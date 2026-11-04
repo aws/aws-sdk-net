@@ -26,7 +26,7 @@ using Amazon.DocDBElastic.Endpoints;
 namespace Amazon.DocDBElastic.Internal
 {
     /// <summary>
-    /// Amazon DocDBElastic endpoint provider.
+    /// Amazon DocumentDB Elastic Clusters endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DocDBElasticEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

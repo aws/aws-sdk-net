@@ -26,7 +26,7 @@ using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
 namespace Amazon.EC2.Internal
 {
     /// <summary>
-    /// Amazon EC2 endpoint provider.
+    /// Amazon Elastic Compute Cloud endpoint provider.
     /// Resolves endpoint for given set of EC2EndpointParameters.
     /// Can throw AmazonClientException if endpoint resolution is unsuccessful.
     /// </summary>

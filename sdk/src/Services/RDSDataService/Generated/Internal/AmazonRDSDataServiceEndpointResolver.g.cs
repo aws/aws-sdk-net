@@ -31,7 +31,7 @@ using Amazon.RDSDataService.Endpoints;
 namespace Amazon.RDSDataService.Internal
 {
     /// <summary>
-    /// Amazon RDSDataService endpoint resolver.
+    /// AWS RDS DataService endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for RDSDataService service requests.
     /// <para />

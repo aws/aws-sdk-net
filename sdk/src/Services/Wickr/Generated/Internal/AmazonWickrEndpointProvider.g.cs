@@ -26,7 +26,7 @@ using Amazon.Wickr.Endpoints;
 namespace Amazon.Wickr.Internal
 {
     /// <summary>
-    /// Amazon Wickr endpoint provider.
+    /// AWS Wickr Admin API endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="WickrEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -27,7 +27,7 @@ using Amazon.StepFunctions.Internal;
 namespace Amazon.StepFunctions
 {
     /// <summary>
-    /// Configuration for accessing Amazon StepFunctions service
+    /// Configuration for accessing AWS Step Functions
     /// </summary>
     public partial class AmazonStepFunctionsConfig : ClientConfig
     {

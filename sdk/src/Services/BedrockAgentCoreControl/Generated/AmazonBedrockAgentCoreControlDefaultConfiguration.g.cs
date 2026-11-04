@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.BedrockAgentCoreControl
 {
     /// <summary>
-    /// Configuration for accessing Amazon BedrockAgentCoreControl service
+    /// Configuration for accessing Amazon Bedrock AgentCore Control
     /// </summary>
     public static class AmazonBedrockAgentCoreControlDefaultConfiguration
     {

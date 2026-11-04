@@ -27,7 +27,7 @@ using Amazon.DataPipeline.Internal;
 namespace Amazon.DataPipeline
 {
     /// <summary>
-    /// Configuration for accessing Amazon DataPipeline service
+    /// Configuration for accessing AWS Data Pipeline
     /// </summary>
     public partial class AmazonDataPipelineConfig : ClientConfig
     {

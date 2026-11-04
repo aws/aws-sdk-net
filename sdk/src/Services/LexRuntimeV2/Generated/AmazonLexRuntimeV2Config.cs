@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the runtime.lex.v2-2020-08-07.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +27,7 @@ using Amazon.LexRuntimeV2.Internal;
 namespace Amazon.LexRuntimeV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon LexRuntimeV2 service
+    /// Configuration for accessing Amazon Lex Runtime V2
     /// </summary>
     public partial class AmazonLexRuntimeV2Config : ClientConfig
     {
@@ -39,16 +38,12 @@ namespace Amazon.LexRuntimeV2
             new AmazonLexRuntimeV2EndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "Lex Runtime V2";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "Lex Runtime V2";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.LexRuntimeV2
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "runtime-v2-lex";
-            }
-        }
+        public override string RegionEndpointServiceName => "runtime-v2-lex";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2020-08-07";
-            }
-        }
+        public override string ServiceVersion => "2020-08-07";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.LexRuntimeV2
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

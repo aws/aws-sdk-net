@@ -27,7 +27,7 @@ using Amazon.ComputeOptimizer.Internal;
 namespace Amazon.ComputeOptimizer
 {
     /// <summary>
-    /// Configuration for accessing Amazon ComputeOptimizer service
+    /// Configuration for accessing AWS Compute Optimizer
     /// </summary>
     public partial class AmazonComputeOptimizerConfig : ClientConfig
     {

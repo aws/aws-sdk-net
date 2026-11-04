@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.QueryDataPlane
 {
     /// <summary>
-    /// Configuration for accessing Amazon QueryDataPlane service
+    /// Configuration for accessing AWS Query Data Plane
     /// </summary>
     public static class AmazonQueryDataPlaneDefaultConfiguration
     {

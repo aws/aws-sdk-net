@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCatalyst.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CodeCatalyst service
+    /// Service metadata for Amazon CodeCatalyst
     /// </summary>
     public partial class AmazonCodeCatalystMetadata : IServiceMetadata
     {

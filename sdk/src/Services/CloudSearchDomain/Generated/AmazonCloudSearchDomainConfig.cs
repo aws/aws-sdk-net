@@ -27,7 +27,7 @@ using Amazon.CloudSearchDomain.Internal;
 namespace Amazon.CloudSearchDomain
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudSearchDomain service
+    /// Configuration for accessing Amazon CloudSearch Domain
     /// </summary>
     public partial class AmazonCloudSearchDomainConfig : ClientConfig
     {

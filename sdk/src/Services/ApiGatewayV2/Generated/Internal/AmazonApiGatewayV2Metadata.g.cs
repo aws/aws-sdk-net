@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApiGatewayV2.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ApiGatewayV2 service
+    /// Service metadata for AmazonApiGatewayV2
     /// </summary>
     public partial class AmazonApiGatewayV2Metadata : IServiceMetadata
     {

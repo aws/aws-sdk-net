@@ -27,7 +27,7 @@ using Amazon.SSO.Internal;
 namespace Amazon.SSO
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSO service
+    /// Configuration for accessing AWS Single Sign-On
     /// </summary>
     public partial class AmazonSSOConfig : ClientConfig
     {

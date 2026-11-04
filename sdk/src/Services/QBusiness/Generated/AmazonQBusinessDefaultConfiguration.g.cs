@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.QBusiness
 {
     /// <summary>
-    /// Configuration for accessing Amazon QBusiness service
+    /// Configuration for accessing QBusiness
     /// </summary>
     public static class AmazonQBusinessDefaultConfiguration
     {

@@ -27,7 +27,7 @@ using Amazon.ElasticMapReduce.Internal;
 namespace Amazon.ElasticMapReduce
 {
     /// <summary>
-    /// Configuration for accessing Amazon ElasticMapReduce service
+    /// Configuration for accessing Amazon EMR
     /// </summary>
     public partial class AmazonElasticMapReduceConfig : ClientConfig
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SagemakerJobRuntime.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SagemakerJobRuntime service
+    /// Service metadata for Sagemaker Job Runtime Service
     /// </summary>
     public partial class AmazonSagemakerJobRuntimeMetadata : IServiceMetadata
     {

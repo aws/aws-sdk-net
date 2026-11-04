@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.QueryCompatibleRpcV2Protocol
 {
     /// <summary>
-    /// Configuration for accessing Amazon QueryCompatibleRpcV2Protocol service
+    /// Configuration for accessing Query Compatible RpcV2 Protocol Service
     /// </summary>
     public static class AmazonQueryCompatibleRpcV2ProtocolDefaultConfiguration
     {

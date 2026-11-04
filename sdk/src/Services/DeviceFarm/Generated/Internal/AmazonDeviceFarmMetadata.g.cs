@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DeviceFarm service
+    /// Service metadata for AWS Device Farm
     /// </summary>
     public partial class AmazonDeviceFarmMetadata : IServiceMetadata
     {

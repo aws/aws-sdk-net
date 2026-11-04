@@ -26,7 +26,7 @@ using Amazon.MailManager.Endpoints;
 namespace Amazon.MailManager.Internal
 {
     /// <summary>
-    /// Amazon MailManager endpoint provider.
+    /// MailManager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MailManagerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

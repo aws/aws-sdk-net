@@ -26,7 +26,7 @@ using Amazon.GeoMaps.Endpoints;
 namespace Amazon.GeoMaps.Internal
 {
     /// <summary>
-    /// Amazon GeoMaps endpoint provider.
+    /// Amazon Location Service Maps V2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="GeoMapsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

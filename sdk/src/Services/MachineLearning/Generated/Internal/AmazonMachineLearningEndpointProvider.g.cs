@@ -26,7 +26,7 @@ using Amazon.MachineLearning.Endpoints;
 namespace Amazon.MachineLearning.Internal
 {
     /// <summary>
-    /// Amazon MachineLearning endpoint provider.
+    /// Amazon Machine Learning endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MachineLearningEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

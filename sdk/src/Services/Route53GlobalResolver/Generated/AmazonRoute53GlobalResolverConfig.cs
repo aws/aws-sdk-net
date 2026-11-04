@@ -27,7 +27,7 @@ using Amazon.Route53GlobalResolver.Internal;
 namespace Amazon.Route53GlobalResolver
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53GlobalResolver service
+    /// Configuration for accessing Amazon Route 53 Global Resolver
     /// </summary>
     public partial class AmazonRoute53GlobalResolverConfig : ClientConfig
     {

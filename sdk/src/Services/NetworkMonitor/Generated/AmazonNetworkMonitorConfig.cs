@@ -27,7 +27,7 @@ using Amazon.NetworkMonitor.Internal;
 namespace Amazon.NetworkMonitor
 {
     /// <summary>
-    /// Configuration for accessing Amazon NetworkMonitor service
+    /// Configuration for accessing Amazon CloudWatch Network Monitor
     /// </summary>
     public partial class AmazonNetworkMonitorConfig : ClientConfig
     {

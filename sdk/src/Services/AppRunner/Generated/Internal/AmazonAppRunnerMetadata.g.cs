@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AppRunner service
+    /// Service metadata for AWS App Runner
     /// </summary>
     public partial class AmazonAppRunnerMetadata : IServiceMetadata
     {

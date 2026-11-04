@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.IoTWireless
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTWireless service
+    /// Configuration for accessing AWS IoT Wireless
     /// </summary>
     public static class AmazonIoTWirelessDefaultConfiguration
     {

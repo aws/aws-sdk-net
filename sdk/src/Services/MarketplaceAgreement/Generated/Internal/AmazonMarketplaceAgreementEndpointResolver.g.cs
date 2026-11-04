@@ -31,7 +31,7 @@ using Amazon.MarketplaceAgreement.Endpoints;
 namespace Amazon.MarketplaceAgreement.Internal
 {
     /// <summary>
-    /// Amazon MarketplaceAgreement endpoint resolver.
+    /// AWS Marketplace Agreement Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MarketplaceAgreement service requests.
     /// <para />

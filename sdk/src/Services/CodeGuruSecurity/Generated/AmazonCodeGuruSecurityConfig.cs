@@ -27,7 +27,7 @@ using Amazon.CodeGuruSecurity.Internal;
 namespace Amazon.CodeGuruSecurity
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeGuruSecurity service
+    /// Configuration for accessing Amazon CodeGuru Security
     /// </summary>
     public partial class AmazonCodeGuruSecurityConfig : ClientConfig
     {

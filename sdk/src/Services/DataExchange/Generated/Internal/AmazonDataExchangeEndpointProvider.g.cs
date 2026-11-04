@@ -26,7 +26,7 @@ using Amazon.DataExchange.Endpoints;
 namespace Amazon.DataExchange.Internal
 {
     /// <summary>
-    /// Amazon DataExchange endpoint provider.
+    /// AWS Data Exchange endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DataExchangeEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

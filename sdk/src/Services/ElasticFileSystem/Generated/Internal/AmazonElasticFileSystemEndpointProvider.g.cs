@@ -26,7 +26,7 @@ using Amazon.ElasticFileSystem.Endpoints;
 namespace Amazon.ElasticFileSystem.Internal
 {
     /// <summary>
-    /// Amazon ElasticFileSystem endpoint provider.
+    /// Amazon Elastic File System endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ElasticFileSystemEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

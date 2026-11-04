@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Sustainability.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Sustainability service
+    /// Service metadata for AWS Sustainability
     /// </summary>
     public partial class AmazonSustainabilityMetadata : IServiceMetadata
     {

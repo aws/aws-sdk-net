@@ -27,7 +27,7 @@ using Amazon.AWSMarketplaceMetering.Internal;
 namespace Amazon.AWSMarketplaceMetering
 {
     /// <summary>
-    /// Configuration for accessing Amazon AWSMarketplaceMetering service
+    /// Configuration for accessing AWSMarketplace Metering
     /// </summary>
     public partial class AmazonAWSMarketplaceMeteringConfig : ClientConfig
     {

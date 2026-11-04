@@ -27,7 +27,7 @@ using Amazon.ManagedBlockchainQuery.Internal;
 namespace Amazon.ManagedBlockchainQuery
 {
     /// <summary>
-    /// Configuration for accessing Amazon ManagedBlockchainQuery service
+    /// Configuration for accessing Amazon Managed Blockchain Query
     /// </summary>
     public partial class AmazonManagedBlockchainQueryConfig : ClientConfig
     {

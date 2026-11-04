@@ -27,7 +27,7 @@ using Amazon.IoTDeviceAdvisor.Internal;
 namespace Amazon.IoTDeviceAdvisor
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTDeviceAdvisor service
+    /// Configuration for accessing AWS IoT Core Device Advisor
     /// </summary>
     public partial class AmazonIoTDeviceAdvisorConfig : ClientConfig
     {

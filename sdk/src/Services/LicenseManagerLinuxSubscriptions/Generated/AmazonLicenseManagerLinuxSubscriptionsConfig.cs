@@ -27,7 +27,7 @@ using Amazon.LicenseManagerLinuxSubscriptions.Internal;
 namespace Amazon.LicenseManagerLinuxSubscriptions
 {
     /// <summary>
-    /// Configuration for accessing Amazon LicenseManagerLinuxSubscriptions service
+    /// Configuration for accessing AWS License Manager Linux Subscriptions
     /// </summary>
     public partial class AmazonLicenseManagerLinuxSubscriptionsConfig : ClientConfig
     {

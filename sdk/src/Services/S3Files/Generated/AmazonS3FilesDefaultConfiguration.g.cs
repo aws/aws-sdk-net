@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.S3Files
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Files service
+    /// Configuration for accessing Amazon S3 Files
     /// </summary>
     public static class AmazonS3FilesDefaultConfiguration
     {

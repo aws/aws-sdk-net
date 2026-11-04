@@ -27,7 +27,7 @@ using Amazon.SSOAdmin.Internal;
 namespace Amazon.SSOAdmin
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSOAdmin service
+    /// Configuration for accessing AWS Single Sign-On Admin
     /// </summary>
     public partial class AmazonSSOAdminConfig : ClientConfig
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MarketplaceAgreement
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceAgreement service
+    /// Configuration for accessing AWS Marketplace Agreement Service
     /// </summary>
     public static class AmazonMarketplaceAgreementDefaultConfiguration
     {

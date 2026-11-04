@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MigrationHubConfig.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MigrationHubConfig service
+    /// Service metadata for AWS Migration Hub Config
     /// </summary>
     public partial class AmazonMigrationHubConfigMetadata : IServiceMetadata
     {

@@ -27,7 +27,7 @@ using Amazon.Proton.Internal;
 namespace Amazon.Proton
 {
     /// <summary>
-    /// Configuration for accessing Amazon Proton service
+    /// Configuration for accessing AWS Proton
     /// </summary>
     public partial class AmazonProtonConfig : ClientConfig
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudControlApi
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudControlApi service
+    /// Configuration for accessing AWS Cloud Control API
     /// </summary>
     public static class AmazonCloudControlApiDefaultConfiguration
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ConnectCases service
+    /// Service metadata for Amazon Connect Cases
     /// </summary>
     public partial class AmazonConnectCasesMetadata : IServiceMetadata
     {

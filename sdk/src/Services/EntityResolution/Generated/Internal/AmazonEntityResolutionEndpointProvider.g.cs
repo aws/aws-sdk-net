@@ -26,7 +26,7 @@ using Amazon.EntityResolution.Endpoints;
 namespace Amazon.EntityResolution.Internal
 {
     /// <summary>
-    /// Amazon EntityResolution endpoint provider.
+    /// AWS EntityResolution endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="EntityResolutionEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

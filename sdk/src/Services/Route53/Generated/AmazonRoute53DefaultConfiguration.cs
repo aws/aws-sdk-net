@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.Route53
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53 service
+    /// Configuration for accessing Amazon Route 53
     /// </summary>
     public static class AmazonRoute53DefaultConfiguration
     {

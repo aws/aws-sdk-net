@@ -27,7 +27,7 @@ using Amazon.SecurityIR.Internal;
 namespace Amazon.SecurityIR
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecurityIR service
+    /// Configuration for accessing Security Incident Response
     /// </summary>
     public partial class AmazonSecurityIRConfig : ClientConfig
     {

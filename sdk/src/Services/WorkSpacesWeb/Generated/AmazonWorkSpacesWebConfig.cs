@@ -27,7 +27,7 @@ using Amazon.WorkSpacesWeb.Internal;
 namespace Amazon.WorkSpacesWeb
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkSpacesWeb service
+    /// Configuration for accessing Amazon WorkSpaces Web
     /// </summary>
     public partial class AmazonWorkSpacesWebConfig : ClientConfig
     {

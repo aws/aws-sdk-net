@@ -27,7 +27,7 @@ using Amazon.XRay.Internal;
 namespace Amazon.XRay
 {
     /// <summary>
-    /// Configuration for accessing Amazon XRay service
+    /// Configuration for accessing AWS X-Ray
     /// </summary>
     public partial class AmazonXRayConfig : ClientConfig
     {

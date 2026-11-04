@@ -26,7 +26,7 @@ using Amazon.PartnerCentralAccount.Endpoints;
 namespace Amazon.PartnerCentralAccount.Internal
 {
     /// <summary>
-    /// Amazon PartnerCentralAccount endpoint provider.
+    /// Partner Central Account API endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PartnerCentralAccountEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -26,7 +26,7 @@ using Amazon.CertificateManager.Endpoints;
 namespace Amazon.CertificateManager.Internal
 {
     /// <summary>
-    /// Amazon CertificateManager endpoint provider.
+    /// AWS Certificate Manager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CertificateManagerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

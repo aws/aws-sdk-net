@@ -27,7 +27,7 @@ using Amazon.KeyspacesStreams.Internal;
 namespace Amazon.KeyspacesStreams
 {
     /// <summary>
-    /// Configuration for accessing Amazon KeyspacesStreams service
+    /// Configuration for accessing Amazon Keyspaces Streams
     /// </summary>
     public partial class AmazonKeyspacesStreamsConfig : ClientConfig
     {

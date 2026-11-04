@@ -31,7 +31,7 @@ using Amazon.TaxSettings.Endpoints;
 namespace Amazon.TaxSettings.Internal
 {
     /// <summary>
-    /// Amazon TaxSettings endpoint resolver.
+    /// Tax Settings endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for TaxSettings service requests.
     /// <para />

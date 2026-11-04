@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.GroundStation
 {
     /// <summary>
-    /// Configuration for accessing Amazon GroundStation service
+    /// Configuration for accessing AWS Ground Station
     /// </summary>
     public static class AmazonGroundStationDefaultConfiguration
     {

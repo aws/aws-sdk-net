@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AWSMarketplaceMetering service
+    /// Service metadata for AWSMarketplace Metering
     /// </summary>
     public partial class AmazonAWSMarketplaceMeteringMetadata : IServiceMetadata
     {

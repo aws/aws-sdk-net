@@ -27,7 +27,7 @@ using Amazon.IoTSecureTunneling.Internal;
 namespace Amazon.IoTSecureTunneling
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTSecureTunneling service
+    /// Configuration for accessing AWS IoT Secure Tunneling
     /// </summary>
     public partial class AmazonIoTSecureTunnelingConfig : ClientConfig
     {

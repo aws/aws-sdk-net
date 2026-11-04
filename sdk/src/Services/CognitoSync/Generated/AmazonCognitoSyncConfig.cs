@@ -27,7 +27,7 @@ using Amazon.CognitoSync.Internal;
 namespace Amazon.CognitoSync
 {
     /// <summary>
-    /// Configuration for accessing Amazon CognitoSync service
+    /// Configuration for accessing Amazon Cognito Sync
     /// </summary>
     public partial class AmazonCognitoSyncConfig : ClientConfig
     {

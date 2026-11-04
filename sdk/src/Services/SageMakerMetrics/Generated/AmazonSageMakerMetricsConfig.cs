@@ -27,7 +27,7 @@ using Amazon.SageMakerMetrics.Internal;
 namespace Amazon.SageMakerMetrics
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMakerMetrics service
+    /// Configuration for accessing Amazon SageMaker Metrics Service
     /// </summary>
     public partial class AmazonSageMakerMetricsConfig : ClientConfig
     {

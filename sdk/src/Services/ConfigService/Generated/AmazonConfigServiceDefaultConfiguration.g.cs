@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ConfigService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConfigService service
+    /// Configuration for accessing AWS Config
     /// </summary>
     public static class AmazonConfigServiceDefaultConfiguration
     {

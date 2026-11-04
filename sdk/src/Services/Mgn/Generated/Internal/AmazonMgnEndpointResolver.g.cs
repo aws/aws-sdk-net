@@ -31,7 +31,7 @@ using Amazon.Mgn.Endpoints;
 namespace Amazon.Mgn.Internal
 {
     /// <summary>
-    /// Amazon Mgn endpoint resolver.
+    /// Application Migration Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Mgn service requests.
     /// <para />

@@ -27,7 +27,7 @@ using Amazon.TimestreamQuery.Internal;
 namespace Amazon.TimestreamQuery
 {
     /// <summary>
-    /// Configuration for accessing Amazon TimestreamQuery service
+    /// Configuration for accessing Amazon Timestream Query
     /// </summary>
     public partial class AmazonTimestreamQueryConfig : ClientConfig
     {

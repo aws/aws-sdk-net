@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSM.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CloudHSM service
+    /// Service metadata for Amazon CloudHSM
     /// </summary>
     public partial class AmazonCloudHSMMetadata : IServiceMetadata
     {

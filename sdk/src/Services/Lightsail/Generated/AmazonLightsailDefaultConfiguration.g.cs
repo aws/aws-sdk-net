@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Lightsail
 {
     /// <summary>
-    /// Configuration for accessing Amazon Lightsail service
+    /// Configuration for accessing Amazon Lightsail
     /// </summary>
     public static class AmazonLightsailDefaultConfiguration
     {

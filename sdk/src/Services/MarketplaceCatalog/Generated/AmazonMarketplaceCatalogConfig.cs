@@ -27,7 +27,7 @@ using Amazon.MarketplaceCatalog.Internal;
 namespace Amazon.MarketplaceCatalog
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceCatalog service
+    /// Configuration for accessing AWS Marketplace Catalog Service
     /// </summary>
     public partial class AmazonMarketplaceCatalogConfig : ClientConfig
     {

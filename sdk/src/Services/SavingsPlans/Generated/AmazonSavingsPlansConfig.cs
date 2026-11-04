@@ -27,7 +27,7 @@ using Amazon.SavingsPlans.Internal;
 namespace Amazon.SavingsPlans
 {
     /// <summary>
-    /// Configuration for accessing Amazon SavingsPlans service
+    /// Configuration for accessing AWS Savings Plans
     /// </summary>
     public partial class AmazonSavingsPlansConfig : ClientConfig
     {

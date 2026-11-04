@@ -9,16 +9,16 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("AWSSDK.Route53")]
 
 #if NET472
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - Amazon Route 53. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - Amazon Route 53.")]
 
 #elif NETSTANDARD2_0
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Route 53. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Route 53.")]
 
 #elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Route 53. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Route 53.")]
 
 #elif NET8_0
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Route 53. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Route 53.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

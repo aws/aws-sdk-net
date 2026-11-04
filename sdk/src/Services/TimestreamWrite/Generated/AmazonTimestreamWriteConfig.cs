@@ -27,7 +27,7 @@ using Amazon.TimestreamWrite.Internal;
 namespace Amazon.TimestreamWrite
 {
     /// <summary>
-    /// Configuration for accessing Amazon TimestreamWrite service
+    /// Configuration for accessing Amazon Timestream Write
     /// </summary>
     public partial class AmazonTimestreamWriteConfig : ClientConfig
     {

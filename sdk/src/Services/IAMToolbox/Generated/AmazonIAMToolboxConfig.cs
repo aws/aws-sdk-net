@@ -27,7 +27,7 @@ using Amazon.IAMToolbox.Internal;
 namespace Amazon.IAMToolbox
 {
     /// <summary>
-    /// Configuration for accessing Amazon IAMToolbox service
+    /// Configuration for accessing IAM Toolbox (Preview)
     /// </summary>
     public partial class AmazonIAMToolboxConfig : ClientConfig
     {

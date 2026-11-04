@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityIR.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SecurityIR service
+    /// Service metadata for Security Incident Response
     /// </summary>
     public partial class AmazonSecurityIRMetadata : IServiceMetadata
     {

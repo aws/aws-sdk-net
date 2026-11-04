@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AppFabric
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppFabric service
+    /// Configuration for accessing AppFabric
     /// </summary>
     public static class AmazonAppFabricDefaultConfiguration
     {

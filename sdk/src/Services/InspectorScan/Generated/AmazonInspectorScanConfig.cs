@@ -27,7 +27,7 @@ using Amazon.InspectorScan.Internal;
 namespace Amazon.InspectorScan
 {
     /// <summary>
-    /// Configuration for accessing Amazon InspectorScan service
+    /// Configuration for accessing Inspector Scan
     /// </summary>
     public partial class AmazonInspectorScanConfig : ClientConfig
     {

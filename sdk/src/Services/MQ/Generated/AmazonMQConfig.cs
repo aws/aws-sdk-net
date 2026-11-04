@@ -27,7 +27,7 @@ using Amazon.MQ.Internal;
 namespace Amazon.MQ
 {
     /// <summary>
-    /// Configuration for accessing Amazon MQ service
+    /// Configuration for accessing AmazonMQ
     /// </summary>
     public partial class AmazonMQConfig : ClientConfig
     {

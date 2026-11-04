@@ -27,7 +27,7 @@ using Amazon.SignerData.Internal;
 namespace Amazon.SignerData
 {
     /// <summary>
-    /// Configuration for accessing Amazon SignerData service
+    /// Configuration for accessing AWS Signer Data Plane
     /// </summary>
     public partial class AmazonSignerDataConfig : ClientConfig
     {

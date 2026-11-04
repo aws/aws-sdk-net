@@ -27,7 +27,7 @@ using Amazon.ApiGatewayV2.Internal;
 namespace Amazon.ApiGatewayV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApiGatewayV2 service
+    /// Configuration for accessing AmazonApiGatewayV2
     /// </summary>
     public partial class AmazonApiGatewayV2Config : ClientConfig
     {

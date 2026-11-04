@@ -26,7 +26,7 @@ using Amazon.ApplicationInsights.Endpoints;
 namespace Amazon.ApplicationInsights.Internal
 {
     /// <summary>
-    /// Amazon ApplicationInsights endpoint provider.
+    /// Amazon CloudWatch Application Insights endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ApplicationInsightsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

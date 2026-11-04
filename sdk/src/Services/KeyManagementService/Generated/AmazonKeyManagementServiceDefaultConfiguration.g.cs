@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.KeyManagementService
 {
     /// <summary>
-    /// Configuration for accessing Amazon KeyManagementService service
+    /// Configuration for accessing AWS Key Management Service
     /// </summary>
     public static class AmazonKeyManagementServiceDefaultConfiguration
     {

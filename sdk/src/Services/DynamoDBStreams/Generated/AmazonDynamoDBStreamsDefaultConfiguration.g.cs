@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DynamoDBStreams
 {
     /// <summary>
-    /// Configuration for accessing Amazon DynamoDBStreams service
+    /// Configuration for accessing Amazon DynamoDB Streams
     /// </summary>
     public static class AmazonDynamoDBStreamsDefaultConfiguration
     {

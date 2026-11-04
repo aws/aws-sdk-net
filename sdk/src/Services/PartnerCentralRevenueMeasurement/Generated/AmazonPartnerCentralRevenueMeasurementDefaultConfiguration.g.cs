@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.PartnerCentralRevenueMeasurement
 {
     /// <summary>
-    /// Configuration for accessing Amazon PartnerCentralRevenueMeasurement service
+    /// Configuration for accessing Partner Central Revenue Measurement API
     /// </summary>
     public static class AmazonPartnerCentralRevenueMeasurementDefaultConfiguration
     {

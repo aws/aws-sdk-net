@@ -31,7 +31,7 @@ using Amazon.IoTSecureTunneling.Endpoints;
 namespace Amazon.IoTSecureTunneling.Internal
 {
     /// <summary>
-    /// Amazon IoTSecureTunneling endpoint resolver.
+    /// AWS IoT Secure Tunneling endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IoTSecureTunneling service requests.
     /// <para />

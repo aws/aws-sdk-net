@@ -27,7 +27,7 @@ using Amazon.MediaPackageVod.Internal;
 namespace Amazon.MediaPackageVod
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaPackageVod service
+    /// Configuration for accessing AWS Elemental MediaPackage VOD
     /// </summary>
     public partial class AmazonMediaPackageVodConfig : ClientConfig
     {

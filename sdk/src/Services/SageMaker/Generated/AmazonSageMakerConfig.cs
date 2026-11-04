@@ -27,7 +27,7 @@ using Amazon.SageMaker.Internal;
 namespace Amazon.SageMaker
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMaker service
+    /// Configuration for accessing Amazon SageMaker Service
     /// </summary>
     public partial class AmazonSageMakerConfig : ClientConfig
     {

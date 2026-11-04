@@ -27,7 +27,7 @@ using Amazon.IdentityStore.Internal;
 namespace Amazon.IdentityStore
 {
     /// <summary>
-    /// Configuration for accessing Amazon IdentityStore service
+    /// Configuration for accessing AWS SSO Identity Store
     /// </summary>
     public partial class AmazonIdentityStoreConfig : ClientConfig
     {

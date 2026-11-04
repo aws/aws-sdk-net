@@ -27,7 +27,7 @@ using Amazon.Inspector2.Internal;
 namespace Amazon.Inspector2
 {
     /// <summary>
-    /// Configuration for accessing Amazon Inspector2 service
+    /// Configuration for accessing Inspector2
     /// </summary>
     public partial class AmazonInspector2Config : ClientConfig
     {

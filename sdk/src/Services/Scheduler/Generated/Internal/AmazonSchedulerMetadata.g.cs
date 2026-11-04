@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Scheduler.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Scheduler service
+    /// Service metadata for Amazon EventBridge Scheduler
     /// </summary>
     public partial class AmazonSchedulerMetadata : IServiceMetadata
     {

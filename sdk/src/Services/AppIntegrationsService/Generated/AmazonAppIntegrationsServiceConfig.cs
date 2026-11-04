@@ -27,7 +27,7 @@ using Amazon.AppIntegrationsService.Internal;
 namespace Amazon.AppIntegrationsService
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppIntegrationsService service
+    /// Configuration for accessing Amazon AppIntegrations Service
     /// </summary>
     public partial class AmazonAppIntegrationsServiceConfig : ClientConfig
     {

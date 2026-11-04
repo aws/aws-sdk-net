@@ -31,7 +31,7 @@ using Amazon.APIGateway.Endpoints;
 namespace Amazon.APIGateway.Internal
 {
     /// <summary>
-    /// Amazon APIGateway endpoint resolver.
+    /// Amazon API Gateway endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for APIGateway service requests.
     /// <para />

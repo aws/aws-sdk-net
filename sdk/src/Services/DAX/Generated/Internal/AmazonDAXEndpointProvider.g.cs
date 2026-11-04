@@ -26,7 +26,7 @@ using Amazon.DAX.Endpoints;
 namespace Amazon.DAX.Internal
 {
     /// <summary>
-    /// Amazon DAX endpoint provider.
+    /// Amazon DynamoDB Accelerator (DAX) endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DAXEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

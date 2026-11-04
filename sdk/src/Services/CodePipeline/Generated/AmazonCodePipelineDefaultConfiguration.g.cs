@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CodePipeline
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodePipeline service
+    /// Configuration for accessing AWS CodePipeline
     /// </summary>
     public static class AmazonCodePipelineDefaultConfiguration
     {

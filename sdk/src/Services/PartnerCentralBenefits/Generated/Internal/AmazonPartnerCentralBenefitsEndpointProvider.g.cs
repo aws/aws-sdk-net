@@ -26,7 +26,7 @@ using Amazon.PartnerCentralBenefits.Endpoints;
 namespace Amazon.PartnerCentralBenefits.Internal
 {
     /// <summary>
-    /// Amazon PartnerCentralBenefits endpoint provider.
+    /// Partner Central Benefits API endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PartnerCentralBenefitsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

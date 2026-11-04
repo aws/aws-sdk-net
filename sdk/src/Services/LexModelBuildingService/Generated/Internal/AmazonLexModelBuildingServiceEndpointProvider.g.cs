@@ -26,7 +26,7 @@ using Amazon.LexModelBuildingService.Endpoints;
 namespace Amazon.LexModelBuildingService.Internal
 {
     /// <summary>
-    /// Amazon LexModelBuildingService endpoint provider.
+    /// Amazon Lex Model Building Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="LexModelBuildingServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

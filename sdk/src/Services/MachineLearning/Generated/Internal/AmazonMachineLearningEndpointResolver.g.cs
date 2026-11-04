@@ -31,7 +31,7 @@ using Amazon.MachineLearning.Endpoints;
 namespace Amazon.MachineLearning.Internal
 {
     /// <summary>
-    /// Amazon MachineLearning endpoint resolver.
+    /// Amazon Machine Learning endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MachineLearning service requests.
     /// <para />

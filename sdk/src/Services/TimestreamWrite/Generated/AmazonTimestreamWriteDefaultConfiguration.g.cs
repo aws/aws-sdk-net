@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.TimestreamWrite
 {
     /// <summary>
-    /// Configuration for accessing Amazon TimestreamWrite service
+    /// Configuration for accessing Amazon Timestream Write
     /// </summary>
     public static class AmazonTimestreamWriteDefaultConfiguration
     {

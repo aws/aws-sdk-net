@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DevOpsGuru
 {
     /// <summary>
-    /// Configuration for accessing Amazon DevOpsGuru service
+    /// Configuration for accessing Amazon DevOps Guru
     /// </summary>
     public static class AmazonDevOpsGuruDefaultConfiguration
     {

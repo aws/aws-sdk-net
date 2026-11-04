@@ -27,7 +27,7 @@ using Amazon.MediaLive.Internal;
 namespace Amazon.MediaLive
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaLive service
+    /// Configuration for accessing AWS Elemental MediaLive
     /// </summary>
     public partial class AmazonMediaLiveConfig : ClientConfig
     {

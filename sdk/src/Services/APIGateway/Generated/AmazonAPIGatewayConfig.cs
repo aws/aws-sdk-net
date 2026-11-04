@@ -27,7 +27,7 @@ using Amazon.APIGateway.Internal;
 namespace Amazon.APIGateway
 {
     /// <summary>
-    /// Configuration for accessing Amazon APIGateway service
+    /// Configuration for accessing Amazon API Gateway
     /// </summary>
     public partial class AmazonAPIGatewayConfig : ClientConfig
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SagemakerEdgeManager.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SagemakerEdgeManager service
+    /// Service metadata for Amazon Sagemaker Edge Manager
     /// </summary>
     public partial class AmazonSagemakerEdgeManagerMetadata : IServiceMetadata
     {

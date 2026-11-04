@@ -26,7 +26,7 @@ using Amazon.DataSync.Endpoints;
 namespace Amazon.DataSync.Internal
 {
     /// <summary>
-    /// Amazon DataSync endpoint provider.
+    /// AWS DataSync endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DataSyncEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

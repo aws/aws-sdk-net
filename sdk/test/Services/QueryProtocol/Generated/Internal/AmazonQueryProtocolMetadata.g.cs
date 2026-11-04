@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QueryProtocol.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon QueryProtocol service
+    /// Service metadata for Sample Query Protocol Service
     /// </summary>
     public partial class AmazonQueryProtocolMetadata : IServiceMetadata
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SimpleEmailServiceV2 service
+    /// Service metadata for Amazon Simple Email Service
     /// </summary>
     public partial class AmazonSimpleEmailServiceV2Metadata : IServiceMetadata
     {

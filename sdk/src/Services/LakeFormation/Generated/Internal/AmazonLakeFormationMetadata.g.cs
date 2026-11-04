@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon LakeFormation service
+    /// Service metadata for AWS Lake Formation
     /// </summary>
     public partial class AmazonLakeFormationMetadata : IServiceMetadata
     {

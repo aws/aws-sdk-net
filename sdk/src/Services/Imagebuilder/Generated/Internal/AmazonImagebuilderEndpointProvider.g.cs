@@ -26,7 +26,7 @@ using Amazon.Imagebuilder.Endpoints;
 namespace Amazon.Imagebuilder.Internal
 {
     /// <summary>
-    /// Amazon Imagebuilder endpoint provider.
+    /// EC2 Image Builder endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ImagebuilderEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

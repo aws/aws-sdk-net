@@ -27,7 +27,7 @@ using Amazon.ResourceGroupsTaggingAPI.Internal;
 namespace Amazon.ResourceGroupsTaggingAPI
 {
     /// <summary>
-    /// Configuration for accessing Amazon ResourceGroupsTaggingAPI service
+    /// Configuration for accessing AWS Resource Groups Tagging API
     /// </summary>
     public partial class AmazonResourceGroupsTaggingAPIConfig : ClientConfig
     {

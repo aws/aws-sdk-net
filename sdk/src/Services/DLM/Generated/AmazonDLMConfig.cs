@@ -27,7 +27,7 @@ using Amazon.DLM.Internal;
 namespace Amazon.DLM
 {
     /// <summary>
-    /// Configuration for accessing Amazon DLM service
+    /// Configuration for accessing Amazon Data Lifecycle Manager
     /// </summary>
     public partial class AmazonDLMConfig : ClientConfig
     {

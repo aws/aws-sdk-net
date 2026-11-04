@@ -27,7 +27,7 @@ using Amazon.QueryProtocol.Internal;
 namespace Amazon.QueryProtocol
 {
     /// <summary>
-    /// Configuration for accessing Amazon QueryProtocol service
+    /// Configuration for accessing Sample Query Protocol Service
     /// </summary>
     public partial class AmazonQueryProtocolConfig : ClientConfig
     {

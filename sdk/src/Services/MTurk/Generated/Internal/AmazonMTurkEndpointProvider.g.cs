@@ -26,7 +26,7 @@ using Amazon.MTurk.Endpoints;
 namespace Amazon.MTurk.Internal
 {
     /// <summary>
-    /// Amazon MTurk endpoint provider.
+    /// Amazon Mechanical Turk endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MTurkEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -26,7 +26,7 @@ using Amazon.TimestreamQuery.Endpoints;
 namespace Amazon.TimestreamQuery.Internal
 {
     /// <summary>
-    /// Amazon TimestreamQuery endpoint provider.
+    /// Amazon Timestream Query endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="TimestreamQueryEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

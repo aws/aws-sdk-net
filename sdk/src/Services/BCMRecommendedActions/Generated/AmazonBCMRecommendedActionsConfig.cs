@@ -27,7 +27,7 @@ using Amazon.BCMRecommendedActions.Internal;
 namespace Amazon.BCMRecommendedActions
 {
     /// <summary>
-    /// Configuration for accessing Amazon BCMRecommendedActions service
+    /// Configuration for accessing AWS Billing and Cost Management Recommended Actions
     /// </summary>
     public partial class AmazonBCMRecommendedActionsConfig : ClientConfig
     {

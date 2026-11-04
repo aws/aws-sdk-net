@@ -26,7 +26,7 @@ using Amazon.Backup.Endpoints;
 namespace Amazon.Backup.Internal
 {
     /// <summary>
-    /// Amazon Backup endpoint provider.
+    /// AWS Backup endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BackupEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

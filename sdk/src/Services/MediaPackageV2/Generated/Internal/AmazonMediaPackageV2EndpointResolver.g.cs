@@ -31,7 +31,7 @@ using Amazon.MediaPackageV2.Endpoints;
 namespace Amazon.MediaPackageV2.Internal
 {
     /// <summary>
-    /// Amazon MediaPackageV2 endpoint resolver.
+    /// AWS Elemental MediaPackage v2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MediaPackageV2 service requests.
     /// <para />

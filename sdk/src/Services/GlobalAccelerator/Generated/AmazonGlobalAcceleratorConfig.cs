@@ -27,7 +27,7 @@ using Amazon.GlobalAccelerator.Internal;
 namespace Amazon.GlobalAccelerator
 {
     /// <summary>
-    /// Configuration for accessing Amazon GlobalAccelerator service
+    /// Configuration for accessing AWS Global Accelerator
     /// </summary>
     public partial class AmazonGlobalAcceleratorConfig : ClientConfig
     {

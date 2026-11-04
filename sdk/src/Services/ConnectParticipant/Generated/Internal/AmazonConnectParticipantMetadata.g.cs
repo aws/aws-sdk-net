@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectParticipant.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ConnectParticipant service
+    /// Service metadata for Amazon Connect Participant Service
     /// </summary>
     public partial class AmazonConnectParticipantMetadata : IServiceMetadata
     {

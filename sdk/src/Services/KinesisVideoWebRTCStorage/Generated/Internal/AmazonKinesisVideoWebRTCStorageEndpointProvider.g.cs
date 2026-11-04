@@ -26,7 +26,7 @@ using Amazon.KinesisVideoWebRTCStorage.Endpoints;
 namespace Amazon.KinesisVideoWebRTCStorage.Internal
 {
     /// <summary>
-    /// Amazon KinesisVideoWebRTCStorage endpoint provider.
+    /// Amazon Kinesis Video WebRTC Storage endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="KinesisVideoWebRTCStorageEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

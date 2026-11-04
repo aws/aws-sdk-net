@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.KinesisFirehose
 {
     /// <summary>
-    /// Configuration for accessing Amazon KinesisFirehose service
+    /// Configuration for accessing Amazon Kinesis Firehose
     /// </summary>
     public static class AmazonKinesisFirehoseDefaultConfiguration
     {

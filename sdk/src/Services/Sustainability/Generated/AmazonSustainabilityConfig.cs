@@ -27,7 +27,7 @@ using Amazon.Sustainability.Internal;
 namespace Amazon.Sustainability
 {
     /// <summary>
-    /// Configuration for accessing Amazon Sustainability service
+    /// Configuration for accessing AWS Sustainability
     /// </summary>
     public partial class AmazonSustainabilityConfig : ClientConfig
     {

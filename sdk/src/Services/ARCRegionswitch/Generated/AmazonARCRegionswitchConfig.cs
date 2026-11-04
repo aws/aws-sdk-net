@@ -27,7 +27,7 @@ using Amazon.ARCRegionswitch.Internal;
 namespace Amazon.ARCRegionswitch
 {
     /// <summary>
-    /// Configuration for accessing Amazon ARCRegionswitch service
+    /// Configuration for accessing ARC - Region switch
     /// </summary>
     public partial class AmazonARCRegionswitchConfig : ClientConfig
     {

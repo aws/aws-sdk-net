@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ChimeSDKMessaging
 {
     /// <summary>
-    /// Configuration for accessing Amazon ChimeSDKMessaging service
+    /// Configuration for accessing Amazon Chime SDK Messaging
     /// </summary>
     public static class AmazonChimeSDKMessagingDefaultConfiguration
     {

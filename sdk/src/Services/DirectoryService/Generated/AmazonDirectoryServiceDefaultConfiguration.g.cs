@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DirectoryService
 {
     /// <summary>
-    /// Configuration for accessing Amazon DirectoryService service
+    /// Configuration for accessing AWS Directory Service
     /// </summary>
     public static class AmazonDirectoryServiceDefaultConfiguration
     {

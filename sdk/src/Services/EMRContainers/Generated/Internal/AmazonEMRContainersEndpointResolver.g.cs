@@ -31,7 +31,7 @@ using Amazon.EMRContainers.Endpoints;
 namespace Amazon.EMRContainers.Internal
 {
     /// <summary>
-    /// Amazon EMRContainers endpoint resolver.
+    /// Amazon EMR Containers endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for EMRContainers service requests.
     /// <para />

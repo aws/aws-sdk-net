@@ -27,7 +27,7 @@ using Amazon.Kafka.Internal;
 namespace Amazon.Kafka
 {
     /// <summary>
-    /// Configuration for accessing Amazon Kafka service
+    /// Configuration for accessing Managed Streaming for Kafka
     /// </summary>
     public partial class AmazonKafkaConfig : ClientConfig
     {

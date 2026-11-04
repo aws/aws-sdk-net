@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCampaignService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ConnectCampaignService service
+    /// Service metadata for AmazonConnectCampaignService
     /// </summary>
     public partial class AmazonConnectCampaignServiceMetadata : IServiceMetadata
     {

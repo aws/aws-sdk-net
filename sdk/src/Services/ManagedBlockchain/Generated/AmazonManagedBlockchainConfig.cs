@@ -27,7 +27,7 @@ using Amazon.ManagedBlockchain.Internal;
 namespace Amazon.ManagedBlockchain
 {
     /// <summary>
-    /// Configuration for accessing Amazon ManagedBlockchain service
+    /// Configuration for accessing Amazon Managed Blockchain
     /// </summary>
     public partial class AmazonManagedBlockchainConfig : ClientConfig
     {

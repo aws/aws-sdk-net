@@ -31,7 +31,7 @@ using Amazon.Wickr.Endpoints;
 namespace Amazon.Wickr.Internal
 {
     /// <summary>
-    /// Amazon Wickr endpoint resolver.
+    /// AWS Wickr Admin API endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Wickr service requests.
     /// <para />

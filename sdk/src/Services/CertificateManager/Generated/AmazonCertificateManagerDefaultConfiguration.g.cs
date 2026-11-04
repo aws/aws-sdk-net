@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CertificateManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon CertificateManager service
+    /// Configuration for accessing AWS Certificate Manager
     /// </summary>
     public static class AmazonCertificateManagerDefaultConfiguration
     {

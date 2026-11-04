@@ -31,7 +31,7 @@ using Amazon.SagemakerEdgeManager.Endpoints;
 namespace Amazon.SagemakerEdgeManager.Internal
 {
     /// <summary>
-    /// Amazon SagemakerEdgeManager endpoint resolver.
+    /// Amazon Sagemaker Edge Manager endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SagemakerEdgeManager service requests.
     /// <para />

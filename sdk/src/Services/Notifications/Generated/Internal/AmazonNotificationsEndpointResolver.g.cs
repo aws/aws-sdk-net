@@ -31,7 +31,7 @@ using Amazon.Notifications.Endpoints;
 namespace Amazon.Notifications.Internal
 {
     /// <summary>
-    /// Amazon Notifications endpoint resolver.
+    /// AWS User Notifications endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Notifications service requests.
     /// <para />

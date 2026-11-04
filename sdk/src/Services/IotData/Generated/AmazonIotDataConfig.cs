@@ -27,7 +27,7 @@ using Amazon.IotData.Internal;
 namespace Amazon.IotData
 {
     /// <summary>
-    /// Configuration for accessing Amazon IotData service
+    /// Configuration for accessing AWS IoT Data Plane
     /// </summary>
     public partial class AmazonIotDataConfig : ClientConfig
     {

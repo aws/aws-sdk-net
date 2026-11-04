@@ -31,7 +31,7 @@ using Amazon.DynamoDBStreams.Endpoints;
 namespace Amazon.DynamoDBStreams.Internal
 {
     /// <summary>
-    /// Amazon DynamoDBStreams endpoint resolver.
+    /// Amazon DynamoDB Streams endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DynamoDBStreams service requests.
     /// <para />

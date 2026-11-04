@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.WorkSpaces
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkSpaces service
+    /// Configuration for accessing Amazon WorkSpaces
     /// </summary>
     public static class AmazonWorkSpacesDefaultConfiguration
     {

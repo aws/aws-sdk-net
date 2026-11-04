@@ -27,7 +27,7 @@ using Amazon.CodeGuruReviewer.Internal;
 namespace Amazon.CodeGuruReviewer
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeGuruReviewer service
+    /// Configuration for accessing Amazon CodeGuru Reviewer
     /// </summary>
     public partial class AmazonCodeGuruReviewerConfig : ClientConfig
     {

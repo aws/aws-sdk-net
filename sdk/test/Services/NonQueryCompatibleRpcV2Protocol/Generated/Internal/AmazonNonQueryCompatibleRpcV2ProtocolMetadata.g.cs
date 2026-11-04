@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NonQueryCompatibleRpcV2Protocol.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon NonQueryCompatibleRpcV2Protocol service
+    /// Service metadata for Non Query Compatible RpcV2 Protocol Service
     /// </summary>
     public partial class AmazonNonQueryCompatibleRpcV2ProtocolMetadata : IServiceMetadata
     {

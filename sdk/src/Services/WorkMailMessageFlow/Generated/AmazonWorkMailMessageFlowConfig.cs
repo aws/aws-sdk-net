@@ -27,7 +27,7 @@ using Amazon.WorkMailMessageFlow.Internal;
 namespace Amazon.WorkMailMessageFlow
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkMailMessageFlow service
+    /// Configuration for accessing Amazon WorkMail Message Flow
     /// </summary>
     public partial class AmazonWorkMailMessageFlowConfig : ClientConfig
     {

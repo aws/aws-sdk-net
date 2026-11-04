@@ -26,7 +26,7 @@ using Amazon.AWSHealth.Endpoints;
 namespace Amazon.AWSHealth.Internal
 {
     /// <summary>
-    /// Amazon AWSHealth endpoint provider.
+    /// AWS Health APIs and Notifications endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AWSHealthEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

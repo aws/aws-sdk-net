@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.IoTSecureTunneling
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTSecureTunneling service
+    /// Configuration for accessing AWS IoT Secure Tunneling
     /// </summary>
     public static class AmazonIoTSecureTunnelingDefaultConfiguration
     {

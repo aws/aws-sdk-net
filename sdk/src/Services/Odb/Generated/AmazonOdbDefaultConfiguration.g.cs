@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Odb
 {
     /// <summary>
-    /// Configuration for accessing Amazon Odb service
+    /// Configuration for accessing odb
     /// </summary>
     public static class AmazonOdbDefaultConfiguration
     {

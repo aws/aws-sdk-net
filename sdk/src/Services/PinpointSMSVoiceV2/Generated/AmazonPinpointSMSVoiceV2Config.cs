@@ -27,7 +27,7 @@ using Amazon.PinpointSMSVoiceV2.Internal;
 namespace Amazon.PinpointSMSVoiceV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon PinpointSMSVoiceV2 service
+    /// Configuration for accessing Amazon Pinpoint SMS Voice V2
     /// </summary>
     public partial class AmazonPinpointSMSVoiceV2Config : ClientConfig
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Route53Domains service
+    /// Service metadata for Amazon Route 53 Domains
     /// </summary>
     public partial class AmazonRoute53DomainsMetadata : IServiceMetadata
     {

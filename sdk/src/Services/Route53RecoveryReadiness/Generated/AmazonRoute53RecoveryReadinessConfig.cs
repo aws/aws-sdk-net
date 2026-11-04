@@ -27,7 +27,7 @@ using Amazon.Route53RecoveryReadiness.Internal;
 namespace Amazon.Route53RecoveryReadiness
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53RecoveryReadiness service
+    /// Configuration for accessing AWS Route53 Recovery Readiness
     /// </summary>
     public partial class AmazonRoute53RecoveryReadinessConfig : ClientConfig
     {

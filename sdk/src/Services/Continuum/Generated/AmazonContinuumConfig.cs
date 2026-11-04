@@ -27,7 +27,7 @@ using Amazon.Continuum.Internal;
 namespace Amazon.Continuum
 {
     /// <summary>
-    /// Configuration for accessing Amazon Continuum service
+    /// Configuration for accessing AWS Continuum
     /// </summary>
     public partial class AmazonContinuumConfig : ClientConfig
     {

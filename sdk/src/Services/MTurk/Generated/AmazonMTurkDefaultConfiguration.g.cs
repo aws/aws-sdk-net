@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MTurk
 {
     /// <summary>
-    /// Configuration for accessing Amazon MTurk service
+    /// Configuration for accessing Amazon Mechanical Turk
     /// </summary>
     public static class AmazonMTurkDefaultConfiguration
     {

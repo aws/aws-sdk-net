@@ -27,7 +27,7 @@ using Amazon.TaxSettings.Internal;
 namespace Amazon.TaxSettings
 {
     /// <summary>
-    /// Configuration for accessing Amazon TaxSettings service
+    /// Configuration for accessing Tax Settings
     /// </summary>
     public partial class AmazonTaxSettingsConfig : ClientConfig
     {

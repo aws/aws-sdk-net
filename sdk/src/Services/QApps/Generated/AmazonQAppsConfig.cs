@@ -27,7 +27,7 @@ using Amazon.QApps.Internal;
 namespace Amazon.QApps
 {
     /// <summary>
-    /// Configuration for accessing Amazon QApps service
+    /// Configuration for accessing QApps
     /// </summary>
     public partial class AmazonQAppsConfig : ClientConfig
     {

@@ -27,7 +27,7 @@ using Amazon.BedrockRuntime.Internal;
 namespace Amazon.BedrockRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon BedrockRuntime service
+    /// Configuration for accessing Amazon Bedrock Runtime
     /// </summary>
     public partial class AmazonBedrockRuntimeConfig : ClientConfig
     {

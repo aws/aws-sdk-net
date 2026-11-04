@@ -27,7 +27,7 @@ using Amazon.CodeDeploy.Internal;
 namespace Amazon.CodeDeploy
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeDeploy service
+    /// Configuration for accessing AWS CodeDeploy
     /// </summary>
     public partial class AmazonCodeDeployConfig : ClientConfig
     {

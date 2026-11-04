@@ -27,7 +27,7 @@ using Amazon.WAFRegional.Internal;
 namespace Amazon.WAFRegional
 {
     /// <summary>
-    /// Configuration for accessing Amazon WAFRegional service
+    /// Configuration for accessing AWS WAF Regional
     /// </summary>
     public partial class AmazonWAFRegionalConfig : ClientConfig
     {

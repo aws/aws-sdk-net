@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ObservabilityAdmin.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ObservabilityAdmin service
+    /// Service metadata for CloudWatch Observability Admin Service
     /// </summary>
     public partial class AmazonObservabilityAdminMetadata : IServiceMetadata
     {

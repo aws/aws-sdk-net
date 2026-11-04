@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DatabaseMigrationService
 {
     /// <summary>
-    /// Configuration for accessing Amazon DatabaseMigrationService service
+    /// Configuration for accessing AWS Database Migration Service
     /// </summary>
     public static class AmazonDatabaseMigrationServiceDefaultConfiguration
     {

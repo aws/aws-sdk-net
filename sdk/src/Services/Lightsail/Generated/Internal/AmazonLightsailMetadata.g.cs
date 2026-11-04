@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Lightsail service
+    /// Service metadata for Amazon Lightsail
     /// </summary>
     public partial class AmazonLightsailMetadata : IServiceMetadata
     {

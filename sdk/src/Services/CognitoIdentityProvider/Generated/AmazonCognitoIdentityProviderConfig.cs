@@ -27,7 +27,7 @@ using Amazon.CognitoIdentityProvider.Internal;
 namespace Amazon.CognitoIdentityProvider
 {
     /// <summary>
-    /// Configuration for accessing Amazon CognitoIdentityProvider service
+    /// Configuration for accessing Amazon Cognito Identity Provider
     /// </summary>
     public partial class AmazonCognitoIdentityProviderConfig : ClientConfig
     {

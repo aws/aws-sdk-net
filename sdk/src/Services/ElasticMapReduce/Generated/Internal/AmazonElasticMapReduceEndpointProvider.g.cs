@@ -26,7 +26,7 @@ using Amazon.ElasticMapReduce.Endpoints;
 namespace Amazon.ElasticMapReduce.Internal
 {
     /// <summary>
-    /// Amazon ElasticMapReduce endpoint provider.
+    /// Amazon EMR endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ElasticMapReduceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

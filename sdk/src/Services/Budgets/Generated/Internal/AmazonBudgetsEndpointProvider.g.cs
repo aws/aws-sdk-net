@@ -26,7 +26,7 @@ using Amazon.Budgets.Endpoints;
 namespace Amazon.Budgets.Internal
 {
     /// <summary>
-    /// Amazon Budgets endpoint provider.
+    /// AWS Budgets endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BudgetsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

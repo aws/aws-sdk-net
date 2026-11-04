@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchRUM.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CloudWatchRUM service
+    /// Service metadata for CloudWatch RUM
     /// </summary>
     public partial class AmazonCloudWatchRUMMetadata : IServiceMetadata
     {

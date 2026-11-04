@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DynamoDB service
+    /// Service metadata for Amazon DynamoDB
     /// </summary>
     public partial class AmazonDynamoDBMetadata : IServiceMetadata
     {

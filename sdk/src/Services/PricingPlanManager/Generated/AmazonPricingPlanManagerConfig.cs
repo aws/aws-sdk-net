@@ -27,7 +27,7 @@ using Amazon.PricingPlanManager.Internal;
 namespace Amazon.PricingPlanManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon PricingPlanManager service
+    /// Configuration for accessing PricingPlanManager
     /// </summary>
     public partial class AmazonPricingPlanManagerConfig : ClientConfig
     {

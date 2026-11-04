@@ -26,7 +26,7 @@ using Amazon.SQS.Endpoints;
 namespace Amazon.SQS.Internal
 {
     /// <summary>
-    /// Amazon SQS endpoint provider.
+    /// Amazon Simple Queue Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SQSEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

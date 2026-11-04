@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MPA
 {
     /// <summary>
-    /// Configuration for accessing Amazon MPA service
+    /// Configuration for accessing AWS Multi-party Approval
     /// </summary>
     public static class AmazonMPADefaultConfiguration
     {

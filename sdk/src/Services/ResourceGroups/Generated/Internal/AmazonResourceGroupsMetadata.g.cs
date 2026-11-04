@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ResourceGroups service
+    /// Service metadata for AWS Resource Groups
     /// </summary>
     public partial class AmazonResourceGroupsMetadata : IServiceMetadata
     {

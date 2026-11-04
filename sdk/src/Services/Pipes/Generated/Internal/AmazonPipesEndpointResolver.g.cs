@@ -31,7 +31,7 @@ using Amazon.Pipes.Endpoints;
 namespace Amazon.Pipes.Internal
 {
     /// <summary>
-    /// Amazon Pipes endpoint resolver.
+    /// Amazon EventBridge Pipes endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Pipes service requests.
     /// <para />

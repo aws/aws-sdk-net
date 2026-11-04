@@ -27,7 +27,7 @@ using Amazon.CodeConnections.Internal;
 namespace Amazon.CodeConnections
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeConnections service
+    /// Configuration for accessing AWS CodeConnections
     /// </summary>
     public partial class AmazonCodeConnectionsConfig : ClientConfig
     {

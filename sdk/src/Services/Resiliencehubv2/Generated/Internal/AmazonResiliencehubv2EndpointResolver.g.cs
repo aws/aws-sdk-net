@@ -31,7 +31,7 @@ using Amazon.Resiliencehubv2.Endpoints;
 namespace Amazon.Resiliencehubv2.Internal
 {
     /// <summary>
-    /// Amazon Resiliencehubv2 endpoint resolver.
+    /// AWS Resilience Hub V2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Resiliencehubv2 service requests.
     /// <para />

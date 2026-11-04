@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MigrationHubOrchestrator
 {
     /// <summary>
-    /// Configuration for accessing Amazon MigrationHubOrchestrator service
+    /// Configuration for accessing AWS Migration Hub Orchestrator
     /// </summary>
     public static class AmazonMigrationHubOrchestratorDefaultConfiguration
     {

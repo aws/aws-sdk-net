@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon S3Control service
+    /// Service metadata for AWS S3 Control
     /// </summary>
     public partial class AmazonS3ControlMetadata : IServiceMetadata
     {

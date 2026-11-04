@@ -27,7 +27,7 @@ using Amazon.ServiceCatalog.Internal;
 namespace Amazon.ServiceCatalog
 {
     /// <summary>
-    /// Configuration for accessing Amazon ServiceCatalog service
+    /// Configuration for accessing AWS Service Catalog
     /// </summary>
     public partial class AmazonServiceCatalogConfig : ClientConfig
     {

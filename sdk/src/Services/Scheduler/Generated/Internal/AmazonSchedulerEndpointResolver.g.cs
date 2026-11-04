@@ -31,7 +31,7 @@ using Amazon.Scheduler.Endpoints;
 namespace Amazon.Scheduler.Internal
 {
     /// <summary>
-    /// Amazon Scheduler endpoint resolver.
+    /// Amazon EventBridge Scheduler endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Scheduler service requests.
     /// <para />

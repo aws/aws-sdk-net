@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MachineLearning service
+    /// Service metadata for Amazon Machine Learning
     /// </summary>
     public partial class AmazonMachineLearningMetadata : IServiceMetadata
     {

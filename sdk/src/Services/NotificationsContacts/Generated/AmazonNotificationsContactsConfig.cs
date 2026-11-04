@@ -27,7 +27,7 @@ using Amazon.NotificationsContacts.Internal;
 namespace Amazon.NotificationsContacts
 {
     /// <summary>
-    /// Configuration for accessing Amazon NotificationsContacts service
+    /// Configuration for accessing AWS User Notifications Contacts
     /// </summary>
     public partial class AmazonNotificationsContactsConfig : ClientConfig
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WellArchitected.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon WellArchitected service
+    /// Service metadata for AWS Well-Architected Tool
     /// </summary>
     public partial class AmazonWellArchitectedMetadata : IServiceMetadata
     {

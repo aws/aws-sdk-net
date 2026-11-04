@@ -26,7 +26,7 @@ using Amazon.MediaLive.Endpoints;
 namespace Amazon.MediaLive.Internal
 {
     /// <summary>
-    /// Amazon MediaLive endpoint provider.
+    /// AWS Elemental MediaLive endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MediaLiveEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

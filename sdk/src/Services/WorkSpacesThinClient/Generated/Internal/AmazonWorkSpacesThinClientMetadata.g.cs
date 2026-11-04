@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpacesThinClient.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon WorkSpacesThinClient service
+    /// Service metadata for Amazon WorkSpaces Thin Client
     /// </summary>
     public partial class AmazonWorkSpacesThinClientMetadata : IServiceMetadata
     {

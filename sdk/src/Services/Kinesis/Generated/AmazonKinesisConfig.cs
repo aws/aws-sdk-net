@@ -27,7 +27,7 @@ using Amazon.Kinesis.Internal;
 namespace Amazon.Kinesis
 {
     /// <summary>
-    /// Configuration for accessing Amazon Kinesis service
+    /// Configuration for accessing Amazon Kinesis
     /// </summary>
     public partial class AmazonKinesisConfig : ClientConfig
     {

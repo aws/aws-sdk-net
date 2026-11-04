@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MarketplaceReporting
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceReporting service
+    /// Configuration for accessing AWS Marketplace Reporting Service
     /// </summary>
     public static class AmazonMarketplaceReportingDefaultConfiguration
     {

@@ -26,7 +26,7 @@ using Amazon.EKSAuth.Endpoints;
 namespace Amazon.EKSAuth.Internal
 {
     /// <summary>
-    /// Amazon EKSAuth endpoint provider.
+    /// Amazon EKS Auth endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="EKSAuthEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

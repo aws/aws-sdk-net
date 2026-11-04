@@ -27,7 +27,7 @@ using Amazon.DAX.Internal;
 namespace Amazon.DAX
 {
     /// <summary>
-    /// Configuration for accessing Amazon DAX service
+    /// Configuration for accessing Amazon DynamoDB Accelerator (DAX)
     /// </summary>
     public partial class AmazonDAXConfig : ClientConfig
     {

@@ -27,7 +27,7 @@ using Amazon.OpenSearchServerless.Internal;
 namespace Amazon.OpenSearchServerless
 {
     /// <summary>
-    /// Configuration for accessing Amazon OpenSearchServerless service
+    /// Configuration for accessing OpenSearch Service Serverless
     /// </summary>
     public partial class AmazonOpenSearchServerlessConfig : ClientConfig
     {

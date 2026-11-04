@@ -27,7 +27,7 @@ using Amazon.ConnectCases.Internal;
 namespace Amazon.ConnectCases
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectCases service
+    /// Configuration for accessing Amazon Connect Cases
     /// </summary>
     public partial class AmazonConnectCasesConfig : ClientConfig
     {

@@ -26,7 +26,7 @@ using Amazon.CodeBuild.Endpoints;
 namespace Amazon.CodeBuild.Internal
 {
     /// <summary>
-    /// Amazon CodeBuild endpoint provider.
+    /// AWS CodeBuild endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CodeBuildEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

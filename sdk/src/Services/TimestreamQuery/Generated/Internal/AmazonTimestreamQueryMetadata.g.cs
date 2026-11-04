@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamQuery.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon TimestreamQuery service
+    /// Service metadata for Amazon Timestream Query
     /// </summary>
     public partial class AmazonTimestreamQueryMetadata : IServiceMetadata
     {

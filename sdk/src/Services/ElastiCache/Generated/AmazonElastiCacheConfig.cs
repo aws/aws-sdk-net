@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +27,7 @@ using Amazon.ElastiCache.Internal;
 namespace Amazon.ElastiCache
 {
     /// <summary>
-    /// Configuration for accessing Amazon ElastiCache service
+    /// Configuration for accessing Amazon ElastiCache
     /// </summary>
     public partial class AmazonElastiCacheConfig : ClientConfig
     {
@@ -39,16 +38,12 @@ namespace Amazon.ElastiCache
             new AmazonElastiCacheEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "ElastiCache";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "ElastiCache";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.ElastiCache
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "elasticache";
-            }
-        }
+        public override string RegionEndpointServiceName => "elasticache";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2015-02-02";
-            }
-        }
+        public override string ServiceVersion => "2015-02-02";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.ElastiCache
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

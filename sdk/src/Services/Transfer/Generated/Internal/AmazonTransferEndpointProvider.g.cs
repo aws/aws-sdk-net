@@ -26,7 +26,7 @@ using Amazon.Transfer.Endpoints;
 namespace Amazon.Transfer.Internal
 {
     /// <summary>
-    /// Amazon Transfer endpoint provider.
+    /// AWS Transfer Family endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="TransferEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -1,0 +1,212 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using Amazon.Runtime;
+
+namespace Amazon.DocDB
+{
+    /// <summary>
+    /// Constants used for properties of type ApplyMethod.
+    /// </summary>
+    public class ApplyMethod : ConstantClass
+    {
+        /// <summary>
+        /// Constant Immediate for ApplyMethod
+        /// </summary>
+        public static readonly ApplyMethod Immediate = new ApplyMethod("immediate");
+
+        /// <summary>
+        /// Constant PendingReboot for ApplyMethod
+        /// </summary>
+        public static readonly ApplyMethod PendingReboot = new ApplyMethod("pending-reboot");
+
+        /// <summary>
+        /// Constructs a custom ApplyMethod for a value not among the defined constants.
+        /// </summary>
+        public ApplyMethod(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplyMethod FindValue(string value)
+        {
+            return FindValue<ApplyMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplyMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FailoverStatus.
+    /// </summary>
+    public class FailoverStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Cancelling for FailoverStatus
+        /// </summary>
+        public static readonly FailoverStatus Cancelling = new FailoverStatus("cancelling");
+
+        /// <summary>
+        /// Constant FailingOver for FailoverStatus
+        /// </summary>
+        public static readonly FailoverStatus FailingOver = new FailoverStatus("failing-over");
+
+        /// <summary>
+        /// Constant Pending for FailoverStatus
+        /// </summary>
+        public static readonly FailoverStatus Pending = new FailoverStatus("pending");
+
+        /// <summary>
+        /// Constructs a custom FailoverStatus for a value not among the defined constants.
+        /// </summary>
+        public FailoverStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FailoverStatus FindValue(string value)
+        {
+            return FindValue<FailoverStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FailoverStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GlobalClusterMemberSynchronizationStatus.
+    /// </summary>
+    public class GlobalClusterMemberSynchronizationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Connected for GlobalClusterMemberSynchronizationStatus
+        /// </summary>
+        public static readonly GlobalClusterMemberSynchronizationStatus Connected = new GlobalClusterMemberSynchronizationStatus("connected");
+
+        /// <summary>
+        /// Constant PendingResync for GlobalClusterMemberSynchronizationStatus
+        /// </summary>
+        public static readonly GlobalClusterMemberSynchronizationStatus PendingResync = new GlobalClusterMemberSynchronizationStatus("pending-resync");
+
+        /// <summary>
+        /// Constructs a custom GlobalClusterMemberSynchronizationStatus for a value not among the defined constants.
+        /// </summary>
+        public GlobalClusterMemberSynchronizationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlobalClusterMemberSynchronizationStatus FindValue(string value)
+        {
+            return FindValue<GlobalClusterMemberSynchronizationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlobalClusterMemberSynchronizationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SourceType.
+    /// </summary>
+    public class SourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DbCluster for SourceType
+        /// </summary>
+        public static readonly SourceType DbCluster = new SourceType("db-cluster");
+
+        /// <summary>
+        /// Constant DbClusterSnapshot for SourceType
+        /// </summary>
+        public static readonly SourceType DbClusterSnapshot = new SourceType("db-cluster-snapshot");
+
+        /// <summary>
+        /// Constant DbInstance for SourceType
+        /// </summary>
+        public static readonly SourceType DbInstance = new SourceType("db-instance");
+
+        /// <summary>
+        /// Constant DbParameterGroup for SourceType
+        /// </summary>
+        public static readonly SourceType DbParameterGroup = new SourceType("db-parameter-group");
+
+        /// <summary>
+        /// Constant DbSecurityGroup for SourceType
+        /// </summary>
+        public static readonly SourceType DbSecurityGroup = new SourceType("db-security-group");
+
+        /// <summary>
+        /// Constant DbSnapshot for SourceType
+        /// </summary>
+        public static readonly SourceType DbSnapshot = new SourceType("db-snapshot");
+
+        /// <summary>
+        /// Constructs a custom SourceType for a value not among the defined constants.
+        /// </summary>
+        public SourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceType FindValue(string value)
+        {
+            return FindValue<SourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+}

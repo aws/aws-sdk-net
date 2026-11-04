@@ -26,7 +26,7 @@ using Amazon.LookoutEquipment.Endpoints;
 namespace Amazon.LookoutEquipment.Internal
 {
     /// <summary>
-    /// Amazon LookoutEquipment endpoint provider.
+    /// Amazon Lookout for Equipment endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="LookoutEquipmentEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

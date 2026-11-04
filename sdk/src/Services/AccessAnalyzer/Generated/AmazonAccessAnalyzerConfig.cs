@@ -27,7 +27,7 @@ using Amazon.AccessAnalyzer.Internal;
 namespace Amazon.AccessAnalyzer
 {
     /// <summary>
-    /// Configuration for accessing Amazon AccessAnalyzer service
+    /// Configuration for accessing Access Analyzer
     /// </summary>
     public partial class AmazonAccessAnalyzerConfig : ClientConfig
     {

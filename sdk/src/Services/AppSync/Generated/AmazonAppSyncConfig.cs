@@ -27,7 +27,7 @@ using Amazon.AppSync.Internal;
 namespace Amazon.AppSync
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppSync service
+    /// Configuration for accessing AWS AppSync
     /// </summary>
     public partial class AmazonAppSyncConfig : ClientConfig
     {

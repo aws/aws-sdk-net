@@ -42,6 +42,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateApplicationRequest.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -51,6 +52,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateApplicationVersionRequest.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -65,6 +67,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateRequest.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -79,6 +82,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateResponse.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -103,6 +107,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentRequest.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -142,6 +147,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentResponse.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -171,6 +177,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateStorageLocationResponse.S3Bucket</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -388,6 +395,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -417,6 +425,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateApplicationRequest.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -436,6 +445,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateApplicationVersionRequest.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -450,6 +460,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateConfigurationTemplateRequest.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -464,6 +475,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateConfigurationTemplateResponse.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -483,6 +495,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -517,6 +530,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -561,6 +575,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.ApplicationDescription.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -570,6 +585,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.ApplicationVersionDescription.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -626,14 +642,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.PlatformDescription.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.S3Location.S3Bucket</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.S3Location.S3Key</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -645,7 +664,7 @@
     <property>Amazon.ElasticBeanstalk.Model.SourceBuildInformation.SourceLocation</property>
     <min>3</min>
     <max>255</max>
-    <pattern>.+/.+</pattern>
+    <pattern>^.+/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.SourceConfiguration.ApplicationName</property>

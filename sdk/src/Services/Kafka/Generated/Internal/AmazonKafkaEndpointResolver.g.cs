@@ -31,7 +31,7 @@ using Amazon.Kafka.Endpoints;
 namespace Amazon.Kafka.Internal
 {
     /// <summary>
-    /// Amazon Kafka endpoint resolver.
+    /// Managed Streaming for Kafka endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Kafka service requests.
     /// <para />

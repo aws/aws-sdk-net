@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MediaConvert service
+    /// Service metadata for AWS Elemental MediaConvert
     /// </summary>
     public partial class AmazonMediaConvertMetadata : IServiceMetadata
     {

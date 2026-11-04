@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MailManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon MailManager service
+    /// Configuration for accessing MailManager
     /// </summary>
     public static class AmazonMailManagerDefaultConfiguration
     {

@@ -27,7 +27,7 @@ using Amazon.CodeGuruProfiler.Internal;
 namespace Amazon.CodeGuruProfiler
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeGuruProfiler service
+    /// Configuration for accessing Amazon CodeGuru Profiler
     /// </summary>
     public partial class AmazonCodeGuruProfilerConfig : ClientConfig
     {

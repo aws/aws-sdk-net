@@ -27,7 +27,7 @@ using Amazon.MarketplaceReporting.Internal;
 namespace Amazon.MarketplaceReporting
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceReporting service
+    /// Configuration for accessing AWS Marketplace Reporting Service
     /// </summary>
     public partial class AmazonMarketplaceReportingConfig : ClientConfig
     {

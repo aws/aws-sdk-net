@@ -27,7 +27,7 @@ using Amazon.PersonalizeRuntime.Internal;
 namespace Amazon.PersonalizeRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon PersonalizeRuntime service
+    /// Configuration for accessing Amazon Personalize Runtime
     /// </summary>
     public partial class AmazonPersonalizeRuntimeConfig : ClientConfig
     {

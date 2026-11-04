@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.QApps
 {
     /// <summary>
-    /// Configuration for accessing Amazon QApps service
+    /// Configuration for accessing QApps
     /// </summary>
     public static class AmazonQAppsDefaultConfiguration
     {

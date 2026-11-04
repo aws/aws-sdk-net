@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Imagebuilder
 {
     /// <summary>
-    /// Configuration for accessing Amazon Imagebuilder service
+    /// Configuration for accessing EC2 Image Builder
     /// </summary>
     public static class AmazonImagebuilderDefaultConfiguration
     {

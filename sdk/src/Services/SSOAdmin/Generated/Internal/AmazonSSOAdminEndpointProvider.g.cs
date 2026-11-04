@@ -26,7 +26,7 @@ using Amazon.SSOAdmin.Endpoints;
 namespace Amazon.SSOAdmin.Internal
 {
     /// <summary>
-    /// Amazon SSOAdmin endpoint provider.
+    /// AWS Single Sign-On Admin endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SSOAdminEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

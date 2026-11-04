@@ -31,7 +31,7 @@ using Amazon.CodePipeline.Endpoints;
 namespace Amazon.CodePipeline.Internal
 {
     /// <summary>
-    /// Amazon CodePipeline endpoint resolver.
+    /// AWS CodePipeline endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CodePipeline service requests.
     /// <para />

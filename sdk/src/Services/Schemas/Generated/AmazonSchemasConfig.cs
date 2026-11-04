@@ -27,7 +27,7 @@ using Amazon.Schemas.Internal;
 namespace Amazon.Schemas
 {
     /// <summary>
-    /// Configuration for accessing Amazon Schemas service
+    /// Configuration for accessing Schemas
     /// </summary>
     public partial class AmazonSchemasConfig : ClientConfig
     {

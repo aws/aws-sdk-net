@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AppMesh service
+    /// Service metadata for AWS App Mesh
     /// </summary>
     public partial class AmazonAppMeshMetadata : IServiceMetadata
     {

@@ -31,7 +31,7 @@ using Amazon.SageMakerGeospatial.Endpoints;
 namespace Amazon.SageMakerGeospatial.Internal
 {
     /// <summary>
-    /// Amazon SageMakerGeospatial endpoint resolver.
+    /// Amazon SageMaker geospatial capabilities endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SageMakerGeospatial service requests.
     /// <para />

@@ -27,7 +27,7 @@ using Amazon.RecycleBin.Internal;
 namespace Amazon.RecycleBin
 {
     /// <summary>
-    /// Configuration for accessing Amazon RecycleBin service
+    /// Configuration for accessing Amazon Recycle Bin
     /// </summary>
     public partial class AmazonRecycleBinConfig : ClientConfig
     {

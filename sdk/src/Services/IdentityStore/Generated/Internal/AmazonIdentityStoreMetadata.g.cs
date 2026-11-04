@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityStore.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IdentityStore service
+    /// Service metadata for AWS SSO Identity Store
     /// </summary>
     public partial class AmazonIdentityStoreMetadata : IServiceMetadata
     {

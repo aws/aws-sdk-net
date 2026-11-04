@@ -26,7 +26,7 @@ using Amazon.Signer.Endpoints;
 namespace Amazon.Signer.Internal
 {
     /// <summary>
-    /// Amazon Signer endpoint provider.
+    /// AWS Signer endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SignerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

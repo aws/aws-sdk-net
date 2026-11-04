@@ -26,7 +26,7 @@ using Amazon.KeyManagementService.Endpoints;
 namespace Amazon.KeyManagementService.Internal
 {
     /// <summary>
-    /// Amazon KeyManagementService endpoint provider.
+    /// AWS Key Management Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="KeyManagementServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

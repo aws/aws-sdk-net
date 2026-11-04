@@ -27,7 +27,7 @@ using Amazon.S3Files.Internal;
 namespace Amazon.S3Files
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Files service
+    /// Configuration for accessing Amazon S3 Files
     /// </summary>
     public partial class AmazonS3FilesConfig : ClientConfig
     {

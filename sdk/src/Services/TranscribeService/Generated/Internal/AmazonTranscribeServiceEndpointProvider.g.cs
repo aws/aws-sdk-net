@@ -26,7 +26,7 @@ using Amazon.TranscribeService.Endpoints;
 namespace Amazon.TranscribeService.Internal
 {
     /// <summary>
-    /// Amazon TranscribeService endpoint provider.
+    /// Amazon Transcribe Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="TranscribeServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

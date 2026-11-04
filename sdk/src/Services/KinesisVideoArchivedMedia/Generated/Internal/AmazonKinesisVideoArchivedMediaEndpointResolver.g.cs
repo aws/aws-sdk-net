@@ -31,7 +31,7 @@ using Amazon.KinesisVideoArchivedMedia.Endpoints;
 namespace Amazon.KinesisVideoArchivedMedia.Internal
 {
     /// <summary>
-    /// Amazon KinesisVideoArchivedMedia endpoint resolver.
+    /// Amazon Kinesis Video Streams Archived Media endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for KinesisVideoArchivedMedia service requests.
     /// <para />

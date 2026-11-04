@@ -26,7 +26,7 @@ using Amazon.QApps.Endpoints;
 namespace Amazon.QApps.Internal
 {
     /// <summary>
-    /// Amazon QApps endpoint provider.
+    /// QApps endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="QAppsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -31,7 +31,7 @@ using Amazon.DataPipeline.Endpoints;
 namespace Amazon.DataPipeline.Internal
 {
     /// <summary>
-    /// Amazon DataPipeline endpoint resolver.
+    /// AWS Data Pipeline endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DataPipeline service requests.
     /// <para />

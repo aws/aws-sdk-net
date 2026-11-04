@@ -31,7 +31,7 @@ using Amazon.ForecastService.Endpoints;
 namespace Amazon.ForecastService.Internal
 {
     /// <summary>
-    /// Amazon ForecastService endpoint resolver.
+    /// Amazon Forecast Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ForecastService service requests.
     /// <para />

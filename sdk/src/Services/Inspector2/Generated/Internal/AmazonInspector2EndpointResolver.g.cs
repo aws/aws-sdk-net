@@ -31,7 +31,7 @@ using Amazon.Inspector2.Endpoints;
 namespace Amazon.Inspector2.Internal
 {
     /// <summary>
-    /// Amazon Inspector2 endpoint resolver.
+    /// Inspector2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Inspector2 service requests.
     /// <para />

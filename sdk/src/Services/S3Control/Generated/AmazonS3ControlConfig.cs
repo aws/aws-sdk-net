@@ -28,7 +28,7 @@ using Amazon.S3Control.Internal;
 namespace Amazon.S3Control
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Control service
+    /// Configuration for accessing AWS S3 Control
     /// </summary>
     public partial class AmazonS3ControlConfig : ClientConfig
     {

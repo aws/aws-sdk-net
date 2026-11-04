@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signin.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Signin service
+    /// Service metadata for AWS Sign-In Service
     /// </summary>
     public partial class AmazonSigninMetadata : IServiceMetadata
     {

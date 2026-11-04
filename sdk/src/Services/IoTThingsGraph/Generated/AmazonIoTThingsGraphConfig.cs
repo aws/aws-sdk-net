@@ -27,7 +27,7 @@ using Amazon.IoTThingsGraph.Internal;
 namespace Amazon.IoTThingsGraph
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTThingsGraph service
+    /// Configuration for accessing AWS IoT Things Graph
     /// </summary>
     public partial class AmazonIoTThingsGraphConfig : ClientConfig
     {

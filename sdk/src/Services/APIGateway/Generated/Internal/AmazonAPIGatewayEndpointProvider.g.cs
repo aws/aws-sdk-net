@@ -26,7 +26,7 @@ using Amazon.APIGateway.Endpoints;
 namespace Amazon.APIGateway.Internal
 {
     /// <summary>
-    /// Amazon APIGateway endpoint provider.
+    /// Amazon API Gateway endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="APIGatewayEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

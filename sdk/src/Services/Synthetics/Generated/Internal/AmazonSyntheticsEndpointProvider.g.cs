@@ -26,7 +26,7 @@ using Amazon.Synthetics.Endpoints;
 namespace Amazon.Synthetics.Internal
 {
     /// <summary>
-    /// Amazon Synthetics endpoint provider.
+    /// Synthetics endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SyntheticsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

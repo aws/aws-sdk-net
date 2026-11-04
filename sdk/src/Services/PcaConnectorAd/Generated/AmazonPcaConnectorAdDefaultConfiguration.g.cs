@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.PcaConnectorAd
 {
     /// <summary>
-    /// Configuration for accessing Amazon PcaConnectorAd service
+    /// Configuration for accessing PcaConnectorAd
     /// </summary>
     public static class AmazonPcaConnectorAdDefaultConfiguration
     {

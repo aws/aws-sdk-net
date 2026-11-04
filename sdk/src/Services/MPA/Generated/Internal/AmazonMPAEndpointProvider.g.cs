@@ -26,7 +26,7 @@ using Amazon.MPA.Endpoints;
 namespace Amazon.MPA.Internal
 {
     /// <summary>
-    /// Amazon MPA endpoint provider.
+    /// AWS Multi-party Approval endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MPAEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

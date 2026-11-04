@@ -27,7 +27,7 @@ using Amazon.AmplifyUIBuilder.Internal;
 namespace Amazon.AmplifyUIBuilder
 {
     /// <summary>
-    /// Configuration for accessing Amazon AmplifyUIBuilder service
+    /// Configuration for accessing AWS Amplify UI Builder
     /// </summary>
     public partial class AmazonAmplifyUIBuilderConfig : ClientConfig
     {

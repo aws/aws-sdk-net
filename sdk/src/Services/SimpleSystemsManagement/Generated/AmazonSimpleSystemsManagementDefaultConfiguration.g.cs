@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SimpleSystemsManagement
 {
     /// <summary>
-    /// Configuration for accessing Amazon SimpleSystemsManagement service
+    /// Configuration for accessing Amazon Simple Systems Manager (SSM)
     /// </summary>
     public static class AmazonSimpleSystemsManagementDefaultConfiguration
     {

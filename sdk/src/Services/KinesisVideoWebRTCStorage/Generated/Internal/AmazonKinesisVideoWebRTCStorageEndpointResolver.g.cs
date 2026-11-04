@@ -31,7 +31,7 @@ using Amazon.KinesisVideoWebRTCStorage.Endpoints;
 namespace Amazon.KinesisVideoWebRTCStorage.Internal
 {
     /// <summary>
-    /// Amazon KinesisVideoWebRTCStorage endpoint resolver.
+    /// Amazon Kinesis Video WebRTC Storage endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for KinesisVideoWebRTCStorage service requests.
     /// <para />

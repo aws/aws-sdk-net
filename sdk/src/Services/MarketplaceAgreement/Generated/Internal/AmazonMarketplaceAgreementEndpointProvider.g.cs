@@ -26,7 +26,7 @@ using Amazon.MarketplaceAgreement.Endpoints;
 namespace Amazon.MarketplaceAgreement.Internal
 {
     /// <summary>
-    /// Amazon MarketplaceAgreement endpoint provider.
+    /// AWS Marketplace Agreement Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MarketplaceAgreementEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

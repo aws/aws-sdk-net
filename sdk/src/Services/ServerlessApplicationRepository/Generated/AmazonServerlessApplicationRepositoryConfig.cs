@@ -27,7 +27,7 @@ using Amazon.ServerlessApplicationRepository.Internal;
 namespace Amazon.ServerlessApplicationRepository
 {
     /// <summary>
-    /// Configuration for accessing Amazon ServerlessApplicationRepository service
+    /// Configuration for accessing AWSServerlessApplicationRepository
     /// </summary>
     public partial class AmazonServerlessApplicationRepositoryConfig : ClientConfig
     {

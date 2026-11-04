@@ -27,7 +27,7 @@ using Amazon.ElasticFileSystem.Internal;
 namespace Amazon.ElasticFileSystem
 {
     /// <summary>
-    /// Configuration for accessing Amazon ElasticFileSystem service
+    /// Configuration for accessing Amazon Elastic File System
     /// </summary>
     public partial class AmazonElasticFileSystemConfig : ClientConfig
     {

@@ -27,7 +27,7 @@ using Amazon.DocDBElastic.Internal;
 namespace Amazon.DocDBElastic
 {
     /// <summary>
-    /// Configuration for accessing Amazon DocDBElastic service
+    /// Configuration for accessing Amazon DocumentDB Elastic Clusters
     /// </summary>
     public partial class AmazonDocDBElasticConfig : ClientConfig
     {

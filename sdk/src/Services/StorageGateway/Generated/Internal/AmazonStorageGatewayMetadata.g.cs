@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon StorageGateway service
+    /// Service metadata for AWS Storage Gateway
     /// </summary>
     public partial class AmazonStorageGatewayMetadata : IServiceMetadata
     {

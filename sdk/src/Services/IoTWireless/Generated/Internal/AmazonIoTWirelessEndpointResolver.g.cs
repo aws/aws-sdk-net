@@ -31,7 +31,7 @@ using Amazon.IoTWireless.Endpoints;
 namespace Amazon.IoTWireless.Internal
 {
     /// <summary>
-    /// Amazon IoTWireless endpoint resolver.
+    /// AWS IoT Wireless endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IoTWireless service requests.
     /// <para />

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.GlobalAccelerator
 {
     /// <summary>
-    /// Configuration for accessing Amazon GlobalAccelerator service
+    /// Configuration for accessing AWS Global Accelerator
     /// </summary>
     public static class AmazonGlobalAcceleratorDefaultConfiguration
     {

@@ -26,7 +26,7 @@ using Amazon.CodeDeploy.Endpoints;
 namespace Amazon.CodeDeploy.Internal
 {
     /// <summary>
-    /// Amazon CodeDeploy endpoint provider.
+    /// AWS CodeDeploy endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CodeDeployEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -27,7 +27,7 @@ using Amazon.EMRContainers.Internal;
 namespace Amazon.EMRContainers
 {
     /// <summary>
-    /// Configuration for accessing Amazon EMRContainers service
+    /// Configuration for accessing Amazon EMR Containers
     /// </summary>
     public partial class AmazonEMRContainersConfig : ClientConfig
     {

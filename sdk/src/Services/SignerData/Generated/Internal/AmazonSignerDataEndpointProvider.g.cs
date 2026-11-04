@@ -26,7 +26,7 @@ using Amazon.SignerData.Endpoints;
 namespace Amazon.SignerData.Internal
 {
     /// <summary>
-    /// Amazon SignerData endpoint provider.
+    /// AWS Signer Data Plane endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SignerDataEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

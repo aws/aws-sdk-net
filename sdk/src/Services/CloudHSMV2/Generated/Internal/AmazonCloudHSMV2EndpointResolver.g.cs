@@ -31,7 +31,7 @@ using Amazon.CloudHSMV2.Endpoints;
 namespace Amazon.CloudHSMV2.Internal
 {
     /// <summary>
-    /// Amazon CloudHSMV2 endpoint resolver.
+    /// AWS CloudHSM V2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CloudHSMV2 service requests.
     /// <para />

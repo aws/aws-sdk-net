@@ -26,7 +26,7 @@ using Amazon.S3Outposts.Endpoints;
 namespace Amazon.S3Outposts.Internal
 {
     /// <summary>
-    /// Amazon S3Outposts endpoint provider.
+    /// Amazon S3 on Outposts endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="S3OutpostsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

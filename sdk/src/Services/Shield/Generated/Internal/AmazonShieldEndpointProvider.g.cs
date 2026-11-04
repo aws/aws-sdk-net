@@ -26,7 +26,7 @@ using Amazon.Shield.Endpoints;
 namespace Amazon.Shield.Internal
 {
     /// <summary>
-    /// Amazon Shield endpoint provider.
+    /// AWS Shield endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ShieldEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

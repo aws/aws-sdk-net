@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ElementalInference
 {
     /// <summary>
-    /// Configuration for accessing Amazon ElementalInference service
+    /// Configuration for accessing AWS Elemental Inference
     /// </summary>
     public static class AmazonElementalInferenceDefaultConfiguration
     {

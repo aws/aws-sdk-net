@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudWatchLogs
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudWatchLogs service
+    /// Configuration for accessing Amazon CloudWatch Logs
     /// </summary>
     public static class AmazonCloudWatchLogsDefaultConfiguration
     {

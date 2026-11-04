@@ -31,7 +31,7 @@ using Amazon.ElasticMapReduce.Endpoints;
 namespace Amazon.ElasticMapReduce.Internal
 {
     /// <summary>
-    /// Amazon ElasticMapReduce endpoint resolver.
+    /// Amazon EMR endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ElasticMapReduce service requests.
     /// <para />

@@ -26,7 +26,7 @@ using Amazon.BCMDashboards.Endpoints;
 namespace Amazon.BCMDashboards.Internal
 {
     /// <summary>
-    /// Amazon BCMDashboards endpoint provider.
+    /// AWS Billing and Cost Management Dashboards endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BCMDashboardsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -31,7 +31,7 @@ using Amazon.Neptunedata.Endpoints;
 namespace Amazon.Neptunedata.Internal
 {
     /// <summary>
-    /// Amazon Neptunedata endpoint resolver.
+    /// Amazon NeptuneData endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Neptunedata service requests.
     /// <para />

@@ -26,7 +26,7 @@ using Amazon.AppConfigData.Endpoints;
 namespace Amazon.AppConfigData.Internal
 {
     /// <summary>
-    /// Amazon AppConfigData endpoint provider.
+    /// AWS AppConfig Data endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AppConfigDataEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -26,7 +26,7 @@ using Amazon.ChimeSDKVoice.Endpoints;
 namespace Amazon.ChimeSDKVoice.Internal
 {
     /// <summary>
-    /// Amazon ChimeSDKVoice endpoint provider.
+    /// Amazon Chime SDK Voice endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ChimeSDKVoiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

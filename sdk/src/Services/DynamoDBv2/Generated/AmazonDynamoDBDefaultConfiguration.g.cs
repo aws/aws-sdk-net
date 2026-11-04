@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DynamoDBv2
 {
     /// <summary>
-    /// Configuration for accessing Amazon DynamoDB service
+    /// Configuration for accessing Amazon DynamoDB
     /// </summary>
     public static class AmazonDynamoDBDefaultConfiguration
     {

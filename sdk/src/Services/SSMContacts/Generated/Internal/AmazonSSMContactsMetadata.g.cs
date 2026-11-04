@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMContacts.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SSMContacts service
+    /// Service metadata for AWS Systems Manager Incident Manager Contacts
     /// </summary>
     public partial class AmazonSSMContactsMetadata : IServiceMetadata
     {

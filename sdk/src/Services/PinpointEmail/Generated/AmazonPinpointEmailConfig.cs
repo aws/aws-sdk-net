@@ -27,7 +27,7 @@ using Amazon.PinpointEmail.Internal;
 namespace Amazon.PinpointEmail
 {
     /// <summary>
-    /// Configuration for accessing Amazon PinpointEmail service
+    /// Configuration for accessing Amazon Pinpoint Email Service
     /// </summary>
     public partial class AmazonPinpointEmailConfig : ClientConfig
     {

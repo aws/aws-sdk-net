@@ -26,7 +26,7 @@ using Amazon.TranscribeStreaming.Endpoints;
 namespace Amazon.TranscribeStreaming.Internal
 {
     /// <summary>
-    /// Amazon TranscribeStreaming endpoint provider.
+    /// Amazon Transcribe Streaming Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="TranscribeStreamingEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -31,7 +31,7 @@ using Amazon.AppMesh.Endpoints;
 namespace Amazon.AppMesh.Internal
 {
     /// <summary>
-    /// Amazon AppMesh endpoint resolver.
+    /// AWS App Mesh endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AppMesh service requests.
     /// <para />

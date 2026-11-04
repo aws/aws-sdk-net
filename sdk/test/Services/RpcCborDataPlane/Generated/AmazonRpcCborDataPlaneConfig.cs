@@ -28,7 +28,7 @@ using Amazon.RpcCborDataPlane.Internal;
 namespace Amazon.RpcCborDataPlane
 {
     /// <summary>
-    /// Configuration for accessing Amazon RpcCborDataPlane service
+    /// Configuration for accessing Smithy RPC v2 CBOR Data Plane
     /// </summary>
     public partial class AmazonRpcCborDataPlaneConfig : ClientConfig
     {

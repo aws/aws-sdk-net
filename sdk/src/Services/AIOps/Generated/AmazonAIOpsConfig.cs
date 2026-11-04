@@ -27,7 +27,7 @@ using Amazon.AIOps.Internal;
 namespace Amazon.AIOps
 {
     /// <summary>
-    /// Configuration for accessing Amazon AIOps service
+    /// Configuration for accessing AWS AI Ops
     /// </summary>
     public partial class AmazonAIOpsConfig : ClientConfig
     {

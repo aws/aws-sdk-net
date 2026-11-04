@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MobileAnalytics.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon MobileAnalytics service
+    /// Service metadata for Amazon Mobile Analytics
     /// </summary>
     public partial class AmazonMobileAnalyticsMetadata : IServiceMetadata
     {

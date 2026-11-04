@@ -31,7 +31,7 @@ using Amazon.OpenSearchService.Endpoints;
 namespace Amazon.OpenSearchService.Internal
 {
     /// <summary>
-    /// Amazon OpenSearchService endpoint resolver.
+    /// Amazon OpenSearch Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for OpenSearchService service requests.
     /// <para />

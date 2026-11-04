@@ -27,7 +27,7 @@ using Amazon.EC2InstanceConnect.Internal;
 namespace Amazon.EC2InstanceConnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon EC2InstanceConnect service
+    /// Configuration for accessing AWS EC2 Instance Connect
     /// </summary>
     public partial class AmazonEC2InstanceConnectConfig : ClientConfig
     {

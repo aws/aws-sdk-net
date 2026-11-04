@@ -27,7 +27,7 @@ using Amazon.OpenSearchService.Internal;
 namespace Amazon.OpenSearchService
 {
     /// <summary>
-    /// Configuration for accessing Amazon OpenSearchService service
+    /// Configuration for accessing Amazon OpenSearch Service
     /// </summary>
     public partial class AmazonOpenSearchServiceConfig : ClientConfig
     {

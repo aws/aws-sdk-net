@@ -27,7 +27,7 @@ using Amazon.LocationService.Internal;
 namespace Amazon.LocationService
 {
     /// <summary>
-    /// Configuration for accessing Amazon LocationService service
+    /// Configuration for accessing Amazon Location Service
     /// </summary>
     public partial class AmazonLocationServiceConfig : ClientConfig
     {

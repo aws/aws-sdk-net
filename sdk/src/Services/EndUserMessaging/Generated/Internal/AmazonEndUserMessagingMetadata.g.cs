@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EndUserMessaging.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon EndUserMessaging service
+    /// Service metadata for AWS End User Messaging
     /// </summary>
     public partial class AmazonEndUserMessagingMetadata : IServiceMetadata
     {

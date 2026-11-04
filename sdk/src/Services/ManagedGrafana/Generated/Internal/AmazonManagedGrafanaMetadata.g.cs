@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedGrafana.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ManagedGrafana service
+    /// Service metadata for Amazon Managed Grafana
     /// </summary>
     public partial class AmazonManagedGrafanaMetadata : IServiceMetadata
     {

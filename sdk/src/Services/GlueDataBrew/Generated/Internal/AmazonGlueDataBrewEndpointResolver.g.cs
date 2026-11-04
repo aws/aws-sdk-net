@@ -31,7 +31,7 @@ using Amazon.GlueDataBrew.Endpoints;
 namespace Amazon.GlueDataBrew.Internal
 {
     /// <summary>
-    /// Amazon GlueDataBrew endpoint resolver.
+    /// AWS Glue DataBrew endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for GlueDataBrew service requests.
     /// <para />

@@ -27,7 +27,7 @@ using Amazon.FMS.Internal;
 namespace Amazon.FMS
 {
     /// <summary>
-    /// Configuration for accessing Amazon FMS service
+    /// Configuration for accessing Firewall Management Service
     /// </summary>
     public partial class AmazonFMSConfig : ClientConfig
     {

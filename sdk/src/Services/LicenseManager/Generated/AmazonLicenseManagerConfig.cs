@@ -27,7 +27,7 @@ using Amazon.LicenseManager.Internal;
 namespace Amazon.LicenseManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon LicenseManager service
+    /// Configuration for accessing AWS License Manager
     /// </summary>
     public partial class AmazonLicenseManagerConfig : ClientConfig
     {

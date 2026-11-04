@@ -27,7 +27,7 @@ using Amazon.Textract.Internal;
 namespace Amazon.Textract
 {
     /// <summary>
-    /// Configuration for accessing Amazon Textract service
+    /// Configuration for accessing Amazon Textract
     /// </summary>
     public partial class AmazonTextractConfig : ClientConfig
     {

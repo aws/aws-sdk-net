@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFlowMonitor.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon NetworkFlowMonitor service
+    /// Service metadata for Network Flow Monitor
     /// </summary>
     public partial class AmazonNetworkFlowMonitorMetadata : IServiceMetadata
     {

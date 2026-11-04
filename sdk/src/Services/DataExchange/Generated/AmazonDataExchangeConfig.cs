@@ -27,7 +27,7 @@ using Amazon.DataExchange.Internal;
 namespace Amazon.DataExchange
 {
     /// <summary>
-    /// Configuration for accessing Amazon DataExchange service
+    /// Configuration for accessing AWS Data Exchange
     /// </summary>
     public partial class AmazonDataExchangeConfig : ClientConfig
     {

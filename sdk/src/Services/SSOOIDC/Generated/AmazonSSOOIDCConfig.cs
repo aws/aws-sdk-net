@@ -27,7 +27,7 @@ using Amazon.SSOOIDC.Internal;
 namespace Amazon.SSOOIDC
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSOOIDC service
+    /// Configuration for accessing AWS SSO OIDC
     /// </summary>
     public partial class AmazonSSOOIDCConfig : ClientConfig
     {

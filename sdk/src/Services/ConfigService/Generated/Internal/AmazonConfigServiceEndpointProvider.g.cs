@@ -26,7 +26,7 @@ using Amazon.ConfigService.Endpoints;
 namespace Amazon.ConfigService.Internal
 {
     /// <summary>
-    /// Amazon ConfigService endpoint provider.
+    /// AWS Config endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ConfigServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

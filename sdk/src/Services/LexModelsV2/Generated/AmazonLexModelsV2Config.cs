@@ -27,7 +27,7 @@ using Amazon.LexModelsV2.Internal;
 namespace Amazon.LexModelsV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon LexModelsV2 service
+    /// Configuration for accessing Amazon Lex Model Building V2
     /// </summary>
     public partial class AmazonLexModelsV2Config : ClientConfig
     {

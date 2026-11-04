@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.RedshiftDataAPIService
 {
     /// <summary>
-    /// Configuration for accessing Amazon RedshiftDataAPIService service
+    /// Configuration for accessing Redshift Data API Service
     /// </summary>
     public static class AmazonRedshiftDataAPIServiceDefaultConfiguration
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AWSHealth service
+    /// Service metadata for AWS Health APIs and Notifications
     /// </summary>
     public partial class AmazonAWSHealthMetadata : IServiceMetadata
     {

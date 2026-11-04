@@ -27,7 +27,7 @@ using Amazon.Amplify.Internal;
 namespace Amazon.Amplify
 {
     /// <summary>
-    /// Configuration for accessing Amazon Amplify service
+    /// Configuration for accessing AWS Amplify
     /// </summary>
     public partial class AmazonAmplifyConfig : ClientConfig
     {

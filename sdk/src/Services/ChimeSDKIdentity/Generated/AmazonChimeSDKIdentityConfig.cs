@@ -27,7 +27,7 @@ using Amazon.ChimeSDKIdentity.Internal;
 namespace Amazon.ChimeSDKIdentity
 {
     /// <summary>
-    /// Configuration for accessing Amazon ChimeSDKIdentity service
+    /// Configuration for accessing Amazon Chime SDK Identity
     /// </summary>
     public partial class AmazonChimeSDKIdentityConfig : ClientConfig
     {

@@ -27,7 +27,7 @@ using Amazon.TranscribeService.Internal;
 namespace Amazon.TranscribeService
 {
     /// <summary>
-    /// Configuration for accessing Amazon TranscribeService service
+    /// Configuration for accessing Amazon Transcribe Service
     /// </summary>
     public partial class AmazonTranscribeServiceConfig : ClientConfig
     {

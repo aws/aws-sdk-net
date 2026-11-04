@@ -27,7 +27,7 @@ using Amazon.ControlCatalog.Internal;
 namespace Amazon.ControlCatalog
 {
     /// <summary>
-    /// Configuration for accessing Amazon ControlCatalog service
+    /// Configuration for accessing AWS Control Catalog
     /// </summary>
     public partial class AmazonControlCatalogConfig : ClientConfig
     {

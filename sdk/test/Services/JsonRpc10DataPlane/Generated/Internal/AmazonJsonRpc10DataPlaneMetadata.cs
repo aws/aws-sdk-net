@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.JsonRpc10DataPlane.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon JsonRpc10DataPlane service
+    /// Service metadata for AWS JSON RPC 1.0 Data Plane
     /// </summary>
     public partial class AmazonJsonRpc10DataPlaneMetadata : IServiceMetadata
     {

@@ -28,7 +28,7 @@ using Amazon.RestXmlDataPlane.Internal;
 namespace Amazon.RestXmlDataPlane
 {
     /// <summary>
-    /// Configuration for accessing Amazon RestXmlDataPlane service
+    /// Configuration for accessing AWS REST XML Data Plane
     /// </summary>
     public partial class AmazonRestXmlDataPlaneConfig : ClientConfig
     {

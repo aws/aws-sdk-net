@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.TimestreamQuery
 {
     /// <summary>
-    /// Configuration for accessing Amazon TimestreamQuery service
+    /// Configuration for accessing Amazon Timestream Query
     /// </summary>
     public static class AmazonTimestreamQueryDefaultConfiguration
     {

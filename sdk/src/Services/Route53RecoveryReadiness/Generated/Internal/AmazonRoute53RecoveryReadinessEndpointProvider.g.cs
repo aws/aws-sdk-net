@@ -26,7 +26,7 @@ using Amazon.Route53RecoveryReadiness.Endpoints;
 namespace Amazon.Route53RecoveryReadiness.Internal
 {
     /// <summary>
-    /// Amazon Route53RecoveryReadiness endpoint provider.
+    /// AWS Route53 Recovery Readiness endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="Route53RecoveryReadinessEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

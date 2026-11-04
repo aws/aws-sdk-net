@@ -27,7 +27,7 @@ using Amazon.Deadline.Internal;
 namespace Amazon.Deadline
 {
     /// <summary>
-    /// Configuration for accessing Amazon Deadline service
+    /// Configuration for accessing AWSDeadlineCloud
     /// </summary>
     public partial class AmazonDeadlineConfig : ClientConfig
     {

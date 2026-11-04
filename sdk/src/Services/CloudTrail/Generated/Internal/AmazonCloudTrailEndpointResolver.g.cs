@@ -31,7 +31,7 @@ using Amazon.CloudTrail.Endpoints;
 namespace Amazon.CloudTrail.Internal
 {
     /// <summary>
-    /// Amazon CloudTrail endpoint resolver.
+    /// AWS CloudTrail endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CloudTrail service requests.
     /// <para />

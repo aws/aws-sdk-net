@@ -31,7 +31,7 @@ using Amazon.TranscribeStreaming.Endpoints;
 namespace Amazon.TranscribeStreaming.Internal
 {
     /// <summary>
-    /// Amazon TranscribeStreaming endpoint resolver.
+    /// Amazon Transcribe Streaming Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for TranscribeStreaming service requests.
     /// <para />

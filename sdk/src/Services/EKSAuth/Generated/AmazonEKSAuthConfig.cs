@@ -27,7 +27,7 @@ using Amazon.EKSAuth.Internal;
 namespace Amazon.EKSAuth
 {
     /// <summary>
-    /// Configuration for accessing Amazon EKSAuth service
+    /// Configuration for accessing Amazon EKS Auth
     /// </summary>
     public partial class AmazonEKSAuthConfig : ClientConfig
     {

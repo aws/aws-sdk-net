@@ -27,7 +27,7 @@ using Amazon.Bedrock.Internal;
 namespace Amazon.Bedrock
 {
     /// <summary>
-    /// Configuration for accessing Amazon Bedrock service
+    /// Configuration for accessing Amazon Bedrock
     /// </summary>
     public partial class AmazonBedrockConfig : ClientConfig
     {

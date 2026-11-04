@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DataPipeline service
+    /// Service metadata for AWS Data Pipeline
     /// </summary>
     public partial class AmazonDataPipelineMetadata : IServiceMetadata
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon GameLift service
+    /// Service metadata for Amazon GameLift
     /// </summary>
     public partial class AmazonGameLiftMetadata : IServiceMetadata
     {

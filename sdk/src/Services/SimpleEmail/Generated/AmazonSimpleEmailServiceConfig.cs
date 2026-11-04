@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +27,7 @@ using Amazon.SimpleEmail.Internal;
 namespace Amazon.SimpleEmail
 {
     /// <summary>
-    /// Configuration for accessing Amazon SimpleEmailService service
+    /// Configuration for accessing Amazon Simple Email Service
     /// </summary>
     public partial class AmazonSimpleEmailServiceConfig : ClientConfig
     {
@@ -39,16 +38,12 @@ namespace Amazon.SimpleEmail
             new AmazonSimpleEmailServiceEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "SES";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "SES";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "email";
-            }
-        }
+        public override string RegionEndpointServiceName => "email";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2010-12-01";
-            }
-        }
+        public override string ServiceVersion => "2010-12-01";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.SimpleEmail
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

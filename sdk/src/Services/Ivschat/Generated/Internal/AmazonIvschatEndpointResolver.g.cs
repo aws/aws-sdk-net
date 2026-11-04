@@ -31,7 +31,7 @@ using Amazon.Ivschat.Endpoints;
 namespace Amazon.Ivschat.Internal
 {
     /// <summary>
-    /// Amazon Ivschat endpoint resolver.
+    /// Amazon Interactive Video Service Chat endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Ivschat service requests.
     /// <para />

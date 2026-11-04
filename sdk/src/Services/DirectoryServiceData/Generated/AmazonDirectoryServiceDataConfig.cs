@@ -27,7 +27,7 @@ using Amazon.DirectoryServiceData.Internal;
 namespace Amazon.DirectoryServiceData
 {
     /// <summary>
-    /// Configuration for accessing Amazon DirectoryServiceData service
+    /// Configuration for accessing AWS Directory Service Data
     /// </summary>
     public partial class AmazonDirectoryServiceDataConfig : ClientConfig
     {

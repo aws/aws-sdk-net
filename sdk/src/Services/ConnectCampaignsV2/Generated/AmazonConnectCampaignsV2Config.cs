@@ -27,7 +27,7 @@ using Amazon.ConnectCampaignsV2.Internal;
 namespace Amazon.ConnectCampaignsV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectCampaignsV2 service
+    /// Configuration for accessing AmazonConnectCampaignServiceV2
     /// </summary>
     public partial class AmazonConnectCampaignsV2Config : ClientConfig
     {

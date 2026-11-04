@@ -27,7 +27,7 @@ using Amazon.DatabaseMigrationService.Internal;
 namespace Amazon.DatabaseMigrationService
 {
     /// <summary>
-    /// Configuration for accessing Amazon DatabaseMigrationService service
+    /// Configuration for accessing AWS Database Migration Service
     /// </summary>
     public partial class AmazonDatabaseMigrationServiceConfig : ClientConfig
     {

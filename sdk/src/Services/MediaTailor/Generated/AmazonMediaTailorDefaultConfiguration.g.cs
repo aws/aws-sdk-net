@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MediaTailor
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaTailor service
+    /// Configuration for accessing AWS MediaTailor
     /// </summary>
     public static class AmazonMediaTailorDefaultConfiguration
     {

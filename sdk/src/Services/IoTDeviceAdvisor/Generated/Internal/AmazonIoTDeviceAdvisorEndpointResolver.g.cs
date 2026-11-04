@@ -31,7 +31,7 @@ using Amazon.IoTDeviceAdvisor.Endpoints;
 namespace Amazon.IoTDeviceAdvisor.Internal
 {
     /// <summary>
-    /// Amazon IoTDeviceAdvisor endpoint resolver.
+    /// AWS IoT Core Device Advisor endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IoTDeviceAdvisor service requests.
     /// <para />

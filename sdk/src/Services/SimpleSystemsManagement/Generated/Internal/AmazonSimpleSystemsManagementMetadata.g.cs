@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SimpleSystemsManagement service
+    /// Service metadata for Amazon Simple Systems Manager (SSM)
     /// </summary>
     public partial class AmazonSimpleSystemsManagementMetadata : IServiceMetadata
     {

@@ -27,7 +27,7 @@ using Amazon.Glue.Internal;
 namespace Amazon.Glue
 {
     /// <summary>
-    /// Configuration for accessing Amazon Glue service
+    /// Configuration for accessing AWS Glue
     /// </summary>
     public partial class AmazonGlueConfig : ClientConfig
     {

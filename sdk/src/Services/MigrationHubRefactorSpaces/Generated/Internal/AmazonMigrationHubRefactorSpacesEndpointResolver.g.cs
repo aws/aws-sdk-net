@@ -31,7 +31,7 @@ using Amazon.MigrationHubRefactorSpaces.Endpoints;
 namespace Amazon.MigrationHubRefactorSpaces.Internal
 {
     /// <summary>
-    /// Amazon MigrationHubRefactorSpaces endpoint resolver.
+    /// AWS Migration Hub Refactor Spaces endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MigrationHubRefactorSpaces service requests.
     /// <para />

@@ -27,7 +27,7 @@ using Amazon.Connect.Internal;
 namespace Amazon.Connect
 {
     /// <summary>
-    /// Configuration for accessing Amazon Connect service
+    /// Configuration for accessing Amazon Connect Service
     /// </summary>
     public partial class AmazonConnectConfig : ClientConfig
     {

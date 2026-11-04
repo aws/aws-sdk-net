@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SsmSap service
+    /// Service metadata for AWS Systems Manager for SAP
     /// </summary>
     public partial class AmazonSsmSapMetadata : IServiceMetadata
     {

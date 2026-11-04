@@ -27,7 +27,7 @@ using Amazon.CostExplorer.Internal;
 namespace Amazon.CostExplorer
 {
     /// <summary>
-    /// Configuration for accessing Amazon CostExplorer service
+    /// Configuration for accessing AWS Cost Explorer Service
     /// </summary>
     public partial class AmazonCostExplorerConfig : ClientConfig
     {

@@ -27,7 +27,7 @@ using Amazon.SSMGuiConnect.Internal;
 namespace Amazon.SSMGuiConnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSMGuiConnect service
+    /// Configuration for accessing AWS SSM-GUIConnect
     /// </summary>
     public partial class AmazonSSMGuiConnectConfig : ClientConfig
     {

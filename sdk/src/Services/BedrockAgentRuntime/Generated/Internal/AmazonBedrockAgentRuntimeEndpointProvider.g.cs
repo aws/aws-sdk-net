@@ -26,7 +26,7 @@ using Amazon.BedrockAgentRuntime.Endpoints;
 namespace Amazon.BedrockAgentRuntime.Internal
 {
     /// <summary>
-    /// Amazon BedrockAgentRuntime endpoint provider.
+    /// Agents for Amazon Bedrock Runtime endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BedrockAgentRuntimeEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

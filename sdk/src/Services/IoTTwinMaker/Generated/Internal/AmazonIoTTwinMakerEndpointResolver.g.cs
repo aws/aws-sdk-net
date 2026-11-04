@@ -31,7 +31,7 @@ using Amazon.IoTTwinMaker.Endpoints;
 namespace Amazon.IoTTwinMaker.Internal
 {
     /// <summary>
-    /// Amazon IoTTwinMaker endpoint resolver.
+    /// AWS IoT TwinMaker endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IoTTwinMaker service requests.
     /// <para />

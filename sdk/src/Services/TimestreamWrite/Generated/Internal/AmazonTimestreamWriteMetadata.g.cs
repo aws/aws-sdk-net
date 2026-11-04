@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon TimestreamWrite service
+    /// Service metadata for Amazon Timestream Write
     /// </summary>
     public partial class AmazonTimestreamWriteMetadata : IServiceMetadata
     {

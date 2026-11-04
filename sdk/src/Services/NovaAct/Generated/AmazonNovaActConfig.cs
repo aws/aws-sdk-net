@@ -27,7 +27,7 @@ using Amazon.NovaAct.Internal;
 namespace Amazon.NovaAct
 {
     /// <summary>
-    /// Configuration for accessing Amazon NovaAct service
+    /// Configuration for accessing Nova Act Service
     /// </summary>
     public partial class AmazonNovaActConfig : ClientConfig
     {

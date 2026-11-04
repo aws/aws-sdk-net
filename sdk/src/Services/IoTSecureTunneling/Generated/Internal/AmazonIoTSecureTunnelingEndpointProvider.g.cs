@@ -26,7 +26,7 @@ using Amazon.IoTSecureTunneling.Endpoints;
 namespace Amazon.IoTSecureTunneling.Internal
 {
     /// <summary>
-    /// Amazon IoTSecureTunneling endpoint provider.
+    /// AWS IoT Secure Tunneling endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IoTSecureTunnelingEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

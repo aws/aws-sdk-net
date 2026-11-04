@@ -27,7 +27,7 @@ using Amazon.Pricing.Internal;
 namespace Amazon.Pricing
 {
     /// <summary>
-    /// Configuration for accessing Amazon Pricing service
+    /// Configuration for accessing AWS Price List Service
     /// </summary>
     public partial class AmazonPricingConfig : ClientConfig
     {

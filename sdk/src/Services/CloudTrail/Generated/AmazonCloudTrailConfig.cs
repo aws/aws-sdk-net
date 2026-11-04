@@ -27,7 +27,7 @@ using Amazon.CloudTrail.Internal;
 namespace Amazon.CloudTrail
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudTrail service
+    /// Configuration for accessing AWS CloudTrail
     /// </summary>
     public partial class AmazonCloudTrailConfig : ClientConfig
     {

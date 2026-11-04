@@ -27,7 +27,7 @@ using Amazon.MediaConvert.Internal;
 namespace Amazon.MediaConvert
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaConvert service
+    /// Configuration for accessing AWS Elemental MediaConvert
     /// </summary>
     public partial class AmazonMediaConvertConfig : ClientConfig
     {

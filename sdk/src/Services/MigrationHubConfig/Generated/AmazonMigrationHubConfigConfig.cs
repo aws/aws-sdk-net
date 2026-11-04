@@ -27,7 +27,7 @@ using Amazon.MigrationHubConfig.Internal;
 namespace Amazon.MigrationHubConfig
 {
     /// <summary>
-    /// Configuration for accessing Amazon MigrationHubConfig service
+    /// Configuration for accessing AWS Migration Hub Config
     /// </summary>
     public partial class AmazonMigrationHubConfigConfig : ClientConfig
     {

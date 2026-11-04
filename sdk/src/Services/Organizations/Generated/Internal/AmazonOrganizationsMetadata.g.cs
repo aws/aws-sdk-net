@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Organizations service
+    /// Service metadata for AWS Organizations
     /// </summary>
     public partial class AmazonOrganizationsMetadata : IServiceMetadata
     {

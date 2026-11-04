@@ -27,7 +27,7 @@ using Amazon.SsmSap.Internal;
 namespace Amazon.SsmSap
 {
     /// <summary>
-    /// Configuration for accessing Amazon SsmSap service
+    /// Configuration for accessing AWS Systems Manager for SAP
     /// </summary>
     public partial class AmazonSsmSapConfig : ClientConfig
     {

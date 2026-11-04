@@ -28,7 +28,7 @@ using Amazon.PaginatorsTest.Internal;
 namespace Amazon.PaginatorsTest
 {
     /// <summary>
-    /// Configuration for accessing Amazon PaginatorsTest service
+    /// Configuration for accessing Paginators-Test
     /// </summary>
     public partial class AmazonPaginatorsTestConfig : ClientConfig
     {

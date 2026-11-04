@@ -27,7 +27,7 @@ using Amazon.ResourceExplorer2.Internal;
 namespace Amazon.ResourceExplorer2
 {
     /// <summary>
-    /// Configuration for accessing Amazon ResourceExplorer2 service
+    /// Configuration for accessing AWS Resource Explorer
     /// </summary>
     public partial class AmazonResourceExplorer2Config : ClientConfig
     {

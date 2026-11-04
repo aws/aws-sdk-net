@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Route53RecoveryCluster
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53RecoveryCluster service
+    /// Configuration for accessing Route53 Recovery Cluster
     /// </summary>
     public static class AmazonRoute53RecoveryClusterDefaultConfiguration
     {

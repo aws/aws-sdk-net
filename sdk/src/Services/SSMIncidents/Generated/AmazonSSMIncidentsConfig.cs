@@ -27,7 +27,7 @@ using Amazon.SSMIncidents.Internal;
 namespace Amazon.SSMIncidents
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSMIncidents service
+    /// Configuration for accessing AWS Systems Manager Incident Manager
     /// </summary>
     public partial class AmazonSSMIncidentsConfig : ClientConfig
     {

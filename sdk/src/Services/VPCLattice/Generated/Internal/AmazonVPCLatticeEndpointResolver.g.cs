@@ -31,7 +31,7 @@ using Amazon.VPCLattice.Endpoints;
 namespace Amazon.VPCLattice.Internal
 {
     /// <summary>
-    /// Amazon VPCLattice endpoint resolver.
+    /// Amazon VPC Lattice endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for VPCLattice service requests.
     /// <para />

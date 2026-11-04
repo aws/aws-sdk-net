@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QueryDataPlane.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon QueryDataPlane service
+    /// Service metadata for AWS Query Data Plane
     /// </summary>
     public partial class AmazonQueryDataPlaneMetadata : IServiceMetadata
     {

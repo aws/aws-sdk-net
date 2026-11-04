@@ -26,7 +26,7 @@ using Amazon.SSMIncidents.Endpoints;
 namespace Amazon.SSMIncidents.Internal
 {
     /// <summary>
-    /// Amazon SSMIncidents endpoint provider.
+    /// AWS Systems Manager Incident Manager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SSMIncidentsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

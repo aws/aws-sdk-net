@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Appflow
 {
     /// <summary>
-    /// Configuration for accessing Amazon Appflow service
+    /// Configuration for accessing Amazon Appflow
     /// </summary>
     public static class AmazonAppflowDefaultConfiguration
     {

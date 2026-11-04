@@ -6,12 +6,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.CreateUserRequest.Engine</property>
-    <pattern>[a-zA-Z]*</pattern>
+    <pattern>^[a-zA-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.CreateUserRequest.UserId</property>
     <min>1</min>
-    <pattern>[a-zA-Z][a-zA-Z0-9\-]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.CreateUserRequest.UserName</property>
@@ -19,37 +19,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.CreateUserResponse.Engine</property>
-    <pattern>[a-zA-Z]*</pattern>
+    <pattern>^[a-zA-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.CreateUserGroupRequest.Engine</property>
-    <pattern>[a-zA-Z]*</pattern>
+    <pattern>^[a-zA-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.CreateUserGroupResponse.Engine</property>
-    <pattern>[a-zA-Z]*</pattern>
+    <pattern>^[a-zA-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.DeleteUserRequest.UserId</property>
     <min>1</min>
-    <pattern>[a-zA-Z][a-zA-Z0-9\-]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.DeleteUserResponse.Engine</property>
-    <pattern>[a-zA-Z]*</pattern>
+    <pattern>^[a-zA-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.DeleteUserGroupResponse.Engine</property>
-    <pattern>[a-zA-Z]*</pattern>
+    <pattern>^[a-zA-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.DescribeUsersRequest.Engine</property>
-    <pattern>[a-zA-Z]*</pattern>
+    <pattern>^[a-zA-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.DescribeUsersRequest.UserId</property>
     <min>1</min>
-    <pattern>[a-zA-Z][a-zA-Z0-9\-]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.ModifyUserRequest.AccessString</property>
@@ -61,36 +61,36 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.ModifyUserRequest.Engine</property>
-    <pattern>[a-zA-Z]*</pattern>
+    <pattern>^[a-zA-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.ModifyUserRequest.UserId</property>
     <min>1</min>
-    <pattern>[a-zA-Z][a-zA-Z0-9\-]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.ModifyUserResponse.Engine</property>
-    <pattern>[a-zA-Z]*</pattern>
+    <pattern>^[a-zA-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.ModifyUserGroupRequest.Engine</property>
-    <pattern>[a-zA-Z]*</pattern>
+    <pattern>^[a-zA-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.ModifyUserGroupResponse.Engine</property>
-    <pattern>[a-zA-Z]*</pattern>
+    <pattern>^[a-zA-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.TestFailoverRequest.NodeGroupId</property>
     <min>1</min>
     <max>4</max>
-    <pattern>\d+</pattern>
+    <pattern>^\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.ConfigureShard.NodeGroupId</property>
     <min>1</min>
     <max>4</max>
-    <pattern>\d+</pattern>
+    <pattern>^\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.Filter.Name</property>
@@ -100,12 +100,12 @@
     <property>Amazon.ElastiCache.Model.NodeGroupConfiguration.NodeGroupId</property>
     <min>1</min>
     <max>4</max>
-    <pattern>\d+</pattern>
+    <pattern>^\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElastiCache.Model.ReshardingConfiguration.NodeGroupId</property>
     <min>1</min>
     <max>4</max>
-    <pattern>\d+</pattern>
+    <pattern>^\d+$</pattern>
   </property-value-rule>
 </property-value-rules>

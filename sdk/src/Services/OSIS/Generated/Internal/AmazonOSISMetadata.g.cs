@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OSIS.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon OSIS service
+    /// Service metadata for Amazon OpenSearch Ingestion
     /// </summary>
     public partial class AmazonOSISMetadata : IServiceMetadata
     {

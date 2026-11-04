@@ -31,7 +31,7 @@ using Amazon.LocationService.Endpoints;
 namespace Amazon.LocationService.Internal
 {
     /// <summary>
-    /// Amazon LocationService endpoint resolver.
+    /// Amazon Location Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for LocationService service requests.
     /// <para />

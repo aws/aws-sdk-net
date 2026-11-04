@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DataZone service
+    /// Service metadata for Amazon DataZone
     /// </summary>
     public partial class AmazonDataZoneMetadata : IServiceMetadata
     {

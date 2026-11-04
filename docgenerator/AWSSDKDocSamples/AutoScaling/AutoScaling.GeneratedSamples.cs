@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
     {
         public void AutoScalingAttachInstances()
         {
-            #region autoscaling-attach-instances-1
+            #region AttachInstances-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.AttachInstances(new AttachInstancesRequest 
+            var response = client.AttachInstances(new AttachInstancesRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 InstanceIds = new List<string> {
@@ -30,10 +31,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingAttachLoadBalancers()
         {
-            #region autoscaling-attach-load-balancers-1
+            #region AttachLoadBalancers-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.AttachLoadBalancers(new AttachLoadBalancersRequest 
+            var response = client.AttachLoadBalancers(new AttachLoadBalancersRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 LoadBalancerNames = new List<string> {
@@ -47,10 +48,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingAttachLoadBalancerTargetGroups()
         {
-            #region autoscaling-attach-load-balancer-target-groups-1
+            #region AttachLoadBalancerTargetGroups-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.AttachLoadBalancerTargetGroups(new AttachLoadBalancerTargetGroupsRequest 
+            var response = client.AttachLoadBalancerTargetGroups(new AttachLoadBalancerTargetGroupsRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 TargetGroupARNs = new List<string> {
@@ -64,10 +65,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingAttachTrafficSources()
         {
-            #region to-attach-a-target-group-to-an-auto-scaling-group-1680036570089
+            #region AttachTrafficSources-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.AttachTrafficSources(new AttachTrafficSourcesRequest 
+            var response = client.AttachTrafficSources(new AttachTrafficSourcesRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 TrafficSources = new List<TrafficSourceIdentifier> {
@@ -81,10 +82,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingCancelInstanceRefresh()
         {
-            #region to-cancel-an-instance-refresh-1592960979817
+            #region CancelInstanceRefresh-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.CancelInstanceRefresh(new CancelInstanceRefreshRequest 
+            var response = client.CancelInstanceRefresh(new CancelInstanceRefreshRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group"
             });
@@ -96,10 +97,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingCompleteLifecycleAction()
         {
-            #region autoscaling-complete-lifecycle-action-1
+            #region CompleteLifecycleAction-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.CompleteLifecycleAction(new CompleteLifecycleActionRequest 
+            var response = client.CompleteLifecycleAction(new CompleteLifecycleActionRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 LifecycleActionResult = "CONTINUE",
@@ -113,33 +114,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingCreateAutoScalingGroup()
         {
-            #region autoscaling-create-auto-scaling-group-1
+            #region CreateAutoScalingGroup-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
-            {
-                AutoScalingGroupName = "my-auto-scaling-group",
-                DefaultInstanceWarmup = 120,
-                LaunchTemplate = new LaunchTemplateSpecification {
-                    LaunchTemplateName = "my-template-for-auto-scaling",
-                    Version = "$Default"
-                },
-                MaxInstanceLifetime = 2592000,
-                MaxSize = 3,
-                MinSize = 1,
-                VPCZoneIdentifier = "subnet-057fa0918fEXAMPLE"
-            });
-
-
-            #endregion
-        }
-
-        public void AutoScalingCreateAutoScalingGroup()
-        {
-            #region autoscaling-create-auto-scaling-group-2
-
-            var client = new AmazonAutoScalingClient();
-            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
+            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 HealthCheckGracePeriod = 300,
@@ -162,10 +140,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingCreateAutoScalingGroup()
         {
-            #region autoscaling-create-auto-scaling-group-3
+            #region CreateAutoScalingGroup-2
 
             var client = new AmazonAutoScalingClient();
-            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
+            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest
             {
                 AutoScalingGroupName = "my-asg",
                 DesiredCapacity = 3,
@@ -204,10 +182,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingCreateAutoScalingGroup()
         {
-            #region autoscaling-create-auto-scaling-group-4
+            #region CreateAutoScalingGroup-3
 
             var client = new AmazonAutoScalingClient();
-            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
+            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest
             {
                 AutoScalingGroupName = "my-asg",
                 DesiredCapacity = 4,
@@ -247,10 +225,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingCreateAutoScalingGroup()
         {
-            #region autoscaling-create-auto-scaling-group-5
+            #region CreateAutoScalingGroup-4
 
             var client = new AmazonAutoScalingClient();
-            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
+            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest
             {
                 AutoScalingGroupName = "my-asg",
                 CapacityReservationSpecification = new CapacityReservationSpecification { CapacityReservationTarget = new CapacityReservationTarget { CapacityReservationResourceGroupArns = new List<string> {
@@ -289,12 +267,35 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             #endregion
         }
 
-        public void AutoScalingCreateLaunchConfiguration()
+        public void AutoScalingCreateAutoScalingGroup()
         {
-            #region autoscaling-create-launch-configuration-1
+            #region CreateAutoScalingGroup-5
 
             var client = new AmazonAutoScalingClient();
-            var response = client.CreateLaunchConfiguration(new CreateLaunchConfigurationRequest 
+            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest
+            {
+                AutoScalingGroupName = "my-auto-scaling-group",
+                DefaultInstanceWarmup = 120,
+                LaunchTemplate = new LaunchTemplateSpecification {
+                    LaunchTemplateName = "my-template-for-auto-scaling",
+                    Version = "$Default"
+                },
+                MaxInstanceLifetime = 2592000,
+                MaxSize = 3,
+                MinSize = 1,
+                VPCZoneIdentifier = "subnet-057fa0918fEXAMPLE"
+            });
+
+
+            #endregion
+        }
+
+        public void AutoScalingCreateLaunchConfiguration()
+        {
+            #region CreateLaunchConfiguration-1
+
+            var client = new AmazonAutoScalingClient();
+            var response = client.CreateLaunchConfiguration(new CreateLaunchConfigurationRequest
             {
                 IamInstanceProfile = "my-iam-role",
                 ImageId = "ami-12345678",
@@ -311,10 +312,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingCreateOrUpdateTags()
         {
-            #region autoscaling-create-or-update-tags-1
+            #region CreateOrUpdateTags-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.CreateOrUpdateTags(new CreateOrUpdateTagsRequest 
+            var response = client.CreateOrUpdateTags(new CreateOrUpdateTagsRequest
             {
                 Tags = new List<Tag> {
                     new Tag {
@@ -340,10 +341,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDeleteAutoScalingGroup()
         {
-            #region autoscaling-delete-auto-scaling-group-1
+            #region DeleteAutoScalingGroup-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DeleteAutoScalingGroup(new DeleteAutoScalingGroupRequest 
+            var response = client.DeleteAutoScalingGroup(new DeleteAutoScalingGroupRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group"
             });
@@ -354,10 +355,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDeleteAutoScalingGroup()
         {
-            #region autoscaling-delete-auto-scaling-group-2
+            #region DeleteAutoScalingGroup-2
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DeleteAutoScalingGroup(new DeleteAutoScalingGroupRequest 
+            var response = client.DeleteAutoScalingGroup(new DeleteAutoScalingGroupRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 ForceDelete = true
@@ -369,10 +370,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDeleteLaunchConfiguration()
         {
-            #region autoscaling-delete-launch-configuration-1
+            #region DeleteLaunchConfiguration-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DeleteLaunchConfiguration(new DeleteLaunchConfigurationRequest 
+            var response = client.DeleteLaunchConfiguration(new DeleteLaunchConfigurationRequest
             {
                 LaunchConfigurationName = "my-launch-config"
             });
@@ -383,10 +384,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDeleteLifecycleHook()
         {
-            #region autoscaling-delete-lifecycle-hook-1
+            #region DeleteLifecycleHook-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DeleteLifecycleHook(new DeleteLifecycleHookRequest 
+            var response = client.DeleteLifecycleHook(new DeleteLifecycleHookRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 LifecycleHookName = "my-lifecycle-hook"
@@ -398,10 +399,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDeleteNotificationConfiguration()
         {
-            #region autoscaling-delete-notification-configuration-1
+            #region DeleteNotificationConfiguration-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DeleteNotificationConfiguration(new DeleteNotificationConfigurationRequest 
+            var response = client.DeleteNotificationConfiguration(new DeleteNotificationConfigurationRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 TopicARN = "arn:aws:sns:us-west-2:123456789012:my-sns-topic"
@@ -413,10 +414,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDeletePolicy()
         {
-            #region autoscaling-delete-policy-1
+            #region DeletePolicy-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DeletePolicy(new DeletePolicyRequest 
+            var response = client.DeletePolicy(new DeletePolicyRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 PolicyName = "my-step-scale-out-policy"
@@ -428,10 +429,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDeleteScheduledAction()
         {
-            #region autoscaling-delete-scheduled-action-1
+            #region DeleteScheduledAction-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DeleteScheduledAction(new DeleteScheduledActionRequest 
+            var response = client.DeleteScheduledAction(new DeleteScheduledActionRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 ScheduledActionName = "my-scheduled-action"
@@ -443,10 +444,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDeleteTags()
         {
-            #region autoscaling-delete-tags-1
+            #region DeleteTags-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DeleteTags(new DeleteTagsRequest 
+            var response = client.DeleteTags(new DeleteTagsRequest
             {
                 Tags = new List<Tag> {
                     new Tag {
@@ -464,27 +465,27 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeAccountLimits()
         {
-            #region autoscaling-describe-account-limits-1
+            #region DescribeAccountLimits-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeAccountLimits(new DescribeAccountLimitsRequest 
+            var response = client.DescribeAccountLimits(new DescribeAccountLimitsRequest
             {
             });
 
-            int maxNumberOfAutoScalingGroups = response.MaxNumberOfAutoScalingGroups;
-            int maxNumberOfLaunchConfigurations = response.MaxNumberOfLaunchConfigurations;
-            int numberOfAutoScalingGroups = response.NumberOfAutoScalingGroups;
-            int numberOfLaunchConfigurations = response.NumberOfLaunchConfigurations;
+            int? maxNumberOfAutoScalingGroups = response.MaxNumberOfAutoScalingGroups;
+            int? maxNumberOfLaunchConfigurations = response.MaxNumberOfLaunchConfigurations;
+            int? numberOfAutoScalingGroups = response.NumberOfAutoScalingGroups;
+            int? numberOfLaunchConfigurations = response.NumberOfLaunchConfigurations;
 
             #endregion
         }
 
         public void AutoScalingDescribeAdjustmentTypes()
         {
-            #region autoscaling-describe-adjustment-types-1
+            #region DescribeAdjustmentTypes-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeAdjustmentTypes(new DescribeAdjustmentTypesRequest 
+            var response = client.DescribeAdjustmentTypes(new DescribeAdjustmentTypesRequest
             {
             });
 
@@ -495,10 +496,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeAutoScalingGroups()
         {
-            #region autoscaling-describe-auto-scaling-groups-1
+            #region DescribeAutoScalingGroups-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeAutoScalingGroups(new DescribeAutoScalingGroupsRequest 
+            var response = client.DescribeAutoScalingGroups(new DescribeAutoScalingGroupsRequest
             {
                 AutoScalingGroupNames = new List<string> {
                     "my-auto-scaling-group"
@@ -512,10 +513,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeAutoScalingInstances()
         {
-            #region autoscaling-describe-auto-scaling-instances-1
+            #region DescribeAutoScalingInstances-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeAutoScalingInstances(new DescribeAutoScalingInstancesRequest 
+            var response = client.DescribeAutoScalingInstances(new DescribeAutoScalingInstancesRequest
             {
                 InstanceIds = new List<string> {
                     "i-05b4f7d5be44822a6"
@@ -529,10 +530,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeAutoScalingNotificationTypes()
         {
-            #region autoscaling-describe-auto-scaling-notification-types-1
+            #region DescribeAutoScalingNotificationTypes-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeAutoScalingNotificationTypes(new DescribeAutoScalingNotificationTypesRequest 
+            var response = client.DescribeAutoScalingNotificationTypes(new DescribeAutoScalingNotificationTypesRequest
             {
             });
 
@@ -541,27 +542,12 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             #endregion
         }
 
-        public void AutoScalingDescribeInstanceRefreshes()
-        {
-            #region to-list-instance-refreshes-1592959593746
-
-            var client = new AmazonAutoScalingClient();
-            var response = client.DescribeInstanceRefreshes(new DescribeInstanceRefreshesRequest 
-            {
-                AutoScalingGroupName = "my-auto-scaling-group"
-            });
-
-            List<InstanceRefresh> instanceRefreshes = response.InstanceRefreshes;
-
-            #endregion
-        }
-
         public void AutoScalingDescribeLaunchConfigurations()
         {
-            #region autoscaling-describe-launch-configurations-1
+            #region DescribeLaunchConfigurations-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeLaunchConfigurations(new DescribeLaunchConfigurationsRequest 
+            var response = client.DescribeLaunchConfigurations(new DescribeLaunchConfigurationsRequest
             {
                 LaunchConfigurationNames = new List<string> {
                     "my-launch-config"
@@ -575,10 +561,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeLifecycleHooks()
         {
-            #region autoscaling-describe-lifecycle-hooks-1
+            #region DescribeLifecycleHooks-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeLifecycleHooks(new DescribeLifecycleHooksRequest 
+            var response = client.DescribeLifecycleHooks(new DescribeLifecycleHooksRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group"
             });
@@ -590,10 +576,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeLifecycleHookTypes()
         {
-            #region autoscaling-describe-lifecycle-hook-types-1
+            #region DescribeLifecycleHookTypes-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeLifecycleHookTypes(new DescribeLifecycleHookTypesRequest 
+            var response = client.DescribeLifecycleHookTypes(new DescribeLifecycleHookTypesRequest
             {
             });
 
@@ -604,10 +590,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeLoadBalancers()
         {
-            #region autoscaling-describe-load-balancers-1
+            #region DescribeLoadBalancers-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeLoadBalancers(new DescribeLoadBalancersRequest 
+            var response = client.DescribeLoadBalancers(new DescribeLoadBalancersRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group"
             });
@@ -619,10 +605,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeLoadBalancerTargetGroups()
         {
-            #region autoscaling-describe-load-balancer-target-groups-1
+            #region DescribeLoadBalancerTargetGroups-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeLoadBalancerTargetGroups(new DescribeLoadBalancerTargetGroupsRequest 
+            var response = client.DescribeLoadBalancerTargetGroups(new DescribeLoadBalancerTargetGroupsRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group"
             });
@@ -634,10 +620,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeMetricCollectionTypes()
         {
-            #region autoscaling-describe-metric-collection-types-1
+            #region DescribeMetricCollectionTypes-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeMetricCollectionTypes(new DescribeMetricCollectionTypesRequest 
+            var response = client.DescribeMetricCollectionTypes(new DescribeMetricCollectionTypesRequest
             {
             });
 
@@ -649,10 +635,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeNotificationConfigurations()
         {
-            #region autoscaling-describe-notification-configurations-1
+            #region DescribeNotificationConfigurations-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeNotificationConfigurations(new DescribeNotificationConfigurationsRequest 
+            var response = client.DescribeNotificationConfigurations(new DescribeNotificationConfigurationsRequest
             {
                 AutoScalingGroupNames = new List<string> {
                     "my-auto-scaling-group"
@@ -666,10 +652,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribePolicies()
         {
-            #region autoscaling-describe-policies-1
+            #region DescribePolicies-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribePolicies(new DescribePoliciesRequest 
+            var response = client.DescribePolicies(new DescribePoliciesRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group"
             });
@@ -681,10 +667,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeScalingActivities()
         {
-            #region autoscaling-describe-scaling-activities-1
+            #region DescribeScalingActivities-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeScalingActivities(new DescribeScalingActivitiesRequest 
+            var response = client.DescribeScalingActivities(new DescribeScalingActivitiesRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group"
             });
@@ -696,10 +682,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeScalingProcessTypes()
         {
-            #region autoscaling-describe-scaling-process-types-1
+            #region DescribeScalingProcessTypes-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeScalingProcessTypes(new DescribeScalingProcessTypesRequest 
+            var response = client.DescribeScalingProcessTypes(new DescribeScalingProcessTypesRequest
             {
             });
 
@@ -710,10 +696,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeScheduledActions()
         {
-            #region autoscaling-describe-scheduled-actions-1
+            #region DescribeScheduledActions-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeScheduledActions(new DescribeScheduledActionsRequest 
+            var response = client.DescribeScheduledActions(new DescribeScheduledActionsRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group"
             });
@@ -725,10 +711,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeTags()
         {
-            #region autoscaling-describe-tags-1
+            #region DescribeTags-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeTags(new DescribeTagsRequest 
+            var response = client.DescribeTags(new DescribeTagsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -747,10 +733,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeTerminationPolicyTypes()
         {
-            #region autoscaling-describe-termination-policy-types-1
+            #region DescribeTerminationPolicyTypes-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeTerminationPolicyTypes(new DescribeTerminationPolicyTypesRequest 
+            var response = client.DescribeTerminationPolicyTypes(new DescribeTerminationPolicyTypesRequest
             {
             });
 
@@ -761,10 +747,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDescribeTrafficSources()
         {
-            #region to-describe-the-target-groups-for-an-auto-scaling-group-1680040714521
+            #region DescribeTrafficSources-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DescribeTrafficSources(new DescribeTrafficSourcesRequest 
+            var response = client.DescribeTrafficSources(new DescribeTrafficSourcesRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group"
             });
@@ -777,10 +763,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDetachInstances()
         {
-            #region autoscaling-detach-instances-1
+            #region DetachInstances-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DetachInstances(new DetachInstancesRequest 
+            var response = client.DetachInstances(new DetachInstancesRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 InstanceIds = new List<string> {
@@ -796,10 +782,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDetachLoadBalancers()
         {
-            #region autoscaling-detach-load-balancers-1
+            #region DetachLoadBalancers-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DetachLoadBalancers(new DetachLoadBalancersRequest 
+            var response = client.DetachLoadBalancers(new DetachLoadBalancersRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 LoadBalancerNames = new List<string> {
@@ -813,10 +799,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDetachLoadBalancerTargetGroups()
         {
-            #region autoscaling-detach-load-balancer-target-groups-1
+            #region DetachLoadBalancerTargetGroups-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DetachLoadBalancerTargetGroups(new DetachLoadBalancerTargetGroupsRequest 
+            var response = client.DetachLoadBalancerTargetGroups(new DetachLoadBalancerTargetGroupsRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 TargetGroupARNs = new List<string> {
@@ -830,10 +816,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDetachTrafficSources()
         {
-            #region to-detach-a-target-group-from-an-auto-scaling-group-1680040404169
+            #region DetachTrafficSources-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DetachTrafficSources(new DetachTrafficSourcesRequest 
+            var response = client.DetachTrafficSources(new DetachTrafficSourcesRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 TrafficSources = new List<TrafficSourceIdentifier> {
@@ -847,10 +833,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingDisableMetricsCollection()
         {
-            #region autoscaling-disable-metrics-collection-1
+            #region DisableMetricsCollection-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.DisableMetricsCollection(new DisableMetricsCollectionRequest 
+            var response = client.DisableMetricsCollection(new DisableMetricsCollectionRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 Metrics = new List<string> {
@@ -864,10 +850,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingEnableMetricsCollection()
         {
-            #region autoscaling-enable-metrics-collection-1
+            #region EnableMetricsCollection-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.EnableMetricsCollection(new EnableMetricsCollectionRequest 
+            var response = client.EnableMetricsCollection(new EnableMetricsCollectionRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 Granularity = "1Minute"
@@ -879,10 +865,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingEnterStandby()
         {
-            #region autoscaling-enter-standby-1
+            #region EnterStandby-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.EnterStandby(new EnterStandbyRequest 
+            var response = client.EnterStandby(new EnterStandbyRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 InstanceIds = new List<string> {
@@ -898,10 +884,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingExecutePolicy()
         {
-            #region autoscaling-execute-policy-1
+            #region ExecutePolicy-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.ExecutePolicy(new ExecutePolicyRequest 
+            var response = client.ExecutePolicy(new ExecutePolicyRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 BreachThreshold = 50,
@@ -915,10 +901,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingExitStandby()
         {
-            #region autoscaling-exit-standby-1
+            #region ExitStandby-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.ExitStandby(new ExitStandbyRequest 
+            var response = client.ExitStandby(new ExitStandbyRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 InstanceIds = new List<string> {
@@ -933,10 +919,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingPutLifecycleHook()
         {
-            #region autoscaling-put-lifecycle-hook-1
+            #region PutLifecycleHook-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.PutLifecycleHook(new PutLifecycleHookRequest 
+            var response = client.PutLifecycleHook(new PutLifecycleHookRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 DefaultResult = "CONTINUE",
@@ -951,10 +937,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingPutNotificationConfiguration()
         {
-            #region autoscaling-put-notification-configuration-1
+            #region PutNotificationConfiguration-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.PutNotificationConfiguration(new PutNotificationConfigurationRequest 
+            var response = client.PutNotificationConfiguration(new PutNotificationConfigurationRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 NotificationTypes = new List<string> {
@@ -969,10 +955,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingPutScalingPolicy()
         {
-            #region autoscaling-put-scaling-policy-1
+            #region PutScalingPolicy-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.PutScalingPolicy(new PutScalingPolicyRequest 
+            var response = client.PutScalingPolicy(new PutScalingPolicyRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 PolicyName = "alb1000-target-tracking-scaling-policy",
@@ -994,10 +980,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingPutScheduledUpdateGroupAction()
         {
-            #region autoscaling-put-scheduled-update-group-action-1
+            #region PutScheduledUpdateGroupAction-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.PutScheduledUpdateGroupAction(new PutScheduledUpdateGroupActionRequest 
+            var response = client.PutScheduledUpdateGroupAction(new PutScheduledUpdateGroupActionRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 DesiredCapacity = 4,
@@ -1014,10 +1000,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingPutWarmPool()
         {
-            #region to-add-a-warm-pool-to-an-auto-scaling-group-1617818810383
+            #region PutWarmPool-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.PutWarmPool(new PutWarmPoolRequest 
+            var response = client.PutWarmPool(new PutWarmPoolRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 InstanceReusePolicy = new InstanceReusePolicy { ReuseOnScaleIn = true },
@@ -1031,10 +1017,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingRecordLifecycleActionHeartbeat()
         {
-            #region autoscaling-record-lifecycle-action-heartbeat-1
+            #region RecordLifecycleActionHeartbeat-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.RecordLifecycleActionHeartbeat(new RecordLifecycleActionHeartbeatRequest 
+            var response = client.RecordLifecycleActionHeartbeat(new RecordLifecycleActionHeartbeatRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 LifecycleActionToken = "bcd2f1b8-9a78-44d3-8a7a-4dd07d7cf635",
@@ -1047,10 +1033,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingResumeProcesses()
         {
-            #region autoscaling-resume-processes-1
+            #region ResumeProcesses-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.ResumeProcesses(new ResumeProcessesRequest 
+            var response = client.ResumeProcesses(new ResumeProcessesRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 ScalingProcesses = new List<string> {
@@ -1064,10 +1050,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingSetDesiredCapacity()
         {
-            #region autoscaling-set-desired-capacity-1
+            #region SetDesiredCapacity-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.SetDesiredCapacity(new SetDesiredCapacityRequest 
+            var response = client.SetDesiredCapacity(new SetDesiredCapacityRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 DesiredCapacity = 2,
@@ -1080,10 +1066,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingSetInstanceHealth()
         {
-            #region autoscaling-set-instance-health-1
+            #region SetInstanceHealth-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.SetInstanceHealth(new SetInstanceHealthRequest 
+            var response = client.SetInstanceHealth(new SetInstanceHealthRequest
             {
                 HealthStatus = "Unhealthy",
                 InstanceId = "i-93633f9b"
@@ -1095,10 +1081,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingSetInstanceProtection()
         {
-            #region autoscaling-set-instance-protection-1
+            #region SetInstanceProtection-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.SetInstanceProtection(new SetInstanceProtectionRequest 
+            var response = client.SetInstanceProtection(new SetInstanceProtectionRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 InstanceIds = new List<string> {
@@ -1113,10 +1099,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingSetInstanceProtection()
         {
-            #region autoscaling-set-instance-protection-2
+            #region SetInstanceProtection-2
 
             var client = new AmazonAutoScalingClient();
-            var response = client.SetInstanceProtection(new SetInstanceProtectionRequest 
+            var response = client.SetInstanceProtection(new SetInstanceProtectionRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 InstanceIds = new List<string> {
@@ -1131,10 +1117,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingStartInstanceRefresh()
         {
-            #region to-start-an-instance-refresh-1592957271522
+            #region StartInstanceRefresh-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.StartInstanceRefresh(new StartInstanceRefreshRequest 
+            var response = client.StartInstanceRefresh(new StartInstanceRefreshRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 DesiredConfiguration = new DesiredConfiguration { LaunchTemplate = new LaunchTemplateSpecification {
@@ -1159,10 +1145,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingSuspendProcesses()
         {
-            #region autoscaling-suspend-processes-1
+            #region SuspendProcesses-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.SuspendProcesses(new SuspendProcessesRequest 
+            var response = client.SuspendProcesses(new SuspendProcessesRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 ScalingProcesses = new List<string> {
@@ -1176,10 +1162,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingTerminateInstanceInAutoScalingGroup()
         {
-            #region autoscaling-terminate-instance-in-auto-scaling-group-1
+            #region TerminateInstanceInAutoScalingGroup-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.TerminateInstanceInAutoScalingGroup(new TerminateInstanceInAutoScalingGroupRequest 
+            var response = client.TerminateInstanceInAutoScalingGroup(new TerminateInstanceInAutoScalingGroupRequest
             {
                 InstanceId = "i-93633f9b",
                 ShouldDecrementDesiredCapacity = false
@@ -1191,10 +1177,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingTerminateInstanceInAutoScalingGroup()
         {
-            #region autoscaling-terminate-instance-in-auto-scaling-group-2
+            #region TerminateInstanceInAutoScalingGroup-2
 
             var client = new AmazonAutoScalingClient();
-            var response = client.TerminateInstanceInAutoScalingGroup(new TerminateInstanceInAutoScalingGroupRequest 
+            var response = client.TerminateInstanceInAutoScalingGroup(new TerminateInstanceInAutoScalingGroupRequest
             {
                 AutoScalingGroupName = "my-asg",
                 InstanceIds = new List<string> {
@@ -1211,10 +1197,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingUpdateAutoScalingGroup()
         {
-            #region autoscaling-update-auto-scaling-group-1
+            #region UpdateAutoScalingGroup-1
 
             var client = new AmazonAutoScalingClient();
-            var response = client.UpdateAutoScalingGroup(new UpdateAutoScalingGroupRequest 
+            var response = client.UpdateAutoScalingGroup(new UpdateAutoScalingGroupRequest
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 LaunchTemplate = new LaunchTemplateSpecification {
@@ -1230,13 +1216,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

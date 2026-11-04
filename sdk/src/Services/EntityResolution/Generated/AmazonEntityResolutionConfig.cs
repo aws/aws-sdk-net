@@ -27,7 +27,7 @@ using Amazon.EntityResolution.Internal;
 namespace Amazon.EntityResolution
 {
     /// <summary>
-    /// Configuration for accessing Amazon EntityResolution service
+    /// Configuration for accessing AWS EntityResolution
     /// </summary>
     public partial class AmazonEntityResolutionConfig : ClientConfig
     {

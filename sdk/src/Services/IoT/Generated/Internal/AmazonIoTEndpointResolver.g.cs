@@ -31,7 +31,7 @@ using Amazon.IoT.Endpoints;
 namespace Amazon.IoT.Internal
 {
     /// <summary>
-    /// Amazon IoT endpoint resolver.
+    /// AWS IoT endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IoT service requests.
     /// <para />

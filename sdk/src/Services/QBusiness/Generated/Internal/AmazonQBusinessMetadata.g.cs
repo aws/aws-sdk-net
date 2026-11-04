@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon QBusiness service
+    /// Service metadata for QBusiness
     /// </summary>
     public partial class AmazonQBusinessMetadata : IServiceMetadata
     {

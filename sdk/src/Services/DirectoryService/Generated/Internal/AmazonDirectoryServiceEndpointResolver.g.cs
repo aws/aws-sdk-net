@@ -31,7 +31,7 @@ using Amazon.DirectoryService.Endpoints;
 namespace Amazon.DirectoryService.Internal
 {
     /// <summary>
-    /// Amazon DirectoryService endpoint resolver.
+    /// AWS Directory Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DirectoryService service requests.
     /// <para />

@@ -27,7 +27,7 @@ using Amazon.PartnerCentralChannel.Internal;
 namespace Amazon.PartnerCentralChannel
 {
     /// <summary>
-    /// Configuration for accessing Amazon PartnerCentralChannel service
+    /// Configuration for accessing Partner Central Channel API
     /// </summary>
     public partial class AmazonPartnerCentralChannelConfig : ClientConfig
     {

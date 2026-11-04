@@ -26,7 +26,7 @@ using Amazon.Schemas.Endpoints;
 namespace Amazon.Schemas.Internal
 {
     /// <summary>
-    /// Amazon Schemas endpoint provider.
+    /// Schemas endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SchemasEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

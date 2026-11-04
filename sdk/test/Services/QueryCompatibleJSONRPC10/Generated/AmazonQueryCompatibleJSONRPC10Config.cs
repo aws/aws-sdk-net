@@ -27,7 +27,7 @@ using Amazon.QueryCompatibleJSONRPC10.Internal;
 namespace Amazon.QueryCompatibleJSONRPC10
 {
     /// <summary>
-    /// Configuration for accessing Amazon QueryCompatibleJSONRPC10 service
+    /// Configuration for accessing Query Compatible Json 1.0 Protocol Service
     /// </summary>
     public partial class AmazonQueryCompatibleJSONRPC10Config : ClientConfig
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PcaConnectorScep.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon PcaConnectorScep service
+    /// Service metadata for Private CA Connector for SCEP
     /// </summary>
     public partial class AmazonPcaConnectorScepMetadata : IServiceMetadata
     {

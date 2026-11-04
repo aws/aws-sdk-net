@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ARCRegionswitch
 {
     /// <summary>
-    /// Configuration for accessing Amazon ARCRegionswitch service
+    /// Configuration for accessing ARC - Region switch
     /// </summary>
     public static class AmazonARCRegionswitchDefaultConfiguration
     {

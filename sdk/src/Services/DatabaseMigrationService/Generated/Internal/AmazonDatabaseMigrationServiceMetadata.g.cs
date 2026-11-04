@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DatabaseMigrationService service
+    /// Service metadata for AWS Database Migration Service
     /// </summary>
     public partial class AmazonDatabaseMigrationServiceMetadata : IServiceMetadata
     {

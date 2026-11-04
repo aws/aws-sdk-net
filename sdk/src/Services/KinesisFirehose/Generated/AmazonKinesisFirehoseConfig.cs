@@ -27,7 +27,7 @@ using Amazon.KinesisFirehose.Internal;
 namespace Amazon.KinesisFirehose
 {
     /// <summary>
-    /// Configuration for accessing Amazon KinesisFirehose service
+    /// Configuration for accessing Amazon Kinesis Firehose
     /// </summary>
     public partial class AmazonKinesisFirehoseConfig : ClientConfig
     {

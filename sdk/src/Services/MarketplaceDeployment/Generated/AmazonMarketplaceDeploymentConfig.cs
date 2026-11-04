@@ -27,7 +27,7 @@ using Amazon.MarketplaceDeployment.Internal;
 namespace Amazon.MarketplaceDeployment
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceDeployment service
+    /// Configuration for accessing AWS Marketplace Deployment Service
     /// </summary>
     public partial class AmazonMarketplaceDeploymentConfig : ClientConfig
     {

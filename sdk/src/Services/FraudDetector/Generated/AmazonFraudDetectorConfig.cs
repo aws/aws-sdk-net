@@ -27,7 +27,7 @@ using Amazon.FraudDetector.Internal;
 namespace Amazon.FraudDetector
 {
     /// <summary>
-    /// Configuration for accessing Amazon FraudDetector service
+    /// Configuration for accessing Amazon Fraud Detector
     /// </summary>
     public partial class AmazonFraudDetectorConfig : ClientConfig
     {

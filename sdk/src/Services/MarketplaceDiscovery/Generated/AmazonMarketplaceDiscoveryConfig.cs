@@ -27,7 +27,7 @@ using Amazon.MarketplaceDiscovery.Internal;
 namespace Amazon.MarketplaceDiscovery
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceDiscovery service
+    /// Configuration for accessing AWS Marketplace Discovery
     /// </summary>
     public partial class AmazonMarketplaceDiscoveryConfig : ClientConfig
     {

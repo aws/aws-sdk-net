@@ -26,7 +26,7 @@ using Amazon.Scheduler.Endpoints;
 namespace Amazon.Scheduler.Internal
 {
     /// <summary>
-    /// Amazon Scheduler endpoint provider.
+    /// Amazon EventBridge Scheduler endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SchedulerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

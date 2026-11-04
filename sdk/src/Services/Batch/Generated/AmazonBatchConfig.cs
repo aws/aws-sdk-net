@@ -27,7 +27,7 @@ using Amazon.Batch.Internal;
 namespace Amazon.Batch
 {
     /// <summary>
-    /// Configuration for accessing Amazon Batch service
+    /// Configuration for accessing AWS Batch
     /// </summary>
     public partial class AmazonBatchConfig : ClientConfig
     {

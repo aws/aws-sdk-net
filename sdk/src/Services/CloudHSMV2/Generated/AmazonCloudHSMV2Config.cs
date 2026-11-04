@@ -27,7 +27,7 @@ using Amazon.CloudHSMV2.Internal;
 namespace Amazon.CloudHSMV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudHSMV2 service
+    /// Configuration for accessing AWS CloudHSM V2
     /// </summary>
     public partial class AmazonCloudHSMV2Config : ClientConfig
     {

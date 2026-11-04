@@ -31,7 +31,7 @@ using Amazon.SSMIncidents.Endpoints;
 namespace Amazon.SSMIncidents.Internal
 {
     /// <summary>
-    /// Amazon SSMIncidents endpoint resolver.
+    /// AWS Systems Manager Incident Manager endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SSMIncidents service requests.
     /// <para />

@@ -27,7 +27,7 @@ using Amazon.AppFabric.Internal;
 namespace Amazon.AppFabric
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppFabric service
+    /// Configuration for accessing AppFabric
     /// </summary>
     public partial class AmazonAppFabricConfig : ClientConfig
     {

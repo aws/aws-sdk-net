@@ -27,7 +27,7 @@ using Amazon.PCS.Internal;
 namespace Amazon.PCS
 {
     /// <summary>
-    /// Configuration for accessing Amazon PCS service
+    /// Configuration for accessing AWS Parallel Computing Service
     /// </summary>
     public partial class AmazonPCSConfig : ClientConfig
     {

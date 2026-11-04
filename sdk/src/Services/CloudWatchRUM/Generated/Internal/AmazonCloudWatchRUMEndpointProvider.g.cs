@@ -26,7 +26,7 @@ using Amazon.CloudWatchRUM.Endpoints;
 namespace Amazon.CloudWatchRUM.Internal
 {
     /// <summary>
-    /// Amazon CloudWatchRUM endpoint provider.
+    /// CloudWatch RUM endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CloudWatchRUMEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

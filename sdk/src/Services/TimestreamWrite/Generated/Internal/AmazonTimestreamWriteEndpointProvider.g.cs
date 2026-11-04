@@ -26,7 +26,7 @@ using Amazon.TimestreamWrite.Endpoints;
 namespace Amazon.TimestreamWrite.Internal
 {
     /// <summary>
-    /// Amazon TimestreamWrite endpoint provider.
+    /// Amazon Timestream Write endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="TimestreamWriteEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Kinesis
 {
     /// <summary>
-    /// Configuration for accessing Amazon Kinesis service
+    /// Configuration for accessing Amazon Kinesis
     /// </summary>
     public static class AmazonKinesisDefaultConfiguration
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PersonalizeEvents.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon PersonalizeEvents service
+    /// Service metadata for Amazon Personalize Events
     /// </summary>
     public partial class AmazonPersonalizeEventsMetadata : IServiceMetadata
     {

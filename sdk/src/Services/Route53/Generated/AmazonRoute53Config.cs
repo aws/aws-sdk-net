@@ -28,7 +28,7 @@ using Amazon.Route53.Internal;
 namespace Amazon.Route53
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53 service
+    /// Configuration for accessing Amazon Route 53
     /// </summary>
     public partial class AmazonRoute53Config : ClientConfig
     {

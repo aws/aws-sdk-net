@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.IoT
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoT service
+    /// Configuration for accessing AWS IoT
     /// </summary>
     public static class AmazonIoTDefaultConfiguration
     {

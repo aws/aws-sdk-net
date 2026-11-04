@@ -27,7 +27,7 @@ using Amazon.BedrockAgentCore.Internal;
 namespace Amazon.BedrockAgentCore
 {
     /// <summary>
-    /// Configuration for accessing Amazon BedrockAgentCore service
+    /// Configuration for accessing Amazon Bedrock AgentCore
     /// </summary>
     public partial class AmazonBedrockAgentCoreConfig : ClientConfig
     {

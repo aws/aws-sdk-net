@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SSMQuickSetup
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSMQuickSetup service
+    /// Configuration for accessing AWS Systems Manager QuickSetup
     /// </summary>
     public static class AmazonSSMQuickSetupDefaultConfiguration
     {

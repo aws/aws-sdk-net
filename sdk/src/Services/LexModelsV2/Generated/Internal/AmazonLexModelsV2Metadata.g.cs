@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon LexModelsV2 service
+    /// Service metadata for Amazon Lex Model Building V2
     /// </summary>
     public partial class AmazonLexModelsV2Metadata : IServiceMetadata
     {

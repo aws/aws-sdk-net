@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SecurityHub
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecurityHub service
+    /// Configuration for accessing AWS SecurityHub
     /// </summary>
     public static class AmazonSecurityHubDefaultConfiguration
     {

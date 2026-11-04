@@ -27,7 +27,7 @@ using Amazon.FIS.Internal;
 namespace Amazon.FIS
 {
     /// <summary>
-    /// Configuration for accessing Amazon FIS service
+    /// Configuration for accessing AWS Fault Injection Simulator
     /// </summary>
     public partial class AmazonFISConfig : ClientConfig
     {

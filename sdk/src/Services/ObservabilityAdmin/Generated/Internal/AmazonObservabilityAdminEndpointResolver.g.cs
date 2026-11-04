@@ -31,7 +31,7 @@ using Amazon.ObservabilityAdmin.Endpoints;
 namespace Amazon.ObservabilityAdmin.Internal
 {
     /// <summary>
-    /// Amazon ObservabilityAdmin endpoint resolver.
+    /// CloudWatch Observability Admin Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ObservabilityAdmin service requests.
     /// <para />

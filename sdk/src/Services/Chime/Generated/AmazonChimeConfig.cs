@@ -27,7 +27,7 @@ using Amazon.Chime.Internal;
 namespace Amazon.Chime
 {
     /// <summary>
-    /// Configuration for accessing Amazon Chime service
+    /// Configuration for accessing Amazon Chime
     /// </summary>
     public partial class AmazonChimeConfig : ClientConfig
     {

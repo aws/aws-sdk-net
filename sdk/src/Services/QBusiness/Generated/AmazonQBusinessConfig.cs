@@ -27,7 +27,7 @@ using Amazon.QBusiness.Internal;
 namespace Amazon.QBusiness
 {
     /// <summary>
-    /// Configuration for accessing Amazon QBusiness service
+    /// Configuration for accessing QBusiness
     /// </summary>
     public partial class AmazonQBusinessConfig : ClientConfig
     {

@@ -26,7 +26,7 @@ using Amazon.SimpleEmailV2.Endpoints;
 namespace Amazon.SimpleEmailV2.Internal
 {
     /// <summary>
-    /// Amazon SimpleEmailServiceV2 endpoint provider.
+    /// Amazon Simple Email Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SimpleEmailServiceV2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

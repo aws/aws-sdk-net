@@ -27,7 +27,7 @@ using Amazon.Transfer.Internal;
 namespace Amazon.Transfer
 {
     /// <summary>
-    /// Configuration for accessing Amazon Transfer service
+    /// Configuration for accessing AWS Transfer Family
     /// </summary>
     public partial class AmazonTransferConfig : ClientConfig
     {

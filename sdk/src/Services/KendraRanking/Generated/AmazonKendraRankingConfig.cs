@@ -27,7 +27,7 @@ using Amazon.KendraRanking.Internal;
 namespace Amazon.KendraRanking
 {
     /// <summary>
-    /// Configuration for accessing Amazon KendraRanking service
+    /// Configuration for accessing Amazon Kendra Intelligent Ranking
     /// </summary>
     public partial class AmazonKendraRankingConfig : ClientConfig
     {

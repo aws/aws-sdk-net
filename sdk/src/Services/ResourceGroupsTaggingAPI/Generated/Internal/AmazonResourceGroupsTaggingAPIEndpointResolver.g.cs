@@ -31,7 +31,7 @@ using Amazon.ResourceGroupsTaggingAPI.Endpoints;
 namespace Amazon.ResourceGroupsTaggingAPI.Internal
 {
     /// <summary>
-    /// Amazon ResourceGroupsTaggingAPI endpoint resolver.
+    /// AWS Resource Groups Tagging API endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ResourceGroupsTaggingAPI service requests.
     /// <para />

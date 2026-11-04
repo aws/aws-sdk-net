@@ -27,7 +27,7 @@ using Amazon.BillingConductor.Internal;
 namespace Amazon.BillingConductor
 {
     /// <summary>
-    /// Configuration for accessing Amazon BillingConductor service
+    /// Configuration for accessing AWSBillingConductor
     /// </summary>
     public partial class AmazonBillingConductorConfig : ClientConfig
     {

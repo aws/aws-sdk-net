@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MarketplaceDiscovery service
+    /// Service metadata for AWS Marketplace Discovery
     /// </summary>
     public partial class AmazonMarketplaceDiscoveryMetadata : IServiceMetadata
     {

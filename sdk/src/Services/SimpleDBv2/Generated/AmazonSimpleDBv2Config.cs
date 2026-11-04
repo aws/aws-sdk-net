@@ -27,7 +27,7 @@ using Amazon.SimpleDBv2.Internal;
 namespace Amazon.SimpleDBv2
 {
     /// <summary>
-    /// Configuration for accessing Amazon SimpleDBv2 service
+    /// Configuration for accessing Amazon SimpleDB v2
     /// </summary>
     public partial class AmazonSimpleDBv2Config : ClientConfig
     {

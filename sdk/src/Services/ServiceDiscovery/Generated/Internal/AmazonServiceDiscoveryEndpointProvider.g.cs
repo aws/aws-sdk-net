@@ -26,7 +26,7 @@ using Amazon.ServiceDiscovery.Endpoints;
 namespace Amazon.ServiceDiscovery.Internal
 {
     /// <summary>
-    /// Amazon ServiceDiscovery endpoint provider.
+    /// AWS Cloud Map endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ServiceDiscoveryEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

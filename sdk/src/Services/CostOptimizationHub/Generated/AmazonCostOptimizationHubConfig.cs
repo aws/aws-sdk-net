@@ -27,7 +27,7 @@ using Amazon.CostOptimizationHub.Internal;
 namespace Amazon.CostOptimizationHub
 {
     /// <summary>
-    /// Configuration for accessing Amazon CostOptimizationHub service
+    /// Configuration for accessing Cost Optimization Hub
     /// </summary>
     public partial class AmazonCostOptimizationHubConfig : ClientConfig
     {

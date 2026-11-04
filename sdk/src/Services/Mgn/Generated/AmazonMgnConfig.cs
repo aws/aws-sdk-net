@@ -27,7 +27,7 @@ using Amazon.Mgn.Internal;
 namespace Amazon.Mgn
 {
     /// <summary>
-    /// Configuration for accessing Amazon Mgn service
+    /// Configuration for accessing Application Migration Service
     /// </summary>
     public partial class AmazonMgnConfig : ClientConfig
     {

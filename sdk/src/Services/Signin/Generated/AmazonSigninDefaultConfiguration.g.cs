@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Signin
 {
     /// <summary>
-    /// Configuration for accessing Amazon Signin service
+    /// Configuration for accessing AWS Sign-In Service
     /// </summary>
     public static class AmazonSigninDefaultConfiguration
     {

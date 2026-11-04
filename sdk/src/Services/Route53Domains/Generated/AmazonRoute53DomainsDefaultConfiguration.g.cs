@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Route53Domains
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53Domains service
+    /// Configuration for accessing Amazon Route 53 Domains
     /// </summary>
     public static class AmazonRoute53DomainsDefaultConfiguration
     {

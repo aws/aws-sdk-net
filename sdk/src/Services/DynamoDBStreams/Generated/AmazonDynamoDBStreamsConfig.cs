@@ -27,7 +27,7 @@ using Amazon.DynamoDBStreams.Internal;
 namespace Amazon.DynamoDBStreams
 {
     /// <summary>
-    /// Configuration for accessing Amazon DynamoDBStreams service
+    /// Configuration for accessing Amazon DynamoDB Streams
     /// </summary>
     public partial class AmazonDynamoDBStreamsConfig : ClientConfig
     {

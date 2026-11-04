@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CloudWatchLogs service
+    /// Service metadata for Amazon CloudWatch Logs
     /// </summary>
     public partial class AmazonCloudWatchLogsMetadata : IServiceMetadata
     {

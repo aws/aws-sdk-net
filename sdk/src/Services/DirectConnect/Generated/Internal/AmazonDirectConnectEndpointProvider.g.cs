@@ -26,7 +26,7 @@ using Amazon.DirectConnect.Endpoints;
 namespace Amazon.DirectConnect.Internal
 {
     /// <summary>
-    /// Amazon DirectConnect endpoint provider.
+    /// AWS Direct Connect endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DirectConnectEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

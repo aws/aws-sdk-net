@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Greengrass service
+    /// Service metadata for AWS Greengrass
     /// </summary>
     public partial class AmazonGreengrassMetadata : IServiceMetadata
     {

@@ -26,7 +26,7 @@ using Amazon.CodePipeline.Endpoints;
 namespace Amazon.CodePipeline.Internal
 {
     /// <summary>
-    /// Amazon CodePipeline endpoint provider.
+    /// AWS CodePipeline endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CodePipelineEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

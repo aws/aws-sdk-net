@@ -31,7 +31,7 @@ using Amazon.Batch.Endpoints;
 namespace Amazon.Batch.Internal
 {
     /// <summary>
-    /// Amazon Batch endpoint resolver.
+    /// AWS Batch endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Batch service requests.
     /// <para />

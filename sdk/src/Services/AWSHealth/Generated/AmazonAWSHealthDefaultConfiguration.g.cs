@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AWSHealth
 {
     /// <summary>
-    /// Configuration for accessing Amazon AWSHealth service
+    /// Configuration for accessing AWS Health APIs and Notifications
     /// </summary>
     public static class AmazonAWSHealthDefaultConfiguration
     {

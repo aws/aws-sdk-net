@@ -28,7 +28,7 @@ using Amazon.EC2.Internal;
 namespace Amazon.EC2
 {
     /// <summary>
-    /// Configuration for accessing Amazon EC2 service
+    /// Configuration for accessing Amazon Elastic Compute Cloud
     /// </summary>
     public partial class AmazonEC2Config : ClientConfig
     {

@@ -27,7 +27,7 @@ using Amazon.KinesisVideoSignalingChannels.Internal;
 namespace Amazon.KinesisVideoSignalingChannels
 {
     /// <summary>
-    /// Configuration for accessing Amazon KinesisVideoSignalingChannels service
+    /// Configuration for accessing Amazon Kinesis Video Signaling Channels
     /// </summary>
     public partial class AmazonKinesisVideoSignalingChannelsConfig : ClientConfig
     {

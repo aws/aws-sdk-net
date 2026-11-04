@@ -31,7 +31,7 @@ using Amazon.WAF.Endpoints;
 namespace Amazon.WAF.Internal
 {
     /// <summary>
-    /// Amazon WAF endpoint resolver.
+    /// AWS WAF endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for WAF service requests.
     /// <para />

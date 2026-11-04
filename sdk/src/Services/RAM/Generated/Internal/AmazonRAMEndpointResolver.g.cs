@@ -31,7 +31,7 @@ using Amazon.RAM.Endpoints;
 namespace Amazon.RAM.Internal
 {
     /// <summary>
-    /// Amazon RAM endpoint resolver.
+    /// AWS Resource Access Manager endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for RAM service requests.
     /// <para />

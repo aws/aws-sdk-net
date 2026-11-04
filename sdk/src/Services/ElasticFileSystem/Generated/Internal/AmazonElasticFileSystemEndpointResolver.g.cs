@@ -31,7 +31,7 @@ using Amazon.ElasticFileSystem.Endpoints;
 namespace Amazon.ElasticFileSystem.Internal
 {
     /// <summary>
-    /// Amazon ElasticFileSystem endpoint resolver.
+    /// Amazon Elastic File System endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ElasticFileSystem service requests.
     /// <para />

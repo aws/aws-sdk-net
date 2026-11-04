@@ -27,7 +27,7 @@ using Amazon.Route53Profiles.Internal;
 namespace Amazon.Route53Profiles
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53Profiles service
+    /// Configuration for accessing Route 53 Profiles
     /// </summary>
     public partial class AmazonRoute53ProfilesConfig : ClientConfig
     {

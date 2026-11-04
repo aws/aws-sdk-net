@@ -27,7 +27,7 @@ using Amazon.QuickSight.Internal;
 namespace Amazon.QuickSight
 {
     /// <summary>
-    /// Configuration for accessing Amazon QuickSight service
+    /// Configuration for accessing Amazon QuickSight
     /// </summary>
     public partial class AmazonQuickSightConfig : ClientConfig
     {

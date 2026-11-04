@@ -27,7 +27,7 @@ using Amazon.EMRServerless.Internal;
 namespace Amazon.EMRServerless
 {
     /// <summary>
-    /// Configuration for accessing Amazon EMRServerless service
+    /// Configuration for accessing EMR Serverless
     /// </summary>
     public partial class AmazonEMRServerlessConfig : ClientConfig
     {

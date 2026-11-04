@@ -26,7 +26,7 @@ using Amazon.ManagedGrafana.Endpoints;
 namespace Amazon.ManagedGrafana.Internal
 {
     /// <summary>
-    /// Amazon ManagedGrafana endpoint provider.
+    /// Amazon Managed Grafana endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ManagedGrafanaEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

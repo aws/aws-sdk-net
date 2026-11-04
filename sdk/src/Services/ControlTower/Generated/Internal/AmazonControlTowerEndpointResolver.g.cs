@@ -31,7 +31,7 @@ using Amazon.ControlTower.Endpoints;
 namespace Amazon.ControlTower.Internal
 {
     /// <summary>
-    /// Amazon ControlTower endpoint resolver.
+    /// AWS Control Tower endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ControlTower service requests.
     /// <para />

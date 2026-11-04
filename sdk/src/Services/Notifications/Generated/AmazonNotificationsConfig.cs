@@ -27,7 +27,7 @@ using Amazon.Notifications.Internal;
 namespace Amazon.Notifications
 {
     /// <summary>
-    /// Configuration for accessing Amazon Notifications service
+    /// Configuration for accessing AWS User Notifications
     /// </summary>
     public partial class AmazonNotificationsConfig : ClientConfig
     {

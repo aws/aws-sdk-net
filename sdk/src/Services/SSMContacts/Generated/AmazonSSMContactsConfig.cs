@@ -27,7 +27,7 @@ using Amazon.SSMContacts.Internal;
 namespace Amazon.SSMContacts
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSMContacts service
+    /// Configuration for accessing AWS Systems Manager Incident Manager Contacts
     /// </summary>
     public partial class AmazonSSMContactsConfig : ClientConfig
     {

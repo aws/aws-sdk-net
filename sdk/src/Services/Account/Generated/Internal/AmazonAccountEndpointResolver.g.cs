@@ -31,7 +31,7 @@ using Amazon.Account.Endpoints;
 namespace Amazon.Account.Internal
 {
     /// <summary>
-    /// Amazon Account endpoint resolver.
+    /// AWS Account endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Account service requests.
     /// <para />

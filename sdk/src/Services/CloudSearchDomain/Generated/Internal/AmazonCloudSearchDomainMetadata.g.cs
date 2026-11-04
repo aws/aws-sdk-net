@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearchDomain.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CloudSearchDomain service
+    /// Service metadata for Amazon CloudSearch Domain
     /// </summary>
     public partial class AmazonCloudSearchDomainMetadata : IServiceMetadata
     {

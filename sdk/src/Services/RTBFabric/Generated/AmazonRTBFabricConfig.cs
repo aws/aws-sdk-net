@@ -27,7 +27,7 @@ using Amazon.RTBFabric.Internal;
 namespace Amazon.RTBFabric
 {
     /// <summary>
-    /// Configuration for accessing Amazon RTBFabric service
+    /// Configuration for accessing RTBFabric
     /// </summary>
     public partial class AmazonRTBFabricConfig : ClientConfig
     {

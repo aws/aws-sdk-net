@@ -27,7 +27,7 @@ using Amazon.Elasticsearch.Internal;
 namespace Amazon.Elasticsearch
 {
     /// <summary>
-    /// Configuration for accessing Amazon Elasticsearch service
+    /// Configuration for accessing Amazon Elasticsearch Service
     /// </summary>
     public partial class AmazonElasticsearchConfig : ClientConfig
     {

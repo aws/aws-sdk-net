@@ -31,7 +31,7 @@ using Amazon.NeptuneGraph.Endpoints;
 namespace Amazon.NeptuneGraph.Internal
 {
     /// <summary>
-    /// Amazon NeptuneGraph endpoint resolver.
+    /// Amazon Neptune Graph endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for NeptuneGraph service requests.
     /// <para />

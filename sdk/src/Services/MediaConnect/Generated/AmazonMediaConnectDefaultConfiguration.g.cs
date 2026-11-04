@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MediaConnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaConnect service
+    /// Configuration for accessing AWS MediaConnect
     /// </summary>
     public static class AmazonMediaConnectDefaultConfiguration
     {

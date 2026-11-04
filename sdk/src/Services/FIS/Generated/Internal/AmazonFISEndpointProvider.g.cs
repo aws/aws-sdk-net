@@ -26,7 +26,7 @@ using Amazon.FIS.Endpoints;
 namespace Amazon.FIS.Internal
 {
     /// <summary>
-    /// Amazon FIS endpoint provider.
+    /// AWS Fault Injection Simulator endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="FISEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

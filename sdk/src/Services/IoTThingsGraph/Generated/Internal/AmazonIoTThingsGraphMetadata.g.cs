@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTThingsGraph.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IoTThingsGraph service
+    /// Service metadata for AWS IoT Things Graph
     /// </summary>
     public partial class AmazonIoTThingsGraphMetadata : IServiceMetadata
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.EndUserMessaging
 {
     /// <summary>
-    /// Configuration for accessing Amazon EndUserMessaging service
+    /// Configuration for accessing AWS End User Messaging
     /// </summary>
     public static class AmazonEndUserMessagingDefaultConfiguration
     {

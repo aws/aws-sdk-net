@@ -27,7 +27,7 @@ using Amazon.CloudHSM.Internal;
 namespace Amazon.CloudHSM
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudHSM service
+    /// Configuration for accessing Amazon CloudHSM
     /// </summary>
     public partial class AmazonCloudHSMConfig : ClientConfig
     {

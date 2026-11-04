@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostOptimizationHub.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CostOptimizationHub service
+    /// Service metadata for Cost Optimization Hub
     /// </summary>
     public partial class AmazonCostOptimizationHubMetadata : IServiceMetadata
     {

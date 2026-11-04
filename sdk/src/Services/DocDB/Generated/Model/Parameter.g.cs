@@ -1,0 +1,203 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.DocDB.Model
+{
+    /// <summary>
+    /// Detailed information about an individual parameter.
+    /// </summary>
+    public partial class Parameter
+    {
+        /// <summary>
+        /// Gets and sets the property AllowedValues. 
+        /// <para>
+        /// Specifies the valid range of values for the parameter.
+        /// </para>
+        /// </summary>
+        public string AllowedValues { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AllowedValues property is set.
+        /// </summary>
+        internal bool IsSetAllowedValues() => this.AllowedValues != null;
+
+        /// <summary>
+        /// Gets and sets the property ApplyMethod. 
+        /// <para>
+        /// Indicates when to apply parameter updates.
+        /// </para>
+        /// </summary>
+        public ApplyMethod ApplyMethod { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApplyMethod property is set.
+        /// </summary>
+        internal bool IsSetApplyMethod() => this.ApplyMethod != null;
+
+        /// <summary>
+        /// Gets and sets the property ApplyType. 
+        /// <para>
+        /// Specifies the engine-specific parameters type.
+        /// </para>
+        /// </summary>
+        public string ApplyType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApplyType property is set.
+        /// </summary>
+        internal bool IsSetApplyType() => this.ApplyType != null;
+
+        /// <summary>
+        /// Gets and sets the property DataType. 
+        /// <para>
+        /// Specifies the valid data type for the parameter.
+        /// </para>
+        /// </summary>
+        public string DataType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataType property is set.
+        /// </summary>
+        internal bool IsSetDataType() => this.DataType != null;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Provides a description of the parameter.
+        /// </para>
+        /// </summary>
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property IsModifiable. 
+        /// <para>
+        ///  Indicates whether (<c>true</c>) or not (<c>false</c>) the parameter can be modified.
+        /// Some parameters have security or operational implications that prevent them from being
+        /// changed. 
+        /// </para>
+        /// </summary>
+        public bool? IsModifiable { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IsModifiable property is set.
+        /// </summary>
+        internal bool IsSetIsModifiable() => this.IsModifiable.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MinimumEngineVersion. 
+        /// <para>
+        /// The earliest engine version to which the parameter can apply.
+        /// </para>
+        /// </summary>
+        public string MinimumEngineVersion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MinimumEngineVersion property is set.
+        /// </summary>
+        internal bool IsSetMinimumEngineVersion() => this.MinimumEngineVersion != null;
+
+        /// <summary>
+        /// Gets and sets the property ParameterName. 
+        /// <para>
+        /// Specifies the name of the parameter.
+        /// </para>
+        /// </summary>
+        public string ParameterName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ParameterName property is set.
+        /// </summary>
+        internal bool IsSetParameterName() => this.ParameterName != null;
+
+        /// <summary>
+        /// Gets and sets the property ParameterValue. 
+        /// <para>
+        /// Specifies the value of the parameter. Must be one or more of the cluster parameter's
+        /// <c>AllowedValues</c> in CSV format:
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>enabled</c>: The cluster accepts secure connections using TLS version 1.0 through
+        /// 1.3. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>disabled</c>: The cluster does not accept secure connections using TLS. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>fips-140-3</c>: The cluster only accepts secure connections per the requirements
+        /// of the Federal Information Processing Standards (FIPS) publication 140-3. Only supported
+        /// starting with Amazon DocumentDB 5.0 (engine version 3.0.3727) clusters in these regions:
+        /// ca-central-1, us-west-2, us-east-1, us-east-2, us-gov-east-1, us-gov-west-1.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>tls1.2+</c>: The cluster accepts secure connections using TLS version 1.2 and
+        /// above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980)
+        /// and Amazon DocumentDB 5.0 (engine version 3.0.11051).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>tls1.3+</c>: The cluster accepts secure connections using TLS version 1.3 and
+        /// above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980)
+        /// and Amazon DocumentDB 5.0 (engine version 3.0.11051).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ParameterValue { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ParameterValue property is set.
+        /// </summary>
+        internal bool IsSetParameterValue() => this.ParameterValue != null;
+
+        /// <summary>
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// Indicates the source of the parameter value.
+        /// </para>
+        /// </summary>
+        public string Source { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Source property is set.
+        /// </summary>
+        internal bool IsSetSource() => this.Source != null;
+    }
+}

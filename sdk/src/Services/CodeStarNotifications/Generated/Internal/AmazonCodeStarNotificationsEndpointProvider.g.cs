@@ -26,7 +26,7 @@ using Amazon.CodeStarNotifications.Endpoints;
 namespace Amazon.CodeStarNotifications.Internal
 {
     /// <summary>
-    /// Amazon CodeStarNotifications endpoint provider.
+    /// AWS CodeStar Notifications endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CodeStarNotificationsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

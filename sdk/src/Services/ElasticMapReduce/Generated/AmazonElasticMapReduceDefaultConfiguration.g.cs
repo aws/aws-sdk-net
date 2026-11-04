@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ElasticMapReduce
 {
     /// <summary>
-    /// Configuration for accessing Amazon ElasticMapReduce service
+    /// Configuration for accessing Amazon EMR
     /// </summary>
     public static class AmazonElasticMapReduceDefaultConfiguration
     {

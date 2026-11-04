@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "Subscribe", new Type[] { typeof(string), typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "Unsubscribe", new Type[] { typeof(string), });
         }
-        
+
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
         {
             Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);

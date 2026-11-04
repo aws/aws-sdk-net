@@ -27,7 +27,7 @@ using Amazon.TrustedAdvisor.Internal;
 namespace Amazon.TrustedAdvisor
 {
     /// <summary>
-    /// Configuration for accessing Amazon TrustedAdvisor service
+    /// Configuration for accessing TrustedAdvisor Public API
     /// </summary>
     public partial class AmazonTrustedAdvisorConfig : ClientConfig
     {

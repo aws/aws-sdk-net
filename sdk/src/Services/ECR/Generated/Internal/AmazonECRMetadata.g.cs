@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ECR service
+    /// Service metadata for Amazon Elastic Container Registry
     /// </summary>
     public partial class AmazonECRMetadata : IServiceMetadata
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Odb.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Odb service
+    /// Service metadata for odb
     /// </summary>
     public partial class AmazonOdbMetadata : IServiceMetadata
     {

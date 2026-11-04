@@ -31,7 +31,7 @@ using Amazon.ComprehendMedical.Endpoints;
 namespace Amazon.ComprehendMedical.Internal
 {
     /// <summary>
-    /// Amazon ComprehendMedical endpoint resolver.
+    /// AWS Comprehend Medical endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ComprehendMedical service requests.
     /// <para />

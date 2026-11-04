@@ -31,7 +31,7 @@ using Amazon.AppRunner.Endpoints;
 namespace Amazon.AppRunner.Internal
 {
     /// <summary>
-    /// Amazon AppRunner endpoint resolver.
+    /// AWS App Runner endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AppRunner service requests.
     /// <para />

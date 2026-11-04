@@ -31,7 +31,7 @@ using Amazon.SupportAuthZ.Endpoints;
 namespace Amazon.SupportAuthZ.Internal
 {
     /// <summary>
-    /// Amazon SupportAuthZ endpoint resolver.
+    /// SupportAuthZ endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SupportAuthZ service requests.
     /// <para />

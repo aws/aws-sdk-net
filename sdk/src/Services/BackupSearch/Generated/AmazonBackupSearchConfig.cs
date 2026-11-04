@@ -27,7 +27,7 @@ using Amazon.BackupSearch.Internal;
 namespace Amazon.BackupSearch
 {
     /// <summary>
-    /// Configuration for accessing Amazon BackupSearch service
+    /// Configuration for accessing AWS Backup Search
     /// </summary>
     public partial class AmazonBackupSearchConfig : ClientConfig
     {

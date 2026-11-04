@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2
 {
     /// <summary>
-    /// Configuration for accessing Amazon EC2 service
+    /// Configuration for accessing Amazon Elastic Compute Cloud
     /// </summary>
     public static class AmazonEC2DefaultConfiguration
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CodeDeploy service
+    /// Service metadata for AWS CodeDeploy
     /// </summary>
     public partial class AmazonCodeDeployMetadata : IServiceMetadata
     {

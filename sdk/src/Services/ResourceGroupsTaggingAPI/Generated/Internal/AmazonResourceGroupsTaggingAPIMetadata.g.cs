@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroupsTaggingAPI.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ResourceGroupsTaggingAPI service
+    /// Service metadata for AWS Resource Groups Tagging API
     /// </summary>
     public partial class AmazonResourceGroupsTaggingAPIMetadata : IServiceMetadata
     {

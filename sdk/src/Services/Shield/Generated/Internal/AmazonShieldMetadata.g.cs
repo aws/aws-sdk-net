@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Shield service
+    /// Service metadata for AWS Shield
     /// </summary>
     public partial class AmazonShieldMetadata : IServiceMetadata
     {

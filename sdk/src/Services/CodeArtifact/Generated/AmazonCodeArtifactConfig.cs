@@ -27,7 +27,7 @@ using Amazon.CodeArtifact.Internal;
 namespace Amazon.CodeArtifact
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeArtifact service
+    /// Configuration for accessing CodeArtifact
     /// </summary>
     public partial class AmazonCodeArtifactConfig : ClientConfig
     {

@@ -31,7 +31,7 @@ using Amazon.EMRServerless.Endpoints;
 namespace Amazon.EMRServerless.Internal
 {
     /// <summary>
-    /// Amazon EMRServerless endpoint resolver.
+    /// EMR Serverless endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for EMRServerless service requests.
     /// <para />

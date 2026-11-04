@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ApplicationSignals service
+    /// Service metadata for Amazon CloudWatch Application Signals
     /// </summary>
     public partial class AmazonApplicationSignalsMetadata : IServiceMetadata
     {

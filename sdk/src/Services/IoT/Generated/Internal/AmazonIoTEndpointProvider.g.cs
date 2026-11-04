@@ -26,7 +26,7 @@ using Amazon.IoT.Endpoints;
 namespace Amazon.IoT.Internal
 {
     /// <summary>
-    /// Amazon IoT endpoint provider.
+    /// AWS IoT endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IoTEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

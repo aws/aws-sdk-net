@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.StorageGateway
 {
     /// <summary>
-    /// Configuration for accessing Amazon StorageGateway service
+    /// Configuration for accessing AWS Storage Gateway
     /// </summary>
     public static class AmazonStorageGatewayDefaultConfiguration
     {

@@ -26,7 +26,7 @@ using Amazon.SimpleSystemsManagement.Endpoints;
 namespace Amazon.SimpleSystemsManagement.Internal
 {
     /// <summary>
-    /// Amazon SimpleSystemsManagement endpoint provider.
+    /// Amazon Simple Systems Manager (SSM) endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SimpleSystemsManagementEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

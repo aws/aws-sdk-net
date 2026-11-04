@@ -27,7 +27,7 @@ using Amazon.ApplicationInsights.Internal;
 namespace Amazon.ApplicationInsights
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApplicationInsights service
+    /// Configuration for accessing Amazon CloudWatch Application Insights
     /// </summary>
     public partial class AmazonApplicationInsightsConfig : ClientConfig
     {

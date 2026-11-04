@@ -26,7 +26,7 @@ using Amazon.DeviceFarm.Endpoints;
 namespace Amazon.DeviceFarm.Internal
 {
     /// <summary>
-    /// Amazon DeviceFarm endpoint provider.
+    /// AWS Device Farm endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DeviceFarmEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

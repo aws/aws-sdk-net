@@ -27,7 +27,7 @@ using Amazon.Imagebuilder.Internal;
 namespace Amazon.Imagebuilder
 {
     /// <summary>
-    /// Configuration for accessing Amazon Imagebuilder service
+    /// Configuration for accessing EC2 Image Builder
     /// </summary>
     public partial class AmazonImagebuilderConfig : ClientConfig
     {

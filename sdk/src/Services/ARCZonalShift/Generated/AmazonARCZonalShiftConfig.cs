@@ -27,7 +27,7 @@ using Amazon.ARCZonalShift.Internal;
 namespace Amazon.ARCZonalShift
 {
     /// <summary>
-    /// Configuration for accessing Amazon ARCZonalShift service
+    /// Configuration for accessing AWS ARC - Zonal Shift
     /// </summary>
     public partial class AmazonARCZonalShiftConfig : ClientConfig
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KafkaConnect.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon KafkaConnect service
+    /// Service metadata for Managed Streaming for Kafka Connect
     /// </summary>
     public partial class AmazonKafkaConnectMetadata : IServiceMetadata
     {

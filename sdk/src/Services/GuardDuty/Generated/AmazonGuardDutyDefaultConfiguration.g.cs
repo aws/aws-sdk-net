@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.GuardDuty
 {
     /// <summary>
-    /// Configuration for accessing Amazon GuardDuty service
+    /// Configuration for accessing Amazon GuardDuty
     /// </summary>
     public static class AmazonGuardDutyDefaultConfiguration
     {

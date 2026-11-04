@@ -31,7 +31,7 @@ using Amazon.DirectConnect.Endpoints;
 namespace Amazon.DirectConnect.Internal
 {
     /// <summary>
-    /// Amazon DirectConnect endpoint resolver.
+    /// AWS Direct Connect endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DirectConnect service requests.
     /// <para />

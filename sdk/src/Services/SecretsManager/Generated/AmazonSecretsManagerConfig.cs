@@ -27,7 +27,7 @@ using Amazon.SecretsManager.Internal;
 namespace Amazon.SecretsManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecretsManager service
+    /// Configuration for accessing AWS Secrets Manager
     /// </summary>
     public partial class AmazonSecretsManagerConfig : ClientConfig
     {

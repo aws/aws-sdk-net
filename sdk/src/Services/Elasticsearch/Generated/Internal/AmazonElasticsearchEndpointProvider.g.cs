@@ -26,7 +26,7 @@ using Amazon.Elasticsearch.Endpoints;
 namespace Amazon.Elasticsearch.Internal
 {
     /// <summary>
-    /// Amazon Elasticsearch endpoint provider.
+    /// Amazon Elasticsearch Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ElasticsearchEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

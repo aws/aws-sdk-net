@@ -27,7 +27,7 @@ using Amazon.MediaConnect.Internal;
 namespace Amazon.MediaConnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaConnect service
+    /// Configuration for accessing AWS MediaConnect
     /// </summary>
     public partial class AmazonMediaConnectConfig : ClientConfig
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AWSSupport
 {
     /// <summary>
-    /// Configuration for accessing Amazon AWSSupport service
+    /// Configuration for accessing AWS Support
     /// </summary>
     public static class AmazonAWSSupportDefaultConfiguration
     {

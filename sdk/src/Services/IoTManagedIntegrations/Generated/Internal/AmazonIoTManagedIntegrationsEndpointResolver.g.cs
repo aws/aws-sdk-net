@@ -31,7 +31,7 @@ using Amazon.IoTManagedIntegrations.Endpoints;
 namespace Amazon.IoTManagedIntegrations.Internal
 {
     /// <summary>
-    /// Amazon IoTManagedIntegrations endpoint resolver.
+    /// Managed integrations for AWS IoT Device Management endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IoTManagedIntegrations service requests.
     /// <para />

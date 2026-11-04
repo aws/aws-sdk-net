@@ -26,7 +26,7 @@ using Amazon.KinesisVideoSignalingChannels.Endpoints;
 namespace Amazon.KinesisVideoSignalingChannels.Internal
 {
     /// <summary>
-    /// Amazon KinesisVideoSignalingChannels endpoint provider.
+    /// Amazon Kinesis Video Signaling Channels endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="KinesisVideoSignalingChannelsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

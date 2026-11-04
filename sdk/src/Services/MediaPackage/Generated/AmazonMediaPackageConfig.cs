@@ -27,7 +27,7 @@ using Amazon.MediaPackage.Internal;
 namespace Amazon.MediaPackage
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaPackage service
+    /// Configuration for accessing AWS Elemental MediaPackage
     /// </summary>
     public partial class AmazonMediaPackageConfig : ClientConfig
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SQS service
+    /// Service metadata for Amazon Simple Queue Service
     /// </summary>
     public partial class AmazonSQSMetadata : IServiceMetadata
     {

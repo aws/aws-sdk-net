@@ -27,7 +27,7 @@ using Amazon.BCMPricingCalculator.Internal;
 namespace Amazon.BCMPricingCalculator
 {
     /// <summary>
-    /// Configuration for accessing Amazon BCMPricingCalculator service
+    /// Configuration for accessing AWS Billing and Cost Management Pricing Calculator
     /// </summary>
     public partial class AmazonBCMPricingCalculatorConfig : ClientConfig
     {

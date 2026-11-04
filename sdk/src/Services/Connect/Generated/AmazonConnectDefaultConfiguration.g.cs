@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Connect
 {
     /// <summary>
-    /// Configuration for accessing Amazon Connect service
+    /// Configuration for accessing Amazon Connect Service
     /// </summary>
     public static class AmazonConnectDefaultConfiguration
     {

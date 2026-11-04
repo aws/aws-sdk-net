@@ -26,7 +26,7 @@ using Amazon.Deadline.Endpoints;
 namespace Amazon.Deadline.Internal
 {
     /// <summary>
-    /// Amazon Deadline endpoint provider.
+    /// AWSDeadlineCloud endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DeadlineEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

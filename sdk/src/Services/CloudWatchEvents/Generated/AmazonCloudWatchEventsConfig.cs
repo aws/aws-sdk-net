@@ -27,7 +27,7 @@ using Amazon.CloudWatchEvents.Internal;
 namespace Amazon.CloudWatchEvents
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudWatchEvents service
+    /// Configuration for accessing Amazon CloudWatch Events
     /// </summary>
     public partial class AmazonCloudWatchEventsConfig : ClientConfig
     {

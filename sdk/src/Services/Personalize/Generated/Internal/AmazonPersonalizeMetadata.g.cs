@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Personalize service
+    /// Service metadata for Amazon Personalize
     /// </summary>
     public partial class AmazonPersonalizeMetadata : IServiceMetadata
     {

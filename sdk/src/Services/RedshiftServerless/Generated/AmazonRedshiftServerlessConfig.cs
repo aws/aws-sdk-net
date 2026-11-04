@@ -27,7 +27,7 @@ using Amazon.RedshiftServerless.Internal;
 namespace Amazon.RedshiftServerless
 {
     /// <summary>
-    /// Configuration for accessing Amazon RedshiftServerless service
+    /// Configuration for accessing Redshift Serverless
     /// </summary>
     public partial class AmazonRedshiftServerlessConfig : ClientConfig
     {

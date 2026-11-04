@@ -27,7 +27,7 @@ using Amazon.AppConfig.Internal;
 namespace Amazon.AppConfig
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppConfig service
+    /// Configuration for accessing Amazon AppConfig
     /// </summary>
     public partial class AmazonAppConfigConfig : ClientConfig
     {

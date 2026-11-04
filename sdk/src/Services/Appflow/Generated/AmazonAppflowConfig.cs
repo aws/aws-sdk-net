@@ -27,7 +27,7 @@ using Amazon.Appflow.Internal;
 namespace Amazon.Appflow
 {
     /// <summary>
-    /// Configuration for accessing Amazon Appflow service
+    /// Configuration for accessing Amazon Appflow
     /// </summary>
     public partial class AmazonAppflowConfig : ClientConfig
     {

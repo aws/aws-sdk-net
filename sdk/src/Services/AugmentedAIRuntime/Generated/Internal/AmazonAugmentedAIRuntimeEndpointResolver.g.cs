@@ -31,7 +31,7 @@ using Amazon.AugmentedAIRuntime.Endpoints;
 namespace Amazon.AugmentedAIRuntime.Internal
 {
     /// <summary>
-    /// Amazon AugmentedAIRuntime endpoint resolver.
+    /// Amazon Augmented AI Runtime endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AugmentedAIRuntime service requests.
     /// <para />

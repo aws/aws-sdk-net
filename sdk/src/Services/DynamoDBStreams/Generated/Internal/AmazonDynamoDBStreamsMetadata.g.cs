@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBStreams.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DynamoDBStreams service
+    /// Service metadata for Amazon DynamoDB Streams
     /// </summary>
     public partial class AmazonDynamoDBStreamsMetadata : IServiceMetadata
     {

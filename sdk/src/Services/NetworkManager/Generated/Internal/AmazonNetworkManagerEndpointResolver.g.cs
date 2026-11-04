@@ -31,7 +31,7 @@ using Amazon.NetworkManager.Endpoints;
 namespace Amazon.NetworkManager.Internal
 {
     /// <summary>
-    /// Amazon NetworkManager endpoint resolver.
+    /// AWS Network Manager endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for NetworkManager service requests.
     /// <para />

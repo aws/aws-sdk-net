@@ -31,7 +31,7 @@ using Amazon.NetworkFlowMonitor.Endpoints;
 namespace Amazon.NetworkFlowMonitor.Internal
 {
     /// <summary>
-    /// Amazon NetworkFlowMonitor endpoint resolver.
+    /// Network Flow Monitor endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for NetworkFlowMonitor service requests.
     /// <para />

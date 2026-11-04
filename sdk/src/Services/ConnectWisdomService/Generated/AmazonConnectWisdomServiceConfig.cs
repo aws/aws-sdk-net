@@ -27,7 +27,7 @@ using Amazon.ConnectWisdomService.Internal;
 namespace Amazon.ConnectWisdomService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectWisdomService service
+    /// Configuration for accessing Amazon Connect Wisdom Service
     /// </summary>
     public partial class AmazonConnectWisdomServiceConfig : ClientConfig
     {

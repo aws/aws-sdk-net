@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BackupGateway.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon BackupGateway service
+    /// Service metadata for AWS Backup Gateway
     /// </summary>
     public partial class AmazonBackupGatewayMetadata : IServiceMetadata
     {

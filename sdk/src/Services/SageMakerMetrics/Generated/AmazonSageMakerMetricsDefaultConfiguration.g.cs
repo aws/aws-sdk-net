@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SageMakerMetrics
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMakerMetrics service
+    /// Configuration for accessing Amazon SageMaker Metrics Service
     /// </summary>
     public static class AmazonSageMakerMetricsDefaultConfiguration
     {

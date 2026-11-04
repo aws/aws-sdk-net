@@ -31,7 +31,7 @@ using Amazon.S3Outposts.Endpoints;
 namespace Amazon.S3Outposts.Internal
 {
     /// <summary>
-    /// Amazon S3Outposts endpoint resolver.
+    /// Amazon S3 on Outposts endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for S3Outposts service requests.
     /// <para />

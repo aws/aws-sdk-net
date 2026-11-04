@@ -31,7 +31,7 @@ using Amazon.CloudWatchLogs.Endpoints;
 namespace Amazon.CloudWatchLogs.Internal
 {
     /// <summary>
-    /// Amazon CloudWatchLogs endpoint resolver.
+    /// Amazon CloudWatch Logs endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CloudWatchLogs service requests.
     /// <para />

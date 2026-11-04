@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AppIntegrationsService
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppIntegrationsService service
+    /// Configuration for accessing Amazon AppIntegrations Service
     /// </summary>
     public static class AmazonAppIntegrationsServiceDefaultConfiguration
     {

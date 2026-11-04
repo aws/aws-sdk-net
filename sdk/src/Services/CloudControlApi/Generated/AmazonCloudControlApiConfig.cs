@@ -27,7 +27,7 @@ using Amazon.CloudControlApi.Internal;
 namespace Amazon.CloudControlApi
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudControlApi service
+    /// Configuration for accessing AWS Cloud Control API
     /// </summary>
     public partial class AmazonCloudControlApiConfig : ClientConfig
     {

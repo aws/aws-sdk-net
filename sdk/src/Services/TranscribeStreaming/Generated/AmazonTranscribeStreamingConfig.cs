@@ -27,7 +27,7 @@ using Amazon.TranscribeStreaming.Internal;
 namespace Amazon.TranscribeStreaming
 {
     /// <summary>
-    /// Configuration for accessing Amazon TranscribeStreaming service
+    /// Configuration for accessing Amazon Transcribe Streaming Service
     /// </summary>
     public partial class AmazonTranscribeStreamingConfig : ClientConfig
     {

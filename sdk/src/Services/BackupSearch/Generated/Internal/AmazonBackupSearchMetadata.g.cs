@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BackupSearch.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon BackupSearch service
+    /// Service metadata for AWS Backup Search
     /// </summary>
     public partial class AmazonBackupSearchMetadata : IServiceMetadata
     {

@@ -27,7 +27,7 @@ using Amazon.CostAndUsageReport.Internal;
 namespace Amazon.CostAndUsageReport
 {
     /// <summary>
-    /// Configuration for accessing Amazon CostAndUsageReport service
+    /// Configuration for accessing AWS Cost and Usage Report Service
     /// </summary>
     public partial class AmazonCostAndUsageReportConfig : ClientConfig
     {

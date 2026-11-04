@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Pinpoint service
+    /// Service metadata for Amazon Pinpoint
     /// </summary>
     public partial class AmazonPinpointMetadata : IServiceMetadata
     {

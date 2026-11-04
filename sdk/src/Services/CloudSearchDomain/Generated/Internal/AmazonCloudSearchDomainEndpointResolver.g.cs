@@ -31,7 +31,7 @@ using Amazon.CloudSearchDomain.Endpoints;
 namespace Amazon.CloudSearchDomain.Internal
 {
     /// <summary>
-    /// Amazon CloudSearchDomain endpoint resolver.
+    /// Amazon CloudSearch Domain endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CloudSearchDomain service requests.
     /// <para />

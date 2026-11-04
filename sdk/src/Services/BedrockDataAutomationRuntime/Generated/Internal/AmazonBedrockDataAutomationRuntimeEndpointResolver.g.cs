@@ -31,7 +31,7 @@ using Amazon.BedrockDataAutomationRuntime.Endpoints;
 namespace Amazon.BedrockDataAutomationRuntime.Internal
 {
     /// <summary>
-    /// Amazon BedrockDataAutomationRuntime endpoint resolver.
+    /// Runtime for Amazon Bedrock Data Automation endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for BedrockDataAutomationRuntime service requests.
     /// <para />

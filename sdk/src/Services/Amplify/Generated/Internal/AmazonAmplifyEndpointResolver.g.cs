@@ -31,7 +31,7 @@ using Amazon.Amplify.Endpoints;
 namespace Amazon.Amplify.Internal
 {
     /// <summary>
-    /// Amazon Amplify endpoint resolver.
+    /// AWS Amplify endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Amplify service requests.
     /// <para />

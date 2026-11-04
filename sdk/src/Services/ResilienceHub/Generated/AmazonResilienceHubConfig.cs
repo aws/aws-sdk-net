@@ -27,7 +27,7 @@ using Amazon.ResilienceHub.Internal;
 namespace Amazon.ResilienceHub
 {
     /// <summary>
-    /// Configuration for accessing Amazon ResilienceHub service
+    /// Configuration for accessing AWS Resilience Hub
     /// </summary>
     public partial class AmazonResilienceHubConfig : ClientConfig
     {

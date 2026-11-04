@@ -27,7 +27,7 @@ using Amazon.SSMQuickSetup.Internal;
 namespace Amazon.SSMQuickSetup
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSMQuickSetup service
+    /// Configuration for accessing AWS Systems Manager QuickSetup
     /// </summary>
     public partial class AmazonSSMQuickSetupConfig : ClientConfig
     {

@@ -31,7 +31,7 @@ using Amazon.TimestreamWrite.Endpoints;
 namespace Amazon.TimestreamWrite.Internal
 {
     /// <summary>
-    /// Amazon TimestreamWrite endpoint resolver.
+    /// Amazon Timestream Write endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for TimestreamWrite service requests.
     /// <para />

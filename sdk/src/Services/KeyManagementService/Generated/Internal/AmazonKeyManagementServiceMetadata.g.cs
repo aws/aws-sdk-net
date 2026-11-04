@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon KeyManagementService service
+    /// Service metadata for AWS Key Management Service
     /// </summary>
     public partial class AmazonKeyManagementServiceMetadata : IServiceMetadata
     {

@@ -31,7 +31,7 @@ using Amazon.GroundStation.Endpoints;
 namespace Amazon.GroundStation.Internal
 {
     /// <summary>
-    /// Amazon GroundStation endpoint resolver.
+    /// AWS Ground Station endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for GroundStation service requests.
     /// <para />

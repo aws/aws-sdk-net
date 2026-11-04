@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RestJsonProtocol.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon RestJsonProtocol service
+    /// Service metadata for Sample Rest Json Protocol Service
     /// </summary>
     public partial class AmazonRestJsonProtocolMetadata : IServiceMetadata
     {

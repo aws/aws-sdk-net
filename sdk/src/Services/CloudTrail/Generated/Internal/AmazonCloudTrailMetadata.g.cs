@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CloudTrail service
+    /// Service metadata for AWS CloudTrail
     /// </summary>
     public partial class AmazonCloudTrailMetadata : IServiceMetadata
     {

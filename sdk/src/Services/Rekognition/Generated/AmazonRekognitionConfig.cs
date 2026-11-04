@@ -27,7 +27,7 @@ using Amazon.Rekognition.Internal;
 namespace Amazon.Rekognition
 {
     /// <summary>
-    /// Configuration for accessing Amazon Rekognition service
+    /// Configuration for accessing Amazon Rekognition
     /// </summary>
     public partial class AmazonRekognitionConfig : ClientConfig
     {

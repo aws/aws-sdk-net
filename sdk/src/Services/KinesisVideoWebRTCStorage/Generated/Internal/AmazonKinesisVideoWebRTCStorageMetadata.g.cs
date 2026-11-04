@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoWebRTCStorage.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon KinesisVideoWebRTCStorage service
+    /// Service metadata for Amazon Kinesis Video WebRTC Storage
     /// </summary>
     public partial class AmazonKinesisVideoWebRTCStorageMetadata : IServiceMetadata
     {

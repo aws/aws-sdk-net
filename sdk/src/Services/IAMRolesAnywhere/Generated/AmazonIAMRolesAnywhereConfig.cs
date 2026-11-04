@@ -27,7 +27,7 @@ using Amazon.IAMRolesAnywhere.Internal;
 namespace Amazon.IAMRolesAnywhere
 {
     /// <summary>
-    /// Configuration for accessing Amazon IAMRolesAnywhere service
+    /// Configuration for accessing IAM Roles Anywhere
     /// </summary>
     public partial class AmazonIAMRolesAnywhereConfig : ClientConfig
     {

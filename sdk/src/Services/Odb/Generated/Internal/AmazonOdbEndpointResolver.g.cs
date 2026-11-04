@@ -31,7 +31,7 @@ using Amazon.Odb.Endpoints;
 namespace Amazon.Odb.Internal
 {
     /// <summary>
-    /// Amazon Odb endpoint resolver.
+    /// odb endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Odb service requests.
     /// <para />

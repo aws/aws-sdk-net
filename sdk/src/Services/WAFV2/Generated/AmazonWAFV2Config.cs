@@ -27,7 +27,7 @@ using Amazon.WAFV2.Internal;
 namespace Amazon.WAFV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon WAFV2 service
+    /// Configuration for accessing AWS WAFV2
     /// </summary>
     public partial class AmazonWAFV2Config : ClientConfig
     {

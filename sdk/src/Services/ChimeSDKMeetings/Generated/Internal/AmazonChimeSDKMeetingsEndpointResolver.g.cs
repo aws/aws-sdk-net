@@ -31,7 +31,7 @@ using Amazon.ChimeSDKMeetings.Endpoints;
 namespace Amazon.ChimeSDKMeetings.Internal
 {
     /// <summary>
-    /// Amazon ChimeSDKMeetings endpoint resolver.
+    /// Amazon Chime SDK Meetings endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ChimeSDKMeetings service requests.
     /// <para />

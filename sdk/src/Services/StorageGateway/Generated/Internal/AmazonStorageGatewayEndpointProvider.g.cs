@@ -26,7 +26,7 @@ using Amazon.StorageGateway.Endpoints;
 namespace Amazon.StorageGateway.Internal
 {
     /// <summary>
-    /// Amazon StorageGateway endpoint provider.
+    /// AWS Storage Gateway endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="StorageGatewayEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

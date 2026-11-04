@@ -31,7 +31,7 @@ using Amazon.ECRPublic.Endpoints;
 namespace Amazon.ECRPublic.Internal
 {
     /// <summary>
-    /// Amazon ECRPublic endpoint resolver.
+    /// Amazon Elastic Container Registry Public endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ECRPublic service requests.
     /// <para />

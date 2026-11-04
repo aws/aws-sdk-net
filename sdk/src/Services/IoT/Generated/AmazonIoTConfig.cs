@@ -27,7 +27,7 @@ using Amazon.IoT.Internal;
 namespace Amazon.IoT
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoT service
+    /// Configuration for accessing AWS IoT
     /// </summary>
     public partial class AmazonIoTConfig : ClientConfig
     {

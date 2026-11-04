@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Account.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Account service
+    /// Service metadata for AWS Account
     /// </summary>
     public partial class AmazonAccountMetadata : IServiceMetadata
     {

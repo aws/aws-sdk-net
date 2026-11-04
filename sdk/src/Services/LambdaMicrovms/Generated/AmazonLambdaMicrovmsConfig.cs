@@ -27,7 +27,7 @@ using Amazon.LambdaMicrovms.Internal;
 namespace Amazon.LambdaMicrovms
 {
     /// <summary>
-    /// Configuration for accessing Amazon LambdaMicrovms service
+    /// Configuration for accessing Lambda MicroVMs
     /// </summary>
     public partial class AmazonLambdaMicrovmsConfig : ClientConfig
     {

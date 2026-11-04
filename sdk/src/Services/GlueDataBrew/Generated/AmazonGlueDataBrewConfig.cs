@@ -27,7 +27,7 @@ using Amazon.GlueDataBrew.Internal;
 namespace Amazon.GlueDataBrew
 {
     /// <summary>
-    /// Configuration for accessing Amazon GlueDataBrew service
+    /// Configuration for accessing AWS Glue DataBrew
     /// </summary>
     public partial class AmazonGlueDataBrewConfig : ClientConfig
     {

@@ -26,7 +26,7 @@ using Amazon.CloudTrail.Endpoints;
 namespace Amazon.CloudTrail.Internal
 {
     /// <summary>
-    /// Amazon CloudTrail endpoint provider.
+    /// AWS CloudTrail endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CloudTrailEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

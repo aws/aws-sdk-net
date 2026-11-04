@@ -27,7 +27,7 @@ using Amazon.MachineLearning.Internal;
 namespace Amazon.MachineLearning
 {
     /// <summary>
-    /// Configuration for accessing Amazon MachineLearning service
+    /// Configuration for accessing Amazon Machine Learning
     /// </summary>
     public partial class AmazonMachineLearningConfig : ClientConfig
     {

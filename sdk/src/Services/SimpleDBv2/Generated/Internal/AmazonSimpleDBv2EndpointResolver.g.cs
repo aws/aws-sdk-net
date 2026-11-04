@@ -31,7 +31,7 @@ using Amazon.SimpleDBv2.Endpoints;
 namespace Amazon.SimpleDBv2.Internal
 {
     /// <summary>
-    /// Amazon SimpleDBv2 endpoint resolver.
+    /// Amazon SimpleDB v2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SimpleDBv2 service requests.
     /// <para />

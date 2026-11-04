@@ -26,7 +26,7 @@ using Amazon.CloudWatchEvents.Endpoints;
 namespace Amazon.CloudWatchEvents.Internal
 {
     /// <summary>
-    /// Amazon CloudWatchEvents endpoint provider.
+    /// Amazon CloudWatch Events endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CloudWatchEventsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

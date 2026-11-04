@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.B2bi.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon B2bi service
+    /// Service metadata for AWS B2B Data Interchange
     /// </summary>
     public partial class AmazonB2biMetadata : IServiceMetadata
     {

@@ -27,7 +27,7 @@ using Amazon.CodeStarconnections.Internal;
 namespace Amazon.CodeStarconnections
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeStarconnections service
+    /// Configuration for accessing AWS CodeStar connections
     /// </summary>
     public partial class AmazonCodeStarconnectionsConfig : ClientConfig
     {

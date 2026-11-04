@@ -31,7 +31,7 @@ using Amazon.AutoScalingPlans.Endpoints;
 namespace Amazon.AutoScalingPlans.Internal
 {
     /// <summary>
-    /// Amazon AutoScalingPlans endpoint resolver.
+    /// AWS Auto Scaling Plans endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AutoScalingPlans service requests.
     /// <para />

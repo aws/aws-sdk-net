@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DirectoryService service
+    /// Service metadata for AWS Directory Service
     /// </summary>
     public partial class AmazonDirectoryServiceMetadata : IServiceMetadata
     {

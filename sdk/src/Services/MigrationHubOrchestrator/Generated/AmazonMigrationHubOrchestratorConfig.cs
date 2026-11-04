@@ -27,7 +27,7 @@ using Amazon.MigrationHubOrchestrator.Internal;
 namespace Amazon.MigrationHubOrchestrator
 {
     /// <summary>
-    /// Configuration for accessing Amazon MigrationHubOrchestrator service
+    /// Configuration for accessing AWS Migration Hub Orchestrator
     /// </summary>
     public partial class AmazonMigrationHubOrchestratorConfig : ClientConfig
     {

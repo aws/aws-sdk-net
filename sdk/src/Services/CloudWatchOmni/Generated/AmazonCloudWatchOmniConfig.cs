@@ -27,7 +27,7 @@ using Amazon.CloudWatchOmni.Internal;
 namespace Amazon.CloudWatchOmni
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudWatchOmni service
+    /// Configuration for accessing CloudWatch Omni
     /// </summary>
     public partial class AmazonCloudWatchOmniConfig : ClientConfig
     {

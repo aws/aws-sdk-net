@@ -27,7 +27,7 @@ using Amazon.SimpleSystemsManagement.Internal;
 namespace Amazon.SimpleSystemsManagement
 {
     /// <summary>
-    /// Configuration for accessing Amazon SimpleSystemsManagement service
+    /// Configuration for accessing Amazon Simple Systems Manager (SSM)
     /// </summary>
     public partial class AmazonSimpleSystemsManagementConfig : ClientConfig
     {

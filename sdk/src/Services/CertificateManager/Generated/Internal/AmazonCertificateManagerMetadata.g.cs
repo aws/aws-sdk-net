@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CertificateManager service
+    /// Service metadata for AWS Certificate Manager
     /// </summary>
     public partial class AmazonCertificateManagerMetadata : IServiceMetadata
     {

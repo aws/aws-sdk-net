@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.PrometheusService
 {
     /// <summary>
-    /// Configuration for accessing Amazon PrometheusService service
+    /// Configuration for accessing Amazon Prometheus Service
     /// </summary>
     public static class AmazonPrometheusServiceDefaultConfiguration
     {

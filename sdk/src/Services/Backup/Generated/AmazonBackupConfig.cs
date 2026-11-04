@@ -27,7 +27,7 @@ using Amazon.Backup.Internal;
 namespace Amazon.Backup
 {
     /// <summary>
-    /// Configuration for accessing Amazon Backup service
+    /// Configuration for accessing AWS Backup
     /// </summary>
     public partial class AmazonBackupConfig : ClientConfig
     {

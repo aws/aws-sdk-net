@@ -26,7 +26,7 @@ using Amazon.Invoicing.Endpoints;
 namespace Amazon.Invoicing.Internal
 {
     /// <summary>
-    /// Amazon Invoicing endpoint provider.
+    /// AWS Invoicing endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="InvoicingEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -26,7 +26,7 @@ using Amazon.CognitoSync.Endpoints;
 namespace Amazon.CognitoSync.Internal
 {
     /// <summary>
-    /// Amazon CognitoSync endpoint provider.
+    /// Amazon Cognito Sync endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CognitoSyncEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

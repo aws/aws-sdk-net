@@ -27,7 +27,7 @@ using Amazon.Billing.Internal;
 namespace Amazon.Billing
 {
     /// <summary>
-    /// Configuration for accessing Amazon Billing service
+    /// Configuration for accessing AWS Billing
     /// </summary>
     public partial class AmazonBillingConfig : ClientConfig
     {

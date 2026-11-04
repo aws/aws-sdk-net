@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DirectConnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon DirectConnect service
+    /// Configuration for accessing AWS Direct Connect
     /// </summary>
     public static class AmazonDirectConnectDefaultConfiguration
     {

@@ -26,7 +26,7 @@ using Amazon.Pricing.Endpoints;
 namespace Amazon.Pricing.Internal
 {
     /// <summary>
-    /// Amazon Pricing endpoint provider.
+    /// AWS Price List Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PricingEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -27,7 +27,7 @@ using Amazon.ObservabilityAdmin.Internal;
 namespace Amazon.ObservabilityAdmin
 {
     /// <summary>
-    /// Configuration for accessing Amazon ObservabilityAdmin service
+    /// Configuration for accessing CloudWatch Observability Admin Service
     /// </summary>
     public partial class AmazonObservabilityAdminConfig : ClientConfig
     {

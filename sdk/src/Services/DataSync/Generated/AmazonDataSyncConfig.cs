@@ -27,7 +27,7 @@ using Amazon.DataSync.Internal;
 namespace Amazon.DataSync
 {
     /// <summary>
-    /// Configuration for accessing Amazon DataSync service
+    /// Configuration for accessing AWS DataSync
     /// </summary>
     public partial class AmazonDataSyncConfig : ClientConfig
     {

@@ -27,7 +27,7 @@ using Amazon.Synthetics.Internal;
 namespace Amazon.Synthetics
 {
     /// <summary>
-    /// Configuration for accessing Amazon Synthetics service
+    /// Configuration for accessing Synthetics
     /// </summary>
     public partial class AmazonSyntheticsConfig : ClientConfig
     {

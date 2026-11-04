@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ARCRegionswitch.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ARCRegionswitch service
+    /// Service metadata for ARC - Region switch
     /// </summary>
     public partial class AmazonARCRegionswitchMetadata : IServiceMetadata
     {

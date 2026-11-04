@@ -27,7 +27,7 @@ using Amazon.Route53RecoveryCluster.Internal;
 namespace Amazon.Route53RecoveryCluster
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53RecoveryCluster service
+    /// Configuration for accessing Route53 Recovery Cluster
     /// </summary>
     public partial class AmazonRoute53RecoveryClusterConfig : ClientConfig
     {

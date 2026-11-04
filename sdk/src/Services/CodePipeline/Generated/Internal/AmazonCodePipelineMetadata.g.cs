@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CodePipeline service
+    /// Service metadata for AWS CodePipeline
     /// </summary>
     public partial class AmazonCodePipelineMetadata : IServiceMetadata
     {

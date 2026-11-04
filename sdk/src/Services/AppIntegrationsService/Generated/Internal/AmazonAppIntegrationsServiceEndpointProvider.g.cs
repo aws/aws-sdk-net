@@ -26,7 +26,7 @@ using Amazon.AppIntegrationsService.Endpoints;
 namespace Amazon.AppIntegrationsService.Internal
 {
     /// <summary>
-    /// Amazon AppIntegrationsService endpoint provider.
+    /// Amazon AppIntegrations Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AppIntegrationsServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

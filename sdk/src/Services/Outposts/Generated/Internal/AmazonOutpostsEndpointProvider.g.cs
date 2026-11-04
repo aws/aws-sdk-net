@@ -26,7 +26,7 @@ using Amazon.Outposts.Endpoints;
 namespace Amazon.Outposts.Internal
 {
     /// <summary>
-    /// Amazon Outposts endpoint provider.
+    /// AWS Outposts endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="OutpostsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

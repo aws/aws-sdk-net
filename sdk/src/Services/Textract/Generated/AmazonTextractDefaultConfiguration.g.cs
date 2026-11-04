@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Textract
 {
     /// <summary>
-    /// Configuration for accessing Amazon Textract service
+    /// Configuration for accessing Amazon Textract
     /// </summary>
     public static class AmazonTextractDefaultConfiguration
     {

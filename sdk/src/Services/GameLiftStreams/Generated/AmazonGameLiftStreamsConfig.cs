@@ -27,7 +27,7 @@ using Amazon.GameLiftStreams.Internal;
 namespace Amazon.GameLiftStreams
 {
     /// <summary>
-    /// Configuration for accessing Amazon GameLiftStreams service
+    /// Configuration for accessing Amazon GameLift Streams
     /// </summary>
     public partial class AmazonGameLiftStreamsConfig : ClientConfig
     {

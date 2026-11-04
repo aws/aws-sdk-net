@@ -31,7 +31,7 @@ using Amazon.CognitoSync.Endpoints;
 namespace Amazon.CognitoSync.Internal
 {
     /// <summary>
-    /// Amazon CognitoSync endpoint resolver.
+    /// Amazon Cognito Sync endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CognitoSync service requests.
     /// <para />

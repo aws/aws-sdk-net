@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon WAF service
+    /// Service metadata for AWS WAF
     /// </summary>
     public partial class AmazonWAFMetadata : IServiceMetadata
     {

@@ -27,7 +27,7 @@ using Amazon.EventBridgeV2.Internal;
 namespace Amazon.EventBridgeV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon EventBridgeV2 service
+    /// Configuration for accessing Amazon EventBridgeV2
     /// </summary>
     public partial class AmazonEventBridgeV2Config : ClientConfig
     {

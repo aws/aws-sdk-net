@@ -26,7 +26,7 @@ using Amazon.ObservabilityAdmin.Endpoints;
 namespace Amazon.ObservabilityAdmin.Internal
 {
     /// <summary>
-    /// Amazon ObservabilityAdmin endpoint provider.
+    /// CloudWatch Observability Admin Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ObservabilityAdminEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

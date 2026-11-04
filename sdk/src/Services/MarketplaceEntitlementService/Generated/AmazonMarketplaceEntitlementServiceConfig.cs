@@ -27,7 +27,7 @@ using Amazon.MarketplaceEntitlementService.Internal;
 namespace Amazon.MarketplaceEntitlementService
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceEntitlementService service
+    /// Configuration for accessing AWS Marketplace Entitlement Service
     /// </summary>
     public partial class AmazonMarketplaceEntitlementServiceConfig : ClientConfig
     {

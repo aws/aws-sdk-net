@@ -27,7 +27,7 @@ using Amazon.MemoryDB.Internal;
 namespace Amazon.MemoryDB
 {
     /// <summary>
-    /// Configuration for accessing Amazon MemoryDB service
+    /// Configuration for accessing Amazon MemoryDB
     /// </summary>
     public partial class AmazonMemoryDBConfig : ClientConfig
     {

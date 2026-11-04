@@ -31,7 +31,7 @@ using Amazon.GeoRoutes.Endpoints;
 namespace Amazon.GeoRoutes.Internal
 {
     /// <summary>
-    /// Amazon GeoRoutes endpoint resolver.
+    /// Amazon Location Service Routes V2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for GeoRoutes service requests.
     /// <para />

@@ -31,7 +31,7 @@ using Amazon.EntityResolution.Endpoints;
 namespace Amazon.EntityResolution.Internal
 {
     /// <summary>
-    /// Amazon EntityResolution endpoint resolver.
+    /// AWS EntityResolution endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for EntityResolution service requests.
     /// <para />

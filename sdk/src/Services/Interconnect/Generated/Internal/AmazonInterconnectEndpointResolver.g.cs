@@ -31,7 +31,7 @@ using Amazon.Interconnect.Endpoints;
 namespace Amazon.Interconnect.Internal
 {
     /// <summary>
-    /// Amazon Interconnect endpoint resolver.
+    /// Interconnect endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Interconnect service requests.
     /// <para />

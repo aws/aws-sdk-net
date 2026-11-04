@@ -27,7 +27,7 @@ using Amazon.Neptunedata.Internal;
 namespace Amazon.Neptunedata
 {
     /// <summary>
-    /// Configuration for accessing Amazon Neptunedata service
+    /// Configuration for accessing Amazon NeptuneData
     /// </summary>
     public partial class AmazonNeptunedataConfig : ClientConfig
     {

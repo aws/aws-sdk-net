@@ -31,7 +31,7 @@ using Amazon.IdentityStore.Endpoints;
 namespace Amazon.IdentityStore.Internal
 {
     /// <summary>
-    /// Amazon IdentityStore endpoint resolver.
+    /// AWS SSO Identity Store endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IdentityStore service requests.
     /// <para />

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudSearchDomain
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudSearchDomain service
+    /// Configuration for accessing Amazon CloudSearch Domain
     /// </summary>
     public static class AmazonCloudSearchDomainDefaultConfiguration
     {

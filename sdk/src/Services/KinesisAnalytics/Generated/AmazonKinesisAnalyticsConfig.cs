@@ -27,7 +27,7 @@ using Amazon.KinesisAnalytics.Internal;
 namespace Amazon.KinesisAnalytics
 {
     /// <summary>
-    /// Configuration for accessing Amazon KinesisAnalytics service
+    /// Configuration for accessing Amazon Kinesis Analytics
     /// </summary>
     public partial class AmazonKinesisAnalyticsConfig : ClientConfig
     {

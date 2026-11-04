@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.TrustedAdvisor
 {
     /// <summary>
-    /// Configuration for accessing Amazon TrustedAdvisor service
+    /// Configuration for accessing TrustedAdvisor Public API
     /// </summary>
     public static class AmazonTrustedAdvisorDefaultConfiguration
     {

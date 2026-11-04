@@ -27,7 +27,7 @@ using Amazon.KinesisVideoMedia.Internal;
 namespace Amazon.KinesisVideoMedia
 {
     /// <summary>
-    /// Configuration for accessing Amazon KinesisVideoMedia service
+    /// Configuration for accessing Amazon Kinesis Video Streams Media
     /// </summary>
     public partial class AmazonKinesisVideoMediaConfig : ClientConfig
     {

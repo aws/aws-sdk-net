@@ -27,7 +27,7 @@ using Amazon.SecurityAgent.Internal;
 namespace Amazon.SecurityAgent
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecurityAgent service
+    /// Configuration for accessing AWS Security Agent
     /// </summary>
     public partial class AmazonSecurityAgentConfig : ClientConfig
     {

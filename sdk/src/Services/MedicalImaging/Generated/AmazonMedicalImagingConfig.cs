@@ -27,7 +27,7 @@ using Amazon.MedicalImaging.Internal;
 namespace Amazon.MedicalImaging
 {
     /// <summary>
-    /// Configuration for accessing Amazon MedicalImaging service
+    /// Configuration for accessing AWS Health Imaging
     /// </summary>
     public partial class AmazonMedicalImagingConfig : ClientConfig
     {

@@ -27,7 +27,7 @@ using Amazon.ApplicationAutoScaling.Internal;
 namespace Amazon.ApplicationAutoScaling
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApplicationAutoScaling service
+    /// Configuration for accessing Application Auto Scaling
     /// </summary>
     public partial class AmazonApplicationAutoScalingConfig : ClientConfig
     {

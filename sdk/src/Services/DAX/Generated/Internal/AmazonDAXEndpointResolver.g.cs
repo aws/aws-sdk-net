@@ -31,7 +31,7 @@ using Amazon.DAX.Endpoints;
 namespace Amazon.DAX.Internal
 {
     /// <summary>
-    /// Amazon DAX endpoint resolver.
+    /// Amazon DynamoDB Accelerator (DAX) endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DAX service requests.
     /// <para />

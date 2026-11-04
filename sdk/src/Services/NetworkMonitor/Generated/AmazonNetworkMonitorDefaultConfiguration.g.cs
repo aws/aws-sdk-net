@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.NetworkMonitor
 {
     /// <summary>
-    /// Configuration for accessing Amazon NetworkMonitor service
+    /// Configuration for accessing Amazon CloudWatch Network Monitor
     /// </summary>
     public static class AmazonNetworkMonitorDefaultConfiguration
     {

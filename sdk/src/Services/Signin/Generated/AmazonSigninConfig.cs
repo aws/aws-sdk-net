@@ -27,7 +27,7 @@ using Amazon.Signin.Internal;
 namespace Amazon.Signin
 {
     /// <summary>
-    /// Configuration for accessing Amazon Signin service
+    /// Configuration for accessing AWS Sign-In Service
     /// </summary>
     public partial class AmazonSigninConfig : ClientConfig
     {

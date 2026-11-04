@@ -26,7 +26,7 @@ using Amazon.DynamoDBStreams.Endpoints;
 namespace Amazon.DynamoDBStreams.Internal
 {
     /// <summary>
-    /// Amazon DynamoDBStreams endpoint provider.
+    /// Amazon DynamoDB Streams endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DynamoDBStreamsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -27,7 +27,7 @@ using Amazon.CustomerProfiles.Internal;
 namespace Amazon.CustomerProfiles
 {
     /// <summary>
-    /// Configuration for accessing Amazon CustomerProfiles service
+    /// Configuration for accessing Amazon Connect Customer Profiles
     /// </summary>
     public partial class AmazonCustomerProfilesConfig : ClientConfig
     {

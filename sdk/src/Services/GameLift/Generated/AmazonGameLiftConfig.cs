@@ -27,7 +27,7 @@ using Amazon.GameLift.Internal;
 namespace Amazon.GameLift
 {
     /// <summary>
-    /// Configuration for accessing Amazon GameLift service
+    /// Configuration for accessing Amazon GameLift
     /// </summary>
     public partial class AmazonGameLiftConfig : ClientConfig
     {

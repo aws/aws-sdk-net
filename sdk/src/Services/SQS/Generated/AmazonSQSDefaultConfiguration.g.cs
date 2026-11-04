@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SQS
 {
     /// <summary>
-    /// Configuration for accessing Amazon SQS service
+    /// Configuration for accessing Amazon Simple Queue Service
     /// </summary>
     public static class AmazonSQSDefaultConfiguration
     {

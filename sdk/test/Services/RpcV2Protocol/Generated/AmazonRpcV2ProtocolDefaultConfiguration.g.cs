@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.RpcV2Protocol
 {
     /// <summary>
-    /// Configuration for accessing Amazon RpcV2Protocol service
+    /// Configuration for accessing RpcV2 Protocol Service
     /// </summary>
     public static class AmazonRpcV2ProtocolDefaultConfiguration
     {

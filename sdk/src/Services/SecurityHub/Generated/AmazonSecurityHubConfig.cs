@@ -27,7 +27,7 @@ using Amazon.SecurityHub.Internal;
 namespace Amazon.SecurityHub
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecurityHub service
+    /// Configuration for accessing AWS SecurityHub
     /// </summary>
     public partial class AmazonSecurityHubConfig : ClientConfig
     {

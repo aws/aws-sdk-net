@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MigrationHubRefactorSpaces
 {
     /// <summary>
-    /// Configuration for accessing Amazon MigrationHubRefactorSpaces service
+    /// Configuration for accessing AWS Migration Hub Refactor Spaces
     /// </summary>
     public static class AmazonMigrationHubRefactorSpacesDefaultConfiguration
     {

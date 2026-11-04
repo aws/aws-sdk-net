@@ -27,7 +27,7 @@ using Amazon.Pipes.Internal;
 namespace Amazon.Pipes
 {
     /// <summary>
-    /// Configuration for accessing Amazon Pipes service
+    /// Configuration for accessing Amazon EventBridge Pipes
     /// </summary>
     public partial class AmazonPipesConfig : ClientConfig
     {

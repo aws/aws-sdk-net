@@ -32,7 +32,7 @@ using Amazon.ImportExport.Endpoints;
 namespace Amazon.ImportExport.Internal
 {
     /// <summary>
-    /// Amazon ImportExport endpoint resolver.
+    /// AWS Import/Export endpoint resolver.
     /// Custom PipelineHandler responsible for resolving endpoint and setting authentication parameters for ImportExport service requests.
     /// Collects values for ImportExportEndpointParameters and then tries to resolve endpoint by calling 
     /// ResolveEndpoint method on GlobalEndpoints.Provider if present, otherwise uses ImportExportEndpointProvider.

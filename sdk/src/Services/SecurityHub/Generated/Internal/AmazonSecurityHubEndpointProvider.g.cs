@@ -26,7 +26,7 @@ using Amazon.SecurityHub.Endpoints;
 namespace Amazon.SecurityHub.Internal
 {
     /// <summary>
-    /// Amazon SecurityHub endpoint provider.
+    /// AWS SecurityHub endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SecurityHubEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

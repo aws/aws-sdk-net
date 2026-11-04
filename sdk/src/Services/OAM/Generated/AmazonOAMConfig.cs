@@ -27,7 +27,7 @@ using Amazon.OAM.Internal;
 namespace Amazon.OAM
 {
     /// <summary>
-    /// Configuration for accessing Amazon OAM service
+    /// Configuration for accessing CloudWatch Observability Access Manager
     /// </summary>
     public partial class AmazonOAMConfig : ClientConfig
     {

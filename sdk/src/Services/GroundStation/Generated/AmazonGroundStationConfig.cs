@@ -27,7 +27,7 @@ using Amazon.GroundStation.Internal;
 namespace Amazon.GroundStation
 {
     /// <summary>
-    /// Configuration for accessing Amazon GroundStation service
+    /// Configuration for accessing AWS Ground Station
     /// </summary>
     public partial class AmazonGroundStationConfig : ClientConfig
     {

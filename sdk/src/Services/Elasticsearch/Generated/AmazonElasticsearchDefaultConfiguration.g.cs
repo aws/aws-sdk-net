@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Elasticsearch
 {
     /// <summary>
-    /// Configuration for accessing Amazon Elasticsearch service
+    /// Configuration for accessing Amazon Elasticsearch Service
     /// </summary>
     public static class AmazonElasticsearchDefaultConfiguration
     {

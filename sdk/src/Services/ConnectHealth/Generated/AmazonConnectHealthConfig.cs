@@ -27,7 +27,7 @@ using Amazon.ConnectHealth.Internal;
 namespace Amazon.ConnectHealth
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectHealth service
+    /// Configuration for accessing Connect Health
     /// </summary>
     public partial class AmazonConnectHealthConfig : ClientConfig
     {

@@ -27,7 +27,7 @@ using Amazon.SocialMessaging.Internal;
 namespace Amazon.SocialMessaging
 {
     /// <summary>
-    /// Configuration for accessing Amazon SocialMessaging service
+    /// Configuration for accessing AWS End User Messaging Social
     /// </summary>
     public partial class AmazonSocialMessagingConfig : ClientConfig
     {

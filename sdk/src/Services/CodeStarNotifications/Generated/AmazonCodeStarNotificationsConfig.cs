@@ -27,7 +27,7 @@ using Amazon.CodeStarNotifications.Internal;
 namespace Amazon.CodeStarNotifications
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeStarNotifications service
+    /// Configuration for accessing AWS CodeStar Notifications
     /// </summary>
     public partial class AmazonCodeStarNotificationsConfig : ClientConfig
     {

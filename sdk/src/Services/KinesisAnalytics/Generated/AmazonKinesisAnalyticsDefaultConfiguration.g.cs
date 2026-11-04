@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.KinesisAnalytics
 {
     /// <summary>
-    /// Configuration for accessing Amazon KinesisAnalytics service
+    /// Configuration for accessing Amazon Kinesis Analytics
     /// </summary>
     public static class AmazonKinesisAnalyticsDefaultConfiguration
     {

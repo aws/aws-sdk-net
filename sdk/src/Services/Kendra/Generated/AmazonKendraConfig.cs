@@ -27,7 +27,7 @@ using Amazon.Kendra.Internal;
 namespace Amazon.Kendra
 {
     /// <summary>
-    /// Configuration for accessing Amazon Kendra service
+    /// Configuration for accessing AWSKendraFrontendService
     /// </summary>
     public partial class AmazonKendraConfig : ClientConfig
     {

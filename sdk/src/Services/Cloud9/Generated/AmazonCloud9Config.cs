@@ -27,7 +27,7 @@ using Amazon.Cloud9.Internal;
 namespace Amazon.Cloud9
 {
     /// <summary>
-    /// Configuration for accessing Amazon Cloud9 service
+    /// Configuration for accessing AWS Cloud9
     /// </summary>
     public partial class AmazonCloud9Config : ClientConfig
     {

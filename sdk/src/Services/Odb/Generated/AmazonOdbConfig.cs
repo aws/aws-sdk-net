@@ -27,7 +27,7 @@ using Amazon.Odb.Internal;
 namespace Amazon.Odb
 {
     /// <summary>
-    /// Configuration for accessing Amazon Odb service
+    /// Configuration for accessing odb
     /// </summary>
     public partial class AmazonOdbConfig : ClientConfig
     {

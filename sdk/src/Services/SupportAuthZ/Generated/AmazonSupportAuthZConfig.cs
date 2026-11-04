@@ -27,7 +27,7 @@ using Amazon.SupportAuthZ.Internal;
 namespace Amazon.SupportAuthZ
 {
     /// <summary>
-    /// Configuration for accessing Amazon SupportAuthZ service
+    /// Configuration for accessing SupportAuthZ
     /// </summary>
     public partial class AmazonSupportAuthZConfig : ClientConfig
     {

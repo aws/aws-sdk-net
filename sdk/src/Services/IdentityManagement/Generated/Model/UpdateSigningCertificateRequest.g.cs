@@ -1,0 +1,117 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.IdentityManagement.Model
+{
+    /// <summary>
+    /// Container for the parameters to the UpdateSigningCertificate operation. Changes the
+    /// status of the specified user signing certificate from active to disabled, or vice
+    /// versa. This operation can be used to disable an IAM user's signing certificate as
+    /// part of a certificate rotation work flow. <para> If the <c>UserName</c> field is not
+    /// specified, the user name is determined implicitly based on the Amazon Web Services
+    /// access key ID used to sign the request. This operation works for access keys under
+    /// the Amazon Web Services account. Consequently, you can use this operation to manage
+    /// Amazon Web Services account root user credentials even if the Amazon Web Services
+    /// account has no associated users. </para>
+    /// </summary>
+    public partial class UpdateSigningCertificateRequest : AmazonIdentityManagementServiceRequest
+    {
+        /// <summary>
+        /// Empty constructor used to set properties independently even when a simple constructor is available
+        /// </summary>
+        public UpdateSigningCertificateRequest() { }
+
+        /// <summary>
+        /// Instantiates UpdateSigningCertificateRequest with the parameterized properties
+        /// </summary>
+        /// <param name="certificateId">The ID of the signing certificate you want to update.   This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can  consist of any upper or lowercased letter or digit.</param>
+        /// <param name="status"> The status you want to assign to the certificate. <c>Active</c> means that the   certificate can be used for programmatic calls to Amazon Web Services <c>Inactive</c> means that   the certificate cannot be used.</param>
+        public UpdateSigningCertificateRequest(string certificateId, StatusType status)
+        {
+            this.CertificateId = certificateId;
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateId. 
+        /// <para>
+        /// The ID of the signing certificate you want to update.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters that can consist of any upper or lowercased letter
+        /// or digit.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 24, Max = 128)]
+        public string CertificateId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CertificateId property is set.
+        /// </summary>
+        internal bool IsSetCertificateId() => this.CertificateId != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The status you want to assign to the certificate. <c>Active</c> means that the certificate
+        /// can be used for programmatic calls to Amazon Web Services <c>Inactive</c> means that
+        /// the certificate cannot be used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public StatusType Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property UserName. 
+        /// <para>
+        /// The name of the IAM user the signing certificate belongs to.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string UserName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UserName property is set.
+        /// </summary>
+        internal bool IsSetUserName() => this.UserName != null;
+    }
+}

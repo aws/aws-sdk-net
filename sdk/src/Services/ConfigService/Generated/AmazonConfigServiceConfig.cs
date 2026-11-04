@@ -27,7 +27,7 @@ using Amazon.ConfigService.Internal;
 namespace Amazon.ConfigService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConfigService service
+    /// Configuration for accessing AWS Config
     /// </summary>
     public partial class AmazonConfigServiceConfig : ClientConfig
     {

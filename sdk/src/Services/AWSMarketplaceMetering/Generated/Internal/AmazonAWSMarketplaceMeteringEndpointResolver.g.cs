@@ -31,7 +31,7 @@ using Amazon.AWSMarketplaceMetering.Endpoints;
 namespace Amazon.AWSMarketplaceMetering.Internal
 {
     /// <summary>
-    /// Amazon AWSMarketplaceMetering endpoint resolver.
+    /// AWSMarketplace Metering endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AWSMarketplaceMetering service requests.
     /// <para />

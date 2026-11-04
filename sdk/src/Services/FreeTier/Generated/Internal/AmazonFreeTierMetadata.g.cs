@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FreeTier.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon FreeTier service
+    /// Service metadata for AWS Free Tier
     /// </summary>
     public partial class AmazonFreeTierMetadata : IServiceMetadata
     {

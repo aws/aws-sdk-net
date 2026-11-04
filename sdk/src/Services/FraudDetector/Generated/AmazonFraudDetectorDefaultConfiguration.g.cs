@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.FraudDetector
 {
     /// <summary>
-    /// Configuration for accessing Amazon FraudDetector service
+    /// Configuration for accessing Amazon Fraud Detector
     /// </summary>
     public static class AmazonFraudDetectorDefaultConfiguration
     {

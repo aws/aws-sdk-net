@@ -27,7 +27,7 @@ using Amazon.Greengrass.Internal;
 namespace Amazon.Greengrass
 {
     /// <summary>
-    /// Configuration for accessing Amazon Greengrass service
+    /// Configuration for accessing AWS Greengrass
     /// </summary>
     public partial class AmazonGreengrassConfig : ClientConfig
     {

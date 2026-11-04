@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Kinesis service
+    /// Service metadata for Amazon Kinesis
     /// </summary>
     public partial class AmazonKinesisMetadata : IServiceMetadata
     {

@@ -27,7 +27,7 @@ using Amazon.Athena.Internal;
 namespace Amazon.Athena
 {
     /// <summary>
-    /// Configuration for accessing Amazon Athena service
+    /// Configuration for accessing Amazon Athena
     /// </summary>
     public partial class AmazonAthenaConfig : ClientConfig
     {

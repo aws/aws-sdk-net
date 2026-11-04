@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AuditManager service
+    /// Service metadata for AWS Audit Manager
     /// </summary>
     public partial class AmazonAuditManagerMetadata : IServiceMetadata
     {

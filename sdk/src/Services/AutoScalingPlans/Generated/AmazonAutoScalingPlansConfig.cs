@@ -27,7 +27,7 @@ using Amazon.AutoScalingPlans.Internal;
 namespace Amazon.AutoScalingPlans
 {
     /// <summary>
-    /// Configuration for accessing Amazon AutoScalingPlans service
+    /// Configuration for accessing AWS Auto Scaling Plans
     /// </summary>
     public partial class AmazonAutoScalingPlansConfig : ClientConfig
     {

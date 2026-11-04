@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ElasticFileSystem service
+    /// Service metadata for Amazon Elastic File System
     /// </summary>
     public partial class AmazonElasticFileSystemMetadata : IServiceMetadata
     {

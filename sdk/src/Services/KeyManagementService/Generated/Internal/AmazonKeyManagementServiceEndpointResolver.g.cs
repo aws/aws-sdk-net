@@ -31,7 +31,7 @@ using Amazon.KeyManagementService.Endpoints;
 namespace Amazon.KeyManagementService.Internal
 {
     /// <summary>
-    /// Amazon KeyManagementService endpoint resolver.
+    /// AWS Key Management Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for KeyManagementService service requests.
     /// <para />

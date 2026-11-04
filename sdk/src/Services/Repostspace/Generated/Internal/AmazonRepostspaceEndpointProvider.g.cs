@@ -26,7 +26,7 @@ using Amazon.Repostspace.Endpoints;
 namespace Amazon.Repostspace.Internal
 {
     /// <summary>
-    /// Amazon Repostspace endpoint provider.
+    /// AWS re:Post Private endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="RepostspaceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

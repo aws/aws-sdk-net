@@ -27,7 +27,7 @@ using Amazon.Artifact.Internal;
 namespace Amazon.Artifact
 {
     /// <summary>
-    /// Configuration for accessing Amazon Artifact service
+    /// Configuration for accessing AWS Artifact
     /// </summary>
     public partial class AmazonArtifactConfig : ClientConfig
     {

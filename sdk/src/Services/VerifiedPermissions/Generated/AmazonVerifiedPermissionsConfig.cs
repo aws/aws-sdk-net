@@ -27,7 +27,7 @@ using Amazon.VerifiedPermissions.Internal;
 namespace Amazon.VerifiedPermissions
 {
     /// <summary>
-    /// Configuration for accessing Amazon VerifiedPermissions service
+    /// Configuration for accessing Amazon Verified Permissions
     /// </summary>
     public partial class AmazonVerifiedPermissionsConfig : ClientConfig
     {

@@ -27,7 +27,7 @@ using Amazon.Invoicing.Internal;
 namespace Amazon.Invoicing
 {
     /// <summary>
-    /// Configuration for accessing Amazon Invoicing service
+    /// Configuration for accessing AWS Invoicing
     /// </summary>
     public partial class AmazonInvoicingConfig : ClientConfig
     {

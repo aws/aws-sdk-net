@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MediaConnect service
+    /// Service metadata for AWS MediaConnect
     /// </summary>
     public partial class AmazonMediaConnectMetadata : IServiceMetadata
     {

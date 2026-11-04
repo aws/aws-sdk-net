@@ -27,7 +27,7 @@ using Amazon.ElementalInference.Internal;
 namespace Amazon.ElementalInference
 {
     /// <summary>
-    /// Configuration for accessing Amazon ElementalInference service
+    /// Configuration for accessing AWS Elemental Inference
     /// </summary>
     public partial class AmazonElementalInferenceConfig : ClientConfig
     {

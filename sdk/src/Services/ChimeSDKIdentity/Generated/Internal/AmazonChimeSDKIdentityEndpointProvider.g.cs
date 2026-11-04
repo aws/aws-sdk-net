@@ -26,7 +26,7 @@ using Amazon.ChimeSDKIdentity.Endpoints;
 namespace Amazon.ChimeSDKIdentity.Internal
 {
     /// <summary>
-    /// Amazon ChimeSDKIdentity endpoint provider.
+    /// Amazon Chime SDK Identity endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ChimeSDKIdentityEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

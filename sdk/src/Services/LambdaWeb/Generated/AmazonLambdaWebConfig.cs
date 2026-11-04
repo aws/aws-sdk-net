@@ -27,7 +27,7 @@ using Amazon.LambdaWeb.Internal;
 namespace Amazon.LambdaWeb
 {
     /// <summary>
-    /// Configuration for accessing Amazon LambdaWeb service
+    /// Configuration for accessing Lambda Web
     /// </summary>
     public partial class AmazonLambdaWebConfig : ClientConfig
     {

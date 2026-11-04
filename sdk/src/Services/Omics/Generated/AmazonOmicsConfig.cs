@@ -27,7 +27,7 @@ using Amazon.Omics.Internal;
 namespace Amazon.Omics
 {
     /// <summary>
-    /// Configuration for accessing Amazon Omics service
+    /// Configuration for accessing Amazon Omics
     /// </summary>
     public partial class AmazonOmicsConfig : ClientConfig
     {

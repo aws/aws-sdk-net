@@ -26,7 +26,7 @@ using Amazon.ConnectWisdomService.Endpoints;
 namespace Amazon.ConnectWisdomService.Internal
 {
     /// <summary>
-    /// Amazon ConnectWisdomService endpoint provider.
+    /// Amazon Connect Wisdom Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ConnectWisdomServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

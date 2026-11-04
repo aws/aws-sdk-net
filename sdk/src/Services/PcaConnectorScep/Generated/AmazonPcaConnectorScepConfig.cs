@@ -27,7 +27,7 @@ using Amazon.PcaConnectorScep.Internal;
 namespace Amazon.PcaConnectorScep
 {
     /// <summary>
-    /// Configuration for accessing Amazon PcaConnectorScep service
+    /// Configuration for accessing Private CA Connector for SCEP
     /// </summary>
     public partial class AmazonPcaConnectorScepConfig : ClientConfig
     {

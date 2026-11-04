@@ -31,7 +31,7 @@ using Amazon.Budgets.Endpoints;
 namespace Amazon.Budgets.Internal
 {
     /// <summary>
-    /// Amazon Budgets endpoint resolver.
+    /// AWS Budgets endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Budgets service requests.
     /// <para />

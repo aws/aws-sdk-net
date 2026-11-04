@@ -26,7 +26,7 @@ using Amazon.MedicalImaging.Endpoints;
 namespace Amazon.MedicalImaging.Internal
 {
     /// <summary>
-    /// Amazon MedicalImaging endpoint provider.
+    /// AWS Health Imaging endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MedicalImagingEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

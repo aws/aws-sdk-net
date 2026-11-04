@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AppMesh
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppMesh service
+    /// Configuration for accessing AWS App Mesh
     /// </summary>
     public static class AmazonAppMeshDefaultConfiguration
     {

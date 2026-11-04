@@ -31,7 +31,7 @@ using Amazon.Synthetics.Endpoints;
 namespace Amazon.Synthetics.Internal
 {
     /// <summary>
-    /// Amazon Synthetics endpoint resolver.
+    /// Synthetics endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Synthetics service requests.
     /// <para />

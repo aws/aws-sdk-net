@@ -1,0 +1,136 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.IdentityManagement.Model
+{
+    /// <summary>
+    /// Container for the parameters to the EnableMFADevice operation. Enables the specified
+    /// MFA device and associates it with the specified IAM user. When enabled, the MFA device
+    /// is required for every subsequent login by the IAM user associated with the device.
+    /// </summary>
+    public partial class EnableMFADeviceRequest : AmazonIdentityManagementServiceRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AuthenticationCode1. 
+        /// <para>
+        /// An authentication code emitted by the device. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter is a string of six digits.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Submit your request immediately after generating the authentication codes. If you
+        /// generate the codes and then wait too long to submit the request, the MFA device successfully
+        /// associates with the user but the MFA device becomes out of sync. This happens because
+        /// time-based one-time passwords (TOTP) expire after a short period of time. If this
+        /// happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+        /// the device</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 6, Max = 6)]
+        public string AuthenticationCode1 { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AuthenticationCode1 property is set.
+        /// </summary>
+        internal bool IsSetAuthenticationCode1() => this.AuthenticationCode1 != null;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationCode2. 
+        /// <para>
+        /// A subsequent authentication code emitted by the device.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter is a string of six digits.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Submit your request immediately after generating the authentication codes. If you
+        /// generate the codes and then wait too long to submit the request, the MFA device successfully
+        /// associates with the user but the MFA device becomes out of sync. This happens because
+        /// time-based one-time passwords (TOTP) expire after a short period of time. If this
+        /// happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+        /// the device</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 6, Max = 6)]
+        public string AuthenticationCode2 { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AuthenticationCode2 property is set.
+        /// </summary>
+        internal bool IsSetAuthenticationCode2() => this.AuthenticationCode2 != null;
+
+        /// <summary>
+        /// Gets and sets the property SerialNumber. 
+        /// <para>
+        /// The serial number that uniquely identifies the MFA device. For virtual MFA devices,
+        /// the serial number is the device ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: =,.@:/-
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 9, Max = 256)]
+        public string SerialNumber { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SerialNumber property is set.
+        /// </summary>
+        internal bool IsSetSerialNumber() => this.SerialNumber != null;
+
+        /// <summary>
+        /// Gets and sets the property UserName. 
+        /// <para>
+        /// The name of the IAM user for whom you want to enable the MFA device.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 128)]
+        public string UserName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UserName property is set.
+        /// </summary>
+        internal bool IsSetUserName() => this.UserName != null;
+    }
+}

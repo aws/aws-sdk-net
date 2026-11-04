@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Glue
 {
     /// <summary>
-    /// Configuration for accessing Amazon Glue service
+    /// Configuration for accessing AWS Glue
     /// </summary>
     public static class AmazonGlueDefaultConfiguration
     {

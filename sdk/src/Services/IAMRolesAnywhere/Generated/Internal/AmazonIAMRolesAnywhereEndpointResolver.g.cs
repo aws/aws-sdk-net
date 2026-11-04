@@ -31,7 +31,7 @@ using Amazon.IAMRolesAnywhere.Endpoints;
 namespace Amazon.IAMRolesAnywhere.Internal
 {
     /// <summary>
-    /// Amazon IAMRolesAnywhere endpoint resolver.
+    /// IAM Roles Anywhere endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IAMRolesAnywhere service requests.
     /// <para />

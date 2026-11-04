@@ -26,7 +26,7 @@ using Amazon.Interconnect.Endpoints;
 namespace Amazon.Interconnect.Internal
 {
     /// <summary>
-    /// Amazon Interconnect endpoint provider.
+    /// Interconnect endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="InterconnectEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

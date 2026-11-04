@@ -31,7 +31,7 @@ using Amazon.KeyspacesStreams.Endpoints;
 namespace Amazon.KeyspacesStreams.Internal
 {
     /// <summary>
-    /// Amazon KeyspacesStreams endpoint resolver.
+    /// Amazon Keyspaces Streams endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for KeyspacesStreams service requests.
     /// <para />

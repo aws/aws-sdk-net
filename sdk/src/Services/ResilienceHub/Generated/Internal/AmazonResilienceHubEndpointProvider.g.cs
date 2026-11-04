@@ -26,7 +26,7 @@ using Amazon.ResilienceHub.Endpoints;
 namespace Amazon.ResilienceHub.Internal
 {
     /// <summary>
-    /// Amazon ResilienceHub endpoint provider.
+    /// AWS Resilience Hub endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ResilienceHubEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

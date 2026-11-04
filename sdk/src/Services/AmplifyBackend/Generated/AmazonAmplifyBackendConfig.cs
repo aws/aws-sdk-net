@@ -27,7 +27,7 @@ using Amazon.AmplifyBackend.Internal;
 namespace Amazon.AmplifyBackend
 {
     /// <summary>
-    /// Configuration for accessing Amazon AmplifyBackend service
+    /// Configuration for accessing AmplifyBackend
     /// </summary>
     public partial class AmazonAmplifyBackendConfig : ClientConfig
     {

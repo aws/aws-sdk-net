@@ -27,7 +27,7 @@ using Amazon.NetworkSecurityManager.Internal;
 namespace Amazon.NetworkSecurityManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon NetworkSecurityManager service
+    /// Configuration for accessing AWS Network Security Manager Customer API
     /// </summary>
     public partial class AmazonNetworkSecurityManagerConfig : ClientConfig
     {

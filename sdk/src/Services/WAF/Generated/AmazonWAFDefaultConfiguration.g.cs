@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.WAF
 {
     /// <summary>
-    /// Configuration for accessing Amazon WAF service
+    /// Configuration for accessing AWS WAF
     /// </summary>
     public static class AmazonWAFDefaultConfiguration
     {

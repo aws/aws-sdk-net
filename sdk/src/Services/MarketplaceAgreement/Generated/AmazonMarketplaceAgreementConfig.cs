@@ -27,7 +27,7 @@ using Amazon.MarketplaceAgreement.Internal;
 namespace Amazon.MarketplaceAgreement
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceAgreement service
+    /// Configuration for accessing AWS Marketplace Agreement Service
     /// </summary>
     public partial class AmazonMarketplaceAgreementConfig : ClientConfig
     {

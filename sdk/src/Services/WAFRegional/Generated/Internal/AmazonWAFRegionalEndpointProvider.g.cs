@@ -26,7 +26,7 @@ using Amazon.WAFRegional.Endpoints;
 namespace Amazon.WAFRegional.Internal
 {
     /// <summary>
-    /// Amazon WAFRegional endpoint provider.
+    /// AWS WAF Regional endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="WAFRegionalEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

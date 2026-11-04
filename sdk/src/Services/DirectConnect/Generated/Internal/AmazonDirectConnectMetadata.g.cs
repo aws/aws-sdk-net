@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DirectConnect service
+    /// Service metadata for AWS Direct Connect
     /// </summary>
     public partial class AmazonDirectConnectMetadata : IServiceMetadata
     {

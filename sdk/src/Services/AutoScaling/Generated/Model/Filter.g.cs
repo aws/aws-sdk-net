@@ -1,0 +1,206 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.AutoScaling.Model
+{
+    /// <summary>
+    /// Describes a filter that is used to return a more specific list of results from a describe
+    /// operation.
+    /// 
+    ///  
+    /// <para>
+    /// If you specify multiple filters, the filters are automatically logically joined with
+    /// an <c>AND</c>, and the request returns only the results that match all of the specified
+    /// filters. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag
+    /// Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// </para>
+    /// </summary>
+    public partial class Filter
+    {
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the filter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  The valid values for <c>Name</c> depend on which API operation you're using with
+        /// the filter. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a>
+        /// </b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <c>Name</c> include the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>tag-key</c> - Accepts tag keys. The results only include information about the
+        /// Auto Scaling groups associated with these tag keys. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>tag-value</c> - Accepts tag values. The results only include information about
+        /// the Auto Scaling groups associated with these tag values. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>tag:&lt;key&gt;</c> - Accepts the key/value combination of the tag. Use the tag
+        /// key in the filter name and the tag value as the filter value. The results only include
+        /// information about the Auto Scaling groups associated with the specified key/value
+        /// combination. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>
+        /// </b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <c>Name</c> include the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>auto-scaling-group</c> - Accepts the names of Auto Scaling groups. The results
+        /// only include information about the tags associated with these Auto Scaling groups.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>key</c> - Accepts tag keys. The results only include information about the tags
+        /// associated with these tag keys. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>value</c> - Accepts tag values. The results only include information about the
+        /// tags associated with these tag values. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>propagate-at-launch</c> - Accepts a Boolean value, which specifies whether tags
+        /// propagate to instances at launch. The results only include information about the tags
+        /// associated with the specified Boolean value. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+        /// </b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <c>Name</c> include the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>StartTimeLowerBound</c> - The earliest scaling activities to return based on the
+        /// activity start time. Scaling activities with a start time earlier than this value
+        /// are not included in the results. Only activities started within the last six weeks
+        /// can be returned regardless of the value specified. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StartTimeUpperBound</c> - The latest scaling activities to return based on the
+        /// activity start time. Scaling activities with a start time later than this value are
+        /// not included in the results. Only activities started within the last six weeks can
+        /// be returned regardless of the value specified. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Status</c> - The <c>StatusCode</c> value of the scaling activity. This filter
+        /// can only be used in combination with the <c>AutoScalingGroupName</c> parameter. For
+        /// valid <c>StatusCode</c> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>StartTimeLowerBound</c> and <c>StartTimeUpperBound</c> accept ISO 8601 formatted
+        /// timestamps. Timestamps without a timezone offset are assumed to be UTC. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>2000-01-18T08:15:00Z</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>2000-01-18T16:15:00+08:00</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// One or more filter values. Filter values are case-sensitive. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify multiple values for a filter, the values are automatically logically
+        /// joined with an <c>OR</c>, and the request returns all results that match any of the
+        /// specified values.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>DescribeAutoScalingGroups example:</b> Specify "tag:environment" for the filter
+        /// name and "production,development" for the filter values to find Auto Scaling groups
+        /// with the tag "environment=production" or "environment=development". 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>DescribeScalingActivities example:</b> Specify "Status" for the filter name and
+        /// "Successful,Failed" for the filter values to find scaling activities with a status
+        /// of either "Successful" or "Failed". 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> Values { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Values property is set.
+        /// </summary>
+        internal bool IsSetValues() => this.Values != null && (this.Values.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

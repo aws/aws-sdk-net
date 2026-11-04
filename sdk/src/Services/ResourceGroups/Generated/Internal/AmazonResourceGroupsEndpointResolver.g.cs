@@ -31,7 +31,7 @@ using Amazon.ResourceGroups.Endpoints;
 namespace Amazon.ResourceGroups.Internal
 {
     /// <summary>
-    /// Amazon ResourceGroups endpoint resolver.
+    /// AWS Resource Groups endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ResourceGroups service requests.
     /// <para />

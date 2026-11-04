@@ -26,7 +26,7 @@ using Amazon.Connect.Endpoints;
 namespace Amazon.Connect.Internal
 {
     /// <summary>
-    /// Amazon Connect endpoint provider.
+    /// Amazon Connect Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ConnectEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

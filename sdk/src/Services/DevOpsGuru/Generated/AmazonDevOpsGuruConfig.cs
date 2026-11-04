@@ -27,7 +27,7 @@ using Amazon.DevOpsGuru.Internal;
 namespace Amazon.DevOpsGuru
 {
     /// <summary>
-    /// Configuration for accessing Amazon DevOpsGuru service
+    /// Configuration for accessing Amazon DevOps Guru
     /// </summary>
     public partial class AmazonDevOpsGuruConfig : ClientConfig
     {

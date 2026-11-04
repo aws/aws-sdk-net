@@ -27,7 +27,7 @@ using Amazon.DSQL.Internal;
 namespace Amazon.DSQL
 {
     /// <summary>
-    /// Configuration for accessing Amazon DSQL service
+    /// Configuration for accessing Amazon Aurora DSQL
     /// </summary>
     public partial class AmazonDSQLConfig : ClientConfig
     {

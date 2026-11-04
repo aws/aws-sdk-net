@@ -31,7 +31,7 @@ using Amazon.XRay.Endpoints;
 namespace Amazon.XRay.Internal
 {
     /// <summary>
-    /// Amazon XRay endpoint resolver.
+    /// AWS X-Ray endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for XRay service requests.
     /// <para />

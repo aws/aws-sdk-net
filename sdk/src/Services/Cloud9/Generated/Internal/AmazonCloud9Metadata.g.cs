@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Cloud9.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Cloud9 service
+    /// Service metadata for AWS Cloud9
     /// </summary>
     public partial class AmazonCloud9Metadata : IServiceMetadata
     {

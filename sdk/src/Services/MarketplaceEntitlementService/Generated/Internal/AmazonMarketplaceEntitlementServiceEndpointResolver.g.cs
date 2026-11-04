@@ -31,7 +31,7 @@ using Amazon.MarketplaceEntitlementService.Endpoints;
 namespace Amazon.MarketplaceEntitlementService.Internal
 {
     /// <summary>
-    /// Amazon MarketplaceEntitlementService endpoint resolver.
+    /// AWS Marketplace Entitlement Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MarketplaceEntitlementService service requests.
     /// <para />

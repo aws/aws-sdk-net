@@ -27,7 +27,7 @@ using Amazon.IoTFleetWise.Internal;
 namespace Amazon.IoTFleetWise
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTFleetWise service
+    /// Configuration for accessing AWS IoT FleetWise
     /// </summary>
     public partial class AmazonIoTFleetWiseConfig : ClientConfig
     {

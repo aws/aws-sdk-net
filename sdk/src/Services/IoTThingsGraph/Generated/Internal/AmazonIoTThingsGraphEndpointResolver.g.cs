@@ -31,7 +31,7 @@ using Amazon.IoTThingsGraph.Endpoints;
 namespace Amazon.IoTThingsGraph.Internal
 {
     /// <summary>
-    /// Amazon IoTThingsGraph endpoint resolver.
+    /// AWS IoT Things Graph endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IoTThingsGraph service requests.
     /// <para />

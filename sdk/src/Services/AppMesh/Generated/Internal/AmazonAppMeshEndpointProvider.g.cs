@@ -26,7 +26,7 @@ using Amazon.AppMesh.Endpoints;
 namespace Amazon.AppMesh.Internal
 {
     /// <summary>
-    /// Amazon AppMesh endpoint provider.
+    /// AWS App Mesh endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AppMeshEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

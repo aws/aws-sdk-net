@@ -27,7 +27,7 @@ using Amazon.AgentRegistry.Internal;
 namespace Amazon.AgentRegistry
 {
     /// <summary>
-    /// Configuration for accessing Amazon AgentRegistry service
+    /// Configuration for accessing Agent Registry
     /// </summary>
     public partial class AmazonAgentRegistryConfig : ClientConfig
     {

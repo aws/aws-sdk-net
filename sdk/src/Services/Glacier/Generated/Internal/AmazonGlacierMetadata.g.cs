@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Glacier service
+    /// Service metadata for Amazon Glacier
     /// </summary>
     public partial class AmazonGlacierMetadata : IServiceMetadata
     {

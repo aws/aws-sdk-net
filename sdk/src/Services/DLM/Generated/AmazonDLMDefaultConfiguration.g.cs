@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DLM
 {
     /// <summary>
-    /// Configuration for accessing Amazon DLM service
+    /// Configuration for accessing Amazon Data Lifecycle Manager
     /// </summary>
     public static class AmazonDLMDefaultConfiguration
     {

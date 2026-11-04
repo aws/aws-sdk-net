@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Route53RecoveryControlConfig
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53RecoveryControlConfig service
+    /// Configuration for accessing AWS Route53 Recovery Control Config
     /// </summary>
     public static class AmazonRoute53RecoveryControlConfigDefaultConfiguration
     {

@@ -27,7 +27,7 @@ using Amazon.PersonalizeEvents.Internal;
 namespace Amazon.PersonalizeEvents
 {
     /// <summary>
-    /// Configuration for accessing Amazon PersonalizeEvents service
+    /// Configuration for accessing Amazon Personalize Events
     /// </summary>
     public partial class AmazonPersonalizeEventsConfig : ClientConfig
     {

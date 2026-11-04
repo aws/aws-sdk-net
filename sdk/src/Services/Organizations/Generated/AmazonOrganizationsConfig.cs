@@ -27,7 +27,7 @@ using Amazon.Organizations.Internal;
 namespace Amazon.Organizations
 {
     /// <summary>
-    /// Configuration for accessing Amazon Organizations service
+    /// Configuration for accessing AWS Organizations
     /// </summary>
     public partial class AmazonOrganizationsConfig : ClientConfig
     {

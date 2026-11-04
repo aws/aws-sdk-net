@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AmplifyBackend service
+    /// Service metadata for AmplifyBackend
     /// </summary>
     public partial class AmazonAmplifyBackendMetadata : IServiceMetadata
     {

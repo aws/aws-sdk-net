@@ -26,7 +26,7 @@ using Amazon.KinesisFirehose.Endpoints;
 namespace Amazon.KinesisFirehose.Internal
 {
     /// <summary>
-    /// Amazon KinesisFirehose endpoint provider.
+    /// Amazon Kinesis Firehose endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="KinesisFirehoseEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

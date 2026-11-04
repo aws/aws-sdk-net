@@ -26,7 +26,7 @@ using Amazon.TaxSettings.Endpoints;
 namespace Amazon.TaxSettings.Internal
 {
     /// <summary>
-    /// Amazon TaxSettings endpoint provider.
+    /// Tax Settings endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="TaxSettingsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

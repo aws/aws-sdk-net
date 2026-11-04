@@ -26,7 +26,7 @@ using Amazon.ResourceExplorer2.Endpoints;
 namespace Amazon.ResourceExplorer2.Internal
 {
     /// <summary>
-    /// Amazon ResourceExplorer2 endpoint provider.
+    /// AWS Resource Explorer endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ResourceExplorer2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

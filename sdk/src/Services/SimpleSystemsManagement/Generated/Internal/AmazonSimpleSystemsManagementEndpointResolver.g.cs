@@ -31,7 +31,7 @@ using Amazon.SimpleSystemsManagement.Endpoints;
 namespace Amazon.SimpleSystemsManagement.Internal
 {
     /// <summary>
-    /// Amazon SimpleSystemsManagement endpoint resolver.
+    /// Amazon Simple Systems Manager (SSM) endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SimpleSystemsManagement service requests.
     /// <para />

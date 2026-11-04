@@ -27,7 +27,7 @@ using Amazon.IoTSiteWise.Internal;
 namespace Amazon.IoTSiteWise
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTSiteWise service
+    /// Configuration for accessing AWS IoT SiteWise
     /// </summary>
     public partial class AmazonIoTSiteWiseConfig : ClientConfig
     {

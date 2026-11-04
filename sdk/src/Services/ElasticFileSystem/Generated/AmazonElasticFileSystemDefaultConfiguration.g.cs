@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ElasticFileSystem
 {
     /// <summary>
-    /// Configuration for accessing Amazon ElasticFileSystem service
+    /// Configuration for accessing Amazon Elastic File System
     /// </summary>
     public static class AmazonElasticFileSystemDefaultConfiguration
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PI.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon PI service
+    /// Service metadata for AWS Performance Insights
     /// </summary>
     public partial class AmazonPIMetadata : IServiceMetadata
     {

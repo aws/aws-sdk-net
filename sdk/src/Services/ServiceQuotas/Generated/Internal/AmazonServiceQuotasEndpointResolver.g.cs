@@ -31,7 +31,7 @@ using Amazon.ServiceQuotas.Endpoints;
 namespace Amazon.ServiceQuotas.Internal
 {
     /// <summary>
-    /// Amazon ServiceQuotas endpoint resolver.
+    /// Service Quotas endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ServiceQuotas service requests.
     /// <para />

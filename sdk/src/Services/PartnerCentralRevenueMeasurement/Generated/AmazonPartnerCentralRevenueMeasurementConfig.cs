@@ -27,7 +27,7 @@ using Amazon.PartnerCentralRevenueMeasurement.Internal;
 namespace Amazon.PartnerCentralRevenueMeasurement
 {
     /// <summary>
-    /// Configuration for accessing Amazon PartnerCentralRevenueMeasurement service
+    /// Configuration for accessing Partner Central Revenue Measurement API
     /// </summary>
     public partial class AmazonPartnerCentralRevenueMeasurementConfig : ClientConfig
     {

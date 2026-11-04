@@ -31,7 +31,7 @@ using Amazon.PartnerCentralSelling.Endpoints;
 namespace Amazon.PartnerCentralSelling.Internal
 {
     /// <summary>
-    /// Amazon PartnerCentralSelling endpoint resolver.
+    /// Partner Central Selling API endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PartnerCentralSelling service requests.
     /// <para />

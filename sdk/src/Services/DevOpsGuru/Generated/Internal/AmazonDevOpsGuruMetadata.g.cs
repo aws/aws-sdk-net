@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DevOpsGuru service
+    /// Service metadata for Amazon DevOps Guru
     /// </summary>
     public partial class AmazonDevOpsGuruMetadata : IServiceMetadata
     {

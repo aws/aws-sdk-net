@@ -27,7 +27,7 @@ using Amazon.PartnerCentralSelling.Internal;
 namespace Amazon.PartnerCentralSelling
 {
     /// <summary>
-    /// Configuration for accessing Amazon PartnerCentralSelling service
+    /// Configuration for accessing Partner Central Selling API
     /// </summary>
     public partial class AmazonPartnerCentralSellingConfig : ClientConfig
     {

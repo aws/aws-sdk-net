@@ -26,7 +26,7 @@ using Amazon.ResourceGroupsTaggingAPI.Endpoints;
 namespace Amazon.ResourceGroupsTaggingAPI.Internal
 {
     /// <summary>
-    /// Amazon ResourceGroupsTaggingAPI endpoint provider.
+    /// AWS Resource Groups Tagging API endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ResourceGroupsTaggingAPIEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

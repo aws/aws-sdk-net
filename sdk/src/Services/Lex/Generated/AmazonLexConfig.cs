@@ -27,7 +27,7 @@ using Amazon.Lex.Internal;
 namespace Amazon.Lex
 {
     /// <summary>
-    /// Configuration for accessing Amazon Lex service
+    /// Configuration for accessing Amazon Lex Runtime Service
     /// </summary>
     public partial class AmazonLexConfig : ClientConfig
     {

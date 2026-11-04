@@ -27,7 +27,7 @@ using Amazon.CodeBuild.Internal;
 namespace Amazon.CodeBuild
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeBuild service
+    /// Configuration for accessing AWS CodeBuild
     /// </summary>
     public partial class AmazonCodeBuildConfig : ClientConfig
     {

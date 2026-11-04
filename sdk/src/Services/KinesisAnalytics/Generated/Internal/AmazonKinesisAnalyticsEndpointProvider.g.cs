@@ -26,7 +26,7 @@ using Amazon.KinesisAnalytics.Endpoints;
 namespace Amazon.KinesisAnalytics.Internal
 {
     /// <summary>
-    /// Amazon KinesisAnalytics endpoint provider.
+    /// Amazon Kinesis Analytics endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="KinesisAnalyticsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -31,7 +31,7 @@ using Amazon.AmplifyUIBuilder.Endpoints;
 namespace Amazon.AmplifyUIBuilder.Internal
 {
     /// <summary>
-    /// Amazon AmplifyUIBuilder endpoint resolver.
+    /// AWS Amplify UI Builder endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AmplifyUIBuilder service requests.
     /// <para />

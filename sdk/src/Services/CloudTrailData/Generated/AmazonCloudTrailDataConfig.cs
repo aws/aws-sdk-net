@@ -27,7 +27,7 @@ using Amazon.CloudTrailData.Internal;
 namespace Amazon.CloudTrailData
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudTrailData service
+    /// Configuration for accessing AWS CloudTrail Data Service
     /// </summary>
     public partial class AmazonCloudTrailDataConfig : ClientConfig
     {

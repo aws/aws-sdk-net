@@ -27,7 +27,7 @@ using Amazon.SageMakerGeospatial.Internal;
 namespace Amazon.SageMakerGeospatial
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMakerGeospatial service
+    /// Configuration for accessing Amazon SageMaker geospatial capabilities
     /// </summary>
     public partial class AmazonSageMakerGeospatialConfig : ClientConfig
     {

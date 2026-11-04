@@ -26,7 +26,7 @@ using Amazon.Snowball.Endpoints;
 namespace Amazon.Snowball.Internal
 {
     /// <summary>
-    /// Amazon Snowball endpoint provider.
+    /// Amazon Import/Export Snowball endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SnowballEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

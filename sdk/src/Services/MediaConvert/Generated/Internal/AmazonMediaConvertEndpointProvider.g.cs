@@ -26,7 +26,7 @@ using Amazon.MediaConvert.Endpoints;
 namespace Amazon.MediaConvert.Internal
 {
     /// <summary>
-    /// Amazon MediaConvert endpoint provider.
+    /// AWS Elemental MediaConvert endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MediaConvertEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

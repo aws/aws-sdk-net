@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Cloud9
 {
     /// <summary>
-    /// Configuration for accessing Amazon Cloud9 service
+    /// Configuration for accessing AWS Cloud9
     /// </summary>
     public static class AmazonCloud9DefaultConfiguration
     {

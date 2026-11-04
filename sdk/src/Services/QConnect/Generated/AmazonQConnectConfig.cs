@@ -27,7 +27,7 @@ using Amazon.QConnect.Internal;
 namespace Amazon.QConnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon QConnect service
+    /// Configuration for accessing Amazon Q Connect
     /// </summary>
     public partial class AmazonQConnectConfig : ClientConfig
     {

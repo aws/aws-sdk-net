@@ -27,7 +27,7 @@ using Amazon.MainframeModernization.Internal;
 namespace Amazon.MainframeModernization
 {
     /// <summary>
-    /// Configuration for accessing Amazon MainframeModernization service
+    /// Configuration for accessing AWSMainframeModernization
     /// </summary>
     public partial class AmazonMainframeModernizationConfig : ClientConfig
     {

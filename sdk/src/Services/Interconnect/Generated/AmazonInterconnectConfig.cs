@@ -27,7 +27,7 @@ using Amazon.Interconnect.Internal;
 namespace Amazon.Interconnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon Interconnect service
+    /// Configuration for accessing Interconnect
     /// </summary>
     public partial class AmazonInterconnectConfig : ClientConfig
     {

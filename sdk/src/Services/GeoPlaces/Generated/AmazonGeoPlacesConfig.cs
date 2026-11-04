@@ -27,7 +27,7 @@ using Amazon.GeoPlaces.Internal;
 namespace Amazon.GeoPlaces
 {
     /// <summary>
-    /// Configuration for accessing Amazon GeoPlaces service
+    /// Configuration for accessing Amazon Location Service Places V2
     /// </summary>
     public partial class AmazonGeoPlacesConfig : ClientConfig
     {

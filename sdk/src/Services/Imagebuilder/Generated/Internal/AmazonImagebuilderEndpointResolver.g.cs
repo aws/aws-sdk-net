@@ -31,7 +31,7 @@ using Amazon.Imagebuilder.Endpoints;
 namespace Amazon.Imagebuilder.Internal
 {
     /// <summary>
-    /// Amazon Imagebuilder endpoint resolver.
+    /// EC2 Image Builder endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Imagebuilder service requests.
     /// <para />

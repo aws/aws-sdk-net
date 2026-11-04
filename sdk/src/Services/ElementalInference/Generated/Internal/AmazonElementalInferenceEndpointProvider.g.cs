@@ -26,7 +26,7 @@ using Amazon.ElementalInference.Endpoints;
 namespace Amazon.ElementalInference.Internal
 {
     /// <summary>
-    /// Amazon ElementalInference endpoint provider.
+    /// AWS Elemental Inference endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ElementalInferenceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

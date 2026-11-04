@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SnowDeviceManagement
 {
     /// <summary>
-    /// Configuration for accessing Amazon SnowDeviceManagement service
+    /// Configuration for accessing AWS Snow Device Management
     /// </summary>
     public static class AmazonSnowDeviceManagementDefaultConfiguration
     {

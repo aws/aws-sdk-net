@@ -27,7 +27,7 @@ using Amazon.ForecastQueryService.Internal;
 namespace Amazon.ForecastQueryService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ForecastQueryService service
+    /// Configuration for accessing Amazon Forecast Query Service
     /// </summary>
     public partial class AmazonForecastQueryServiceConfig : ClientConfig
     {

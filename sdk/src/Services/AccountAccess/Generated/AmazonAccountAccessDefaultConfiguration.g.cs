@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AccountAccess
 {
     /// <summary>
-    /// Configuration for accessing Amazon AccountAccess service
+    /// Configuration for accessing Account Access
     /// </summary>
     public static class AmazonAccountAccessDefaultConfiguration
     {

@@ -31,7 +31,7 @@ using Amazon.LexModelsV2.Endpoints;
 namespace Amazon.LexModelsV2.Internal
 {
     /// <summary>
-    /// Amazon LexModelsV2 endpoint resolver.
+    /// Amazon Lex Model Building V2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for LexModelsV2 service requests.
     /// <para />

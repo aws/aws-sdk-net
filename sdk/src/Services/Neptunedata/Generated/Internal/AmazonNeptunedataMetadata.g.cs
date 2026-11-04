@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptunedata.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Neptunedata service
+    /// Service metadata for Amazon NeptuneData
     /// </summary>
     public partial class AmazonNeptunedataMetadata : IServiceMetadata
     {

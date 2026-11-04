@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon LocationService service
+    /// Service metadata for Amazon Location Service
     /// </summary>
     public partial class AmazonLocationServiceMetadata : IServiceMetadata
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.APIGateway
 {
     /// <summary>
-    /// Configuration for accessing Amazon APIGateway service
+    /// Configuration for accessing Amazon API Gateway
     /// </summary>
     public static class AmazonAPIGatewayDefaultConfiguration
     {

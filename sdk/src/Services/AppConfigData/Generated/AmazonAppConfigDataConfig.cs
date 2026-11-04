@@ -27,7 +27,7 @@ using Amazon.AppConfigData.Internal;
 namespace Amazon.AppConfigData
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppConfigData service
+    /// Configuration for accessing AWS AppConfig Data
     /// </summary>
     public partial class AmazonAppConfigDataConfig : ClientConfig
     {

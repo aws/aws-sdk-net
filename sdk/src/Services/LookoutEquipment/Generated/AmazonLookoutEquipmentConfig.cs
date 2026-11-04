@@ -27,7 +27,7 @@ using Amazon.LookoutEquipment.Internal;
 namespace Amazon.LookoutEquipment
 {
     /// <summary>
-    /// Configuration for accessing Amazon LookoutEquipment service
+    /// Configuration for accessing Amazon Lookout for Equipment
     /// </summary>
     public partial class AmazonLookoutEquipmentConfig : ClientConfig
     {

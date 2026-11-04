@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoSync.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CognitoSync service
+    /// Service metadata for Amazon Cognito Sync
     /// </summary>
     public partial class AmazonCognitoSyncMetadata : IServiceMetadata
     {

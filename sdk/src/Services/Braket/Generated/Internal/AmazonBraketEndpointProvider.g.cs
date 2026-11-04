@@ -26,7 +26,7 @@ using Amazon.Braket.Endpoints;
 namespace Amazon.Braket.Internal
 {
     /// <summary>
-    /// Amazon Braket endpoint provider.
+    /// Braket endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BraketEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

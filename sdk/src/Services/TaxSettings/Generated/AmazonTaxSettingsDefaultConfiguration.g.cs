@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.TaxSettings
 {
     /// <summary>
-    /// Configuration for accessing Amazon TaxSettings service
+    /// Configuration for accessing Tax Settings
     /// </summary>
     public static class AmazonTaxSettingsDefaultConfiguration
     {

@@ -31,7 +31,7 @@ using Amazon.PI.Endpoints;
 namespace Amazon.PI.Internal
 {
     /// <summary>
-    /// Amazon PI endpoint resolver.
+    /// AWS Performance Insights endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PI service requests.
     /// <para />

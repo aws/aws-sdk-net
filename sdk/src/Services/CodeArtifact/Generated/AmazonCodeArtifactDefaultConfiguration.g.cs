@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CodeArtifact
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeArtifact service
+    /// Configuration for accessing CodeArtifact
     /// </summary>
     public static class AmazonCodeArtifactDefaultConfiguration
     {

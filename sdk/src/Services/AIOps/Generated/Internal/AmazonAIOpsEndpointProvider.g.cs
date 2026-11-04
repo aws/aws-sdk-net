@@ -26,7 +26,7 @@ using Amazon.AIOps.Endpoints;
 namespace Amazon.AIOps.Internal
 {
     /// <summary>
-    /// Amazon AIOps endpoint provider.
+    /// AWS AI Ops endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AIOpsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

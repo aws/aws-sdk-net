@@ -31,7 +31,7 @@ using Amazon.KinesisFirehose.Endpoints;
 namespace Amazon.KinesisFirehose.Internal
 {
     /// <summary>
-    /// Amazon KinesisFirehose endpoint resolver.
+    /// Amazon Kinesis Firehose endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for KinesisFirehose service requests.
     /// <para />

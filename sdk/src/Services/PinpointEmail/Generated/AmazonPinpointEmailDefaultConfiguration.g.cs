@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.PinpointEmail
 {
     /// <summary>
-    /// Configuration for accessing Amazon PinpointEmail service
+    /// Configuration for accessing Amazon Pinpoint Email Service
     /// </summary>
     public static class AmazonPinpointEmailDefaultConfiguration
     {

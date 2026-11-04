@@ -27,7 +27,7 @@ using Amazon.ApplicationCostProfiler.Internal;
 namespace Amazon.ApplicationCostProfiler
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApplicationCostProfiler service
+    /// Configuration for accessing AWS Application Cost Profiler
     /// </summary>
     public partial class AmazonApplicationCostProfilerConfig : ClientConfig
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Ivschat
 {
     /// <summary>
-    /// Configuration for accessing Amazon Ivschat service
+    /// Configuration for accessing Amazon Interactive Video Service Chat
     /// </summary>
     public static class AmazonIvschatDefaultConfiguration
     {

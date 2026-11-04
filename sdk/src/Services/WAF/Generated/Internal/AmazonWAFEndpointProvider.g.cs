@@ -26,7 +26,7 @@ using Amazon.WAF.Endpoints;
 namespace Amazon.WAF.Internal
 {
     /// <summary>
-    /// Amazon WAF endpoint provider.
+    /// AWS WAF endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="WAFEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

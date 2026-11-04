@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ControlCatalog
 {
     /// <summary>
-    /// Configuration for accessing Amazon ControlCatalog service
+    /// Configuration for accessing AWS Control Catalog
     /// </summary>
     public static class AmazonControlCatalogDefaultConfiguration
     {

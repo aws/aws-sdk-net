@@ -31,7 +31,7 @@ using Amazon.OpenSearchServerless.Endpoints;
 namespace Amazon.OpenSearchServerless.Internal
 {
     /// <summary>
-    /// Amazon OpenSearchServerless endpoint resolver.
+    /// OpenSearch Service Serverless endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for OpenSearchServerless service requests.
     /// <para />

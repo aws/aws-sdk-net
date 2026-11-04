@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon GlueDataBrew service
+    /// Service metadata for AWS Glue DataBrew
     /// </summary>
     public partial class AmazonGlueDataBrewMetadata : IServiceMetadata
     {

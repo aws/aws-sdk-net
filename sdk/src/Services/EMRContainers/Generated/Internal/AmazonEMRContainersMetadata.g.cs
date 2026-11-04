@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRContainers.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon EMRContainers service
+    /// Service metadata for Amazon EMR Containers
     /// </summary>
     public partial class AmazonEMRContainersMetadata : IServiceMetadata
     {

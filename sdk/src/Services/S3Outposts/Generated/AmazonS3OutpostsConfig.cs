@@ -27,7 +27,7 @@ using Amazon.S3Outposts.Internal;
 namespace Amazon.S3Outposts
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Outposts service
+    /// Configuration for accessing Amazon S3 on Outposts
     /// </summary>
     public partial class AmazonS3OutpostsConfig : ClientConfig
     {

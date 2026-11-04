@@ -27,7 +27,7 @@ using Amazon.SagemakerJobRuntime.Internal;
 namespace Amazon.SagemakerJobRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon SagemakerJobRuntime service
+    /// Configuration for accessing Sagemaker Job Runtime Service
     /// </summary>
     public partial class AmazonSagemakerJobRuntimeConfig : ClientConfig
     {

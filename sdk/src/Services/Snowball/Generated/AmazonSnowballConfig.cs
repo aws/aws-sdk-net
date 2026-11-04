@@ -27,7 +27,7 @@ using Amazon.Snowball.Internal;
 namespace Amazon.Snowball
 {
     /// <summary>
-    /// Configuration for accessing Amazon Snowball service
+    /// Configuration for accessing Amazon Import/Export Snowball
     /// </summary>
     public partial class AmazonSnowballConfig : ClientConfig
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Proton service
+    /// Service metadata for AWS Proton
     /// </summary>
     public partial class AmazonProtonMetadata : IServiceMetadata
     {

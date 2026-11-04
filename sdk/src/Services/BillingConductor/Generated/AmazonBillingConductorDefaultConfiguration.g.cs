@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.BillingConductor
 {
     /// <summary>
-    /// Configuration for accessing Amazon BillingConductor service
+    /// Configuration for accessing AWSBillingConductor
     /// </summary>
     public static class AmazonBillingConductorDefaultConfiguration
     {

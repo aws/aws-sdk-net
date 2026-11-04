@@ -26,7 +26,7 @@ using Amazon.Route53Domains.Endpoints;
 namespace Amazon.Route53Domains.Internal
 {
     /// <summary>
-    /// Amazon Route53Domains endpoint provider.
+    /// Amazon Route 53 Domains endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="Route53DomainsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

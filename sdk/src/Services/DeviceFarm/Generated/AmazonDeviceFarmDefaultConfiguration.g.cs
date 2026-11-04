@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DeviceFarm
 {
     /// <summary>
-    /// Configuration for accessing Amazon DeviceFarm service
+    /// Configuration for accessing AWS Device Farm
     /// </summary>
     public static class AmazonDeviceFarmDefaultConfiguration
     {

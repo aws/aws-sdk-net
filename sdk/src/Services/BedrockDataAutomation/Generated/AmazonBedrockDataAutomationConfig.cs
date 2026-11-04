@@ -27,7 +27,7 @@ using Amazon.BedrockDataAutomation.Internal;
 namespace Amazon.BedrockDataAutomation
 {
     /// <summary>
-    /// Configuration for accessing Amazon BedrockDataAutomation service
+    /// Configuration for accessing Data Automation for Amazon Bedrock
     /// </summary>
     public partial class AmazonBedrockDataAutomationConfig : ClientConfig
     {

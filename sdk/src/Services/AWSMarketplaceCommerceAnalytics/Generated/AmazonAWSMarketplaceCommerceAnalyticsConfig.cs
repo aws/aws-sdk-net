@@ -27,7 +27,7 @@ using Amazon.AWSMarketplaceCommerceAnalytics.Internal;
 namespace Amazon.AWSMarketplaceCommerceAnalytics
 {
     /// <summary>
-    /// Configuration for accessing Amazon AWSMarketplaceCommerceAnalytics service
+    /// Configuration for accessing AWS Marketplace Commerce Analytics
     /// </summary>
     public partial class AmazonAWSMarketplaceCommerceAnalyticsConfig : ClientConfig
     {

@@ -31,7 +31,7 @@ using Amazon.SSOAdmin.Endpoints;
 namespace Amazon.SSOAdmin.Internal
 {
     /// <summary>
-    /// Amazon SSOAdmin endpoint resolver.
+    /// AWS Single Sign-On Admin endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SSOAdmin service requests.
     /// <para />

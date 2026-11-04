@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.XRay
 {
     /// <summary>
-    /// Configuration for accessing Amazon XRay service
+    /// Configuration for accessing AWS X-Ray
     /// </summary>
     public static class AmazonXRayDefaultConfiguration
     {

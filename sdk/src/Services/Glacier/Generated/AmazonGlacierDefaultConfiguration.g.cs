@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Glacier
 {
     /// <summary>
-    /// Configuration for accessing Amazon Glacier service
+    /// Configuration for accessing Amazon Glacier
     /// </summary>
     public static class AmazonGlacierDefaultConfiguration
     {

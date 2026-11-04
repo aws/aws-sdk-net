@@ -31,7 +31,7 @@ using Amazon.SimpleEmailV2.Endpoints;
 namespace Amazon.SimpleEmailV2.Internal
 {
     /// <summary>
-    /// Amazon SimpleEmailServiceV2 endpoint resolver.
+    /// Amazon Simple Email Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SimpleEmailServiceV2 service requests.
     /// <para />

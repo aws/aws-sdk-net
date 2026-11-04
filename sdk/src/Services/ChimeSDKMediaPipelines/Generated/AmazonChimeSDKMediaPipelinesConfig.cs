@@ -27,7 +27,7 @@ using Amazon.ChimeSDKMediaPipelines.Internal;
 namespace Amazon.ChimeSDKMediaPipelines
 {
     /// <summary>
-    /// Configuration for accessing Amazon ChimeSDKMediaPipelines service
+    /// Configuration for accessing Amazon Chime SDK Media Pipelines
     /// </summary>
     public partial class AmazonChimeSDKMediaPipelinesConfig : ClientConfig
     {

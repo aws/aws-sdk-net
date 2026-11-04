@@ -27,7 +27,7 @@ using Amazon.KeyManagementService.Internal;
 namespace Amazon.KeyManagementService
 {
     /// <summary>
-    /// Configuration for accessing Amazon KeyManagementService service
+    /// Configuration for accessing AWS Key Management Service
     /// </summary>
     public partial class AmazonKeyManagementServiceConfig : ClientConfig
     {

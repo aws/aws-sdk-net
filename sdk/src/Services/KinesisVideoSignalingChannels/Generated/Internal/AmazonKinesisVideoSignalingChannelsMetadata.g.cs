@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoSignalingChannels.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon KinesisVideoSignalingChannels service
+    /// Service metadata for Amazon Kinesis Video Signaling Channels
     /// </summary>
     public partial class AmazonKinesisVideoSignalingChannelsMetadata : IServiceMetadata
     {

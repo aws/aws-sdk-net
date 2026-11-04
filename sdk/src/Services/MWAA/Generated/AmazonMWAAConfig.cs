@@ -27,7 +27,7 @@ using Amazon.MWAA.Internal;
 namespace Amazon.MWAA
 {
     /// <summary>
-    /// Configuration for accessing Amazon MWAA service
+    /// Configuration for accessing AmazonMWAA
     /// </summary>
     public partial class AmazonMWAAConfig : ClientConfig
     {

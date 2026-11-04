@@ -26,7 +26,7 @@ using Amazon.PI.Endpoints;
 namespace Amazon.PI.Internal
 {
     /// <summary>
-    /// Amazon PI endpoint provider.
+    /// AWS Performance Insights endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PIEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

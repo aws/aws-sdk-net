@@ -31,7 +31,7 @@ using Amazon.IoTJobsDataPlane.Endpoints;
 namespace Amazon.IoTJobsDataPlane.Internal
 {
     /// <summary>
-    /// Amazon IoTJobsDataPlane endpoint resolver.
+    /// AWS IoT Jobs Data Plane endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IoTJobsDataPlane service requests.
     /// <para />

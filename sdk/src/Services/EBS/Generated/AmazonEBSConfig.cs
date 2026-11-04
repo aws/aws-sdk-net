@@ -27,7 +27,7 @@ using Amazon.EBS.Internal;
 namespace Amazon.EBS
 {
     /// <summary>
-    /// Configuration for accessing Amazon EBS service
+    /// Configuration for accessing Amazon Elastic Block Store
     /// </summary>
     public partial class AmazonEBSConfig : ClientConfig
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.GeoMaps
 {
     /// <summary>
-    /// Configuration for accessing Amazon GeoMaps service
+    /// Configuration for accessing Amazon Location Service Maps V2
     /// </summary>
     public static class AmazonGeoMapsDefaultConfiguration
     {

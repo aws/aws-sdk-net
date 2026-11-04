@@ -31,7 +31,7 @@ using Amazon.ConfigService.Endpoints;
 namespace Amazon.ConfigService.Internal
 {
     /// <summary>
-    /// Amazon ConfigService endpoint resolver.
+    /// AWS Config endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ConfigService service requests.
     /// <para />

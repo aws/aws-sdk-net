@@ -27,7 +27,7 @@ using Amazon.NeptuneGraph.Internal;
 namespace Amazon.NeptuneGraph
 {
     /// <summary>
-    /// Configuration for accessing Amazon NeptuneGraph service
+    /// Configuration for accessing Amazon Neptune Graph
     /// </summary>
     public partial class AmazonNeptuneGraphConfig : ClientConfig
     {

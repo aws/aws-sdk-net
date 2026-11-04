@@ -27,7 +27,7 @@ using Amazon.Shield.Internal;
 namespace Amazon.Shield
 {
     /// <summary>
-    /// Configuration for accessing Amazon Shield service
+    /// Configuration for accessing AWS Shield
     /// </summary>
     public partial class AmazonShieldConfig : ClientConfig
     {

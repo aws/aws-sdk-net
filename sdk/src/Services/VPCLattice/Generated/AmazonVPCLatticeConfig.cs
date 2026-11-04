@@ -27,7 +27,7 @@ using Amazon.VPCLattice.Internal;
 namespace Amazon.VPCLattice
 {
     /// <summary>
-    /// Configuration for accessing Amazon VPCLattice service
+    /// Configuration for accessing Amazon VPC Lattice
     /// </summary>
     public partial class AmazonVPCLatticeConfig : ClientConfig
     {

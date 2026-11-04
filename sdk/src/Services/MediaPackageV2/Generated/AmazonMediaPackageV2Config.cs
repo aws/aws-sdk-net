@@ -27,7 +27,7 @@ using Amazon.MediaPackageV2.Internal;
 namespace Amazon.MediaPackageV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaPackageV2 service
+    /// Configuration for accessing AWS Elemental MediaPackage v2
     /// </summary>
     public partial class AmazonMediaPackageV2Config : ClientConfig
     {

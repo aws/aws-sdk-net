@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ElasticMapReduce service
+    /// Service metadata for Amazon EMR
     /// </summary>
     public partial class AmazonElasticMapReduceMetadata : IServiceMetadata
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Detective
 {
     /// <summary>
-    /// Configuration for accessing Amazon Detective service
+    /// Configuration for accessing Amazon Detective
     /// </summary>
     public static class AmazonDetectiveDefaultConfiguration
     {

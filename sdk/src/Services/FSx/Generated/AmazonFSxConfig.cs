@@ -27,7 +27,7 @@ using Amazon.FSx.Internal;
 namespace Amazon.FSx
 {
     /// <summary>
-    /// Configuration for accessing Amazon FSx service
+    /// Configuration for accessing Amazon FSx
     /// </summary>
     public partial class AmazonFSxConfig : ClientConfig
     {

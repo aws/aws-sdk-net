@@ -27,7 +27,7 @@ using Amazon.Repostspace.Internal;
 namespace Amazon.Repostspace
 {
     /// <summary>
-    /// Configuration for accessing Amazon Repostspace service
+    /// Configuration for accessing AWS re:Post Private
     /// </summary>
     public partial class AmazonRepostspaceConfig : ClientConfig
     {

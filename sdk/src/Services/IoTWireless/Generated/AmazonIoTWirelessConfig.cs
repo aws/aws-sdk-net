@@ -27,7 +27,7 @@ using Amazon.IoTWireless.Internal;
 namespace Amazon.IoTWireless
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTWireless service
+    /// Configuration for accessing AWS IoT Wireless
     /// </summary>
     public partial class AmazonIoTWirelessConfig : ClientConfig
     {

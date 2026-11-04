@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.GameLift
 {
     /// <summary>
-    /// Configuration for accessing Amazon GameLift service
+    /// Configuration for accessing Amazon GameLift
     /// </summary>
     public static class AmazonGameLiftDefaultConfiguration
     {

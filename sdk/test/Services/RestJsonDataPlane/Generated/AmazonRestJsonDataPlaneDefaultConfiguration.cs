@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.RestJsonDataPlane
 {
     /// <summary>
-    /// Configuration for accessing Amazon RestJsonDataPlane service
+    /// Configuration for accessing AWS REST JSON Data Plane
     /// </summary>
     public static class AmazonRestJsonDataPlaneDefaultConfiguration
     {

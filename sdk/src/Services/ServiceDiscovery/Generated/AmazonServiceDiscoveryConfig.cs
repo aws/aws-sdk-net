@@ -27,7 +27,7 @@ using Amazon.ServiceDiscovery.Internal;
 namespace Amazon.ServiceDiscovery
 {
     /// <summary>
-    /// Configuration for accessing Amazon ServiceDiscovery service
+    /// Configuration for accessing AWS Cloud Map
     /// </summary>
     public partial class AmazonServiceDiscoveryConfig : ClientConfig
     {

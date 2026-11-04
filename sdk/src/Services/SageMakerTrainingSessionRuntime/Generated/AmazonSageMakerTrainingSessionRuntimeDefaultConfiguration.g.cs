@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SageMakerTrainingSessionRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMakerTrainingSessionRuntime service
+    /// Configuration for accessing SageMaker Training Session Runtime
     /// </summary>
     public static class AmazonSageMakerTrainingSessionRuntimeDefaultConfiguration
     {

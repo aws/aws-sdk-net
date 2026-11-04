@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Evs
 {
     /// <summary>
-    /// Configuration for accessing Amazon Evs service
+    /// Configuration for accessing Amazon Elastic VMware Service
     /// </summary>
     public static class AmazonEvsDefaultConfiguration
     {

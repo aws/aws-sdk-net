@@ -27,7 +27,7 @@ using Amazon.PaymentCryptography.Internal;
 namespace Amazon.PaymentCryptography
 {
     /// <summary>
-    /// Configuration for accessing Amazon PaymentCryptography service
+    /// Configuration for accessing Payment Cryptography Control Plane
     /// </summary>
     public partial class AmazonPaymentCryptographyConfig : ClientConfig
     {

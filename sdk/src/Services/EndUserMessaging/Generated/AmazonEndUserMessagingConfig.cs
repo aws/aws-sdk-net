@@ -27,7 +27,7 @@ using Amazon.EndUserMessaging.Internal;
 namespace Amazon.EndUserMessaging
 {
     /// <summary>
-    /// Configuration for accessing Amazon EndUserMessaging service
+    /// Configuration for accessing AWS End User Messaging
     /// </summary>
     public partial class AmazonEndUserMessagingConfig : ClientConfig
     {

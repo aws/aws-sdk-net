@@ -27,7 +27,7 @@ using Amazon.LaunchWizard.Internal;
 namespace Amazon.LaunchWizard
 {
     /// <summary>
-    /// Configuration for accessing Amazon LaunchWizard service
+    /// Configuration for accessing AWS Launch Wizard
     /// </summary>
     public partial class AmazonLaunchWizardConfig : ClientConfig
     {

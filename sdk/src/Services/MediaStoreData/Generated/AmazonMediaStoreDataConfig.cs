@@ -27,7 +27,7 @@ using Amazon.MediaStoreData.Internal;
 namespace Amazon.MediaStoreData
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaStoreData service
+    /// Configuration for accessing AWS Elemental MediaStore Data Plane
     /// </summary>
     public partial class AmazonMediaStoreDataConfig : ClientConfig
     {

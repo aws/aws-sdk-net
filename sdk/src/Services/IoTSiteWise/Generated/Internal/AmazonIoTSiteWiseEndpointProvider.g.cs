@@ -26,7 +26,7 @@ using Amazon.IoTSiteWise.Endpoints;
 namespace Amazon.IoTSiteWise.Internal
 {
     /// <summary>
-    /// Amazon IoTSiteWise endpoint provider.
+    /// AWS IoT SiteWise endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IoTSiteWiseEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

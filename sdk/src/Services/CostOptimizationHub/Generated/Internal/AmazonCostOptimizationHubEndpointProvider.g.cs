@@ -26,7 +26,7 @@ using Amazon.CostOptimizationHub.Endpoints;
 namespace Amazon.CostOptimizationHub.Internal
 {
     /// <summary>
-    /// Amazon CostOptimizationHub endpoint provider.
+    /// Cost Optimization Hub endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CostOptimizationHubEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostAndUsageReport.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CostAndUsageReport service
+    /// Service metadata for AWS Cost and Usage Report Service
     /// </summary>
     public partial class AmazonCostAndUsageReportMetadata : IServiceMetadata
     {

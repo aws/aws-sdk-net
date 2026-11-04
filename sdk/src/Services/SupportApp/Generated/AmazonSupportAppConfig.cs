@@ -27,7 +27,7 @@ using Amazon.SupportApp.Internal;
 namespace Amazon.SupportApp
 {
     /// <summary>
-    /// Configuration for accessing Amazon SupportApp service
+    /// Configuration for accessing AWS Support App
     /// </summary>
     public partial class AmazonSupportAppConfig : ClientConfig
     {

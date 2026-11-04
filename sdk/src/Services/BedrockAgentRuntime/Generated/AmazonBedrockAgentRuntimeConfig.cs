@@ -27,7 +27,7 @@ using Amazon.BedrockAgentRuntime.Internal;
 namespace Amazon.BedrockAgentRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon BedrockAgentRuntime service
+    /// Configuration for accessing Agents for Amazon Bedrock Runtime
     /// </summary>
     public partial class AmazonBedrockAgentRuntimeConfig : ClientConfig
     {

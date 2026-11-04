@@ -27,7 +27,7 @@ using Amazon.SnowDeviceManagement.Internal;
 namespace Amazon.SnowDeviceManagement
 {
     /// <summary>
-    /// Configuration for accessing Amazon SnowDeviceManagement service
+    /// Configuration for accessing AWS Snow Device Management
     /// </summary>
     public partial class AmazonSnowDeviceManagementConfig : ClientConfig
     {

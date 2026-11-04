@@ -31,7 +31,7 @@ using Amazon.TimestreamQuery.Endpoints;
 namespace Amazon.TimestreamQuery.Internal
 {
     /// <summary>
-    /// Amazon TimestreamQuery endpoint resolver.
+    /// Amazon Timestream Query endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for TimestreamQuery service requests.
     /// <para />

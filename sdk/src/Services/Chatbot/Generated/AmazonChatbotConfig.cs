@@ -27,7 +27,7 @@ using Amazon.Chatbot.Internal;
 namespace Amazon.Chatbot
 {
     /// <summary>
-    /// Configuration for accessing Amazon Chatbot service
+    /// Configuration for accessing AWS Chatbot
     /// </summary>
     public partial class AmazonChatbotConfig : ClientConfig
     {

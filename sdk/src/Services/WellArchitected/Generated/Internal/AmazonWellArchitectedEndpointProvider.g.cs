@@ -26,7 +26,7 @@ using Amazon.WellArchitected.Endpoints;
 namespace Amazon.WellArchitected.Internal
 {
     /// <summary>
-    /// Amazon WellArchitected endpoint provider.
+    /// AWS Well-Architected Tool endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="WellArchitectedEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

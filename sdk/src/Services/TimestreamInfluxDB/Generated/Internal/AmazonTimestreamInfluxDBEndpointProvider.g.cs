@@ -26,7 +26,7 @@ using Amazon.TimestreamInfluxDB.Endpoints;
 namespace Amazon.TimestreamInfluxDB.Internal
 {
     /// <summary>
-    /// Amazon TimestreamInfluxDB endpoint provider.
+    /// Timestream InfluxDB endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="TimestreamInfluxDBEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -31,7 +31,7 @@ using Amazon.ManagedGrafana.Endpoints;
 namespace Amazon.ManagedGrafana.Internal
 {
     /// <summary>
-    /// Amazon ManagedGrafana endpoint resolver.
+    /// Amazon Managed Grafana endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ManagedGrafana service requests.
     /// <para />

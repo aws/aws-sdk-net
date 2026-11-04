@@ -27,7 +27,7 @@ using Amazon.MailManager.Internal;
 namespace Amazon.MailManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon MailManager service
+    /// Configuration for accessing MailManager
     /// </summary>
     public partial class AmazonMailManagerConfig : ClientConfig
     {

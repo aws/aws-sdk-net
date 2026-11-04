@@ -27,7 +27,7 @@ using Amazon.AppStream.Internal;
 namespace Amazon.AppStream
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppStream service
+    /// Configuration for accessing Amazon AppStream
     /// </summary>
     public partial class AmazonAppStreamConfig : ClientConfig
     {

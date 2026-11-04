@@ -26,7 +26,7 @@ using Amazon.MediaConnect.Endpoints;
 namespace Amazon.MediaConnect.Internal
 {
     /// <summary>
-    /// Amazon MediaConnect endpoint provider.
+    /// AWS MediaConnect endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MediaConnectEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

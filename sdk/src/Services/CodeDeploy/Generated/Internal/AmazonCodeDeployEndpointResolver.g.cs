@@ -31,7 +31,7 @@ using Amazon.CodeDeploy.Endpoints;
 namespace Amazon.CodeDeploy.Internal
 {
     /// <summary>
-    /// Amazon CodeDeploy endpoint resolver.
+    /// AWS CodeDeploy endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CodeDeploy service requests.
     /// <para />

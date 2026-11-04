@@ -27,7 +27,7 @@ using Amazon.CodeCatalyst.Internal;
 namespace Amazon.CodeCatalyst
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeCatalyst service
+    /// Configuration for accessing Amazon CodeCatalyst
     /// </summary>
     public partial class AmazonCodeCatalystConfig : ClientConfig
     {

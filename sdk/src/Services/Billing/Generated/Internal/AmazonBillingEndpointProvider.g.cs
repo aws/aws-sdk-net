@@ -26,7 +26,7 @@ using Amazon.Billing.Endpoints;
 namespace Amazon.Billing.Internal
 {
     /// <summary>
-    /// Amazon Billing endpoint provider.
+    /// AWS Billing endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BillingEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

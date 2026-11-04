@@ -26,7 +26,7 @@ using Amazon.SageMakerGeospatial.Endpoints;
 namespace Amazon.SageMakerGeospatial.Internal
 {
     /// <summary>
-    /// Amazon SageMakerGeospatial endpoint provider.
+    /// Amazon SageMaker geospatial capabilities endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SageMakerGeospatialEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

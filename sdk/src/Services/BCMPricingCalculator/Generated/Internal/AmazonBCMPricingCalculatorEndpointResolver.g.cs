@@ -31,7 +31,7 @@ using Amazon.BCMPricingCalculator.Endpoints;
 namespace Amazon.BCMPricingCalculator.Internal
 {
     /// <summary>
-    /// Amazon BCMPricingCalculator endpoint resolver.
+    /// AWS Billing and Cost Management Pricing Calculator endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for BCMPricingCalculator service requests.
     /// <para />

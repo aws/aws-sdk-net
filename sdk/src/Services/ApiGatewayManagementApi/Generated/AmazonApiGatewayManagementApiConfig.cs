@@ -27,7 +27,7 @@ using Amazon.ApiGatewayManagementApi.Internal;
 namespace Amazon.ApiGatewayManagementApi
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApiGatewayManagementApi service
+    /// Configuration for accessing AmazonApiGatewayManagementApi
     /// </summary>
     public partial class AmazonApiGatewayManagementApiConfig : ClientConfig
     {

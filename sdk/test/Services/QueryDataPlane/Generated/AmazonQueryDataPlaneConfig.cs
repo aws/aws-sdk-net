@@ -28,7 +28,7 @@ using Amazon.QueryDataPlane.Internal;
 namespace Amazon.QueryDataPlane
 {
     /// <summary>
-    /// Configuration for accessing Amazon QueryDataPlane service
+    /// Configuration for accessing AWS Query Data Plane
     /// </summary>
     public partial class AmazonQueryDataPlaneConfig : ClientConfig
     {

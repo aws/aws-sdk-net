@@ -27,7 +27,7 @@ using Amazon.Translate.Internal;
 namespace Amazon.Translate
 {
     /// <summary>
-    /// Configuration for accessing Amazon Translate service
+    /// Configuration for accessing Amazon Translate
     /// </summary>
     public partial class AmazonTranslateConfig : ClientConfig
     {

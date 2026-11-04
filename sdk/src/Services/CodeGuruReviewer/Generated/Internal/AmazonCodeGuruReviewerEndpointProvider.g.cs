@@ -26,7 +26,7 @@ using Amazon.CodeGuruReviewer.Endpoints;
 namespace Amazon.CodeGuruReviewer.Internal
 {
     /// <summary>
-    /// Amazon CodeGuruReviewer endpoint provider.
+    /// Amazon CodeGuru Reviewer endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CodeGuruReviewerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

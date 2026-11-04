@@ -27,7 +27,7 @@ using Amazon.VoiceID.Internal;
 namespace Amazon.VoiceID
 {
     /// <summary>
-    /// Configuration for accessing Amazon VoiceID service
+    /// Configuration for accessing Amazon Voice ID
     /// </summary>
     public partial class AmazonVoiceIDConfig : ClientConfig
     {

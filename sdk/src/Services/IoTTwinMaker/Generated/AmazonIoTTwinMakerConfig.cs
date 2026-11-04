@@ -27,7 +27,7 @@ using Amazon.IoTTwinMaker.Internal;
 namespace Amazon.IoTTwinMaker
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTTwinMaker service
+    /// Configuration for accessing AWS IoT TwinMaker
     /// </summary>
     public partial class AmazonIoTTwinMakerConfig : ClientConfig
     {

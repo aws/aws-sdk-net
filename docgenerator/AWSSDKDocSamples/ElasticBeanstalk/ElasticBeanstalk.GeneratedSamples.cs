@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
     {
         public void ElasticBeanstalkAbortEnvironmentUpdate()
         {
-            #region to-abort-a-deployment-1456267848227
+            #region AbortEnvironmentUpdate-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.AbortEnvironmentUpdate(new AbortEnvironmentUpdateRequest 
+            var response = client.AbortEnvironmentUpdate(new AbortEnvironmentUpdateRequest
             {
                 EnvironmentName = "my-env"
             });
@@ -27,15 +28,15 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkCheckDNSAvailability()
         {
-            #region to-check-the-availability-of-a-cname-1456268589537
+            #region CheckDNSAvailability-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.CheckDNSAvailability(new CheckDNSAvailabilityRequest 
+            var response = client.CheckDNSAvailability(new CheckDNSAvailabilityRequest
             {
                 CNAMEPrefix = "my-cname"
             });
 
-            bool available = response.Available;
+            bool? available = response.Available;
             string fullyQualifiedCNAME = response.FullyQualifiedCNAME;
 
             #endregion
@@ -43,10 +44,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkCreateApplication()
         {
-            #region to-create-a-new-application-1456268895683
+            #region CreateApplication-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.CreateApplication(new CreateApplicationRequest 
+            var response = client.CreateApplication(new CreateApplicationRequest
             {
                 ApplicationName = "my-app",
                 Description = "my application"
@@ -59,10 +60,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkCreateApplicationVersion()
         {
-            #region to-create-a-new-application-1456268895683
+            #region CreateApplicationVersion-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.CreateApplicationVersion(new CreateApplicationVersionRequest 
+            var response = client.CreateApplicationVersion(new CreateApplicationVersionRequest
             {
                 ApplicationName = "my-app",
                 AutoCreateApplication = true,
@@ -82,10 +83,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkCreateConfigurationTemplate()
         {
-            #region to-create-a-configuration-template-1456269283586
+            #region CreateConfigurationTemplate-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.CreateConfigurationTemplate(new CreateConfigurationTemplateRequest 
+            var response = client.CreateConfigurationTemplate(new CreateConfigurationTemplateRequest
             {
                 ApplicationName = "my-app",
                 EnvironmentId = "e-rpqsewtp2j",
@@ -93,8 +94,8 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
             });
 
             string applicationName = response.ApplicationName;
-            DateTime dateCreated = response.DateCreated;
-            DateTime dateUpdated = response.DateUpdated;
+            DateTime? dateCreated = response.DateCreated;
+            DateTime? dateUpdated = response.DateUpdated;
             string solutionStackName = response.SolutionStackName;
             string templateName = response.TemplateName;
 
@@ -103,10 +104,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkCreateEnvironment()
         {
-            #region to-create-a-new-environment-for-an-application-1456269380396
+            #region CreateEnvironment-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.CreateEnvironment(new CreateEnvironmentRequest 
+            var response = client.CreateEnvironment(new CreateEnvironmentRequest
             {
                 ApplicationName = "my-app",
                 CNAMEPrefix = "my-app",
@@ -117,13 +118,13 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
             string applicationName = response.ApplicationName;
             string cname = response.CNAME;
-            DateTime dateCreated = response.DateCreated;
-            DateTime dateUpdated = response.DateUpdated;
+            DateTime? dateCreated = response.DateCreated;
+            DateTime? dateUpdated = response.DateUpdated;
             string environmentId = response.EnvironmentId;
             string environmentName = response.EnvironmentName;
-            string health = response.Health;
+            EnvironmentHealth health = response.Health;
             string solutionStackName = response.SolutionStackName;
-            string status = response.Status;
+            EnvironmentStatus status = response.Status;
             EnvironmentTier tier = response.Tier;
             string versionLabel = response.VersionLabel;
 
@@ -132,10 +133,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkCreateStorageLocation()
         {
-            #region to-create-a-new-environment-for-an-application-1456269380396
+            #region CreateStorageLocation-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.CreateStorageLocation(new CreateStorageLocationRequest 
+            var response = client.CreateStorageLocation(new CreateStorageLocationRequest
             {
             });
 
@@ -146,10 +147,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkDeleteApplication()
         {
-            #region to-delete-an-application-1456269699366
+            #region DeleteApplication-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.DeleteApplication(new DeleteApplicationRequest 
+            var response = client.DeleteApplication(new DeleteApplicationRequest
             {
                 ApplicationName = "my-app"
             });
@@ -160,10 +161,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkDeleteApplicationVersion()
         {
-            #region to-delete-an-application-version-1456269792956
+            #region DeleteApplicationVersion-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.DeleteApplicationVersion(new DeleteApplicationVersionRequest 
+            var response = client.DeleteApplicationVersion(new DeleteApplicationVersionRequest
             {
                 ApplicationName = "my-app",
                 DeleteSourceBundle = true,
@@ -176,10 +177,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkDeleteConfigurationTemplate()
         {
-            #region to-delete-a-configuration-template-1456269836701
+            #region DeleteConfigurationTemplate-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.DeleteConfigurationTemplate(new DeleteConfigurationTemplateRequest 
+            var response = client.DeleteConfigurationTemplate(new DeleteConfigurationTemplateRequest
             {
                 ApplicationName = "my-app",
                 TemplateName = "my-template"
@@ -191,10 +192,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkDeleteEnvironmentConfiguration()
         {
-            #region to-delete-a-draft-configuration-1456269886654
+            #region DeleteEnvironmentConfiguration-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.DeleteEnvironmentConfiguration(new DeleteEnvironmentConfigurationRequest 
+            var response = client.DeleteEnvironmentConfiguration(new DeleteEnvironmentConfigurationRequest
             {
                 ApplicationName = "my-app",
                 EnvironmentName = "my-env"
@@ -206,10 +207,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkDescribeApplications()
         {
-            #region to-view-a-list-of-applications-1456270027373
+            #region DescribeApplications-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.DescribeApplications(new DescribeApplicationsRequest 
+            var response = client.DescribeApplications(new DescribeApplicationsRequest
             {
             });
 
@@ -220,10 +221,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkDescribeApplicationVersions()
         {
-            #region to-view-information-about-an-application-version-1456269947428
+            #region DescribeApplicationVersions-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.DescribeApplicationVersions(new DescribeApplicationVersionsRequest 
+            var response = client.DescribeApplicationVersions(new DescribeApplicationVersionsRequest
             {
                 ApplicationName = "my-app",
                 VersionLabels = new List<string> {
@@ -238,10 +239,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkDescribeConfigurationOptions()
         {
-            #region to-view-configuration-options-for-an-environment-1456276763917
+            #region DescribeConfigurationOptions-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.DescribeConfigurationOptions(new DescribeConfigurationOptionsRequest 
+            var response = client.DescribeConfigurationOptions(new DescribeConfigurationOptionsRequest
             {
                 ApplicationName = "my-app",
                 EnvironmentName = "my-env"
@@ -254,10 +255,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkDescribeConfigurationSettings()
         {
-            #region to-view-configurations-settings-for-an-environment-1456276924537
+            #region DescribeConfigurationSettings-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.DescribeConfigurationSettings(new DescribeConfigurationSettingsRequest 
+            var response = client.DescribeConfigurationSettings(new DescribeConfigurationSettingsRequest
             {
                 ApplicationName = "my-app",
                 EnvironmentName = "my-env"
@@ -270,10 +271,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkDescribeEnvironmentHealth()
         {
-            #region to-view-environment-health-1456277109510
+            #region DescribeEnvironmentHealth-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.DescribeEnvironmentHealth(new DescribeEnvironmentHealthRequest 
+            var response = client.DescribeEnvironmentHealth(new DescribeEnvironmentHealthRequest
             {
                 AttributeNames = new List<string> {
                     "All"
@@ -287,17 +288,17 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
             string environmentName = response.EnvironmentName;
             string healthStatus = response.HealthStatus;
             InstanceHealthSummary instancesHealth = response.InstancesHealth;
-            DateTime refreshedAt = response.RefreshedAt;
+            DateTime? refreshedAt = response.RefreshedAt;
 
             #endregion
         }
 
         public void ElasticBeanstalkDescribeEnvironmentResources()
         {
-            #region to-view-information-about-the-aws-resources-in-your-environment-1456277206232
+            #region DescribeEnvironmentResources-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.DescribeEnvironmentResources(new DescribeEnvironmentResourcesRequest 
+            var response = client.DescribeEnvironmentResources(new DescribeEnvironmentResourcesRequest
             {
                 EnvironmentName = "my-env"
             });
@@ -309,10 +310,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkDescribeEnvironments()
         {
-            #region to-view-information-about-an-environment-1456277288662
+            #region DescribeEnvironments-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.DescribeEnvironments(new DescribeEnvironmentsRequest 
+            var response = client.DescribeEnvironments(new DescribeEnvironmentsRequest
             {
                 EnvironmentNames = new List<string> {
                     "my-env"
@@ -326,10 +327,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkDescribeEvents()
         {
-            #region to-view-events-for-an-environment-1456277367589
+            #region DescribeEvents-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.DescribeEvents(new DescribeEventsRequest 
+            var response = client.DescribeEvents(new DescribeEventsRequest
             {
                 EnvironmentName = "my-env"
             });
@@ -341,10 +342,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkDescribeInstancesHealth()
         {
-            #region to-view-environment-health-1456277424757
+            #region DescribeInstancesHealth-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.DescribeInstancesHealth(new DescribeInstancesHealthRequest 
+            var response = client.DescribeInstancesHealth(new DescribeInstancesHealthRequest
             {
                 AttributeNames = new List<string> {
                     "All"
@@ -353,17 +354,17 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
             });
 
             List<SingleInstanceHealth> instanceHealthList = response.InstanceHealthList;
-            DateTime refreshedAt = response.RefreshedAt;
+            DateTime? refreshedAt = response.RefreshedAt;
 
             #endregion
         }
 
         public void ElasticBeanstalkListAvailableSolutionStacks()
         {
-            #region to-view-solution-stacks-1456277504811
+            #region ListAvailableSolutionStacks-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.ListAvailableSolutionStacks(new ListAvailableSolutionStacksRequest 
+            var response = client.ListAvailableSolutionStacks(new ListAvailableSolutionStacksRequest
             {
             });
 
@@ -375,10 +376,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkRebuildEnvironment()
         {
-            #region to-rebuild-an-environment-1456277600918
+            #region RebuildEnvironment-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.RebuildEnvironment(new RebuildEnvironmentRequest 
+            var response = client.RebuildEnvironment(new RebuildEnvironmentRequest
             {
                 EnvironmentName = "my-env"
             });
@@ -389,10 +390,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkRequestEnvironmentInfo()
         {
-            #region to-request-tailed-logs-1456277657045
+            #region RequestEnvironmentInfo-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.RequestEnvironmentInfo(new RequestEnvironmentInfoRequest 
+            var response = client.RequestEnvironmentInfo(new RequestEnvironmentInfoRequest
             {
                 EnvironmentName = "my-env",
                 InfoType = "tail"
@@ -404,10 +405,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkRestartAppServer()
         {
-            #region to-restart-application-servers-1456277739302
+            #region RestartAppServer-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.RestartAppServer(new RestartAppServerRequest 
+            var response = client.RestartAppServer(new RestartAppServerRequest
             {
                 EnvironmentName = "my-env"
             });
@@ -418,10 +419,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkRetrieveEnvironmentInfo()
         {
-            #region to-retrieve-tailed-logs-1456277792734
+            #region RetrieveEnvironmentInfo-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.RetrieveEnvironmentInfo(new RetrieveEnvironmentInfoRequest 
+            var response = client.RetrieveEnvironmentInfo(new RetrieveEnvironmentInfoRequest
             {
                 EnvironmentName = "my-env",
                 InfoType = "tail"
@@ -434,10 +435,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkSwapEnvironmentCNAMEs()
         {
-            #region to-swap-environment-cnames-1456277839438
+            #region SwapEnvironmentCNAMEs-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.SwapEnvironmentCNAMEs(new SwapEnvironmentCNAMEsRequest 
+            var response = client.SwapEnvironmentCNAMEs(new SwapEnvironmentCNAMEsRequest
             {
                 DestinationEnvironmentName = "my-env-green",
                 SourceEnvironmentName = "my-env-blue"
@@ -449,25 +450,25 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkTerminateEnvironment()
         {
-            #region to-terminate-an-environment-1456277888556
+            #region TerminateEnvironment-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.TerminateEnvironment(new TerminateEnvironmentRequest 
+            var response = client.TerminateEnvironment(new TerminateEnvironmentRequest
             {
                 EnvironmentName = "my-env"
             });
 
-            bool abortableOperationInProgress = response.AbortableOperationInProgress;
+            bool? abortableOperationInProgress = response.AbortableOperationInProgress;
             string applicationName = response.ApplicationName;
             string cname = response.CNAME;
-            DateTime dateCreated = response.DateCreated;
-            DateTime dateUpdated = response.DateUpdated;
+            DateTime? dateCreated = response.DateCreated;
+            DateTime? dateUpdated = response.DateUpdated;
             string endpointURL = response.EndpointURL;
             string environmentId = response.EnvironmentId;
             string environmentName = response.EnvironmentName;
-            string health = response.Health;
+            EnvironmentHealth health = response.Health;
             string solutionStackName = response.SolutionStackName;
-            string status = response.Status;
+            EnvironmentStatus status = response.Status;
             EnvironmentTier tier = response.Tier;
 
             #endregion
@@ -475,10 +476,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkUpdateApplication()
         {
-            #region to-change-an-applications-description-1456277957075
+            #region UpdateApplication-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.UpdateApplication(new UpdateApplicationRequest 
+            var response = client.UpdateApplication(new UpdateApplicationRequest
             {
                 ApplicationName = "my-app",
                 Description = "my Elastic Beanstalk application"
@@ -491,10 +492,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkUpdateApplicationVersion()
         {
-            #region to-change-an-application-versions-description-1456278019237
+            #region UpdateApplicationVersion-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.UpdateApplicationVersion(new UpdateApplicationVersionRequest 
+            var response = client.UpdateApplicationVersion(new UpdateApplicationVersionRequest
             {
                 ApplicationName = "my-app",
                 Description = "new description",
@@ -508,10 +509,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkUpdateConfigurationTemplate()
         {
-            #region to-update-a-configuration-template-1456278075300
+            #region UpdateConfigurationTemplate-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.UpdateConfigurationTemplate(new UpdateConfigurationTemplateRequest 
+            var response = client.UpdateConfigurationTemplate(new UpdateConfigurationTemplateRequest
             {
                 ApplicationName = "my-app",
                 OptionsToRemove = new List<OptionSpecification> {
@@ -524,8 +525,8 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
             });
 
             string applicationName = response.ApplicationName;
-            DateTime dateCreated = response.DateCreated;
-            DateTime dateUpdated = response.DateUpdated;
+            DateTime? dateCreated = response.DateCreated;
+            DateTime? dateUpdated = response.DateUpdated;
             string solutionStackName = response.SolutionStackName;
             string templateName = response.TemplateName;
 
@@ -534,37 +535,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkUpdateEnvironment()
         {
-            #region to-update-an-environment-to-a-new-version-1456278210718
+            #region UpdateEnvironment-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.UpdateEnvironment(new UpdateEnvironmentRequest 
-            {
-                EnvironmentName = "my-env",
-                VersionLabel = "v2"
-            });
-
-            string applicationName = response.ApplicationName;
-            string cname = response.CNAME;
-            DateTime dateCreated = response.DateCreated;
-            DateTime dateUpdated = response.DateUpdated;
-            string endpointURL = response.EndpointURL;
-            string environmentId = response.EnvironmentId;
-            string environmentName = response.EnvironmentName;
-            string health = response.Health;
-            string solutionStackName = response.SolutionStackName;
-            string status = response.Status;
-            EnvironmentTier tier = response.Tier;
-            string versionLabel = response.VersionLabel;
-
-            #endregion
-        }
-
-        public void ElasticBeanstalkUpdateEnvironment()
-        {
-            #region to-configure-option-settings-1456278286349
-
-            var client = new AmazonElasticBeanstalkClient();
-            var response = client.UpdateEnvironment(new UpdateEnvironmentRequest 
+            var response = client.UpdateEnvironment(new UpdateEnvironmentRequest
             {
                 EnvironmentName = "my-env",
                 OptionSettings = new List<ConfigurationOptionSetting> {
@@ -591,17 +565,44 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
                 }
             });
 
-            bool abortableOperationInProgress = response.AbortableOperationInProgress;
+            bool? abortableOperationInProgress = response.AbortableOperationInProgress;
             string applicationName = response.ApplicationName;
             string cname = response.CNAME;
-            DateTime dateCreated = response.DateCreated;
-            DateTime dateUpdated = response.DateUpdated;
+            DateTime? dateCreated = response.DateCreated;
+            DateTime? dateUpdated = response.DateUpdated;
             string endpointURL = response.EndpointURL;
             string environmentId = response.EnvironmentId;
             string environmentName = response.EnvironmentName;
-            string health = response.Health;
+            EnvironmentHealth health = response.Health;
             string solutionStackName = response.SolutionStackName;
-            string status = response.Status;
+            EnvironmentStatus status = response.Status;
+            EnvironmentTier tier = response.Tier;
+            string versionLabel = response.VersionLabel;
+
+            #endregion
+        }
+
+        public void ElasticBeanstalkUpdateEnvironment()
+        {
+            #region UpdateEnvironment-2
+
+            var client = new AmazonElasticBeanstalkClient();
+            var response = client.UpdateEnvironment(new UpdateEnvironmentRequest
+            {
+                EnvironmentName = "my-env",
+                VersionLabel = "v2"
+            });
+
+            string applicationName = response.ApplicationName;
+            string cname = response.CNAME;
+            DateTime? dateCreated = response.DateCreated;
+            DateTime? dateUpdated = response.DateUpdated;
+            string endpointURL = response.EndpointURL;
+            string environmentId = response.EnvironmentId;
+            string environmentName = response.EnvironmentName;
+            EnvironmentHealth health = response.Health;
+            string solutionStackName = response.SolutionStackName;
+            EnvironmentStatus status = response.Status;
             EnvironmentTier tier = response.Tier;
             string versionLabel = response.VersionLabel;
 
@@ -610,10 +611,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 
         public void ElasticBeanstalkValidateConfigurationSettings()
         {
-            #region to-validate-configuration-settings-1456278393654
+            #region ValidateConfigurationSettings-1
 
             var client = new AmazonElasticBeanstalkClient();
-            var response = client.ValidateConfigurationSettings(new ValidateConfigurationSettingsRequest 
+            var response = client.ValidateConfigurationSettings(new ValidateConfigurationSettingsRequest
             {
                 ApplicationName = "my-app",
                 EnvironmentName = "my-env",
@@ -631,13 +632,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

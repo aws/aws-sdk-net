@@ -31,7 +31,7 @@ using Amazon.DevOpsAgent.Endpoints;
 namespace Amazon.DevOpsAgent.Internal
 {
     /// <summary>
-    /// Amazon DevOpsAgent endpoint resolver.
+    /// AWS DevOps Agent Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DevOpsAgent service requests.
     /// <para />

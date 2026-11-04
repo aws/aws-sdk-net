@@ -31,7 +31,7 @@ using Amazon.DeviceFarm.Endpoints;
 namespace Amazon.DeviceFarm.Internal
 {
     /// <summary>
-    /// Amazon DeviceFarm endpoint resolver.
+    /// AWS Device Farm endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DeviceFarm service requests.
     /// <para />

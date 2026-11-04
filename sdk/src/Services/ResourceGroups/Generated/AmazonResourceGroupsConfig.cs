@@ -27,7 +27,7 @@ using Amazon.ResourceGroups.Internal;
 namespace Amazon.ResourceGroups
 {
     /// <summary>
-    /// Configuration for accessing Amazon ResourceGroups service
+    /// Configuration for accessing AWS Resource Groups
     /// </summary>
     public partial class AmazonResourceGroupsConfig : ClientConfig
     {

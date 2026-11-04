@@ -27,7 +27,7 @@ using Amazon.ControlTower.Internal;
 namespace Amazon.ControlTower
 {
     /// <summary>
-    /// Configuration for accessing Amazon ControlTower service
+    /// Configuration for accessing AWS Control Tower
     /// </summary>
     public partial class AmazonControlTowerConfig : ClientConfig
     {

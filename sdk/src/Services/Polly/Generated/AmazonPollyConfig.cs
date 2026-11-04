@@ -27,7 +27,7 @@ using Amazon.Polly.Internal;
 namespace Amazon.Polly
 {
     /// <summary>
-    /// Configuration for accessing Amazon Polly service
+    /// Configuration for accessing Amazon Polly
     /// </summary>
     public partial class AmazonPollyConfig : ClientConfig
     {

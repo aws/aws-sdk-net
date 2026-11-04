@@ -31,7 +31,7 @@ using Amazon.Cloud9.Endpoints;
 namespace Amazon.Cloud9.Internal
 {
     /// <summary>
-    /// Amazon Cloud9 endpoint resolver.
+    /// AWS Cloud9 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Cloud9 service requests.
     /// <para />

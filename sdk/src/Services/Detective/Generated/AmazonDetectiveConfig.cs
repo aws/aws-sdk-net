@@ -27,7 +27,7 @@ using Amazon.Detective.Internal;
 namespace Amazon.Detective
 {
     /// <summary>
-    /// Configuration for accessing Amazon Detective service
+    /// Configuration for accessing Amazon Detective
     /// </summary>
     public partial class AmazonDetectiveConfig : ClientConfig
     {

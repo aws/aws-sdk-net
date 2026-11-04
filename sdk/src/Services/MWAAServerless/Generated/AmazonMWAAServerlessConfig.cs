@@ -27,7 +27,7 @@ using Amazon.MWAAServerless.Internal;
 namespace Amazon.MWAAServerless
 {
     /// <summary>
-    /// Configuration for accessing Amazon MWAAServerless service
+    /// Configuration for accessing AmazonMWAAServerless
     /// </summary>
     public partial class AmazonMWAAServerlessConfig : ClientConfig
     {

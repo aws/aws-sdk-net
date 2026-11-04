@@ -27,7 +27,7 @@ using Amazon.SagemakerEdgeManager.Internal;
 namespace Amazon.SagemakerEdgeManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon SagemakerEdgeManager service
+    /// Configuration for accessing Amazon Sagemaker Edge Manager
     /// </summary>
     public partial class AmazonSagemakerEdgeManagerConfig : ClientConfig
     {

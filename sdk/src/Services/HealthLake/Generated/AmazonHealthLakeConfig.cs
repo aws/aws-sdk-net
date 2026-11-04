@@ -27,7 +27,7 @@ using Amazon.HealthLake.Internal;
 namespace Amazon.HealthLake
 {
     /// <summary>
-    /// Configuration for accessing Amazon HealthLake service
+    /// Configuration for accessing Amazon HealthLake
     /// </summary>
     public partial class AmazonHealthLakeConfig : ClientConfig
     {

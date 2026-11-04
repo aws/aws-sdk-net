@@ -27,7 +27,7 @@ using Amazon.S3Tables.Internal;
 namespace Amazon.S3Tables
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Tables service
+    /// Configuration for accessing Amazon S3 Tables
     /// </summary>
     public partial class AmazonS3TablesConfig : ClientConfig
     {

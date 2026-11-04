@@ -27,7 +27,7 @@ using Amazon.CloudWatchRUM.Internal;
 namespace Amazon.CloudWatchRUM
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudWatchRUM service
+    /// Configuration for accessing CloudWatch RUM
     /// </summary>
     public partial class AmazonCloudWatchRUMConfig : ClientConfig
     {

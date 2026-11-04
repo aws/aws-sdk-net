@@ -27,7 +27,7 @@ using Amazon.WorkMail.Internal;
 namespace Amazon.WorkMail
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkMail service
+    /// Configuration for accessing Amazon WorkMail
     /// </summary>
     public partial class AmazonWorkMailConfig : ClientConfig
     {

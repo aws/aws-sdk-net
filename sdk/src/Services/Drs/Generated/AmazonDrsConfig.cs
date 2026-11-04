@@ -27,7 +27,7 @@ using Amazon.Drs.Internal;
 namespace Amazon.Drs
 {
     /// <summary>
-    /// Configuration for accessing Amazon Drs service
+    /// Configuration for accessing Elastic Disaster Recovery Service
     /// </summary>
     public partial class AmazonDrsConfig : ClientConfig
     {

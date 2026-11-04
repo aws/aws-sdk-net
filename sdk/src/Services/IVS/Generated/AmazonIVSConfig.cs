@@ -27,7 +27,7 @@ using Amazon.IVS.Internal;
 namespace Amazon.IVS
 {
     /// <summary>
-    /// Configuration for accessing Amazon IVS service
+    /// Configuration for accessing Amazon Interactive Video Service
     /// </summary>
     public partial class AmazonIVSConfig : ClientConfig
     {

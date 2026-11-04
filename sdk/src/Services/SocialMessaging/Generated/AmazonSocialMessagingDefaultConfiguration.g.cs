@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SocialMessaging
 {
     /// <summary>
-    /// Configuration for accessing Amazon SocialMessaging service
+    /// Configuration for accessing AWS End User Messaging Social
     /// </summary>
     public static class AmazonSocialMessagingDefaultConfiguration
     {

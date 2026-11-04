@@ -27,7 +27,7 @@ using Amazon.WorkDocs.Internal;
 namespace Amazon.WorkDocs
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkDocs service
+    /// Configuration for accessing Amazon WorkDocs
     /// </summary>
     public partial class AmazonWorkDocsConfig : ClientConfig
     {

@@ -27,7 +27,7 @@ using Amazon.ChimeSDKMeetings.Internal;
 namespace Amazon.ChimeSDKMeetings
 {
     /// <summary>
-    /// Configuration for accessing Amazon ChimeSDKMeetings service
+    /// Configuration for accessing Amazon Chime SDK Meetings
     /// </summary>
     public partial class AmazonChimeSDKMeetingsConfig : ClientConfig
     {

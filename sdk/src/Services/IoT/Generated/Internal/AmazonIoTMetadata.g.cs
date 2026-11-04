@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IoT service
+    /// Service metadata for AWS IoT
     /// </summary>
     public partial class AmazonIoTMetadata : IServiceMetadata
     {

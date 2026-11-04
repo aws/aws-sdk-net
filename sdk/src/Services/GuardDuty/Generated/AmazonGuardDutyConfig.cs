@@ -27,7 +27,7 @@ using Amazon.GuardDuty.Internal;
 namespace Amazon.GuardDuty
 {
     /// <summary>
-    /// Configuration for accessing Amazon GuardDuty service
+    /// Configuration for accessing Amazon GuardDuty
     /// </summary>
     public partial class AmazonGuardDutyConfig : ClientConfig
     {

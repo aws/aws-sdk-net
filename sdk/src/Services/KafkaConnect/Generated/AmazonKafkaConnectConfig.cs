@@ -27,7 +27,7 @@ using Amazon.KafkaConnect.Internal;
 namespace Amazon.KafkaConnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon KafkaConnect service
+    /// Configuration for accessing Managed Streaming for Kafka Connect
     /// </summary>
     public partial class AmazonKafkaConnectConfig : ClientConfig
     {

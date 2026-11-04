@@ -26,7 +26,7 @@ using Amazon.Evs.Endpoints;
 namespace Amazon.Evs.Internal
 {
     /// <summary>
-    /// Amazon Evs endpoint provider.
+    /// Amazon Elastic VMware Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="EvsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

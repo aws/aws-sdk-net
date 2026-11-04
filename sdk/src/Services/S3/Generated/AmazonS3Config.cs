@@ -28,7 +28,7 @@ using Amazon.S3.Internal;
 namespace Amazon.S3
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3 service
+    /// Configuration for accessing Amazon Simple Storage Service
     /// </summary>
     public partial class AmazonS3Config : ClientConfig
     {

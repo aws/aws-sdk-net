@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +27,7 @@ using Amazon.IdentityManagement.Internal;
 namespace Amazon.IdentityManagement
 {
     /// <summary>
-    /// Configuration for accessing Amazon IdentityManagementService service
+    /// Configuration for accessing AWS Identity and Access Management
     /// </summary>
     public partial class AmazonIdentityManagementServiceConfig : ClientConfig
     {
@@ -39,16 +38,12 @@ namespace Amazon.IdentityManagement
             new AmazonIdentityManagementServiceEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "IAM";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "IAM";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -65,35 +60,17 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "iam";
-            }
-        }
+        public override string RegionEndpointServiceName => "iam";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2010-05-08";
-            }
-        }
+        public override string ServiceVersion => "2010-05-08";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -115,7 +92,5 @@ namespace Amazon.IdentityManagement
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

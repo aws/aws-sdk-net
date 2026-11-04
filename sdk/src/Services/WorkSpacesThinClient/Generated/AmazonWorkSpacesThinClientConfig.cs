@@ -27,7 +27,7 @@ using Amazon.WorkSpacesThinClient.Internal;
 namespace Amazon.WorkSpacesThinClient
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkSpacesThinClient service
+    /// Configuration for accessing Amazon WorkSpaces Thin Client
     /// </summary>
     public partial class AmazonWorkSpacesThinClientConfig : ClientConfig
     {

@@ -27,7 +27,7 @@ using Amazon.BedrockDataAutomationRuntime.Internal;
 namespace Amazon.BedrockDataAutomationRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon BedrockDataAutomationRuntime service
+    /// Configuration for accessing Runtime for Amazon Bedrock Data Automation
     /// </summary>
     public partial class AmazonBedrockDataAutomationRuntimeConfig : ClientConfig
     {

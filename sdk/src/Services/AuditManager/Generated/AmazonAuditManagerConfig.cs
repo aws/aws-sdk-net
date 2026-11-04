@@ -27,7 +27,7 @@ using Amazon.AuditManager.Internal;
 namespace Amazon.AuditManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon AuditManager service
+    /// Configuration for accessing AWS Audit Manager
     /// </summary>
     public partial class AmazonAuditManagerConfig : ClientConfig
     {

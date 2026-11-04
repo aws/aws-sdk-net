@@ -27,7 +27,7 @@ using Amazon.Keyspaces.Internal;
 namespace Amazon.Keyspaces
 {
     /// <summary>
-    /// Configuration for accessing Amazon Keyspaces service
+    /// Configuration for accessing Amazon Keyspaces
     /// </summary>
     public partial class AmazonKeyspacesConfig : ClientConfig
     {

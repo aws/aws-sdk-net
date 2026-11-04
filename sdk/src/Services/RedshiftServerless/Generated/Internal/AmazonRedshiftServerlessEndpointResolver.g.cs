@@ -31,7 +31,7 @@ using Amazon.RedshiftServerless.Endpoints;
 namespace Amazon.RedshiftServerless.Internal
 {
     /// <summary>
-    /// Amazon RedshiftServerless endpoint resolver.
+    /// Redshift Serverless endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for RedshiftServerless service requests.
     /// <para />

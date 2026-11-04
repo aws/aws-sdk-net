@@ -31,7 +31,7 @@ using Amazon.B2bi.Endpoints;
 namespace Amazon.B2bi.Internal
 {
     /// <summary>
-    /// Amazon B2bi endpoint resolver.
+    /// AWS B2B Data Interchange endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for B2bi service requests.
     /// <para />

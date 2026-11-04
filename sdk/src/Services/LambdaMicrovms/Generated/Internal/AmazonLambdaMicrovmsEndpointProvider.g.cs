@@ -26,7 +26,7 @@ using Amazon.LambdaMicrovms.Endpoints;
 namespace Amazon.LambdaMicrovms.Internal
 {
     /// <summary>
-    /// Amazon LambdaMicrovms endpoint provider.
+    /// Lambda MicroVMs endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="LambdaMicrovmsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

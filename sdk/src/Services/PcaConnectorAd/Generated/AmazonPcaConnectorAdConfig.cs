@@ -27,7 +27,7 @@ using Amazon.PcaConnectorAd.Internal;
 namespace Amazon.PcaConnectorAd
 {
     /// <summary>
-    /// Configuration for accessing Amazon PcaConnectorAd service
+    /// Configuration for accessing PcaConnectorAd
     /// </summary>
     public partial class AmazonPcaConnectorAdConfig : ClientConfig
     {

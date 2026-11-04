@@ -31,7 +31,7 @@ using Amazon.Braket.Endpoints;
 namespace Amazon.Braket.Internal
 {
     /// <summary>
-    /// Amazon Braket endpoint resolver.
+    /// Braket endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Braket service requests.
     /// <para />

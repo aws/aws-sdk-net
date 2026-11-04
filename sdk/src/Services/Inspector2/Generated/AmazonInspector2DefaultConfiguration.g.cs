@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Inspector2
 {
     /// <summary>
-    /// Configuration for accessing Amazon Inspector2 service
+    /// Configuration for accessing Inspector2
     /// </summary>
     public static class AmazonInspector2DefaultConfiguration
     {

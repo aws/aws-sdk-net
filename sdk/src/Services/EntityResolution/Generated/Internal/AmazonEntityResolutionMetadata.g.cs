@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon EntityResolution service
+    /// Service metadata for AWS EntityResolution
     /// </summary>
     public partial class AmazonEntityResolutionMetadata : IServiceMetadata
     {

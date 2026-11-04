@@ -31,7 +31,7 @@ using Amazon.Schemas.Endpoints;
 namespace Amazon.Schemas.Internal
 {
     /// <summary>
-    /// Amazon Schemas endpoint resolver.
+    /// Schemas endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Schemas service requests.
     /// <para />

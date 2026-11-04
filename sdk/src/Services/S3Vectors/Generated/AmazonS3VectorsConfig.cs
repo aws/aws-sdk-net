@@ -27,7 +27,7 @@ using Amazon.S3Vectors.Internal;
 namespace Amazon.S3Vectors
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Vectors service
+    /// Configuration for accessing Amazon S3 Vectors
     /// </summary>
     public partial class AmazonS3VectorsConfig : ClientConfig
     {

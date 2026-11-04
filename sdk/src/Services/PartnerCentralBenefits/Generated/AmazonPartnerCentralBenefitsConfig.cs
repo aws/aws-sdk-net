@@ -27,7 +27,7 @@ using Amazon.PartnerCentralBenefits.Internal;
 namespace Amazon.PartnerCentralBenefits
 {
     /// <summary>
-    /// Configuration for accessing Amazon PartnerCentralBenefits service
+    /// Configuration for accessing Partner Central Benefits API
     /// </summary>
     public partial class AmazonPartnerCentralBenefitsConfig : ClientConfig
     {

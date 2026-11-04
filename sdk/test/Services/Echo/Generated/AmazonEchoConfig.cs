@@ -28,7 +28,7 @@ using Amazon.Echo.Internal;
 namespace Amazon.Echo
 {
     /// <summary>
-    /// Configuration for accessing Amazon Echo service
+    /// Configuration for accessing Echo Service
     /// </summary>
     public partial class AmazonEchoConfig : ClientConfig
     {

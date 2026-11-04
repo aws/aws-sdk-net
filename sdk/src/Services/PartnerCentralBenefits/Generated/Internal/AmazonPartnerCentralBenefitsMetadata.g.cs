@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralBenefits.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon PartnerCentralBenefits service
+    /// Service metadata for Partner Central Benefits API
     /// </summary>
     public partial class AmazonPartnerCentralBenefitsMetadata : IServiceMetadata
     {

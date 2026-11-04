@@ -31,7 +31,7 @@ using Amazon.AWSSupport.Endpoints;
 namespace Amazon.AWSSupport.Internal
 {
     /// <summary>
-    /// Amazon AWSSupport endpoint resolver.
+    /// AWS Support endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AWSSupport service requests.
     /// <para />

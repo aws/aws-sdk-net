@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SimpleEmailV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon SimpleEmailServiceV2 service
+    /// Configuration for accessing Amazon Simple Email Service
     /// </summary>
     public static class AmazonSimpleEmailServiceV2DefaultConfiguration
     {

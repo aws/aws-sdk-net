@@ -26,7 +26,7 @@ using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
 namespace Amazon.S3Control.Internal
 {
     /// <summary>
-    /// Amazon S3Control endpoint provider.
+    /// AWS S3 Control endpoint provider.
     /// Resolves endpoint for given set of S3ControlEndpointParameters.
     /// Can throw AmazonClientException if endpoint resolution is unsuccessful.
     /// </summary>

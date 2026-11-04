@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.WorkSpacesThinClient
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkSpacesThinClient service
+    /// Configuration for accessing Amazon WorkSpaces Thin Client
     /// </summary>
     public static class AmazonWorkSpacesThinClientDefaultConfiguration
     {

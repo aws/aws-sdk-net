@@ -27,7 +27,7 @@ using Amazon.NetworkManager.Internal;
 namespace Amazon.NetworkManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon NetworkManager service
+    /// Configuration for accessing AWS Network Manager
     /// </summary>
     public partial class AmazonNetworkManagerConfig : ClientConfig
     {

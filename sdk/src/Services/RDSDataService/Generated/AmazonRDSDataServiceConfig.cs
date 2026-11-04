@@ -27,7 +27,7 @@ using Amazon.RDSDataService.Internal;
 namespace Amazon.RDSDataService
 {
     /// <summary>
-    /// Configuration for accessing Amazon RDSDataService service
+    /// Configuration for accessing AWS RDS DataService
     /// </summary>
     public partial class AmazonRDSDataServiceConfig : ClientConfig
     {

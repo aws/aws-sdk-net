@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.S3
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3 service
+    /// Configuration for accessing Amazon Simple Storage Service
     /// </summary>
     public static class AmazonS3DefaultConfiguration
     {

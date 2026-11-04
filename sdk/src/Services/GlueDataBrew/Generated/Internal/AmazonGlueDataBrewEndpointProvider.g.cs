@@ -26,7 +26,7 @@ using Amazon.GlueDataBrew.Endpoints;
 namespace Amazon.GlueDataBrew.Internal
 {
     /// <summary>
-    /// Amazon GlueDataBrew endpoint provider.
+    /// AWS Glue DataBrew endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="GlueDataBrewEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -31,7 +31,7 @@ using Amazon.Snowball.Endpoints;
 namespace Amazon.Snowball.Internal
 {
     /// <summary>
-    /// Amazon Snowball endpoint resolver.
+    /// Amazon Import/Export Snowball endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Snowball service requests.
     /// <para />

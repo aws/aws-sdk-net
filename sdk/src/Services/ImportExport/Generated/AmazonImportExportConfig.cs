@@ -28,7 +28,7 @@ using Amazon.ImportExport.Internal;
 namespace Amazon.ImportExport
 {
     /// <summary>
-    /// Configuration for accessing Amazon ImportExport service
+    /// Configuration for accessing AWS Import/Export
     /// </summary>
     public partial class AmazonImportExportConfig : ClientConfig
     {

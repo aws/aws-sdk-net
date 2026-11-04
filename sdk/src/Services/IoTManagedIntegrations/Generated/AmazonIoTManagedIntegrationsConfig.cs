@@ -27,7 +27,7 @@ using Amazon.IoTManagedIntegrations.Internal;
 namespace Amazon.IoTManagedIntegrations
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTManagedIntegrations service
+    /// Configuration for accessing Managed integrations for AWS IoT Device Management
     /// </summary>
     public partial class AmazonIoTManagedIntegrationsConfig : ClientConfig
     {

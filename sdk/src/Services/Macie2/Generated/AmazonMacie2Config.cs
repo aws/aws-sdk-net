@@ -27,7 +27,7 @@ using Amazon.Macie2.Internal;
 namespace Amazon.Macie2
 {
     /// <summary>
-    /// Configuration for accessing Amazon Macie2 service
+    /// Configuration for accessing Amazon Macie 2
     /// </summary>
     public partial class AmazonMacie2Config : ClientConfig
     {

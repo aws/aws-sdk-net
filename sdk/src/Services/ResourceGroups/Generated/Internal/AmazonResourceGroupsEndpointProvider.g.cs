@@ -26,7 +26,7 @@ using Amazon.ResourceGroups.Endpoints;
 namespace Amazon.ResourceGroups.Internal
 {
     /// <summary>
-    /// Amazon ResourceGroups endpoint provider.
+    /// AWS Resource Groups endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ResourceGroupsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

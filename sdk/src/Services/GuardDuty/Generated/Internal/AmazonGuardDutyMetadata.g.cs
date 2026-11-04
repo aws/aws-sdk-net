@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon GuardDuty service
+    /// Service metadata for Amazon GuardDuty
     /// </summary>
     public partial class AmazonGuardDutyMetadata : IServiceMetadata
     {

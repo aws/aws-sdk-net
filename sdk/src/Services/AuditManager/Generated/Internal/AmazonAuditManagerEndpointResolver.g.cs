@@ -31,7 +31,7 @@ using Amazon.AuditManager.Endpoints;
 namespace Amazon.AuditManager.Internal
 {
     /// <summary>
-    /// Amazon AuditManager endpoint resolver.
+    /// AWS Audit Manager endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AuditManager service requests.
     /// <para />

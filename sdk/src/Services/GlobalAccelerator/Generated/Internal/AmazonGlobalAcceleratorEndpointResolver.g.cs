@@ -31,7 +31,7 @@ using Amazon.GlobalAccelerator.Endpoints;
 namespace Amazon.GlobalAccelerator.Internal
 {
     /// <summary>
-    /// Amazon GlobalAccelerator endpoint resolver.
+    /// AWS Global Accelerator endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for GlobalAccelerator service requests.
     /// <para />

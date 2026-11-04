@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ARCZonalShift.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ARCZonalShift service
+    /// Service metadata for AWS ARC - Zonal Shift
     /// </summary>
     public partial class AmazonARCZonalShiftMetadata : IServiceMetadata
     {

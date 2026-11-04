@@ -27,7 +27,7 @@ using Amazon.AppRegistry.Internal;
 namespace Amazon.AppRegistry
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppRegistry service
+    /// Configuration for accessing AWS Service Catalog App Registry
     /// </summary>
     public partial class AmazonAppRegistryConfig : ClientConfig
     {

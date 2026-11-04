@@ -27,7 +27,7 @@ using Amazon.DynamoDBv2.Internal;
 namespace Amazon.DynamoDBv2
 {
     /// <summary>
-    /// Configuration for accessing Amazon DynamoDB service
+    /// Configuration for accessing Amazon DynamoDB
     /// </summary>
     public partial class AmazonDynamoDBConfig : ClientConfig
     {

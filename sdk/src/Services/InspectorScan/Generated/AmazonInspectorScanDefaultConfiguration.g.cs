@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.InspectorScan
 {
     /// <summary>
-    /// Configuration for accessing Amazon InspectorScan service
+    /// Configuration for accessing Inspector Scan
     /// </summary>
     public static class AmazonInspectorScanDefaultConfiguration
     {

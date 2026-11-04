@@ -27,7 +27,7 @@ using Amazon.SecurityLake.Internal;
 namespace Amazon.SecurityLake
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecurityLake service
+    /// Configuration for accessing Amazon Security Lake
     /// </summary>
     public partial class AmazonSecurityLakeConfig : ClientConfig
     {

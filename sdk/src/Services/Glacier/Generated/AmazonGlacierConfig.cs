@@ -27,7 +27,7 @@ using Amazon.Glacier.Internal;
 namespace Amazon.Glacier
 {
     /// <summary>
-    /// Configuration for accessing Amazon Glacier service
+    /// Configuration for accessing Amazon Glacier
     /// </summary>
     public partial class AmazonGlacierConfig : ClientConfig
     {

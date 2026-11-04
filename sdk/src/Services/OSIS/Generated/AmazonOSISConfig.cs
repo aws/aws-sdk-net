@@ -27,7 +27,7 @@ using Amazon.OSIS.Internal;
 namespace Amazon.OSIS
 {
     /// <summary>
-    /// Configuration for accessing Amazon OSIS service
+    /// Configuration for accessing Amazon OpenSearch Ingestion
     /// </summary>
     public partial class AmazonOSISConfig : ClientConfig
     {

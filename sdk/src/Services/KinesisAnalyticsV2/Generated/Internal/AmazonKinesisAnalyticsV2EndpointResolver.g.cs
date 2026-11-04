@@ -31,7 +31,7 @@ using Amazon.KinesisAnalyticsV2.Endpoints;
 namespace Amazon.KinesisAnalyticsV2.Internal
 {
     /// <summary>
-    /// Amazon KinesisAnalyticsV2 endpoint resolver.
+    /// Amazon Kinesis Analytics endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for KinesisAnalyticsV2 service requests.
     /// <para />

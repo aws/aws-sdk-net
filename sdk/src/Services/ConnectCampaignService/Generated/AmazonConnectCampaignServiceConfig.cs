@@ -27,7 +27,7 @@ using Amazon.ConnectCampaignService.Internal;
 namespace Amazon.ConnectCampaignService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectCampaignService service
+    /// Configuration for accessing AmazonConnectCampaignService
     /// </summary>
     public partial class AmazonConnectCampaignServiceConfig : ClientConfig
     {

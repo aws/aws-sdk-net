@@ -26,7 +26,7 @@ using Amazon.SnowDeviceManagement.Endpoints;
 namespace Amazon.SnowDeviceManagement.Internal
 {
     /// <summary>
-    /// Amazon SnowDeviceManagement endpoint provider.
+    /// AWS Snow Device Management endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SnowDeviceManagementEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

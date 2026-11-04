@@ -27,7 +27,7 @@ using Amazon.WellArchitected.Internal;
 namespace Amazon.WellArchitected
 {
     /// <summary>
-    /// Configuration for accessing Amazon WellArchitected service
+    /// Configuration for accessing AWS Well-Architected Tool
     /// </summary>
     public partial class AmazonWellArchitectedConfig : ClientConfig
     {

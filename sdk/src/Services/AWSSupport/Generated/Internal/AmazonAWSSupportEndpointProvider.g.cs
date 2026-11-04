@@ -26,7 +26,7 @@ using Amazon.AWSSupport.Endpoints;
 namespace Amazon.AWSSupport.Internal
 {
     /// <summary>
-    /// Amazon AWSSupport endpoint provider.
+    /// AWS Support endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AWSSupportEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

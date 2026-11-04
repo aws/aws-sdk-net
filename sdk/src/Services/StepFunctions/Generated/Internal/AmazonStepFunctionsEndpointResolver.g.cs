@@ -31,7 +31,7 @@ using Amazon.StepFunctions.Endpoints;
 namespace Amazon.StepFunctions.Internal
 {
     /// <summary>
-    /// Amazon StepFunctions endpoint resolver.
+    /// AWS Step Functions endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for StepFunctions service requests.
     /// <para />

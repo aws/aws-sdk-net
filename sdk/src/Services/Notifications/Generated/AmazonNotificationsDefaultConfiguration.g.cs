@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Notifications
 {
     /// <summary>
-    /// Configuration for accessing Amazon Notifications service
+    /// Configuration for accessing AWS User Notifications
     /// </summary>
     public static class AmazonNotificationsDefaultConfiguration
     {

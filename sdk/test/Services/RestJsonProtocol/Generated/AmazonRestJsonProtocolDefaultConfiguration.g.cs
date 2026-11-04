@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.RestJsonProtocol
 {
     /// <summary>
-    /// Configuration for accessing Amazon RestJsonProtocol service
+    /// Configuration for accessing Sample Rest Json Protocol Service
     /// </summary>
     public static class AmazonRestJsonProtocolDefaultConfiguration
     {

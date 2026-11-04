@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.NetworkManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon NetworkManager service
+    /// Configuration for accessing AWS Network Manager
     /// </summary>
     public static class AmazonNetworkManagerDefaultConfiguration
     {

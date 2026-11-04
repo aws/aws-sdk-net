@@ -27,7 +27,7 @@ using Amazon.Account.Internal;
 namespace Amazon.Account
 {
     /// <summary>
-    /// Configuration for accessing Amazon Account service
+    /// Configuration for accessing AWS Account
     /// </summary>
     public partial class AmazonAccountConfig : ClientConfig
     {

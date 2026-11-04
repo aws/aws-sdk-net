@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Mgn
 {
     /// <summary>
-    /// Configuration for accessing Amazon Mgn service
+    /// Configuration for accessing Application Migration Service
     /// </summary>
     public static class AmazonMgnDefaultConfiguration
     {

@@ -26,7 +26,7 @@ using Amazon.BedrockAgentCore.Endpoints;
 namespace Amazon.BedrockAgentCore.Internal
 {
     /// <summary>
-    /// Amazon BedrockAgentCore endpoint provider.
+    /// Amazon Bedrock AgentCore endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BedrockAgentCoreEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

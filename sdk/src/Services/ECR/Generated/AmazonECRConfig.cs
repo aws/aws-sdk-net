@@ -27,7 +27,7 @@ using Amazon.ECR.Internal;
 namespace Amazon.ECR
 {
     /// <summary>
-    /// Configuration for accessing Amazon ECR service
+    /// Configuration for accessing Amazon Elastic Container Registry
     /// </summary>
     public partial class AmazonECRConfig : ClientConfig
     {

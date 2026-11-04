@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.RestXmlDataPlane
 {
     /// <summary>
-    /// Configuration for accessing Amazon RestXmlDataPlane service
+    /// Configuration for accessing AWS REST XML Data Plane
     /// </summary>
     public static class AmazonRestXmlDataPlaneDefaultConfiguration
     {

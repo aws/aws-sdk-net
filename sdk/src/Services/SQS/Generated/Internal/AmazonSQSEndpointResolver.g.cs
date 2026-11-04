@@ -31,7 +31,7 @@ using Amazon.SQS.Endpoints;
 namespace Amazon.SQS.Internal
 {
     /// <summary>
-    /// Amazon SQS endpoint resolver.
+    /// Amazon Simple Queue Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SQS service requests.
     /// <para />

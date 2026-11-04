@@ -26,7 +26,7 @@ using Amazon.DataPipeline.Endpoints;
 namespace Amazon.DataPipeline.Internal
 {
     /// <summary>
-    /// Amazon DataPipeline endpoint provider.
+    /// AWS Data Pipeline endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DataPipelineEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -27,7 +27,7 @@ using Amazon.CleanRooms.Internal;
 namespace Amazon.CleanRooms
 {
     /// <summary>
-    /// Configuration for accessing Amazon CleanRooms service
+    /// Configuration for accessing AWS Clean Rooms Service
     /// </summary>
     public partial class AmazonCleanRoomsConfig : ClientConfig
     {

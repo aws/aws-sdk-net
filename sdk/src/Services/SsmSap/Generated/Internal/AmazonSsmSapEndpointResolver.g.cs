@@ -31,7 +31,7 @@ using Amazon.SsmSap.Endpoints;
 namespace Amazon.SsmSap.Internal
 {
     /// <summary>
-    /// Amazon SsmSap endpoint resolver.
+    /// AWS Systems Manager for SAP endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SsmSap service requests.
     /// <para />
