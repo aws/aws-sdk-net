@@ -37,7 +37,10 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property CustomAmiList. 
         /// <para>
-        /// The custom AMIs supported by the platform version.
+        /// The AMIs of the platform version, by virtualization type. For Elastic Beanstalk managed
+        /// platforms, these are the default <c>x86_64</c> AMIs; for custom platforms, the <c>hvm</c>
+        /// entry is the AMI built for the platform version. To find a managed platform's default
+        /// AMIs for every supported processor architecture, including <c>arm64</c>, use <c>DefaultAmiList</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -78,6 +81,31 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Checks to see if the DateUpdated property is set.
         /// </summary>
         internal bool IsSetDateUpdated() => this.DateUpdated.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DefaultAmiList. 
+        /// <para>
+        /// The AMIs that Elastic Beanstalk uses by default for the platform version, one for
+        /// each supported processor architecture. When an environment doesn't specify a custom
+        /// AMI, Elastic Beanstalk chooses the default AMI that matches the environment's architecture.
+        /// </para>
+        ///  
+        /// <para>
+        /// This list isn't returned for custom platforms.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<DefaultAmi> DefaultAmiList { get; set; } = AWSConfigs.InitializeCollections ? new List<DefaultAmi>() : null;
+
+        /// <summary>
+        /// Checks to see if the DefaultAmiList property is set.
+        /// </summary>
+        internal bool IsSetDefaultAmiList() => this.DefaultAmiList != null && (this.DefaultAmiList.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property Description. 

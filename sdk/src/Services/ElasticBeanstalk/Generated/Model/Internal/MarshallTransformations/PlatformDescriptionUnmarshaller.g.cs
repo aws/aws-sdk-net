@@ -80,6 +80,17 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("DefaultAmiList/member", targetDepth))
+                    {
+                        if (unmarshalledObject.DefaultAmiList == null)
+                        {
+                            unmarshalledObject.DefaultAmiList = new List<DefaultAmi>();
+                        }
+                        var unmarshaller = DefaultAmiUnmarshaller.Instance;
+                        unmarshalledObject.DefaultAmiList.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
                     if (context.TestExpression("Description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

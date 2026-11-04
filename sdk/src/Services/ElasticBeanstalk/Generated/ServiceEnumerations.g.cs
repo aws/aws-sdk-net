@@ -165,6 +165,47 @@ namespace Amazon.ElasticBeanstalk
     }
 
     /// <summary>
+    /// Constants used for properties of type AmiArchitecture.
+    /// </summary>
+    public class AmiArchitecture : ConstantClass
+    {
+        /// <summary>
+        /// Constant Arm64 for AmiArchitecture
+        /// </summary>
+        public static readonly AmiArchitecture Arm64 = new AmiArchitecture("arm64");
+
+        /// <summary>
+        /// Constant X86_64 for AmiArchitecture
+        /// </summary>
+        public static readonly AmiArchitecture X86_64 = new AmiArchitecture("x86_64");
+
+        /// <summary>
+        /// Constructs a custom AmiArchitecture for a value not among the defined constants.
+        /// </summary>
+        public AmiArchitecture(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AmiArchitecture FindValue(string value)
+        {
+            return FindValue<AmiArchitecture>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AmiArchitecture(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ApplicationVersionStatus.
     /// </summary>
     public class ApplicationVersionStatus : ConstantClass

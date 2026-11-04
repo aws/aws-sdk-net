@@ -47,6 +47,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// If you specify <c>Build</c>, also specify the request's <c>SourceBundle</c> parameter,
         /// and don't specify <c>Source</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// To build the image when you create the application version instead of on first deployment,
+        /// also set <c>Process</c> to <c>true</c>.
+        /// </para>
         /// </summary>
         public ImageBuildConfiguration Build { get; set; }
 

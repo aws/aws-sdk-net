@@ -157,6 +157,13 @@ namespace Amazon.ElasticBeanstalk.Model
         /// or CodeCommit. For application versions built from a source bundle in Amazon S3, processing
         /// is optional.
         /// </para>
+        ///  
+        /// <para>
+        /// For application versions with <c>ImageConfiguration.Build</c>, <c>Process</c> determines
+        /// when Elastic Beanstalk builds the container image. Set it to <c>true</c> to build
+        /// the image when you create the application version. If you don't, Elastic Beanstalk
+        /// builds the image when you first deploy the application version to an environment.
+        /// </para>
         ///  <note> 
         /// <para>
         /// The <c>Process</c> option validates Elastic Beanstalk configuration files. It doesn't
