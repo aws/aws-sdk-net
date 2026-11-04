@@ -1,3 +1,87 @@
+### 4.0.363.0 (2026-11-04 20:18 UTC)
+* AutoScaling (4.0.105.2)
+	* AutoScaling is now generated from its Smithy model. There are no changes to the public API.
+* CloudFormation (4.0.103.6)
+	* CloudFormation is now generated from its Smithy model. There are no changes to the public API.
+* CloudSearch (4.0.100.22)
+	* CloudSearch is now generated from its Smithy model.
+	* Added the Code property to DisabledOperationException, InternalException, InvalidTypeException, LimitExceededException, ResourceAlreadyExistsException, ResourceNotFoundException and ValidationException. It is populated from the Code element of the error response.
+* CloudWatch (4.0.107.3)
+	* CloudWatch is now generated from its Smithy model. There are no changes to the public API.
+* CognitoIdentity (4.0.100.22)
+	* CognitoIdentity is now generated from its Smithy model. There are no changes to the public API.
+* Connect (4.0.130.0)
+	* Adds support for retrieving associated cases in contact responses. The Contact object now includes a Cases field containing case IDs and reference numbers linked to the contact.
+* ConnectContactLens (4.0.102.0)
+	* Rules TBAC GA (Contact Lens V1) - Adds an optional ListFilter (CategoriesAttributeFilter with OrConditions, AndCondition and TagCondition) to ListRealtimeContactAnalysisSegments. This filters matched categories by rule tags. It also adds an optional RuleId to CategoryDetails in the response.
+* DocDB (4.0.102.1)
+	* DocDB is now generated from its Smithy model. There are no changes to the public API.
+* DynamoDBv2 (4.0.110.0)
+	* Adds StartBulkPutItems, DescribeBulkOperation, ListBulkOperations, and CancelBulkOperation for asynchronously loading Amazon S3 datasets into existing DynamoDB tables.
+* EC2 (4.0.132.0)
+	* Add the Unsupported SupportabilityScore to GetCapacityManagerSupportabilityScores.
+* ECS (4.0.110.0)
+	* Amazon ECS Managed Instances now supports the json-file log driver in task definitions. Daemon task definition volumes also support logDriverVolumeConfiguration, letting managed daemons read those logs.
+* ElastiCache (4.0.103.3)
+	* ElastiCache is now generated from its Smithy model. There are no changes to the public API.
+* ElasticBeanstalk (4.0.102.0)
+	* Adds DefaultAmiList to DescribePlatformVersion to return the default AMI for each processor architecture that a platform version supports.
+	* ElasticBeanstalk is now generated from its Smithy model. There are no changes to the public API.
+* ElasticLoadBalancing (4.0.100.22)
+	* ElasticLoadBalancing is now generated from its Smithy model. There are no changes to the public API.
+* ElasticLoadBalancingV2 (4.0.101.19)
+	* ElasticLoadBalancingV2 is now generated from its Smithy model. There are no changes to the public API.
+* ElasticMapReduce (4.0.102.0)
+	* Added StepAdditionalInfo on DescribeStep and ListSteps to surface YARN application IDs for steps.
+* IAMRolesAnywhere (4.0.102.0)
+	* Adds the crlDpRevocationEnabled field to enable automatic revocation checking using CRL distribution points in X.509 certificates.
+* IdentityManagement (4.0.103.14)
+	* IdentityManagement is now generated from its Smithy model. There are no changes to the public API.
+* IoTSiteWise (4.0.103.0)
+	* Adds support for an optional jobName on CreateDatasetExportJob. The jobName is returned by DescribeDatasetExportJob and ListDatasetExportJobs, making dataset export jobs easier to identify and track. If jobName is omitted, a default name is generated automatically.
+* LexRuntimeV2 (4.0.100.22)
+	* LexRuntimeV2 is now generated from its Smithy model.
+	* Marked PutSessionRequest.SessionStateValue as required ([AWSProperty(Required = true)]), matching the service model. The previous generator omitted it because of a bug; the service already rejected requests without it.
+* LookoutEquipment (4.0.101.0)
+	* Amazon Lookout for Equipment reached end of support on October 7, 2026. All Lookout for Equipment APIs are now marked as deprecated.
+* MarketplaceDiscovery (4.0.104.0)
+	* GetListing and SearchListings APIs now return G2 and PeerSpot review sources in review summaries.
+* Mgn (4.0.103.0)
+	* This release adds Migration Planning artifacts as a source environment for network migration definitions, and an optional clientToken on CreateNetworkMigrationDefinition so that retried requests don't create duplicate definitions.
+* MWAAServerless (4.0.102.0)
+	* Adding support to Environment Variables in MWAA Serverless
+* Neptune (4.0.100.22)
+	* Neptune is now generated from its Smithy model. There are no changes to the public API.
+* Polly (4.0.102.0)
+	* Amazon Polly now supports tagging lexicons. Use the new TagResource, UntagResource and ListTagsForResource APIs, or add tags when creating a lexicon with PutLexicon, to organize lexicons and control access with tag-based (ABAC) IAM policies.
+* RDS (4.0.108.0)
+	* Adding support for copying and tagging option groups with cross-Region DB snapshot copies, in the same account or across accounts.
+	* RDS is now generated from its Smithy model. There are no changes to the public API.
+* Redshift (4.0.102.13)
+	* Redshift is now generated from its Smithy model. There are no changes to the public API.
+* S3Tables (4.0.101.0)
+	* Amazon S3 Tables now supports migrating AWS Glue Data Catalog tables into S3 Table buckets. This release adds the StartTableMigration, SyncTableMigration, UpdateTableMigration, CompleteTableMigration, GetTableMigration, and ListTableMigrations APIs.
+* SecurityHub (4.0.107.0)
+	* Release Software APIs- GetSoftwareV2, GetSoftwareStatisticsV2 and GetSoftwareResourcesV2 to list software packages with aggregated resource count, get aggregated software statistics, and find the resources that contain a specific software package.
+* SecurityToken (4.0.101.8)
+	* SecurityToken is now generated from its Smithy model. There are no changes to the public API.
+* SimpleEmail (4.0.100.22)
+	* SimpleEmail is now generated from its Smithy model. There are no changes to the public API.
+* SimpleNotificationService (4.0.100.23)
+	* SimpleNotificationService is now generated from its Smithy model. There are no changes to the public API.
+* SimpleWorkflow (4.0.100.22)
+	* SimpleWorkflow is now generated from its Smithy model. There are no changes to the public API.
+* TaxSettings (4.0.103.0)
+	* Adds Colombia additional information (responsibility codes, taxpayer type code, and RUT issue date) and a rejection reason (statusReason) to tax registration responses, and adds Argentina and Uruguay tax registration types.
+* WorkSpaces (4.0.105.0)
+	* Add Ubuntu 24.04, Ubuntu 26.04, RHEL 9, RHEL10, Rocky 9 and Rocky 10 to OperatingSystemName and documentation update for WorkspaceProperties Protocols.
+* Core 4.0.102.17
+	* Fixed clock skew correction recording a false offset after long-running requests. The skew is now the response Date header minus the time the response headers were received, instead of being measured from the midpoint of the request round trip.
+	* Generated doc comments, assembly descriptions and NuGet package descriptions now use the service name from the service model. No API changes.
+	* Reuse the endpoint resolved during auth scheme resolution instead of evaluating the endpoint ruleset twice per request, and build partition property bags from a per-partition prototype.
+	* Stop the streaming JSON reader from exposing its pooled buffer after it has been returned to the pool, and read the whole body of a JSON error response so the response body in the exception message is complete.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.362.0 (2026-10-30 18:10 UTC)
 * BedrockAgentRuntime (4.0.105.0)
 	* Adds the CodeExecution step and codeExecution action to AgenticRetrieveStream trace events, showing when the agent runs code and which documents it reads.

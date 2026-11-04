@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Generated doc comments, assembly descriptions and NuGet package descriptions now use the service name from the service model. No API changes."
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}
