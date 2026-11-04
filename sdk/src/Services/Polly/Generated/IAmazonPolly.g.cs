@@ -370,11 +370,79 @@ namespace Amazon.Polly
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the tags for an Amazon Polly resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <returns>The response from the ListTagsForResource service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.InvalidTagParameterException">
+        /// The resource ARN or a tag in the request isn't valid. Specify the ARN of a supported
+        /// resource in the Amazon Web Services account and Region of the request. Tag keys can
+        /// have a maximum length of 128 characters, and tag values can have a maximum length
+        /// of 256 characters. Correct the ARN or the tags, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN is spelled
+        /// correctly, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the tags for an Amazon Polly resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListTagsForResource service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.InvalidTagParameterException">
+        /// The resource ARN or a tag in the request isn't valid. Specify the ARN of a supported
+        /// resource in the Amazon Web Services account and Region of the request. Tag keys can
+        /// have a maximum length of 128 characters, and tag values can have a maximum length
+        /// of 256 characters. Correct the ARN or the tags, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN is spelled
+        /// correctly, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Stores a pronunciation lexicon in an Amazon Web Services Region. If a lexicon with
         /// the same name already exists in the region, it is overwritten by the new lexicon.
         /// Lexicon operations have eventual consistency, therefore, it might take some time before
         /// the lexicon is available to the SynthesizeSpeech operation.
         /// 
+        ///  
+        /// <para>
+        /// Overwriting a lexicon keeps its existing tags. You can specify tags only when you
+        /// create a lexicon. If you specify tags for a lexicon that already exists, the request
+        /// fails with a <c>ValidationException</c>. To change the tags of an existing lexicon,
+        /// use <c>TagResource</c> and <c>UntagResource</c>.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
@@ -386,6 +454,12 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.InvalidLexiconException">
         /// Amazon Polly can't find the specified lexicon. Verify that the lexicon's name is spelled
         /// correctly, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.InvalidTagParameterException">
+        /// The resource ARN or a tag in the request isn't valid. Specify the ARN of a supported
+        /// resource in the Amazon Web Services account and Region of the request. Tag keys can
+        /// have a maximum length of 128 characters, and tag values can have a maximum length
+        /// of 256 characters. Correct the ARN or the tags, and then try again.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.LexiconSizeExceededException">
         /// The maximum size of the specified lexicon would be exceeded by this operation.
@@ -399,6 +473,11 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
         /// </exception>
+        /// <exception cref="Amazon.Polly.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the limit. The maximum number of tags that
+        /// can be applied to a resource is 50. Remove unused tags or reduce the number of tags
+        /// in the request, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.UnsupportedPlsAlphabetException">
         /// The alphabet specified by the lexicon is not a supported alphabet. Valid values are
         /// <c>ipa</c>, <c>x-sampa</c>, <c>x-amazon-pinyin</c>, <c>x-amazon-jyutping</c>, <c>x-amazon-pron-kana</c>,
@@ -410,6 +489,9 @@ namespace Amazon.Polly
         /// see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon
         /// Attributes</a>.
         /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         PutLexiconResponse PutLexicon(PutLexiconRequest request);
 #endif
@@ -420,6 +502,13 @@ namespace Amazon.Polly
         /// Lexicon operations have eventual consistency, therefore, it might take some time before
         /// the lexicon is available to the SynthesizeSpeech operation.
         /// 
+        ///  
+        /// <para>
+        /// Overwriting a lexicon keeps its existing tags. You can specify tags only when you
+        /// create a lexicon. If you specify tags for a lexicon that already exists, the request
+        /// fails with a <c>ValidationException</c>. To change the tags of an existing lexicon,
+        /// use <c>TagResource</c> and <c>UntagResource</c>.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
@@ -435,6 +524,12 @@ namespace Amazon.Polly
         /// Amazon Polly can't find the specified lexicon. Verify that the lexicon's name is spelled
         /// correctly, and then try again.
         /// </exception>
+        /// <exception cref="Amazon.Polly.Model.InvalidTagParameterException">
+        /// The resource ARN or a tag in the request isn't valid. Specify the ARN of a supported
+        /// resource in the Amazon Web Services account and Region of the request. Tag keys can
+        /// have a maximum length of 128 characters, and tag values can have a maximum length
+        /// of 256 characters. Correct the ARN or the tags, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.LexiconSizeExceededException">
         /// The maximum size of the specified lexicon would be exceeded by this operation.
         /// </exception>
@@ -447,6 +542,11 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
         /// </exception>
+        /// <exception cref="Amazon.Polly.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the limit. The maximum number of tags that
+        /// can be applied to a resource is 50. Remove unused tags or reduce the number of tags
+        /// in the request, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.UnsupportedPlsAlphabetException">
         /// The alphabet specified by the lexicon is not a supported alphabet. Valid values are
         /// <c>ipa</c>, <c>x-sampa</c>, <c>x-amazon-pinyin</c>, <c>x-amazon-jyutping</c>, <c>x-amazon-pron-kana</c>,
@@ -457,6 +557,9 @@ namespace Amazon.Polly
         /// The language specified in the lexicon is unsupported. For a list of supported languages,
         /// see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon
         /// Attributes</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         Task<PutLexiconResponse> PutLexiconAsync(PutLexiconRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -789,6 +892,144 @@ namespace Amazon.Polly
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         Task<SynthesizeSpeechResponse> SynthesizeSpeechAsync(SynthesizeSpeechRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Adds specified tags to a resource with the specified ARN. Existing tags on a resource
+        /// are not changed if they are not specified in the request parameters. If you specify
+        /// a tag key that already exists on the resource, the value in the request replaces the
+        /// existing value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <returns>The response from the TagResource service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.InvalidTagParameterException">
+        /// The resource ARN or a tag in the request isn't valid. Specify the ARN of a supported
+        /// resource in the Amazon Web Services account and Region of the request. Tag keys can
+        /// have a maximum length of 128 characters, and tag values can have a maximum length
+        /// of 256 characters. Correct the ARN or the tags, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN is spelled
+        /// correctly, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the limit. The maximum number of tags that
+        /// can be applied to a resource is 50. Remove unused tags or reduce the number of tags
+        /// in the request, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Adds specified tags to a resource with the specified ARN. Existing tags on a resource
+        /// are not changed if they are not specified in the request parameters. If you specify
+        /// a tag key that already exists on the resource, the value in the request replaces the
+        /// existing value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the TagResource service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.InvalidTagParameterException">
+        /// The resource ARN or a tag in the request isn't valid. Specify the ARN of a supported
+        /// resource in the Amazon Web Services account and Region of the request. Tag keys can
+        /// have a maximum length of 128 characters, and tag values can have a maximum length
+        /// of 256 characters. Correct the ARN or the tags, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN is spelled
+        /// correctly, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the limit. The maximum number of tags that
+        /// can be applied to a resource is 50. Remove unused tags or reduce the number of tags
+        /// in the request, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes specified tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <returns>The response from the UntagResource service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.InvalidTagParameterException">
+        /// The resource ARN or a tag in the request isn't valid. Specify the ARN of a supported
+        /// resource in the Amazon Web Services account and Region of the request. Tag keys can
+        /// have a maximum length of 128 characters, and tag values can have a maximum length
+        /// of 256 characters. Correct the ARN or the tags, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN is spelled
+        /// correctly, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes specified tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UntagResource service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.InvalidTagParameterException">
+        /// The resource ARN or a tag in the request isn't valid. Specify the ARN of a supported
+        /// resource in the Amazon Web Services account and Region of the request. Tag keys can
+        /// have a maximum length of 128 characters, and tag values can have a maximum length
+        /// of 256 characters. Correct the ARN or the tags, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN is spelled
+        /// correctly, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
