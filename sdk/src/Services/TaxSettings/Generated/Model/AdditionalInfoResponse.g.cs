@@ -91,6 +91,19 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetChileAdditionalInfo() => this.ChileAdditionalInfo != null;
 
         /// <summary>
+        /// Gets and sets the property ColombiaAdditionalInfo. 
+        /// <para>
+        /// Additional tax information associated with your Tax Registration Number (TRN) in Colombia.
+        /// </para>
+        /// </summary>
+        public ColombiaAdditionalInfo ColombiaAdditionalInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ColombiaAdditionalInfo property is set.
+        /// </summary>
+        internal bool IsSetColombiaAdditionalInfo() => this.ColombiaAdditionalInfo != null;
+
+        /// <summary>
         /// Gets and sets the property EgyptAdditionalInfo. 
         /// <para>
         /// Additional tax information to specify for a TRN in Egypt. 

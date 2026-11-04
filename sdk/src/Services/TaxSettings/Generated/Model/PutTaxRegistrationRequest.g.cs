@@ -34,10 +34,13 @@ namespace Amazon.TaxSettings.Model
     /// tax registration for a single account. You can't set a TRN if there's a pending TRN.
     /// You'll need to delete the pending TRN first. <para> To call this API operation for
     /// specific countries, see the following country-specific requirements. </para> <para>
-    /// <b>Bangladesh</b> </para> <ul> <li> <para> You must specify the tax registration certificate
-    /// document in the <c>taxRegistrationDocuments</c> field of the <c>VerificationDetails</c>
-    /// object. </para> </li> </ul> <para> <b>Brazil</b> </para> <ul> <li> <para> You must
-    /// complete the tax registration process in the <a href="https://console.aws.amazon.com/billing/home#/paymentpreferences/paymentmethods">Payment
+    /// <b>Argentina</b> </para> <ul> <li> <para> <c>RegistrationType</c> valid values are
+    /// <c>CUIT</c> (Clave Única de Identificación Tributaria) and <c>CDI</c> (Clave de Identificación).
+    /// </para> </li> </ul> <para> <b>Bangladesh</b> </para> <ul> <li> <para> You must specify
+    /// the tax registration certificate document in the <c>taxRegistrationDocuments</c> field
+    /// of the <c>VerificationDetails</c> object. </para> </li> </ul> <para> <b>Brazil</b>
+    /// </para> <ul> <li> <para> You must complete the tax registration process in the <a
+    /// href="https://console.aws.amazon.com/billing/home#/paymentpreferences/paymentmethods">Payment
     /// preferences</a> page in the Billing and Cost Management console. After your TRN and
     /// billing address are verified, you can call this API operation. </para> </li> <li>
     /// <para> For Amazon Web Services accounts created through Organizations, you can call
@@ -130,13 +133,15 @@ namespace Amazon.TaxSettings.Model
     /// you're subject to KDV tax, you must specify your industry in the <c>industries</c>
     /// field. </para> </li> <li> <para> For <c>address</c>, you must specify <c>districtOrCounty</c>.
     /// </para> </li> </ul> <para> <b>Ukraine</b> </para> <ul> <li> <para> The sector valid
-    /// values are <c>Business</c> and <c>Individual</c>. </para> </li> </ul> <para> <b>Philippines</b>
-    /// </para> <ul> <li> <para> You can optionally specify the <c>isVatRegistered</c> in
-    /// the <c>philippinesAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
-    /// object to indicate your VAT registration status with the Bureau of Internal Revenue
-    /// (BIR). </para> </li> </ul> <para> <b>Belgium</b> </para> <ul> <li> <para> You can
-    /// optionally specify the <c>peppolId</c> in the <c>belgiumAdditionalInfo</c> field of
-    /// the <c>additionalTaxInformation</c> object. </para> </li> </ul> <para> <b>Chile</b>
+    /// values are <c>Business</c> and <c>Individual</c>. </para> </li> </ul> <para> <b>Uruguay</b>
+    /// </para> <ul> <li> <para> <c>RegistrationType</c> valid values are <c>RUT</c> (Registro
+    /// Único Tributario), <c>NIE</c> (Numero de Identificacion del Extranjero), and <c>CI</c>
+    /// (Cedula Identidad). </para> </li> </ul> <para> <b>Philippines</b> </para> <ul> <li>
+    /// <para> You can optionally specify the <c>isVatRegistered</c> in the <c>philippinesAdditionalInfo</c>
+    /// field of the <c>additionalTaxInformation</c> object to indicate your VAT registration
+    /// status with the Bureau of Internal Revenue (BIR). </para> </li> </ul> <para> <b>Belgium</b>
+    /// </para> <ul> <li> <para> You can optionally specify the <c>peppolId</c> in the <c>belgiumAdditionalInfo</c>
+    /// field of the <c>additionalTaxInformation</c> object. </para> </li> </ul> <para> <b>Chile</b>
     /// </para> <ul> <li> <para> You can optionally specify the <c>documentType</c> and <c>businessActivity</c>
     /// in the <c>chileAdditionalInfo</c> field of the <c>additionalTaxInformation</c> object.
     /// </para> </li> </ul> <para> <b>France</b> </para> <ul> <li> <para> You must specify

@@ -138,7 +138,8 @@ namespace Amazon.TaxSettings.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of your TRN. This can be either <c>Verified</c>, <c>Pending</c>, <c>Deleted</c>,
-        /// or <c>Rejected</c>. 
+        /// or <c>Rejected</c>. If the status is <c>Rejected</c>, see <c>statusReason</c> for
+        /// the reason. 
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -148,6 +149,20 @@ namespace Amazon.TaxSettings.Model
         /// Checks to see if the Status property is set.
         /// </summary>
         internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// The reason that your TRN was rejected. This is returned only when <c>status</c> is
+        /// <c>Rejected</c>.
+        /// </para>
+        /// </summary>
+        public TaxRegistrationStatusReason StatusReason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StatusReason property is set.
+        /// </summary>
+        internal bool IsSetStatusReason() => this.StatusReason != null;
 
         /// <summary>
         /// Gets and sets the property TaxDocumentMetadatas. 

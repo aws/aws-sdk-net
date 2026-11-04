@@ -845,6 +845,16 @@ namespace Amazon.TaxSettings
     public class TaxRegistrationType : ConstantClass
     {
         /// <summary>
+        /// Constant CDI for TaxRegistrationType
+        /// </summary>
+        public static readonly TaxRegistrationType CDI = new TaxRegistrationType("CDI");
+
+        /// <summary>
+        /// Constant CI for TaxRegistrationType
+        /// </summary>
+        public static readonly TaxRegistrationType CI = new TaxRegistrationType("CI");
+
+        /// <summary>
         /// Constant CNPJ for TaxRegistrationType
         /// </summary>
         public static readonly TaxRegistrationType CNPJ = new TaxRegistrationType("CNPJ");
@@ -855,9 +865,19 @@ namespace Amazon.TaxSettings
         public static readonly TaxRegistrationType CPF = new TaxRegistrationType("CPF");
 
         /// <summary>
+        /// Constant CUIT for TaxRegistrationType
+        /// </summary>
+        public static readonly TaxRegistrationType CUIT = new TaxRegistrationType("CUIT");
+
+        /// <summary>
         /// Constant GST for TaxRegistrationType
         /// </summary>
         public static readonly TaxRegistrationType GST = new TaxRegistrationType("GST");
+
+        /// <summary>
+        /// Constant NIE for TaxRegistrationType
+        /// </summary>
+        public static readonly TaxRegistrationType NIE = new TaxRegistrationType("NIE");
 
         /// <summary>
         /// Constant NIP for TaxRegistrationType
@@ -873,6 +893,11 @@ namespace Amazon.TaxSettings
         /// Constant PAN for TaxRegistrationType
         /// </summary>
         public static readonly TaxRegistrationType PAN = new TaxRegistrationType("PAN");
+
+        /// <summary>
+        /// Constant RUT for TaxRegistrationType
+        /// </summary>
+        public static readonly TaxRegistrationType RUT = new TaxRegistrationType("RUT");
 
         /// <summary>
         /// Constant SST for TaxRegistrationType
