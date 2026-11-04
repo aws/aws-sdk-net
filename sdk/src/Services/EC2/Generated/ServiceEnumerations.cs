@@ -29460,6 +29460,10 @@ namespace Amazon.EC2
         /// Constant Medium for SupportabilityScore
         /// </summary>
         public static readonly SupportabilityScore Medium = new SupportabilityScore("medium");
+        /// <summary>
+        /// Constant Unsupported for SupportabilityScore
+        /// </summary>
+        public static readonly SupportabilityScore Unsupported = new SupportabilityScore("unsupported");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
