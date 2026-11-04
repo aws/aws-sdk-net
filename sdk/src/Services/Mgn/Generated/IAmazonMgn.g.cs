@@ -1198,7 +1198,7 @@ namespace Amazon.Mgn
         /// 10 minutes). The following properties of the SourceServer will be changed immediately:
         /// dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes
         /// property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
-        /// and dataReplicationInfo.lagDuration will be nullified.
+        /// and dataReplicationInfo.etaDateTime will be nullified.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisconnectFromService service method.</param>
         /// <returns>The response from the DisconnectFromService service method, as returned by Mgn.</returns>
@@ -1226,7 +1226,7 @@ namespace Amazon.Mgn
         /// 10 minutes). The following properties of the SourceServer will be changed immediately:
         /// dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes
         /// property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
-        /// and dataReplicationInfo.lagDuration will be nullified.
+        /// and dataReplicationInfo.etaDateTime will be nullified.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisconnectFromService service method.</param>
         /// <param name="cancellationToken">
@@ -1256,7 +1256,7 @@ namespace Amazon.Mgn
         /// immediately: dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED;
         /// The SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes
         /// property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
-        /// and dataReplicationInfo.lagDuration will be nullified.
+        /// and dataReplicationInfo.etaDateTime will be nullified.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FinalizeCutover service method.</param>
         /// <returns>The response from the FinalizeCutover service method, as returned by Mgn.</returns>
@@ -1286,7 +1286,7 @@ namespace Amazon.Mgn
         /// immediately: dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED;
         /// The SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes
         /// property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
-        /// and dataReplicationInfo.lagDuration will be nullified.
+        /// and dataReplicationInfo.etaDateTime will be nullified.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FinalizeCutover service method.</param>
         /// <param name="cancellationToken">
