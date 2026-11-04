@@ -52,8 +52,22 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property SourceId. 
         /// <para>
-        /// The machine-readable identifier of the review source.
+        /// The machine-readable identifier of the review source. This field has one of the following
+        /// values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS_MARKETPLACE</c> – The reviews come from AWS Marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>G2</c> – The reviews come from G2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PEERSPOT</c> – The reviews come from PeerSpot.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]
         public ReviewSourceId SourceId { get; set; }
@@ -66,8 +80,21 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property SourceName. 
         /// <para>
-        /// The name of the review source, such as AWS Marketplace.
+        /// The name of the review source. This field has one of the following values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// AWS Marketplace
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// G2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PeerSpot
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1024)]
         public string SourceName { get; set; }

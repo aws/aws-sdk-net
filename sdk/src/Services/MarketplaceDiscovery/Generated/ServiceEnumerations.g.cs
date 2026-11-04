@@ -756,6 +756,16 @@ namespace Amazon.MarketplaceDiscovery
         public static readonly ReviewSourceId AWS_MARKETPLACE = new ReviewSourceId("AWS_MARKETPLACE");
 
         /// <summary>
+        /// Constant G2 for ReviewSourceId
+        /// </summary>
+        public static readonly ReviewSourceId G2 = new ReviewSourceId("G2");
+
+        /// <summary>
+        /// Constant PEERSPOT for ReviewSourceId
+        /// </summary>
+        public static readonly ReviewSourceId PEERSPOT = new ReviewSourceId("PEERSPOT");
+
+        /// <summary>
         /// Constructs a custom ReviewSourceId for a value not among the defined constants.
         /// </summary>
         public ReviewSourceId(string value) : base(value) { }
