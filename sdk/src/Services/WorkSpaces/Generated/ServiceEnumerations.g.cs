@@ -2120,14 +2120,34 @@ namespace Amazon.WorkSpaces
         public static readonly OperatingSystemName AMAZON_LINUX_2 = new OperatingSystemName("AMAZON_LINUX_2");
 
         /// <summary>
+        /// Constant RHEL_10 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName RHEL_10 = new OperatingSystemName("RHEL_10");
+
+        /// <summary>
         /// Constant RHEL_8 for OperatingSystemName
         /// </summary>
         public static readonly OperatingSystemName RHEL_8 = new OperatingSystemName("RHEL_8");
 
         /// <summary>
+        /// Constant RHEL_9 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName RHEL_9 = new OperatingSystemName("RHEL_9");
+
+        /// <summary>
+        /// Constant ROCKY_10 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName ROCKY_10 = new OperatingSystemName("ROCKY_10");
+
+        /// <summary>
         /// Constant ROCKY_8 for OperatingSystemName
         /// </summary>
         public static readonly OperatingSystemName ROCKY_8 = new OperatingSystemName("ROCKY_8");
+
+        /// <summary>
+        /// Constant ROCKY_9 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName ROCKY_9 = new OperatingSystemName("ROCKY_9");
 
         /// <summary>
         /// Constant UBUNTU_18_04 for OperatingSystemName
@@ -2143,6 +2163,16 @@ namespace Amazon.WorkSpaces
         /// Constant UBUNTU_22_04 for OperatingSystemName
         /// </summary>
         public static readonly OperatingSystemName UBUNTU_22_04 = new OperatingSystemName("UBUNTU_22_04");
+
+        /// <summary>
+        /// Constant UBUNTU_24_04 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName UBUNTU_24_04 = new OperatingSystemName("UBUNTU_24_04");
+
+        /// <summary>
+        /// Constant UBUNTU_26_04 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName UBUNTU_26_04 = new OperatingSystemName("UBUNTU_26_04");
 
         /// <summary>
         /// Constant UNKNOWN for OperatingSystemName
