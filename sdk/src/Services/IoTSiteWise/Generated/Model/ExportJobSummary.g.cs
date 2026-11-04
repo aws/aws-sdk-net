@@ -76,6 +76,20 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
+        /// Gets and sets the property JobName. 
+        /// <para>
+        /// The name of the dataset export job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 350)]
+        public string JobName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobName property is set.
+        /// </summary>
+        internal bool IsSetJobName() => this.JobName != null;
+
+        /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
         /// The timestamp when the job started processing.
