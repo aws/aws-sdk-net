@@ -85,6 +85,48 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("SourceDBSnapshotIdentifier", StringUtils.FromString(publicRequest.SourceDBSnapshotIdentifier));
             }
+            if (publicRequest.IsSetTagSpecifications())
+            {
+                if (publicRequest.TagSpecifications.Count == 0)
+                {
+                    request.Parameters.Add("TagSpecifications", "");
+                }
+                else
+                {
+                    int index0 = 1;
+                    foreach (var item0 in publicRequest.TagSpecifications)
+                    {
+                        if (item0.IsSetResourceType())
+                        {
+                            request.Parameters.Add("TagSpecifications" + ".item" + "." + index0 + ".ResourceType", StringUtils.FromString(item0.ResourceType));
+                        }
+                        if (item0.IsSetTags())
+                        {
+                            if (item0.Tags.Count == 0)
+                            {
+                                request.Parameters.Add("TagSpecifications" + ".item" + "." + index0 + ".Tags", "");
+                            }
+                            else
+                            {
+                                int index1 = 1;
+                                foreach (var item1 in item0.Tags)
+                                {
+                                    if (item1.IsSetKey())
+                                    {
+                                        request.Parameters.Add("TagSpecifications" + ".item" + "." + index0 + ".Tags" + ".Tag" + "." + index1 + ".Key", StringUtils.FromString(item1.Key));
+                                    }
+                                    if (item1.IsSetValue())
+                                    {
+                                        request.Parameters.Add("TagSpecifications" + ".item" + "." + index0 + ".Tags" + ".Tag" + "." + index1 + ".Value", StringUtils.FromString(item1.Value));
+                                    }
+                                    index1++;
+                                }
+                            }
+                        }
+                        index0++;
+                    }
+                }
+            }
             if (publicRequest.IsSetTags())
             {
                 if (publicRequest.Tags.Count == 0)

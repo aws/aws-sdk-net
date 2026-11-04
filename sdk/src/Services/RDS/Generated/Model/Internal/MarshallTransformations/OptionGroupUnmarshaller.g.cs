@@ -129,6 +129,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("SourceRegion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceRegion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("VpcId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -173,6 +173,20 @@ namespace Amazon.RDS.Model
         internal bool IsSetSourceOptionGroup() => this.SourceOptionGroup != null;
 
         /// <summary>
+        /// Gets and sets the property SourceRegion. 
+        /// <para>
+        /// Specifies the Amazon Web Services Region for the option group from which this option
+        /// group is copied.
+        /// </para>
+        /// </summary>
+        public string SourceRegion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceRegion property is set.
+        /// </summary>
+        internal bool IsSetSourceRegion() => this.SourceRegion != null;
+
+        /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
         /// If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <c>false</c>, this field is blank.

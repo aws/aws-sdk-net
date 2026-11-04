@@ -62,6 +62,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("CopyableCrossRegion", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.CopyableCrossRegion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("DefaultPort", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;

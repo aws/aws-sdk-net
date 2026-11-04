@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The tags to apply to resources when creating or modifying a DB instance or DB cluster.
-    /// When you specify a tag, you must specify the resource type to tag, otherwise the request
-    /// will fail.
+    /// The tags to apply to resources when creating or modifying a DB instance or DB cluster,
+    /// or when copying a DB instance snapshot. When you specify a tag, you must specify the
+    /// resource type to tag, otherwise the request will fail.
     /// </summary>
     public partial class TagSpecification
     {
@@ -52,6 +52,10 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>cluster-auto-backup</c> - The DB cluster's automated backup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>og</c> - The copied option group. Valid only for <c>CopyDBSnapshot</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

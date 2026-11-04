@@ -48,6 +48,19 @@ namespace Amazon.RDS.Model
         internal bool IsSetCopyableCrossAccount() => this.CopyableCrossAccount.HasValue;
 
         /// <summary>
+        /// Gets and sets the property CopyableCrossRegion. 
+        /// <para>
+        /// Indicates whether the option can be copied across Amazon Web Services Regions.
+        /// </para>
+        /// </summary>
+        public bool? CopyableCrossRegion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CopyableCrossRegion property is set.
+        /// </summary>
+        internal bool IsSetCopyableCrossRegion() => this.CopyableCrossRegion.HasValue;
+
+        /// <summary>
         /// Gets and sets the property DefaultPort. 
         /// <para>
         /// If the option requires a port, specifies the default port for the option.

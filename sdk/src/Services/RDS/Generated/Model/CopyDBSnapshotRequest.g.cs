@@ -45,8 +45,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property CopyOptionGroup. 
         /// <para>
         /// Specifies whether to copy the DB option group associated with the source DB snapshot
-        /// to the target Amazon Web Services account and associate with the target DB snapshot.
-        /// The associated option group can be copied only with cross-account snapshot copy calls.
+        /// to the target Amazon Web Services account or Amazon Web Services Region and associate
+        /// it with the target DB snapshot.
         /// </para>
         /// </summary>
         public bool? CopyOptionGroup { get; set; }
@@ -302,6 +302,43 @@ namespace Amazon.RDS.Model
         /// Checks to see if the SourceDBSnapshotIdentifier property is set.
         /// </summary>
         internal bool IsSetSourceDBSnapshotIdentifier() => this.SourceDBSnapshotIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// Tags to assign to the copied option group. By default, the copied option group isn't
+        /// tagged.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>og</c> - The copied option group.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can only be specified when <c>CopyOptionGroup</c> is <c>true</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications { get; set; } = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+
+        /// <summary>
+        /// Checks to see if the TagSpecifications property is set.
+        /// </summary>
+        internal bool IsSetTagSpecifications() => this.TagSpecifications != null && (this.TagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property Tags.
