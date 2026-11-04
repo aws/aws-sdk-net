@@ -8648,6 +8648,414 @@ namespace Amazon.SecurityHub
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns a list of resources that contain a specific software package. You identify
+        /// the package with <c>PackageName</c> and <c>PackageType</c>. To narrow the results
+        /// to one version of the package, include <c>PackageVersion</c>.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you retrieve
+        /// resources from your entire organization or from specific organizational units. Only
+        /// the delegated administrator account can use <c>Scopes</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>Filters</c> parameter to further refine results based on resource
+        /// attributes, such as <c>ResourceType</c> or <c>Region</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSoftwareResourcesV2 service method.</param>
+        /// <returns>The response from the GetSoftwareResourcesV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationNotFoundException">
+        /// The request failed because one or more organizations specified in the request don't
+        /// exist or don't belong to the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationalUnitNotFoundException">
+        /// The request failed because one or more organizational units specified in the request
+        /// don't exist within the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSoftwareResourcesV2">REST API Reference for GetSoftwareResourcesV2 Operation</seealso>
+        public virtual GetSoftwareResourcesV2Response GetSoftwareResourcesV2(GetSoftwareResourcesV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSoftwareResourcesV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSoftwareResourcesV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetSoftwareResourcesV2Response>(request, options);
+        }
+#else
+        internal virtual GetSoftwareResourcesV2Response GetSoftwareResourcesV2(GetSoftwareResourcesV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSoftwareResourcesV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSoftwareResourcesV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetSoftwareResourcesV2Response>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns a list of resources that contain a specific software package. You identify
+        /// the package with <c>PackageName</c> and <c>PackageType</c>. To narrow the results
+        /// to one version of the package, include <c>PackageVersion</c>.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you retrieve
+        /// resources from your entire organization or from specific organizational units. Only
+        /// the delegated administrator account can use <c>Scopes</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>Filters</c> parameter to further refine results based on resource
+        /// attributes, such as <c>ResourceType</c> or <c>Region</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSoftwareResourcesV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetSoftwareResourcesV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationNotFoundException">
+        /// The request failed because one or more organizations specified in the request don't
+        /// exist or don't belong to the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationalUnitNotFoundException">
+        /// The request failed because one or more organizational units specified in the request
+        /// don't exist within the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSoftwareResourcesV2">REST API Reference for GetSoftwareResourcesV2 Operation</seealso>
+        public virtual Task<GetSoftwareResourcesV2Response> GetSoftwareResourcesV2Async(GetSoftwareResourcesV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSoftwareResourcesV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSoftwareResourcesV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSoftwareResourcesV2Response>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves aggregated counts of software packages installed on your resources, grouped
+        /// by a field that you specify. For example, you can return the most common package types
+        /// or the accounts with the most installed packages.
+        /// 
+        ///  
+        /// <para>
+        /// Each count is the number of package-to-resource pairs that match the grouping value.
+        /// A package installed on three resources contributes three to the count.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you aggregate
+        /// software from your entire organization or from specific organizational units. Only
+        /// the delegated administrator account can use <c>Scopes</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation doesn't paginate. Use <c>MaxStatisticResults</c> to control how many
+        /// grouping values are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSoftwareStatisticsV2 service method.</param>
+        /// <returns>The response from the GetSoftwareStatisticsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationNotFoundException">
+        /// The request failed because one or more organizations specified in the request don't
+        /// exist or don't belong to the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationalUnitNotFoundException">
+        /// The request failed because one or more organizational units specified in the request
+        /// don't exist within the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSoftwareStatisticsV2">REST API Reference for GetSoftwareStatisticsV2 Operation</seealso>
+        public virtual GetSoftwareStatisticsV2Response GetSoftwareStatisticsV2(GetSoftwareStatisticsV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSoftwareStatisticsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSoftwareStatisticsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetSoftwareStatisticsV2Response>(request, options);
+        }
+#else
+        internal virtual GetSoftwareStatisticsV2Response GetSoftwareStatisticsV2(GetSoftwareStatisticsV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSoftwareStatisticsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSoftwareStatisticsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetSoftwareStatisticsV2Response>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves aggregated counts of software packages installed on your resources, grouped
+        /// by a field that you specify. For example, you can return the most common package types
+        /// or the accounts with the most installed packages.
+        /// 
+        ///  
+        /// <para>
+        /// Each count is the number of package-to-resource pairs that match the grouping value.
+        /// A package installed on three resources contributes three to the count.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you aggregate
+        /// software from your entire organization or from specific organizational units. Only
+        /// the delegated administrator account can use <c>Scopes</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation doesn't paginate. Use <c>MaxStatisticResults</c> to control how many
+        /// grouping values are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSoftwareStatisticsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetSoftwareStatisticsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationNotFoundException">
+        /// The request failed because one or more organizations specified in the request don't
+        /// exist or don't belong to the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationalUnitNotFoundException">
+        /// The request failed because one or more organizational units specified in the request
+        /// don't exist within the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSoftwareStatisticsV2">REST API Reference for GetSoftwareStatisticsV2 Operation</seealso>
+        public virtual Task<GetSoftwareStatisticsV2Response> GetSoftwareStatisticsV2Async(GetSoftwareStatisticsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSoftwareStatisticsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSoftwareStatisticsV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSoftwareStatisticsV2Response>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a list of software packages installed on your resources. Each result identifies
+        /// a package by name, version, and type, and includes the number of resources that contain
+        /// that package.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you retrieve
+        /// software from your entire organization or from specific organizational units. Only
+        /// the delegated administrator account can use <c>Scopes</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>Filters</c> parameter to refine results based on package and resource
+        /// attributes. You can use <c>Scopes</c> and <c>Filters</c> independently or together.
+        /// When both are provided, <c>Scopes</c> narrows the data set first, and then <c>Filters</c>
+        /// refines results within that scoped data set.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list the resources that contain a specific package, use <c>GetSoftwareResourcesV2</c>.
+        /// To get counts of software grouped by a field, use <c>GetSoftwareStatisticsV2</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSoftwareV2 service method.</param>
+        /// <returns>The response from the GetSoftwareV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationNotFoundException">
+        /// The request failed because one or more organizations specified in the request don't
+        /// exist or don't belong to the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationalUnitNotFoundException">
+        /// The request failed because one or more organizational units specified in the request
+        /// don't exist within the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSoftwareV2">REST API Reference for GetSoftwareV2 Operation</seealso>
+        public virtual GetSoftwareV2Response GetSoftwareV2(GetSoftwareV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSoftwareV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSoftwareV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetSoftwareV2Response>(request, options);
+        }
+#else
+        internal virtual GetSoftwareV2Response GetSoftwareV2(GetSoftwareV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSoftwareV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSoftwareV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetSoftwareV2Response>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns a list of software packages installed on your resources. Each result identifies
+        /// a package by name, version, and type, and includes the number of resources that contain
+        /// that package.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you retrieve
+        /// software from your entire organization or from specific organizational units. Only
+        /// the delegated administrator account can use <c>Scopes</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>Filters</c> parameter to refine results based on package and resource
+        /// attributes. You can use <c>Scopes</c> and <c>Filters</c> independently or together.
+        /// When both are provided, <c>Scopes</c> narrows the data set first, and then <c>Filters</c>
+        /// refines results within that scoped data set.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list the resources that contain a specific package, use <c>GetSoftwareResourcesV2</c>.
+        /// To get counts of software grouped by a field, use <c>GetSoftwareStatisticsV2</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSoftwareV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetSoftwareV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationNotFoundException">
+        /// The request failed because one or more organizations specified in the request don't
+        /// exist or don't belong to the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationalUnitNotFoundException">
+        /// The request failed because one or more organizational units specified in the request
+        /// don't exist within the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSoftwareV2">REST API Reference for GetSoftwareV2 Operation</seealso>
+        public virtual Task<GetSoftwareV2Response> GetSoftwareV2Async(GetSoftwareV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSoftwareV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSoftwareV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSoftwareV2Response>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// <note> 
         /// <para>
         /// We recommend using Organizations instead of Security Hub CSPM invitations to manage
