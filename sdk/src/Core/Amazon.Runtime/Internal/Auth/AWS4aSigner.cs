@@ -385,12 +385,19 @@ namespace Amazon.Runtime.Internal.Auth
             // uint32 magic || uint32 keySize || byte[keySize] X || byte[keySize] Y || byte[keySize] D
             // Only D is set, and X and Y are left as zeroes, which is sufficient for CNG to import the key.
             var keyBlob = new byte[sizeof(uint) * 2 + privateKey.Length * 3];
-            BinaryPrimitives.WriteUInt32LittleEndian(keyBlob, BCRYPT_ECDSA_PRIVATE_P256_MAGIC);
-            BinaryPrimitives.WriteUInt32LittleEndian(keyBlob.AsSpan(sizeof(uint)), (uint)privateKey.Length);
-            Array.Copy(privateKey, 0, keyBlob, sizeof(uint) * 2 + privateKey.Length * 2, privateKey.Length);
+            try
+            {
+                BinaryPrimitives.WriteUInt32LittleEndian(keyBlob, BCRYPT_ECDSA_PRIVATE_P256_MAGIC);
+                BinaryPrimitives.WriteUInt32LittleEndian(keyBlob.AsSpan(sizeof(uint)), (uint)privateKey.Length);
+                Array.Copy(privateKey, 0, keyBlob, sizeof(uint) * 2 + privateKey.Length * 2, privateKey.Length);
 
-            using var cngKey = CngKey.Import(keyBlob, CngKeyBlobFormat.EccPrivateBlob);
-            return new ECDsaCng(cngKey);
+                using var cngKey = CngKey.Import(keyBlob, CngKeyBlobFormat.EccPrivateBlob);
+                return new ECDsaCng(cngKey);
+            }
+            finally
+            {
+                Array.Clear(keyBlob, 0, keyBlob.Length);
+            }
 #else
             return ECDsa.Create(new ECParameters { Curve = SigningCurve, D = privateKey });
 #endif
@@ -406,6 +413,7 @@ namespace Amazon.Runtime.Internal.Auth
         {
             byte[] kvalue = null;
             byte[] ksecret = null;
+            byte[] kDerived = null;
 
             try
             {
@@ -426,18 +434,17 @@ namespace Amazon.Runtime.Internal.Auth
                 counterValue = 1;
                 while (counterValue < 0xFF)
                 {
-                    byte[] kDerived = ComputeKeyedHash(SignerAlgorithm, ksecret, kvalue);
+                    kDerived = ComputeKeyedHash(SignerAlgorithm, ksecret, kvalue);
                     if (CompareConstantTime(kDerived, NMinus2) > 0)
                     {
-                        // increment the counter value
+                        // Discard the rejected candidate and increment the counter value
+                        Array.Clear(kDerived, 0, kDerived.Length);
                         counterValue++;
                         continue;
                     }
 
                     AddOneConstantTime(kDerived);
-                    var ecdsa = ImportECDsaP256PrivateKey(kDerived);
-                    Array.Clear(kDerived, 0, kDerived.Length);
-                    return ecdsa;
+                    return ImportECDsaP256PrivateKey(kDerived);
                 }
 
                 throw new AmazonClientException("Failed to derive a SigV4a key for the request.");
@@ -449,6 +456,8 @@ namespace Amazon.Runtime.Internal.Auth
                     Array.Clear(ksecret, 0, ksecret.Length);
                 if (kvalue != null)
                     Array.Clear(kvalue, 0, kvalue.Length);
+                if (kDerived != null)
+                    Array.Clear(kDerived, 0, kDerived.Length);
             }
         }
 
