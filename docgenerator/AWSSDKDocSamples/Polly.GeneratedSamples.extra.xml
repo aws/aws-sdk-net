@@ -50,6 +50,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.Polly.IAmazonPolly.ListTagsForResource(Amazon.Polly.Model.ListTagsForResourceRequest)" />
+      <member name="M:Amazon.Polly.AmazonPollyClient.ListTagsForResource(Amazon.Polly.Model.ListTagsForResourceRequest)" />
+      <member name="T:Amazon.Polly.Model.ListTagsForResourceRequest" />
+      <member name="T:Amazon.Polly.Model.ListTagsForResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists the tags associated with a pronunciation lexicon.
+        </para>
+        <code title="To list the tags on a lexicon" source=".\AWSSDKDocSamples\Polly\Polly.GeneratedSamples.cs" region="ListTagsForResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.Polly.IAmazonPolly.PutLexicon(Amazon.Polly.Model.PutLexiconRequest)" />
       <member name="M:Amazon.Polly.AmazonPollyClient.PutLexicon(Amazon.Polly.Model.PutLexiconRequest)" />
       <member name="T:Amazon.Polly.Model.PutLexiconRequest" />
@@ -77,6 +93,38 @@
           Synthesizes plain text or SSML into a file of human-like speech.
         </para>
         <code title="To synthesize speech" source=".\AWSSDKDocSamples\Polly\Polly.GeneratedSamples.cs" region="SynthesizeSpeech-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Polly.IAmazonPolly.TagResource(Amazon.Polly.Model.TagResourceRequest)" />
+      <member name="M:Amazon.Polly.AmazonPollyClient.TagResource(Amazon.Polly.Model.TagResourceRequest)" />
+      <member name="T:Amazon.Polly.Model.TagResourceRequest" />
+      <member name="T:Amazon.Polly.Model.TagResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example adds the specified tags to a pronunciation lexicon.
+        </para>
+        <code title="To add tags to a lexicon" source=".\AWSSDKDocSamples\Polly\Polly.GeneratedSamples.cs" region="TagResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Polly.IAmazonPolly.UntagResource(Amazon.Polly.Model.UntagResourceRequest)" />
+      <member name="M:Amazon.Polly.AmazonPollyClient.UntagResource(Amazon.Polly.Model.UntagResourceRequest)" />
+      <member name="T:Amazon.Polly.Model.UntagResourceRequest" />
+      <member name="T:Amazon.Polly.Model.UntagResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example removes the tags with the specified keys from a pronunciation lexicon.
+        </para>
+        <code title="To remove tags from a lexicon" source=".\AWSSDKDocSamples\Polly\Polly.GeneratedSamples.cs" region="UntagResource-1" />
       </example>
     </value>
   </doc>

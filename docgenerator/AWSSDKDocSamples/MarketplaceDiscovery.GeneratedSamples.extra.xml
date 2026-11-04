@@ -444,7 +444,7 @@
         <para>
 
         </para>
-        <code title="List API Fulfillment Options with Dynamic Endpoint" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-3" />
+        <code title="List CloudFormation Template Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-3" />
       </example>
     </value>
   </doc>
@@ -460,7 +460,7 @@
         <para>
 
         </para>
-        <code title="List CloudFormation Template Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-4" />
+        <code title="List Container Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-4" />
       </example>
     </value>
   </doc>
@@ -476,7 +476,7 @@
         <para>
 
         </para>
-        <code title="List Container Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-5" />
+        <code title="List Helm Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-5" />
       </example>
     </value>
   </doc>
@@ -492,7 +492,7 @@
         <para>
 
         </para>
-        <code title="List Helm Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-6" />
+        <code title="List EKS Add-On Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-6" />
       </example>
     </value>
   </doc>
@@ -508,7 +508,7 @@
         <para>
 
         </para>
-        <code title="List EKS Add-On Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-7" />
+        <code title="List EC2 Image Builder Component Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-7" />
       </example>
     </value>
   </doc>
@@ -524,7 +524,7 @@
         <para>
 
         </para>
-        <code title="List EC2 Image Builder Component Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-8" />
+        <code title="List Data Exchange Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-8" />
       </example>
     </value>
   </doc>
@@ -540,7 +540,7 @@
         <para>
 
         </para>
-        <code title="List Data Exchange Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-9" />
+        <code title="List Professional Services Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-9" />
       </example>
     </value>
   </doc>
@@ -556,7 +556,7 @@
         <para>
 
         </para>
-        <code title="List Professional Services Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-10" />
+        <code title="List SaaS Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-10" />
       </example>
     </value>
   </doc>
@@ -572,7 +572,7 @@
         <para>
 
         </para>
-        <code title="List SaaS Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-11" />
+        <code title="List SageMaker Algorithm Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-11" />
       </example>
     </value>
   </doc>
@@ -588,23 +588,7 @@
         <para>
 
         </para>
-        <code title="List SageMaker Algorithm Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-12" />
-      </example>
-    </value>
-  </doc>
-  <doc>
-    <members>
-      <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
-      <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
-      <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
-      <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
-    </members>
-    <value>
-      <example>
-        <para>
-
-        </para>
-        <code title="List SageMaker Model Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-13" />
+        <code title="List SageMaker Model Fulfillment Options" source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs" region="ListFulfillmentOptions-12" />
       </example>
     </value>
   </doc>
