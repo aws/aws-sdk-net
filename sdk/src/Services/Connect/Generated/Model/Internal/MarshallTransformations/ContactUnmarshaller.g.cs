@@ -95,6 +95,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("Cases", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CaseEntry, CaseEntryUnmarshaller>(CaseEntryUnmarshaller.Instance);
+                    unmarshalledObject.Cases = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Channel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

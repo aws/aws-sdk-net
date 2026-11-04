@@ -117,6 +117,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetCampaign() => this.Campaign != null;
 
         /// <summary>
+        /// Gets and sets the property Cases. 
+        /// <para>
+        /// A list of cases associated with the contact. This field is populated when one or more
+        /// cases have been linked to the contact.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<CaseEntry> Cases { get; set; } = AWSConfigs.InitializeCollections ? new List<CaseEntry>() : null;
+
+        /// <summary>
+        /// Checks to see if the Cases property is set.
+        /// </summary>
+        internal bool IsSetCases() => this.Cases != null && (this.Cases.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property Channel. 
         /// <para>
         /// How the contact reached your contact center.

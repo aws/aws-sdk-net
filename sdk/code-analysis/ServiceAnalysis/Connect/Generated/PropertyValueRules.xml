@@ -6194,6 +6194,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CaseEntry.CaseId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CaseEntry.CaseReferenceNumber</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CaseSlaConfiguration.FieldId</property>
     <min>1</min>
     <max>500</max>
