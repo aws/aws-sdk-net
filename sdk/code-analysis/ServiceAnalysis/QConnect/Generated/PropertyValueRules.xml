@@ -1096,6 +1096,24 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.RegisterAssistantReplicaKeyRequest.AssistantId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.RegisterAssistantReplicaKeyRequest.ClientToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.RegisterKnowledgeBaseReplicaKeyRequest.ClientToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.RegisterKnowledgeBaseReplicaKeyRequest.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.RemoveAssistantAIAgentRequest.AssistantId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$</pattern>
   </property-value-rule>
@@ -1521,6 +1539,12 @@
     <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.AIAgentData.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.AIAgentData.Name</property>
     <min>1</min>
     <max>255</max>
@@ -1547,6 +1571,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.AIAgentSummary.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.AIAgentSummary.Name</property>
@@ -1590,6 +1620,12 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.AIGuardrailData.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.AIGuardrailData.Name</property>
     <min>1</min>
     <max>255</max>
@@ -1615,6 +1651,12 @@
     <property>Amazon.QConnect.Model.AIGuardrailSummary.Description</property>
     <min>1</min>
     <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.AIGuardrailSummary.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.AIGuardrailSummary.Name</property>
@@ -1647,6 +1689,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.AIPromptData.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.AIPromptData.ModelId</property>
@@ -1700,6 +1748,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.AIPromptSummary.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.AIPromptSummary.ModelId</property>
@@ -1786,6 +1840,12 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.AssistantAssociationData.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.AssistantAssociationInputData.KnowledgeBaseId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
@@ -1806,6 +1866,12 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.AssistantAssociationSummary.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.AssistantData.AssistantArn</property>
     <pattern>^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$</pattern>
   </property-value-rule>
@@ -1818,6 +1884,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.AssistantData.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.AssistantData.Name</property>
@@ -1844,6 +1916,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.AssistantSummary.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.AssistantSummary.Name</property>
@@ -1962,12 +2040,23 @@
     <pattern>^(text/(plain|html|csv))|(application/(pdf|vnd\.openxmlformats-officedocument\.wordprocessingml\.document))|(application/x\.wisdom-json;source=(salesforce|servicenow|zendesk))$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.ContentData.FileHash</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.ContentData.KnowledgeBaseArn</property>
     <pattern>^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.ContentData.KnowledgeBaseId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ContentData.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.ContentData.LinkOutUri</property>
@@ -2024,12 +2113,23 @@
     <pattern>^(text/(plain|html|csv))|(application/(pdf|vnd\.openxmlformats-officedocument\.wordprocessingml\.document))|(application/x\.wisdom-json;source=(salesforce|servicenow|zendesk))$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.ContentSummary.FileHash</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.ContentSummary.KnowledgeBaseArn</property>
     <pattern>^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.ContentSummary.KnowledgeBaseId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ContentSummary.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.ContentSummary.Name</property>
@@ -2644,6 +2744,12 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.KnowledgeBaseData.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.KnowledgeBaseData.Name</property>
     <min>1</min>
     <max>255</max>
@@ -2662,6 +2768,12 @@
   <property-value-rule>
     <property>Amazon.QConnect.Model.KnowledgeBaseSummary.KnowledgeBaseId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.KnowledgeBaseSummary.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.KnowledgeBaseSummary.Name</property>
@@ -3108,6 +3220,12 @@
     <pattern>^arn:[a-z-]+?:[a-z-]+?:[a-z0-9-]*?:([0-9]{12})?:[a-zA-Z0-9-:/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.QuickResponseData.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.QuickResponseData.Name</property>
     <min>1</min>
     <max>100</max>
@@ -3174,6 +3292,12 @@
     <pattern>^arn:[a-z-]+?:[a-z-]+?:[a-z0-9-]*?:([0-9]{12})?:[a-zA-Z0-9-:/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.QuickResponseSearchResultData.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.QuickResponseSearchResultData.Name</property>
     <min>1</min>
     <max>100</max>
@@ -3215,6 +3339,12 @@
     <pattern>^arn:[a-z-]+?:[a-z-]+?:[a-z0-9-]*?:([0-9]{12})?:[a-zA-Z0-9-:/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.QuickResponseSummary.LastModifiedRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.QuickResponseSummary.Name</property>
     <min>1</min>
     <max>100</max>
@@ -3246,6 +3376,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.RenderingConfiguration.TemplateUri</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ReplicaKmsKey.Arn</property>
     <min>1</min>
     <max>4096</max>
   </property-value-rule>

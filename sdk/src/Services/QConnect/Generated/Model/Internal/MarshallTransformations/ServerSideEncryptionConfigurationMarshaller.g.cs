@@ -50,6 +50,22 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("kmsKeyId");
                 context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
+
+            if (requestObject.IsSetReplicaKmsKeys())
+            {
+                context.Writer.WritePropertyName("replicaKmsKeys");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectReplicaKmsKeysListValue in requestObject.ReplicaKmsKeys)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ReplicaKmsKeyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectReplicaKmsKeysListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
         }
 
         /// <summary>

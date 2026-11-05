@@ -137,6 +137,33 @@ namespace Amazon.QConnect.Model
         internal bool IsSetLastContentModificationTime() => this.LastContentModificationTime.HasValue;
 
         /// <summary>
+        /// Gets and sets the property LastModifiedRegion. 
+        /// <para>
+        /// The Amazon Web Services Region where the knowledge base was last modified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 8, Max = 31)]
+        public string LastModifiedRegion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedRegion property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedRegion() => this.LastModifiedRegion != null;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The timestamp when the knowledge base was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime? LastModifiedTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedTime property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedTime() => this.LastModifiedTime.HasValue;
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the knowledge base.

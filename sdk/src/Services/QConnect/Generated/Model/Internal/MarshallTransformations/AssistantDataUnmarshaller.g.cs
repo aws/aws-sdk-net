@@ -67,6 +67,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("assistantGlobalResiliencyStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssistantGlobalResiliencyStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("assistantId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +99,20 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AssistantIntegrationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IntegrationConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("lastModifiedRegion", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedRegion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("lastModifiedTime", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

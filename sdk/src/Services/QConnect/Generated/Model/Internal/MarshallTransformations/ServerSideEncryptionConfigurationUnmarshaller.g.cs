@@ -59,6 +59,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("replicaKmsKeys", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ReplicaKmsKey, ReplicaKmsKeyUnmarshaller>(ReplicaKmsKeyUnmarshaller.Instance);
+                    unmarshalledObject.ReplicaKmsKeys = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

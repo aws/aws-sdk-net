@@ -130,6 +130,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("lastModifiedRegion", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedRegion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("lastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
