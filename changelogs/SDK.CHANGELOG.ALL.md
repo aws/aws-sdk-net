@@ -1,3 +1,41 @@
+### 4.0.364.0 (2026-11-05 19:17 UTC)
+* AccountAccessRuntime (4.0.100.0)
+	* Adds SDK support for Account Access user portal operations, enabling users to list out and get credentials for role assignments configured in AWS IAM Account Access Manager.
+* AgentRegistryControl (4.0.104.0)
+	* Adds support for OAuth2 Authorization Server Metadata (RFC 8414) discovery URLs in custom JWT authorizer.
+* AppIntegrationsService (4.0.104.0)
+	* This release adds a LastModifiedRegion field to GetApplication and ListApplications so customers can see which Region an application was last modified in.
+* BedrockAgentCoreControl (4.0.126.0)
+	* Adds support for OAuth2 Authorization Server Metadata (RFC 8414) discovery URLs in custom JWT authorizer and OAuth2 credential provider configurations.
+* BedrockAgentRuntime (4.0.106.0)
+	* Amazon Bedrock Managed Knowledge Base now supports an optional mediaId parameter in GetDocumentContent that you can use to retrieve images embedded in source documents.
+* CloudWatchLogs (4.0.108.0)
+	* Adds account-level retention policies with dry run preview and the Essentials log group class to Amazon CloudWatch Logs
+* DataSync (4.0.102.0)
+	* Adds support for federated identity on Azure Blob Storage and object storage locations, enabling DataSync to authenticate to Azure and Google Cloud Storage using Workload Identity Federation (WIF) over OpenID Connect (OIDC) instead of stored long-lived credentials.
+* Glue (4.0.117.0)
+	* AWS Glue Spark ETL jobs can now auto-upgrade to the latest version. Set GlueVersion to Auto, then track progress with the AutoVersionStatus field in GetJob. Use StartJobUpgradeAnalysis to approve or decline an upgrade, GetJobUpgradeAnalysis to view details, and StopJobUpgradeAnalysis to stop it.
+* LambdaMicrovms (4.0.102.0)
+	* AWS Lambda MicroVMs now support the x86-64 CPU architecture, which you can select in addition to ARM64 (Graviton) when launching a MicroVM.
+* QConnect (4.0.103.0)
+	* Adds support for real-time agent assistance and self-service with Amazon Connect Global Resiliency, including cross-Region replication of supported AI agent resources and configurations.
+* QuickSight (4.0.113.0)
+	* Amazon QuickSight adds APIs to view account service role settings and switch to or replace a customer-managed IAM role.
+* Route53Domains (4.0.102.0)
+	* Route 53 Domains now supports restoring domains. This release adds the RestoreDomain API to self-serve domain restoration.
+* SageMaker (4.0.125.0)
+	* Fixed the ImageDeleted and ImageVersionDeleted waiters to succeed on the ResourceNotFound error returned by DescribeImage and DescribeImageVersion
+* SecurityAgent (4.0.115.0)
+	* Adds support for IAM Identity Center groups as Agent Space members. CreateMembership, DeleteMembership, and ListMemberships now accept the GROUP member type. ListMemberships can filter by USER, GROUP, or ALL, and returns group display name and description.
+* WAFV2 (4.0.103.0)
+	* AWS WAF customers who monetize AI traffic on Web ACLs can now configure payments through connected accounts (Stripe).
+* Core 4.0.102.18
+	* Documented that LogMetrics output includes the signed request and LogResponses output includes the raw response body.
+	* EC2InstanceMetadata returns null instead of sending a request when an absolute path is not on the configured metadata service endpoint.
+	* On Linux and macOS, the shared credentials and config files and the SSO and login token cache files are created with owner-only permissions in the create call instead of being created and then restricted.
+	* Writes to the shared credentials and config files are rejected when a section name, property name or value contains a line break, or when a property name would not read back as the same property.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.363.0 (2026-11-04 20:18 UTC)
 * AutoScaling (4.0.105.2)
 	* AutoScaling is now generated from its Smithy model. There are no changes to the public API.

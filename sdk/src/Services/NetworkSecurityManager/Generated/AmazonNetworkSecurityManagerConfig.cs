@@ -32,7 +32,7 @@ namespace Amazon.NetworkSecurityManager
     public partial class AmazonNetworkSecurityManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Network Security Manager", "4.0.100.8");
+            InternalSDKUtils.BuildUserAgentString("Network Security Manager", "4.0.100.9");
 
         private static readonly AmazonNetworkSecurityManagerEndpointResolver EndpointResolver =
             new AmazonNetworkSecurityManagerEndpointResolver();

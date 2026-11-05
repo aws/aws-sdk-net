@@ -32,7 +32,7 @@ namespace Amazon.SageMakerRuntimeHTTP2
     public partial class AmazonSageMakerRuntimeHTTP2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMaker Runtime HTTP2", "4.0.100.23");
+            InternalSDKUtils.BuildUserAgentString("SageMaker Runtime HTTP2", "4.0.100.24");
 
         private static readonly AmazonSageMakerRuntimeHTTP2EndpointResolver EndpointResolver =
             new AmazonSageMakerRuntimeHTTP2EndpointResolver();
