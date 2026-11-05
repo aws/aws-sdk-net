@@ -3156,7 +3156,6 @@ this.Write("\t\t\t\t\t\txmlWriter.WriteValue(");
         
         #line 641 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listItemVariable));
-this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.RestXmlListValueSuffix));
 
         
         #line default
@@ -3784,7 +3783,7 @@ this.Write("\", kvp.Value");
         #line hidden
         
         #line 736 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.RestXmlMapValueSuffix));
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.IsString ? "" : ".ToString()"));
 
         
         #line default
@@ -3853,7 +3852,7 @@ this.Write("\",kvp.Value");
         #line hidden
         
         #line 745 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.RestXmlMapValueSuffix));
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.IsString ? "" : ".ToString()"));
 
         
         #line default
@@ -3932,7 +3931,7 @@ this.Write("\",kvp.Value");
         #line hidden
         
         #line 750 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.RestXmlMapValueSuffix));
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.IsString ? "" : ".ToString()"));
 
         
         #line default
@@ -4293,7 +4292,7 @@ this.Write("\", kvp.Value");
         #line hidden
         
         #line 802 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.RestXmlMapValueSuffix));
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.IsString ? "" : ".ToString()"));
 
         
         #line default
@@ -4373,7 +4372,7 @@ this.Write("\", kvp.Value");
         #line hidden
         
         #line 809 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.RestXmlMapValueSuffix));
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.IsString ? "" : ".ToString()"));
 
         
         #line default
@@ -5068,7 +5067,6 @@ this.Write("\t\t\t\t\t\txmlWriter.WriteValue(");
         
         #line 903 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(innerListItemVariable));
-this.Write(this.ToStringHelper.ToStringWithCulture(innerMember.Shape.ListShape.RestXmlListValueSuffix));
 
         
         #line default

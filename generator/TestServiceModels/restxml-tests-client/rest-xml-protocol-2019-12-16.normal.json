@@ -983,12 +983,12 @@
                     "locationName": "StringSet"
                 },
                 "queryByte": {
-                    "shape": "Byte",
+                    "shape": "Integer",
                     "location": "querystring",
                     "locationName": "Byte"
                 },
                 "queryShort": {
-                    "shape": "Short",
+                    "shape": "Integer",
                     "location": "querystring",
                     "locationName": "Short"
                 },
@@ -1606,7 +1606,7 @@
                     "locationName": "string"
                 },
                 "short": {
-                    "shape": "Short",
+                    "shape": "Integer",
                     "location": "uri",
                     "locationName": "short"
                 },
@@ -1672,12 +1672,12 @@
                     "locationName": "X-String"
                 },
                 "headerByte": {
-                    "shape": "Byte",
+                    "shape": "Integer",
                     "location": "header",
                     "locationName": "X-Byte"
                 },
                 "headerShort": {
-                    "shape": "Short",
+                    "shape": "Integer",
                     "location": "header",
                     "locationName": "X-Short"
                 },
@@ -2094,10 +2094,10 @@
                     "shape": "Boolean"
                 },
                 "byteValue": {
-                    "shape": "Byte"
+                    "shape": "Integer"
                 },
                 "shortValue": {
-                    "shape": "Short"
+                    "shape": "Integer"
                 },
                 "integerValue": {
                     "shape": "Integer"
@@ -2132,10 +2132,10 @@
                     "shape": "Boolean"
                 },
                 "byteValue": {
-                    "shape": "Byte"
+                    "shape": "Integer"
                 },
                 "shortValue": {
-                    "shape": "Short"
+                    "shape": "Integer"
                 },
                 "integerValue": {
                     "shape": "Integer"
@@ -2937,10 +2937,10 @@
                     "shape": "Boolean"
                 },
                 "byteValue": {
-                    "shape": "Byte"
+                    "shape": "Integer"
                 },
                 "shortValue": {
-                    "shape": "Short"
+                    "shape": "Integer"
                 },
                 "integerValue": {
                     "shape": "Integer"
@@ -3018,10 +3018,10 @@
                     "shape": "Boolean"
                 },
                 "byteValue": {
-                    "shape": "Byte"
+                    "shape": "Integer"
                 },
                 "shortValue": {
-                    "shape": "Short"
+                    "shape": "Integer"
                 },
                 "integerValue": {
                     "shape": "Integer"
@@ -3059,12 +3059,6 @@
                     "shape": "XmlUnionShape"
                 }
             }
-        },
-        "Byte": {
-            "type": "byte"
-        },
-        "Short": {
-            "type": "short"
         }
     },
     "documentation": "<p>A REST XML service that sends XML requests and responses.</p>"

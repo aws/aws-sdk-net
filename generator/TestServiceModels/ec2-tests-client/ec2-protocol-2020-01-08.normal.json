@@ -709,10 +709,10 @@
                     "shape": "Boolean"
                 },
                 "byteValue": {
-                    "shape": "Byte"
+                    "shape": "Integer"
                 },
                 "shortValue": {
-                    "shape": "Short"
+                    "shape": "Integer"
                 },
                 "integerValue": {
                     "shape": "Integer"
@@ -965,12 +965,6 @@
                     "shape": "HttpDate"
                 }
             }
-        },
-        "Byte": {
-            "type": "byte"
-        },
-        "Short": {
-            "type": "short"
         }
     },
     "documentation": "<p>An EC2 query service that sends query requests and XML responses.</p>"

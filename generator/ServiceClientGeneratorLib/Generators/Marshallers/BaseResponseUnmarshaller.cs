@@ -1393,7 +1393,7 @@ this.Write(" = MultiValueHeaderParser.ToValueTypeList<");
         #line hidden
         
         #line 314 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.PrimitiveParseTypeName));
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.GetPrimitiveType().ToLower()));
 
         
         #line default
@@ -1414,21 +1414,7 @@ this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName))
         #line hidden
         
         #line 314 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-this.Write("\")");
-
-        
-        #line default
-        #line hidden
-        
-        #line 314 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.HeaderListParseArgument));
-
-        
-        #line default
-        #line hidden
-        
-        #line 314 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-this.Write(");\r\n");
+this.Write("\"));\r\n");
 
         
         #line default
@@ -1571,7 +1557,7 @@ this.Write(" = ");
         #line hidden
         
         #line 345 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.PrimitiveParseTypeName));
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.GetPrimitiveType().ToLower()));
 
         
         #line default
