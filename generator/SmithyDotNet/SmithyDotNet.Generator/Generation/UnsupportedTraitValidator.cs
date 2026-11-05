@@ -14,7 +14,6 @@ public static class UnsupportedTraitValidator
 {
     private static readonly Dictionary<string, string> DeniedTraits = new()
     {
-        ["aws.protocols#httpChecksum"] = "httpChecksum",
         // TODO: pass discovery ids in EndpointDiscoveryMarshallerWriter's EndpointDiscoveryData; no service models one yet.
         ["aws.api#clientEndpointDiscoveryId"] = "clientEndpointDiscoveryId",
     };

@@ -120,12 +120,7 @@ public sealed class CborRequestMarshallerWriter(GenerationContext context, strin
             if (hasBody)
             {
                 WriteBody(writer, members, () => WriteRequestContent(writer));
-
-                // The checksum covers the body, so it follows serialization.
-                if (operation.Shape.RequiresHttpChecksum())
-                {
-                    writer.WriteLine("ChecksumUtils.SetChecksumData(request);");
-                }
+                MarshallerCommon.WriteRequestChecksum(writer, context, operation);
             }
             if (operation.Shape.HasUnsignedPayload())
             {

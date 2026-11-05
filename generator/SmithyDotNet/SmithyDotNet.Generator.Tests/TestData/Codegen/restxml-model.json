@@ -8,6 +8,8 @@
         { "target": "com.example#PutThing" },
         { "target": "com.example#GetThing" },
         { "target": "com.example#PutPayload" },
+        { "target": "com.example#PutChecksummedThing" },
+        { "target": "com.example#GetChecksummedThing" },
         { "target": "com.example#AccountOp" },
         { "target": "com.example#RegionOp" }
       ],
@@ -92,6 +94,44 @@
       "type": "structure",
       "members": {
         "details": { "target": "com.example#NestedThing", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+
+    "com.example#PutChecksummedThing": {
+      "type": "operation",
+      "input": { "target": "com.example#PutChecksummedThingRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/checksummed", "method": "PUT" },
+        "aws.protocols#httpChecksum": { "requestChecksumRequired": true, "requestAlgorithmMember": "checksumAlgorithm" }
+      }
+    },
+    "com.example#GetChecksummedThing": {
+      "type": "operation",
+      "input": { "target": "com.example#GetChecksummedThingRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/checksummed/{id}", "method": "GET" },
+        "aws.protocols#httpChecksum": { "requestChecksumRequired": true }
+      }
+    },
+    "com.example#GetChecksummedThingRequest": {
+      "type": "structure",
+      "members": {
+        "id": { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } }
+      }
+    },
+    "com.example#PutChecksummedThingRequest": {
+      "type": "structure",
+      "members": {
+        "checksumAlgorithm": { "target": "com.example#ChecksumAlgorithm", "traits": { "smithy.api#httpHeader": "x-amz-sdk-checksum-algorithm" } },
+        "details": { "target": "com.example#NestedThing", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#ChecksumAlgorithm": {
+      "type": "enum",
+      "members": {
+        "CRC32": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "CRC32" } }
       }
     },
 

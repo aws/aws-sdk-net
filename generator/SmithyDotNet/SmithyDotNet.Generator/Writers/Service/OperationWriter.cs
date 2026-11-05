@@ -46,8 +46,9 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         var doc = $"Container for the parameters to the {operation.Name} operation. {cleanedOperationDoc}";
 
         var members = ApplyEventStreamPublisher(operation, TypeMapper.ResolveMembers(operation.Input, context));
-        var record = new OperationRecord(className, baseClass, doc, members, TypeMapper.BuildObsolete(operation.Input));
-        return WriteClass(record, cancellationToken);
+        var obsolete = TypeMapper.BuildObsolete(operation.Input);
+        var checksum = operation.Shape.GetHttpChecksum();
+        return WriteClass(new OperationRecord(className, baseClass, doc, members, obsolete, HttpChecksum: checksum), cancellationToken);
     }
 
     // A request event-stream member (target is a @streaming union) is emitted as a Func publisher property
@@ -124,7 +125,11 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         List<Member> Members,
         string? Obsolete = null,
         List<Member>? StreamingMembers = null,
-        bool HasRequestEventStream = false);
+        bool HasRequestEventStream = false,
+        HttpChecksumTrait? HttpChecksum = null);
+
+    // Core cannot validate the other modeled algorithms (ChecksumUtils.UnsupportedChecksumAlgorithms), so they are left out, as C2J does.
+    private static readonly HashSet<string> ValidatableResponseAlgorithms = ["CRC32C", "CRC32", "SHA256", "SHA1", "CRC64NVME", "SHA512"];
 
     private string WriteClass(OperationRecord opRecord, CancellationToken cancellationToken)
     {
@@ -145,6 +150,10 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
             {
                 SimpleConstructorWriter.Write(writer, context, opRecord.ClassName, opRecord.Members);
                 MemberWriter.WriteMembers(writer, opRecord.Members);
+                if (opRecord.HttpChecksum?.RequestValidationModeMember is { } modeMember)
+                {
+                    WriteResponseChecksumOverrides(writer, opRecord.Members, modeMember, opRecord.HttpChecksum.ResponseAlgorithms);
+                }
                 if (opRecord.HasRequestEventStream)
                 {
                     WriteEventInputStreamContextOwner(writer);
@@ -160,6 +169,33 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         });
 
         return writer.ToFormattedString(cancellationToken);
+    }
+
+    // The caller opts into response checksum validation through the modeled mode member; the runtime reads it and the
+    // algorithms it may validate through these AmazonWebServiceRequest overrides.
+    private static void WriteResponseChecksumOverrides(CodeWriter writer, List<Member> members, string modeMemberName, IReadOnlyList<string> responseAlgorithms)
+    {
+        var mode = members.FirstOrDefault(member => member.ModeledName == modeMemberName)?.PropertyName
+            ?? throw new GeneratorException($"httpChecksum requestValidationModeMember '{modeMemberName}' is not a member of the input.");
+        var algorithms = responseAlgorithms.Where(ValidatableResponseAlgorithms.Contains).Select(algorithm => $"CoreChecksumAlgorithm.{algorithm}");
+
+        writer.WriteLine();
+        writer.WriteLine("#region Flexible checksum properties");
+        writer.WriteLine();
+        writer.WriteLine("/// <inheritdoc/>");
+        writer.OpenBlock("protected override CoreChecksumResponseBehavior CoreChecksumMode", () =>
+        {
+            writer.WriteLine($"get => IsSet{mode}() ? (CoreChecksumResponseBehavior)Enum.Parse(typeof(CoreChecksumResponseBehavior), this.{mode}) : CoreChecksumResponseBehavior.DISABLED;");
+            writer.WriteLine($"set => this.{mode} = value.ToString();");
+        });
+        writer.WriteLine();
+        writer.WriteLine("private static readonly System.Collections.ObjectModel.ReadOnlyCollection<CoreChecksumAlgorithm> _checksumResponseAlgorithms =");
+        writer.Indent(() => writer.WriteLine($"new List<CoreChecksumAlgorithm> {{ {string.Join(", ", algorithms)} }}.AsReadOnly();"));
+        writer.WriteLine();
+        writer.WriteLine("/// <inheritdoc/>");
+        writer.WriteLine("protected override System.Collections.ObjectModel.ReadOnlyCollection<CoreChecksumAlgorithm> ChecksumResponseAlgorithms => _checksumResponseAlgorithms;");
+        writer.WriteLine();
+        writer.WriteLine("#endregion");
     }
 
     // Explicit interface implementation, so CA1033 (make it accessible to derived types) is suppressed like C2J does.

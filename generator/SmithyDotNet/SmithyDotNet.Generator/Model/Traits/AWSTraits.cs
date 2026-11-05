@@ -48,6 +48,9 @@ public static class AWSTraits
     /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsquerycompatible-trait" /></remarks>
     public static bool HasAwsQueryCompatible(this Shape shape) => shape.Traits.ContainsKey("aws.protocols#awsQueryCompatible");
 
+    /// <remarks><see href="https://smithy.io/2.0/aws/aws-core.html#aws-protocols-httpchecksum-trait" /></remarks>
+    public static HttpChecksumTrait? GetHttpChecksum(this Shape shape) => DeserializeTrait<HttpChecksumTrait>(shape, "aws.protocols#httpChecksum");
+
     /// <remarks><see href="https://smithy.io/2.0/aws/aws-core.html#aws-api-service-trait" /></remarks>
     public static AWSServiceTrait? GetAWSService(this Shape shape) => DeserializeTrait<AWSServiceTrait>(shape, "aws.api#service");
 

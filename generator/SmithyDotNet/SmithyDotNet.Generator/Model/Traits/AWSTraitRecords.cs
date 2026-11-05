@@ -67,6 +67,22 @@ public record AwsQueryErrorTrait : TraitRecord
     public int HttpResponseCode { get; init; }
 }
 
+/// <remarks><see href="https://smithy.io/2.0/aws/aws-core.html#aws-protocols-httpchecksum-trait" /></remarks>
+public record HttpChecksumTrait : TraitRecord
+{
+    [JsonPropertyName("requestChecksumRequired")]
+    public bool RequestChecksumRequired { get; init; }
+
+    [JsonPropertyName("requestAlgorithmMember")]
+    public string? RequestAlgorithmMember { get; init; }
+
+    [JsonPropertyName("requestValidationModeMember")]
+    public string? RequestValidationModeMember { get; init; }
+
+    [JsonPropertyName("responseAlgorithms")]
+    public IReadOnlyList<string> ResponseAlgorithms { get; init; } = [];
+}
+
 /// <summary>
 /// The value of the protocol traits (such as restJson1 or awsJson1_0), which all carry
 /// the same HTTP version members.

@@ -49,7 +49,7 @@ Every request marshaller emits, in this order:
 4. `@httpQuery` members, then `@httpQueryParams`; `@httpPrefixHeaders`, then `@httpHeader` members.
 5. `@httpLabel` members as `AddPathResource` calls, then `request.ResourcePath` set to the `@http` uri
    template (labels left as `{name}` for the runtime to substitute).
-6. The body (below), `@httpChecksumRequired`, `@unsignedPayload`, `UseQueryString`, `@endpoint` host
+6. The body (below), the request checksum (below), `@unsignedPayload`, `UseQueryString`, `@endpoint` host
    prefix, `return request`.
 
 An operation that requires HTTP/2 pins `request.HttpProtocolVersion = System.Net.HttpVersion.Version20`
@@ -178,7 +178,7 @@ A `@httpPayload` member IS the entire body: no wrapping object/property name, no
 
 List and map payloads fail loud.
 
-### `@requestCompression` and `@httpChecksumRequired` (request)
+### `@requestCompression` and request checksums (request)
 
 Both are one emitted call to a runtime helper in `Amazon.Runtime.Internal.Util`, at opposite ends of the body.
 
@@ -189,10 +189,10 @@ Both are one emitted call to a runtime helper in `Amazon.Runtime.Internal.Util`,
   throw, where C2J warns and emits no call: silently dropping compression changes wire behavior with no
   signal. A `@streaming` `@requiresLength` payload is rejected (Smithy forbids it; the compressed length
   isn't known until the stream has been read).
-- `@httpChecksumRequired` → `ChecksumUtils.SetChecksumData(request);` **after** body serialization (the
-  checksum covers the body), before the `DisablePayloadSigning` line. This is the legacy MD5-only trait.
-  C2J also treats the flexible `aws.protocols#httpChecksum` as MD5-required; we deliberately don't (that
-  trait is rejected as unsupported), so flexible-checksum operations stay off the MD5 path.
+- `aws.protocols#httpChecksum` / `@httpChecksumRequired` → one `ChecksumUtils.SetChecksumData(...)` call, the same
+  arguments C2J emits, **after** body serialization and only for an operation with a body (S3Control has the legacy
+  trait on GETs). restXml emits it after `PostMarshallCustomization`, as C2J does, so the modeled checksum wins over a
+  hand-written hook. `skipChecksumDuringMarshalling` suppresses it; a response-only `httpChecksum` emits nothing.
 
 ### `@endpoint` host prefix (request)
 
@@ -461,7 +461,8 @@ Writers and their output are pinned by `RestXmlCodegenTests` and the restXml pro
   is marshalled by that structure's own marshaller into the root. `Content-Type: application/xml` and
   `x-amz-api-version` are set only when there is an XML body, inside a `try`/`catch` that maps an
   `EncoderFallbackException` to an `AmazonServiceException`. A structure/union `@httpPayload` is `IsSet`-guarded
-  so an unset payload sends an empty body, not `<Root />` (as C2J and the JSON writer do). A non-structure
+  so an unset payload sends an empty body, not `<Root />`. With a request checksum only the root element is
+  guarded and the stream is always created (C2J), so the checksum covers the empty body instead of nothing. A non-structure
   `@httpPayload` (string/blob) takes the raw-content path with `text/plain`/`application/octet-stream` (or
   `@mediaType`). The `@endpoint` host prefix is skipped when a `@hostLabel` member is also a `@contextParam`
   (the endpoint ruleset already consumes it into the host; only S3 Control matches today) — derived from the

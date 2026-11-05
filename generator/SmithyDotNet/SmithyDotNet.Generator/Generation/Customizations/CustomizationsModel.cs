@@ -45,6 +45,9 @@ public sealed record CustomizationsModel
     /// <summary>True when <c>operationModifiers.{op}.allowEmptyResult</c> is set for <paramref name="operationName"/>.</summary>
     public bool AllowsEmptyResult(string operationName) => OperationModifiers.TryGetValue(operationName, out var modifier) && modifier.AllowEmptyResult;
 
+    /// <summary>True when <c>operationModifiers.{op}.skipChecksumDuringMarshalling</c> is set for <paramref name="operationName"/>.</summary>
+    public bool SkipsChecksumDuringMarshalling(string operationName) => OperationModifiers.TryGetValue(operationName, out var modifier) && modifier.SkipChecksumDuringMarshalling;
+
     /// <summary>
     /// Usage:
     /// emitIsSetProperties: {
@@ -402,6 +405,13 @@ public sealed record OperationModifier
     /// </summary>
     [JsonPropertyName("allowEmptyResult")]
     public bool AllowEmptyResult { get; init; }
+
+    /// <summary>
+    /// The request marshaller sets no checksum data for the operation's modeled checksum; the service's hand-written
+    /// code does (S3 PutObject and UploadPart).
+    /// </summary>
+    [JsonPropertyName("skipChecksumDuringMarshalling")]
+    public bool SkipChecksumDuringMarshalling { get; init; }
 }
 
 /// <summary>

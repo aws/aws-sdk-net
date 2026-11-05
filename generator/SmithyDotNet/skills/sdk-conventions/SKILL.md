@@ -338,6 +338,7 @@ added to the modeled one. A field the trait already has fails generation.
 `operationModifiers.{Operation}.stopPaginationOnSameToken` stops on a repeated token (CloudWatch Logs `GetLogEvents`).
 Unlike the C2J-inherited hooks above, `paginators` names members as the model does (like `@paginated`), not by their
 emitted name.
+`operationModifiers.{Operation}.skipChecksumDuringMarshalling` drops the marshaller's checksum call (S3 `PutObject`, `UploadPart`).
 
 Three convenience hooks add hand-picked public members, read from `GenerationContext.Customizations` (not folded into the
 model). A form names members by C# property name (case-insensitive); a stale operation/class/member reference fails

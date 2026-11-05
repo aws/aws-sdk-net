@@ -49,6 +49,37 @@ public class OperationWriterTests
     }
 
     [Fact]
+    public void Request_HttpChecksumValidationMode_EmitsResponseChecksumOverrides()
+    {
+        var context = TestModels.Context("Codegen/compression-checksum-model.json");
+        var operation = context.Operations.Single(o => o.Name == "DoValidatedChecksum");
+        var output = new OperationWriter(context, ModelFileName).WriteRequest(operation, TestContext.Current.CancellationToken);
+
+        Assert.Contains("protected override CoreChecksumResponseBehavior CoreChecksumMode", output);
+        Assert.Contains("get => IsSetChecksumMode() ? (CoreChecksumResponseBehavior)Enum.Parse(typeof(CoreChecksumResponseBehavior), this.ChecksumMode) : CoreChecksumResponseBehavior.DISABLED;", output);
+        Assert.Contains("set => this.ChecksumMode = value.ToString();", output);
+        Assert.Contains("CoreChecksumAlgorithm.CRC64NVME, CoreChecksumAlgorithm.CRC32, CoreChecksumAlgorithm.SHA256", output);
+        Assert.DoesNotContain("XXHASH128", output);
+        Assert.Contains("protected override System.Collections.ObjectModel.ReadOnlyCollection<CoreChecksumAlgorithm> ChecksumResponseAlgorithms => _checksumResponseAlgorithms;", output);
+    }
+
+    [Fact]
+    public void Request_HttpChecksumValidationModeMemberMissing_Throws()
+    {
+        var context = TestModels.Context("Codegen/compression-checksum-model.json");
+        var operation = context.Operations.Single(o => o.Name == "DoDanglingModeMember");
+
+        var exception = Assert.Throws<GeneratorException>(() => new OperationWriter(context, ModelFileName).WriteRequest(operation, TestContext.Current.CancellationToken));
+        Assert.Contains("'missing'", exception.Message);
+    }
+
+    [Fact]
+    public void Request_NoHttpChecksum_EmitsNoChecksumOverrides()
+    {
+        Assert.DoesNotContain("CoreChecksumMode", _request);
+    }
+
+    [Fact]
     public void ServiceRequest_EmitsBaseClassInServiceNamespace()
     {
         Assert.Contains("namespace Amazon.CloudTrailData", _serviceRequest);
