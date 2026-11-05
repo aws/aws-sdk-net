@@ -4602,7 +4602,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CustomJWTAuthorizerConfiguration.DiscoveryUrl</property>
-    <pattern>^.+/\.well-known/openid-configuration$</pattern>
+    <pattern>^[^\s?#]+/\.well-known/(openid-configuration|oauth-authorization-server)(/[^\s?#]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CustomMemoryStrategyInput.Description</property>
@@ -5700,7 +5700,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.Oauth2Discovery.DiscoveryUrl</property>
-    <pattern>^.+/\.well-known/(openid-configuration|oauth-authorization-server)$</pattern>
+    <pattern>^[^\s?#]+/\.well-known/(openid-configuration|oauth-authorization-server)(/[^\s?#]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.OnlineEvaluationConfigSummary.Description</property>
