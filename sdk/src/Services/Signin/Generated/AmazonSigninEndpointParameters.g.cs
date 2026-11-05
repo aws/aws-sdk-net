@@ -45,55 +45,75 @@ namespace Amazon.Signin.Endpoints
         /// <summary>
         /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
         /// </summary>
-        public bool? UseDualStack
-        {
-            get => (bool?)this["UseDualStack"];
-            set => this["UseDualStack"] = value;
-        }
+        public bool? UseDualStack { get; set; }
 
         /// <summary>
         /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
         /// </summary>
-        public bool? UseFIPS
-        {
-            get => (bool?)this["UseFIPS"];
-            set => this["UseFIPS"] = value;
-        }
+        public bool? UseFIPS { get; set; }
 
         /// <summary>
         /// Override the endpoint used to send this request
         /// </summary>
-        public string Endpoint
-        {
-            get => (string)this["Endpoint"];
-            set => this["Endpoint"] = value;
-        }
+        public string Endpoint { get; set; }
 
         /// <summary>
         /// The AWS region used to dispatch the request.
         /// </summary>
-        public string Region
-        {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
-        }
+        public string Region { get; set; }
 
         /// <summary>
         /// Indicates if the operation targets the control plane endpoint
         /// </summary>
-        public bool? IsControlPlane
-        {
-            get => (bool?)this["IsControlPlane"];
-            set => this["IsControlPlane"] = value;
-        }
+        public bool? IsControlPlane { get; set; }
 
         /// <summary>
         /// Indicates if the operation targets the OAuth token endpoint
         /// </summary>
-        public bool? IsOAuthEndpoint
+        public bool? IsOAuthEndpoint { get; set; }
+
+        /// <summary>
+        /// Gets or sets an endpoint parameter by name. Known parameters read and write the typed
+        /// properties; any other name falls through to the underlying property bag.
+        /// </summary>
+        public override object this[string name]
         {
-            get => (bool?)this["IsOAuthEndpoint"];
-            set => this["IsOAuthEndpoint"] = value;
+            get => name switch
+            {
+                "UseDualStack" => UseDualStack,
+                "UseFIPS" => UseFIPS,
+                "Endpoint" => Endpoint,
+                "Region" => Region,
+                "IsControlPlane" => IsControlPlane,
+                "IsOAuthEndpoint" => IsOAuthEndpoint,
+                _ => base[name],
+            };
+            set
+            {
+                switch (name)
+                {
+                    case "UseDualStack": UseDualStack = (bool?)value; break;
+                    case "UseFIPS": UseFIPS = (bool?)value; break;
+                    case "Endpoint": Endpoint = (string)value; break;
+                    case "Region": Region = (string)value; break;
+                    case "IsControlPlane": IsControlPlane = (bool?)value; break;
+                    case "IsOAuthEndpoint": IsOAuthEndpoint = (bool?)value; break;
+                    default: base[name] = value; break;
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        protected override bool ParameterValuesEqual(EndpointParameters other)
+        {
+            var o = (SigninEndpointParameters)other;
+            return UseDualStack == o.UseDualStack
+                && UseFIPS == o.UseFIPS
+                && Endpoint == o.Endpoint
+                && Region == o.Region
+                && IsControlPlane == o.IsControlPlane
+                && IsOAuthEndpoint == o.IsOAuthEndpoint
+                && base.ParameterValuesEqual(other);
         }
     }
 }

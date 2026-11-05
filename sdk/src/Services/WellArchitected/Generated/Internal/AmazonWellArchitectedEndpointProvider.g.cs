@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.WellArchitected.Endpoints;
 
 namespace Amazon.WellArchitected.Internal
 {
     /// <summary>
-    /// AWS Well-Architected Tool endpoint provider.
+    /// Amazon WellArchitected endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="WellArchitectedEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonWellArchitectedEndpointProvider : IEndpointProvider
+    public class AmazonWellArchitectedEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonWellArchitectedEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public WellArchitectedEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(WellArchitectedEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAABQAAAADAAAAAQAAAAQF9eEPAAAAAgAAAAUF9eEPAAAAAwAAAAwAAAAGAAAABQAAAAcAAAAIAAAABgAAAAoAAAAIAAAABwAAAAkF9eEOAAAACAX14Q0F9eEJAAAABwAAAAsF9eEKAAAACAX14QgF9eEJAAAABAAAAA4AAAANAAAABwX14QUF9eEHAAAABQAAAA8AAAAQAAAABgAAABIAAAAQAAAABwAAABEF9eEMAAAACAX14QsF9eEFAAAABwAAABMF9eEGAAAACAX14QQF9eEFAAAAAwX14QEAAAAVAAAABwX14QIF9eED");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for WellArchitectedEndpointParameters
+        /// Resolves the endpoint for WellArchitectedEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -51,118 +67,88 @@ namespace Amazon.WellArchitected.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (WellArchitectedEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["UseDualStack"] = parameters["UseDualStack"],
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["Region"] = parameters["Region"],
-                ["SubServiceType"] = parameters["SubServiceType"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                if (Equals(refs["UseDualStack"], true))
-                {
+                case 2:
                     throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-            }
-            if (IsSet(refs["SubServiceType"]) && Equals(refs["SubServiceType"], "AGENT") && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-            {
-                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                {
-                    if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true) && Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
+                case 3:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 4:
+                    return new Endpoint($"https://wellarchitected-agent-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
                     {
-                        return new Endpoint(Interpolate(@"https://wellarchitected-agent-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""wellarchitected"",
-                                                            ""signingRegion"": ""{Region}""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
-                    }
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "wellarchitected", $"{context.Parameters.Region}", null, null) },
+                    };
+                case 5:
                     throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                }
-                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
-                {
-                    if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
+                case 6:
+                    return new Endpoint($"https://wellarchitected-agent-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}")
                     {
-                        return new Endpoint(Interpolate(@"https://wellarchitected-agent-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""wellarchitected"",
-                                                            ""signingRegion"": ""{Region}""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
-                    }
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "wellarchitected", $"{context.Parameters.Region}", null, null) },
+                    };
+                case 7:
                     throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                }
-                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
-                {
-                    if (Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
+                case 8:
+                    return new Endpoint($"https://wellarchitected-agent.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
                     {
-                        return new Endpoint(Interpolate(@"https://wellarchitected-agent.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""wellarchitected"",
-                                                            ""signingRegion"": ""{Region}""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
-                    }
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "wellarchitected", $"{context.Parameters.Region}", null, null) },
+                    };
+                case 9:
                     throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                }
-                return new Endpoint(Interpolate(@"https://wellarchitected-agent.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{
-                                            ""authSchemes"": [
-                                                {
-                                                    ""name"": ""sigv4"",
-                                                    ""signingName"": ""wellarchitected"",
-                                                    ""signingRegion"": ""{Region}""
-                                                }
-                                            ]
-                                        }", refs), InterpolateJson(@"", refs));
+                case 10:
+                    return new Endpoint($"https://wellarchitected-agent.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "wellarchitected", $"{context.Parameters.Region}", null, null) },
+                    };
+                case 11:
+                    return new Endpoint($"https://wellarchitected-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 12:
+                    return new Endpoint($"https://wellarchitected-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 13:
+                    return new Endpoint($"https://wellarchitected.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 14:
+                    return new Endpoint($"https://wellarchitected.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 15:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Region"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://wellarchitected-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                    }
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
-                    {
-                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                        {
-                            return new Endpoint(Interpolate(@"https://wellarchitected-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                    }
-                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://wellarchitected.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    return new Endpoint(Interpolate(@"https://wellarchitected.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 4:
+                    return Equals(GetAttr(context.PartitionResult, "supportsFIPS"), true);
+                case 5:
+                    return IsSet(context.Parameters.SubServiceType);
+                case 6:
+                    return Equals(context.Parameters.SubServiceType, "AGENT");
+                case 7:
+                    return Equals(context.Parameters.UseDualStack, true);
+                case 8:
+                    return Equals(GetAttr(context.PartitionResult, "supportsDualStack"), true);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
         }
     }
 }

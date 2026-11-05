@@ -21,20 +21,39 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.CloudFrontKeyValueStore.Endpoints;
 
 namespace Amazon.CloudFrontKeyValueStore.Internal
 {
     /// <summary>
-    /// Amazon CloudFront KeyValueStore endpoint provider.
+    /// Amazon CloudFrontKeyValueStore endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CloudFrontKeyValueStoreEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonCloudFrontKeyValueStoreEndpointProvider : IEndpointProvider
+    public class AmazonCloudFrontKeyValueStoreEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonCloudFrontKeyValueStoreEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public CloudFrontKeyValueStoreEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Arn ParsedArn { get; set; }
+            public object ArnType { get; set; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.URL Url { get; set; }
+
+            public Context(CloudFrontKeyValueStoreEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAX14QwAAAADAAAAAQAAAAQF9eELAAAAAgAAAAUF9eEKAAAAAwAAAAYF9eEJAAAABAAAAAcF9eEIAAAABQAAAAgF9eEHAAAABgX14QcAAAAJAAAABwAAAAoF9eEGAAAACAAAAAsF9eEFAAAACQAAAAwAAAAOAAAACgAAAA0AAAAOAAAACwAAAA4F9eEEAAAADAAAAA8F9eEDAAAADQX14QEF9eEC");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for CloudFrontKeyValueStoreEndpointParameters
+        /// Resolves the endpoint for CloudFrontKeyValueStoreEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -47,117 +66,86 @@ namespace Amazon.CloudFrontKeyValueStore.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (CloudFrontKeyValueStoreEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["KvsARN"] = parameters["KvsARN"],
-                ["Region"] = parameters["Region"],
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-            };
-            if (Equals(refs["UseFIPS"], false))
-            {
-                if (IsSet(refs["KvsARN"]))
-                {
-                    if ((refs["parsedArn"] = ParseArn((string)refs["KvsARN"])) != null)
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
+                    return new Endpoint($"{Fn.GetAttr(context.Url, "scheme")}://{Fn.GetAttr(context.ParsedArn, "accountId")}.{Fn.GetAttr(context.Url, "authority")}{Fn.GetAttr(context.Url, "path")}")
                     {
-                        if (Equals(GetAttr(refs["parsedArn"], "service"), "cloudfront"))
-                        {
-                            if (Equals(GetAttr(refs["parsedArn"], "region"), ""))
-                            {
-                                if ((refs["arnType"] = GetAttr(refs["parsedArn"], "resourceId[0]")) != null)
-                                {
-                                    if (!Equals(refs["arnType"], ""))
-                                    {
-                                        if (Equals(refs["arnType"], "key-value-store"))
-                                        {
-                                            if (Equals(GetAttr(refs["parsedArn"], "partition"), "aws"))
-                                            {
-                                                if (IsSet(refs["Region"]))
-                                                {
-                                                    if ((refs["partitionResult"] = Partition((string)refs["Region"])) != null)
-                                                    {
-                                                        if (Equals(GetAttr(refs["partitionResult"], "name"), Interpolate(@"{parsedArn#partition}", refs)))
-                                                        {
-                                                            if (IsSet(refs["Endpoint"]))
-                                                            {
-                                                                if ((refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
-                                                                {
-                                                                    return new Endpoint(Interpolate(@"{url#scheme}://{parsedArn#accountId}.{url#authority}{url#path}", refs), InterpolateJson(@"{
-                                                                                                                                                    ""authSchemes"": [
-                                                                                                                                                        {
-                                                                                                                                                            ""name"": ""sigv4a"",
-                                                                                                                                                            ""signingName"": ""cloudfront-keyvaluestore"",
-                                                                                                                                                            ""signingRegionSet"": [
-                                                                                                                                                                ""*""
-                                                                                                                                                            ]
-                                                                                                                                                        }
-                                                                                                                                                    ]
-                                                                                                                                                }", refs), InterpolateJson(@"", refs));
-                                                                }
-                                                                throw new AmazonClientException("Provided endpoint is not a valid URL");
-                                                            }
-                                                            return new Endpoint(Interpolate(@"https://{parsedArn#accountId}.cloudfront-kvs.global.api.aws", refs), InterpolateJson(@"{
-                                                                                                                                    ""authSchemes"": [
-                                                                                                                                        {
-                                                                                                                                            ""name"": ""sigv4a"",
-                                                                                                                                            ""signingName"": ""cloudfront-keyvaluestore"",
-                                                                                                                                            ""signingRegionSet"": [
-                                                                                                                                                ""*""
-                                                                                                                                            ]
-                                                                                                                                        }
-                                                                                                                                    ]
-                                                                                                                                }", refs), InterpolateJson(@"", refs));
-                                                        }
-                                                        throw new AmazonClientException(Interpolate(@"Client was configured for partition `{partitionResult#name}` but Kvs ARN has `{parsedArn#partition}`", refs));
-                                                    }
-                                                }
-                                                if (IsSet(refs["Endpoint"]))
-                                                {
-                                                    if ((refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
-                                                    {
-                                                        return new Endpoint(Interpolate(@"{url#scheme}://{parsedArn#accountId}.{url#authority}{url#path}", refs), InterpolateJson(@"{
-                                                                                                                            ""authSchemes"": [
-                                                                                                                                {
-                                                                                                                                    ""name"": ""sigv4a"",
-                                                                                                                                    ""signingName"": ""cloudfront-keyvaluestore"",
-                                                                                                                                    ""signingRegionSet"": [
-                                                                                                                                        ""*""
-                                                                                                                                    ]
-                                                                                                                                }
-                                                                                                                            ]
-                                                                                                                        }", refs), InterpolateJson(@"", refs));
-                                                    }
-                                                    throw new AmazonClientException("Provided endpoint is not a valid URL");
-                                                }
-                                                return new Endpoint(Interpolate(@"https://{parsedArn#accountId}.cloudfront-kvs.global.api.aws", refs), InterpolateJson(@"{
-                                                                                                            ""authSchemes"": [
-                                                                                                                {
-                                                                                                                    ""name"": ""sigv4a"",
-                                                                                                                    ""signingName"": ""cloudfront-keyvaluestore"",
-                                                                                                                    ""signingRegionSet"": [
-                                                                                                                        ""*""
-                                                                                                                    ]
-                                                                                                                }
-                                                                                                            ]
-                                                                                                        }", refs), InterpolateJson(@"", refs));
-                                            }
-                                            throw new AmazonClientException(Interpolate(@"CloudFront-KeyValueStore is not supported in partition `{parsedArn#partition}`", refs));
-                                        }
-                                        throw new AmazonClientException(Interpolate(@"ARN resource type is invalid. Expected `key-value-store`, found: `{arnType}`", refs));
-                                    }
-                                    throw new AmazonClientException("No resource type found in the KVS ARN. Resource type must be `key-value-store`.");
-                                }
-                                throw new AmazonClientException("No resource type found in the KVS ARN. Resource type must be `key-value-store`.");
-                            }
-                            throw new AmazonClientException(Interpolate(@"Provided ARN must be a global resource ARN. Found: `{parsedArn#region}`", refs));
-                        }
-                        throw new AmazonClientException(Interpolate(@"Provided ARN is not a valid CloudFront Service ARN. Found: `{parsedArn#service}`", refs));
-                    }
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4a", "cloudfront-keyvaluestore", null, new List<string> { "*" }, null) },
+                    };
+                case 2:
+                    throw new AmazonClientException("Provided endpoint is not a valid URL");
+                case 3:
+                    return new Endpoint($"https://{Fn.GetAttr(context.ParsedArn, "accountId")}.cloudfront-kvs.global.api.aws")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4a", "cloudfront-keyvaluestore", null, new List<string> { "*" }, null) },
+                    };
+                case 4:
+                    throw new AmazonClientException($"Client was configured for partition `{Fn.GetAttr(context.PartitionResult, "name")}` but Kvs ARN has `{Fn.GetAttr(context.ParsedArn, "partition")}`");
+                case 5:
+                    throw new AmazonClientException($"CloudFront-KeyValueStore is not supported in partition `{Fn.GetAttr(context.ParsedArn, "partition")}`");
+                case 6:
+                    throw new AmazonClientException($"ARN resource type is invalid. Expected `key-value-store`, found: `{context.ArnType}`");
+                case 7:
+                    throw new AmazonClientException("No resource type found in the KVS ARN. Resource type must be `key-value-store`.");
+                case 8:
+                    throw new AmazonClientException($"Provided ARN must be a global resource ARN. Found: `{Fn.GetAttr(context.ParsedArn, "region")}`");
+                case 9:
+                    throw new AmazonClientException($"Provided ARN is not a valid CloudFront Service ARN. Found: `{Fn.GetAttr(context.ParsedArn, "service")}`");
+                case 10:
                     throw new AmazonClientException("KVS ARN must be a valid ARN");
-                }
-                throw new AmazonClientException("KVS ARN must be provided to use this service");
+                case 11:
+                    throw new AmazonClientException("KVS ARN must be provided to use this service");
+                case 12:
+                    throw new AmazonClientException("Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore.");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            throw new AmazonClientException("Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore.");
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
+            {
+                case 0:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 1:
+                    return IsSet(context.Parameters.KvsARN);
+                case 2:
+                    return (context.ParsedArn = ParseArn((string)context.Parameters.KvsARN)) != null;
+                case 3:
+                    return Equals(GetAttr(context.ParsedArn, "service"), "cloudfront");
+                case 4:
+                    return Equals(GetAttr(context.ParsedArn, "region"), "");
+                case 5:
+                    return (context.ArnType = GetAttr(context.ParsedArn, "resourceId[0]")) != null;
+                case 6:
+                    return Equals(context.ArnType, "");
+                case 7:
+                    return Equals(context.ArnType, "key-value-store");
+                case 8:
+                    return Equals(GetAttr(context.ParsedArn, "partition"), "aws");
+                case 9:
+                    return IsSet(context.Parameters.Region);
+                case 10:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 11:
+                    return Equals(GetAttr(context.ParsedArn, "partition"), GetAttr(context.PartitionResult, "name"));
+                case 12:
+                    return IsSet(context.Parameters.Endpoint);
+                case 13:
+                    return (context.Url = ParseURL((string)context.Parameters.Endpoint)) != null;
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
+            }
         }
     }
 }

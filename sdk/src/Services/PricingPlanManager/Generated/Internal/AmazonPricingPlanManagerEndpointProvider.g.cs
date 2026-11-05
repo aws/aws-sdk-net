@@ -21,20 +21,35 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.PricingPlanManager.Endpoints;
 
 namespace Amazon.PricingPlanManager.Internal
 {
     /// <summary>
-    /// PricingPlanManager endpoint provider.
+    /// Amazon PricingPlanManager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PricingPlanManagerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonPricingPlanManagerEndpointProvider : IEndpointProvider
+    public class AmazonPricingPlanManagerEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonPricingPlanManagerEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public PricingPlanManagerEndpointParameters Parameters { get; }
+
+            public Context(PricingPlanManagerEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAX14QEF9eEC");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for PricingPlanManagerEndpointParameters
+        /// Resolves the endpoint for PricingPlanManagerEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -47,32 +62,40 @@ namespace Amazon.PricingPlanManager.Internal
                 throw new AmazonClientException("Region parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (PricingPlanManagerEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["Endpoint"] = parameters["Endpoint"],
-                ["Region"] = parameters["Region"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                return new Endpoint(Interpolate(@"{Endpoint}", refs), InterpolateJson(@"{
-                                    ""authSchemes"": [
-                                        {
-                                            ""name"": ""sigv4"",
-                                            ""signingName"": ""pricingplanmanager"",
-                                            ""signingRegion"": ""us-east-1""
-                                        }
-                                    ]
-                                }", refs), InterpolateJson(@"", refs));
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
+                    return new Endpoint($"{context.Parameters.Endpoint}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "pricingplanmanager", "us-east-1", null, null) },
+                    };
+                case 2:
+                    return new Endpoint("https://pricingplanmanager.us-east-1.api.aws")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "pricingplanmanager", "us-east-1", null, null) },
+                    };
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            return new Endpoint("https://pricingplanmanager.us-east-1.api.aws", InterpolateJson(@"{
-                                    ""authSchemes"": [
-                                        {
-                                            ""name"": ""sigv4"",
-                                            ""signingName"": ""pricingplanmanager"",
-                                            ""signingRegion"": ""us-east-1""
-                                        }
-                                    ]
-                                }", refs), InterpolateJson(@"", refs));
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
+            {
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
+            }
         }
     }
 }

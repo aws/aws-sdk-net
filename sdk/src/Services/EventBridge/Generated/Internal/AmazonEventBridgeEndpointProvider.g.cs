@@ -21,6 +21,8 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.EventBridge.Endpoints;
 
 namespace Amazon.EventBridge.Internal
@@ -31,10 +33,24 @@ namespace Amazon.EventBridge.Internal
     /// Resolves endpoint for given set of <see cref="EventBridgeEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonEventBridgeEndpointProvider : IEndpointProvider
+    public class AmazonEventBridgeEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonEventBridgeEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public EventBridgeEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(EventBridgeEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAAAQAAAADAAAAAQAAABsF9eESAAAAAQAAABkAAAAFAAAAAgAAABEAAAAGAAAAAwAAAAcF9eESAAAABAAAAAoAAAAIAAAABQAAAAkF9eERAAAACQX14QEF9eEEAAAABQAAAA4AAAALAAAACAAAAAwF9eEQAAAACgX14Q0AAAANAAAACwX14Q4F9eEPAAAABgX14QEAAAAPAAAACAAAABAF9eEMAAAACQX14QsF9eEMAAAAAwAAABIF9eESAAAABAAAABcAAAATAAAABQAAABUAAAAUAAAABwX14QUF9eEHAAAABwAAABYF9eEHAAAACQX14QMF9eEEAAAABQAAABgAAAAfAAAABgX14QEAAAAfAAAAAgAAABoAAAAbAAAAAwAAAB0AAAAbAAAABAX14QgAAAAcAAAABQX14QkF9eEKAAAABAAAAB8AAAAeAAAABwX14QIF9eEHAAAABwX14QYF9eEH");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for EventBridgeEndpointParameters
+        /// Resolves the endpoint for EventBridgeEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -51,124 +67,97 @@ namespace Amazon.EventBridge.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (EventBridgeEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["Region"] = parameters["Region"],
-                ["UseDualStack"] = parameters["UseDualStack"],
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["EndpointId"] = parameters["EndpointId"],
-            };
-            if (!IsSet(refs["Endpoint"]) && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-            {
-                return new Endpoint(Interpolate(@"https://events.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-            }
-            if (IsSet(refs["EndpointId"]) && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-            {
-                if (IsValidHostLabel((string)refs["EndpointId"], true))
-                {
-                    if (Equals(refs["UseFIPS"], false))
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
+                    return new Endpoint($"https://events.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 2:
+                    return new Endpoint((string)context.Parameters.Endpoint)
                     {
-                        if (IsSet(refs["Endpoint"]))
-                        {
-                            return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4a"",
-                                                                    ""signingName"": ""events"",
-                                                                    ""signingRegionSet"": [
-                                                                        ""*""
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                        }
-                        if (Equals(refs["UseDualStack"], true))
-                        {
-                            if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                            {
-                                return new Endpoint(Interpolate(@"https://{EndpointId}.endpoint.events.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                                            ""authSchemes"": [
-                                                                                {
-                                                                                    ""name"": ""sigv4a"",
-                                                                                    ""signingName"": ""events"",
-                                                                                    ""signingRegionSet"": [
-                                                                                        ""*""
-                                                                                    ]
-                                                                                }
-                                                                            ]
-                                                                        }", refs), InterpolateJson(@"", refs));
-                            }
-                            throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                        }
-                        return new Endpoint(Interpolate(@"https://{EndpointId}.endpoint.events.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4a"",
-                                                                    ""signingName"": ""events"",
-                                                                    ""signingRegionSet"": [
-                                                                        ""*""
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4a", "events", null, new List<string> { "*" }, null) },
+                    };
+                case 3:
+                    return new Endpoint($"https://{context.Parameters.EndpointId}.endpoint.events.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4a", "events", null, new List<string> { "*" }, null) },
+                    };
+                case 4:
+                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                case 5:
+                    return new Endpoint($"https://{context.Parameters.EndpointId}.endpoint.events.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4a", "events", null, new List<string> { "*" }, null) },
+                    };
+                case 6:
                     throw new AmazonClientException("Invalid Configuration: FIPS is not supported with EventBridge multi-region endpoints.");
-                }
-                throw new AmazonClientException("EndpointId must be a valid host label.");
-            }
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 7:
+                    throw new AmazonClientException("EndpointId must be a valid host label.");
+                case 8:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                if (Equals(refs["UseDualStack"], true))
-                {
+                case 9:
                     throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 10:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 11:
+                    return new Endpoint($"https://events-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 12:
+                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                case 13:
+                    return new Endpoint("https://events.us-gov-east-1.amazonaws.com");
+                case 14:
+                    return new Endpoint("https://events.us-gov-west-1.amazonaws.com");
+                case 15:
+                    return new Endpoint($"https://events-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 16:
+                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                case 17:
+                    return new Endpoint($"https://events.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 18:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Region"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://events-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                    }
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                        {
-                            if (Equals(refs["Region"], "us-gov-east-1"))
-                            {
-                                return new Endpoint("https://events.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            if (Equals(refs["Region"], "us-gov-west-1"))
-                            {
-                                return new Endpoint("https://events.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            return new Endpoint(Interpolate(@"https://events-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                    }
-                    if (Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://events.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    return new Endpoint(Interpolate(@"https://events.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
+                case 0:
+                    return IsSet(context.Parameters.Region);
+                case 1:
+                    return IsSet(context.Parameters.Endpoint);
+                case 2:
+                    return IsSet(context.Parameters.EndpointId);
+                case 3:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 4:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 5:
+                    return Equals(context.Parameters.UseDualStack, true);
+                case 6:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-us-gov");
+                case 7:
+                    return IsValidHostLabel((string)context.Parameters.EndpointId, true);
+                case 8:
+                    return Equals(GetAttr(context.PartitionResult, "supportsFIPS"), true);
+                case 9:
+                    return Equals(GetAttr(context.PartitionResult, "supportsDualStack"), true);
+                case 10:
+                    return Equals(context.Parameters.Region, "us-gov-east-1");
+                case 11:
+                    return Equals(context.Parameters.Region, "us-gov-west-1");
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
         }
     }
 }

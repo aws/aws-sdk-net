@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.BCMDataExports.Endpoints;
 
 namespace Amazon.BCMDataExports.Internal
 {
     /// <summary>
-    /// AWS Billing and Cost Management Data Exports endpoint provider.
+    /// Amazon BCMDataExports endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BCMDataExportsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonBCMDataExportsEndpointProvider : IEndpointProvider
+    public class AmazonBCMDataExportsEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonBCMDataExportsEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public BCMDataExportsEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(BCMDataExportsEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAAAoAAAADAAAAAQAAAAQF9eEJAAAAAgAAAAUF9eEJAAAAAwX14QcAAAAGAAAABAX14QMAAAAHAAAABQX14QQAAAAIAAAABgX14QUAAAAJAAAABwX14QYF9eEIAAAAAwX14QEF9eEC");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for BCMDataExportsEndpointParameters
+        /// Resolves the endpoint for BCMDataExportsEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -47,90 +63,80 @@ namespace Amazon.BCMDataExports.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (BCMDataExportsEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["Region"] = parameters["Region"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 2:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 3:
+                    return new Endpoint("https://bcm-data-exports.us-iso-east-1.c2s.ic.gov")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "us-iso-east-1", null, null) },
+                    };
+                case 4:
+                    return new Endpoint("https://bcm-data-exports.us-isob-east-1.sc2s.sgov.gov")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "us-isob-east-1", null, null) },
+                    };
+                case 5:
+                    return new Endpoint("https://bcm-data-exports.eu-isoe-west-1.cloud.adc-e.uk")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "eu-isoe-west-1", null, null) },
+                    };
+                case 6:
+                    return new Endpoint("https://bcm-data-exports.us-isof-south-1.csp.hci.ic.gov")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "us-isof-south-1", null, null) },
+                    };
+                case 7:
+                    return new Endpoint($"https://bcm-data-exports-fips.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 8:
+                    return new Endpoint($"https://bcm-data-exports.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 9:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Region"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && Equals(refs["UseFIPS"], false))
-                    {
-                        return new Endpoint("https://bcm-data-exports.us-iso-east-1.c2s.ic.gov", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-iso-east-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b") && Equals(refs["UseFIPS"], false))
-                    {
-                        return new Endpoint("https://bcm-data-exports.us-isob-east-1.sc2s.sgov.gov", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-isob-east-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-e") && Equals(refs["UseFIPS"], false))
-                    {
-                        return new Endpoint("https://bcm-data-exports.eu-isoe-west-1.cloud.adc-e.uk", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""eu-isoe-west-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-f") && Equals(refs["UseFIPS"], false))
-                    {
-                        return new Endpoint("https://bcm-data-exports.us-isof-south-1.csp.hci.ic.gov", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-isof-south-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        return new Endpoint(Interpolate(@"https://bcm-data-exports-fips.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    return new Endpoint(Interpolate(@"https://bcm-data-exports.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                }
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 4:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso");
+                case 5:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso-b");
+                case 6:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso-e");
+                case 7:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso-f");
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
         }
     }
 }

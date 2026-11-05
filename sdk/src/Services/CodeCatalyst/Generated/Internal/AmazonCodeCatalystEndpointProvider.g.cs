@@ -21,6 +21,8 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.CodeCatalyst.Endpoints;
 
 namespace Amazon.CodeCatalyst.Internal
@@ -31,10 +33,25 @@ namespace Amazon.CodeCatalyst.Internal
     /// Resolves endpoint for given set of <see cref="CodeCatalystEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonCodeCatalystEndpointProvider : IEndpointProvider
+    public class AmazonCodeCatalystEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonCodeCatalystEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public CodeCatalystEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResultSsa2 { get; set; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResultSsa1 { get; set; }
+
+            public Context(CodeCatalystEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAX14QEAAAADAAAAAQAAAAcAAAAEAAAAAwAAAAUF9eEAAAAABAAAAAYF9eEEAAAABQX14QMF9eECAAAAAgAAAAgF9eEAAAAABAAAAAkF9eEGAAAABgX14QUF9eEC");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for CodeCatalystEndpointParameters
+        /// Resolves the endpoint for CodeCatalystEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -47,41 +64,54 @@ namespace Amazon.CodeCatalyst.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (CodeCatalystEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Region"] = parameters["Region"],
-                ["Endpoint"] = parameters["Endpoint"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 2:
+                    throw new AmazonClientException("Partition does not support FIPS.");
+                case 3:
+                    return new Endpoint($"https://codecatalyst-fips.global.{Fn.GetAttr(context.PartitionResultSsa1, "dualStackDnsSuffix")}");
+                case 4:
+                    return new Endpoint($"https://codecatalyst.global.{Fn.GetAttr(context.PartitionResultSsa1, "dualStackDnsSuffix")}");
+                case 5:
+                    return new Endpoint($"https://codecatalyst-fips.global.{Fn.GetAttr(context.PartitionResultSsa2, "dualStackDnsSuffix")}");
+                case 6:
+                    return new Endpoint($"https://codecatalyst.global.{Fn.GetAttr(context.PartitionResultSsa2, "dualStackDnsSuffix")}");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (!IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition("us-west-2")) != null)
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if (Equals(refs["UseFIPS"], true))
-                {
-                    if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), false))
-                    {
-                        throw new AmazonClientException("Partition does not support FIPS.");
-                    }
-                    return new Endpoint(Interpolate(@"https://codecatalyst-fips.global.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                return new Endpoint(Interpolate(@"https://codecatalyst.global.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResultSsa2 = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return (context.PartitionResultSsa1 = Partition("us-west-2")) != null;
+                case 4:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 5:
+                    return Equals(GetAttr(context.PartitionResultSsa1, "supportsFIPS"), true);
+                case 6:
+                    return Equals(GetAttr(context.PartitionResultSsa2, "supportsFIPS"), true);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            if (IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
-                    if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), false))
-                    {
-                        throw new AmazonClientException("Partition does not support FIPS.");
-                    }
-                    return new Endpoint(Interpolate(@"https://codecatalyst-fips.global.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                return new Endpoint(Interpolate(@"https://codecatalyst.global.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-            }
-            throw new AmazonClientException("Cannot resolve endpoint");
         }
     }
 }

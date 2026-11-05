@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.PartnerCentralChannel.Endpoints;
 
 namespace Amazon.PartnerCentralChannel.Internal
 {
     /// <summary>
-    /// Partner Central Channel API endpoint provider.
+    /// Amazon PartnerCentralChannel endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PartnerCentralChannelEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonPartnerCentralChannelEndpointProvider : IEndpointProvider
+    public class AmazonPartnerCentralChannelEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonPartnerCentralChannelEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public PartnerCentralChannelEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(PartnerCentralChannelEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAAAgAAAADAAAAAQAAAAQF9eEHAAAAAgAAAAUF9eEHAAAAAwAAAAcAAAAGAAAABAX14QUF9eEGAAAABAX14QQF9eEDAAAABAX14QEF9eEC");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for PartnerCentralChannelEndpointParameters
+        /// Resolves the endpoint for PartnerCentralChannelEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -47,104 +63,67 @@ namespace Amazon.PartnerCentralChannel.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (PartnerCentralChannelEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["Region"] = parameters["Region"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"{
-                                            ""authSchemes"": [
-                                                {
-                                                    ""name"": ""sigv4a"",
-                                                    ""signingRegionSet"": [
-                                                        ""*""
-                                                    ]
-                                                },
-                                                {
-                                                    ""name"": ""sigv4""
-                                                }
-                                            ]
-                                        }", refs), InterpolateJson(@"", refs));
+                case 2:
+                    return new Endpoint((string)context.Parameters.Endpoint)
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4a", null, null, new List<string> { "*" }, null), new AuthScheme("sigv4", null, null, null, null) },
+                    };
+                case 3:
+                    return new Endpoint($"https://partnercentral-channel.us-gov.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4a", null, null, new List<string> { "*" }, null), new AuthScheme("sigv4", null, "us-gov-west-1", null, null) },
+                    };
+                case 4:
+                    return new Endpoint($"https://partnercentral-channel-fips.us-gov.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4a", null, null, new List<string> { "*" }, null), new AuthScheme("sigv4", null, "us-gov-west-1", null, null) },
+                    };
+                case 5:
+                    return new Endpoint($"https://partnercentral-channel-fips.global.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4a", null, null, new List<string> { "*" }, null), new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 6:
+                    return new Endpoint($"https://partnercentral-channel.global.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4a", null, null, new List<string> { "*" }, null), new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 7:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Region"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], false))
-                    {
-                        return new Endpoint(Interpolate(@"https://partnercentral-channel.us-gov.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4a"",
-                                                                    ""signingRegionSet"": [
-                                                                        ""*""
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-gov-west-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true))
-                    {
-                        return new Endpoint(Interpolate(@"https://partnercentral-channel-fips.us-gov.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4a"",
-                                                                    ""signingRegionSet"": [
-                                                                        ""*""
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-gov-west-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        return new Endpoint(Interpolate(@"https://partnercentral-channel-fips.global.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4a"",
-                                                                    ""signingRegionSet"": [
-                                                                        ""*""
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    return new Endpoint(Interpolate(@"https://partnercentral-channel.global.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4a"",
-                                                                    ""signingRegionSet"": [
-                                                                        ""*""
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                }
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-us-gov");
+                case 4:
+                    return Equals(context.Parameters.UseFIPS, true);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
         }
     }
 }

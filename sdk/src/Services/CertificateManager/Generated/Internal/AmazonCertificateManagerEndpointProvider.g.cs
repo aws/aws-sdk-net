@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.CertificateManager.Endpoints;
 
 namespace Amazon.CertificateManager.Internal
 {
     /// <summary>
-    /// AWS Certificate Manager endpoint provider.
+    /// Amazon CertificateManager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CertificateManagerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonCertificateManagerEndpointProvider : IEndpointProvider
+    public class AmazonCertificateManagerEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonCertificateManagerEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public CertificateManagerEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(CertificateManagerEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAX14QEAAAADAAAAAQAAAAQF9eEKAAAAAgAAAAkAAAAFAAAAAwAAAAcAAAAGAAAABQX14QgF9eEJAAAABQX14QUAAAAIAAAABgX14QYF9eEHAAAAAwAAAAwAAAAKAAAABAX14QMAAAALAAAABgX14QMF9eEEAAAABAX14QIAAAANAAAABgX14QIF9eEE");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for CertificateManagerEndpointParameters
+        /// Resolves the endpoint for CertificateManagerEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -59,63 +75,62 @@ namespace Amazon.CertificateManager.Internal
                 throw new AmazonClientException("ServiceType parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (CertificateManagerEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["Region"] = parameters["Region"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["UseDualStack"] = parameters["UseDualStack"],
-                ["ServiceType"] = parameters["ServiceType"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                return new Endpoint(Interpolate(@"{Endpoint}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-            }
-            if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-            {
-                if (Equals(refs["ServiceType"], "ACM-ACME"))
-                {
-                    if (IsSet(refs["Endpoint"]))
-                    {
-                        return new Endpoint(Interpolate(@"{Endpoint}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
-                    {
-                        if (Equals(refs["UseFIPS"], true))
-                        {
-                            throw new AmazonClientException("FIPS endpoints are not available for ACME operations");
-                        }
-                        return new Endpoint(Interpolate(@"https://acm-acme.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
-                    {
-                        if (Equals(refs["UseFIPS"], true))
-                        {
-                            throw new AmazonClientException("FIPS endpoints are not available for ACME operations");
-                        }
-                        return new Endpoint(Interpolate(@"https://acm-acme.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
+                    return new Endpoint($"{context.Parameters.Endpoint}");
+                case 2:
+                    throw new AmazonClientException("FIPS endpoints are not available for ACME operations");
+                case 3:
+                    return new Endpoint($"https://acm-acme.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 4:
                     throw new AmazonClientException("ACME operations are only available in the aws and aws-us-gov partitions");
-                }
-                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                {
-                    return new Endpoint(Interpolate(@"https://acm-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                if (Equals(refs["UseFIPS"], true))
-                {
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
-                    {
-                        return new Endpoint(Interpolate(@"https://acm.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    return new Endpoint(Interpolate(@"https://acm-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                if (Equals(refs["UseDualStack"], true))
-                {
-                    return new Endpoint(Interpolate(@"https://acm.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                return new Endpoint(Interpolate(@"https://acm.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 5:
+                    return new Endpoint($"https://acm-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 6:
+                    return new Endpoint($"https://acm.{context.Parameters.Region}.amazonaws.com");
+                case 7:
+                    return new Endpoint($"https://acm-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 8:
+                    return new Endpoint($"https://acm.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 9:
+                    return new Endpoint($"https://acm.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 10:
+                    throw new AmazonClientException("Region must be set to resolve an endpoint.");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            throw new AmazonClientException("Region must be set to resolve an endpoint.");
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
+            {
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 2:
+                    return Equals(context.Parameters.ServiceType, "ACM-ACME");
+                case 3:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 4:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws");
+                case 5:
+                    return Equals(context.Parameters.UseDualStack, true);
+                case 6:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-us-gov");
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
+            }
         }
     }
 }

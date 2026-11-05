@@ -45,37 +45,59 @@ namespace Amazon.SignerData.Endpoints
         /// <summary>
         /// The AWS region used to dispatch the request.
         /// </summary>
-        public string Region
-        {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
-        }
+        public string Region { get; set; }
 
         /// <summary>
         /// When true, send this request to the FIPS-compliant regional endpoint.
         /// </summary>
-        public bool? UseFIPS
-        {
-            get => (bool?)this["UseFIPS"];
-            set => this["UseFIPS"] = value;
-        }
+        public bool? UseFIPS { get; set; }
 
         /// <summary>
         /// When true, use the dual-stack endpoint.
         /// </summary>
-        public bool? UseDualStack
-        {
-            get => (bool?)this["UseDualStack"];
-            set => this["UseDualStack"] = value;
-        }
+        public bool? UseDualStack { get; set; }
 
         /// <summary>
         /// Override the endpoint used to send this request.
         /// </summary>
-        public string Endpoint
+        public string Endpoint { get; set; }
+
+        /// <summary>
+        /// Gets or sets an endpoint parameter by name. Known parameters read and write the typed
+        /// properties; any other name falls through to the underlying property bag.
+        /// </summary>
+        public override object this[string name]
         {
-            get => (string)this["Endpoint"];
-            set => this["Endpoint"] = value;
+            get => name switch
+            {
+                "Region" => Region,
+                "UseFIPS" => UseFIPS,
+                "UseDualStack" => UseDualStack,
+                "Endpoint" => Endpoint,
+                _ => base[name],
+            };
+            set
+            {
+                switch (name)
+                {
+                    case "Region": Region = (string)value; break;
+                    case "UseFIPS": UseFIPS = (bool?)value; break;
+                    case "UseDualStack": UseDualStack = (bool?)value; break;
+                    case "Endpoint": Endpoint = (string)value; break;
+                    default: base[name] = value; break;
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        protected override bool ParameterValuesEqual(EndpointParameters other)
+        {
+            var o = (SignerDataEndpointParameters)other;
+            return Region == o.Region
+                && UseFIPS == o.UseFIPS
+                && UseDualStack == o.UseDualStack
+                && Endpoint == o.Endpoint
+                && base.ParameterValuesEqual(other);
         }
     }
 }

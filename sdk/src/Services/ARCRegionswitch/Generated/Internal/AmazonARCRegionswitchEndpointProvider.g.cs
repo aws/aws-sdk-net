@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.ARCRegionswitch.Endpoints;
 
 namespace Amazon.ARCRegionswitch.Internal
 {
     /// <summary>
-    /// ARC - Region switch endpoint provider.
+    /// Amazon ARCRegionswitch endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ARCRegionswitchEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonARCRegionswitchEndpointProvider : IEndpointProvider
+    public class AmazonARCRegionswitchEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonARCRegionswitchEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public ARCRegionswitchEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(ARCRegionswitchEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAAAoAAAADAAAAAQAAAAQF9eEJAAAAAgAAAAUF9eEJAAAAAwAAAAgAAAAGAAAABAAAAAcF9eEIAAAABQX14QEF9eEEAAAABAAAAAkF9eEHAAAABQX14QIF9eEDAAAAAwX14QUF9eEG");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for ARCRegionswitchEndpointParameters
+        /// Resolves the endpoint for ARCRegionswitchEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -47,73 +63,67 @@ namespace Amazon.ARCRegionswitch.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (ARCRegionswitchEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["Region"] = parameters["Region"],
-                ["UseControlPlaneEndpoint"] = parameters["UseControlPlaneEndpoint"],
-            };
-            if (IsSet(refs["UseControlPlaneEndpoint"]) && Equals(refs["UseControlPlaneEndpoint"], true) && IsSet(refs["Region"]) && !Equals(refs["UseFIPS"], true) && !IsSet(refs["Endpoint"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn"))
-            {
-                return new Endpoint(Interpolate(@"https://arc-region-switch-control-plane.cn-north-1.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                            ""authSchemes"": [
-                                                {
-                                                    ""name"": ""sigv4"",
-                                                    ""signingName"": ""arc-region-switch"",
-                                                    ""signingRegion"": ""cn-north-1""
-                                                }
-                                            ]
-                                        }", refs), InterpolateJson(@"", refs));
-            }
-            if (!IsSet(refs["Endpoint"]) && IsSet(refs["UseControlPlaneEndpoint"]) && Equals(refs["UseControlPlaneEndpoint"], true) && IsSet(refs["Region"]) && Equals(refs["UseFIPS"], true) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-            {
-                if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn"))
-                {
-                    throw new AmazonClientException("Invalid Configuration: FIPS is not supported in this partition");
-                }
-                return new Endpoint(Interpolate(@"https://arc-region-switch-control-plane-fips.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""arc-region-switch"",
-                                                            ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
-            }
-            if (IsSet(refs["UseControlPlaneEndpoint"]) && Equals(refs["UseControlPlaneEndpoint"], true) && IsSet(refs["Region"]) && !Equals(refs["UseFIPS"], true) && !IsSet(refs["Endpoint"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-            {
-                return new Endpoint(Interpolate(@"https://arc-region-switch-control-plane.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                            ""authSchemes"": [
-                                                {
-                                                    ""name"": ""sigv4"",
-                                                    ""signingName"": ""arc-region-switch"",
-                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                }
-                                            ]
-                                        }", refs), InterpolateJson(@"", refs));
-            }
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
-                    throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-            }
-            if (IsSet(refs["Region"]))
-            {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(refs["UseFIPS"], true))
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
+                    return new Endpoint($"https://arc-region-switch-control-plane.cn-north-1.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
                     {
-                        return new Endpoint(Interpolate(@"https://arc-region-switch-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    return new Endpoint(Interpolate(@"https://arc-region-switch.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "arc-region-switch", "cn-north-1", null, null) },
+                    };
+                case 2:
+                    throw new AmazonClientException("Invalid Configuration: FIPS is not supported in this partition");
+                case 3:
+                    return new Endpoint($"https://arc-region-switch-control-plane-fips.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "arc-region-switch", $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 4:
+                    return new Endpoint($"https://arc-region-switch-control-plane.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "arc-region-switch", $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 5:
+                    throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
+                case 6:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 7:
+                    return new Endpoint($"https://arc-region-switch-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 8:
+                    return new Endpoint($"https://arc-region-switch.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 9:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
+            {
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 4:
+                    return Equals((context.Parameters.UseControlPlaneEndpoint ?? false), true);
+                case 5:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-cn");
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
+            }
         }
     }
 }
