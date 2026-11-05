@@ -234,5 +234,26 @@ namespace AWSSDK.UnitTests
             resolver.ProcessRequestHandlers(executionContext);
             Assert.AreEqual("https://123456789012.ddb.us-east-1.amazonaws.com/", executionContext.RequestContext.Request.Endpoint.ToString());
         }
+
+        /// <summary>
+        /// Generated endpoint parameters keep their values in typed properties rather than the property bag, so
+        /// the cache comparison must see those properties: equal values allow reuse, a changed value does not.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        public void TypedEndpointParametersCompareByPropertyValues()
+        {
+            var first = new Amazon.DynamoDBv2.Endpoints.DynamoDBEndpointParameters { Region = "us-east-1", AccountIdEndpointMode = "preferred" };
+            var second = new Amazon.DynamoDBv2.Endpoints.DynamoDBEndpointParameters { Region = "us-east-1", AccountIdEndpointMode = "preferred" };
+            Assert.IsTrue(first.ParametersEqual(second));
+
+            second.AccountId = "123456789012";
+            Assert.IsFalse(first.ParametersEqual(second));
+
+            // A key set only through the indexer lives in the property bag and still participates.
+            var third = new Amazon.DynamoDBv2.Endpoints.DynamoDBEndpointParameters { Region = "us-east-1", AccountIdEndpointMode = "preferred" };
+            third["NotAModelParameter"] = "value";
+            Assert.IsFalse(first.ParametersEqual(third));
+        }
     }
 }

@@ -20,5 +20,26 @@ namespace Amazon.Runtime.Endpoints
     /// </summary>
     public class EndpointParameters : PropertyBag
     {
+        /// <summary>
+        /// Returns true when <paramref name="other"/> is the same type as this instance and holds the same
+        /// parameter values. The endpoint resolver uses this to decide whether an endpoint resolved earlier
+        /// in the same request can be reused.
+        /// </summary>
+        internal bool ParametersEqual(EndpointParameters other)
+        {
+            return other != null && other.GetType() == GetType() && ParameterValuesEqual(other);
+        }
+
+        /// <summary>
+        /// Returns true when <paramref name="other"/>, which is always the same type as this instance, holds
+        /// the same parameter values. Derived classes that store parameters outside the property bag must
+        /// override this to compare those values, and call the base implementation for the rest.
+        /// </summary>
+        /// <param name="other">The parameters to compare with.</param>
+        /// <returns>True when the parameter values are equal.</returns>
+        protected virtual bool ParameterValuesEqual(EndpointParameters other)
+        {
+            return ContentEquals(other);
+        }
     }
 }
