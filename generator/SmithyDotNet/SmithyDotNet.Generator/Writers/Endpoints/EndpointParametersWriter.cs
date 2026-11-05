@@ -44,6 +44,7 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
                 }
 
                 WriteIndexer(writer, parameters);
+                WriteParameterValuesEqual(writer, parameters, className);
             });
         });
 
@@ -119,6 +120,31 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
                     writer.WriteLine("default: base[name] = value; break;");
                 });
             });
+        });
+    }
+
+    // Core's endpoint cache reuses an endpoint resolved earlier in the request when the parameters are
+    // unchanged. The base comparison only sees the property bag, which typed properties never write, so
+    // compare each typed property here and defer to the base for keys set only through the indexer.
+    // string/bool? use == (no boxing); stringArray uses Equals, the same reference comparison the bag
+    // applies to list values.
+    private static void WriteParameterValuesEqual(CodeWriter writer, IReadOnlyDictionary<string, EndpointParameter> parameters, string className)
+    {
+        writer.WriteLine();
+        writer.WriteLine("/// <inheritdoc/>");
+        writer.OpenBlock("protected override bool ParameterValuesEqual(EndpointParameters other)", () =>
+        {
+            writer.WriteLine($"var o = ({className})other;");
+            var comparisons = parameters.Select(p => NativeType(p.Value.Type) == "IEnumerable<string>"
+                ? $"Equals({p.Key}, o.{p.Key})"
+                : $"{p.Key} == o.{p.Key}");
+            var lines = comparisons.Append("base.ParameterValuesEqual(other)").ToList();
+            for (var i = 0; i < lines.Count; i++)
+            {
+                var prefix = i == 0 ? "return " : "    && ";
+                var suffix = i == lines.Count - 1 ? ";" : string.Empty;
+                writer.WriteLine($"{prefix}{lines[i]}{suffix}");
+            }
         });
     }
 

@@ -58,4 +58,18 @@ public class EndpointParametersWriterTests
     {
         Assert.Contains("/// The AWS region used to dispatch the request.", _output);
     }
+
+    [Fact]
+    public void ParameterValuesEqualComparesEveryTypedPropertyThenBase()
+    {
+        // Core's endpoint cache compares parameters through this override; without it, typed
+        // properties are invisible to the comparison and a stale endpoint can be reused.
+        Assert.Contains("protected override bool ParameterValuesEqual(EndpointParameters other)", _output);
+        Assert.Contains("var o = (CloudTrailDataEndpointParameters)other;", _output);
+        Assert.Contains("Region == o.Region", _output);
+        Assert.Contains("UseFIPS == o.UseFIPS", _output);
+        Assert.Contains("UseDualStack == o.UseDualStack", _output);
+        Assert.Contains("Endpoint == o.Endpoint", _output);
+        Assert.Contains("&& base.ParameterValuesEqual(other);", _output);
+    }
 }
