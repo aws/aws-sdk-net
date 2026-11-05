@@ -161,7 +161,7 @@ namespace Amazon.LambdaMicrovms.Model
         /// <summary>
         /// Gets and sets the property EgressNetworkConnectors. 
         /// <para>
-        /// The list of egress network connectors available to the MicroVM at runtime.
+        /// The list of egress network connectors available to the MicroVM at image build time.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -190,7 +190,7 @@ namespace Amazon.LambdaMicrovms.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max = 50)]
+        [AWSProperty(Max = 100)]
         public Dictionary<string, string> EnvironmentVariables { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>

@@ -128,5 +128,11 @@ namespace Amazon.LambdaMicrovms.Model
             info.AddValue("ResourceType", this.ResourceType);
         }
 #endif
+
+        /// <summary>
+        /// Flag indicating if the exception is retryable and the associated retry
+        /// details. A null value indicates that the exception is not retryable.
+        /// </summary>
+        public override RetryableDetails Retryable { get; } = new RetryableDetails(false);
     }
 }
