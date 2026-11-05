@@ -48,7 +48,7 @@ namespace Amazon.Runtime.Internal
         private const int UserAgentCacheSize = 4;
         private readonly GeneratedUserAgent[] _userAgentCache = new GeneratedUserAgent[UserAgentCacheSize];
         private int _nextUserAgentCacheSlot;
-#if !BCL
+#if !NETFRAMEWORK
         private volatile ComposedUri _lastComposedUri;
 #endif
 
@@ -524,7 +524,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         internal Uri ComposeRequestUrl(IRequest request)
         {
-#if BCL
+#if NETFRAMEWORK
             return AmazonServiceClient.ComposeUrl(request);
 #else
             var urlString = AmazonServiceClient.ComposeUrlString(request);
@@ -548,7 +548,7 @@ namespace Amazon.Runtime.Internal
 #endif
         }
 
-#if !BCL
+#if !NETFRAMEWORK
         private sealed class ComposedUri
         {
             public ComposedUri(string urlString, bool disableCanonicalizationFlag, Uri uri)
