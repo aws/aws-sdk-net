@@ -1,0 +1,84 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Drs.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Drs.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// PITPolicyRule Marshaller
+    /// </summary>
+    public partial class PITPolicyRuleMarshaller : IRequestMarshaller<PITPolicyRule, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(PITPolicyRule requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetEnabled())
+            {
+                context.Writer.WritePropertyName("enabled");
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
+            }
+
+            if (requestObject.IsSetInterval())
+            {
+                context.Writer.WritePropertyName("interval");
+                context.Writer.WriteNumberValue(requestObject.Interval.Value);
+            }
+
+            if (requestObject.IsSetRetentionDuration())
+            {
+                context.Writer.WritePropertyName("retentionDuration");
+                context.Writer.WriteNumberValue(requestObject.RetentionDuration.Value);
+            }
+
+            if (requestObject.IsSetRuleID())
+            {
+                context.Writer.WritePropertyName("ruleID");
+                context.Writer.WriteNumberValue(requestObject.RuleID.Value);
+            }
+
+            if (requestObject.IsSetUnits())
+            {
+                context.Writer.WritePropertyName("units");
+                context.Writer.WriteStringValue(requestObject.Units);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static PITPolicyRuleMarshaller Instance = new PITPolicyRuleMarshaller();
+    }
+}

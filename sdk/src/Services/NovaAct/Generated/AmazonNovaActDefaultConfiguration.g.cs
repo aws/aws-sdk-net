@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.NovaAct
 {
     /// <summary>
-    /// Configuration for accessing Amazon NovaAct service
+    /// Configuration for accessing Nova Act Service
     /// </summary>
     public static class AmazonNovaActDefaultConfiguration
     {

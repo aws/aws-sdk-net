@@ -27,12 +27,12 @@ using Amazon.WorkSpacesWeb.Internal;
 namespace Amazon.WorkSpacesWeb
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkSpacesWeb service
+    /// Configuration for accessing Amazon WorkSpaces Web
     /// </summary>
     public partial class AmazonWorkSpacesWebConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WorkSpaces Web", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("WorkSpaces Web", "4.0.100.23");
 
         private static readonly AmazonWorkSpacesWebEndpointResolver EndpointResolver =
             new AmazonWorkSpacesWebEndpointResolver();

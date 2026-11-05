@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ControlTower
 {
     /// <summary>
-    /// Configuration for accessing Amazon ControlTower service
+    /// Configuration for accessing AWS Control Tower
     /// </summary>
     public static class AmazonControlTowerDefaultConfiguration
     {

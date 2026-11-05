@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.BCMDataExports
 {
     /// <summary>
-    /// Configuration for accessing Amazon BCMDataExports service
+    /// Configuration for accessing AWS Billing and Cost Management Data Exports
     /// </summary>
     public static class AmazonBCMDataExportsDefaultConfiguration
     {

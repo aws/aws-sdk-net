@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DataSync service
+    /// Service metadata for AWS DataSync
     /// </summary>
     public partial class AmazonDataSyncMetadata : IServiceMetadata
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.KinesisVideo
 {
     /// <summary>
-    /// Configuration for accessing Amazon KinesisVideo service
+    /// Configuration for accessing Amazon Kinesis Video Streams
     /// </summary>
     public static class AmazonKinesisVideoDefaultConfiguration
     {

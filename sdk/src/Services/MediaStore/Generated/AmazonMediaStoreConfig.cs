@@ -27,12 +27,12 @@ using Amazon.MediaStore.Internal;
 namespace Amazon.MediaStore
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaStore service
+    /// Configuration for accessing AWS Elemental MediaStore
     /// </summary>
     public partial class AmazonMediaStoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MediaStore", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("MediaStore", "4.0.100.23");
 
         private static readonly AmazonMediaStoreEndpointResolver EndpointResolver =
             new AmazonMediaStoreEndpointResolver();

@@ -311,8 +311,8 @@ public class TypeMapperTests
         var op = context.Operations.Single(o => o.Name == "DoShadow");
         var members = TypeMapper.ResolveMembers(op.Input, context);
 
-        Assert.True(members.Single(m => m.PropertyName == "Equals").HidesBaseMember);
-        Assert.False(members.Single(m => m.PropertyName == "Name").HidesBaseMember);
+        Assert.Equal(BaseMemberModifier.New, members.Single(m => m.PropertyName == "Equals").BaseMemberModifier);
+        Assert.Equal(BaseMemberModifier.None, members.Single(m => m.PropertyName == "Name").BaseMemberModifier);
     }
 
     [Fact]

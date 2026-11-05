@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CodeGuruSecurity
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeGuruSecurity service
+    /// Configuration for accessing Amazon CodeGuru Security
     /// </summary>
     public static class AmazonCodeGuruSecurityDefaultConfiguration
     {

@@ -26,7 +26,7 @@ using Amazon.PcaConnectorScep.Endpoints;
 namespace Amazon.PcaConnectorScep.Internal
 {
     /// <summary>
-    /// Amazon PcaConnectorScep endpoint provider.
+    /// Private CA Connector for SCEP endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PcaConnectorScepEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

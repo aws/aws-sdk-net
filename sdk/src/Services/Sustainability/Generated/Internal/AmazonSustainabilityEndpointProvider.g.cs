@@ -26,7 +26,7 @@ using Amazon.Sustainability.Endpoints;
 namespace Amazon.Sustainability.Internal
 {
     /// <summary>
-    /// Amazon Sustainability endpoint provider.
+    /// AWS Sustainability endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SustainabilityEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

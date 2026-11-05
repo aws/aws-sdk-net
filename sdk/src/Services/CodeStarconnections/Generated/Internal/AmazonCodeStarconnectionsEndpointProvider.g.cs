@@ -26,7 +26,7 @@ using Amazon.CodeStarconnections.Endpoints;
 namespace Amazon.CodeStarconnections.Internal
 {
     /// <summary>
-    /// Amazon CodeStarconnections endpoint provider.
+    /// AWS CodeStar connections endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CodeStarconnectionsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

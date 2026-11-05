@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Files.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon S3Files service
+    /// Service metadata for Amazon S3 Files
     /// </summary>
     public partial class AmazonS3FilesMetadata : IServiceMetadata
     {

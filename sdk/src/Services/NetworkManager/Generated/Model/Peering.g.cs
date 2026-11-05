@@ -92,7 +92,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property LastModificationErrors. 
         /// <para>
-        /// Describes the error associated with the Connect peer request.
+        /// Describes the error associated with the peering request.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

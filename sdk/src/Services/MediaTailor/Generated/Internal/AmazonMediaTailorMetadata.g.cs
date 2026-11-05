@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MediaTailor service
+    /// Service metadata for AWS MediaTailor
     /// </summary>
     public partial class AmazonMediaTailorMetadata : IServiceMetadata
     {

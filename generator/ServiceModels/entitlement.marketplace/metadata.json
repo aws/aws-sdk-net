@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.",
+  "base-name": "MarketplaceEntitlementService",
   "legacy-service-id": "Marketplace Entitlement Service"
 }

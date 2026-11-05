@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon TranscribeService service
+    /// Service metadata for Amazon Transcribe Service
     /// </summary>
     public partial class AmazonTranscribeServiceMetadata : IServiceMetadata
     {

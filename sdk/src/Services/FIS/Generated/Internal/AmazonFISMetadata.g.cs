@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FIS.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon FIS service
+    /// Service metadata for AWS Fault Injection Simulator
     /// </summary>
     public partial class AmazonFISMetadata : IServiceMetadata
     {

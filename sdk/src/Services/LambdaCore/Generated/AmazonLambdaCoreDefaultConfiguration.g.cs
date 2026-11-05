@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.LambdaCore
 {
     /// <summary>
-    /// Configuration for accessing Amazon LambdaCore service
+    /// Configuration for accessing AWS Lambda Core
     /// </summary>
     public static class AmazonLambdaCoreDefaultConfiguration
     {

@@ -26,7 +26,7 @@ using Amazon.Greengrass.Endpoints;
 namespace Amazon.Greengrass.Internal
 {
     /// <summary>
-    /// Amazon Greengrass endpoint provider.
+    /// AWS Greengrass endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="GreengrassEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

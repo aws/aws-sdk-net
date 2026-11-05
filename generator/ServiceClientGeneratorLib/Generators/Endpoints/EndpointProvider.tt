@@ -17,7 +17,7 @@ using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
 namespace <#=this.Config.Namespace#>.Internal
 {
     /// <summary>
-    /// Amazon <#=this.Config.ClassName#> endpoint provider.
+    /// <#=this.Config.ServiceModel.ServiceFullName#> endpoint provider.
     /// Resolves endpoint for given set of <#=this.Config.ClassName#>EndpointParameters.
     /// Can throw AmazonClientException if endpoint resolution is unsuccessful.
     /// </summary>

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.InternetMonitor.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon InternetMonitor service
+    /// Service metadata for Amazon CloudWatch Internet Monitor
     /// </summary>
     public partial class AmazonInternetMonitorMetadata : IServiceMetadata
     {

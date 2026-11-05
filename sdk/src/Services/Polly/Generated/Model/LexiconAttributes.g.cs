@@ -39,7 +39,8 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property Alphabet. 
         /// <para>
-        /// Phonetic alphabet used in the lexicon. Valid values are <c>ipa</c> and <c>x-sampa</c>.
+        /// Phonetic alphabet used in the lexicon. Valid values are <c>ipa</c>, <c>x-sampa</c>,
+        /// <c>x-amazon-pinyin</c>, <c>x-amazon-jyutping</c>, <c>x-amazon-pron-kana</c>, and <c>x-amazon-yomigana</c>.
         /// </para>
         /// </summary>
         public string Alphabet { get; set; }

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SimpleDBv2
 {
     /// <summary>
-    /// Configuration for accessing Amazon SimpleDBv2 service
+    /// Configuration for accessing Amazon SimpleDB v2
     /// </summary>
     public static class AmazonSimpleDBv2DefaultConfiguration
     {

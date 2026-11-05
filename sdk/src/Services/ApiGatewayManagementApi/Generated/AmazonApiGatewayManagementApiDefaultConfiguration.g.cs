@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ApiGatewayManagementApi
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApiGatewayManagementApi service
+    /// Configuration for accessing AmazonApiGatewayManagementApi
     /// </summary>
     public static class AmazonApiGatewayManagementApiDefaultConfiguration
     {

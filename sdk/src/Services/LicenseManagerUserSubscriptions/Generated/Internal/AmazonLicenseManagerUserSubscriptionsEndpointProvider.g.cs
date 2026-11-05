@@ -26,7 +26,7 @@ using Amazon.LicenseManagerUserSubscriptions.Endpoints;
 namespace Amazon.LicenseManagerUserSubscriptions.Internal
 {
     /// <summary>
-    /// Amazon LicenseManagerUserSubscriptions endpoint provider.
+    /// AWS License Manager User Subscriptions endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="LicenseManagerUserSubscriptionsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

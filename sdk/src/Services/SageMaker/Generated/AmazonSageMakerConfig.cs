@@ -27,12 +27,12 @@ using Amazon.SageMaker.Internal;
 namespace Amazon.SageMaker
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMaker service
+    /// Configuration for accessing Amazon SageMaker Service
     /// </summary>
     public partial class AmazonSageMakerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMaker", "4.0.122.2");
+            InternalSDKUtils.BuildUserAgentString("SageMaker", "4.0.124.1");
 
         private static readonly AmazonSageMakerEndpointResolver EndpointResolver =
             new AmazonSageMakerEndpointResolver();

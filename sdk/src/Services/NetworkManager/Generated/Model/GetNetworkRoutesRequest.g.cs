@@ -108,6 +108,34 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetLongestPrefixMatches() => this.LongestPrefixMatches != null && (this.LongestPrefixMatches.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 500)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next page of results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 2048)]
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
         /// Gets and sets the property PrefixListIds. 
         /// <para>
         /// The IDs of the prefix lists.

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SsmSap
 {
     /// <summary>
-    /// Configuration for accessing Amazon SsmSap service
+    /// Configuration for accessing AWS Systems Manager for SAP
     /// </summary>
     public static class AmazonSsmSapDefaultConfiguration
     {

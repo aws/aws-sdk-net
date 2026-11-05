@@ -31,7 +31,7 @@ using Amazon.MigrationHub.Endpoints;
 namespace Amazon.MigrationHub.Internal
 {
     /// <summary>
-    /// Amazon MigrationHub endpoint resolver.
+    /// AWS Migration Hub endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MigrationHub service requests.
     /// <para />

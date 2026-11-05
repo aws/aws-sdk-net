@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationInsights.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ApplicationInsights service
+    /// Service metadata for Amazon CloudWatch Application Insights
     /// </summary>
     public partial class AmazonApplicationInsightsMetadata : IServiceMetadata
     {

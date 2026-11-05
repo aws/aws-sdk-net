@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Artifact
 {
     /// <summary>
-    /// Configuration for accessing Amazon Artifact service
+    /// Configuration for accessing AWS Artifact
     /// </summary>
     public static class AmazonArtifactDefaultConfiguration
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BCMRecommendedActions.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon BCMRecommendedActions service
+    /// Service metadata for AWS Billing and Cost Management Recommended Actions
     /// </summary>
     public partial class AmazonBCMRecommendedActionsMetadata : IServiceMetadata
     {

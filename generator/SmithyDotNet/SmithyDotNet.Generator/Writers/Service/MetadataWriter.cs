@@ -25,7 +25,7 @@ public sealed class MetadataWriter(GenerationContext context, string modelFileNa
         writer.OpenNamespace($"{context.Namespace}.Internal", () =>
         {
             writer.WriteLine("/// <summary>");
-            writer.WriteLine($"/// Service metadata for Amazon {context.BaseName} service");
+            writer.WriteLine($"/// Service metadata for {context.ServiceTitle}");
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public partial class {className} : IServiceMetadata", () =>
             {

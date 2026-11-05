@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SupportApp.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SupportApp service
+    /// Service metadata for AWS Support App
     /// </summary>
     public partial class AmazonSupportAppMetadata : IServiceMetadata
     {

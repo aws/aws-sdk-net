@@ -109,6 +109,13 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("statusReason", targetDepth, ref reader))
+                {
+                    var unmarshaller = TaxRegistrationStatusReasonUnmarshaller.Instance;
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("taxDocumentMetadatas", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TaxDocumentMetadata, TaxDocumentMetadataUnmarshaller>(TaxDocumentMetadataUnmarshaller.Instance);

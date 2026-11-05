@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.",
+  "base-name": "ECR",
   "legacy-service-id": "ECR"
 }

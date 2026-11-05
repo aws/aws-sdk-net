@@ -31,7 +31,7 @@ using Amazon.MigrationHubOrchestrator.Endpoints;
 namespace Amazon.MigrationHubOrchestrator.Internal
 {
     /// <summary>
-    /// Amazon MigrationHubOrchestrator endpoint resolver.
+    /// AWS Migration Hub Orchestrator endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MigrationHubOrchestrator service requests.
     /// <para />

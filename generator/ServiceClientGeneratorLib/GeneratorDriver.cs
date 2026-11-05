@@ -1158,7 +1158,7 @@ namespace ServiceClientGenerator
                 { "NetStandardSupport",  Configuration.NetStandardSupport },
                 { "NetStandardCoreAssemblyName",  Configuration.ServiceFolderName },
                 { "NuGetTitle",  nugetTitle },
-                { "AssemblyDescription", Configuration.AssemblyDescription(includePreamble: false, includeBody: false) },
+                { "NuGetPackageDescription", Configuration.NuGetPackageDescription },
                 { "AssemblyVersion", Configuration.ServiceFileVersion },
                 { "AWSDependencies", awsDependencies },
                 { "BaseName", Configuration.ClassName },

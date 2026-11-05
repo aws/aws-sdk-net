@@ -64,7 +64,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Extensions.CborProto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Extensions.CborProtocol.NetStandard", "src\AWSSDK.Extensions.CborProtocol\AWSSDK.Extensions.CborProtocol.NetStandard.csproj", "{24CBBC97-409E-BAC8-0553-D260AB0B8C6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CborProtocol.Tests.NetFramework", "test\CborProtocol.Tests\CborProtocol.Tests.NetFramework.csproj", "{9FFDECAB-94D6-7EB1-1A5B-487492600755}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CborProtocol.Tests", "test\CborProtocol.Tests\CborProtocol.Tests.csproj", "{9FFDECAB-94D6-7EB1-1A5B-487492600755}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Extensions.Numerics", "src\AWSSDK.Extensions.Numerics\AWSSDK.Extensions.Numerics.csproj", "{67FAF83C-AF50-47BD-B0BE-61E6C0C31FAB}"
 EndProject

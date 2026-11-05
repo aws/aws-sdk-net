@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MedicalImaging.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MedicalImaging service
+    /// Service metadata for AWS Health Imaging
     /// </summary>
     public partial class AmazonMedicalImagingMetadata : IServiceMetadata
     {

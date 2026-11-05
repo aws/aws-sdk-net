@@ -31,7 +31,7 @@ using Amazon.PartnerCentralBenefits.Endpoints;
 namespace Amazon.PartnerCentralBenefits.Internal
 {
     /// <summary>
-    /// Amazon PartnerCentralBenefits endpoint resolver.
+    /// Partner Central Benefits API endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PartnerCentralBenefits service requests.
     /// <para />

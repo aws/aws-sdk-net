@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.IVSRealTime
 {
     /// <summary>
-    /// Configuration for accessing Amazon IVSRealTime service
+    /// Configuration for accessing Amazon Interactive Video Service RealTime
     /// </summary>
     public static class AmazonIVSRealTimeDefaultConfiguration
     {

@@ -1,0 +1,13 @@
+{
+    "shapeSubstitutions": {
+        "PermissionInput$action": {
+            "renameShape": "PermissionInputActionEnum"
+        },
+        "PermissionOutput$action": {
+            "renameShape": "PermissionOutputActionEnum"
+        },
+        "PrincipalOutput$userType": {
+            "renameShape": "PrincipalOutputUserTypeEnum"
+        }
+    }
+}

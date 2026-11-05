@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.LambdaWeb
 {
     /// <summary>
-    /// Configuration for accessing Amazon LambdaWeb service
+    /// Configuration for accessing Lambda Web
     /// </summary>
     public static class AmazonLambdaWebDefaultConfiguration
     {

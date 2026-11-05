@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MigrationHub
 {
     /// <summary>
-    /// Configuration for accessing Amazon MigrationHub service
+    /// Configuration for accessing AWS Migration Hub
     /// </summary>
     public static class AmazonMigrationHubDefaultConfiguration
     {

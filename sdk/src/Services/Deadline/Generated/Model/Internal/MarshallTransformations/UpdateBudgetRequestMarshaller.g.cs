@@ -1,0 +1,176 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.Deadline.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Deadline.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// UpdateBudget Request Marshaller
+    /// </summary>
+    public partial class UpdateBudgetRequestMarshaller : IMarshaller<IRequest, UpdateBudgetRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateBudgetRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(UpdateBudgetRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Deadline");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-10-12";
+            request.HttpMethod = "PATCH";
+
+            if (publicRequest.IsSetClientToken())
+            {
+                request.Headers["X-Amz-Client-Token"] = publicRequest.ClientToken;
+            }
+
+            if (!publicRequest.IsSetBudgetId())
+            {
+                throw new AmazonDeadlineException("Request object does not have required field BudgetId set");
+            }
+            request.AddPathResource("{budgetId}", StringUtils.FromString(publicRequest.BudgetId));
+
+            if (!publicRequest.IsSetFarmId())
+            {
+                throw new AmazonDeadlineException("Request object does not have required field FarmId set");
+            }
+            request.AddPathResource("{farmId}", StringUtils.FromString(publicRequest.FarmId));
+
+            request.ResourcePath = "/2023-10-12/farms/{farmId}/budgets/{budgetId}";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetActionsToAdd())
+            {
+                context.Writer.WritePropertyName("actionsToAdd");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestActionsToAddListValue in publicRequest.ActionsToAdd)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = BudgetActionToAddMarshaller.Instance;
+                    marshaller.Marshall(publicRequestActionsToAddListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetActionsToRemove())
+            {
+                context.Writer.WritePropertyName("actionsToRemove");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestActionsToRemoveListValue in publicRequest.ActionsToRemove)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = BudgetActionToRemoveMarshaller.Instance;
+                    marshaller.Marshall(publicRequestActionsToRemoveListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetApproximateDollarLimit())
+            {
+                context.Writer.WritePropertyName("approximateDollarLimit");
+                if (StringUtils.IsSpecialFloatValue(publicRequest.ApproximateDollarLimit.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(publicRequest.ApproximateDollarLimit.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.ApproximateDollarLimit.Value);
+                }
+            }
+            if (publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+            if (publicRequest.IsSetDisplayName())
+            {
+                context.Writer.WritePropertyName("displayName");
+                context.Writer.WriteStringValue(publicRequest.DisplayName);
+            }
+            if (publicRequest.IsSetSchedule())
+            {
+                context.Writer.WritePropertyName("schedule");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BudgetScheduleMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Schedule, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            request.HostPrefix = $"management.";
+
+            return request;
+        }
+
+        private static readonly UpdateBudgetRequestMarshaller _instance = new();
+
+        internal static UpdateBudgetRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static UpdateBudgetRequestMarshaller Instance => _instance;
+    }
+}

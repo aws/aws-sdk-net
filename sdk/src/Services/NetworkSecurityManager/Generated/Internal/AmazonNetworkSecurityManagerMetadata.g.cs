@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkSecurityManager.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon NetworkSecurityManager service
+    /// Service metadata for AWS Network Security Manager Customer API
     /// </summary>
     public partial class AmazonNetworkSecurityManagerMetadata : IServiceMetadata
     {

@@ -26,7 +26,7 @@ using Amazon.ChimeSDKMeetings.Endpoints;
 namespace Amazon.ChimeSDKMeetings.Internal
 {
     /// <summary>
-    /// Amazon ChimeSDKMeetings endpoint provider.
+    /// Amazon Chime SDK Meetings endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ChimeSDKMeetingsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

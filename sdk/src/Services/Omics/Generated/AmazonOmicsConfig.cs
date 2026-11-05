@@ -27,12 +27,12 @@ using Amazon.Omics.Internal;
 namespace Amazon.Omics
 {
     /// <summary>
-    /// Configuration for accessing Amazon Omics service
+    /// Configuration for accessing Amazon Omics
     /// </summary>
     public partial class AmazonOmicsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Omics", "4.0.104.2");
+            InternalSDKUtils.BuildUserAgentString("Omics", "4.0.105.1");
 
         private static readonly AmazonOmicsEndpointResolver EndpointResolver =
             new AmazonOmicsEndpointResolver();

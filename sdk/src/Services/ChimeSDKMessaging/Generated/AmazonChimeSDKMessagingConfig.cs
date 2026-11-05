@@ -27,12 +27,12 @@ using Amazon.ChimeSDKMessaging.Internal;
 namespace Amazon.ChimeSDKMessaging
 {
     /// <summary>
-    /// Configuration for accessing Amazon ChimeSDKMessaging service
+    /// Configuration for accessing Amazon Chime SDK Messaging
     /// </summary>
     public partial class AmazonChimeSDKMessagingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Chime SDK Messaging", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("Chime SDK Messaging", "4.0.100.23");
 
         private static readonly AmazonChimeSDKMessagingEndpointResolver EndpointResolver =
             new AmazonChimeSDKMessagingEndpointResolver();

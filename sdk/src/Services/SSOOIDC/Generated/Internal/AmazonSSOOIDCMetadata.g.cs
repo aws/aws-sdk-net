@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOOIDC.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SSOOIDC service
+    /// Service metadata for AWS SSO OIDC
     /// </summary>
     public partial class AmazonSSOOIDCMetadata : IServiceMetadata
     {

@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.Echo
 {
     /// <summary>
-    /// Configuration for accessing Amazon Echo service
+    /// Configuration for accessing Echo Service
     /// </summary>
     public static class AmazonEchoDefaultConfiguration
     {

@@ -27,12 +27,12 @@ using Amazon.Pipes.Internal;
 namespace Amazon.Pipes
 {
     /// <summary>
-    /// Configuration for accessing Amazon Pipes service
+    /// Configuration for accessing Amazon EventBridge Pipes
     /// </summary>
     public partial class AmazonPipesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pipes", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("Pipes", "4.0.100.23");
 
         private static readonly AmazonPipesEndpointResolver EndpointResolver =
             new AmazonPipesEndpointResolver();

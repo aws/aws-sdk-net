@@ -26,7 +26,7 @@ using Amazon.Kafka.Endpoints;
 namespace Amazon.Kafka.Internal
 {
     /// <summary>
-    /// Amazon Kafka endpoint provider.
+    /// Managed Streaming for Kafka endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="KafkaEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

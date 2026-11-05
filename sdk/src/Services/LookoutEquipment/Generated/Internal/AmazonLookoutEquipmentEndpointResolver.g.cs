@@ -31,7 +31,7 @@ using Amazon.LookoutEquipment.Endpoints;
 namespace Amazon.LookoutEquipment.Internal
 {
     /// <summary>
-    /// Amazon LookoutEquipment endpoint resolver.
+    /// Amazon Lookout for Equipment endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for LookoutEquipment service requests.
     /// <para />

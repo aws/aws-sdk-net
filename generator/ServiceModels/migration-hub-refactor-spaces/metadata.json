@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "This is the initial SDK release for AWS Migration Hub Refactor Spaces",
   "generate-client-constructors": true,
+  "base-name": "MigrationHubRefactorSpaces",
   "legacy-service-id": "Migration Hub Refactor Spaces"
 }

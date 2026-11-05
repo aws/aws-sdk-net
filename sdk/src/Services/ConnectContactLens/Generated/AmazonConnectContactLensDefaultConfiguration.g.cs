@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ConnectContactLens
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectContactLens service
+    /// Configuration for accessing Amazon Connect Contact Lens
     /// </summary>
     public static class AmazonConnectContactLensDefaultConfiguration
     {

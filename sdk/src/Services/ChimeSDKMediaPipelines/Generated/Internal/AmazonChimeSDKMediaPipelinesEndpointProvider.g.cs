@@ -26,7 +26,7 @@ using Amazon.ChimeSDKMediaPipelines.Endpoints;
 namespace Amazon.ChimeSDKMediaPipelines.Internal
 {
     /// <summary>
-    /// Amazon ChimeSDKMediaPipelines endpoint provider.
+    /// Amazon Chime SDK Media Pipelines endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ChimeSDKMediaPipelinesEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

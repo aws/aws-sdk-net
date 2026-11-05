@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SecretsManager service
+    /// Service metadata for AWS Secrets Manager
     /// </summary>
     public partial class AmazonSecretsManagerMetadata : IServiceMetadata
     {

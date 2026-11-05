@@ -31,7 +31,9 @@ namespace Amazon.Polly.Model
 {
     /// <summary>
     /// The alphabet specified by the lexicon is not a supported alphabet. Valid values are
-    /// <c>x-sampa</c> and <c>ipa</c>.
+    /// <c>ipa</c>, <c>x-sampa</c>, <c>x-amazon-pinyin</c>, <c>x-amazon-jyutping</c>, <c>x-amazon-pron-kana</c>,
+    /// and <c>x-amazon-yomigana</c>. Replace the unsupported alphabet with one of the valid
+    /// values and resubmit your request.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

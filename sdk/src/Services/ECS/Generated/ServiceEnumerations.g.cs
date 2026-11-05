@@ -2954,6 +2954,52 @@ namespace Amazon.ECS
     }
 
     /// <summary>
+    /// Constants used for properties of type GpuSharingMode.
+    /// </summary>
+    public class GpuSharingMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DEDICATED for GpuSharingMode
+        /// </summary>
+        public static readonly GpuSharingMode DEDICATED = new GpuSharingMode("DEDICATED");
+
+        /// <summary>
+        /// Constant IDLE for GpuSharingMode
+        /// </summary>
+        public static readonly GpuSharingMode IDLE = new GpuSharingMode("IDLE");
+
+        /// <summary>
+        /// Constant NVIDIA_MPS for GpuSharingMode
+        /// </summary>
+        public static readonly GpuSharingMode NVIDIA_MPS = new GpuSharingMode("NVIDIA_MPS");
+
+        /// <summary>
+        /// Constructs a custom GpuSharingMode for a value not among the defined constants.
+        /// </summary>
+        public GpuSharingMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GpuSharingMode FindValue(string value)
+        {
+            return FindValue<GpuSharingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GpuSharingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type HealthStatus.
     /// </summary>
     public class HealthStatus : ConstantClass

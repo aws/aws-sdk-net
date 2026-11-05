@@ -2,171 +2,171 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToFarmRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToFarmRequest.IdentityCenterRegion</property>
     <min>1</min>
     <max>25</max>
-    <pattern>[a-z0-9-]+</pattern>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToFarmRequest.IdentityStoreId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToFarmRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToFleetRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToFleetRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToFleetRequest.IdentityCenterRegion</property>
     <min>1</min>
     <max>25</max>
-    <pattern>[a-z0-9-]+</pattern>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToFleetRequest.IdentityStoreId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToFleetRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToJobRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToJobRequest.IdentityCenterRegion</property>
     <min>1</min>
     <max>25</max>
-    <pattern>[a-z0-9-]+</pattern>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToJobRequest.IdentityStoreId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToJobRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToJobRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToJobRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToQueueRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToQueueRequest.IdentityCenterRegion</property>
     <min>1</min>
     <max>25</max>
-    <pattern>[a-z0-9-]+</pattern>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToQueueRequest.IdentityStoreId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToQueueRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToQueueRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssumeFleetRoleForReadRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssumeFleetRoleForReadRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssumeFleetRoleForWorkerRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssumeFleetRoleForWorkerRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssumeFleetRoleForWorkerRequest.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssumeQueueRoleForReadRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssumeQueueRoleForReadRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssumeQueueRoleForUserRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssumeQueueRoleForUserRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssumeQueueRoleForWorkerRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssumeQueueRoleForWorkerRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssumeQueueRoleForWorkerRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssumeQueueRoleForWorkerRequest.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobEntityRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobEntityRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobEntityRequest.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateJobRequest.ClientToken</property>
@@ -180,15 +180,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CopyJobTemplateRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CopyJobTemplateRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CopyJobTemplateRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateBudgetRequest.ClientToken</property>
@@ -207,11 +207,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateBudgetRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateBudgetResponse.BudgetId</property>
-    <pattern>budget-[0-9a-f]{32}</pattern>
+    <pattern>^budget-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateFarmRequest.ClientToken</property>
@@ -235,11 +235,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateFarmRequest.KmsKeyArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):kms:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:key/[\w-]{1,120}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):kms:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:key/[\w-]{1,120}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateFarmResponse.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateFleetRequest.ClientToken</property>
@@ -258,7 +258,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateFleetRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateFleetRequest.MaxWorkerCount</property>
@@ -272,11 +272,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateFleetRequest.RoleArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateFleetResponse.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateJobRequest.ClientToken</property>
@@ -290,7 +290,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateJobRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateJobRequest.MaxFailedTasksCount</property>
@@ -319,15 +319,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateJobRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateJobRequest.SourceJobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateJobRequest.StorageProfileId</property>
-    <pattern>sp-[0-9a-f]{32}</pattern>
+    <pattern>^sp-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateJobRequest.Template</property>
@@ -336,7 +336,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateJobResponse.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateLicenseEndpointRequest.ClientToken</property>
@@ -347,15 +347,14 @@
     <property>Amazon.Deadline.Model.CreateLicenseEndpointRequest.VpcId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>vpc-[\w]{1,120}</pattern>
+    <pattern>^vpc-[\w]{1,120}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateLicenseEndpointResponse.LicenseEndpointId</property>
-    <pattern>le-[0-9a-f]{32}</pattern>
+    <pattern>^le-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateLimitRequest.AmountRequirementName</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -375,7 +374,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateLimitRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateLimitRequest.MaxCount</property>
@@ -384,7 +383,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateLimitResponse.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateMonitorRequest.ClientToken</property>
@@ -398,25 +397,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateMonitorRequest.IdentityCenterInstanceArn</property>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateMonitorRequest.IdentityCenterRegion</property>
     <min>1</min>
     <max>25</max>
-    <pattern>[a-z0-9-]+</pattern>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateMonitorRequest.RoleArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateMonitorRequest.Subdomain</property>
-    <pattern>[a-z0-9-]{1,100}</pattern>
+    <pattern>^[a-z0-9-]{1,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateMonitorResponse.MonitorId</property>
-    <pattern>monitor-[0-9a-f]{32}</pattern>
+    <pattern>^monitor-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueRequest.ClientToken</property>
@@ -435,15 +434,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueRequest.RoleArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueResponse.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueEnvironmentRequest.ClientToken</property>
@@ -452,7 +451,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueEnvironmentRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueEnvironmentRequest.Priority</property>
@@ -461,7 +460,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueEnvironmentRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueEnvironmentRequest.Template</property>
@@ -470,31 +469,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueEnvironmentResponse.QueueEnvironmentId</property>
-    <pattern>queueenv-[0-9a-f]{32}</pattern>
+    <pattern>^queueenv-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueFleetAssociationRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueFleetAssociationRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueFleetAssociationRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueLimitAssociationRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueLimitAssociationRequest.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateQueueLimitAssociationRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateStorageProfileRequest.ClientToken</property>
@@ -508,11 +507,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateStorageProfileRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateStorageProfileResponse.StorageProfileId</property>
-    <pattern>sp-[0-9a-f]{32}</pattern>
+    <pattern>^sp-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateWorkerRequest.ClientToken</property>
@@ -521,27 +520,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateWorkerRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateWorkerRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateWorkerResponse.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteBudgetRequest.BudgetId</property>
-    <pattern>budget-[0-9a-f]{32}</pattern>
+    <pattern>^budget-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteBudgetRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteFarmRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteFleetRequest.ClientToken</property>
@@ -550,179 +549,179 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteFleetRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteFleetRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteLicenseEndpointRequest.LicenseEndpointId</property>
-    <pattern>le-[0-9a-f]{32}</pattern>
+    <pattern>^le-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteLimitRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteLimitRequest.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteMeteredProductRequest.LicenseEndpointId</property>
-    <pattern>le-[0-9a-f]{32}</pattern>
+    <pattern>^le-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteMeteredProductRequest.ProductId</property>
-    <pattern>[0-9a-z]{1,32}-[.0-9a-z]{1,32}</pattern>
+    <pattern>^[0-9a-z]{1,32}-[.0-9a-z]{1,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteMonitorRequest.MonitorId</property>
-    <pattern>monitor-[0-9a-f]{32}</pattern>
+    <pattern>^monitor-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteQueueRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteQueueRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteQueueEnvironmentRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteQueueEnvironmentRequest.QueueEnvironmentId</property>
-    <pattern>queueenv-[0-9a-f]{32}</pattern>
+    <pattern>^queueenv-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteQueueEnvironmentRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteQueueFleetAssociationRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteQueueFleetAssociationRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteQueueFleetAssociationRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteQueueLimitAssociationRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteQueueLimitAssociationRequest.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteQueueLimitAssociationRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteStorageProfileRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteStorageProfileRequest.StorageProfileId</property>
-    <pattern>sp-[0-9a-f]{32}</pattern>
+    <pattern>^sp-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteVolumeRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteVolumeRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteVolumeRequest.VolumeId</property>
-    <pattern>volume-[0-9a-f]{32}</pattern>
+    <pattern>^volume-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteWorkerRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteWorkerRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DeleteWorkerRequest.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DisassociateMemberFromFarmRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DisassociateMemberFromFarmRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DisassociateMemberFromFleetRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DisassociateMemberFromFleetRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DisassociateMemberFromFleetRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DisassociateMemberFromJobRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DisassociateMemberFromJobRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DisassociateMemberFromJobRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DisassociateMemberFromJobRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DisassociateMemberFromQueueRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DisassociateMemberFromQueueRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.DisassociateMemberFromQueueRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetBudgetRequest.BudgetId</property>
-    <pattern>budget-[0-9a-f]{32}</pattern>
+    <pattern>^budget-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetBudgetRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetBudgetResponse.BudgetId</property>
-    <pattern>budget-[0-9a-f]{32}</pattern>
+    <pattern>^budget-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetBudgetResponse.Description</property>
@@ -736,7 +735,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetFarmRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetFarmResponse.CostScaleFactor</property>
@@ -755,19 +754,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetFarmResponse.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetFarmResponse.KmsKeyArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):kms:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:key/[\w-]{1,120}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):kms:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:key/[\w-]{1,120}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetFleetRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetFleetRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetFleetResponse.Description</property>
@@ -781,11 +780,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetFleetResponse.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetFleetResponse.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetFleetResponse.MaxWorkerCount</property>
@@ -799,19 +798,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetFleetResponse.RoleArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetJobRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetJobRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetJobRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetJobResponse.Description</property>
@@ -820,7 +819,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetJobResponse.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetJobResponse.MaxFailedTasksCount</property>
@@ -849,11 +848,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetJobResponse.SourceJobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetJobResponse.StorageProfileId</property>
-    <pattern>sp-[0-9a-f]{32}</pattern>
+    <pattern>^sp-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetJobResponse.TaskFailureRetryCount</property>
@@ -862,11 +861,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetLicenseEndpointRequest.LicenseEndpointId</property>
-    <pattern>le-[0-9a-f]{32}</pattern>
+    <pattern>^le-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetLicenseEndpointResponse.LicenseEndpointId</property>
-    <pattern>le-[0-9a-f]{32}</pattern>
+    <pattern>^le-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetLicenseEndpointResponse.StatusMessage</property>
@@ -877,19 +876,18 @@
     <property>Amazon.Deadline.Model.GetLicenseEndpointResponse.VpcId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>vpc-[\w]{1,120}</pattern>
+    <pattern>^vpc-[\w]{1,120}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetLimitRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetLimitRequest.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetLimitResponse.AmountRequirementName</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -909,11 +907,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetLimitResponse.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetLimitResponse.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetLimitResponse.MaxCount</property>
@@ -922,7 +920,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetMonitorRequest.MonitorId</property>
-    <pattern>monitor-[0-9a-f]{32}</pattern>
+    <pattern>^monitor-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetMonitorResponse.DisplayName</property>
@@ -931,37 +929,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetMonitorResponse.IdentityCenterInstanceArn</property>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetMonitorResponse.IdentityCenterRegion</property>
     <min>1</min>
     <max>25</max>
-    <pattern>[a-z0-9-]+</pattern>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetMonitorResponse.MonitorId</property>
-    <pattern>monitor-[0-9a-f]{32}</pattern>
+    <pattern>^monitor-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetMonitorResponse.RoleArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetMonitorResponse.Subdomain</property>
-    <pattern>[a-z0-9-]{1,100}</pattern>
+    <pattern>^[a-z0-9-]{1,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetMonitorSettingsRequest.MonitorId</property>
-    <pattern>monitor-[0-9a-f]{32}</pattern>
+    <pattern>^monitor-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueResponse.Description</property>
@@ -975,27 +973,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueResponse.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueResponse.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueResponse.RoleArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueEnvironmentRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueEnvironmentRequest.QueueEnvironmentId</property>
-    <pattern>queueenv-[0-9a-f]{32}</pattern>
+    <pattern>^queueenv-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueEnvironmentRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueEnvironmentResponse.Priority</property>
@@ -1004,7 +1002,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueEnvironmentResponse.QueueEnvironmentId</property>
-    <pattern>queueenv-[0-9a-f]{32}</pattern>
+    <pattern>^queueenv-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueEnvironmentResponse.Template</property>
@@ -1013,87 +1011,87 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueFleetAssociationRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueFleetAssociationRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueFleetAssociationRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueFleetAssociationResponse.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueFleetAssociationResponse.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueLimitAssociationRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueLimitAssociationRequest.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueLimitAssociationRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueLimitAssociationResponse.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueLimitAssociationResponse.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionRequest.SessionId</property>
-    <pattern>session-[0-9a-f]{32}</pattern>
+    <pattern>^session-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionResponse.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionResponse.SessionId</property>
-    <pattern>session-[0-9a-f]{32}</pattern>
+    <pattern>^session-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionResponse.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionActionRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionActionRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionActionRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionActionRequest.SessionActionId</property>
-    <pattern>sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionActionResponse.ProcessExitCode</property>
@@ -1112,19 +1110,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionActionResponse.SessionActionId</property>
-    <pattern>sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionActionResponse.SessionId</property>
-    <pattern>session-[0-9a-f]{32}</pattern>
+    <pattern>^session-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionsStatisticsAggregationRequest.AggregationId</property>
-    <pattern>[0-9a-f]{32}</pattern>
+    <pattern>^[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionsStatisticsAggregationRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionsStatisticsAggregationRequest.MaxResults</property>
@@ -1133,29 +1131,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionsStatisticsAggregationRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetSessionsStatisticsAggregationResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStepRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStepRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStepRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStepRequest.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStepResponse.Description</property>
@@ -1169,7 +1165,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStepResponse.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStepResponse.TaskFailureRetryCount</property>
@@ -1178,11 +1174,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStorageProfileRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStorageProfileRequest.StorageProfileId</property>
-    <pattern>sp-[0-9a-f]{32}</pattern>
+    <pattern>^sp-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStorageProfileResponse.DisplayName</property>
@@ -1191,19 +1187,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStorageProfileResponse.StorageProfileId</property>
-    <pattern>sp-[0-9a-f]{32}</pattern>
+    <pattern>^sp-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStorageProfileForQueueRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStorageProfileForQueueRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStorageProfileForQueueRequest.StorageProfileId</property>
-    <pattern>sp-[0-9a-f]{32}</pattern>
+    <pattern>^sp-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStorageProfileForQueueResponse.DisplayName</property>
@@ -1212,27 +1208,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStorageProfileForQueueResponse.StorageProfileId</property>
-    <pattern>sp-[0-9a-f]{32}</pattern>
+    <pattern>^sp-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetTaskRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetTaskRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetTaskRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetTaskRequest.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetTaskRequest.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetTaskResponse.FailureRetryCount</property>
@@ -1241,35 +1237,35 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetTaskResponse.LatestSessionActionId</property>
-    <pattern>sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetTaskResponse.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetVolumeRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetVolumeRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetVolumeRequest.VolumeId</property>
-    <pattern>volume-[0-9a-f]{32}</pattern>
+    <pattern>^volume-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetVolumeResponse.AttachedWorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetVolumeResponse.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetVolumeResponse.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetVolumeResponse.Iops</property>
@@ -1288,31 +1284,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetVolumeResponse.VolumeId</property>
-    <pattern>volume-[0-9a-f]{32}</pattern>
+    <pattern>^volume-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetWorkerRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetWorkerRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetWorkerRequest.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetWorkerResponse.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetWorkerResponse.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetWorkerResponse.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListAvailableMeteredProductsRequest.MaxResults</property>
@@ -1321,17 +1317,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListAvailableMeteredProductsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListAvailableMeteredProductsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListBudgetsRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListBudgetsRequest.MaxResults</property>
@@ -1340,17 +1334,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListBudgetsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListBudgetsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFarmMembersRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFarmMembersRequest.MaxResults</property>
@@ -1359,12 +1351,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFarmMembersRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFarmMembersResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -1374,27 +1364,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFarmsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFarmsRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFarmsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFleetMembersRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFleetMembersRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFleetMembersRequest.MaxResults</property>
@@ -1403,12 +1391,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFleetMembersRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFleetMembersResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -1418,7 +1404,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFleetsRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFleetsRequest.MaxResults</property>
@@ -1427,27 +1413,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFleetsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFleetsRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFleetsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobMembersRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobMembersRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobMembersRequest.MaxResults</property>
@@ -1456,25 +1440,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobMembersRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobMembersRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobMembersResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobParameterDefinitionsRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobParameterDefinitionsRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobParameterDefinitionsRequest.MaxResults</property>
@@ -1483,21 +1465,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobParameterDefinitionsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobParameterDefinitionsRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobParameterDefinitionsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobsRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobsRequest.MaxResults</property>
@@ -1506,22 +1486,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobsRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobsRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -1531,17 +1509,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListLicenseEndpointsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListLicenseEndpointsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListLimitsRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListLimitsRequest.MaxResults</property>
@@ -1550,25 +1526,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListLimitsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListLimitsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListMembershipsRequest.IdentityCenterRegion</property>
     <min>1</min>
     <max>25</max>
-    <pattern>[a-z0-9-]+</pattern>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListMembershipsRequest.IdentityStoreId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListMembershipsRequest.MaxResults</property>
@@ -1577,23 +1551,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListMembershipsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListMembershipsRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListMembershipsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListMeteredProductsRequest.LicenseEndpointId</property>
-    <pattern>le-[0-9a-f]{32}</pattern>
+    <pattern>^le-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListMeteredProductsRequest.MaxResults</property>
@@ -1602,12 +1574,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListMeteredProductsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListMeteredProductsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -1617,17 +1587,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListMonitorsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListMonitorsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueEnvironmentsRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueEnvironmentsRequest.MaxResults</property>
@@ -1636,25 +1604,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueEnvironmentsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueEnvironmentsRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueEnvironmentsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueFleetAssociationsRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueFleetAssociationsRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueFleetAssociationsRequest.MaxResults</property>
@@ -1663,25 +1629,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueFleetAssociationsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueFleetAssociationsRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueFleetAssociationsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueLimitAssociationsRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueLimitAssociationsRequest.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueLimitAssociationsRequest.MaxResults</property>
@@ -1690,21 +1654,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueLimitAssociationsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueLimitAssociationsRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueLimitAssociationsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueMembersRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueMembersRequest.MaxResults</property>
@@ -1713,21 +1675,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueMembersRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueMembersRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueMembersResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueuesRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueuesRequest.MaxResults</property>
@@ -1736,27 +1696,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueuesRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueuesRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueuesResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionActionsRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionActionsRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionActionsRequest.MaxResults</property>
@@ -1765,33 +1723,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionActionsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionActionsRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionActionsRequest.SessionId</property>
-    <pattern>session-[0-9a-f]{32}</pattern>
+    <pattern>^session-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionActionsRequest.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionActionsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsRequest.MaxResults</property>
@@ -1800,25 +1756,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsForWorkerRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsForWorkerRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsForWorkerRequest.MaxResults</property>
@@ -1827,25 +1781,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsForWorkerRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsForWorkerRequest.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsForWorkerResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepConsumersRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepConsumersRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepConsumersRequest.MaxResults</property>
@@ -1854,29 +1806,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepConsumersRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepConsumersRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepConsumersRequest.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepConsumersResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepDependenciesRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepDependenciesRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepDependenciesRequest.MaxResults</property>
@@ -1885,29 +1835,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepDependenciesRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepDependenciesRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepDependenciesRequest.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepDependenciesResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepsRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepsRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepsRequest.MaxResults</property>
@@ -1916,21 +1864,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepsRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepsRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepsResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStorageProfilesRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStorageProfilesRequest.MaxResults</property>
@@ -1939,17 +1885,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStorageProfilesRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStorageProfilesResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStorageProfilesForQueueRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStorageProfilesForQueueRequest.MaxResults</property>
@@ -1958,25 +1902,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStorageProfilesForQueueRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStorageProfilesForQueueRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStorageProfilesForQueueResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListTasksRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListTasksRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListTasksRequest.MaxResults</property>
@@ -1985,29 +1927,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListTasksRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListTasksRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListTasksRequest.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListTasksResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListVolumesRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListVolumesRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListVolumesRequest.MaxResults</property>
@@ -2016,21 +1956,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListVolumesRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListVolumesResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListWorkersRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListWorkersRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListWorkersRequest.MaxResults</property>
@@ -2039,25 +1977,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListWorkersRequest.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListWorkersResponse.NextToken</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.PutMeteredProductRequest.LicenseEndpointId</property>
-    <pattern>le-[0-9a-f]{32}</pattern>
+    <pattern>^le-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.PutMeteredProductRequest.ProductId</property>
-    <pattern>[0-9a-z]{1,32}-[.0-9a-z]{1,32}</pattern>
+    <pattern>^[0-9a-z]{1,32}-[.0-9a-z]{1,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SearchJobsRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SearchJobsRequest.ItemOffset</property>
@@ -2081,7 +2017,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SearchStepsRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SearchStepsRequest.ItemOffset</property>
@@ -2090,7 +2026,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SearchStepsRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SearchStepsRequest.PageSize</property>
@@ -2109,7 +2045,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SearchTasksRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SearchTasksRequest.ItemOffset</property>
@@ -2118,7 +2054,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SearchTasksRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SearchTasksRequest.PageSize</property>
@@ -2137,7 +2073,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SearchWorkersRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SearchWorkersRequest.ItemOffset</property>
@@ -2161,21 +2097,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StartSessionsStatisticsAggregationRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StartSessionsStatisticsAggregationRequest.Timezone</property>
     <min>9</min>
     <max>9</max>
-    <pattern>UTC[-+][01][0-9]:(30|00)</pattern>
+    <pattern>^UTC[-+][01][0-9]:(30|00)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StartSessionsStatisticsAggregationResponse.AggregationId</property>
-    <pattern>[0-9a-f]{32}</pattern>
+    <pattern>^[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateBudgetRequest.BudgetId</property>
-    <pattern>budget-[0-9a-f]{32}</pattern>
+    <pattern>^budget-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateBudgetRequest.ClientToken</property>
@@ -2194,7 +2130,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateBudgetRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateFarmRequest.CostScaleFactor</property>
@@ -2213,7 +2149,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateFarmRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateFleetRequest.ClientToken</property>
@@ -2232,11 +2168,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateFleetRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateFleetRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateFleetRequest.MaxWorkerCount</property>
@@ -2250,7 +2186,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateFleetRequest.RoleArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateJobRequest.ClientToken</property>
@@ -2264,11 +2200,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateJobRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateJobRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateJobRequest.MaxFailedTasksCount</property>
@@ -2297,7 +2233,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateJobRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateLimitRequest.Description</property>
@@ -2311,11 +2247,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateLimitRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateLimitRequest.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateLimitRequest.MaxCount</property>
@@ -2329,19 +2265,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateMonitorRequest.MonitorId</property>
-    <pattern>monitor-[0-9a-f]{32}</pattern>
+    <pattern>^monitor-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateMonitorRequest.RoleArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateMonitorRequest.Subdomain</property>
-    <pattern>[a-z0-9-]{1,100}</pattern>
+    <pattern>^[a-z0-9-]{1,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateMonitorSettingsRequest.MonitorId</property>
-    <pattern>monitor-[0-9a-f]{32}</pattern>
+    <pattern>^monitor-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueRequest.ClientToken</property>
@@ -2360,15 +2296,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueRequest.RoleArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueEnvironmentRequest.ClientToken</property>
@@ -2377,7 +2313,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueEnvironmentRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueEnvironmentRequest.Priority</property>
@@ -2386,11 +2322,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueEnvironmentRequest.QueueEnvironmentId</property>
-    <pattern>queueenv-[0-9a-f]{32}</pattern>
+    <pattern>^queueenv-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueEnvironmentRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueEnvironmentRequest.Template</property>
@@ -2399,27 +2335,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueFleetAssociationRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueFleetAssociationRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueFleetAssociationRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueLimitAssociationRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueLimitAssociationRequest.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueLimitAssociationRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateSessionRequest.ClientToken</property>
@@ -2428,19 +2364,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateSessionRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateSessionRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateSessionRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateSessionRequest.SessionId</property>
-    <pattern>session-[0-9a-f]{32}</pattern>
+    <pattern>^session-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateStepRequest.ClientToken</property>
@@ -2449,19 +2385,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateStepRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateStepRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateStepRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateStepRequest.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateStorageProfileRequest.ClientToken</property>
@@ -2475,11 +2411,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateStorageProfileRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateStorageProfileRequest.StorageProfileId</property>
-    <pattern>sp-[0-9a-f]{32}</pattern>
+    <pattern>^sp-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateTaskRequest.ClientToken</property>
@@ -2488,47 +2424,47 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateTaskRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateTaskRequest.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateTaskRequest.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateTaskRequest.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateTaskRequest.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateWorkerRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateWorkerRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateWorkerRequest.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateWorkerScheduleRequest.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateWorkerScheduleRequest.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateWorkerScheduleRequest.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateWorkerScheduleResponse.UpdateIntervalSeconds</property>
@@ -2566,67 +2502,67 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AcquiredLimit.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssignedEnvironmentEnterSessionActionDefinition.EnvironmentId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)</pattern>
+    <pattern>^(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssignedEnvironmentExitSessionActionDefinition.EnvironmentId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)</pattern>
+    <pattern>^(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssignedSession.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssignedSession.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssignedSessionAction.SessionActionId</property>
-    <pattern>sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssignedSyncInputJobAttachmentsSessionActionDefinition.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssignedTaskRunSessionActionDefinition.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssignedTaskRunSessionActionDefinition.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobError.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobError.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobError.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobIdentifier.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobIdentifier.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobIdentifier.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobItem.Description</property>
@@ -2635,11 +2571,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobItem.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobItem.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobItem.MaxFailedTasksCount</property>
@@ -2668,15 +2604,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobItem.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobItem.SourceJobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobItem.StorageProfileId</property>
-    <pattern>sp-[0-9a-f]{32}</pattern>
+    <pattern>^sp-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobItem.TaskFailureRetryCount</property>
@@ -2685,43 +2621,43 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionError.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionError.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionError.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionError.SessionActionId</property>
-    <pattern>sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionIdentifier.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionIdentifier.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionIdentifier.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionIdentifier.SessionActionId</property>
-    <pattern>sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionItem.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionItem.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionItem.ProcessExitCode</property>
@@ -2740,103 +2676,103 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionItem.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionItem.SessionActionId</property>
-    <pattern>sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionActionItem.SessionId</property>
-    <pattern>session-[0-9a-f]{32}</pattern>
+    <pattern>^session-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionError.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionError.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionError.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionError.SessionId</property>
-    <pattern>session-[0-9a-f]{32}</pattern>
+    <pattern>^session-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionIdentifier.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionIdentifier.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionIdentifier.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionIdentifier.SessionId</property>
-    <pattern>session-[0-9a-f]{32}</pattern>
+    <pattern>^session-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionItem.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionItem.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionItem.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionItem.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionItem.SessionId</property>
-    <pattern>session-[0-9a-f]{32}</pattern>
+    <pattern>^session-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetSessionItem.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepError.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepError.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepError.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepError.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepIdentifier.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepIdentifier.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepIdentifier.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepIdentifier.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepItem.Description</property>
@@ -2845,11 +2781,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepItem.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepItem.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepItem.Name</property>
@@ -2858,11 +2794,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepItem.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepItem.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepItem.TaskFailureRetryCount</property>
@@ -2871,43 +2807,43 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskError.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskError.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskError.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskError.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskError.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskIdentifier.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskIdentifier.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskIdentifier.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskIdentifier.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskIdentifier.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskItem.FailureRetryCount</property>
@@ -2916,75 +2852,75 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskItem.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskItem.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskItem.LatestSessionActionId</property>
-    <pattern>sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskItem.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskItem.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetTaskItem.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetWorkerError.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetWorkerError.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetWorkerError.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetWorkerIdentifier.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetWorkerIdentifier.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetWorkerIdentifier.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetWorkerItem.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetWorkerItem.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetWorkerItem.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateJobError.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateJobError.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateJobError.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateJobItem.Description</property>
@@ -2993,11 +2929,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateJobItem.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateJobItem.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateJobItem.MaxFailedTasksCount</property>
@@ -3026,47 +2962,47 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateJobItem.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateTaskError.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateTaskError.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateTaskError.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateTaskError.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateTaskError.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateTaskItem.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateTaskItem.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateTaskItem.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateTaskItem.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateTaskItem.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BudgetActionToAdd.Description</property>
@@ -3085,7 +3021,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BudgetSummary.BudgetId</property>
-    <pattern>budget-[0-9a-f]{32}</pattern>
+    <pattern>^budget-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BudgetSummary.Description</property>
@@ -3114,7 +3050,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CustomerManagedFleetConfiguration.StorageProfileId</property>
-    <pattern>sp-[0-9a-f]{32}</pattern>
+    <pattern>^sp-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.Ec2EbsVolume.Iops</property>
@@ -3130,11 +3066,11 @@
     <property>Amazon.Deadline.Model.EnvironmentDetailsEntity.EnvironmentId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)</pattern>
+    <pattern>^(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.EnvironmentDetailsEntity.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.EnvironmentDetailsEntity.ResolvedSymbolTable</property>
@@ -3145,61 +3081,61 @@
     <property>Amazon.Deadline.Model.EnvironmentDetailsError.EnvironmentId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)</pattern>
+    <pattern>^(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.EnvironmentDetailsError.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.EnvironmentDetailsIdentifiers.EnvironmentId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)</pattern>
+    <pattern>^(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.EnvironmentDetailsIdentifiers.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.EnvironmentEnterSessionActionDefinition.EnvironmentId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)</pattern>
+    <pattern>^(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.EnvironmentEnterSessionActionDefinitionSummary.EnvironmentId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)</pattern>
+    <pattern>^(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.EnvironmentExitSessionActionDefinition.EnvironmentId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)</pattern>
+    <pattern>^(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.EnvironmentExitSessionActionDefinitionSummary.EnvironmentId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)</pattern>
+    <pattern>^(STEP:step-[0-9a-f]{32}:.*)|(JOB:job-[0-9a-f]{32}:.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FarmMember.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FarmMember.IdentityStoreId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FarmMember.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FarmSummary.DisplayName</property>
@@ -3208,17 +3144,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FarmSummary.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FarmSummary.KmsKeyArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):kms:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:key/[\w-]{1,120}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):kms:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:key/[\w-]{1,120}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FileSystemLocation.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z ]*</pattern>
+    <pattern>^[0-9A-Za-z ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FileSystemLocation.Path</property>
@@ -3229,33 +3165,33 @@
     <property>Amazon.Deadline.Model.FleetAmountCapability.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>([a-zA-Z][a-zA-Z0-9]{0,63}:)?amount(\.[a-zA-Z][a-zA-Z0-9]{0,63})+</pattern>
+    <pattern>^([a-zA-Z][a-zA-Z0-9]{0,63}:)?amount(\.[a-zA-Z][a-zA-Z0-9]{0,63})+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FleetAttributeCapability.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>([a-zA-Z][a-zA-Z0-9]{0,63}:)?attr(\.[a-zA-Z][a-zA-Z0-9]{0,63})+</pattern>
+    <pattern>^([a-zA-Z][a-zA-Z0-9]{0,63}:)?attr(\.[a-zA-Z][a-zA-Z0-9]{0,63})+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FleetMember.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FleetMember.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FleetMember.IdentityStoreId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FleetMember.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FleetSummary.DisplayName</property>
@@ -3264,11 +3200,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FleetSummary.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FleetSummary.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.FleetSummary.MaxWorkerCount</property>
@@ -3292,7 +3228,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.HostPropertiesRequest.HostName</property>
-    <pattern>[a-zA-Z0-9_\.\-]{0,255}</pattern>
+    <pattern>^[a-zA-Z0-9_\.\-]{0,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.HostPropertiesResponse.Ec2InstanceType</property>
@@ -3301,25 +3237,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.HostPropertiesResponse.HostName</property>
-    <pattern>[a-zA-Z0-9_\.\-]{0,255}</pattern>
+    <pattern>^[a-zA-Z0-9_\.\-]{0,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobAttachmentDetailsEntity.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobAttachmentDetailsError.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobAttachmentDetailsIdentifiers.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobAttachmentSettings.RootPrefix</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z0-9-_/]+</pattern>
+    <pattern>^[a-zA-Z0-9-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobAttachmentSettings.S3BucketName</property>
@@ -3328,25 +3264,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobDetailsEntity.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobDetailsEntity.QueueRoleArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobDetailsError.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobDetailsIdentifiers.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobDetailsJobAttachmentSettings.RootPrefix</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z0-9-_/]+</pattern>
+    <pattern>^[a-zA-Z0-9-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobDetailsJobAttachmentSettings.S3BucketName</property>
@@ -3355,45 +3291,45 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobMember.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobMember.IdentityStoreId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobMember.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobMember.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobMember.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobParameter.Bool</property>
     <min>1</min>
     <max>5</max>
-    <pattern>([Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee]|[Yy][Ee][Ss]|[Nn][Oo]|[Oo][Nn]|[Oo][Ff][Ff]|[01])</pattern>
+    <pattern>^([Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee]|[Yy][Ee][Ss]|[Nn][Oo]|[Oo][Nn]|[Oo][Ff][Ff]|[01])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobParameter.Float</property>
     <min>1</min>
     <max>26</max>
-    <pattern>[-]?(0|[1-9][0-9]*)([.][0-9]+)?([eE][+-]?[0-9]+)?</pattern>
+    <pattern>^[-]?(0|[1-9][0-9]*)([.][0-9]+)?([eE][+-]?[0-9]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobParameter.Int</property>
     <min>1</min>
     <max>20</max>
-    <pattern>[-]?(0|[1-9][0-9]*)</pattern>
+    <pattern>^[-]?(0|[1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobParameter.Path</property>
@@ -3412,7 +3348,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSearchSummary.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSearchSummary.MaxFailedTasksCount</property>
@@ -3441,11 +3377,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSearchSummary.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSearchSummary.SourceJobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSearchSummary.TaskFailureRetryCount</property>
@@ -3454,7 +3390,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSummary.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSummary.MaxFailedTasksCount</property>
@@ -3483,7 +3419,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSummary.SourceJobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSummary.TaskFailureRetryCount</property>
@@ -3492,7 +3428,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.LicenseEndpointSummary.LicenseEndpointId</property>
-    <pattern>le-[0-9a-f]{32}</pattern>
+    <pattern>^le-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.LicenseEndpointSummary.StatusMessage</property>
@@ -3503,11 +3439,10 @@
     <property>Amazon.Deadline.Model.LicenseEndpointSummary.VpcId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>vpc-[\w]{1,120}</pattern>
+    <pattern>^vpc-[\w]{1,120}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.LimitSummary.AmountRequirementName</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -3522,11 +3457,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.LimitSummary.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.LimitSummary.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.LimitSummary.MaxCount</property>
@@ -3547,7 +3482,7 @@
     <property>Amazon.Deadline.Model.ManifestProperties.FileSystemLocationName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z ]*</pattern>
+    <pattern>^[0-9A-Za-z ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ManifestProperties.InputManifestHash</property>
@@ -3586,7 +3521,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.MeteredProductSummary.ProductId</property>
-    <pattern>[0-9a-z]{1,32}-[.0-9a-z]{1,32}</pattern>
+    <pattern>^[0-9a-z]{1,32}-[.0-9a-z]{1,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.MeteredProductSummary.Vendor</property>
@@ -3600,25 +3535,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.MonitorSummary.IdentityCenterInstanceArn</property>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.MonitorSummary.IdentityCenterRegion</property>
     <min>1</min>
     <max>25</max>
-    <pattern>[a-z0-9-]+</pattern>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.MonitorSummary.MonitorId</property>
-    <pattern>monitor-[0-9a-f]{32}</pattern>
+    <pattern>^monitor-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.MonitorSummary.RoleArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):iam::\d{12}:role(/[!-.0-~]+)*/[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.MonitorSummary.Subdomain</property>
-    <pattern>[a-z0-9-]{1,100}</pattern>
+    <pattern>^[a-z0-9-]{1,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ParameterFilterExpression.Value</property>
@@ -3659,13 +3594,13 @@
     <property>Amazon.Deadline.Model.PosixUser.Group</property>
     <min>0</min>
     <max>31</max>
-    <pattern>(?:[a-z][a-z0-9-]{0,30})?</pattern>
+    <pattern>^(?:[a-z][a-z0-9-]{0,30})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.PosixUser.User</property>
     <min>0</min>
     <max>31</max>
-    <pattern>(?:[a-z][a-z0-9-]{0,30})?</pattern>
+    <pattern>^(?:[a-z][a-z0-9-]{0,30})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.PriorityBalancedSchedulingConfiguration.RenderingTaskBuffer</property>
@@ -3679,43 +3614,43 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.QueueEnvironmentSummary.QueueEnvironmentId</property>
-    <pattern>queueenv-[0-9a-f]{32}</pattern>
+    <pattern>^queueenv-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.QueueFleetAssociationSummary.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.QueueFleetAssociationSummary.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.QueueLimitAssociationSummary.LimitId</property>
-    <pattern>limit-[0-9a-f]{32}</pattern>
+    <pattern>^limit-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.QueueLimitAssociationSummary.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.QueueMember.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.QueueMember.IdentityStoreId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.QueueMember.PrincipalId</property>
     <min>1</min>
     <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.QueueMember.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.QueueSummary.DisplayName</property>
@@ -3724,11 +3659,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.QueueSummary.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.QueueSummary.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ResponseBudgetAction.Description</property>
@@ -3772,7 +3707,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ServiceManagedEc2FleetConfiguration.StorageProfileId</property>
-    <pattern>sp-[0-9a-f]{32}</pattern>
+    <pattern>^sp-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SessionActionSummary.ProgressPercent</property>
@@ -3781,23 +3716,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SessionActionSummary.SessionActionId</property>
-    <pattern>sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SessionSummary.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SessionSummary.SessionId</property>
-    <pattern>session-[0-9a-f]{32}</pattern>
+    <pattern>^session-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SessionSummary.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.Statistics.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.Statistics.InstanceType</property>
@@ -3806,7 +3741,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.Statistics.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.Statistics.JobName</property>
@@ -3815,31 +3750,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.Statistics.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepAmountCapability.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>([a-zA-Z][a-zA-Z0-9]{0,63}:)?amount(\.[a-zA-Z][a-zA-Z0-9]{0,63})+</pattern>
+    <pattern>^([a-zA-Z][a-zA-Z0-9]{0,63}:)?amount(\.[a-zA-Z][a-zA-Z0-9]{0,63})+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepAttributeCapability.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>([a-zA-Z][a-zA-Z0-9]{0,63}:)?attr(\.[a-zA-Z][a-zA-Z0-9]{0,63})+</pattern>
+    <pattern>^([a-zA-Z][a-zA-Z0-9]{0,63}:)?attr(\.[a-zA-Z][a-zA-Z0-9]{0,63})+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepConsumer.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepDependency.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepDetailsEntity.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepDetailsEntity.ResolvedSymbolTable</property>
@@ -3848,23 +3783,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepDetailsEntity.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepDetailsError.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepDetailsError.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepDetailsIdentifiers.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepDetailsIdentifiers.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepParameter.Name</property>
@@ -3883,7 +3818,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepSearchSummary.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepSearchSummary.Name</property>
@@ -3892,11 +3827,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepSearchSummary.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepSearchSummary.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepSearchSummary.TaskFailureRetryCount</property>
@@ -3910,7 +3845,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepSummary.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepSummary.TaskFailureRetryCount</property>
@@ -3924,7 +3859,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StorageProfileSummary.StorageProfileId</property>
-    <pattern>sp-[0-9a-f]{32}</pattern>
+    <pattern>^sp-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StringFilterExpression.Value</property>
@@ -3933,23 +3868,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SyncInputJobAttachmentsSessionActionDefinition.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.SyncInputJobAttachmentsSessionActionDefinitionSummary.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskParameterValue.Float</property>
     <min>1</min>
     <max>26</max>
-    <pattern>[-]?(0|[1-9][0-9]*)([.][0-9]+)?([eE][+-]?[0-9]+)?</pattern>
+    <pattern>^[-]?(0|[1-9][0-9]*)([.][0-9]+)?([eE][+-]?[0-9]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskParameterValue.Int</property>
     <min>1</min>
     <max>20</max>
-    <pattern>[-]?(0|[1-9][0-9]*)</pattern>
+    <pattern>^[-]?(0|[1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskParameterValue.Path</property>
@@ -3973,19 +3908,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskRunSessionActionDefinition.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskRunSessionActionDefinition.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskRunSessionActionDefinitionSummary.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskRunSessionActionDefinitionSummary.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskSearchSummary.FailureRetryCount</property>
@@ -3994,23 +3929,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskSearchSummary.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskSearchSummary.LatestSessionActionId</property>
-    <pattern>sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskSearchSummary.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskSearchSummary.StepId</property>
-    <pattern>step-[0-9a-f]{32}</pattern>
+    <pattern>^step-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskSearchSummary.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskSummary.FailureRetryCount</property>
@@ -4019,11 +3954,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskSummary.LatestSessionActionId</property>
-    <pattern>sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskSummary.TaskId</property>
-    <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+    <pattern>^task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdatedSessionActionInfo.ProcessExitCode</property>
@@ -4042,7 +3977,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UsageTrackingResource.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.VCpuCountRange.Max</property>
@@ -4056,15 +3991,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.VolumeSummary.AttachedWorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.VolumeSummary.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.VolumeSummary.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.VolumeSummary.SizeGiB</property>
@@ -4073,7 +4008,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.VolumeSummary.VolumeId</property>
-    <pattern>volume-[0-9a-f]{32}</pattern>
+    <pattern>^volume-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.WeightedBalancedSchedulingConfiguration.ErrorWeight</property>
@@ -4104,56 +4039,56 @@
     <property>Amazon.Deadline.Model.WindowsUser.PasswordArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*):secretsmanager:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:secret:[a-zA-Z0-9-/_+=.@]{1,2028}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):secretsmanager:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:secret:[a-zA-Z0-9-/_+=.@]{1,2028}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.WindowsUser.User</property>
     <min>0</min>
     <max>111</max>
-    <pattern>[^"'/\[\]:;|=,+*?&lt;&gt;\s]*</pattern>
+    <pattern>^[^"'/\[\]:;|=,+*?&lt;&gt;\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.WorkerAmountCapability.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>([a-zA-Z][a-zA-Z0-9]{0,63}:)?amount(\.[a-zA-Z][a-zA-Z0-9]{0,63})+</pattern>
+    <pattern>^([a-zA-Z][a-zA-Z0-9]{0,63}:)?amount(\.[a-zA-Z][a-zA-Z0-9]{0,63})+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.WorkerAttributeCapability.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>([a-zA-Z][a-zA-Z0-9]{0,63}:)?attr(\.[a-zA-Z][a-zA-Z0-9]{0,63})+</pattern>
+    <pattern>^([a-zA-Z][a-zA-Z0-9]{0,63}:)?attr(\.[a-zA-Z][a-zA-Z0-9]{0,63})+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.WorkerSearchSummary.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.WorkerSearchSummary.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.WorkerSessionSummary.JobId</property>
-    <pattern>job-[0-9a-f]{32}</pattern>
+    <pattern>^job-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.WorkerSessionSummary.QueueId</property>
-    <pattern>queue-[0-9a-f]{32}</pattern>
+    <pattern>^queue-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.WorkerSessionSummary.SessionId</property>
-    <pattern>session-[0-9a-f]{32}</pattern>
+    <pattern>^session-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.WorkerSummary.FarmId</property>
-    <pattern>farm-[0-9a-f]{32}</pattern>
+    <pattern>^farm-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.WorkerSummary.FleetId</property>
-    <pattern>fleet-[0-9a-f]{32}</pattern>
+    <pattern>^fleet-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.WorkerSummary.WorkerId</property>
-    <pattern>worker-[0-9a-f]{32}</pattern>
+    <pattern>^worker-[0-9a-f]{32}$</pattern>
   </property-value-rule>
 </property-value-rules>

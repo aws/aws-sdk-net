@@ -31,7 +31,7 @@ using Amazon.SSO.Endpoints;
 namespace Amazon.SSO.Internal
 {
     /// <summary>
-    /// Amazon SSO endpoint resolver.
+    /// AWS Single Sign-On endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SSO service requests.
     /// <para />

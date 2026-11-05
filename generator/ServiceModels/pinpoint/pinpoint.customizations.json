@@ -1,0 +1,10 @@
+{
+    "shapeSubstitutions": {
+        "CreateRecommenderConfigurationShape": {
+            "renameShape": "CreateRecommenderConfiguration"
+        },
+        "UpdateRecommenderConfigurationShape": {
+            "renameShape": "UpdateRecommenderConfiguration"
+        }
+    }
+}

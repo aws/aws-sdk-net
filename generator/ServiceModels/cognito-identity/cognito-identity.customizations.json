@@ -1,4 +1,11 @@
 {
+	"shapeModifiers": {
+		"Credentials": {
+			"modify": [
+				{ "Expiration": { "overridesBaseMember": true } }
+			]
+		}
+	},
 	"shapeSubstitutions": {
         "CognitoIdentityProvider": {
             "renameShape": "CognitoIdentityProviderInfo"

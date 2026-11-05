@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.GeoRoutes
 {
     /// <summary>
-    /// Configuration for accessing Amazon GeoRoutes service
+    /// Configuration for accessing Amazon Location Service Routes V2
     /// </summary>
     public static class AmazonGeoRoutesDefaultConfiguration
     {

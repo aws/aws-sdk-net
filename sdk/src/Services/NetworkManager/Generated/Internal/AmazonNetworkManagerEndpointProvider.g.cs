@@ -26,7 +26,7 @@ using Amazon.NetworkManager.Endpoints;
 namespace Amazon.NetworkManager.Internal
 {
     /// <summary>
-    /// Amazon NetworkManager endpoint provider.
+    /// AWS Network Manager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="NetworkManagerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

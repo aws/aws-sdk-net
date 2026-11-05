@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.WorkMail
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkMail service
+    /// Configuration for accessing Amazon WorkMail
     /// </summary>
     public static class AmazonWorkMailDefaultConfiguration
     {

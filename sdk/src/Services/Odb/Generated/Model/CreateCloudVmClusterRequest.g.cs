@@ -168,6 +168,42 @@ namespace Amazon.Odb.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
+        /// Gets and sets the property ExascaleDbStorageVaultId. 
+        /// <para>
+        /// The unique identifier or Amazon Resource Name (ARN) of the Exascale storage vault
+        /// to use for the VM cluster. Specify this value to create a VM cluster that uses Exascale
+        /// storage on dedicated Exadata infrastructure.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 6, Max = 2048)]
+        public string ExascaleDbStorageVaultId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExascaleDbStorageVaultId property is set.
+        /// </summary>
+        internal bool IsSetExascaleDbStorageVaultId() => this.ExascaleDbStorageVaultId != null;
+
+        /// <summary>
+        /// Gets and sets the property FileSystemConfigurationDetails. 
+        /// <para>
+        /// The list of file system configurations for the VM cluster. Each entry specifies the
+        /// mount point of a file system and its size, in gigabytes (GB).
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<FileSystemConfigurationDetails> FileSystemConfigurationDetails { get; set; } = AWSConfigs.InitializeCollections ? new List<FileSystemConfigurationDetails>() : null;
+
+        /// <summary>
+        /// Checks to see if the FileSystemConfigurationDetails property is set.
+        /// </summary>
+        internal bool IsSetFileSystemConfigurationDetails() => this.FileSystemConfigurationDetails != null && (this.FileSystemConfigurationDetails.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property GiVersion. 
         /// <para>
         /// A valid software version of Oracle Grid Infrastructure (GI). To get the list of valid
@@ -388,5 +424,35 @@ namespace Amazon.Odb.Model
         /// Checks to see if the TimeZone property is set.
         /// </summary>
         internal bool IsSetTimeZone() => this.TimeZone != null;
+
+        /// <summary>
+        /// Gets and sets the property VmBackupStorageType. 
+        /// <para>
+        /// The type of storage to use for VM backups. Specify <c>EXASCALE</c> to store VM backups
+        /// in Exascale storage on the storage servers, or <c>LOCAL</c> to store them on the database
+        /// servers.
+        /// </para>
+        /// </summary>
+        public VmStorageType VmBackupStorageType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VmBackupStorageType property is set.
+        /// </summary>
+        internal bool IsSetVmBackupStorageType() => this.VmBackupStorageType != null;
+
+        /// <summary>
+        /// Gets and sets the property VmFileSystemStorageType. 
+        /// <para>
+        /// The type of storage to use for the VM file systems. Specify <c>EXASCALE</c> to store
+        /// the VM file systems in Exascale storage on the storage servers, or <c>LOCAL</c> to
+        /// store them on the database servers.
+        /// </para>
+        /// </summary>
+        public VmStorageType VmFileSystemStorageType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VmFileSystemStorageType property is set.
+        /// </summary>
+        internal bool IsSetVmFileSystemStorageType() => this.VmFileSystemStorageType != null;
     }
 }

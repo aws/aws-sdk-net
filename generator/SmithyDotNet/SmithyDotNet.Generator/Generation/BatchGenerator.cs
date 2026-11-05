@@ -9,7 +9,9 @@ using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Converters;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
+using SmithyDotNet.Generator.Writers.CodeAnalysis;
 using SmithyDotNet.Generator.Writers.Core;
+using SmithyDotNet.Generator.Writers.ProjectFiles;
 
 namespace SmithyDotNet.Generator.Generation;
 
@@ -45,27 +47,29 @@ public sealed class BatchGenerator(string repoRoot)
     private readonly StringComparer _pathComparer = Directory.Exists(SdkTreeLayout.SdkRoot(repoRoot).ToUpperInvariant()) ? StringComparer.OrdinalIgnoreCase : StringComparer.Ordinal;
 
     /// <summary>
-    /// Runs the batch generation: Core's region files, then the listed services. Returns the generated
-    /// ServiceFolderNames (empty when the control file is missing or lists no services). Throws
-    /// <see cref="GeneratorException"/> on configuration errors.
+    /// Runs the batch generation: Core's and the extensions' files, the listed services, then the solutions and legacy
+    /// unit-test projects that span them. Returns the generated ServiceFolderNames (empty when the control file is
+    /// missing or lists no services). Throws <see cref="GeneratorException"/> on configuration errors.
     /// </summary>
     public IReadOnlyList<string> Run(CancellationToken ct = default)
     {
         // Per-service lines below log repo-relative paths; the root is logged once here.
         Log.Info($"Generating under '{repoRoot}'.");
-        GenerateCoreFiles(ct);
+        var unitTestProject = UnitTestProjectManifest.Load(Path.Combine(_modelsRoot, "_manifest.json"));
+        var versionManifest = SdkVersionManifest.Load(SdkTreeLayout.VersionManifestPath(repoRoot));
+        var defaultConfigurationModes = DefaultConfigurationManifest.Load(Path.Combine(SdkTreeLayout.CoreRoot(repoRoot), "sdk-default-configuration.json"));
+        TargetPlatforms.Initialize(_sdkRoot);
+        GenerateCoreFiles(versionManifest, defaultConfigurationModes, ct);
+        ExtensionVersionUpdater.Update(SdkTreeLayout.ExtensionsRoot(repoRoot), versionManifest);
 
         var controlFilePath = Path.Combine(_modelsRoot, SdkTreeLayout.MigratedServicesFileName);
         var migrated = LoadControlFile(controlFilePath);
         if (migrated.Count == 0)
         {
             Log.Info($"No services listed in '{controlFilePath}'; no services to generate.");
+            GenerateRepoFiles(unitTestProject, ct);
             return [];
         }
-
-        var versionManifest = SdkVersionManifest.Load(SdkTreeLayout.VersionManifestPath(repoRoot));
-        var defaultConfigurationModes = DefaultConfigurationManifest.Load(Path.Combine(SdkTreeLayout.CoreRoot(repoRoot), "sdk-default-configuration.json"));
-        TargetPlatforms.Initialize(_sdkRoot);
 
         var discovered = DiscoverModels(ct);
         var matched = MatchListedServices(migrated, discovered);
@@ -75,23 +79,56 @@ public sealed class BatchGenerator(string repoRoot)
         var generated = new ConcurrentBag<string>();
         ForEachParallel(matched, ct, service =>
         {
-            GenerateService(service, versionManifest, defaultConfigurationModes, ct);
+            GenerateService(service, versionManifest, defaultConfigurationModes, unitTestProject, ct);
             generated.Add(service.Name);
         });
 
+        GenerateRepoFiles(unitTestProject, ct);
         return generated.ToList();
     }
 
-    // Core's region constants and partition tables come from partitions.json rather than a service model, so they're
-    // written even when no service is listed. C2J still writes them too, because the release's partitions merge runs
-    // C2J alone; the two outputs must stay byte-identical. They're written unformatted, as C2J's templates produce them.
-    private void GenerateCoreFiles(CancellationToken ct)
+    // Core's files come from partitions.json, _sdk-versions.json and sdk-default-configuration.json rather than a
+    // service model, so they're written even when no service is listed. C2J still writes them too, and the release
+    // runs C2J alone for its partitions and endpoints merges, so the two outputs must stay byte-identical (the
+    // git-ignored nuspec aside). They're written unformatted, as C2J's templates produce them.
+    private void GenerateCoreFiles(SdkVersionManifest versionManifest, IReadOnlyList<ResolvedDefaultConfigurationMode> defaultConfigurationModes, CancellationToken ct)
     {
         var coreRoot = SdkTreeLayout.CoreRoot(repoRoot);
         var partitions = PartitionsManifest.Load(Path.Combine(coreRoot, "partitions.json"));
-        ServiceGenerator.WriteFile(Path.Combine(coreRoot, "RegionEndpoint", "RegionEndpoint.generated.cs"), new RegionEndpointWriter(partitions).Write(), format: false, ct);
-        ServiceGenerator.WriteFile(Path.Combine(coreRoot, "Amazon.Runtime", "Internal", "Endpoints", "StandardLibrary", "Partition.generated.cs"), new PartitionWriter(partitions).Write(), format: false, ct);
-        Log.Info($"Generated Core's region and partition files under '{Relative(coreRoot)}'.");
+        var coreVersion = new CoreVersionWriter(versionManifest);
+        (string Path, string Contents)[] files =
+        [
+            (Path.Combine("RegionEndpoint", "RegionEndpoint.generated.cs"), new RegionEndpointWriter(partitions).Write()),
+            (Path.Combine("Amazon.Runtime", "Internal", "Endpoints", "StandardLibrary", "Partition.generated.cs"), new PartitionWriter(partitions).Write()),
+            (Path.Combine("Amazon.Runtime", "DefaultConfigurationMode.generated.cs"), new DefaultConfigurationModeWriter(defaultConfigurationModes).Write()),
+            (Path.Combine("Properties", "AssemblyInfo.cs"), coreVersion.WriteAssemblyInfo()),
+            (Path.Combine("Amazon.Util", "Internal", "InternalSDKUtils.generated.cs"), coreVersion.WriteInternalSdkUtils()),
+            ("AWSSDK.Core.nuspec", coreVersion.WriteNuspec()),
+        ];
+        foreach (var (path, contents) in files)
+        {
+            ServiceGenerator.WriteFile(Path.Combine(coreRoot, path), contents, format: false, ct);
+        }
+        Log.Info($"Generated Core's files under '{Relative(coreRoot)}'.");
+    }
+
+    // The solutions and the legacy unit-test projects span every service, so they're written after the services, and the
+    // solutions last, as they list every project file. C2J still writes them too, so the two outputs must match.
+    private void GenerateRepoFiles(UnitTestProjectManifest unitTestProject, CancellationToken ct)
+    {
+        ServiceProjectConfiguration[] configurations = [ServiceProjectConfigurations.NetFramework, ServiceProjectConfigurations.NetStandard];
+        var legacyUnitTests = new LegacyUnitTestProjectFileWriter(unitTestProject);
+        foreach (var configuration in configurations)
+        {
+            ServiceGenerator.WriteFile(Path.Combine(_sdkRoot, "test", "UnitTests", $"AWSSDK.UnitTests.{configuration.Variant}.csproj"), legacyUnitTests.Write(configuration), format: false, ct);
+        }
+        var solutions = new SdkSolutionFileWriter(_sdkRoot);
+        foreach (var configuration in configurations)
+        {
+            ServiceGenerator.WriteFile(Path.Combine(_sdkRoot, SdkSolutionFileWriter.FileName(configuration.Variant)), solutions.Write(configuration.Variant), format: false, ct);
+        }
+        ServiceGenerator.WriteFile(Path.Combine(_sdkRoot, CodeAnalysisSolutionFileWriter.FileName), new CodeAnalysisSolutionFileWriter(_sdkRoot).Write(), format: false, ct);
+        Log.Info($"Generated the SDK's solutions and legacy unit-test projects under '{Relative(_sdkRoot)}'.");
     }
 
     // The work is CPU-bound (mostly the Roslyn formatter), so one worker per core: at two per core the threads
@@ -224,7 +261,7 @@ public sealed class BatchGenerator(string repoRoot)
         return listed.Where(name => seen.Add(name)).Select(name => discovered[name]).ToList();
     }
 
-    private void GenerateService(DiscoveredModel service, SdkVersionManifest versionManifest, IReadOnlyList<ResolvedDefaultConfigurationMode> defaultConfigurationModes, CancellationToken ct)
+    private void GenerateService(DiscoveredModel service, SdkVersionManifest versionManifest, IReadOnlyList<ResolvedDefaultConfigurationMode> defaultConfigurationModes, UnitTestProjectManifest unitTestProject, CancellationToken ct)
     {
         var codeAnalysisRoot = SdkTreeLayout.ServiceCodeAnalysisRoot(repoRoot, service.Name);
         var testsRoot = SdkTreeLayout.ServiceTestsRoot(repoRoot, service.Name);
@@ -243,7 +280,7 @@ public sealed class BatchGenerator(string repoRoot)
             var index = new ServiceIndex(service.Model);
 
             // Everything that can fail without writing a file happens before any file is touched.
-            var context = new GenerationContext(index, versionManifest, service.Metadata, customizations);
+            var context = new GenerationContext(index, versionManifest, service.Metadata, customizations) { UnitTestProject = unitTestProject };
             UnsupportedTraitValidator.Validate(index, context.Protocol);
 
             var serviceFileVersion = versionManifest.GetServiceVersion(context.ServiceName);

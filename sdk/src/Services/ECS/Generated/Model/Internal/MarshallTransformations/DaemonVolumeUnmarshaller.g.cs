@@ -60,6 +60,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("logDriverVolumeConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = LogDriverVolumeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LogDriverVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

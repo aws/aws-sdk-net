@@ -69,28 +69,43 @@ namespace Amazon.Runtime.Credentials.Internal
     public class LoginTokenManager : ILoginTokenManager
     {
         private readonly ILogger _logger = Logger.GetLogger(typeof(LoginTokenManager));
-        private readonly Lazy<ICoreAmazonSignin> _amazonSigninClient;
+        private readonly Func<string, ICoreAmazonSignin> _amazonSigninClientFactory;
+        // Keyed by region.
+        private readonly ConcurrentDictionary<string, ICoreAmazonSignin> _amazonSigninClients =
+                new ConcurrentDictionary<string, ICoreAmazonSignin>();
         private readonly ILoginTokenFileCache _loginTokenFileCache;
         private readonly ConcurrentDictionary<string, LoginTokenManager.CacheState> _inMemoryCache =
                 new ConcurrentDictionary<string, CacheState>();
 
+        /// <summary>
+        /// Uses <paramref name="amazonSigninClient"/> for every refresh, whatever region the cached Login Token was issued in.
+        /// The client must be configured for the region the token was issued in.
+        /// </summary>
         public LoginTokenManager(
             ICoreAmazonSignin amazonSigninClient,
             ILoginTokenFileCache loginTokenFileCache)
-            : this(() => amazonSigninClient, loginTokenFileCache)
+            : this(_ => amazonSigninClient, loginTokenFileCache)
         {
         }
 
         /// <summary>
-        /// Creates the Signin client only when a token needs to be refreshed.
+        /// Creates a Signin client for a region only when a token needs to be refreshed there.
+        /// The factory receives null when no region is known and must resolve one itself.
         /// </summary>
         internal LoginTokenManager(
-            Func<ICoreAmazonSignin> amazonSigninClientFactory,
+            Func<string, ICoreAmazonSignin> amazonSigninClientFactory,
             ILoginTokenFileCache loginTokenFileCache)
         {
-            // PublicationOnly does not cache a factory failure, so a later refresh can retry.
-            _amazonSigninClient = new Lazy<ICoreAmazonSignin>(amazonSigninClientFactory, LazyThreadSafetyMode.PublicationOnly);
+            _amazonSigninClientFactory = amazonSigninClientFactory;
             _loginTokenFileCache = loginTokenFileCache;
+        }
+
+        private ICoreAmazonSignin GetSigninClient(LoginToken loginToken, LoginTokenManagerGetTokenOptions options)
+        {
+            var region = string.IsNullOrEmpty(loginToken.SignInRegion) ? options.Region : loginToken.SignInRegion;
+
+            // GetOrAdd does not cache a factory failure, so a later refresh can retry.
+            return _amazonSigninClients.GetOrAdd(region ?? string.Empty, _ => _amazonSigninClientFactory(region));
         }
 
         private class RefreshState
@@ -381,7 +396,7 @@ namespace Amazon.Runtime.Credentials.Internal
                                 };
 
                                 // Token is now saved (cached) in AmazonSigninPostMarshallerHandler pipeline handler where it calculates DPoP proof as well.
-                                _amazonSigninClient.Value.CreateOAuth2Token(coreCreateOAuth2TokenRequest, false);
+                                GetSigninClient(loginToken, options).CreateOAuth2Token(coreCreateOAuth2TokenRequest, false);
                             },
                             loginToken);
 
@@ -602,7 +617,7 @@ namespace Amazon.Runtime.Credentials.Internal
                                 };
 
                                 // Token is now saved (cached) in AmazonSigninPostMarshallerHandler pipeline handler where it calculates DPoP proof as well.
-                                await _amazonSigninClient.Value.CreateOAuth2TokenAsync(coreCreateOAuth2TokenRequest, false, cancellationToken).ConfigureAwait(false);
+                                await GetSigninClient(loginToken, options).CreateOAuth2TokenAsync(coreCreateOAuth2TokenRequest, false, cancellationToken).ConfigureAwait(false);
                             },
                             loginToken).ConfigureAwait(false);
 

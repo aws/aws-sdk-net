@@ -31,7 +31,7 @@ using Amazon.ServiceDiscovery.Endpoints;
 namespace Amazon.ServiceDiscovery.Internal
 {
     /// <summary>
-    /// Amazon ServiceDiscovery endpoint resolver.
+    /// AWS Cloud Map endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ServiceDiscovery service requests.
     /// <para />

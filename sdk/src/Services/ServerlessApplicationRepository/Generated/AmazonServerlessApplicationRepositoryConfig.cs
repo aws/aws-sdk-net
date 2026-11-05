@@ -27,12 +27,12 @@ using Amazon.ServerlessApplicationRepository.Internal;
 namespace Amazon.ServerlessApplicationRepository
 {
     /// <summary>
-    /// Configuration for accessing Amazon ServerlessApplicationRepository service
+    /// Configuration for accessing AWSServerlessApplicationRepository
     /// </summary>
     public partial class AmazonServerlessApplicationRepositoryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ServerlessApplicationRepository", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("ServerlessApplicationRepository", "4.0.100.23");
 
         private static readonly AmazonServerlessApplicationRepositoryEndpointResolver EndpointResolver =
             new AmazonServerlessApplicationRepositoryEndpointResolver();

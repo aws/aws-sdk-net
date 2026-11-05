@@ -59,6 +59,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActivationOverrideBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("DesiredStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DesiredStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

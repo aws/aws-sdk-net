@@ -27,12 +27,12 @@ using Amazon.AppRunner.Internal;
 namespace Amazon.AppRunner
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppRunner service
+    /// Configuration for accessing AWS App Runner
     /// </summary>
     public partial class AmazonAppRunnerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AppRunner", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("AppRunner", "4.0.100.22");
 
         private static readonly AmazonAppRunnerEndpointResolver EndpointResolver =
             new AmazonAppRunnerEndpointResolver();

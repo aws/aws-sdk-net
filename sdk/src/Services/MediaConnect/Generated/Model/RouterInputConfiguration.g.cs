@@ -35,6 +35,19 @@ namespace Amazon.MediaConnect.Model
     public partial class RouterInputConfiguration
     {
         /// <summary>
+        /// Gets and sets the property DestinationEndpoint. 
+        /// <para>
+        /// Configuration settings for a router input that is represented by a destination endpoint.
+        /// </para>
+        /// </summary>
+        public DestinationEndpointRouterInputConfiguration DestinationEndpoint { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DestinationEndpoint property is set.
+        /// </summary>
+        internal bool IsSetDestinationEndpoint() => this.DestinationEndpoint != null;
+
+        /// <summary>
         /// Gets and sets the property Failover.
         /// </summary>
         public FailoverRouterInputConfiguration Failover { get; set; }

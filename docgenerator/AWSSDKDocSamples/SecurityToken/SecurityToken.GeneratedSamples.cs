@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
     {
         public void SecurityTokenServiceAssumeRole()
         {
-            #region to-assume-a-role-1480532402212
+            #region AssumeRole-1
 
             var client = new AmazonSecurityTokenServiceClient();
-            var response = client.AssumeRole(new AssumeRoleRequest 
+            var response = client.AssumeRole(new AssumeRoleRequest
             {
                 ExternalId = "123ABC",
                 Policy = "escaped-JSON-IAM-POLICY",
@@ -44,17 +45,17 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
 
             AssumedRoleUser assumedRoleUser = response.AssumedRoleUser;
             Credentials credentials = response.Credentials;
-            int packedPolicySize = response.PackedPolicySize;
+            int? packedPolicySize = response.PackedPolicySize;
 
             #endregion
         }
 
         public void SecurityTokenServiceAssumeRoleWithSAML()
         {
-            #region to-assume-role-with-saml-14882749597814
+            #region AssumeRoleWithSAML-1
 
             var client = new AmazonSecurityTokenServiceClient();
-            var response = client.AssumeRoleWithSAML(new AssumeRoleWithSAMLRequest 
+            var response = client.AssumeRoleWithSAML(new AssumeRoleWithSAMLRequest
             {
                 DurationSeconds = 3600,
                 PrincipalArn = "arn:aws:iam::123456789012:saml-provider/SAML-test",
@@ -67,7 +68,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             Credentials credentials = response.Credentials;
             string issuer = response.Issuer;
             string nameQualifier = response.NameQualifier;
-            int packedPolicySize = response.PackedPolicySize;
+            int? packedPolicySize = response.PackedPolicySize;
             string subject = response.Subject;
             string subjectType = response.SubjectType;
 
@@ -76,10 +77,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
 
         public void SecurityTokenServiceAssumeRoleWithWebIdentity()
         {
-            #region to-assume-a-role-as-an-openid-connect-federated-user-1480533445696
+            #region AssumeRoleWithWebIdentity-1
 
             var client = new AmazonSecurityTokenServiceClient();
-            var response = client.AssumeRoleWithWebIdentity(new AssumeRoleWithWebIdentityRequest 
+            var response = client.AssumeRoleWithWebIdentity(new AssumeRoleWithWebIdentityRequest
             {
                 DurationSeconds = 3600,
                 Policy = "escaped-JSON-IAM-POLICY",
@@ -92,7 +93,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             AssumedRoleUser assumedRoleUser = response.AssumedRoleUser;
             string audience = response.Audience;
             Credentials credentials = response.Credentials;
-            int packedPolicySize = response.PackedPolicySize;
+            int? packedPolicySize = response.PackedPolicySize;
             string provider = response.Provider;
             string subjectFromWebIdentityToken = response.SubjectFromWebIdentityToken;
 
@@ -101,10 +102,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
 
         public void SecurityTokenServiceAssumeRoot()
         {
-            #region to-launch-a-privileged-session-1731335424565
+            #region AssumeRoot-1
 
             var client = new AmazonSecurityTokenServiceClient();
-            var response = client.AssumeRoot(new AssumeRootRequest 
+            var response = client.AssumeRoot(new AssumeRootRequest
             {
                 DurationSeconds = 900,
                 TargetPrincipal = "111122223333",
@@ -119,10 +120,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
 
         public void SecurityTokenServiceDecodeAuthorizationMessage()
         {
-            #region to-decode-information-about-an-authorization-status-of-a-request-1480533854499
+            #region DecodeAuthorizationMessage-1
 
             var client = new AmazonSecurityTokenServiceClient();
-            var response = client.DecodeAuthorizationMessage(new DecodeAuthorizationMessageRequest 
+            var response = client.DecodeAuthorizationMessage(new DecodeAuthorizationMessageRequest
             {
                 EncodedMessage = "<encoded-message>"
             });
@@ -134,10 +135,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
 
         public void SecurityTokenServiceGetCallerIdentity()
         {
-            #region to-get-details-about-a-calling-iam-user-1480540050376
+            #region GetCallerIdentity-1
 
             var client = new AmazonSecurityTokenServiceClient();
-            var response = client.GetCallerIdentity(new GetCallerIdentityRequest 
+            var response = client.GetCallerIdentity(new GetCallerIdentityRequest
             {
             });
 
@@ -150,10 +151,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
 
         public void SecurityTokenServiceGetCallerIdentity()
         {
-            #region to-get-details-about-a-calling-user-federated-with-assumerole-1480540158545
+            #region GetCallerIdentity-2
 
             var client = new AmazonSecurityTokenServiceClient();
-            var response = client.GetCallerIdentity(new GetCallerIdentityRequest 
+            var response = client.GetCallerIdentity(new GetCallerIdentityRequest
             {
             });
 
@@ -166,10 +167,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
 
         public void SecurityTokenServiceGetCallerIdentity()
         {
-            #region to-get-details-about-a-calling-user-federated-with-getfederationtoken-1480540231316
+            #region GetCallerIdentity-3
 
             var client = new AmazonSecurityTokenServiceClient();
-            var response = client.GetCallerIdentity(new GetCallerIdentityRequest 
+            var response = client.GetCallerIdentity(new GetCallerIdentityRequest
             {
             });
 
@@ -182,10 +183,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
 
         public void SecurityTokenServiceGetFederationToken()
         {
-            #region to-get-temporary-credentials-for-a-role-by-using-getfederationtoken-1480540749900
+            #region GetFederationToken-1
 
             var client = new AmazonSecurityTokenServiceClient();
-            var response = client.GetFederationToken(new GetFederationTokenRequest 
+            var response = client.GetFederationToken(new GetFederationTokenRequest
             {
                 DurationSeconds = 3600,
                 Name = "testFedUserSession",
@@ -204,17 +205,17 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
 
             Credentials credentials = response.Credentials;
             FederatedUser federatedUser = response.FederatedUser;
-            int packedPolicySize = response.PackedPolicySize;
+            int? packedPolicySize = response.PackedPolicySize;
 
             #endregion
         }
 
         public void SecurityTokenServiceGetSessionToken()
         {
-            #region to-get-temporary-credentials-for-an-iam-user-or-an-aws-account-1480540814038
+            #region GetSessionToken-1
 
             var client = new AmazonSecurityTokenServiceClient();
-            var response = client.GetSessionToken(new GetSessionTokenRequest 
+            var response = client.GetSessionToken(new GetSessionTokenRequest
             {
                 DurationSeconds = 3600,
                 SerialNumber = "YourMFASerialNumber",
@@ -226,13 +227,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

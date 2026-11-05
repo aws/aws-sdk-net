@@ -2554,6 +2554,11 @@ namespace Amazon.WAFV2
         public static readonly ParameterExceptionField CHALLENGE_CONFIG = new ParameterExceptionField("CHALLENGE_CONFIG");
 
         /// <summary>
+        /// Constant CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG = new ParameterExceptionField("CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG");
+
+        /// <summary>
         /// Constant CHANGE_PROPAGATION_STATUS for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField CHANGE_PROPAGATION_STATUS = new ParameterExceptionField("CHANGE_PROPAGATION_STATUS");

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaStoreData.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MediaStoreData service
+    /// Service metadata for AWS Elemental MediaStore Data Plane
     /// </summary>
     public partial class AmazonMediaStoreDataMetadata : IServiceMetadata
     {

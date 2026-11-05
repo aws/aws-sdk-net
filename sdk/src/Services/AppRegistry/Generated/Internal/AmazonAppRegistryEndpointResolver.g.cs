@@ -31,7 +31,7 @@ using Amazon.AppRegistry.Endpoints;
 namespace Amazon.AppRegistry.Internal
 {
     /// <summary>
-    /// Amazon AppRegistry endpoint resolver.
+    /// AWS Service Catalog App Registry endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AppRegistry service requests.
     /// <para />

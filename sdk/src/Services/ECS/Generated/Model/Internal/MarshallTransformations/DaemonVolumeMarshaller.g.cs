@@ -56,6 +56,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetLogDriverVolumeConfiguration())
+            {
+                context.Writer.WritePropertyName("logDriverVolumeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LogDriverVolumeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LogDriverVolumeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

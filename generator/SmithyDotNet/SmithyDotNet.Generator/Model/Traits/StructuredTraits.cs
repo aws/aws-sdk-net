@@ -30,6 +30,10 @@ public static class StructuredTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/endpoint-traits.html#endpoint-trait" /></remarks>
     public static EndpointTrait? GetEndpoint(this Shape shape) => DeserializeTrait<EndpointTrait>(shape, "smithy.api#endpoint");
 
+    /// <summary>The XML namespace (uri, optional prefix) applied to a member's or shape's element (restXml).</summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/protocol-traits.html#xmlnamespace-trait" /></remarks>
+    public static XmlNamespaceTrait? GetXmlNamespace(this Shape shape) => DeserializeTrait<XmlNamespaceTrait>(shape, "smithy.api#xmlNamespace");
+
     /// <remarks><see href="https://smithy.io/2.0/spec/constraint-traits.html#length-trait" /></remarks>
     public static LengthTrait? GetLength(this Shape shape) => DeserializeTrait<LengthTrait>(shape, "smithy.api#length");
 

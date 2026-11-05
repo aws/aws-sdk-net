@@ -31,7 +31,7 @@ using Amazon.ChimeSDKIdentity.Endpoints;
 namespace Amazon.ChimeSDKIdentity.Internal
 {
     /// <summary>
-    /// Amazon ChimeSDKIdentity endpoint resolver.
+    /// Amazon Chime SDK Identity endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ChimeSDKIdentity service requests.
     /// <para />

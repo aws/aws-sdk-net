@@ -31,7 +31,7 @@ using Amazon.TimestreamInfluxDB.Endpoints;
 namespace Amazon.TimestreamInfluxDB.Internal
 {
     /// <summary>
-    /// Amazon TimestreamInfluxDB endpoint resolver.
+    /// Timestream InfluxDB endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for TimestreamInfluxDB service requests.
     /// <para />

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchOmni.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CloudWatchOmni service
+    /// Service metadata for CloudWatch Omni
     /// </summary>
     public partial class AmazonCloudWatchOmniMetadata : IServiceMetadata
     {

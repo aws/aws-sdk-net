@@ -143,6 +143,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetSubsidiaryAuthorizationSort())
+            {
+                context.Writer.WritePropertyName("SubsidiaryAuthorizationSort");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SubsidiaryAuthorizationSortMarshaller.Instance;
+                marshaller.Marshall(requestObject.SubsidiaryAuthorizationSort, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

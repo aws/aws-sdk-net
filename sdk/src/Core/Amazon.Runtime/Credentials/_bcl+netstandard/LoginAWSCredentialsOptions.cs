@@ -34,7 +34,8 @@ namespace Amazon.Runtime
         public string LoginSession { get; set; }
 
         /// <summary>
-        /// Region to be used for Signin client.
+        /// Region used to refresh the login credentials when the cached login token does not record the region it was issued in.
+        /// If not set, the default region resolution is used.
         /// </summary>
         public string Region { get; set; }
 

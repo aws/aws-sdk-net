@@ -72,6 +72,25 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetPolicyVariables() => this.PolicyVariables != null;
 
         /// <summary>
+        /// Gets and sets the property Route53ResolvedIPValidation. 
+        /// <para>
+        /// The settings that enable resolved IP validation for the policy. Resolved IP validation
+        /// verifies that a connection's destination IP address is one that the Amazon Route 53
+        /// Resolver returned in a DNS response for a domain. The response must come from a VPC
+        /// that's associated with the Route 53 Resolver DNS Firewall rule group that you specify.
+        /// This checks how the destination IP address was obtained, instead of relying only on
+        /// the domain that the client asserts in its TLS Server Name Indication (SNI) or HTTP
+        /// <c>Host</c> header. For more information, see <a>Route53ResolvedIPValidation</a>.
+        /// </para>
+        /// </summary>
+        public Route53ResolvedIPValidation Route53ResolvedIPValidation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Route53ResolvedIPValidation property is set.
+        /// </summary>
+        internal bool IsSetRoute53ResolvedIPValidation() => this.Route53ResolvedIPValidation != null;
+
+        /// <summary>
         /// Gets and sets the property StatefulDefaultActions. 
         /// <para>
         /// The default actions to take on a packet that doesn't match any stateful rules. The

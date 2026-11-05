@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AuditManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon AuditManager service
+    /// Configuration for accessing AWS Audit Manager
     /// </summary>
     public static class AmazonAuditManagerDefaultConfiguration
     {

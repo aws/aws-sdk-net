@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.JsonProtocol
 {
     /// <summary>
-    /// Configuration for accessing Amazon JsonProtocol service
+    /// Configuration for accessing Sample Json 1.1 Protocol Service
     /// </summary>
     public static class AmazonJsonProtocolDefaultConfiguration
     {

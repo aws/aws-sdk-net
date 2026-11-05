@@ -1,0 +1,10 @@
+{
+    "paginators": {
+        "ListBackendJobs": {
+            "inputToken": [ "NextToken" ],
+            "outputToken": [ "NextToken" ],
+            "pageSize": "MaxResults",
+            "items": [ "Jobs" ]
+        }
+    }
+}

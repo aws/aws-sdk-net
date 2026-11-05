@@ -39,7 +39,7 @@ namespace Amazon.Mgn.Model
     /// will receive a command to uninstall itself (within approximately 10 minutes). The
     /// following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState
     /// will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks
-    /// will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration
+    /// will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.etaDateTime
     /// will be nullified.
     /// </summary>
     public partial class DisconnectFromServiceRequest : AmazonMgnRequest

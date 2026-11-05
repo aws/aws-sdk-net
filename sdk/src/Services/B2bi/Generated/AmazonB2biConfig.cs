@@ -27,12 +27,12 @@ using Amazon.B2bi.Internal;
 namespace Amazon.B2bi
 {
     /// <summary>
-    /// Configuration for accessing Amazon B2bi service
+    /// Configuration for accessing AWS B2B Data Interchange
     /// </summary>
     public partial class AmazonB2biConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("b2bi", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("b2bi", "4.0.100.22");
 
         private static readonly AmazonB2biEndpointResolver EndpointResolver =
             new AmazonB2biEndpointResolver();

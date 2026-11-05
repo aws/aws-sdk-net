@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.KeyspacesStreams
 {
     /// <summary>
-    /// Configuration for accessing Amazon KeyspacesStreams service
+    /// Configuration for accessing Amazon Keyspaces Streams
     /// </summary>
     public static class AmazonKeyspacesStreamsDefaultConfiguration
     {

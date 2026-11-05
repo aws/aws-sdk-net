@@ -201,8 +201,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DevicePostureOptions. 
         /// <para>
         /// The device posture options for the Client VPN endpoint. Specifying this parameter
-        /// replaces the entire device posture configuration for the endpoint. To remove all device
-        /// trust providers, specify an empty list.
+        /// replaces the entire device posture configuration for the endpoint. To disable device
+        /// posture and remove all device trust providers, specify <c>false</c> for <c>Enabled</c>.
         /// </para>
         /// </summary>
         public DevicePostureOptions DevicePostureOptions

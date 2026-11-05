@@ -31,7 +31,7 @@ using Amazon.CodeStarconnections.Endpoints;
 namespace Amazon.CodeStarconnections.Internal
 {
     /// <summary>
-    /// Amazon CodeStarconnections endpoint resolver.
+    /// AWS CodeStar connections endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CodeStarconnections service requests.
     /// <para />

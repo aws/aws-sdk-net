@@ -31,7 +31,7 @@ using Amazon.SSOOIDC.Endpoints;
 namespace Amazon.SSOOIDC.Internal
 {
     /// <summary>
-    /// Amazon SSOOIDC endpoint resolver.
+    /// AWS SSO OIDC endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SSOOIDC service requests.
     /// <para />

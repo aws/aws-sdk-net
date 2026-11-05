@@ -1,3 +1,417 @@
+### 4.0.363.0 (2026-11-04 20:18 UTC)
+* AutoScaling (4.0.105.2)
+	* AutoScaling is now generated from its Smithy model. There are no changes to the public API.
+* CloudFormation (4.0.103.6)
+	* CloudFormation is now generated from its Smithy model. There are no changes to the public API.
+* CloudSearch (4.0.100.22)
+	* CloudSearch is now generated from its Smithy model.
+	* Added the Code property to DisabledOperationException, InternalException, InvalidTypeException, LimitExceededException, ResourceAlreadyExistsException, ResourceNotFoundException and ValidationException. It is populated from the Code element of the error response.
+* CloudWatch (4.0.107.3)
+	* CloudWatch is now generated from its Smithy model. There are no changes to the public API.
+* CognitoIdentity (4.0.100.22)
+	* CognitoIdentity is now generated from its Smithy model. There are no changes to the public API.
+* Connect (4.0.130.0)
+	* Adds support for retrieving associated cases in contact responses. The Contact object now includes a Cases field containing case IDs and reference numbers linked to the contact.
+* ConnectContactLens (4.0.102.0)
+	* Rules TBAC GA (Contact Lens V1) - Adds an optional ListFilter (CategoriesAttributeFilter with OrConditions, AndCondition and TagCondition) to ListRealtimeContactAnalysisSegments. This filters matched categories by rule tags. It also adds an optional RuleId to CategoryDetails in the response.
+* DocDB (4.0.102.1)
+	* DocDB is now generated from its Smithy model. There are no changes to the public API.
+* DynamoDBv2 (4.0.110.0)
+	* Adds StartBulkPutItems, DescribeBulkOperation, ListBulkOperations, and CancelBulkOperation for asynchronously loading Amazon S3 datasets into existing DynamoDB tables.
+* EC2 (4.0.132.0)
+	* Add the Unsupported SupportabilityScore to GetCapacityManagerSupportabilityScores.
+* ECS (4.0.110.0)
+	* Amazon ECS Managed Instances now supports the json-file log driver in task definitions. Daemon task definition volumes also support logDriverVolumeConfiguration, letting managed daemons read those logs.
+* ElastiCache (4.0.103.3)
+	* ElastiCache is now generated from its Smithy model. There are no changes to the public API.
+* ElasticBeanstalk (4.0.102.0)
+	* Adds DefaultAmiList to DescribePlatformVersion to return the default AMI for each processor architecture that a platform version supports.
+	* ElasticBeanstalk is now generated from its Smithy model. There are no changes to the public API.
+* ElasticLoadBalancing (4.0.100.22)
+	* ElasticLoadBalancing is now generated from its Smithy model. There are no changes to the public API.
+* ElasticLoadBalancingV2 (4.0.101.19)
+	* ElasticLoadBalancingV2 is now generated from its Smithy model. There are no changes to the public API.
+* ElasticMapReduce (4.0.102.0)
+	* Added StepAdditionalInfo on DescribeStep and ListSteps to surface YARN application IDs for steps.
+* IAMRolesAnywhere (4.0.102.0)
+	* Adds the crlDpRevocationEnabled field to enable automatic revocation checking using CRL distribution points in X.509 certificates.
+* IdentityManagement (4.0.103.14)
+	* IdentityManagement is now generated from its Smithy model. There are no changes to the public API.
+* IoTSiteWise (4.0.103.0)
+	* Adds support for an optional jobName on CreateDatasetExportJob. The jobName is returned by DescribeDatasetExportJob and ListDatasetExportJobs, making dataset export jobs easier to identify and track. If jobName is omitted, a default name is generated automatically.
+* LexRuntimeV2 (4.0.100.22)
+	* LexRuntimeV2 is now generated from its Smithy model.
+	* Marked PutSessionRequest.SessionStateValue as required ([AWSProperty(Required = true)]), matching the service model. The previous generator omitted it because of a bug; the service already rejected requests without it.
+* LookoutEquipment (4.0.101.0)
+	* Amazon Lookout for Equipment reached end of support on October 7, 2026. All Lookout for Equipment APIs are now marked as deprecated.
+* MarketplaceDiscovery (4.0.104.0)
+	* GetListing and SearchListings APIs now return G2 and PeerSpot review sources in review summaries.
+* Mgn (4.0.103.0)
+	* This release adds Migration Planning artifacts as a source environment for network migration definitions, and an optional clientToken on CreateNetworkMigrationDefinition so that retried requests don't create duplicate definitions.
+* MWAAServerless (4.0.102.0)
+	* Adding support to Environment Variables in MWAA Serverless
+* Neptune (4.0.100.22)
+	* Neptune is now generated from its Smithy model. There are no changes to the public API.
+* Polly (4.0.102.0)
+	* Amazon Polly now supports tagging lexicons. Use the new TagResource, UntagResource and ListTagsForResource APIs, or add tags when creating a lexicon with PutLexicon, to organize lexicons and control access with tag-based (ABAC) IAM policies.
+* RDS (4.0.108.0)
+	* Adding support for copying and tagging option groups with cross-Region DB snapshot copies, in the same account or across accounts.
+	* RDS is now generated from its Smithy model. There are no changes to the public API.
+* Redshift (4.0.102.13)
+	* Redshift is now generated from its Smithy model. There are no changes to the public API.
+* S3Tables (4.0.101.0)
+	* Amazon S3 Tables now supports migrating AWS Glue Data Catalog tables into S3 Table buckets. This release adds the StartTableMigration, SyncTableMigration, UpdateTableMigration, CompleteTableMigration, GetTableMigration, and ListTableMigrations APIs.
+* SecurityHub (4.0.107.0)
+	* Release Software APIs- GetSoftwareV2, GetSoftwareStatisticsV2 and GetSoftwareResourcesV2 to list software packages with aggregated resource count, get aggregated software statistics, and find the resources that contain a specific software package.
+* SecurityToken (4.0.101.8)
+	* SecurityToken is now generated from its Smithy model. There are no changes to the public API.
+* SimpleEmail (4.0.100.22)
+	* SimpleEmail is now generated from its Smithy model. There are no changes to the public API.
+* SimpleNotificationService (4.0.100.23)
+	* SimpleNotificationService is now generated from its Smithy model. There are no changes to the public API.
+* SimpleWorkflow (4.0.100.22)
+	* SimpleWorkflow is now generated from its Smithy model. There are no changes to the public API.
+* TaxSettings (4.0.103.0)
+	* Adds Colombia additional information (responsibility codes, taxpayer type code, and RUT issue date) and a rejection reason (statusReason) to tax registration responses, and adds Argentina and Uruguay tax registration types.
+* WorkSpaces (4.0.105.0)
+	* Add Ubuntu 24.04, Ubuntu 26.04, RHEL 9, RHEL10, Rocky 9 and Rocky 10 to OperatingSystemName and documentation update for WorkspaceProperties Protocols.
+* Core 4.0.102.17
+	* Fixed clock skew correction recording a false offset after long-running requests. The skew is now the response Date header minus the time the response headers were received, instead of being measured from the midpoint of the request round trip.
+	* Generated doc comments, assembly descriptions and NuGet package descriptions now use the service name from the service model. No API changes.
+	* Reuse the endpoint resolved during auth scheme resolution instead of evaluating the endpoint ruleset twice per request, and build partition property bags from a per-partition prototype.
+	* Stop the streaming JSON reader from exposing its pooled buffer after it has been returned to the pool, and read the whole body of a JSON error response so the response body in the exception message is complete.
+	* All service and extension packages updated to require new Core
+
+### 4.0.362.0 (2026-10-30 18:10 UTC)
+* BedrockAgentRuntime (4.0.105.0)
+	* Adds the CodeExecution step and codeExecution action to AgenticRetrieveStream trace events, showing when the agent runs code and which documents it reads.
+* CloudWatchLogs (4.0.107.0)
+	* Adds support for account-level retention policies in Amazon CloudWatch Logs. Customers can now use PutAccountPolicy with the new RETENTION POLICY type to set default log retention across all log groups in an account. Includes dry-run mode to preview the impact of policy changes before applying them.
+* Connect (4.0.129.0)
+	* Amazon Connect adds tag-based access control for Contact Lens rules. ListRealtimeContactAnalysisSegmentsV2 adds a ListFilter to return only category segments whose rules match given tags. PreEvaluationFilter now supports contact evaluation resources for OnContactEvaluationSubmit rules.
+* CustomerProfiles (4.0.104.0)
+	* Adds support for template ingestion controls in the GetProfileObjectTypeTemplate API response.
+* DocDB (4.0.102.0)
+	* Amazon DocumentDB now returns ServerlessV2PlatformVersion in DBCluster API responses and adds the DescribeServerlessV2PlatformVersions API to discover available platform versions and their capabilities.
+* Lambda (4.0.111.0)
+	* Adds ConsumptionMode to SelfManagedKafkaEventSourceConfig, letting Lambda event source mappings consume self-managed Apache Kafka topics as a queue. Set ConsumptionMode to Queue when creating an event source mapping.
+* Omics (4.0.105.0)
+	* Adds the outputUriPrefixMode parameter to StartRun and GetRun. You can now write run outputs directly under outputUri, without the prefixes the service adds by default. When you opt in, outputs overwrite existing objects at the same keys.
+* PrometheusService (4.0.103.0)
+	* Managed Prometheus collectors now support Amazon MSK consumer-group metrics for Amazon Managed Service for Prometheus and CloudWatch.
+* SageMaker (4.0.124.0)
+	* Create endpoints with AcceleratorPartitionLayouts on ProductionVariant and deploy inference components with AcceleratorPartitionType in ComputeResourceRequirements to divide accelerators into hardware-isolated NVIDIA MIG partitions, running multiple models per GPU. P4d, P5, G7, G7e.
+* TimestreamInfluxDB (4.0.105.0)
+	* Add DeploymentConfiguration field to CreateDbCluster and UpdateDbCluster APIs to support creation of heterogenous InfluxDB v3 Enterprise clusters.
+* Core 4.0.102.16
+	* Return the streaming JSON reader's pooled buffer once the root value has been read, and dispose the unmarshaller context for non-streaming responses, so JSON responses no longer allocate a fresh buffer per request.
+
+### 4.0.361.0 (2026-10-29 18:09 UTC)
+* AppMesh (4.0.100.22)
+	* AppMesh is now generated from its Smithy model. There are no changes to the public API.
+* AWSSupport (4.0.101.11)
+	* AWSSupport is now generated from its Smithy model. There are no changes to the public API.
+* BedrockAgentCore (4.0.116.0)
+	* Adds AgentCore Runtime session endpoint support, including sessionEndpointUrl on the InvokeAgentRuntime response
+* BedrockAgentCoreControl (4.0.125.0)
+	* Adds Session Endpoint Feature on AgentCore Runtime
+* CleanRooms (4.0.106.0)
+	* Adds support for the PySpark 2.0 analysis template format and for choosing the file format (CSV or Parquet) of protected job results written to Amazon S3, including in a membership's default job result configuration.
+* CloudHSM (4.0.100.22)
+	* CloudHSM is now generated from its Smithy model. CloudHsmInternalException and InvalidRequestException now expose the Retryable flag (bool?) that the service returns, hiding the base RetryableDetails property as CloudHsmServiceException already does.
+* CloudTrail (4.0.101.10)
+	* CloudTrail is now generated from its Smithy model. There are no changes to the public API.
+	* The X-Amz-Target request header now uses the service shape name (CloudTrail_20131101.{Operation}) instead of the legacy namespaced prefix; the service accepts both and other AWS SDKs already send the new form.
+* CloudWatchLogs (4.0.106.3)
+	* CloudWatchLogs is now generated from its Smithy model. There are no changes to the public API.
+* CodeDeploy (4.0.103.3)
+	* CodeDeploy is now generated from its Smithy model. There are no changes to the public API.
+* CodePipeline (4.0.101.3)
+	* CodePipeline is now generated from its Smithy model. There are no changes to the public API.
+* CognitoSync (4.0.100.22)
+	* CognitoSync is now generated from its Smithy model. There are no changes to the public API.
+* ConfigService (4.0.102.20)
+	* ConfigService is now generated from its Smithy model. There are no changes to the public API.
+* Connect (4.0.128.1)
+	* Connect is now generated from its Smithy model. There are no changes to the public API.
+* DataPipeline (4.0.100.22)
+	* DataPipeline is now generated from its Smithy model. There are no changes to the public API.
+	* The DescribeObjects, ListPipelines and QueryObjects paginators now stop when the response carries no marker instead of checking the HasMoreResults flag; the service omits the marker on the last page.
+* DeviceFarm (4.0.102.12)
+	* DeviceFarm is now generated from its Smithy model. There are no changes to the public API.
+* DirectConnect (4.0.103.8)
+	* DirectConnect is now generated from its Smithy model. There are no changes to the public API.
+* DirectoryService (4.0.100.22)
+	* DirectoryService is now generated from its Smithy model. There are no changes to the public API.
+* DynamoDBStreams (4.0.101.4)
+	* DynamoDBStreams is now generated from its Smithy model. There are no changes to the public API.
+* ElasticFileSystem (4.0.100.22)
+	* ElasticFileSystem is now generated from its Smithy model. There are no changes to the public API.
+* ElasticMapReduce (4.0.101.18)
+	* ElasticMapReduce is now generated from its Smithy model. BlockPublicAccessConfiguration now exposes the Classification, Configurations and Properties members that the service returns.
+* GameLift (4.0.104.5)
+	* GameLift is now generated from its Smithy model. There are no changes to the public API.
+* Glacier (4.0.100.22)
+	* Glacier is now generated from its Smithy model.
+	* Added the ListMultipartUploads paginator (IGlacierPaginatorFactory.ListMultipartUploads). The operation was always declared as paginated, but the previous generator skipped it.
+* Imagebuilder (4.0.104.0)
+	* This release adds support for on-demand AMI scanning with Amazon Inspector.
+* IoT (4.0.101.12)
+	* IoT is now generated from its Smithy model.
+	* Added the ListPrincipalThings, ListThings and ListTopicRules paginators (IIoTPaginatorFactory). The operations were always declared as paginated, but the previous generator skipped them.
+* KeyManagementService (4.0.101.1)
+	* KeyManagementService is now generated from its Smithy model. There are no changes to the public API.
+	* The DescribeCustomKeyStores, ListAliases, ListGrants, ListKeyPolicies, ListKeyRotations, ListKeys, ListResourceTags and ListRetirableGrants paginators now stop when the response carries no NextMarker instead of checking the Truncated flag; the service omits NextMarker on the last page.
+* Kinesis (4.0.104.8)
+	* Kinesis is now generated from its Smithy model. There are no changes to the public API.
+	* The ListStreams paginator now stops when the response carries no NextToken instead of checking the HasMoreStreams flag; the service omits NextToken on the last page, which is how the other Smithy-based SDKs already paginate it.
+* KinesisFirehose (4.0.100.22)
+	* KinesisFirehose is now generated from its Smithy model. There are no changes to the public API.
+* Lightsail (4.0.106.0)
+	* This release adds support for instance health status checks and system status checks.
+* MachineLearning (4.0.100.22)
+	* MachineLearning is now generated from its Smithy model. There are no changes to the public API.
+* Route53Domains (4.0.101.5)
+	* Route53Domains is now generated from its Smithy model. There are no changes to the public API.
+* S3 (4.0.104.8)
+	* Fix S3 Express sessions being shared between clients that use different credentials with the same AmazonS3Config. Each client now creates and caches its own sessions, keyed by bucket and credentials, and clients no longer dispose an S3ExpressCredentialProvider set on the config.
+* SimpleSystemsManagement (4.0.104.8)
+	* SimpleSystemsManagement is now generated from its Smithy model. There are no changes to the public API.
+* SQS (4.0.100.22)
+	* SQS is now generated from its Smithy model. There are no changes to the public API.
+* StorageGateway (4.0.100.22)
+	* StorageGateway is now generated from its Smithy model. There are no changes to the public API.
+* TimestreamQuery (4.0.100.22)
+	* TimestreamQuery is now generated from its Smithy model. There are no changes to the public API.
+* TimestreamWrite (4.0.100.22)
+	* TimestreamWrite is now generated from its Smithy model. There are no changes to the public API.
+* WAF (4.0.100.22)
+	* WAF is now generated from its Smithy model. There are no changes to the public API.
+* WAFRegional (4.0.100.22)
+	* WAFRegional is now generated from its Smithy model. There are no changes to the public API.
+* WAFV2 (4.0.102.0)
+	* AWS WAF customers using Targeted Bot Control, ATP, or ACFP managed rule groups can now enable automatic Challenge JavaScript SDK injection. When enabled, Amazon CloudFront injects the script tag into HTML responses on your behalf, removing the need for manual integration.
+* WorkSpaces (4.0.104.3)
+	* WorkSpaces is now generated from its Smithy model. There are no changes to the public API.
+* Core 4.0.102.15
+	* Read the AWS_LAMBDA_FUNCTION_NAME environment variable once per process instead of on every request when setting the recursion detection header.
+	* Removed a lock from the cached logger lookup and avoided building debug log arguments during request path canonicalization unless a debug logger is attached.
+
+### 4.0.360.0 (2026-10-28 18:11 UTC)
+* Artifact (4.0.103.0)
+	* Update support mode for Assurance Assistance
+* CertificateManager (4.0.103.0)
+	* AWS Certificate Manager now supports the Automatic Certificate Management Environment (ACME) protocol in the AWS GovCloud (US-East) and AWS GovCloud (US-West) Regions.
+* Connect (4.0.128.0)
+	* Amazon Connect APIs - CreateTaskTemplate and UpdateTaskTemplate accept a new ContactHooks parameter called WrapUpFlowId to identify the flow module that runs when an agent attempts to disconnect from a task created with the template. Use this to verify an agent's work or update external case repos.
+* ConnectParticipant (4.0.101.0)
+	* Amazon Connect Participant Service now supports the optional UrlContentDisposition parameter on GetAttachment, which returns a pre-signed URL that renders a chat attachment inline in the browser instead of forcing a download.
+* EC2 (4.0.131.0)
+	* Amazon EC2 Capacity Manager adds supportability checks and capacity fulfillment metrics. Use GetCapacityManagerSupportabilityScores to score how well instance types and Availability Zones can support a capacity request, and GetCapacityManagerMetricData to retrieve fulfillment metrics.
+* IVS (4.0.103.0)
+	* InsertAdBreak now allows setting a customized adBreakId on a request and also adds a new field targetStartAt for a delayed ad insertion
+* KafkaConnect (4.0.103.0)
+	* Amazon MSK Connect now supports updating a connector's custom plugin and worker configuration via the UpdateConnector API. MSK Connect checks connector and task health after the update and rolls back on failure. Each call returns an operation ARN to track with DescribeConnectorOperation.
+* MediaLive (4.0.108.0)
+	* AWS Elemental MediaLive now supports SMPTE 2022-7 seamless protection switching for multicast inputs on MediaLive Anywhere. Support for MulticastSettings sources to add a redundant copy of the stream received on a second network interface.
+* Neptunedata (4.0.101.0)
+	* Get Storage API analyzes storage usage to identify database bloat and your storage footprint. Index Rebuild API triggers on-demand index reconstruction to eliminate bloat and restore query performance.
+* OpenSearchService (4.0.106.0)
+	* This release adds APIs to simplify setting up a replication relationship between OpenSearch clusters. The APIs include new Switchover and Failover actions for planned switchovers and unplanned failovers to ensure high availability for OpenSearch in the event of disaster in a single region.
+* SecurityAgent (4.0.114.0)
+	* Adds support for attaching client certificates for mutual TLS (mTLS) authentication to penetration test target endpoints via the new ClientCertificates field on Assets, enabling pentesting of endpoints that require client certificate authentication.
+
+### 4.0.359.0 (2026-10-27 18:12 UTC)
+* BedrockAgentCoreControl (4.0.124.0)
+	* Adds the ResetTokenVaultKeyMaterial API, which restores a token vault whose customer managed key was deleted by moving it to an AWS owned key. The reset permanently deletes the stored OAuth 2.0 tokens, users must consent again. Adds on-behalf-of token exchange client authentication override option.
+* DynamoDBv2 (4.0.109.3)
+	* DynamoDBv2 is now generated from its Smithy model. There are no changes to the public API.
+	* Added the InvalidEndpointException type. Operations that return HTTP 421 now throw InvalidEndpointException, a subclass of AmazonDynamoDBException, instead of the base exception.
+* EC2 (4.0.130.0)
+	* EC2 AMIs can now show vulnerability data and be targeted directly for scanning.
+* ECS (4.0.109.0)
+	* ECS now supports GPU sharing via NVIDIA Multi-Process Service (MPS) on ECS Managed Instances and ECS EC2, allowing multiple ECS tasks to share a single Nvidia GPU for improved utilization.
+* Inspector2 (4.0.107.0)
+	* Adding support for Machine Image scan
+* LicenseManager (4.0.102.0)
+	* AWS License Manager now supports delegate grants for read-only visibility into license distributions. CreateGrant accepts a new GrantType (BuyerGrant or DelegateGrant) and a desired status at distribution time.
+* Lightsail (4.0.105.0)
+	* Added the attributeUpdates parameter to the Lightsail StartInstance API, which allows customers to update the attributes of a stopped instance when starting it.
+
+### 4.0.358.0 (2026-10-26 18:11 UTC)
+* APIGateway (4.0.101.7)
+	* APIGateway is now generated from its Smithy model. The RetryAfterSeconds property on LimitExceededException, ServiceUnavailableException and TooManyRequestsException is now populated from the Retry-After response header.
+* AppStream (4.0.104.0)
+	* Add Windows 11 to PlatformType enum
+* BedrockAgentCoreControl (4.0.123.1)
+	* BedrockAgentCoreControl is now generated from its Smithy model. There are no changes to the public API.
+* Billing (4.0.106.0)
+	* Adds support for managing private pricing contracts and contractual investments including listing and associating contracts, retrieving contractual investments and their summaries, and creating, listing, and canceling contractual investment attestations
+* CertificateManager (4.0.102.13)
+	* CertificateManager is now generated from its Smithy model. There are no changes to the public API.
+* CloudWatchEvents (4.0.100.21)
+	* CloudWatchEvents is now generated from its Smithy model. There are no changes to the public API.
+* Connect (4.0.127.0)
+	* Amazon Connect now automatically saves agents' in-progress email drafts preserving the message, recipients, and subject during browser or network interruptions so agents can return to the mail and continue instead of starting over.
+* Deadline (4.0.103.6)
+	* fix the sdk documenation issue only
+* ECR (4.0.102.0)
+	* Add support for ECR replication backfill
+* EKS (4.0.108.0)
+	* This release adds support for EKS management of Gateway API CRDs (Custom Resource Definitions)
+* IVS (4.0.102.0)
+	* The release adds failover slate configurations, which show viewers a slate during temporary broadcaster network disruptions to reduce viewer drop-off and refresh storms.
+* KeyManagementService (4.0.101.0)
+	* This release adds support for ML-KEM (Module-Lattice-Based Key-Encapsulation Mechanism) keys in AWS KMS. ML-KEM, as specified in NIST FIPS 203, is a post-quantum key encapsulation mechanism that can be used to establish a shared secret between two parties.
+* Lambda (4.0.110.4)
+	* Lambda is now generated from its Smithy model. The RetryAfterSeconds property on TooManyRequestsException is now populated from the Retry-After response header.
+* Lightsail (4.0.104.0)
+	* This release adds Web Application Firewall (WAF) support for Lightsail distribution.
+* MarketplaceCatalog (4.0.106.0)
+	* This release adds support for the SubsidiaryAuthorization entity type in the ListEntities operation, including entity-type filters with partial name search, sort options, and a summary returned for each subsidiary authorization.
+* MediaConnect (4.0.104.0)
+	* This release adds support for managing and sharing endpoint across accounts in AWS Elemental MediaConnect. You can now register endpoints to represent external or service-managed sources and destinations, and share them across AWS accounts.
+* MediaLive (4.0.107.0)
+	* AWS Elemental MediaLive now lets you control whether explicit weighted prediction is applied to H.264 outputs. It also introduces Perceptual Filter, a new noise reduction filter designed to improve video quality by increasing VMAF scores, now with Auto, None, and strength options.
+	* MediaLive is now generated from its Smithy model. There are no changes to the public API.
+* Odb (4.0.104.0)
+	* Adds support for Exascale storage with Oracle Exadata Database Service on Dedicated Infrastructure
+* Pinpoint (4.0.100.21)
+	* Pinpoint is now generated from its Smithy model. There are no changes to the public API.
+* SageMaker (4.0.123.0)
+	* Amazon SageMaker HyperPod adds the MultiNodeTrainingValidation deep health check for clusters orchestrated by Amazon EKS. It validates NVIDIA GPU instances by running a short multi-node training workload and flags instances that produce numerical errors or fall behind expected training time.
+* Signin (4.0.102.0)
+	* Adds support for the OAuth 2.0 Token Exchange grant (RFC 8693), enabling applications to exchange identity provider issued JSON Web Tokens (JWTs) for short-lived OAuth access tokens to access supported AWS services without managing separate AWS credentials.
+	* Fixed the cached login token not recording the region the login was performed in. It is now saved as `signInRegion`, except when the Sign-In endpoint is overridden, and kept when the token is refreshed.
+* SSOAdmin (4.0.104.0)
+	* Added support for the RegionScope parameter on ListInstances, allowing you to list IAM Identity Center instances in the current Region or across all Regions.
+* TaxSettings (4.0.102.0)
+	* Add Mexico Additional Info changes
+* Core 4.0.102.14
+	* Aligned the layout of Core's generated `AssemblyInfo.cs` with the service assemblies. No functional changes.
+	* Fixed login credentials refreshing in the profile or default region instead of the region the login was performed in. Refresh is now sent to the `signInRegion` recorded in the cached login token, and tokens without it keep using the existing region resolution.
+	* All service and extension packages updated to require new Core
+
+### 4.0.357.0 (2026-10-22 18:12 UTC)
+* AccountAccess (4.0.101.12)
+	* AccountAccess is now generated from its Smithy model. There are no changes to the public API.
+* ApiGatewayV2 (4.0.100.21)
+	* ApiGatewayV2 is now generated from its Smithy model. There are no changes to the public API.
+* ApplicationDiscoveryService (4.0.100.21)
+	* ApplicationDiscoveryService is now generated from its Smithy model. There are no changes to the public API.
+* AppStream (4.0.103.4)
+	* AppStream is now generated from its Smithy model. There are no changes to the public API.
+* AWSHealth (4.0.102.5)
+	* AWSHealth is now generated from its Smithy model. There are no changes to the public API.
+* AWSMarketplaceCommerceAnalytics (4.0.100.21)
+	* AWSMarketplaceCommerceAnalytics is now generated from its Smithy model. There are no changes to the public API.
+* BedrockAgentCore (4.0.115.0)
+	* Adds the dimension name to evaluation results and batch evaluation summaries. For multi-dimensional LLM-as-a-Judge evaluators, each result and summary now identifies which dimension it corresponds to.
+* BedrockAgentCoreControl (4.0.123.0)
+	* Adds model-based routing and fallback to AgentCore Gateway rules. Rules can match the requested model, route to a specific model, and fall back across inference targets with an optional circuit breaker. Adds multi-dimensional rating scales for AgentCore Evaluations LLM-as-a-Judge evaluators.
+* Connect (4.0.126.0)
+	* Adds support for customer queryable replication errors.
+* Continuum (4.0.100.0)
+	* Releasing Continuum for Code Vulnerabilities APIs for SDKs
+* DatabaseMigrationService (4.0.100.22)
+	* DatabaseMigrationService is now generated from its Smithy model. There are no changes to the public API.
+* Deadline (4.0.103.5)
+	* Deadline is now generated from its Smithy model. The RetryAfterSeconds property on InternalServerErrorException and ThrottlingException is now populated from the Retry-After response header.
+* DevOpsGuru (4.0.100.21)
+	* DevOpsGuru is now generated from its Smithy model. The RetryAfterSeconds property on InternalServerException and ThrottlingException is now populated from the Retry-After response header.
+* Drs (4.0.104.2)
+	* Drs is now generated from its Smithy model. The RetryAfterSeconds property on InternalServerException and ThrottlingException is now populated from the Retry-After response header.
+* EC2 (4.0.129.0)
+	* AWS Transit Gateway now provides managed one-to-one NAT directly on its attachments, through integration with Regional Private NAT Gateway. Use ModifyTransitGatewayAttachmentNatConfiguration to enable NAT and configure NAT rules, and GetTransitGatewayAttachmentNatConfiguration to view them.
+* ElementalInference (4.0.107.0)
+	* Elemental Inference now supports feed scheduling, letting you apply feed configuration changes at a time you choose instead of building your own automation.
+* GlobalAccelerator (4.0.101.6)
+	* GlobalAccelerator is now generated from its Smithy model. There are no changes to the public API.
+* Glue (4.0.116.0)
+	* Add support for large worker types in AWS Glue
+* GuardDuty (4.0.111.2)
+	* GuardDuty is now generated from its Smithy model. There are no changes to the public API.
+* Inspector2 (4.0.106.7)
+	* Inspector2 is now generated from its Smithy model. The RetryAfterSeconds property on InternalServerException and ThrottlingException is now populated from the Retry-After response header.
+* IVSRealTime (4.0.102.0)
+	* Adds RevokeConnectionToken operation for Amazon IVS Real-Time Streaming.
+* KafkaConnect (4.0.102.0)
+	* Amazon MSK Connect now supports pausing and resuming connectors via the asynchronous PauseConnector and ResumeConnector APIs. Paused connectors keep their configuration and committed offsets and resume where they left off. Each call returns an operation ARN to track with DescribeConnectorOperation.
+* Lambda (4.0.110.3)
+	* AWS Lambda durable functions now supports payloads up to 1 MB for checkpoints, callback completion, and error details.
+* Lightsail (4.0.103.1)
+	* Lightsail is now generated from its Smithy model. There are no changes to the public API.
+* MTurk (4.0.100.21)
+	* MTurk is now generated from its Smithy model. There are no changes to the public API.
+* NetworkManager (4.0.101.0)
+	* AWS Cloud WAN now provides managed one-to-one NAT directly on it's core network attachments, through integration with Regional Private NAT Gateway. Use UpdateAttachmentNatConfiguration to enable NAT and configure NAT rules, and ListAttachmentNatConfigurations to view them.
+* OpenSearchServerless (4.0.101.0)
+	* Adds APIs to create, get, list, and cancel ingestion jobs, and to create, get, list, and delete ingestion streams, for ingesting data from Amazon S3 into OpenSearch Serverless collections.
+	* OpenSearchServerless is now generated from its Smithy model. There are no changes to the public API.
+* Resiliencehubv2 (4.0.105.4)
+	* Resiliencehubv2 is now generated from its Smithy model. There are no changes to the public API.
+* ResourceGroups (4.0.100.21)
+	* ResourceGroups is now generated from its Smithy model. There are no changes to the public API.
+* SageMakerGeospatial (4.0.100.21)
+	* SageMakerGeospatial is now generated from its Smithy model. There are no changes to the public API.
+* Scheduler (4.0.100.21)
+	* Scheduler is now generated from its Smithy model. There are no changes to the public API.
+* Shield (4.0.100.21)
+	* Shield is now generated from its Smithy model. There are no changes to the public API.
+
+### 4.0.356.0 (2026-10-21 18:15 UTC)
+* AmplifyBackend (4.0.100.20)
+	* AmplifyBackend is now generated from its Smithy model. There are no changes to the public API.
+* AutoScaling (4.0.105.0)
+	* EC2 Auto Scaling now supports account settings, letting you manage account-level configuration for Auto Scaling.
+* BedrockRuntime (4.0.101.13)
+	* BedrockRuntime is now generated from its Smithy model. There are no changes to the public API.
+* Budgets (4.0.101.4)
+	* Budgets is now generated from its Smithy model. There are no changes to the public API.
+* Cloud9 (4.0.100.20)
+	* Cloud9 is now generated from its Smithy model. The exception classes now expose the ClassName and Code properties returned by the service.
+* CloudSearchDomain (4.0.100.20)
+	* CloudSearchDomain is now generated from its Smithy model. There are no changes to the public API.
+* Connect (4.0.125.0)
+	* Added support for AWS-managed security profiles.
+* DataZone (4.0.111.0)
+	* Added custom designations support with new CRUD APIs. The designation field in project membership and policy grant APIs supports a new enum for custom designations. These APIs also support a new field for custom designation id.
+* DevOpsAgent (4.0.107.0)
+	* Adds support for Microsoft Teams as a notification service. Associations can now be created and updated with a Microsoft Teams team and channel configuration using the DevOps Agent API and SDKs.
+* EC2 (4.0.128.0)
+	* Adds new response fields to DescribeInstanceStatus and Network Insights analysis results.
+* HealthLake (4.0.104.0)
+	* Update the UpdateProfileWithAgent API to return a streaming response to provide more frequent updates on what the agent is doing.
+* Imagebuilder (4.0.103.2)
+	* Imagebuilder is now generated from its Smithy model. There are no changes to the public API.
+* LexModelsV2 (4.0.102.0)
+	* Adds support for Assisted NLU - Dialog Manager mode allowing usage of LLMs as the default NLU system and dialog management
+* Lightsail (4.0.103.0)
+	* This release adds support for metrics related to system-disk performance.
+* MarketplaceDiscovery (4.0.103.6)
+	* MarketplaceDiscovery is now generated from its Smithy model. There are no changes to the public API.
+* MediaConvert (4.0.106.0)
+	* Adds AV1 CBR rate control and scene change detection. New sliding window peak bitrate setting for all codecs. DASH adaptation set grouping update. Option to disable the AV1 perceptual quality filter. Support for vertical (portrait) AV1 encoding.
+* NetworkFirewall (4.0.106.0)
+	* Adds support for Network Firewall Resolved IP validation.
+* Notifications (4.0.101.6)
+	* Notifications is now generated from its Smithy model. The RetryAfterSeconds property on ThrottlingException is now populated from the Retry-After response header.
+* Polly (4.0.101.0)
+	* Added support for the new voices - Kenneth (en-US), Nate (en-US), Tina (de-DE), Carlos (es-US), Carolina (pt-BR), Leo (pt-BR), Curtis (en-AU), Kiara (en-IN), Arjun (en-IN) and Hyunduk (ko-KR). They are available as a Generative voices only.
+* QApps (4.0.100.20)
+	* QApps is now generated from its Smithy model. The RetryAfterSeconds property on InternalServerException and ThrottlingException is now populated from the Retry-After response header.
+* QuickSight (4.0.112.0)
+	* Adds support for SharePoint and OneDrive two-legged OAuth certificate credentials and Google Workspace service account credentials when creating data sources
+* RedshiftDataAPIService (4.0.104.0)
+	* Add Redshift QueryUUID field to DescribeStatement response
+* Signin (4.0.101.17)
+	* Signin is now generated from its Smithy model. There are no changes to the public API.
+* StepFunctions (4.0.101.0)
+	* Release minor updates to API model
+* Core 4.0.102.13
+	* Added validation of event-stream header name and value byte lengths during encoding so that oversized values are rejected rather than having their length field truncated.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.355.0 (2026-10-20 18:20 UTC)
 * Bedrock (4.0.104.0)
 	* Amazon Bedrock Guardrails now supports a configurable tier for the contextual grounding policy via a new tier option. Select the Standard tier for grounding that better supports conversations and reasoning, with expanded language coverage.

@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.csproj"/>
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj"/>
+    <ProjectReference Include="../../../../src/Services/CloudTrailData/AWSSDK.CloudTrailData.NetFramework.csproj"/>
+    <ProjectReference Include="../../../../src/Services/Kinesis/AWSSDK.Kinesis.NetFramework.csproj"/>
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetStandard.csproj"/>
+    <ProjectReference Include="../../../../src/Services/CloudTrailData/AWSSDK.CloudTrailData.NetStandard.csproj"/>
+    <ProjectReference Include="../../../../src/Services/Kinesis/AWSSDK.Kinesis.NetStandard.csproj"/>
+  </ItemGroup>
+</Project>

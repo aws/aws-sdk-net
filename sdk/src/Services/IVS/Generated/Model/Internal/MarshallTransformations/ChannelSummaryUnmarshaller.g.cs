@@ -74,6 +74,13 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("failoverSlateConfigurationArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FailoverSlateConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("insecureIngest", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

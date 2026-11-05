@@ -26,7 +26,7 @@ using Amazon.BedrockDataAutomationRuntime.Endpoints;
 namespace Amazon.BedrockDataAutomationRuntime.Internal
 {
     /// <summary>
-    /// Amazon BedrockDataAutomationRuntime endpoint provider.
+    /// Runtime for Amazon Bedrock Data Automation endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BedrockDataAutomationRuntimeEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

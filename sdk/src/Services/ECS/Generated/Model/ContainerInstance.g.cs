@@ -148,6 +148,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetEc2InstanceId() => this.Ec2InstanceId != null;
 
         /// <summary>
+        /// Gets and sets the property GpuDevices. 
+        /// <para>
+        /// The state of each GPU on the container instance, including its sharing mode and available
+        /// memory. This field is present only for container instances that support GPU sharing.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<GpuDevice> GpuDevices { get; set; } = AWSConfigs.InitializeCollections ? new List<GpuDevice>() : null;
+
+        /// <summary>
+        /// Checks to see if the GpuDevices property is set.
+        /// </summary>
+        internal bool IsSetGpuDevices() => this.GpuDevices != null && (this.GpuDevices.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
         /// An object representing the health status of the container instance.

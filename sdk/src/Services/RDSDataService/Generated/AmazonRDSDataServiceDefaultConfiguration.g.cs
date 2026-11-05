@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.RDSDataService
 {
     /// <summary>
-    /// Configuration for accessing Amazon RDSDataService service
+    /// Configuration for accessing AWS RDS DataService
     /// </summary>
     public static class AmazonRDSDataServiceDefaultConfiguration
     {

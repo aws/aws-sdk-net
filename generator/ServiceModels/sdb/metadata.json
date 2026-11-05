@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Amazon SimpleDB is a highly available, scalable, and flexible non-relational data store that enables you to store and query data items using web services requests.",
+  "base-name": "SimpleDB",
   "legacy-service-id": "SimpleDB"
 }

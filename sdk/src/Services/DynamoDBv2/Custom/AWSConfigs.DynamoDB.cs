@@ -5,7 +5,7 @@ using System.IO;
 
 using System.Xml.Linq;
 
-#if BCL
+#if NETFRAMEWORK
 using System.Xml;
 using System.Configuration;
 #endif
@@ -31,7 +31,7 @@ namespace Amazon
         {
             try
             {
-#if BCL
+#if NETFRAMEWORK
                 var root = new RootConfig();
                 var section = root.GetServiceSection(dynamoDBKey);
                 if (section == null)
@@ -74,7 +74,7 @@ namespace Amazon
         /// </summary>
         public static Util.DynamoDBContextConfig Context { get; private set; }
 
-#if BCL
+#if NETFRAMEWORK
         internal static void Configure(DynamoDBSection section)
         {
             Context = new Util.DynamoDBContextConfig();
@@ -182,7 +182,7 @@ namespace Amazon.Util
             TypeMappings = new Dictionary<Type, TypeMapping>();
         }
 
-#if BCL
+#if NETFRAMEWORK
         internal void Configure(DynamoDBContextSection section)
         {
             if (section != null && section.ElementInformation.IsPresent)
@@ -275,7 +275,7 @@ namespace Amazon.Util
             PropertyConfigs = new Dictionary<string, PropertyConfig>(StringComparer.Ordinal);
         }
 
-#if BCL
+#if NETFRAMEWORK
         internal TypeMapping(TypeMappingElement mapping)
             : this(mapping.Type, mapping.TargetTable)
         {
@@ -334,7 +334,7 @@ namespace Amazon.Util
             Name = propertyName;
         }
 
-#if BCL
+#if NETFRAMEWORK
         internal PropertyConfig(PropertyConfigElement prop)
             : this(prop.Name)
         {
@@ -352,7 +352,7 @@ namespace Amazon.Util
 
     #region DynamoDB sections
 
-#if BCL
+#if NETFRAMEWORK
 
     internal class DynamoDBSectionRoot : WritableConfigurationElement
     {

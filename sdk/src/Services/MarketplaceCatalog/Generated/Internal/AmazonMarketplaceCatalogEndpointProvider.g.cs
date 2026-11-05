@@ -26,7 +26,7 @@ using Amazon.MarketplaceCatalog.Endpoints;
 namespace Amazon.MarketplaceCatalog.Internal
 {
     /// <summary>
-    /// Amazon MarketplaceCatalog endpoint provider.
+    /// AWS Marketplace Catalog Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MarketplaceCatalogEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

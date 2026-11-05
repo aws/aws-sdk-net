@@ -26,7 +26,7 @@ using Amazon.ARCRegionswitch.Endpoints;
 namespace Amazon.ARCRegionswitch.Internal
 {
     /// <summary>
-    /// Amazon ARCRegionswitch endpoint provider.
+    /// ARC - Region switch endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ARCRegionswitchEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

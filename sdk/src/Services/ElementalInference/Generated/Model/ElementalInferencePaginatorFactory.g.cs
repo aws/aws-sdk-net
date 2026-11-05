@@ -49,6 +49,14 @@ namespace Amazon.ElementalInference.Model
         }
 
         /// <summary>
+        /// Paginator for ListScheduleActions operation
+        /// </summary>
+        public IListScheduleActionsPaginator ListScheduleActions(ListScheduleActionsRequest request)
+        {
+            return new ListScheduleActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchFixtures operation
         /// </summary>
         public ISearchFixturesPaginator SearchFixtures(SearchFixturesRequest request)

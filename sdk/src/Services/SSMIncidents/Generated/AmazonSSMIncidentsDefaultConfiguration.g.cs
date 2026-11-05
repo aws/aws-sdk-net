@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SSMIncidents
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSMIncidents service
+    /// Configuration for accessing AWS Systems Manager Incident Manager
     /// </summary>
     public static class AmazonSSMIncidentsDefaultConfiguration
     {

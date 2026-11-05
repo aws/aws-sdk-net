@@ -31,7 +31,7 @@ using Amazon.PaymentCryptography.Endpoints;
 namespace Amazon.PaymentCryptography.Internal
 {
     /// <summary>
-    /// Amazon PaymentCryptography endpoint resolver.
+    /// Payment Cryptography Control Plane endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PaymentCryptography service requests.
     /// <para />

@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection.",
+  "base-name": "WAF",
   "legacy-service-id": "WAF"
 }

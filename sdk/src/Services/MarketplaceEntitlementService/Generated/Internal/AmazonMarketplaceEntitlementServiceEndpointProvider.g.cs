@@ -26,7 +26,7 @@ using Amazon.MarketplaceEntitlementService.Endpoints;
 namespace Amazon.MarketplaceEntitlementService.Internal
 {
     /// <summary>
-    /// Amazon MarketplaceEntitlementService endpoint provider.
+    /// AWS Marketplace Entitlement Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MarketplaceEntitlementServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

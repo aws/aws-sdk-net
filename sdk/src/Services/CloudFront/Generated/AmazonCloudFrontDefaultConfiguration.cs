@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudFront service
+    /// Configuration for accessing Amazon CloudFront
     /// </summary>
     public static class AmazonCloudFrontDefaultConfiguration
     {

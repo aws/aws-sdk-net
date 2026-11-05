@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Translate service
+    /// Service metadata for Amazon Translate
     /// </summary>
     public partial class AmazonTranslateMetadata : IServiceMetadata
     {

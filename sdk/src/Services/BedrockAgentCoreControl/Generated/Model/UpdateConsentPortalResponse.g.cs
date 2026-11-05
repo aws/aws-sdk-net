@@ -1,0 +1,214 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.BedrockAgentCoreControl.Model
+{
+    /// <summary>
+    /// This is the response object from the UpdateConsentPortal operation.
+    /// </summary>
+    public partial class UpdateConsentPortalResponse : AmazonWebServiceResponse
+    {
+        /// <summary>
+        /// Gets and sets the property ConsentPortalArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the consent portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string ConsentPortalArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ConsentPortalArn property is set.
+        /// </summary>
+        internal bool IsSetConsentPortalArn() => this.ConsentPortalArn != null;
+
+        /// <summary>
+        /// Gets and sets the property ConsentPortalId. 
+        /// <para>
+        /// The unique identifier of the consent portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string ConsentPortalId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ConsentPortalId property is set.
+        /// </summary>
+        internal bool IsSetConsentPortalId() => this.ConsentPortalId != null;
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The timestamp for when the consent portal was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public DateTime? CreatedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreatedAt property is set.
+        /// </summary>
+        internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the consent portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max = 512)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that the consent portal assumes to
+        /// access the resources defined in its sources.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string ExecutionRoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExecutionRoleArn property is set.
+        /// </summary>
+        internal bool IsSetExecutionRoleArn() => this.ExecutionRoleArn != null;
+
+        /// <summary>
+        /// Gets and sets the property IdpConfig. 
+        /// <para>
+        /// The identity provider configuration that the consent portal uses to authenticate end
+        /// users.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public ConsentPortalIdpConfig IdpConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdpConfig property is set.
+        /// </summary>
+        internal bool IsSetIdpConfig() => this.IdpConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the consent portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 50)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property PortalUrl. 
+        /// <para>
+        /// The URL used to access the consent portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2000)]
+        public string PortalUrl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PortalUrl property is set.
+        /// </summary>
+        internal bool IsSetPortalUrl() => this.PortalUrl != null;
+
+        /// <summary>
+        /// Gets and sets the property Sources. 
+        /// <para>
+        /// The resources served by the consent portal.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 1)]
+        public List<ConsentPortalSource> Sources { get; set; } = AWSConfigs.InitializeCollections ? new List<ConsentPortalSource>() : null;
+
+        /// <summary>
+        /// Checks to see if the Sources property is set.
+        /// </summary>
+        internal bool IsSetSources() => this.Sources != null && (this.Sources.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the consent portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public ConsentPortalStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// A message that provides additional information about the current status of the consent
+        /// portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1024)]
+        public string StatusReason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StatusReason property is set.
+        /// </summary>
+        internal bool IsSetStatusReason() => this.StatusReason != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The timestamp for when the consent portal was last updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public DateTime? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdatedAt property is set.
+        /// </summary>
+        internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
+    }
+}

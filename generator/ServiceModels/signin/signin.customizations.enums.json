@@ -1,0 +1,13 @@
+{
+    "shapeModifiers": {
+        "OAuth2ErrorCode": {
+            "modify" : [
+                {
+                    "invalid_request":{
+                        "emitPropertyName": "OAuth_Invalid_Request"
+                    }
+                }
+            ]
+        }
+    }
+}

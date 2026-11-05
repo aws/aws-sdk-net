@@ -26,7 +26,7 @@ using Amazon.ComputeOptimizerAutomation.Endpoints;
 namespace Amazon.ComputeOptimizerAutomation.Internal
 {
     /// <summary>
-    /// Amazon ComputeOptimizerAutomation endpoint provider.
+    /// Compute Optimizer Automation endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ComputeOptimizerAutomationEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

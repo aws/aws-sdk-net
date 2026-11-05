@@ -1,0 +1,179 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ElastiCache.Model
+{
+    /// <summary>
+    /// A group of settings that are applied to the cluster in the future, or that are currently
+    /// being applied.
+    /// </summary>
+    public partial class PendingModifiedValues
+    {
+        /// <summary>
+        /// Empty constructor used to set properties independently even when a simple constructor is available
+        /// </summary>
+        public PendingModifiedValues() { }
+
+        /// <summary>
+        /// Gets and sets the property AuthTokenStatus. 
+        /// <para>
+        /// The auth token status
+        /// </para>
+        /// </summary>
+        public AuthTokenUpdateStatus AuthTokenStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AuthTokenStatus property is set.
+        /// </summary>
+        internal bool IsSetAuthTokenStatus() => this.AuthTokenStatus != null;
+
+        /// <summary>
+        /// Gets and sets the property CacheNodeIdsToRemove. 
+        /// <para>
+        /// A list of cache node IDs that are being removed (or will be removed) from the cluster.
+        /// A node ID is a 4-digit numeric identifier (0001, 0002, etc.).
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> CacheNodeIdsToRemove { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the CacheNodeIdsToRemove property is set.
+        /// </summary>
+        internal bool IsSetCacheNodeIdsToRemove() => this.CacheNodeIdsToRemove != null && (this.CacheNodeIdsToRemove.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property CacheNodeType. 
+        /// <para>
+        /// The cache node type that this cluster or replication group is scaled to.
+        /// </para>
+        /// </summary>
+        public string CacheNodeType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CacheNodeType property is set.
+        /// </summary>
+        internal bool IsSetCacheNodeType() => this.CacheNodeType != null;
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The new cache engine version that the cluster runs.
+        /// </para>
+        /// </summary>
+        public string EngineVersion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EngineVersion property is set.
+        /// </summary>
+        internal bool IsSetEngineVersion() => this.EngineVersion != null;
+
+        /// <summary>
+        /// Gets and sets the property LogDeliveryConfigurations. 
+        /// <para>
+        /// The log delivery configurations being modified 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<PendingLogDeliveryConfiguration> LogDeliveryConfigurations { get; set; } = AWSConfigs.InitializeCollections ? new List<PendingLogDeliveryConfiguration>() : null;
+
+        /// <summary>
+        /// Checks to see if the LogDeliveryConfigurations property is set.
+        /// </summary>
+        internal bool IsSetLogDeliveryConfigurations() => this.LogDeliveryConfigurations != null && (this.LogDeliveryConfigurations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property NumCacheNodes. 
+        /// <para>
+        /// The new number of cache nodes for the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For clusters running Valkey or Redis OSS, this value must be 1. For clusters running
+        /// Memcached, this value must be between 1 and 40.
+        /// </para>
+        /// </summary>
+        public int? NumCacheNodes { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NumCacheNodes property is set.
+        /// </summary>
+        internal bool IsSetNumCacheNodes() => this.NumCacheNodes.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ScaleConfig. 
+        /// <para>
+        /// The scaling configuration changes that are pending for the Memcached cluster.
+        /// </para>
+        /// </summary>
+        public ScaleConfig ScaleConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ScaleConfig property is set.
+        /// </summary>
+        internal bool IsSetScaleConfig() => this.ScaleConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionEnabled. 
+        /// <para>
+        /// A flag that enables in-transit encryption when set to true.
+        /// </para>
+        /// </summary>
+        public bool? TransitEncryptionEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TransitEncryptionEnabled property is set.
+        /// </summary>
+        internal bool IsSetTransitEncryptionEnabled() => this.TransitEncryptionEnabled.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionMode. 
+        /// <para>
+        /// A setting that allows you to migrate your clients to use in-transit encryption, with
+        /// no downtime.
+        /// </para>
+        /// </summary>
+        public TransitEncryptionMode TransitEncryptionMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TransitEncryptionMode property is set.
+        /// </summary>
+        internal bool IsSetTransitEncryptionMode() => this.TransitEncryptionMode != null;
+    }
+}

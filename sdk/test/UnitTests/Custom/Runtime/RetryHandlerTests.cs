@@ -245,10 +245,10 @@ namespace AWSSDK.UnitTests
                 var requestEndpoint = ctx.RequestContext.Request.Endpoint.ToString();
                 Assert.AreEqual(TimeSpan.Zero, CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint));
 
-                // Record a +5 minute skew: midpoint of send/receive is 00:00:01, server Date is 00:05:01.
+                // Record a +5 minute skew: serverTime - received (00:00:02) = 300 s.
                 var send = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc);
                 AWSConfigs.utcNowSource = () => new DateTime(2026, 1, 1, 0, 0, 2, DateTimeKind.Utc);
-                var response = new ClockSkewResponseStub(HttpStatusCode.OK, "Thu, 01 Jan 2026 00:05:01 GMT");
+                var response = new ClockSkewResponseStub(HttpStatusCode.OK, "Thu, 01 Jan 2026 00:05:02 GMT");
                 ClockSkewPipelineHelper.RecordFromResponse(ctx, send, response);
 
                 // The learned correction lands on the REQUEST endpoint...

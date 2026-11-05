@@ -26,7 +26,7 @@ using Amazon.CleanRooms.Endpoints;
 namespace Amazon.CleanRooms.Internal
 {
     /// <summary>
-    /// Amazon CleanRooms endpoint provider.
+    /// AWS Clean Rooms Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CleanRoomsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

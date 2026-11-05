@@ -31,7 +31,7 @@ using Amazon.PartnerCentralRevenueMeasurement.Endpoints;
 namespace Amazon.PartnerCentralRevenueMeasurement.Internal
 {
     /// <summary>
-    /// Amazon PartnerCentralRevenueMeasurement endpoint resolver.
+    /// Partner Central Revenue Measurement API endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PartnerCentralRevenueMeasurement service requests.
     /// <para />

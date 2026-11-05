@@ -26,7 +26,7 @@ using Amazon.SSMContacts.Endpoints;
 namespace Amazon.SSMContacts.Internal
 {
     /// <summary>
-    /// Amazon SSMContacts endpoint provider.
+    /// AWS Systems Manager Incident Manager Contacts endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SSMContactsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

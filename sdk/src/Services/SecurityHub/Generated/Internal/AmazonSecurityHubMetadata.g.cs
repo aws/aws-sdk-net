@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SecurityHub service
+    /// Service metadata for AWS SecurityHub
     /// </summary>
     public partial class AmazonSecurityHubMetadata : IServiceMetadata
     {

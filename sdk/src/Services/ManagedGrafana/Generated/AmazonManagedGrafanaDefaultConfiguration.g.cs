@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ManagedGrafana
 {
     /// <summary>
-    /// Configuration for accessing Amazon ManagedGrafana service
+    /// Configuration for accessing Amazon Managed Grafana
     /// </summary>
     public static class AmazonManagedGrafanaDefaultConfiguration
     {

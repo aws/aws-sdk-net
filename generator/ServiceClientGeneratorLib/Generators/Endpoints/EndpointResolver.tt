@@ -23,7 +23,7 @@ using <#=Config.Namespace#>.Endpoints;
 namespace <#=Config.Namespace#>.Internal
 {
     /// <summary>
-    /// Amazon <#=this.Config.ClassName#> endpoint resolver.
+    /// <#=this.Config.ServiceModel.ServiceFullName#> endpoint resolver.
     /// Custom PipelineHandler responsible for resolving endpoint and setting authentication parameters for <#=this.Config.ClassName#> service requests.
     /// Collects values for <#=this.Config.ClassName#>EndpointParameters and then tries to resolve endpoint by calling 
     /// ResolveEndpoint method on GlobalEndpoints.Provider if present, otherwise uses <#=this.Config.ClassName#>EndpointProvider.

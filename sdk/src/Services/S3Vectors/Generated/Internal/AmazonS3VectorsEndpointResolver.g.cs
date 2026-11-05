@@ -31,7 +31,7 @@ using Amazon.S3Vectors.Endpoints;
 namespace Amazon.S3Vectors.Internal
 {
     /// <summary>
-    /// Amazon S3Vectors endpoint resolver.
+    /// Amazon S3 Vectors endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for S3Vectors service requests.
     /// <para />

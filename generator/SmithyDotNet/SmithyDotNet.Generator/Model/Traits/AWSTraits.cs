@@ -28,6 +28,23 @@ public static class AWSTraits
     /// <remarks><see href="https://smithy.io/2.0/additional-specs/protocols/smithy-rpc-v2-cbor.html#smithy-protocols-rpcv2cbor-trait" /></remarks>
     public static ProtocolTrait? GetRpcV2Cbor(this Shape shape) => DeserializeTrait<ProtocolTrait>(shape, "smithy.protocols#rpcv2Cbor");
 
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-restxml-protocol.html#aws-protocols-restxml-trait" /></remarks>
+    public static ProtocolTrait? GetRestXml(this Shape shape) => DeserializeTrait<ProtocolTrait>(shape, "aws.protocols#restXml");
+
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsquery-trait" /></remarks>
+    public static ProtocolTrait? GetAwsQuery(this Shape shape) => DeserializeTrait<ProtocolTrait>(shape, "aws.protocols#awsQuery");
+
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-ec2-query-protocol.html#aws-protocols-ec2query-trait" /></remarks>
+    public static ProtocolTrait? GetEc2Query(this Shape shape) => DeserializeTrait<ProtocolTrait>(shape, "aws.protocols#ec2Query");
+
+    /// <summary>The member's <c>aws.protocols#ec2QueryName</c>: its ec2Query request parameter name, used verbatim.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-ec2-query-protocol.html#aws-protocols-ec2queryname-trait" /></remarks>
+    public static string? GetEc2QueryName(this Shape shape) => GetStringTrait(shape, "aws.protocols#ec2QueryName");
+
+    /// <summary>The error's <c>aws.protocols#awsQueryError</c> customization (the wire <c>Code</c> awsQuery dispatches on), or null.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsqueryerror-trait" /></remarks>
+    public static AwsQueryErrorTrait? GetAwsQueryError(this Shape shape) => DeserializeTrait<AwsQueryErrorTrait>(shape, "aws.protocols#awsQueryError");
+
     /// <summary>Whether the service carries <c>aws.protocols#awsQueryCompatible</c>: it moved off awsQuery and still reports its old error codes in the <c>x-amzn-query-error</c> header.</summary>
     /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsquerycompatible-trait" /></remarks>
     public static bool HasAwsQueryCompatible(this Shape shape) => shape.Traits.ContainsKey("aws.protocols#awsQueryCompatible");

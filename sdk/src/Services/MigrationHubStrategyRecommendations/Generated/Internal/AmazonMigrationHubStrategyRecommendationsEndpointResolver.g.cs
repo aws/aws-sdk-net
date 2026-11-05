@@ -31,7 +31,7 @@ using Amazon.MigrationHubStrategyRecommendations.Endpoints;
 namespace Amazon.MigrationHubStrategyRecommendations.Internal
 {
     /// <summary>
-    /// Amazon MigrationHubStrategyRecommendations endpoint resolver.
+    /// Migration Hub Strategy Recommendations endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MigrationHubStrategyRecommendations service requests.
     /// <para />

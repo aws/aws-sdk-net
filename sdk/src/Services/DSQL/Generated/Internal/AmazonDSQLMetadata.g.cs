@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DSQL.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DSQL service
+    /// Service metadata for Amazon Aurora DSQL
     /// </summary>
     public partial class AmazonDSQLMetadata : IServiceMetadata
     {

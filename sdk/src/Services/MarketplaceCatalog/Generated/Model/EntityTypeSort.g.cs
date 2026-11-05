@@ -147,5 +147,18 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Checks to see if the SaaSProductSort property is set.
         /// </summary>
         internal bool IsSetSaaSProductSort() => this.SaaSProductSort != null;
+
+        /// <summary>
+        /// Gets and sets the property SubsidiaryAuthorizationSort. 
+        /// <para>
+        /// A sort for subsidiary authorizations.
+        /// </para>
+        /// </summary>
+        public SubsidiaryAuthorizationSort SubsidiaryAuthorizationSort { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SubsidiaryAuthorizationSort property is set.
+        /// </summary>
+        internal bool IsSetSubsidiaryAuthorizationSort() => this.SubsidiaryAuthorizationSort != null;
     }
 }

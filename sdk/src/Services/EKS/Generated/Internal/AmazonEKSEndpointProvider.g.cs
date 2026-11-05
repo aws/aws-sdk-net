@@ -26,7 +26,7 @@ using Amazon.EKS.Endpoints;
 namespace Amazon.EKS.Internal
 {
     /// <summary>
-    /// Amazon EKS endpoint provider.
+    /// Amazon Elastic Kubernetes Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="EKSEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

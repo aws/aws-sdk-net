@@ -120,6 +120,16 @@ namespace Amazon.MWAAServerless.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("EngineVersion");
                 context.Writer.WriteNumberValue(publicRequest.EngineVersion.Value);
             }
+            if (publicRequest.IsSetEnvironment())
+            {
+                context.Writer.WritePropertyName("Environment");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EnvironmentMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Environment, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetLoggingConfiguration())
             {
                 context.Writer.WritePropertyName("LoggingConfiguration");

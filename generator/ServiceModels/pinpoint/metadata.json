@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Amazon Pinpoint makes it easy to run targeted campaigns to improve user engagement. Pinpoint helps you understand your users behavior, define who to target, what messages to send, when to deliver them, and tracks the results of the campaign.",
+  "base-name": "Pinpoint",
   "legacy-service-id": "Pinpoint"
 }

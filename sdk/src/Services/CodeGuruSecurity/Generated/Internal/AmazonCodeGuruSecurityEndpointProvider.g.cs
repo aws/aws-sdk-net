@@ -26,7 +26,7 @@ using Amazon.CodeGuruSecurity.Endpoints;
 namespace Amazon.CodeGuruSecurity.Internal
 {
     /// <summary>
-    /// Amazon CodeGuruSecurity endpoint provider.
+    /// Amazon CodeGuru Security endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CodeGuruSecurityEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

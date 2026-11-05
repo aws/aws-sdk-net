@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.LookoutEquipment
 {
     /// <summary>
-    /// Configuration for accessing Amazon LookoutEquipment service
+    /// Configuration for accessing Amazon Lookout for Equipment
     /// </summary>
     public static class AmazonLookoutEquipmentDefaultConfiguration
     {

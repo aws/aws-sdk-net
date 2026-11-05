@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Amplify
 {
     /// <summary>
-    /// Configuration for accessing Amazon Amplify service
+    /// Configuration for accessing AWS Amplify
     /// </summary>
     public static class AmazonAmplifyDefaultConfiguration
     {

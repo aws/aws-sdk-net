@@ -1,0 +1,7 @@
+{
+    "paginators": {
+        "ListGroupResources": {
+            "items": [ "Resources" ]
+        }
+    }
+}

@@ -26,7 +26,7 @@ using Amazon.Pipes.Endpoints;
 namespace Amazon.Pipes.Internal
 {
     /// <summary>
-    /// Amazon Pipes endpoint provider.
+    /// Amazon EventBridge Pipes endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PipesEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -26,7 +26,7 @@ using Amazon.ComprehendMedical.Endpoints;
 namespace Amazon.ComprehendMedical.Internal
 {
     /// <summary>
-    /// Amazon ComprehendMedical endpoint provider.
+    /// AWS Comprehend Medical endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ComprehendMedicalEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

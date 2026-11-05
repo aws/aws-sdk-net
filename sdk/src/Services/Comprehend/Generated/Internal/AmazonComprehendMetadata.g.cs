@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Comprehend service
+    /// Service metadata for Amazon Comprehend
     /// </summary>
     public partial class AmazonComprehendMetadata : IServiceMetadata
     {

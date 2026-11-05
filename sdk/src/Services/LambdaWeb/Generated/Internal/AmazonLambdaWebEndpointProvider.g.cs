@@ -26,7 +26,7 @@ using Amazon.LambdaWeb.Endpoints;
 namespace Amazon.LambdaWeb.Internal
 {
     /// <summary>
-    /// Amazon LambdaWeb endpoint provider.
+    /// Lambda Web endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="LambdaWebEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

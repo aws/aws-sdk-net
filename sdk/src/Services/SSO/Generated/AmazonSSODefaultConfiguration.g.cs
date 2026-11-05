@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SSO
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSO service
+    /// Configuration for accessing AWS Single Sign-On
     /// </summary>
     public static class AmazonSSODefaultConfiguration
     {

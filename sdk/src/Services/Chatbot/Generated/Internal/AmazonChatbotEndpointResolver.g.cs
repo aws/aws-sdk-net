@@ -31,7 +31,7 @@ using Amazon.Chatbot.Endpoints;
 namespace Amazon.Chatbot.Internal
 {
     /// <summary>
-    /// Amazon Chatbot endpoint resolver.
+    /// AWS Chatbot endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Chatbot service requests.
     /// <para />

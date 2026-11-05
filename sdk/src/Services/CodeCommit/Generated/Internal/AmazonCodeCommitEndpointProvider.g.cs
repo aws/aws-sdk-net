@@ -26,7 +26,7 @@ using Amazon.CodeCommit.Endpoints;
 namespace Amazon.CodeCommit.Internal
 {
     /// <summary>
-    /// Amazon CodeCommit endpoint provider.
+    /// AWS CodeCommit endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CodeCommitEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

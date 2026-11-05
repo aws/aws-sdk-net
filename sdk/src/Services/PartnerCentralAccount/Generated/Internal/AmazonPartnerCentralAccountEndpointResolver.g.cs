@@ -31,7 +31,7 @@ using Amazon.PartnerCentralAccount.Endpoints;
 namespace Amazon.PartnerCentralAccount.Internal
 {
     /// <summary>
-    /// Amazon PartnerCentralAccount endpoint resolver.
+    /// Partner Central Account API endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PartnerCentralAccount service requests.
     /// <para />

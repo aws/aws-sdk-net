@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MainframeModernization.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MainframeModernization service
+    /// Service metadata for AWSMainframeModernization
     /// </summary>
     public partial class AmazonMainframeModernizationMetadata : IServiceMetadata
     {

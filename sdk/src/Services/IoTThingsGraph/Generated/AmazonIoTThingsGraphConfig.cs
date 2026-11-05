@@ -27,12 +27,12 @@ using Amazon.IoTThingsGraph.Internal;
 namespace Amazon.IoTThingsGraph
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTThingsGraph service
+    /// Configuration for accessing AWS IoT Things Graph
     /// </summary>
     public partial class AmazonIoTThingsGraphConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoTThingsGraph", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("IoTThingsGraph", "4.0.100.23");
 
         private static readonly AmazonIoTThingsGraphEndpointResolver EndpointResolver =
             new AmazonIoTThingsGraphEndpointResolver();

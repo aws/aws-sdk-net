@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudWatchOmni
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudWatchOmni service
+    /// Configuration for accessing CloudWatch Omni
     /// </summary>
     public static class AmazonCloudWatchOmniDefaultConfiguration
     {

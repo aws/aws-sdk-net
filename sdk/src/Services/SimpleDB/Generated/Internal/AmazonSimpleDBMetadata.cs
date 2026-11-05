@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleDB.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon SimpleDB service
+    /// Service metadata for Amazon SimpleDB
     /// </summary>
     public partial class AmazonSimpleDBMetadata : IServiceMetadata
     {

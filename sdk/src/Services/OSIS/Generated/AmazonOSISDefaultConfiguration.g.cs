@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.OSIS
 {
     /// <summary>
-    /// Configuration for accessing Amazon OSIS service
+    /// Configuration for accessing Amazon OpenSearch Ingestion
     /// </summary>
     public static class AmazonOSISDefaultConfiguration
     {

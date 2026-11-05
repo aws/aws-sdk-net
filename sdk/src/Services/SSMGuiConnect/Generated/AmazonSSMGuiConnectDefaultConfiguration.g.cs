@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SSMGuiConnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSMGuiConnect service
+    /// Configuration for accessing AWS SSM-GUIConnect
     /// </summary>
     public static class AmazonSSMGuiConnectDefaultConfiguration
     {

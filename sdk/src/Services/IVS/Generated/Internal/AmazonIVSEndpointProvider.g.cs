@@ -26,7 +26,7 @@ using Amazon.IVS.Endpoints;
 namespace Amazon.IVS.Internal
 {
     /// <summary>
-    /// Amazon IVS endpoint provider.
+    /// Amazon Interactive Video Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IVSEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

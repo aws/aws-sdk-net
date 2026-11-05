@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Repostspace
 {
     /// <summary>
-    /// Configuration for accessing Amazon Repostspace service
+    /// Configuration for accessing AWS re:Post Private
     /// </summary>
     public static class AmazonRepostspaceDefaultConfiguration
     {

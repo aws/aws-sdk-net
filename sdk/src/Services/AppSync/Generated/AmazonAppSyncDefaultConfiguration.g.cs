@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AppSync
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppSync service
+    /// Configuration for accessing AWS AppSync
     /// </summary>
     public static class AmazonAppSyncDefaultConfiguration
     {

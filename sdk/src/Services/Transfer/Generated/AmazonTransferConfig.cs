@@ -27,12 +27,12 @@ using Amazon.Transfer.Internal;
 namespace Amazon.Transfer
 {
     /// <summary>
-    /// Configuration for accessing Amazon Transfer service
+    /// Configuration for accessing AWS Transfer Family
     /// </summary>
     public partial class AmazonTransferConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Transfer", "4.0.105.1");
+            InternalSDKUtils.BuildUserAgentString("Transfer", "4.0.105.4");
 
         private static readonly AmazonTransferEndpointResolver EndpointResolver =
             new AmazonTransferEndpointResolver();

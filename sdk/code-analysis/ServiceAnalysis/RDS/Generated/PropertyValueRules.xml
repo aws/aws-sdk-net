@@ -4,49 +4,49 @@
     <property>Amazon.RDS.Model.AddRoleToDBClusterRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z-]*:iam::[0-9]*:role/.*</pattern>
+    <pattern>^arn:aws[a-z-]*:iam::[0-9]*:role/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CancelDBCapacityReservationRequest.DBCapacityReservationIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.BlueGreenDeploymentName</property>
     <min>1</min>
     <max>60</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.Source</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.TargetDBClusterParameterGroupName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z](?!.*--)[0-9A-Za-z-]*[^-]|^default(?!.*--)(?!.*\.\.)[0-9A-Za-z-.]*[^-]</pattern>
+    <pattern>^[A-Za-z](?!.*--)[0-9A-Za-z-]*[^-]|^default(?!.*--)(?!.*\.\.)[0-9A-Za-z-.]*[^-]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.TargetDBInstanceClass</property>
     <min>5</min>
     <max>20</max>
-    <pattern>db\.[0-9a-z]{2,6}\.[0-9a-z]{4,9}</pattern>
+    <pattern>^db\.[0-9a-z]{2,6}\.[0-9a-z]{4,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.TargetDBParameterGroupName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z](?!.*--)[0-9A-Za-z-]*[^-]|^default(?!.*--)(?!.*\.\.)[0-9A-Za-z-.]*[^-]</pattern>
+    <pattern>^[A-Za-z](?!.*--)[0-9A-Za-z-]*[^-]|^default(?!.*--)(?!.*\.\.)[0-9A-Za-z-.]*[^-]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.TargetEngineVersion</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z-_.]+</pattern>
+    <pattern>^[0-9A-Za-z-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionRequest.DatabaseInstallationFilesS3BucketName</property>
@@ -70,13 +70,13 @@
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionRequest.Engine</property>
     <min>1</min>
     <max>35</max>
-    <pattern>[A-Za-z0-9-]{1,35}</pattern>
+    <pattern>^[A-Za-z0-9-]{1,35}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionRequest.EngineVersion</property>
     <min>1</min>
     <max>60</max>
-    <pattern>[a-z0-9_.-]{1,60}</pattern>
+    <pattern>^[a-z0-9_.-]{1,60}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionRequest.ImageId</property>
@@ -88,13 +88,13 @@
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionRequest.KMSKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9_:\-\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_:\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionRequest.Manifest</property>
     <min>1</min>
     <max>51000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionRequest.SourceCustomDbEngineVersionIdentifier</property>
@@ -106,43 +106,43 @@
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionResponse.CustomDBEngineVersionManifest</property>
     <min>1</min>
     <max>51000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateDBCapacityReservationRequest.DBCapacityReservationName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateDBCapacityReservationRequest.DBInstanceClass</property>
     <min>5</min>
     <max>30</max>
-    <pattern>db\.[0-9a-z]{2,6}\.[0-9a-z\.]{4,20}</pattern>
+    <pattern>^db\.[0-9a-z]{2,6}\.[0-9a-z\.]{4,20}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateDBClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateDBInstanceRequest.DBCapacityReservationIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateDBInstanceReadReplicaRequest.DBCapacityReservationIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateDBProxyRequest.DBProxyName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateDBProxyRequest.RoleArn</property>
@@ -153,31 +153,31 @@
     <property>Amazon.RDS.Model.CreateDBProxyEndpointRequest.DBProxyEndpointName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateDBProxyEndpointRequest.DBProxyName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateDBShardGroupResponse.DBShardGroupIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateGlobalClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateIntegrationRequest.DataFilter</property>
     <min>1</min>
     <max>25600</max>
-    <pattern>[a-zA-Z0-9_ "\\\-$,*.:?+\/]*</pattern>
+    <pattern>^[a-zA-Z0-9_ "\\\-$,*.:?+\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateIntegrationRequest.Description</property>
@@ -189,13 +189,13 @@
     <property>Amazon.RDS.Model.CreateIntegrationRequest.IntegrationName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateIntegrationRequest.SourceArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:(cluster|db):[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:(cluster|db):[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateIntegrationRequest.TargetArn</property>
@@ -206,7 +206,7 @@
     <property>Amazon.RDS.Model.CreateIntegrationResponse.DataFilter</property>
     <min>1</min>
     <max>25600</max>
-    <pattern>[a-zA-Z0-9_ "\\\-$,*.:?+\/]*</pattern>
+    <pattern>^[a-zA-Z0-9_ "\\\-$,*.:?+\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateIntegrationResponse.Description</property>
@@ -218,19 +218,19 @@
     <property>Amazon.RDS.Model.CreateIntegrationResponse.IntegrationArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateIntegrationResponse.IntegrationName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateIntegrationResponse.SourceArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:(cluster|db):[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:(cluster|db):[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateIntegrationResponse.TargetArn</property>
@@ -241,67 +241,67 @@
     <property>Amazon.RDS.Model.DeleteBlueGreenDeploymentRequest.BlueGreenDeploymentIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteCustomDBEngineVersionRequest.Engine</property>
     <min>1</min>
     <max>35</max>
-    <pattern>[A-Za-z0-9-]{1,35}</pattern>
+    <pattern>^[A-Za-z0-9-]{1,35}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteCustomDBEngineVersionRequest.EngineVersion</property>
     <min>1</min>
     <max>60</max>
-    <pattern>[a-z0-9_.-]{1,60}</pattern>
+    <pattern>^[a-z0-9_.-]{1,60}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteCustomDBEngineVersionResponse.CustomDBEngineVersionManifest</property>
     <min>1</min>
     <max>51000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteDBProxyRequest.DBProxyName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteDBProxyEndpointRequest.DBProxyEndpointName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteDBShardGroupRequest.DBShardGroupIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteDBShardGroupResponse.DBShardGroupIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteGlobalClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteIntegrationRequest.IntegrationIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_:\-\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_:\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteIntegrationResponse.DataFilter</property>
     <min>1</min>
     <max>25600</max>
-    <pattern>[a-zA-Z0-9_ "\\\-$,*.:?+\/]*</pattern>
+    <pattern>^[a-zA-Z0-9_ "\\\-$,*.:?+\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteIntegrationResponse.Description</property>
@@ -313,19 +313,19 @@
     <property>Amazon.RDS.Model.DeleteIntegrationResponse.IntegrationArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteIntegrationResponse.IntegrationName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteIntegrationResponse.SourceArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:(cluster|db):[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:(cluster|db):[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteIntegrationResponse.TargetArn</property>
@@ -336,19 +336,19 @@
     <property>Amazon.RDS.Model.DeregisterDBProxyTargetsRequest.DBProxyName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeregisterDBProxyTargetsRequest.TargetGroupName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeBlueGreenDeploymentsRequest.BlueGreenDeploymentIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeBlueGreenDeploymentsRequest.MaxRecords</property>
@@ -359,7 +359,7 @@
     <property>Amazon.RDS.Model.DescribeDBCapacityReservationsRequest.DBCapacityReservationIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeDBCapacityReservationsRequest.MaxRecords</property>
@@ -390,7 +390,7 @@
     <property>Amazon.RDS.Model.DescribeDBProxiesRequest.DBProxyName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeDBProxiesRequest.MaxRecords</property>
@@ -401,13 +401,13 @@
     <property>Amazon.RDS.Model.DescribeDBProxyEndpointsRequest.DBProxyEndpointName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeDBProxyEndpointsRequest.DBProxyName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeDBProxyEndpointsRequest.MaxRecords</property>
@@ -418,7 +418,7 @@
     <property>Amazon.RDS.Model.DescribeDBProxyTargetGroupsRequest.DBProxyName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeDBProxyTargetGroupsRequest.MaxRecords</property>
@@ -429,13 +429,13 @@
     <property>Amazon.RDS.Model.DescribeDBProxyTargetGroupsRequest.TargetGroupName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeDBProxyTargetsRequest.DBProxyName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeDBProxyTargetsRequest.MaxRecords</property>
@@ -446,13 +446,13 @@
     <property>Amazon.RDS.Model.DescribeDBProxyTargetsRequest.TargetGroupName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeDBShardGroupsRequest.DBShardGroupIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeDBShardGroupsRequest.MaxRecords</property>
@@ -468,13 +468,13 @@
     <property>Amazon.RDS.Model.DescribeGlobalClustersRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeIntegrationsRequest.IntegrationIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_:\-\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_:\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeIntegrationsRequest.Marker</property>
@@ -490,13 +490,13 @@
     <property>Amazon.RDS.Model.FailoverGlobalClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.FailoverGlobalClusterRequest.TargetDbClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyCustomDBEngineVersionRequest.Description</property>
@@ -508,55 +508,55 @@
     <property>Amazon.RDS.Model.ModifyCustomDBEngineVersionRequest.Engine</property>
     <min>1</min>
     <max>35</max>
-    <pattern>[A-Za-z0-9-]{1,35}</pattern>
+    <pattern>^[A-Za-z0-9-]{1,35}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyCustomDBEngineVersionRequest.EngineVersion</property>
     <min>1</min>
     <max>60</max>
-    <pattern>[a-z0-9_.-]{1,60}</pattern>
+    <pattern>^[a-z0-9_.-]{1,60}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyCustomDBEngineVersionResponse.CustomDBEngineVersionManifest</property>
     <min>1</min>
     <max>51000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBCapacityReservationRequest.DBCapacityReservationIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBClusterRequest.AwsBackupRecoveryPointArn</property>
     <min>43</min>
     <max>350</max>
-    <pattern>arn:aws[a-z-]*:backup:[-a-z0-9]+:[0-9]{12}:[-a-z]+:([a-z0-9\-]+:)?[a-z][a-z0-9\-]{0,255}</pattern>
+    <pattern>^arn:aws[a-z-]*:backup:[-a-z0-9]+:[0-9]{12}:[-a-z]+:([a-z0-9\-]+:)?[a-z][a-z0-9\-]{0,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBInstanceRequest.AwsBackupRecoveryPointArn</property>
     <min>43</min>
     <max>350</max>
-    <pattern>arn:aws[a-z-]*:backup:[-a-z0-9]+:[0-9]{12}:[-a-z]+:([a-z0-9\-]+:)?[a-z][a-z0-9\-]{0,255}</pattern>
+    <pattern>^arn:aws[a-z-]*:backup:[-a-z0-9]+:[0-9]{12}:[-a-z]+:([a-z0-9\-]+:)?[a-z][a-z0-9\-]{0,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBInstanceRequest.DBCapacityReservationIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBProxyRequest.DBProxyName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBProxyRequest.NewDBProxyName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBProxyRequest.RoleArn</property>
@@ -567,55 +567,55 @@
     <property>Amazon.RDS.Model.ModifyDBProxyEndpointRequest.DBProxyEndpointName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBProxyEndpointRequest.NewDBProxyEndpointName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBProxyTargetGroupRequest.DBProxyName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBProxyTargetGroupRequest.TargetGroupName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBShardGroupRequest.DBShardGroupIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBShardGroupResponse.DBShardGroupIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyGlobalClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyGlobalClusterRequest.NewGlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyIntegrationRequest.DataFilter</property>
     <min>1</min>
     <max>25600</max>
-    <pattern>[a-zA-Z0-9_ "\\\-$,*.:?+\/]*</pattern>
+    <pattern>^[a-zA-Z0-9_ "\\\-$,*.:?+\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyIntegrationRequest.Description</property>
@@ -627,19 +627,19 @@
     <property>Amazon.RDS.Model.ModifyIntegrationRequest.IntegrationIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_:\-\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_:\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyIntegrationRequest.IntegrationName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyIntegrationResponse.DataFilter</property>
     <min>1</min>
     <max>25600</max>
-    <pattern>[a-zA-Z0-9_ "\\\-$,*.:?+\/]*</pattern>
+    <pattern>^[a-zA-Z0-9_ "\\\-$,*.:?+\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyIntegrationResponse.Description</property>
@@ -651,19 +651,19 @@
     <property>Amazon.RDS.Model.ModifyIntegrationResponse.IntegrationArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyIntegrationResponse.IntegrationName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyIntegrationResponse.SourceArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:(cluster|db):[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^arn:aws[a-z\-]*:rds(-[a-z]*)?:[a-z0-9\-]*:[0-9]*:(cluster|db):[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyIntegrationResponse.TargetArn</property>
@@ -674,67 +674,67 @@
     <property>Amazon.RDS.Model.RebootDBShardGroupRequest.DBShardGroupIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.RebootDBShardGroupResponse.DBShardGroupIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.RegisterDBProxyTargetsRequest.DBProxyName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.RegisterDBProxyTargetsRequest.TargetGroupName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.RemoveFromGlobalClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.RemoveRoleFromDBClusterRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z-]*:iam::[0-9]*:role/.*</pattern>
+    <pattern>^arn:aws[a-z-]*:iam::[0-9]*:role/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.RestoreDBInstanceFromDBSnapshotRequest.DBCapacityReservationIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.RestoreDBInstanceFromS3Request.DBCapacityReservationIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.RestoreDBInstanceToPointInTimeRequest.DBCapacityReservationIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.StartDBInstanceRequest.DBCapacityReservationIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.SwitchoverBlueGreenDeploymentRequest.BlueGreenDeploymentIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.SwitchoverBlueGreenDeploymentRequest.SwitchoverTimeout</property>
@@ -744,109 +744,109 @@
     <property>Amazon.RDS.Model.SwitchoverGlobalClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.SwitchoverGlobalClusterRequest.TargetDbClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.BlueGreenDeployment.BlueGreenDeploymentIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.BlueGreenDeployment.BlueGreenDeploymentName</property>
     <min>1</min>
     <max>60</max>
-    <pattern>[a-zA-Z](?:-?[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z](?:-?[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.BlueGreenDeployment.Source</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.BlueGreenDeployment.Target</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DBCapacityReservation.DBCapacityReservationIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DBCapacityReservation.DBCapacityReservationName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DBCapacityReservation.DBInstanceClass</property>
     <min>5</min>
     <max>30</max>
-    <pattern>db\.[0-9a-z]{2,6}\.[0-9a-z\.]{4,20}</pattern>
+    <pattern>^db\.[0-9a-z]{2,6}\.[0-9a-z\.]{4,20}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DBCluster.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DBClusterAssociatedRole.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z-]*:iam::[0-9]*:role/.*</pattern>
+    <pattern>^arn:aws[a-z-]*:iam::[0-9]*:role/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DBInstance.DBCapacityReservationIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.GlobalCluster.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.PendingModifiedValues.DBCapacityReservationIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z](?:-?[a-z0-9]+){0,15}</pattern>
+    <pattern>^[a-z](?:-?[a-z0-9]+){0,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.SwitchoverDetail.SourceMember</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.SwitchoverDetail.TargetMember</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.TargetResourceConfiguration.SourceArn</property>
     <min>39</min>
     <max>255</max>
-    <pattern>arn:aws[a-z-]*:rds(-[a-z]+)?:[a-z0-9-]*:[0-9]{12}:(cluster|db):[a-zA-Z][a-zA-Z0-9-]{0,62}</pattern>
+    <pattern>^arn:aws[a-z-]*:rds(-[a-z]+)?:[a-z0-9-]*:[0-9]{12}:(cluster|db):[a-zA-Z][a-zA-Z0-9-]{0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.TargetResourceConfiguration.TargetKmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9_:\-\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_:\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.UserAuthConfig.Description</property>

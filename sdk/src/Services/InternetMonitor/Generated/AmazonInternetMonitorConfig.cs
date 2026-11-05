@@ -27,12 +27,12 @@ using Amazon.InternetMonitor.Internal;
 namespace Amazon.InternetMonitor
 {
     /// <summary>
-    /// Configuration for accessing Amazon InternetMonitor service
+    /// Configuration for accessing Amazon CloudWatch Internet Monitor
     /// </summary>
     public partial class AmazonInternetMonitorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("InternetMonitor", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("InternetMonitor", "4.0.100.23");
 
         private static readonly AmazonInternetMonitorEndpointResolver EndpointResolver =
             new AmazonInternetMonitorEndpointResolver();

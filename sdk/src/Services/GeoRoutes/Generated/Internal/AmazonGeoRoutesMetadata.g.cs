@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon GeoRoutes service
+    /// Service metadata for Amazon Location Service Routes V2
     /// </summary>
     public partial class AmazonGeoRoutesMetadata : IServiceMetadata
     {

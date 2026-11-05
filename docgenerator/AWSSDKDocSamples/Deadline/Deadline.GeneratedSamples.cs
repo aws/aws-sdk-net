@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
     {
         public void DeadlineBatchGetJob()
         {
-            #region example-1
+            #region BatchGetJob-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.BatchGetJob(new BatchGetJobRequest 
+            var response = client.BatchGetJob(new BatchGetJobRequest
             {
                 Identifiers = new List<BatchGetJobIdentifier> {
                     new BatchGetJobIdentifier {
@@ -38,10 +39,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineBatchGetSession()
         {
-            #region example-1
+            #region BatchGetSession-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.BatchGetSession(new BatchGetSessionRequest 
+            var response = client.BatchGetSession(new BatchGetSessionRequest
             {
                 Identifiers = new List<BatchGetSessionIdentifier> {
                     new BatchGetSessionIdentifier {
@@ -65,10 +66,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineBatchGetSessionAction()
         {
-            #region example-1
+            #region BatchGetSessionAction-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.BatchGetSessionAction(new BatchGetSessionActionRequest 
+            var response = client.BatchGetSessionAction(new BatchGetSessionActionRequest
             {
                 Identifiers = new List<BatchGetSessionActionIdentifier> {
                     new BatchGetSessionActionIdentifier {
@@ -92,10 +93,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineBatchGetStep()
         {
-            #region example-1
+            #region BatchGetStep-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.BatchGetStep(new BatchGetStepRequest 
+            var response = client.BatchGetStep(new BatchGetStepRequest
             {
                 Identifiers = new List<BatchGetStepIdentifier> {
                     new BatchGetStepIdentifier {
@@ -119,10 +120,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineBatchGetTask()
         {
-            #region example-1
+            #region BatchGetTask-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.BatchGetTask(new BatchGetTaskRequest 
+            var response = client.BatchGetTask(new BatchGetTaskRequest
             {
                 Identifiers = new List<BatchGetTaskIdentifier> {
                     new BatchGetTaskIdentifier {
@@ -148,10 +149,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineBatchGetWorker()
         {
-            #region example-1
+            #region BatchGetWorker-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.BatchGetWorker(new BatchGetWorkerRequest 
+            var response = client.BatchGetWorker(new BatchGetWorkerRequest
             {
                 Identifiers = new List<BatchGetWorkerIdentifier> {
                     new BatchGetWorkerIdentifier {
@@ -173,10 +174,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineBatchUpdateJob()
         {
-            #region example-1
+            #region BatchUpdateJob-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.BatchUpdateJob(new BatchUpdateJobRequest 
+            var response = client.BatchUpdateJob(new BatchUpdateJobRequest
             {
                 Jobs = new List<BatchUpdateJobItem> {
                     new BatchUpdateJobItem {
@@ -200,10 +201,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineBatchUpdateTask()
         {
-            #region example-1
+            #region BatchUpdateTask-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.BatchUpdateTask(new BatchUpdateTaskRequest 
+            var response = client.BatchUpdateTask(new BatchUpdateTaskRequest
             {
                 Tasks = new List<BatchUpdateTaskItem> {
                     new BatchUpdateTaskItem {
@@ -231,10 +232,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineDeleteVolume()
         {
-            #region example-1
+            #region DeleteVolume-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.DeleteVolume(new DeleteVolumeRequest 
+            var response = client.DeleteVolume(new DeleteVolumeRequest
             {
                 FarmId = "farm-1234567890abcdef1234567890abcdef",
                 FleetId = "fleet-1234567890abcdef1234567890abcdef",
@@ -247,10 +248,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineGetMonitorSettings()
         {
-            #region example-1
+            #region GetMonitorSettings-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.GetMonitorSettings(new GetMonitorSettingsRequest 
+            var response = client.GetMonitorSettings(new GetMonitorSettingsRequest
             {
                 MonitorId = "monitor-1234567890abcdef1234567890abcdef"
             });
@@ -261,10 +262,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineGetVolume()
         {
-            #region example-1
+            #region GetVolume-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.GetVolume(new GetVolumeRequest 
+            var response = client.GetVolume(new GetVolumeRequest
             {
                 FarmId = "farm-1234567890abcdef1234567890abcdef",
                 FleetId = "fleet-1234567890abcdef1234567890abcdef",
@@ -277,10 +278,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineListMemberships()
         {
-            #region example-1
+            #region ListMemberships-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.ListMemberships(new ListMembershipsRequest 
+            var response = client.ListMemberships(new ListMembershipsRequest
             {
                 IdentityCenterRegion = "us-east-1",
                 IdentityStoreId = "d-1234567890",
@@ -297,10 +298,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineListMemberships()
         {
-            #region example-2
+            #region ListMemberships-2
 
             var client = new AmazonDeadlineClient();
-            var response = client.ListMemberships(new ListMembershipsRequest 
+            var response = client.ListMemberships(new ListMembershipsRequest
             {
                 PrincipalId = "12345678-1234-1234-1234-123456789abc"
             });
@@ -311,10 +312,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineListVolumes()
         {
-            #region example-1
+            #region ListVolumes-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.ListVolumes(new ListVolumesRequest 
+            var response = client.ListVolumes(new ListVolumesRequest
             {
                 FarmId = "farm-1234567890abcdef1234567890abcdef",
                 FleetId = "fleet-1234567890abcdef1234567890abcdef"
@@ -326,10 +327,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
 
         public void DeadlineUpdateMonitorSettings()
         {
-            #region example-1
+            #region UpdateMonitorSettings-1
 
             var client = new AmazonDeadlineClient();
-            var response = client.UpdateMonitorSettings(new UpdateMonitorSettingsRequest 
+            var response = client.UpdateMonitorSettings(new UpdateMonitorSettingsRequest
             {
                 MonitorId = "monitor-1234567890abcdef1234567890abcdef",
                 Settings = new Dictionary<string, string> {
@@ -341,13 +342,10 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

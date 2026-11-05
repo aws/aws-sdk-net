@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationCostProfiler.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ApplicationCostProfiler service
+    /// Service metadata for AWS Application Cost Profiler
     /// </summary>
     public partial class AmazonApplicationCostProfilerMetadata : IServiceMetadata
     {

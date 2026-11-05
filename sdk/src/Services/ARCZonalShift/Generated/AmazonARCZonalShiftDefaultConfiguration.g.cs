@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ARCZonalShift
 {
     /// <summary>
-    /// Configuration for accessing Amazon ARCZonalShift service
+    /// Configuration for accessing AWS ARC - Zonal Shift
     /// </summary>
     public static class AmazonARCZonalShiftDefaultConfiguration
     {

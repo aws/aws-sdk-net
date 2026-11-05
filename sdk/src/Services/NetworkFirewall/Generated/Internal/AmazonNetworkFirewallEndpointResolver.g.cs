@@ -31,7 +31,7 @@ using Amazon.NetworkFirewall.Endpoints;
 namespace Amazon.NetworkFirewall.Internal
 {
     /// <summary>
-    /// Amazon NetworkFirewall endpoint resolver.
+    /// AWS Network Firewall endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for NetworkFirewall service requests.
     /// <para />

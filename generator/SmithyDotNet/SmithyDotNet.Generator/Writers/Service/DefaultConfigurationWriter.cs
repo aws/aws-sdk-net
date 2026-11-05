@@ -24,7 +24,7 @@ public sealed class DefaultConfigurationWriter(GenerationContext context, string
         writer.OpenNamespace(context.Namespace, () =>
         {
             writer.WriteLine("/// <summary>");
-            writer.WriteLine($"/// Configuration for accessing Amazon {context.BaseName} service");
+            writer.WriteLine($"/// Configuration for accessing {context.ServiceTitle}");
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public static class {context.ClientName}DefaultConfiguration", () =>
             {

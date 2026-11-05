@@ -27,12 +27,12 @@ using Amazon.TranscribeService.Internal;
 namespace Amazon.TranscribeService
 {
     /// <summary>
-    /// Configuration for accessing Amazon TranscribeService service
+    /// Configuration for accessing Amazon Transcribe Service
     /// </summary>
     public partial class AmazonTranscribeServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Transcribe", "4.0.102.5");
+            InternalSDKUtils.BuildUserAgentString("Transcribe", "4.0.102.8");
 
         private static readonly AmazonTranscribeServiceEndpointResolver EndpointResolver =
             new AmazonTranscribeServiceEndpointResolver();

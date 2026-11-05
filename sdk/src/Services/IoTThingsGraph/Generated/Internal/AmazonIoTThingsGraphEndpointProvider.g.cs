@@ -26,7 +26,7 @@ using Amazon.IoTThingsGraph.Endpoints;
 namespace Amazon.IoTThingsGraph.Internal
 {
     /// <summary>
-    /// Amazon IoTThingsGraph endpoint provider.
+    /// AWS IoT Things Graph endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IoTThingsGraphEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

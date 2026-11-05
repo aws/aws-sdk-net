@@ -75,5 +75,10 @@
 		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  },
     }
+  },
+  "paginators": {
+    "FilterLogEvents": {
+      "items": ["events", "searchedLogStreams"]
+    }
   }
 }

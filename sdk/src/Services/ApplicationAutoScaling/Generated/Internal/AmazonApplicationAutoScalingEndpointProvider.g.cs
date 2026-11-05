@@ -26,7 +26,7 @@ using Amazon.ApplicationAutoScaling.Endpoints;
 namespace Amazon.ApplicationAutoScaling.Internal
 {
     /// <summary>
-    /// Amazon ApplicationAutoScaling endpoint provider.
+    /// Application Auto Scaling endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ApplicationAutoScalingEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -27,12 +27,12 @@ using Amazon.MWAA.Internal;
 namespace Amazon.MWAA
 {
     /// <summary>
-    /// Configuration for accessing Amazon MWAA service
+    /// Configuration for accessing AmazonMWAA
     /// </summary>
     public partial class AmazonMWAAConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MWAA", "4.0.101.8");
+            InternalSDKUtils.BuildUserAgentString("MWAA", "4.0.101.11");
 
         private static readonly AmazonMWAAEndpointResolver EndpointResolver =
             new AmazonMWAAEndpointResolver();

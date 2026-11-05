@@ -26,7 +26,7 @@ using Amazon.CostExplorer.Endpoints;
 namespace Amazon.CostExplorer.Internal
 {
     /// <summary>
-    /// Amazon CostExplorer endpoint provider.
+    /// AWS Cost Explorer Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CostExplorerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

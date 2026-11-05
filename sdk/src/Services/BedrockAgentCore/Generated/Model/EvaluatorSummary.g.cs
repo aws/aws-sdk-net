@@ -35,6 +35,21 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class EvaluatorSummary
     {
         /// <summary>
+        /// Gets and sets the property EvaluationDimensionName. 
+        /// <para>
+        /// The name of the dimension that this summary covers. This field is set only for evaluators
+        /// that use a multi-dimensional rating scale, where each dimension is summarized separately.
+        /// For single-scale evaluators, this field is not set.
+        /// </para>
+        /// </summary>
+        public string EvaluationDimensionName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EvaluationDimensionName property is set.
+        /// </summary>
+        internal bool IsSetEvaluationDimensionName() => this.EvaluationDimensionName != null;
+
+        /// <summary>
         /// Gets and sets the property EvaluatorId. 
         /// <para>
         /// The unique identifier of the evaluator.

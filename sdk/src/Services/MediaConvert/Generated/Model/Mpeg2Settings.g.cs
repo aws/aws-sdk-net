@@ -459,6 +459,35 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSceneChangeDetect() => this.SceneChangeDetect != null;
 
         /// <summary>
+        /// Gets and sets the property SlidingWindowMs. Optional. Specify the duration, in milliseconds,
+        /// of the sliding window over which MediaConvert enforces your Peak bitrate. When you
+        /// specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window
+        /// of 1000.
+        /// </summary>
+        [AWSProperty(Min = 1000, Max = 3000)]
+        public int? SlidingWindowMs { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SlidingWindowMs property is set.
+        /// </summary>
+        internal bool IsSetSlidingWindowMs() => this.SlidingWindowMs.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property SlidingWindowPeakBitrate. Optional. Specify an instantaneous
+        /// peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding
+        /// window set by Peak bitrate window. For example, enter fifty megabits per second as
+        /// 50000000. Applies in the VBR and CBR rate control modes. When you specify a value
+        /// below Max bitrate, MediaConvert raises it to Max bitrate.
+        /// </summary>
+        [AWSProperty(Min = 1000, Max = 300000000)]
+        public int? SlidingWindowPeakBitrate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SlidingWindowPeakBitrate property is set.
+        /// </summary>
+        internal bool IsSetSlidingWindowPeakBitrate() => this.SlidingWindowPeakBitrate.HasValue;
+
+        /// <summary>
         /// Gets and sets the property SlowPal. Ignore this setting unless your input frame rate
         /// is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output.
         /// When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Tables.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon S3Tables service
+    /// Service metadata for Amazon S3 Tables
     /// </summary>
     public partial class AmazonS3TablesMetadata : IServiceMetadata
     {

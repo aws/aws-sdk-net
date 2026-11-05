@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Outposts service
+    /// Service metadata for AWS Outposts
     /// </summary>
     public partial class AmazonOutpostsMetadata : IServiceMetadata
     {

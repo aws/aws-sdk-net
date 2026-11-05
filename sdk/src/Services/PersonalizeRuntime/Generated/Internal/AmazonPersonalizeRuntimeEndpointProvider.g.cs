@@ -26,7 +26,7 @@ using Amazon.PersonalizeRuntime.Endpoints;
 namespace Amazon.PersonalizeRuntime.Internal
 {
     /// <summary>
-    /// Amazon PersonalizeRuntime endpoint provider.
+    /// Amazon Personalize Runtime endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PersonalizeRuntimeEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

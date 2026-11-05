@@ -26,7 +26,7 @@ using Amazon.RedshiftDataAPIService.Endpoints;
 namespace Amazon.RedshiftDataAPIService.Internal
 {
     /// <summary>
-    /// Amazon RedshiftDataAPIService endpoint provider.
+    /// Redshift Data API Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="RedshiftDataAPIServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

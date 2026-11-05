@@ -26,7 +26,7 @@ using Amazon.Odb.Endpoints;
 namespace Amazon.Odb.Internal
 {
     /// <summary>
-    /// Amazon Odb endpoint provider.
+    /// odb endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="OdbEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

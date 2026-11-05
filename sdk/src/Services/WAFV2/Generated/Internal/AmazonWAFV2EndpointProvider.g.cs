@@ -26,7 +26,7 @@ using Amazon.WAFV2.Endpoints;
 namespace Amazon.WAFV2.Internal
 {
     /// <summary>
-    /// Amazon WAFV2 endpoint provider.
+    /// AWS WAFV2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="WAFV2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

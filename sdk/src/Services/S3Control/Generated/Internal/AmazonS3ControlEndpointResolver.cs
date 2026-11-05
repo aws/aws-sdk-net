@@ -32,7 +32,7 @@ using Amazon.S3Control.Endpoints;
 namespace Amazon.S3Control.Internal
 {
     /// <summary>
-    /// Amazon S3Control endpoint resolver.
+    /// AWS S3 Control endpoint resolver.
     /// Custom PipelineHandler responsible for resolving endpoint and setting authentication parameters for S3Control service requests.
     /// Collects values for S3ControlEndpointParameters and then tries to resolve endpoint by calling 
     /// ResolveEndpoint method on GlobalEndpoints.Provider if present, otherwise uses S3ControlEndpointProvider.

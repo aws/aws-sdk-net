@@ -47,10 +47,9 @@ public class ConfigWriterTests
     }
 
     [Fact]
-    public void EmitsClassDoc_UsingNormalizedServiceName()
+    public void EmitsClassDoc_UsingServiceTitle()
     {
-        // The class doc uses the BaseName (CloudTrailData), not the sdkId ("CloudTrail Data").
-        Assert.Contains("/// Configuration for accessing Amazon CloudTrailData service", _output);
+        Assert.Contains("/// Configuration for accessing AWS CloudTrail Data Service", _output);
     }
 
     [Fact]

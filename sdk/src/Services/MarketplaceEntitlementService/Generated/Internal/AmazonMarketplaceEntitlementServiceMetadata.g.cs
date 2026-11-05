@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceEntitlementService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MarketplaceEntitlementService service
+    /// Service metadata for AWS Marketplace Entitlement Service
     /// </summary>
     public partial class AmazonMarketplaceEntitlementServiceMetadata : IServiceMetadata
     {

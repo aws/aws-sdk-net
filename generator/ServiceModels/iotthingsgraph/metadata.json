@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "Initial Release.",
   "generate-client-constructors": true,
+  "base-name": "IoTThingsGraph",
   "legacy-service-id": "IoTThingsGraph"
 }

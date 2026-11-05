@@ -31,7 +31,7 @@ using Amazon.MWAAServerless.Endpoints;
 namespace Amazon.MWAAServerless.Internal
 {
     /// <summary>
-    /// Amazon MWAAServerless endpoint resolver.
+    /// AmazonMWAAServerless endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MWAAServerless service requests.
     /// <para />

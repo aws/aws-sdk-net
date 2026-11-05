@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralRevenueMeasurement.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon PartnerCentralRevenueMeasurement service
+    /// Service metadata for Partner Central Revenue Measurement API
     /// </summary>
     public partial class AmazonPartnerCentralRevenueMeasurementMetadata : IServiceMetadata
     {

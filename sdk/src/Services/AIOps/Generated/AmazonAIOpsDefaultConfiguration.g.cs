@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AIOps
 {
     /// <summary>
-    /// Configuration for accessing Amazon AIOps service
+    /// Configuration for accessing AWS AI Ops
     /// </summary>
     public static class AmazonAIOpsDefaultConfiguration
     {

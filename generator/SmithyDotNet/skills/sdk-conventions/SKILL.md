@@ -55,7 +55,8 @@ Every generated file starts with the full Apache 2.0 license block followed by t
 "Do not modify this file. This file is generated from the {model-filename} service model." notice,
 where `{model-filename}` is the Smithy model file name (e.g. `cloudtrail-data-2021-08-11.normal.json`).
 The exact text lives in `Writers/FileHeader.cs`.
-Core's region files (below) instead carry C2J's older ASCII-art header, `FileHeader.WriteCoreLicense`.
+Core's `.generated.cs` files (below) instead carry C2J's headers: the ASCII-art `FileHeader.WriteCoreLicense`, or
+`FileHeader.WriteLicenseWithNotice` for `InternalSDKUtils.generated.cs`.
 
 ## Naming Rules
 
@@ -155,11 +156,11 @@ Differences from C2J:
   is written as it is. The docs build parses the XML and left-justifies each region, so the rendered docs
   don't change.
 
-## Core Region Files
+## Core and Extension Files
 
-Each batch run writes two Core files from `sdk/src/Core/partitions.json` (`PartitionsManifest`), before the
-services and byte-identical to what C2J's templates produce. C2J still writes both too, since the release's
-partitions merge runs C2J alone, so any change to either file has to be made in both generators:
+Each batch run writes Core's repo-level files before the services, byte-identical to what C2J produces (apart from the
+git-ignored nuspec, which C2J rewrites after this generator). C2J still writes them too, and the release runs C2J
+alone for its partitions and endpoints merges, so any change to them has to be made in both generators. From `sdk/src/Core/partitions.json` (`PartitionsManifest`):
 
 - `RegionEndpoint/RegionEndpoint.generated.cs` (`RegionEndpointWriter`): a public `RegionEndpoint` constant per
   region, skipping each partition's `*-global` pseudo-region. Names upper-case the first dash-separated part and
@@ -168,9 +169,37 @@ partitions merge runs C2J alone, so any change to either file has to be made in 
 - `Amazon.Runtime/Internal/Endpoints/StandardLibrary/Partition.generated.cs` (`PartitionWriter`): the endpoint
   rules' partition lookup tables, including the `*-global` regions.
 
-Both are written unformatted and without a final newline. S3's `S3Enumerations.cs`, built from the same file, stays
-with C2J until S3 migrates: C2J deletes any file under an unmigrated service's `Generated/` folder that it didn't
-write in that run, and it runs after the Smithy generator.
+From `_sdk-versions.json` (`CoreVersionWriter`): Core's `Properties/AssemblyInfo.cs`,
+`Amazon.Util/Internal/InternalSDKUtils.generated.cs` and the git-ignored `AWSSDK.Core.nuspec`. `AssemblyInfo.cs`
+shares the services' `FileHeader.WriteAssemblyInfoBody`, and C2J's `CoreAssemblyInfo.tt` matches it. From
+`sdk-default-configuration.json` (`DefaultConfigurationModeWriter`): `Amazon.Runtime/DefaultConfigurationMode.generated.cs`.
+
+Core's files are written unformatted and, as C2J trims them, without a final newline. S3's `S3Enumerations.cs`,
+built from `partitions.json`, stays with C2J until S3 migrates: C2J deletes any file under an unmigrated service's
+`Generated/` folder that it didn't write in that run, and it runs after the Smithy generator.
+
+Each extension under `extensions/src` with a nuspec gets its `ExtensionVersions` entry stamped into the nuspec and
+`Properties/AssemblyInfo.cs` (`ExtensionVersionUpdater`). Those files are hand-written, so they're edited in place;
+C2J's `GeneratorExtensionsDriver` still makes the same edits.
+
+## SDK Solutions and Legacy Unit-Test Projects
+
+After the services, each batch run writes the files that span every project, matching C2J's apart from line endings.
+C2J still writes them too:
+
+- `sdk/test/UnitTests/AWSSDK.UnitTests.{NetFramework,NetStandard}.csproj` (`LegacyUnitTestProjectFileWriter`), from
+  `_manifest.json`'s `unittestprojects` entry (`UnitTestProjectManifest`). The per-service test projects take only
+  its package references and `noWarn`: its other settings name TFMs (`targets`), which their framework-identifier
+  conditions avoid, or paths relative to `sdk/test/UnitTests`; the `obj` exclude is fixed. Written first, since the
+  solutions list them.
+- `sdk/AWSSDK.{NetFramework,NetStandard}.sln` (`SdkSolutionFileWriter`). Project and folder GUIDs are read back from
+  the existing solution by name, so only a new project gets a new GUID, and C2J then reuses it. Folders and files sort
+  by the invariant culture (`AccessAnalyzer` before `ACMPCA`), which matches C2J's current-culture `OrderBy` under
+  en-US.
+- `sdk/AWSSDK.CodeAnalysis.sln` (`CodeAnalysisSolutionFileWriter`), taking each project's GUID from its
+  `<ProjectGuid>`. C2J writes it untrimmed, so it keeps a leading and a final newline.
+
+Core's two csproj files are hand-maintained: their `_manifest.json` template, `VS2017ProjectFile`, makes C2J skip them.
 
 ## Event Streams
 
@@ -289,7 +318,8 @@ hook key fails deserialization (fail-closed) rather than silently diverging from
 `shapeSubstitutions.renameShape` is applied first, as an entry in the service's `rename` map (the shape ID
 is unchanged, so targets still resolve). Every hook keys a renamed shape by its modeled name. C2J keys a renamed
 structure by its new name, so S3's entries for its renamed structures must be rekeyed on migration. Wire error codes
-keep the modeled name. A model that already renames the shape fails.
+keep the modeled name. A model that already renames the shape fails; so does a name another shape already emits, except
+service, resource and operation shapes, which emit no type.
 A Smithy-only `"Structure$member"` key instead copies that member's target under the new name (QApps: one
 `Action` enum is C2J's `PermissionInputActionEnum` and `PermissionOutputActionEnum`); the original is dropped once
 nothing targets it.
@@ -298,6 +328,9 @@ nothing targets it.
 name on every protocol. `CustomizationsModel.PropertyName` is used wherever a member's C# name is derived.
 As in C2J, the name's first letter is upper-cased (iot's `marker` is `Marker`) and
 `emitIsSetProperties`/`dataTypeSwap` list a renamed member under its new name.
+The Smithy-only `overridesBaseMember` emits a member with `override` when a hand-written partial gives its structure a
+base class declaring the same member: CognitoIdentity's and SecurityToken's `Credentials` derive from `AWSCredentials`,
+whose `BaseIdentity.Expiration` is virtual. C2J hard-codes that case instead.
 `paginators.{Operation}` supplies what `@paginated` lacks but the shipped paginator has: `pageSize` (PowerShell reads
 `LimitKey`); `inputToken`/`outputToken` arrays, which make a trait-less operation paginated — map tokens loop while entries
 remain (DynamoDB `BatchGetItem`), several tokens page together (Route 53 `ListResourceRecordSets`); `items` (dotted paths)
@@ -320,7 +353,7 @@ for a form member). All three carry the member `@documentation` onto the paramet
 `operationModifiers.{Operation}.exclude` unbinds the operation from its service or resource and `shapeModifiers.{Shape}.exclude`
 removes members, so whatever is no longer reachable is not emitted. `useWrappingResult` moves the output under one member,
 `wrappedResultMember`, of a new output structure: the response has a single property of the output's type, paginator paths go
-through it, and the JSON response unmarshaller reads it from the whole body.
+through it, and the JSON, CBOR and ec2Query response unmarshallers read it from the whole body.
 
 - What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` parses;
   each hook's per-level behavior lives on that record, its `Apply`/`Validate` step, and its lookup.

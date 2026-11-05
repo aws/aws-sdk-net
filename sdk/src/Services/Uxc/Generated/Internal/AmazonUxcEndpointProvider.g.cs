@@ -26,7 +26,7 @@ using Amazon.Uxc.Endpoints;
 namespace Amazon.Uxc.Internal
 {
     /// <summary>
-    /// Amazon Uxc endpoint provider.
+    /// AWS User Experience Customization endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="UxcEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

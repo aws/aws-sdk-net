@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CodeCommit service
+    /// Service metadata for AWS CodeCommit
     /// </summary>
     public partial class AmazonCodeCommitMetadata : IServiceMetadata
     {

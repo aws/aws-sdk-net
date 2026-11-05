@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon RDSDataService service
+    /// Service metadata for AWS RDS DataService
     /// </summary>
     public partial class AmazonRDSDataServiceMetadata : IServiceMetadata
     {

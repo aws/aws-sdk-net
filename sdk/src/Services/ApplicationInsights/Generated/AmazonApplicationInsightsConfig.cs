@@ -27,12 +27,12 @@ using Amazon.ApplicationInsights.Internal;
 namespace Amazon.ApplicationInsights
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApplicationInsights service
+    /// Configuration for accessing Amazon CloudWatch Application Insights
     /// </summary>
     public partial class AmazonApplicationInsightsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Application Insights", "4.0.101.13");
+            InternalSDKUtils.BuildUserAgentString("Application Insights", "4.0.101.16");
 
         private static readonly AmazonApplicationInsightsEndpointResolver EndpointResolver =
             new AmazonApplicationInsightsEndpointResolver();

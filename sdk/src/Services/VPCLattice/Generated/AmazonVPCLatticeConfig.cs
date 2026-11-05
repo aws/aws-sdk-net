@@ -27,12 +27,12 @@ using Amazon.VPCLattice.Internal;
 namespace Amazon.VPCLattice
 {
     /// <summary>
-    /// Configuration for accessing Amazon VPCLattice service
+    /// Configuration for accessing Amazon VPC Lattice
     /// </summary>
     public partial class AmazonVPCLatticeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("VPC Lattice", "4.0.102.5");
+            InternalSDKUtils.BuildUserAgentString("VPC Lattice", "4.0.102.8");
 
         private static readonly AmazonVPCLatticeEndpointResolver EndpointResolver =
             new AmazonVPCLatticeEndpointResolver();

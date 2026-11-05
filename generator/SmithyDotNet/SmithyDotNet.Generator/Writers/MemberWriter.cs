@@ -62,8 +62,12 @@ public static class MemberWriter
             writer.WriteLine(awsProperty);
         }
 
-        // `new` when the member shadows a base-class member (e.g., Equals or Retryable); empty otherwise.
-        var modifier = member.HidesBaseMember ? "new " : string.Empty;
+        var modifier = member.BaseMemberModifier switch
+        {
+            BaseMemberModifier.New => "new ",
+            BaseMemberModifier.Override => "override ",
+            _ => string.Empty,
+        };
 
         // A request event-stream member is a consumer-supplied Func the marshaller wires unconditionally,
         // so it has no IsSet method.

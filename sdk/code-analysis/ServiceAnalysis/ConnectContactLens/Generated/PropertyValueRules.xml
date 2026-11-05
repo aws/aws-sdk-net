@@ -30,6 +30,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectContactLens.Model.CategoryDetails.RuleId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectContactLens.Model.CharacterOffsets.BeginOffsetChar</property>
     <min>0</min>
   </property-value-rule>
@@ -71,6 +77,16 @@
     <property>Amazon.ConnectContactLens.Model.PostContactSummary.Content</property>
     <min>1</min>
     <max>1762</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectContactLens.Model.TagCondition.TagKey</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectContactLens.Model.TagCondition.TagValue</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectContactLens.Model.Transcript.BeginOffsetMillis</property>

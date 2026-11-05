@@ -26,7 +26,7 @@ using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
 namespace Amazon.Route53.Internal
 {
     /// <summary>
-    /// Amazon Route53 endpoint provider.
+    /// Amazon Route 53 endpoint provider.
     /// Resolves endpoint for given set of Route53EndpointParameters.
     /// Can throw AmazonClientException if endpoint resolution is unsuccessful.
     /// </summary>

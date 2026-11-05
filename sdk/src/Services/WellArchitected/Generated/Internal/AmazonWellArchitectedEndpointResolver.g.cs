@@ -31,7 +31,7 @@ using Amazon.WellArchitected.Endpoints;
 namespace Amazon.WellArchitected.Internal
 {
     /// <summary>
-    /// Amazon WellArchitected endpoint resolver.
+    /// AWS Well-Architected Tool endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for WellArchitected service requests.
     /// <para />

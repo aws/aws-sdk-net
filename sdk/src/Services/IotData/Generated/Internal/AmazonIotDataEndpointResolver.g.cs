@@ -31,7 +31,7 @@ using Amazon.IotData.Endpoints;
 namespace Amazon.IotData.Internal
 {
     /// <summary>
-    /// Amazon IotData endpoint resolver.
+    /// AWS IoT Data Plane endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IotData service requests.
     /// <para />

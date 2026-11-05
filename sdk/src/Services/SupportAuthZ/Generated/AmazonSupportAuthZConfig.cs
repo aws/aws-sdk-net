@@ -27,12 +27,12 @@ using Amazon.SupportAuthZ.Internal;
 namespace Amazon.SupportAuthZ
 {
     /// <summary>
-    /// Configuration for accessing Amazon SupportAuthZ service
+    /// Configuration for accessing SupportAuthZ
     /// </summary>
     public partial class AmazonSupportAuthZConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SupportAuthZ", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("SupportAuthZ", "4.0.100.22");
 
         private static readonly AmazonSupportAuthZEndpointResolver EndpointResolver =
             new AmazonSupportAuthZEndpointResolver();

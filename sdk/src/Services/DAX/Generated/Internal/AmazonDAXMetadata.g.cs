@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DAX.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DAX service
+    /// Service metadata for Amazon DynamoDB Accelerator (DAX)
     /// </summary>
     public partial class AmazonDAXMetadata : IServiceMetadata
     {

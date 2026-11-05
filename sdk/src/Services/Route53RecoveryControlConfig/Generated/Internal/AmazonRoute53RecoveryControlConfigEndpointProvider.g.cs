@@ -26,7 +26,7 @@ using Amazon.Route53RecoveryControlConfig.Endpoints;
 namespace Amazon.Route53RecoveryControlConfig.Internal
 {
     /// <summary>
-    /// Amazon Route53RecoveryControlConfig endpoint provider.
+    /// AWS Route53 Recovery Control Config endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="Route53RecoveryControlConfigEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

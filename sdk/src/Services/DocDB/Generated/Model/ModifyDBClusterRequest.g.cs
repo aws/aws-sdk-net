@@ -1,0 +1,567 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.DocDB.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ModifyDBCluster operation. Modifies a setting
+    /// for an Amazon DocumentDB cluster. You can change one or more database configuration
+    /// parameters by specifying these parameters and the new values in the request.
+    /// </summary>
+    public partial class ModifyDBClusterRequest : AmazonDocDBRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AllowMajorVersionUpgrade. 
+        /// <para>
+        /// A value that indicates whether major version upgrades are allowed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must allow major version upgrades when specifying a value for the <c>EngineVersion</c>
+        /// parameter that is a different major version than the cluster's current version.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since some parameters are version specific, changing them requires executing a new
+        /// <c>ModifyDBCluster</c> API call after the in-place MVU completes.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Performing an MVU directly impacts the following parameters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MasterUserPassword</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NewDBClusterIdentifier</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VpcSecurityGroupIds</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Port</c> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        public bool? AllowMajorVersionUpgrade { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AllowMajorVersionUpgrade property is set.
+        /// </summary>
+        internal bool IsSetAllowMajorVersionUpgrade() => this.AllowMajorVersionUpgrade.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ApplyImmediately. 
+        /// <para>
+        /// A value that specifies whether the changes in this request and any pending changes
+        /// are asynchronously applied as soon as possible, regardless of the <c>PreferredMaintenanceWindow</c>
+        /// setting for the cluster. If this parameter is set to <c>false</c>, changes to the
+        /// cluster are applied during the next maintenance window.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>ApplyImmediately</c> parameter affects only the <c>NewDBClusterIdentifier</c>
+        /// and <c>MasterUserPassword</c> values. If you set this parameter value to <c>false</c>,
+        /// the changes to the <c>NewDBClusterIdentifier</c> and <c>MasterUserPassword</c> values
+        /// are applied during the next maintenance window. All other changes are applied immediately,
+        /// regardless of the value of the <c>ApplyImmediately</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>false</c> 
+        /// </para>
+        /// </summary>
+        public bool? ApplyImmediately { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApplyImmediately property is set.
+        /// </summary>
+        internal bool IsSetApplyImmediately() => this.ApplyImmediately.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property BackupRetentionPeriod. 
+        /// <para>
+        /// The number of days for which automated backups are retained. You must specify a minimum
+        /// value of 1.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 1
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be a value from 1 to 35.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public int? BackupRetentionPeriod { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BackupRetentionPeriod property is set.
+        /// </summary>
+        internal bool IsSetBackupRetentionPeriod() => this.BackupRetentionPeriod.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property CloudwatchLogsExportConfiguration. 
+        /// <para>
+        /// The configuration setting for the log types to be enabled for export to Amazon CloudWatch
+        /// Logs for a specific instance or cluster. The <c>EnableLogTypes</c> and <c>DisableLogTypes</c>
+        /// arrays determine which logs are exported (or not exported) to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public CloudwatchLogsExportConfiguration CloudwatchLogsExportConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CloudwatchLogsExportConfiguration property is set.
+        /// </summary>
+        internal bool IsSetCloudwatchLogsExportConfiguration() => this.CloudwatchLogsExportConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        /// Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster.
+        /// The default is not to copy them.
+        /// </para>
+        /// </summary>
+        public bool? CopyTagsToSnapshot { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CopyTagsToSnapshot property is set.
+        /// </summary>
+        internal bool IsSetCopyTagsToSnapshot() => this.CopyTagsToSnapshot.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DBClusterIdentifier. 
+        /// <para>
+        /// The cluster identifier for the cluster that is being modified. This parameter is not
+        /// case sensitive.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must match the identifier of an existing <c>DBCluster</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string DBClusterIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DBClusterIdentifier property is set.
+        /// </summary>
+        internal bool IsSetDBClusterIdentifier() => this.DBClusterIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property DBClusterParameterGroupName. 
+        /// <para>
+        /// The name of the cluster parameter group to use for the cluster.
+        /// </para>
+        /// </summary>
+        public string DBClusterParameterGroupName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DBClusterParameterGroupName property is set.
+        /// </summary>
+        internal bool IsSetDBClusterParameterGroupName() => this.DBClusterParameterGroupName != null;
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Specifies whether this cluster can be deleted. If <c>DeletionProtection</c> is enabled,
+        /// the cluster cannot be deleted unless it is modified and <c>DeletionProtection</c>
+        /// is disabled. <c>DeletionProtection</c> protects clusters from being accidentally deleted.
+        /// </para>
+        /// </summary>
+        public bool? DeletionProtection { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeletionProtection property is set.
+        /// </summary>
+        internal bool IsSetDeletionProtection() => this.DeletionProtection.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The version number of the database engine to which you want to upgrade. Changing this
+        /// parameter results in an outage. The change is applied during the next maintenance
+        /// window unless <c>ApplyImmediately</c> is enabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list all of the available engine versions for Amazon DocumentDB use the following
+        /// command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</c>
+        /// 
+        /// </para>
+        /// </summary>
+        public string EngineVersion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EngineVersion property is set.
+        /// </summary>
+        internal bool IsSetEngineVersion() => this.EngineVersion != null;
+
+        /// <summary>
+        /// Gets and sets the property ManageMasterUserPassword. 
+        /// <para>
+        /// Specifies whether to manage the master user password with Amazon Web Services Secrets
+        /// Manager. If the cluster doesn't manage the master user password with Amazon Web Services
+        /// Secrets Manager, you can turn on this management. In this case, you can't specify
+        /// <c>MasterUserPassword</c>. If the cluster already manages the master user password
+        /// with Amazon Web Services Secrets Manager, and you specify that the master user password
+        /// is not managed with Amazon Web Services Secrets Manager, then you must specify <c>MasterUserPassword</c>.
+        /// In this case, Amazon DocumentDB deletes the secret and uses the new password for the
+        /// master user specified by <c>MasterUserPassword</c>.
+        /// </para>
+        /// </summary>
+        public bool? ManageMasterUserPassword { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ManageMasterUserPassword property is set.
+        /// </summary>
+        internal bool IsSetManageMasterUserPassword() => this.ManageMasterUserPassword.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MasterUserPassword. 
+        /// <para>
+        /// The password for the master database user. This password can contain any printable
+        /// ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 100 characters.
+        /// </para>
+        /// </summary>
+        public string MasterUserPassword { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MasterUserPassword property is set.
+        /// </summary>
+        internal bool IsSetMasterUserPassword() => this.MasterUserPassword != null;
+
+        /// <summary>
+        /// Gets and sets the property MasterUserSecretKmsKeyId. 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier to encrypt a secret that is automatically
+        /// generated and managed in Amazon Web Services Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is valid only if both of the following conditions are met:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The cluster doesn't manage the master user password in Amazon Web Services Secrets
+        /// Manager. If the cluster already manages the master user password in Amazon Web Services
+        /// Secrets Manager, you can't change the KMS key that is used to encrypt the secret.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are enabling <c>ManageMasterUserPassword</c> to manage the master user password
+        /// in Amazon Web Services Secrets Manager. If you are turning on <c>ManageMasterUserPassword</c>
+        /// and don't specify <c>MasterUserSecretKmsKeyId</c>, then the <c>aws/secretsmanager</c>
+        /// KMS key is used to encrypt the secret. If the secret is in a different Amazon Web
+        /// Services account, then you can't use the <c>aws/secretsmanager</c> KMS key to encrypt
+        /// the secret, and you must use a customer managed KMS key.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the KMS key. To use a KMS key in a different Amazon Web Services account,
+        /// specify the key ARN or alias ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services
+        /// account has a different default KMS key for each Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        public string MasterUserSecretKmsKeyId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MasterUserSecretKmsKeyId property is set.
+        /// </summary>
+        internal bool IsSetMasterUserSecretKmsKeyId() => this.MasterUserSecretKmsKeyId != null;
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the cluster.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB
+        /// clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>IPV4</c> | <c>DUAL</c> 
+        /// </para>
+        /// </summary>
+        public string NetworkType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NetworkType property is set.
+        /// </summary>
+        internal bool IsSetNetworkType() => this.NetworkType != null;
+
+        /// <summary>
+        /// Gets and sets the property NewDBClusterIdentifier. 
+        /// <para>
+        /// The new cluster identifier for the cluster when renaming a cluster. This value is
+        /// stored as a lowercase string.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 letters, numbers, or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The first character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <c>my-cluster2</c> 
+        /// </para>
+        /// </summary>
+        public string NewDBClusterIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NewDBClusterIdentifier property is set.
+        /// </summary>
+        internal bool IsSetNewDBClusterIdentifier() => this.NewDBClusterIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The port number on which the cluster accepts connections.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must be a value from <c>1150</c> to <c>65535</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: The same port as the original cluster.
+        /// </para>
+        /// </summary>
+        public int? Port { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Port property is set.
+        /// </summary>
+        internal bool IsSetPort() => this.Port.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property PreferredBackupWindow. 
+        /// <para>
+        /// The daily time range during which automated backups are created if automated backups
+        /// are enabled, using the <c>BackupRetentionPeriod</c> parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is a 30-minute window selected at random from an 8-hour block of time
+        /// for each Amazon Web Services Region. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be in the format <c>hh24:mi-hh24:mi</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be in Universal Coordinated Time (UTC).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not conflict with the preferred maintenance window.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be at least 30 minutes.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string PreferredBackupWindow { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PreferredBackupWindow property is set.
+        /// </summary>
+        internal bool IsSetPreferredBackupWindow() => this.PreferredBackupWindow != null;
+
+        /// <summary>
+        /// Gets and sets the property PreferredMaintenanceWindow. 
+        /// <para>
+        /// The weekly time range during which system maintenance can occur, in Universal Coordinated
+        /// Time (UTC).
+        /// </para>
+        ///  
+        /// <para>
+        /// Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is a 30-minute window selected at random from an 8-hour block of time
+        /// for each Amazon Web Services Region, occurring on a random day of the week. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Minimum 30-minute window.
+        /// </para>
+        /// </summary>
+        public string PreferredMaintenanceWindow { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PreferredMaintenanceWindow property is set.
+        /// </summary>
+        internal bool IsSetPreferredMaintenanceWindow() => this.PreferredMaintenanceWindow != null;
+
+        /// <summary>
+        /// Gets and sets the property RotateMasterUserPassword. 
+        /// <para>
+        /// Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager
+        /// for the master user password.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is valid only if the master user password is managed by Amazon DocumentDB
+        /// in Amazon Web Services Secrets Manager for the cluster. The secret value contains
+        /// the updated password.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraint: You must apply the change immediately when rotating the master user password.
+        /// </para>
+        /// </summary>
+        public bool? RotateMasterUserPassword { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RotateMasterUserPassword property is set.
+        /// </summary>
+        internal bool IsSetRotateMasterUserPassword() => this.RotateMasterUserPassword.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ServerlessV2ScalingConfiguration. 
+        /// <para>
+        /// Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.
+        /// </para>
+        /// </summary>
+        public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ServerlessV2ScalingConfiguration property is set.
+        /// </summary>
+        internal bool IsSetServerlessV2ScalingConfiguration() => this.ServerlessV2ScalingConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The storage type to associate with the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information on storage types for Amazon DocumentDB clusters, see Cluster storage
+        /// configurations in the <i>Amazon DocumentDB Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for storage type - <c>standard | iopt1</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value is <c>standard </c> 
+        /// </para>
+        /// </summary>
+        public string StorageType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StorageType property is set.
+        /// </summary>
+        internal bool IsSetStorageType() => this.StorageType != null;
+
+        /// <summary>
+        /// Gets and sets the property VpcSecurityGroupIds. 
+        /// <para>
+        /// A list of virtual private cloud (VPC) security groups that the cluster will belong
+        /// to.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> VpcSecurityGroupIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the VpcSecurityGroupIds property is set.
+        /// </summary>
+        internal bool IsSetVpcSecurityGroupIds() => this.VpcSecurityGroupIds != null && (this.VpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

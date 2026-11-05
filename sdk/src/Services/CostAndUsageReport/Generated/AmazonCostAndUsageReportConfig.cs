@@ -27,12 +27,12 @@ using Amazon.CostAndUsageReport.Internal;
 namespace Amazon.CostAndUsageReport
 {
     /// <summary>
-    /// Configuration for accessing Amazon CostAndUsageReport service
+    /// Configuration for accessing AWS Cost and Usage Report Service
     /// </summary>
     public partial class AmazonCostAndUsageReportConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Cost and Usage Report Service", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("Cost and Usage Report Service", "4.0.100.22");
 
         private static readonly AmazonCostAndUsageReportEndpointResolver EndpointResolver =
             new AmazonCostAndUsageReportEndpointResolver();

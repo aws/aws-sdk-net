@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SavingsPlans.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SavingsPlans service
+    /// Service metadata for AWS Savings Plans
     /// </summary>
     public partial class AmazonSavingsPlansMetadata : IServiceMetadata
     {

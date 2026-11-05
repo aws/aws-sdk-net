@@ -663,6 +663,12 @@
     <pattern>^s3://[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.CreateDatasetExportJobRequest.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\x00-\x1f\x7f]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.CreateDatasetExportJobRequest.WorkspaceName</property>
     <min>1</min>
     <max>64</max>
@@ -1766,6 +1772,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.DescribeDatasetExportJobResponse.JobName</property>
+    <min>1</min>
+    <max>350</max>
+    <pattern>^[^\x00-\x1f\x7f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.DescribeDatasetExportJobResponse.WorkspaceName</property>
@@ -5290,6 +5302,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.ExportJobSummary.JobName</property>
+    <min>1</min>
+    <max>350</max>
+    <pattern>^[^\x00-\x1f\x7f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.ExpressionVariable.Name</property>

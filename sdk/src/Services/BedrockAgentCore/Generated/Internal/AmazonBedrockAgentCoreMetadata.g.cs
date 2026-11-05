@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon BedrockAgentCore service
+    /// Service metadata for Amazon Bedrock AgentCore
     /// </summary>
     public partial class AmazonBedrockAgentCoreMetadata : IServiceMetadata
     {

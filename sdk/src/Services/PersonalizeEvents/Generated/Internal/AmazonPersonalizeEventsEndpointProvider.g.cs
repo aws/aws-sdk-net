@@ -26,7 +26,7 @@ using Amazon.PersonalizeEvents.Endpoints;
 namespace Amazon.PersonalizeEvents.Internal
 {
     /// <summary>
-    /// Amazon PersonalizeEvents endpoint provider.
+    /// Amazon Personalize Events endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PersonalizeEventsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

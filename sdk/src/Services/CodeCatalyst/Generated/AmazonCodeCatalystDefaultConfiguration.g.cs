@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CodeCatalyst
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeCatalyst service
+    /// Configuration for accessing Amazon CodeCatalyst
     /// </summary>
     public static class AmazonCodeCatalystDefaultConfiguration
     {

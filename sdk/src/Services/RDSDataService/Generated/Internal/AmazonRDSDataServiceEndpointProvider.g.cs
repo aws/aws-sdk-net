@@ -26,7 +26,7 @@ using Amazon.RDSDataService.Endpoints;
 namespace Amazon.RDSDataService.Internal
 {
     /// <summary>
-    /// Amazon RDSDataService endpoint provider.
+    /// AWS RDS DataService endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="RDSDataServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

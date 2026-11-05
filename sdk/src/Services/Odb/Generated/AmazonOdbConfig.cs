@@ -27,12 +27,12 @@ using Amazon.Odb.Internal;
 namespace Amazon.Odb
 {
     /// <summary>
-    /// Configuration for accessing Amazon Odb service
+    /// Configuration for accessing odb
     /// </summary>
     public partial class AmazonOdbConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("odb", "4.0.103.8");
+            InternalSDKUtils.BuildUserAgentString("odb", "4.0.104.1");
 
         private static readonly AmazonOdbEndpointResolver EndpointResolver =
             new AmazonOdbEndpointResolver();

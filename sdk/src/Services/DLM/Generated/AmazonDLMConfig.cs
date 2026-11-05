@@ -27,12 +27,12 @@ using Amazon.DLM.Internal;
 namespace Amazon.DLM
 {
     /// <summary>
-    /// Configuration for accessing Amazon DLM service
+    /// Configuration for accessing Amazon Data Lifecycle Manager
     /// </summary>
     public partial class AmazonDLMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DLM", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("DLM", "4.0.100.23");
 
         private static readonly AmazonDLMEndpointResolver EndpointResolver =
             new AmazonDLMEndpointResolver();

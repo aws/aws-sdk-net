@@ -27,12 +27,12 @@ using Amazon.Chatbot.Internal;
 namespace Amazon.Chatbot
 {
     /// <summary>
-    /// Configuration for accessing Amazon Chatbot service
+    /// Configuration for accessing AWS Chatbot
     /// </summary>
     public partial class AmazonChatbotConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("chatbot", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("chatbot", "4.0.100.23");
 
         private static readonly AmazonChatbotEndpointResolver EndpointResolver =
             new AmazonChatbotEndpointResolver();

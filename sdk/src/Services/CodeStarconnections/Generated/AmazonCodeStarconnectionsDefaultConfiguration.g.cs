@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CodeStarconnections
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeStarconnections service
+    /// Configuration for accessing AWS CodeStar connections
     /// </summary>
     public static class AmazonCodeStarconnectionsDefaultConfiguration
     {

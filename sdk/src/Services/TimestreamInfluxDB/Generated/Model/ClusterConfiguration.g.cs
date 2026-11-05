@@ -31,6 +31,11 @@ namespace Amazon.TimestreamInfluxDB.Model
 {
     /// <summary>
     /// Configuration for node modes in the DbCluster.
+    /// 
+    ///  
+    /// <para>
+    /// Deprecated. Use deploymentConfiguration to define the cluster topology instead.
+    /// </para>
     /// </summary>
     public partial class ClusterConfiguration
     {

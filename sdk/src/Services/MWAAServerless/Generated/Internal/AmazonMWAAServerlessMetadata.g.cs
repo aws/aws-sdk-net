@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAAServerless.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MWAAServerless service
+    /// Service metadata for AmazonMWAAServerless
     /// </summary>
     public partial class AmazonMWAAServerlessMetadata : IServiceMetadata
     {

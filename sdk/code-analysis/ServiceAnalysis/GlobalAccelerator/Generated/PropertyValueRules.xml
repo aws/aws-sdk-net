@@ -2,79 +2,98 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.AddCustomRoutingEndpointsRequest.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.AddCustomRoutingEndpointsResponse.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.AddEndpointsRequest.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.AddEndpointsResponse.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.AdvertiseByoipCidrRequest.Cidr</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.AllowCustomRoutingTrafficRequest.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.AllowCustomRoutingTrafficRequest.EndpointId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateAcceleratorRequest.IdempotencyToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateAcceleratorRequest.Name</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateCrossAccountAttachmentRequest.IdempotencyToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateCrossAccountAttachmentRequest.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateCustomRoutingAcceleratorRequest.IdempotencyToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateCustomRoutingAcceleratorRequest.Name</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateCustomRoutingEndpointGroupRequest.EndpointGroupRegion</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateCustomRoutingEndpointGroupRequest.IdempotencyToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateCustomRoutingEndpointGroupRequest.ListenerArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateCustomRoutingListenerRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateCustomRoutingListenerRequest.IdempotencyToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateEndpointGroupRequest.EndpointGroupRegion</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -84,6 +103,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateEndpointGroupRequest.HealthCheckPath</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^/[-a-zA-Z0-9@:%_\\+.~#?&amp;/=]*$</pattern>
   </property-value-rule>
@@ -94,10 +114,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateEndpointGroupRequest.IdempotencyToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateEndpointGroupRequest.ListenerArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -112,86 +134,107 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateListenerRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateListenerRequest.IdempotencyToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DeleteAcceleratorRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DeleteCrossAccountAttachmentRequest.AttachmentArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DeleteCustomRoutingAcceleratorRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DeleteCustomRoutingEndpointGroupRequest.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DeleteCustomRoutingListenerRequest.ListenerArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DeleteEndpointGroupRequest.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DeleteListenerRequest.ListenerArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DenyCustomRoutingTrafficRequest.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DenyCustomRoutingTrafficRequest.EndpointId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DeprovisionByoipCidrRequest.Cidr</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DescribeAcceleratorRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DescribeAcceleratorAttributesRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DescribeCrossAccountAttachmentRequest.AttachmentArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DescribeCustomRoutingAcceleratorRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DescribeCustomRoutingAcceleratorAttributesRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DescribeCustomRoutingEndpointGroupRequest.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DescribeCustomRoutingListenerRequest.ListenerArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DescribeEndpointGroupRequest.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DescribeListenerRequest.ListenerArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -201,10 +244,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListAcceleratorsRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListAcceleratorsResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -214,10 +259,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListByoipCidrsRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListByoipCidrsResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -227,14 +274,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCrossAccountAttachmentsRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCrossAccountAttachmentsResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCrossAccountResourcesRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -244,6 +294,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCrossAccountResourcesRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -254,6 +305,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCrossAccountResourcesResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -263,14 +315,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingAcceleratorsRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingAcceleratorsResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingEndpointGroupsRequest.ListenerArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -280,14 +335,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingEndpointGroupsRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingEndpointGroupsResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingListenersRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -297,18 +355,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingListenersRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingListenersResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingPortMappingsRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingPortMappingsRequest.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -318,18 +380,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingPortMappingsRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingPortMappingsResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingPortMappingsByDestinationRequest.DestinationAddress</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingPortMappingsByDestinationRequest.EndpointId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -339,14 +405,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingPortMappingsByDestinationRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListCustomRoutingPortMappingsByDestinationResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListEndpointGroupsRequest.ListenerArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -356,14 +425,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListEndpointGroupsRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListEndpointGroupsResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListListenersRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -373,10 +445,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListListenersRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListListenersResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -386,14 +460,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ProvisionByoipCidrRequest.Cidr</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.RemoveCustomRoutingEndpointsRequest.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.RemoveEndpointsRequest.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -408,59 +485,73 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateAcceleratorRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateAcceleratorRequest.Name</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateAcceleratorAttributesRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateAcceleratorAttributesRequest.FlowLogsS3Bucket</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateAcceleratorAttributesRequest.FlowLogsS3Prefix</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateCrossAccountAttachmentRequest.AttachmentArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateCrossAccountAttachmentRequest.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateCustomRoutingAcceleratorRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateCustomRoutingAcceleratorRequest.Name</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateCustomRoutingAcceleratorAttributesRequest.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateCustomRoutingAcceleratorAttributesRequest.FlowLogsS3Bucket</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateCustomRoutingAcceleratorAttributesRequest.FlowLogsS3Prefix</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateCustomRoutingListenerRequest.ListenerArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateEndpointGroupRequest.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -470,6 +561,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateEndpointGroupRequest.HealthCheckPath</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^/[-a-zA-Z0-9@:%_\\+.~#?&amp;/=]*$</pattern>
   </property-value-rule>
@@ -490,95 +582,118 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateListenerRequest.ListenerArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.WithdrawByoipCidrRequest.Cidr</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.Accelerator.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.Accelerator.DnsName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.Accelerator.DualStackDnsName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.Accelerator.Name</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.AcceleratorAttributes.FlowLogsS3Bucket</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.AcceleratorAttributes.FlowLogsS3Prefix</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.AcceleratorEvent.Message</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.Attachment.AttachmentArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.Attachment.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ByoipCidr.Cidr</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ByoipCidrEvent.Message</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CidrAuthorizationContext.Message</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CidrAuthorizationContext.Signature</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CrossAccountResource.AttachmentArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CrossAccountResource.Cidr</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CrossAccountResource.EndpointId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CustomRoutingAccelerator.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CustomRoutingAccelerator.DnsName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CustomRoutingAccelerator.Name</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CustomRoutingAcceleratorAttributes.FlowLogsS3Bucket</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CustomRoutingAcceleratorAttributes.FlowLogsS3Prefix</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -603,50 +718,62 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CustomRoutingEndpointConfiguration.AttachmentArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CustomRoutingEndpointConfiguration.EndpointId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CustomRoutingEndpointDescription.EndpointId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CustomRoutingEndpointGroup.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CustomRoutingEndpointGroup.EndpointGroupRegion</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CustomRoutingListener.ListenerArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DestinationPortMapping.AcceleratorArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DestinationPortMapping.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DestinationPortMapping.EndpointGroupRegion</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DestinationPortMapping.EndpointId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.EndpointConfiguration.AttachmentArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.EndpointConfiguration.EndpointId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -656,10 +783,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.EndpointDescription.EndpointId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.EndpointDescription.HealthReason</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -669,10 +798,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.EndpointGroup.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.EndpointGroup.EndpointGroupRegion</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -682,6 +813,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.EndpointGroup.HealthCheckPath</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^/[-a-zA-Z0-9@:%_\\+.~#?&amp;/=]*$</pattern>
   </property-value-rule>
@@ -702,22 +834,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.EndpointIdentifier.EndpointId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.IpAddressDetail.IpAddress</property>
+    <min>0</min>
     <max>45</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.IpAddressDetail.NetworkZone</property>
+    <min>0</min>
     <max>24</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.IpSet.IpFamily</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.Listener.ListenerArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -727,10 +864,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.PortMapping.EndpointGroupArn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.PortMapping.EndpointId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -755,18 +894,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.Resource.Cidr</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.Resource.EndpointId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.Resource.Region</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.SocketAddress.IpAddress</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>

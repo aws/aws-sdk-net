@@ -35,7 +35,7 @@ namespace Amazon.Polly.Model
     /// synthesis parameters in HTTP/2 headers, send text incrementally as events on the input
     /// stream, and receive synthesized audio as it becomes available. <para> This operation
     /// serves as a bidirectional counterpart to <c>SynthesizeSpeech</c>: </para> <ul> <li>
-    /// <para> <a href="https://docs.aws.amazon.com/polly/latest/API/API_SynthesizeSpeech.html">SynthesizeSpeech</a>
+    /// <para> <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html">SynthesizeSpeech</a>
     /// </para> </li> </ul>
     /// </summary>
     public partial class StartSpeechSynthesisStreamRequest : AmazonPollyRequest
@@ -143,7 +143,7 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property VoiceId. 
         /// <para>
-        /// The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/API/API_DescribeVoices.html">DescribeVoices</a>
+        /// The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
         /// operation.
         /// </para>
         /// </summary>

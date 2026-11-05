@@ -26,7 +26,7 @@ using Amazon.SavingsPlans.Endpoints;
 namespace Amazon.SavingsPlans.Internal
 {
     /// <summary>
-    /// Amazon SavingsPlans endpoint provider.
+    /// AWS Savings Plans endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SavingsPlansEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

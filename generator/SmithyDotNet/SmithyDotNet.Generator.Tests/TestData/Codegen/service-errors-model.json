@@ -5,7 +5,8 @@
       "type": "service",
       "version": "2023-01-01",
       "operations": [
-        { "target": "com.example#GetThing" }
+        { "target": "com.example#GetThing" },
+        { "target": "com.example#PutThing" }
       ],
       "errors": [
         { "target": "com.example#ThrottlingException" },
@@ -27,6 +28,38 @@
         { "target": "com.example#ValidationException" }
       ],
       "traits": { "smithy.api#http": { "uri": "/thing", "method": "GET" } }
+    },
+    "com.example#PutThing": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "smithy.api#Unit" },
+      "errors": [
+        { "target": "com.example#LimitExceededException" },
+        { "target": "com.example#LimitExceededFault" },
+        { "target": "com.example#Missing" },
+        { "target": "com.example#MissingException" }
+      ],
+      "traits": { "smithy.api#http": { "uri": "/thing", "method": "PUT" } }
+    },
+    "com.example#LimitExceededException": {
+      "type": "structure",
+      "members": {},
+      "traits": { "smithy.api#error": "client" }
+    },
+    "com.example#LimitExceededFault": {
+      "type": "structure",
+      "members": { "message": { "target": "smithy.api#String" } },
+      "traits": { "smithy.api#error": "client" }
+    },
+    "com.example#Missing": {
+      "type": "structure",
+      "members": {},
+      "traits": { "smithy.api#error": "client" }
+    },
+    "com.example#MissingException": {
+      "type": "structure",
+      "members": { "resourceId": { "target": "smithy.api#String" } },
+      "traits": { "smithy.api#error": "client" }
     },
     "com.example#AccessDeniedException": {
       "type": "structure",

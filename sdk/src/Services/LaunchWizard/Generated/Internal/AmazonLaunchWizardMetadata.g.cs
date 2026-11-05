@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LaunchWizard.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon LaunchWizard service
+    /// Service metadata for AWS Launch Wizard
     /// </summary>
     public partial class AmazonLaunchWizardMetadata : IServiceMetadata
     {

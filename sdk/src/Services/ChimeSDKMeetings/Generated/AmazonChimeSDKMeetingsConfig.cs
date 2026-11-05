@@ -27,12 +27,12 @@ using Amazon.ChimeSDKMeetings.Internal;
 namespace Amazon.ChimeSDKMeetings
 {
     /// <summary>
-    /// Configuration for accessing Amazon ChimeSDKMeetings service
+    /// Configuration for accessing Amazon Chime SDK Meetings
     /// </summary>
     public partial class AmazonChimeSDKMeetingsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Chime SDK Meetings", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("Chime SDK Meetings", "4.0.100.23");
 
         private static readonly AmazonChimeSDKMeetingsEndpointResolver EndpointResolver =
             new AmazonChimeSDKMeetingsEndpointResolver();

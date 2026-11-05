@@ -31,7 +31,7 @@ using Amazon.ChimeSDKMessaging.Endpoints;
 namespace Amazon.ChimeSDKMessaging.Internal
 {
     /// <summary>
-    /// Amazon ChimeSDKMessaging endpoint resolver.
+    /// Amazon Chime SDK Messaging endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ChimeSDKMessaging service requests.
     /// <para />

@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.ImportExport
 {
     /// <summary>
-    /// Configuration for accessing Amazon ImportExport service
+    /// Configuration for accessing AWS Import/Export
     /// </summary>
     public static class AmazonImportExportDefaultConfiguration
     {

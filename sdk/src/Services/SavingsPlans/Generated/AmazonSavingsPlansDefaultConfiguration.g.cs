@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SavingsPlans
 {
     /// <summary>
-    /// Configuration for accessing Amazon SavingsPlans service
+    /// Configuration for accessing AWS Savings Plans
     /// </summary>
     public static class AmazonSavingsPlansDefaultConfiguration
     {

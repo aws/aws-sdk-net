@@ -26,7 +26,7 @@ using Amazon.MediaTailor.Endpoints;
 namespace Amazon.MediaTailor.Internal
 {
     /// <summary>
-    /// Amazon MediaTailor endpoint provider.
+    /// AWS MediaTailor endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MediaTailorEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

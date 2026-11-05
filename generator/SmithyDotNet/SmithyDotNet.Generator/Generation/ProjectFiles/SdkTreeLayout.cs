@@ -39,6 +39,9 @@ public static class SdkTreeLayout
     /// <summary>sdk/src/Core — the runtime, home of <c>partitions.json</c> and the files generated from it.</summary>
     public static string CoreRoot(string repoRoot) => Path.Combine(SdkRoot(repoRoot), "src", "Core");
 
+    /// <summary>extensions/src — one folder per extension package.</summary>
+    public static string ExtensionsRoot(string repoRoot) => Path.Combine(repoRoot, "extensions", "src");
+
     // Relative prefixes embedded in generated files. Forward-slash so the generated references are
     // byte-identical whether the generator runs on Windows or Linux.
 

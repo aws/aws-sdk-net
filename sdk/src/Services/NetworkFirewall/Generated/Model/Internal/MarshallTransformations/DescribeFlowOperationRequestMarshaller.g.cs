@@ -75,6 +75,11 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("AvailabilityZone");
                 context.Writer.WriteStringValue(publicRequest.AvailabilityZone);
             }
+            if (publicRequest.IsSetAvailabilityZoneId())
+            {
+                context.Writer.WritePropertyName("AvailabilityZoneId");
+                context.Writer.WriteStringValue(publicRequest.AvailabilityZoneId);
+            }
             if (publicRequest.IsSetFirewallArn())
             {
                 context.Writer.WritePropertyName("FirewallArn");

@@ -26,7 +26,7 @@ using Amazon.CloudFrontKeyValueStore.Endpoints;
 namespace Amazon.CloudFrontKeyValueStore.Internal
 {
     /// <summary>
-    /// Amazon CloudFrontKeyValueStore endpoint provider.
+    /// Amazon CloudFront KeyValueStore endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CloudFrontKeyValueStoreEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -512,9 +512,16 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property WorkerType. 
         /// <para>
         /// The type of predefined worker that is allocated when a job runs. Accepts a value of
-        /// G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html#create-job">Defining
+        /// G.025X, G.1X, G.2X, G.4X, G.8X, G.12X, G.16X, R.1X, R.2X, R.4X, or R.8X for Spark
+        /// jobs. Accepts the value Z.2X for Ray jobs. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html#create-job">Defining
         /// job properties for Spark jobs </a> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>G.12X</c>, <c>G.16X</c>, and <c>R.1X</c> through <c>R.8X</c> worker types are
+        /// available only for Glue version 4.0 or later Spark ETL jobs in select Amazon Web Services
+        /// Regions. For the supported Regions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Configuring
+        /// job properties for Spark jobs</a> in the developer guide.
         /// </para>
         /// </summary>
         public WorkerType WorkerType { get; set; }

@@ -31,7 +31,7 @@ using Amazon.CodeBuild.Endpoints;
 namespace Amazon.CodeBuild.Internal
 {
     /// <summary>
-    /// Amazon CodeBuild endpoint resolver.
+    /// AWS CodeBuild endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CodeBuild service requests.
     /// <para />

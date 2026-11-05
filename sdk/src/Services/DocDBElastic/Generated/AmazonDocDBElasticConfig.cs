@@ -27,12 +27,12 @@ using Amazon.DocDBElastic.Internal;
 namespace Amazon.DocDBElastic
 {
     /// <summary>
-    /// Configuration for accessing Amazon DocDBElastic service
+    /// Configuration for accessing Amazon DocumentDB Elastic Clusters
     /// </summary>
     public partial class AmazonDocDBElasticConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DocDB Elastic", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("DocDB Elastic", "4.0.100.23");
 
         private static readonly AmazonDocDBElasticEndpointResolver EndpointResolver =
             new AmazonDocDBElasticEndpointResolver();

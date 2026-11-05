@@ -101,6 +101,13 @@ namespace Amazon.MWAAServerless.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("Environment", targetDepth, ref reader))
+                {
+                    var unmarshaller = EnvironmentUnmarshaller.Instance;
+                    unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("LoggingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LoggingConfigurationUnmarshaller.Instance;

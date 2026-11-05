@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Batch service
+    /// Service metadata for AWS Batch
     /// </summary>
     public partial class AmazonBatchMetadata : IServiceMetadata
     {

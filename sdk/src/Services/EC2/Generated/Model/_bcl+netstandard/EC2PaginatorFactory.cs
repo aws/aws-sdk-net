@@ -1181,6 +1181,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for GetImageFindings operation
+        ///</summary>
+        public IGetImageFindingsPaginator GetImageFindings(GetImageFindingsRequest request) 
+        {
+            return new GetImageFindingsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetInstanceTypesFromInstanceRequirements operation
         ///</summary>
         public IGetInstanceTypesFromInstanceRequirementsPaginator GetInstanceTypesFromInstanceRequirements(GetInstanceTypesFromInstanceRequirementsRequest request) 

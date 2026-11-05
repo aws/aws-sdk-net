@@ -31,7 +31,7 @@ using Amazon.PrometheusService.Endpoints;
 namespace Amazon.PrometheusService.Internal
 {
     /// <summary>
-    /// Amazon PrometheusService endpoint resolver.
+    /// Amazon Prometheus Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PrometheusService service requests.
     /// <para />

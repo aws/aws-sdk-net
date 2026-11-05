@@ -28,12 +28,12 @@ using Amazon.EC2.Internal;
 namespace Amazon.EC2
 {
     /// <summary>
-    /// Configuration for accessing Amazon EC2 service
+    /// Configuration for accessing Amazon Elastic Compute Cloud
     /// </summary>
     public partial class AmazonEC2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EC2", "4.0.127.1");
+            InternalSDKUtils.BuildUserAgentString("EC2", "4.0.132.0");
 
         private static readonly AmazonEC2EndpointResolver EndpointResolver =
             new AmazonEC2EndpointResolver();

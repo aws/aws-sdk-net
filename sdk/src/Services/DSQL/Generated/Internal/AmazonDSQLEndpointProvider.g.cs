@@ -26,7 +26,7 @@ using Amazon.DSQL.Endpoints;
 namespace Amazon.DSQL.Internal
 {
     /// <summary>
-    /// Amazon DSQL endpoint provider.
+    /// Amazon Aurora DSQL endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DSQLEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

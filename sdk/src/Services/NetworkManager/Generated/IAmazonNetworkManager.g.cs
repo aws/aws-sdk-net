@@ -3892,6 +3892,59 @@ namespace Amazon.NetworkManager
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the NAT configurations of core network attachments. You must specify either
+        /// a core network ID or an attachment ID. Only the core network owner can list NAT configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachmentNatConfigurations service method.</param>
+        /// <returns>The response from the ListAttachmentNatConfigurations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachmentNatConfigurations">REST API Reference for ListAttachmentNatConfigurations Operation</seealso>
+        ListAttachmentNatConfigurationsResponse ListAttachmentNatConfigurations(ListAttachmentNatConfigurationsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the NAT configurations of core network attachments. You must specify either
+        /// a core network ID or an attachment ID. Only the core network owner can list NAT configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachmentNatConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAttachmentNatConfigurations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachmentNatConfigurations">REST API Reference for ListAttachmentNatConfigurations Operation</seealso>
+        Task<ListAttachmentNatConfigurationsResponse> ListAttachmentNatConfigurationsAsync(ListAttachmentNatConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists the routing policy associations for attachments in a core network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAttachmentRoutingPolicyAssociations service method.</param>
@@ -5042,6 +5095,97 @@ namespace Amazon.NetworkManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the NAT configuration of a core network attachment. You can enable or disable
+        /// NAT gateway support, specify whether the core network installs system routes for the
+        /// NAT CIDR blocks, and replace the NAT rules of the attachment. Specify at least one
+        /// of <c>NatGatewaySupport</c>, <c>NatSystemRouteSupport</c>, or <c>NatGatewayRules</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Only the core network owner can update the NAT configuration of an attachment. The
+        /// attachment must be in the <c>AVAILABLE</c>, <c>PENDING_ATTACHMENT_ACCEPTANCE</c>,
+        /// or <c>PENDING_TAG_ACCEPTANCE</c> state. Changes are applied asynchronously, and the
+        /// attachment is in the <c>UPDATING</c> state while they are applied. If the attachment
+        /// is pending acceptance, the NAT configuration is stored and is applied after the attachment
+        /// is accepted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAttachmentNatConfiguration service method.</param>
+        /// <returns>The response from the UpdateAttachmentNatConfiguration service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateAttachmentNatConfiguration">REST API Reference for UpdateAttachmentNatConfiguration Operation</seealso>
+        UpdateAttachmentNatConfigurationResponse UpdateAttachmentNatConfiguration(UpdateAttachmentNatConfigurationRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the NAT configuration of a core network attachment. You can enable or disable
+        /// NAT gateway support, specify whether the core network installs system routes for the
+        /// NAT CIDR blocks, and replace the NAT rules of the attachment. Specify at least one
+        /// of <c>NatGatewaySupport</c>, <c>NatSystemRouteSupport</c>, or <c>NatGatewayRules</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Only the core network owner can update the NAT configuration of an attachment. The
+        /// attachment must be in the <c>AVAILABLE</c>, <c>PENDING_ATTACHMENT_ACCEPTANCE</c>,
+        /// or <c>PENDING_TAG_ACCEPTANCE</c> state. Changes are applied asynchronously, and the
+        /// attachment is in the <c>UPDATING</c> state while they are applied. If the attachment
+        /// is pending acceptance, the NAT configuration is stored and is applied after the attachment
+        /// is accepted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAttachmentNatConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateAttachmentNatConfiguration service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateAttachmentNatConfiguration">REST API Reference for UpdateAttachmentNatConfiguration Operation</seealso>
+        Task<UpdateAttachmentNatConfigurationResponse> UpdateAttachmentNatConfigurationAsync(UpdateAttachmentNatConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

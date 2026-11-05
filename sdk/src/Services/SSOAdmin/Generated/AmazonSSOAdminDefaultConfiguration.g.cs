@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SSOAdmin
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSOAdmin service
+    /// Configuration for accessing AWS Single Sign-On Admin
     /// </summary>
     public static class AmazonSSOAdminDefaultConfiguration
     {

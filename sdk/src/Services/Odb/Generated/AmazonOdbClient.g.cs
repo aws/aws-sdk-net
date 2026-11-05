@@ -1212,6 +1212,12 @@ namespace Amazon.Odb
 #if NETFRAMEWORK
         /// <summary>
         /// Creates an Exascale storage vault.
+        /// 
+        ///  
+        /// <para>
+        /// To create the Exascale storage vault on dedicated Exadata infrastructure, specify
+        /// <c>cloudExadataInfrastructureId</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExascaleDbStorageVault service method.</param>
         /// <returns>The response from the CreateExascaleDbStorageVault service method, as returned by Odb.</returns>
@@ -1226,6 +1232,10 @@ namespace Amazon.Odb
         /// <exception cref="Amazon.Odb.Model.InternalServerException">
         /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
         /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Odb.Model.ServiceQuotaExceededException">
         /// You have exceeded the service quota.
@@ -1259,6 +1269,12 @@ namespace Amazon.Odb
 
         /// <summary>
         /// Creates an Exascale storage vault.
+        /// 
+        ///  
+        /// <para>
+        /// To create the Exascale storage vault on dedicated Exadata infrastructure, specify
+        /// <c>cloudExadataInfrastructureId</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExascaleDbStorageVault service method.</param>
         /// <param name="cancellationToken">
@@ -1276,6 +1292,10 @@ namespace Amazon.Odb
         /// <exception cref="Amazon.Odb.Model.InternalServerException">
         /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
         /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Odb.Model.ServiceQuotaExceededException">
         /// You have exceeded the service quota.
@@ -4904,6 +4924,10 @@ namespace Amazon.Odb
         /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
         /// service. Wait and try again.
         /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
         /// <exception cref="Amazon.Odb.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
@@ -4947,6 +4971,10 @@ namespace Amazon.Odb
         /// <exception cref="Amazon.Odb.Model.InternalServerException">
         /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
         /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Odb.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -6737,6 +6765,100 @@ namespace Amazon.Odb
             options.ResponseUnmarshaller = UpdateExadbVmClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateExadbVmClusterResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Configures or updates the Exascale storage on an Exadata infrastructure. After you
+        /// configure Exascale storage, you can create Exascale storage vaults on the infrastructure
+        /// and VM clusters that use Exascale storage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExascaleCloudExadataInfrastructure service method.</param>
+        /// <returns>The response from the UpdateExascaleCloudExadataInfrastructure service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateExascaleCloudExadataInfrastructure">REST API Reference for UpdateExascaleCloudExadataInfrastructure Operation</seealso>
+        public virtual UpdateExascaleCloudExadataInfrastructureResponse UpdateExascaleCloudExadataInfrastructure(UpdateExascaleCloudExadataInfrastructureRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExascaleCloudExadataInfrastructureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExascaleCloudExadataInfrastructureResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateExascaleCloudExadataInfrastructureResponse>(request, options);
+        }
+#else
+        internal virtual UpdateExascaleCloudExadataInfrastructureResponse UpdateExascaleCloudExadataInfrastructure(UpdateExascaleCloudExadataInfrastructureRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExascaleCloudExadataInfrastructureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExascaleCloudExadataInfrastructureResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateExascaleCloudExadataInfrastructureResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Configures or updates the Exascale storage on an Exadata infrastructure. After you
+        /// configure Exascale storage, you can create Exascale storage vaults on the infrastructure
+        /// and VM clusters that use Exascale storage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExascaleCloudExadataInfrastructure service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateExascaleCloudExadataInfrastructure service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateExascaleCloudExadataInfrastructure">REST API Reference for UpdateExascaleCloudExadataInfrastructure Operation</seealso>
+        public virtual Task<UpdateExascaleCloudExadataInfrastructureResponse> UpdateExascaleCloudExadataInfrastructureAsync(UpdateExascaleCloudExadataInfrastructureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExascaleCloudExadataInfrastructureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExascaleCloudExadataInfrastructureResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateExascaleCloudExadataInfrastructureResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

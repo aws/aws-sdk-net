@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BCMDataExports.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon BCMDataExports service
+    /// Service metadata for AWS Billing and Cost Management Data Exports
     /// </summary>
     public partial class AmazonBCMDataExportsMetadata : IServiceMetadata
     {

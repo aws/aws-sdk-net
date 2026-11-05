@@ -377,6 +377,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TransitGatewayAttachment = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("transitGatewayPolicyTable", targetDepth))
+                    {
+                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
+                        unmarshalledObject.TransitGatewayPolicyTable = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("transitGatewayPolicyTableEntry", targetDepth))
+                    {
+                        var unmarshaller = AnalysisTransitGatewayPolicyTableEntryUnmarshaller.Instance;
+                        unmarshalledObject.TransitGatewayPolicyTableEntry = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("transitGatewayRouteTable", targetDepth))
                     {
                         var unmarshaller = AnalysisComponentUnmarshaller.Instance;

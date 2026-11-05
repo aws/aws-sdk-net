@@ -1,0 +1,101 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.WorkSpaces.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DescribeWorkspacesPoolSessions operation. <note>
+    /// <para> End of support notice: On December 31, 2027, Amazon Web Services will end support
+    /// for Amazon WorkSpaces Pools. After December 31, 2027, you will no longer be able to
+    /// access the Amazon WorkSpaces Pools console or Amazon WorkSpaces Pools resources. For
+    /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-pools-end-of-support.html">Amazon
+    /// WorkSpaces Pools end of support</a>. </para> </note> <para> Retrieves a list that
+    /// describes the streaming sessions for a specified pool. </para>
+    /// </summary>
+    public partial class DescribeWorkspacesPoolSessionsRequest : AmazonWorkSpacesRequest
+    {
+        /// <summary>
+        /// Gets and sets the property Limit. 
+        /// <para>
+        /// The maximum size of each page of results. The default value is 20 and the maximum
+        /// value is 50.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 50)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Limit property is set.
+        /// </summary>
+        internal bool IsSetLimit() => this.Limit.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If you received a <c>NextToken</c> from a previous call that was paginated, provide
+        /// this token to receive the next set of results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
+        /// Gets and sets the property PoolId. 
+        /// <para>
+        /// The identifier of the pool.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string PoolId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PoolId property is set.
+        /// </summary>
+        internal bool IsSetPoolId() => this.PoolId != null;
+
+        /// <summary>
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// The identifier of the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 2, Max = 128)]
+        public string UserId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UserId property is set.
+        /// </summary>
+        internal bool IsSetUserId() => this.UserId != null;
+    }
+}

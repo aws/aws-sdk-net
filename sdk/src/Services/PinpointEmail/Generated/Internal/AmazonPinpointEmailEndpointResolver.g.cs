@@ -31,7 +31,7 @@ using Amazon.PinpointEmail.Endpoints;
 namespace Amazon.PinpointEmail.Internal
 {
     /// <summary>
-    /// Amazon PinpointEmail endpoint resolver.
+    /// Amazon Pinpoint Email Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PinpointEmail service requests.
     /// <para />

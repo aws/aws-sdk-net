@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QConnect.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon QConnect service
+    /// Service metadata for Amazon Q Connect
     /// </summary>
     public partial class AmazonQConnectMetadata : IServiceMetadata
     {

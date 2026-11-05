@@ -31,7 +31,7 @@ using Amazon.PinpointSMSVoice.Endpoints;
 namespace Amazon.PinpointSMSVoice.Internal
 {
     /// <summary>
-    /// Amazon PinpointSMSVoice endpoint resolver.
+    /// Amazon Pinpoint SMS and Voice Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PinpointSMSVoice service requests.
     /// <para />

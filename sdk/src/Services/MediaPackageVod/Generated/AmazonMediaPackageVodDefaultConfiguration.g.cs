@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MediaPackageVod
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaPackageVod service
+    /// Configuration for accessing AWS Elemental MediaPackage VOD
     /// </summary>
     public static class AmazonMediaPackageVodDefaultConfiguration
     {

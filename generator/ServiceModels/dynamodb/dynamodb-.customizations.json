@@ -2,8 +2,8 @@
     "noArgOverloads": [
         "ListTables"
     ],
-    "emitIsSetProperties":{
-        "AttributeValue" : [
+    "emitIsSetProperties": {
+        "AttributeValue": [
             "BOOL",
             "M",
             "L",
@@ -11,16 +11,26 @@
             "BS",
             "NS"
         ],
-        "GetItemOutput" : [
+        "GetItemOutput": [
             "Item"
         ],
-        "QueryInput" : [
+        "QueryInput": [
             "Limit"
         ],
-        "ScanInput" : [
+        "ScanInput": [
             "Limit",
             "Segment",
             "TotalSegments"
         ]
+    },
+    "paginators": {
+        "BatchGetItem": {
+            "inputToken": [
+                "RequestItems"
+            ],
+            "outputToken": [
+                "UnprocessedKeys"
+            ]
+        }
     }
 }

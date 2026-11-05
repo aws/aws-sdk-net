@@ -31,7 +31,7 @@ using Amazon.LambdaCore.Endpoints;
 namespace Amazon.LambdaCore.Internal
 {
     /// <summary>
-    /// Amazon LambdaCore endpoint resolver.
+    /// AWS Lambda Core endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for LambdaCore service requests.
     /// <para />

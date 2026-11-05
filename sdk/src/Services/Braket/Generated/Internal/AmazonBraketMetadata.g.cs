@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Braket service
+    /// Service metadata for Braket
     /// </summary>
     public partial class AmazonBraketMetadata : IServiceMetadata
     {

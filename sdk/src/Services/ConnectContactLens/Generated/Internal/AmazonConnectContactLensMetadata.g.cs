@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectContactLens.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ConnectContactLens service
+    /// Service metadata for Amazon Connect Contact Lens
     /// </summary>
     public partial class AmazonConnectContactLensMetadata : IServiceMetadata
     {

@@ -36,6 +36,15 @@ public class ServiceSpecificSolutionFileWriterTests : IDisposable
         File.Copy(Utils.PathCombineAlt("TestData", "AWSSDK.UnitTests.Core.xml"),
             Utils.PathCombineAlt(unitTestsCoreDirectory, "AWSSDK.UnitTests.Core.csproj"), overwrite: true);
 
+        // The service's own test csprojs are discovered under sdk/test/Services/{Service}.
+        var serviceTestsRoot = Utils.PathCombineAlt(_seededSdkRoot, "test", "Services", "CloudTrailData");
+        Directory.CreateDirectory(Utils.PathCombineAlt(serviceTestsRoot, "UnitTests"));
+        File.Copy(Utils.PathCombineAlt("TestData", "AWSSDK.UnitTests.CloudTrailData.xml"),
+            Utils.PathCombineAlt(serviceTestsRoot, "UnitTests", "AWSSDK.UnitTests.CloudTrailData.csproj"), overwrite: true);
+        Directory.CreateDirectory(Utils.PathCombineAlt(serviceTestsRoot, "IntegrationTests"));
+        File.Copy(Utils.PathCombineAlt("TestData", "AWSSDK.IntegrationTests.CloudTrailData.xml"),
+            Utils.PathCombineAlt(serviceTestsRoot, "IntegrationTests", "AWSSDK.IntegrationTests.CloudTrailData.csproj"), overwrite: true);
+
         _slnxFile = writer.Write(serviceDirectory);
     }
 
@@ -70,6 +79,7 @@ public class ServiceSpecificSolutionFileWriterTests : IDisposable
         AssertHelper("""<Project Path="../../../../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj" />""");
         AssertHelper("""<Project Path="../../../test/Common/AWSSDK.CommonTest.csproj" />""");
         AssertHelper("""<Project Path="../../../test/IntegrationTests/AWSSDK.IntegrationTestUtilities.csproj" />""");
+        AssertHelper("""<Project Path="../../../test/Services/CloudTrailData/IntegrationTests/AWSSDK.IntegrationTests.CloudTrailData.csproj" />""");
         AssertHelper("""<Project Path="../../../test/Services/CloudTrailData/UnitTests/AWSSDK.UnitTests.CloudTrailData.csproj" />""");
         AssertHelper("""<Project Path="../../../test/UnitTests/AWSSDK.UnitTests.Core.csproj" />""");
         AssertHelper("""<Project Path="../../../test/UnitTests/Custom/AWSSDK.UnitTestUtilities.csproj" />""");
@@ -91,6 +101,10 @@ public class ServiceSpecificSolutionFileWriterTests : IDisposable
         AssertHelper("""<Project Path="../SimpleNotificationService/AWSSDK.SimpleNotificationService.NetStandard.csproj" />""");
         AssertHelper("""<Project Path="../SQS/AWSSDK.SQS.NetFramework.csproj" />""");
         AssertHelper("""<Project Path="../SQS/AWSSDK.SQS.NetStandard.csproj" />""");
+
+        // Referenced only by the service's integration tests.
+        AssertHelper("""<Project Path="../Kinesis/AWSSDK.Kinesis.NetFramework.csproj" />""");
+        AssertHelper("""<Project Path="../Kinesis/AWSSDK.Kinesis.NetStandard.csproj" />""");
     }
 
     // As in C2J, a service dependency the core unit tests also reference (SQS) is listed once, under /Services/.

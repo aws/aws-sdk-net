@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Billing.Model.AssociateContractRequest.ContractArn</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^arn:aws[a-z-]*:billing::[0-9]{12}:contract/[a-zA-Z0-9_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.AssociateContractRequest.ContractDocumentId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Billing.Model.AssociateSourceViewsRequest.Arn</property>
     <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.AssociateSourceViewsResponse.Arn</property>
     <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.CancelContractualInvestmentAttestationRequest.AttestationId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.CancelContractualInvestmentAttestationRequest.ContractArn</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^arn:aws[a-z-]*:billing::[0-9]{12}:contract/[a-zA-Z0-9_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.CancelContractualInvestmentAttestationRequest.Reason</property>
+    <min>1</min>
+    <max>80</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.CreateBillingViewRequest.ClientToken</property>
@@ -29,12 +57,53 @@
     <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest.ContractArn</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^arn:aws[a-z-]*:billing::[0-9]{12}:contract/[a-zA-Z0-9_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest.ContractDocumentId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest.InvestmentId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest.InvestmentSummaryId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.CreateContractualInvestmentAttestationResponse.AttestationId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Billing.Model.DeleteBillingViewRequest.Arn</property>
     <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.DeleteBillingViewResponse.Arn</property>
     <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.DisassociateContractRequest.ContractArn</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^arn:aws[a-z-]*:billing::[0-9]{12}:contract/[a-zA-Z0-9_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.DisassociateSourceViewsRequest.Arn</property>
@@ -64,6 +133,12 @@
   <property-value-rule>
     <property>Amazon.Billing.Model.GetBillingViewRequest.Arn</property>
     <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.GetContractInformationRequest.ContractArn</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^arn:aws[a-z-]*:billing::[0-9]{12}:contract/[a-zA-Z0-9_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetCreditAllocationHistoryRequest.AccountId</property>
@@ -211,6 +286,104 @@
     <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractsRequest.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractsResponse.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentAttestationsRequest.ContractArn</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^arn:aws[a-z-]*:billing::[0-9]{12}:contract/[a-zA-Z0-9_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentAttestationsRequest.InvestmentSummaryId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentAttestationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentAttestationsRequest.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentAttestationsResponse.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentSummariesRequest.ContractArn</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^arn:aws[a-z-]*:billing::[0-9]{12}:contract/[a-zA-Z0-9_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentSummariesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentSummariesRequest.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentSummariesResponse.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentsRequest.ContractArn</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^arn:aws[a-z-]*:billing::[0-9]{12}:contract/[a-zA-Z0-9_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentsRequest.InvestmentSummaryId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentsRequest.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListContractualInvestmentsResponse.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Billing.Model.ListEnterpriseSupportLinkedAccountChargesRequest.AccountId</property>
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
@@ -296,12 +469,45 @@
     <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Billing.Model.AdditionalRecipient.Email</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Billing.Model.Amount.CurrencyAmount</property>
     <pattern>^[0-9]+(.[0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.Amount.CurrencyCode</property>
     <pattern>^[A-Z]{3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ApproverDetails.Email</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ApproverDetails.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ApproverDetails.Title</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.AttestationQuantity.AttestationUnit</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.AttestationQuantity.AttestationVolume</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^[0-9]+(\.[0-9]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingPeriod.Month</property>
@@ -421,6 +627,12 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Billing.Model.ContractSummary.ContractArn</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^arn:aws[a-z-]*:billing::[0-9]{12}:contract/[a-zA-Z0-9_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Billing.Model.CostCategoryValues.Key</property>
     <min>1</min>
     <max>50</max>
@@ -452,12 +664,94 @@
     <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Billing.Model.InvestmentAttestation.AttestationId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.InvestmentAttestation.InvestmentId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.InvestmentAttestation.InvestmentName</property>
+    <min>1</min>
+    <max>400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.InvestmentAttestation.InvestmentSummaryId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.InvestmentAttestation.OutcomeDescription</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.InvestmentDistribution.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.InvestmentMultiplier.InvestmentAttestationInputUnit</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.InvestmentMultiplier.Value</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^[0-9]+(\.[0-9]+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.InvestmentSummary.InvestmentName</property>
+    <min>1</min>
+    <max>400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.InvestmentSummary.InvestmentSummaryId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.LegalEntity.LegalEntityName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Billing.Model.LinkedAccountCharge.AccountId</property>
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.LinkedAccountCharge.PayerAccountId</property>
     <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.MilestoneBasedInvestment.InvestmentId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.OutcomeBasedInvestment.InvestmentId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.OutcomeBasedInvestment.OutcomeDescription</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.PrivatePricingAddendum.ContractArn</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^arn:aws[a-z-]*:billing::[0-9]{12}:contract/[a-zA-Z0-9_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ResourceNotFoundException.ResourceId</property>

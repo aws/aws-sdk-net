@@ -27,12 +27,12 @@ using Amazon.ControlTower.Internal;
 namespace Amazon.ControlTower
 {
     /// <summary>
-    /// Configuration for accessing Amazon ControlTower service
+    /// Configuration for accessing AWS Control Tower
     /// </summary>
     public partial class AmazonControlTowerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ControlTower", "4.0.101.0");
+            InternalSDKUtils.BuildUserAgentString("ControlTower", "4.0.101.3");
 
         private static readonly AmazonControlTowerEndpointResolver EndpointResolver =
             new AmazonControlTowerEndpointResolver();

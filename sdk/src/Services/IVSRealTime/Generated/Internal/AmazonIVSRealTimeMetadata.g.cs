@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IVSRealTime service
+    /// Service metadata for Amazon Interactive Video Service RealTime
     /// </summary>
     public partial class AmazonIVSRealTimeMetadata : IServiceMetadata
     {

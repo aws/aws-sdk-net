@@ -26,7 +26,7 @@ using Amazon.CloudControlApi.Endpoints;
 namespace Amazon.CloudControlApi.Internal
 {
     /// <summary>
-    /// Amazon CloudControlApi endpoint provider.
+    /// AWS Cloud Control API endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CloudControlApiEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

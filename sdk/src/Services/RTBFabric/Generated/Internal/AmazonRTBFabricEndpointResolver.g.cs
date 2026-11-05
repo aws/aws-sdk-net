@@ -31,7 +31,7 @@ using Amazon.RTBFabric.Endpoints;
 namespace Amazon.RTBFabric.Internal
 {
     /// <summary>
-    /// Amazon RTBFabric endpoint resolver.
+    /// RTBFabric endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for RTBFabric service requests.
     /// <para />

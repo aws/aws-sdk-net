@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.GreengrassV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon GreengrassV2 service
+    /// Configuration for accessing AWS IoT Greengrass V2
     /// </summary>
     public static class AmazonGreengrassV2DefaultConfiguration
     {

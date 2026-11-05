@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.",
   "generate-client-constructors": true,
+  "base-name": "DocDB",
   "legacy-service-id": "DocDB"
 }

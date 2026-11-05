@@ -31,7 +31,7 @@ using Amazon.KinesisVideoSignalingChannels.Endpoints;
 namespace Amazon.KinesisVideoSignalingChannels.Internal
 {
     /// <summary>
-    /// Amazon KinesisVideoSignalingChannels endpoint resolver.
+    /// Amazon Kinesis Video Signaling Channels endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for KinesisVideoSignalingChannels service requests.
     /// <para />

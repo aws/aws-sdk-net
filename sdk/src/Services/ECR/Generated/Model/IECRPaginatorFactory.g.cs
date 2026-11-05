@@ -51,6 +51,12 @@ namespace Amazon.ECR.Model
         IDescribePullThroughCacheRulesPaginator DescribePullThroughCacheRules(DescribePullThroughCacheRulesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeReplicationBackfillResults operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IDescribeReplicationBackfillResultsPaginator DescribeReplicationBackfillResults(DescribeReplicationBackfillResultsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeRepositories operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -73,5 +79,11 @@ namespace Amazon.ECR.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListImagesPaginator ListImages(ListImagesRequest request);
+
+        /// <summary>
+        /// Paginator for ListReplicationBackfills operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListReplicationBackfillsPaginator ListReplicationBackfills(ListReplicationBackfillsRequest request);
     }
 }

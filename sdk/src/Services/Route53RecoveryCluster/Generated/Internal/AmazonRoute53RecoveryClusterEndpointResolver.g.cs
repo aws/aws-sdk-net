@@ -31,7 +31,7 @@ using Amazon.Route53RecoveryCluster.Endpoints;
 namespace Amazon.Route53RecoveryCluster.Internal
 {
     /// <summary>
-    /// Amazon Route53RecoveryCluster endpoint resolver.
+    /// Route53 Recovery Cluster endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Route53RecoveryCluster service requests.
     /// <para />

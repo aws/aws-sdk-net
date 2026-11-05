@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.JSONRPC10
 {
     /// <summary>
-    /// Configuration for accessing Amazon JSONRPC10 service
+    /// Configuration for accessing Sample Json 1.0 Protocol Service
     /// </summary>
     public static class AmazonJSONRPC10DefaultConfiguration
     {

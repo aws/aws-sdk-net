@@ -1,0 +1,10 @@
+{
+    "paginators": {
+        "ListApplications": {
+            "pageSize": "maxResults"
+        },
+        "ListEntitlements": {
+            "pageSize": "maxResults"
+        }
+    }
+}

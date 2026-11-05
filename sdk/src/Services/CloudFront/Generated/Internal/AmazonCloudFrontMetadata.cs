@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon CloudFront service
+    /// Service metadata for Amazon CloudFront
     /// </summary>
     public partial class AmazonCloudFrontMetadata : IServiceMetadata
     {

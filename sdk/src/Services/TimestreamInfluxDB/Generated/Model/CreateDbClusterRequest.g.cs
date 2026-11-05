@@ -90,8 +90,12 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <para>
         /// The Timestream for InfluxDB DB instance type to run InfluxDB on.
         /// </para>
+        ///  
+        /// <para>
+        /// Optional when you define the cluster topology with deploymentConfiguration, because
+        /// the instance type is then specified per node group.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public DbInstanceType DbInstanceType { get; set; }
 
         /// <summary>
@@ -145,6 +149,22 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Checks to see if the DbStorageType property is set.
         /// </summary>
         internal bool IsSetDbStorageType() => this.DbStorageType != null;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfiguration. 
+        /// <para>
+        /// The compute topology for the cluster, defined as a set of node groups. Use deploymentConfiguration
+        /// to allocate compute per function: ingest, query, compaction, and processing. A deployment
+        /// configuration becomes the source of truth for the cluster's topology. Timestream for
+        /// InfluxDB then ignores any node-count parameters in the associated DB parameter group.
+        /// </para>
+        /// </summary>
+        public DeploymentConfiguration DeploymentConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeploymentConfiguration property is set.
+        /// </summary>
+        internal bool IsSetDeploymentConfiguration() => this.DeploymentConfiguration != null;
 
         /// <summary>
         /// Gets and sets the property DeploymentType. 

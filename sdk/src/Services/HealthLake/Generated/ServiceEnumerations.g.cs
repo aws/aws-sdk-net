@@ -22,6 +22,62 @@ using Amazon.Runtime;
 namespace Amazon.HealthLake
 {
     /// <summary>
+    /// Constants used for properties of type AgentErrorType.
+    /// </summary>
+    public class AgentErrorType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AccessDeniedException for AgentErrorType
+        /// </summary>
+        public static readonly AgentErrorType AccessDeniedException = new AgentErrorType("AccessDeniedException");
+
+        /// <summary>
+        /// Constant InternalServerException for AgentErrorType
+        /// </summary>
+        public static readonly AgentErrorType InternalServerException = new AgentErrorType("InternalServerException");
+
+        /// <summary>
+        /// Constant ResourceNotFoundException for AgentErrorType
+        /// </summary>
+        public static readonly AgentErrorType ResourceNotFoundException = new AgentErrorType("ResourceNotFoundException");
+
+        /// <summary>
+        /// Constant ThrottlingException for AgentErrorType
+        /// </summary>
+        public static readonly AgentErrorType ThrottlingException = new AgentErrorType("ThrottlingException");
+
+        /// <summary>
+        /// Constant ValidationException for AgentErrorType
+        /// </summary>
+        public static readonly AgentErrorType ValidationException = new AgentErrorType("ValidationException");
+
+        /// <summary>
+        /// Constructs a custom AgentErrorType for a value not among the defined constants.
+        /// </summary>
+        public AgentErrorType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentErrorType FindValue(string value)
+        {
+            return FindValue<AgentErrorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentErrorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AgentInputMessageType.
     /// </summary>
     public class AgentInputMessageType : ConstantClass
@@ -57,72 +113,6 @@ namespace Amazon.HealthLake
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AgentInputMessageType(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-    /// <summary>
-    /// Constants used for properties of type AgentOutputMessageType.
-    /// </summary>
-    public class AgentOutputMessageType : ConstantClass
-    {
-        /// <summary>
-        /// Constant Choices for AgentOutputMessageType
-        /// </summary>
-        public static readonly AgentOutputMessageType Choices = new AgentOutputMessageType("choices");
-
-        /// <summary>
-        /// Constant Complete for AgentOutputMessageType
-        /// </summary>
-        public static readonly AgentOutputMessageType Complete = new AgentOutputMessageType("complete");
-
-        /// <summary>
-        /// Constant Confirmation for AgentOutputMessageType
-        /// </summary>
-        public static readonly AgentOutputMessageType Confirmation = new AgentOutputMessageType("confirmation");
-
-        /// <summary>
-        /// Constant Error for AgentOutputMessageType
-        /// </summary>
-        public static readonly AgentOutputMessageType Error = new AgentOutputMessageType("error");
-
-        /// <summary>
-        /// Constant INITIAL_GREETING for AgentOutputMessageType
-        /// </summary>
-        public static readonly AgentOutputMessageType INITIAL_GREETING = new AgentOutputMessageType("INITIAL_GREETING");
-
-        /// <summary>
-        /// Constant Normal for AgentOutputMessageType
-        /// </summary>
-        public static readonly AgentOutputMessageType Normal = new AgentOutputMessageType("normal");
-
-        /// <summary>
-        /// Constant Options for AgentOutputMessageType
-        /// </summary>
-        public static readonly AgentOutputMessageType Options = new AgentOutputMessageType("options");
-
-        /// <summary>
-        /// Constructs a custom AgentOutputMessageType for a value not among the defined constants.
-        /// </summary>
-        public AgentOutputMessageType(string value) : base(value) { }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static AgentOutputMessageType FindValue(string value)
-        {
-            return FindValue<AgentOutputMessageType>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator AgentOutputMessageType(string value)
         {
             return FindValue(value);
         }

@@ -26,7 +26,7 @@ using Amazon.NotificationsContacts.Endpoints;
 namespace Amazon.NotificationsContacts.Internal
 {
     /// <summary>
-    /// Amazon NotificationsContacts endpoint provider.
+    /// AWS User Notifications Contacts endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="NotificationsContactsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

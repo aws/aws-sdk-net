@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.LaunchWizard
 {
     /// <summary>
-    /// Configuration for accessing Amazon LaunchWizard service
+    /// Configuration for accessing AWS Launch Wizard
     /// </summary>
     public static class AmazonLaunchWizardDefaultConfiguration
     {

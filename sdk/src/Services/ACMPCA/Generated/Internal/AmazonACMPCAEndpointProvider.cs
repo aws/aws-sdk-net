@@ -26,7 +26,7 @@ using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
 namespace Amazon.ACMPCA.Internal
 {
     /// <summary>
-    /// Amazon ACMPCA endpoint provider.
+    /// AWS Certificate Manager Private Certificate Authority endpoint provider.
     /// Resolves endpoint for given set of ACMPCAEndpointParameters.
     /// Can throw AmazonClientException if endpoint resolution is unsuccessful.
     /// </summary>

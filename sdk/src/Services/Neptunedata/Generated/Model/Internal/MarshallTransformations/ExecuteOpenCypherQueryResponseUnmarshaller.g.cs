@@ -85,6 +85,10 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                     {
                         return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("CancelledByMaintenanceException"))
+                    {
+                        return CancelledByMaintenanceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("CancelledByUserException"))
                     {
                         return CancelledByUserExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

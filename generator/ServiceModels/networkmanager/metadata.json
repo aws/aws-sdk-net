@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "This is the initial SDK release for AWS Network Manager.",
   "generate-client-constructors": true,
+  "base-name": "NetworkManager",
   "legacy-service-id": "NetworkManager"
 }

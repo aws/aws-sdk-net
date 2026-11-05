@@ -798,6 +798,108 @@ namespace Amazon.ECR
     }
 
     /// <summary>
+    /// Constants used for properties of type ReplicationBackfillResultStatus.
+    /// </summary>
+    public class ReplicationBackfillResultStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETE for ReplicationBackfillResultStatus
+        /// </summary>
+        public static readonly ReplicationBackfillResultStatus COMPLETE = new ReplicationBackfillResultStatus("COMPLETE");
+
+        /// <summary>
+        /// Constant FAILED for ReplicationBackfillResultStatus
+        /// </summary>
+        public static readonly ReplicationBackfillResultStatus FAILED = new ReplicationBackfillResultStatus("FAILED");
+
+        /// <summary>
+        /// Constructs a custom ReplicationBackfillResultStatus for a value not among the defined constants.
+        /// </summary>
+        public ReplicationBackfillResultStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationBackfillResultStatus FindValue(string value)
+        {
+            return FindValue<ReplicationBackfillResultStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationBackfillResultStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationBackfillStatus.
+    /// </summary>
+    public class ReplicationBackfillStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETE for ReplicationBackfillStatus
+        /// </summary>
+        public static readonly ReplicationBackfillStatus COMPLETE = new ReplicationBackfillStatus("COMPLETE");
+
+        /// <summary>
+        /// Constant FAILED for ReplicationBackfillStatus
+        /// </summary>
+        public static readonly ReplicationBackfillStatus FAILED = new ReplicationBackfillStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for ReplicationBackfillStatus
+        /// </summary>
+        public static readonly ReplicationBackfillStatus IN_PROGRESS = new ReplicationBackfillStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant PREPARING for ReplicationBackfillStatus
+        /// </summary>
+        public static readonly ReplicationBackfillStatus PREPARING = new ReplicationBackfillStatus("PREPARING");
+
+        /// <summary>
+        /// Constant STOPPED for ReplicationBackfillStatus
+        /// </summary>
+        public static readonly ReplicationBackfillStatus STOPPED = new ReplicationBackfillStatus("STOPPED");
+
+        /// <summary>
+        /// Constant STOPPING for ReplicationBackfillStatus
+        /// </summary>
+        public static readonly ReplicationBackfillStatus STOPPING = new ReplicationBackfillStatus("STOPPING");
+
+        /// <summary>
+        /// Constructs a custom ReplicationBackfillStatus for a value not among the defined constants.
+        /// </summary>
+        public ReplicationBackfillStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationBackfillStatus FindValue(string value)
+        {
+            return FindValue<ReplicationBackfillStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationBackfillStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ReplicationStatus.
     /// </summary>
     public class ReplicationStatus : ConstantClass

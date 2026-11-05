@@ -31,7 +31,7 @@ using Amazon.AppIntegrationsService.Endpoints;
 namespace Amazon.AppIntegrationsService.Internal
 {
     /// <summary>
-    /// Amazon AppIntegrationsService endpoint resolver.
+    /// Amazon AppIntegrations Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AppIntegrationsService service requests.
     /// <para />

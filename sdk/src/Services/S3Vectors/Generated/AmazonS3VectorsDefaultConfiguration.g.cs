@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.S3Vectors
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Vectors service
+    /// Configuration for accessing Amazon S3 Vectors
     /// </summary>
     public static class AmazonS3VectorsDefaultConfiguration
     {

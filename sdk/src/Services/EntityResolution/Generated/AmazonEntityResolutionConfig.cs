@@ -27,12 +27,12 @@ using Amazon.EntityResolution.Internal;
 namespace Amazon.EntityResolution
 {
     /// <summary>
-    /// Configuration for accessing Amazon EntityResolution service
+    /// Configuration for accessing AWS EntityResolution
     /// </summary>
     public partial class AmazonEntityResolutionConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EntityResolution", "4.0.102.11");
+            InternalSDKUtils.BuildUserAgentString("EntityResolution", "4.0.102.14");
 
         private static readonly AmazonEntityResolutionEndpointResolver EndpointResolver =
             new AmazonEntityResolutionEndpointResolver();

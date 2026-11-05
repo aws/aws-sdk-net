@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VoiceID.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon VoiceID service
+    /// Service metadata for Amazon Voice ID
     /// </summary>
     public partial class AmazonVoiceIDMetadata : IServiceMetadata
     {

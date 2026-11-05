@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.JSONRPC10.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon JSONRPC10 service
+    /// Service metadata for Sample Json 1.0 Protocol Service
     /// </summary>
     public partial class AmazonJSONRPC10Metadata : IServiceMetadata
     {

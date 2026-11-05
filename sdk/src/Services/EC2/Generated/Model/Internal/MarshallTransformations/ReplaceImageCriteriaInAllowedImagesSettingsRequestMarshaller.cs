@@ -157,6 +157,37 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                      }
                                 }
                             }
+                            if(publicRequestlistValue.IsSetScanResultCondition())
+                            {
+                                if(publicRequestlistValue.ScanResultCondition.IsSetMaxDaysSinceCriticalFixAvailable())
+                                {
+                                    request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ScanResultCondition" + "." + "MaxDaysSinceCriticalFixAvailable", StringUtils.FromInt(publicRequestlistValue.ScanResultCondition.MaxDaysSinceCriticalFixAvailable));
+                                }
+                                if(publicRequestlistValue.ScanResultCondition.IsSetMaxDaysSinceHighFixAvailable())
+                                {
+                                    request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ScanResultCondition" + "." + "MaxDaysSinceHighFixAvailable", StringUtils.FromInt(publicRequestlistValue.ScanResultCondition.MaxDaysSinceHighFixAvailable));
+                                }
+                                if(publicRequestlistValue.ScanResultCondition.IsSetMaxDaysSinceInformationalFixAvailable())
+                                {
+                                    request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ScanResultCondition" + "." + "MaxDaysSinceInformationalFixAvailable", StringUtils.FromInt(publicRequestlistValue.ScanResultCondition.MaxDaysSinceInformationalFixAvailable));
+                                }
+                                if(publicRequestlistValue.ScanResultCondition.IsSetMaxDaysSinceLastFindingScan())
+                                {
+                                    request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ScanResultCondition" + "." + "MaxDaysSinceLastFindingScan", StringUtils.FromInt(publicRequestlistValue.ScanResultCondition.MaxDaysSinceLastFindingScan));
+                                }
+                                if(publicRequestlistValue.ScanResultCondition.IsSetMaxDaysSinceLowFixAvailable())
+                                {
+                                    request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ScanResultCondition" + "." + "MaxDaysSinceLowFixAvailable", StringUtils.FromInt(publicRequestlistValue.ScanResultCondition.MaxDaysSinceLowFixAvailable));
+                                }
+                                if(publicRequestlistValue.ScanResultCondition.IsSetMaxDaysSinceMediumFixAvailable())
+                                {
+                                    request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ScanResultCondition" + "." + "MaxDaysSinceMediumFixAvailable", StringUtils.FromInt(publicRequestlistValue.ScanResultCondition.MaxDaysSinceMediumFixAvailable));
+                                }
+                                if(publicRequestlistValue.ScanResultCondition.IsSetMaximumSeverityLabel())
+                                {
+                                    request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ScanResultCondition" + "." + "MaximumSeverityLabel", StringUtils.FromString(publicRequestlistValue.ScanResultCondition.MaximumSeverityLabel));
+                                }
+                            }
                              publicRequestlistValueIndex++;
                          }
                     }

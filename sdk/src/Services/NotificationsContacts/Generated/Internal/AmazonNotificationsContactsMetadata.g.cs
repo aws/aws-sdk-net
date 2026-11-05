@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NotificationsContacts.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon NotificationsContacts service
+    /// Service metadata for AWS User Notifications Contacts
     /// </summary>
     public partial class AmazonNotificationsContactsMetadata : IServiceMetadata
     {

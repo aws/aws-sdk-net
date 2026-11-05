@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.EventBridge
 {
     /// <summary>
-    /// Configuration for accessing Amazon EventBridge service
+    /// Configuration for accessing Amazon EventBridge
     /// </summary>
     public static class AmazonEventBridgeDefaultConfiguration
     {

@@ -27,12 +27,12 @@ using Amazon.EKS.Internal;
 namespace Amazon.EKS
 {
     /// <summary>
-    /// Configuration for accessing Amazon EKS service
+    /// Configuration for accessing Amazon Elastic Kubernetes Service
     /// </summary>
     public partial class AmazonEKSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EKS", "4.0.107.3");
+            InternalSDKUtils.BuildUserAgentString("EKS", "4.0.108.1");
 
         private static readonly AmazonEKSEndpointResolver EndpointResolver =
             new AmazonEKSEndpointResolver();

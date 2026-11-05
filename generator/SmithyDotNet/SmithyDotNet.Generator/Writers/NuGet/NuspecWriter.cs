@@ -26,7 +26,7 @@ public sealed class NuspecWriter(GenerationContext context)
             writer.WriteLine($"<title>AWSSDK - {context.ServiceName}</title>");
             writer.WriteLine($"<version>{context.Manifest.GetPackageVersion(context.ServiceName)}</version>");
             writer.WriteLine("<authors>Amazon Web Services</authors>");
-            writer.WriteLine($"<description>{System.Security.SecurityElement.Escape(context.Metadata?.Synopsis)}</description>");
+            writer.WriteLine($"<description>{System.Security.SecurityElement.Escape(context.NuGetPackageDescription)}</description>");
             writer.WriteLine("<language>en-US</language>");
             writer.WriteLine("<readme>nuget-readme.md</readme>");
             writer.WriteLine("""<license type="expression">Apache-2.0</license>""");

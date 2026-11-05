@@ -83,6 +83,37 @@ namespace AWSSDK.UnitTests
             var ctx = NewContext();
             var op = new Op(initialClientSkew: 0, expectedClientSkew: 0)
                 .Attempt(send: "2026-01-01T00:00:00Z", receive: "2026-01-01T00:00:02Z",
+                         expectedSigningTime: "2026-01-01T00:00:00Z", status: 200, date: "Thu, 01 Jan 2026 00:00:02 GMT");
+            RunOperations(ctx, op);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void LongRunningRequest_ServerProcessingTimeNotAttributedToClientSkew()
+        {
+            // 620 s of server processing with agreeing clocks. The old midpoint formula
+            // recorded about +310 s here and signed the next operation with that offset.
+            var ctx = NewContext();
+            var op1 = new Op(initialClientSkew: 0, expectedClientSkew: 0)
+                .Attempt(send: "2026-01-01T00:00:00Z", receive: "2026-01-01T00:10:20Z",
+                         expectedSigningTime: "2026-01-01T00:00:00Z", status: 200, date: "Thu, 01 Jan 2026 00:10:20 GMT");
+            var op2 = new Op(initialClientSkew: 0, expectedClientSkew: 0)
+                .Attempt(send: "2026-01-01T00:10:21Z", receive: "2026-01-01T00:10:22Z",
+                         expectedSigningTime: "2026-01-01T00:10:21Z", status: 200, date: "Thu, 01 Jan 2026 00:10:22 GMT");
+            RunOperations(ctx, op1, op2);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void ResponseLatency_AttributedToClientSkew()
+        {
+            // The response is generated while the clocks agree and takes 1 s to arrive. HTTP
+            // carries no server transmit timestamp, so that latency shows up as -1 s of skew.
+            var ctx = NewContext();
+            var op = new Op(initialClientSkew: 0, expectedClientSkew: -1)
+                .Attempt(send: "2026-01-01T00:00:00Z", receive: "2026-01-01T00:00:02Z",
                          expectedSigningTime: "2026-01-01T00:00:00Z", status: 200, date: "Thu, 01 Jan 2026 00:00:01 GMT");
             RunOperations(ctx, op);
         }
@@ -96,12 +127,12 @@ namespace AWSSDK.UnitTests
             var op1 = new Op(initialClientSkew: 0, expectedClientSkew: 300)
                 .Attempt(send: "2026-01-01T00:00:00Z", receive: "2026-01-01T00:00:02Z",
                          expectedSigningTime: "2026-01-01T00:00:00Z", status: 403,
-                         date: "Thu, 01 Jan 2026 00:05:01 GMT", errorCode: "RequestTimeTooSkewed", expectRetry: true)
+                         date: "Thu, 01 Jan 2026 00:05:02 GMT", errorCode: "RequestTimeTooSkewed", expectRetry: true)
                 .Attempt(send: "2026-01-01T00:00:02Z", receive: "2026-01-01T00:00:04Z",
-                         expectedSigningTime: "2026-01-01T00:05:02Z", status: 200, date: "Thu, 01 Jan 2026 00:05:03 GMT");
+                         expectedSigningTime: "2026-01-01T00:05:02Z", status: 200, date: "Thu, 01 Jan 2026 00:05:04 GMT");
             var op2 = new Op(initialClientSkew: 300, expectedClientSkew: 300)
                 .Attempt(send: "2026-01-01T00:01:00Z", receive: "2026-01-01T00:01:02Z",
-                         expectedSigningTime: "2026-01-01T00:06:00Z", status: 200, date: "Thu, 01 Jan 2026 00:06:01 GMT");
+                         expectedSigningTime: "2026-01-01T00:06:00Z", status: 200, date: "Thu, 01 Jan 2026 00:06:02 GMT");
             RunOperations(ctx, op1, op2);
         }
 
@@ -114,7 +145,7 @@ namespace AWSSDK.UnitTests
             var op = new Op(initialClientSkew: 0, expectedClientSkew: 300)
                 .Attempt(send: "2026-01-01T00:00:00Z", receive: "2026-01-01T00:00:02Z",
                          expectedSigningTime: "2026-01-01T00:00:00Z", status: 403,
-                         date: "Thu, 01 Jan 2026 00:05:01 GMT", errorCode: "RequestTimeTooSkewed");
+                         date: "Thu, 01 Jan 2026 00:05:02 GMT", errorCode: "RequestTimeTooSkewed");
             RunOperations(ctx, op);
         }
 
@@ -129,7 +160,7 @@ namespace AWSSDK.UnitTests
                          expectedSigningTime: "2026-01-01T00:00:00Z", status: 200, date: "Thu, 01 Jan 2026 00:10:00 GMT");
             var op2 = new Op(initialClientSkew: 0, expectedClientSkew: 300)
                 .Attempt(send: "2026-01-01T00:17:00Z", receive: "2026-01-01T00:17:02Z",
-                         expectedSigningTime: "2026-01-01T00:17:00Z", status: 200, date: "Thu, 01 Jan 2026 00:22:01 GMT");
+                         expectedSigningTime: "2026-01-01T00:17:00Z", status: 200, date: "Thu, 01 Jan 2026 00:22:02 GMT");
             RunOperations(ctx, op1, op2);
         }
 
@@ -141,7 +172,7 @@ namespace AWSSDK.UnitTests
             var ctx = NewContext();
             var op = new Op(initialClientSkew: 300, expectedClientSkew: 0)
                 .Attempt(send: "2026-01-01T00:00:00Z", receive: "2026-01-01T00:00:02Z",
-                         expectedSigningTime: "2026-01-01T00:05:00Z", status: 200, date: "Thu, 01 Jan 2026 00:00:01 GMT");
+                         expectedSigningTime: "2026-01-01T00:05:00Z", status: 200, date: "Thu, 01 Jan 2026 00:00:02 GMT");
             RunOperations(ctx, op);
         }
 
@@ -154,7 +185,7 @@ namespace AWSSDK.UnitTests
             var op = new Op(initialClientSkew: 0, expectedClientSkew: 120)
                 .Attempt(send: "2026-01-01T00:00:00Z", receive: "2026-01-01T00:00:02Z",
                          expectedSigningTime: "2026-01-01T00:00:00Z", status: 400,
-                         date: "Thu, 01 Jan 2026 00:02:01 GMT", errorCode: "InvalidSignatureException",
+                         date: "Thu, 01 Jan 2026 00:02:02 GMT", errorCode: "InvalidSignatureException",
                          expectRetry: false);
             RunOperations(ctx, op);
         }
@@ -168,9 +199,9 @@ namespace AWSSDK.UnitTests
             var op = new Op(initialClientSkew: 0, expectedClientSkew: 300)
                 .Attempt(send: "2026-01-01T00:00:00Z", receive: "2026-01-01T00:00:02Z",
                          expectedSigningTime: "2026-01-01T00:00:00Z", status: 400,
-                         date: "Thu, 01 Jan 2026 00:05:01 GMT", errorCode: "InvalidSignatureException", expectRetry: true)
+                         date: "Thu, 01 Jan 2026 00:05:02 GMT", errorCode: "InvalidSignatureException", expectRetry: true)
                 .Attempt(send: "2026-01-01T00:00:02Z", receive: "2026-01-01T00:00:04Z",
-                         expectedSigningTime: "2026-01-01T00:05:02Z", status: 200, date: "Thu, 01 Jan 2026 00:05:03 GMT");
+                         expectedSigningTime: "2026-01-01T00:05:02Z", status: 200, date: "Thu, 01 Jan 2026 00:05:04 GMT");
             RunOperations(ctx, op);
         }
 
@@ -199,7 +230,7 @@ namespace AWSSDK.UnitTests
                          date: "Thu, 01 Jan 2026 12:03:01 GMT", age: "17280");
             var op2 = new Op(initialClientSkew: 0, expectedClientSkew: 300)
                 .Attempt(send: "2026-01-01T16:51:10Z", receive: "2026-01-01T16:51:12Z",
-                         expectedSigningTime: "2026-01-01T16:51:10Z", status: 200, date: "Thu, 01 Jan 2026 16:56:11 GMT");
+                         expectedSigningTime: "2026-01-01T16:51:10Z", status: 200, date: "Thu, 01 Jan 2026 16:56:12 GMT");
             RunOperations(ctx, op1, op2);
         }
 
@@ -215,8 +246,83 @@ namespace AWSSDK.UnitTests
                          date: "Thu, 01 Jan 2026 12:03:01 GMT", age: "17280");
             var op2 = new Op(initialClientSkew: 0, expectedClientSkew: 0)
                 .Attempt(send: "2026-01-01T16:51:10Z", receive: "2026-01-01T16:51:12Z",
-                         expectedSigningTime: "2026-01-01T16:51:10Z", status: 200, date: "Thu, 01 Jan 2026 16:51:11 GMT");
+                         expectedSigningTime: "2026-01-01T16:51:10Z", status: 200, date: "Thu, 01 Jan 2026 16:51:12 GMT");
             RunOperations(ctx, op1, op2);
+        }
+
+        // ---- Candidate = serverTime - timeResponseReceived ----------------------
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void LongRequest_620s_Skew600()
+        {
+            var ctx = NewContext();
+            var op = new Op(initialClientSkew: 0, expectedClientSkew: 600)
+                .Attempt(send: "2026-01-01T00:00:00Z", receive: "2026-01-01T00:10:20Z",
+                         expectedSigningTime: "2026-01-01T00:00:00Z", status: 200, date: "Thu, 01 Jan 2026 00:20:20 GMT");
+            RunOperations(ctx, op);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void RoundTripOver15Min_901s_Discarded_StoredSkewUnchanged()
+        {
+            var ctx = NewContext();
+            var op = new Op(initialClientSkew: 300, expectedClientSkew: 300)
+                .Attempt(send: "2026-01-01T00:00:00Z", receive: "2026-01-01T00:15:01Z",
+                         expectedSigningTime: "2026-01-01T00:05:00Z", status: 200, date: "Thu, 01 Jan 2026 00:15:01 GMT");
+            RunOperations(ctx, op);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void ServerAheadOneHour()
+        {
+            var ctx = NewContext();
+            var op = new Op(initialClientSkew: 0, expectedClientSkew: 3600)
+                .Attempt(send: "2026-01-01T00:00:00Z", receive: "2026-01-01T00:00:02Z",
+                         expectedSigningTime: "2026-01-01T00:00:00Z", status: 200, date: "Thu, 01 Jan 2026 01:00:02 GMT");
+            RunOperations(ctx, op);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void ServerBehindOneHour()
+        {
+            var ctx = NewContext();
+            var op = new Op(initialClientSkew: 0, expectedClientSkew: -3600)
+                .Attempt(send: "2026-01-01T01:00:00Z", receive: "2026-01-01T01:00:02Z",
+                         expectedSigningTime: "2026-01-01T01:00:00Z", status: 200, date: "Thu, 01 Jan 2026 00:00:02 GMT");
+            RunOperations(ctx, op);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void AgeHeader_Discarded_StoredSkewUnchanged()
+        {
+            var ctx = NewContext();
+            var op = new Op(initialClientSkew: 0, expectedClientSkew: 0)
+                .Attempt(send: "2026-01-01T00:00:00Z", receive: "2026-01-01T00:00:02Z",
+                         expectedSigningTime: "2026-01-01T00:00:00Z", status: 200,
+                         date: "Thu, 01 Jan 2026 01:00:02 GMT", age: "30");
+            RunOperations(ctx, op);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void MissingDate_StoredSkewUnchanged()
+        {
+            var ctx = NewContext();
+            var op = new Op(initialClientSkew: 300, expectedClientSkew: 300)
+                .Attempt(send: "2026-01-01T00:00:00Z", receive: "2026-01-01T00:00:02Z",
+                         expectedSigningTime: "2026-01-01T00:05:00Z", status: 200, date: null);
+            RunOperations(ctx, op);
         }
 
         // ---- Harness -----------------------------------------------------------

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.AWSHealth.Generated
     {
         public void AWSHealthDescribeServiceLifecycle()
         {
-            #region describeservicelifecycle-1727539200000
+            #region DescribeServiceLifecycle-1
 
             var client = new AmazonAWSHealthClient();
-            var response = client.DescribeServiceLifecycle(new DescribeServiceLifecycleRequest 
+            var response = client.DescribeServiceLifecycle(new DescribeServiceLifecycleRequest
             {
                 MaxResults = 5
             });
@@ -27,13 +28,10 @@ namespace AWSSDKDocSamples.Amazon.AWSHealth.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

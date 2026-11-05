@@ -55,6 +55,21 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
             #endregion
         }
 
+        public void PollyListTagsForResource()
+        {
+            #region ListTagsForResource-1
+
+            var client = new AmazonPollyClient();
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
+            {
+                ResourceArn = "arn:aws:polly:us-east-1:111122223333:lexicon/example"
+            });
+
+            Dictionary<string, string> tags = response.Tags;
+
+            #endregion
+        }
+
         public void PollyPutLexicon()
         {
             #region PutLexicon-1
@@ -90,6 +105,41 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
             Stream audioStream = response.AudioStream;
             string contentType = response.ContentType;
             int? requestCharacters = response.RequestCharacters;
+
+            #endregion
+        }
+
+        public void PollyTagResource()
+        {
+            #region TagResource-1
+
+            var client = new AmazonPollyClient();
+            var response = client.TagResource(new TagResourceRequest
+            {
+                ResourceArn = "arn:aws:polly:us-east-1:111122223333:lexicon/example",
+                Tags = new Dictionary<string, string> {
+                    { "Environment", "Production" },
+                    { "Project", "Narration" }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void PollyUntagResource()
+        {
+            #region UntagResource-1
+
+            var client = new AmazonPollyClient();
+            var response = client.UntagResource(new UntagResourceRequest
+            {
+                ResourceArn = "arn:aws:polly:us-east-1:111122223333:lexicon/example",
+                TagKeys = new List<string> {
+                    "Environment"
+                }
+            });
+
 
             #endregion
         }

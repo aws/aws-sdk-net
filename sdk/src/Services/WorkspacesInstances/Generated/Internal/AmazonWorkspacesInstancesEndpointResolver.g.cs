@@ -31,7 +31,7 @@ using Amazon.WorkspacesInstances.Endpoints;
 namespace Amazon.WorkspacesInstances.Internal
 {
     /// <summary>
-    /// Amazon WorkspacesInstances endpoint resolver.
+    /// Amazon Workspaces Instances endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for WorkspacesInstances service requests.
     /// <para />

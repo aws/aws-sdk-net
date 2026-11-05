@@ -31,7 +31,7 @@ using Amazon.DataExchange.Endpoints;
 namespace Amazon.DataExchange.Internal
 {
     /// <summary>
-    /// Amazon DataExchange endpoint resolver.
+    /// AWS Data Exchange endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DataExchange service requests.
     /// <para />

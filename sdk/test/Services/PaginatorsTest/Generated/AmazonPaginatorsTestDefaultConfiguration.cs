@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.PaginatorsTest
 {
     /// <summary>
-    /// Configuration for accessing Amazon PaginatorsTest service
+    /// Configuration for accessing Paginators-Test
     /// </summary>
     public static class AmazonPaginatorsTestDefaultConfiguration
     {

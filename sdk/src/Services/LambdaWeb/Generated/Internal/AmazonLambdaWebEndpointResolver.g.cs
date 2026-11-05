@@ -31,7 +31,7 @@ using Amazon.LambdaWeb.Endpoints;
 namespace Amazon.LambdaWeb.Internal
 {
     /// <summary>
-    /// Amazon LambdaWeb endpoint resolver.
+    /// Lambda Web endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for LambdaWeb service requests.
     /// <para />

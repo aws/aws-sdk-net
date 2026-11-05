@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Elasticsearch service
+    /// Service metadata for Amazon Elasticsearch Service
     /// </summary>
     public partial class AmazonElasticsearchMetadata : IServiceMetadata
     {

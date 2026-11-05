@@ -72,6 +72,10 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                     {
                         return InvalidLexiconExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagParameterException"))
+                    {
+                        return InvalidTagParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("LexiconSizeExceededException"))
                     {
                         return LexiconSizeExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -88,6 +92,10 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                     {
                         return ServiceFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTagsException"))
+                    {
+                        return TooManyTagsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedPlsAlphabetException"))
                     {
                         return UnsupportedPlsAlphabetExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -95,6 +103,10 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                     if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedPlsLanguageException"))
                     {
                         return UnsupportedPlsLanguageExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                    {
+                        return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
                 }
             }

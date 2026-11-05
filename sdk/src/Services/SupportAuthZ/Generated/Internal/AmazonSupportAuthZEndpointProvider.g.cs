@@ -26,7 +26,7 @@ using Amazon.SupportAuthZ.Endpoints;
 namespace Amazon.SupportAuthZ.Internal
 {
     /// <summary>
-    /// Amazon SupportAuthZ endpoint provider.
+    /// SupportAuthZ endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SupportAuthZEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

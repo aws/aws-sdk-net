@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Wickr.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Wickr service
+    /// Service metadata for AWS Wickr Admin API
     /// </summary>
     public partial class AmazonWickrMetadata : IServiceMetadata
     {

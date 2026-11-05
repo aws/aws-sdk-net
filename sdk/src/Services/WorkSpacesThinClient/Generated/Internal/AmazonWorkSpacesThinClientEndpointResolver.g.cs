@@ -31,7 +31,7 @@ using Amazon.WorkSpacesThinClient.Endpoints;
 namespace Amazon.WorkSpacesThinClient.Internal
 {
     /// <summary>
-    /// Amazon WorkSpacesThinClient endpoint resolver.
+    /// Amazon WorkSpaces Thin Client endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for WorkSpacesThinClient service requests.
     /// <para />

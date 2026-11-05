@@ -1,0 +1,116 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ElasticFileSystem.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DescribeFileSystems operation. Returns the description
+    /// of a specific Amazon EFS file system if either the file system <c>CreationToken</c>
+    /// or the <c>FileSystemId</c> is provided. Otherwise, it returns descriptions of all
+    /// file systems owned by the caller's Amazon Web Services account in the Amazon Web Services
+    /// Region of the endpoint that you're calling. <para> When retrieving all file system
+    /// descriptions, you can optionally specify the <c>MaxItems</c> parameter to limit the
+    /// number of descriptions in a response. This number is automatically set to 100. If
+    /// more file system descriptions remain, Amazon EFS returns a <c>NextMarker</c>, an opaque
+    /// token, in the response. In this case, you should send a subsequent request with the
+    /// <c>Marker</c> request parameter set to the value of <c>NextMarker</c>. </para> <para>
+    /// To retrieve a list of your file system descriptions, this operation is used in an
+    /// iterative process, where <c>DescribeFileSystems</c> is called first without the <c>Marker</c>
+    /// and then the operation continues to call it with the <c>Marker</c> parameter set to
+    /// the value of the <c>NextMarker</c> from the previous response until the response has
+    /// no <c>NextMarker</c>. </para> <para> The order of file systems returned in the response
+    /// of one <c>DescribeFileSystems</c> call and the order of file systems returned across
+    /// the responses of a multi-call iteration is unspecified. </para> <para> This operation
+    /// requires permissions for the <c>elasticfilesystem:DescribeFileSystems</c> action.
+    /// </para>
+    /// </summary>
+    public partial class DescribeFileSystemsRequest : AmazonElasticFileSystemRequest
+    {
+        /// <summary>
+        /// Gets and sets the property CreationToken. 
+        /// <para>
+        /// (Optional) Restricts the list to the file system with this creation token (String).
+        /// You specify a creation token when you create an Amazon EFS file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string CreationToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreationToken property is set.
+        /// </summary>
+        internal bool IsSetCreationToken() => this.CreationToken != null;
+
+        /// <summary>
+        /// Gets and sets the property FileSystemId. 
+        /// <para>
+        /// (Optional) ID of the file system whose description you want to retrieve (String).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 128)]
+        public string FileSystemId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FileSystemId property is set.
+        /// </summary>
+        internal bool IsSetFileSystemId() => this.FileSystemId != null;
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// (Optional) Opaque pagination token returned from a previous <c>DescribeFileSystems</c>
+        /// operation (String). If present, specifies to continue the list from where the returning
+        /// call had left off. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string Marker { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Marker property is set.
+        /// </summary>
+        internal bool IsSetMarker() => this.Marker != null;
+
+        /// <summary>
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// (Optional) Specifies the maximum number of file systems to return in the response
+        /// (integer). This number is automatically set to 100. The response is paginated at 100
+        /// per page if you have more than 100 file systems. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public int? MaxItems { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxItems property is set.
+        /// </summary>
+        internal bool IsSetMaxItems() => this.MaxItems.HasValue;
+    }
+}

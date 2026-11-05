@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.NonQueryCompatibleRpcV2Protocol
 {
     /// <summary>
-    /// Configuration for accessing Amazon NonQueryCompatibleRpcV2Protocol service
+    /// Configuration for accessing Non Query Compatible RpcV2 Protocol Service
     /// </summary>
     public static class AmazonNonQueryCompatibleRpcV2ProtocolDefaultConfiguration
     {

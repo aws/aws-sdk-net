@@ -31,7 +31,7 @@ using Amazon.BCMDataExports.Endpoints;
 namespace Amazon.BCMDataExports.Internal
 {
     /// <summary>
-    /// Amazon BCMDataExports endpoint resolver.
+    /// AWS Billing and Cost Management Data Exports endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for BCMDataExports service requests.
     /// <para />

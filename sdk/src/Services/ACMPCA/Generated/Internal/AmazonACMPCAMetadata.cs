@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon ACMPCA service
+    /// Service metadata for AWS Certificate Manager Private Certificate Authority
     /// </summary>
     public partial class AmazonACMPCAMetadata : IServiceMetadata
     {

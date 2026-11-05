@@ -26,7 +26,7 @@ using Amazon.Chatbot.Endpoints;
 namespace Amazon.Chatbot.Internal
 {
     /// <summary>
-    /// Amazon Chatbot endpoint provider.
+    /// AWS Chatbot endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ChatbotEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

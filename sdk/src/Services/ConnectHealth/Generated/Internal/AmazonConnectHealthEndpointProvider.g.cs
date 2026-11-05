@@ -26,7 +26,7 @@ using Amazon.ConnectHealth.Endpoints;
 namespace Amazon.ConnectHealth.Internal
 {
     /// <summary>
-    /// Amazon ConnectHealth endpoint provider.
+    /// Connect Health endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ConnectHealthEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

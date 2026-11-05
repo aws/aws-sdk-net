@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon S3 service
+    /// Service metadata for Amazon Simple Storage Service
     /// </summary>
     public partial class AmazonS3Metadata : IServiceMetadata
     {

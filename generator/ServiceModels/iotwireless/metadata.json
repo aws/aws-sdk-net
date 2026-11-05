@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "AWS IoT for LoRaWAN enables customers to setup a private LoRaWAN network by connecting their LoRaWAN devices and gateways to the AWS cloud without managing a LoRaWAN Network Server.",
   "generate-client-constructors": true,
+  "base-name": "IoTWireless",
   "legacy-service-id": "IoT Wireless"
 }

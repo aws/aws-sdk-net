@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackage.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MediaPackage service
+    /// Service metadata for AWS Elemental MediaPackage
     /// </summary>
     public partial class AmazonMediaPackageMetadata : IServiceMetadata
     {

@@ -77,8 +77,8 @@ namespace Amazon.NetworkFirewall
     /// traffic going to and coming from an internet gateway, NAT gateway, or over VPN or
     /// Direct Connect. Network Firewall uses rules that are compatible with Suricata, a free,
     /// open source network analysis and threat detection engine. Network Firewall supports
-    /// Suricata version 7.0.8. For information about Suricata, see the <a href="https://suricata.io/">Suricata
-    /// website</a> and the <a href="https://suricata.readthedocs.io/en/suricata-7.0.8/">Suricata
+    /// Suricata version 8.0.3. For information about Suricata, see the <a href="https://suricata.io/">Suricata
+    /// website</a> and the <a href="https://suricata.readthedocs.io/en/suricata-8.0.3/">Suricata
     /// User Guide</a>. 
     /// </para>
     ///  
@@ -984,6 +984,10 @@ namespace Amazon.NetworkFirewall
         /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
         /// The operation failed because of a problem with your request. Examples include: 
         /// 
@@ -1034,6 +1038,10 @@ namespace Amazon.NetworkFirewall
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
         /// The operation failed because of a problem with your request. Examples include: 
@@ -6593,6 +6601,9 @@ namespace Amazon.NetworkFirewall
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
         /// The token you provided is stale or isn't valid for the operation.
         /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
+        /// Unable to perform the operation because doing so would violate a limit setting.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.
         /// </exception>
@@ -6637,6 +6648,9 @@ namespace Amazon.NetworkFirewall
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
         /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
+        /// Unable to perform the operation because doing so would violate a limit setting.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.
@@ -7009,6 +7023,10 @@ namespace Amazon.NetworkFirewall
         /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
         /// The operation failed because of a problem with your request. Examples include: 
         /// 
@@ -7051,6 +7069,10 @@ namespace Amazon.NetworkFirewall
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
         /// The operation failed because of a problem with your request. Examples include: 

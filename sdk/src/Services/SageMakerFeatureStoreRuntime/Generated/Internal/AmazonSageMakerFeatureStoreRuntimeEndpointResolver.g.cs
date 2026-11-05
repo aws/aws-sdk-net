@@ -31,7 +31,7 @@ using Amazon.SageMakerFeatureStoreRuntime.Endpoints;
 namespace Amazon.SageMakerFeatureStoreRuntime.Internal
 {
     /// <summary>
-    /// Amazon SageMakerFeatureStoreRuntime endpoint resolver.
+    /// Amazon SageMaker Feature Store Runtime endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SageMakerFeatureStoreRuntime service requests.
     /// <para />

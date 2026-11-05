@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ServerlessApplicationRepository
 {
     /// <summary>
-    /// Configuration for accessing Amazon ServerlessApplicationRepository service
+    /// Configuration for accessing AWSServerlessApplicationRepository
     /// </summary>
     public static class AmazonServerlessApplicationRepositoryDefaultConfiguration
     {

@@ -31,7 +31,7 @@ using Amazon.ControlCatalog.Endpoints;
 namespace Amazon.ControlCatalog.Internal
 {
     /// <summary>
-    /// Amazon ControlCatalog endpoint resolver.
+    /// AWS Control Catalog endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ControlCatalog service requests.
     /// <para />

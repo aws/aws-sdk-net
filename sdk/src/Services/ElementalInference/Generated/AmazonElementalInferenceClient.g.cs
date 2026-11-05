@@ -638,6 +638,120 @@ namespace Amazon.ElementalInference
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a schedule action on a feed. A schedule action applies configuration changes
+        /// to the feed at a time that you specify, in the same way as an UpdateFeed request.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Elemental Inference validates the targets of the action when you create it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduleAction service method.</param>
+        /// <returns>The response from the CreateScheduleAction service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed one or more service quotas for your
+        /// account. Review your service quotas and either delete unused resources or request
+        /// a quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateScheduleAction">REST API Reference for CreateScheduleAction Operation</seealso>
+        public virtual CreateScheduleActionResponse CreateScheduleAction(CreateScheduleActionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateScheduleActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduleActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateScheduleActionResponse>(request, options);
+        }
+#else
+        internal virtual CreateScheduleActionResponse CreateScheduleAction(CreateScheduleActionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateScheduleActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduleActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateScheduleActionResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a schedule action on a feed. A schedule action applies configuration changes
+        /// to the feed at a time that you specify, in the same way as an UpdateFeed request.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Elemental Inference validates the targets of the action when you create it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduleAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateScheduleAction service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed one or more service quotas for your
+        /// account. Review your service quotas and either delete unused resources or request
+        /// a quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateScheduleAction">REST API Reference for CreateScheduleAction Operation</seealso>
+        public virtual Task<CreateScheduleActionResponse> CreateScheduleActionAsync(CreateScheduleActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateScheduleActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduleActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateScheduleActionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes the specified dictionary. You cannot delete a dictionary that is referenced
         /// by a feed. You must first remove the dictionary reference from the feed's subtitling
         /// configuration.
@@ -910,6 +1024,110 @@ namespace Amazon.ElementalInference
             options.ResponseUnmarshaller = DeleteFeedPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFeedPolicyResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a schedule action from a feed. A deleted action never runs.
+        /// 
+        ///  
+        /// <para>
+        /// You can delete only an action whose status is PENDING. Deleting an action doesn't
+        /// reverse changes that the action already made to the feed. When you delete or archive
+        /// a feed, Elemental Inference deletes all the schedule actions on that feed. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduleAction service method.</param>
+        /// <returns>The response from the DeleteScheduleAction service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteScheduleAction">REST API Reference for DeleteScheduleAction Operation</seealso>
+        public virtual DeleteScheduleActionResponse DeleteScheduleAction(DeleteScheduleActionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteScheduleActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduleActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScheduleActionResponse>(request, options);
+        }
+#else
+        internal virtual DeleteScheduleActionResponse DeleteScheduleAction(DeleteScheduleActionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteScheduleActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduleActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScheduleActionResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes a schedule action from a feed. A deleted action never runs.
+        /// 
+        ///  
+        /// <para>
+        /// You can delete only an action whose status is PENDING. Deleting an action doesn't
+        /// reverse changes that the action already made to the feed. When you delete or archive
+        /// a feed, Elemental Inference deletes all the schedule actions on that feed. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduleAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteScheduleAction service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteScheduleAction">REST API Reference for DeleteScheduleAction Operation</seealso>
+        public virtual Task<DeleteScheduleActionResponse> DeleteScheduleActionAsync(DeleteScheduleActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteScheduleActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduleActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteScheduleActionResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -1594,6 +1812,104 @@ namespace Amazon.ElementalInference
             options.ResponseUnmarshaller = ListFeedsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFeedsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Displays a list of the schedule actions on a feed, including the status of each action
+        /// and, for a failed action, information about why it failed. 
+        /// 
+        ///  
+        /// <para>
+        /// Elemental Inference keeps an action whose status is COMPLETED or FAILED for about
+        /// 48 hours after its scheduled time, and then deletes it automatically. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScheduleActions service method.</param>
+        /// <returns>The response from the ListScheduleActions service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListScheduleActions">REST API Reference for ListScheduleActions Operation</seealso>
+        public virtual ListScheduleActionsResponse ListScheduleActions(ListScheduleActionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListScheduleActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScheduleActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListScheduleActionsResponse>(request, options);
+        }
+#else
+        internal virtual ListScheduleActionsResponse ListScheduleActions(ListScheduleActionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListScheduleActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScheduleActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListScheduleActionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Displays a list of the schedule actions on a feed, including the status of each action
+        /// and, for a failed action, information about why it failed. 
+        /// 
+        ///  
+        /// <para>
+        /// Elemental Inference keeps an action whose status is COMPLETED or FAILED for about
+        /// 48 hours after its scheduled time, and then deletes it automatically. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScheduleActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListScheduleActions service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListScheduleActions">REST API Reference for ListScheduleActions Operation</seealso>
+        public virtual Task<ListScheduleActionsResponse> ListScheduleActionsAsync(ListScheduleActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListScheduleActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScheduleActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListScheduleActionsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

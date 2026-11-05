@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ssm-2014-11-06.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System.Collections.Generic;
 using System.IO;

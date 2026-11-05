@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Chatbot
 {
     /// <summary>
-    /// Configuration for accessing Amazon Chatbot service
+    /// Configuration for accessing AWS Chatbot
     /// </summary>
     public static class AmazonChatbotDefaultConfiguration
     {

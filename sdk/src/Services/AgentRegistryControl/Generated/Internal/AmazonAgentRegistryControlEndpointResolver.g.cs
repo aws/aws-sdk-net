@@ -31,7 +31,7 @@ using Amazon.AgentRegistryControl.Endpoints;
 namespace Amazon.AgentRegistryControl.Internal
 {
     /// <summary>
-    /// Amazon AgentRegistryControl endpoint resolver.
+    /// Agent Registry Control endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AgentRegistryControl service requests.
     /// <para />

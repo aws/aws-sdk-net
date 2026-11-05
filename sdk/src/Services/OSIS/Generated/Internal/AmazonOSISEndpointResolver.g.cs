@@ -31,7 +31,7 @@ using Amazon.OSIS.Endpoints;
 namespace Amazon.OSIS.Internal
 {
     /// <summary>
-    /// Amazon OSIS endpoint resolver.
+    /// Amazon OpenSearch Ingestion endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for OSIS service requests.
     /// <para />

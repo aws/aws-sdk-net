@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.PartnerCentralAccount
 {
     /// <summary>
-    /// Configuration for accessing Amazon PartnerCentralAccount service
+    /// Configuration for accessing Partner Central Account API
     /// </summary>
     public static class AmazonPartnerCentralAccountDefaultConfiguration
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruSecurity.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CodeGuruSecurity service
+    /// Service metadata for Amazon CodeGuru Security
     /// </summary>
     public partial class AmazonCodeGuruSecurityMetadata : IServiceMetadata
     {

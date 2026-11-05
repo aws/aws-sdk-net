@@ -31,7 +31,7 @@ using Amazon.MediaConnect.Endpoints;
 namespace Amazon.MediaConnect.Internal
 {
     /// <summary>
-    /// Amazon MediaConnect endpoint resolver.
+    /// AWS MediaConnect endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MediaConnect service requests.
     /// <para />

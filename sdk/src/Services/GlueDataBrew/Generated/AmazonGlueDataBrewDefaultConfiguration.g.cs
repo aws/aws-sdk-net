@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.GlueDataBrew
 {
     /// <summary>
-    /// Configuration for accessing Amazon GlueDataBrew service
+    /// Configuration for accessing AWS Glue DataBrew
     /// </summary>
     public static class AmazonGlueDataBrewDefaultConfiguration
     {

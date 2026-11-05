@@ -31,7 +31,7 @@ using Amazon.Evs.Endpoints;
 namespace Amazon.Evs.Internal
 {
     /// <summary>
-    /// Amazon Evs endpoint resolver.
+    /// Amazon Elastic VMware Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Evs service requests.
     /// <para />

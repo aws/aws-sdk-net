@@ -85,6 +85,10 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                     {
                         return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+                    {
+                        return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                 }
             }
             return new AmazonIAMRolesAnywhereException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

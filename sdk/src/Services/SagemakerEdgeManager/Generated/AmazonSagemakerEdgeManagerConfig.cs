@@ -27,12 +27,12 @@ using Amazon.SagemakerEdgeManager.Internal;
 namespace Amazon.SagemakerEdgeManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon SagemakerEdgeManager service
+    /// Configuration for accessing Amazon Sagemaker Edge Manager
     /// </summary>
     public partial class AmazonSagemakerEdgeManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Sagemaker Edge", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("Sagemaker Edge", "4.0.100.22");
 
         private static readonly AmazonSagemakerEdgeManagerEndpointResolver EndpointResolver =
             new AmazonSagemakerEdgeManagerEndpointResolver();

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRoomsML.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CleanRoomsML service
+    /// Service metadata for AWS Clean Rooms ML
     /// </summary>
     public partial class AmazonCleanRoomsMLMetadata : IServiceMetadata
     {

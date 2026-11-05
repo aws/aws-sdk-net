@@ -27,12 +27,12 @@ using Amazon.CodeStarconnections.Internal;
 namespace Amazon.CodeStarconnections
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeStarconnections service
+    /// Configuration for accessing AWS CodeStar connections
     /// </summary>
     public partial class AmazonCodeStarconnectionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeStar connections", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("CodeStar connections", "4.0.100.22");
 
         private static readonly AmazonCodeStarconnectionsEndpointResolver EndpointResolver =
             new AmazonCodeStarconnectionsEndpointResolver();

@@ -31,7 +31,7 @@ using Amazon.VerifiedPermissions.Endpoints;
 namespace Amazon.VerifiedPermissions.Internal
 {
     /// <summary>
-    /// Amazon VerifiedPermissions endpoint resolver.
+    /// Amazon Verified Permissions endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for VerifiedPermissions service requests.
     /// <para />

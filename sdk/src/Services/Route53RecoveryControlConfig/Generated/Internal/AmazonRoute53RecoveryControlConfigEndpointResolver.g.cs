@@ -31,7 +31,7 @@ using Amazon.Route53RecoveryControlConfig.Endpoints;
 namespace Amazon.Route53RecoveryControlConfig.Internal
 {
     /// <summary>
-    /// Amazon Route53RecoveryControlConfig endpoint resolver.
+    /// AWS Route53 Recovery Control Config endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Route53RecoveryControlConfig service requests.
     /// <para />

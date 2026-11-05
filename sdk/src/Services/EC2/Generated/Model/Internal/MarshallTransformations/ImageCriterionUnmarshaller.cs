@@ -111,6 +111,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.MarketplaceProductCodes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("scanResultCondition", targetDepth))
+                    {
+                        var unmarshaller = ScanResultConditionUnmarshaller.Instance;
+                        unmarshalledObject.ScanResultCondition = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.RAM
 {
     /// <summary>
-    /// Configuration for accessing Amazon RAM service
+    /// Configuration for accessing AWS Resource Access Manager
     /// </summary>
     public static class AmazonRAMDefaultConfiguration
     {

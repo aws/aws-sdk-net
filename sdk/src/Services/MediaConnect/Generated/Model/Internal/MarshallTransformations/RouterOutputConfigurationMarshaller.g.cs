@@ -67,6 +67,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetSourceEndpoint())
+            {
+                context.Writer.WritePropertyName("sourceEndpoint");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SourceEndpointRouterOutputConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourceEndpoint, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetStandard())
             {
                 context.Writer.WritePropertyName("standard");

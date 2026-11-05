@@ -26,7 +26,7 @@ using Amazon.IoTJobsDataPlane.Endpoints;
 namespace Amazon.IoTJobsDataPlane.Internal
 {
     /// <summary>
-    /// Amazon IoTJobsDataPlane endpoint provider.
+    /// AWS IoT Jobs Data Plane endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IoTJobsDataPlaneEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

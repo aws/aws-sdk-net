@@ -105,6 +105,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListDesignations operation
+        /// </summary>
+        public IListDesignationsPaginator ListDesignations(ListDesignationsRequest request)
+        {
+            return new ListDesignationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDomainUnitsForParent operation
         /// </summary>
         public IListDomainUnitsForParentPaginator ListDomainUnitsForParent(ListDomainUnitsForParentRequest request)

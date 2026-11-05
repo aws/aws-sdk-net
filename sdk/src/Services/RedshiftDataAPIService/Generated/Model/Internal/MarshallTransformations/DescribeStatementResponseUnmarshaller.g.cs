@@ -143,6 +143,13 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("RedshiftQueryUuid", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RedshiftQueryUuid = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ResultFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

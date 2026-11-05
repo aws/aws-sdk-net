@@ -28,12 +28,12 @@ using Amazon.CloudFront.Internal;
 namespace Amazon.CloudFront
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudFront service
+    /// Configuration for accessing Amazon CloudFront
     /// </summary>
     public partial class AmazonCloudFrontConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudFront", "4.0.103.1");
+            InternalSDKUtils.BuildUserAgentString("CloudFront", "4.0.103.4");
 
         private static readonly AmazonCloudFrontEndpointResolver EndpointResolver =
             new AmazonCloudFrontEndpointResolver();

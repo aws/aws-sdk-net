@@ -26,7 +26,7 @@ using Amazon.GeoRoutes.Endpoints;
 namespace Amazon.GeoRoutes.Internal
 {
     /// <summary>
-    /// Amazon GeoRoutes endpoint provider.
+    /// Amazon Location Service Routes V2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="GeoRoutesEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DLM service
+    /// Service metadata for Amazon Data Lifecycle Manager
     /// </summary>
     public partial class AmazonDLMMetadata : IServiceMetadata
     {

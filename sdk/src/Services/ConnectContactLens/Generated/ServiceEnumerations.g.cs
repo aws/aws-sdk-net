@@ -219,4 +219,45 @@ namespace Amazon.ConnectContactLens
             return FindValue(value);
         }
     }
+
+    /// <summary>
+    /// Constants used for properties of type TagComparisonType.
+    /// </summary>
+    public class TagComparisonType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EQUALS for TagComparisonType
+        /// </summary>
+        public static readonly TagComparisonType EQUALS = new TagComparisonType("EQUALS");
+
+        /// <summary>
+        /// Constant NOT_EQUALS for TagComparisonType
+        /// </summary>
+        public static readonly TagComparisonType NOT_EQUALS = new TagComparisonType("NOT_EQUALS");
+
+        /// <summary>
+        /// Constructs a custom TagComparisonType for a value not among the defined constants.
+        /// </summary>
+        public TagComparisonType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TagComparisonType FindValue(string value)
+        {
+            return FindValue<TagComparisonType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TagComparisonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
 }

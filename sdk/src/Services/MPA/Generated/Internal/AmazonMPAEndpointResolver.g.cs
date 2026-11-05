@@ -31,7 +31,7 @@ using Amazon.MPA.Endpoints;
 namespace Amazon.MPA.Internal
 {
     /// <summary>
-    /// Amazon MPA endpoint resolver.
+    /// AWS Multi-party Approval endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MPA service requests.
     /// <para />

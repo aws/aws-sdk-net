@@ -384,100 +384,6 @@
     <max>86400</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreateAuthorizerInput.AuthorizerResultTtlInSeconds</property>
-    <min>0</min>
-    <max>3600</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreateIntegrationInput.TimeoutInMillis</property>
-    <min>50</min>
-    <max>30000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreatePortalProductRequestContent.Description</property>
-    <min>0</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreatePortalProductRequestContent.DisplayName</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreatePortalProductResponseContent.Description</property>
-    <min>0</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreatePortalProductResponseContent.DisplayName</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreatePortalProductResponseContent.PortalProductArn</property>
-    <min>20</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreatePortalProductResponseContent.PortalProductId</property>
-    <min>10</min>
-    <max>30</max>
-    <pattern>^[a-z0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreatePortalRequestContent.LogoUri</property>
-    <min>0</min>
-    <max>1092</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreatePortalRequestContent.RumAppMonitorName</property>
-    <min>0</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreatePortalResponseContent.LastPublishedDescription</property>
-    <min>0</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreatePortalResponseContent.PortalArn</property>
-    <min>20</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreatePortalResponseContent.PortalId</property>
-    <min>10</min>
-    <max>30</max>
-    <pattern>^[a-z0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreatePortalResponseContent.RumAppMonitorName</property>
-    <min>0</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreateProductPageResponseContent.ProductPageArn</property>
-    <min>20</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreateProductPageResponseContent.ProductPageId</property>
-    <min>10</min>
-    <max>30</max>
-    <pattern>^[a-z0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreateProductRestEndpointPageResponseContent.ProductRestEndpointPageArn</property>
-    <min>20</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.CreateProductRestEndpointPageResponseContent.ProductRestEndpointPageId</property>
-    <min>10</min>
-    <max>30</max>
-    <pattern>^[a-z0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.CustomColors.AccentColor</property>
     <min>1</min>
     <max>16</max>
@@ -573,81 +479,6 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetPortalProductResponseContent.Description</property>
-    <min>0</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetPortalProductResponseContent.DisplayName</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetPortalProductResponseContent.PortalProductArn</property>
-    <min>20</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetPortalProductResponseContent.PortalProductId</property>
-    <min>10</min>
-    <max>30</max>
-    <pattern>^[a-z0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetPortalProductSharingPolicyResponseContent.PolicyDocument</property>
-    <min>1</min>
-    <max>307200</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetPortalProductSharingPolicyResponseContent.PortalProductId</property>
-    <min>10</min>
-    <max>30</max>
-    <pattern>^[a-z0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetPortalResponseContent.LastPublishedDescription</property>
-    <min>0</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetPortalResponseContent.PortalArn</property>
-    <min>20</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetPortalResponseContent.PortalId</property>
-    <min>10</min>
-    <max>30</max>
-    <pattern>^[a-z0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetPortalResponseContent.RumAppMonitorName</property>
-    <min>0</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetProductPageResponseContent.ProductPageArn</property>
-    <min>20</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetProductPageResponseContent.ProductPageId</property>
-    <min>10</min>
-    <max>30</max>
-    <pattern>^[a-z0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetProductRestEndpointPageResponseContent.ProductRestEndpointPageArn</property>
-    <min>20</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.GetProductRestEndpointPageResponseContent.ProductRestEndpointPageId</property>
-    <min>10</min>
-    <max>30</max>
-    <pattern>^[a-z0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.IdentifierParts.Method</property>
     <min>1</min>
     <max>20</max>
@@ -671,21 +502,6 @@
     <property>Amazon.ApiGatewayV2.Model.Integration.TimeoutInMillis</property>
     <min>50</min>
     <max>30000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.ListPortalProductsResponseContent.NextToken</property>
-    <min>1</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.ListPortalsResponseContent.NextToken</property>
-    <min>1</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.ListProductPagesResponseContent.NextToken</property>
-    <min>1</min>
-    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.PortalContent.Description</property>
@@ -777,22 +593,7 @@
     <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.PublishPortalRequestContent.Description</property>
-    <min>0</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.PutPortalProductSharingPolicyRequestContent.PolicyDocument</property>
-    <min>1</min>
-    <max>307200</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.RoutingRule.Priority</property>
-    <min>1</min>
-    <max>1000000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.RoutingRuleInput.Priority</property>
     <min>1</min>
     <max>1000000</max>
   </property-value-rule>
@@ -805,99 +606,5 @@
     <property>Amazon.ApiGatewayV2.Model.StatusException.Message</property>
     <min>1</min>
     <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdateAuthorizerInput.AuthorizerResultTtlInSeconds</property>
-    <min>0</min>
-    <max>3600</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdateIntegrationInput.TimeoutInMillis</property>
-    <min>50</min>
-    <max>30000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdatePortalProductRequestContent.Description</property>
-    <min>0</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdatePortalProductRequestContent.DisplayName</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdatePortalProductResponseContent.Description</property>
-    <min>0</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdatePortalProductResponseContent.DisplayName</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdatePortalProductResponseContent.PortalProductArn</property>
-    <min>20</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdatePortalProductResponseContent.PortalProductId</property>
-    <min>10</min>
-    <max>30</max>
-    <pattern>^[a-z0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdatePortalRequestContent.LogoUri</property>
-    <min>0</min>
-    <max>1092</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdatePortalRequestContent.RumAppMonitorName</property>
-    <min>0</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdatePortalResponseContent.LastPublishedDescription</property>
-    <min>0</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdatePortalResponseContent.PortalArn</property>
-    <min>20</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdatePortalResponseContent.PortalId</property>
-    <min>10</min>
-    <max>30</max>
-    <pattern>^[a-z0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdatePortalResponseContent.RumAppMonitorName</property>
-    <min>0</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdateProductPageResponseContent.ProductPageArn</property>
-    <min>20</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdateProductPageResponseContent.ProductPageId</property>
-    <min>10</min>
-    <max>30</max>
-    <pattern>^[a-z0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdateProductRestEndpointPageResponseContent.ProductRestEndpointPageArn</property>
-    <min>20</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApiGatewayV2.Model.UpdateProductRestEndpointPageResponseContent.ProductRestEndpointPageId</property>
-    <min>10</min>
-    <max>30</max>
-    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
 </property-value-rules>

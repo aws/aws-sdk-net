@@ -31,7 +31,7 @@ using Amazon.ManagedBlockchain.Endpoints;
 namespace Amazon.ManagedBlockchain.Internal
 {
     /// <summary>
-    /// Amazon ManagedBlockchain endpoint resolver.
+    /// Amazon Managed Blockchain endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ManagedBlockchain service requests.
     /// <para />

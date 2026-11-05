@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistry.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AgentRegistry service
+    /// Service metadata for Agent Registry
     /// </summary>
     public partial class AmazonAgentRegistryMetadata : IServiceMetadata
     {

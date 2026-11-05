@@ -37,10 +37,13 @@ namespace Amazon.EC2.Model
     public partial class CreateCapacityReservationFleetRequest : AmazonEC2Request
     {
         private string _allocationStrategy;
+        private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _clientToken;
         private bool? _dryRun;
         private DateTime? _endDate;
         private FleetInstanceMatchCriteria _instanceMatchCriteria;
+        private InstanceRequirementsRequest _instanceRequirements;
         private List<ReservationFleetInstanceSpecification> _instanceTypeSpecifications = AWSConfigs.InitializeCollections ? new List<ReservationFleetInstanceSpecification>() : null;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private FleetCapacityReservationTenancy _tenancy;
@@ -69,6 +72,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetAllocationStrategy()
         {
             return this._allocationStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// Reserved for internal use.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// Reserved for internal use.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>
@@ -162,6 +201,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceMatchCriteria()
         {
             return this._instanceMatchCriteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceRequirements. 
+        /// <para>
+        /// Reserved for internal use.
+        /// </para>
+        /// </summary>
+        public InstanceRequirementsRequest InstanceRequirements
+        {
+            get { return this._instanceRequirements; }
+            set { this._instanceRequirements = value; }
+        }
+
+        // Check to see if InstanceRequirements property is set
+        internal bool IsSetInstanceRequirements()
+        {
+            return this._instanceRequirements != null;
         }
 
         /// <summary>

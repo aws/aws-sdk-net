@@ -79,6 +79,18 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Content");
                 context.Writer.WriteStringValue(publicRequest.Content);
             }
+            if (publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                    context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
 
             writer.WriteEndObject();
             writer.Flush();

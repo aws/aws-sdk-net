@@ -71,8 +71,8 @@ namespace Amazon.MWAAServerless.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// Optional. The version ID of the workflow definition file in Amazon S3. If not specified,
-        /// the latest version is used.
+        /// Optional. The version ID of the workflow definition file in Amazon S3. If you don't
+        /// specify a version, we use the latest version.
         /// </para>
         /// </summary>
         public string VersionId { get; set; }

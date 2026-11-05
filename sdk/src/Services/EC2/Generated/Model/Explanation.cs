@@ -83,6 +83,8 @@ namespace Amazon.EC2.Model
         private AnalysisComponent _subnetRouteTable;
         private AnalysisComponent _transitGateway;
         private AnalysisComponent _transitGatewayAttachment;
+        private AnalysisComponent _transitGatewayPolicyTable;
+        private AnalysisTransitGatewayPolicyTableEntry _transitGatewayPolicyTableEntry;
         private AnalysisComponent _transitGatewayRouteTable;
         private TransitGatewayRouteTableRoute _transitGatewayRouteTableRoute;
         private AnalysisComponent _vpc;
@@ -989,6 +991,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetTransitGatewayAttachment()
         {
             return this._transitGatewayAttachment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayPolicyTable. 
+        /// <para>
+        /// The transit gateway policy table.
+        /// </para>
+        /// </summary>
+        public AnalysisComponent TransitGatewayPolicyTable
+        {
+            get { return this._transitGatewayPolicyTable; }
+            set { this._transitGatewayPolicyTable = value; }
+        }
+
+        // Check to see if TransitGatewayPolicyTable property is set
+        internal bool IsSetTransitGatewayPolicyTable()
+        {
+            return this._transitGatewayPolicyTable != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayPolicyTableEntry. 
+        /// <para>
+        /// The transit gateway policy table entry.
+        /// </para>
+        /// </summary>
+        public AnalysisTransitGatewayPolicyTableEntry TransitGatewayPolicyTableEntry
+        {
+            get { return this._transitGatewayPolicyTableEntry; }
+            set { this._transitGatewayPolicyTableEntry = value; }
+        }
+
+        // Check to see if TransitGatewayPolicyTableEntry property is set
+        internal bool IsSetTransitGatewayPolicyTableEntry()
+        {
+            return this._transitGatewayPolicyTableEntry != null;
         }
 
         /// <summary>

@@ -1,0 +1,97 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Deadline.Model
+{
+    /// <summary>
+    /// The type of search filter to apply.
+    /// </summary>
+    public partial class SearchFilterExpression
+    {
+        /// <summary>
+        /// Gets and sets the property DateTimeFilter. Filters based on date and time.
+        /// </summary>
+        public DateTimeFilterExpression DateTimeFilter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DateTimeFilter property is set.
+        /// </summary>
+        internal bool IsSetDateTimeFilter() => this.DateTimeFilter != null;
+
+        /// <summary>
+        /// Gets and sets the property GroupFilter. Filters by group.
+        /// </summary>
+        public SearchGroupedFilterExpressions GroupFilter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GroupFilter property is set.
+        /// </summary>
+        internal bool IsSetGroupFilter() => this.GroupFilter != null;
+
+        /// <summary>
+        /// Gets and sets the property ParameterFilter. Filters by parameter.
+        /// </summary>
+        public ParameterFilterExpression ParameterFilter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ParameterFilter property is set.
+        /// </summary>
+        internal bool IsSetParameterFilter() => this.ParameterFilter != null;
+
+        /// <summary>
+        /// Gets and sets the property SearchTermFilter. Filters by a specified search term.
+        /// </summary>
+        public SearchTermFilterExpression SearchTermFilter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SearchTermFilter property is set.
+        /// </summary>
+        internal bool IsSetSearchTermFilter() => this.SearchTermFilter != null;
+
+        /// <summary>
+        /// Gets and sets the property StringFilter. Filters by a string.
+        /// </summary>
+        public StringFilterExpression StringFilter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StringFilter property is set.
+        /// </summary>
+        internal bool IsSetStringFilter() => this.StringFilter != null;
+
+        /// <summary>
+        /// Gets and sets the property StringListFilter. Filters by a list of strings.
+        /// </summary>
+        public StringListFilterExpression StringListFilter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StringListFilter property is set.
+        /// </summary>
+        internal bool IsSetStringListFilter() => this.StringListFilter != null;
+    }
+}

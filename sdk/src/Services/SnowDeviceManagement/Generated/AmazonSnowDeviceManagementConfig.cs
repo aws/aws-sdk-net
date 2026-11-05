@@ -27,12 +27,12 @@ using Amazon.SnowDeviceManagement.Internal;
 namespace Amazon.SnowDeviceManagement
 {
     /// <summary>
-    /// Configuration for accessing Amazon SnowDeviceManagement service
+    /// Configuration for accessing AWS Snow Device Management
     /// </summary>
     public partial class AmazonSnowDeviceManagementConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Snow Device Management", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("Snow Device Management", "4.0.100.23");
 
         private static readonly AmazonSnowDeviceManagementEndpointResolver EndpointResolver =
             new AmazonSnowDeviceManagementEndpointResolver();

@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.",
+  "base-name": "DataPipeline",
   "legacy-service-id": "Data Pipeline"
 }

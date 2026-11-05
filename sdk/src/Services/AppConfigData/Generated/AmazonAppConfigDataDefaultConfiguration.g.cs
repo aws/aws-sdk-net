@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AppConfigData
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppConfigData service
+    /// Configuration for accessing AWS AppConfig Data
     /// </summary>
     public static class AmazonAppConfigDataDefaultConfiguration
     {

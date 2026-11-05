@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.LakeFormation
 {
     /// <summary>
-    /// Configuration for accessing Amazon LakeFormation service
+    /// Configuration for accessing AWS Lake Formation
     /// </summary>
     public static class AmazonLakeFormationDefaultConfiguration
     {

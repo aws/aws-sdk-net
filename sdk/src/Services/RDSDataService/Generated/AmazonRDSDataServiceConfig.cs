@@ -27,12 +27,12 @@ using Amazon.RDSDataService.Internal;
 namespace Amazon.RDSDataService
 {
     /// <summary>
-    /// Configuration for accessing Amazon RDSDataService service
+    /// Configuration for accessing AWS RDS DataService
     /// </summary>
     public partial class AmazonRDSDataServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("RDS Data", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("RDS Data", "4.0.100.23");
 
         private static readonly AmazonRDSDataServiceEndpointResolver EndpointResolver =
             new AmazonRDSDataServiceEndpointResolver();

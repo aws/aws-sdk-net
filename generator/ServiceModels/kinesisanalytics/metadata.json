@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.",
+  "base-name": "KinesisAnalytics",
   "legacy-service-id": "Kinesis Analytics"
 }

@@ -4,19 +4,19 @@
     <property>Amazon.CloudWatch.Model.AssociateDatasetKmsKeyRequest.DatasetIdentifier</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(default|arn:[a-zA-Z0-9-]+:cloudwatch:[a-zA-Z0-9-]*:\d{12}:dataset/default)</pattern>
+    <pattern>^(default|arn:[a-zA-Z0-9-]+:cloudwatch:[a-zA-Z0-9-]*:\d{12}:dataset/default)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.AssociateDatasetKmsKeyRequest.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key/[a-f0-9-]+</pattern>
+    <pattern>^arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key/[a-f0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.CreateResourceMetricsConfigurationRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+</pattern>
+    <pattern>^arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DeleteAlarmMuteRuleRequest.AlarmMuteRuleName</property>
@@ -27,7 +27,7 @@
     <property>Amazon.CloudWatch.Model.DeleteAnomalyDetectorRequest.AnomalyDetectorId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9_./:%()+-]+</pattern>
+    <pattern>^[A-Za-z0-9_./:%()+-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DeleteAnomalyDetectorRequest.MetricName</property>
@@ -38,12 +38,13 @@
     <property>Amazon.CloudWatch.Model.DeleteAnomalyDetectorRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DeleteAnomalyDetectorRequest.Stat</property>
+    <min>0</min>
     <max>50</max>
-    <pattern>(SampleCount|Average|Sum|Minimum|Maximum|IQM|(p|tc|tm|ts|wm)(\d{1,2}(\.\d{0,10})?|100)|[ou]\d+(\.\d*)?)(_E|_L|_H)?|(TM|TC|TS|WM)\(((((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?:((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%|((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%:(((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?)\)|(TM|TC|TS|WM|PR)\(((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)):((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?|((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?:(\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))\)</pattern>
+    <pattern>^(SampleCount|Average|Sum|Minimum|Maximum|IQM|(p|tc|tm|ts|wm)(\d{1,2}(\.\d{0,10})?|100)|[ou]\d+(\.\d*)?)(_E|_L|_H)?|(TM|TC|TS|WM)\(((((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?:((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%|((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%:(((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?)\)|(TM|TC|TS|WM|PR)\(((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)):((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?|((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?:(\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))\)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DeleteMetricStreamRequest.Name</property>
@@ -54,7 +55,7 @@
     <property>Amazon.CloudWatch.Model.DeleteResourceMetricsConfigurationRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+</pattern>
+    <pattern>^arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeAlarmContributorsRequest.AlarmName</property>
@@ -110,7 +111,7 @@
     <property>Amazon.CloudWatch.Model.DescribeAlarmsForMetricRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeAlarmsForMetricRequest.Period</property>
@@ -129,7 +130,7 @@
     <property>Amazon.CloudWatch.Model.DescribeAnomalyDetectorsRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeInsightRulesRequest.MaxResults</property>
@@ -140,7 +141,7 @@
     <property>Amazon.CloudWatch.Model.DisassociateDatasetKmsKeyRequest.DatasetIdentifier</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(default|arn:[a-zA-Z0-9-]+:cloudwatch:[a-zA-Z0-9-]*:\d{12}:dataset/default)</pattern>
+    <pattern>^(default|arn:[a-zA-Z0-9-]+:cloudwatch:[a-zA-Z0-9-]*:\d{12}:dataset/default)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.GetAlarmMuteRuleRequest.AlarmMuteRuleName</property>
@@ -166,31 +167,31 @@
     <property>Amazon.CloudWatch.Model.GetDatasetRequest.DatasetIdentifier</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(default|arn:[a-zA-Z0-9-]+:cloudwatch:[a-zA-Z0-9-]*:\d{12}:dataset/default)</pattern>
+    <pattern>^(default|arn:[a-zA-Z0-9-]+:cloudwatch:[a-zA-Z0-9-]*:\d{12}:dataset/default)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.GetDatasetResponse.Arn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:[a-zA-Z0-9-]+:cloudwatch:[a-zA-Z0-9-]*:\d{12}:dataset/default</pattern>
+    <pattern>^arn:[a-zA-Z0-9-]+:cloudwatch:[a-zA-Z0-9-]*:\d{12}:dataset/default$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.GetDatasetResponse.DatasetId</property>
     <min>7</min>
     <max>7</max>
-    <pattern>default</pattern>
+    <pattern>^default$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.GetDatasetResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key/[a-f0-9-]+</pattern>
+    <pattern>^arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key/[a-f0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.GetInsightRuleReportRequest.OrderBy</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[\x20-\x7E]+</pattern>
+    <pattern>^[\x20-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.GetInsightRuleReportRequest.Period</property>
@@ -200,7 +201,7 @@
     <property>Amazon.CloudWatch.Model.GetInsightRuleReportRequest.RuleName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x20-\x7E]+</pattern>
+    <pattern>^[\x20-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.GetMetricStatisticsRequest.MetricName</property>
@@ -211,7 +212,7 @@
     <property>Amazon.CloudWatch.Model.GetMetricStatisticsRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.GetMetricStatisticsRequest.Period</property>
@@ -251,7 +252,7 @@
     <property>Amazon.CloudWatch.Model.GetResourceMetricsConfigurationRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+</pattern>
+    <pattern>^arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.ListAlarmMuteRulesRequest.AlarmName</property>
@@ -274,6 +275,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ListMetricStreamsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.ListMetricsRequest.MetricName</property>
     <min>1</min>
     <max>255</max>
@@ -282,17 +288,12 @@
     <property>Amazon.CloudWatch.Model.ListMetricsRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.ListMetricsRequest.OwningAccount</property>
     <min>1</min>
     <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CloudWatch.Model.ListMetricStreamsRequest.MaxResults</property>
-    <min>1</min>
-    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.ListTagsForResourceRequest.ResourceARN</property>
@@ -318,18 +319,19 @@
     <property>Amazon.CloudWatch.Model.PutAnomalyDetectorRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutAnomalyDetectorRequest.Stat</property>
+    <min>0</min>
     <max>50</max>
-    <pattern>(SampleCount|Average|Sum|Minimum|Maximum|IQM|(p|tc|tm|ts|wm)(\d{1,2}(\.\d{0,10})?|100)|[ou]\d+(\.\d*)?)(_E|_L|_H)?|(TM|TC|TS|WM)\(((((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?:((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%|((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%:(((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?)\)|(TM|TC|TS|WM|PR)\(((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)):((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?|((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?:(\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))\)</pattern>
+    <pattern>^(SampleCount|Average|Sum|Minimum|Maximum|IQM|(p|tc|tm|ts|wm)(\d{1,2}(\.\d{0,10})?|100)|[ou]\d+(\.\d*)?)(_E|_L|_H)?|(TM|TC|TS|WM)\(((((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?:((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%|((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%:(((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?)\)|(TM|TC|TS|WM|PR)\(((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)):((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?|((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?:(\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))\)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutAnomalyDetectorResponse.AnomalyDetectorId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9_./:%()+-]+</pattern>
+    <pattern>^[A-Za-z0-9_./:%()+-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutCompositeAlarmRequest.ActionsSuppressor</property>
@@ -355,19 +357,19 @@
     <property>Amazon.CloudWatch.Model.PutInsightRuleRequest.RuleDefinition</property>
     <min>1</min>
     <max>8192</max>
-    <pattern>[\x00-\x7F]+</pattern>
+    <pattern>^[\x00-\x7F]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutInsightRuleRequest.RuleName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x20-\x7E]+</pattern>
+    <pattern>^[\x20-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutInsightRuleRequest.RuleState</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[\x20-\x7E]+</pattern>
+    <pattern>^[\x20-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutLogAlarmRequest.AlarmDescription</property>
@@ -429,7 +431,7 @@
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.Period</property>
@@ -449,7 +451,7 @@
     <property>Amazon.CloudWatch.Model.PutMetricDataRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricStreamRequest.FirehoseArn</property>
@@ -505,7 +507,7 @@
     <property>Amazon.CloudWatch.Model.UpdateResourceMetricsConfigurationRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+</pattern>
+    <pattern>^arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.AlarmContributor.ContributorId</property>
@@ -561,7 +563,7 @@
     <property>Amazon.CloudWatch.Model.AnomalyDetector.AnomalyDetectorId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9_./:%()+-]+</pattern>
+    <pattern>^[A-Za-z0-9_./:%()+-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.AnomalyDetector.MetricName</property>
@@ -572,15 +574,17 @@
     <property>Amazon.CloudWatch.Model.AnomalyDetector.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.AnomalyDetector.Stat</property>
+    <min>0</min>
     <max>50</max>
-    <pattern>(SampleCount|Average|Sum|Minimum|Maximum|IQM|(p|tc|tm|ts|wm)(\d{1,2}(\.\d{0,10})?|100)|[ou]\d+(\.\d*)?)(_E|_L|_H)?|(TM|TC|TS|WM)\(((((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?:((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%|((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%:(((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?)\)|(TM|TC|TS|WM|PR)\(((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)):((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?|((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?:(\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))\)</pattern>
+    <pattern>^(SampleCount|Average|Sum|Minimum|Maximum|IQM|(p|tc|tm|ts|wm)(\d{1,2}(\.\d{0,10})?|100)|[ou]\d+(\.\d*)?)(_E|_L|_H)?|(TM|TC|TS|WM)\(((((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?:((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%|((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%:(((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?)\)|(TM|TC|TS|WM|PR)\(((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)):((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?|((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?:(\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))\)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.AnomalyDetectorConfiguration.MetricTimezone</property>
+    <min>0</min>
     <max>50</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -648,19 +652,19 @@
     <property>Amazon.CloudWatch.Model.InsightRule.Definition</property>
     <min>1</min>
     <max>8192</max>
-    <pattern>[\x00-\x7F]+</pattern>
+    <pattern>^[\x00-\x7F]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.InsightRule.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x20-\x7E]+</pattern>
+    <pattern>^[\x20-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.InsightRule.State</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[\x20-\x7E]+</pattern>
+    <pattern>^[\x20-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.LogAlarm.AlarmArn</property>
@@ -724,13 +728,13 @@
     <property>Amazon.CloudWatch.Model.ManagedRuleState.RuleName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x20-\x7E]+</pattern>
+    <pattern>^[\x20-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.ManagedRuleState.State</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[\x20-\x7E]+</pattern>
+    <pattern>^[\x20-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.Metric.MetricName</property>
@@ -741,7 +745,7 @@
     <property>Amazon.CloudWatch.Model.Metric.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricAlarm.AlarmArn</property>
@@ -785,7 +789,7 @@
     <property>Amazon.CloudWatch.Model.MetricAlarm.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricAlarm.Period</property>
@@ -872,7 +876,7 @@
     <property>Amazon.CloudWatch.Model.MetricStreamFilter.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricStreamStatisticsMetric.MetricName</property>
@@ -883,19 +887,19 @@
     <property>Amazon.CloudWatch.Model.MetricStreamStatisticsMetric.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.OTelEnrichmentMetricSelector.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.ResourceMetricsConfiguration.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+</pattern>
+    <pattern>^arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.Schedule.Duration</property>
@@ -961,12 +965,13 @@
     <property>Amazon.CloudWatch.Model.SingleMetricAnomalyDetector.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^:].*</pattern>
+    <pattern>^[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.SingleMetricAnomalyDetector.Stat</property>
+    <min>0</min>
     <max>50</max>
-    <pattern>(SampleCount|Average|Sum|Minimum|Maximum|IQM|(p|tc|tm|ts|wm)(\d{1,2}(\.\d{0,10})?|100)|[ou]\d+(\.\d*)?)(_E|_L|_H)?|(TM|TC|TS|WM)\(((((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?:((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%|((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%:(((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?)\)|(TM|TC|TS|WM|PR)\(((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)):((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?|((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?:(\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))\)</pattern>
+    <pattern>^(SampleCount|Average|Sum|Minimum|Maximum|IQM|(p|tc|tm|ts|wm)(\d{1,2}(\.\d{0,10})?|100)|[ou]\d+(\.\d*)?)(_E|_L|_H)?|(TM|TC|TS|WM)\(((((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?:((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%|((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%:(((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?)\)|(TM|TC|TS|WM|PR)\(((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)):((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?|((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?:(\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))\)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.Tag.Key</property>

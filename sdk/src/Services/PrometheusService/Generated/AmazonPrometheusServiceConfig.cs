@@ -27,12 +27,12 @@ using Amazon.PrometheusService.Internal;
 namespace Amazon.PrometheusService
 {
     /// <summary>
-    /// Configuration for accessing Amazon PrometheusService service
+    /// Configuration for accessing Amazon Prometheus Service
     /// </summary>
     public partial class AmazonPrometheusServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("amp", "4.0.102.12");
+            InternalSDKUtils.BuildUserAgentString("amp", "4.0.103.1");
 
         private static readonly AmazonPrometheusServiceEndpointResolver EndpointResolver =
             new AmazonPrometheusServiceEndpointResolver();

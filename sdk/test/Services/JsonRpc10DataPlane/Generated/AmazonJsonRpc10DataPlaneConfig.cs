@@ -28,7 +28,7 @@ using Amazon.JsonRpc10DataPlane.Internal;
 namespace Amazon.JsonRpc10DataPlane
 {
     /// <summary>
-    /// Configuration for accessing Amazon JsonRpc10DataPlane service
+    /// Configuration for accessing AWS JSON RPC 1.0 Data Plane
     /// </summary>
     public partial class AmazonJsonRpc10DataPlaneConfig : ClientConfig
     {

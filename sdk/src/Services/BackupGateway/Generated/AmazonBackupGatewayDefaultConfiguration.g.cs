@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.BackupGateway
 {
     /// <summary>
-    /// Configuration for accessing Amazon BackupGateway service
+    /// Configuration for accessing AWS Backup Gateway
     /// </summary>
     public static class AmazonBackupGatewayDefaultConfiguration
     {

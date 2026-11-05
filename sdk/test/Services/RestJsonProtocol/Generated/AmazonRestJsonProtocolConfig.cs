@@ -27,7 +27,7 @@ using Amazon.RestJsonProtocol.Internal;
 namespace Amazon.RestJsonProtocol
 {
     /// <summary>
-    /// Configuration for accessing Amazon RestJsonProtocol service
+    /// Configuration for accessing Sample Rest Json Protocol Service
     /// </summary>
     public partial class AmazonRestJsonProtocolConfig : ClientConfig
     {

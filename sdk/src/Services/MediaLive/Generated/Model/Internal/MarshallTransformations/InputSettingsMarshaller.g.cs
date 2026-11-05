@@ -1,0 +1,150 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.MediaLive.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// InputSettings Marshaller
+    /// </summary>
+    public partial class InputSettingsMarshaller : IRequestMarshaller<InputSettings, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(InputSettings requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAudioSelectors())
+            {
+                context.Writer.WritePropertyName("audioSelectors");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectAudioSelectorsListValue in requestObject.AudioSelectors)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AudioSelectorMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAudioSelectorsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetCaptionSelectors())
+            {
+                context.Writer.WritePropertyName("captionSelectors");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectCaptionSelectorsListValue in requestObject.CaptionSelectors)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CaptionSelectorMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCaptionSelectorsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetDeblockFilter())
+            {
+                context.Writer.WritePropertyName("deblockFilter");
+                context.Writer.WriteStringValue(requestObject.DeblockFilter);
+            }
+
+            if (requestObject.IsSetDenoiseFilter())
+            {
+                context.Writer.WritePropertyName("denoiseFilter");
+                context.Writer.WriteStringValue(requestObject.DenoiseFilter);
+            }
+
+            if (requestObject.IsSetFilterStrength())
+            {
+                context.Writer.WritePropertyName("filterStrength");
+                context.Writer.WriteNumberValue(requestObject.FilterStrength.Value);
+            }
+
+            if (requestObject.IsSetInputFilter())
+            {
+                context.Writer.WritePropertyName("inputFilter");
+                context.Writer.WriteStringValue(requestObject.InputFilter);
+            }
+
+            if (requestObject.IsSetNetworkInputSettings())
+            {
+                context.Writer.WritePropertyName("networkInputSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NetworkInputSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.NetworkInputSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetScte35Pid())
+            {
+                context.Writer.WritePropertyName("scte35Pid");
+                context.Writer.WriteNumberValue(requestObject.Scte35Pid.Value);
+            }
+
+            if (requestObject.IsSetSmpte2038DataPreference())
+            {
+                context.Writer.WritePropertyName("smpte2038DataPreference");
+                context.Writer.WriteStringValue(requestObject.Smpte2038DataPreference);
+            }
+
+            if (requestObject.IsSetSourceEndBehavior())
+            {
+                context.Writer.WritePropertyName("sourceEndBehavior");
+                context.Writer.WriteStringValue(requestObject.SourceEndBehavior);
+            }
+
+            if (requestObject.IsSetVideoSelector())
+            {
+                context.Writer.WritePropertyName("videoSelector");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VideoSelectorMarshaller.Instance;
+                marshaller.Marshall(requestObject.VideoSelector, context);
+
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static InputSettingsMarshaller Instance = new InputSettingsMarshaller();
+    }
+}

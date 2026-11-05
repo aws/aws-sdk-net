@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerTrainingSessionRuntime.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SageMakerTrainingSessionRuntime service
+    /// Service metadata for SageMaker Training Session Runtime
     /// </summary>
     public partial class AmazonSageMakerTrainingSessionRuntimeMetadata : IServiceMetadata
     {

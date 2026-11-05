@@ -26,7 +26,7 @@ using Amazon.IotData.Endpoints;
 namespace Amazon.IotData.Internal
 {
     /// <summary>
-    /// Amazon IotData endpoint provider.
+    /// AWS IoT Data Plane endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IotDataEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

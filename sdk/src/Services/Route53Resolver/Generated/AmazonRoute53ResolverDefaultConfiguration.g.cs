@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Route53Resolver
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53Resolver service
+    /// Configuration for accessing Amazon Route 53 Resolver
     /// </summary>
     public static class AmazonRoute53ResolverDefaultConfiguration
     {

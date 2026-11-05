@@ -26,7 +26,7 @@ using Amazon.IoTDeviceAdvisor.Endpoints;
 namespace Amazon.IoTDeviceAdvisor.Internal
 {
     /// <summary>
-    /// Amazon IoTDeviceAdvisor endpoint provider.
+    /// AWS IoT Core Device Advisor endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IoTDeviceAdvisorEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

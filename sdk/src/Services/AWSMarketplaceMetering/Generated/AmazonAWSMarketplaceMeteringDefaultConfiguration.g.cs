@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AWSMarketplaceMetering
 {
     /// <summary>
-    /// Configuration for accessing Amazon AWSMarketplaceMetering service
+    /// Configuration for accessing AWSMarketplace Metering
     /// </summary>
     public static class AmazonAWSMarketplaceMeteringDefaultConfiguration
     {

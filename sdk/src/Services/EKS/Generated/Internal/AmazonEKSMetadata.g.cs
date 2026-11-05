@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon EKS service
+    /// Service metadata for Amazon Elastic Kubernetes Service
     /// </summary>
     public partial class AmazonEKSMetadata : IServiceMetadata
     {

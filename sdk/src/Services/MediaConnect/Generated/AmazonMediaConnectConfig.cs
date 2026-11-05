@@ -27,12 +27,12 @@ using Amazon.MediaConnect.Internal;
 namespace Amazon.MediaConnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaConnect service
+    /// Configuration for accessing AWS MediaConnect
     /// </summary>
     public partial class AmazonMediaConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MediaConnect", "4.0.103.2");
+            InternalSDKUtils.BuildUserAgentString("MediaConnect", "4.0.104.1");
 
         private static readonly AmazonMediaConnectEndpointResolver EndpointResolver =
             new AmazonMediaConnectEndpointResolver();

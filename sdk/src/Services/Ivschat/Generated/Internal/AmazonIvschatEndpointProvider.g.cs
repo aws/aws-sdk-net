@@ -26,7 +26,7 @@ using Amazon.Ivschat.Endpoints;
 namespace Amazon.Ivschat.Internal
 {
     /// <summary>
-    /// Amazon Ivschat endpoint provider.
+    /// Amazon Interactive Video Service Chat endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IvschatEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

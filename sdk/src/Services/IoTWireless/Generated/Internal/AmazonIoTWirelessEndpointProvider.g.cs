@@ -26,7 +26,7 @@ using Amazon.IoTWireless.Endpoints;
 namespace Amazon.IoTWireless.Internal
 {
     /// <summary>
-    /// Amazon IoTWireless endpoint provider.
+    /// AWS IoT Wireless endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IoTWirelessEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -26,7 +26,7 @@ using Amazon.VPCLattice.Endpoints;
 namespace Amazon.VPCLattice.Internal
 {
     /// <summary>
-    /// Amazon VPCLattice endpoint provider.
+    /// Amazon VPC Lattice endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="VPCLatticeEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

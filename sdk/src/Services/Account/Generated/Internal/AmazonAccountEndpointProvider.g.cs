@@ -26,7 +26,7 @@ using Amazon.Account.Endpoints;
 namespace Amazon.Account.Internal
 {
     /// <summary>
-    /// Amazon Account endpoint provider.
+    /// AWS Account endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AccountEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

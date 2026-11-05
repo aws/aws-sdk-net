@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "This is the first release of Amazon Connect Customer Profiles, a unified customer profile for your Amazon Connect contact center.",
   "generate-client-constructors": true,
+  "base-name": "CustomerProfiles",
   "legacy-service-id": "Customer Profiles"
 }

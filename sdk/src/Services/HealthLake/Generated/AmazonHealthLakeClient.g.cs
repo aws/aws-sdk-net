@@ -2094,35 +2094,14 @@ namespace Amazon.HealthLake
         /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
-        /// <exception cref="Amazon.HealthLake.Model.AgentMessageOutOfContextException">
-        /// The agent message does not fit within the current conversation context. Start a new
-        /// conversation or provide a message that relates to the current profile customization
-        /// session.
-        /// </exception>
-        /// <exception cref="Amazon.HealthLake.Model.ConversationNotFoundException">
-        /// The specified conversation identifier does not exist. Verify the conversation ID or
-        /// omit it to start a new conversation.
-        /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
         /// An unknown internal error occurred in the service.
-        /// </exception>
-        /// <exception cref="Amazon.HealthLake.Model.NotImplementedOperationException">
-        /// The requested operation is not yet available. Check the service documentation for
-        /// a list of supported operations.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
-        /// </exception>
-        /// <exception cref="Amazon.HealthLake.Model.UnauthorizedException">
-        /// You are not authorized to make this request. Verify that your Amazon Web Services
-        /// credentials are valid and that you have the required permissions.
-        /// </exception>
-        /// <exception cref="Amazon.HealthLake.Model.UnsupportedMIMETypeException">
-        /// The content type in your request is not supported. Use a supported content type for
-        /// this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ValidationException">
         /// The user input parameter was invalid.
@@ -2159,35 +2138,14 @@ namespace Amazon.HealthLake
         /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
-        /// <exception cref="Amazon.HealthLake.Model.AgentMessageOutOfContextException">
-        /// The agent message does not fit within the current conversation context. Start a new
-        /// conversation or provide a message that relates to the current profile customization
-        /// session.
-        /// </exception>
-        /// <exception cref="Amazon.HealthLake.Model.ConversationNotFoundException">
-        /// The specified conversation identifier does not exist. Verify the conversation ID or
-        /// omit it to start a new conversation.
-        /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
         /// An unknown internal error occurred in the service.
-        /// </exception>
-        /// <exception cref="Amazon.HealthLake.Model.NotImplementedOperationException">
-        /// The requested operation is not yet available. Check the service documentation for
-        /// a list of supported operations.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
-        /// </exception>
-        /// <exception cref="Amazon.HealthLake.Model.UnauthorizedException">
-        /// You are not authorized to make this request. Verify that your Amazon Web Services
-        /// credentials are valid and that you have the required permissions.
-        /// </exception>
-        /// <exception cref="Amazon.HealthLake.Model.UnsupportedMIMETypeException">
-        /// The content type in your request is not supported. Use a supported content type for
-        /// this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ValidationException">
         /// The user input parameter was invalid.

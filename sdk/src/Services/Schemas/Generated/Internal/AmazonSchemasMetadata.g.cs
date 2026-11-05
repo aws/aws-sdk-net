@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Schemas.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Schemas service
+    /// Service metadata for Schemas
     /// </summary>
     public partial class AmazonSchemasMetadata : IServiceMetadata
     {

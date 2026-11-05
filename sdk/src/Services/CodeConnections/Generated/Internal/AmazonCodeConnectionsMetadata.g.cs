@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeConnections.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CodeConnections service
+    /// Service metadata for AWS CodeConnections
     /// </summary>
     public partial class AmazonCodeConnectionsMetadata : IServiceMetadata
     {

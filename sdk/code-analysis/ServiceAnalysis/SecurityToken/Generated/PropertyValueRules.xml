@@ -9,7 +9,7 @@
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.ExternalId</property>
     <min>2</min>
     <max>1224</max>
-    <pattern>[\w+=,.@:\/-]*</pattern>
+    <pattern>^[\w+=,.@:\/-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.MinimumSessionTokenSize</property>
@@ -19,37 +19,37 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.Policy</property>
     <min>1</min>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.RoleSessionName</property>
     <min>2</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.SerialNumber</property>
     <min>9</min>
     <max>256</max>
-    <pattern>[\w+=/:,.@-]*</pattern>
+    <pattern>^[\w+=/:,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.SourceIdentity</property>
     <min>2</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.TokenCode</property>
     <min>6</min>
     <max>6</max>
-    <pattern>[\d]*</pattern>
+    <pattern>^[\d]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleResponse.PackedPolicySize</property>
@@ -67,7 +67,7 @@
     <property>Amazon.SecurityToken.Model.AssumeRoleResponse.SourceIdentity</property>
     <min>2</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest.DurationSeconds</property>
@@ -83,19 +83,19 @@
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest.Policy</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest.PrincipalArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest.SAMLAssertion</property>
@@ -118,7 +118,7 @@
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLResponse.SourceIdentity</property>
     <min>2</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest.DurationSeconds</property>
@@ -134,7 +134,7 @@
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest.Policy</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest.ProviderId</property>
@@ -145,13 +145,13 @@
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest.RoleSessionName</property>
     <min>2</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest.WebIdentityToken</property>
@@ -174,7 +174,7 @@
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityResponse.SourceIdentity</property>
     <min>2</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityResponse.SubjectFromWebIdentityToken</property>
@@ -208,7 +208,7 @@
     <property>Amazon.SecurityToken.Model.AssumeRootResponse.SourceIdentity</property>
     <min>2</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.DecodeAuthorizationMessageRequest.EncodedMessage</property>
@@ -219,19 +219,19 @@
     <property>Amazon.SecurityToken.Model.GetAccessKeyInfoRequest.AccessKeyId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]*</pattern>
+    <pattern>^[\w]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.GetCallerIdentityResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.GetDelegatedAccessTokenResponse.AssumedPrincipal</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.GetDelegatedAccessTokenResponse.PackedPolicySize</property>
@@ -251,13 +251,13 @@
     <property>Amazon.SecurityToken.Model.GetFederationTokenRequest.Name</property>
     <min>2</min>
     <max>32</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.GetFederationTokenRequest.Policy</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.GetFederationTokenResponse.PackedPolicySize</property>
@@ -285,13 +285,13 @@
     <property>Amazon.SecurityToken.Model.GetSessionTokenRequest.SerialNumber</property>
     <min>9</min>
     <max>256</max>
-    <pattern>[\w+=/:,.@-]*</pattern>
+    <pattern>^[\w+=/:,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.GetSessionTokenRequest.TokenCode</property>
     <min>6</min>
     <max>6</max>
-    <pattern>[\d]*</pattern>
+    <pattern>^[\d]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.GetSessionTokenResponse.SessionTokenSize</property>
@@ -315,37 +315,37 @@
     <property>Amazon.SecurityToken.Model.AssumedRoleUser.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumedRoleUser.AssumedRoleId</property>
     <min>2</min>
     <max>193</max>
-    <pattern>[\w+=,.@:-]*</pattern>
+    <pattern>^[\w+=,.@:-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.Credentials.AccessKeyId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]*</pattern>
+    <pattern>^[\w]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.FederatedUser.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.FederatedUser.FederatedUserId</property>
     <min>2</min>
     <max>193</max>
-    <pattern>[\w+=,.@\:-]*</pattern>
+    <pattern>^[\w+=,.@\:-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.PolicyDescriptorType.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.ProvidedContext.ContextAssertion</property>
@@ -356,18 +356,18 @@
     <property>Amazon.SecurityToken.Model.ProvidedContext.ProviderArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]+</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=+\-@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]*</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=+\-@]*$</pattern>
   </property-value-rule>
 </property-value-rules>

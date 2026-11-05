@@ -54,6 +54,20 @@ public record SigV4Trait : TraitRecord
 }
 
 /// <summary>
+/// The <c>aws.protocols#awsQueryError</c> trait on an error shape: the <c>Code</c> value awsQuery/ec2Query
+/// serialize in the error response (overriding the shape name), which the client dispatches on.
+/// </summary>
+/// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsqueryerror-trait" /></remarks>
+public record AwsQueryErrorTrait : TraitRecord
+{
+    [JsonPropertyName("code")]
+    public required string Code { get; init; }
+
+    [JsonPropertyName("httpResponseCode")]
+    public int HttpResponseCode { get; init; }
+}
+
+/// <summary>
 /// The value of the protocol traits (such as restJson1 or awsJson1_0), which all carry
 /// the same HTTP version members.
 /// </summary>

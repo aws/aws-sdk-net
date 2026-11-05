@@ -31,7 +31,7 @@ using Amazon.KafkaConnect.Endpoints;
 namespace Amazon.KafkaConnect.Internal
 {
     /// <summary>
-    /// Amazon KafkaConnect endpoint resolver.
+    /// Managed Streaming for Kafka Connect endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for KafkaConnect service requests.
     /// <para />

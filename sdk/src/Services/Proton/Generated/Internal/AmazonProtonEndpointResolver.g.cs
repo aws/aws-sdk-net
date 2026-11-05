@@ -31,7 +31,7 @@ using Amazon.Proton.Endpoints;
 namespace Amazon.Proton.Internal
 {
     /// <summary>
-    /// Amazon Proton endpoint resolver.
+    /// AWS Proton endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Proton service requests.
     /// <para />

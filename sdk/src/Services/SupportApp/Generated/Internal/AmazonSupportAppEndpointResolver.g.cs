@@ -31,7 +31,7 @@ using Amazon.SupportApp.Endpoints;
 namespace Amazon.SupportApp.Internal
 {
     /// <summary>
-    /// Amazon SupportApp endpoint resolver.
+    /// AWS Support App endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SupportApp service requests.
     /// <para />

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TaxSettings.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon TaxSettings service
+    /// Service metadata for Tax Settings
     /// </summary>
     public partial class AmazonTaxSettingsMetadata : IServiceMetadata
     {

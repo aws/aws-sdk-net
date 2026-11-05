@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IAMToolbox.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IAMToolbox service
+    /// Service metadata for IAM Toolbox (Preview)
     /// </summary>
     public partial class AmazonIAMToolboxMetadata : IServiceMetadata
     {

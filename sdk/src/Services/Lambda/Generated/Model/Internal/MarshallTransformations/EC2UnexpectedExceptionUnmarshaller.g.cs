@@ -1,0 +1,90 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Lambda.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using Amazon.Util;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Lambda.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Exception Unmarshaller for EC2UnexpectedException
+    /// </summary>
+    public partial class EC2UnexpectedExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<EC2UnexpectedException, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the exception from the service to the appropriate exception class
+        /// </summary>
+        public EC2UnexpectedException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+        }
+
+        /// <summary>
+        /// Unmarshall the exception from the service to the appropriate exception class
+        /// </summary>
+        public EC2UnexpectedException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new EC2UnexpectedException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+
+            if (context.Stream.Length > 0)
+            {
+                context.Read(ref reader);
+                int targetDepth = context.CurrentDepth;
+                while (context.ReadAtDepth(targetDepth, ref reader))
+                {
+                    if (context.TestExpression("EC2ErrorCode", targetDepth, ref reader))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EC2ErrorCode = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
+
+                    if (context.TestExpression("Type", targetDepth, ref reader))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
+                }
+            }
+
+            return unmarshalledObject;
+        }
+
+        private static EC2UnexpectedExceptionUnmarshaller _instance = new EC2UnexpectedExceptionUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static EC2UnexpectedExceptionUnmarshaller Instance => _instance;
+    }
+}

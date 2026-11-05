@@ -33,11 +33,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.RestJson
 {
     [TestClass]
     public class InputStreamWithInitialRequest
     {
+        #if NET8_0_OR_GREATER
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestJson")]
+        public async Task InitialRequestInputRequest()
+        {
+            // Arrange
+            var inputEvents = new Queue<IEventStreamEvent>(new IEventStreamEvent[]
+            {
+            });
+            var request = new InputStreamWithInitialRequestRequest
+            {
+                InitialRequestMember = "foo",
+                StreamPublisher = () => Task.FromResult(inputEvents.Count > 0 ? inputEvents.Dequeue() : null),
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
+            // Act
+            using var actualResponse = await client.InputStreamWithInitialRequestAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
+
+            // Assert
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/InputStreamWithInitialRequest", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("foo".Replace(" ",""), actualRequest.Headers["initial-request-member"].Replace(" ",""));
+        }
+        #endif
+
     }
 }

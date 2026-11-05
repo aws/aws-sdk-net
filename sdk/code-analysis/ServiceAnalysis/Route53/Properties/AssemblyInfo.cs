@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Route53")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon Route 53. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET - Amazon Route 53.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]
@@ -29,4 +29,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("4.0")]
-[assembly: AssemblyFileVersion("4.0.100.19")]
+[assembly: AssemblyFileVersion("4.0.100.22")]

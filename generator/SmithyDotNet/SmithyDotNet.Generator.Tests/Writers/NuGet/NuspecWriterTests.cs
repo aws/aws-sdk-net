@@ -27,7 +27,7 @@ public class NuspecWriterTests
         AssertHelper("<title>AWSSDK - CloudTrailData</title>");
         AssertHelper("<version>4.0.100.3</version>");
         AssertHelper("<authors>Amazon Web Services</authors>");
-        AssertHelper("<description>Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.</description>");
+        AssertHelper("<description>The Amazon Web Services SDK for .NET - AWS CloudTrail Data Service</description>");
         AssertHelper("<language>en-US</language>");
         AssertHelper("""<license type="expression">Apache-2.0</license>""");
         AssertHelper("<projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>");

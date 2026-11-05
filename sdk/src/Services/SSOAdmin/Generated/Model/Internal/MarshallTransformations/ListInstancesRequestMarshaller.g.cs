@@ -80,6 +80,11 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("NextToken");
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
+            if (publicRequest.IsSetRegionScope())
+            {
+                context.Writer.WritePropertyName("RegionScope");
+                context.Writer.WriteStringValue(publicRequest.RegionScope);
+            }
 
             writer.WriteEndObject();
             writer.Flush();

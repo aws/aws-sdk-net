@@ -100,6 +100,16 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("dbParameterGroupIdentifier");
                 context.Writer.WriteStringValue(publicRequest.DbParameterGroupIdentifier);
             }
+            if (publicRequest.IsSetDeploymentConfiguration())
+            {
+                context.Writer.WritePropertyName("deploymentConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeploymentConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeploymentConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetFailoverMode())
             {
                 context.Writer.WritePropertyName("failoverMode");

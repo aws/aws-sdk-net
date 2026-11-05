@@ -26,7 +26,7 @@ using Amazon.NovaAct.Endpoints;
 namespace Amazon.NovaAct.Internal
 {
     /// <summary>
-    /// Amazon NovaAct endpoint provider.
+    /// Nova Act Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="NovaActEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

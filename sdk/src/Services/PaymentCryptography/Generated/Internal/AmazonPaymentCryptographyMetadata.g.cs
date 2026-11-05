@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon PaymentCryptography service
+    /// Service metadata for Payment Cryptography Control Plane
     /// </summary>
     public partial class AmazonPaymentCryptographyMetadata : IServiceMetadata
     {

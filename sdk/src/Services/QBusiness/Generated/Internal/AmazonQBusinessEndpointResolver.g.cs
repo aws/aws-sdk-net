@@ -31,7 +31,7 @@ using Amazon.QBusiness.Endpoints;
 namespace Amazon.QBusiness.Internal
 {
     /// <summary>
-    /// Amazon QBusiness endpoint resolver.
+    /// QBusiness endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for QBusiness service requests.
     /// <para />

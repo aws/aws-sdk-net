@@ -3984,6 +3984,22 @@
         {"shape":"ThrottlingException"}
       ]
     },
+    "ListReplicationFindings":{
+      "name":"ListReplicationFindings",
+      "http":{
+        "method":"GET",
+        "requestUri":"/replication-findings/{InstanceId}"
+      },
+      "input":{"shape":"ListReplicationFindingsRequest"},
+      "output":{"shape":"ListReplicationFindingsResponse"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
     "ListRoutingProfileManualAssignmentQueues":{
       "name":"ListRoutingProfileManualAssignmentQueues",
       "http":{
@@ -6061,6 +6077,23 @@
         {"shape":"InvalidParameterException"}
       ]
     },
+    "UpdateOutboundEmailContactMessage":{
+      "name":"UpdateOutboundEmailContactMessage",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/instances/{InstanceId}/contacts/{ContactId}/outbound-email-message"
+      },
+      "input":{"shape":"UpdateOutboundEmailContactMessageRequest"},
+      "output":{"shape":"UpdateOutboundEmailContactMessageResponse"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"ResourceConflictException"}
+      ]
+    },
     "UpdateParticipantAuthentication":{
       "name":"UpdateParticipantAuthentication",
       "http":{
@@ -7338,6 +7371,25 @@
       "type":"list",
       "member":{"shape":"Application"},
       "max":10
+    },
+    "ApproximateDriftedResourceCount":{
+      "type":"structure",
+      "required":[
+        "Region",
+        "Count",
+        "Timestamp"
+      ],
+      "members":{
+        "Region":{"shape":"AwsRegion"},
+        "Count":{"shape":"ApproximateTotalCount"},
+        "Timestamp":{"shape":"Timestamp"}
+      }
+    },
+    "ApproximateDriftedResourceCounts":{
+      "type":"list",
+      "member":{"shape":"ApproximateDriftedResourceCount"},
+      "max":2,
+      "min":1
     },
     "ApproximateTotalCount":{"type":"long"},
     "ArtifactId":{
@@ -8683,6 +8735,27 @@
       "max":100,
       "min":1
     },
+    "CaseEntries":{
+      "type":"list",
+      "member":{"shape":"CaseEntry"}
+    },
+    "CaseEntry":{
+      "type":"structure",
+      "members":{
+        "CaseId":{"shape":"CaseId"},
+        "CaseReferenceNumber":{"shape":"CaseReferenceNumber"}
+      }
+    },
+    "CaseId":{
+      "type":"string",
+      "max":36,
+      "min":1
+    },
+    "CaseReferenceNumber":{
+      "type":"string",
+      "max":50,
+      "min":1
+    },
     "CaseSlaConfiguration":{
       "type":"structure",
       "required":[
@@ -8697,6 +8770,24 @@
         "TargetFieldValues":{"shape":"SlaFieldValueUnionList"},
         "TargetSlaMinutes":{"shape":"TargetSlaMinutes"}
       }
+    },
+    "CategoriesAttributeAndCondition":{
+      "type":"structure",
+      "members":{
+        "TagConditions":{"shape":"TagAndConditionList"}
+      }
+    },
+    "CategoriesAttributeFilter":{
+      "type":"structure",
+      "members":{
+        "OrConditions":{"shape":"CategoriesAttributeOrConditionList"},
+        "AndCondition":{"shape":"CategoriesAttributeAndCondition"},
+        "TagCondition":{"shape":"TagCondition"}
+      }
+    },
+    "CategoriesAttributeOrConditionList":{
+      "type":"list",
+      "member":{"shape":"CategoriesAttributeAndCondition"}
     },
     "Channel":{
       "type":"string",
@@ -9044,6 +9135,7 @@
         "DisconnectReason":{"shape":"String"},
         "ContactEvaluations":{"shape":"ContactEvaluations"},
         "TaskTemplateInfo":{"shape":"TaskTemplateInfoV2"},
+        "Cases":{"shape":"CaseEntries"},
         "ContactDetails":{"shape":"ContactDetails"},
         "OutboundStrategy":{"shape":"OutboundStrategy"},
         "Attributes":{"shape":"Attributes"},
@@ -10803,6 +10895,7 @@
         "Description":{"shape":"TaskTemplateDescription"},
         "ContactFlowId":{"shape":"ContactFlowId"},
         "SelfAssignFlowId":{"shape":"ContactFlowId"},
+        "ContactHooks":{"shape":"TaskTemplateContactHooks"},
         "Constraints":{"shape":"TaskTemplateConstraints"},
         "Defaults":{"shape":"TaskTemplateDefaults"},
         "Status":{"shape":"TaskTemplateStatus"},
@@ -16678,6 +16771,7 @@
         "Description":{"shape":"TaskTemplateDescription"},
         "ContactFlowId":{"shape":"ContactFlowId"},
         "SelfAssignFlowId":{"shape":"ContactFlowId"},
+        "ContactHooks":{"shape":"TaskTemplateContactHooks"},
         "Constraints":{"shape":"TaskTemplateConstraints"},
         "Defaults":{"shape":"TaskTemplateDefaults"},
         "Fields":{"shape":"TaskTemplateFields"},
@@ -16739,7 +16833,8 @@
         "Id":{"shape":"ACGRTrafficDistributionGroupId"},
         "Arn":{"shape":"ACGRTrafficDistributionGroupArn"},
         "SignInConfig":{"shape":"SignInConfig"},
-        "AgentConfig":{"shape":"AgentConfig"}
+        "AgentConfig":{"shape":"AgentConfig"},
+        "LastFailoverTime":{"shape":"Timestamp"}
       }
     },
     "GlobalResiliencyMetadata":{
@@ -19297,7 +19392,8 @@
         "MaxResults":{"shape":"MaxResult100"},
         "NextToken":{"shape":"LargeNextToken"},
         "OutputType":{"shape":"RealTimeContactAnalysisOutputType"},
-        "SegmentTypes":{"shape":"RealTimeContactAnalysisSegmentTypes"}
+        "SegmentTypes":{"shape":"RealTimeContactAnalysisSegmentTypes"},
+        "ListFilter":{"shape":"RealTimeContactAnalysisSegmentsFilter"}
       }
     },
     "ListRealtimeContactAnalysisSegmentsV2Response":{
@@ -19312,6 +19408,46 @@
         "Status":{"shape":"RealTimeContactAnalysisStatus"},
         "Segments":{"shape":"RealtimeContactAnalysisSegments"},
         "NextToken":{"shape":"LargeNextToken"}
+      }
+    },
+    "ListReplicationFindingsRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "ResourceType"
+      ],
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceIdOrArn",
+          "location":"uri",
+          "locationName":"InstanceId"
+        },
+        "ResourceType":{
+          "shape":"ReplicationFindingResourceType",
+          "location":"querystring",
+          "locationName":"resourceType"
+        },
+        "MaxResults":{
+          "shape":"MaxResult100",
+          "box":true,
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "NextToken":{
+          "shape":"LargeNextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListReplicationFindingsResponse":{
+      "type":"structure",
+      "required":["ReplicationFindingsList"],
+      "members":{
+        "ReplicationFindingsList":{"shape":"ReplicationFindingsList"},
+        "ApproximateDriftedResourceCounts":{"shape":"ApproximateDriftedResourceCounts"},
+        "NextToken":{"shape":"LargeNextToken"},
+        "ResourceReplicationStatuses":{"shape":"ResourceReplicationStatuses"}
       }
     },
     "ListRoutingProfileManualAssignmentQueuesRequest":{
@@ -21022,6 +21158,12 @@
         "WIDGET_ACTION"
       ]
     },
+    "NullableAdditionalRecipients":{
+      "type":"structure",
+      "members":{
+        "CcEmailAddresses":{"shape":"OptionalEmailAddressRecipientList"}
+      }
+    },
     "NullableBoolean":{"type":"boolean"},
     "NullableDouble":{"type":"double"},
     "NullableProficiencyLevel":{
@@ -21119,6 +21261,12 @@
         "OPEN",
         "CLOSED"
       ]
+    },
+    "OptionalEmailAddressRecipientList":{
+      "type":"list",
+      "member":{"shape":"EmailAddressInfo"},
+      "max":50,
+      "min":0
     },
     "Origin":{
       "type":"string",
@@ -21984,7 +22132,10 @@
     },
     "PreEvaluationFilterResourceType":{
       "type":"string",
-      "enum":["CONTACT"]
+      "enum":[
+        "CONTACT",
+        "CONTACT_EVALUATION"
+      ]
     },
     "PreEvaluationFilterType":{
       "type":"string",
@@ -22666,6 +22817,7 @@
       "type":"structure",
       "required":["PointsOfInterest"],
       "members":{
+        "RuleId":{"shape":"RuleId256"},
         "PointsOfInterest":{"shape":"RealTimeContactAnalysisPointsOfInterest"}
       }
     },
@@ -22905,6 +23057,12 @@
       "type":"list",
       "member":{"shape":"RealTimeContactAnalysisSegmentType"},
       "max":7
+    },
+    "RealTimeContactAnalysisSegmentsFilter":{
+      "type":"structure",
+      "members":{
+        "CategoriesAttributeFilter":{"shape":"CategoriesAttributeFilter"}
+      }
     },
     "RealTimeContactAnalysisSentimentLabel":{
       "type":"string",
@@ -23164,7 +23322,8 @@
         "APPROVED",
         "REJECTED",
         "PROCESSING",
-        "FAILED"
+        "FAILED",
+        "DRAFTING"
       ]
     },
     "ReferenceStatusReason":{
@@ -23294,6 +23453,52 @@
         "GlobalSignInEndpoint":{"shape":"GlobalSignInEndpoint"}
       }
     },
+    "ReplicationFinding":{
+      "type":"structure",
+      "required":[
+        "Arn",
+        "Id",
+        "ResourceType"
+      ],
+      "members":{
+        "Arn":{"shape":"ARN"},
+        "Id":{"shape":"ResourceId"},
+        "Region":{"shape":"AwsRegion"},
+        "ResourceType":{"shape":"ReplicationFindingResourceType"},
+        "Name":{"shape":"ReplicationFindingResourceName"},
+        "Operation":{"shape":"ReplicationFindingOperation"},
+        "ReferenceCode":{"shape":"ReplicationFindingReferenceCode"},
+        "Message":{"shape":"ReplicationFindingMessage"}
+      }
+    },
+    "ReplicationFindingMessage":{
+      "type":"string",
+      "max":4096
+    },
+    "ReplicationFindingOperation":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
+    "ReplicationFindingReferenceCode":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
+    "ReplicationFindingResourceName":{
+      "type":"string",
+      "max":512,
+      "min":1
+    },
+    "ReplicationFindingResourceType":{
+      "type":"string",
+      "max":128,
+      "min":1
+    },
+    "ReplicationFindingsList":{
+      "type":"list",
+      "member":{"shape":"ReplicationFinding"}
+    },
     "ReplicationStatusReason":{
       "type":"string",
       "max":1024,
@@ -23370,6 +23575,28 @@
       },
       "error":{"httpStatusCode":409},
       "exception":true
+    },
+    "ResourceReplicationStatus":{
+      "type":"structure",
+      "required":[
+        "Region",
+        "Status"
+      ],
+      "members":{
+        "Region":{"shape":"AwsRegion"},
+        "Status":{"shape":"ResourceReplicationStatusValue"}
+      }
+    },
+    "ResourceReplicationStatusValue":{
+      "type":"string",
+      "max":128,
+      "min":1
+    },
+    "ResourceReplicationStatuses":{
+      "type":"list",
+      "member":{"shape":"ResourceReplicationStatus"},
+      "max":2,
+      "min":1
     },
     "ResourceTagsSearchCriteria":{
       "type":"structure",
@@ -23751,6 +23978,11 @@
     },
     "RuleFunction":{"type":"string"},
     "RuleId":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
+    "RuleId256":{
       "type":"string",
       "max":256,
       "min":1
@@ -24760,7 +24992,8 @@
         "LastModifiedRegion":{"shape":"RegionName"},
         "HierarchyRestrictedResources":{"shape":"HierarchyRestrictedResourceList"},
         "AllowedAccessControlHierarchyGroupId":{"shape":"HierarchyGroupId"},
-        "GranularAccessControlConfiguration":{"shape":"GranularAccessControlConfiguration"}
+        "GranularAccessControlConfiguration":{"shape":"GranularAccessControlConfiguration"},
+        "Type":{"shape":"SecurityProfileType"}
       }
     },
     "SecurityProfileDescription":{
@@ -24815,7 +25048,8 @@
         "Arn":{"shape":"ARN"},
         "SecurityProfileName":{"shape":"SecurityProfileName"},
         "Description":{"shape":"SecurityProfileDescription"},
-        "Tags":{"shape":"TagMap"}
+        "Tags":{"shape":"TagMap"},
+        "Type":{"shape":"SecurityProfileType"}
       }
     },
     "SecurityProfileSummary":{
@@ -24825,12 +25059,20 @@
         "Arn":{"shape":"ARN"},
         "Name":{"shape":"SecurityProfileName"},
         "LastModifiedTime":{"shape":"Timestamp"},
-        "LastModifiedRegion":{"shape":"RegionName"}
+        "LastModifiedRegion":{"shape":"RegionName"},
+        "Type":{"shape":"SecurityProfileType"}
       }
     },
     "SecurityProfileSummaryList":{
       "type":"list",
       "member":{"shape":"SecurityProfileSummary"}
+    },
+    "SecurityProfileType":{
+      "type":"string",
+      "enum":[
+        "AWS_MANAGED",
+        "CUSTOMER_MANAGED"
+      ]
     },
     "SecurityProfiles":{
       "type":"list",
@@ -26171,6 +26413,12 @@
         "InvisibleFields":{"shape":"InvisibleTaskTemplateFields"}
       }
     },
+    "TaskTemplateContactHooks":{
+      "type":"structure",
+      "members":{
+        "WrapUpFlowId":{"shape":"ContactFlowModuleId"}
+      }
+    },
     "TaskTemplateDefaultFieldValue":{
       "type":"structure",
       "members":{
@@ -27102,7 +27350,8 @@
         "QueueInfo":{"shape":"QueueInfoInput"},
         "UserInfo":{"shape":"UserInfo"},
         "CustomerEndpoint":{"shape":"Endpoint"},
-        "SystemEndpoint":{"shape":"Endpoint"}
+        "SystemEndpoint":{"shape":"Endpoint"},
+        "AdditionalRecipients":{"shape":"NullableAdditionalRecipients"}
       }
     },
     "UpdateContactResponse":{
@@ -27603,6 +27852,60 @@
       "type":"structure",
       "members":{}
     },
+    "UpdateOutboundEmailContactMessageRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "ContactId",
+        "EmailMessage"
+      ],
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceId",
+          "location":"uri",
+          "locationName":"InstanceId"
+        },
+        "ContactId":{
+          "shape":"ContactId",
+          "location":"uri",
+          "locationName":"ContactId"
+        },
+        "EmailMessage":{"shape":"UpdateOutboundEmailContent"}
+      }
+    },
+    "UpdateOutboundEmailContactMessageResponse":{
+      "type":"structure",
+      "required":["ContactId"],
+      "members":{
+        "ContactId":{"shape":"ContactId"}
+      }
+    },
+    "UpdateOutboundEmailContent":{
+      "type":"structure",
+      "required":[
+        "MessageSourceType",
+        "RawMessage"
+      ],
+      "members":{
+        "MessageSourceType":{"shape":"UpdateOutboundEmailMessageSourceType"},
+        "RawMessage":{"shape":"UpdateOutboundRawMessage"}
+      }
+    },
+    "UpdateOutboundEmailMessageSourceType":{
+      "type":"string",
+      "enum":["RAW"]
+    },
+    "UpdateOutboundRawMessage":{
+      "type":"structure",
+      "required":[
+        "Body",
+        "ContentType"
+      ],
+      "members":{
+        "Body":{"shape":"Body"},
+        "ContentType":{"shape":"EmailMessageContentType"}
+      }
+    },
     "UpdateParticipantAuthenticationRequest":{
       "type":"structure",
       "required":[
@@ -28102,6 +28405,7 @@
         "Description":{"shape":"TaskTemplateDescription"},
         "ContactFlowId":{"shape":"ContactFlowId"},
         "SelfAssignFlowId":{"shape":"ContactFlowId"},
+        "ContactHooks":{"shape":"TaskTemplateContactHooks"},
         "Constraints":{"shape":"TaskTemplateConstraints"},
         "Defaults":{"shape":"TaskTemplateDefaults"},
         "Status":{"shape":"TaskTemplateStatus"},
@@ -28118,6 +28422,7 @@
         "Description":{"shape":"TaskTemplateDescription"},
         "ContactFlowId":{"shape":"ContactFlowId"},
         "SelfAssignFlowId":{"shape":"ContactFlowId"},
+        "ContactHooks":{"shape":"TaskTemplateContactHooks"},
         "Constraints":{"shape":"TaskTemplateConstraints"},
         "Defaults":{"shape":"TaskTemplateDefaults"},
         "Fields":{"shape":"TaskTemplateFields"},

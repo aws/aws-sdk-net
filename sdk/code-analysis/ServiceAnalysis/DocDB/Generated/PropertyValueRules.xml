@@ -4,72 +4,72 @@
     <property>Amazon.DocDB.Model.CreateDBClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DocDB.Model.CreateGlobalClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DocDB.Model.DeleteGlobalClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DocDB.Model.DescribeGlobalClustersRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DocDB.Model.FailoverGlobalClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DocDB.Model.FailoverGlobalClusterRequest.TargetDbClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DocDB.Model.ModifyGlobalClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DocDB.Model.ModifyGlobalClusterRequest.NewGlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DocDB.Model.RemoveFromGlobalClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DocDB.Model.SwitchoverGlobalClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DocDB.Model.SwitchoverGlobalClusterRequest.TargetDbClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DocDB.Model.GlobalCluster.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
 </property-value-rules>

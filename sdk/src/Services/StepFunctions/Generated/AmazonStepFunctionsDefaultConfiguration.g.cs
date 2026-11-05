@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.StepFunctions
 {
     /// <summary>
-    /// Configuration for accessing Amazon StepFunctions service
+    /// Configuration for accessing AWS Step Functions
     /// </summary>
     public static class AmazonStepFunctionsDefaultConfiguration
     {

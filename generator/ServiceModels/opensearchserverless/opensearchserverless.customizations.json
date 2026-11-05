@@ -1,0 +1,25 @@
+{
+    "paginators": {
+        "ListAccessPolicies": {
+            "pageSize": "maxResults"
+        },
+        "ListCollectionGroups": {
+            "pageSize": "maxResults"
+        },
+        "ListCollections": {
+            "pageSize": "maxResults"
+        },
+        "ListLifecyclePolicies": {
+            "pageSize": "maxResults"
+        },
+        "ListSecurityConfigs": {
+            "pageSize": "maxResults"
+        },
+        "ListSecurityPolicies": {
+            "pageSize": "maxResults"
+        },
+        "ListVpcEndpoints": {
+            "pageSize": "maxResults"
+        }
+    }
+}

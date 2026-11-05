@@ -31,7 +31,7 @@ using Amazon.FIS.Endpoints;
 namespace Amazon.FIS.Internal
 {
     /// <summary>
-    /// Amazon FIS endpoint resolver.
+    /// AWS Fault Injection Simulator endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for FIS service requests.
     /// <para />

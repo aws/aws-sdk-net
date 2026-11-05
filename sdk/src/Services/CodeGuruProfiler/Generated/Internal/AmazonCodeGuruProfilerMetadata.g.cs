@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CodeGuruProfiler service
+    /// Service metadata for Amazon CodeGuru Profiler
     /// </summary>
     public partial class AmazonCodeGuruProfilerMetadata : IServiceMetadata
     {

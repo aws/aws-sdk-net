@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSO.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SSO service
+    /// Service metadata for AWS Single Sign-On
     /// </summary>
     public partial class AmazonSSOMetadata : IServiceMetadata
     {

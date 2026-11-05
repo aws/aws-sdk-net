@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchainQuery.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ManagedBlockchainQuery service
+    /// Service metadata for Amazon Managed Blockchain Query
     /// </summary>
     public partial class AmazonManagedBlockchainQueryMetadata : IServiceMetadata
     {

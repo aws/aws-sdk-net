@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.HealthLake
 {
     /// <summary>
-    /// Configuration for accessing Amazon HealthLake service
+    /// Configuration for accessing Amazon HealthLake
     /// </summary>
     public static class AmazonHealthLakeDefaultConfiguration
     {

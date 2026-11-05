@@ -27,12 +27,12 @@ using Amazon.RecycleBin.Internal;
 namespace Amazon.RecycleBin
 {
     /// <summary>
-    /// Configuration for accessing Amazon RecycleBin service
+    /// Configuration for accessing Amazon Recycle Bin
     /// </summary>
     public partial class AmazonRecycleBinConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("rbin", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("rbin", "4.0.100.22");
 
         private static readonly AmazonRecycleBinEndpointResolver EndpointResolver =
             new AmazonRecycleBinEndpointResolver();

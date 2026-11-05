@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CodeCommit
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeCommit service
+    /// Configuration for accessing AWS CodeCommit
     /// </summary>
     public static class AmazonCodeCommitDefaultConfiguration
     {

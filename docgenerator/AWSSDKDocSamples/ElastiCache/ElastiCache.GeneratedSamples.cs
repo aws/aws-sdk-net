@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
     {
         public void ElastiCacheAddTagsToResource()
         {
-            #region addtagstoresource-1482430264385
+            #region AddTagsToResource-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.AddTagsToResource(new AddTagsToResourceRequest 
+            var response = client.AddTagsToResource(new AddTagsToResourceRequest
             {
                 ResourceName = "arn:aws:elasticache:us-east-1:1234567890:cluster:my-mem-cluster",
                 Tags = new List<Tag> {
@@ -38,10 +39,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheAuthorizeCacheSecurityGroupIngress()
         {
-            #region authorizecachecachesecuritygroupingress-1483046446206
+            #region AuthorizeCacheSecurityGroupIngress-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.AuthorizeCacheSecurityGroupIngress(new AuthorizeCacheSecurityGroupIngressRequest 
+            var response = client.AuthorizeCacheSecurityGroupIngress(new AuthorizeCacheSecurityGroupIngressRequest
             {
                 CacheSecurityGroupName = "my-sec-grp",
                 EC2SecurityGroupName = "my-ec2-sec-grp",
@@ -54,10 +55,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheCopySnapshot()
         {
-            #region copysnapshot-1482961393820
+            #region CopySnapshot-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.CopySnapshot(new CopySnapshotRequest 
+            var response = client.CopySnapshot(new CopySnapshotRequest
             {
                 SourceSnapshotName = "my-snapshot",
                 TargetBucket = "",
@@ -71,10 +72,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheCreateCacheCluster()
         {
-            #region createcachecluster-1474994727381
+            #region CreateCacheCluster-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.CreateCacheCluster(new CreateCacheClusterRequest 
+            var response = client.CreateCacheCluster(new CreateCacheClusterRequest
             {
                 AZMode = "cross-az",
                 CacheClusterId = "my-memcached-cluster",
@@ -93,10 +94,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheCreateCacheCluster()
         {
-            #region createcachecluster-1474994727381
+            #region CreateCacheCluster-2
 
             var client = new AmazonElastiCacheClient();
-            var response = client.CreateCacheCluster(new CreateCacheClusterRequest 
+            var response = client.CreateCacheCluster(new CreateCacheClusterRequest
             {
                 AutoMinorVersionUpgrade = true,
                 CacheClusterId = "my-redis",
@@ -117,10 +118,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheCreateCacheParameterGroup()
         {
-            #region createcacheparametergroup-1474997699362
+            #region CreateCacheParameterGroup-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.CreateCacheParameterGroup(new CreateCacheParameterGroupRequest 
+            var response = client.CreateCacheParameterGroup(new CreateCacheParameterGroupRequest
             {
                 CacheParameterGroupFamily = "redis2.8",
                 CacheParameterGroupName = "custom-redis2-8",
@@ -134,10 +135,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheCreateCacheSecurityGroup()
         {
-            #region createcachesecuritygroup-1483041506604
+            #region CreateCacheSecurityGroup-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.CreateCacheSecurityGroup(new CreateCacheSecurityGroupRequest 
+            var response = client.CreateCacheSecurityGroup(new CreateCacheSecurityGroupRequest
             {
                 CacheSecurityGroupName = "my-cache-sec-grp",
                 Description = "Example ElastiCache security group."
@@ -149,10 +150,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheCreateCacheSubnetGroup()
         {
-            #region createcachesubnet-1483042274558
+            #region CreateCacheSubnetGroup-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.CreateCacheSubnetGroup(new CreateCacheSubnetGroupRequest 
+            var response = client.CreateCacheSubnetGroup(new CreateCacheSubnetGroupRequest
             {
                 CacheSubnetGroupDescription = "Sample subnet group",
                 CacheSubnetGroupName = "my-sn-grp2",
@@ -170,10 +171,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheCreateReplicationGroup()
         {
-            #region createcachereplicationgroup-1474998730655
+            #region CreateReplicationGroup-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.CreateReplicationGroup(new CreateReplicationGroupRequest 
+            var response = client.CreateReplicationGroup(new CreateReplicationGroupRequest
             {
                 AutomaticFailoverEnabled = true,
                 CacheNodeType = "cache.m3.medium",
@@ -192,10 +193,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheCreateReplicationGroup()
         {
-            #region createreplicationgroup-1483657035585
+            #region CreateReplicationGroup-2
 
             var client = new AmazonElastiCacheClient();
-            var response = client.CreateReplicationGroup(new CreateReplicationGroupRequest 
+            var response = client.CreateReplicationGroup(new CreateReplicationGroupRequest
             {
                 AutoMinorVersionUpgrade = true,
                 CacheNodeType = "cache.m3.medium",
@@ -234,26 +235,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheCreateSnapshot()
         {
-            #region createsnapshot-1474999681024
+            #region CreateSnapshot-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.CreateSnapshot(new CreateSnapshotRequest 
-            {
-                CacheClusterId = "onenoderedis",
-                SnapshotName = "snapshot-1"
-            });
-
-            Snapshot snapshot = response.Snapshot;
-
-            #endregion
-        }
-
-        public void ElastiCacheCreateSnapshot()
-        {
-            #region createsnapshot-1474999681024
-
-            var client = new AmazonElastiCacheClient();
-            var response = client.CreateSnapshot(new CreateSnapshotRequest 
+            var response = client.CreateSnapshot(new CreateSnapshotRequest
             {
                 CacheClusterId = "threenoderedis-001",
                 SnapshotName = "snapshot-2"
@@ -266,10 +251,26 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheCreateSnapshot()
         {
-            #region createsnapshot-clustered-redis-1486144841758
+            #region CreateSnapshot-2
 
             var client = new AmazonElastiCacheClient();
-            var response = client.CreateSnapshot(new CreateSnapshotRequest 
+            var response = client.CreateSnapshot(new CreateSnapshotRequest
+            {
+                CacheClusterId = "onenoderedis",
+                SnapshotName = "snapshot-1"
+            });
+
+            Snapshot snapshot = response.Snapshot;
+
+            #endregion
+        }
+
+        public void ElastiCacheCreateSnapshot()
+        {
+            #region CreateSnapshot-3
+
+            var client = new AmazonElastiCacheClient();
+            var response = client.CreateSnapshot(new CreateSnapshotRequest
             {
                 ReplicationGroupId = "clusteredredis",
                 SnapshotName = "snapshot-2x5"
@@ -282,10 +283,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDeleteCacheCluster()
         {
-            #region deletecachecluster-1475010605291
+            #region DeleteCacheCluster-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DeleteCacheCluster(new DeleteCacheClusterRequest 
+            var response = client.DeleteCacheCluster(new DeleteCacheClusterRequest
             {
                 CacheClusterId = "my-memcached"
             });
@@ -297,10 +298,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDeleteCacheParameterGroup()
         {
-            #region deletecacheparametergroup-1475010933957
+            #region DeleteCacheParameterGroup-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DeleteCacheParameterGroup(new DeleteCacheParameterGroupRequest 
+            var response = client.DeleteCacheParameterGroup(new DeleteCacheParameterGroupRequest
             {
                 CacheParameterGroupName = "custom-mem1-4"
             });
@@ -311,10 +312,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDeleteCacheSecurityGroup()
         {
-            #region deletecachesecuritygroup-1483046967507
+            #region DeleteCacheSecurityGroup-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DeleteCacheSecurityGroup(new DeleteCacheSecurityGroupRequest 
+            var response = client.DeleteCacheSecurityGroup(new DeleteCacheSecurityGroupRequest
             {
                 CacheSecurityGroupName = "my-sec-group"
             });
@@ -325,10 +326,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDeleteCacheSubnetGroup()
         {
-            #region deletecachesubnetgroup-1475011431325
+            #region DeleteCacheSubnetGroup-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DeleteCacheSubnetGroup(new DeleteCacheSubnetGroupRequest 
+            var response = client.DeleteCacheSubnetGroup(new DeleteCacheSubnetGroupRequest
             {
                 CacheSubnetGroupName = "my-subnet-group"
             });
@@ -339,10 +340,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDeleteReplicationGroup()
         {
-            #region deletereplicationgroup-1475011641804
+            #region DeleteReplicationGroup-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DeleteReplicationGroup(new DeleteReplicationGroupRequest 
+            var response = client.DeleteReplicationGroup(new DeleteReplicationGroupRequest
             {
                 ReplicationGroupId = "my-redis-rg",
                 RetainPrimaryCluster = false
@@ -355,10 +356,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDeleteSnapshot()
         {
-            #region deletesnapshot-1475011945779
+            #region DeleteSnapshot-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DeleteSnapshot(new DeleteSnapshotRequest 
+            var response = client.DeleteSnapshot(new DeleteSnapshotRequest
             {
                 SnapshotName = "snapshot-20161212"
             });
@@ -370,25 +371,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeCacheClusters()
         {
-            #region describecacheclusters-1475012269754
+            #region DescribeCacheClusters-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeCacheClusters(new DescribeCacheClustersRequest 
-            {
-                CacheClusterId = "my-mem-cluster"
-            });
-
-            List<CacheCluster> cacheClusters = response.CacheClusters;
-
-            #endregion
-        }
-
-        public void ElastiCacheDescribeCacheClusters()
-        {
-            #region describecacheclusters-1475012269754
-
-            var client = new AmazonElastiCacheClient();
-            var response = client.DescribeCacheClusters(new DescribeCacheClustersRequest 
+            var response = client.DescribeCacheClusters(new DescribeCacheClustersRequest
             {
                 CacheClusterId = "my-mem-cluster",
                 ShowCacheNodeInfo = true
@@ -399,12 +385,27 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
             #endregion
         }
 
-        public void ElastiCacheDescribeCacheEngineVersions()
+        public void ElastiCacheDescribeCacheClusters()
         {
-            #region describecacheengineversions-1475012638790
+            #region DescribeCacheClusters-2
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeCacheEngineVersions(new DescribeCacheEngineVersionsRequest 
+            var response = client.DescribeCacheClusters(new DescribeCacheClustersRequest
+            {
+                CacheClusterId = "my-mem-cluster"
+            });
+
+            List<CacheCluster> cacheClusters = response.CacheClusters;
+
+            #endregion
+        }
+
+        public void ElastiCacheDescribeCacheEngineVersions()
+        {
+            #region DescribeCacheEngineVersions-1
+
+            var client = new AmazonElastiCacheClient();
+            var response = client.DescribeCacheEngineVersions(new DescribeCacheEngineVersionsRequest
             {
             });
 
@@ -415,10 +416,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeCacheEngineVersions()
         {
-            #region describecacheengineversions-1475012638790
+            #region DescribeCacheEngineVersions-2
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeCacheEngineVersions(new DescribeCacheEngineVersionsRequest 
+            var response = client.DescribeCacheEngineVersions(new DescribeCacheEngineVersionsRequest
             {
                 DefaultOnly = false,
                 Engine = "redis",
@@ -433,10 +434,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeCacheParameterGroups()
         {
-            #region describecacheparametergroups-1483045457557
+            #region DescribeCacheParameterGroups-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeCacheParameterGroups(new DescribeCacheParameterGroupsRequest 
+            var response = client.DescribeCacheParameterGroups(new DescribeCacheParameterGroupsRequest
             {
                 CacheParameterGroupName = "custom-mem1-4"
             });
@@ -448,10 +449,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeCacheParameters()
         {
-            #region describecacheparameters-1475013576900
+            #region DescribeCacheParameters-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeCacheParameters(new DescribeCacheParametersRequest 
+            var response = client.DescribeCacheParameters(new DescribeCacheParametersRequest
             {
                 CacheParameterGroupName = "custom-redis2-8",
                 MaxRecords = 100,
@@ -466,10 +467,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeCacheSecurityGroups()
         {
-            #region describecachesecuritygroups-1483047200801
+            #region DescribeCacheSecurityGroups-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeCacheSecurityGroups(new DescribeCacheSecurityGroupsRequest 
+            var response = client.DescribeCacheSecurityGroups(new DescribeCacheSecurityGroupsRequest
             {
                 CacheSecurityGroupName = "my-sec-group"
             });
@@ -480,10 +481,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeCacheSubnetGroups()
         {
-            #region describecachesubnetgroups-1482439214064
+            #region DescribeCacheSubnetGroups-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeCacheSubnetGroups(new DescribeCacheSubnetGroupsRequest 
+            var response = client.DescribeCacheSubnetGroups(new DescribeCacheSubnetGroupsRequest
             {
                 MaxRecords = 25
             });
@@ -496,10 +497,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeEngineDefaultParameters()
         {
-            #region describeenginedefaultparameters-1481738057686
+            #region DescribeEngineDefaultParameters-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeEngineDefaultParameters(new DescribeEngineDefaultParametersRequest 
+            var response = client.DescribeEngineDefaultParameters(new DescribeEngineDefaultParametersRequest
             {
                 CacheParameterGroupFamily = "redis2.8",
                 MaxRecords = 25
@@ -512,10 +513,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeEvents()
         {
-            #region describeevents-1481843894757
+            #region DescribeEvents-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeEvents(new DescribeEventsRequest 
+            var response = client.DescribeEvents(new DescribeEventsRequest
             {
                 Duration = 360,
                 SourceType = "cache-cluster"
@@ -529,12 +530,12 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeEvents()
         {
-            #region describeevents-1481843894757
+            #region DescribeEvents-2
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeEvents(new DescribeEventsRequest 
+            var response = client.DescribeEvents(new DescribeEventsRequest
             {
-                StartTime = new DateTime(2016, 12, 22, 3, 0, 0, DateTimeKind.Utc)
+                StartTime = new DateTime(2016, 12, 22, 15, 0, 0, DateTimeKind.Utc)
             });
 
             List<Event> events = response.Events;
@@ -545,10 +546,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeReplicationGroups()
         {
-            #region describereplicationgroups-1481742639427
+            #region DescribeReplicationGroups-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeReplicationGroups(new DescribeReplicationGroupsRequest 
+            var response = client.DescribeReplicationGroups(new DescribeReplicationGroupsRequest
             {
             });
 
@@ -560,10 +561,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeReservedCacheNodes()
         {
-            #region describereservedcachenodes-1481742348045
+            #region DescribeReservedCacheNodes-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeReservedCacheNodes(new DescribeReservedCacheNodesRequest 
+            var response = client.DescribeReservedCacheNodes(new DescribeReservedCacheNodesRequest
             {
                 MaxRecords = 25
             });
@@ -574,26 +575,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeReservedCacheNodesOfferings()
         {
-            #region describereseredcachenodeofferings-1481742869998
+            #region DescribeReservedCacheNodesOfferings-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeReservedCacheNodesOfferings(new DescribeReservedCacheNodesOfferingsRequest 
-            {
-                MaxRecords = 20
-            });
-
-            string marker = response.Marker;
-            List<ReservedCacheNodesOffering> reservedCacheNodesOfferings = response.ReservedCacheNodesOfferings;
-
-            #endregion
-        }
-
-        public void ElastiCacheDescribeReservedCacheNodesOfferings()
-        {
-            #region describereseredcachenodeofferings-1481742869998
-
-            var client = new AmazonElastiCacheClient();
-            var response = client.DescribeReservedCacheNodesOfferings(new DescribeReservedCacheNodesOfferingsRequest 
+            var response = client.DescribeReservedCacheNodesOfferings(new DescribeReservedCacheNodesOfferingsRequest
             {
                 CacheNodeType = "cache.r3.large",
                 Duration = "3",
@@ -610,10 +595,26 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeReservedCacheNodesOfferings()
         {
-            #region describereseredcachenodeofferings-1481742869998
+            #region DescribeReservedCacheNodesOfferings-2
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeReservedCacheNodesOfferings(new DescribeReservedCacheNodesOfferingsRequest 
+            var response = client.DescribeReservedCacheNodesOfferings(new DescribeReservedCacheNodesOfferingsRequest
+            {
+                MaxRecords = 20
+            });
+
+            string marker = response.Marker;
+            List<ReservedCacheNodesOffering> reservedCacheNodesOfferings = response.ReservedCacheNodesOfferings;
+
+            #endregion
+        }
+
+        public void ElastiCacheDescribeReservedCacheNodesOfferings()
+        {
+            #region DescribeReservedCacheNodesOfferings-3
+
+            var client = new AmazonElastiCacheClient();
+            var response = client.DescribeReservedCacheNodesOfferings(new DescribeReservedCacheNodesOfferingsRequest
             {
                 CacheNodeType = "",
                 Duration = "",
@@ -632,10 +633,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheDescribeSnapshots()
         {
-            #region describesnapshots-1481743399584
+            #region DescribeSnapshots-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.DescribeSnapshots(new DescribeSnapshotsRequest 
+            var response = client.DescribeSnapshots(new DescribeSnapshotsRequest
             {
                 SnapshotName = "snapshot-20161212"
             });
@@ -648,25 +649,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheListAllowedNodeTypeModifications()
         {
-            #region listallowednodetypemodifications-1481748494872
+            #region ListAllowedNodeTypeModifications-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.ListAllowedNodeTypeModifications(new ListAllowedNodeTypeModificationsRequest 
-            {
-                ReplicationGroupId = "myreplgroup"
-            });
-
-            List<string> scaleUpModifications = response.ScaleUpModifications;
-
-            #endregion
-        }
-
-        public void ElastiCacheListAllowedNodeTypeModifications()
-        {
-            #region listallowednodetypemodifications-1481748494872
-
-            var client = new AmazonElastiCacheClient();
-            var response = client.ListAllowedNodeTypeModifications(new ListAllowedNodeTypeModificationsRequest 
+            var response = client.ListAllowedNodeTypeModifications(new ListAllowedNodeTypeModificationsRequest
             {
                 CacheClusterId = "mycluster"
             });
@@ -676,12 +662,27 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
             #endregion
         }
 
-        public void ElastiCacheListTagsForResource()
+        public void ElastiCacheListAllowedNodeTypeModifications()
         {
-            #region listtagsforresource-1481748784584
+            #region ListAllowedNodeTypeModifications-2
 
             var client = new AmazonElastiCacheClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListAllowedNodeTypeModifications(new ListAllowedNodeTypeModificationsRequest
+            {
+                ReplicationGroupId = "myreplgroup"
+            });
+
+            List<string> scaleUpModifications = response.ScaleUpModifications;
+
+            #endregion
+        }
+
+        public void ElastiCacheListTagsForResource()
+        {
+            #region ListTagsForResource-1
+
+            var client = new AmazonElastiCacheClient();
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceName = "arn:aws:elasticache:us-west-2:<my-account-id>:cluster:mycluster"
             });
@@ -693,10 +694,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheModifyCacheCluster()
         {
-            #region modifycachecluster-1482962725919
+            #region ModifyCacheCluster-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.ModifyCacheCluster(new ModifyCacheClusterRequest 
+            var response = client.ModifyCacheCluster(new ModifyCacheClusterRequest
             {
                 ApplyImmediately = true,
                 CacheClusterId = "redis-cluster",
@@ -710,10 +711,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheModifyCacheParameterGroup()
         {
-            #region modifycacheparametergroup-1482966746787
+            #region ModifyCacheParameterGroup-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.ModifyCacheParameterGroup(new ModifyCacheParameterGroupRequest 
+            var response = client.ModifyCacheParameterGroup(new ModifyCacheParameterGroupRequest
             {
                 CacheParameterGroupName = "custom-mem1-4",
                 ParameterNameValues = new List<ParameterNameValue> {
@@ -735,10 +736,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheModifyCacheSubnetGroup()
         {
-            #region modifycachesubnetgroup-1483043446226
+            #region ModifyCacheSubnetGroup-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.ModifyCacheSubnetGroup(new ModifyCacheSubnetGroupRequest 
+            var response = client.ModifyCacheSubnetGroup(new ModifyCacheSubnetGroupRequest
             {
                 CacheSubnetGroupName = "my-sn-grp",
                 SubnetIds = new List<string> {
@@ -753,10 +754,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheModifyReplicationGroup()
         {
-            #region modifyreplicationgroup-1483039689581
+            #region ModifyReplicationGroup-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.ModifyReplicationGroup(new ModifyReplicationGroupRequest 
+            var response = client.ModifyReplicationGroup(new ModifyReplicationGroupRequest
             {
                 ApplyImmediately = true,
                 ReplicationGroupDescription = "Modified replication group",
@@ -772,10 +773,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCachePurchaseReservedCacheNodesOffering()
         {
-            #region purchasereservedcachenodesofferings-1483040798484
+            #region PurchaseReservedCacheNodesOffering-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.PurchaseReservedCacheNodesOffering(new PurchaseReservedCacheNodesOfferingRequest 
+            var response = client.PurchaseReservedCacheNodesOffering(new PurchaseReservedCacheNodesOfferingRequest
             {
                 ReservedCacheNodesOfferingId = "1ef01f5b-94ff-433f-a530-61a56bfc8e7a"
             });
@@ -786,10 +787,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheRebootCacheCluster()
         {
-            #region rebootcachecluster-1482969019505
+            #region RebootCacheCluster-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.RebootCacheCluster(new RebootCacheClusterRequest 
+            var response = client.RebootCacheCluster(new RebootCacheClusterRequest
             {
                 CacheClusterId = "custom-mem1-4  ",
                 CacheNodeIdsToReboot = new List<string> {
@@ -805,10 +806,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheRemoveTagsFromResource()
         {
-            #region removetagsfromresource-1483037920947
+            #region RemoveTagsFromResource-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.RemoveTagsFromResource(new RemoveTagsFromResourceRequest 
+            var response = client.RemoveTagsFromResource(new RemoveTagsFromResourceRequest
             {
                 ResourceName = "arn:aws:elasticache:us-east-1:1234567890:cluster:my-mem-cluster",
                 TagKeys = new List<string> {
@@ -825,10 +826,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheResetCacheParameterGroup()
         {
-            #region resetcacheparametergroup-1483038334014
+            #region ResetCacheParameterGroup-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.ResetCacheParameterGroup(new ResetCacheParameterGroupRequest 
+            var response = client.ResetCacheParameterGroup(new ResetCacheParameterGroupRequest
             {
                 CacheParameterGroupName = "custom-mem1-4",
                 ResetAllParameters = true
@@ -841,10 +842,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
         public void ElastiCacheRevokeCacheSecurityGroupIngress()
         {
-            #region describecachesecuritygroups-1483047200801
+            #region RevokeCacheSecurityGroupIngress-1
 
             var client = new AmazonElastiCacheClient();
-            var response = client.RevokeCacheSecurityGroupIngress(new RevokeCacheSecurityGroupIngressRequest 
+            var response = client.RevokeCacheSecurityGroupIngress(new RevokeCacheSecurityGroupIngressRequest
             {
                 CacheSecurityGroupName = "my-sec-grp",
                 EC2SecurityGroupName = "my-ec2-sec-grp",
@@ -855,13 +856,10 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

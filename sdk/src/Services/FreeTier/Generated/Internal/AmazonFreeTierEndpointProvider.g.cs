@@ -26,7 +26,7 @@ using Amazon.FreeTier.Endpoints;
 namespace Amazon.FreeTier.Internal
 {
     /// <summary>
-    /// Amazon FreeTier endpoint provider.
+    /// AWS Free Tier endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="FreeTierEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

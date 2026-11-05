@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Comprehend
 {
     /// <summary>
-    /// Configuration for accessing Amazon Comprehend service
+    /// Configuration for accessing Amazon Comprehend
     /// </summary>
     public static class AmazonComprehendDefaultConfiguration
     {

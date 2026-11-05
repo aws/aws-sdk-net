@@ -27,12 +27,12 @@ using Amazon.CloudTrailData.Internal;
 namespace Amazon.CloudTrailData
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudTrailData service
+    /// Configuration for accessing AWS CloudTrail Data Service
     /// </summary>
     public partial class AmazonCloudTrailDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudTrail Data", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("CloudTrail Data", "4.0.100.24");
 
         private static readonly AmazonCloudTrailDataEndpointResolver EndpointResolver =
             new AmazonCloudTrailDataEndpointResolver();

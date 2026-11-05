@@ -31,7 +31,7 @@ using Amazon.DSQL.Endpoints;
 namespace Amazon.DSQL.Internal
 {
     /// <summary>
-    /// Amazon DSQL endpoint resolver.
+    /// Amazon Aurora DSQL endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DSQL service requests.
     /// <para />

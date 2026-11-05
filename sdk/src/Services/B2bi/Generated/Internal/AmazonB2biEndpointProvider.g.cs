@@ -26,7 +26,7 @@ using Amazon.B2bi.Endpoints;
 namespace Amazon.B2bi.Internal
 {
     /// <summary>
-    /// Amazon B2bi endpoint provider.
+    /// AWS B2B Data Interchange endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="B2biEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

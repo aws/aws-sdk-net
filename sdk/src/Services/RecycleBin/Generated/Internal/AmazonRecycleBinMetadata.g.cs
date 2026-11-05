@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RecycleBin.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon RecycleBin service
+    /// Service metadata for Amazon Recycle Bin
     /// </summary>
     public partial class AmazonRecycleBinMetadata : IServiceMetadata
     {

@@ -1,0 +1,104 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.KinesisFirehose.Model
+{
+    /// <summary>
+    /// Contains information about the server-side encryption (SSE) status for the delivery
+    /// stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK.
+    /// You can get <c>DeliveryStreamEncryptionConfiguration</c> by invoking the <a>DescribeDeliveryStream</a>
+    /// operation.
+    /// </summary>
+    public partial class DeliveryStreamEncryptionConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property FailureDescription. 
+        /// <para>
+        /// Provides details in case one of the following operations fails due to an error related
+        /// to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+        /// <a>StopDeliveryStreamEncryption</a>.
+        /// </para>
+        /// </summary>
+        public FailureDescription FailureDescription { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FailureDescription property is set.
+        /// </summary>
+        internal bool IsSetFailureDescription() => this.FailureDescription != null;
+
+        /// <summary>
+        /// Gets and sets the property KeyARN. 
+        /// <para>
+        /// If <c>KeyType</c> is <c>CUSTOMER_MANAGED_CMK</c>, this field contains the ARN of the
+        /// customer managed CMK. If <c>KeyType</c> is <c>Amazon Web Services_OWNED_CMK</c>, <c>DeliveryStreamEncryptionConfiguration</c>
+        /// doesn't contain a value for <c>KeyARN</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 512)]
+        public string KeyARN { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KeyARN property is set.
+        /// </summary>
+        internal bool IsSetKeyARN() => this.KeyARN != null;
+
+        /// <summary>
+        /// Gets and sets the property KeyType. 
+        /// <para>
+        /// Indicates the type of customer master key (CMK) that is used for encryption. The default
+        /// setting is <c>Amazon Web Services_OWNED_CMK</c>. For more information about CMKs,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+        /// Master Keys (CMKs)</a>.
+        /// </para>
+        /// </summary>
+        public KeyType KeyType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KeyType property is set.
+        /// </summary>
+        internal bool IsSetKeyType() => this.KeyType != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// This is the server-side encryption (SSE) status for the Firehose stream. For a full
+        /// description of the different values of this status, see <a>StartDeliveryStreamEncryption</a>
+        /// and <a>StopDeliveryStreamEncryption</a>. If this status is <c>ENABLING_FAILED</c>
+        /// or <c>DISABLING_FAILED</c>, it is the status of the most recent attempt to enable
+        /// or disable SSE, respectively.
+        /// </para>
+        /// </summary>
+        public DeliveryStreamEncryptionStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+    }
+}

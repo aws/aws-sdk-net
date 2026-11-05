@@ -95,6 +95,21 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetInput() => this.Input != null;
 
         /// <summary>
+        /// Gets and sets the property JobName. 
+        /// <para>
+        /// An optional name for the export job. When omitted, one will be created based on type
+        /// of job and start time.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string JobName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobName property is set.
+        /// </summary>
+        internal bool IsSetJobName() => this.JobName != null;
+
+        /// <summary>
         /// Gets and sets the property WorkspaceName. 
         /// <para>
         /// The name of the workspace in which to create the dataset export job.

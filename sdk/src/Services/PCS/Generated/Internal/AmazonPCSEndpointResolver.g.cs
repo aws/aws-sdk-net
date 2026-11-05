@@ -31,7 +31,7 @@ using Amazon.PCS.Endpoints;
 namespace Amazon.PCS.Internal
 {
     /// <summary>
-    /// Amazon PCS endpoint resolver.
+    /// AWS Parallel Computing Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PCS service requests.
     /// <para />

@@ -31,7 +31,7 @@ using Amazon.Greengrass.Endpoints;
 namespace Amazon.Greengrass.Internal
 {
     /// <summary>
-    /// Amazon Greengrass endpoint resolver.
+    /// AWS Greengrass endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Greengrass service requests.
     /// <para />

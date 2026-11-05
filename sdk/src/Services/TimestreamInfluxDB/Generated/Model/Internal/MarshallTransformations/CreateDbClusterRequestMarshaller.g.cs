@@ -110,6 +110,16 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("dbStorageType");
                 context.Writer.WriteStringValue(publicRequest.DbStorageType);
             }
+            if (publicRequest.IsSetDeploymentConfiguration())
+            {
+                context.Writer.WritePropertyName("deploymentConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeploymentConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeploymentConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetDeploymentType())
             {
                 context.Writer.WritePropertyName("deploymentType");

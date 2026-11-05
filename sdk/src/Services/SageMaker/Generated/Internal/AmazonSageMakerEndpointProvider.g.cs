@@ -26,7 +26,7 @@ using Amazon.SageMaker.Endpoints;
 namespace Amazon.SageMaker.Internal
 {
     /// <summary>
-    /// Amazon SageMaker endpoint provider.
+    /// Amazon SageMaker Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SageMakerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

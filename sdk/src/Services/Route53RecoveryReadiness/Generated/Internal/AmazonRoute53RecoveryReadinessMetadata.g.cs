@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Route53RecoveryReadiness service
+    /// Service metadata for AWS Route53 Recovery Readiness
     /// </summary>
     public partial class AmazonRoute53RecoveryReadinessMetadata : IServiceMetadata
     {

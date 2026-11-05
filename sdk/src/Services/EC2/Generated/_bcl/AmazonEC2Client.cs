@@ -15932,10 +15932,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes the specified transit gateway route table. If there are any route tables associated
-        /// with the transit gateway route table, you must first run <a>DisassociateRouteTable</a>
-        /// before you can delete the transit gateway route table. This removes any route tables
-        /// associated with the transit gateway route table.
+        /// Deletes the specified transit gateway route table. Before you can delete a transit
+        /// gateway route table, you must disassociate all attachments from it by using <a>DisassociateTransitGatewayRouteTable</a>
+        /// and wait for the disassociations to complete. You can't delete a transit gateway route
+        /// table that is the default association route table or default propagation route table
+        /// for the transit gateway. To change the default route tables, use <a>ModifyTransitGateway</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRouteTable service method.</param>
         /// 
@@ -15952,10 +15953,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes the specified transit gateway route table. If there are any route tables associated
-        /// with the transit gateway route table, you must first run <a>DisassociateRouteTable</a>
-        /// before you can delete the transit gateway route table. This removes any route tables
-        /// associated with the transit gateway route table.
+        /// Deletes the specified transit gateway route table. Before you can delete a transit
+        /// gateway route table, you must disassociate all attachments from it by using <a>DisassociateTransitGatewayRouteTable</a>
+        /// and wait for the disassociations to complete. You can't delete a transit gateway route
+        /// table that is the default association route table or default propagation route table
+        /// for the transit gateway. To change the default route tables, use <a>ModifyTransitGateway</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRouteTable service method.</param>
         /// <param name="cancellationToken">
@@ -34957,6 +34959,81 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetCapacityManagerSupportabilityScores
+
+
+        /// <summary>
+        /// Scores how well each instance type and Availability Zone combination can support
+        /// a capacity request, based on current Amazon EC2 capacity. The response includes a
+        /// score for each combination and an aggregate score for all combinations in the request.
+        /// This action doesn't launch or reserve instances, and a score doesn't guarantee that
+        /// a later launch will succeed. 
+        /// 
+        ///  
+        /// <para>
+        ///  Call this action in the Region where you turned on Capacity Manager. A single request
+        /// can include Availability Zones in any Region. Real-time supportability checks are
+        /// available only to Amazon Web Services Support customers on the Unified Operations
+        /// plan. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-manager-supportability.html">Check
+        /// supportability</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerSupportabilityScores service method.</param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerSupportabilityScores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerSupportabilityScores">REST API Reference for GetCapacityManagerSupportabilityScores Operation</seealso>
+        public virtual GetCapacityManagerSupportabilityScoresResponse GetCapacityManagerSupportabilityScores(GetCapacityManagerSupportabilityScoresRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerSupportabilityScoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerSupportabilityScoresResponseUnmarshaller.Instance;
+
+            return Invoke<GetCapacityManagerSupportabilityScoresResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Scores how well each instance type and Availability Zone combination can support
+        /// a capacity request, based on current Amazon EC2 capacity. The response includes a
+        /// score for each combination and an aggregate score for all combinations in the request.
+        /// This action doesn't launch or reserve instances, and a score doesn't guarantee that
+        /// a later launch will succeed. 
+        /// 
+        ///  
+        /// <para>
+        ///  Call this action in the Region where you turned on Capacity Manager. A single request
+        /// can include Availability Zones in any Region. Real-time supportability checks are
+        /// available only to Amazon Web Services Support customers on the Unified Operations
+        /// plan. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-manager-supportability.html">Check
+        /// supportability</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerSupportabilityScores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerSupportabilityScores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerSupportabilityScores">REST API Reference for GetCapacityManagerSupportabilityScores Operation</seealso>
+        public virtual Task<GetCapacityManagerSupportabilityScoresResponse> GetCapacityManagerSupportabilityScoresAsync(GetCapacityManagerSupportabilityScoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerSupportabilityScoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerSupportabilityScoresResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCapacityManagerSupportabilityScoresResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCapacityReservationUsage
 
 
@@ -35794,6 +35871,59 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = GetImageBlockPublicAccessStateResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetImageBlockPublicAccessStateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetImageFindings
+
+
+        /// <summary>
+        /// Describes the Amazon Inspector vulnerability findings for the specified AMI.
+        /// 
+        ///  
+        /// <para>
+        /// You can get findings for AMIs that you own, AMIs that are shared with you, and public
+        /// AMIs. Amazon Inspector returns findings only for AMIs that it has scanned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImageFindings service method.</param>
+        /// 
+        /// <returns>The response from the GetImageFindings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageFindings">REST API Reference for GetImageFindings Operation</seealso>
+        public virtual GetImageFindingsResponse GetImageFindings(GetImageFindingsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetImageFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImageFindingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetImageFindingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the Amazon Inspector vulnerability findings for the specified AMI.
+        /// 
+        ///  
+        /// <para>
+        /// You can get findings for AMIs that you own, AMIs that are shared with you, and public
+        /// AMIs. Amazon Inspector returns findings only for AMIs that it has scanned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImageFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetImageFindings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageFindings">REST API Reference for GetImageFindings Operation</seealso>
+        public virtual Task<GetImageFindingsResponse> GetImageFindingsAsync(GetImageFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetImageFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImageFindingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetImageFindingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -38043,6 +38173,49 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = GetSubnetCidrReservationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetSubnetCidrReservationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTransitGatewayAttachmentNatConfiguration
+
+
+        /// <summary>
+        /// Describes the NAT configuration for the specified transit gateway attachment. Only
+        /// the owner of the transit gateway can describe the NAT configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayAttachmentNatConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayAttachmentNatConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentNatConfiguration">REST API Reference for GetTransitGatewayAttachmentNatConfiguration Operation</seealso>
+        public virtual GetTransitGatewayAttachmentNatConfigurationResponse GetTransitGatewayAttachmentNatConfiguration(GetTransitGatewayAttachmentNatConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayAttachmentNatConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayAttachmentNatConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayAttachmentNatConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the NAT configuration for the specified transit gateway attachment. Only
+        /// the owner of the transit gateway can describe the NAT configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayAttachmentNatConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayAttachmentNatConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentNatConfiguration">REST API Reference for GetTransitGatewayAttachmentNatConfiguration Operation</seealso>
+        public virtual Task<GetTransitGatewayAttachmentNatConfigurationResponse> GetTransitGatewayAttachmentNatConfigurationAsync(GetTransitGatewayAttachmentNatConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayAttachmentNatConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayAttachmentNatConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTransitGatewayAttachmentNatConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -42778,6 +42951,103 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyTransitGatewayResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyTransitGatewayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyTransitGatewayAttachmentNatConfiguration
+
+
+        /// <summary>
+        /// Modifies the NAT configuration for the specified transit gateway attachment. Use this
+        /// operation to do the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Enable or disable NAT gateway support for the attachment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify whether the transit gateway installs routes for the NAT CIDRs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replace the NAT gateway rules for the attachment.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Only the owner of the transit gateway can modify the NAT configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// With NAT gateway support enabled, the transit gateway translates addresses in each
+        /// rule's <c>MatchSourceCidr</c> range to the corresponding addresses in its <c>NatCidr</c>
+        /// range.
+        /// </para>
+        ///  
+        /// <para>
+        /// The transit gateway applies changes asynchronously. To check the result, use <c>GetTransitGatewayAttachmentNatConfiguration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayAttachmentNatConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTransitGatewayAttachmentNatConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayAttachmentNatConfiguration">REST API Reference for ModifyTransitGatewayAttachmentNatConfiguration Operation</seealso>
+        public virtual ModifyTransitGatewayAttachmentNatConfigurationResponse ModifyTransitGatewayAttachmentNatConfiguration(ModifyTransitGatewayAttachmentNatConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyTransitGatewayAttachmentNatConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTransitGatewayAttachmentNatConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyTransitGatewayAttachmentNatConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the NAT configuration for the specified transit gateway attachment. Use this
+        /// operation to do the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Enable or disable NAT gateway support for the attachment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify whether the transit gateway installs routes for the NAT CIDRs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replace the NAT gateway rules for the attachment.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Only the owner of the transit gateway can modify the NAT configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// With NAT gateway support enabled, the transit gateway translates addresses in each
+        /// rule's <c>MatchSourceCidr</c> range to the corresponding addresses in its <c>NatCidr</c>
+        /// range.
+        /// </para>
+        ///  
+        /// <para>
+        /// The transit gateway applies changes asynchronously. To check the result, use <c>GetTransitGatewayAttachmentNatConfiguration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayAttachmentNatConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyTransitGatewayAttachmentNatConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayAttachmentNatConfiguration">REST API Reference for ModifyTransitGatewayAttachmentNatConfiguration Operation</seealso>
+        public virtual Task<ModifyTransitGatewayAttachmentNatConfigurationResponse> ModifyTransitGatewayAttachmentNatConfigurationAsync(ModifyTransitGatewayAttachmentNatConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyTransitGatewayAttachmentNatConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTransitGatewayAttachmentNatConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyTransitGatewayAttachmentNatConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

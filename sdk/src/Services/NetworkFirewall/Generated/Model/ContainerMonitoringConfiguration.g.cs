@@ -43,6 +43,11 @@ namespace Amazon.NetworkFirewall.Model
         /// filter by namespace and Kubernetes labels. For Amazon ECS, you can filter by container
         /// instance attributes (EC2 launch type only).
         /// </para>
+        ///  
+        /// <para>
+        /// Attribute values can contain wildcard patterns, for example <c>payments-*</c>. Attribute
+        /// keys must match exactly.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

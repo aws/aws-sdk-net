@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MailManager.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MailManager service
+    /// Service metadata for MailManager
     /// </summary>
     public partial class AmazonMailManagerMetadata : IServiceMetadata
     {

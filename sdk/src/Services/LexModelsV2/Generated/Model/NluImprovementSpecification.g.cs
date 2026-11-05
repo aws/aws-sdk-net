@@ -40,8 +40,9 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property AssistedNluMode. 
         /// <para>
         /// Specifies the mode for Assisted NLU operation. Use <c>Primary</c> to make Assisted
-        /// NLU the primary intent recognition method, or <c>Fallback</c> to use it only when
-        /// standard NLU confidence is low.
+        /// NLU the primary intent recognition method, <c>Fallback</c> to use it only when standard
+        /// NLU confidence is low, or <c>DialogManager</c> to use a large language model to manage
+        /// the conversation, including intent recognition, slot elicitation, and confirmation.
         /// </para>
         /// </summary>
         public AssistedNluMode AssistedNluMode { get; set; }

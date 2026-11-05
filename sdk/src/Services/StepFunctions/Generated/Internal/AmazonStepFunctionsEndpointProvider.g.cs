@@ -26,7 +26,7 @@ using Amazon.StepFunctions.Endpoints;
 namespace Amazon.StepFunctions.Internal
 {
     /// <summary>
-    /// Amazon StepFunctions endpoint provider.
+    /// AWS Step Functions endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="StepFunctionsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

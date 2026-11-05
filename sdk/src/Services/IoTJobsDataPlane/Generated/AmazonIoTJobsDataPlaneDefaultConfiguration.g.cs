@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.IoTJobsDataPlane
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTJobsDataPlane service
+    /// Configuration for accessing AWS IoT Jobs Data Plane
     /// </summary>
     public static class AmazonIoTJobsDataPlaneDefaultConfiguration
     {

@@ -1,0 +1,137 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Neptune.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateDBParameterGroup operation. Creates a new
+    /// DB parameter group. <para> A DB parameter group is initially created with the default
+    /// parameters for the database engine used by the DB instance. To provide custom values
+    /// for any of the parameters, you must modify the group after creating it using <i>ModifyDBParameterGroup</i>.
+    /// Once you've created a DB parameter group, you need to associate it with your DB instance
+    /// using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with a
+    /// running DB instance, you need to reboot the DB instance without failover for the new
+    /// DB parameter group and associated settings to take effect. </para> <important> <para>
+    /// After you create a DB parameter group, you should wait at least 5 minutes before creating
+    /// your first DB instance that uses that DB parameter group as the default parameter
+    /// group. This allows Amazon Neptune to fully complete the create action before the parameter
+    /// group is used as the default for a new DB instance. This is especially important for
+    /// parameters that are critical when creating the default database for a DB instance,
+    /// such as the character set for the default database defined by the <c>character_set_database</c>
+    /// parameter. You can use the <i>Parameter Groups</i> option of the Amazon Neptune console
+    /// or the <i>DescribeDBParameters</i> command to verify that your DB parameter group
+    /// has been created or modified. </para> </important>
+    /// </summary>
+    public partial class CreateDBParameterGroupRequest : AmazonNeptuneRequest
+    {
+        /// <summary>
+        /// Gets and sets the property DBParameterGroupFamily. 
+        /// <para>
+        /// The DB parameter group family name. A DB parameter group can be associated with one
+        /// and only one DB parameter group family, and can be applied only to a DB instance running
+        /// a database engine and engine version compatible with that DB parameter group family.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string DBParameterGroupFamily { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DBParameterGroupFamily property is set.
+        /// </summary>
+        internal bool IsSetDBParameterGroupFamily() => this.DBParameterGroupFamily != null;
+
+        /// <summary>
+        /// Gets and sets the property DBParameterGroupName. 
+        /// <para>
+        /// The name of the DB parameter group.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 letters, numbers, or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This value is stored as a lowercase string.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string DBParameterGroupName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DBParameterGroupName property is set.
+        /// </summary>
+        internal bool IsSetDBParameterGroupName() => this.DBParameterGroupName != null;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description for the DB parameter group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to be assigned to the new DB parameter group.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Tag> Tags { get; set; } = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

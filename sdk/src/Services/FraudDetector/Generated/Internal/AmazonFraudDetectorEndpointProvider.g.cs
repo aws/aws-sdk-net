@@ -26,7 +26,7 @@ using Amazon.FraudDetector.Endpoints;
 namespace Amazon.FraudDetector.Internal
 {
     /// <summary>
-    /// Amazon FraudDetector endpoint provider.
+    /// Amazon Fraud Detector endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="FraudDetectorEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

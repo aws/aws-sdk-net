@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CostAndUsageReport
 {
     /// <summary>
-    /// Configuration for accessing Amazon CostAndUsageReport service
+    /// Configuration for accessing AWS Cost and Usage Report Service
     /// </summary>
     public static class AmazonCostAndUsageReportDefaultConfiguration
     {

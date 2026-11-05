@@ -31,7 +31,7 @@ using Amazon.BCMDashboards.Endpoints;
 namespace Amazon.BCMDashboards.Internal
 {
     /// <summary>
-    /// Amazon BCMDashboards endpoint resolver.
+    /// AWS Billing and Cost Management Dashboards endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for BCMDashboards service requests.
     /// <para />

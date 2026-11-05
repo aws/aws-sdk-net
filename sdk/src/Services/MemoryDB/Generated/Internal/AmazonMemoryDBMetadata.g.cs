@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MemoryDB service
+    /// Service metadata for Amazon MemoryDB
     /// </summary>
     public partial class AmazonMemoryDBMetadata : IServiceMetadata
     {

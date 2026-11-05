@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.S3Control
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Control service
+    /// Configuration for accessing AWS S3 Control
     /// </summary>
     public static class AmazonS3ControlDefaultConfiguration
     {

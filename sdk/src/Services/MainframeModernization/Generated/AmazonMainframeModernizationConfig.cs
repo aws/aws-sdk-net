@@ -27,12 +27,12 @@ using Amazon.MainframeModernization.Internal;
 namespace Amazon.MainframeModernization
 {
     /// <summary>
-    /// Configuration for accessing Amazon MainframeModernization service
+    /// Configuration for accessing AWSMainframeModernization
     /// </summary>
     public partial class AmazonMainframeModernizationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("m2", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("m2", "4.0.100.23");
 
         private static readonly AmazonMainframeModernizationEndpointResolver EndpointResolver =
             new AmazonMainframeModernizationEndpointResolver();

@@ -27,12 +27,12 @@ using Amazon.EndUserMessaging.Internal;
 namespace Amazon.EndUserMessaging
 {
     /// <summary>
-    /// Configuration for accessing Amazon EndUserMessaging service
+    /// Configuration for accessing AWS End User Messaging
     /// </summary>
     public partial class AmazonEndUserMessagingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EndUserMessaging", "4.0.100.4");
+            InternalSDKUtils.BuildUserAgentString("EndUserMessaging", "4.0.100.7");
 
         private static readonly AmazonEndUserMessagingEndpointResolver EndpointResolver =
             new AmazonEndUserMessagingEndpointResolver();

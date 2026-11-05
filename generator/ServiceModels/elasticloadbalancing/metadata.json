@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.",
+  "base-name": "ElasticLoadBalancing",
   "legacy-service-id": "Elastic Load Balancing"
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Kinesis.Generated
     {
         public void KinesisCreateChannel()
         {
-            #region create-channel-example-1
+            #region CreateChannel-1
 
             var client = new AmazonKinesisClient();
-            var response = client.CreateChannel(new CreateChannelRequest 
+            var response = client.CreateChannel(new CreateChannelRequest
             {
                 ChannelName = "my-channel-name",
                 EncryptionConfiguration = new ChannelEncryptionConfiguration {
@@ -55,10 +56,10 @@ namespace AWSSDKDocSamples.Amazon.Kinesis.Generated
 
         public void KinesisCreateChannel()
         {
-            #region create-channel-example-2
+            #region CreateChannel-2
 
             var client = new AmazonKinesisClient();
-            var response = client.CreateChannel(new CreateChannelRequest 
+            var response = client.CreateChannel(new CreateChannelRequest
             {
                 ChannelName = "my-channel-name",
                 EncryptionConfiguration = new ChannelEncryptionConfiguration {
@@ -109,10 +110,10 @@ namespace AWSSDKDocSamples.Amazon.Kinesis.Generated
 
         public void KinesisDeleteChannel()
         {
-            #region delete-channel-example-1
+            #region DeleteChannel-1
 
             var client = new AmazonKinesisClient();
-            var response = client.DeleteChannel(new DeleteChannelRequest 
+            var response = client.DeleteChannel(new DeleteChannelRequest
             {
                 ChannelARN = "arn:aws:kinesis:us-east-1:123456789012:channel/my-channel-id"
             });
@@ -123,10 +124,10 @@ namespace AWSSDKDocSamples.Amazon.Kinesis.Generated
 
         public void KinesisDescribeChannel()
         {
-            #region describe-channel-example-1
+            #region DescribeChannel-1
 
             var client = new AmazonKinesisClient();
-            var response = client.DescribeChannel(new DescribeChannelRequest 
+            var response = client.DescribeChannel(new DescribeChannelRequest
             {
                 ChannelARN = "arn:aws:kinesis:us-east-1:123456789012:channel/my-channel-id"
             });
@@ -138,10 +139,10 @@ namespace AWSSDKDocSamples.Amazon.Kinesis.Generated
 
         public void KinesisListChannels()
         {
-            #region list-channels-example-1
+            #region ListChannels-1
 
             var client = new AmazonKinesisClient();
-            var response = client.ListChannels(new ListChannelsRequest 
+            var response = client.ListChannels(new ListChannelsRequest
             {
             });
 
@@ -152,10 +153,10 @@ namespace AWSSDKDocSamples.Amazon.Kinesis.Generated
 
         public void KinesisListChannels()
         {
-            #region list-channels-example-2
+            #region ListChannels-2
 
             var client = new AmazonKinesisClient();
-            var response = client.ListChannels(new ListChannelsRequest 
+            var response = client.ListChannels(new ListChannelsRequest
             {
                 MaxResults = 10,
                 StreamFilter = new List<StreamFilter> {
@@ -171,10 +172,10 @@ namespace AWSSDKDocSamples.Amazon.Kinesis.Generated
 
         public void KinesisUpdateChannel()
         {
-            #region update-channel-example-1
+            #region UpdateChannel-1
 
             var client = new AmazonKinesisClient();
-            var response = client.UpdateChannel(new UpdateChannelRequest 
+            var response = client.UpdateChannel(new UpdateChannelRequest
             {
                 ChannelARN = "arn:aws:kinesis:us-east-1:123456789012:channel/my-channel-id",
                 LoggingConfiguration = new ChannelLoggingUpdateInput { CloudWatchLogs = new CloudWatchLogsUpdateInput {
@@ -190,13 +191,10 @@ namespace AWSSDKDocSamples.Amazon.Kinesis.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

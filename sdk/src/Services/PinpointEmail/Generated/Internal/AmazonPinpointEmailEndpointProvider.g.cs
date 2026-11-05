@@ -26,7 +26,7 @@ using Amazon.PinpointEmail.Endpoints;
 namespace Amazon.PinpointEmail.Internal
 {
     /// <summary>
-    /// Amazon PinpointEmail endpoint provider.
+    /// Amazon Pinpoint Email Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PinpointEmailEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

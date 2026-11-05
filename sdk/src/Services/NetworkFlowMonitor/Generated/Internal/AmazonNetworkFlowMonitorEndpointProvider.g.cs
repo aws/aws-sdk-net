@@ -26,7 +26,7 @@ using Amazon.NetworkFlowMonitor.Endpoints;
 namespace Amazon.NetworkFlowMonitor.Internal
 {
     /// <summary>
-    /// Amazon NetworkFlowMonitor endpoint provider.
+    /// Network Flow Monitor endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="NetworkFlowMonitorEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

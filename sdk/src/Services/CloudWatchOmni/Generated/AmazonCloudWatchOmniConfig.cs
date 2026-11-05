@@ -27,12 +27,12 @@ using Amazon.CloudWatchOmni.Internal;
 namespace Amazon.CloudWatchOmni
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudWatchOmni service
+    /// Configuration for accessing CloudWatch Omni
     /// </summary>
     public partial class AmazonCloudWatchOmniConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudWatchOmni", "4.0.102.0");
+            InternalSDKUtils.BuildUserAgentString("CloudWatchOmni", "4.0.102.3");
 
         private static readonly AmazonCloudWatchOmniEndpointResolver EndpointResolver =
             new AmazonCloudWatchOmniEndpointResolver();

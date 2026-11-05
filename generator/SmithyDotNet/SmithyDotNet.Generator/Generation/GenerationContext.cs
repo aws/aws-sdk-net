@@ -11,6 +11,7 @@ using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
+using SmithyDotNet.Generator.Writers.Shapes;
 
 namespace SmithyDotNet.Generator.Generation;
 
@@ -133,11 +134,21 @@ public class GenerationContext
     /// </summary>
     public IReadOnlyList<OperationAuth> OperationsWithModeledAuth { get; }
 
+    /// <summary>
+    /// The service shape's <c>@xmlNamespace</c> (restXml), or null when absent. Its uri is the default
+    /// namespace the request marshaller declares on the body's root element; C2J calls it the service's
+    /// <c>xmlNamespace</c> metadata.
+    /// </summary>
+    public XmlNamespaceTrait? XmlNamespace { get; }
+
     /// <summary>The service shape's <c>@documentation</c>, or null if absent. Used for the client interface/class summary.</summary>
     public string? ServiceDocumentation { get; }
 
     /// <summary>The service's <c>smithy.api#title</c> (e.g. "AWS CloudTrail Data Service"). C2J equivalent: <c>service.FullName</c>. Used in the assembly description.</summary>
     public string? ServiceTitle { get; }
+
+    /// <summary>The NuGet package description, in the Core package's form; the nuspec and the packable csproj both emit it. Not the metadata.json synopsis: that is the launch-time blurb and goes stale. C2J: <c>NuGetPackageDescription</c>.</summary>
+    public string NuGetPackageDescription => $"The Amazon Web Services SDK for .NET - {ServiceTitle}";
 
     /// <summary>The wire protocol detected from the service shape's protocol trait.</summary>
     public AWSProtocol Protocol { get; }
@@ -230,6 +241,9 @@ public class GenerationContext
     /// </summary>
     public SdkVersionManifest Manifest { get; }
 
+    /// <summary>The unit-test project settings from <c>_manifest.json</c>; set by the batch run, which writes the unit-test projects.</summary>
+    public UnitTestProjectManifest? UnitTestProject { get; init; }
+
     /// <summary>
     /// The service's customizations, for hooks applied at generation time (enum constant names, member
     /// renames, runtime pipeline overrides, and later code injection). Hooks with a Smithy trait equivalent never
@@ -291,15 +305,25 @@ public class GenerationContext
 
         ServiceDocumentation = index.Service.GetDocumentation();
         ServiceTitle = index.Service.GetTitle();
+        XmlNamespace = index.Service.GetXmlNamespace();
         Protocol = ProtocolResolver.Resolve(index.Service, SdkId);
-        // TODO: restXml also honors the HTTP binding traits; add it here when that protocol lands.
-        UsesHttpBindings = Protocol == AWSProtocol.RestJson1;
-        // The wrapped output is read as the whole response body, which only awsJson's response is.
-        // TODO: ec2 wraps outputs too; support it in the XML response unmarshaller when ec2Query lands.
-        if (Protocol is not (AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1)
-            && Customizations.OperationModifiers.FirstOrDefault(entry => entry.Value.UseWrappingResult).Key is { } wrapped)
+        UsesHttpBindings = Protocol is AWSProtocol.RestJson1 or AWSProtocol.RestXml;
+
+        // The wrapped output is read as the whole response body, which only awsJson's, rpcv2Cbor's and ec2Query's responses are.
+        var supportsWrappedOutput = Protocol is AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1 or AWSProtocol.RpcV2Cbor or AWSProtocol.Ec2Query;
+        foreach (var (operationName, modifier) in Customizations.OperationModifiers)
         {
-            throw new GeneratorException($"operationModifiers['{wrapped}'] wraps the output, which is only supported for awsJson.");
+            if (modifier.UseWrappingResult && !supportsWrappedOutput)
+            {
+                throw new GeneratorException($"operationModifiers['{operationName}'] wraps the output, which is only supported for awsJson, rpcv2Cbor and ec2Query.");
+            }
+        }
+        // allowEmptyResult only drives the restXml response unmarshaller's empty-body early-return; on any
+        // other protocol it would generate silently without the guard, where C2J throws.
+        if (Protocol is not AWSProtocol.RestXml
+            && Customizations.OperationModifiers.FirstOrDefault(entry => entry.Value.AllowEmptyResult).Key is { } emptyResult)
+        {
+            throw new GeneratorException($"operationModifiers['{emptyResult}'] allows an empty result, which is only supported for restXml.");
         }
         IsAwsQueryCompatible = index.Service.HasAwsQueryCompatible();
         ServiceShapeName = index.ServiceId.Name;
@@ -331,6 +355,19 @@ public class GenerationContext
             else if (!structure.IsInput() && !structure.IsOutput())
             {
                 structures[shapeId] = structure;
+            }
+        }
+
+        // monitoring models LimitExceededFault next to LimitExceededException, and ResourceNotFound next to
+        // ResourceNotFoundException. Each pair maps to one class; C2J ships the one already named like the class, and
+        // the other's wire code still dispatches to it.
+        var errorNames = errors.Keys.Select(errorId => errorId.Name).ToHashSet();
+        foreach (var errorId in errors.Keys.ToList())
+        {
+            var exceptionName = ExceptionWriter.ToExceptionName(ToDotNetName(errorId));
+            if (exceptionName != errorId.Name && errorNames.Contains(exceptionName))
+            {
+                errors.Remove(errorId);
             }
         }
 
@@ -407,7 +444,6 @@ public class GenerationContext
 
     /// <inheritdoc cref="ServiceIndex.ToDotNetName"/>
     /// <remarks>
-    /// TODO: EC2 query name (aws.protocols#ec2QueryName) is not applied yet.
     /// Customization renames don't belong here — <see cref="CustomizationTransform"/> merges them
     /// into the model.
     /// </remarks>

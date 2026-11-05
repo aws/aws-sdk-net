@@ -205,6 +205,19 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetMcpserversplunk() => this.Mcpserversplunk != null;
 
         /// <summary>
+        /// Gets and sets the property Msteams. 
+        /// <para>
+        /// The configuration for connecting a Microsoft Teams team to the DevOps Agent service.
+        /// </para>
+        /// </summary>
+        public MSTeamsConfiguration Msteams { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Msteams property is set.
+        /// </summary>
+        internal bool IsSetMsteams() => this.Msteams != null;
+
+        /// <summary>
         /// Gets and sets the property Pagerduty. 
         /// <para>
         /// PagerDuty integration configuration

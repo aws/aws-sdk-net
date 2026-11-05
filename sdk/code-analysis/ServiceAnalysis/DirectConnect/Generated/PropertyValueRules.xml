@@ -49,17 +49,6 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DirectConnect.Model.AssociateConnectionsToResiliencyGroupRequest.ClientToken</property>
-    <min>1</min>
-    <max>128</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DirectConnect.Model.AssociateConnectionsToResiliencyGroupRequest.ResiliencyGroupId</property>
-    <min>22</min>
-    <max>22</max>
-    <pattern>^(dxrg|DXRG)-[0-9a-zA-Z]{17}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DirectConnect.Model.AssociateConnectionWithLagResponse.PrefixPoolSizeIpv4</property>
     <min>0</min>
   </property-value-rule>
@@ -74,6 +63,17 @@
   <property-value-rule>
     <property>Amazon.DirectConnect.Model.AssociateConnectionWithLagResponse.PrefixPoolUnallocatedCountIpv6</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.AssociateConnectionsToResiliencyGroupRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.AssociateConnectionsToResiliencyGroupRequest.ResiliencyGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^(dxrg|DXRG)-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectConnect.Model.AssociateHostedConnectionResponse.PrefixPoolSizeIpv4</property>
@@ -101,10 +101,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectConnect.Model.ConfirmCustomerAgreementRequest.AgreementName</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectConnect.Model.ConfirmCustomerAgreementResponse.Status</property>
+    <min>0</min>
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
@@ -322,10 +324,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectConnect.Model.CustomerAgreement.AgreementName</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectConnect.Model.CustomerAgreement.Status</property>
+    <min>0</min>
     <max>30</max>
   </property-value-rule>
   <property-value-rule>

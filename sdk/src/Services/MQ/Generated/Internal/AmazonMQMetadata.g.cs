@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MQ service
+    /// Service metadata for AmazonMQ
     /// </summary>
     public partial class AmazonMQMetadata : IServiceMetadata
     {

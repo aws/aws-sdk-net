@@ -31,7 +31,7 @@ using Amazon.MediaConvert.Endpoints;
 namespace Amazon.MediaConvert.Internal
 {
     /// <summary>
-    /// Amazon MediaConvert endpoint resolver.
+    /// AWS Elemental MediaConvert endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MediaConvert service requests.
     /// <para />

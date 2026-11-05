@@ -26,7 +26,7 @@ using Amazon.Route53GlobalResolver.Endpoints;
 namespace Amazon.Route53GlobalResolver.Internal
 {
     /// <summary>
-    /// Amazon Route53GlobalResolver endpoint provider.
+    /// Amazon Route 53 Global Resolver endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="Route53GlobalResolverEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

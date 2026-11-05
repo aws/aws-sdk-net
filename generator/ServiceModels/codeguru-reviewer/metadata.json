@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "This is the preview release of Amazon CodeGuru Reviewer.",
   "generate-client-constructors": true,
+  "base-name": "CodeGuruReviewer",
   "legacy-service-id": "CodeGuru Reviewer"
 }

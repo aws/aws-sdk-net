@@ -31,7 +31,7 @@ using Amazon.NovaAct.Endpoints;
 namespace Amazon.NovaAct.Internal
 {
     /// <summary>
-    /// Amazon NovaAct endpoint resolver.
+    /// Nova Act Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for NovaAct service requests.
     /// <para />

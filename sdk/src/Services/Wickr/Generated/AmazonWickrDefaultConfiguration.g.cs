@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Wickr
 {
     /// <summary>
-    /// Configuration for accessing Amazon Wickr service
+    /// Configuration for accessing AWS Wickr Admin API
     /// </summary>
     public static class AmazonWickrDefaultConfiguration
     {

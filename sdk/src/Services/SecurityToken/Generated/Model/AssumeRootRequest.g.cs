@@ -1,0 +1,142 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.SecurityToken.Model
+{
+    /// <summary>
+    /// Container for the parameters to the AssumeRoot operation. Returns a set of short term
+    /// credentials you can use to perform privileged tasks on a member account in your organization.
+    /// You must use credentials from an Organizations management account or a delegated administrator
+    /// account for IAM to call <c>AssumeRoot</c>. You cannot use root user credentials to
+    /// make this call. <para> Before you can launch a privileged session, you must have centralized
+    /// root access in your organization. For steps to enable this feature, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-enable-root-access.html">Centralize
+    /// root access for member accounts</a> in the <i>IAM User Guide</i>. </para> <note> <para>
+    /// The STS global endpoint is not supported for AssumeRoot. You must send this request
+    /// to a Regional STS endpoint. For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html#sts-endpoints">Endpoints</a>.
+    /// </para> </note> <para> You can track AssumeRoot in CloudTrail logs to determine what
+    /// actions were performed in a session. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-track-privileged-tasks.html">Track
+    /// privileged tasks in CloudTrail</a> in the <i>IAM User Guide</i>. </para> <para> When
+    /// granting access to privileged tasks you should only grant the necessary permissions
+    /// required to perform that task. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">Security
+    /// best practices in IAM</a>. In addition, you can use <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html">service
+    /// control policies</a> (SCPs) to manage and limit permissions in your organization.
+    /// See <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples_general.html">General
+    /// examples</a> in the <i>Organizations User Guide</i> for more information on SCPs.
+    /// </para>
+    /// </summary>
+    public partial class AssumeRootRequest : AmazonSecurityTokenServiceRequest
+    {
+        /// <summary>
+        /// Gets and sets the property DurationSeconds. 
+        /// <para>
+        /// The duration, in seconds, of the privileged session. The value can range from 0 seconds
+        /// up to the maximum session duration of 900 seconds (15 minutes). If you specify a value
+        /// higher than this setting, the operation fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, the value is set to <c>900</c> seconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 900)]
+        public int? DurationSeconds { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DurationSeconds property is set.
+        /// </summary>
+        internal bool IsSetDurationSeconds() => this.DurationSeconds.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MinimumSessionTokenSize.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 4096)]
+        public int? MinimumSessionTokenSize { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MinimumSessionTokenSize property is set.
+        /// </summary>
+        internal bool IsSetMinimumSessionTokenSize() => this.MinimumSessionTokenSize.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property TargetPrincipal. 
+        /// <para>
+        /// The member account principal ARN or account ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 12, Max = 2048)]
+        public string TargetPrincipal { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TargetPrincipal property is set.
+        /// </summary>
+        internal bool IsSetTargetPrincipal() => this.TargetPrincipal != null;
+
+        /// <summary>
+        /// Gets and sets the property TaskPolicyArn. 
+        /// <para>
+        /// The identity based policy that scopes the session to the privileged tasks that can
+        /// be performed. You must use one of following Amazon Web Services managed policies to
+        /// scope root session actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMAuditRootUserCredentials">IAMAuditRootUserCredentials</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMCreateRootUserPassword">IAMCreateRootUserPassword</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMDeleteRootUserCredentials">IAMDeleteRootUserCredentials</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-S3UnlockBucketPolicy">S3UnlockBucketPolicy</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-SQSUnlockQueuePolicy">SQSUnlockQueuePolicy</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public PolicyDescriptorType TaskPolicyArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TaskPolicyArn property is set.
+        /// </summary>
+        internal bool IsSetTaskPolicyArn() => this.TaskPolicyArn != null;
+    }
+}

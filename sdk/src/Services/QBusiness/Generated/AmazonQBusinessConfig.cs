@@ -27,12 +27,12 @@ using Amazon.QBusiness.Internal;
 namespace Amazon.QBusiness
 {
     /// <summary>
-    /// Configuration for accessing Amazon QBusiness service
+    /// Configuration for accessing QBusiness
     /// </summary>
     public partial class AmazonQBusinessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("QBusiness", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("QBusiness", "4.0.100.23");
 
         private static readonly AmazonQBusinessEndpointResolver EndpointResolver =
             new AmazonQBusinessEndpointResolver();

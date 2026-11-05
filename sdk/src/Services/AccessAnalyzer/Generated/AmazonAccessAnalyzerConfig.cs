@@ -27,12 +27,12 @@ using Amazon.AccessAnalyzer.Internal;
 namespace Amazon.AccessAnalyzer
 {
     /// <summary>
-    /// Configuration for accessing Amazon AccessAnalyzer service
+    /// Configuration for accessing Access Analyzer
     /// </summary>
     public partial class AmazonAccessAnalyzerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AccessAnalyzer", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("AccessAnalyzer", "4.0.100.23");
 
         private static readonly AmazonAccessAnalyzerEndpointResolver EndpointResolver =
             new AmazonAccessAnalyzerEndpointResolver();

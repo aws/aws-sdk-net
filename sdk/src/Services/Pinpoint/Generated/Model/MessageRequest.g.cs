@@ -1,0 +1,146 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Pinpoint.Model
+{
+    /// <summary>
+    /// Specifies the configuration and other settings for a message.
+    /// </summary>
+    public partial class MessageRequest
+    {
+        /// <summary>
+        /// Gets and sets the property Addresses. 
+        /// <para>
+        /// A map of key-value pairs, where each key is an address and each value is an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+        /// object. An address can be a push notification token, a phone number, or an email address.
+        /// You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+        /// object to tailor the message for an address by specifying settings such as content
+        /// overrides and message variables.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, AddressConfiguration> Addresses { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, AddressConfiguration>() : null;
+
+        /// <summary>
+        /// Checks to see if the Addresses property is set.
+        /// </summary>
+        internal bool IsSetAddresses() => this.Addresses != null && (this.Addresses.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// A map of custom attributes to attach to the message. For a push notification, this
+        /// payload is added to the data.pinpoint object. For an email or text message, this payload
+        /// is added to email/SMS delivery receipt event attributes.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> Context { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Context property is set.
+        /// </summary>
+        internal bool IsSetContext() => this.Context != null && (this.Context.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Endpoints. 
+        /// <para>
+        /// A map of key-value pairs, where each key is an endpoint ID and each value is an <a
+        /// href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+        /// object. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+        /// object to tailor the message for an endpoint by specifying settings such as content
+        /// overrides and message variables.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, EndpointSendConfiguration> Endpoints { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, EndpointSendConfiguration>() : null;
+
+        /// <summary>
+        /// Checks to see if the Endpoints property is set.
+        /// </summary>
+        internal bool IsSetEndpoints() => this.Endpoints != null && (this.Endpoints.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property MessageConfiguration. 
+        /// <para>
+        /// The settings and content for the default message and any default messages that you
+        /// defined for specific channels.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public DirectMessageConfiguration MessageConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MessageConfiguration property is set.
+        /// </summary>
+        internal bool IsSetMessageConfiguration() => this.MessageConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property TemplateConfiguration. 
+        /// <para>
+        /// The message template to use for the message.
+        /// </para>
+        /// </summary>
+        public TemplateConfiguration TemplateConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TemplateConfiguration property is set.
+        /// </summary>
+        internal bool IsSetTemplateConfiguration() => this.TemplateConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The unique identifier for tracing the message. This identifier is visible to message
+        /// recipients.
+        /// </para>
+        /// </summary>
+        public string TraceId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TraceId property is set.
+        /// </summary>
+        internal bool IsSetTraceId() => this.TraceId != null;
+    }
+}

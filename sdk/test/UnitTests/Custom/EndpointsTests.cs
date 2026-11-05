@@ -12,10 +12,15 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.Internal;
+using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AWSSDK.UnitTests
 {
@@ -108,6 +113,126 @@ namespace AWSSDK.UnitTests
             resolver.ProcessRequestHandlers(executionContext);
 
             Assert.AreEqual("authentication-region", executionContext.RequestContext.Request.AuthenticationRegion);
+        }
+
+        /// <summary>
+        /// Counts how often the ruleset is evaluated and lets a test change the parameters between calls.
+        /// </summary>
+        private class CountingEndpointProvider : IEndpointProvider
+        {
+            public int Calls;
+
+            public Endpoint ResolveEndpoint(EndpointParameters parameters)
+            {
+                Calls++;
+                return new Endpoint("https://" + parameters["Region"] + ".localhost:7777", "{\"authSchemes\":[{\"name\":\"sigv4\"}]}", null);
+            }
+        }
+
+        private class ParameterizedEndpointResolver : BaseEndpointResolver
+        {
+            public string Region = "us-east-1";
+
+            protected override EndpointParameters MapEndpointsParameters(Amazon.Runtime.IRequestContext requestContext)
+            {
+                var parameters = new EndpointParameters();
+                parameters["Region"] = Region;
+                return parameters;
+            }
+        }
+
+        private static ExecutionContext CreateExecutionContext(IEndpointProvider provider)
+        {
+            var config = new MockClientConfig { EndpointProvider = provider };
+            var requestContext = new RequestContext(false, new NullSigner())
+            {
+                ClientConfig = config,
+                Request = new DefaultRequest(new MockAmazonWebServiceRequest(), "test-service")
+            };
+            return new ExecutionContext(requestContext, null);
+        }
+
+        /// <summary>
+        /// Resolving the endpoint twice for the same request (as the auth resolver and the endpoint resolver do for S3)
+        /// evaluates the ruleset once and yields the same endpoint.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        public void EndpointResolverReusesEndpointForUnchangedParameters()
+        {
+            var provider = new CountingEndpointProvider();
+            var executionContext = CreateExecutionContext(provider);
+            var resolver = new ParameterizedEndpointResolver();
+
+            var first = resolver.GetEndpoint(executionContext);
+            resolver.ProcessRequestHandlers(executionContext);
+
+            Assert.AreEqual(1, provider.Calls);
+            Assert.AreSame(first.Attributes, executionContext.RequestContext.Request.EndpointAttributes);
+            Assert.AreEqual("https://us-east-1.localhost:7777/", executionContext.RequestContext.Request.Endpoint.ToString());
+        }
+
+        /// <summary>
+        /// Changed parameters on the same request context resolve again.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        public void EndpointResolverResolvesAgainWhenParametersChange()
+        {
+            var provider = new CountingEndpointProvider();
+            var executionContext = CreateExecutionContext(provider);
+            var resolver = new ParameterizedEndpointResolver();
+
+            resolver.GetEndpoint(executionContext);
+            resolver.Region = "eu-west-1";
+            resolver.ProcessRequestHandlers(executionContext);
+
+            Assert.AreEqual(2, provider.Calls);
+            Assert.AreEqual("https://eu-west-1.localhost:7777/", executionContext.RequestContext.Request.Endpoint.ToString());
+        }
+
+        /// <summary>
+        /// Resolvers that do not map parameters (the base implementation returns null) resolve on every call without failing.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        public void EndpointResolverHandlesNullParameters()
+        {
+            var provider = new TestEndpointProvider();
+            var executionContext = CreateExecutionContext(provider);
+            var resolver = new BaseEndpointResolver();
+
+            resolver.GetEndpoint(executionContext);
+            resolver.ProcessRequestHandlers(executionContext);
+
+            Assert.AreEqual("https://localhost:7777/", executionContext.RequestContext.Request.Endpoint.ToString());
+        }
+
+        /// <summary>
+        /// The auth resolver resolves the endpoint before the identity exists (S3 and others); a parameter
+        /// that comes from the identity must make the endpoint resolver evaluate the ruleset again.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        public void EndpointResolverDoesNotReuseEndpointResolvedBeforeIdentity()
+        {
+            var request = new Amazon.DynamoDBv2.Model.GetItemRequest();
+            var executionContext = new ExecutionContext(new RequestContext(false, new NullSigner())
+            {
+                ClientConfig = new AmazonDynamoDBConfig { RegionEndpoint = RegionEndpoint.USEast1, AccountIdEndpointMode = AccountIdEndpointMode.PREFERRED },
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, "DynamoDB"),
+            }, null);
+
+            // Auth resolver: identity not resolved yet
+            var resolver = new AmazonDynamoDBEndpointResolver();
+            var before = resolver.GetEndpoint(executionContext);
+            Assert.AreEqual("https://dynamodb.us-east-1.amazonaws.com/", before.URL);
+
+            // Endpoint resolver: identity resolved in between
+            executionContext.RequestContext.Identity = new BasicAWSCredentials("foo", "bar", "123456789012");
+            resolver.ProcessRequestHandlers(executionContext);
+            Assert.AreEqual("https://123456789012.ddb.us-east-1.amazonaws.com/", executionContext.RequestContext.Request.Endpoint.ToString());
         }
     }
 }

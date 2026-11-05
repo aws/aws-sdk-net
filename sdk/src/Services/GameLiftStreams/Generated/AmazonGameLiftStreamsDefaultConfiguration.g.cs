@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.GameLiftStreams
 {
     /// <summary>
-    /// Configuration for accessing Amazon GameLiftStreams service
+    /// Configuration for accessing Amazon GameLift Streams
     /// </summary>
     public static class AmazonGameLiftStreamsDefaultConfiguration
     {

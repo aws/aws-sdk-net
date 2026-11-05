@@ -1,0 +1,202 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Kinesis.Model
+{
+    /// <summary>
+    /// Container for the parameters to the PutRecord operation. Writes a single data record
+    /// into an Amazon Kinesis data stream. Call <c>PutRecord</c> to send data into the stream
+    /// for real-time ingestion and subsequent processing, one record at a time. Each shard
+    /// can support writes up to 1,000 records per second, up to a maximum data write total
+    /// of 10 MiB per second. <note> <para> When invoking this API, you must use either the
+    /// <c>StreamARN</c> or the <c>StreamName</c> parameter, or both. It is recommended that
+    /// you use the <c>StreamARN</c> input parameter when you invoke this API. </para> </note>
+    /// <para> You must specify the name of the stream that captures, stores, and transports
+    /// the data; a partition key; and the data blob itself. </para> <para> The data blob
+    /// can be any type of data; for example, a segment from a log file, geographic/location
+    /// data, website clickstream data, and so on. </para> <para> The partition key is used
+    /// by Kinesis Data Streams to distribute data across shards. Kinesis Data Streams segregates
+    /// the data records that belong to a stream into multiple shards, using the partition
+    /// key associated with each data record to determine the shard to which a given data
+    /// record belongs. </para> <para> Partition keys are Unicode strings, with a maximum
+    /// length limit of 256 characters for each key. An MD5 hash function is used to map partition
+    /// keys to 128-bit integer values and to map associated data records to shards using
+    /// the hash key ranges of the shards. You can override hashing the partition key to determine
+    /// the shard by explicitly specifying a hash value using the <c>ExplicitHashKey</c> parameter.
+    /// For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+    /// Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. </para>
+    /// <para> <c>PutRecord</c> returns the shard ID of where the data record was placed and
+    /// the sequence number that was assigned to the data record. </para> <para> Sequence
+    /// numbers increase over time and are specific to a shard within a stream, not across
+    /// all shards within a stream. To guarantee strictly increasing ordering, write serially
+    /// to a shard and use the <c>SequenceNumberForOrdering</c> parameter. For more information,
+    /// see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+    /// Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. </para>
+    /// <important> <para> After you write a record to a stream, you cannot modify that record
+    /// or its order within the stream. </para> </important> <para> If a <c>PutRecord</c>
+    /// request cannot be processed because of insufficient provisioned throughput on the
+    /// shard involved in the request, <c>PutRecord</c> throws <c>ProvisionedThroughputExceededException</c>.
+    /// </para> <para> By default, data records are accessible for 24 hours from the time
+    /// that they are added to a stream. You can use <a>IncreaseStreamRetentionPeriod</a>
+    /// or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period. </para>
+    /// </summary>
+    public partial class PutRecordRequest : AmazonKinesisRequest
+    {
+        /// <summary>
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// The data blob to put into the record, which is base64-encoded when the blob is serialized.
+        /// When the data blob (the payload before base64-encoding) is added to the partition
+        /// key size, the total size must not exceed the maximum record size (10 MiB).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 0, Max = 10485760)]
+        public MemoryStream Data { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Data property is set.
+        /// </summary>
+        internal bool IsSetData() => this.Data != null;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks if your request will succeed. <c>DryRun</c> is an optional parameter.
+        /// </para>
+        /// </summary>
+        public bool? DryRun { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DryRun property is set.
+        /// </summary>
+        internal bool IsSetDryRun() => this.DryRun.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ExplicitHashKey. 
+        /// <para>
+        /// The hash value used to explicitly determine the shard the data record is assigned
+        /// to by overriding the partition key hash.
+        /// </para>
+        /// </summary>
+        public string ExplicitHashKey { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExplicitHashKey property is set.
+        /// </summary>
+        internal bool IsSetExplicitHashKey() => this.ExplicitHashKey != null;
+
+        /// <summary>
+        /// Gets and sets the property PartitionKey. 
+        /// <para>
+        /// Determines which shard in the stream the data record is assigned to. Partition keys
+        /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
+        /// Kinesis Data Streams uses the partition key as input to a hash function that maps
+        /// the partition key and associated data to a specific shard. Specifically, an MD5 hash
+        /// function is used to map partition keys to 128-bit integer values and to map associated
+        /// data records to shards. As a result of this hashing mechanism, all data records with
+        /// the same partition key map to the same shard within the stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the stream uses the <c>USER_PARTITION_KEY</c> record distribution strategy (the
+        /// default), a partition key is required. If the stream uses the <c>AUTO</c> record distribution
+        /// strategy, the partition key is optional and any value you provide is ignored, along
+        /// with any <c>ExplicitHashKey</c> you provide. In that case, Amazon Kinesis Data Streams
+        /// distributes the record across shards using service-managed algorithms. For more information,
+        /// see <c>UpdateStreamRecordDistributionStrategy</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string PartitionKey { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PartitionKey property is set.
+        /// </summary>
+        internal bool IsSetPartitionKey() => this.PartitionKey != null;
+
+        /// <summary>
+        /// Gets and sets the property SequenceNumberForOrdering. 
+        /// <para>
+        /// Guarantees strictly increasing sequence numbers, for puts from the same client and
+        /// to the same partition key. Usage: set the <c>SequenceNumberForOrdering</c> of record
+        /// <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when
+        /// putting record <i>n-1</i>). If this parameter is not set, records are coarsely ordered
+        /// based on arrival time.
+        /// </para>
+        /// </summary>
+        public string SequenceNumberForOrdering { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SequenceNumberForOrdering property is set.
+        /// </summary>
+        internal bool IsSetSequenceNumberForOrdering() => this.SequenceNumberForOrdering != null;
+
+        /// <summary>
+        /// Gets and sets the property StreamARN. 
+        /// <para>
+        /// The ARN of the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string StreamARN { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StreamARN property is set.
+        /// </summary>
+        internal bool IsSetStreamARN() => this.StreamARN != null;
+
+        /// <summary>
+        /// Gets and sets the property StreamId. 
+        /// <para>
+        /// Not Implemented. Reserved for future use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 24)]
+        public string StreamId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StreamId property is set.
+        /// </summary>
+        internal bool IsSetStreamId() => this.StreamId != null;
+
+        /// <summary>
+        /// Gets and sets the property StreamName. 
+        /// <para>
+        /// The name of the stream to put the data record into.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string StreamName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StreamName property is set.
+        /// </summary>
+        internal bool IsSetStreamName() => this.StreamName != null;
+    }
+}

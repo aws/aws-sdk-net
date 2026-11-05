@@ -20,45 +20,60 @@ public class ServiceSpecificSolutionFileWriter(GenerationContext context)
     /// </summary>
     public string Write(string serviceDirectory)
     {
+        var testRoot = FindTestRoot(serviceDirectory);
+        List<string> serviceTestProjects = testRoot is null ? [] : FindServiceTestProjects(testRoot);
+
         var writer = new CodeWriter();
         writer.OpenXmlBlock("Solution", () =>
         {
             AddCoreProjects(writer);
             var serviceDependencies = AddServiceDependencyProjects(writer, serviceDirectory);
             AddCurrentService(writer);
-            AddTestProjects(writer);
-            AddTestDependencyProjects(writer, serviceDirectory, serviceDependencies);
+            AddTestProjects(writer, serviceTestProjects);
+            AddTestDependencyProjects(writer, testRoot, serviceTestProjects, serviceDependencies);
         });
         return writer.ToRawString();
     }
 
-    // only covers those in cloudtraildata for now, although it does follow the current C2J generator in adding these references
-    // for every service slnx.
-    private void AddTestProjects(CodeWriter writer)
+    // The shared test projects every service slnx lists (as in C2J) plus the service's own test
+    // csprojs under sdk/test/Services/{Service}.
+    private void AddTestProjects(CodeWriter writer, IReadOnlyList<string> serviceTestProjects)
     {
-        var serviceUnitTestProject = $"AWSSDK.UnitTests.{context.ServiceName}.csproj";
         writer.WriteXmlBlock("""<Folder Name="/Test/">""", "Folder", () =>
         {
             writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkRoot, "..", "generator", "ServiceClientGeneratorLib", ProjectFileNames.GeneratorLib)}" />""");
             writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkRoot, "test", "Common", ProjectFileNames.CommonTest)}" />""");
             writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkRoot, "test", "IntegrationTests", ProjectFileNames.IntegrationTestUtility)}" />""");
-            writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkRoot, "test", "Services", context.ServiceName, "UnitTests", serviceUnitTestProject)}" />""");
+
+            foreach (var project in serviceTestProjects)
+            {
+                writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkRoot, "test", project)}" />""");
+            }
+
             writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkRoot, "test", "UnitTests", ProjectFileNames.UnitTestsCore)}" />""");
             writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkRoot, "test", "UnitTests", "Custom", ProjectFileNames.UnitTestUtility)}" />""");
         });
     }
 
-    // resolve test dependencies from the core unit-tests' csproj that lives in
-    // sdk/test/UnitTests/AWSSDK.UnitTests.Core.csproj
-    private void AddTestDependencyProjects(CodeWriter writer, string serviceDirectory, IReadOnlyList<string> serviceDependencies)
+    // Resolve test dependencies from the core unit-tests' csproj (sdk/test/UnitTests/AWSSDK.UnitTests.Core.csproj)
+    // and from the service's own test csprojs, as in C2J: an integration-test project may reference
+    // services the SDK project itself does not.
+    private void AddTestDependencyProjects(CodeWriter writer, string? testRoot, IReadOnlyList<string> serviceTestProjects, IReadOnlyList<string> serviceDependencies)
     {
-        var unitTestsCoreProjectPath = FindUnitTestsCoreProject(serviceDirectory);
         var dependencies = new List<string>();
+
         // No test tree on disk (e.g. generating into a bare output dir) means no dependencies to read.
-        if (unitTestsCoreProjectPath is not null)
+        if (testRoot is not null)
         {
-            AddProjectDependencies(unitTestsCoreProjectPath, context.ServiceName, dependencies);
+            var unitTestsCoreProject = Path.Combine(testRoot, "UnitTests", ProjectFileNames.UnitTestsCore);
+            AddProjectDependencies(unitTestsCoreProject, context.ServiceName, dependencies);
+            foreach (var project in serviceTestProjects)
+            {
+                var projectFile = Path.Combine(testRoot, project);
+                AddProjectDependencies(projectFile, context.ServiceName, dependencies);
+            }
         }
+
         writer.WriteXmlBlock("""<Folder Name="/TestDependencies/">""", "Folder", () =>
         {
             // As in C2J, a project already under /Services/ isn't listed again; a repeated path makes the slnx invalid.
@@ -70,23 +85,43 @@ public class ServiceSpecificSolutionFileWriter(GenerationContext context)
     }
 
     // Walks up from the given folder until it finds an ancestor containing an "sdk" directory, then
-    // returns the path to sdk/test/UnitTests/AWSSDK.UnitTests.Core.csproj. Discovering it this way
-    // avoids hard-coding the number of levels between the output folder and the SDK root — and works
-    // whether output lands inside the SDK tree (sdk/src/Services/{Service}/) or in a sibling dev
-    // output folder. Returns null when no ancestor contains an "sdk" directory (e.g. a bare output
-    // dir with no SDK tree).
-    private static string? FindUnitTestsCoreProject(string serviceDirectory)
+    // returns the path to sdk/test. Discovering it this way avoids hard-coding the number of levels
+    // between the output folder and the SDK root — and works whether output lands inside the SDK tree
+    // (sdk/src/Services/{Service}/) or in a sibling dev output folder. Returns null when no ancestor
+    // contains an "sdk" directory (e.g. a bare output dir with no SDK tree).
+    private static string? FindTestRoot(string serviceDirectory)
     {
         for (var directory = new DirectoryInfo(serviceDirectory); directory is not null; directory = directory.Parent)
         {
             var sdkDirectory = Path.Combine(directory.FullName, "sdk");
             if (Directory.Exists(sdkDirectory))
             {
-                return Utils.PathCombineAlt(sdkDirectory, "test", "UnitTests", ProjectFileNames.UnitTestsCore);
+                return Path.Combine(sdkDirectory, "test");
             }
         }
 
         return null;
+    }
+
+    // The csprojs under sdk/test/Services/{Service} as paths relative to sdk/test: the generated
+    // UnitTests project (emitted before the slnx) and, for some services, a hand-written
+    // IntegrationTests project.
+    private List<string> FindServiceTestProjects(string testRoot)
+    {
+        var projects = new List<string>();
+        var serviceTestsRoot = Path.Combine(testRoot, "Services", context.ServiceName);
+        if (!Directory.Exists(serviceTestsRoot))
+        {
+            return projects;
+        }
+
+        foreach (var projectFile in Directory.EnumerateFiles(serviceTestsRoot, "*.csproj", SearchOption.AllDirectories).OrderBy(f => f))
+        {
+            var relativePath = Path.GetRelativePath(testRoot, projectFile);
+            projects.Add(Utils.ConvertPathAlt(relativePath));
+        }
+
+        return projects;
     }
 
     private void AddCurrentService(CodeWriter writer)

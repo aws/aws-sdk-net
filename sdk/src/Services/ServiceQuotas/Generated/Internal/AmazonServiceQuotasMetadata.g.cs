@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ServiceQuotas service
+    /// Service metadata for Service Quotas
     /// </summary>
     public partial class AmazonServiceQuotasMetadata : IServiceMetadata
     {

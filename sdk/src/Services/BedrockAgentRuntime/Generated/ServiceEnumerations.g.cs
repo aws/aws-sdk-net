@@ -425,6 +425,11 @@ namespace Amazon.BedrockAgentRuntime
     public class AgenticRetrieveStep : ConstantClass
     {
         /// <summary>
+        /// Constant CodeExecution for AgenticRetrieveStep
+        /// </summary>
+        public static readonly AgenticRetrieveStep CodeExecution = new AgenticRetrieveStep("CodeExecution");
+
+        /// <summary>
         /// Constant FullDocumentExpansion for AgenticRetrieveStep
         /// </summary>
         public static readonly AgenticRetrieveStep FullDocumentExpansion = new AgenticRetrieveStep("FullDocumentExpansion");

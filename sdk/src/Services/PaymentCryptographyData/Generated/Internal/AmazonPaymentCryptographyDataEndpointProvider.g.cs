@@ -26,7 +26,7 @@ using Amazon.PaymentCryptographyData.Endpoints;
 namespace Amazon.PaymentCryptographyData.Internal
 {
     /// <summary>
-    /// Amazon PaymentCryptographyData endpoint provider.
+    /// Payment Cryptography Data Plane endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PaymentCryptographyDataEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

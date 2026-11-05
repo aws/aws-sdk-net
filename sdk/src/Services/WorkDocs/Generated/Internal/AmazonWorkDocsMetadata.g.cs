@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkDocs.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon WorkDocs service
+    /// Service metadata for Amazon WorkDocs
     /// </summary>
     public partial class AmazonWorkDocsMetadata : IServiceMetadata
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ServiceCatalog
 {
     /// <summary>
-    /// Configuration for accessing Amazon ServiceCatalog service
+    /// Configuration for accessing AWS Service Catalog
     /// </summary>
     public static class AmazonServiceCatalogDefaultConfiguration
     {

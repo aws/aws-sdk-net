@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.",
+  "base-name": "Route53Domains",
   "legacy-service-id": "Route 53 Domains"
 }

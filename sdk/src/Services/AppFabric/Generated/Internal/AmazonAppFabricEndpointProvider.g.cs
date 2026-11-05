@@ -26,7 +26,7 @@ using Amazon.AppFabric.Endpoints;
 namespace Amazon.AppFabric.Internal
 {
     /// <summary>
-    /// Amazon AppFabric endpoint provider.
+    /// AppFabric endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AppFabricEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

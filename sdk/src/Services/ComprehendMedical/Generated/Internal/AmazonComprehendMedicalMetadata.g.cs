@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ComprehendMedical service
+    /// Service metadata for AWS Comprehend Medical
     /// </summary>
     public partial class AmazonComprehendMedicalMetadata : IServiceMetadata
     {

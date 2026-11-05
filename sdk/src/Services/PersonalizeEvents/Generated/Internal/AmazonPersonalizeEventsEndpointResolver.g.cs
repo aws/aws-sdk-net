@@ -31,7 +31,7 @@ using Amazon.PersonalizeEvents.Endpoints;
 namespace Amazon.PersonalizeEvents.Internal
 {
     /// <summary>
-    /// Amazon PersonalizeEvents endpoint resolver.
+    /// Amazon Personalize Events endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PersonalizeEvents service requests.
     /// <para />

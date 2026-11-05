@@ -31,7 +31,7 @@ using Amazon.NetworkSecurityManager.Endpoints;
 namespace Amazon.NetworkSecurityManager.Internal
 {
     /// <summary>
-    /// Amazon NetworkSecurityManager endpoint resolver.
+    /// AWS Network Security Manager Customer API endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for NetworkSecurityManager service requests.
     /// <para />

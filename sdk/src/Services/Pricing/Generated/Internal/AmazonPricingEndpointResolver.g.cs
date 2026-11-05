@@ -31,7 +31,7 @@ using Amazon.Pricing.Endpoints;
 namespace Amazon.Pricing.Internal
 {
     /// <summary>
-    /// Amazon Pricing endpoint resolver.
+    /// AWS Price List Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Pricing service requests.
     /// <para />

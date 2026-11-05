@@ -35,6 +35,20 @@ namespace Amazon.NetworkManager.Model
     public partial class GetNetworkRoutesResponse : AmazonWebServiceResponse
     {
         /// <summary>
+        /// Gets and sets the property CoreNetworkNetworkFunctionGroup. 
+        /// <para>
+        /// Describes the network function group route table that the routes are from. This field
+        /// is present only when you specify <c>CoreNetworkNetworkFunctionGroup</c> in <c>RouteTableIdentifier</c>.
+        /// </para>
+        /// </summary>
+        public CoreNetworkNetworkFunctionGroupIdentifier CoreNetworkNetworkFunctionGroup { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CoreNetworkNetworkFunctionGroup property is set.
+        /// </summary>
+        internal bool IsSetCoreNetworkNetworkFunctionGroup() => this.CoreNetworkNetworkFunctionGroup != null;
+
+        /// <summary>
         /// Gets and sets the property CoreNetworkSegmentEdge. 
         /// <para>
         /// Describes a core network segment edge.
@@ -65,6 +79,20 @@ namespace Amazon.NetworkManager.Model
         /// Checks to see if the NetworkRoutes property is set.
         /// </summary>
         internal bool IsSetNetworkRoutes() => this.NetworkRoutes != null && (this.NetworkRoutes.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next page of results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 2048)]
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
         /// Gets and sets the property RouteTableArn. 

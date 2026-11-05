@@ -31,7 +31,7 @@ using Amazon.EKSAuth.Endpoints;
 namespace Amazon.EKSAuth.Internal
 {
     /// <summary>
-    /// Amazon EKSAuth endpoint resolver.
+    /// Amazon EKS Auth endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for EKSAuth service requests.
     /// <para />

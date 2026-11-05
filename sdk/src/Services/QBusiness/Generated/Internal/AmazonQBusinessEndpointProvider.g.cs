@@ -26,7 +26,7 @@ using Amazon.QBusiness.Endpoints;
 namespace Amazon.QBusiness.Internal
 {
     /// <summary>
-    /// Amazon QBusiness endpoint provider.
+    /// QBusiness endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="QBusinessEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

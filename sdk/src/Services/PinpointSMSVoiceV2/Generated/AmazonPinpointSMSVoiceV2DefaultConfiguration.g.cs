@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.PinpointSMSVoiceV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon PinpointSMSVoiceV2 service
+    /// Configuration for accessing Amazon Pinpoint SMS Voice V2
     /// </summary>
     public static class AmazonPinpointSMSVoiceV2DefaultConfiguration
     {

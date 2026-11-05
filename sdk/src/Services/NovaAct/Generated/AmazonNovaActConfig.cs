@@ -27,12 +27,12 @@ using Amazon.NovaAct.Internal;
 namespace Amazon.NovaAct
 {
     /// <summary>
-    /// Configuration for accessing Amazon NovaAct service
+    /// Configuration for accessing Nova Act Service
     /// </summary>
     public partial class AmazonNovaActConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Nova Act", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("Nova Act", "4.0.100.22");
 
         private static readonly AmazonNovaActEndpointResolver EndpointResolver =
             new AmazonNovaActEndpointResolver();

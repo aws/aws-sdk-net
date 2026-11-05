@@ -4,31 +4,31 @@
     <property>Amazon.KinesisFirehose.Model.CreateDeliveryStreamRequest.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.CreateDeliveryStreamResponse.DeliveryStreamARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:firehose:[a-zA-Z0-9\-]+:\d{12}:deliverystream/[a-zA-Z0-9._-]+</pattern>
+    <pattern>^arn:.*:firehose:[a-zA-Z0-9\-]+:\d{12}:deliverystream/[a-zA-Z0-9._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DeleteDeliveryStreamRequest.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DescribeDeliveryStreamRequest.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DescribeDeliveryStreamRequest.ExclusiveStartDestinationId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DescribeDeliveryStreamRequest.Limit</property>
@@ -39,7 +39,7 @@
     <property>Amazon.KinesisFirehose.Model.ListDeliveryStreamsRequest.ExclusiveStartDeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ListDeliveryStreamsRequest.Limit</property>
@@ -50,7 +50,7 @@
     <property>Amazon.KinesisFirehose.Model.ListTagsForDeliveryStreamRequest.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ListTagsForDeliveryStreamRequest.ExclusiveStartTagKey</property>
@@ -67,7 +67,7 @@
     <property>Amazon.KinesisFirehose.Model.PutRecordRequest.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.PutRecordResponse.RecordId</property>
@@ -77,7 +77,7 @@
     <property>Amazon.KinesisFirehose.Model.PutRecordBatchRequest.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.PutRecordBatchResponse.FailedPutCount</property>
@@ -87,43 +87,43 @@
     <property>Amazon.KinesisFirehose.Model.StartDeliveryStreamEncryptionRequest.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.StopDeliveryStreamEncryptionRequest.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.TagDeliveryStreamRequest.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.UntagDeliveryStreamRequest.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.UpdateDestinationRequest.CurrentDeliveryStreamVersionId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[0-9]+</pattern>
+    <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.UpdateDestinationRequest.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.UpdateDestinationRequest.DestinationId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessBufferingHints.IntervalInSeconds</property>
@@ -139,7 +139,7 @@
     <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationConfiguration.CollectionEndpoint</property>
     <min>1</min>
     <max>512</max>
-    <pattern>https:.*</pattern>
+    <pattern>^https:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationConfiguration.IndexName</property>
@@ -151,13 +151,13 @@
     <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationConfiguration.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationDescription.CollectionEndpoint</property>
     <min>1</min>
     <max>512</max>
-    <pattern>https:.*</pattern>
+    <pattern>^https:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationDescription.IndexName</property>
@@ -169,13 +169,13 @@
     <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationDescription.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationUpdate.CollectionEndpoint</property>
     <min>1</min>
     <max>512</max>
-    <pattern>https:.*</pattern>
+    <pattern>^https:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationUpdate.IndexName</property>
@@ -187,7 +187,7 @@
     <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationUpdate.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessRetryOptions.DurationInSeconds</property>
@@ -208,13 +208,13 @@
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationConfiguration.ClusterEndpoint</property>
     <min>1</min>
     <max>512</max>
-    <pattern>https:.*</pattern>
+    <pattern>^https:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationConfiguration.DomainARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:es:[a-zA-Z0-9\-]+:\d{12}:domain/[a-z][-0-9a-z]{2,27}</pattern>
+    <pattern>^arn:.*:es:[a-zA-Z0-9\-]+:\d{12}:domain/[a-z][-0-9a-z]{2,27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationConfiguration.IndexName</property>
@@ -226,7 +226,7 @@
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationConfiguration.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationConfiguration.TypeName</property>
@@ -238,13 +238,13 @@
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationDescription.ClusterEndpoint</property>
     <min>1</min>
     <max>512</max>
-    <pattern>https:.*</pattern>
+    <pattern>^https:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationDescription.DomainARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:es:[a-zA-Z0-9\-]+:\d{12}:domain/[a-z][-0-9a-z]{2,27}</pattern>
+    <pattern>^arn:.*:es:[a-zA-Z0-9\-]+:\d{12}:domain/[a-z][-0-9a-z]{2,27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationDescription.IndexName</property>
@@ -256,7 +256,7 @@
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationDescription.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationDescription.TypeName</property>
@@ -268,13 +268,13 @@
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationUpdate.ClusterEndpoint</property>
     <min>1</min>
     <max>512</max>
-    <pattern>https:.*</pattern>
+    <pattern>^https:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationUpdate.DomainARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:es:[a-zA-Z0-9\-]+:\d{12}:domain/[a-z][-0-9a-z]{2,27}</pattern>
+    <pattern>^arn:.*:es:[a-zA-Z0-9\-]+:\d{12}:domain/[a-z][-0-9a-z]{2,27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationUpdate.IndexName</property>
@@ -286,7 +286,7 @@
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationUpdate.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceDestinationUpdate.TypeName</property>
@@ -303,7 +303,7 @@
     <property>Amazon.KinesisFirehose.Model.AuthenticationConfiguration.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.BufferingHints.IntervalInSeconds</property>
@@ -319,25 +319,25 @@
     <property>Amazon.KinesisFirehose.Model.CatalogConfiguration.CatalogARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:glue:.*:\d{12}:catalog(?:(/[a-z0-9_-]+){1,2})?</pattern>
+    <pattern>^arn:.*:glue:.*:\d{12}:catalog(?:(/[a-z0-9_-]+){1,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.CatalogConfiguration.WarehouseLocation</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>s3:\/\/.*</pattern>
+    <pattern>^s3:\/\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.CloudWatchLoggingOptions.LogGroupName</property>
     <min>0</min>
     <max>512</max>
-    <pattern>[\.\-_/#A-Za-z0-9]*</pattern>
+    <pattern>^[\.\-_/#A-Za-z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.CloudWatchLoggingOptions.LogStreamName</property>
     <min>0</min>
     <max>512</max>
-    <pattern>[^:*]*</pattern>
+    <pattern>^[^:*]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.CopyCommand.CopyOptions</property>
@@ -367,13 +367,13 @@
     <property>Amazon.KinesisFirehose.Model.DatabaseSnapshotInfo.Table</property>
     <min>1</min>
     <max>129</max>
-    <pattern>[\u0001-\uFFFF]*</pattern>
+    <pattern>^[\u0001-\uFFFF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DatabaseSourceConfiguration.Endpoint</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(?!\s*$).+</pattern>
+    <pattern>^(?!\s*$).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DatabaseSourceConfiguration.Port</property>
@@ -384,13 +384,13 @@
     <property>Amazon.KinesisFirehose.Model.DatabaseSourceConfiguration.SnapshotWatermarkTable</property>
     <min>1</min>
     <max>129</max>
-    <pattern>[\u0001-\uFFFF]*</pattern>
+    <pattern>^[\u0001-\uFFFF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DatabaseSourceDescription.Endpoint</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(?!\s*$).+</pattern>
+    <pattern>^(?!\s*$).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DatabaseSourceDescription.Port</property>
@@ -401,7 +401,7 @@
     <property>Amazon.KinesisFirehose.Model.DatabaseSourceDescription.SnapshotWatermarkTable</property>
     <min>1</min>
     <max>129</max>
-    <pattern>[\u0001-\uFFFF]*</pattern>
+    <pattern>^[\u0001-\uFFFF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DatabaseSourceVPCConfiguration.VpcEndpointServiceName</property>
@@ -412,37 +412,37 @@
     <property>Amazon.KinesisFirehose.Model.DeliveryStreamDescription.DeliveryStreamARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:firehose:[a-zA-Z0-9\-]+:\d{12}:deliverystream/[a-zA-Z0-9._-]+</pattern>
+    <pattern>^arn:.*:firehose:[a-zA-Z0-9\-]+:\d{12}:deliverystream/[a-zA-Z0-9._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DeliveryStreamDescription.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DeliveryStreamDescription.VersionId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[0-9]+</pattern>
+    <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DeliveryStreamEncryptionConfiguration.KeyARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:kms:[a-zA-Z0-9\-]+:\d{12}:key/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:kms:[a-zA-Z0-9\-]+:\d{12}:key/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DeliveryStreamEncryptionConfigurationInput.KeyARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:kms:[a-zA-Z0-9\-]+:\d{12}:key/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:kms:[a-zA-Z0-9\-]+:\d{12}:key/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DestinationDescription.DestinationId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DestinationTableConfiguration.DestinationDatabaseName</property>
@@ -484,13 +484,13 @@
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationConfiguration.ClusterEndpoint</property>
     <min>1</min>
     <max>512</max>
-    <pattern>https:.*</pattern>
+    <pattern>^https:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationConfiguration.DomainARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:es:[a-zA-Z0-9\-]+:\d{12}:domain/[a-z][-0-9a-z]{2,27}</pattern>
+    <pattern>^arn:.*:es:[a-zA-Z0-9\-]+:\d{12}:domain/[a-z][-0-9a-z]{2,27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationConfiguration.IndexName</property>
@@ -502,7 +502,7 @@
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationConfiguration.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationConfiguration.TypeName</property>
@@ -514,13 +514,13 @@
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationDescription.ClusterEndpoint</property>
     <min>1</min>
     <max>512</max>
-    <pattern>https:.*</pattern>
+    <pattern>^https:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationDescription.DomainARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:es:[a-zA-Z0-9\-]+:\d{12}:domain/[a-z][-0-9a-z]{2,27}</pattern>
+    <pattern>^arn:.*:es:[a-zA-Z0-9\-]+:\d{12}:domain/[a-z][-0-9a-z]{2,27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationDescription.IndexName</property>
@@ -532,7 +532,7 @@
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationDescription.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationDescription.TypeName</property>
@@ -544,13 +544,13 @@
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationUpdate.ClusterEndpoint</property>
     <min>1</min>
     <max>512</max>
-    <pattern>https:.*</pattern>
+    <pattern>^https:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationUpdate.DomainARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:es:[a-zA-Z0-9\-]+:\d{12}:domain/[a-z][-0-9a-z]{2,27}</pattern>
+    <pattern>^arn:.*:es:[a-zA-Z0-9\-]+:\d{12}:domain/[a-z][-0-9a-z]{2,27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationUpdate.IndexName</property>
@@ -562,7 +562,7 @@
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationUpdate.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationUpdate.TypeName</property>
@@ -579,13 +579,13 @@
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationConfiguration.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*:s3:::[\w\.\-]{1,255}</pattern>
+    <pattern>^arn:.*:s3:::[\w\.\-]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationConfiguration.CustomTimeZone</property>
     <min>0</min>
     <max>50</max>
-    <pattern>^$|[a-zA-Z/_]+</pattern>
+    <pattern>^$|[a-zA-Z/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationConfiguration.ErrorOutputPrefix</property>
@@ -597,7 +597,7 @@
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationConfiguration.FileExtension</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^$|\.[0-9a-z!\-_.*'()]+</pattern>
+    <pattern>^$|\.[0-9a-z!\-_.*'()]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationConfiguration.Prefix</property>
@@ -609,19 +609,19 @@
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationConfiguration.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationDescription.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*:s3:::[\w\.\-]{1,255}</pattern>
+    <pattern>^arn:.*:s3:::[\w\.\-]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationDescription.CustomTimeZone</property>
     <min>0</min>
     <max>50</max>
-    <pattern>^$|[a-zA-Z/_]+</pattern>
+    <pattern>^$|[a-zA-Z/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationDescription.ErrorOutputPrefix</property>
@@ -633,7 +633,7 @@
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationDescription.FileExtension</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^$|\.[0-9a-z!\-_.*'()]+</pattern>
+    <pattern>^$|\.[0-9a-z!\-_.*'()]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationDescription.Prefix</property>
@@ -645,19 +645,19 @@
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationDescription.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationUpdate.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*:s3:::[\w\.\-]{1,255}</pattern>
+    <pattern>^arn:.*:s3:::[\w\.\-]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationUpdate.CustomTimeZone</property>
     <min>0</min>
     <max>50</max>
-    <pattern>^$|[a-zA-Z/_]+</pattern>
+    <pattern>^$|[a-zA-Z/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationUpdate.ErrorOutputPrefix</property>
@@ -669,7 +669,7 @@
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationUpdate.FileExtension</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^$|\.[0-9a-z!\-_.*'()]+</pattern>
+    <pattern>^$|\.[0-9a-z!\-_.*'()]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationUpdate.Prefix</property>
@@ -681,13 +681,13 @@
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationUpdate.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.FailureDescription.Details</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^(?!\s*$).+</pattern>
+    <pattern>^(?!\s*$).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.HttpEndpointBufferingHints.IntervalInSeconds</property>
@@ -703,7 +703,7 @@
     <property>Amazon.KinesisFirehose.Model.HttpEndpointCommonAttribute.AttributeName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^(?!\s*$).+</pattern>
+    <pattern>^(?!\s*$).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.HttpEndpointCommonAttribute.AttributeValue</property>
@@ -721,43 +721,43 @@
     <property>Amazon.KinesisFirehose.Model.HttpEndpointConfiguration.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^(?!\s*$).+</pattern>
+    <pattern>^(?!\s*$).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.HttpEndpointConfiguration.Url</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>https://.*</pattern>
+    <pattern>^https://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.HttpEndpointDescription.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^(?!\s*$).+</pattern>
+    <pattern>^(?!\s*$).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.HttpEndpointDescription.Url</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>https://.*</pattern>
+    <pattern>^https://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.HttpEndpointDestinationConfiguration.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.HttpEndpointDestinationDescription.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.HttpEndpointDestinationUpdate.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.HttpEndpointRetryOptions.DurationInSeconds</property>
@@ -768,73 +768,73 @@
     <property>Amazon.KinesisFirehose.Model.IcebergDestinationConfiguration.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.IcebergDestinationDescription.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.IcebergDestinationUpdate.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceConfiguration.KinesisStreamARN</property>
-    <min>1</min>
-    <max>512</max>
-    <pattern>arn:.*:kinesis:[a-zA-Z0-9\-]+:\d{12}:stream/[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceConfiguration.RoleARN</property>
-    <min>1</min>
-    <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceDescription.KinesisStreamARN</property>
-    <min>1</min>
-    <max>512</max>
-    <pattern>arn:.*:kinesis:[a-zA-Z0-9\-]+:\d{12}:stream/[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceDescription.RoleARN</property>
-    <min>1</min>
-    <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.KMSEncryptionConfig.AWSKMSKeyARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:kms:[a-zA-Z0-9\-]+:\d{12}:(key|alias)/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:kms:[a-zA-Z0-9\-]+:\d{12}:(key|alias)/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceConfiguration.KinesisStreamARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:.*:kinesis:[a-zA-Z0-9\-]+:\d{12}:stream/[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceConfiguration.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceDescription.KinesisStreamARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:.*:kinesis:[a-zA-Z0-9\-]+:\d{12}:stream/[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceDescription.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.MSKSourceConfiguration.MSKClusterARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.MSKSourceConfiguration.TopicName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9\\._\\-]+</pattern>
+    <pattern>^[a-zA-Z0-9\\._\\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.MSKSourceDescription.MSKClusterARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.MSKSourceDescription.TopicName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9\\._\\-]+</pattern>
+    <pattern>^[a-zA-Z0-9\\._\\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.OrcSerDe.BlockSizeBytes</property>
@@ -885,7 +885,7 @@
     <property>Amazon.KinesisFirehose.Model.ProcessorParameter.ParameterValue</property>
     <min>1</min>
     <max>5120</max>
-    <pattern>^(?!\s*$).+</pattern>
+    <pattern>^(?!\s*$).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.PutRecordBatchResponseEntry.RecordId</property>
@@ -900,7 +900,7 @@
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationConfiguration.ClusterJDBCURL</property>
     <min>1</min>
     <max>512</max>
-    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+(redshift(-serverless)?)\.([a-zA-Z0-9\.\-]+):\d{1,5}/[a-zA-Z0-9_$-]+</pattern>
+    <pattern>^jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+(redshift(-serverless)?)\.([a-zA-Z0-9\.\-]+):\d{1,5}/[a-zA-Z0-9_$-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationConfiguration.Password</property>
@@ -912,7 +912,7 @@
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationConfiguration.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationConfiguration.Username</property>
@@ -924,13 +924,13 @@
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationDescription.ClusterJDBCURL</property>
     <min>1</min>
     <max>512</max>
-    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+(redshift(-serverless)?)\.([a-zA-Z0-9\.\-]+):\d{1,5}/[a-zA-Z0-9_$-]+</pattern>
+    <pattern>^jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+(redshift(-serverless)?)\.([a-zA-Z0-9\.\-]+):\d{1,5}/[a-zA-Z0-9_$-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationDescription.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationDescription.Username</property>
@@ -942,7 +942,7 @@
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationUpdate.ClusterJDBCURL</property>
     <min>1</min>
     <max>512</max>
-    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+(redshift(-serverless)?)\.([a-zA-Z0-9\.\-]+):\d{1,5}/[a-zA-Z0-9_$-]+</pattern>
+    <pattern>^jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+(redshift(-serverless)?)\.([a-zA-Z0-9\.\-]+):\d{1,5}/[a-zA-Z0-9_$-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationUpdate.Password</property>
@@ -954,7 +954,7 @@
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationUpdate.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationUpdate.Username</property>
@@ -976,7 +976,7 @@
     <property>Amazon.KinesisFirehose.Model.S3DestinationConfiguration.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*:s3:::[\w\.\-]{1,255}</pattern>
+    <pattern>^arn:.*:s3:::[\w\.\-]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.S3DestinationConfiguration.ErrorOutputPrefix</property>
@@ -994,13 +994,13 @@
     <property>Amazon.KinesisFirehose.Model.S3DestinationConfiguration.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.S3DestinationDescription.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*:s3:::[\w\.\-]{1,255}</pattern>
+    <pattern>^arn:.*:s3:::[\w\.\-]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.S3DestinationDescription.ErrorOutputPrefix</property>
@@ -1018,13 +1018,13 @@
     <property>Amazon.KinesisFirehose.Model.S3DestinationDescription.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.S3DestinationUpdate.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*:s3:::[\w\.\-]{1,255}</pattern>
+    <pattern>^arn:.*:s3:::[\w\.\-]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.S3DestinationUpdate.ErrorOutputPrefix</property>
@@ -1042,7 +1042,7 @@
     <property>Amazon.KinesisFirehose.Model.S3DestinationUpdate.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.SchemaConfiguration.CatalogId</property>
@@ -1084,13 +1084,13 @@
     <property>Amazon.KinesisFirehose.Model.SecretsManagerConfiguration.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.SecretsManagerConfiguration.SecretARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*:secretsmanager:[a-zA-Z0-9\-]+:\d{12}:secret:[a-zA-Z0-9\-/_+=.@!]+</pattern>
+    <pattern>^arn:.*:secretsmanager:[a-zA-Z0-9\-]+:\d{12}:secret:[a-zA-Z0-9\-/_+=.@!]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.SnowflakeBufferingHints.IntervalInSeconds</property>
@@ -1106,7 +1106,7 @@
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationConfiguration.AccountUrl</property>
     <min>24</min>
     <max>2048</max>
-    <pattern>.+?\.snowflakecomputing\.com</pattern>
+    <pattern>^.+?\.snowflakecomputing\.com$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationConfiguration.ContentColumnName</property>
@@ -1138,7 +1138,7 @@
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationConfiguration.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationConfiguration.Schema</property>
@@ -1159,7 +1159,7 @@
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationDescription.AccountUrl</property>
     <min>24</min>
     <max>2048</max>
-    <pattern>.+?\.snowflakecomputing\.com</pattern>
+    <pattern>^.+?\.snowflakecomputing\.com$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationDescription.ContentColumnName</property>
@@ -1180,7 +1180,7 @@
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationDescription.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationDescription.Schema</property>
@@ -1201,7 +1201,7 @@
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationUpdate.AccountUrl</property>
     <min>24</min>
     <max>2048</max>
-    <pattern>.+?\.snowflakecomputing\.com</pattern>
+    <pattern>^.+?\.snowflakecomputing\.com$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationUpdate.ContentColumnName</property>
@@ -1233,7 +1233,7 @@
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationUpdate.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationUpdate.Schema</property>
@@ -1347,13 +1347,13 @@
     <property>Amazon.KinesisFirehose.Model.VpcConfiguration.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.VpcConfigurationDescription.RoleARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:.*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.VpcConfigurationDescription.VpcId</property>

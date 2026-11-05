@@ -27,12 +27,12 @@ using Amazon.EKSAuth.Internal;
 namespace Amazon.EKSAuth
 {
     /// <summary>
-    /// Configuration for accessing Amazon EKSAuth service
+    /// Configuration for accessing Amazon EKS Auth
     /// </summary>
     public partial class AmazonEKSAuthConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EKS Auth", "4.0.101.13");
+            InternalSDKUtils.BuildUserAgentString("EKS Auth", "4.0.101.16");
 
         private static readonly AmazonEKSAuthEndpointResolver EndpointResolver =
             new AmazonEKSAuthEndpointResolver();

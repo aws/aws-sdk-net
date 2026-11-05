@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "Add new service - Application Migration Service.",
   "generate-client-constructors": true,
+  "base-name": "Mgn",
   "legacy-service-id": "mgn"
 }

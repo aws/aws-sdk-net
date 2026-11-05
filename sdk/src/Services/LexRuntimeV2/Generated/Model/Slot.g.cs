@@ -1,0 +1,105 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.LexRuntimeV2.Model
+{
+    /// <summary>
+    /// A value that Amazon Lex V2 uses to fulfill an intent.
+    /// </summary>
+    public partial class Slot
+    {
+        /// <summary>
+        /// Gets and sets the property Shape. 
+        /// <para>
+        /// When the <c>shape</c> value is <c>List</c>, it indicates that the <c>values</c> field
+        /// contains a list of slot values. When the value is <c>Scalar</c>, it indicates that
+        /// the <c>value</c> field contains a single value.
+        /// </para>
+        /// </summary>
+        public Shape Shape { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Shape property is set.
+        /// </summary>
+        internal bool IsSetShape() => this.Shape != null;
+
+        /// <summary>
+        /// Gets and sets the property SubSlots. 
+        /// <para>
+        /// The constituent sub slots of a composite slot.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, Slot> SubSlots { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, Slot>() : null;
+
+        /// <summary>
+        /// Checks to see if the SubSlots property is set.
+        /// </summary>
+        internal bool IsSetSubSlots() => this.SubSlots != null && (this.SubSlots.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The current value of the slot.
+        /// </para>
+        /// </summary>
+        public Value Value { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Value property is set.
+        /// </summary>
+        internal bool IsSetValue() => this.Value != null;
+
+        /// <summary>
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// A list of one or more values that the user provided for the slot. For example, if
+        /// a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."
+        /// 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Slot> Values { get; set; } = AWSConfigs.InitializeCollections ? new List<Slot>() : null;
+
+        /// <summary>
+        /// Checks to see if the Values property is set.
+        /// </summary>
+        internal bool IsSetValues() => this.Values != null && (this.Values.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

@@ -50,5 +50,20 @@ namespace Amazon.EKS.Model
         /// Checks to see if the Enabled property is set.
         /// </summary>
         internal bool IsSetEnabled() => this.Enabled.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property GatewayApi. 
+        /// <para>
+        /// Indicates the current configuration of the Kubernetes Gateway API for the load balancing
+        /// capability on your EKS Auto Mode cluster. For more information, see EKS Auto Mode
+        /// load balancing capability in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        public GatewayApiConfiguration GatewayApi { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GatewayApi property is set.
+        /// </summary>
+        internal bool IsSetGatewayApi() => this.GatewayApi != null;
     }
 }

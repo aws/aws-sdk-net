@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MWAAServerless
 {
     /// <summary>
-    /// Configuration for accessing Amazon MWAAServerless service
+    /// Configuration for accessing AmazonMWAAServerless
     /// </summary>
     public static class AmazonMWAAServerlessDefaultConfiguration
     {

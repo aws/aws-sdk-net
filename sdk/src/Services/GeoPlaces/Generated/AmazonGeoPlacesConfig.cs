@@ -27,12 +27,12 @@ using Amazon.GeoPlaces.Internal;
 namespace Amazon.GeoPlaces
 {
     /// <summary>
-    /// Configuration for accessing Amazon GeoPlaces service
+    /// Configuration for accessing Amazon Location Service Places V2
     /// </summary>
     public partial class AmazonGeoPlacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Geo Places", "4.0.101.17");
+            InternalSDKUtils.BuildUserAgentString("Geo Places", "4.0.101.20");
 
         private static readonly AmazonGeoPlacesEndpointResolver EndpointResolver =
             new AmazonGeoPlacesEndpointResolver();

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Bedrock
 {
     /// <summary>
-    /// Configuration for accessing Amazon Bedrock service
+    /// Configuration for accessing Amazon Bedrock
     /// </summary>
     public static class AmazonBedrockDefaultConfiguration
     {

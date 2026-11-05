@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QueryCompatibleJSONRPC10.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon QueryCompatibleJSONRPC10 service
+    /// Service metadata for Query Compatible Json 1.0 Protocol Service
     /// </summary>
     public partial class AmazonQueryCompatibleJSONRPC10Metadata : IServiceMetadata
     {

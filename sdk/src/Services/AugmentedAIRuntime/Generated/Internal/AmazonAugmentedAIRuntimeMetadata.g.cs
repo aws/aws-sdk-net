@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AugmentedAIRuntime.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AugmentedAIRuntime service
+    /// Service metadata for Amazon Augmented AI Runtime
     /// </summary>
     public partial class AmazonAugmentedAIRuntimeMetadata : IServiceMetadata
     {

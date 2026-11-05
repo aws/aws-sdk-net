@@ -26,7 +26,7 @@ using Amazon.PCS.Endpoints;
 namespace Amazon.PCS.Internal
 {
     /// <summary>
-    /// Amazon PCS endpoint provider.
+    /// AWS Parallel Computing Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PCSEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

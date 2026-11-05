@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.NetworkFirewall
 {
     /// <summary>
-    /// Configuration for accessing Amazon NetworkFirewall service
+    /// Configuration for accessing AWS Network Firewall
     /// </summary>
     public static class AmazonNetworkFirewallDefaultConfiguration
     {

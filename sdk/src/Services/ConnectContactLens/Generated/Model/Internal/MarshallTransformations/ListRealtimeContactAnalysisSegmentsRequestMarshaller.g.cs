@@ -78,6 +78,16 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("InstanceId");
                 context.Writer.WriteStringValue(publicRequest.InstanceId);
             }
+            if (publicRequest.IsSetListFilter())
+            {
+                context.Writer.WritePropertyName("ListFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RealTimeContactAnalysisSegmentsFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ListFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");

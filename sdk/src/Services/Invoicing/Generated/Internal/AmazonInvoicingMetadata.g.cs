@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Invoicing.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Invoicing service
+    /// Service metadata for AWS Invoicing
     /// </summary>
     public partial class AmazonInvoicingMetadata : IServiceMetadata
     {

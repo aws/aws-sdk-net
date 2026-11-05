@@ -27,12 +27,12 @@ using Amazon.Elasticsearch.Internal;
 namespace Amazon.Elasticsearch
 {
     /// <summary>
-    /// Configuration for accessing Amazon Elasticsearch service
+    /// Configuration for accessing Amazon Elasticsearch Service
     /// </summary>
     public partial class AmazonElasticsearchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Elasticsearch Service", "4.0.101.16");
+            InternalSDKUtils.BuildUserAgentString("Elasticsearch Service", "4.0.101.19");
 
         private static readonly AmazonElasticsearchEndpointResolver EndpointResolver =
             new AmazonElasticsearchEndpointResolver();

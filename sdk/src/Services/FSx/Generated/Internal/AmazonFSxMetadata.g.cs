@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon FSx service
+    /// Service metadata for Amazon FSx
     /// </summary>
     public partial class AmazonFSxMetadata : IServiceMetadata
     {

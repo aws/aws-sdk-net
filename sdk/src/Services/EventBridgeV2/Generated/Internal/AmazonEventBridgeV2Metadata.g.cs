@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridgeV2.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon EventBridgeV2 service
+    /// Service metadata for Amazon EventBridgeV2
     /// </summary>
     public partial class AmazonEventBridgeV2Metadata : IServiceMetadata
     {

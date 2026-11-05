@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Kafka
 {
     /// <summary>
-    /// Configuration for accessing Amazon Kafka service
+    /// Configuration for accessing Managed Streaming for Kafka
     /// </summary>
     public static class AmazonKafkaDefaultConfiguration
     {
