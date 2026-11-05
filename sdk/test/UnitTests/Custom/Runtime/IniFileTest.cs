@@ -243,6 +243,23 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        [TestMethod]
+        [DataRow("section", "property", "value\ncredential_process=evil")]
+        [DataRow("section", "property", "value\u2028credential_process=evil")]
+        [DataRow("section", "property\r\n", "value")]
+        [DataRow("section", "property=x", "value")]
+        [DataRow("section", "[property", "value")]
+        [DataRow("section]\n[other", "property", "value")]
+        public void EditSectionRejectsInvalidInput(string sectionName, string propertyName, string propertyValue)
+        {
+            var properties = new SortedDictionary<string, string> { { propertyName, propertyValue } };
+            using (var tester = new IniFileTester(ValidSection1))
+            {
+                AssertExtensions.ExpectException<ArgumentException>(() => tester.TestFile.EditSection(sectionName, properties));
+                tester.AssertSection("section", "property", "value");
+            }
+        }
+
         private class IniFileTester : IDisposable
         {
             private string FilePath { get; set; }

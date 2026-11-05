@@ -100,6 +100,21 @@ namespace AWSSDK.UnitTests
        }
 
         [TestMethod]
+        public void GetDataAbsolutePathOnAnotherHostReturnsNullWithoutRequest()
+        {
+            using (var servlet = new EC2InstanceMetadataServlet())
+            {
+                servlet.AddTokenFetchResponse("token");
+
+                // starts with the endpoint ("http://localhost:<port>") but the host is 127.0.0.1
+                var otherHost = servlet.ServiceURL.TrimEnd('/') + "@127.0.0.1:" + servlet.Port + "/x";
+
+                Assert.IsNull(EC2InstanceMetadata.GetData(otherHost));
+                Assert.AreEqual(0, servlet.RequestedPaths.Count);
+            }
+        }
+
+        [TestMethod]
         public void TestIMDSInvalidEndpointViaProfile()
         {
             var exception = Assert.ThrowsExactly<AmazonClientException>(() =>

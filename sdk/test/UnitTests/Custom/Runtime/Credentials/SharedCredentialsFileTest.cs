@@ -1117,6 +1117,23 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void RegisterProfileWithLineBreakLeavesBothFilesUnchanged()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(BasicProfileTextCredentialsPartial, BasicProfileTextConfigPartial))
+            {
+                var options = new CredentialProfileOptions
+                {
+                    AccessKey = "basic_aws_access_key_id",
+                    SecretKey = "x\n[admin]\naws_access_key_id=evil"
+                };
+
+                AssertExtensions.ExpectException<ArgumentException>(() => tester.CredentialsFile.RegisterProfile(new CredentialProfile("basic_profile", options)));
+                tester.AssertCredentialsFileContents(BasicProfileTextCredentialsPartial);
+                Assert.AreEqual(BasicProfileTextConfigPartial, File.ReadAllText(tester.ConfigFilePath));
+            }
+        }
+
+        [TestMethod]
         public void ReadBasicProfileCredentialsTakesPrecedence()
         {
             using (var tester = new SharedCredentialsFileTestFixture(

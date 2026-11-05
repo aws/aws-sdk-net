@@ -1,0 +1,12 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "On Linux and macOS, the shared credentials and config files and the SSO and login token cache files are created with owner-only permissions in the create call instead of being created and then restricted.",
+      "Writes to the shared credentials and config files are rejected when a section name, property name or value contains a line break, or when a property name would not read back as the same property.",
+      "EC2InstanceMetadata returns null instead of sending a request when an absolute path is not on the configured metadata service endpoint.",
+      "Documented that LogMetrics output includes the signed request and LogResponses output includes the raw response body."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}

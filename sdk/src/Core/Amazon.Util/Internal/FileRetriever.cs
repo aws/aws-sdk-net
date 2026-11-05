@@ -55,7 +55,15 @@ namespace Amazon.Util.Internal
         public bool Exists(string path) => File.Exists(path);
 
         public string ReadAllText(string path) => File.ReadAllText(path);
-        public void WriteAllText(string path, string contents) => File.WriteAllText(path, contents);
+        public void WriteAllText(string path, string contents)
+        {
+            using (var fs = FilePermissionHelper.OpenFile(path, FileMode.Create, FileAccess.Write, FileShare.Read))
+            using (var writer = new StreamWriter(fs))
+            {
+                writer.Write(contents);
+            }
+        }
+
         public void Delete(string path) => File.Delete(path);
         public void SetFileOwnerReadWrite(string path) => FilePermissionHelper.SetFileOwnerReadWrite(path);
 
@@ -69,11 +77,12 @@ namespace Amazon.Util.Internal
 
         public async Task WriteAllTextAsync(string path, string contents, CancellationToken token = default)
         {
-            //we use  FileMode.Create because we want to truncate the file first if the file exists then write to it.
-            using (var fs = new FileStream(path, FileMode.Create))
+            // We use FileMode.Create because we want to truncate the file first if the file exists then write to it.
+            using (var fs = FilePermissionHelper.OpenFile(path, FileMode.Create, FileAccess.Write, FileShare.Read))
             using (var writer = new StreamWriter(fs))
+            {
                 await writer.WriteAsync(contents).ConfigureAwait(false);
-
+            }
         }
     }
 }
