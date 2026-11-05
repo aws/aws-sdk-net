@@ -1008,7 +1008,8 @@ namespace Amazon.SecurityAgent
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Creates a new membership, granting a user access to an agent space within an application.
+        /// Creates a new membership, granting a user or group access to an agent space within
+        /// an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembership service method.</param>
         /// <returns>The response from the CreateMembership service method, as returned by SecurityAgent.</returns>
@@ -1017,7 +1018,8 @@ namespace Amazon.SecurityAgent
 #endif
 
         /// <summary>
-        /// Creates a new membership, granting a user access to an agent space within an application.
+        /// Creates a new membership, granting a user or group access to an agent space within
+        /// an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembership service method.</param>
         /// <param name="cancellationToken">
@@ -1403,7 +1405,7 @@ namespace Amazon.SecurityAgent
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Deletes a membership, revoking a user's access to an agent space.
+        /// Deletes a membership, revoking a user's or group's access to an agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembership service method.</param>
         /// <returns>The response from the DeleteMembership service method, as returned by SecurityAgent.</returns>
@@ -1412,7 +1414,7 @@ namespace Amazon.SecurityAgent
 #endif
 
         /// <summary>
-        /// Deletes a membership, revoking a user's access to an agent space.
+        /// Deletes a membership, revoking a user's or group's access to an agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembership service method.</param>
         /// <param name="cancellationToken">

@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMembership operation. Creates a new membership,
-    /// granting a user access to an agent space within an application.
+    /// granting a user or group access to an agent space within an application.
     /// </summary>
     public partial class CreateMembershipRequest : AmazonSecurityAgentRequest
     {
@@ -79,7 +79,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MemberType. 
         /// <para>
-        /// The type of member. Currently, only USER is supported.
+        /// The type of member. Use USER for an individual user or GROUP for an IAM Identity Center
+        /// group. All members of a group have access to the agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
