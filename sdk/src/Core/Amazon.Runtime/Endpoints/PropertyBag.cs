@@ -46,7 +46,7 @@ namespace Amazon.Runtime.Endpoints
             properties = new Dictionary<string, object>(source.properties);
         }
 
-        public object this[string propertyName]
+        public virtual object this[string propertyName]
         {
             get 
             {
