@@ -1,0 +1,25 @@
+{
+  "services": [
+    {
+      "serviceName": "SimpleNotificationService",
+      "type": "patch",
+      "changeLogMessages": [
+        "Flattened the hand-written platform-specific folders into the Custom folder. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CloudSearchDomain",
+      "type": "patch",
+      "changeLogMessages": [
+        "Replaced legacy BCL preprocessor guards in hand-written code with NETFRAMEWORK. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SecurityToken",
+      "type": "patch",
+      "changeLogMessages": [
+        "Replaced legacy NETSTANDARD preprocessor guards in hand-written code with !NETFRAMEWORK. There are no changes to the public API."
+      ]
+    }
+  ]
+}
