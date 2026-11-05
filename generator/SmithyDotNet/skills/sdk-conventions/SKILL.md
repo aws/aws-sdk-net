@@ -33,7 +33,8 @@ A **removed** line in generated output is a red flag — investigate it, do not 
 - The config constructor's region fallback, from metadata.json `default-region` (iam only: a partition-global
   service still needs a region to sign and resolve an endpoint when the environment supplies none)
 - The auth resolver's `GetSigner` override, from metadata.json `signature-version` (C2J's non-SigV4
-  `signatureVersion`: `v2` sdb, `s3` S3, `s3v4` S3Control). `v2` also keeps the SigV4 default and `Region`
+  `signatureVersion`: `"v2"` sdb → `QueryStringSigner`, `"S3"` S3 → `Amazon.S3.Internal.S3Signer`, `"S3V4"`
+  S3Control → Core's `S3Signer`; values are case-insensitive). `v2` also keeps the SigV4 default and `Region`
   although the model carries no auth trait, Smithy having no SigV2 trait
 
 ## What Can Differ
@@ -465,9 +466,10 @@ Must expose:
   under its `condition`, if any), then the endpoint-resolver swap and auth scheme handler. The handler classes are hand-written under the service's `Custom/`.
 - `ServiceMetadata` property override
 
-The auth scheme handler (`AuthResolverWriter`) overrides `GetSigner` for the services in its
-`SignerOverrides` map (S3Control → `S3Signer`). C2J derives the signer from `metadata.signatureVersion`,
-which Smithy does not model, so the map is kept by name — like `EndpointAuthDelegatedServices`.
+The auth scheme handler (`AuthResolverWriter`) overrides `GetSigner` when metadata.json sets
+`signature-version` (e.g. S3Control's `"S3V4"` → `S3Signer`). C2J derives the signer from
+`metadata.signatureVersion`, which Smithy does not model, so each such service carries the key in its
+metadata.json rather than the generator keeping a list by name.
 
 Use `#if NETFRAMEWORK` directives to include sync methods only for .NET Framework targets. Both sync and async methods are `public virtual` on the client class.
 
