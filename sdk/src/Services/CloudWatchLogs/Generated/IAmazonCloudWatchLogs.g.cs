@@ -1498,8 +1498,11 @@ namespace Amazon.CloudWatchLogs
         /// Deletes a CloudWatch Logs account policy. This stops the account-wide policy from
         /// applying to log groups or data sources in the account. If you delete a data protection
         /// policy or subscription filter policy, any log-group level policies of those types
-        /// remain in effect. This operation supports deletion of data source-based field index
-        /// policies, including facet configurations, in addition to log group-based policies.
+        /// remain in effect. If you delete a retention policy, the log groups that it applied
+        /// to use their own retention setting, unless another retention policy applies to them.
+        /// Deleting a retention policy does not restore log events that CloudWatch Logs has already
+        /// deleted. This operation supports deletion of data source-based field index policies,
+        /// including facet configurations, in addition to log group-based policies.
         /// 
         ///  
         /// <para>
@@ -1531,6 +1534,13 @@ namespace Amazon.CloudWatchLogs
         /// If you delete a field index policy that included facet configurations, those facets
         /// will no longer be available for interactive exploration in the CloudWatch Logs Insights
         /// console. However, facet data is retained for up to 30 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To delete a retention policy, you must have the <c>logs:DeleteRetentionPolicy</c>
+        /// and <c>logs:DeleteAccountPolicy</c> permissions. To preview the impact of deleting
+        /// a retention policy, specify <c>true</c> for <c>dryRun</c>. A dry run requires the
+        /// same permissions as the operation that it previews, and no additional permissions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1561,8 +1571,11 @@ namespace Amazon.CloudWatchLogs
         /// Deletes a CloudWatch Logs account policy. This stops the account-wide policy from
         /// applying to log groups or data sources in the account. If you delete a data protection
         /// policy or subscription filter policy, any log-group level policies of those types
-        /// remain in effect. This operation supports deletion of data source-based field index
-        /// policies, including facet configurations, in addition to log group-based policies.
+        /// remain in effect. If you delete a retention policy, the log groups that it applied
+        /// to use their own retention setting, unless another retention policy applies to them.
+        /// Deleting a retention policy does not restore log events that CloudWatch Logs has already
+        /// deleted. This operation supports deletion of data source-based field index policies,
+        /// including facet configurations, in addition to log group-based policies.
         /// 
         ///  
         /// <para>
@@ -1594,6 +1607,13 @@ namespace Amazon.CloudWatchLogs
         /// If you delete a field index policy that included facet configurations, those facets
         /// will no longer be available for interactive exploration in the CloudWatch Logs Insights
         /// console. However, facet data is retained for up to 30 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To delete a retention policy, you must have the <c>logs:DeleteRetentionPolicy</c>
+        /// and <c>logs:DeleteAccountPolicy</c> permissions. To preview the impact of deleting
+        /// a retention policy, specify <c>true</c> for <c>dryRun</c>. A dry run requires the
+        /// same permissions as the operation that it previews, and no additional permissions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2503,6 +2523,12 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Log events do not expire if they belong to log groups without a retention policy.
         /// </para>
+        ///  
+        /// <para>
+        /// If an account-level retention policy applies to this log group, the log group uses
+        /// the retention period from that policy. For more information about account-level retention
+        /// policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRetentionPolicy service method.</param>
         /// <returns>The response from the DeleteRetentionPolicy service method, as returned by CloudWatchLogs.</returns>
@@ -2528,6 +2554,12 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// Log events do not expire if they belong to log groups without a retention policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// If an account-level retention policy applies to this log group, the log group uses
+        /// the retention period from that policy. For more information about account-level retention
+        /// policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRetentionPolicy service method.</param>
@@ -2817,6 +2849,10 @@ namespace Amazon.CloudWatchLogs
         /// To see field index policies, you must have the <c>logs:DescribeIndexPolicies</c> and
         /// <c>logs:DescribeAccountPolicies</c> permissions.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To see retention policies, you must have the <c>logs:DescribeAccountPolicies</c> permission.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountPolicies service method.</param>
@@ -2864,6 +2900,10 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// To see field index policies, you must have the <c>logs:DescribeIndexPolicies</c> and
         /// <c>logs:DescribeAccountPolicies</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To see retention policies, you must have the <c>logs:DescribeAccountPolicies</c> permission.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3435,6 +3475,12 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
+        /// If an account-level retention policy applies to a log group, <c>retentionInDays</c>
+        /// shows the retention period from that policy, and <c>retentionPolicyName</c> shows
+        /// the name of the policy.
+        /// </para>
+        ///  
+        /// <para>
         /// CloudWatch Logs doesn't support IAM policies that control access to the <c>DescribeLogGroups</c>
         /// action by using the <c>aws:ResourceTag/<i>key-name</i> </c> condition key. Other CloudWatch
         /// Logs actions do support the use of the <c>aws:ResourceTag/<i>key-name</i> </c> condition
@@ -3467,6 +3513,12 @@ namespace Amazon.CloudWatchLogs
         /// log group. You can return all your log groups or filter the results by prefix. The
         /// results are ASCII-sorted by log group name.
         /// 
+        ///  
+        /// <para>
+        /// If an account-level retention policy applies to a log group, <c>retentionInDays</c>
+        /// shows the retention period from that policy, and <c>retentionPolicyName</c> shows
+        /// the name of the policy.
+        /// </para>
         ///  
         /// <para>
         /// CloudWatch Logs doesn't support IAM policies that control access to the <c>DescribeLogGroups</c>
@@ -3506,6 +3558,12 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
+        /// If an account-level retention policy applies to a log group, <c>retentionInDays</c>
+        /// shows the retention period from that policy, and <c>retentionPolicyName</c> shows
+        /// the name of the policy.
+        /// </para>
+        ///  
+        /// <para>
         /// CloudWatch Logs doesn't support IAM policies that control access to the <c>DescribeLogGroups</c>
         /// action by using the <c>aws:ResourceTag/<i>key-name</i> </c> condition key. Other CloudWatch
         /// Logs actions do support the use of the <c>aws:ResourceTag/<i>key-name</i> </c> condition
@@ -3537,6 +3595,12 @@ namespace Amazon.CloudWatchLogs
         /// log group. You can return all your log groups or filter the results by prefix. The
         /// results are ASCII-sorted by log group name.
         /// 
+        ///  
+        /// <para>
+        /// If an account-level retention policy applies to a log group, <c>retentionInDays</c>
+        /// shows the retention period from that policy, and <c>retentionPolicyName</c> shows
+        /// the name of the policy.
+        /// </para>
         ///  
         /// <para>
         /// CloudWatch Logs doesn't support IAM policies that control access to the <c>DescribeLogGroups</c>
@@ -6049,11 +6113,11 @@ namespace Amazon.CloudWatchLogs
 #if NETFRAMEWORK
         /// <summary>
         /// Creates an account-level data protection policy, subscription filter policy, field
-        /// index policy, transformer policy, or metric extraction policy that applies to all
-        /// log groups, a subset of log groups, or a data source name and type combination in
-        /// the account. Account-level policies are Region-specific: a policy applies only to
-        /// log groups in the Region where you create it. To apply a policy across multiple Regions,
-        /// create the policy separately in each Region.
+        /// index policy, transformer policy, metric extraction policy, or retention policy that
+        /// applies to all log groups, a subset of log groups, or a data source name and type
+        /// combination in the account. Account-level policies are Region-specific: a policy applies
+        /// only to log groups in the Region where you create it. To apply a policy across multiple
+        /// Regions, create the policy separately in each Region.
         /// 
         ///  <important> 
         /// <para>
@@ -6101,6 +6165,11 @@ namespace Amazon.CloudWatchLogs
         ///  <i>Metric extraction policies</i> — Metric extraction policies are account-level
         /// only and have no log-group-level equivalent, so no conflict resolution applies.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Retention policies</i> — An account-level retention policy overrides the retention
+        /// setting of the log group.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For field index policies, you can configure indexed fields as <i>facets</i> to enable
@@ -6143,6 +6212,12 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// To create a metric extraction policy, you must have the <c>logs:PutMetricExtractionPolicy</c>
         /// and <c>logs:PutAccountPolicy</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a retention policy, you must have the <c>logs:PutRetentionPolicy</c> and
+        /// <c>logs:PutAccountPolicy</c> permissions. A dry run requires the same permissions
+        /// as the operation that it previews, and no additional permissions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -6599,7 +6674,66 @@ namespace Amazon.CloudWatchLogs
         /// an <c>IN</c> policy for prefix <c>"/aws"</c> because the set of log groups matching
         /// <c>"/aws"</c> is not a subset of the log groups matching <c>"/aws/lambda"</c>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Retention policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A retention policy sets the retention period for log groups in your account. You can
+        /// use an account-level retention policy to set a default retention period for all log
+        /// groups in the account, or for a subset of log groups that you specify with the <c>selectionCriteria</c>
+        /// parameter. CloudWatch Logs automatically deletes log events that are older than the
+        /// retention period.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each account can have up to 20 account-level retention policies in each Region. To
+        /// scope a retention policy to a subset of log groups, use <c>LogGroupNamePrefix</c>
+        /// in <c>selectionCriteria</c>. Retention policies support log group name prefixes only.
+        /// If you omit <c>selectionCriteria</c>, the policy applies to all log groups in the
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unlike other account-level policy types, retention policies can have overlapping selection
+        /// criteria. When more than one retention policy applies to a log group, the policy with
+        /// the longest retention period is used. A policy that specifies <c>NEVER_EXPIRE</c>
+        /// is treated as the longest retention period. This lets you set a baseline retention
+        /// period for the account, apply longer retention periods to specific log groups, and
+        /// exempt specific log groups from expiring at all. If two policies that apply to the
+        /// same log group specify the same retention period, the policy that was created first
+        /// is the one reported in <c>retentionPolicyName</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Account-level retention policies require a minimum retention period of 30 days.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// A retention policy takes effect 24 hours after you create it. If you update a policy,
+        /// the new retention period takes effect 24 hours after the update, and the previous
+        /// retention period stays in effect until then. During this period, <c>DescribeLogGroups</c>
+        /// and log event expiration use the retention period that is currently in effect, but
+        /// a dry run reports the impact as if the policy were already in effect.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Before you create, update, or delete a retention policy, you can specify <c>true</c>
+        /// for <c>dryRun</c> to preview how many log groups would have a longer, shorter, or
+        /// unchanged retention period. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DryRunResult.html">DryRunResult</a>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// An account-level retention policy replaces the retention period set on a log group,
+        /// including when the log group's own retention period is longer. For example, if a log
+        /// group is set to retain log events for 10 years and you create a retention policy that
+        /// sets a 90-day retention period for that log group, CloudWatch Logs deletes the log
+        /// events in that log group that are older than 90 days. Specify <c>true</c> for <c>dryRun</c>
+        /// to see which log groups would have a shorter retention period before you create or
+        /// update the policy.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountPolicy service method.</param>
         /// <returns>The response from the PutAccountPolicy service method, as returned by CloudWatchLogs.</returns>
@@ -6621,11 +6755,11 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Creates an account-level data protection policy, subscription filter policy, field
-        /// index policy, transformer policy, or metric extraction policy that applies to all
-        /// log groups, a subset of log groups, or a data source name and type combination in
-        /// the account. Account-level policies are Region-specific: a policy applies only to
-        /// log groups in the Region where you create it. To apply a policy across multiple Regions,
-        /// create the policy separately in each Region.
+        /// index policy, transformer policy, metric extraction policy, or retention policy that
+        /// applies to all log groups, a subset of log groups, or a data source name and type
+        /// combination in the account. Account-level policies are Region-specific: a policy applies
+        /// only to log groups in the Region where you create it. To apply a policy across multiple
+        /// Regions, create the policy separately in each Region.
         /// 
         ///  <important> 
         /// <para>
@@ -6673,6 +6807,11 @@ namespace Amazon.CloudWatchLogs
         ///  <i>Metric extraction policies</i> — Metric extraction policies are account-level
         /// only and have no log-group-level equivalent, so no conflict resolution applies.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Retention policies</i> — An account-level retention policy overrides the retention
+        /// setting of the log group.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For field index policies, you can configure indexed fields as <i>facets</i> to enable
@@ -6715,6 +6854,12 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// To create a metric extraction policy, you must have the <c>logs:PutMetricExtractionPolicy</c>
         /// and <c>logs:PutAccountPolicy</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a retention policy, you must have the <c>logs:PutRetentionPolicy</c> and
+        /// <c>logs:PutAccountPolicy</c> permissions. A dry run requires the same permissions
+        /// as the operation that it previews, and no additional permissions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -7171,7 +7316,66 @@ namespace Amazon.CloudWatchLogs
         /// an <c>IN</c> policy for prefix <c>"/aws"</c> because the set of log groups matching
         /// <c>"/aws"</c> is not a subset of the log groups matching <c>"/aws/lambda"</c>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Retention policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A retention policy sets the retention period for log groups in your account. You can
+        /// use an account-level retention policy to set a default retention period for all log
+        /// groups in the account, or for a subset of log groups that you specify with the <c>selectionCriteria</c>
+        /// parameter. CloudWatch Logs automatically deletes log events that are older than the
+        /// retention period.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each account can have up to 20 account-level retention policies in each Region. To
+        /// scope a retention policy to a subset of log groups, use <c>LogGroupNamePrefix</c>
+        /// in <c>selectionCriteria</c>. Retention policies support log group name prefixes only.
+        /// If you omit <c>selectionCriteria</c>, the policy applies to all log groups in the
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unlike other account-level policy types, retention policies can have overlapping selection
+        /// criteria. When more than one retention policy applies to a log group, the policy with
+        /// the longest retention period is used. A policy that specifies <c>NEVER_EXPIRE</c>
+        /// is treated as the longest retention period. This lets you set a baseline retention
+        /// period for the account, apply longer retention periods to specific log groups, and
+        /// exempt specific log groups from expiring at all. If two policies that apply to the
+        /// same log group specify the same retention period, the policy that was created first
+        /// is the one reported in <c>retentionPolicyName</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Account-level retention policies require a minimum retention period of 30 days.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// A retention policy takes effect 24 hours after you create it. If you update a policy,
+        /// the new retention period takes effect 24 hours after the update, and the previous
+        /// retention period stays in effect until then. During this period, <c>DescribeLogGroups</c>
+        /// and log event expiration use the retention period that is currently in effect, but
+        /// a dry run reports the impact as if the policy were already in effect.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Before you create, update, or delete a retention policy, you can specify <c>true</c>
+        /// for <c>dryRun</c> to preview how many log groups would have a longer, shorter, or
+        /// unchanged retention period. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DryRunResult.html">DryRunResult</a>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// An account-level retention policy replaces the retention period set on a log group,
+        /// including when the log group's own retention period is longer. For example, if a log
+        /// group is set to retain log events for 10 years and you create a retention policy that
+        /// sets a 90-day retention period for that log group, CloudWatch Logs deletes the log
+        /// events in that log group that are older than 90 days. Specify <c>true</c> for <c>dryRun</c>
+        /// to see which log groups would have a shorter retention period before you create or
+        /// update the policy.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -8880,6 +9084,18 @@ namespace Amazon.CloudWatchLogs
         /// Sets the retention of the specified log group. With a retention policy, you can configure
         /// the number of days for which to retain log events in the specified log group.
         /// 
+        ///  
+        /// <para>
+        /// Account-level retention policies created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
+        /// override the retention that you set with <c>PutRetentionPolicy</c>. If an account-level
+        /// retention policy applies to the log group, this operation succeeds and CloudWatch
+        /// Logs saves the retention period that you specify, but the retention period from the
+        /// account-level policy continues to determine when log events in the log group expire.
+        /// <c>DescribeLogGroups</c> returns the retention period from the policy in <c>retentionInDays</c>
+        /// and the name of the policy in <c>retentionPolicyName</c>. The retention period that
+        /// you set with this operation takes effect if the account-level policy no longer applies
+        /// to the log group.
+        /// </para>
         ///  <note> 
         /// <para>
         /// CloudWatch Logs doesn't immediately delete log events when they reach their retention
@@ -8928,6 +9144,18 @@ namespace Amazon.CloudWatchLogs
         /// Sets the retention of the specified log group. With a retention policy, you can configure
         /// the number of days for which to retain log events in the specified log group.
         /// 
+        ///  
+        /// <para>
+        /// Account-level retention policies created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
+        /// override the retention that you set with <c>PutRetentionPolicy</c>. If an account-level
+        /// retention policy applies to the log group, this operation succeeds and CloudWatch
+        /// Logs saves the retention period that you specify, but the retention period from the
+        /// account-level policy continues to determine when log events in the log group expire.
+        /// <c>DescribeLogGroups</c> returns the retention period from the policy in <c>retentionInDays</c>
+        /// and the name of the policy in <c>retentionPolicyName</c>. The retention period that
+        /// you set with this operation takes effect if the account-level policy no longer applies
+        /// to the log group.
+        /// </para>
         ///  <note> 
         /// <para>
         /// CloudWatch Logs doesn't immediately delete log events when they reach their retention

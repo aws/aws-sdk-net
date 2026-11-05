@@ -33,24 +33,30 @@ namespace Amazon.CloudWatchLogs.Model
     /// Container for the parameters to the DeleteAccountPolicy operation. Deletes a CloudWatch
     /// Logs account policy. This stops the account-wide policy from applying to log groups
     /// or data sources in the account. If you delete a data protection policy or subscription
-    /// filter policy, any log-group level policies of those types remain in effect. This
-    /// operation supports deletion of data source-based field index policies, including facet
-    /// configurations, in addition to log group-based policies. <para> To use this operation,
-    /// you must be signed on with the correct permissions depending on the type of policy
-    /// that you are deleting. </para> <ul> <li> <para> To delete a data protection policy,
-    /// you must have the <c>logs:DeleteDataProtectionPolicy</c> and <c>logs:DeleteAccountPolicy</c>
-    /// permissions. </para> </li> <li> <para> To delete a subscription filter policy, you
-    /// must have the <c>logs:DeleteSubscriptionFilter</c> and <c>logs:DeleteAccountPolicy</c>
-    /// permissions. </para> </li> <li> <para> To delete a transformer policy, you must have
-    /// the <c>logs:DeleteTransformer</c> and <c>logs:DeleteAccountPolicy</c> permissions.
-    /// </para> </li> <li> <para> To delete a field index policy, you must have the <c>logs:DeleteIndexPolicy</c>
-    /// and <c>logs:DeleteAccountPolicy</c> permissions. </para> <para> If you delete a field
-    /// index policy that included facet configurations, those facets will no longer be available
-    /// for interactive exploration in the CloudWatch Logs Insights console. However, facet
-    /// data is retained for up to 30 days. </para> </li> </ul> <para> If you delete a field
-    /// index policy, the indexing of the log events that happened before you deleted the
-    /// policy will still be used for up to 30 days to improve CloudWatch Logs Insights queries.
-    /// </para>
+    /// filter policy, any log-group level policies of those types remain in effect. If you
+    /// delete a retention policy, the log groups that it applied to use their own retention
+    /// setting, unless another retention policy applies to them. Deleting a retention policy
+    /// does not restore log events that CloudWatch Logs has already deleted. This operation
+    /// supports deletion of data source-based field index policies, including facet configurations,
+    /// in addition to log group-based policies. <para> To use this operation, you must be
+    /// signed on with the correct permissions depending on the type of policy that you are
+    /// deleting. </para> <ul> <li> <para> To delete a data protection policy, you must have
+    /// the <c>logs:DeleteDataProtectionPolicy</c> and <c>logs:DeleteAccountPolicy</c> permissions.
+    /// </para> </li> <li> <para> To delete a subscription filter policy, you must have the
+    /// <c>logs:DeleteSubscriptionFilter</c> and <c>logs:DeleteAccountPolicy</c> permissions.
+    /// </para> </li> <li> <para> To delete a transformer policy, you must have the <c>logs:DeleteTransformer</c>
+    /// and <c>logs:DeleteAccountPolicy</c> permissions. </para> </li> <li> <para> To delete
+    /// a field index policy, you must have the <c>logs:DeleteIndexPolicy</c> and <c>logs:DeleteAccountPolicy</c>
+    /// permissions. </para> <para> If you delete a field index policy that included facet
+    /// configurations, those facets will no longer be available for interactive exploration
+    /// in the CloudWatch Logs Insights console. However, facet data is retained for up to
+    /// 30 days. </para> </li> <li> <para> To delete a retention policy, you must have the
+    /// <c>logs:DeleteRetentionPolicy</c> and <c>logs:DeleteAccountPolicy</c> permissions.
+    /// To preview the impact of deleting a retention policy, specify <c>true</c> for <c>dryRun</c>.
+    /// A dry run requires the same permissions as the operation that it previews, and no
+    /// additional permissions. </para> </li> </ul> <para> If you delete a field index policy,
+    /// the indexing of the log events that happened before you deleted the policy will still
+    /// be used for up to 30 days to improve CloudWatch Logs Insights queries. </para>
     /// </summary>
     public partial class DeleteAccountPolicyRequest : AmazonCloudWatchLogsRequest
     {

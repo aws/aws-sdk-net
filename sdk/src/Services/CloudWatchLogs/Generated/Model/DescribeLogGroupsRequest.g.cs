@@ -33,8 +33,10 @@ namespace Amazon.CloudWatchLogs.Model
     /// Container for the parameters to the DescribeLogGroups operation. Returns information
     /// about log groups, including data sources that ingest into each log group. You can
     /// return all your log groups or filter the results by prefix. The results are ASCII-sorted
-    /// by log group name. <para> CloudWatch Logs doesn't support IAM policies that control
-    /// access to the <c>DescribeLogGroups</c> action by using the <c>aws:ResourceTag/<i>key-name</i>
+    /// by log group name. <para> If an account-level retention policy applies to a log group,
+    /// <c>retentionInDays</c> shows the retention period from that policy, and <c>retentionPolicyName</c>
+    /// shows the name of the policy. </para> <para> CloudWatch Logs doesn't support IAM policies
+    /// that control access to the <c>DescribeLogGroups</c> action by using the <c>aws:ResourceTag/<i>key-name</i>
     /// </c> condition key. Other CloudWatch Logs actions do support the use of the <c>aws:ResourceTag/<i>key-name</i>
     /// </c> condition key to control access. For more information about using tags to control
     /// access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
@@ -115,7 +117,12 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// Specifies the log group class for this log group. There are three classes:
+        /// If you specify either <c>INFREQUENT_ACCESS</c> or <c>ESSENTIALS</c>, the results include
+        /// log groups in both the Infrequent Access and Essentials log classes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifies the log group class for this log group. There are four classes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -125,6 +132,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The <c>Infrequent Access</c> log class supports a subset of CloudWatch Logs features
         /// and incurs lower costs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>Essentials</c> log class supports a subset of CloudWatch Logs features and
+        /// incurs lower costs.
         /// </para>
         ///  </li> <li> 
         /// <para>

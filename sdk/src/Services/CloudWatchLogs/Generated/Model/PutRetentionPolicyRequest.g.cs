@@ -32,21 +32,30 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the PutRetentionPolicy operation. Sets the retention
     /// of the specified log group. With a retention policy, you can configure the number
-    /// of days for which to retain log events in the specified log group. <note> <para> CloudWatch
-    /// Logs doesn't immediately delete log events when they reach their retention setting.
-    /// It typically takes up to 72 hours after that before log events are deleted, but in
-    /// rare situations might take longer. </para> <para> To illustrate, imagine that you
-    /// change a log group to have a longer retention setting when it contains log events
-    /// that are past the expiration date, but haven't been deleted. Those log events will
-    /// take up to 72 hours to be deleted after the new retention date is reached. To make
-    /// sure that log data is deleted permanently, keep a log group at its lower retention
-    /// setting until 72 hours after the previous retention period ends. Alternatively, wait
-    /// to change the retention setting until you confirm that the earlier log events are
-    /// deleted. </para> <para> When log events reach their retention setting they are marked
-    /// for deletion. After they are marked for deletion, they do not add to your archival
-    /// storage costs anymore, even if they are not actually deleted until later. These log
-    /// events marked for deletion are also not included when you use an API to retrieve the
-    /// <c>storedBytes</c> value to see how many bytes a log group is storing. </para> </note>
+    /// of days for which to retain log events in the specified log group. <para> Account-level
+    /// retention policies created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
+    /// override the retention that you set with <c>PutRetentionPolicy</c>. If an account-level
+    /// retention policy applies to the log group, this operation succeeds and CloudWatch
+    /// Logs saves the retention period that you specify, but the retention period from the
+    /// account-level policy continues to determine when log events in the log group expire.
+    /// <c>DescribeLogGroups</c> returns the retention period from the policy in <c>retentionInDays</c>
+    /// and the name of the policy in <c>retentionPolicyName</c>. The retention period that
+    /// you set with this operation takes effect if the account-level policy no longer applies
+    /// to the log group. </para> <note> <para> CloudWatch Logs doesn't immediately delete
+    /// log events when they reach their retention setting. It typically takes up to 72 hours
+    /// after that before log events are deleted, but in rare situations might take longer.
+    /// </para> <para> To illustrate, imagine that you change a log group to have a longer
+    /// retention setting when it contains log events that are past the expiration date, but
+    /// haven't been deleted. Those log events will take up to 72 hours to be deleted after
+    /// the new retention date is reached. To make sure that log data is deleted permanently,
+    /// keep a log group at its lower retention setting until 72 hours after the previous
+    /// retention period ends. Alternatively, wait to change the retention setting until you
+    /// confirm that the earlier log events are deleted. </para> <para> When log events reach
+    /// their retention setting they are marked for deletion. After they are marked for deletion,
+    /// they do not add to your archival storage costs anymore, even if they are not actually
+    /// deleted until later. These log events marked for deletion are also not included when
+    /// you use an API to retrieve the <c>storedBytes</c> value to see how many bytes a log
+    /// group is storing. </para> </note>
     /// </summary>
     public partial class PutRetentionPolicyRequest : AmazonCloudWatchLogsRequest
     {

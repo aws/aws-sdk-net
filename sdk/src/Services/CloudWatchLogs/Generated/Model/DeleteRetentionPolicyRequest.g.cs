@@ -32,7 +32,10 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the DeleteRetentionPolicy operation. Deletes the specified
     /// retention policy. <para> Log events do not expire if they belong to log groups without
-    /// a retention policy. </para>
+    /// a retention policy. </para> <para> If an account-level retention policy applies to
+    /// this log group, the log group uses the retention period from that policy. For more
+    /// information about account-level retention policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.
+    /// </para>
     /// </summary>
     public partial class DeleteRetentionPolicyRequest : AmazonCloudWatchLogsRequest
     {
