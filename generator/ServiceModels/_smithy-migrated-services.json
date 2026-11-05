@@ -398,6 +398,7 @@
     "Signer",
     "SignerData",
     "Signin",
+    "SimpleDB",
     "SimpleDBv2",
     "SimpleEmail",
     "SimpleEmailV2",

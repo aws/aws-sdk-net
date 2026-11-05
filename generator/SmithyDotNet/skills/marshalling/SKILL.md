@@ -504,7 +504,9 @@ body. Wire names reuse the XML naming traits via `XmlNames` (member `@xmlName` e
   `StringUtils.From*` conversions as restXml (value types unwrap `.Value`; body timestamps default to
   `date-time`; blobs are base64; enums are `FromString`); an idempotency token fills a GUID when unset.
   Nested list-of-collection and map-of-map/map-of-struct-list fail loud (C2J has no path for them). The
-  body is cached up front via `AWSSDKUtils.WriteParametersToPooledStream` / `GetRequestPayloadBytes`. An
+  body is cached up front via `AWSSDKUtils.WriteParametersToPooledStream` / `GetRequestPayloadBytes`, except
+  under metadata.json `signature-version: "v2"` (sdb), whose `QueryStringSigner` appends `SecurityToken` to
+  the parameters after marshalling and so would miss a cached body. An
   `@endpoint` host prefix is emitted like restJson1; streaming (blobs and event streams) and documents are
   rejected.
 - **Response body** — `QueryResponseUnmarshallerWriter` (base `XmlResponseUnmarshaller`) descends the

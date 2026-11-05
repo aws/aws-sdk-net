@@ -1,21 +1,15 @@
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Auth;
+using SmithyDotNet.Generator.Generation.Manifests;
 
 namespace SmithyDotNet.Generator.Writers.Service;
 
 /// <summary>
-/// Emits the C# source for a service's auth resolver (e.g.
-/// <c>AmazonKeyManagementServiceAuthSchemeResolver</c>), which lives in the service's <c>.Internal</c>
-/// namespace and contains three classes: the auth-scheme parameters (which include a <c>Region</c>
-/// member only for SigV4-signing services), the handler that maps a request context into those
-/// parameters, and the resolver whose <c>ResolveAuthScheme</c> switch returns the auth-scheme
-/// option(s) for each operation.
-/// <para />
-/// Each switch arm returns the auth list modeled on that operation's <c>smithy.api#auth</c> trait;
-/// the discard (<c>_</c>) arm returns the service-level list. For the services in
-/// <see cref="EndpointAuthDelegatedServices"/> the handler first asks the endpoint resolver for the
-/// auth schemes its rule set attached to the resolved endpoint; every other service returns the
-/// modeled schemes directly.
+/// Emits a service's auth resolver: the auth-scheme parameters (<c>Region</c> only for SigV4 services), the
+/// handler that maps a request context into them, and the resolver whose switch returns each operation's
+/// modeled <c>smithy.api#auth</c> list, with the discard arm returning the service-level list. Services in
+/// <see cref="EndpointAuthDelegatedServices"/> ask the endpoint resolver first; a metadata.json
+/// <c>signature-version</c> adds a <c>GetSigner</c> override.
 /// </summary>
 public sealed class AuthResolverWriter(GenerationContext context, string modelFileName)
 {
@@ -31,6 +25,16 @@ public sealed class AuthResolverWriter(GenerationContext context, string modelFi
         "SimpleEmailServiceV2",
         "CloudFrontKeyValueStore",
     ];
+
+    // The signer C2J swapped in for a non-SigV4 signatureVersion (GeneratorHelpers.DetermineSignerOverride). S3 is
+    // qualified because its own S3Signer shadows Core's.
+    private string? SignerOverride => context.Metadata?.SignatureVersion switch
+    {
+        SignatureVersion.V2 => "QueryStringSigner",
+        SignatureVersion.S3 => "Amazon.S3.Internal.S3Signer",
+        SignatureVersion.S3V4 => "S3Signer",
+        _ => null,
+    };
 
     // The endpoint resolver type only exists when the model carries a rule set.
     private bool DelegatesToEndpoint =>
@@ -130,6 +134,16 @@ public sealed class AuthResolverWriter(GenerationContext context, string modelFi
                 writer.WriteLine();
                 writer.WriteLine("return AuthSchemeResolver.ResolveAuthScheme(mappedParameters);");
             });
+
+            if (SignerOverride is { } signer)
+            {
+                writer.WriteLine();
+                writer.WriteLine("/// <inheritdoc/>");
+                writer.OpenBlock("protected override ISigner GetSigner(IAuthScheme<BaseIdentity> scheme)", () =>
+                {
+                    writer.WriteLine($"return new {signer}();");
+                });
+            }
         });
     }
 

@@ -308,7 +308,8 @@ public class GenerationContext
         Operations = OperationResolver.Resolve(index, Protocol);
         EndpointDiscoveryOperation = EndpointDiscoveryResolver.ResolveDiscoveryOperation(Operations, index);
         DiscoveredOperations = EndpointDiscoveryResolver.ResolveDiscoveredOperations(Operations, EndpointDiscoveryOperation);
-        ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
+        // A SigV2 service (sdb) models no auth trait; C2J still resolved it to SigV4 so the handler resolves AWS credentials.
+        ServiceAuthSchemes = Metadata?.SignatureVersion == SignatureVersion.V2 ? [AuthSchemeIds.SigV4] : ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
         PaginatedOperations = PaginationResolver.Resolve(Operations, index, Customizations);

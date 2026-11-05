@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Writers.Serialization;
@@ -24,6 +25,21 @@ public class QueryCodegenTests
     private static string ResponseUnmarshaller(string operationName) =>
         new QueryResponseUnmarshallerWriter(Context, ModelFileName)
             .Write(Context.Operations.Single(o => o.Name == operationName), TestContext.Current.CancellationToken);
+
+    [Fact]
+    public void Request_SignatureVersion2_SkipsContentPrecompute()
+    {
+        // The SigV2 QueryStringSigner appends SecurityToken to Parameters after marshalling, so a cached body
+        // would miss it (C2J skips the cache when signatureVersion is v2).
+        var metadata = new ServiceMetadata { SignatureVersion = SignatureVersion.V2 };
+        var context = new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/query-model.json")), TestManifests.Example(), metadata);
+        var source = new QueryRequestMarshallerWriter(context, ModelFileName)
+            .Write(context.Operations.Single(o => o.Name == "DoThing"), TestContext.Current.CancellationToken);
+
+        Assert.DoesNotContain("WriteParametersToPooledStream", source);
+        Assert.DoesNotContain("GetRequestPayloadBytes", source);
+        Assert.Contains("return request;", source);
+    }
 
     [Fact]
     public void Protocol_ResolvesAwsQuery()

@@ -56,6 +56,15 @@ public record ServiceMetadata
     [JsonPropertyName("default-region")]
     public string? DefaultRegion { get; init; }
 
+    /// <summary>
+    /// The legacy C2J <c>signatureVersion</c> when it is not SigV4; the auth resolver then overrides <c>GetSigner</c>.
+    /// Smithy has no trait for SigV2, so sdb's model carries no auth trait and this key also keeps C2J's SigV4 auth
+    /// scheme (so AWS credentials are resolved) and leaves the awsQuery body uncached.
+    /// </summary>
+    [JsonPropertyName("signature-version")]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public SignatureVersion? SignatureVersion { get; init; }
+
     /// <summary>Free-form tags declared for the service.</summary>
     [JsonPropertyName("tags")]
     public IReadOnlyList<string> Tags { get; init; } = [];
@@ -112,6 +121,19 @@ public record ServiceMetadata
             throw new GeneratorException($"'{metadataPath}': {e.Message}");
         }
     }
+}
+
+/// <summary>The non-SigV4 C2J <c>signatureVersion</c> values; each maps to the signer C2J emitted for it.</summary>
+public enum SignatureVersion
+{
+    /// <summary>SigV2, signed by <c>QueryStringSigner</c> (sdb).</summary>
+    V2,
+
+    /// <summary>S3's own <c>Amazon.S3.Internal.S3Signer</c>.</summary>
+    S3,
+
+    /// <summary>Core's <c>S3Signer</c> (S3Control).</summary>
+    S3V4,
 }
 
 /// <summary>

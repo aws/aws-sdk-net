@@ -1,19 +1,20 @@
+using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Manifests;
+using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Writers.Service;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Writers.Service;
 
-// Each service exercises a distinct auth-config shape: KMS (service default only), Cognito Identity
-// (per-operation no-auth overrides), Bedrock (an inline multi-scheme default), CodeCatalyst (bearer
-// only, no Region), Dual Signing (a synthetic service with a derived multi-scheme default — no
-// explicit auth list), Dual Signing Explicit (the same schemes carried as an explicit auth list),
-// Empty Auth (an explicitly empty auth list, normalized to noAuth), and EventBridge (an allowlisted
-// service that resolves auth from its endpoint rule set before the modeled switch).
+// One fixture per auth-config shape, e.g. KMS (service default only), Cognito Identity (per-operation
+// no-auth overrides), CodeCatalyst (bearer only, no Region), SimpleDB (no auth trait; metadata's
+// signature-version supplies SigV4 and the QueryStringSigner override).
 public class AuthResolverWriterTests
 {
-    private static string Write(string modelFile, string modelFileName)
+    private static string Write(string modelFile, string modelFileName, ServiceMetadata? metadata = null)
     {
-        var context = TestModels.Context(Path.Combine("Auth", modelFile));
+        var model = TestModels.Load(Path.Combine("Auth", modelFile));
+        var context = new GenerationContext(new ServiceIndex(model), TestManifests.Example(), metadata);
         return new AuthResolverWriter(context, modelFileName).Write(CancellationToken.None);
     }
 
@@ -26,6 +27,7 @@ public class AuthResolverWriterTests
     private static readonly string DualSigningExplicitOutput = Write("dual-signing-explicit-model.json", "dual-signing-explicit-2024-01-01.normal.json");
     private static readonly string EmptyAuthOutput = Write("empty-auth-model.json", "empty-auth-2024-01-01.normal.json");
     private static readonly string EventBridgeOutput = Write("eventbridge-model.json", "eventbridge-2015-10-07.normal.json");
+    private static readonly string SimpleDbOutput = Write("simpledb-model.json", "sdb-2009-04-15.normal.json", new ServiceMetadata { SignatureVersion = SignatureVersion.V2 });
 
     private static readonly string[] CognitoNoAuthRequestNames =
     [
@@ -206,5 +208,18 @@ public class AuthResolverWriterTests
             """, EmptyAuthOutput);
         Assert.Contains("_ => AuthSchemeOption.DEFAULT_NOAUTH,", EmptyAuthOutput);
         Assert.DoesNotContain("new List<IAuthSchemeOption>", EmptyAuthOutput);
+    }
+
+    [Fact]
+    public void SimpleDb_SignatureVersion2_ResolvesSigV4AndOverridesSigner()
+    {
+        // No auth trait would resolve to noAuth (anonymous); the v2 knob keeps C2J's SigV4 default and Region so
+        // AWS credentials are resolved, and swaps in the SigV2 signer.
+        Assert.Contains("_ => AuthSchemeOption.DEFAULT_SIGV4,", SimpleDbOutput);
+        Assert.DoesNotContain("DEFAULT_NOAUTH", SimpleDbOutput);
+        Assert.Contains("public string Region { get; set; }", SimpleDbOutput);
+        Assert.Contains("protected override ISigner GetSigner(IAuthScheme<BaseIdentity> scheme)", SimpleDbOutput);
+        Assert.Contains("return new QueryStringSigner();", SimpleDbOutput);
+        Assert.DoesNotContain("GetSigner", KmsOutput);
     }
 }

@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Model.Traits;
 
@@ -83,15 +84,16 @@ public sealed class QueryRequestMarshallerWriter(GenerationContext context, stri
             _body.WriteStructureBody(writer, operation.Input, partitioned.BodyMembers, "publicRequest", prefix: null, depth: 0);
             writer.WriteLine("");
 
-            // Cache the URL-encoded body up front (the runtime signs and sends it). C2J skips this for v2
-            // signing, whose signer appends SecurityToken to Parameters after marshalling.
-            // TODO: SimpleDB still signs with the v2 QueryStringSigner; skip this precompute for it when that
-            // service migrates.
-            writer.WriteLine("#if !NETFRAMEWORK");
-            writer.WriteLine("request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);");
-            writer.WriteLine("#else");
-            writer.WriteLine("request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);");
-            writer.WriteLine("#endif");
+            // Cache the URL-encoded body up front (the runtime signs and sends it), except under SigV2: that
+            // signer appends SecurityToken to Parameters after marshalling, so a cached body would miss it.
+            if (context.Metadata?.SignatureVersion != SignatureVersion.V2)
+            {
+                writer.WriteLine("#if !NETFRAMEWORK");
+                writer.WriteLine("request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);");
+                writer.WriteLine("#else");
+                writer.WriteLine("request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);");
+                writer.WriteLine("#endif");
+            }
 
             if (!string.IsNullOrEmpty(hostPrefix))
             {

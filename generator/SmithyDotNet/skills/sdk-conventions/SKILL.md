@@ -32,6 +32,9 @@ A **removed** line in generated output is a red flag — investigate it, do not 
   reach internals; an entry without its own `PublicKey=` gets the SDK's)
 - The config constructor's region fallback, from metadata.json `default-region` (iam only: a partition-global
   service still needs a region to sign and resolve an endpoint when the environment supplies none)
+- The auth resolver's `GetSigner` override, from metadata.json `signature-version` (C2J's non-SigV4
+  `signatureVersion`: `v2` sdb, `s3` S3, `s3v4` S3Control). `v2` also keeps the SigV4 default and `Region`
+  although the model carries no auth trait, Smithy having no SigV2 trait
 
 ## What Can Differ
 
