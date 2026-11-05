@@ -465,6 +465,10 @@ Must expose:
   under its `condition`, if any), then the endpoint-resolver swap and auth scheme handler. The handler classes are hand-written under the service's `Custom/`.
 - `ServiceMetadata` property override
 
+The auth scheme handler (`AuthResolverWriter`) overrides `GetSigner` for the services in its
+`SignerOverrides` map (S3Control → `S3Signer`). C2J derives the signer from `metadata.signatureVersion`,
+which Smithy does not model, so the map is kept by name — like `EndpointAuthDelegatedServices`.
+
 Use `#if NETFRAMEWORK` directives to include sync methods only for .NET Framework targets. Both sync and async methods are `public virtual` on the client class.
 
 ## Endpoint Discovery

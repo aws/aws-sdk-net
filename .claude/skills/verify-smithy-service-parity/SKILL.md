@@ -141,6 +141,10 @@ Report each step as `PASS` with its pasted evidence, `FAIL` with the output, or 
 
 ## Troubleshooting
 
+**The service has no `smithy.json`** — add it from [aws/api-models-aws](https://github.com/aws/api-models-aws) (`models/<sdk-id>/service/<api-version>/<sdk-id>-<api-version>.json`, e.g. `models/route-53/service/2013-04-01/route-53-2013-04-01.json`) as `generator/ServiceModels/<dir>/smithy.json`, re-indented to match the existing files (`jq --indent 4 .`, no trailing newline). Confirm its operation set matches the C2J `.api.json` before regenerating, because a model from a different release shows up as API diffs that are not migration bugs.
+
+**`create-nuget-packages.ps1` produces no packages on Linux** — it globs with `\` separators and shells out to `NuGet.exe`, which needs mono. Step 5 can only be run on Windows; on Linux report it `UNVERIFIED` (a `dotnet pack` with the nuspec is a useful smoke test but not the same step).
+
 **Step 1 shows changes to other services** — a generator change leaked in. Stop and report which services changed.
 
 **AssemblyComparer reports findings that look intentional** — still `FAIL` until each finding is explained in the report.
