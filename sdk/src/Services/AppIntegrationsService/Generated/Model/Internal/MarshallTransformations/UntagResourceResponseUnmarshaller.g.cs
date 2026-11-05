@@ -68,6 +68,14 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
                     var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                    {
+                        return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                    {
+                        return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceError"))
                     {
                         return InternalServiceErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

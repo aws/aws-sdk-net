@@ -102,6 +102,20 @@ namespace Amazon.AppIntegrationsService.Model
         internal bool IsSetIsService() => this.IsService.HasValue;
 
         /// <summary>
+        /// Gets and sets the property LastModifiedRegion. 
+        /// <para>
+        /// The Amazon Web Services Region where the application was last modified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 25)]
+        public string LastModifiedRegion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedRegion property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedRegion() => this.LastModifiedRegion != null;
+
+        /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
         /// The time when the application was last modified.
