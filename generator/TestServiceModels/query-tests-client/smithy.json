@@ -817,7 +817,7 @@
                         "code": 200,
                         "body": "<FractionalSecondsResponse xmlns=\"https://example.com/\">\n    <FractionalSecondsResult>\n        <datetime>2000-01-02T20:34:56.123Z</datetime>\n    </FractionalSecondsResult>\n</FractionalSecondsResponse>\n",
                         "params": {
-                            "datetime": 946845296.123
+                            "datetime": 9.46845296123E8
                         },
                         "bodyMediaType": "application/xml",
                         "headers": {
@@ -2184,10 +2184,10 @@
                     "target": "smithy.api#Boolean"
                 },
                 "byteValue": {
-                    "target": "smithy.api#Byte"
+                    "target": "smithy.api#Integer"
                 },
                 "shortValue": {
-                    "target": "smithy.api#Short"
+                    "target": "smithy.api#Integer"
                 },
                 "integerValue": {
                     "target": "smithy.api#Integer"

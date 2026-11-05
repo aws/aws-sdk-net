@@ -1,5 +1,0 @@
-{
-  "active": true,
-  "test-service": true,
-  "synopsis": "Numeric types (byte, short, bigInteger, bigDecimal) query test service"
-}

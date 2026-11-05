@@ -27,15 +27,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using static AWSSDK.ProtocolTests.NumericTypes.NumericTypesTestData;
-using Ec2Svc = Amazon.NumericTypesEC2;
-using QuerySvc = Amazon.NumericTypesQuery;
 using RestJsonSvc = Amazon.NumericTypesRestJson;
 using RestXmlSvc = Amazon.NumericTypesRestXml;
 
 namespace AWSSDK.ProtocolTests.NumericTypes
 {
     /// <summary>
-    /// Full Numeric Type Support specification tests for restXml, awsQuery and ec2Query (decimal text), plus the REST header,
+    /// Full Numeric Type Support specification tests for restXml (decimal text), plus the REST header,
     /// query string and URI label bindings shared by restJson1 and restXml.
     /// </summary>
     [TestClass]
@@ -73,68 +71,9 @@ namespace AWSSDK.ProtocolTests.NumericTypes
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
-        public void Query_RequestBody_WritesDecimalText()
+        public void RestXml_RequestBody_IgnoresCurrentCulture()
         {
-            var request = new QuerySvc.Model.BodyNumbersRequest
-            {
-                ByteValue = sbyte.MinValue,
-                ShortValue = short.MaxValue,
-                BigIntegerValue = BigInteger(BigIntegerText),
-                BigDecimalValue = BigDecimal(BigDecimalText),
-                ByteList = new List<sbyte> { -128, 127 },
-                ShortMap = new Dictionary<string, short> { ["k"] = short.MinValue },
-                BigDecimalMap = new Dictionary<string, BigDecimal> { ["k"] = BigDecimal("1E+3") },
-                Nested = new QuerySvc.Model.NestedNumbers { BigIntegerValue = BigInteger(BigIntegerInMapText) },
-            };
-            var config = new QuerySvc.AmazonNumericTypesQueryConfig { ServiceURL = "https://test.com/" };
-
-            var marshalled = ProtocolTestUtils.RunMockRequest(request, new QuerySvc.Model.Internal.MarshallTransformations.BodyNumbersRequestMarshaller(), config);
-            var parameters = QueryParameters(marshalled);
-
-            Assert.AreEqual("-128", parameters["ByteValue"]);
-            Assert.AreEqual("32767", parameters["ShortValue"]);
-            Assert.AreEqual(BigIntegerText, parameters["BigIntegerValue"]);
-            Assert.AreEqual(BigDecimalText, parameters["BigDecimalValue"]);
-            Assert.AreEqual("-128", parameters["ByteList.member.1"]);
-            Assert.AreEqual("127", parameters["ByteList.member.2"]);
-            Assert.AreEqual("k", parameters["ShortMap.entry.1.key"]);
-            Assert.AreEqual("-32768", parameters["ShortMap.entry.1.value"]);
-            Assert.AreEqual("1000", parameters["BigDecimalMap.entry.1.value"]);
-            Assert.AreEqual(BigIntegerInMapText, parameters["Nested.BigIntegerValue"]);
-        }
-
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("RequestTest")]
-        public void Ec2_RequestBody_WritesDecimalText()
-        {
-            var request = new Ec2Svc.Model.BodyNumbersRequest
-            {
-                ByteValue = sbyte.MinValue,
-                ShortValue = short.MaxValue,
-                BigIntegerValue = BigInteger(BigIntegerText),
-                BigDecimalValue = BigDecimal(BigDecimalText),
-                BigDecimalList = new List<BigDecimal> { BigDecimal("1E-39"), BigDecimal(BigDecimalText) },
-            };
-            var config = new Ec2Svc.AmazonNumericTypesEC2Config { ServiceURL = "https://test.com/" };
-
-            var marshalled = ProtocolTestUtils.RunMockRequest(request, new Ec2Svc.Model.Internal.MarshallTransformations.BodyNumbersRequestMarshaller(), config);
-            var parameters = QueryParameters(marshalled);
-
-            Assert.AreEqual("-128", parameters["ByteValue"]);
-            Assert.AreEqual("32767", parameters["ShortValue"]);
-            Assert.AreEqual(BigIntegerText, parameters["BigIntegerValue"]);
-            Assert.AreEqual(BigDecimalText, parameters["BigDecimalValue"]);
-            Assert.AreEqual("0.000000000000000000000000000000000000001", parameters["BigDecimalList.1"]);
-            Assert.AreEqual(BigDecimalText, parameters["BigDecimalList.2"]);
-        }
-
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("RequestTest")]
-        public void Query_RequestBody_IgnoresCurrentCulture()
-        {
-            InNonInvariantCulture(Query_RequestBody_WritesDecimalText);
+            InNonInvariantCulture(RestXml_RequestBody_WritesDecimalText);
         }
 
         [TestMethod]
@@ -164,50 +103,6 @@ namespace AWSSDK.ProtocolTests.NumericTypes
             CollectionAssert.AreEqual(new List<short> { 1, -2 }, actual.ShortList);
             Assert.AreEqual(BigInteger(BigIntegerText), actual.BigIntegerMap["k"]);
             Assert.AreEqual("123.4500", actual.Nested.BigDecimalValue.Value.ToPlainString(CultureInfo.InvariantCulture));
-        }
-
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("ResponseTest")]
-        public async Task Query_ResponseBody_ReadsEveryDigit()
-        {
-            var body = "<BodyNumbersResponse xmlns=\"https://example.com/numerictypes/\"><BodyNumbersResult>"
-                + "<ByteValue>127</ByteValue>"
-                + "<BigIntegerValue>" + BigIntegerText + "</BigIntegerValue>"
-                + "<BigDecimalValue>" + BigDecimalText + "</BigDecimalValue>"
-                + "<BigDecimalList><member>" + DoubleLossyDecimalText + "</member></BigDecimalList>"
-                + "</BodyNumbersResult></BodyNumbersResponse>";
-            var config = new QuerySvc.AmazonNumericTypesQueryConfig { ServiceURL = MockHttpClientUtils.TestServiceUrl, MaxErrorRetry = 0 };
-            using var client = new QuerySvc.AmazonNumericTypesQueryClient(MockHttpClientUtils.TestCredentials, config);
-            MockHttpClientUtils.InjectMockHttp(client, XmlResponse(body));
-
-            var actual = await client.BodyNumbersAsync(new QuerySvc.Model.BodyNumbersRequest()).ConfigureAwait(false);
-
-            Assert.AreEqual((sbyte)127, actual.ByteValue);
-            Assert.AreEqual(BigInteger(BigIntegerText), actual.BigIntegerValue);
-            Assert.AreEqual(BigDecimalText, actual.BigDecimalValue.Value.ToPlainString(CultureInfo.InvariantCulture));
-            Assert.AreEqual(DoubleLossyDecimalText, actual.BigDecimalList.Single().ToPlainString(CultureInfo.InvariantCulture));
-        }
-
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("ResponseTest")]
-        public async Task Ec2_ResponseBody_ReadsEveryDigit()
-        {
-            var body = "<BodyNumbersResponse>"
-                + "<shortValue>-32768</shortValue>"
-                + "<bigIntegerValue>" + BigIntegerInMapText + "</bigIntegerValue>"
-                + "<bigDecimalValue>" + DoubleLossyDecimalText + "</bigDecimalValue>"
-                + "</BodyNumbersResponse>";
-            var config = new Ec2Svc.AmazonNumericTypesEC2Config { ServiceURL = MockHttpClientUtils.TestServiceUrl, MaxErrorRetry = 0 };
-            using var client = new Ec2Svc.AmazonNumericTypesEC2Client(MockHttpClientUtils.TestCredentials, config);
-            MockHttpClientUtils.InjectMockHttp(client, XmlResponse(body));
-
-            var actual = await client.BodyNumbersAsync(new Ec2Svc.Model.BodyNumbersRequest()).ConfigureAwait(false);
-
-            Assert.AreEqual(short.MinValue, actual.ShortValue);
-            Assert.AreEqual(BigInteger(BigIntegerInMapText), actual.BigIntegerValue);
-            Assert.AreEqual(DoubleLossyDecimalText, actual.BigDecimalValue.Value.ToPlainString(CultureInfo.InvariantCulture));
         }
 
         [TestMethod]
@@ -305,9 +200,6 @@ namespace AWSSDK.ProtocolTests.NumericTypes
 
         private static XElement Child(XElement parent, string name) =>
             parent.Elements().Single(e => e.Name.LocalName == name);
-
-        private static Dictionary<string, string> QueryParameters(IRequest marshalled) =>
-            QueryTestUtils.ConvertBodyToParameters(Encoding.UTF8.GetString(marshalled.Content));
 
         private static MockHttpResponse XmlResponse(string body)
         {

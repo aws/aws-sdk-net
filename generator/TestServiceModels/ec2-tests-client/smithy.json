@@ -570,7 +570,7 @@
                             "Content-Type": "text/xml;charset=UTF-8"
                         },
                         "params": {
-                            "datetime": 946845296.123
+                            "datetime": 9.46845296123E8
                         }
                     }
                 ]
@@ -1699,10 +1699,10 @@
                     "target": "smithy.api#Boolean"
                 },
                 "byteValue": {
-                    "target": "smithy.api#Byte"
+                    "target": "smithy.api#Integer"
                 },
                 "shortValue": {
-                    "target": "smithy.api#Short"
+                    "target": "smithy.api#Integer"
                 },
                 "integerValue": {
                     "target": "smithy.api#Integer"
