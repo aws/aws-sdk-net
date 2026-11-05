@@ -31,7 +31,6 @@ namespace Amazon.Runtime.Internal.Util
 
         private object metricsLock = new object();
         private readonly long startTimestamp;
-        private bool isEnabled;
         // Created on the first StartEvent, so a disabled request that never times CSM attempt latency doesn't allocate it.
         private Dictionary<Metric, Timing> inFlightTimings;
         private List<MetricError> errors = new List<MetricError>();
@@ -115,20 +114,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// Whether metrics are enabled for the request
         /// </summary>
-        public bool IsEnabled
-        {
-            get { return isEnabled; }
-            internal set
-            {
-                isEnabled = value;
-                if (value)
-                {
-                    properties ??= new Dictionary<Metric, List<object>>();
-                    timings ??= new Dictionary<Metric, List<IMetricsTiming>>();
-                    counters ??= new Dictionary<Metric, long>();
-                }
-            }
-        }
+        public bool IsEnabled { get; internal set; }
 
         #endregion
 
