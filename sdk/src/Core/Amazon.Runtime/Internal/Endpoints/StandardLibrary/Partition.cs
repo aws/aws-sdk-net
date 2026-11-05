@@ -114,6 +114,12 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
 
         private Partition(Partition source) : base(source)
         {
+            name = source.name;
+            dnsSuffix = source.dnsSuffix;
+            dualStackDnsSuffix = source.dualStackDnsSuffix;
+            supportsFIPS = source.supportsFIPS;
+            supportsDualStack = source.supportsDualStack;
+            implicitGlobalRegion = source.implicitGlobalRegion;
         }
 
         private static readonly ReaderWriterLockSlim _locker = new ReaderWriterLockSlim();
