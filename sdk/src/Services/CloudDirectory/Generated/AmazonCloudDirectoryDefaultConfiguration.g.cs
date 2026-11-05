@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudDirectory
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudDirectory service
+    /// Configuration for accessing Amazon CloudDirectory
     /// </summary>
     public static class AmazonCloudDirectoryDefaultConfiguration
     {

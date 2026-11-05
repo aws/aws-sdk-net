@@ -26,7 +26,7 @@ using Amazon.IdentityStore.Endpoints;
 namespace Amazon.IdentityStore.Internal
 {
     /// <summary>
-    /// Amazon IdentityStore endpoint provider.
+    /// AWS SSO Identity Store endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IdentityStoreEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

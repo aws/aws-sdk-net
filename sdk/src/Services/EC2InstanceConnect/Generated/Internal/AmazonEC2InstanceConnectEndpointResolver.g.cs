@@ -31,7 +31,7 @@ using Amazon.EC2InstanceConnect.Endpoints;
 namespace Amazon.EC2InstanceConnect.Internal
 {
     /// <summary>
-    /// Amazon EC2InstanceConnect endpoint resolver.
+    /// AWS EC2 Instance Connect endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for EC2InstanceConnect service requests.
     /// <para />

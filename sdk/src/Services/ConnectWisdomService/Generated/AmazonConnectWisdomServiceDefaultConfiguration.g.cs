@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ConnectWisdomService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectWisdomService service
+    /// Configuration for accessing Amazon Connect Wisdom Service
     /// </summary>
     public static class AmazonConnectWisdomServiceDefaultConfiguration
     {

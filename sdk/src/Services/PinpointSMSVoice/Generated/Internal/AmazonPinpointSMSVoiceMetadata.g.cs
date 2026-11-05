@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointSMSVoice.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon PinpointSMSVoice service
+    /// Service metadata for Amazon Pinpoint SMS and Voice Service
     /// </summary>
     public partial class AmazonPinpointSMSVoiceMetadata : IServiceMetadata
     {

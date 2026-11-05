@@ -31,7 +31,7 @@ using Amazon.ConnectParticipant.Endpoints;
 namespace Amazon.ConnectParticipant.Internal
 {
     /// <summary>
-    /// Amazon ConnectParticipant endpoint resolver.
+    /// Amazon Connect Participant Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ConnectParticipant service requests.
     /// <para />

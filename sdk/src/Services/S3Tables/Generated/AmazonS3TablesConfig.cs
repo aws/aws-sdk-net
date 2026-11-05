@@ -27,12 +27,12 @@ using Amazon.S3Tables.Internal;
 namespace Amazon.S3Tables
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Tables service
+    /// Configuration for accessing Amazon S3 Tables
     /// </summary>
     public partial class AmazonS3TablesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("S3Tables", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("S3Tables", "4.0.101.0");
 
         private static readonly AmazonS3TablesEndpointResolver EndpointResolver =
             new AmazonS3TablesEndpointResolver();

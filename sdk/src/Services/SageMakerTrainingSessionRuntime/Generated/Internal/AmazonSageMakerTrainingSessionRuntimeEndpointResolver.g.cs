@@ -31,7 +31,7 @@ using Amazon.SageMakerTrainingSessionRuntime.Endpoints;
 namespace Amazon.SageMakerTrainingSessionRuntime.Internal
 {
     /// <summary>
-    /// Amazon SageMakerTrainingSessionRuntime endpoint resolver.
+    /// SageMaker Training Session Runtime endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SageMakerTrainingSessionRuntime service requests.
     /// <para />

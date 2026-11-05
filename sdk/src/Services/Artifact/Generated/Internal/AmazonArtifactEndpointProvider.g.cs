@@ -26,7 +26,7 @@ using Amazon.Artifact.Endpoints;
 namespace Amazon.Artifact.Internal
 {
     /// <summary>
-    /// Amazon Artifact endpoint provider.
+    /// AWS Artifact endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ArtifactEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

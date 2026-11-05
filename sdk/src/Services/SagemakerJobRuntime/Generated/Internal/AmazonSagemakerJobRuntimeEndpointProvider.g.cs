@@ -26,7 +26,7 @@ using Amazon.SagemakerJobRuntime.Endpoints;
 namespace Amazon.SagemakerJobRuntime.Internal
 {
     /// <summary>
-    /// Amazon SagemakerJobRuntime endpoint provider.
+    /// Sagemaker Job Runtime Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SagemakerJobRuntimeEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

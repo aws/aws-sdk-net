@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Amazon WorkSpaces is a managed desktop computing service in the cloud.",
+  "base-name": "WorkSpaces",
   "legacy-service-id": "WorkSpaces"
 }

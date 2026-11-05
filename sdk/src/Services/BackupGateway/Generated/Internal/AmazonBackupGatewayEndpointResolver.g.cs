@@ -31,7 +31,7 @@ using Amazon.BackupGateway.Endpoints;
 namespace Amazon.BackupGateway.Internal
 {
     /// <summary>
-    /// Amazon BackupGateway endpoint resolver.
+    /// AWS Backup Gateway endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for BackupGateway service requests.
     /// <para />

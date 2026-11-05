@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ChimeSDKVoice
 {
     /// <summary>
-    /// Configuration for accessing Amazon ChimeSDKVoice service
+    /// Configuration for accessing Amazon Chime SDK Voice
     /// </summary>
     public static class AmazonChimeSDKVoiceDefaultConfiguration
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Transfer service
+    /// Service metadata for AWS Transfer Family
     /// </summary>
     public partial class AmazonTransferMetadata : IServiceMetadata
     {

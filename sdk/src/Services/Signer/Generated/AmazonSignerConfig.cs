@@ -27,12 +27,12 @@ using Amazon.Signer.Internal;
 namespace Amazon.Signer
 {
     /// <summary>
-    /// Configuration for accessing Amazon Signer service
+    /// Configuration for accessing AWS Signer
     /// </summary>
     public partial class AmazonSignerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("signer", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("signer", "4.0.100.23");
 
         private static readonly AmazonSignerEndpointResolver EndpointResolver =
             new AmazonSignerEndpointResolver();

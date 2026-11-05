@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.OpenSearchService
 {
     /// <summary>
-    /// Configuration for accessing Amazon OpenSearchService service
+    /// Configuration for accessing Amazon OpenSearch Service
     /// </summary>
     public static class AmazonOpenSearchServiceDefaultConfiguration
     {

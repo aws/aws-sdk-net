@@ -31,7 +31,7 @@ using Amazon.BackupSearch.Endpoints;
 namespace Amazon.BackupSearch.Internal
 {
     /// <summary>
-    /// Amazon BackupSearch endpoint resolver.
+    /// AWS Backup Search endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for BackupSearch service requests.
     /// <para />

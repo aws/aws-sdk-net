@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MediaStoreData
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaStoreData service
+    /// Configuration for accessing AWS Elemental MediaStore Data Plane
     /// </summary>
     public static class AmazonMediaStoreDataDefaultConfiguration
     {

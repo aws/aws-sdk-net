@@ -1,0 +1,109 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.MediaLive.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// H265FilterSettings Marshaller
+    /// </summary>
+    public partial class H265FilterSettingsMarshaller : IRequestMarshaller<H265FilterSettings, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(H265FilterSettings requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAutoFilterSettings())
+            {
+                context.Writer.WritePropertyName("autoFilterSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoFilterSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetBandwidthReductionFilterSettings())
+            {
+                context.Writer.WritePropertyName("bandwidthReductionFilterSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BandwidthReductionFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.BandwidthReductionFilterSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetNoneFilterSettings())
+            {
+                context.Writer.WritePropertyName("noneFilterSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NoneFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.NoneFilterSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetPerceptualFilterSettings())
+            {
+                context.Writer.WritePropertyName("perceptualFilterSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PerceptualFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.PerceptualFilterSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetTemporalFilterSettings())
+            {
+                context.Writer.WritePropertyName("temporalFilterSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TemporalFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TemporalFilterSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static H265FilterSettingsMarshaller Instance = new H265FilterSettingsMarshaller();
+    }
+}

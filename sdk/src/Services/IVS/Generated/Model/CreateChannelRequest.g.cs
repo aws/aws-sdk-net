@@ -79,6 +79,22 @@ namespace Amazon.IVS.Model
         internal bool IsSetContainerFormat() => this.ContainerFormat != null;
 
         /// <summary>
+        /// Gets and sets the property FailoverSlateConfigurationArn. 
+        /// <para>
+        /// Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and
+        /// enables failover slate. Default: "" (empty string, no failover slate configuration
+        /// is applied).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 128)]
+        public string FailoverSlateConfigurationArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FailoverSlateConfigurationArn property is set.
+        /// </summary>
+        internal bool IsSetFailoverSlateConfigurationArn() => this.FailoverSlateConfigurationArn != null;
+
+        /// <summary>
         /// Gets and sets the property InsecureIngest. 
         /// <para>
         /// Whether the channel allows insecure RTMP and SRT ingest. Default: <c>false</c>.

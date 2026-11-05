@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Snowball service
+    /// Service metadata for Amazon Import/Export Snowball
     /// </summary>
     public partial class AmazonSnowballMetadata : IServiceMetadata
     {

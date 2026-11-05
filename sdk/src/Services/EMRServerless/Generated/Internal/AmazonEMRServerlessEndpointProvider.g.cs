@@ -26,7 +26,7 @@ using Amazon.EMRServerless.Endpoints;
 namespace Amazon.EMRServerless.Internal
 {
     /// <summary>
-    /// Amazon EMRServerless endpoint provider.
+    /// EMR Serverless endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="EMRServerlessEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

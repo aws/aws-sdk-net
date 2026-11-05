@@ -1,0 +1,240 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Lambda.Model
+{
+    /// <summary>
+    /// Container for the parameters to the Invoke operation. Invokes a Lambda Event Function.
+    /// You can invoke a function synchronously (and wait for the response), or asynchronously.
+    /// By default, Lambda invokes your function synchronously (i.e. the<c>InvocationType</c>
+    /// is <c>RequestResponse</c>). To invoke a function asynchronously, set <c>InvocationType</c>
+    /// to <c>Event</c>. Lambda passes the <c>ClientContext</c> object to your function for
+    /// synchronous invocations only. <para> For synchronous invocations, the maximum payload
+    /// size is 6 MB. For asynchronous invocations, the maximum payload size is 1 MB. </para>
+    /// <para> For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous
+    /// invocation</a>, details about the function response, including errors, are included
+    /// in the response body and headers. For either invocation type, you can find more information
+    /// in the <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution
+    /// log</a> and <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html">trace</a>.
+    /// </para> <para> When an error occurs, your function may be invoked multiple times.
+    /// Retry behavior varies by error type, client, event source, and invocation type. For
+    /// example, if you invoke a function asynchronously and it returns an error, Lambda executes
+    /// the function up to two more times. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-retries.html">Error
+    /// handling and automatic retries in Lambda</a>. </para> <para> For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
+    /// invocation</a>, Lambda adds events to a queue before sending them to your function.
+    /// If your function does not have enough capacity to keep up with the queue, events may
+    /// be lost. Occasionally, your function may receive the same event multiple times, even
+    /// if no error occurs. To retain events that were not processed, configure your function
+    /// with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">dead-letter
+    /// queue</a>. </para> <para> The status code in the API response doesn't reflect function
+    /// errors. Error codes are reserved for errors that prevent your function from executing,
+    /// such as permissions errors, <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">quota</a>
+    /// errors, or issues with your function's code and configuration. For example, Lambda
+    /// returns <c>TooManyRequestsException</c> if running the function would cause you to
+    /// exceed a concurrency limit at either the account level (<c>ConcurrentInvocationLimitExceeded</c>)
+    /// or function level (<c>ReservedFunctionConcurrentInvocationLimitExceeded</c>). </para>
+    /// <para> For functions with a long timeout, your client might disconnect during synchronous
+    /// invocation while it waits for a response. Configure your HTTP client, SDK, firewall,
+    /// proxy, or operating system to allow for long connections with timeout or keep-alive
+    /// settings. </para> <para> This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
+    /// action. For details on how to set up permissions for cross-account invocations, see
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#permissions-resource-xaccountinvoke">Granting
+    /// function access to other accounts</a>. </para>
+    /// </summary>
+    public partial class InvokeRequest : AmazonLambdaRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ClientContextBase64. 
+        /// <para>
+        /// Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the
+        /// function in the context object. Lambda passes the <c>ClientContext</c> object to your
+        /// function for synchronous invocations only.
+        /// </para>
+        /// </summary>
+        public string ClientContextBase64 { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientContextBase64 property is set.
+        /// </summary>
+        internal bool IsSetClientContextBase64() => this.ClientContextBase64 != null;
+
+        /// <summary>
+        /// Gets and sets the property DurableExecutionName. 
+        /// <para>
+        /// A unique name for the durable execution. If you invoke a durable function using a
+        /// name that already exists with the same payload, Lambda returns the existing execution
+        /// instead of creating a duplicate. If the payload differs, Lambda returns a <c>DurableExecutionAlreadyStartedException</c>
+        /// error.
+        /// </para>
+        ///  
+        /// <para>
+        /// If not specified, Lambda generates a unique identifier automatically. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-execution-idempotency.html#durable-idempotency-execution-names">Execution
+        /// names</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string DurableExecutionName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DurableExecutionName property is set.
+        /// </summary>
+        internal bool IsSetDurableExecutionName() => this.DurableExecutionName != null;
+
+        /// <summary>
+        /// Gets and sets the property FunctionName. 
+        /// <para>
+        /// The name or ARN of the Lambda function, version, or alias.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Name formats</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:v1</c> (with
+        /// alias).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can append a version number or alias to any of the formats. The length constraint
+        /// applies only to the full ARN. If you specify only the function name, it is limited
+        /// to 64 characters in length.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
+        public string FunctionName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FunctionName property is set.
+        /// </summary>
+        internal bool IsSetFunctionName() => this.FunctionName != null;
+
+        /// <summary>
+        /// Gets and sets the property InvocationType. 
+        /// <para>
+        /// Choose from the following options.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RequestResponse</c> (default) – Invoke the function synchronously. Keep the connection
+        /// open until the function returns a response or times out. The API response includes
+        /// the function response and additional data.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Event</c> – Invoke the function asynchronously. Send events that fail multiple
+        /// times to the function's dead-letter queue (if one is configured). The API response
+        /// only includes a status code.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DryRun</c> – Validate parameter values and verify that the user or role has permission
+        /// to invoke the function.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public InvocationType InvocationType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InvocationType property is set.
+        /// </summary>
+        internal bool IsSetInvocationType() => this.InvocationType != null;
+
+        /// <summary>
+        /// Gets and sets the property LogType. 
+        /// <para>
+        /// Set to <c>Tail</c> to include the execution log in the response. Applies to synchronously
+        /// invoked functions only.
+        /// </para>
+        /// </summary>
+        public LogType LogType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LogType property is set.
+        /// </summary>
+        internal bool IsSetLogType() => this.LogType != null;
+
+        /// <summary>
+        /// Gets and sets the property PayloadStream. 
+        /// <para>
+        /// The JSON that you want to provide to your Lambda function as input. The maximum payload
+        /// size is 6 MB for synchronous invocations and 1 MB for asynchronous invocations.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can enter the JSON directly. For example, <c>--payload '{ "key": "value" }'</c>.
+        /// You can also specify a file path. For example, <c>--payload file://payload.json</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public MemoryStream PayloadStream { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PayloadStream property is set.
+        /// </summary>
+        internal bool IsSetPayloadStream() => this.PayloadStream != null;
+
+        /// <summary>
+        /// Gets and sets the property Qualifier. 
+        /// <para>
+        /// Specify a version or alias to invoke a published version of the function.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string Qualifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Qualifier property is set.
+        /// </summary>
+        internal bool IsSetQualifier() => this.Qualifier != null;
+
+        /// <summary>
+        /// Gets and sets the property TenantId. 
+        /// <para>
+        /// The identifier of the tenant in a multi-tenant Lambda function.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string TenantId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TenantId property is set.
+        /// </summary>
+        internal bool IsSetTenantId() => this.TenantId != null;
+    }
+}

@@ -229,6 +229,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Min = 1, Max = 4)]
         public List<string> InstanceModes { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>

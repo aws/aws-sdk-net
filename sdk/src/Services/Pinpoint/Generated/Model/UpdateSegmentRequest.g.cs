@@ -1,0 +1,79 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Pinpoint.Model
+{
+    /// <summary>
+    /// Container for the parameters to the UpdateSegment operation. Creates a new segment
+    /// for an application or updates the configuration, dimension, and other settings for
+    /// an existing segment that's associated with an application.
+    /// </summary>
+    public partial class UpdateSegmentRequest : AmazonPinpointRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string ApplicationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApplicationId property is set.
+        /// </summary>
+        internal bool IsSetApplicationId() => this.ApplicationId != null;
+
+        /// <summary>
+        /// Gets and sets the property SegmentId. 
+        /// <para>
+        /// The unique identifier for the segment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string SegmentId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SegmentId property is set.
+        /// </summary>
+        internal bool IsSetSegmentId() => this.SegmentId != null;
+
+        /// <summary>
+        /// Gets and sets the property WriteSegmentRequest.
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public WriteSegmentRequest WriteSegmentRequest { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WriteSegmentRequest property is set.
+        /// </summary>
+        internal bool IsSetWriteSegmentRequest() => this.WriteSegmentRequest != null;
+    }
+}

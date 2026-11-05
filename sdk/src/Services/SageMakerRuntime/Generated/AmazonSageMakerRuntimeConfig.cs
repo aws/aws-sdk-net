@@ -27,12 +27,12 @@ using Amazon.SageMakerRuntime.Internal;
 namespace Amazon.SageMakerRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMakerRuntime service
+    /// Configuration for accessing Amazon SageMaker Runtime
     /// </summary>
     public partial class AmazonSageMakerRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMaker Runtime", "4.0.101.13");
+            InternalSDKUtils.BuildUserAgentString("SageMaker Runtime", "4.0.101.16");
 
         private static readonly AmazonSageMakerRuntimeEndpointResolver EndpointResolver =
             new AmazonSageMakerRuntimeEndpointResolver();

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon GroundStation service
+    /// Service metadata for AWS Ground Station
     /// </summary>
     public partial class AmazonGroundStationMetadata : IServiceMetadata
     {

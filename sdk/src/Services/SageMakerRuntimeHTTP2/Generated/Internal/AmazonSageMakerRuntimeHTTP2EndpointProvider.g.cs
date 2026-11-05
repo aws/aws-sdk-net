@@ -26,7 +26,7 @@ using Amazon.SageMakerRuntimeHTTP2.Endpoints;
 namespace Amazon.SageMakerRuntimeHTTP2.Internal
 {
     /// <summary>
-    /// Amazon SageMakerRuntimeHTTP2 endpoint provider.
+    /// Amazon SageMaker Runtime HTTP2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SageMakerRuntimeHTTP2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

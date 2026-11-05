@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MarketplaceDeployment
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceDeployment service
+    /// Configuration for accessing AWS Marketplace Deployment Service
     /// </summary>
     public static class AmazonMarketplaceDeploymentDefaultConfiguration
     {

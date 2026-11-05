@@ -4355,6 +4355,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityUnit.
+    /// </summary>
+    public class CapacityUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Instances for CapacityUnit
+        /// </summary>
+        public static readonly CapacityUnit Instances = new CapacityUnit("instances");
+        /// <summary>
+        /// Constant Vcpus for CapacityUnit
+        /// </summary>
+        public static readonly CapacityUnit Vcpus = new CapacityUnit("vcpus");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityUnit FindValue(string value)
+        {
+            return FindValue<CapacityUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CarrierGatewayState.
     /// </summary>
     public class CarrierGatewayState : ConstantClass
@@ -21907,6 +21957,26 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant AvgInstAzCountPerRequestedVcpu for Metric
+        /// </summary>
+        public static readonly Metric AvgInstAzCountPerRequestedVcpu = new Metric("avg-inst-az-count-per-requested-vcpu");
+        /// <summary>
+        /// Constant CapacityRequestFulfillmentRate for Metric
+        /// </summary>
+        public static readonly Metric CapacityRequestFulfillmentRate = new Metric("capacity-request-fulfillment-rate");
+        /// <summary>
+        /// Constant CapacityTotalFulfilledVcpu for Metric
+        /// </summary>
+        public static readonly Metric CapacityTotalFulfilledVcpu = new Metric("capacity-total-fulfilled-vcpu");
+        /// <summary>
+        /// Constant CapacityTotalRequestedVcpu for Metric
+        /// </summary>
+        public static readonly Metric CapacityTotalRequestedVcpu = new Metric("capacity-total-requested-vcpu");
+        /// <summary>
+        /// Constant InstAzFulfillmentRate for Metric
+        /// </summary>
+        public static readonly Metric InstAzFulfillmentRate = new Metric("inst-az-fulfillment-rate");
+        /// <summary>
         /// Constant ReservationAvgCommittedSizeInst for Metric
         /// </summary>
         public static readonly Metric ReservationAvgCommittedSizeInst = new Metric("reservation-avg-committed-size-inst");
@@ -22043,9 +22113,29 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly Metric ReservedTotalUsageHrsVcpu = new Metric("reserved-total-usage-hrs-vcpu");
         /// <summary>
+        /// Constant SpotAvgInstAzCountPerRequestedVcpu for Metric
+        /// </summary>
+        public static readonly Metric SpotAvgInstAzCountPerRequestedVcpu = new Metric("spot-avg-inst-az-count-per-requested-vcpu");
+        /// <summary>
         /// Constant SpotAvgRunTimeBeforeInterruptionInst for Metric
         /// </summary>
         public static readonly Metric SpotAvgRunTimeBeforeInterruptionInst = new Metric("spot-avg-run-time-before-interruption-inst");
+        /// <summary>
+        /// Constant SpotCapacityRequestFulfillmentRate for Metric
+        /// </summary>
+        public static readonly Metric SpotCapacityRequestFulfillmentRate = new Metric("spot-capacity-request-fulfillment-rate");
+        /// <summary>
+        /// Constant SpotCapacityTotalFulfilledVcpu for Metric
+        /// </summary>
+        public static readonly Metric SpotCapacityTotalFulfilledVcpu = new Metric("spot-capacity-total-fulfilled-vcpu");
+        /// <summary>
+        /// Constant SpotCapacityTotalRequestedVcpu for Metric
+        /// </summary>
+        public static readonly Metric SpotCapacityTotalRequestedVcpu = new Metric("spot-capacity-total-requested-vcpu");
+        /// <summary>
+        /// Constant SpotInstAzFulfillmentRate for Metric
+        /// </summary>
+        public static readonly Metric SpotInstAzFulfillmentRate = new Metric("spot-inst-az-fulfillment-rate");
         /// <summary>
         /// Constant SpotInterruptionRateInst for Metric
         /// </summary>
@@ -27905,6 +27995,68 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type SeverityLabel.
+    /// </summary>
+    public class SeverityLabel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Critical for SeverityLabel
+        /// </summary>
+        public static readonly SeverityLabel Critical = new SeverityLabel("critical");
+        /// <summary>
+        /// Constant High for SeverityLabel
+        /// </summary>
+        public static readonly SeverityLabel High = new SeverityLabel("high");
+        /// <summary>
+        /// Constant Informational for SeverityLabel
+        /// </summary>
+        public static readonly SeverityLabel Informational = new SeverityLabel("informational");
+        /// <summary>
+        /// Constant Low for SeverityLabel
+        /// </summary>
+        public static readonly SeverityLabel Low = new SeverityLabel("low");
+        /// <summary>
+        /// Constant Medium for SeverityLabel
+        /// </summary>
+        public static readonly SeverityLabel Medium = new SeverityLabel("medium");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SeverityLabel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SeverityLabel FindValue(string value)
+        {
+            return FindValue<SeverityLabel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SeverityLabel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ShutdownBehavior.
     /// </summary>
     public class ShutdownBehavior : ConstantClass
@@ -29241,6 +29393,114 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type SupportabilityMarketType.
+    /// </summary>
+    public class SupportabilityMarketType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OnDemand for SupportabilityMarketType
+        /// </summary>
+        public static readonly SupportabilityMarketType OnDemand = new SupportabilityMarketType("on-demand");
+        /// <summary>
+        /// Constant Spot for SupportabilityMarketType
+        /// </summary>
+        public static readonly SupportabilityMarketType Spot = new SupportabilityMarketType("spot");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupportabilityMarketType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupportabilityMarketType FindValue(string value)
+        {
+            return FindValue<SupportabilityMarketType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupportabilityMarketType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SupportabilityScore.
+    /// </summary>
+    public class SupportabilityScore : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant High for SupportabilityScore
+        /// </summary>
+        public static readonly SupportabilityScore High = new SupportabilityScore("high");
+        /// <summary>
+        /// Constant Low for SupportabilityScore
+        /// </summary>
+        public static readonly SupportabilityScore Low = new SupportabilityScore("low");
+        /// <summary>
+        /// Constant Medium for SupportabilityScore
+        /// </summary>
+        public static readonly SupportabilityScore Medium = new SupportabilityScore("medium");
+        /// <summary>
+        /// Constant Unsupported for SupportabilityScore
+        /// </summary>
+        public static readonly SupportabilityScore Unsupported = new SupportabilityScore("unsupported");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupportabilityScore(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupportabilityScore FindValue(string value)
+        {
+            return FindValue<SupportabilityScore>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupportabilityScore(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SupportedAdditionalProcessorFeature.
     /// </summary>
     public class SupportedAdditionalProcessorFeature : ConstantClass
@@ -30251,6 +30511,164 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type TransitGatewayAttachmentNatGatewaySupportState.
+    /// </summary>
+    public class TransitGatewayAttachmentNatGatewaySupportState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for TransitGatewayAttachmentNatGatewaySupportState
+        /// </summary>
+        public static readonly TransitGatewayAttachmentNatGatewaySupportState Disabled = new TransitGatewayAttachmentNatGatewaySupportState("disabled");
+        /// <summary>
+        /// Constant Disabling for TransitGatewayAttachmentNatGatewaySupportState
+        /// </summary>
+        public static readonly TransitGatewayAttachmentNatGatewaySupportState Disabling = new TransitGatewayAttachmentNatGatewaySupportState("disabling");
+        /// <summary>
+        /// Constant Enabled for TransitGatewayAttachmentNatGatewaySupportState
+        /// </summary>
+        public static readonly TransitGatewayAttachmentNatGatewaySupportState Enabled = new TransitGatewayAttachmentNatGatewaySupportState("enabled");
+        /// <summary>
+        /// Constant Enabling for TransitGatewayAttachmentNatGatewaySupportState
+        /// </summary>
+        public static readonly TransitGatewayAttachmentNatGatewaySupportState Enabling = new TransitGatewayAttachmentNatGatewaySupportState("enabling");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayAttachmentNatGatewaySupportState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayAttachmentNatGatewaySupportState FindValue(string value)
+        {
+            return FindValue<TransitGatewayAttachmentNatGatewaySupportState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayAttachmentNatGatewaySupportState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransitGatewayAttachmentNatGatewaySupportValue.
+    /// </summary>
+    public class TransitGatewayAttachmentNatGatewaySupportValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for TransitGatewayAttachmentNatGatewaySupportValue
+        /// </summary>
+        public static readonly TransitGatewayAttachmentNatGatewaySupportValue Disable = new TransitGatewayAttachmentNatGatewaySupportValue("disable");
+        /// <summary>
+        /// Constant Enable for TransitGatewayAttachmentNatGatewaySupportValue
+        /// </summary>
+        public static readonly TransitGatewayAttachmentNatGatewaySupportValue Enable = new TransitGatewayAttachmentNatGatewaySupportValue("enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayAttachmentNatGatewaySupportValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayAttachmentNatGatewaySupportValue FindValue(string value)
+        {
+            return FindValue<TransitGatewayAttachmentNatGatewaySupportValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayAttachmentNatGatewaySupportValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransitGatewayAttachmentNatSystemRouteSupportValue.
+    /// </summary>
+    public class TransitGatewayAttachmentNatSystemRouteSupportValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for TransitGatewayAttachmentNatSystemRouteSupportValue
+        /// </summary>
+        public static readonly TransitGatewayAttachmentNatSystemRouteSupportValue Disable = new TransitGatewayAttachmentNatSystemRouteSupportValue("disable");
+        /// <summary>
+        /// Constant Enable for TransitGatewayAttachmentNatSystemRouteSupportValue
+        /// </summary>
+        public static readonly TransitGatewayAttachmentNatSystemRouteSupportValue Enable = new TransitGatewayAttachmentNatSystemRouteSupportValue("enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayAttachmentNatSystemRouteSupportValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayAttachmentNatSystemRouteSupportValue FindValue(string value)
+        {
+            return FindValue<TransitGatewayAttachmentNatSystemRouteSupportValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayAttachmentNatSystemRouteSupportValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TransitGatewayAttachmentResourceType.
     /// </summary>
     public class TransitGatewayAttachmentResourceType : ConstantClass
@@ -30841,6 +31259,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type TransitGatewayNatRuleState.
+    /// </summary>
+    public class TransitGatewayNatRuleState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Activated for TransitGatewayNatRuleState
+        /// </summary>
+        public static readonly TransitGatewayNatRuleState Activated = new TransitGatewayNatRuleState("activated");
+        /// <summary>
+        /// Constant Deactivated for TransitGatewayNatRuleState
+        /// </summary>
+        public static readonly TransitGatewayNatRuleState Deactivated = new TransitGatewayNatRuleState("deactivated");
+        /// <summary>
+        /// Constant Deleting for TransitGatewayNatRuleState
+        /// </summary>
+        public static readonly TransitGatewayNatRuleState Deleting = new TransitGatewayNatRuleState("deleting");
+        /// <summary>
+        /// Constant Pending for TransitGatewayNatRuleState
+        /// </summary>
+        public static readonly TransitGatewayNatRuleState Pending = new TransitGatewayNatRuleState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayNatRuleState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayNatRuleState FindValue(string value)
+        {
+            return FindValue<TransitGatewayNatRuleState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayNatRuleState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TransitGatewayPolicyTableEntryState.
     /// </summary>
     public class TransitGatewayPolicyTableEntryState : ConstantClass
@@ -31314,6 +31790,10 @@ namespace Amazon.EC2
         /// Constant Static for TransitGatewayRouteType
         /// </summary>
         public static readonly TransitGatewayRouteType Static = new TransitGatewayRouteType("static");
+        /// <summary>
+        /// Constant System for TransitGatewayRouteType
+        /// </summary>
+        public static readonly TransitGatewayRouteType System = new TransitGatewayRouteType("system");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

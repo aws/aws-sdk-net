@@ -12,11 +12,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticLoadBalancing.Model.AdditionalAttribute.Key</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticLoadBalancing.Model.AdditionalAttribute.Value</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9.]+$</pattern>
   </property-value-rule>

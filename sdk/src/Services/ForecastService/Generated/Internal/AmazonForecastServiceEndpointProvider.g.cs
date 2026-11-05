@@ -26,7 +26,7 @@ using Amazon.ForecastService.Endpoints;
 namespace Amazon.ForecastService.Internal
 {
     /// <summary>
-    /// Amazon ForecastService endpoint provider.
+    /// Amazon Forecast Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ForecastServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

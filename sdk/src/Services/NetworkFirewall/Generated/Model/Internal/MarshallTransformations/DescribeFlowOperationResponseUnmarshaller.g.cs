@@ -59,6 +59,13 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("AvailabilityZoneId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("FirewallArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

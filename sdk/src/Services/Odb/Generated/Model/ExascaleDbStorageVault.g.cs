@@ -106,6 +106,36 @@ namespace Amazon.Odb.Model
         internal bool IsSetAvailabilityZoneId() => this.AvailabilityZoneId != null;
 
         /// <summary>
+        /// Gets and sets the property CloudExadataInfrastructureArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Exadata infrastructure that hosts the Exascale
+        /// storage vault. This value is present only for vaults on dedicated Exadata infrastructure.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 2048)]
+        public string CloudExadataInfrastructureArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CloudExadataInfrastructureArn property is set.
+        /// </summary>
+        internal bool IsSetCloudExadataInfrastructureArn() => this.CloudExadataInfrastructureArn != null;
+
+        /// <summary>
+        /// Gets and sets the property CloudExadataInfrastructureId. 
+        /// <para>
+        /// The unique identifier of the Exadata infrastructure that hosts the Exascale storage
+        /// vault. This value is present only for vaults on dedicated Exadata infrastructure.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 6, Max = 64)]
+        public string CloudExadataInfrastructureId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CloudExadataInfrastructureId property is set.
+        /// </summary>
+        internal bool IsSetCloudExadataInfrastructureId() => this.CloudExadataInfrastructureId != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The date and time when the Exascale storage vault was created.
@@ -289,6 +319,19 @@ namespace Amazon.Odb.Model
         /// Checks to see if the TimeZone property is set.
         /// </summary>
         internal bool IsSetTimeZone() => this.TimeZone != null;
+
+        /// <summary>
+        /// Gets and sets the property VaultType. 
+        /// <para>
+        /// The type of infrastructure that hosts the Exascale storage vault.
+        /// </para>
+        /// </summary>
+        public ExascaleDbStorageVaultType VaultType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VaultType property is set.
+        /// </summary>
+        internal bool IsSetVaultType() => this.VaultType != null;
 
         /// <summary>
         /// Gets and sets the property VmClusterArns. 

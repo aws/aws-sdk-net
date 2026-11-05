@@ -31,7 +31,7 @@ using Amazon.PricingPlanManager.Endpoints;
 namespace Amazon.PricingPlanManager.Internal
 {
     /// <summary>
-    /// Amazon PricingPlanManager endpoint resolver.
+    /// PricingPlanManager endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PricingPlanManager service requests.
     /// <para />

@@ -26,7 +26,7 @@ using Amazon.MainframeModernization.Endpoints;
 namespace Amazon.MainframeModernization.Internal
 {
     /// <summary>
-    /// Amazon MainframeModernization endpoint provider.
+    /// AWSMainframeModernization endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MainframeModernizationEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

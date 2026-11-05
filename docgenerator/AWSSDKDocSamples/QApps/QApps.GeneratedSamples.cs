@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
     {
         public void QAppsAssociateLibraryItemReview()
         {
-            #region example-1
+            #region AssociateLibraryItemReview-1
 
             var client = new AmazonQAppsClient();
-            var response = client.AssociateLibraryItemReview(new AssociateLibraryItemReviewRequest 
+            var response = client.AssociateLibraryItemReview(new AssociateLibraryItemReviewRequest
             {
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
                 LibraryItemId = "cb9ecf72-8563-450d-9db9-994f98297316"
@@ -28,10 +29,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsAssociateQAppWithUser()
         {
-            #region example-1
+            #region AssociateQAppWithUser-1
 
             var client = new AmazonQAppsClient();
-            var response = client.AssociateQAppWithUser(new AssociateQAppWithUserRequest 
+            var response = client.AssociateQAppWithUser(new AssociateQAppWithUserRequest
             {
                 AppId = "393e77fb-0a30-4f47-ad30-75d71aeaed8a",
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f"
@@ -43,10 +44,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsBatchCreateCategory()
         {
-            #region example-1
+            #region BatchCreateCategory-1
 
             var client = new AmazonQAppsClient();
-            var response = client.BatchCreateCategory(new BatchCreateCategoryRequest 
+            var response = client.BatchCreateCategory(new BatchCreateCategoryRequest
             {
                 Categories = new List<BatchCreateCategoryInputCategory> {
                     new BatchCreateCategoryInputCategory {
@@ -67,10 +68,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsBatchDeleteCategory()
         {
-            #region example-1
+            #region BatchDeleteCategory-1
 
             var client = new AmazonQAppsClient();
-            var response = client.BatchDeleteCategory(new BatchDeleteCategoryRequest 
+            var response = client.BatchDeleteCategory(new BatchDeleteCategoryRequest
             {
                 Categories = new List<string> {
                     "9c871ed4-1c41-4065-aefe-321cd4b61cf8"
@@ -84,10 +85,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsBatchUpdateCategory()
         {
-            #region example-1
+            #region BatchUpdateCategory-1
 
             var client = new AmazonQAppsClient();
-            var response = client.BatchUpdateCategory(new BatchUpdateCategoryRequest 
+            var response = client.BatchUpdateCategory(new BatchUpdateCategoryRequest
             {
                 Categories = new List<CategoryInput> {
                     new CategoryInput {
@@ -108,10 +109,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsCreateLibraryItem()
         {
-            #region example-1
+            #region CreateLibraryItem-1
 
             var client = new AmazonQAppsClient();
-            var response = client.CreateLibraryItem(new CreateLibraryItemRequest 
+            var response = client.CreateLibraryItem(new CreateLibraryItemRequest
             {
                 AppId = "7a11f34b-42d4-4bc8-b668-ae4a788dae1e",
                 AppVersion = 6,
@@ -121,13 +122,13 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f"
             });
 
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string createdBy = response.CreatedBy;
-            bool isVerified = response.IsVerified;
+            bool? isVerified = response.IsVerified;
             string libraryItemId = response.LibraryItemId;
-            int ratingCount = response.RatingCount;
+            int? ratingCount = response.RatingCount;
             string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
             string updatedBy = response.UpdatedBy;
 
             #endregion
@@ -135,10 +136,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsCreatePresignedUrl()
         {
-            #region example-1
+            #region CreatePresignedUrl-1
 
             var client = new AmazonQAppsClient();
-            var response = client.CreatePresignedUrl(new CreatePresignedUrlRequest 
+            var response = client.CreatePresignedUrl(new CreatePresignedUrlRequest
             {
                 AppId = "4263767c-d889-4cb2-a8f6-8b649bc66af0",
                 CardId = "82f69028-22a9-4bea-8727-0eabf58e9fed",
@@ -151,7 +152,7 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
             string fileId = response.FileId;
             string presignedUrl = response.PresignedUrl;
-            DateTime presignedUrlExpiration = response.PresignedUrlExpiration;
+            DateTime? presignedUrlExpiration = response.PresignedUrlExpiration;
             Dictionary<string, string> presignedUrlFields = response.PresignedUrlFields;
 
             #endregion
@@ -159,10 +160,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsCreatePresignedUrl()
         {
-            #region example-2
+            #region CreatePresignedUrl-2
 
             var client = new AmazonQAppsClient();
-            var response = client.CreatePresignedUrl(new CreatePresignedUrlRequest 
+            var response = client.CreatePresignedUrl(new CreatePresignedUrlRequest
             {
                 AppId = "4263767c-d889-4cb2-a8f6-8b649bc66af0",
                 CardId = "7a11f34b-42d4-4bc8-b668-ae4a788dae1e",
@@ -174,7 +175,7 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
             string fileId = response.FileId;
             string presignedUrl = response.PresignedUrl;
-            DateTime presignedUrlExpiration = response.PresignedUrlExpiration;
+            DateTime? presignedUrlExpiration = response.PresignedUrlExpiration;
             Dictionary<string, string> presignedUrlFields = response.PresignedUrlFields;
 
             #endregion
@@ -182,23 +183,23 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsCreateQApp()
         {
-            #region example-1
+            #region CreateQApp-1
 
             var client = new AmazonQAppsClient();
-            var response = client.CreateQApp(new CreateQAppRequest 
+            var response = client.CreateQApp(new CreateQAppRequest
             {
                 AppDefinition = new AppDefinitionInput {
                     Cards = new List<CardInput> {
                         new CardInput { TextInput = new TextInputCardInput {
-                            Type = "text-input",
                             Id = "4cf94d96-8819-45c2-98cc-58c56b35c72f",
-                            Title = "Color Base"
+                            Title = "Color Base",
+                            Type = "text-input"
                         } },
                         new CardInput { QQuery = new QQueryCardInput {
-                            Type = "q-query",
                             Id = "18870b94-1e63-40e0-8c12-669c90ac5acc",
                             Prompt = "Recommend me a list of colors that go well with @4cf94d96-8819-45c2-98cc-58c56b35c72f",
-                            Title = "Recommended Palette"
+                            Title = "Recommended Palette",
+                            Type = "q-query"
                         } }
                     },
                     InitialPrompt = "Create an app that recommend a list of colors based on input."
@@ -209,14 +210,14 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
             string appArn = response.AppArn;
             string appId = response.AppId;
-            int appVersion = response.AppVersion;
-            DateTime createdAt = response.CreatedAt;
+            int? appVersion = response.AppVersion;
+            DateTime? createdAt = response.CreatedAt;
             string createdBy = response.CreatedBy;
             string initialPrompt = response.InitialPrompt;
             List<string> requiredCapabilities = response.RequiredCapabilities;
-            string status = response.Status;
+            AppStatus status = response.Status;
             string title = response.Title;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
             string updatedBy = response.UpdatedBy;
 
             #endregion
@@ -224,10 +225,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsDeleteLibraryItem()
         {
-            #region example-1
+            #region DeleteLibraryItem-1
 
             var client = new AmazonQAppsClient();
-            var response = client.DeleteLibraryItem(new DeleteLibraryItemRequest 
+            var response = client.DeleteLibraryItem(new DeleteLibraryItemRequest
             {
                 InstanceId = "3642ba81-344c-42fd-a480-9119a5a5f26b",
                 LibraryItemId = "72088fd4-78b6-43da-bfb8-8621323c3cfb"
@@ -239,10 +240,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsDeleteQApp()
         {
-            #region example-1
+            #region DeleteQApp-1
 
             var client = new AmazonQAppsClient();
-            var response = client.DeleteQApp(new DeleteQAppRequest 
+            var response = client.DeleteQApp(new DeleteQAppRequest
             {
                 AppId = "393e77fb-0a30-4f47-ad30-75d71aeaed8a",
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f"
@@ -254,10 +255,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsDescribeQAppPermissions()
         {
-            #region example-1
+            #region DescribeQAppPermissions-1
 
             var client = new AmazonQAppsClient();
-            var response = client.DescribeQAppPermissions(new DescribeQAppPermissionsRequest 
+            var response = client.DescribeQAppPermissions(new DescribeQAppPermissionsRequest
             {
                 AppId = "fe0acf86-49e5-4def-a0c2-40ce0cafee14",
                 InstanceId = "01793661-ad73-4c7d-8eaa-1c95a10151c2"
@@ -272,10 +273,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsDisassociateLibraryItemReview()
         {
-            #region example-1
+            #region DisassociateLibraryItemReview-1
 
             var client = new AmazonQAppsClient();
-            var response = client.DisassociateLibraryItemReview(new DisassociateLibraryItemReviewRequest 
+            var response = client.DisassociateLibraryItemReview(new DisassociateLibraryItemReviewRequest
             {
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
                 LibraryItemId = "cb9ecf72-8563-450d-9db9-994f98297316"
@@ -287,10 +288,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsDisassociateQAppFromUser()
         {
-            #region example-1
+            #region DisassociateQAppFromUser-1
 
             var client = new AmazonQAppsClient();
-            var response = client.DisassociateQAppFromUser(new DisassociateQAppFromUserRequest 
+            var response = client.DisassociateQAppFromUser(new DisassociateQAppFromUserRequest
             {
                 AppId = "393e77fb-0a30-4f47-ad30-75d71aeaed8a",
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f"
@@ -302,38 +303,38 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsGetLibraryItem()
         {
-            #region example-1
+            #region GetLibraryItem-1
 
             var client = new AmazonQAppsClient();
-            var response = client.GetLibraryItem(new GetLibraryItemRequest 
+            var response = client.GetLibraryItem(new GetLibraryItemRequest
             {
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
                 LibraryItemId = "18cbebaa-196a-4aa5-a840-88d548e07f8f"
             });
 
             string appId = response.AppId;
-            int appVersion = response.AppVersion;
+            int? appVersion = response.AppVersion;
             List<Category> categories = response.Categories;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string createdBy = response.CreatedBy;
-            bool isRatedByUser = response.IsRatedByUser;
-            bool isVerified = response.IsVerified;
+            bool? isRatedByUser = response.IsRatedByUser;
+            bool? isVerified = response.IsVerified;
             string libraryItemId = response.LibraryItemId;
-            int ratingCount = response.RatingCount;
+            int? ratingCount = response.RatingCount;
             string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
             string updatedBy = response.UpdatedBy;
-            int userCount = response.UserCount;
+            int? userCount = response.UserCount;
 
             #endregion
         }
 
         public void QAppsGetQApp()
         {
-            #region example-1
+            #region GetQApp-1
 
             var client = new AmazonQAppsClient();
-            var response = client.GetQApp(new GetQAppRequest 
+            var response = client.GetQApp(new GetQAppRequest
             {
                 AppId = "3d110749-efc3-427c-87e8-15e966e5c168",
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f"
@@ -342,12 +343,12 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             string appArn = response.AppArn;
             AppDefinition appDefinition = response.AppDefinition;
             string appId = response.AppId;
-            int appVersion = response.AppVersion;
-            DateTime createdAt = response.CreatedAt;
+            int? appVersion = response.AppVersion;
+            DateTime? createdAt = response.CreatedAt;
             string createdBy = response.CreatedBy;
-            string status = response.Status;
+            AppStatus status = response.Status;
             string title = response.Title;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
             string updatedBy = response.UpdatedBy;
 
             #endregion
@@ -355,10 +356,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsGetQAppSession()
         {
-            #region example-1
+            #region GetQAppSession-1
 
             var client = new AmazonQAppsClient();
-            var response = client.GetQAppSession(new GetQAppSessionRequest 
+            var response = client.GetQAppSession(new GetQAppSessionRequest
             {
                 InstanceId = "288ae830-1df2-4871-b6c0-4314d74dadef",
                 SessionId = "1fca878e-64c5-4dc4-b1d9-c93effed4e82"
@@ -367,17 +368,17 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             Dictionary<string, CardStatus> cardStatus = response.CardStatus;
             string sessionArn = response.SessionArn;
             string sessionId = response.SessionId;
-            string status = response.Status;
+            ExecutionStatus status = response.Status;
 
             #endregion
         }
 
         public void QAppsGetQAppSessionMetadata()
         {
-            #region example-1
+            #region GetQAppSessionMetadata-1
 
             var client = new AmazonQAppsClient();
-            var response = client.GetQAppSessionMetadata(new GetQAppSessionMetadataRequest 
+            var response = client.GetQAppSessionMetadata(new GetQAppSessionMetadataRequest
             {
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
                 SessionId = "56ae47c3-10bc-4c2c-8b27-9b9fe23b3edb"
@@ -386,7 +387,7 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             string sessionArn = response.SessionArn;
             string sessionId = response.SessionId;
             string sessionName = response.SessionName;
-            bool sessionOwner = response.SessionOwner;
+            bool? sessionOwner = response.SessionOwner;
             SessionSharingConfiguration sharingConfiguration = response.SharingConfiguration;
 
             #endregion
@@ -394,10 +395,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsImportDocument()
         {
-            #region example-1
+            #region ImportDocument-1
 
             var client = new AmazonQAppsClient();
-            var response = client.ImportDocument(new ImportDocumentRequest 
+            var response = client.ImportDocument(new ImportDocumentRequest
             {
                 AppId = "4263767c-d889-4cb2-a8f6-8b649bc66af0",
                 CardId = "82f69028-22a9-4bea-8727-0eabf58e9fed",
@@ -415,10 +416,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsImportDocument()
         {
-            #region example-2
+            #region ImportDocument-2
 
             var client = new AmazonQAppsClient();
-            var response = client.ImportDocument(new ImportDocumentRequest 
+            var response = client.ImportDocument(new ImportDocumentRequest
             {
                 AppId = "4263767c-d889-4cb2-a8f6-8b649bc66af0",
                 CardId = "7a11f34b-42d4-4bc8-b668-ae4a788dae1e",
@@ -435,10 +436,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsListCategories()
         {
-            #region example-1
+            #region ListCategories-1
 
             var client = new AmazonQAppsClient();
-            var response = client.ListCategories(new ListCategoriesRequest 
+            var response = client.ListCategories(new ListCategoriesRequest
             {
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f"
             });
@@ -450,10 +451,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsListLibraryItems()
         {
-            #region example-1
+            #region ListLibraryItems-1
 
             var client = new AmazonQAppsClient();
-            var response = client.ListLibraryItems(new ListLibraryItemsRequest 
+            var response = client.ListLibraryItems(new ListLibraryItemsRequest
             {
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
                 Limit = 3
@@ -467,10 +468,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsListQApps()
         {
-            #region example-1
+            #region ListQApps-1
 
             var client = new AmazonQAppsClient();
-            var response = client.ListQApps(new ListQAppsRequest 
+            var response = client.ListQApps(new ListQAppsRequest
             {
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
                 Limit = 3
@@ -484,10 +485,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsListQApps()
         {
-            #region example-2
+            #region ListQApps-2
 
             var client = new AmazonQAppsClient();
-            var response = client.ListQApps(new ListQAppsRequest 
+            var response = client.ListQApps(new ListQAppsRequest
             {
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
                 Limit = 3,
@@ -502,10 +503,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonQAppsClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceARN = "arn:aws:qapps:us-west-2:123456789012:application/3642ba81-344c-42fd-a480-9119a5a5f26b/qapp/7212ff04-de7b-4831-bd80-45d6975ba1b0"
             });
@@ -517,17 +518,17 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsStartQAppSession()
         {
-            #region example-1
+            #region StartQAppSession-1
 
             var client = new AmazonQAppsClient();
-            var response = client.StartQAppSession(new StartQAppSessionRequest 
+            var response = client.StartQAppSession(new StartQAppSessionRequest
             {
                 AppId = "65e7dce7-226a-47f9-b689-22850becef89",
                 AppVersion = 1,
                 InitialValues = new List<CardValue> {
                     new CardValue {
-                        Value = "What is the circumference of Earth?",
-                        CardId = "6fb5b404-3b7b-48a4-8a8b-56406922a606"
+                        CardId = "6fb5b404-3b7b-48a4-8a8b-56406922a606",
+                        Value = "What is the circumference of Earth?"
                     }
                 },
                 InstanceId = "4cc5e4c2-d2a2-4188-a114-9ca125b4aedc"
@@ -541,10 +542,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonQAppsClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceARN = "arn:aws:qapps:us-west-2:123456789012:application/3642ba81-344c-42fd-a480-9119a5a5f26b/qapp/7212ff04-de7b-4831-bd80-45d6975ba1b0",
                 Tags = new Dictionary<string, string> {
@@ -558,10 +559,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonQAppsClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceARN = "arn:aws:qapps:us-west-2:123456789012:application/3642ba81-344c-42fd-a480-9119a5a5f26b/qapp/7212ff04-de7b-4831-bd80-45d6975ba1b0",
                 TagKeys = new List<string> {
@@ -575,10 +576,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsUpdateLibraryItem()
         {
-            #region example-1
+            #region UpdateLibraryItem-1
 
             var client = new AmazonQAppsClient();
-            var response = client.UpdateLibraryItem(new UpdateLibraryItemRequest 
+            var response = client.UpdateLibraryItem(new UpdateLibraryItemRequest
             {
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
                 LibraryItemId = "cb9ecf72-8563-450d-9db9-994f98297316",
@@ -586,15 +587,15 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             });
 
             string appId = response.AppId;
-            int appVersion = response.AppVersion;
+            int? appVersion = response.AppVersion;
             List<Category> categories = response.Categories;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string createdBy = response.CreatedBy;
-            bool isVerified = response.IsVerified;
+            bool? isVerified = response.IsVerified;
             string libraryItemId = response.LibraryItemId;
-            int ratingCount = response.RatingCount;
+            int? ratingCount = response.RatingCount;
             string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
             string updatedBy = response.UpdatedBy;
 
             #endregion
@@ -602,10 +603,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsUpdateLibraryItemMetadata()
         {
-            #region example-1
+            #region UpdateLibraryItemMetadata-1
 
             var client = new AmazonQAppsClient();
-            var response = client.UpdateLibraryItemMetadata(new UpdateLibraryItemMetadataRequest 
+            var response = client.UpdateLibraryItemMetadata(new UpdateLibraryItemMetadataRequest
             {
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
                 IsVerified = true,
@@ -618,10 +619,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsUpdateQApp()
         {
-            #region example-1
+            #region UpdateQApp-1
 
             var client = new AmazonQAppsClient();
-            var response = client.UpdateQApp(new UpdateQAppRequest 
+            var response = client.UpdateQApp(new UpdateQAppRequest
             {
                 AppId = "7212ff04-de7b-4831-bd80-45d6975ba1b0",
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
@@ -630,13 +631,13 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
             string appArn = response.AppArn;
             string appId = response.AppId;
-            int appVersion = response.AppVersion;
-            DateTime createdAt = response.CreatedAt;
+            int? appVersion = response.AppVersion;
+            DateTime? createdAt = response.CreatedAt;
             string createdBy = response.CreatedBy;
             List<string> requiredCapabilities = response.RequiredCapabilities;
-            string status = response.Status;
+            AppStatus status = response.Status;
             string title = response.Title;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
             string updatedBy = response.UpdatedBy;
 
             #endregion
@@ -644,17 +645,17 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsUpdateQApp()
         {
-            #region example-2
+            #region UpdateQApp-2
 
             var client = new AmazonQAppsClient();
-            var response = client.UpdateQApp(new UpdateQAppRequest 
+            var response = client.UpdateQApp(new UpdateQAppRequest
             {
                 AppDefinition = new AppDefinitionInput { Cards = new List<CardInput> {
                     new CardInput { QQuery = new QQueryCardInput {
-                        Type = "q-query",
                         Id = "18870b94-1e63-40e0-8c12-669c90ac5acc",
                         Prompt = "Recommend me an itinerary for a trip",
-                        Title = "Trip Ideas"
+                        Title = "Trip Ideas",
+                        Type = "q-query"
                     } }
                 } },
                 AppId = "7212ff04-de7b-4831-bd80-45d6975ba1b0",
@@ -663,13 +664,13 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
             string appArn = response.AppArn;
             string appId = response.AppId;
-            int appVersion = response.AppVersion;
-            DateTime createdAt = response.CreatedAt;
+            int? appVersion = response.AppVersion;
+            DateTime? createdAt = response.CreatedAt;
             string createdBy = response.CreatedBy;
             List<string> requiredCapabilities = response.RequiredCapabilities;
-            string status = response.Status;
+            AppStatus status = response.Status;
             string title = response.Title;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
             string updatedBy = response.UpdatedBy;
 
             #endregion
@@ -677,10 +678,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsUpdateQAppPermissions()
         {
-            #region example-1
+            #region UpdateQAppPermissions-1
 
             var client = new AmazonQAppsClient();
-            var response = client.UpdateQAppPermissions(new UpdateQAppPermissionsRequest 
+            var response = client.UpdateQAppPermissions(new UpdateQAppPermissionsRequest
             {
                 AppId = "fe0acf86-49e5-4def-a0c2-40ce0cafee14",
                 GrantPermissions = new List<PermissionInput> {
@@ -701,10 +702,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsUpdateQAppPermissions()
         {
-            #region example-2
+            #region UpdateQAppPermissions-2
 
             var client = new AmazonQAppsClient();
-            var response = client.UpdateQAppPermissions(new UpdateQAppPermissionsRequest 
+            var response = client.UpdateQAppPermissions(new UpdateQAppPermissionsRequest
             {
                 AppId = "fe0acf86-49e5-4def-a0c2-40ce0cafee14",
                 InstanceId = "01793661-ad73-4c7d-8eaa-1c95a10151c2",
@@ -725,10 +726,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
         public void QAppsUpdateQAppSessionMetadata()
         {
-            #region example-1
+            #region UpdateQAppSessionMetadata-1
 
             var client = new AmazonQAppsClient();
-            var response = client.UpdateQAppSessionMetadata(new UpdateQAppSessionMetadataRequest 
+            var response = client.UpdateQAppSessionMetadata(new UpdateQAppSessionMetadataRequest
             {
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
                 SessionId = "56ae47c3-10bc-4c2c-8b27-9b9fe23b3edb",
@@ -748,13 +749,10 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

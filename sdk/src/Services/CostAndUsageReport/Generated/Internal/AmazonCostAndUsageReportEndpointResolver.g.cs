@@ -31,7 +31,7 @@ using Amazon.CostAndUsageReport.Endpoints;
 namespace Amazon.CostAndUsageReport.Internal
 {
     /// <summary>
-    /// Amazon CostAndUsageReport endpoint resolver.
+    /// AWS Cost and Usage Report Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CostAndUsageReport service requests.
     /// <para />

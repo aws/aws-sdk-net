@@ -105,13 +105,14 @@ namespace Amazon.Runtime.Internal
             using (requestContext.Metrics.StartEvent(Metric.ResponseProcessingTime))
             {
                 var unmarshaller = requestContext.Unmarshaller;
+                UnmarshallerContext context = null;
                 try
                 {
                     var readEntireResponse = _supportsResponseLogging &&
                         (requestContext.ClientConfig.LogResponse
                         || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never);
 
-                    var context = unmarshaller.CreateContext(responseContext.HttpResponse,
+                    context = unmarshaller.CreateContext(responseContext.HttpResponse,
                         readEntireResponse,
                         responseContext.HttpResponse.ResponseBody.OpenResponse(),
                         requestContext.Metrics,
@@ -142,7 +143,12 @@ namespace Amazon.Runtime.Internal
                 finally
                 {
                     if (!unmarshaller.HasStreamingProperty)
-                        responseContext.HttpResponse.ResponseBody.Dispose();     
+                    {
+                        // The response has been fully consumed, so the context (and the pooled
+                        // buffers it holds) can be released together with the body.
+                        context?.Dispose();
+                        responseContext.HttpResponse.ResponseBody.Dispose();
+                    }
                 }
             }
         }
@@ -165,6 +171,7 @@ namespace Amazon.Runtime.Internal
                 var unmarshaller = requestContext.Unmarshaller;
                 var cancellationToken = requestContext.CancellationToken;
                 var abortRegistration = default(CancellationTokenRegistration);
+                UnmarshallerContext context = null;
                 try
                 {
                     // HttpClient stops observing the token once headers arrive; abort the response on cancellation
@@ -178,7 +185,7 @@ namespace Amazon.Runtime.Internal
 
                     var responseStream = await responseContext.HttpResponse.
                         ResponseBody.OpenResponseAsync().ConfigureAwait(false);
-                    var context = unmarshaller.CreateContext(responseContext.HttpResponse,
+                    context = unmarshaller.CreateContext(responseContext.HttpResponse,
                         readEntireResponse,
                         responseStream,
                         requestContext.Metrics,
@@ -201,7 +208,12 @@ namespace Amazon.Runtime.Internal
                 {
                     abortRegistration.Dispose();
                     if (!unmarshaller.HasStreamingProperty)
+                    {
+                        // The response has been fully consumed, so the context (and the pooled
+                        // buffers it holds) can be released together with the body.
+                        context?.Dispose();
                         responseContext.HttpResponse.ResponseBody.Dispose();
+                    }
                 }
             }
         }

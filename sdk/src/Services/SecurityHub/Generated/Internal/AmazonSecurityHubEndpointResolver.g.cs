@@ -31,7 +31,7 @@ using Amazon.SecurityHub.Endpoints;
 namespace Amazon.SecurityHub.Internal
 {
     /// <summary>
-    /// Amazon SecurityHub endpoint resolver.
+    /// AWS SecurityHub endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SecurityHub service requests.
     /// <para />

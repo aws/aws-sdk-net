@@ -5467,6 +5467,188 @@ namespace Amazon.SecurityHub
     }
 
     /// <summary>
+    /// Constants used for properties of type SoftwareGroupByField.
+    /// </summary>
+    public class SoftwareGroupByField : ConstantClass
+    {
+        /// <summary>
+        /// Constant AccountId for SoftwareGroupByField
+        /// </summary>
+        public static readonly SoftwareGroupByField AccountId = new SoftwareGroupByField("AccountId");
+
+        /// <summary>
+        /// Constant PackageName for SoftwareGroupByField
+        /// </summary>
+        public static readonly SoftwareGroupByField PackageName = new SoftwareGroupByField("PackageName");
+
+        /// <summary>
+        /// Constant PackageType for SoftwareGroupByField
+        /// </summary>
+        public static readonly SoftwareGroupByField PackageType = new SoftwareGroupByField("PackageType");
+
+        /// <summary>
+        /// Constant PackageVersion for SoftwareGroupByField
+        /// </summary>
+        public static readonly SoftwareGroupByField PackageVersion = new SoftwareGroupByField("PackageVersion");
+
+        /// <summary>
+        /// Constant Region for SoftwareGroupByField
+        /// </summary>
+        public static readonly SoftwareGroupByField Region = new SoftwareGroupByField("Region");
+
+        /// <summary>
+        /// Constant ResourceCloudPartition for SoftwareGroupByField
+        /// </summary>
+        public static readonly SoftwareGroupByField ResourceCloudPartition = new SoftwareGroupByField("ResourceCloudPartition");
+
+        /// <summary>
+        /// Constant ResourceId for SoftwareGroupByField
+        /// </summary>
+        public static readonly SoftwareGroupByField ResourceId = new SoftwareGroupByField("ResourceId");
+
+        /// <summary>
+        /// Constant ResourceOwnerAccountId for SoftwareGroupByField
+        /// </summary>
+        public static readonly SoftwareGroupByField ResourceOwnerAccountId = new SoftwareGroupByField("ResourceOwnerAccountId");
+
+        /// <summary>
+        /// Constant ResourceOwnerOrgId for SoftwareGroupByField
+        /// </summary>
+        public static readonly SoftwareGroupByField ResourceOwnerOrgId = new SoftwareGroupByField("ResourceOwnerOrgId");
+
+        /// <summary>
+        /// Constant ResourceProvider for SoftwareGroupByField
+        /// </summary>
+        public static readonly SoftwareGroupByField ResourceProvider = new SoftwareGroupByField("ResourceProvider");
+
+        /// <summary>
+        /// Constant ResourceRegion for SoftwareGroupByField
+        /// </summary>
+        public static readonly SoftwareGroupByField ResourceRegion = new SoftwareGroupByField("ResourceRegion");
+
+        /// <summary>
+        /// Constant ResourceType for SoftwareGroupByField
+        /// </summary>
+        public static readonly SoftwareGroupByField ResourceType = new SoftwareGroupByField("ResourceType");
+
+        /// <summary>
+        /// Constructs a custom SoftwareGroupByField for a value not among the defined constants.
+        /// </summary>
+        public SoftwareGroupByField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SoftwareGroupByField FindValue(string value)
+        {
+            return FindValue<SoftwareGroupByField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SoftwareGroupByField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SoftwareStringField.
+    /// </summary>
+    public class SoftwareStringField : ConstantClass
+    {
+        /// <summary>
+        /// Constant AccountId for SoftwareStringField
+        /// </summary>
+        public static readonly SoftwareStringField AccountId = new SoftwareStringField("AccountId");
+
+        /// <summary>
+        /// Constant PackageName for SoftwareStringField
+        /// </summary>
+        public static readonly SoftwareStringField PackageName = new SoftwareStringField("PackageName");
+
+        /// <summary>
+        /// Constant PackageType for SoftwareStringField
+        /// </summary>
+        public static readonly SoftwareStringField PackageType = new SoftwareStringField("PackageType");
+
+        /// <summary>
+        /// Constant PackageVersion for SoftwareStringField
+        /// </summary>
+        public static readonly SoftwareStringField PackageVersion = new SoftwareStringField("PackageVersion");
+
+        /// <summary>
+        /// Constant Region for SoftwareStringField
+        /// </summary>
+        public static readonly SoftwareStringField Region = new SoftwareStringField("Region");
+
+        /// <summary>
+        /// Constant ResourceCloudPartition for SoftwareStringField
+        /// </summary>
+        public static readonly SoftwareStringField ResourceCloudPartition = new SoftwareStringField("ResourceCloudPartition");
+
+        /// <summary>
+        /// Constant ResourceId for SoftwareStringField
+        /// </summary>
+        public static readonly SoftwareStringField ResourceId = new SoftwareStringField("ResourceId");
+
+        /// <summary>
+        /// Constant ResourceOwnerAccountId for SoftwareStringField
+        /// </summary>
+        public static readonly SoftwareStringField ResourceOwnerAccountId = new SoftwareStringField("ResourceOwnerAccountId");
+
+        /// <summary>
+        /// Constant ResourceOwnerOrgId for SoftwareStringField
+        /// </summary>
+        public static readonly SoftwareStringField ResourceOwnerOrgId = new SoftwareStringField("ResourceOwnerOrgId");
+
+        /// <summary>
+        /// Constant ResourceProvider for SoftwareStringField
+        /// </summary>
+        public static readonly SoftwareStringField ResourceProvider = new SoftwareStringField("ResourceProvider");
+
+        /// <summary>
+        /// Constant ResourceRegion for SoftwareStringField
+        /// </summary>
+        public static readonly SoftwareStringField ResourceRegion = new SoftwareStringField("ResourceRegion");
+
+        /// <summary>
+        /// Constant ResourceType for SoftwareStringField
+        /// </summary>
+        public static readonly SoftwareStringField ResourceType = new SoftwareStringField("ResourceType");
+
+        /// <summary>
+        /// Constructs a custom SoftwareStringField for a value not among the defined constants.
+        /// </summary>
+        public SoftwareStringField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SoftwareStringField FindValue(string value)
+        {
+            return FindValue<SoftwareStringField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SoftwareStringField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type SortOrder.
     /// </summary>
     public class SortOrder : ConstantClass

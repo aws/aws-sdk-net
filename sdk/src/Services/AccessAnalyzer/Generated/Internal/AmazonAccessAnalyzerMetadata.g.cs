@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AccessAnalyzer.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AccessAnalyzer service
+    /// Service metadata for Access Analyzer
     /// </summary>
     public partial class AmazonAccessAnalyzerMetadata : IServiceMetadata
     {

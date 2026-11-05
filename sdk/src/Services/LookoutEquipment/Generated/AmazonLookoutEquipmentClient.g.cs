@@ -277,6 +277,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -286,6 +287,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<CreateDatasetResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -328,6 +330,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -372,6 +375,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateInferenceScheduler">REST API Reference for CreateInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual CreateInferenceSchedulerResponse CreateInferenceScheduler(CreateInferenceSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -381,6 +385,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<CreateInferenceSchedulerResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual CreateInferenceSchedulerResponse CreateInferenceScheduler(CreateInferenceSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -428,6 +433,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateInferenceScheduler">REST API Reference for CreateInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<CreateInferenceSchedulerResponse> CreateInferenceSchedulerAsync(CreateInferenceSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -468,6 +474,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual CreateLabelResponse CreateLabel(CreateLabelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -477,6 +484,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<CreateLabelResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual CreateLabelResponse CreateLabel(CreateLabelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -520,6 +528,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<CreateLabelResponse> CreateLabelAsync(CreateLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -556,6 +565,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual CreateLabelGroupResponse CreateLabelGroup(CreateLabelGroupRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -565,6 +575,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<CreateLabelGroupResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual CreateLabelGroupResponse CreateLabelGroup(CreateLabelGroupRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -604,6 +615,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<CreateLabelGroupResponse> CreateLabelGroupAsync(CreateLabelGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -659,6 +671,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateModel">REST API Reference for CreateModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -668,6 +681,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<CreateModelResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -726,6 +740,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateModel">REST API Reference for CreateModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -763,6 +778,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateRetrainingScheduler">REST API Reference for CreateRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual CreateRetrainingSchedulerResponse CreateRetrainingScheduler(CreateRetrainingSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -772,6 +788,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<CreateRetrainingSchedulerResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual CreateRetrainingSchedulerResponse CreateRetrainingScheduler(CreateRetrainingSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -812,6 +829,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateRetrainingScheduler">REST API Reference for CreateRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<CreateRetrainingSchedulerResponse> CreateRetrainingSchedulerAsync(CreateRetrainingSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -853,6 +871,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -862,6 +881,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DeleteDatasetResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -906,6 +926,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -944,6 +965,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteInferenceScheduler">REST API Reference for DeleteInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DeleteInferenceSchedulerResponse DeleteInferenceScheduler(DeleteInferenceSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -953,6 +975,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DeleteInferenceSchedulerResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DeleteInferenceSchedulerResponse DeleteInferenceScheduler(DeleteInferenceSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -994,6 +1017,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteInferenceScheduler">REST API Reference for DeleteInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DeleteInferenceSchedulerResponse> DeleteInferenceSchedulerAsync(DeleteInferenceSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1031,6 +1055,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DeleteLabelResponse DeleteLabel(DeleteLabelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1040,6 +1065,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DeleteLabelResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DeleteLabelResponse DeleteLabel(DeleteLabelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1080,6 +1106,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DeleteLabelResponse> DeleteLabelAsync(DeleteLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1117,6 +1144,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DeleteLabelGroupResponse DeleteLabelGroup(DeleteLabelGroupRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1126,6 +1154,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DeleteLabelGroupResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DeleteLabelGroupResponse DeleteLabelGroup(DeleteLabelGroupRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1166,6 +1195,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DeleteLabelGroupResponse> DeleteLabelGroupAsync(DeleteLabelGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1205,6 +1235,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1214,6 +1245,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DeleteModelResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1256,6 +1288,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1293,6 +1326,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1302,6 +1336,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DeleteResourcePolicyResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1342,6 +1377,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1380,6 +1416,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteRetrainingScheduler">REST API Reference for DeleteRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DeleteRetrainingSchedulerResponse DeleteRetrainingScheduler(DeleteRetrainingSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1389,6 +1426,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DeleteRetrainingSchedulerResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DeleteRetrainingSchedulerResponse DeleteRetrainingScheduler(DeleteRetrainingSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1430,6 +1468,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteRetrainingScheduler">REST API Reference for DeleteRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DeleteRetrainingSchedulerResponse> DeleteRetrainingSchedulerAsync(DeleteRetrainingSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1464,6 +1503,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">REST API Reference for DescribeDataIngestionJob Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DescribeDataIngestionJobResponse DescribeDataIngestionJob(DescribeDataIngestionJobRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1473,6 +1513,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DescribeDataIngestionJobResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DescribeDataIngestionJobResponse DescribeDataIngestionJob(DescribeDataIngestionJobRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1510,6 +1551,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">REST API Reference for DescribeDataIngestionJob Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DescribeDataIngestionJobResponse> DescribeDataIngestionJobAsync(DescribeDataIngestionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1544,6 +1586,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1553,6 +1596,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DescribeDatasetResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1590,6 +1634,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1624,6 +1669,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeInferenceScheduler">REST API Reference for DescribeInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DescribeInferenceSchedulerResponse DescribeInferenceScheduler(DescribeInferenceSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1633,6 +1679,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DescribeInferenceSchedulerResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DescribeInferenceSchedulerResponse DescribeInferenceScheduler(DescribeInferenceSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1670,6 +1717,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeInferenceScheduler">REST API Reference for DescribeInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DescribeInferenceSchedulerResponse> DescribeInferenceSchedulerAsync(DescribeInferenceSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1703,6 +1751,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DescribeLabelResponse DescribeLabel(DescribeLabelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1712,6 +1761,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DescribeLabelResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DescribeLabelResponse DescribeLabel(DescribeLabelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1748,6 +1798,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DescribeLabelResponse> DescribeLabelAsync(DescribeLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1781,6 +1832,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DescribeLabelGroupResponse DescribeLabelGroup(DescribeLabelGroupRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1790,6 +1842,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DescribeLabelGroupResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DescribeLabelGroupResponse DescribeLabelGroup(DescribeLabelGroupRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1826,6 +1879,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DescribeLabelGroupResponse> DescribeLabelGroupAsync(DescribeLabelGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1861,6 +1915,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">REST API Reference for DescribeModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DescribeModelResponse DescribeModel(DescribeModelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1870,6 +1925,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DescribeModelResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DescribeModelResponse DescribeModel(DescribeModelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1908,6 +1964,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">REST API Reference for DescribeModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DescribeModelResponse> DescribeModelAsync(DescribeModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1941,6 +1998,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion">REST API Reference for DescribeModelVersion Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DescribeModelVersionResponse DescribeModelVersion(DescribeModelVersionRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1950,6 +2008,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DescribeModelVersionResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DescribeModelVersionResponse DescribeModelVersion(DescribeModelVersionRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1986,6 +2045,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion">REST API Reference for DescribeModelVersion Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DescribeModelVersionResponse> DescribeModelVersionAsync(DescribeModelVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2019,6 +2079,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2028,6 +2089,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DescribeResourcePolicyResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2064,6 +2126,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DescribeResourcePolicyResponse> DescribeResourcePolicyAsync(DescribeResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2098,6 +2161,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeRetrainingScheduler">REST API Reference for DescribeRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual DescribeRetrainingSchedulerResponse DescribeRetrainingScheduler(DescribeRetrainingSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2107,6 +2171,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<DescribeRetrainingSchedulerResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual DescribeRetrainingSchedulerResponse DescribeRetrainingScheduler(DescribeRetrainingSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2144,6 +2209,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeRetrainingScheduler">REST API Reference for DescribeRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<DescribeRetrainingSchedulerResponse> DescribeRetrainingSchedulerAsync(DescribeRetrainingSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2184,6 +2250,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset">REST API Reference for ImportDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ImportDatasetResponse ImportDataset(ImportDatasetRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2193,6 +2260,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ImportDatasetResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ImportDatasetResponse ImportDataset(ImportDatasetRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2236,6 +2304,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset">REST API Reference for ImportDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ImportDatasetResponse> ImportDatasetAsync(ImportDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2276,6 +2345,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion">REST API Reference for ImportModelVersion Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ImportModelVersionResponse ImportModelVersion(ImportModelVersionRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2285,6 +2355,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ImportModelVersionResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ImportModelVersionResponse ImportModelVersion(ImportModelVersionRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2328,6 +2399,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion">REST API Reference for ImportModelVersion Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ImportModelVersionResponse> ImportModelVersionAsync(ImportModelVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2358,6 +2430,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDataIngestionJobs">REST API Reference for ListDataIngestionJobs Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ListDataIngestionJobsResponse ListDataIngestionJobs(ListDataIngestionJobsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2367,6 +2440,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ListDataIngestionJobsResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ListDataIngestionJobsResponse ListDataIngestionJobs(ListDataIngestionJobsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2400,6 +2474,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDataIngestionJobs">REST API Reference for ListDataIngestionJobs Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ListDataIngestionJobsResponse> ListDataIngestionJobsAsync(ListDataIngestionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2429,6 +2504,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2438,6 +2514,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ListDatasetsResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2470,6 +2547,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2503,6 +2581,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ListInferenceEventsResponse ListInferenceEvents(ListInferenceEventsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2512,6 +2591,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ListInferenceEventsResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ListInferenceEventsResponse ListInferenceEvents(ListInferenceEventsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2548,6 +2628,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ListInferenceEventsResponse> ListInferenceEventsAsync(ListInferenceEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2582,6 +2663,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceExecutions">REST API Reference for ListInferenceExecutions Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ListInferenceExecutionsResponse ListInferenceExecutions(ListInferenceExecutionsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2591,6 +2673,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ListInferenceExecutionsResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ListInferenceExecutionsResponse ListInferenceExecutions(ListInferenceExecutionsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2628,6 +2711,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceExecutions">REST API Reference for ListInferenceExecutions Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ListInferenceExecutionsResponse> ListInferenceExecutionsAsync(ListInferenceExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2657,6 +2741,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceSchedulers">REST API Reference for ListInferenceSchedulers Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ListInferenceSchedulersResponse ListInferenceSchedulers(ListInferenceSchedulersRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2666,6 +2751,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ListInferenceSchedulersResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ListInferenceSchedulersResponse ListInferenceSchedulers(ListInferenceSchedulersRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2698,6 +2784,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceSchedulers">REST API Reference for ListInferenceSchedulers Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ListInferenceSchedulersResponse> ListInferenceSchedulersAsync(ListInferenceSchedulersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2727,6 +2814,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ListLabelGroupsResponse ListLabelGroups(ListLabelGroupsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2736,6 +2824,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ListLabelGroupsResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ListLabelGroupsResponse ListLabelGroups(ListLabelGroupsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2768,6 +2857,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ListLabelGroupsResponse> ListLabelGroupsAsync(ListLabelGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2797,6 +2887,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ListLabelsResponse ListLabels(ListLabelsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2806,6 +2897,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ListLabelsResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ListLabelsResponse ListLabels(ListLabelsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2838,6 +2930,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ListLabelsResponse> ListLabelsAsync(ListLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2873,6 +2966,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions">REST API Reference for ListModelVersions Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ListModelVersionsResponse ListModelVersions(ListModelVersionsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2882,6 +2976,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ListModelVersionsResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ListModelVersionsResponse ListModelVersions(ListModelVersionsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2920,6 +3015,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions">REST API Reference for ListModelVersions Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ListModelVersionsResponse> ListModelVersionsAsync(ListModelVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2950,6 +3046,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModels">REST API Reference for ListModels Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ListModelsResponse ListModels(ListModelsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2959,6 +3056,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ListModelsResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ListModelsResponse ListModels(ListModelsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2992,6 +3090,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModels">REST API Reference for ListModels Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ListModelsResponse> ListModelsAsync(ListModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3022,6 +3121,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers">REST API Reference for ListRetrainingSchedulers Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ListRetrainingSchedulersResponse ListRetrainingSchedulers(ListRetrainingSchedulersRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3031,6 +3131,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ListRetrainingSchedulersResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ListRetrainingSchedulersResponse ListRetrainingSchedulers(ListRetrainingSchedulersRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3064,6 +3165,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers">REST API Reference for ListRetrainingSchedulers Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ListRetrainingSchedulersResponse> ListRetrainingSchedulersAsync(ListRetrainingSchedulersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3099,6 +3201,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ListSensorStatisticsResponse ListSensorStatistics(ListSensorStatisticsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3108,6 +3211,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ListSensorStatisticsResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ListSensorStatisticsResponse ListSensorStatistics(ListSensorStatisticsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3146,6 +3250,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ListSensorStatisticsResponse> ListSensorStatisticsAsync(ListSensorStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3179,6 +3284,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3188,6 +3294,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<ListTagsForResourceResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3224,6 +3331,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3264,6 +3372,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3273,6 +3382,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<PutResourcePolicyResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3316,6 +3426,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3356,6 +3467,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartDataIngestionJob">REST API Reference for StartDataIngestionJob Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual StartDataIngestionJobResponse StartDataIngestionJob(StartDataIngestionJobRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3365,6 +3477,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<StartDataIngestionJobResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual StartDataIngestionJobResponse StartDataIngestionJob(StartDataIngestionJobRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3408,6 +3521,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartDataIngestionJob">REST API Reference for StartDataIngestionJob Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<StartDataIngestionJobResponse> StartDataIngestionJobAsync(StartDataIngestionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3445,6 +3559,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartInferenceScheduler">REST API Reference for StartInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual StartInferenceSchedulerResponse StartInferenceScheduler(StartInferenceSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3454,6 +3569,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<StartInferenceSchedulerResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual StartInferenceSchedulerResponse StartInferenceScheduler(StartInferenceSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3494,6 +3610,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartInferenceScheduler">REST API Reference for StartInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<StartInferenceSchedulerResponse> StartInferenceSchedulerAsync(StartInferenceSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3531,6 +3648,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartRetrainingScheduler">REST API Reference for StartRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual StartRetrainingSchedulerResponse StartRetrainingScheduler(StartRetrainingSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3540,6 +3658,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<StartRetrainingSchedulerResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual StartRetrainingSchedulerResponse StartRetrainingScheduler(StartRetrainingSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3580,6 +3699,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartRetrainingScheduler">REST API Reference for StartRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<StartRetrainingSchedulerResponse> StartRetrainingSchedulerAsync(StartRetrainingSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3617,6 +3737,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopInferenceScheduler">REST API Reference for StopInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual StopInferenceSchedulerResponse StopInferenceScheduler(StopInferenceSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3626,6 +3747,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<StopInferenceSchedulerResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual StopInferenceSchedulerResponse StopInferenceScheduler(StopInferenceSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3666,6 +3788,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopInferenceScheduler">REST API Reference for StopInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<StopInferenceSchedulerResponse> StopInferenceSchedulerAsync(StopInferenceSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3703,6 +3826,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopRetrainingScheduler">REST API Reference for StopRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual StopRetrainingSchedulerResponse StopRetrainingScheduler(StopRetrainingSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3712,6 +3836,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<StopRetrainingSchedulerResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual StopRetrainingSchedulerResponse StopRetrainingScheduler(StopRetrainingSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3752,6 +3877,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopRetrainingScheduler">REST API Reference for StopRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<StopRetrainingSchedulerResponse> StopRetrainingSchedulerAsync(StopRetrainingSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3792,6 +3918,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3801,6 +3928,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<TagResourceResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3844,6 +3972,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3877,6 +4006,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3886,6 +4016,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<UntagResourceResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3922,6 +4053,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3959,6 +4091,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion">REST API Reference for UpdateActiveModelVersion Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual UpdateActiveModelVersionResponse UpdateActiveModelVersion(UpdateActiveModelVersionRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3968,6 +4101,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<UpdateActiveModelVersionResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual UpdateActiveModelVersionResponse UpdateActiveModelVersion(UpdateActiveModelVersionRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4008,6 +4142,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion">REST API Reference for UpdateActiveModelVersion Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<UpdateActiveModelVersionResponse> UpdateActiveModelVersionAsync(UpdateActiveModelVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4045,6 +4180,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateInferenceScheduler">REST API Reference for UpdateInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual UpdateInferenceSchedulerResponse UpdateInferenceScheduler(UpdateInferenceSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4054,6 +4190,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<UpdateInferenceSchedulerResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual UpdateInferenceSchedulerResponse UpdateInferenceScheduler(UpdateInferenceSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4094,6 +4231,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateInferenceScheduler">REST API Reference for UpdateInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<UpdateInferenceSchedulerResponse> UpdateInferenceSchedulerAsync(UpdateInferenceSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4131,6 +4269,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual UpdateLabelGroupResponse UpdateLabelGroup(UpdateLabelGroupRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4140,6 +4279,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<UpdateLabelGroupResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual UpdateLabelGroupResponse UpdateLabelGroup(UpdateLabelGroupRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4180,6 +4320,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<UpdateLabelGroupResponse> UpdateLabelGroupAsync(UpdateLabelGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4217,6 +4358,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4226,6 +4368,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<UpdateModelResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4266,6 +4409,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<UpdateModelResponse> UpdateModelAsync(UpdateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4303,6 +4447,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateRetrainingScheduler">REST API Reference for UpdateRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual UpdateRetrainingSchedulerResponse UpdateRetrainingScheduler(UpdateRetrainingSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4312,6 +4457,7 @@ namespace Amazon.LookoutEquipment
             return Invoke<UpdateRetrainingSchedulerResponse>(request, options);
         }
 #else
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         internal virtual UpdateRetrainingSchedulerResponse UpdateRetrainingScheduler(UpdateRetrainingSchedulerRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4352,6 +4498,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateRetrainingScheduler">REST API Reference for UpdateRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         public virtual Task<UpdateRetrainingSchedulerResponse> UpdateRetrainingSchedulerAsync(UpdateRetrainingSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();

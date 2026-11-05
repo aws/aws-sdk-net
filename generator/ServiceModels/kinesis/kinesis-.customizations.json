@@ -21,5 +21,10 @@
                 ]
             }
         }
+    },
+    "paginators": {
+        "ListStreams": {
+            "items": ["StreamNames", "StreamSummaries"]
+        }
     }
 }

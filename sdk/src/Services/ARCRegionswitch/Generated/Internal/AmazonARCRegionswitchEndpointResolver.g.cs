@@ -31,7 +31,7 @@ using Amazon.ARCRegionswitch.Endpoints;
 namespace Amazon.ARCRegionswitch.Internal
 {
     /// <summary>
-    /// Amazon ARCRegionswitch endpoint resolver.
+    /// ARC - Region switch endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ARCRegionswitch service requests.
     /// <para />

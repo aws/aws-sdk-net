@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ControlTower service
+    /// Service metadata for AWS Control Tower
     /// </summary>
     public partial class AmazonControlTowerMetadata : IServiceMetadata
     {

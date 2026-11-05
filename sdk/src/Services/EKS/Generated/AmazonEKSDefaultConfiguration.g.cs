@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.EKS
 {
     /// <summary>
-    /// Configuration for accessing Amazon EKS service
+    /// Configuration for accessing Amazon Elastic Kubernetes Service
     /// </summary>
     public static class AmazonEKSDefaultConfiguration
     {

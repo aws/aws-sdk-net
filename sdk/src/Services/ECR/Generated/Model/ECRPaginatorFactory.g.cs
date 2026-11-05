@@ -57,6 +57,14 @@ namespace Amazon.ECR.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeReplicationBackfillResults operation
+        /// </summary>
+        public IDescribeReplicationBackfillResultsPaginator DescribeReplicationBackfillResults(DescribeReplicationBackfillResultsRequest request)
+        {
+            return new DescribeReplicationBackfillResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeRepositories operation
         /// </summary>
         public IDescribeRepositoriesPaginator DescribeRepositories(DescribeRepositoriesRequest request)
@@ -86,6 +94,14 @@ namespace Amazon.ECR.Model
         public IListImagesPaginator ListImages(ListImagesRequest request)
         {
             return new ListImagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListReplicationBackfills operation
+        /// </summary>
+        public IListReplicationBackfillsPaginator ListReplicationBackfills(ListReplicationBackfillsRequest request)
+        {
+            return new ListReplicationBackfillsPaginator(this.client, request);
         }
     }
 }

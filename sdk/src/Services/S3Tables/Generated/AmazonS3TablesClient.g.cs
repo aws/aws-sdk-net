@@ -47,12 +47,12 @@ namespace Amazon.S3Tables
     /// href="https://parquet.apache.org/docs/">Apache Parquet</a> format and related metadata.
     /// This data is stored inside an S3 table as a subresource. All tables in a table bucket
     /// are stored in the <a href="https://iceberg.apache.org/docs/latest/">Apache Iceberg</a>
-    /// table format. Through integration with the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html">Amazon
+    /// table format. Through integration with the <a href="https://docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html">Amazon
     /// Web Services Glue Data Catalog</a> you can interact with your tables using Amazon
-    /// Web Services analytics services, such as <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/athena/">Amazon
-    /// Athena</a> and <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/redshift/">Amazon
-    /// Redshift</a>. Amazon S3 manages maintenance of your tables through automatic file
-    /// compaction and snapshot management. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html">Amazon
+    /// Web Services analytics services, such as <a href="https://docs.aws.amazon.com/athena/">Amazon
+    /// Athena</a> and <a href="https://docs.aws.amazon.com/redshift/">Amazon Redshift</a>.
+    /// Amazon S3 manages maintenance of your tables through automatic file compaction and
+    /// snapshot management. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html">Amazon
     /// S3 table buckets</a>.
     /// </summary>
     public partial class AmazonS3TablesClient : AmazonServiceClient, IAmazonS3Tables
@@ -254,6 +254,116 @@ namespace Amazon.S3Tables
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Completes the migration of a table. The table's most recent migration must be in the
+        /// <c>succeeded</c>, <c>failed</c> or <c>cancelled</c> state. After you complete the
+        /// migration, you can't sync the table again, and you can write to and maintain the table
+        /// as you do any other table: compaction starts, and unreferenced file removal follows
+        /// the table bucket's configuration. You can't undo this operation. Calling it again
+        /// for the same table returns a <c>ConflictException</c>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:CompleteTableMigration</c> permission to use this operation.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteTableMigration service method.</param>
+        /// <returns>The response from the CompleteTableMigration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CompleteTableMigration">REST API Reference for CompleteTableMigration Operation</seealso>
+        public virtual CompleteTableMigrationResponse CompleteTableMigration(CompleteTableMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CompleteTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteTableMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteTableMigrationResponse>(request, options);
+        }
+#else
+        internal virtual CompleteTableMigrationResponse CompleteTableMigration(CompleteTableMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CompleteTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteTableMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteTableMigrationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Completes the migration of a table. The table's most recent migration must be in the
+        /// <c>succeeded</c>, <c>failed</c> or <c>cancelled</c> state. After you complete the
+        /// migration, you can't sync the table again, and you can write to and maintain the table
+        /// as you do any other table: compaction starts, and unreferenced file removal follows
+        /// the table bucket's configuration. You can't undo this operation. Calling it again
+        /// for the same table returns a <c>ConflictException</c>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:CompleteTableMigration</c> permission to use this operation.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteTableMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CompleteTableMigration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CompleteTableMigration">REST API Reference for CompleteTableMigration Operation</seealso>
+        public virtual Task<CompleteTableMigrationResponse> CompleteTableMigrationAsync(CompleteTableMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CompleteTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteTableMigrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CompleteTableMigrationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -2824,6 +2934,104 @@ namespace Amazon.S3Tables
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Gets the details of a migration, including its state, the reason it failed, its statistics
+        /// and the location of its reports. Identify the migration by its <c>migrationId</c>,
+        /// or specify the <c>tableARN</c> of a destination table to get that table's most recent
+        /// migration.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableMigration</c> permission to use this operation.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableMigration service method.</param>
+        /// <returns>The response from the GetTableMigration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableMigration">REST API Reference for GetTableMigration Operation</seealso>
+        public virtual GetTableMigrationResponse GetTableMigration(GetTableMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<GetTableMigrationResponse>(request, options);
+        }
+#else
+        internal virtual GetTableMigrationResponse GetTableMigration(GetTableMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<GetTableMigrationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Gets the details of a migration, including its state, the reason it failed, its statistics
+        /// and the location of its reports. Identify the migration by its <c>migrationId</c>,
+        /// or specify the <c>tableARN</c> of a destination table to get that table's most recent
+        /// migration.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableMigration</c> permission to use this operation.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetTableMigration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableMigration">REST API Reference for GetTableMigration Operation</seealso>
+        public virtual Task<GetTableMigrationResponse> GetTableMigrationAsync(GetTableMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableMigrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTableMigrationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Gets details about a table policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-get">Viewing
         /// a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
@@ -3628,6 +3836,118 @@ namespace Amazon.S3Tables
             options.ResponseUnmarshaller = ListTableBucketsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTableBucketsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the migrations whose destination is in a table bucket, a namespace or a table.
+        /// Specify a <c>tableBucketARN</c> to list the migrations into a table bucket, and add
+        /// a <c>namespace</c>, or a <c>namespace</c> and a <c>name</c>, to narrow the list. Or
+        /// specify a <c>tableARN</c> to list the migrations into a table.
+        /// 
+        ///  
+        /// <para>
+        /// Migrations are listed newest first. Results are paginated: use <c>maxResults</c> to
+        /// set the page size, and pass the <c>nextToken</c> from a response to retrieve the next
+        /// page of results. A page can contain fewer migrations than <c>maxResults</c>, or none,
+        /// and still return a <c>nextToken</c>. Continue until a response has no <c>nextToken</c>.
+        /// </para>
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:ListTableMigrations</c> permission to use this operation.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTableMigrations service method.</param>
+        /// <returns>The response from the ListTableMigrations service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/ListTableMigrations">REST API Reference for ListTableMigrations Operation</seealso>
+        public virtual ListTableMigrationsResponse ListTableMigrations(ListTableMigrationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTableMigrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTableMigrationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTableMigrationsResponse>(request, options);
+        }
+#else
+        internal virtual ListTableMigrationsResponse ListTableMigrations(ListTableMigrationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTableMigrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTableMigrationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTableMigrationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the migrations whose destination is in a table bucket, a namespace or a table.
+        /// Specify a <c>tableBucketARN</c> to list the migrations into a table bucket, and add
+        /// a <c>namespace</c>, or a <c>namespace</c> and a <c>name</c>, to narrow the list. Or
+        /// specify a <c>tableARN</c> to list the migrations into a table.
+        /// 
+        ///  
+        /// <para>
+        /// Migrations are listed newest first. Results are paginated: use <c>maxResults</c> to
+        /// set the page size, and pass the <c>nextToken</c> from a response to retrieve the next
+        /// page of results. A page can contain fewer migrations than <c>maxResults</c>, or none,
+        /// and still return a <c>nextToken</c>. Continue until a response has no <c>nextToken</c>.
+        /// </para>
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:ListTableMigrations</c> permission to use this operation.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTableMigrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListTableMigrations service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/ListTableMigrations">REST API Reference for ListTableMigrations Operation</seealso>
+        public virtual Task<ListTableMigrationsResponse> ListTableMigrationsAsync(ListTableMigrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTableMigrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTableMigrationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTableMigrationsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -5084,6 +5404,312 @@ namespace Amazon.S3Tables
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Starts migrating an Amazon Web Services Glue Data Catalog table into a new table in
+        /// a table bucket. The migration runs asynchronously: this operation returns the migration
+        /// ID and its initial state, and you track progress with <c>GetTableMigration</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The namespace must already exist, and a table with the specified name must not. The
+        /// migration creates the table during planning and commits data to it as it runs. Until
+        /// you call <c>CompleteTableMigration</c>, you can read the table but you can't write
+        /// to it. If the migration fails or is cancelled, the table and the data already committed
+        /// to it remain.
+        /// </para>
+        ///  
+        /// <para>
+        /// The migration first checks the source and the destination, and writes the table compatibility
+        /// and object compatibility reports to the bucket that you specify in <c>migrationOutput</c>.
+        /// If you set <c>reviewMigrationPlan</c> to <c>true</c>, the migration waits in the <c>pendingReview</c>
+        /// state so that you can review the reports, and continues only when you call <c>UpdateTableMigration</c>
+        /// with <c>requestedState</c> set to <c>queued</c>. If you don't continue or cancel the
+        /// migration within 30 days, the migration fails. Otherwise it continues to migrate the
+        /// data, and writes the object migration report when the migration ends. If planning
+        /// fails, the migration writes no object migration report.
+        /// </para>
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:StartTableMigration</c> permission to use this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have the <c>iam:PassRole</c> permission on the role that you specify in <c>roleARN</c>,
+        /// with a condition that allows passing it to <c>migration.s3tables.amazonaws.com</c>.
+        /// The associated resource is the table bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>destinationTable</c> specifies SSE-KMS encryption, you must have the <c>kms:DescribeKey</c>
+        /// and <c>kms:GenerateDataKey</c> permissions on the KMS key. You must also grant the
+        /// S3 Tables maintenance principal access to the key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
+        /// requirements for S3 Tables SSE-KMS encryption</a>.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTableMigration service method.</param>
+        /// <returns>The response from the StartTableMigration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/StartTableMigration">REST API Reference for StartTableMigration Operation</seealso>
+        public virtual StartTableMigrationResponse StartTableMigration(StartTableMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTableMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<StartTableMigrationResponse>(request, options);
+        }
+#else
+        internal virtual StartTableMigrationResponse StartTableMigration(StartTableMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTableMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<StartTableMigrationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Starts migrating an Amazon Web Services Glue Data Catalog table into a new table in
+        /// a table bucket. The migration runs asynchronously: this operation returns the migration
+        /// ID and its initial state, and you track progress with <c>GetTableMigration</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The namespace must already exist, and a table with the specified name must not. The
+        /// migration creates the table during planning and commits data to it as it runs. Until
+        /// you call <c>CompleteTableMigration</c>, you can read the table but you can't write
+        /// to it. If the migration fails or is cancelled, the table and the data already committed
+        /// to it remain.
+        /// </para>
+        ///  
+        /// <para>
+        /// The migration first checks the source and the destination, and writes the table compatibility
+        /// and object compatibility reports to the bucket that you specify in <c>migrationOutput</c>.
+        /// If you set <c>reviewMigrationPlan</c> to <c>true</c>, the migration waits in the <c>pendingReview</c>
+        /// state so that you can review the reports, and continues only when you call <c>UpdateTableMigration</c>
+        /// with <c>requestedState</c> set to <c>queued</c>. If you don't continue or cancel the
+        /// migration within 30 days, the migration fails. Otherwise it continues to migrate the
+        /// data, and writes the object migration report when the migration ends. If planning
+        /// fails, the migration writes no object migration report.
+        /// </para>
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:StartTableMigration</c> permission to use this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have the <c>iam:PassRole</c> permission on the role that you specify in <c>roleARN</c>,
+        /// with a condition that allows passing it to <c>migration.s3tables.amazonaws.com</c>.
+        /// The associated resource is the table bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>destinationTable</c> specifies SSE-KMS encryption, you must have the <c>kms:DescribeKey</c>
+        /// and <c>kms:GenerateDataKey</c> permissions on the KMS key. You must also grant the
+        /// S3 Tables maintenance principal access to the key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
+        /// requirements for S3 Tables SSE-KMS encryption</a>.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTableMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartTableMigration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/StartTableMigration">REST API Reference for StartTableMigration Operation</seealso>
+        public virtual Task<StartTableMigrationResponse> StartTableMigrationAsync(StartTableMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTableMigrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartTableMigrationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Migrates the changes in the source table since the previous start or sync, such as
+        /// added and deleted source objects, into the destination table. The sync runs asynchronously:
+        /// this operation returns the migration ID of the sync and its initial state, and you
+        /// track progress with <c>GetTableMigration</c>.
+        /// 
+        ///  
+        /// <para>
+        /// A sync uses the source, destination and data migration settings of the table's migration,
+        /// and plans the work and writes its reports in the same way as <c>StartTableMigration</c>.
+        /// You can sync after a start or sync that succeeded, failed or was cancelled, if an
+        /// earlier start or sync of the table has a valid plan (<c>hasValidPlan</c>). You can't
+        /// sync a table while a start or sync is in progress for it, and you can sync a table
+        /// until you call <c>CompleteTableMigration</c> for it. If a source object that an earlier
+        /// migration migrated has since been overwritten, the sync fails.
+        /// </para>
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:SyncTableMigration</c> permission to use this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have the <c>iam:PassRole</c> permission on the role that you specify in <c>roleARN</c>,
+        /// with a condition that allows passing it to <c>migration.s3tables.amazonaws.com</c>.
+        /// The associated resource is the table.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SyncTableMigration service method.</param>
+        /// <returns>The response from the SyncTableMigration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/SyncTableMigration">REST API Reference for SyncTableMigration Operation</seealso>
+        public virtual SyncTableMigrationResponse SyncTableMigration(SyncTableMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SyncTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SyncTableMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<SyncTableMigrationResponse>(request, options);
+        }
+#else
+        internal virtual SyncTableMigrationResponse SyncTableMigration(SyncTableMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SyncTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SyncTableMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<SyncTableMigrationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Migrates the changes in the source table since the previous start or sync, such as
+        /// added and deleted source objects, into the destination table. The sync runs asynchronously:
+        /// this operation returns the migration ID of the sync and its initial state, and you
+        /// track progress with <c>GetTableMigration</c>.
+        /// 
+        ///  
+        /// <para>
+        /// A sync uses the source, destination and data migration settings of the table's migration,
+        /// and plans the work and writes its reports in the same way as <c>StartTableMigration</c>.
+        /// You can sync after a start or sync that succeeded, failed or was cancelled, if an
+        /// earlier start or sync of the table has a valid plan (<c>hasValidPlan</c>). You can't
+        /// sync a table while a start or sync is in progress for it, and you can sync a table
+        /// until you call <c>CompleteTableMigration</c> for it. If a source object that an earlier
+        /// migration migrated has since been overwritten, the sync fails.
+        /// </para>
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:SyncTableMigration</c> permission to use this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have the <c>iam:PassRole</c> permission on the role that you specify in <c>roleARN</c>,
+        /// with a condition that allows passing it to <c>migration.s3tables.amazonaws.com</c>.
+        /// The associated resource is the table.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SyncTableMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the SyncTableMigration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/SyncTableMigration">REST API Reference for SyncTableMigration Operation</seealso>
+        public virtual Task<SyncTableMigrationResponse> SyncTableMigrationAsync(SyncTableMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SyncTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SyncTableMigrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SyncTableMigrationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Applies one or more user-defined tags to an Amazon S3 Tables resource or updates existing
         /// tags. Each tag is a label consisting of a key and value pair. Tags can help you organize,
         /// track costs for, and control access to your resources. You can add up to 50 tags for
@@ -5402,6 +6028,128 @@ namespace Amazon.S3Tables
             options.ResponseUnmarshaller = UpdateTableMetadataLocationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateTableMetadataLocationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Requests a state change for a migration. Identify the migration by its <c>migrationId</c>
+        /// or by the <c>tableARN</c> of its destination table.
+        /// 
+        ///  
+        /// <para>
+        /// Set <c>requestedState</c> to <c>queued</c> to continue a migration in the <c>pendingReview</c>
+        /// state; the migration moves to <c>queued</c> or <c>migrating</c>. Set it to <c>cancelled</c>
+        /// to cancel a migration in the <c>new</c>, <c>planning</c>, <c>pendingReview</c>, <c>queued</c>
+        /// or <c>migrating</c> state; the migration moves to <c>cancelling</c>, finishes the
+        /// work in progress, and then ends in the <c>cancelled</c> state, or in the <c>failed</c>
+        /// state if any objects failed to migrate. Data that the migration already committed
+        /// stays in the destination table.
+        /// </para>
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:UpdateTableMigration</c> permission to use this operation.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTableMigration service method.</param>
+        /// <returns>The response from the UpdateTableMigration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/UpdateTableMigration">REST API Reference for UpdateTableMigration Operation</seealso>
+        public virtual UpdateTableMigrationResponse UpdateTableMigration(UpdateTableMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTableMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTableMigrationResponse>(request, options);
+        }
+#else
+        internal virtual UpdateTableMigrationResponse UpdateTableMigration(UpdateTableMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTableMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTableMigrationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Requests a state change for a migration. Identify the migration by its <c>migrationId</c>
+        /// or by the <c>tableARN</c> of its destination table.
+        /// 
+        ///  
+        /// <para>
+        /// Set <c>requestedState</c> to <c>queued</c> to continue a migration in the <c>pendingReview</c>
+        /// state; the migration moves to <c>queued</c> or <c>migrating</c>. Set it to <c>cancelled</c>
+        /// to cancel a migration in the <c>new</c>, <c>planning</c>, <c>pendingReview</c>, <c>queued</c>
+        /// or <c>migrating</c> state; the migration moves to <c>cancelling</c>, finishes the
+        /// work in progress, and then ends in the <c>cancelled</c> state, or in the <c>failed</c>
+        /// state if any objects failed to migrate. Data that the migration already committed
+        /// stays in the destination table.
+        /// </para>
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:UpdateTableMigration</c> permission to use this operation.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTableMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateTableMigration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/UpdateTableMigration">REST API Reference for UpdateTableMigration Operation</seealso>
+        public virtual Task<UpdateTableMigrationResponse> UpdateTableMigrationAsync(UpdateTableMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTableMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTableMigrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTableMigrationResponse>(request, options, cancellationToken);
         }
 
         /// <summary>

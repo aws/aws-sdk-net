@@ -75,6 +75,24 @@ public class AwsJsonCodegenTests
     }
 
     [Fact]
+    public void EventStreamSiblings_UseInitialMessages()
+    {
+        var operation = Json11.Operations.Single(o => o.Name == "Chat");
+        var request = new JsonRequestMarshallerWriter(Json11, ModelFileName).Write(operation, TestContext.Current.CancellationToken);
+        var response = new JsonResponseUnmarshallerWriter(Json11, ModelFileName).Write(operation, TestContext.Current.CancellationToken);
+
+        Assert.Contains("if (publicRequest.IsSetSessionId())", request);
+        Assert.Contains("""context.Writer.WritePropertyName("sessionId");""", request);
+        Assert.Contains("request.EventStreamPublisher = new ChatStreamPublisherMarshaller(publicRequest.InputPublisher, initialRequest);", request);
+
+        Assert.Contains("unmarshalledObject.Output = new ChatStream(context.Stream);", response);
+        Assert.Contains("unmarshalledObject.Output.InitialResponseReceived += (sender, args) => UnmarshallInitialResponse(unmarshalledObject, args.EventStreamEvent);", response);
+        Assert.Contains("var context = new JsonUnmarshallerContext(initialResponse.Payload, false, null);", response);
+        Assert.Contains("""context.TestExpression("sessionId", targetDepth, ref reader)""", response);
+        Assert.Contains("""context.TestExpression("sequenceNumber", targetDepth, ref reader)""", response);
+    }
+
+    [Fact]
     public void Exception_ReadsHeaderBoundMemberFromBody()
     {
         var error = Json11.Errors.Single(e => e.Key.Name == "BadThing");

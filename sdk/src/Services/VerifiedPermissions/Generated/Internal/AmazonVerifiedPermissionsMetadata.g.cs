@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VerifiedPermissions.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon VerifiedPermissions service
+    /// Service metadata for Amazon Verified Permissions
     /// </summary>
     public partial class AmazonVerifiedPermissionsMetadata : IServiceMetadata
     {

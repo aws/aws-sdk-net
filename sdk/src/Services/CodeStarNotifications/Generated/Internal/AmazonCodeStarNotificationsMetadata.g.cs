@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarNotifications.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CodeStarNotifications service
+    /// Service metadata for AWS CodeStar Notifications
     /// </summary>
     public partial class AmazonCodeStarNotificationsMetadata : IServiceMetadata
     {

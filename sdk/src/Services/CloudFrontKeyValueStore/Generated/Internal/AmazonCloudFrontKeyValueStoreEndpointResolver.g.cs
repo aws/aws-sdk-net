@@ -31,7 +31,7 @@ using Amazon.CloudFrontKeyValueStore.Endpoints;
 namespace Amazon.CloudFrontKeyValueStore.Internal
 {
     /// <summary>
-    /// Amazon CloudFrontKeyValueStore endpoint resolver.
+    /// Amazon CloudFront KeyValueStore endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CloudFrontKeyValueStore service requests.
     /// <para />

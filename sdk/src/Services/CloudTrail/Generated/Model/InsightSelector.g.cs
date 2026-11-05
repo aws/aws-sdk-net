@@ -1,0 +1,95 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CloudTrail.Model
+{
+    /// <summary>
+    /// A JSON string that contains a list of Insights types that are logged on a trail or
+    /// event data store.
+    /// </summary>
+    public partial class InsightSelector
+    {
+        /// <summary>
+        /// Gets and sets the property EventCategories. 
+        /// <para>
+        /// Select the event category on which Insights should be enabled. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If EventCategories is not provided, the specified Insights types are enabled on management
+        /// API calls by default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If EventCategories is provided, the given event categories will overwrite the existing
+        /// ones. For example, if a trail already has Insights enabled on management events, and
+        /// then a PutInsightSelectors request is made with only data events specified in EventCategories,
+        /// Insights on management events will be disabled. 
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> EventCategories { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the EventCategories property is set.
+        /// </summary>
+        internal bool IsSetEventCategories() => this.EventCategories != null && (this.EventCategories.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property InsightType. 
+        /// <para>
+        /// The type of Insights events to log on a trail or event data store. <c>ApiCallRateInsight</c>
+        /// and <c>ApiErrorRateInsight</c> are valid Insight types.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>ApiCallRateInsight</c> Insights type analyzes write-only management API calls
+        /// or read and write data API calls that are aggregated per minute against a baseline
+        /// API call volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>ApiErrorRateInsight</c> Insights type analyzes management and data API calls
+        /// that result in error codes. The error is shown if the API call is unsuccessful.
+        /// </para>
+        /// </summary>
+        public InsightType InsightType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InsightType property is set.
+        /// </summary>
+        internal bool IsSetInsightType() => this.InsightType != null;
+    }
+}

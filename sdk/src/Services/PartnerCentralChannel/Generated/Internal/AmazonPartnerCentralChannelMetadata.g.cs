@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralChannel.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon PartnerCentralChannel service
+    /// Service metadata for Partner Central Channel API
     /// </summary>
     public partial class AmazonPartnerCentralChannelMetadata : IServiceMetadata
     {

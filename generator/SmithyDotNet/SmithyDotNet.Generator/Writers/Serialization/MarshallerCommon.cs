@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation.Operations;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 
@@ -187,6 +188,57 @@ public static class MarshallerCommon
             writer.WriteLine($"header.{setter};");
             writer.WriteLine("context.Request.EventHeaders.Add(header);");
         });
+    }
+
+    // A @httpPayload response member IS the whole body, read into the in-scope unmarshalledObject local. restXml
+    // reads a structure/union payload through the element loop instead (handled by the caller), so only the JSON
+    // protocols reach the structure/document branch; a stray XML document payload falls through to the fail-loud throw.
+    internal static void WritePayloadUnmarshall(CodeWriter writer, Member payload, AWSProtocol protocol)
+    {
+        if (payload.Type.MarshalsAsString)
+        {
+            writer.OpenBlock("using (var sr = new StreamReader(context.Stream))", "}", () =>
+            {
+                writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = sr.ReadToEnd();");
+            });
+            return;
+        }
+
+        if (protocol is not AWSProtocol.RestXml && (payload.Type.IsStructure || payload.Type.IsDocument))
+        {
+            // A document reuses the DocumentUnmarshaller that body-member and collection-element documents
+            // resolve to (see JsonBodyMemberUnmarshaller); a structure uses its generated unmarshaller.
+            var unmarshaller = payload.Type.IsDocument
+                ? "Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller"
+                : payload.Type.UnmarshallerName;
+            writer.WriteLine("var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
+            writer.WriteLine("if (reader.Reader.IsFinalBlock) return unmarshalledObject;");
+            writer.WriteLine($"var unmarshaller = {unmarshaller}.Instance;");
+            writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            return;
+        }
+
+        if (payload.Type.IsStreaming)
+        {
+            // A streaming blob hands back the raw response stream unbuffered (the caller reads it);
+            // the class also overrides HasStreamingProperty. Matches C2J (see Polly SynthesizeSpeech).
+            writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = context.Stream;");
+            return;
+        }
+
+        if (payload.Type.IsBlob)
+        {
+            writer.WriteLine("var ms = new MemoryStream();");
+            writer.WriteLine("Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);");
+            writer.WriteLine("ms.Seek(0, SeekOrigin.Begin);");
+            writer.OpenBlock("if (ms.Length > 0)", () =>
+            {
+                writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = ms;");
+            });
+            return;
+        }
+
+        throw new GeneratorException($"Unsupported @httpPayload response member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}).");
     }
 
     // Emitted when the response's @httpPayload is a @streaming blob or an event stream: the runtime

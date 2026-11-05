@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CodeBuild
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeBuild service
+    /// Configuration for accessing AWS CodeBuild
     /// </summary>
     public static class AmazonCodeBuildDefaultConfiguration
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AppRunner
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppRunner service
+    /// Configuration for accessing AWS App Runner
     /// </summary>
     public static class AmazonAppRunnerDefaultConfiguration
     {

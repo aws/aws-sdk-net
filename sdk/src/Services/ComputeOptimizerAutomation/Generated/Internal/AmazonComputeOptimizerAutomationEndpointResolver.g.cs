@@ -31,7 +31,7 @@ using Amazon.ComputeOptimizerAutomation.Endpoints;
 namespace Amazon.ComputeOptimizerAutomation.Internal
 {
     /// <summary>
-    /// Amazon ComputeOptimizerAutomation endpoint resolver.
+    /// Compute Optimizer Automation endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ComputeOptimizerAutomation service requests.
     /// <para />

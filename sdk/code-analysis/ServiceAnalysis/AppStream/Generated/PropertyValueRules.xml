@@ -42,6 +42,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CopyImageRequest.DestinationImageDescription</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -63,10 +64,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateAppBlockRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateAppBlockRequest.DisplayName</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -75,10 +78,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateAppBlockBuilderRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateAppBlockBuilderRequest.DisplayName</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -107,10 +112,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateApplicationRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateApplicationRequest.DisplayName</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -131,6 +138,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateEntitlementRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -143,6 +151,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateExportImageTaskRequest.AmiDescription</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -159,10 +168,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateFleetRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateFleetRequest.DisplayName</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -192,10 +203,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateImageBuilderRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateImageBuilderRequest.DisplayName</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -258,14 +271,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateStackRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateStackRequest.DisplayName</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateStackRequest.FeedbackURL</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -274,6 +290,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateStackRequest.RedirectURL</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -296,7 +313,7 @@
     <property>Amazon.AppStream.Model.CreateStreamingURLRequest.UserId</property>
     <min>2</min>
     <max>32</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateStreamingURLResponse.StreamingURL</property>
@@ -318,10 +335,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateUpdatedImageRequest.NewImageDescription</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateUpdatedImageRequest.NewImageDisplayName</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -334,11 +353,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateUserRequest.FirstName</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^[A-Za-z0-9_\-\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateUserRequest.LastName</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^[A-Za-z0-9_\-\s]+$</pattern>
   </property-value-rule>
@@ -346,7 +367,7 @@
     <property>Amazon.AppStream.Model.CreateUserRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DeleteAppBlockRequest.Name</property>
@@ -400,7 +421,7 @@
     <property>Amazon.AppStream.Model.DeleteUserRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeAppBlockBuilderAppBlockAssociationsRequest.AppBlockArn</property>
@@ -435,6 +456,18 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeAppLicenseUsageRequest.BillingPeriod</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeAppLicenseUsageRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeAppLicenseUsageResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeApplicationFleetAssociationsRequest.ApplicationArn</property>
     <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
   </property-value-rule>
@@ -456,18 +489,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeApplicationsResponse.NextToken</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AppStream.Model.DescribeAppLicenseUsageRequest.BillingPeriod</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AppStream.Model.DescribeAppLicenseUsageRequest.NextToken</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AppStream.Model.DescribeAppLicenseUsageResponse.NextToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -606,14 +627,6 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AppStream.Model.DescribeUsersRequest.NextToken</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AppStream.Model.DescribeUsersResponse.NextToken</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeUserStackAssociationsRequest.MaxResults</property>
     <min>0</min>
     <max>500</max>
@@ -630,17 +643,25 @@
     <property>Amazon.AppStream.Model.DescribeUserStackAssociationsRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeUserStackAssociationsResponse.NextToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeUsersRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeUsersResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.DisableUserRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DisassociateAppBlockBuilderAppBlockRequest.AppBlockArn</property>
@@ -690,7 +711,7 @@
     <property>Amazon.AppStream.Model.EnableUserRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ExpireSessionRequest.SessionId</property>
@@ -800,10 +821,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateAppBlockBuilderRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateAppBlockBuilderRequest.DisplayName</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -824,10 +847,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateApplicationRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateApplicationRequest.DisplayName</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -848,6 +873,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateEntitlementRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -860,10 +886,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateFleetRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateFleetRequest.DisplayName</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -896,14 +924,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateStackRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateStackRequest.DisplayName</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateStackRequest.FeedbackURL</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -912,6 +943,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateStackRequest.RedirectURL</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -1092,6 +1124,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ApplicationSettings.SettingsGroup</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -1100,6 +1133,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ApplicationSettingsResponse.SettingsGroup</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -1108,6 +1142,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DomainJoinInfo.OrganizationalUnitDistinguishedName</property>
+    <min>0</min>
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
@@ -1116,6 +1151,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.Entitlement.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -1144,6 +1180,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ExportImageTask.AmiDescription</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -1369,6 +1406,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.Stack.FeedbackURL</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -1377,6 +1415,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.Stack.RedirectURL</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -1427,11 +1466,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.User.FirstName</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^[A-Za-z0-9_\-\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.User.LastName</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^[A-Za-z0-9_\-\s]+$</pattern>
   </property-value-rule>
@@ -1443,7 +1484,7 @@
     <property>Amazon.AppStream.Model.User.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UserStackAssociation.StackName</property>
@@ -1453,7 +1494,7 @@
     <property>Amazon.AppStream.Model.UserStackAssociation.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UserStackAssociationError.ErrorMessage</property>

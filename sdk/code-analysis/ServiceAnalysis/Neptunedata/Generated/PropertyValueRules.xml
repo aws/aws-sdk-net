@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Neptunedata.Model.CancelIndexRebuildResponse.Concurrency</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Neptunedata.Model.GetIndexRebuildStatusResponse.Concurrency</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Neptunedata.Model.GetLoaderJobStatusRequest.ErrorsPerPage</property>
     <min>1</min>
   </property-value-rule>
@@ -42,5 +50,13 @@
     <property>Amazon.Neptunedata.Model.ListMLModelTransformJobsRequest.MaxItems</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Neptunedata.Model.StartIndexRebuildRequest.Concurrency</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Neptunedata.Model.StartIndexRebuildResponse.Concurrency</property>
+    <min>1</min>
   </property-value-rule>
 </property-value-rules>

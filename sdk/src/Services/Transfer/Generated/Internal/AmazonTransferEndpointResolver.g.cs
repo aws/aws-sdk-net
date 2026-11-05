@@ -31,7 +31,7 @@ using Amazon.Transfer.Endpoints;
 namespace Amazon.Transfer.Internal
 {
     /// <summary>
-    /// Amazon Transfer endpoint resolver.
+    /// AWS Transfer Family endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Transfer service requests.
     /// <para />

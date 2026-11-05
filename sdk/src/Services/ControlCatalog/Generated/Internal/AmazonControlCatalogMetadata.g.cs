@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlCatalog.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ControlCatalog service
+    /// Service metadata for AWS Control Catalog
     /// </summary>
     public partial class AmazonControlCatalogMetadata : IServiceMetadata
     {

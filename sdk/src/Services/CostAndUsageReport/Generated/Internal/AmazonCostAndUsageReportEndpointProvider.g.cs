@@ -26,7 +26,7 @@ using Amazon.CostAndUsageReport.Endpoints;
 namespace Amazon.CostAndUsageReport.Internal
 {
     /// <summary>
-    /// Amazon CostAndUsageReport endpoint provider.
+    /// AWS Cost and Usage Report Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CostAndUsageReportEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

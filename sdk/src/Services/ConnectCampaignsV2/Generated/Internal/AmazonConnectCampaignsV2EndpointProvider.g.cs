@@ -26,7 +26,7 @@ using Amazon.ConnectCampaignsV2.Endpoints;
 namespace Amazon.ConnectCampaignsV2.Internal
 {
     /// <summary>
-    /// Amazon ConnectCampaignsV2 endpoint provider.
+    /// AmazonConnectCampaignServiceV2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ConnectCampaignsV2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -6,6 +6,7 @@ using Amazon.Util.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -85,6 +86,66 @@ namespace AWSSDK.UnitTests
             _cache.SaveLoginToken(loginSession, token, null);
 
             _mockFileRetriever.Verify(x => x.WriteAllText(It.IsAny<string>(), It.IsAny<string>()), Times.Once);
+        }
+
+        [TestMethod]
+        public void TryGetLoginToken_TokenWithSignInRegion_ReadsSignInRegion()
+        {
+            _mockFileRetriever.Setup(x => x.Exists(It.IsAny<string>())).Returns(true);
+            _mockFileRetriever.Setup(x => x.ReadAllText(It.IsAny<string>())).Returns(@"{
+                ""accessToken"": {
+                    ""accessKeyId"": ""dummy-access-key"",
+                    ""secretAccessKey"": ""dummy-secret-key"",
+                    ""sessionToken"": ""dummy-session-token"",
+                    ""accountId"": ""012345678901"",
+                    ""expiresAt"": ""2025-09-14T04:05:45Z""
+                },
+                ""clientId"": ""arn:aws:signin:::devtools/same-device"",
+                ""signInRegion"": ""us-east-1""
+            }");
+
+            _cache.TryGetLoginToken("test-session", null, out var token);
+
+            Assert.AreEqual("us-east-1", token.SignInRegion);
+        }
+
+        [TestMethod]
+        public void SaveLoginToken_WithSignInRegion_WritesSignInRegion()
+        {
+            var saved = SaveAndParse(new LoginToken
+            {
+                AccessToken = new LoginImmutableCredentials("key", "secret", "token", DateTime.UtcNow.AddHours(1), "123456789012"),
+                SignInRegion = "us-east-1"
+            });
+
+            Assert.AreEqual("us-east-1", saved.GetProperty("signInRegion").GetString());
+        }
+
+        [TestMethod]
+        public void SaveLoginToken_WithoutSignInRegion_DoesNotWriteARegion()
+        {
+            var saved = SaveAndParse(new LoginToken
+            {
+                AccessToken = new LoginImmutableCredentials("key", "secret", "token", DateTime.UtcNow.AddHours(1), "123456789012")
+            });
+
+#if NETCOREAPP3_1
+            // See LoginToken.SignInRegion: this target writes null, which readers treat as missing.
+            Assert.AreEqual(JsonValueKind.Null, saved.GetProperty("signInRegion").ValueKind);
+#else
+            Assert.IsFalse(saved.TryGetProperty("signInRegion", out _));
+#endif
+        }
+
+        private JsonElement SaveAndParse(LoginToken token)
+        {
+            string savedJson = null;
+            _mockFileRetriever.Setup(x => x.WriteAllText(It.IsAny<string>(), It.IsAny<string>()))
+                              .Callback<string, string>((_, json) => savedJson = json);
+
+            _cache.SaveLoginToken("test-session", token, null);
+
+            return JsonDocument.Parse(savedJson).RootElement;
         }
 
         [TestMethod]

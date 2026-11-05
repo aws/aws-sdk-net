@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CustomerProfiles
 {
     /// <summary>
-    /// Configuration for accessing Amazon CustomerProfiles service
+    /// Configuration for accessing Amazon Connect Customer Profiles
     /// </summary>
     public static class AmazonCustomerProfilesDefaultConfiguration
     {

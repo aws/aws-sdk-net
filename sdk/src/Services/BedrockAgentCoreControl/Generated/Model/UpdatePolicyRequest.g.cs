@@ -1,0 +1,141 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.BedrockAgentCoreControl.Model
+{
+    /// <summary>
+    /// Container for the parameters to the UpdatePolicy operation. Updates an existing policy
+    /// within the AgentCore Policy system. This operation allows modification of the policy
+    /// description and definition while maintaining the policy's identity. The updated policy
+    /// is validated against the Cedar schema before being applied. This is an asynchronous
+    /// operation. Use the <c>GetPolicy</c> operation to poll the <c>status</c> field to track
+    /// completion. <para> If the updated policy is a temporal policy, the policy engine invalidates
+    /// all active temporal sessions. If the update adds or removes temporal operators, the
+    /// policy engine also invalidates active temporal sessions. For more information about
+    /// temporal policy sessions, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-session-based-temporal.html">session-based
+    /// temporal policies</a>. The policy engine returns an HTTP 409 <c>ConflictException</c>
+    /// to in-flight sessions. To resume, you must start a new session with a new session
+    /// ID. </para>
+    /// </summary>
+    public partial class UpdatePolicyRequest : AmazonBedrockAgentCoreControlRequest
+    {
+        /// <summary>
+        /// Gets and sets the property Definition. 
+        /// <para>
+        /// The new Cedar or Dogwood policy statement that defines the access control rules. This
+        /// replaces the existing policy definition with new logic while maintaining the policy's
+        /// identity.
+        /// </para>
+        /// </summary>
+        public PolicyDefinition Definition { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Definition property is set.
+        /// </summary>
+        internal bool IsSetDefinition() => this.Definition != null;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The new human-readable description for the policy. This optional field allows updating
+        /// the policy's documentation while keeping the same policy logic.
+        /// </para>
+        /// </summary>
+        public UpdatedDescription Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property EnforcementMode. 
+        /// <para>
+        /// The enforcement mode for the policy. Run this policy in <c>LOG_ONLY</c> mode to collect
+        /// data on how it affects your application. Once you are satisfied with the data gathered,
+        /// switch the policy to <c>ACTIVE</c>. If you omit this field, the policy's existing
+        /// enforcement mode is unchanged.
+        /// </para>
+        /// </summary>
+        public EnforcementMode EnforcementMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnforcementMode property is set.
+        /// </summary>
+        internal bool IsSetEnforcementMode() => this.EnforcementMode != null;
+
+        /// <summary>
+        /// Gets and sets the property PolicyEngineId. 
+        /// <para>
+        /// The identifier of the policy engine that manages the policy to be updated. This ensures
+        /// the policy is updated within the correct policy engine context.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 12, Max = 59)]
+        public string PolicyEngineId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyEngineId property is set.
+        /// </summary>
+        internal bool IsSetPolicyEngineId() => this.PolicyEngineId != null;
+
+        /// <summary>
+        /// Gets and sets the property PolicyId. 
+        /// <para>
+        /// The unique identifier of the policy to be updated. This must be a valid policy ID
+        /// that exists within the specified policy engine.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 12, Max = 59)]
+        public string PolicyId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyId property is set.
+        /// </summary>
+        internal bool IsSetPolicyId() => this.PolicyId != null;
+
+        /// <summary>
+        /// Gets and sets the property ValidationMode. 
+        /// <para>
+        /// The validation mode for the policy update. Determines how Cedar analyzer validation
+        /// results are handled during policy updates. FAIL_ON_ANY_FINDINGS runs the Cedar analyzer
+        /// and fails the update if validation issues are detected, ensuring the policy conforms
+        /// to the Cedar schema and tool context. IGNORE_ALL_FINDINGS runs the Cedar analyzer
+        /// but allows updates despite validation warnings. Use FAIL_ON_ANY_FINDINGS to ensure
+        /// policy correctness during updates, especially when modifying policy logic or conditions.
+        /// </para>
+        /// </summary>
+        public PolicyValidationMode ValidationMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ValidationMode property is set.
+        /// </summary>
+        internal bool IsSetValidationMode() => this.ValidationMode != null;
+    }
+}

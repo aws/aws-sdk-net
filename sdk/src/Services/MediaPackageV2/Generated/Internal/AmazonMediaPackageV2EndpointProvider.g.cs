@@ -26,7 +26,7 @@ using Amazon.MediaPackageV2.Endpoints;
 namespace Amazon.MediaPackageV2.Internal
 {
     /// <summary>
-    /// Amazon MediaPackageV2 endpoint provider.
+    /// AWS Elemental MediaPackage v2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MediaPackageV2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

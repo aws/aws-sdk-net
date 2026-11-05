@@ -31,7 +31,7 @@ using Amazon.Elasticsearch.Endpoints;
 namespace Amazon.Elasticsearch.Internal
 {
     /// <summary>
-    /// Amazon Elasticsearch endpoint resolver.
+    /// Amazon Elasticsearch Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Elasticsearch service requests.
     /// <para />

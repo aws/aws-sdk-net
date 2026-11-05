@@ -31,7 +31,7 @@ using Amazon.CodeCommit.Endpoints;
 namespace Amazon.CodeCommit.Internal
 {
     /// <summary>
-    /// Amazon CodeCommit endpoint resolver.
+    /// AWS CodeCommit endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CodeCommit service requests.
     /// <para />

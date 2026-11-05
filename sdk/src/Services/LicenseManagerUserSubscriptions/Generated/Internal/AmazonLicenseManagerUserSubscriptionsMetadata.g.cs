@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManagerUserSubscriptions.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon LicenseManagerUserSubscriptions service
+    /// Service metadata for AWS License Manager User Subscriptions
     /// </summary>
     public partial class AmazonLicenseManagerUserSubscriptionsMetadata : IServiceMetadata
     {

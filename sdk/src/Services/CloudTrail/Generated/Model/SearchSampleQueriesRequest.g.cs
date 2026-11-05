@@ -1,0 +1,88 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CloudTrail.Model
+{
+    /// <summary>
+    /// Container for the parameters to the SearchSampleQueries operation. <important> <para>
+    /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+    /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+    /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+    /// Lake availability change</a>. </para> </important> <para> Searches sample queries
+    /// and returns a list of sample queries that are sorted by relevance. To search for sample
+    /// queries, provide a natural language <c>SearchPhrase</c> in English. </para>
+    /// </summary>
+    public partial class SearchSampleQueriesRequest : AmazonCloudTrailRequest
+    {
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        ///  The maximum number of results to return on a single page. The default value is 10.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 50)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  A token you can use to get the next page of results. The length constraint is in
+        /// characters, not words. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 4, Max = 1000)]
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
+        /// Gets and sets the property SearchPhrase. 
+        /// <para>
+        ///  The natural language phrase to use for the semantic search. The phrase must be in
+        /// English. The length constraint is in characters, not words.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 2, Max = 1000)]
+        public string SearchPhrase { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SearchPhrase property is set.
+        /// </summary>
+        internal bool IsSetSearchPhrase() => this.SearchPhrase != null;
+    }
+}

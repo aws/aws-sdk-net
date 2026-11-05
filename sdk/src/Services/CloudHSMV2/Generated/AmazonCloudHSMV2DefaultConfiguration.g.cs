@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudHSMV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudHSMV2 service
+    /// Configuration for accessing AWS CloudHSM V2
     /// </summary>
     public static class AmazonCloudHSMV2DefaultConfiguration
     {

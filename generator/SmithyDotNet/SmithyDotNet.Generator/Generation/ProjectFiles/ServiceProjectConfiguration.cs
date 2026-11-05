@@ -1,7 +1,9 @@
+using System.Text.Json.Serialization;
+
 namespace SmithyDotNet.Generator.Generation.ProjectFiles;
 
 /// <summary>
-/// File names of the shared test and generator projects a service's slnx references.
+/// File names of the shared test and generator projects the solutions and test projects reference.
 /// </summary>
 public static class ProjectFileNames
 {
@@ -12,8 +14,11 @@ public static class ProjectFileNames
     public const string IntegrationTestUtility = "AWSSDK.IntegrationTestUtilities.csproj";
 }
 
-/// <summary>A NuGet package reference emitted with <c>PrivateAssets=all</c>.</summary>
-public sealed record PackageRef(string Id, string Version);
+/// <summary>A NuGet package id and version.</summary>
+[JsonUnmappedMemberHandling(JsonUnmappedMemberHandling.Disallow)]
+public sealed record PackageRef(
+    [property: JsonPropertyName("include"), JsonRequired] string Id,
+    [property: JsonPropertyName("version"), JsonRequired] string Version);
 
 /// <summary>
 /// Configuration for a single service project file variant (NetFramework or NetStandard).
@@ -38,6 +43,9 @@ public sealed record ServiceProjectConfiguration
 
     /// <summary>The variant name (<c>NetFramework</c> or <c>NetStandard</c>) that selects extension csproj files.</summary>
     public required string Variant { get; init; }
+
+    /// <summary>The C2J folder (<c>_netstandard</c> or <c>_bcl</c>) of the other variant's hand-written code, which this variant's test projects don't compile.</summary>
+    public required string OtherVariantFolder { get; init; }
 
     /// <summary>Relative path to the signing key file (fallback when <c>$(AWSKeyFile)</c> is empty).</summary>
     public required string KeyFilePath { get; init; }
@@ -75,6 +83,7 @@ public static class ServiceProjectConfigurations
         DefineConstants = ["BCL", "CODE_ANALYSIS"],
         CoreProjectReference = Utils.PathCombineAlt(ServicesRoot, "Core", "AWSSDK.Core.NetFramework.csproj"),
         Variant = "NetFramework",
+        OtherVariantFolder = "_netstandard",
         KeyFilePath = Utils.PathCombineAlt(SdkRoot, "awssdk.dll.snk"),
         AnalyzersPath = Utils.PathCombineAlt(SdkRoot, "..", "buildtools", "CustomRoslynAnalyzers.dll"),
         RuleSetFilePath = Utils.PathCombineAlt(SdkRoot, "AWSDotNetSDK.ruleset"),
@@ -94,6 +103,7 @@ public static class ServiceProjectConfigurations
         DefineConstants = ["NETSTANDARD"],
         CoreProjectReference = Utils.PathCombineAlt(ServicesRoot, "Core", "AWSSDK.Core.NetStandard.csproj"),
         Variant = "NetStandard",
+        OtherVariantFolder = "_bcl",
         KeyFilePath = Utils.PathCombineAlt(SdkRoot, "awssdk.dll.snk"),
         AnalyzersPath = Utils.PathCombineAlt(SdkRoot, "..", "buildtools", "CustomRoslynAnalyzers.dll"),
         RuleSetFilePath = Utils.PathCombineAlt(SdkRoot, "AWSDotNetSDK.ruleset"),
@@ -118,4 +128,16 @@ public static class ServiceProjectConfigurations
     {
         CoreProjectReference = Utils.PathCombineAlt(SdkTreeLayout.SrcRootFromServiceTests, "Core", "AWSSDK.Core.NetStandard.csproj"),
     };
+}
+
+/// <summary>The packages Core's nuspec depends on per target framework: polyfills for what the framework doesn't ship.</summary>
+public static class CoreNuspecDependencies
+{
+    private static readonly Dictionary<string, PackageRef[]> ByTargetFramework = new()
+    {
+        ["net472"] = [new("System.Buffers", "4.5.1"), new("System.Memory", "4.5.5"), new("System.Text.Json", "8.0.6")],
+        ["netstandard2.0"] = [new("Microsoft.Bcl.AsyncInterfaces", "8.0.0"), new("System.Buffers", "4.5.1"), new("System.Memory", "4.5.5"), new("System.Text.Json", "8.0.6")],
+    };
+
+    public static IReadOnlyList<PackageRef> For(string targetFramework) => ByTargetFramework.GetValueOrDefault(targetFramework, []);
 }

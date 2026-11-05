@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.PartnerCentralChannel
 {
     /// <summary>
-    /// Configuration for accessing Amazon PartnerCentralChannel service
+    /// Configuration for accessing Partner Central Channel API
     /// </summary>
     public static class AmazonPartnerCentralChannelDefaultConfiguration
     {

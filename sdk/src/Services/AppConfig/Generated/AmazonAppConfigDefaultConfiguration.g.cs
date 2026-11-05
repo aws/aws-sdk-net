@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AppConfig
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppConfig service
+    /// Configuration for accessing Amazon AppConfig
     /// </summary>
     public static class AmazonAppConfigDefaultConfiguration
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Billing service
+    /// Service metadata for AWS Billing
     /// </summary>
     public partial class AmazonBillingMetadata : IServiceMetadata
     {

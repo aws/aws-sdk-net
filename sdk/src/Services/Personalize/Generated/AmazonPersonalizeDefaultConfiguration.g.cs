@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Personalize
 {
     /// <summary>
-    /// Configuration for accessing Amazon Personalize service
+    /// Configuration for accessing Amazon Personalize
     /// </summary>
     public static class AmazonPersonalizeDefaultConfiguration
     {

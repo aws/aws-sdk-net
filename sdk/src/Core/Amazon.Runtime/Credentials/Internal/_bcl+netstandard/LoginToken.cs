@@ -59,6 +59,19 @@ namespace Amazon.Runtime.Credentials.Internal
         public string ClientId { get; set; }
 
         /// <summary>
+        /// The region Sign-In was called in when the token was acquired. Refresh tokens can only be redeemed in this region.
+        /// Tokens cached by earlier tool versions do not contain it.
+        /// </summary>
+        [JsonPropertyName("signInRegion")]
+#if !NETCOREAPP3_1
+        // Leaving out a missing region keeps a refresh from adding one. The netcoreapp3.1 build, which .NET 5-7 apps
+        // also use, compiles against System.Text.Json 4.7 without JsonIgnoreCondition, so it writes null instead,
+        // which readers treat as missing.
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+#endif
+        public string SignInRegion { get; set; }
+
+        /// <summary>
         /// PEM file contents containing the base64-encoding of the ECPrivateKey format.
         /// </summary>
         [JsonPropertyName("dpopKey")]

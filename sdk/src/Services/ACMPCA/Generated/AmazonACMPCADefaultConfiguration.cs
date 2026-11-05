@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.ACMPCA
 {
     /// <summary>
-    /// Configuration for accessing Amazon ACMPCA service
+    /// Configuration for accessing AWS Certificate Manager Private Certificate Authority
     /// </summary>
     public static class AmazonACMPCADefaultConfiguration
     {

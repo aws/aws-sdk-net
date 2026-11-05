@@ -27,12 +27,12 @@ using Amazon.MedicalImaging.Internal;
 namespace Amazon.MedicalImaging
 {
     /// <summary>
-    /// Configuration for accessing Amazon MedicalImaging service
+    /// Configuration for accessing AWS Health Imaging
     /// </summary>
     public partial class AmazonMedicalImagingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Medical Imaging", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("Medical Imaging", "4.0.100.23");
 
         private static readonly AmazonMedicalImagingEndpointResolver EndpointResolver =
             new AmazonMedicalImagingEndpointResolver();

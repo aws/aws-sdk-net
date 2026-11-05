@@ -26,7 +26,7 @@ using Amazon.BCMPricingCalculator.Endpoints;
 namespace Amazon.BCMPricingCalculator.Internal
 {
     /// <summary>
-    /// Amazon BCMPricingCalculator endpoint provider.
+    /// AWS Billing and Cost Management Pricing Calculator endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BCMPricingCalculatorEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

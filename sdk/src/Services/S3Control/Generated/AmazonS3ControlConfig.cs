@@ -28,12 +28,12 @@ using Amazon.S3Control.Internal;
 namespace Amazon.S3Control
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Control service
+    /// Configuration for accessing AWS S3 Control
     /// </summary>
     public partial class AmazonS3ControlConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("S3 Control", "4.0.101.7");
+            InternalSDKUtils.BuildUserAgentString("S3 Control", "4.0.101.10");
 
         private static readonly AmazonS3ControlEndpointResolver EndpointResolver =
             new AmazonS3ControlEndpointResolver();

@@ -1,0 +1,178 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.RDS.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ModifyCustomDBEngineVersion operation. Modifies
+    /// the status of a custom engine version (CEV). You can find CEVs to modify by calling
+    /// <c>DescribeDBEngineVersions</c>. <note> <para> The MediaImport service that imports
+    /// files from Amazon S3 to create CEVs isn't integrated with Amazon Web Services CloudTrail.
+    /// If you turn on data logging for Amazon RDS in CloudTrail, calls to the <c>ModifyCustomDbEngineVersion</c>
+    /// event aren't logged. However, you might see calls from the API gateway that accesses
+    /// your Amazon S3 bucket. These calls originate from the MediaImport service for the
+    /// <c>ModifyCustomDbEngineVersion</c> event. </para> </note> <para> For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.modify">Modifying
+    /// CEV status</a> in the <i>Amazon RDS User Guide</i>. </para>
+    /// </summary>
+    public partial class ModifyCustomDBEngineVersionRequest : AmazonRDSRequest
+    {
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// An optional description of your CEV.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1000)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The database engine.
+        /// </para>
+        ///  
+        /// <para>
+        /// RDS Custom for Oracle supports the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>custom-oracle-ee</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-ee-cdb</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-se2</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-se2-cdb</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// RDS Custom for SQL Server supports the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>custom-sqlserver-ee</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-sqlserver-se</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-sqlserver-web</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-sqlserver-dev</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// RDS for SQL Server supports the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>sqlserver-ee</c> (Bring Your Own Media)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sqlserver-se</c> (Bring Your Own Media)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sqlserver-dev-ee</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 35)]
+        public string Engine { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Engine property is set.
+        /// </summary>
+        internal bool IsSetEngine() => this.Engine != null;
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The custom engine version (CEV) that you want to modify. This option is required for
+        /// RDS Custom for Oracle, but optional for Amazon RDS. The combination of <c>Engine</c>
+        /// and <c>EngineVersion</c> is unique per customer per Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 60)]
+        public string EngineVersion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EngineVersion property is set.
+        /// </summary>
+        internal bool IsSetEngineVersion() => this.EngineVersion != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The availability status to be assigned to the CEV. Valid values are as follows:
+        /// </para>
+        ///  <dl> <dt>available</dt> <dd> 
+        /// <para>
+        /// You can use this CEV to create a new RDS Custom DB instance.
+        /// </para>
+        ///  </dd> <dt>inactive</dt> <dd> 
+        /// <para>
+        /// You can create a new RDS Custom instance by restoring a DB snapshot with this CEV.
+        /// You can't patch or create new instances with this CEV.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// You can change any status to any status. A typical reason to change status is to prevent
+        /// the accidental use of a CEV, or to make a deprecated CEV eligible for use again. For
+        /// example, you might change the status of your CEV from <c>available</c> to <c>inactive</c>,
+        /// and from <c>inactive</c> back to <c>available</c>. To change the availability status
+        /// of the CEV, it must not currently be in use by an RDS Custom instance, snapshot, or
+        /// automated backup.
+        /// </para>
+        /// </summary>
+        public CustomEngineVersionStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+    }
+}

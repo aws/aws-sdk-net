@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudControlApi.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CloudControlApi service
+    /// Service metadata for AWS Cloud Control API
     /// </summary>
     public partial class AmazonCloudControlApiMetadata : IServiceMetadata
     {

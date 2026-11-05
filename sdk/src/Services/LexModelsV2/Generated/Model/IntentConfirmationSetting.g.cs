@@ -202,8 +202,12 @@ namespace Amazon.LexModelsV2.Model
         /// intents that simply respond to user questions, you might not need to ask the user
         /// for confirmation before providing the information. 
         /// </para>
+        ///  
+        /// <para>
+        /// Required unless the bot locale's <c>assistedNluMode</c> is <c>DialogManager</c>, in
+        /// which case Amazon Lex generates the confirmation prompt.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public PromptSpecification PromptSpecification { get; set; }
 
         /// <summary>

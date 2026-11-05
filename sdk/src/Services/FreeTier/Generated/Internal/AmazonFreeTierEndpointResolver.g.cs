@@ -31,7 +31,7 @@ using Amazon.FreeTier.Endpoints;
 namespace Amazon.FreeTier.Internal
 {
     /// <summary>
-    /// Amazon FreeTier endpoint resolver.
+    /// AWS Free Tier endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for FreeTier service requests.
     /// <para />

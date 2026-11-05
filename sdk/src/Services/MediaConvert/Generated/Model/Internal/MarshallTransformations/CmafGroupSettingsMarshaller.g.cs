@@ -79,6 +79,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CodecSpecification);
             }
 
+            if (requestObject.IsSetDashAdaptationSetGrouping())
+            {
+                context.Writer.WritePropertyName("dashAdaptationSetGrouping");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectDashAdaptationSetGroupingListValue in requestObject.DashAdaptationSetGrouping)
+                {
+                    context.Writer.WriteStringValue(requestObjectDashAdaptationSetGroupingListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if (requestObject.IsSetDashIFrameTrickPlayNameModifier())
             {
                 context.Writer.WritePropertyName("dashIFrameTrickPlayNameModifier");

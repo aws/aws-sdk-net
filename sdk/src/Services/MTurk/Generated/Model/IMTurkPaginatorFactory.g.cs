@@ -1,0 +1,95 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.MTurk.Model
+{
+    /// <summary>
+    /// Paginators for the MTurk service
+    /// </summary>
+    public interface IMTurkPaginatorFactory
+    {
+        /// <summary>
+        /// Paginator for ListAssignmentsForHIT operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAssignmentsForHITPaginator ListAssignmentsForHIT(ListAssignmentsForHITRequest request);
+
+        /// <summary>
+        /// Paginator for ListBonusPayments operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListBonusPaymentsPaginator ListBonusPayments(ListBonusPaymentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListHITs operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListHITsPaginator ListHITs(ListHITsRequest request);
+
+        /// <summary>
+        /// Paginator for ListHITsForQualificationType operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListHITsForQualificationTypePaginator ListHITsForQualificationType(ListHITsForQualificationTypeRequest request);
+
+        /// <summary>
+        /// Paginator for ListQualificationRequests operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListQualificationRequestsPaginator ListQualificationRequests(ListQualificationRequestsRequest request);
+
+        /// <summary>
+        /// Paginator for ListQualificationTypes operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListQualificationTypesPaginator ListQualificationTypes(ListQualificationTypesRequest request);
+
+        /// <summary>
+        /// Paginator for ListReviewPolicyResultsForHIT operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListReviewPolicyResultsForHITPaginator ListReviewPolicyResultsForHIT(ListReviewPolicyResultsForHITRequest request);
+
+        /// <summary>
+        /// Paginator for ListReviewableHITs operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListReviewableHITsPaginator ListReviewableHITs(ListReviewableHITsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkerBlocks operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListWorkerBlocksPaginator ListWorkerBlocks(ListWorkerBlocksRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkersWithQualificationType operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListWorkersWithQualificationTypePaginator ListWorkersWithQualificationType(ListWorkersWithQualificationTypeRequest request);
+    }
+}

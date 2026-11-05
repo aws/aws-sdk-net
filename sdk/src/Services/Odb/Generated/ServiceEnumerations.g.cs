@@ -1240,6 +1240,47 @@ namespace Amazon.Odb
     }
 
     /// <summary>
+    /// Constants used for properties of type ExascaleDbStorageVaultType.
+    /// </summary>
+    public class ExascaleDbStorageVaultType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DEDICATED_INFRASTRUCTURE for ExascaleDbStorageVaultType
+        /// </summary>
+        public static readonly ExascaleDbStorageVaultType DEDICATED_INFRASTRUCTURE = new ExascaleDbStorageVaultType("DEDICATED_INFRASTRUCTURE");
+
+        /// <summary>
+        /// Constant EXASCALE_INFRASTRUCTURE for ExascaleDbStorageVaultType
+        /// </summary>
+        public static readonly ExascaleDbStorageVaultType EXASCALE_INFRASTRUCTURE = new ExascaleDbStorageVaultType("EXASCALE_INFRASTRUCTURE");
+
+        /// <summary>
+        /// Constructs a custom ExascaleDbStorageVaultType for a value not among the defined constants.
+        /// </summary>
+        public ExascaleDbStorageVaultType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExascaleDbStorageVaultType FindValue(string value)
+        {
+            return FindValue<ExascaleDbStorageVaultType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExascaleDbStorageVaultType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ExternalIdType.
     /// </summary>
     public class ExternalIdType : ConstantClass
@@ -2586,6 +2627,47 @@ namespace Amazon.Odb
     }
 
     /// <summary>
+    /// Constants used for properties of type StorageManagementType.
+    /// </summary>
+    public class StorageManagementType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ASM for StorageManagementType
+        /// </summary>
+        public static readonly StorageManagementType ASM = new StorageManagementType("ASM");
+
+        /// <summary>
+        /// Constant EXASCALE for StorageManagementType
+        /// </summary>
+        public static readonly StorageManagementType EXASCALE = new StorageManagementType("EXASCALE");
+
+        /// <summary>
+        /// Constructs a custom StorageManagementType for a value not among the defined constants.
+        /// </summary>
+        public StorageManagementType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageManagementType FindValue(string value)
+        {
+            return FindValue<StorageManagementType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageManagementType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type SupportedAwsIntegration.
     /// </summary>
     public class SupportedAwsIntegration : ConstantClass
@@ -2718,6 +2800,47 @@ namespace Amazon.Odb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VmStorageType.
+    /// </summary>
+    public class VmStorageType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EXASCALE for VmStorageType
+        /// </summary>
+        public static readonly VmStorageType EXASCALE = new VmStorageType("EXASCALE");
+
+        /// <summary>
+        /// Constant LOCAL for VmStorageType
+        /// </summary>
+        public static readonly VmStorageType LOCAL = new VmStorageType("LOCAL");
+
+        /// <summary>
+        /// Constructs a custom VmStorageType for a value not among the defined constants.
+        /// </summary>
+        public VmStorageType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VmStorageType FindValue(string value)
+        {
+            return FindValue<VmStorageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VmStorageType(string value)
         {
             return FindValue(value);
         }

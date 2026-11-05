@@ -26,7 +26,7 @@ using Amazon.SSO.Endpoints;
 namespace Amazon.SSO.Internal
 {
     /// <summary>
-    /// Amazon SSO endpoint provider.
+    /// AWS Single Sign-On endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SSOEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -31,7 +31,7 @@ using Amazon.MWAA.Endpoints;
 namespace Amazon.MWAA.Internal
 {
     /// <summary>
-    /// Amazon MWAA endpoint resolver.
+    /// AmazonMWAA endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MWAA service requests.
     /// <para />

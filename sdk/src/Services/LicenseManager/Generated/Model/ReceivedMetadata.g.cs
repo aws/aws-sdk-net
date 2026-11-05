@@ -55,6 +55,29 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetAllowedOperations() => this.AllowedOperations != null && (this.AllowedOperations.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property GrantType. 
+        /// <para>
+        /// The type of the grant through which the license was received. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>BuyerGrant</c> - Grants you the entitlement to use the license.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DelegateGrant</c> - Gives you read-only visibility into the licenses and grants
+        /// distributed to buyers, with no entitlement to use them.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public GrantType GrantType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GrantType property is set.
+        /// </summary>
+        internal bool IsSetGrantType() => this.GrantType != null;
+
+        /// <summary>
         /// Gets and sets the property ReceivedStatus. 
         /// <para>
         /// Received status.

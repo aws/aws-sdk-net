@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MarketplaceCatalog service
+    /// Service metadata for AWS Marketplace Catalog Service
     /// </summary>
     public partial class AmazonMarketplaceCatalogMetadata : IServiceMetadata
     {

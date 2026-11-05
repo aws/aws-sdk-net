@@ -96,6 +96,10 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     {
                         return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                    {
+                        return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                     {
                         return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

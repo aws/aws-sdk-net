@@ -26,7 +26,7 @@ using Amazon.SecretsManager.Endpoints;
 namespace Amazon.SecretsManager.Internal
 {
     /// <summary>
-    /// Amazon SecretsManager endpoint provider.
+    /// AWS Secrets Manager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SecretsManagerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

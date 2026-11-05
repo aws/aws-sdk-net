@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CodeConnections
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeConnections service
+    /// Configuration for accessing AWS CodeConnections
     /// </summary>
     public static class AmazonCodeConnectionsDefaultConfiguration
     {

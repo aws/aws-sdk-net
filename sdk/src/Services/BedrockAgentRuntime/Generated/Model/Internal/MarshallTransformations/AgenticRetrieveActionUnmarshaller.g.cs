@@ -53,6 +53,13 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("codeExecution", targetDepth, ref reader))
+                {
+                    var unmarshaller = AgenticRetrieveCodeExecutionDetailsUnmarshaller.Instance;
+                    unmarshalledObject.CodeExecution = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("fullDocumentExpansion", targetDepth, ref reader))
                 {
                     var unmarshaller = AgenticRetrieveFullDocExpansionDetailsUnmarshaller.Instance;

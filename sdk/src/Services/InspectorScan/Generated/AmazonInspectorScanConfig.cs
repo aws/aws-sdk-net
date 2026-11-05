@@ -27,12 +27,12 @@ using Amazon.InspectorScan.Internal;
 namespace Amazon.InspectorScan
 {
     /// <summary>
-    /// Configuration for accessing Amazon InspectorScan service
+    /// Configuration for accessing Inspector Scan
     /// </summary>
     public partial class AmazonInspectorScanConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Inspector Scan", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("Inspector Scan", "4.0.100.23");
 
         private static readonly AmazonInspectorScanEndpointResolver EndpointResolver =
             new AmazonInspectorScanEndpointResolver();

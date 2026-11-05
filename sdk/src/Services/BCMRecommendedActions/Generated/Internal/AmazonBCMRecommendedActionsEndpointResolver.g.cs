@@ -31,7 +31,7 @@ using Amazon.BCMRecommendedActions.Endpoints;
 namespace Amazon.BCMRecommendedActions.Internal
 {
     /// <summary>
-    /// Amazon BCMRecommendedActions endpoint resolver.
+    /// AWS Billing and Cost Management Recommended Actions endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for BCMRecommendedActions service requests.
     /// <para />

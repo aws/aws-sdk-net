@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PricingPlanManager.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon PricingPlanManager service
+    /// Service metadata for PricingPlanManager
     /// </summary>
     public partial class AmazonPricingPlanManagerMetadata : IServiceMetadata
     {

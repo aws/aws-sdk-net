@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.VPCLattice
 {
     /// <summary>
-    /// Configuration for accessing Amazon VPCLattice service
+    /// Configuration for accessing Amazon VPC Lattice
     /// </summary>
     public static class AmazonVPCLatticeDefaultConfiguration
     {

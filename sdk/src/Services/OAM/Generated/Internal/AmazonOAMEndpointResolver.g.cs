@@ -31,7 +31,7 @@ using Amazon.OAM.Endpoints;
 namespace Amazon.OAM.Internal
 {
     /// <summary>
-    /// Amazon OAM endpoint resolver.
+    /// CloudWatch Observability Access Manager endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for OAM service requests.
     /// <para />

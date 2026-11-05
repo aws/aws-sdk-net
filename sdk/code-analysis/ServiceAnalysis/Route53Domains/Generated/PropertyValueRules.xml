@@ -2,134 +2,166 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.AcceptDomainTransferFromAnotherAwsAccountRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.AcceptDomainTransferFromAnotherAwsAccountResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.AssociateDelegationSignerToDomainRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.AssociateDelegationSignerToDomainResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.CancelDomainTransferToAnotherAwsAccountRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.CancelDomainTransferToAnotherAwsAccountResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.CheckDomainAvailabilityRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.CheckDomainAvailabilityRequest.IdnLangCode</property>
-    <pattern>(|[A-Za-z]{2,3})</pattern>
+    <pattern>^(|[A-Za-z]{2,3})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.CheckDomainTransferabilityRequest.AuthCode</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.CheckDomainTransferabilityRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.DeleteDomainRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.DeleteDomainResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.DeleteTagsForDomainRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.DisableDomainAutoRenewRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.DisableDomainTransferLockRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.DisableDomainTransferLockResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.DisassociateDelegationSignerFromDomainRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.DisassociateDelegationSignerFromDomainResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.EnableDomainAutoRenewRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.EnableDomainTransferLockRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.EnableDomainTransferLockResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.GetContactReachabilityStatusRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.GetContactReachabilityStatusResponse.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.GetDomainDetailRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.GetDomainDetailResponse.AbuseContactEmail</property>
+    <min>0</min>
     <max>254</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.GetDomainDetailResponse.AbuseContactPhone</property>
+    <min>0</min>
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.GetDomainDetailResponse.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.GetDomainPricesRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.GetDomainSuggestionsRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.GetOperationDetailRequest.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.GetOperationDetailResponse.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.GetOperationDetailResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ListDomainsRequest.Marker</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -138,10 +170,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ListDomainsResponse.NextPageMarker</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ListOperationsRequest.Marker</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -150,10 +184,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ListOperationsResponse.NextPageMarker</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ListPricesRequest.Marker</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -167,14 +203,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ListPricesResponse.NextPageMarker</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ListTagsForDomainRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.PushDomainRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -184,6 +223,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RegisterDomainRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -193,22 +233,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RegisterDomainRequest.IdnLangCode</property>
-    <pattern>(|[A-Za-z]{2,3})</pattern>
+    <pattern>^(|[A-Za-z]{2,3})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RegisterDomainResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RejectDomainTransferFromAnotherAwsAccountRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RejectDomainTransferFromAnotherAwsAccountResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RenewDomainRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -218,38 +262,47 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RenewDomainResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ResendContactReachabilityEmailRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ResendContactReachabilityEmailResponse.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ResendContactReachabilityEmailResponse.EmailAddress</property>
+    <min>0</min>
     <max>254</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ResendOperationAuthorizationRequest.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RetrieveDomainAuthCodeRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RetrieveDomainAuthCodeResponse.AuthCode</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.TransferDomainRequest.AuthCode</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.TransferDomainRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -259,10 +312,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.TransferDomainRequest.IdnLangCode</property>
-    <pattern>(|[A-Za-z]{2,3})</pattern>
+    <pattern>^(|[A-Za-z]{2,3})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.TransferDomainResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -273,30 +327,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.TransferDomainToAnotherAwsAccountRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.TransferDomainToAnotherAwsAccountResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.UpdateDomainContactRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.UpdateDomainContactResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.UpdateDomainContactPrivacyRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.UpdateDomainContactPrivacyResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.UpdateDomainNameserversRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -306,14 +367,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.UpdateDomainNameserversResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.UpdateTagsForDomainRequest.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ViewBillingRequest.Marker</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -322,10 +386,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ViewBillingResponse.NextPageMarker</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.BillingRecord.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -344,54 +410,67 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.AddressLine1</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.AddressLine2</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.City</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.Email</property>
+    <min>0</min>
     <max>254</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.Fax</property>
+    <min>0</min>
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.FirstName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.LastName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.OrganizationName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.PhoneNumber</property>
+    <min>0</min>
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.State</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.ZipCode</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.DnssecKey.PublicKey</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.DnssecSigningAttributes.PublicKey</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -401,27 +480,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.DomainSuggestion.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.DomainSummary.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ExtraParam.Value</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.Nameserver.Name</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_\-.]*</pattern>
+    <pattern>^[a-zA-Z0-9_\-.]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.OperationSummary.DomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.OperationSummary.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -434,6 +519,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Domains.Model.TLDInMaintenanceException.Tld</property>
+    <min>2</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Domains.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
@@ -442,10 +532,5 @@
     <property>Amazon.Route53Domains.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53Domains.Model.TLDInMaintenanceException.Tld</property>
-    <min>2</min>
-    <max>255</max>
   </property-value-rule>
 </property-value-rules>

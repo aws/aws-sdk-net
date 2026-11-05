@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AmplifyUIBuilder service
+    /// Service metadata for AWS Amplify UI Builder
     /// </summary>
     public partial class AmazonAmplifyUIBuilderMetadata : IServiceMetadata
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Chime service
+    /// Service metadata for Amazon Chime
     /// </summary>
     public partial class AmazonChimeMetadata : IServiceMetadata
     {

@@ -28,12 +28,12 @@ using Amazon.Route53.Internal;
 namespace Amazon.Route53
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53 service
+    /// Configuration for accessing Amazon Route 53
     /// </summary>
     public partial class AmazonRoute53Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Route 53", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("Route 53", "4.0.100.22");
 
         private static readonly AmazonRoute53EndpointResolver EndpointResolver =
             new AmazonRoute53EndpointResolver();

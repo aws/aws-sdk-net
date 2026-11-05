@@ -58,6 +58,18 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetBitDepth() => this.BitDepth != null;
 
         /// <summary>
+        /// Gets and sets the property Bitrate. Specify the average bitrate in bits per second.
+        /// Required when Rate control mode is CBR.
+        /// </summary>
+        [AWSProperty(Min = 1000, Max = 1152000000)]
+        public int? Bitrate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Bitrate property is set.
+        /// </summary>
+        internal bool IsSetBitrate() => this.Bitrate.HasValue;
+
+        /// <summary>
         /// Gets and sets the property FilmGrainSynthesis. Film grain synthesis replaces film
         /// grain present in your content with similar quality synthesized AV1 film grain. We
         /// recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level
@@ -215,8 +227,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property QvbrSettings. Settings for quality-defined variable bitrate
-        /// encoding with the H.265 codec. Use these settings only when you set QVBR for Rate
-        /// control mode.
+        /// encoding with the AV1 codec. Use these settings only when you set QVBR for Rate control
+        /// mode.
         /// </summary>
         public Av1QvbrSettings QvbrSettings { get; set; }
 
@@ -227,8 +239,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property RateControlMode. 'With AV1 outputs, for rate control mode,
-        /// MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use
-        /// CBR or VBR.'
+        /// MediaConvert supports quality-defined variable bitrate (QVBR) and constant bitrate
+        /// (CBR). You can''t use VBR.'
         /// </summary>
         public Av1RateControlMode RateControlMode { get; set; }
 
@@ -236,6 +248,21 @@ namespace Amazon.MediaConvert.Model
         /// Checks to see if the RateControlMode property is set.
         /// </summary>
         internal bool IsSetRateControlMode() => this.RateControlMode != null;
+
+        /// <summary>
+        /// Gets and sets the property SceneChangeDetect. Optional. Use this setting to have the
+        /// service insert I-frames at scene changes that it automatically detects. For AV1, scene
+        /// change detection is disabled by default. Choose Enabled to insert I-frames at detected
+        /// scene changes, which can improve video quality. If this output uses QVBR, you can
+        /// instead choose Transition detection for further video quality improvement. For more
+        /// information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+        /// </summary>
+        public Av1SceneChangeDetect SceneChangeDetect { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SceneChangeDetect property is set.
+        /// </summary>
+        internal bool IsSetSceneChangeDetect() => this.SceneChangeDetect != null;
 
         /// <summary>
         /// Gets and sets the property Slices. Specify the number of slices per picture. This
@@ -250,6 +277,35 @@ namespace Amazon.MediaConvert.Model
         /// Checks to see if the Slices property is set.
         /// </summary>
         internal bool IsSetSlices() => this.Slices.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property SlidingWindowMs. Optional. Specify the duration, in milliseconds,
+        /// of the sliding window over which MediaConvert enforces your Peak bitrate. When you
+        /// specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window
+        /// of 1000.
+        /// </summary>
+        [AWSProperty(Min = 1000, Max = 3000)]
+        public int? SlidingWindowMs { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SlidingWindowMs property is set.
+        /// </summary>
+        internal bool IsSetSlidingWindowMs() => this.SlidingWindowMs.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property SlidingWindowPeakBitrate. Optional. Specify an instantaneous
+        /// peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding
+        /// window set by Peak bitrate window. For example, enter fifty megabits per second as
+        /// 50000000. Applies in the QVBR rate control mode. When you specify a value below Max
+        /// bitrate, MediaConvert raises it to Max bitrate.
+        /// </summary>
+        [AWSProperty(Min = 1000, Max = 1152000000)]
+        public int? SlidingWindowPeakBitrate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SlidingWindowPeakBitrate property is set.
+        /// </summary>
+        internal bool IsSetSlidingWindowPeakBitrate() => this.SlidingWindowPeakBitrate.HasValue;
 
         /// <summary>
         /// Gets and sets the property SpatialAdaptiveQuantization. Keep the default value, Enabled,

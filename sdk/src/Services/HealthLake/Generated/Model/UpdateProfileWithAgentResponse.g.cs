@@ -32,34 +32,54 @@ namespace Amazon.HealthLake.Model
     /// <summary>
     /// This is the response object from the UpdateProfileWithAgent operation.
     /// </summary>
-    public partial class UpdateProfileWithAgentResponse : AmazonWebServiceResponse
+    public partial class UpdateProfileWithAgentResponse : AmazonWebServiceResponse, IDisposable
     {
         /// <summary>
         /// Gets and sets the property AgentResponse. 
         /// <para>
-        /// The response message from the agent.
+        /// The streaming response from the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
-        public AgentOutputMessage AgentResponse { get; set; }
+        public AgentOutputMessageStream AgentResponse { get; set; }
 
         /// <summary>
         /// Checks to see if the AgentResponse property is set.
         /// </summary>
         internal bool IsSetAgentResponse() => this.AgentResponse != null;
 
-        /// <summary>
-        /// Gets and sets the property ConversationId. 
-        /// <para>
-        /// The conversation identifier to use for follow-up messages in this conversation.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 36)]
-        public string ConversationId { get; set; }
+        #region Dispose Pattern
+
+        private bool _disposed;
 
         /// <summary>
-        /// Checks to see if the ConversationId property is set.
+        /// Disposes of all managed and unmanaged resources.
         /// </summary>
-        internal bool IsSetConversationId() => this.ConversationId != null;
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+            {
+                return;
+            }
+
+            if (disposing)
+            {
+                this.AgentResponse?.Dispose();
+                this.AgentResponse = null;
+            }
+
+            this._disposed = true;
+        }
+
+        #endregion
     }
 }

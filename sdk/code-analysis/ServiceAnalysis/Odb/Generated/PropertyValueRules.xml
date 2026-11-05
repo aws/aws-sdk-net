@@ -263,6 +263,12 @@
     <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.CreateCloudVmClusterRequest.ExascaleDbStorageVaultId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudVmClusterRequest.GiVersion</property>
     <min>1</min>
     <max>255</max>
@@ -399,6 +405,12 @@
     <min>8</min>
     <max>64</max>
     <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateExascaleDbStorageVaultRequest.CloudExadataInfrastructureId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateExascaleDbStorageVaultRequest.Description</property>
@@ -898,6 +910,12 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.ListExascaleDbStorageVaultsRequest.CloudExadataInfrastructureId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.ListExascaleDbStorageVaultsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -1261,6 +1279,12 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateExascaleCloudExadataInfrastructureRequest.CloudExadataInfrastructureId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.UpdateExascaleDbStorageVaultRequest.AdditionalFlashCacheInPercent</property>
     <min>0</min>
   </property-value-rule>
@@ -1585,6 +1609,18 @@
     <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.CloudVmCluster.ExascaleDbStorageVaultArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CloudVmCluster.ExascaleDbStorageVaultId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.CloudVmCluster.OdbNetworkArn</property>
     <min>20</min>
     <max>2048</max>
@@ -1604,6 +1640,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudVmClusterSummary.CloudVmClusterId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CloudVmClusterSummary.ExascaleDbStorageVaultArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CloudVmClusterSummary.ExascaleDbStorageVaultId</property>
     <min>6</min>
     <max>64</max>
     <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
@@ -1820,6 +1868,18 @@
     <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.ExascaleDbStorageVault.CloudExadataInfrastructureArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ExascaleDbStorageVault.CloudExadataInfrastructureId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.ExascaleDbStorageVault.ExascaleDbStorageVaultArn</property>
     <min>20</min>
     <max>2048</max>
@@ -1830,6 +1890,18 @@
     <min>6</min>
     <max>2048</max>
     <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ExascaleDbStorageVaultSummary.CloudExadataInfrastructureArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ExascaleDbStorageVaultSummary.CloudExadataInfrastructureId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExascaleDbStorageVaultSummary.ExascaleDbStorageVaultArn</property>

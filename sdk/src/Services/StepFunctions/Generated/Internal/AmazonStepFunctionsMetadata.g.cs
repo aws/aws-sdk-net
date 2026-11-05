@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon StepFunctions service
+    /// Service metadata for AWS Step Functions
     /// </summary>
     public partial class AmazonStepFunctionsMetadata : IServiceMetadata
     {

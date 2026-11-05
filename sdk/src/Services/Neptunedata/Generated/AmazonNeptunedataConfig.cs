@@ -27,12 +27,12 @@ using Amazon.Neptunedata.Internal;
 namespace Amazon.Neptunedata
 {
     /// <summary>
-    /// Configuration for accessing Amazon Neptunedata service
+    /// Configuration for accessing Amazon NeptuneData
     /// </summary>
     public partial class AmazonNeptunedataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("neptunedata", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("neptunedata", "4.0.101.1");
 
         private static readonly AmazonNeptunedataEndpointResolver EndpointResolver =
             new AmazonNeptunedataEndpointResolver();

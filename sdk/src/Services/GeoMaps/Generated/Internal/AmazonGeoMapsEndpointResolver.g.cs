@@ -31,7 +31,7 @@ using Amazon.GeoMaps.Endpoints;
 namespace Amazon.GeoMaps.Internal
 {
     /// <summary>
-    /// Amazon GeoMaps endpoint resolver.
+    /// Amazon Location Service Maps V2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for GeoMaps service requests.
     /// <para />

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Braket
 {
     /// <summary>
-    /// Configuration for accessing Amazon Braket service
+    /// Configuration for accessing Braket
     /// </summary>
     public static class AmazonBraketDefaultConfiguration
     {

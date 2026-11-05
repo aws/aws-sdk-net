@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.FSx
 {
     /// <summary>
-    /// Configuration for accessing Amazon FSx service
+    /// Configuration for accessing Amazon FSx
     /// </summary>
     public static class AmazonFSxDefaultConfiguration
     {

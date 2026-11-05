@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
     {
         public void IdentityManagementServiceAddClientIDToOpenIDConnectProvider()
         {
-            #region 028e91f4-e2a6-4d59-9e3b-4965a3fb19be
+            #region AddClientIDToOpenIDConnectProvider-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.AddClientIDToOpenIDConnectProvider(new AddClientIDToOpenIDConnectProviderRequest 
+            var response = client.AddClientIDToOpenIDConnectProvider(new AddClientIDToOpenIDConnectProviderRequest
             {
                 ClientID = "my-application-ID",
                 OpenIDConnectProviderArn = "arn:aws:iam::123456789012:oidc-provider/server.example.com"
@@ -28,10 +29,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceAddRoleToInstanceProfile()
         {
-            #region c107fac3-edb6-4827-8a71-8863ec91c81f
+            #region AddRoleToInstanceProfile-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.AddRoleToInstanceProfile(new AddRoleToInstanceProfileRequest 
+            var response = client.AddRoleToInstanceProfile(new AddRoleToInstanceProfileRequest
             {
                 InstanceProfileName = "Webserver",
                 RoleName = "S3Access"
@@ -43,10 +44,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceAddUserToGroup()
         {
-            #region 619c7e6b-09f8-4036-857b-51a6ea5027ca
+            #region AddUserToGroup-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.AddUserToGroup(new AddUserToGroupRequest 
+            var response = client.AddUserToGroup(new AddUserToGroupRequest
             {
                 GroupName = "Admins",
                 UserName = "Bob"
@@ -58,10 +59,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceAttachGroupPolicy()
         {
-            #region 87551489-86f0-45db-9889-759936778f2b
+            #region AttachGroupPolicy-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.AttachGroupPolicy(new AttachGroupPolicyRequest 
+            var response = client.AttachGroupPolicy(new AttachGroupPolicyRequest
             {
                 GroupName = "Finance",
                 PolicyArn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
@@ -73,10 +74,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceAttachRolePolicy()
         {
-            #region 3e1b8c7c-99c8-4fc4-a20c-131fe3f22c7e
+            #region AttachRolePolicy-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.AttachRolePolicy(new AttachRolePolicyRequest 
+            var response = client.AttachRolePolicy(new AttachRolePolicyRequest
             {
                 PolicyArn = "arn:aws:iam::aws:policy/ReadOnlyAccess",
                 RoleName = "ReadOnlyRole"
@@ -88,10 +89,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceAttachUserPolicy()
         {
-            #region 1372ebd8-9475-4b1a-a479-23b6fd4b8b3e
+            #region AttachUserPolicy-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.AttachUserPolicy(new AttachUserPolicyRequest 
+            var response = client.AttachUserPolicy(new AttachUserPolicyRequest
             {
                 PolicyArn = "arn:aws:iam::aws:policy/AdministratorAccess",
                 UserName = "Alice"
@@ -103,10 +104,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceChangePassword()
         {
-            #region 3a80c66f-bffb-46df-947c-1e8fa583b470
+            #region ChangePassword-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.ChangePassword(new ChangePasswordRequest 
+            var response = client.ChangePassword(new ChangePasswordRequest
             {
                 NewPassword = "]35d/{pB9Fo9wJ",
                 OldPassword = "3s0K_;xh4~8XXI"
@@ -118,10 +119,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceCreateAccessKey()
         {
-            #region 1fbb3211-4cf2-41db-8c20-ba58d9f5802d
+            #region CreateAccessKey-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.CreateAccessKey(new CreateAccessKeyRequest 
+            var response = client.CreateAccessKey(new CreateAccessKeyRequest
             {
                 UserName = "Bob"
             });
@@ -133,10 +134,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceCreateAccountAlias()
         {
-            #region 5adaf6fb-94fc-4ca2-b825-2fbc2062add1
+            #region CreateAccountAlias-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.CreateAccountAlias(new CreateAccountAliasRequest 
+            var response = client.CreateAccountAlias(new CreateAccountAliasRequest
             {
                 AccountAlias = "examplecorp"
             });
@@ -147,10 +148,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceCreateGroup()
         {
-            #region d5da2a90-5e69-4ef7-8ae8-4c33dc21fd21
+            #region CreateGroup-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.CreateGroup(new CreateGroupRequest 
+            var response = client.CreateGroup(new CreateGroupRequest
             {
                 GroupName = "Admins"
             });
@@ -162,10 +163,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceCreateInstanceProfile()
         {
-            #region 5d84e6ae-5921-4e39-8454-10232cd9ff9a
+            #region CreateInstanceProfile-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.CreateInstanceProfile(new CreateInstanceProfileRequest 
+            var response = client.CreateInstanceProfile(new CreateInstanceProfileRequest
             {
                 InstanceProfileName = "Webserver"
             });
@@ -177,10 +178,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceCreateLoginProfile()
         {
-            #region c63795bc-3444-40b3-89df-83c474ef88be
+            #region CreateLoginProfile-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.CreateLoginProfile(new CreateLoginProfileRequest 
+            var response = client.CreateLoginProfile(new CreateLoginProfileRequest
             {
                 Password = "h]6EszR}vJ*m",
                 PasswordResetRequired = true,
@@ -194,10 +195,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceCreateOpenIDConnectProvider()
         {
-            #region 4e4a6bff-cc97-4406-922e-0ab4a82cdb63
+            #region CreateOpenIDConnectProvider-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.CreateOpenIDConnectProvider(new CreateOpenIDConnectProviderRequest 
+            var response = client.CreateOpenIDConnectProvider(new CreateOpenIDConnectProviderRequest
             {
                 ClientIDList = new List<string> {
                     "my-application-id"
@@ -215,10 +216,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceCreateRole()
         {
-            #region eaaa4b5f-51f1-4f73-b0d3-30127040eff8
+            #region CreateRole-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.CreateRole(new CreateRoleRequest 
+            var response = client.CreateRole(new CreateRoleRequest
             {
                 AssumeRolePolicyDocument = "<Stringified-JSON>",
                 Path = "/",
@@ -232,10 +233,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceCreateUser()
         {
-            #region eb15f90b-e5f5-4af8-a594-e4e82b181a62
+            #region CreateUser-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.CreateUser(new CreateUserRequest 
+            var response = client.CreateUser(new CreateUserRequest
             {
                 UserName = "Bob"
             });
@@ -247,10 +248,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDeleteAccessKey()
         {
-            #region 61a785a7-d30a-415a-ae18-ab9236e56871
+            #region DeleteAccessKey-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DeleteAccessKey(new DeleteAccessKeyRequest 
+            var response = client.DeleteAccessKey(new DeleteAccessKeyRequest
             {
                 AccessKeyId = "AKIDPMS9RO4H3FEXAMPLE",
                 UserName = "Bob"
@@ -262,10 +263,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDeleteAccountAlias()
         {
-            #region 7abeca65-04a8-4500-a890-47f1092bf766
+            #region DeleteAccountAlias-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DeleteAccountAlias(new DeleteAccountAliasRequest 
+            var response = client.DeleteAccountAlias(new DeleteAccountAliasRequest
             {
                 AccountAlias = "mycompany"
             });
@@ -276,10 +277,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDeleteAccountPasswordPolicy()
         {
-            #region 9ddf755e-495c-49bc-ae3b-ea6cc9b8ebcf
+            #region DeleteAccountPasswordPolicy-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DeleteAccountPasswordPolicy(new DeleteAccountPasswordPolicyRequest 
+            var response = client.DeleteAccountPasswordPolicy(new DeleteAccountPasswordPolicyRequest
             {
             });
 
@@ -289,10 +290,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDeleteGroupPolicy()
         {
-            #region e683f2bd-98a4-4fe0-bb66-33169c692d4a
+            #region DeleteGroupPolicy-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DeleteGroupPolicy(new DeleteGroupPolicyRequest 
+            var response = client.DeleteGroupPolicy(new DeleteGroupPolicyRequest
             {
                 GroupName = "Admins",
                 PolicyName = "ExamplePolicy"
@@ -304,10 +305,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDeleteInstanceProfile()
         {
-            #region 12d74fb8-3433-49db-8171-a1fc764e354d
+            #region DeleteInstanceProfile-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DeleteInstanceProfile(new DeleteInstanceProfileRequest 
+            var response = client.DeleteInstanceProfile(new DeleteInstanceProfileRequest
             {
                 InstanceProfileName = "ExampleInstanceProfile"
             });
@@ -318,10 +319,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDeleteLoginProfile()
         {
-            #region 1fe57059-fc73-42e2-b992-517b7d573b5c
+            #region DeleteLoginProfile-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DeleteLoginProfile(new DeleteLoginProfileRequest 
+            var response = client.DeleteLoginProfile(new DeleteLoginProfileRequest
             {
                 UserName = "Bob"
             });
@@ -332,10 +333,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDeleteRole()
         {
-            #region 053cdf74-9bda-44b8-bdbb-140fd5a32603
+            #region DeleteRole-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DeleteRole(new DeleteRoleRequest 
+            var response = client.DeleteRole(new DeleteRoleRequest
             {
                 RoleName = "Test-Role"
             });
@@ -346,10 +347,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDeleteRolePolicy()
         {
-            #region 9c667336-fde3-462c-b8f3-950800821e27
+            #region DeleteRolePolicy-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DeleteRolePolicy(new DeleteRolePolicyRequest 
+            var response = client.DeleteRolePolicy(new DeleteRolePolicyRequest
             {
                 PolicyName = "ExamplePolicy",
                 RoleName = "Test-Role"
@@ -361,10 +362,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDeleteSigningCertificate()
         {
-            #region e3357586-ba9c-4070-b35b-d1a899b71987
+            #region DeleteSigningCertificate-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DeleteSigningCertificate(new DeleteSigningCertificateRequest 
+            var response = client.DeleteSigningCertificate(new DeleteSigningCertificateRequest
             {
                 CertificateId = "TA7SMP42TDN5Z26OBPJE7EXAMPLE",
                 UserName = "Anika"
@@ -376,10 +377,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDeleteUser()
         {
-            #region a13dc3f9-59fe-42d9-abbb-fb98b204fdf0
+            #region DeleteUser-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DeleteUser(new DeleteUserRequest 
+            var response = client.DeleteUser(new DeleteUserRequest
             {
                 UserName = "Bob"
             });
@@ -390,10 +391,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDeleteUserPolicy()
         {
-            #region 34f07ddc-9bc1-4f52-bc59-cd0a3ccd06c8
+            #region DeleteUserPolicy-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DeleteUserPolicy(new DeleteUserPolicyRequest 
+            var response = client.DeleteUserPolicy(new DeleteUserPolicyRequest
             {
                 PolicyName = "ExamplePolicy",
                 UserName = "Juan"
@@ -405,10 +406,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDeleteVirtualMFADevice()
         {
-            #region 2933b08b-dbe7-4b89-b8c1-fdf75feea1ee
+            #region DeleteVirtualMFADevice-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DeleteVirtualMFADevice(new DeleteVirtualMFADeviceRequest 
+            var response = client.DeleteVirtualMFADevice(new DeleteVirtualMFADeviceRequest
             {
                 SerialNumber = "arn:aws:iam::123456789012:mfa/ExampleName"
             });
@@ -419,10 +420,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDisableOrganizationsRootCredentialsManagement()
         {
-            #region to-disable-the-rootcredentialsmanagement-feature-in-your-organization-1730908292211
+            #region DisableOrganizationsRootCredentialsManagement-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DisableOrganizationsRootCredentialsManagement(new DisableOrganizationsRootCredentialsManagementRequest 
+            var response = client.DisableOrganizationsRootCredentialsManagement(new DisableOrganizationsRootCredentialsManagementRequest
             {
             });
 
@@ -434,10 +435,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceDisableOrganizationsRootSessions()
         {
-            #region to-disable-the-rootsessions-feature-in-your-organization-1730908495962
+            #region DisableOrganizationsRootSessions-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.DisableOrganizationsRootSessions(new DisableOrganizationsRootSessionsRequest 
+            var response = client.DisableOrganizationsRootSessions(new DisableOrganizationsRootSessionsRequest
             {
             });
 
@@ -449,10 +450,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceEnableOrganizationsRootCredentialsManagement()
         {
-            #region to-enable-the-rootcredentialsmanagement-feature-in-your-organization-1730908602395
+            #region EnableOrganizationsRootCredentialsManagement-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.EnableOrganizationsRootCredentialsManagement(new EnableOrganizationsRootCredentialsManagementRequest 
+            var response = client.EnableOrganizationsRootCredentialsManagement(new EnableOrganizationsRootCredentialsManagementRequest
             {
             });
 
@@ -464,10 +465,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceEnableOrganizationsRootSessions()
         {
-            #region to-enable-the-rootsessions-feature-in-your-organization-1730908736611
+            #region EnableOrganizationsRootSessions-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.EnableOrganizationsRootSessions(new EnableOrganizationsRootSessionsRequest 
+            var response = client.EnableOrganizationsRootSessions(new EnableOrganizationsRootSessionsRequest
             {
             });
 
@@ -479,10 +480,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceGenerateOrganizationsAccessReport()
         {
-            #region generateorganizationsaccessreport-ou
+            #region GenerateOrganizationsAccessReport-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.GenerateOrganizationsAccessReport(new GenerateOrganizationsAccessReportRequest 
+            var response = client.GenerateOrganizationsAccessReport(new GenerateOrganizationsAccessReportRequest
             {
                 EntityPath = "o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-1a2b3c-k9l8m7n6o5example"
             });
@@ -494,10 +495,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceGenerateServiceLastAccessedDetails()
         {
-            #region generateaccessdata-policy-1541695178514
+            #region GenerateServiceLastAccessedDetails-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.GenerateServiceLastAccessedDetails(new GenerateServiceLastAccessedDetailsRequest 
+            var response = client.GenerateServiceLastAccessedDetails(new GenerateServiceLastAccessedDetailsRequest
             {
                 Arn = "arn:aws:iam::123456789012:policy/ExamplePolicy1"
             });
@@ -509,10 +510,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceGetAccountPasswordPolicy()
         {
-            #region 5e4598c7-c425-431f-8af1-19073b3c4a5f
+            #region GetAccountPasswordPolicy-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.GetAccountPasswordPolicy(new GetAccountPasswordPolicyRequest 
+            var response = client.GetAccountPasswordPolicy(new GetAccountPasswordPolicyRequest
             {
             });
 
@@ -523,10 +524,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceGetAccountSummary()
         {
-            #region 9d8447af-f344-45de-8219-2cebc3cce7f2
+            #region GetAccountSummary-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.GetAccountSummary(new GetAccountSummaryRequest 
+            var response = client.GetAccountSummary(new GetAccountSummaryRequest
             {
             });
 
@@ -537,10 +538,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceGetInstanceProfile()
         {
-            #region 463b9ba5-18cc-4608-9ccb-5a7c6b6e5fe7
+            #region GetInstanceProfile-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.GetInstanceProfile(new GetInstanceProfileRequest 
+            var response = client.GetInstanceProfile(new GetInstanceProfileRequest
             {
                 InstanceProfileName = "ExampleInstanceProfile"
             });
@@ -552,10 +553,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceGetLoginProfile()
         {
-            #region d6b580cc-909f-4925-9caa-d425cbc1ad47
+            #region GetLoginProfile-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.GetLoginProfile(new GetLoginProfileRequest 
+            var response = client.GetLoginProfile(new GetLoginProfileRequest
             {
                 UserName = "Anika"
             });
@@ -567,31 +568,31 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceGetOrganizationsAccessReport()
         {
-            #region getorganizationsaccessreport-ou
+            #region GetOrganizationsAccessReport-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.GetOrganizationsAccessReport(new GetOrganizationsAccessReportRequest 
+            var response = client.GetOrganizationsAccessReport(new GetOrganizationsAccessReportRequest
             {
                 JobId = "examplea-1234-b567-cde8-90fg123abcd4"
             });
 
             List<AccessDetail> accessDetails = response.AccessDetails;
-            bool isTruncated = response.IsTruncated;
-            DateTime jobCompletionDate = response.JobCompletionDate;
-            DateTime jobCreationDate = response.JobCreationDate;
-            string jobStatus = response.JobStatus;
-            int numberOfServicesAccessible = response.NumberOfServicesAccessible;
-            int numberOfServicesNotAccessed = response.NumberOfServicesNotAccessed;
+            bool? isTruncated = response.IsTruncated;
+            DateTime? jobCompletionDate = response.JobCompletionDate;
+            DateTime? jobCreationDate = response.JobCreationDate;
+            JobStatusType jobStatus = response.JobStatus;
+            int? numberOfServicesAccessible = response.NumberOfServicesAccessible;
+            int? numberOfServicesNotAccessed = response.NumberOfServicesNotAccessed;
 
             #endregion
         }
 
         public void IdentityManagementServiceGetRole()
         {
-            #region 5b7d03a6-340c-472d-aa77-56425950d8b0
+            #region GetRole-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.GetRole(new GetRoleRequest 
+            var response = client.GetRole(new GetRoleRequest
             {
                 RoleName = "Test-Role"
             });
@@ -603,18 +604,18 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceGetServiceLastAccessedDetails()
         {
-            #region getserviceaccessdetails-policy-1541696298085
+            #region GetServiceLastAccessedDetails-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.GetServiceLastAccessedDetails(new GetServiceLastAccessedDetailsRequest 
+            var response = client.GetServiceLastAccessedDetails(new GetServiceLastAccessedDetailsRequest
             {
                 JobId = "examplef-1305-c245-eba4-71fe298bcda7"
             });
 
-            bool isTruncated = response.IsTruncated;
-            DateTime jobCompletionDate = response.JobCompletionDate;
-            DateTime jobCreationDate = response.JobCreationDate;
-            string jobStatus = response.JobStatus;
+            bool? isTruncated = response.IsTruncated;
+            DateTime? jobCompletionDate = response.JobCompletionDate;
+            DateTime? jobCreationDate = response.JobCreationDate;
+            JobStatusType jobStatus = response.JobStatus;
             List<ServiceLastAccessed> servicesLastAccessed = response.ServicesLastAccessed;
 
             #endregion
@@ -622,30 +623,30 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceGetServiceLastAccessedDetailsWithEntities()
         {
-            #region getserviceaccessdetailsentity-policy-1541697621384
+            #region GetServiceLastAccessedDetailsWithEntities-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.GetServiceLastAccessedDetailsWithEntities(new GetServiceLastAccessedDetailsWithEntitiesRequest 
+            var response = client.GetServiceLastAccessedDetailsWithEntities(new GetServiceLastAccessedDetailsWithEntitiesRequest
             {
                 JobId = "examplef-1305-c245-eba4-71fe298bcda7",
                 ServiceNamespace = "iam"
             });
 
             List<EntityDetails> entityDetailsList = response.EntityDetailsList;
-            bool isTruncated = response.IsTruncated;
-            DateTime jobCompletionDate = response.JobCompletionDate;
-            DateTime jobCreationDate = response.JobCreationDate;
-            string jobStatus = response.JobStatus;
+            bool? isTruncated = response.IsTruncated;
+            DateTime? jobCompletionDate = response.JobCompletionDate;
+            DateTime? jobCreationDate = response.JobCreationDate;
+            JobStatusType jobStatus = response.JobStatus;
 
             #endregion
         }
 
         public void IdentityManagementServiceGetUser()
         {
-            #region ede000a1-9e4c-40db-bd0a-d4f95e41a6ab
+            #region GetUser-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.GetUser(new GetUserRequest 
+            var response = client.GetUser(new GetUserRequest
             {
                 UserName = "Bob"
             });
@@ -657,10 +658,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceListAccessKeys()
         {
-            #region 15571463-ebea-411a-a021-1c76bd2a3625
+            #region ListAccessKeys-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.ListAccessKeys(new ListAccessKeysRequest 
+            var response = client.ListAccessKeys(new ListAccessKeysRequest
             {
                 UserName = "Alice"
             });
@@ -672,10 +673,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceListAccountAliases()
         {
-            #region e27b457a-16f9-4e05-a006-3df7b3472741
+            #region ListAccountAliases-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.ListAccountAliases(new ListAccountAliasesRequest 
+            var response = client.ListAccountAliases(new ListAccountAliasesRequest
             {
             });
 
@@ -686,10 +687,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceListGroupPolicies()
         {
-            #region 02de5095-2410-4d3a-ac1b-cc40234af68f
+            #region ListGroupPolicies-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.ListGroupPolicies(new ListGroupPoliciesRequest 
+            var response = client.ListGroupPolicies(new ListGroupPoliciesRequest
             {
                 GroupName = "Admins"
             });
@@ -701,10 +702,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceListGroups()
         {
-            #region b3ab1380-2a21-42fb-8e85-503f65512c66
+            #region ListGroups-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.ListGroups(new ListGroupsRequest 
+            var response = client.ListGroups(new ListGroupsRequest
             {
             });
 
@@ -715,10 +716,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceListGroupsForUser()
         {
-            #region 278ec2ee-fc28-4136-83fb-433af0ae46a2
+            #region ListGroupsForUser-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.ListGroupsForUser(new ListGroupsForUserRequest 
+            var response = client.ListGroupsForUser(new ListGroupsForUserRequest
             {
                 UserName = "Bob"
             });
@@ -730,10 +731,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceListOrganizationsFeatures()
         {
-            #region to-list-the-centralized-root-access-features-enabled-for-your-organization-1730908832557
+            #region ListOrganizationsFeatures-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.ListOrganizationsFeatures(new ListOrganizationsFeaturesRequest 
+            var response = client.ListOrganizationsFeatures(new ListOrganizationsFeaturesRequest
             {
             });
 
@@ -745,10 +746,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceListPoliciesGrantingServiceAccess()
         {
-            #region listpoliciesaccess-user-1541698749508
+            #region ListPoliciesGrantingServiceAccess-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.ListPoliciesGrantingServiceAccess(new ListPoliciesGrantingServiceAccessRequest 
+            var response = client.ListPoliciesGrantingServiceAccess(new ListPoliciesGrantingServiceAccessRequest
             {
                 Arn = "arn:aws:iam::123456789012:user/ExampleUser01",
                 ServiceNamespaces = new List<string> {
@@ -757,7 +758,7 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
                 }
             });
 
-            bool isTruncated = response.IsTruncated;
+            bool? isTruncated = response.IsTruncated;
             List<ListPoliciesGrantingServiceAccessEntry> policiesGrantingServiceAccess = response.PoliciesGrantingServiceAccess;
 
             #endregion
@@ -765,15 +766,15 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceListRoleTags()
         {
-            #region to-list-the-tags-attached-to-an-iam-role-1506719238376
+            #region ListRoleTags-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.ListRoleTags(new ListRoleTagsRequest 
+            var response = client.ListRoleTags(new ListRoleTagsRequest
             {
                 RoleName = "taggedrole1"
             });
 
-            bool isTruncated = response.IsTruncated;
+            bool? isTruncated = response.IsTruncated;
             List<Tag> tags = response.Tags;
 
             #endregion
@@ -781,10 +782,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceListSigningCertificates()
         {
-            #region b4c10256-4fc9-457e-b3fd-4a110d4d73dc
+            #region ListSigningCertificates-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.ListSigningCertificates(new ListSigningCertificatesRequest 
+            var response = client.ListSigningCertificates(new ListSigningCertificatesRequest
             {
                 UserName = "Bob"
             });
@@ -796,10 +797,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceListUsers()
         {
-            #region 9edfbd73-03d8-4d8a-9a79-76c85e8c8298
+            #region ListUsers-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.ListUsers(new ListUsersRequest 
+            var response = client.ListUsers(new ListUsersRequest
             {
             });
 
@@ -810,15 +811,15 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceListUserTags()
         {
-            #region to-list-the-tags-attached-to-an-iam-user-1506719473186
+            #region ListUserTags-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.ListUserTags(new ListUserTagsRequest 
+            var response = client.ListUserTags(new ListUserTagsRequest
             {
                 UserName = "anika"
             });
 
-            bool isTruncated = response.IsTruncated;
+            bool? isTruncated = response.IsTruncated;
             List<Tag> tags = response.Tags;
 
             #endregion
@@ -826,10 +827,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceListVirtualMFADevices()
         {
-            #region 54f9ac18-5100-4070-bec4-fe5f612710d5
+            #region ListVirtualMFADevices-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.ListVirtualMFADevices(new ListVirtualMFADevicesRequest 
+            var response = client.ListVirtualMFADevices(new ListVirtualMFADevicesRequest
             {
             });
 
@@ -840,10 +841,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServicePutGroupPolicy()
         {
-            #region 4bc17418-758f-4d0f-ab0c-4d00265fec2e
+            #region PutGroupPolicy-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.PutGroupPolicy(new PutGroupPolicyRequest 
+            var response = client.PutGroupPolicy(new PutGroupPolicyRequest
             {
                 GroupName = "PowerUsers",
                 PolicyDocument = "{\"Version\":\"2012-10-17\",\"Statement\":{\"Effect\":\"Allow\",\"Action\":[\"iam:Get*\",\"iam:List*\",\"iam:Generate*\"],\"Resource\":\"*\"}}",
@@ -856,10 +857,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServicePutRolePolicy()
         {
-            #region de62fd00-46c7-4601-9e0d-71d5fbb11ecb
+            #region PutRolePolicy-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.PutRolePolicy(new PutRolePolicyRequest 
+            var response = client.PutRolePolicy(new PutRolePolicyRequest
             {
                 PolicyDocument = "{\"Version\":\"2012-10-17\",\"Statement\":{\"Effect\":\"Allow\",\"Action\":\"s3:*\",\"Resource\":\"*\"}}",
                 PolicyName = "S3AccessPolicy",
@@ -872,10 +873,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServicePutUserPolicy()
         {
-            #region 2551ffc6-3576-4d39-823f-30b60bffc2c7
+            #region PutUserPolicy-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.PutUserPolicy(new PutUserPolicyRequest 
+            var response = client.PutUserPolicy(new PutUserPolicyRequest
             {
                 PolicyDocument = "{\"Version\":\"2012-10-17\",\"Statement\":{\"Effect\":\"Allow\",\"Action\":\"*\",\"Resource\":\"*\"}}",
                 PolicyName = "AllAccessPolicy",
@@ -888,10 +889,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceRemoveRoleFromInstanceProfile()
         {
-            #region 6d9f46f1-9f4a-4873-b403-51a85c5c627c
+            #region RemoveRoleFromInstanceProfile-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.RemoveRoleFromInstanceProfile(new RemoveRoleFromInstanceProfileRequest 
+            var response = client.RemoveRoleFromInstanceProfile(new RemoveRoleFromInstanceProfileRequest
             {
                 InstanceProfileName = "ExampleInstanceProfile",
                 RoleName = "Test-Role"
@@ -903,10 +904,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceRemoveUserFromGroup()
         {
-            #region fb54d5b4-0caf-41d8-af0e-10a84413f174
+            #region RemoveUserFromGroup-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.RemoveUserFromGroup(new RemoveUserFromGroupRequest 
+            var response = client.RemoveUserFromGroup(new RemoveUserFromGroupRequest
             {
                 GroupName = "Admins",
                 UserName = "Bob"
@@ -918,10 +919,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceSetSecurityTokenServicePreferences()
         {
-            #region 61a785a7-d30a-415a-ae18-ab9236e56871
+            #region SetSecurityTokenServicePreferences-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.SetSecurityTokenServicePreferences(new SetSecurityTokenServicePreferencesRequest 
+            var response = client.SetSecurityTokenServicePreferences(new SetSecurityTokenServicePreferencesRequest
             {
                 GlobalEndpointTokenVersion = "v2Token"
             });
@@ -932,10 +933,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceTagRole()
         {
-            #region to-add-a-tag-key-and-value-to-an-iam-role-1506718791513
+            #region TagRole-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.TagRole(new TagRoleRequest 
+            var response = client.TagRole(new TagRoleRequest
             {
                 RoleName = "taggedrole",
                 Tags = new List<Tag> {
@@ -956,10 +957,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceTagUser()
         {
-            #region to-add-a-tag-key-and-value-to-an-iam-user-1506719044227
+            #region TagUser-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.TagUser(new TagUserRequest 
+            var response = client.TagUser(new TagUserRequest
             {
                 Tags = new List<Tag> {
                     new Tag {
@@ -980,10 +981,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceUntagRole()
         {
-            #region to-remove-a-tag-from-an-iam-role-1506719589943
+            #region UntagRole-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.UntagRole(new UntagRoleRequest 
+            var response = client.UntagRole(new UntagRoleRequest
             {
                 RoleName = "taggedrole",
                 TagKeys = new List<string> {
@@ -997,10 +998,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceUntagUser()
         {
-            #region to-remove-a-tag-from-an-iam-user-1506719725554
+            #region UntagUser-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.UntagUser(new UntagUserRequest 
+            var response = client.UntagUser(new UntagUserRequest
             {
                 TagKeys = new List<string> {
                     "Dept"
@@ -1014,10 +1015,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceUpdateAccessKey()
         {
-            #region 02b556fd-e673-49b7-ab6b-f2f9035967d0
+            #region UpdateAccessKey-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.UpdateAccessKey(new UpdateAccessKeyRequest 
+            var response = client.UpdateAccessKey(new UpdateAccessKeyRequest
             {
                 AccessKeyId = "AKIAIOSFODNN7EXAMPLE",
                 Status = "Inactive",
@@ -1030,10 +1031,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceUpdateAccountPasswordPolicy()
         {
-            #region c263a1af-37dc-4423-8dba-9790284ef5e0
+            #region UpdateAccountPasswordPolicy-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.UpdateAccountPasswordPolicy(new UpdateAccountPasswordPolicyRequest 
+            var response = client.UpdateAccountPasswordPolicy(new UpdateAccountPasswordPolicyRequest
             {
                 MinimumPasswordLength = 8,
                 RequireNumbers = true
@@ -1045,10 +1046,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceUpdateAssumeRolePolicy()
         {
-            #region c9150063-d953-4e99-9576-9685872006c6
+            #region UpdateAssumeRolePolicy-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.UpdateAssumeRolePolicy(new UpdateAssumeRolePolicyRequest 
+            var response = client.UpdateAssumeRolePolicy(new UpdateAssumeRolePolicyRequest
             {
                 PolicyDocument = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":[\"ec2.amazonaws.com\"]},\"Action\":[\"sts:AssumeRole\"]}]}",
                 RoleName = "S3AccessForEC2Instances"
@@ -1060,10 +1061,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceUpdateGroup()
         {
-            #region f0cf1662-91ae-4278-a80e-7db54256ccba
+            #region UpdateGroup-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.UpdateGroup(new UpdateGroupRequest 
+            var response = client.UpdateGroup(new UpdateGroupRequest
             {
                 GroupName = "Test",
                 NewGroupName = "Test-1"
@@ -1075,10 +1076,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceUpdateLoginProfile()
         {
-            #region 036d9498-ecdb-4ed6-a8d8-366c383d1487
+            #region UpdateLoginProfile-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.UpdateLoginProfile(new UpdateLoginProfileRequest 
+            var response = client.UpdateLoginProfile(new UpdateLoginProfileRequest
             {
                 Password = "SomeKindOfPassword123!@#",
                 UserName = "Bob"
@@ -1090,10 +1091,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceUpdateSigningCertificate()
         {
-            #region 829aee7b-efc5-4b3b-84a5-7f899b38018d
+            #region UpdateSigningCertificate-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.UpdateSigningCertificate(new UpdateSigningCertificateRequest 
+            var response = client.UpdateSigningCertificate(new UpdateSigningCertificateRequest
             {
                 CertificateId = "TA7SMP42TDN5Z26OBPJE7EXAMPLE",
                 Status = "Inactive",
@@ -1106,10 +1107,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceUpdateUser()
         {
-            #region 275d53ed-347a-44e6-b7d0-a96276154352
+            #region UpdateUser-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.UpdateUser(new UpdateUserRequest 
+            var response = client.UpdateUser(new UpdateUserRequest
             {
                 NewUserName = "Robert",
                 UserName = "Bob"
@@ -1121,10 +1122,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceUploadServerCertificate()
         {
-            #region 06eab6d1-ebf2-4bd9-839d-f7508b9a38b6
+            #region UploadServerCertificate-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.UploadServerCertificate(new UploadServerCertificateRequest 
+            var response = client.UploadServerCertificate(new UploadServerCertificateRequest
             {
                 CertificateBody = "-----BEGIN CERTIFICATE-----<a very long certificate text string>-----END CERTIFICATE-----",
                 Path = "/company/servercerts/",
@@ -1139,10 +1140,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
         public void IdentityManagementServiceUploadSigningCertificate()
         {
-            #region e67489b6-7b73-4e30-9ed3-9a9e0231e458
+            #region UploadSigningCertificate-1
 
             var client = new AmazonIdentityManagementServiceClient();
-            var response = client.UploadSigningCertificate(new UploadSigningCertificateRequest 
+            var response = client.UploadSigningCertificate(new UploadSigningCertificateRequest
             {
                 CertificateBody = "-----BEGIN CERTIFICATE-----<certificate-body>-----END CERTIFICATE-----",
                 UserName = "Bob"
@@ -1153,13 +1154,10 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

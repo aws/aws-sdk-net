@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.EKSAuth
 {
     /// <summary>
-    /// Configuration for accessing Amazon EKSAuth service
+    /// Configuration for accessing Amazon EKS Auth
     /// </summary>
     public static class AmazonEKSAuthDefaultConfiguration
     {

@@ -211,7 +211,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property RoutingPolicyDirection. 
         /// <para>
-        /// The routing policy direction (inbound/outbound) in a core network change event.
+        /// The routing policy direction (inbound/outbound) in the core network change values.
         /// </para>
         /// </summary>
         public RoutingPolicyDirection RoutingPolicyDirection { get; set; }

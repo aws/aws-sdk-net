@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CognitoIdentityProvider service
+    /// Service metadata for Amazon Cognito Identity Provider
     /// </summary>
     public partial class AmazonCognitoIdentityProviderMetadata : IServiceMetadata
     {

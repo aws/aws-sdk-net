@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackageVod.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MediaPackageVod service
+    /// Service metadata for AWS Elemental MediaPackage VOD
     /// </summary>
     public partial class AmazonMediaPackageVodMetadata : IServiceMetadata
     {

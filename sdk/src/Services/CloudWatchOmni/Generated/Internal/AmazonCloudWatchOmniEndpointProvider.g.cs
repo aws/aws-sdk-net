@@ -26,7 +26,7 @@ using Amazon.CloudWatchOmni.Endpoints;
 namespace Amazon.CloudWatchOmni.Internal
 {
     /// <summary>
-    /// Amazon CloudWatchOmni endpoint provider.
+    /// CloudWatch Omni endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CloudWatchOmniEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

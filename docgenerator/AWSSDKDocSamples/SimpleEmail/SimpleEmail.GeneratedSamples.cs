@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
     {
         public void SimpleEmailServiceCloneReceiptRuleSet()
         {
-            #region clonereceiptruleset-1469055039770
+            #region CloneReceiptRuleSet-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.CloneReceiptRuleSet(new CloneReceiptRuleSetRequest 
+            var response = client.CloneReceiptRuleSet(new CloneReceiptRuleSetRequest
             {
                 OriginalRuleSetName = "RuleSetToClone",
                 RuleSetName = "RuleSetToCreate"
@@ -28,10 +29,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceCreateReceiptFilter()
         {
-            #region createreceiptfilter-1469122681253
+            #region CreateReceiptFilter-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.CreateReceiptFilter(new CreateReceiptFilterRequest 
+            var response = client.CreateReceiptFilter(new CreateReceiptFilterRequest
             {
                 Filter = new ReceiptFilter {
                     IpFilter = new ReceiptIpFilter {
@@ -48,10 +49,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceCreateReceiptRule()
         {
-            #region createreceiptrule-1469122946515
+            #region CreateReceiptRule-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.CreateReceiptRule(new CreateReceiptRuleRequest 
+            var response = client.CreateReceiptRule(new CreateReceiptRuleRequest
             {
                 After = "",
                 Rule = new ReceiptRule {
@@ -75,10 +76,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceCreateReceiptRuleSet()
         {
-            #region createreceiptruleset-1469058761646
+            #region CreateReceiptRuleSet-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.CreateReceiptRuleSet(new CreateReceiptRuleSetRequest 
+            var response = client.CreateReceiptRuleSet(new CreateReceiptRuleSetRequest
             {
                 RuleSetName = "MyRuleSet"
             });
@@ -89,10 +90,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceDeleteIdentity()
         {
-            #region deleteidentity-1469047858906
+            #region DeleteIdentity-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.DeleteIdentity(new DeleteIdentityRequest 
+            var response = client.DeleteIdentity(new DeleteIdentityRequest
             {
                 Identity = "user@example.com"
             });
@@ -103,10 +104,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceDeleteIdentityPolicy()
         {
-            #region deleteidentitypolicy-1469055282499
+            #region DeleteIdentityPolicy-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.DeleteIdentityPolicy(new DeleteIdentityPolicyRequest 
+            var response = client.DeleteIdentityPolicy(new DeleteIdentityPolicyRequest
             {
                 Identity = "user@example.com",
                 PolicyName = "MyPolicy"
@@ -118,10 +119,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceDeleteReceiptFilter()
         {
-            #region deletereceiptfilter-1469055456835
+            #region DeleteReceiptFilter-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.DeleteReceiptFilter(new DeleteReceiptFilterRequest 
+            var response = client.DeleteReceiptFilter(new DeleteReceiptFilterRequest
             {
                 FilterName = "MyFilter"
             });
@@ -132,10 +133,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceDeleteReceiptRule()
         {
-            #region deletereceiptrule-1469055563599
+            #region DeleteReceiptRule-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.DeleteReceiptRule(new DeleteReceiptRuleRequest 
+            var response = client.DeleteReceiptRule(new DeleteReceiptRuleRequest
             {
                 RuleName = "MyRule",
                 RuleSetName = "MyRuleSet"
@@ -147,10 +148,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceDeleteReceiptRuleSet()
         {
-            #region deletereceiptruleset-1469055713690
+            #region DeleteReceiptRuleSet-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.DeleteReceiptRuleSet(new DeleteReceiptRuleSetRequest 
+            var response = client.DeleteReceiptRuleSet(new DeleteReceiptRuleSetRequest
             {
                 RuleSetName = "MyRuleSet"
             });
@@ -161,10 +162,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceDeleteVerifiedEmailAddress()
         {
-            #region deleteverifiedemailaddress-1469051086444
+            #region DeleteVerifiedEmailAddress-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.DeleteVerifiedEmailAddress(new DeleteVerifiedEmailAddressRequest 
+            var response = client.DeleteVerifiedEmailAddress(new DeleteVerifiedEmailAddressRequest
             {
                 EmailAddress = "user@example.com"
             });
@@ -175,10 +176,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceDescribeActiveReceiptRuleSet()
         {
-            #region describeactivereceiptruleset-1469121611502
+            #region DescribeActiveReceiptRuleSet-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.DescribeActiveReceiptRuleSet(new DescribeActiveReceiptRuleSetRequest 
+            var response = client.DescribeActiveReceiptRuleSet(new DescribeActiveReceiptRuleSetRequest
             {
             });
 
@@ -190,10 +191,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceDescribeReceiptRule()
         {
-            #region describereceiptrule-1469055813118
+            #region DescribeReceiptRule-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.DescribeReceiptRule(new DescribeReceiptRuleRequest 
+            var response = client.DescribeReceiptRule(new DescribeReceiptRuleRequest
             {
                 RuleName = "MyRule",
                 RuleSetName = "MyRuleSet"
@@ -206,10 +207,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceDescribeReceiptRuleSet()
         {
-            #region describereceiptruleset-1469121240385
+            #region DescribeReceiptRuleSet-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.DescribeReceiptRuleSet(new DescribeReceiptRuleSetRequest 
+            var response = client.DescribeReceiptRuleSet(new DescribeReceiptRuleSetRequest
             {
                 RuleSetName = "MyRuleSet"
             });
@@ -222,24 +223,24 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceGetAccountSendingEnabled()
         {
-            #region getaccountsendingenabled-1469047741333
+            #region GetAccountSendingEnabled-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.GetAccountSendingEnabled(new GetAccountSendingEnabledRequest 
+            var response = client.GetAccountSendingEnabled(new GetAccountSendingEnabledRequest
             {
             });
 
-            bool enabled = response.Enabled;
+            bool? enabled = response.Enabled;
 
             #endregion
         }
 
         public void SimpleEmailServiceGetIdentityDkimAttributes()
         {
-            #region getidentitydkimattributes-1469050695628
+            #region GetIdentityDkimAttributes-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.GetIdentityDkimAttributes(new GetIdentityDkimAttributesRequest 
+            var response = client.GetIdentityDkimAttributes(new GetIdentityDkimAttributesRequest
             {
                 Identities = new List<string> {
                     "example.com",
@@ -254,10 +255,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceGetIdentityMailFromDomainAttributes()
         {
-            #region getidentitymailfromdomainattributes-1469123114860
+            #region GetIdentityMailFromDomainAttributes-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.GetIdentityMailFromDomainAttributes(new GetIdentityMailFromDomainAttributesRequest 
+            var response = client.GetIdentityMailFromDomainAttributes(new GetIdentityMailFromDomainAttributesRequest
             {
                 Identities = new List<string> {
                     "example.com"
@@ -271,10 +272,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceGetIdentityNotificationAttributes()
         {
-            #region getidentitynotificationattributes-1469123466947
+            #region GetIdentityNotificationAttributes-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.GetIdentityNotificationAttributes(new GetIdentityNotificationAttributesRequest 
+            var response = client.GetIdentityNotificationAttributes(new GetIdentityNotificationAttributesRequest
             {
                 Identities = new List<string> {
                     "example.com"
@@ -288,10 +289,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceGetIdentityPolicies()
         {
-            #region getidentitypolicies-1469123949351
+            #region GetIdentityPolicies-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.GetIdentityPolicies(new GetIdentityPoliciesRequest 
+            var response = client.GetIdentityPolicies(new GetIdentityPoliciesRequest
             {
                 Identity = "example.com",
                 PolicyNames = new List<string> {
@@ -306,10 +307,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceGetIdentityVerificationAttributes()
         {
-            #region getidentityverificationattributes-1469124205897
+            #region GetIdentityVerificationAttributes-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.GetIdentityVerificationAttributes(new GetIdentityVerificationAttributesRequest 
+            var response = client.GetIdentityVerificationAttributes(new GetIdentityVerificationAttributesRequest
             {
                 Identities = new List<string> {
                     "example.com"
@@ -323,26 +324,26 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceGetSendQuota()
         {
-            #region getsendquota-1469047324508
+            #region GetSendQuota-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.GetSendQuota(new GetSendQuotaRequest 
+            var response = client.GetSendQuota(new GetSendQuotaRequest
             {
             });
 
-            double max24HourSend = response.Max24HourSend;
-            double maxSendRate = response.MaxSendRate;
-            double sentLast24Hours = response.SentLast24Hours;
+            double? max24HourSend = response.Max24HourSend;
+            double? maxSendRate = response.MaxSendRate;
+            double? sentLast24Hours = response.SentLast24Hours;
 
             #endregion
         }
 
         public void SimpleEmailServiceGetSendStatistics()
         {
-            #region getsendstatistics-1469047741329
+            #region GetSendStatistics-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.GetSendStatistics(new GetSendStatisticsRequest 
+            var response = client.GetSendStatistics(new GetSendStatisticsRequest
             {
             });
 
@@ -353,10 +354,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceListIdentities()
         {
-            #region listidentities-1469048638493
+            #region ListIdentities-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.ListIdentities(new ListIdentitiesRequest 
+            var response = client.ListIdentities(new ListIdentitiesRequest
             {
                 IdentityType = "EmailAddress",
                 MaxItems = 123,
@@ -371,10 +372,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceListIdentityPolicies()
         {
-            #region listidentitypolicies-1469124417674
+            #region ListIdentityPolicies-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.ListIdentityPolicies(new ListIdentityPoliciesRequest 
+            var response = client.ListIdentityPolicies(new ListIdentityPoliciesRequest
             {
                 Identity = "example.com"
             });
@@ -386,10 +387,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceListReceiptFilters()
         {
-            #region listreceiptfilters-1469120786789
+            #region ListReceiptFilters-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.ListReceiptFilters(new ListReceiptFiltersRequest 
+            var response = client.ListReceiptFilters(new ListReceiptFiltersRequest
             {
             });
 
@@ -400,10 +401,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceListReceiptRuleSets()
         {
-            #region listreceiptrulesets-1469121037235
+            #region ListReceiptRuleSets-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.ListReceiptRuleSets(new ListReceiptRuleSetsRequest 
+            var response = client.ListReceiptRuleSets(new ListReceiptRuleSetsRequest
             {
                 NextToken = ""
             });
@@ -416,10 +417,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceListVerifiedEmailAddresses()
         {
-            #region listverifiedemailaddresses-1469051402570
+            #region ListVerifiedEmailAddresses-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.ListVerifiedEmailAddresses(new ListVerifiedEmailAddressesRequest 
+            var response = client.ListVerifiedEmailAddresses(new ListVerifiedEmailAddressesRequest
             {
             });
 
@@ -430,10 +431,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServicePutIdentityPolicy()
         {
-            #region putidentitypolicy-1469124560016
+            #region PutIdentityPolicy-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.PutIdentityPolicy(new PutIdentityPolicyRequest 
+            var response = client.PutIdentityPolicy(new PutIdentityPolicyRequest
             {
                 Identity = "example.com",
                 Policy = "{\"Version\":\"2008-10-17\",\"Statement\":[{\"Sid\":\"stmt1469123904194\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::123456789012:root\"},\"Action\":[\"ses:SendEmail\",\"ses:SendRawEmail\"],\"Resource\":\"arn:aws:ses:us-east-1:EXAMPLE65304:identity/example.com\"}]}",
@@ -446,10 +447,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceReorderReceiptRuleSet()
         {
-            #region reorderreceiptruleset-1469058156806
+            #region ReorderReceiptRuleSet-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.ReorderReceiptRuleSet(new ReorderReceiptRuleSetRequest 
+            var response = client.ReorderReceiptRuleSet(new ReorderReceiptRuleSetRequest
             {
                 RuleNames = new List<string> {
                     "MyRule",
@@ -464,14 +465,13 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceSendEmail()
         {
-            #region sendemail-1469049656296
+            #region SendEmail-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.SendEmail(new SendEmailRequest 
+            var response = client.SendEmail(new SendEmailRequest
             {
                 Destination = new Destination {
                     BccAddresses = new List<string> {
-                        
                     },
                     CcAddresses = new List<string> {
                         "recipient3@example.com"
@@ -498,7 +498,6 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
                     }
                 },
                 ReplyToAddresses = new List<string> {
-                    
                 },
                 ReturnPath = "",
                 ReturnPathArn = "",
@@ -513,13 +512,12 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceSendRawEmail()
         {
-            #region sendrawemail-1469118548649
+            #region SendRawEmail-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.SendRawEmail(new SendRawEmailRequest 
+            var response = client.SendRawEmail(new SendRawEmailRequest
             {
                 Destinations = new List<string> {
-                    
                 },
                 FromArn = "",
                 RawMessage = new RawMessage { Data = new MemoryStream(From: sender@example.com\nTo: recipient@example.com\nSubject: Test email (contains an attachment)\nMIME-Version: 1.0\nContent-type: Multipart/Mixed; boundary="NextPart"\n\n--NextPart\nContent-Type: text/plain\n\nThis is the message body.\n\n--NextPart\nContent-Type: text/plain;\nContent-Disposition: attachment; filename="attachment.txt"\n\nThis is the text in the attachment.\n\n--NextPart--) },
@@ -535,10 +533,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceSetActiveReceiptRuleSet()
         {
-            #region setactivereceiptruleset-1469058391329
+            #region SetActiveReceiptRuleSet-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.SetActiveReceiptRuleSet(new SetActiveReceiptRuleSetRequest 
+            var response = client.SetActiveReceiptRuleSet(new SetActiveReceiptRuleSetRequest
             {
                 RuleSetName = "RuleSetToActivate"
             });
@@ -549,10 +547,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceSetIdentityDkimEnabled()
         {
-            #region setidentitydkimenabled-1469057485202
+            #region SetIdentityDkimEnabled-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.SetIdentityDkimEnabled(new SetIdentityDkimEnabledRequest 
+            var response = client.SetIdentityDkimEnabled(new SetIdentityDkimEnabledRequest
             {
                 DkimEnabled = true,
                 Identity = "user@example.com"
@@ -564,10 +562,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceSetIdentityFeedbackForwardingEnabled()
         {
-            #region setidentityfeedbackforwardingenabled-1469056811329
+            #region SetIdentityFeedbackForwardingEnabled-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.SetIdentityFeedbackForwardingEnabled(new SetIdentityFeedbackForwardingEnabledRequest 
+            var response = client.SetIdentityFeedbackForwardingEnabled(new SetIdentityFeedbackForwardingEnabledRequest
             {
                 ForwardingEnabled = true,
                 Identity = "user@example.com"
@@ -579,10 +577,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceSetIdentityHeadersInNotificationsEnabled()
         {
-            #region setidentityheadersinnotificationsenabled-1469057295001
+            #region SetIdentityHeadersInNotificationsEnabled-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.SetIdentityHeadersInNotificationsEnabled(new SetIdentityHeadersInNotificationsEnabledRequest 
+            var response = client.SetIdentityHeadersInNotificationsEnabled(new SetIdentityHeadersInNotificationsEnabledRequest
             {
                 Enabled = true,
                 Identity = "user@example.com",
@@ -595,10 +593,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceSetIdentityMailFromDomain()
         {
-            #region setidentitymailfromdomain-1469057693908
+            #region SetIdentityMailFromDomain-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.SetIdentityMailFromDomain(new SetIdentityMailFromDomainRequest 
+            var response = client.SetIdentityMailFromDomain(new SetIdentityMailFromDomainRequest
             {
                 BehaviorOnMXFailure = "UseDefaultValue",
                 Identity = "user@example.com",
@@ -611,10 +609,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceSetIdentityNotificationTopic()
         {
-            #region setidentitynotificationtopic-1469057854966
+            #region SetIdentityNotificationTopic-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.SetIdentityNotificationTopic(new SetIdentityNotificationTopicRequest 
+            var response = client.SetIdentityNotificationTopic(new SetIdentityNotificationTopicRequest
             {
                 Identity = "user@example.com",
                 NotificationType = "Bounce",
@@ -627,10 +625,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceSetReceiptRulePosition()
         {
-            #region setreceiptruleposition-1469058530550
+            #region SetReceiptRulePosition-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.SetReceiptRulePosition(new SetReceiptRulePositionRequest 
+            var response = client.SetReceiptRulePosition(new SetReceiptRulePositionRequest
             {
                 After = "PutRuleAfterThisRule",
                 RuleName = "RuleToReposition",
@@ -643,10 +641,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceUpdateAccountSendingEnabled()
         {
-            #region updateaccountsendingenabled-1469047741333
+            #region UpdateAccountSendingEnabled-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.UpdateAccountSendingEnabled(new UpdateAccountSendingEnabledRequest 
+            var response = client.UpdateAccountSendingEnabled(new UpdateAccountSendingEnabledRequest
             {
                 Enabled = true
             });
@@ -657,10 +655,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceUpdateConfigurationSetReputationMetricsEnabled()
         {
-            #region updateconfigurationsetreputationmetricsenabled-2362747741333
+            #region UpdateConfigurationSetReputationMetricsEnabled-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.UpdateConfigurationSetReputationMetricsEnabled(new UpdateConfigurationSetReputationMetricsEnabledRequest 
+            var response = client.UpdateConfigurationSetReputationMetricsEnabled(new UpdateConfigurationSetReputationMetricsEnabledRequest
             {
                 ConfigurationSetName = "foo",
                 Enabled = true
@@ -672,10 +670,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceUpdateConfigurationSetSendingEnabled()
         {
-            #region updateconfigurationsetsendingenabled-2362747741333
+            #region UpdateConfigurationSetSendingEnabled-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.UpdateConfigurationSetSendingEnabled(new UpdateConfigurationSetSendingEnabledRequest 
+            var response = client.UpdateConfigurationSetSendingEnabled(new UpdateConfigurationSetSendingEnabledRequest
             {
                 ConfigurationSetName = "foo",
                 Enabled = true
@@ -687,10 +685,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceUpdateReceiptRule()
         {
-            #region updatereceiptrule-1469051756940
+            #region UpdateReceiptRule-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.UpdateReceiptRule(new UpdateReceiptRuleRequest 
+            var response = client.UpdateReceiptRule(new UpdateReceiptRuleRequest
             {
                 Rule = new ReceiptRule {
                     Actions = new List<ReceiptAction> {
@@ -713,10 +711,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceVerifyDomainDkim()
         {
-            #region verifydomaindkim-1469049503083
+            #region VerifyDomainDkim-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.VerifyDomainDkim(new VerifyDomainDkimRequest 
+            var response = client.VerifyDomainDkim(new VerifyDomainDkimRequest
             {
                 Domain = "example.com"
             });
@@ -728,10 +726,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceVerifyDomainIdentity()
         {
-            #region verifydomainidentity-1469049165936
+            #region VerifyDomainIdentity-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.VerifyDomainIdentity(new VerifyDomainIdentityRequest 
+            var response = client.VerifyDomainIdentity(new VerifyDomainIdentityRequest
             {
                 Domain = "example.com"
             });
@@ -743,10 +741,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceVerifyEmailAddress()
         {
-            #region verifyemailaddress-1469048849187
+            #region VerifyEmailAddress-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.VerifyEmailAddress(new VerifyEmailAddressRequest 
+            var response = client.VerifyEmailAddress(new VerifyEmailAddressRequest
             {
                 EmailAddress = "user@example.com"
             });
@@ -757,10 +755,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
 
         public void SimpleEmailServiceVerifyEmailIdentity()
         {
-            #region verifyemailidentity-1469049068623
+            #region VerifyEmailIdentity-1
 
             var client = new AmazonSimpleEmailServiceClient();
-            var response = client.VerifyEmailIdentity(new VerifyEmailIdentityRequest 
+            var response = client.VerifyEmailIdentity(new VerifyEmailIdentityRequest
             {
                 EmailAddress = "user@example.com"
             });
@@ -769,13 +767,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

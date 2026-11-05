@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Synthetics.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Synthetics service
+    /// Service metadata for Synthetics
     /// </summary>
     public partial class AmazonSyntheticsMetadata : IServiceMetadata
     {

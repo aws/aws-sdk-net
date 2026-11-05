@@ -1235,6 +1235,47 @@ namespace Amazon.DataZone
     }
 
     /// <summary>
+    /// Constants used for properties of type DesignationType.
+    /// </summary>
+    public class DesignationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant MANAGED for DesignationType
+        /// </summary>
+        public static readonly DesignationType MANAGED = new DesignationType("MANAGED");
+
+        /// <summary>
+        /// Constant USER_CREATED for DesignationType
+        /// </summary>
+        public static readonly DesignationType USER_CREATED = new DesignationType("USER_CREATED");
+
+        /// <summary>
+        /// Constructs a custom DesignationType for a value not among the defined constants.
+        /// </summary>
+        public DesignationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DesignationType FindValue(string value)
+        {
+            return FindValue<DesignationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DesignationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DomainStatus.
     /// </summary>
     public class DomainStatus : ConstantClass
@@ -3541,6 +3582,11 @@ namespace Amazon.DataZone
         public static readonly ProjectDesignation PROJECT_CATALOG_STEWARD = new ProjectDesignation("PROJECT_CATALOG_STEWARD");
 
         /// <summary>
+        /// Constant USER_CREATED_DESIGNATION for ProjectDesignation
+        /// </summary>
+        public static readonly ProjectDesignation USER_CREATED_DESIGNATION = new ProjectDesignation("USER_CREATED_DESIGNATION");
+
+        /// <summary>
         /// Constructs a custom ProjectDesignation for a value not among the defined constants.
         /// </summary>
         public ProjectDesignation(string value) : base(value) { }
@@ -5347,6 +5393,11 @@ namespace Amazon.DataZone
         /// Constant PROJECT_OWNER for UserDesignation
         /// </summary>
         public static readonly UserDesignation PROJECT_OWNER = new UserDesignation("PROJECT_OWNER");
+
+        /// <summary>
+        /// Constant USER_CREATED_DESIGNATION for UserDesignation
+        /// </summary>
+        public static readonly UserDesignation USER_CREATED_DESIGNATION = new UserDesignation("USER_CREATED_DESIGNATION");
 
         /// <summary>
         /// Constructs a custom UserDesignation for a value not among the defined constants.

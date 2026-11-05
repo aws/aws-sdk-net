@@ -27,12 +27,12 @@ using Amazon.FIS.Internal;
 namespace Amazon.FIS
 {
     /// <summary>
-    /// Configuration for accessing Amazon FIS service
+    /// Configuration for accessing AWS Fault Injection Simulator
     /// </summary>
     public partial class AmazonFISConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("fis", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("fis", "4.0.100.22");
 
         private static readonly AmazonFISEndpointResolver EndpointResolver =
             new AmazonFISEndpointResolver();

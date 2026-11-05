@@ -19,5 +19,12 @@
     },
 	"noArgOverloads": [
 		"GetSessionToken"
-	]
+	],
+	"shapeModifiers": {
+		"Credentials": {
+			"modify": [
+				{ "Expiration": { "overridesBaseMember": true } }
+			]
+		}
+	}
 }

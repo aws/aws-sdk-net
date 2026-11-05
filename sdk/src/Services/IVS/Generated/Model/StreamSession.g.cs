@@ -64,6 +64,19 @@ namespace Amazon.IVS.Model
         internal bool IsSetEndTime() => this.EndTime.HasValue;
 
         /// <summary>
+        /// Gets and sets the property FailoverSlateConfiguration. 
+        /// <para>
+        /// The properties of the failover slate configuration at the time of going live.
+        /// </para>
+        /// </summary>
+        public FailoverSlateConfiguration FailoverSlateConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FailoverSlateConfiguration property is set.
+        /// </summary>
+        internal bool IsSetFailoverSlateConfiguration() => this.FailoverSlateConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property IngestConfiguration. 
         /// <para>
         /// The properties of the incoming RTMP stream.

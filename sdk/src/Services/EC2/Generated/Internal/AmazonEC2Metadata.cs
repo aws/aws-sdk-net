@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon EC2 service
+    /// Service metadata for Amazon Elastic Compute Cloud
     /// </summary>
     public partial class AmazonEC2Metadata : IServiceMetadata
     {

@@ -31,7 +31,7 @@ using Amazon.ConnectCases.Endpoints;
 namespace Amazon.ConnectCases.Internal
 {
     /// <summary>
-    /// Amazon ConnectCases endpoint resolver.
+    /// Amazon Connect Cases endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ConnectCases service requests.
     /// <para />

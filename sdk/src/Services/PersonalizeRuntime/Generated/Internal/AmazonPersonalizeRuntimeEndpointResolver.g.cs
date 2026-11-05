@@ -31,7 +31,7 @@ using Amazon.PersonalizeRuntime.Endpoints;
 namespace Amazon.PersonalizeRuntime.Internal
 {
     /// <summary>
-    /// Amazon PersonalizeRuntime endpoint resolver.
+    /// Amazon Personalize Runtime endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PersonalizeRuntime service requests.
     /// <para />

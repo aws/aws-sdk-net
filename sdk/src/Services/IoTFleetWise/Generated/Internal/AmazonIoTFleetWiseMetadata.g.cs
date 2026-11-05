@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTFleetWise.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IoTFleetWise service
+    /// Service metadata for AWS IoT FleetWise
     /// </summary>
     public partial class AmazonIoTFleetWiseMetadata : IServiceMetadata
     {

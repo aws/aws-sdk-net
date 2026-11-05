@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ImportExport.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon ImportExport service
+    /// Service metadata for AWS Import/Export
     /// </summary>
     public partial class AmazonImportExportMetadata : IServiceMetadata
     {

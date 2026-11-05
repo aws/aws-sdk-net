@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Pricing
 {
     /// <summary>
-    /// Configuration for accessing Amazon Pricing service
+    /// Configuration for accessing AWS Price List Service
     /// </summary>
     public static class AmazonPricingDefaultConfiguration
     {

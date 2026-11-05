@@ -26,7 +26,7 @@ using Amazon.AgentRegistryControl.Endpoints;
 namespace Amazon.AgentRegistryControl.Internal
 {
     /// <summary>
-    /// Amazon AgentRegistryControl endpoint provider.
+    /// Agent Registry Control endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AgentRegistryControlEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

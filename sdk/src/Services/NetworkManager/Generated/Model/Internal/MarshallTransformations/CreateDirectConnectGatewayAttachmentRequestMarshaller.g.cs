@@ -98,6 +98,31 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetNatGatewayRules())
+            {
+                context.Writer.WritePropertyName("NatGatewayRules");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestNatGatewayRulesListValue in publicRequest.NatGatewayRules)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = NatRuleRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestNatGatewayRulesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetNatGatewaySupport())
+            {
+                context.Writer.WritePropertyName("NatGatewaySupport");
+                context.Writer.WriteStringValue(publicRequest.NatGatewaySupport);
+            }
+            if (publicRequest.IsSetNatSystemRouteSupport())
+            {
+                context.Writer.WritePropertyName("NatSystemRouteSupport");
+                context.Writer.WriteBooleanValue(publicRequest.NatSystemRouteSupport.Value);
+            }
             if (publicRequest.IsSetRoutingPolicyLabel())
             {
                 context.Writer.WritePropertyName("RoutingPolicyLabel");

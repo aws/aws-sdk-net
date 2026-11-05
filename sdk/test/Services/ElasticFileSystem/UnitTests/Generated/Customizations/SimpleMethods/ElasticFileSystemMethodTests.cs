@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticfilesystem-2015-02-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,11 +40,11 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.ElasticFileSystem.AmazonElasticFileSystemClient), "CreateFileSystem", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.ElasticFileSystem.AmazonElasticFileSystemClient), "DeleteFileSystem", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.ElasticFileSystem.AmazonElasticFileSystemClient), "DeleteMountTarget", new Type[] { typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.ElasticFileSystem.AmazonElasticFileSystemClient), "DescribeMountTargets", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.ElasticFileSystem.AmazonElasticFileSystemClient), "DescribeMountTargetSecurityGroups", new Type[] { typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.ElasticFileSystem.AmazonElasticFileSystemClient), "DescribeMountTargets", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.ElasticFileSystem.AmazonElasticFileSystemClient), "DescribeTags", new Type[] { typeof(string), });
         }
-        
+
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
         {
             Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);

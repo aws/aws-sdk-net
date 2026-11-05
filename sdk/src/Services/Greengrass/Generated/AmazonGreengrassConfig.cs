@@ -27,12 +27,12 @@ using Amazon.Greengrass.Internal;
 namespace Amazon.Greengrass
 {
     /// <summary>
-    /// Configuration for accessing Amazon Greengrass service
+    /// Configuration for accessing AWS Greengrass
     /// </summary>
     public partial class AmazonGreengrassConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Greengrass", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("Greengrass", "4.0.100.22");
 
         private static readonly AmazonGreengrassEndpointResolver EndpointResolver =
             new AmazonGreengrassEndpointResolver();

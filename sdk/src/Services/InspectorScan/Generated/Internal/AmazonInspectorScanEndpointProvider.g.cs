@@ -26,7 +26,7 @@ using Amazon.InspectorScan.Endpoints;
 namespace Amazon.InspectorScan.Internal
 {
     /// <summary>
-    /// Amazon InspectorScan endpoint provider.
+    /// Inspector Scan endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="InspectorScanEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

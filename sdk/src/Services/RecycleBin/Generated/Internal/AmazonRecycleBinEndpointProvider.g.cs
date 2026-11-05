@@ -26,7 +26,7 @@ using Amazon.RecycleBin.Endpoints;
 namespace Amazon.RecycleBin.Internal
 {
     /// <summary>
-    /// Amazon RecycleBin endpoint provider.
+    /// Amazon Recycle Bin endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="RecycleBinEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

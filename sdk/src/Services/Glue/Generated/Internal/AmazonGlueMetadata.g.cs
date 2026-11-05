@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Glue service
+    /// Service metadata for AWS Glue
     /// </summary>
     public partial class AmazonGlueMetadata : IServiceMetadata
     {

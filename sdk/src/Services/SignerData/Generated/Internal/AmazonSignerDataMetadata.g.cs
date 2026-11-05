@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SignerData.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SignerData service
+    /// Service metadata for AWS Signer Data Plane
     /// </summary>
     public partial class AmazonSignerDataMetadata : IServiceMetadata
     {

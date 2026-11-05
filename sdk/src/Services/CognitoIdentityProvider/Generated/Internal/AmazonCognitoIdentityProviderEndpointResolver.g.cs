@@ -31,7 +31,7 @@ using Amazon.CognitoIdentityProvider.Endpoints;
 namespace Amazon.CognitoIdentityProvider.Internal
 {
     /// <summary>
-    /// Amazon CognitoIdentityProvider endpoint resolver.
+    /// Amazon Cognito Identity Provider endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CognitoIdentityProvider service requests.
     /// <para />

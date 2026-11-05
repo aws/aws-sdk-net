@@ -26,7 +26,7 @@ using Amazon.NeptuneGraph.Endpoints;
 namespace Amazon.NeptuneGraph.Internal
 {
     /// <summary>
-    /// Amazon NeptuneGraph endpoint provider.
+    /// Amazon Neptune Graph endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="NeptuneGraphEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

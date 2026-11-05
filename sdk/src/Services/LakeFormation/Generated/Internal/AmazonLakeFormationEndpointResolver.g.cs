@@ -31,7 +31,7 @@ using Amazon.LakeFormation.Endpoints;
 namespace Amazon.LakeFormation.Internal
 {
     /// <summary>
-    /// Amazon LakeFormation endpoint resolver.
+    /// AWS Lake Formation endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for LakeFormation service requests.
     /// <para />

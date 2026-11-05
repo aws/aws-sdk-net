@@ -31,7 +31,7 @@ using Amazon.ChimeSDKVoice.Endpoints;
 namespace Amazon.ChimeSDKVoice.Internal
 {
     /// <summary>
-    /// Amazon ChimeSDKVoice endpoint resolver.
+    /// Amazon Chime SDK Voice endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ChimeSDKVoice service requests.
     /// <para />

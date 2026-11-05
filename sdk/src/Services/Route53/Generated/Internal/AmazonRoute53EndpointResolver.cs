@@ -32,7 +32,7 @@ using Amazon.Route53.Endpoints;
 namespace Amazon.Route53.Internal
 {
     /// <summary>
-    /// Amazon Route53 endpoint resolver.
+    /// Amazon Route 53 endpoint resolver.
     /// Custom PipelineHandler responsible for resolving endpoint and setting authentication parameters for Route53 service requests.
     /// Collects values for Route53EndpointParameters and then tries to resolve endpoint by calling 
     /// ResolveEndpoint method on GlobalEndpoints.Provider if present, otherwise uses Route53EndpointProvider.

@@ -26,7 +26,7 @@ using Amazon.NetworkSecurityManager.Endpoints;
 namespace Amazon.NetworkSecurityManager.Internal
 {
     /// <summary>
-    /// Amazon NetworkSecurityManager endpoint provider.
+    /// AWS Network Security Manager Customer API endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="NetworkSecurityManagerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

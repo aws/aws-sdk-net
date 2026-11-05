@@ -31,7 +31,7 @@ using Amazon.NotificationsContacts.Endpoints;
 namespace Amazon.NotificationsContacts.Internal
 {
     /// <summary>
-    /// Amazon NotificationsContacts endpoint resolver.
+    /// AWS User Notifications Contacts endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for NotificationsContacts service requests.
     /// <para />

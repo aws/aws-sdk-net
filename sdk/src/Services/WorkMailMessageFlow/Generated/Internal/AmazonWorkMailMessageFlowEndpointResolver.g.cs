@@ -31,7 +31,7 @@ using Amazon.WorkMailMessageFlow.Endpoints;
 namespace Amazon.WorkMailMessageFlow.Internal
 {
     /// <summary>
-    /// Amazon WorkMailMessageFlow endpoint resolver.
+    /// Amazon WorkMail Message Flow endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for WorkMailMessageFlow service requests.
     /// <para />

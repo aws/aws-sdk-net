@@ -27,12 +27,12 @@ using Amazon.SimpleEmailV2.Internal;
 namespace Amazon.SimpleEmailV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon SimpleEmailServiceV2 service
+    /// Configuration for accessing Amazon Simple Email Service
     /// </summary>
     public partial class AmazonSimpleEmailServiceV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SESv2", "4.0.106.5");
+            InternalSDKUtils.BuildUserAgentString("SESv2", "4.0.106.8");
 
         private static readonly AmazonSimpleEmailServiceV2EndpointResolver EndpointResolver =
             new AmazonSimpleEmailServiceV2EndpointResolver();

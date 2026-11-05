@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SupportAuthZ
 {
     /// <summary>
-    /// Configuration for accessing Amazon SupportAuthZ service
+    /// Configuration for accessing SupportAuthZ
     /// </summary>
     public static class AmazonSupportAuthZDefaultConfiguration
     {

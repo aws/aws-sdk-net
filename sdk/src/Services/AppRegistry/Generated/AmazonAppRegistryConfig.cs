@@ -27,12 +27,12 @@ using Amazon.AppRegistry.Internal;
 namespace Amazon.AppRegistry
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppRegistry service
+    /// Configuration for accessing AWS Service Catalog App Registry
     /// </summary>
     public partial class AmazonAppRegistryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Service Catalog AppRegistry", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("Service Catalog AppRegistry", "4.0.100.23");
 
         private static readonly AmazonAppRegistryEndpointResolver EndpointResolver =
             new AmazonAppRegistryEndpointResolver();

@@ -31,7 +31,7 @@ using Amazon.BedrockAgentRuntime.Endpoints;
 namespace Amazon.BedrockAgentRuntime.Internal
 {
     /// <summary>
-    /// Amazon BedrockAgentRuntime endpoint resolver.
+    /// Agents for Amazon Bedrock Runtime endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for BedrockAgentRuntime service requests.
     /// <para />

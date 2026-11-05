@@ -26,7 +26,7 @@ using Amazon.SageMakerMetrics.Endpoints;
 namespace Amazon.SageMakerMetrics.Internal
 {
     /// <summary>
-    /// Amazon SageMakerMetrics endpoint provider.
+    /// Amazon SageMaker Metrics Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SageMakerMetricsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

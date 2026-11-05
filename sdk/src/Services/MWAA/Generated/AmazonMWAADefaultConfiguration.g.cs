@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MWAA
 {
     /// <summary>
-    /// Configuration for accessing Amazon MWAA service
+    /// Configuration for accessing AmazonMWAA
     /// </summary>
     public static class AmazonMWAADefaultConfiguration
     {

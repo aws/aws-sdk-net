@@ -26,7 +26,7 @@ using Amazon.PrometheusService.Endpoints;
 namespace Amazon.PrometheusService.Internal
 {
     /// <summary>
-    /// Amazon PrometheusService endpoint provider.
+    /// Amazon Prometheus Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PrometheusServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

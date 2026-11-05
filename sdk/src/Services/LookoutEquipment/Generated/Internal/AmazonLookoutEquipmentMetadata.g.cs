@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutEquipment.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon LookoutEquipment service
+    /// Service metadata for Amazon Lookout for Equipment
     /// </summary>
     public partial class AmazonLookoutEquipmentMetadata : IServiceMetadata
     {

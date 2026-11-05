@@ -31,7 +31,7 @@ using Amazon.Backup.Endpoints;
 namespace Amazon.Backup.Internal
 {
     /// <summary>
-    /// Amazon Backup endpoint resolver.
+    /// AWS Backup endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Backup service requests.
     /// <para />

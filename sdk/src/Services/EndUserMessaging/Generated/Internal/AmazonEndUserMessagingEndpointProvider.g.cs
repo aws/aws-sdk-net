@@ -26,7 +26,7 @@ using Amazon.EndUserMessaging.Endpoints;
 namespace Amazon.EndUserMessaging.Internal
 {
     /// <summary>
-    /// Amazon EndUserMessaging endpoint provider.
+    /// AWS End User Messaging endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="EndUserMessagingEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

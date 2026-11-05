@@ -27,12 +27,12 @@ using Amazon.TrustedAdvisor.Internal;
 namespace Amazon.TrustedAdvisor
 {
     /// <summary>
-    /// Configuration for accessing Amazon TrustedAdvisor service
+    /// Configuration for accessing TrustedAdvisor Public API
     /// </summary>
     public partial class AmazonTrustedAdvisorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("TrustedAdvisor", "4.0.101.12");
+            InternalSDKUtils.BuildUserAgentString("TrustedAdvisor", "4.0.101.15");
 
         private static readonly AmazonTrustedAdvisorEndpointResolver EndpointResolver =
             new AmazonTrustedAdvisorEndpointResolver();

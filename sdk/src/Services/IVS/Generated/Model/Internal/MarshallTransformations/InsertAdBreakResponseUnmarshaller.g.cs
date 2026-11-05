@@ -58,6 +58,13 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdBreakId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("targetStartAt", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.TargetStartAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return unmarshalledObject;

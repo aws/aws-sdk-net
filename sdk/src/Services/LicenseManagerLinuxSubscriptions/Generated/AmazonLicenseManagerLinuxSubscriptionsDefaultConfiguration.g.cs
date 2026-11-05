@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.LicenseManagerLinuxSubscriptions
 {
     /// <summary>
-    /// Configuration for accessing Amazon LicenseManagerLinuxSubscriptions service
+    /// Configuration for accessing AWS License Manager Linux Subscriptions
     /// </summary>
     public static class AmazonLicenseManagerLinuxSubscriptionsDefaultConfiguration
     {

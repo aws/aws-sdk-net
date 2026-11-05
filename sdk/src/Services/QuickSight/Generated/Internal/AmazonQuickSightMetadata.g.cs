@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon QuickSight service
+    /// Service metadata for Amazon QuickSight
     /// </summary>
     public partial class AmazonQuickSightMetadata : IServiceMetadata
     {

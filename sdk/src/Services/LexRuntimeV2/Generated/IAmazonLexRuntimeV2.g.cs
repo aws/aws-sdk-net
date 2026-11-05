@@ -1,0 +1,779 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Amazon.Runtime;
+using Amazon.LexRuntimeV2.Model;
+
+#pragma warning disable CS1570
+
+namespace Amazon.LexRuntimeV2
+{
+    /// <summary>
+    /// <para>Interface for accessing LexRuntimeV2</para>
+    ///
+    /// This section contains documentation for the Amazon Lex V2 Runtime V2 API operations.
+    /// </summary>
+    public partial interface IAmazonLexRuntimeV2 : IAmazonService, IDisposable
+    {
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes session information for a specified bot, alias, and user ID. 
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation to restart a conversation with a bot. When you remove a
+        /// session, the entire history of the session is removed so that you can start again.
+        /// </para>
+        ///  
+        /// <para>
+        /// You don't need to delete a session. Sessions have a time limit and will expire. Set
+        /// the session time limit when you create the bot. The default is 5 minutes, but you
+        /// can specify anything between 1 minute and 24 hours.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a bot or alias ID that doesn't exist, you receive a <c>BadRequestException.</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the locale doesn't exist in the bot, or if the locale hasn't been enables for the
+        /// alias, you receive a <c>BadRequestException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSession service method.</param>
+        /// <returns>The response from the DeleteSession service method, as returned by LexRuntimeV2.</returns>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ConflictException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
+        DeleteSessionResponse DeleteSession(DeleteSessionRequest request);
+#endif
+
+        /// <summary>
+        /// Removes session information for a specified bot, alias, and user ID. 
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation to restart a conversation with a bot. When you remove a
+        /// session, the entire history of the session is removed so that you can start again.
+        /// </para>
+        ///  
+        /// <para>
+        /// You don't need to delete a session. Sessions have a time limit and will expire. Set
+        /// the session time limit when you create the bot. The default is 5 minutes, but you
+        /// can specify anything between 1 minute and 24 hours.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a bot or alias ID that doesn't exist, you receive a <c>BadRequestException.</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the locale doesn't exist in the bot, or if the locale hasn't been enables for the
+        /// alias, you receive a <c>BadRequestException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteSession service method, as returned by LexRuntimeV2.</returns>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ConflictException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
+        Task<DeleteSessionResponse> DeleteSessionAsync(DeleteSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns session information for a specified bot, alias, and user.
+        /// 
+        ///  
+        /// <para>
+        /// For example, you can use this operation to retrieve session information for a user
+        /// that has left a long-running session in use.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the bot, alias, or session identifier doesn't exist, Amazon Lex V2 returns a <c>BadRequestException</c>.
+        /// If the locale doesn't exist or is not enabled for the alias, you receive a <c>BadRequestException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
+        /// <returns>The response from the GetSession service method, as returned by LexRuntimeV2.</returns>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/GetSession">REST API Reference for GetSession Operation</seealso>
+        GetSessionResponse GetSession(GetSessionRequest request);
+#endif
+
+        /// <summary>
+        /// Returns session information for a specified bot, alias, and user.
+        /// 
+        ///  
+        /// <para>
+        /// For example, you can use this operation to retrieve session information for a user
+        /// that has left a long-running session in use.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the bot, alias, or session identifier doesn't exist, Amazon Lex V2 returns a <c>BadRequestException</c>.
+        /// If the locale doesn't exist or is not enabled for the alias, you receive a <c>BadRequestException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetSession service method, as returned by LexRuntimeV2.</returns>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/GetSession">REST API Reference for GetSession Operation</seealso>
+        Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a new session or modifies an existing session with an Amazon Lex V2 bot. Use
+        /// this operation to enable your application to set the state of the bot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSession service method.</param>
+        /// <returns>The response from the PutSession service method, as returned by LexRuntimeV2.</returns>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.BadGatewayException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ConflictException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.DependencyFailedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/PutSession">REST API Reference for PutSession Operation</seealso>
+        PutSessionResponse PutSession(PutSessionRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a new session or modifies an existing session with an Amazon Lex V2 bot. Use
+        /// this operation to enable your application to set the state of the bot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutSession service method, as returned by LexRuntimeV2.</returns>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.BadGatewayException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ConflictException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.DependencyFailedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/PutSession">REST API Reference for PutSession Operation</seealso>
+        Task<PutSessionResponse> PutSessionAsync(PutSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Sends user input to Amazon Lex V2. Client applications use this API to send requests
+        /// to Amazon Lex V2 at runtime. Amazon Lex V2 then interprets the user input using the
+        /// machine learning model that it build for the bot.
+        /// 
+        ///  
+        /// <para>
+        /// In response, Amazon Lex V2 returns the next message to convey to the user and an optional
+        /// response card to display.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the optional post-fulfillment response is specified, the messages are returned
+        /// as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Success message</b> - Returned if the Lambda function completes successfully and
+        /// the intent state is fulfilled or ready fulfillment if the message is present.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Failed message</b> - The failed message is returned if the Lambda function throws
+        /// an exception or if the Lambda function returns a failed intent state without a message.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Timeout message</b> - If you don't configure a timeout message and a timeout,
+        /// and the Lambda function doesn't return within 30 seconds, the timeout message is returned.
+        /// If you configure a timeout, the timeout message is returned when the period times
+        /// out. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion
+        /// message</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RecognizeText service method.</param>
+        /// <returns>The response from the RecognizeText service method, as returned by LexRuntimeV2.</returns>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.BadGatewayException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ConflictException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.DependencyFailedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/RecognizeText">REST API Reference for RecognizeText Operation</seealso>
+        RecognizeTextResponse RecognizeText(RecognizeTextRequest request);
+#endif
+
+        /// <summary>
+        /// Sends user input to Amazon Lex V2. Client applications use this API to send requests
+        /// to Amazon Lex V2 at runtime. Amazon Lex V2 then interprets the user input using the
+        /// machine learning model that it build for the bot.
+        /// 
+        ///  
+        /// <para>
+        /// In response, Amazon Lex V2 returns the next message to convey to the user and an optional
+        /// response card to display.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the optional post-fulfillment response is specified, the messages are returned
+        /// as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Success message</b> - Returned if the Lambda function completes successfully and
+        /// the intent state is fulfilled or ready fulfillment if the message is present.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Failed message</b> - The failed message is returned if the Lambda function throws
+        /// an exception or if the Lambda function returns a failed intent state without a message.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Timeout message</b> - If you don't configure a timeout message and a timeout,
+        /// and the Lambda function doesn't return within 30 seconds, the timeout message is returned.
+        /// If you configure a timeout, the timeout message is returned when the period times
+        /// out. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion
+        /// message</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RecognizeText service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RecognizeText service method, as returned by LexRuntimeV2.</returns>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.BadGatewayException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ConflictException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.DependencyFailedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/RecognizeText">REST API Reference for RecognizeText Operation</seealso>
+        Task<RecognizeTextResponse> RecognizeTextAsync(RecognizeTextRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Sends user input to Amazon Lex V2. You can send text or speech. Clients use this API
+        /// to send text and audio requests to Amazon Lex V2 at runtime. Amazon Lex V2 interprets
+        /// the user input using the machine learning model built for the bot.
+        /// 
+        ///  
+        /// <para>
+        /// The following request fields must be compressed with gzip and then base64 encoded
+        /// before you send them to Amazon Lex V2. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// requestAttributes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// sessionState
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following response fields are compressed using gzip and then base64 encoded by
+        /// Amazon Lex V2. Before you can use these fields, you must decode and decompress them.
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// inputTranscript
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// interpretations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// messages
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// requestAttributes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// sessionState
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The example contains a Java application that compresses and encodes a Java object
+        /// to send to Amazon Lex V2, and a second that decodes and decompresses a response from
+        /// Amazon Lex V2.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the optional post-fulfillment response is specified, the messages are returned
+        /// as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Success message</b> - Returned if the Lambda function completes successfully and
+        /// the intent state is fulfilled or ready fulfillment if the message is present.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Failed message</b> - The failed message is returned if the Lambda function throws
+        /// an exception or if the Lambda function returns a failed intent state without a message.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Timeout message</b> - If you don't configure a timeout message and a timeout,
+        /// and the Lambda function doesn't return within 30 seconds, the timeout message is returned.
+        /// If you configure a timeout, the timeout message is returned when the period times
+        /// out. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion
+        /// message</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RecognizeUtterance service method.</param>
+        /// <returns>The response from the RecognizeUtterance service method, as returned by LexRuntimeV2.</returns>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.BadGatewayException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ConflictException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.DependencyFailedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/RecognizeUtterance">REST API Reference for RecognizeUtterance Operation</seealso>
+        RecognizeUtteranceResponse RecognizeUtterance(RecognizeUtteranceRequest request);
+#endif
+
+        /// <summary>
+        /// Sends user input to Amazon Lex V2. You can send text or speech. Clients use this API
+        /// to send text and audio requests to Amazon Lex V2 at runtime. Amazon Lex V2 interprets
+        /// the user input using the machine learning model built for the bot.
+        /// 
+        ///  
+        /// <para>
+        /// The following request fields must be compressed with gzip and then base64 encoded
+        /// before you send them to Amazon Lex V2. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// requestAttributes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// sessionState
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following response fields are compressed using gzip and then base64 encoded by
+        /// Amazon Lex V2. Before you can use these fields, you must decode and decompress them.
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// inputTranscript
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// interpretations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// messages
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// requestAttributes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// sessionState
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The example contains a Java application that compresses and encodes a Java object
+        /// to send to Amazon Lex V2, and a second that decodes and decompresses a response from
+        /// Amazon Lex V2.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the optional post-fulfillment response is specified, the messages are returned
+        /// as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Success message</b> - Returned if the Lambda function completes successfully and
+        /// the intent state is fulfilled or ready fulfillment if the message is present.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Failed message</b> - The failed message is returned if the Lambda function throws
+        /// an exception or if the Lambda function returns a failed intent state without a message.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Timeout message</b> - If you don't configure a timeout message and a timeout,
+        /// and the Lambda function doesn't return within 30 seconds, the timeout message is returned.
+        /// If you configure a timeout, the timeout message is returned when the period times
+        /// out. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion
+        /// message</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RecognizeUtterance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RecognizeUtterance service method, as returned by LexRuntimeV2.</returns>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.BadGatewayException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ConflictException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.DependencyFailedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/RecognizeUtterance">REST API Reference for RecognizeUtterance Operation</seealso>
+        Task<RecognizeUtteranceResponse> RecognizeUtteranceAsync(RecognizeUtteranceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NET8_0_OR_GREATER
+#if NETFRAMEWORK
+        /// <summary>
+        /// Starts an HTTP/2 bidirectional event stream that enables you to send audio, text,
+        /// or DTMF input in real time. After your application starts a conversation, users send
+        /// input to Amazon Lex V2 as a stream of events. Amazon Lex V2 processes the incoming
+        /// events and responds with streaming text or audio events. 
+        /// 
+        ///  
+        /// <para>
+        /// Audio input must be in the following format: <c>audio/lpcm sample-rate=8000 sample-size-bits=16
+        /// channel-count=1; is-big-endian=false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the optional post-fulfillment response is specified, the messages are returned
+        /// as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Success message</b> - Returned if the Lambda function completes successfully and
+        /// the intent state is fulfilled or ready fulfillment if the message is present.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Failed message</b> - The failed message is returned if the Lambda function throws
+        /// an exception or if the Lambda function returns a failed intent state without a message.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Timeout message</b> - If you don't configure a timeout message and a timeout,
+        /// and the Lambda function doesn't return within 30 seconds, the timeout message is returned.
+        /// If you configure a timeout, the timeout message is returned when the period times
+        /// out. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion
+        /// message</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the optional update message is configured, it is played at the specified frequency
+        /// while the Lambda function is running and the update message state is active. If the
+        /// fulfillment update message is not active, the Lambda function runs with a 30 second
+        /// timeout. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-update.html">Update
+        /// message </a> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>StartConversation</c> operation is supported only in the following SDKs: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex.v2-2020-08-07/StartConversation">AWS
+        /// SDK for C++</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/goto/SdkForJavaV2/runtime.lex.v2-2020-08-07/StartConversation">AWS
+        /// SDK for Java V2</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/goto/SdkForRubyV3/runtime.lex.v2-2020-08-07/StartConversation">AWS
+        /// SDK for Ruby V3</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartConversation service method.</param>
+        /// <returns>The response from the StartConversation service method, as returned by LexRuntimeV2.</returns>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/StartConversation">REST API Reference for StartConversation Operation</seealso>
+        StartConversationResponse StartConversation(StartConversationRequest request);
+#endif
+
+        /// <summary>
+        /// Starts an HTTP/2 bidirectional event stream that enables you to send audio, text,
+        /// or DTMF input in real time. After your application starts a conversation, users send
+        /// input to Amazon Lex V2 as a stream of events. Amazon Lex V2 processes the incoming
+        /// events and responds with streaming text or audio events. 
+        /// 
+        ///  
+        /// <para>
+        /// Audio input must be in the following format: <c>audio/lpcm sample-rate=8000 sample-size-bits=16
+        /// channel-count=1; is-big-endian=false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the optional post-fulfillment response is specified, the messages are returned
+        /// as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Success message</b> - Returned if the Lambda function completes successfully and
+        /// the intent state is fulfilled or ready fulfillment if the message is present.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Failed message</b> - The failed message is returned if the Lambda function throws
+        /// an exception or if the Lambda function returns a failed intent state without a message.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Timeout message</b> - If you don't configure a timeout message and a timeout,
+        /// and the Lambda function doesn't return within 30 seconds, the timeout message is returned.
+        /// If you configure a timeout, the timeout message is returned when the period times
+        /// out. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion
+        /// message</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the optional update message is configured, it is played at the specified frequency
+        /// while the Lambda function is running and the update message state is active. If the
+        /// fulfillment update message is not active, the Lambda function runs with a 30 second
+        /// timeout. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-update.html">Update
+        /// message </a> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>StartConversation</c> operation is supported only in the following SDKs: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex.v2-2020-08-07/StartConversation">AWS
+        /// SDK for C++</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/goto/SdkForJavaV2/runtime.lex.v2-2020-08-07/StartConversation">AWS
+        /// SDK for Java V2</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/goto/SdkForRubyV3/runtime.lex.v2-2020-08-07/StartConversation">AWS
+        /// SDK for Ruby V3</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartConversation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartConversation service method, as returned by LexRuntimeV2.</returns>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/StartConversation">REST API Reference for StartConversation Operation</seealso>
+        Task<StartConversationResponse> StartConversationAsync(StartConversationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+#endif
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
+
+#if NET8_0_OR_GREATER
+        // Warning CA1033 is issued when the child types can not call the method defined in parent types.
+        // In this use case the intended caller is only meant to be the interface as a factory
+        // method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonLexRuntimeV2Config))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonLexRuntimeV2Config();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+            Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonLexRuntimeV2Config;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonLexRuntimeV2Config to create AmazonLexRuntimeV2Client");
+            }
+
+            return awsCredentials == null ?
+                    new AmazonLexRuntimeV2Client(serviceClientConfig) :
+                    new AmazonLexRuntimeV2Client(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+    }
+}

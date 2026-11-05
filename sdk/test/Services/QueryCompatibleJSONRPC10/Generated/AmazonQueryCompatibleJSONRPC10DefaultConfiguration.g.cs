@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.QueryCompatibleJSONRPC10
 {
     /// <summary>
-    /// Configuration for accessing Amazon QueryCompatibleJSONRPC10 service
+    /// Configuration for accessing Query Compatible Json 1.0 Protocol Service
     /// </summary>
     public static class AmazonQueryCompatibleJSONRPC10DefaultConfiguration
     {

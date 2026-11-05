@@ -26,7 +26,7 @@ using Amazon.ControlTower.Endpoints;
 namespace Amazon.ControlTower.Internal
 {
     /// <summary>
-    /// Amazon ControlTower endpoint provider.
+    /// AWS Control Tower endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ControlTowerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

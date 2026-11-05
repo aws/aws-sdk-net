@@ -9,16 +9,16 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("AWSSDK.QueryDataPlane")]
 
 #if NET472
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - AWS Query Data Plane. AWS Query serde benchmark data plane service")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - AWS Query Data Plane.")]
 
 #elif NETSTANDARD2_0
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Query Data Plane. AWS Query serde benchmark data plane service")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Query Data Plane.")]
 
 #elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Query Data Plane. AWS Query serde benchmark data plane service")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Query Data Plane.")]
 
 #elif NET8_0
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS Query Data Plane. AWS Query serde benchmark data plane service")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS Query Data Plane.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LambdaWeb.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon LambdaWeb service
+    /// Service metadata for Lambda Web
     /// </summary>
     public partial class AmazonLambdaWebMetadata : IServiceMetadata
     {

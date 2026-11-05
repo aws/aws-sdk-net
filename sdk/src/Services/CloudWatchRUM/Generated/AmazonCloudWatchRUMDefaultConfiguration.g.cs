@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudWatchRUM
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudWatchRUM service
+    /// Configuration for accessing CloudWatch RUM
     /// </summary>
     public static class AmazonCloudWatchRUMDefaultConfiguration
     {

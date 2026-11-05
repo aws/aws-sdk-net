@@ -31,7 +31,7 @@ using Amazon.GreengrassV2.Endpoints;
 namespace Amazon.GreengrassV2.Internal
 {
     /// <summary>
-    /// Amazon GreengrassV2 endpoint resolver.
+    /// AWS IoT Greengrass V2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for GreengrassV2 service requests.
     /// <para />

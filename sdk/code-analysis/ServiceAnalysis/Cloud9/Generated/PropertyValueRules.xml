@@ -7,14 +7,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.CreateEnvironmentEC2Request.ClientRequestToken</property>
-    <pattern>[\x20-\x7E]{10,128}</pattern>
+    <pattern>^[\x20-\x7E]{10,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.CreateEnvironmentEC2Request.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.CreateEnvironmentEC2Request.ImageId</property>
+    <min>0</min>
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
@@ -86,18 +88,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.ListTagsForResourceRequest.ResourceARN</property>
-    <pattern>arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.TagResourceRequest.ResourceARN</property>
-    <pattern>arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.UntagResourceRequest.ResourceARN</property>
-    <pattern>arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.UpdateEnvironmentRequest.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -119,6 +122,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.Environment.Description</property>
+    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>

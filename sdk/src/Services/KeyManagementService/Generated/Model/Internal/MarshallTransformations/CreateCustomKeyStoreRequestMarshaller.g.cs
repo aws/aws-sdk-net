@@ -1,0 +1,152 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.KeyManagementService.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// CreateCustomKeyStore Request Marshaller
+    /// </summary>
+    public partial class CreateCustomKeyStoreRequestMarshaller : IMarshaller<IRequest, CreateCustomKeyStoreRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((CreateCustomKeyStoreRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(CreateCustomKeyStoreRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.KeyManagementService");
+            string target = "TrentService.CreateCustomKeyStore";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-01";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetCloudHsmClusterId())
+            {
+                context.Writer.WritePropertyName("CloudHsmClusterId");
+                context.Writer.WriteStringValue(publicRequest.CloudHsmClusterId);
+            }
+            if (publicRequest.IsSetCustomKeyStoreName())
+            {
+                context.Writer.WritePropertyName("CustomKeyStoreName");
+                context.Writer.WriteStringValue(publicRequest.CustomKeyStoreName);
+            }
+            if (publicRequest.IsSetCustomKeyStoreType())
+            {
+                context.Writer.WritePropertyName("CustomKeyStoreType");
+                context.Writer.WriteStringValue(publicRequest.CustomKeyStoreType);
+            }
+            if (publicRequest.IsSetKeyStorePassword())
+            {
+                context.Writer.WritePropertyName("KeyStorePassword");
+                context.Writer.WriteStringValue(publicRequest.KeyStorePassword);
+            }
+            if (publicRequest.IsSetTrustAnchorCertificate())
+            {
+                context.Writer.WritePropertyName("TrustAnchorCertificate");
+                context.Writer.WriteStringValue(publicRequest.TrustAnchorCertificate);
+            }
+            if (publicRequest.IsSetXksProxyAuthenticationCredential())
+            {
+                context.Writer.WritePropertyName("XksProxyAuthenticationCredential");
+                context.Writer.WriteStartObject();
+
+                var marshaller = XksProxyAuthenticationCredentialTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.XksProxyAuthenticationCredential, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetXksProxyConnectivity())
+            {
+                context.Writer.WritePropertyName("XksProxyConnectivity");
+                context.Writer.WriteStringValue(publicRequest.XksProxyConnectivity);
+            }
+            if (publicRequest.IsSetXksProxyUriEndpoint())
+            {
+                context.Writer.WritePropertyName("XksProxyUriEndpoint");
+                context.Writer.WriteStringValue(publicRequest.XksProxyUriEndpoint);
+            }
+            if (publicRequest.IsSetXksProxyUriPath())
+            {
+                context.Writer.WritePropertyName("XksProxyUriPath");
+                context.Writer.WriteStringValue(publicRequest.XksProxyUriPath);
+            }
+            if (publicRequest.IsSetXksProxyVpcEndpointServiceName())
+            {
+                context.Writer.WritePropertyName("XksProxyVpcEndpointServiceName");
+                context.Writer.WriteStringValue(publicRequest.XksProxyVpcEndpointServiceName);
+            }
+            if (publicRequest.IsSetXksProxyVpcEndpointServiceOwner())
+            {
+                context.Writer.WritePropertyName("XksProxyVpcEndpointServiceOwner");
+                context.Writer.WriteStringValue(publicRequest.XksProxyVpcEndpointServiceOwner);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly CreateCustomKeyStoreRequestMarshaller _instance = new();
+
+        internal static CreateCustomKeyStoreRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static CreateCustomKeyStoreRequestMarshaller Instance => _instance;
+    }
+}

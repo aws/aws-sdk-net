@@ -60,6 +60,13 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("crlDpRevocationEnabled", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.CrlDpRevocationEnabled = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

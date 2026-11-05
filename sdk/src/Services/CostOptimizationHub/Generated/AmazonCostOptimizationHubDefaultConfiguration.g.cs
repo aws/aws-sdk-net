@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CostOptimizationHub
 {
     /// <summary>
-    /// Configuration for accessing Amazon CostOptimizationHub service
+    /// Configuration for accessing Cost Optimization Hub
     /// </summary>
     public static class AmazonCostOptimizationHubDefaultConfiguration
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RpcCborDataPlane.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon RpcCborDataPlane service
+    /// Service metadata for Smithy RPC v2 CBOR Data Plane
     /// </summary>
     public partial class AmazonRpcCborDataPlaneMetadata : IServiceMetadata
     {

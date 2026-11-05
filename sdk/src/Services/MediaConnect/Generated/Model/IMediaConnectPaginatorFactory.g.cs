@@ -39,6 +39,12 @@ namespace Amazon.MediaConnect.Model
         IListBridgesPaginator ListBridges(ListBridgesRequest request);
 
         /// <summary>
+        /// Paginator for ListDestinationEndpoints operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListDestinationEndpointsPaginator ListDestinationEndpoints(ListDestinationEndpointsRequest request);
+
+        /// <summary>
         /// Paginator for ListEntitlements operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -91,5 +97,11 @@ namespace Amazon.MediaConnect.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListRouterOutputsPaginator ListRouterOutputs(ListRouterOutputsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSourceEndpoints operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListSourceEndpointsPaginator ListSourceEndpoints(ListSourceEndpointsRequest request);
     }
 }

@@ -26,7 +26,7 @@ using Amazon.ManagedBlockchainQuery.Endpoints;
 namespace Amazon.ManagedBlockchainQuery.Internal
 {
     /// <summary>
-    /// Amazon ManagedBlockchainQuery endpoint provider.
+    /// Amazon Managed Blockchain Query endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ManagedBlockchainQueryEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

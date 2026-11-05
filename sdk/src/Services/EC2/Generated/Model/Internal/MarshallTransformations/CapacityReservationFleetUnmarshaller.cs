@@ -61,6 +61,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("availabilityZone", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("availabilityZoneId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("capacityReservationFleetArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -89,6 +101,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.InstanceMatchCriteria = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceRequirements", targetDepth))
+                    {
+                        var unmarshaller = InstanceRequirementsRequestUnmarshaller.Instance;
+                        unmarshalledObject.InstanceRequirements = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("instanceTypeSpecificationSet/item", targetDepth))

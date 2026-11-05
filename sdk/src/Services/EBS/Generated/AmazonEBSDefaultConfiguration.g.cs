@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.EBS
 {
     /// <summary>
-    /// Configuration for accessing Amazon EBS service
+    /// Configuration for accessing Amazon Elastic Block Store
     /// </summary>
     public static class AmazonEBSDefaultConfiguration
     {

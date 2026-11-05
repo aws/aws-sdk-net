@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DevOpsAgent service
+    /// Service metadata for AWS DevOps Agent Service
     /// </summary>
     public partial class AmazonDevOpsAgentMetadata : IServiceMetadata
     {

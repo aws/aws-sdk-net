@@ -22,6 +22,144 @@ using Amazon.Runtime;
 namespace Amazon.S3Tables
 {
     /// <summary>
+    /// Constants used for properties of type CompressionCodec.
+    /// </summary>
+    public class CompressionCodec : ConstantClass
+    {
+        /// <summary>
+        /// Constant Gzip for CompressionCodec
+        /// </summary>
+        public static readonly CompressionCodec Gzip = new CompressionCodec("gzip");
+
+        /// <summary>
+        /// Constant Snappy for CompressionCodec
+        /// </summary>
+        public static readonly CompressionCodec Snappy = new CompressionCodec("snappy");
+
+        /// <summary>
+        /// Constant Uncompressed for CompressionCodec
+        /// </summary>
+        public static readonly CompressionCodec Uncompressed = new CompressionCodec("uncompressed");
+
+        /// <summary>
+        /// Constant Zstd for CompressionCodec
+        /// </summary>
+        public static readonly CompressionCodec Zstd = new CompressionCodec("zstd");
+
+        /// <summary>
+        /// Constructs a custom CompressionCodec for a value not among the defined constants.
+        /// </summary>
+        public CompressionCodec(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CompressionCodec FindValue(string value)
+        {
+            return FindValue<CompressionCodec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CompressionCodec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataFileFormat.
+    /// </summary>
+    public class DataFileFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant Parquet for DataFileFormat
+        /// </summary>
+        public static readonly DataFileFormat Parquet = new DataFileFormat("parquet");
+
+        /// <summary>
+        /// Constructs a custom DataFileFormat for a value not among the defined constants.
+        /// </summary>
+        public DataFileFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataFileFormat FindValue(string value)
+        {
+            return FindValue<DataFileFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataFileFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FindingCategory.
+    /// </summary>
+    public class FindingCategory : ConstantClass
+    {
+        /// <summary>
+        /// Constant Access for FindingCategory
+        /// </summary>
+        public static readonly FindingCategory Access = new FindingCategory("access");
+
+        /// <summary>
+        /// Constant Data for FindingCategory
+        /// </summary>
+        public static readonly FindingCategory Data = new FindingCategory("data");
+
+        /// <summary>
+        /// Constant Internal for FindingCategory
+        /// </summary>
+        public static readonly FindingCategory Internal = new FindingCategory("internal");
+
+        /// <summary>
+        /// Constant Metadata for FindingCategory
+        /// </summary>
+        public static readonly FindingCategory Metadata = new FindingCategory("metadata");
+
+        /// <summary>
+        /// Constructs a custom FindingCategory for a value not among the defined constants.
+        /// </summary>
+        public FindingCategory(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingCategory FindValue(string value)
+        {
+            return FindValue<FindingCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type IcebergCompactionStrategy.
     /// </summary>
     public class IcebergCompactionStrategy : ConstantClass
@@ -155,6 +293,47 @@ namespace Amazon.S3Tables
     }
 
     /// <summary>
+    /// Constants used for properties of type IncompatibleValuesPolicy.
+    /// </summary>
+    public class IncompatibleValuesPolicy : ConstantClass
+    {
+        /// <summary>
+        /// Constant Fail for IncompatibleValuesPolicy
+        /// </summary>
+        public static readonly IncompatibleValuesPolicy Fail = new IncompatibleValuesPolicy("fail");
+
+        /// <summary>
+        /// Constant SetNull for IncompatibleValuesPolicy
+        /// </summary>
+        public static readonly IncompatibleValuesPolicy SetNull = new IncompatibleValuesPolicy("setNull");
+
+        /// <summary>
+        /// Constructs a custom IncompatibleValuesPolicy for a value not among the defined constants.
+        /// </summary>
+        public IncompatibleValuesPolicy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IncompatibleValuesPolicy FindValue(string value)
+        {
+            return FindValue<IncompatibleValuesPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IncompatibleValuesPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type JobStatus.
     /// </summary>
     public class JobStatus : ConstantClass
@@ -241,6 +420,281 @@ namespace Amazon.S3Tables
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MaintenanceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MigrationFailureCode.
+    /// </summary>
+    public class MigrationFailureCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DestinationPermissions for MigrationFailureCode
+        /// </summary>
+        public static readonly MigrationFailureCode DestinationPermissions = new MigrationFailureCode("destinationPermissions");
+
+        /// <summary>
+        /// Constant InternalError for MigrationFailureCode
+        /// </summary>
+        public static readonly MigrationFailureCode InternalError = new MigrationFailureCode("internalError");
+
+        /// <summary>
+        /// Constant ObjectCompatibilityReport for MigrationFailureCode
+        /// </summary>
+        public static readonly MigrationFailureCode ObjectCompatibilityReport = new MigrationFailureCode("objectCompatibilityReport");
+
+        /// <summary>
+        /// Constant ObjectMigrationReport for MigrationFailureCode
+        /// </summary>
+        public static readonly MigrationFailureCode ObjectMigrationReport = new MigrationFailureCode("objectMigrationReport");
+
+        /// <summary>
+        /// Constant ReportBucketNotSupported for MigrationFailureCode
+        /// </summary>
+        public static readonly MigrationFailureCode ReportBucketNotSupported = new MigrationFailureCode("reportBucketNotSupported");
+
+        /// <summary>
+        /// Constant ResourceNotFound for MigrationFailureCode
+        /// </summary>
+        public static readonly MigrationFailureCode ResourceNotFound = new MigrationFailureCode("resourceNotFound");
+
+        /// <summary>
+        /// Constant RolePermissions for MigrationFailureCode
+        /// </summary>
+        public static readonly MigrationFailureCode RolePermissions = new MigrationFailureCode("rolePermissions");
+
+        /// <summary>
+        /// Constant SourceNotSupported for MigrationFailureCode
+        /// </summary>
+        public static readonly MigrationFailureCode SourceNotSupported = new MigrationFailureCode("sourceNotSupported");
+
+        /// <summary>
+        /// Constant SourcePermissions for MigrationFailureCode
+        /// </summary>
+        public static readonly MigrationFailureCode SourcePermissions = new MigrationFailureCode("sourcePermissions");
+
+        /// <summary>
+        /// Constant TableCompatibilityReport for MigrationFailureCode
+        /// </summary>
+        public static readonly MigrationFailureCode TableCompatibilityReport = new MigrationFailureCode("tableCompatibilityReport");
+
+        /// <summary>
+        /// Constructs a custom MigrationFailureCode for a value not among the defined constants.
+        /// </summary>
+        public MigrationFailureCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MigrationFailureCode FindValue(string value)
+        {
+            return FindValue<MigrationFailureCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MigrationFailureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MigrationRequestedState.
+    /// </summary>
+    public class MigrationRequestedState : ConstantClass
+    {
+        /// <summary>
+        /// Constant Cancelled for MigrationRequestedState
+        /// </summary>
+        public static readonly MigrationRequestedState Cancelled = new MigrationRequestedState("cancelled");
+
+        /// <summary>
+        /// Constant Queued for MigrationRequestedState
+        /// </summary>
+        public static readonly MigrationRequestedState Queued = new MigrationRequestedState("queued");
+
+        /// <summary>
+        /// Constructs a custom MigrationRequestedState for a value not among the defined constants.
+        /// </summary>
+        public MigrationRequestedState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MigrationRequestedState FindValue(string value)
+        {
+            return FindValue<MigrationRequestedState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MigrationRequestedState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MigrationSourceType.
+    /// </summary>
+    public class MigrationSourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant GlueTable for MigrationSourceType
+        /// </summary>
+        public static readonly MigrationSourceType GlueTable = new MigrationSourceType("glueTable");
+
+        /// <summary>
+        /// Constructs a custom MigrationSourceType for a value not among the defined constants.
+        /// </summary>
+        public MigrationSourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MigrationSourceType FindValue(string value)
+        {
+            return FindValue<MigrationSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MigrationSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MigrationState.
+    /// </summary>
+    public class MigrationState : ConstantClass
+    {
+        /// <summary>
+        /// Constant Cancelled for MigrationState
+        /// </summary>
+        public static readonly MigrationState Cancelled = new MigrationState("cancelled");
+
+        /// <summary>
+        /// Constant Cancelling for MigrationState
+        /// </summary>
+        public static readonly MigrationState Cancelling = new MigrationState("cancelling");
+
+        /// <summary>
+        /// Constant Failed for MigrationState
+        /// </summary>
+        public static readonly MigrationState Failed = new MigrationState("failed");
+
+        /// <summary>
+        /// Constant Migrating for MigrationState
+        /// </summary>
+        public static readonly MigrationState Migrating = new MigrationState("migrating");
+
+        /// <summary>
+        /// Constant New for MigrationState
+        /// </summary>
+        public static readonly MigrationState New = new MigrationState("new");
+
+        /// <summary>
+        /// Constant PendingReview for MigrationState
+        /// </summary>
+        public static readonly MigrationState PendingReview = new MigrationState("pendingReview");
+
+        /// <summary>
+        /// Constant Planning for MigrationState
+        /// </summary>
+        public static readonly MigrationState Planning = new MigrationState("planning");
+
+        /// <summary>
+        /// Constant Queued for MigrationState
+        /// </summary>
+        public static readonly MigrationState Queued = new MigrationState("queued");
+
+        /// <summary>
+        /// Constant Succeeded for MigrationState
+        /// </summary>
+        public static readonly MigrationState Succeeded = new MigrationState("succeeded");
+
+        /// <summary>
+        /// Constructs a custom MigrationState for a value not among the defined constants.
+        /// </summary>
+        public MigrationState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MigrationState FindValue(string value)
+        {
+            return FindValue<MigrationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MigrationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MigrationType.
+    /// </summary>
+    public class MigrationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Start for MigrationType
+        /// </summary>
+        public static readonly MigrationType Start = new MigrationType("start");
+
+        /// <summary>
+        /// Constant Sync for MigrationType
+        /// </summary>
+        public static readonly MigrationType Sync = new MigrationType("sync");
+
+        /// <summary>
+        /// Constructs a custom MigrationType for a value not among the defined constants.
+        /// </summary>
+        public MigrationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MigrationType FindValue(string value)
+        {
+            return FindValue<MigrationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MigrationType(string value)
         {
             return FindValue(value);
         }
@@ -738,6 +1192,47 @@ namespace Amazon.S3Tables
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TableType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UnmatchedSourceFieldsPolicy.
+    /// </summary>
+    public class UnmatchedSourceFieldsPolicy : ConstantClass
+    {
+        /// <summary>
+        /// Constant Drop for UnmatchedSourceFieldsPolicy
+        /// </summary>
+        public static readonly UnmatchedSourceFieldsPolicy Drop = new UnmatchedSourceFieldsPolicy("drop");
+
+        /// <summary>
+        /// Constant Fail for UnmatchedSourceFieldsPolicy
+        /// </summary>
+        public static readonly UnmatchedSourceFieldsPolicy Fail = new UnmatchedSourceFieldsPolicy("fail");
+
+        /// <summary>
+        /// Constructs a custom UnmatchedSourceFieldsPolicy for a value not among the defined constants.
+        /// </summary>
+        public UnmatchedSourceFieldsPolicy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnmatchedSourceFieldsPolicy FindValue(string value)
+        {
+            return FindValue<UnmatchedSourceFieldsPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnmatchedSourceFieldsPolicy(string value)
         {
             return FindValue(value);
         }

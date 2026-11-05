@@ -31,7 +31,7 @@ using Amazon.AIOps.Endpoints;
 namespace Amazon.AIOps.Internal
 {
     /// <summary>
-    /// Amazon AIOps endpoint resolver.
+    /// AWS AI Ops endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AIOps service requests.
     /// <para />

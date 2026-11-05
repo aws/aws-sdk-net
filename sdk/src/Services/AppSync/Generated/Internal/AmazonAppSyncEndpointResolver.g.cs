@@ -31,7 +31,7 @@ using Amazon.AppSync.Endpoints;
 namespace Amazon.AppSync.Internal
 {
     /// <summary>
-    /// Amazon AppSync endpoint resolver.
+    /// AWS AppSync endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AppSync service requests.
     /// <para />

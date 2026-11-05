@@ -31,7 +31,7 @@ using Amazon.ApplicationCostProfiler.Endpoints;
 namespace Amazon.ApplicationCostProfiler.Internal
 {
     /// <summary>
-    /// Amazon ApplicationCostProfiler endpoint resolver.
+    /// AWS Application Cost Profiler endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ApplicationCostProfiler service requests.
     /// <para />

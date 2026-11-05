@@ -1444,6 +1444,16 @@
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.MSTeamsChannel.ChannelId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.MSTeamsConfiguration.TeamId</property>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MonthlyRecurrence.DayOfMonth</property>
     <min>1</min>
     <max>31</max>

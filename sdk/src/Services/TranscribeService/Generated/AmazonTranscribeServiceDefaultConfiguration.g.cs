@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.TranscribeService
 {
     /// <summary>
-    /// Configuration for accessing Amazon TranscribeService service
+    /// Configuration for accessing Amazon Transcribe Service
     /// </summary>
     public static class AmazonTranscribeServiceDefaultConfiguration
     {

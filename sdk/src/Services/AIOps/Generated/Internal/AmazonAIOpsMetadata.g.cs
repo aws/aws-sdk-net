@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AIOps.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AIOps service
+    /// Service metadata for AWS AI Ops
     /// </summary>
     public partial class AmazonAIOpsMetadata : IServiceMetadata
     {

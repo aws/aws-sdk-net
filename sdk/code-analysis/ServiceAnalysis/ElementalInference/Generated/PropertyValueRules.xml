@@ -57,6 +57,18 @@
     <pattern>^[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElementalInference.Model.CreateScheduleActionRequest.ActionName</property>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.CreateScheduleActionRequest.Id</property>
+    <pattern>^[a-z0-9]{19}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.CreateScheduleActionResponse.ActionName</property>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElementalInference.Model.DeleteDictionaryRequest.Id</property>
     <min>1</min>
     <max>19</max>
@@ -79,6 +91,18 @@
   <property-value-rule>
     <property>Amazon.ElementalInference.Model.DeleteFeedPolicyRequest.Id</property>
     <pattern>^[a-z0-9]{19}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.DeleteScheduleActionRequest.ActionName</property>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.DeleteScheduleActionRequest.Id</property>
+    <pattern>^[a-z0-9]{19}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.DeleteScheduleActionResponse.ActionName</property>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElementalInference.Model.DisassociateFeedRequest.AssociatedResourceName</property>
@@ -168,8 +192,17 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElementalInference.Model.ListScheduleActionsRequest.Id</property>
+    <pattern>^[a-z0-9]{19}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.ListScheduleActionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElementalInference.Model.ListTagsForResourceRequest.ResourceArn</property>
-    <pattern>^arn:aws[a-z\-]*:elemental-inference[a-z\-]*:[a-z0-9\-]+:[0-9]{12}:(feed|dictionary)/[a-zA-Z0-9]{1,19}$</pattern>
+    <pattern>^arn:aws[a-z\-]*:elemental-inference[a-z\-]*:[a-z0-9\-]+:[0-9]{12}:[a-z]+/[a-zA-Z0-9]{1,19}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElementalInference.Model.PutFeedPolicyRequest.Id</property>
@@ -195,11 +228,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElementalInference.Model.TagResourceRequest.ResourceArn</property>
-    <pattern>^arn:aws[a-z\-]*:elemental-inference[a-z\-]*:[a-z0-9\-]+:[0-9]{12}:(feed|dictionary)/[a-zA-Z0-9]{1,19}$</pattern>
+    <pattern>^arn:aws[a-z\-]*:elemental-inference[a-z\-]*:[a-z0-9\-]+:[0-9]{12}:[a-z]+/[a-zA-Z0-9]{1,19}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElementalInference.Model.UntagResourceRequest.ResourceArn</property>
-    <pattern>^arn:aws[a-z\-]*:elemental-inference[a-z\-]*:[a-z0-9\-]+:[0-9]{12}:(feed|dictionary)/[a-zA-Z0-9]{1,19}$</pattern>
+    <pattern>^arn:aws[a-z\-]*:elemental-inference[a-z\-]*:[a-z0-9\-]+:[0-9]{12}:[a-z]+/[a-zA-Z0-9]{1,19}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElementalInference.Model.UpdateDictionaryRequest.Entries</property>
@@ -311,6 +344,14 @@
     <pattern>^[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElementalInference.Model.RemoveClippingDataSourceConfiguration.OutputName</property>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.ScheduleAction.ActionName</property>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElementalInference.Model.SubtitlingConfig.Dictionary</property>
     <min>1</min>
     <max>19</max>
@@ -321,12 +362,20 @@
     <pattern>^[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElementalInference.Model.UpdateClippingDataSourceConfiguration.OutputName</property>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElementalInference.Model.UpdateOutput.Description</property>
     <max>1024</max>
     <pattern>^[\w \-\.',@:;]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElementalInference.Model.UpdateOutput.Name</property>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.UpdateOutputStatus.OutputName</property>
     <pattern>^[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?$</pattern>
   </property-value-rule>
 </property-value-rules>

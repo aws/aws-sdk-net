@@ -27,12 +27,12 @@ using Amazon.MediaConvert.Internal;
 namespace Amazon.MediaConvert
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaConvert service
+    /// Configuration for accessing AWS Elemental MediaConvert
     /// </summary>
     public partial class AmazonMediaConvertConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MediaConvert", "4.0.105.5");
+            InternalSDKUtils.BuildUserAgentString("MediaConvert", "4.0.106.2");
 
         private static readonly AmazonMediaConvertEndpointResolver EndpointResolver =
             new AmazonMediaConvertEndpointResolver();

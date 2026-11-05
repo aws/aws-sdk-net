@@ -26,7 +26,7 @@ using Amazon.RTBFabric.Endpoints;
 namespace Amazon.RTBFabric.Internal
 {
     /// <summary>
-    /// Amazon RTBFabric endpoint provider.
+    /// RTBFabric endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="RTBFabricEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

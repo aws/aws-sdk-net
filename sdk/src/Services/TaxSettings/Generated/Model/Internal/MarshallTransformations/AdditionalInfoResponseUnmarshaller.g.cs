@@ -81,6 +81,13 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("colombiaAdditionalInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = ColombiaAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.ColombiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("egyptAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = EgyptAdditionalInfoUnmarshaller.Instance;
@@ -106,6 +113,13 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = GeorgiaAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.GeorgiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("germanyAdditionalInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = GermanyAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.GermanyAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
@@ -155,6 +169,13 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = MalaysiaAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.MalaysiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("mexicoAdditionalInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = MexicoAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.MexicoAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

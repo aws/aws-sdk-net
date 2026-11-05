@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Echo.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon Echo service
+    /// Service metadata for Echo Service
     /// </summary>
     public partial class AmazonEchoMetadata : IServiceMetadata
     {

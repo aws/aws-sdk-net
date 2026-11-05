@@ -27,12 +27,12 @@ using Amazon.MemoryDB.Internal;
 namespace Amazon.MemoryDB
 {
     /// <summary>
-    /// Configuration for accessing Amazon MemoryDB service
+    /// Configuration for accessing Amazon MemoryDB
     /// </summary>
     public partial class AmazonMemoryDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MemoryDB", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("MemoryDB", "4.0.100.22");
 
         private static readonly AmazonMemoryDBEndpointResolver EndpointResolver =
             new AmazonMemoryDBEndpointResolver();

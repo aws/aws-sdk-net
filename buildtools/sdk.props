@@ -17,7 +17,7 @@
         <UnitTestProject Include="sdk/test/UnitTests/AWSSDK.UnitTests.NetStandard.csproj" Runner="mstest" />
         <UnitTestProject Include="sdk/test/ProtocolTests/AWSSDK.ProtocolTests.NetFramework.csproj" Runner="mstest" />
         <UnitTestProject Include="sdk/test/ProtocolTests/AWSSDK.ProtocolTests.NetStandard.csproj" Runner="mstest" />
-        <UnitTestProject Include="extensions/test/CborProtocol.Tests/CborProtocol.Tests.NetFramework.csproj" Runner="xunit" />
+        <UnitTestProject Include="extensions/test/CborProtocol.Tests/CborProtocol.Tests.csproj" Runner="xunit" />
         <UnitTestProject Include="extensions/test/NETCore.SetupTests/NETCore.SetupTests.csproj" Runner="xunit" />
         <UnitTestProject Include="extensions/test/CrtIntegrationTests/CrtIntegrationTests.csproj" Runner="xunit" />
         <UnitTestProject Include="extensions/test/CloudFront.SignersTests/CloudFront.Signers.Tests.NetStandard.csproj" Runner="xunit" />

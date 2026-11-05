@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.JsonRpc10DataPlane
 {
     /// <summary>
-    /// Configuration for accessing Amazon JsonRpc10DataPlane service
+    /// Configuration for accessing AWS JSON RPC 1.0 Data Plane
     /// </summary>
     public static class AmazonJsonRpc10DataPlaneDefaultConfiguration
     {

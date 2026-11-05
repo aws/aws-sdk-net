@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DataSync
 {
     /// <summary>
-    /// Configuration for accessing Amazon DataSync service
+    /// Configuration for accessing AWS DataSync
     /// </summary>
     public static class AmazonDataSyncDefaultConfiguration
     {

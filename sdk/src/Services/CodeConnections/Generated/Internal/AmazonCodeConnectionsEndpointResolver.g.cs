@@ -31,7 +31,7 @@ using Amazon.CodeConnections.Endpoints;
 namespace Amazon.CodeConnections.Internal
 {
     /// <summary>
-    /// Amazon CodeConnections endpoint resolver.
+    /// AWS CodeConnections endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CodeConnections service requests.
     /// <para />

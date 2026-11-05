@@ -26,7 +26,7 @@ using Amazon.FMS.Endpoints;
 namespace Amazon.FMS.Internal
 {
     /// <summary>
-    /// Amazon FMS endpoint provider.
+    /// Firewall Management Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="FMSEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

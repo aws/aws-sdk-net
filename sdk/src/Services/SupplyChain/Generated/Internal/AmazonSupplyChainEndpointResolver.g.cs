@@ -31,7 +31,7 @@ using Amazon.SupplyChain.Endpoints;
 namespace Amazon.SupplyChain.Internal
 {
     /// <summary>
-    /// Amazon SupplyChain endpoint resolver.
+    /// AWS Supply Chain endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SupplyChain service requests.
     /// <para />

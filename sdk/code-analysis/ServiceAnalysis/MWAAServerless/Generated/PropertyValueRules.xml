@@ -34,7 +34,7 @@
     <property>Amazon.MWAAServerless.Model.CreateWorkflowResponse.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.CreateWorkflowResponse.WorkflowVersion</property>
@@ -46,7 +46,7 @@
     <property>Amazon.MWAAServerless.Model.DeleteWorkflowRequest.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.DeleteWorkflowRequest.WorkflowVersion</property>
@@ -58,7 +58,7 @@
     <property>Amazon.MWAAServerless.Model.DeleteWorkflowResponse.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.DeleteWorkflowResponse.WorkflowVersion</property>
@@ -82,7 +82,7 @@
     <property>Amazon.MWAAServerless.Model.GetTaskInstanceRequest.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.GetTaskInstanceResponse.ErrorMessage</property>
@@ -124,7 +124,7 @@
     <property>Amazon.MWAAServerless.Model.GetTaskInstanceResponse.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.GetTaskInstanceResponse.WorkflowVersion</property>
@@ -136,7 +136,7 @@
     <property>Amazon.MWAAServerless.Model.GetWorkflowRequest.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.GetWorkflowRequest.WorkflowVersion</property>
@@ -172,7 +172,7 @@
     <property>Amazon.MWAAServerless.Model.GetWorkflowResponse.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.GetWorkflowResponse.WorkflowDefinition</property>
@@ -196,7 +196,7 @@
     <property>Amazon.MWAAServerless.Model.GetWorkflowRunRequest.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.GetWorkflowRunResponse.RunId</property>
@@ -208,7 +208,7 @@
     <property>Amazon.MWAAServerless.Model.GetWorkflowRunResponse.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.GetWorkflowRunResponse.WorkflowVersion</property>
@@ -220,7 +220,7 @@
     <property>Amazon.MWAAServerless.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.ListTaskInstancesRequest.MaxResults</property>
@@ -237,7 +237,7 @@
     <property>Amazon.MWAAServerless.Model.ListTaskInstancesRequest.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.ListWorkflowRunsRequest.MaxResults</property>
@@ -248,7 +248,7 @@
     <property>Amazon.MWAAServerless.Model.ListWorkflowRunsRequest.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.ListWorkflowRunsRequest.WorkflowVersion</property>
@@ -265,7 +265,7 @@
     <property>Amazon.MWAAServerless.Model.ListWorkflowVersionsRequest.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.ListWorkflowsRequest.MaxResults</property>
@@ -282,7 +282,7 @@
     <property>Amazon.MWAAServerless.Model.StartWorkflowRunRequest.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.StartWorkflowRunRequest.WorkflowVersion</property>
@@ -306,7 +306,7 @@
     <property>Amazon.MWAAServerless.Model.StopWorkflowRunRequest.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.StopWorkflowRunResponse.RunId</property>
@@ -318,7 +318,7 @@
     <property>Amazon.MWAAServerless.Model.StopWorkflowRunResponse.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.StopWorkflowRunResponse.WorkflowVersion</property>
@@ -330,13 +330,13 @@
     <property>Amazon.MWAAServerless.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.UpdateWorkflowRequest.Description</property>
@@ -360,13 +360,13 @@
     <property>Amazon.MWAAServerless.Model.UpdateWorkflowRequest.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.UpdateWorkflowResponse.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.UpdateWorkflowResponse.WorkflowVersion</property>
@@ -411,7 +411,7 @@
     <property>Amazon.MWAAServerless.Model.TaskInstanceSummary.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.TaskInstanceSummary.WorkflowVersion</property>
@@ -441,7 +441,7 @@
     <property>Amazon.MWAAServerless.Model.WorkflowRunDetail.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.WorkflowRunDetail.WorkflowVersion</property>
@@ -459,7 +459,7 @@
     <property>Amazon.MWAAServerless.Model.WorkflowRunSummary.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.WorkflowRunSummary.WorkflowVersion</property>
@@ -489,7 +489,7 @@
     <property>Amazon.MWAAServerless.Model.WorkflowSummary.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.WorkflowSummary.WorkflowVersion</property>
@@ -507,7 +507,7 @@
     <property>Amazon.MWAAServerless.Model.WorkflowVersionSummary.WorkflowArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-[a-z]+-[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
+    <pattern>^arn:aws(?:-(?:cn|us-gov|iso|iso-b|iso-e|iso-f))?:airflow-serverless:([a-z]{2}-(?:[a-z]+-)+[0-9]{1}):([0-9]{12}):workflow/([a-zA-Z0-9][a-zA-Z0-9\.\-_]{0,254}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAAServerless.Model.WorkflowVersionSummary.WorkflowVersion</property>

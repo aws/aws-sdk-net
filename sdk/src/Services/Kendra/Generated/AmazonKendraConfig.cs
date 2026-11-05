@@ -27,12 +27,12 @@ using Amazon.Kendra.Internal;
 namespace Amazon.Kendra
 {
     /// <summary>
-    /// Configuration for accessing Amazon Kendra service
+    /// Configuration for accessing AWSKendraFrontendService
     /// </summary>
     public partial class AmazonKendraConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("kendra", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("kendra", "4.0.100.23");
 
         private static readonly AmazonKendraEndpointResolver EndpointResolver =
             new AmazonKendraEndpointResolver();

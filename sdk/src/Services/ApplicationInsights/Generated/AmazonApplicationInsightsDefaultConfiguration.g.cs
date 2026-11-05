@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ApplicationInsights
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApplicationInsights service
+    /// Configuration for accessing Amazon CloudWatch Application Insights
     /// </summary>
     public static class AmazonApplicationInsightsDefaultConfiguration
     {

@@ -9,5 +9,10 @@
         }
       ]
     }
+  },
+  "shapeSubstitutions": {
+    "GatewayApiKeyCredentialProvider": {
+      "renameShape": "ApiKeyCredentialProvider"
+    }
   }
 }

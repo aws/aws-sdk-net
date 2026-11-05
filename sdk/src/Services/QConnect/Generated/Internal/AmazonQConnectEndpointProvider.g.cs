@@ -26,7 +26,7 @@ using Amazon.QConnect.Endpoints;
 namespace Amazon.QConnect.Internal
 {
     /// <summary>
-    /// Amazon QConnect endpoint provider.
+    /// Amazon Q Connect endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="QConnectEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -26,7 +26,7 @@ using Amazon.AccessAnalyzer.Endpoints;
 namespace Amazon.AccessAnalyzer.Internal
 {
     /// <summary>
-    /// Amazon AccessAnalyzer endpoint provider.
+    /// Access Analyzer endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AccessAnalyzerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

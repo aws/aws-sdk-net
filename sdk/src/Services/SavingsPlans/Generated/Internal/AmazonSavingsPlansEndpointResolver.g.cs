@@ -31,7 +31,7 @@ using Amazon.SavingsPlans.Endpoints;
 namespace Amazon.SavingsPlans.Internal
 {
     /// <summary>
-    /// Amazon SavingsPlans endpoint resolver.
+    /// AWS Savings Plans endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SavingsPlans service requests.
     /// <para />

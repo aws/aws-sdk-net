@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectHealth.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ConnectHealth service
+    /// Service metadata for Connect Health
     /// </summary>
     public partial class AmazonConnectHealthMetadata : IServiceMetadata
     {

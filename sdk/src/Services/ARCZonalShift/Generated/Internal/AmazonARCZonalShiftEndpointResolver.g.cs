@@ -31,7 +31,7 @@ using Amazon.ARCZonalShift.Endpoints;
 namespace Amazon.ARCZonalShift.Internal
 {
     /// <summary>
-    /// Amazon ARCZonalShift endpoint resolver.
+    /// AWS ARC - Zonal Shift endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ARCZonalShift service requests.
     /// <para />

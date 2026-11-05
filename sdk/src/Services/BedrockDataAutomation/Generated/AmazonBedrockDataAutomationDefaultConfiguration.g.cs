@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.BedrockDataAutomation
 {
     /// <summary>
-    /// Configuration for accessing Amazon BedrockDataAutomation service
+    /// Configuration for accessing Data Automation for Amazon Bedrock
     /// </summary>
     public static class AmazonBedrockDataAutomationDefaultConfiguration
     {

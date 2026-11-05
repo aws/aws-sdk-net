@@ -1626,6 +1626,47 @@ namespace Amazon.IVSRealTime
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Revokes the specified connection token so that it can no longer connect to a stage.
+        /// This operation disconnects any participant currently connected with the revoked token.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeConnectionToken service method.</param>
+        /// <returns>The response from the RevokeConnectionToken service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/RevokeConnectionToken">REST API Reference for RevokeConnectionToken Operation</seealso>
+        RevokeConnectionTokenResponse RevokeConnectionToken(RevokeConnectionTokenRequest request);
+#endif
+
+        /// <summary>
+        /// Revokes the specified connection token so that it can no longer connect to a stage.
+        /// This operation disconnects any participant currently connected with the revoked token.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeConnectionToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RevokeConnectionToken service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/RevokeConnectionToken">REST API Reference for RevokeConnectionToken Operation</seealso>
+        Task<RevokeConnectionTokenResponse> RevokeConnectionTokenAsync(RevokeConnectionTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Starts a Composition from a stage based on the configuration provided in the request.
         /// 
         ///  

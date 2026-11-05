@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         private AnalysisComponent _sourceVpc;
         private AnalysisComponent _subnet;
         private AnalysisComponent _transitGateway;
+        private AnalysisTransitGatewayPolicyTableEntry _transitGatewayPolicyTableEntry;
         private TransitGatewayRouteTableRoute _transitGatewayRouteTableRoute;
         private AnalysisComponent _vpc;
 
@@ -387,6 +388,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTransitGateway()
         {
             return this._transitGateway != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayPolicyTableEntry. 
+        /// <para>
+        /// The entry in a transit gateway policy table.
+        /// </para>
+        /// </summary>
+        public AnalysisTransitGatewayPolicyTableEntry TransitGatewayPolicyTableEntry
+        {
+            get { return this._transitGatewayPolicyTableEntry; }
+            set { this._transitGatewayPolicyTableEntry = value; }
+        }
+
+        // Check to see if TransitGatewayPolicyTableEntry property is set
+        internal bool IsSetTransitGatewayPolicyTableEntry()
+        {
+            return this._transitGatewayPolicyTableEntry != null;
         }
 
         /// <summary>

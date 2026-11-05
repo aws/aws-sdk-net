@@ -26,7 +26,7 @@ using Amazon.LocationService.Endpoints;
 namespace Amazon.LocationService.Internal
 {
     /// <summary>
-    /// Amazon LocationService endpoint provider.
+    /// Amazon Location Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="LocationServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

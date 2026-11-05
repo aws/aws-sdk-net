@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ConnectParticipant
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectParticipant service
+    /// Configuration for accessing Amazon Connect Participant Service
     /// </summary>
     public static class AmazonConnectParticipantDefaultConfiguration
     {

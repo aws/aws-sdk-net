@@ -26,7 +26,7 @@ using Amazon.CodeArtifact.Endpoints;
 namespace Amazon.CodeArtifact.Internal
 {
     /// <summary>
-    /// Amazon CodeArtifact endpoint provider.
+    /// CodeArtifact endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CodeArtifactEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

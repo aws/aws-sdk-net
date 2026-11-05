@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.LexModelsV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon LexModelsV2 service
+    /// Configuration for accessing Amazon Lex Model Building V2
     /// </summary>
     public static class AmazonLexModelsV2DefaultConfiguration
     {

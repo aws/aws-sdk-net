@@ -31,7 +31,7 @@ using Amazon.EndUserMessaging.Endpoints;
 namespace Amazon.EndUserMessaging.Internal
 {
     /// <summary>
-    /// Amazon EndUserMessaging endpoint resolver.
+    /// AWS End User Messaging endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for EndUserMessaging service requests.
     /// <para />

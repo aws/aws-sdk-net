@@ -26,7 +26,7 @@ using Amazon.SageMakerFeatureStoreRuntime.Endpoints;
 namespace Amazon.SageMakerFeatureStoreRuntime.Internal
 {
     /// <summary>
-    /// Amazon SageMakerFeatureStoreRuntime endpoint provider.
+    /// Amazon SageMaker Feature Store Runtime endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SageMakerFeatureStoreRuntimeEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

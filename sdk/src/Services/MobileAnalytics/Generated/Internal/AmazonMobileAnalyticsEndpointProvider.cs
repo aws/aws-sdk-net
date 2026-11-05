@@ -26,7 +26,7 @@ using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
 namespace Amazon.MobileAnalytics.Internal
 {
     /// <summary>
-    /// Amazon MobileAnalytics endpoint provider.
+    /// Amazon Mobile Analytics endpoint provider.
     /// Resolves endpoint for given set of MobileAnalyticsEndpointParameters.
     /// Can throw AmazonClientException if endpoint resolution is unsuccessful.
     /// </summary>

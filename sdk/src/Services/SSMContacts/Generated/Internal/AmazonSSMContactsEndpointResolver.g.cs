@@ -31,7 +31,7 @@ using Amazon.SSMContacts.Endpoints;
 namespace Amazon.SSMContacts.Internal
 {
     /// <summary>
-    /// Amazon SSMContacts endpoint resolver.
+    /// AWS Systems Manager Incident Manager Contacts endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SSMContacts service requests.
     /// <para />

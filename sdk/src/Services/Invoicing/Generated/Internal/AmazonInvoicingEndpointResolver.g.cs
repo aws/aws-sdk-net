@@ -31,7 +31,7 @@ using Amazon.Invoicing.Endpoints;
 namespace Amazon.Invoicing.Internal
 {
     /// <summary>
-    /// Amazon Invoicing endpoint resolver.
+    /// AWS Invoicing endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Invoicing service requests.
     /// <para />

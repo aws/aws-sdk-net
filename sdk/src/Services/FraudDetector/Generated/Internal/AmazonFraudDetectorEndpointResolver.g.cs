@@ -31,7 +31,7 @@ using Amazon.FraudDetector.Endpoints;
 namespace Amazon.FraudDetector.Internal
 {
     /// <summary>
-    /// Amazon FraudDetector endpoint resolver.
+    /// Amazon Fraud Detector endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for FraudDetector service requests.
     /// <para />

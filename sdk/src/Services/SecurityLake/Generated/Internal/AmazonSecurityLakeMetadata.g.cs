@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SecurityLake service
+    /// Service metadata for Amazon Security Lake
     /// </summary>
     public partial class AmazonSecurityLakeMetadata : IServiceMetadata
     {

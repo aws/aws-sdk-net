@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53GlobalResolver.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Route53GlobalResolver service
+    /// Service metadata for Amazon Route 53 Global Resolver
     /// </summary>
     public partial class AmazonRoute53GlobalResolverMetadata : IServiceMetadata
     {

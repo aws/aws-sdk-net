@@ -27,16 +27,43 @@ namespace Amazon.S3.Internal.S3Express
 {
     internal class DefaultS3ExpressCredentialProvider : IS3ExpressCredentialProvider
     {
+        // Sessions are cached per bucket and per set of base credentials, so a session created
+        // with one identity is never returned for another.
+        private sealed class SessionKey : IEquatable<SessionKey>
+        {
+            public SessionKey(string bucketName, ImmutableCredentials credentials)
+            {
+                BucketName = bucketName;
+                Credentials = credentials;
+            }
+
+            public string BucketName { get; }
+
+            // Null for anonymous clients.
+            public ImmutableCredentials Credentials { get; }
+
+            public bool Equals(SessionKey other) =>
+                other != null &&
+                string.Equals(BucketName, other.BucketName, StringComparison.Ordinal) &&
+                Equals(Credentials, other.Credentials);
+
+            public override bool Equals(object obj) => obj is SessionKey other && Equals(other);
+
+            public override int GetHashCode() => Hashing.Hash(BucketName, Credentials);
+        }
+
         private class SessionCredentialsLruItem
         {
             private const int DefaultExpirationTime = 60 * 5;
 
+            public AWSCredentials Identity { get; }
             public SessionCredentials SessionCredentials { get; }
             public DateTime CreatedAt { get; }
             public DateTime ExpirationDate { get; }
 
-            public SessionCredentialsLruItem(SessionCredentials sessionCredentials)
+            public SessionCredentialsLruItem(AWSCredentials identity, SessionCredentials sessionCredentials)
             {
+                Identity = identity;
                 SessionCredentials = sessionCredentials;
                 CreatedAt = AWSSDKUtils.CorrectedUtcNow;
                 ExpirationDate = sessionCredentials.Expiration.GetValueOrDefault().ToUniversalTime();
@@ -48,7 +75,7 @@ namespace Amazon.S3.Internal.S3Express
         }
 
         private readonly AmazonS3Client _s3Client;
-        private readonly LruCache<string, SessionCredentialsLruItem> _cache;
+        private readonly LruCache<SessionKey, SessionCredentialsLruItem> _cache;
         private DateTime _lastRefreshedTime;
 
         private readonly SemaphoreSlim _cacheLock = new SemaphoreSlim(1, 1);
@@ -68,7 +95,7 @@ namespace Amazon.S3.Internal.S3Express
             _s3Client = s3Client;
             _logger = Logger.GetLogger(typeof(DefaultS3ExpressCredentialProvider));
 
-            _cache = new LruCache<string, SessionCredentialsLruItem>(MaxCacheSize);
+            _cache = new LruCache<SessionKey, SessionCredentialsLruItem>(MaxCacheSize);
             _refreshCredentialsTimer = new Timer(RefreshCredentials);
         }
 
@@ -77,7 +104,16 @@ namespace Amazon.S3.Internal.S3Express
         /// </summary>
         public SessionCredentials ResolveSessionCredentials(string bucketName)
         {
-            var sessionCredentials = GetSessionCredentialsFromCache(bucketName);
+            return ResolveSessionCredentials(bucketName, _s3Client.ResolveCredentials());
+        }
+
+        /// <summary>
+        /// Resolves S3Express session credentials for the bucket and the identity that signs the request.
+        /// </summary>
+        internal SessionCredentials ResolveSessionCredentials(string bucketName, AWSCredentials identity)
+        {
+            var key = new SessionKey(bucketName, identity?.GetCredentials());
+            var sessionCredentials = GetSessionCredentialsFromCache(key);
 
             if (sessionCredentials == null)
             {
@@ -87,7 +123,7 @@ namespace Amazon.S3.Internal.S3Express
                     //check again to see if while we were getting credentials from the cache, another thread
                     //filled the cache with the same credential already. In this case we don't want to make another
                     //create session call
-                    if (_cache.TryGetValue(bucketName, out var sessionCredentialsLruItem))
+                    if (_cache.TryGetValue(key, out var sessionCredentialsLruItem))
                     {
                         return sessionCredentialsLruItem.SessionCredentials;
                     }
@@ -99,14 +135,14 @@ namespace Amazon.S3.Internal.S3Express
                         };
 
                         var createSessionResponse = _s3Client.CreateSession(createSessionRequest);
-                        CacheSessionCredentials(bucketName, createSessionResponse.Credentials);
+                        CacheSessionCredentials(key, identity, createSessionResponse.Credentials);
                         return createSessionResponse.Credentials;
                     }
                 }
                 catch (NoSuchBucketException e)
                 {
                     _logger.Error(e, $"Bucket: {bucketName} doesn't exist or was removed");
-                    _cache.Evict(bucketName);
+                    _cache.Evict(key);
                 }
                 finally
                 {
@@ -119,19 +155,29 @@ namespace Amazon.S3.Internal.S3Express
         /// <summary>
         /// Resolves S3Express session credentials based on the bucket name.
         /// </summary>
-        public async Task<SessionCredentials> ResolveSessionCredentialsAsync(string bucketName, CancellationToken cancellationToken = default)
+        public Task<SessionCredentials> ResolveSessionCredentialsAsync(string bucketName, CancellationToken cancellationToken = default)
         {
-            var sessionCredentials = GetSessionCredentialsFromCache(bucketName);
+            return ResolveSessionCredentialsAsync(bucketName, _s3Client.ResolveCredentials(), cancellationToken);
+        }
+
+        /// <summary>
+        /// Resolves S3Express session credentials for the bucket and the identity that signs the request.
+        /// </summary>
+        internal async Task<SessionCredentials> ResolveSessionCredentialsAsync(string bucketName, AWSCredentials identity, CancellationToken cancellationToken = default)
+        {
+            var credentials = identity == null ? null : await identity.GetCredentialsAsync().ConfigureAwait(false);
+            var key = new SessionKey(bucketName, credentials);
+            var sessionCredentials = GetSessionCredentialsFromCache(key);
 
             if (sessionCredentials == null)
             {
-                await _cacheLock.WaitAsync().ConfigureAwait(false);
+                await _cacheLock.WaitAsync(cancellationToken).ConfigureAwait(false);
                 try
                 {
                     //check again to see if while we were getting credentials from the cache, another thread
                     //filled the cache with the same credential already. In this case we don't want to make another
                     //create session call
-                    if (_cache.TryGetValue(bucketName, out var sessionCredentialsLruItem))
+                    if (_cache.TryGetValue(key, out var sessionCredentialsLruItem))
                     {
                         return sessionCredentialsLruItem.SessionCredentials;
                     }
@@ -142,15 +188,15 @@ namespace Amazon.S3.Internal.S3Express
                             BucketName = bucketName,
                         };
 
-                        var createSessionResponse = await _s3Client.CreateSessionAsync(createSessionRequest).ConfigureAwait(false);
-                        CacheSessionCredentials(bucketName, createSessionResponse.Credentials);
+                        var createSessionResponse = await _s3Client.CreateSessionAsync(createSessionRequest, cancellationToken).ConfigureAwait(false);
+                        CacheSessionCredentials(key, identity, createSessionResponse.Credentials);
                         return createSessionResponse.Credentials;
                     }
                 }
                 catch (NoSuchBucketException e)
                 {
                     _logger.Error(e, $"Bucket: {bucketName} doesn't exist or was removed");
-                    _cache.Evict(bucketName);
+                    _cache.Evict(key);
                 }
                 finally
                 {
@@ -160,9 +206,9 @@ namespace Amazon.S3.Internal.S3Express
             return sessionCredentials;
         }
 
-        private SessionCredentials GetSessionCredentialsFromCache(string bucketName)
+        private SessionCredentials GetSessionCredentialsFromCache(SessionKey key)
         {
-            if (_cache.TryGetValue(bucketName, out var item))
+            if (_cache.TryGetValue(key, out var item))
             {
                 if (!IsExpiredSessionCredentials(item))
                     return item.SessionCredentials;
@@ -171,7 +217,7 @@ namespace Amazon.S3.Internal.S3Express
                     _cacheLock.Wait();
                     try
                     {
-                        _cache.Evict(bucketName);
+                        _cache.Evict(key);
                     }
                     finally
                     {
@@ -182,10 +228,10 @@ namespace Amazon.S3.Internal.S3Express
             return null;
         }
 
-        private void CacheSessionCredentials(string bucketName, SessionCredentials credentials)
+        private void CacheSessionCredentials(SessionKey key, AWSCredentials identity, SessionCredentials credentials)
         {
-            var credentialsLruItem = new SessionCredentialsLruItem(credentials);
-            _cache.AddOrUpdate(bucketName, credentialsLruItem);
+            var credentialsLruItem = new SessionCredentialsLruItem(identity, credentials);
+            _cache.AddOrUpdate(key, credentialsLruItem);
             //The first call is guaranteed to set the timer since _timerStarted is false initially
             ResetCredentialsTimer(credentialsLruItem.ExpirationDate);
         }
@@ -200,7 +246,7 @@ namespace Amazon.S3.Internal.S3Express
             try
             {
                 _logger.InfoFormat("Refreshing session credentials started in the background.");
-                var keysToRefresh = new List<string>();
+                var keysToRefresh = new List<KeyValuePair<SessionKey, AWSCredentials>>();
                 _cacheLock.Wait();
                 try
                 {
@@ -210,12 +256,12 @@ namespace Amazon.S3.Internal.S3Express
                         if (_lastRefreshedTime == DateTime.MinValue)
                         {
                             if (item.LastTouchedTimestamp > item.Value.CreatedAt.AddSeconds(RequestTime))
-                                keysToRefresh.Add(item.Key);
+                                keysToRefresh.Add(new KeyValuePair<SessionKey, AWSCredentials>(item.Key, item.Value.Identity));
                         }
                         else
                         {
                             if (item.LastTouchedTimestamp > _lastRefreshedTime)
-                                keysToRefresh.Add(item.Key);
+                                keysToRefresh.Add(new KeyValuePair<SessionKey, AWSCredentials>(item.Key, item.Value.Identity));
                         }
                         //Since the oldest item is at the tail we must go to the previous item to get the next oldest item
                         item = item.Previous;
@@ -226,17 +272,46 @@ namespace Amazon.S3.Internal.S3Express
                     _cacheLock.Release();
                 }
                 DateTime resetTime = DateTime.MinValue;
-                foreach (var key in keysToRefresh)
+                foreach (var entry in keysToRefresh)
                 {
+                    var key = entry.Key;
+                    var identity = entry.Value;
+
+                    ImmutableCredentials currentCredentials;
+                    try
+                    {
+                        currentCredentials = identity == null ? null : await identity.GetCredentialsAsync().ConfigureAwait(false);
+                    }
+                    catch (AmazonClientException e)
+                    {
+                        _logger.Error(e, $"Could not resolve credentials to refresh the session for bucket: {key.BucketName}. The session will expire.");
+                        continue;
+                    }
+
+                    // The credentials changed since the session was created. The session can no longer
+                    // be looked up, so remove it instead of refreshing it.
+                    if (!Equals(currentCredentials, key.Credentials))
+                    {
+                        _cacheLock.Wait();
+                        try
+                        {
+                            _cache.Evict(key);
+                        }
+                        finally
+                        {
+                            _cacheLock.Release();
+                        }
+                        continue;
+                    }
 
                     CreateSessionResponse credentials = null;
                     try
                     {
-                        credentials = await _s3Client.CreateSessionAsync(new CreateSessionRequest { BucketName = key }).ConfigureAwait(false);
+                        credentials = await _s3Client.CreateSessionAsync(new CreateSessionRequest { BucketName = key.BucketName }).ConfigureAwait(false);
                     }
                     catch (NoSuchBucketException e)
                     {
-                        _logger.Error(e, $"Bucket: {key} doesn't exist or was removed");
+                        _logger.Error(e, $"Bucket: {key.BucketName} doesn't exist or was removed");
                         _cacheLock.Wait();
                         try
                         {
@@ -249,7 +324,7 @@ namespace Amazon.S3.Internal.S3Express
                         }
                     }
 
-                    var credentialsLruItem = new SessionCredentialsLruItem(credentials.Credentials);
+                    var credentialsLruItem = new SessionCredentialsLruItem(identity, credentials.Credentials);
                     if (resetTime == DateTime.MinValue)
                     {
                         resetTime = credentials.Credentials.Expiration.GetValueOrDefault().ToUniversalTime();

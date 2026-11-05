@@ -66,10 +66,10 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         var eventClasses = stream.Events.Select(context.ToDotNetName).ToList();
         var publisher = new EventStreamPublisherInfo(stream.InterfaceName, eventClasses);
         return members
-            // Clear HidesBaseMember: the "Publisher" suffix means a member named "equals" no longer
+            // Clear the modifier: the "Publisher" suffix means a member named "equals" no longer
             // shadows object.Equals, so it must not keep the `new` modifier (CS0109).
             .Select(member => member.ModeledName == memberName && member.Type.IsEventStream
-                ? member with { PropertyName = $"{member.PropertyName}Publisher", EventStreamPublisher = publisher, HidesBaseMember = false }
+                ? member with { PropertyName = $"{member.PropertyName}Publisher", EventStreamPublisher = publisher, BaseMemberModifier = BaseMemberModifier.None }
                 : member)
             .OrderBy(member => member.PropertyName, StringComparer.Ordinal)
             .ToList();
@@ -106,6 +106,8 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
             baseClass = baseClass + ", IDisposable";
         }
 
+        // TODO: the output structure's @documentation is available here, but across the models it is mostly
+        // boilerplate ("The response to the request.") or leaked modeling notes, so the generic line stays.
         var doc = $"This is the response object from the {operation.Name} operation.";
         var record = new OperationRecord(className, baseClass, doc, members, TypeMapper.BuildObsolete(operation.Output), streamingMembers, hasRequestEventStream);
         return WriteClass(record, cancellationToken);

@@ -26,7 +26,7 @@ using Amazon.CloudTrailData.Endpoints;
 namespace Amazon.CloudTrailData.Internal
 {
     /// <summary>
-    /// Amazon CloudTrailData endpoint provider.
+    /// AWS CloudTrail Data Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CloudTrailDataEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

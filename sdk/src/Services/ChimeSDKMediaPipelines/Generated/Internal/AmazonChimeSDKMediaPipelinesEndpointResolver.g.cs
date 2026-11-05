@@ -31,7 +31,7 @@ using Amazon.ChimeSDKMediaPipelines.Endpoints;
 namespace Amazon.ChimeSDKMediaPipelines.Internal
 {
     /// <summary>
-    /// Amazon ChimeSDKMediaPipelines endpoint resolver.
+    /// Amazon Chime SDK Media Pipelines endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ChimeSDKMediaPipelines service requests.
     /// <para />

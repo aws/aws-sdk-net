@@ -26,7 +26,7 @@ using Amazon.EMRContainers.Endpoints;
 namespace Amazon.EMRContainers.Internal
 {
     /// <summary>
-    /// Amazon EMRContainers endpoint provider.
+    /// Amazon EMR Containers endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="EMRContainersEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

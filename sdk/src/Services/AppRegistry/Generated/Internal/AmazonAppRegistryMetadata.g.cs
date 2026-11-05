@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRegistry.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AppRegistry service
+    /// Service metadata for AWS Service Catalog App Registry
     /// </summary>
     public partial class AmazonAppRegistryMetadata : IServiceMetadata
     {

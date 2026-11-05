@@ -31,7 +31,7 @@ using Amazon.MediaStore.Endpoints;
 namespace Amazon.MediaStore.Internal
 {
     /// <summary>
-    /// Amazon MediaStore endpoint resolver.
+    /// AWS Elemental MediaStore endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MediaStore service requests.
     /// <para />

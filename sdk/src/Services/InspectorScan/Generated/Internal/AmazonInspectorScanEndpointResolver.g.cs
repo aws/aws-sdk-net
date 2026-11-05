@@ -31,7 +31,7 @@ using Amazon.InspectorScan.Endpoints;
 namespace Amazon.InspectorScan.Internal
 {
     /// <summary>
-    /// Amazon InspectorScan endpoint resolver.
+    /// Inspector Scan endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for InspectorScan service requests.
     /// <para />

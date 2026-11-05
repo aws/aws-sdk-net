@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CostExplorer service
+    /// Service metadata for AWS Cost Explorer Service
     /// </summary>
     public partial class AmazonCostExplorerMetadata : IServiceMetadata
     {

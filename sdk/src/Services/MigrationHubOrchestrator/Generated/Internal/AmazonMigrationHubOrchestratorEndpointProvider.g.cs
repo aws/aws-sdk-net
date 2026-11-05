@@ -26,7 +26,7 @@ using Amazon.MigrationHubOrchestrator.Endpoints;
 namespace Amazon.MigrationHubOrchestrator.Internal
 {
     /// <summary>
-    /// Amazon MigrationHubOrchestrator endpoint provider.
+    /// AWS Migration Hub Orchestrator endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MigrationHubOrchestratorEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

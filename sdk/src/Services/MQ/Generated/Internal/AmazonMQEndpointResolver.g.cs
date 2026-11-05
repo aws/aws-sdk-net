@@ -31,7 +31,7 @@ using Amazon.MQ.Endpoints;
 namespace Amazon.MQ.Internal
 {
     /// <summary>
-    /// Amazon MQ endpoint resolver.
+    /// AmazonMQ endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MQ service requests.
     /// <para />

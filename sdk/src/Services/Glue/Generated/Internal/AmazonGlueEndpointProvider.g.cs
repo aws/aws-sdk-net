@@ -26,7 +26,7 @@ using Amazon.Glue.Endpoints;
 namespace Amazon.Glue.Internal
 {
     /// <summary>
-    /// Amazon Glue endpoint provider.
+    /// AWS Glue endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="GlueEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -26,7 +26,7 @@ using Amazon.GroundStation.Endpoints;
 namespace Amazon.GroundStation.Internal
 {
     /// <summary>
-    /// Amazon GroundStation endpoint provider.
+    /// AWS Ground Station endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="GroundStationEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -26,7 +26,7 @@ using Amazon.CloudHSMV2.Endpoints;
 namespace Amazon.CloudHSMV2.Internal
 {
     /// <summary>
-    /// Amazon CloudHSMV2 endpoint provider.
+    /// AWS CloudHSM V2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CloudHSMV2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

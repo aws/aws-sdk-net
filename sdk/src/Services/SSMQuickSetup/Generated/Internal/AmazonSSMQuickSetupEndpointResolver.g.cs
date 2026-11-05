@@ -31,7 +31,7 @@ using Amazon.SSMQuickSetup.Endpoints;
 namespace Amazon.SSMQuickSetup.Internal
 {
     /// <summary>
-    /// Amazon SSMQuickSetup endpoint resolver.
+    /// AWS Systems Manager QuickSetup endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SSMQuickSetup service requests.
     /// <para />

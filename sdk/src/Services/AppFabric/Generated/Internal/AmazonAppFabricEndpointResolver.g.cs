@@ -31,7 +31,7 @@ using Amazon.AppFabric.Endpoints;
 namespace Amazon.AppFabric.Internal
 {
     /// <summary>
-    /// Amazon AppFabric endpoint resolver.
+    /// AppFabric endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AppFabric service requests.
     /// <para />

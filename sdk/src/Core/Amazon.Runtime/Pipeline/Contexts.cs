@@ -88,6 +88,15 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         internal TimeSpan? ClockSkewAttemptCandidate;
 
+        /// <summary>
+        /// The endpoint most recently resolved for this request by <see cref="BaseEndpointResolver"/>, together with
+        /// the parameters it was resolved from and its URL before any normalization. Lets the endpoint resolver reuse
+        /// the result when the auth resolver already evaluated the endpoint rules for the same parameters.
+        /// </summary>
+        internal Amazon.Runtime.Endpoints.Endpoint ResolvedEndpoint;
+        internal Amazon.Runtime.Endpoints.EndpointParameters ResolvedEndpointParameters;
+        internal string ResolvedEndpointUrl;
+
         public RequestContext(bool enableMetric)
             : this(enableMetric, null)
         {

@@ -26,7 +26,7 @@ using Amazon.IoTManagedIntegrations.Endpoints;
 namespace Amazon.IoTManagedIntegrations.Internal
 {
     /// <summary>
-    /// Amazon IoTManagedIntegrations endpoint provider.
+    /// Managed integrations for AWS IoT Device Management endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IoTManagedIntegrationsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

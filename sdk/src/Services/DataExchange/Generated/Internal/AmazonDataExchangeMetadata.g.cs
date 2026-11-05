@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DataExchange service
+    /// Service metadata for AWS Data Exchange
     /// </summary>
     public partial class AmazonDataExchangeMetadata : IServiceMetadata
     {

@@ -31,7 +31,7 @@ using Amazon.TrustedAdvisor.Endpoints;
 namespace Amazon.TrustedAdvisor.Internal
 {
     /// <summary>
-    /// Amazon TrustedAdvisor endpoint resolver.
+    /// TrustedAdvisor Public API endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for TrustedAdvisor service requests.
     /// <para />

@@ -516,7 +516,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, IAmazonDynamoDB client)
         {
-#if NETSTANDARD
+#if !NETFRAMEWORK
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var internalClient = client as AmazonDynamoDBClient;
             if (internalClient == null)

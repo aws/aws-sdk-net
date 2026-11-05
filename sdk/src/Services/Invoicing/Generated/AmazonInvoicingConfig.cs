@@ -27,12 +27,12 @@ using Amazon.Invoicing.Internal;
 namespace Amazon.Invoicing
 {
     /// <summary>
-    /// Configuration for accessing Amazon Invoicing service
+    /// Configuration for accessing AWS Invoicing
     /// </summary>
     public partial class AmazonInvoicingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Invoicing", "4.0.103.4");
+            InternalSDKUtils.BuildUserAgentString("Invoicing", "4.0.103.7");
 
         private static readonly AmazonInvoicingEndpointResolver EndpointResolver =
             new AmazonInvoicingEndpointResolver();

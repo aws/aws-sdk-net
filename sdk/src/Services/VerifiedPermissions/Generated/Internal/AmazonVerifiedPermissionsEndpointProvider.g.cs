@@ -26,7 +26,7 @@ using Amazon.VerifiedPermissions.Endpoints;
 namespace Amazon.VerifiedPermissions.Internal
 {
     /// <summary>
-    /// Amazon VerifiedPermissions endpoint provider.
+    /// Amazon Verified Permissions endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="VerifiedPermissionsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

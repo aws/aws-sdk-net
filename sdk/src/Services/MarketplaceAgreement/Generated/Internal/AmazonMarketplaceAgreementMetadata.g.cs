@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceAgreement.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MarketplaceAgreement service
+    /// Service metadata for AWS Marketplace Agreement Service
     /// </summary>
     public partial class AmazonMarketplaceAgreementMetadata : IServiceMetadata
     {

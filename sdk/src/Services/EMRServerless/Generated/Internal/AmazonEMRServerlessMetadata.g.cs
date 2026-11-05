@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRServerless.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon EMRServerless service
+    /// Service metadata for EMR Serverless
     /// </summary>
     public partial class AmazonEMRServerlessMetadata : IServiceMetadata
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Proton
 {
     /// <summary>
-    /// Configuration for accessing Amazon Proton service
+    /// Configuration for accessing AWS Proton
     /// </summary>
     public static class AmazonProtonDefaultConfiguration
     {

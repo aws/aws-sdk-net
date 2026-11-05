@@ -26,7 +26,7 @@ using Amazon.SupportApp.Endpoints;
 namespace Amazon.SupportApp.Internal
 {
     /// <summary>
-    /// Amazon SupportApp endpoint provider.
+    /// AWS Support App endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SupportAppEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

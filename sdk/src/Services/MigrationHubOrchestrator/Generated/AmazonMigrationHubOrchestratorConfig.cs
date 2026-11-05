@@ -27,12 +27,12 @@ using Amazon.MigrationHubOrchestrator.Internal;
 namespace Amazon.MigrationHubOrchestrator
 {
     /// <summary>
-    /// Configuration for accessing Amazon MigrationHubOrchestrator service
+    /// Configuration for accessing AWS Migration Hub Orchestrator
     /// </summary>
     public partial class AmazonMigrationHubOrchestratorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MigrationHubOrchestrator", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("MigrationHubOrchestrator", "4.0.100.23");
 
         private static readonly AmazonMigrationHubOrchestratorEndpointResolver EndpointResolver =
             new AmazonMigrationHubOrchestratorEndpointResolver();

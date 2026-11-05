@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ApplicationAutoScaling service
+    /// Service metadata for Application Auto Scaling
     /// </summary>
     public partial class AmazonApplicationAutoScalingMetadata : IServiceMetadata
     {

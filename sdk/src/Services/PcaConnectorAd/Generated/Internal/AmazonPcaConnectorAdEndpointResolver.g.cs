@@ -31,7 +31,7 @@ using Amazon.PcaConnectorAd.Endpoints;
 namespace Amazon.PcaConnectorAd.Internal
 {
     /// <summary>
-    /// Amazon PcaConnectorAd endpoint resolver.
+    /// PcaConnectorAd endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PcaConnectorAd service requests.
     /// <para />

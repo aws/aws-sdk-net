@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Inspector service
+    /// Service metadata for Amazon Inspector
     /// </summary>
     public partial class AmazonInspectorMetadata : IServiceMetadata
     {

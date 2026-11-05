@@ -31,7 +31,7 @@ using Amazon.SignerData.Endpoints;
 namespace Amazon.SignerData.Internal
 {
     /// <summary>
-    /// Amazon SignerData endpoint resolver.
+    /// AWS Signer Data Plane endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SignerData service requests.
     /// <para />

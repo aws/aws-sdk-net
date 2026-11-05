@@ -31,7 +31,7 @@ using Amazon.ElementalInference.Endpoints;
 namespace Amazon.ElementalInference.Internal
 {
     /// <summary>
-    /// Amazon ElementalInference endpoint resolver.
+    /// AWS Elemental Inference endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ElementalInference service requests.
     /// <para />

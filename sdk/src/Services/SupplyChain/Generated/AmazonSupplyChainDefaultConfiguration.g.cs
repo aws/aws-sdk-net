@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SupplyChain
 {
     /// <summary>
-    /// Configuration for accessing Amazon SupplyChain service
+    /// Configuration for accessing AWS Supply Chain
     /// </summary>
     public static class AmazonSupplyChainDefaultConfiguration
     {

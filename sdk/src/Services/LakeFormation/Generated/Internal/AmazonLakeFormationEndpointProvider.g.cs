@@ -26,7 +26,7 @@ using Amazon.LakeFormation.Endpoints;
 namespace Amazon.LakeFormation.Internal
 {
     /// <summary>
-    /// Amazon LakeFormation endpoint provider.
+    /// AWS Lake Formation endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="LakeFormationEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

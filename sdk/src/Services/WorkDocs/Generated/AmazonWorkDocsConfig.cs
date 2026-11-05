@@ -27,12 +27,12 @@ using Amazon.WorkDocs.Internal;
 namespace Amazon.WorkDocs
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkDocs service
+    /// Configuration for accessing Amazon WorkDocs
     /// </summary>
     public partial class AmazonWorkDocsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WorkDocs", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("WorkDocs", "4.0.100.22");
 
         private static readonly AmazonWorkDocsEndpointResolver EndpointResolver =
             new AmazonWorkDocsEndpointResolver();

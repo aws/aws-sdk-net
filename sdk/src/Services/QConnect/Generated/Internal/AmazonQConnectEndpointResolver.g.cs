@@ -31,7 +31,7 @@ using Amazon.QConnect.Endpoints;
 namespace Amazon.QConnect.Internal
 {
     /// <summary>
-    /// Amazon QConnect endpoint resolver.
+    /// Amazon Q Connect endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for QConnect service requests.
     /// <para />

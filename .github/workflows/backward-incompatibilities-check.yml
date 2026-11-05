@@ -68,13 +68,14 @@ jobs:
                 const content = fs.readFileSync(filePath, 'utf8');
                 const jsonData = JSON.parse(content);
                 
-                // Check if any key in the JSON contains backwardIncompatibilitiesToIgnore
+                // Check if any nested backwardIncompatibilitiesToIgnore array is non-empty.
+                // An empty array is the DevConfig template default and needs no review.
                 function searchForKey(obj) {
                   if (typeof obj !== 'object' || obj === null) return false;
                   
                   for (const key in obj) {
                     if (key === 'backwardIncompatibilitiesToIgnore') {
-                      return true;
+                      return Array.isArray(obj[key]) && obj[key].length > 0;
                     }
                     if (typeof obj[key] === 'object' && searchForKey(obj[key])) {
                       return true;

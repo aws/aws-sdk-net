@@ -7966,6 +7966,17 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.OneDriveClientCredentials.CertThumbprint</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.OneDriveClientCredentials.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[-a-z0-9]*:kms:[-a-z0-9]*:[0-9]{12}:key/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.OneDriveParameters.ClientId</property>
     <min>1</min>
     <max>100</max>
@@ -8700,6 +8711,22 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.ServiceAccountCredentials.AdminAccountEmail</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ServiceAccountCredentials.ClientEmail</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ServiceAccountCredentials.ServiceAccountPrivateKey</property>
+    <min>1600</min>
+    <max>8000</max>
+    <pattern>^-{5}BEGIN (ENCRYPTED )?PRIVATE KEY-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END (ENCRYPTED )?PRIVATE KEY-{5}(\u000D?\u000A)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.ServiceNowParameters.SiteBaseUrl</property>
     <min>1</min>
     <max>1024</max>
@@ -8719,6 +8746,17 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SharePointClientCredentials.CertThumbprint</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SharePointClientCredentials.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[-a-z0-9]*:kms:[-a-z0-9]*:[0-9]{12}:key/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.SharePointParameters.ClientId</property>

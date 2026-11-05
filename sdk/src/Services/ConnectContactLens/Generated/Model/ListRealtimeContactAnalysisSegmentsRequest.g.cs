@@ -66,6 +66,22 @@ namespace Amazon.ConnectContactLens.Model
         internal bool IsSetInstanceId() => this.InstanceId != null;
 
         /// <summary>
+        /// Gets and sets the property ListFilter. 
+        /// <para>
+        /// A filter that limits the category segments returned by the operation. When provided,
+        /// use <c>CategoriesAttributeFilter</c> to return only the category segments whose rules
+        /// have tags that match the filter. This enforces tag-based access control on the categories
+        /// that the caller can view.
+        /// </para>
+        /// </summary>
+        public RealTimeContactAnalysisSegmentsFilter ListFilter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ListFilter property is set.
+        /// </summary>
+        internal bool IsSetListFilter() => this.ListFilter != null;
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return per page.

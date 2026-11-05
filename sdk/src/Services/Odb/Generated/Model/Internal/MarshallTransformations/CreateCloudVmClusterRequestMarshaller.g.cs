@@ -137,6 +137,26 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("displayName");
                 context.Writer.WriteStringValue(publicRequest.DisplayName);
             }
+            if (publicRequest.IsSetExascaleDbStorageVaultId())
+            {
+                context.Writer.WritePropertyName("exascaleDbStorageVaultId");
+                context.Writer.WriteStringValue(publicRequest.ExascaleDbStorageVaultId);
+            }
+            if (publicRequest.IsSetFileSystemConfigurationDetails())
+            {
+                context.Writer.WritePropertyName("fileSystemConfigurationDetails");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestFileSystemConfigurationDetailsListValue in publicRequest.FileSystemConfigurationDetails)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FileSystemConfigurationDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFileSystemConfigurationDetailsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetGiVersion())
             {
                 context.Writer.WritePropertyName("giVersion");
@@ -208,6 +228,16 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("timeZone");
                 context.Writer.WriteStringValue(publicRequest.TimeZone);
+            }
+            if (publicRequest.IsSetVmBackupStorageType())
+            {
+                context.Writer.WritePropertyName("vmBackupStorageType");
+                context.Writer.WriteStringValue(publicRequest.VmBackupStorageType);
+            }
+            if (publicRequest.IsSetVmFileSystemStorageType())
+            {
+                context.Writer.WritePropertyName("vmFileSystemStorageType");
+                context.Writer.WriteStringValue(publicRequest.VmFileSystemStorageType);
             }
 
             writer.WriteEndObject();

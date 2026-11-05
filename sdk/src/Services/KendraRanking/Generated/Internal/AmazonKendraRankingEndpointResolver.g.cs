@@ -31,7 +31,7 @@ using Amazon.KendraRanking.Endpoints;
 namespace Amazon.KendraRanking.Internal
 {
     /// <summary>
-    /// Amazon KendraRanking endpoint resolver.
+    /// Amazon Kendra Intelligent Ranking endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for KendraRanking service requests.
     /// <para />

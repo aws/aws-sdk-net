@@ -32,7 +32,7 @@ using Amazon.EC2.Endpoints;
 namespace Amazon.EC2.Internal
 {
     /// <summary>
-    /// Amazon EC2 endpoint resolver.
+    /// Amazon Elastic Compute Cloud endpoint resolver.
     /// Custom PipelineHandler responsible for resolving endpoint and setting authentication parameters for EC2 service requests.
     /// Collects values for EC2EndpointParameters and then tries to resolve endpoint by calling 
     /// ResolveEndpoint method on GlobalEndpoints.Provider if present, otherwise uses EC2EndpointProvider.

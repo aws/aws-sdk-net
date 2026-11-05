@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ServiceQuotas
 {
     /// <summary>
-    /// Configuration for accessing Amazon ServiceQuotas service
+    /// Configuration for accessing Service Quotas
     /// </summary>
     public static class AmazonServiceQuotasDefaultConfiguration
     {

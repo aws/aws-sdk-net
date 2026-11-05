@@ -1,0 +1,7 @@
+{
+    "shapeSubstitutions": {
+        "DeadlinePrincipalType": {
+            "renameShape": "PrincipalType"
+        }
+    }
+}

@@ -7,7 +7,11 @@ permissions: {}
 # evaluated on pull_request events and never adds a check-run row to a PR. The
 # build result is surfaced via the build-sdk-v4 commit status (see Post step).
 on:
-  issue_comment:
+  # zizmor 1.31+ flags issue_comment unconditionally. The compensating controls
+  # are the author_association gate on the job, the push-permission check and
+  # the fork rejection in the first two steps. Switching to a label trigger
+  # would remove the finding and can be revisited later.
+  issue_comment: # zizmor: ignore[dangerous-triggers]
     types: [created]
 
 concurrency:

@@ -31,7 +31,7 @@ using Amazon.Outposts.Endpoints;
 namespace Amazon.Outposts.Internal
 {
     /// <summary>
-    /// Amazon Outposts endpoint resolver.
+    /// AWS Outposts endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Outposts service requests.
     /// <para />

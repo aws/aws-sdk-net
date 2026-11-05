@@ -348,8 +348,14 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <para>
         /// Specifies if the compactor instance should be a standalone instance or not.
         /// </para>
+        ///  
+        /// <para>
+        /// Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define
+        /// the cluster topology instead. When you supply a deployment configuration, Timestream
+        /// for InfluxDB ignores this parameter.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
+        [Obsolete("Use deploymentConfiguration instead.")]
         public bool? DedicatedCompactor { get; set; }
 
         /// <summary>
@@ -515,8 +521,15 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <para>
         /// Specifies number of instances in the DbCluster which can both ingest and query.
         /// </para>
+        ///  
+        /// <para>
+        /// Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define
+        /// the cluster topology instead. When you supply a deployment configuration, Timestream
+        /// for InfluxDB ignores this parameter.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 4)]
+        [Obsolete("Use deploymentConfiguration instead.")]
+        [AWSProperty(Min = 1, Max = 4)]
         public int? IngestQueryInstances { get; set; }
 
         /// <summary>
@@ -764,8 +777,15 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <para>
         /// Specifies number of instances in the DbCluster which can only query.
         /// </para>
+        ///  
+        /// <para>
+        /// Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define
+        /// the cluster topology instead. When you supply a deployment configuration, Timestream
+        /// for InfluxDB ignores this parameter.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 0, Max = 10)]
+        [Obsolete("Use deploymentConfiguration instead.")]
+        [AWSProperty(Min = 0, Max = 10)]
         public int? QueryOnlyInstances { get; set; }
 
         /// <summary>

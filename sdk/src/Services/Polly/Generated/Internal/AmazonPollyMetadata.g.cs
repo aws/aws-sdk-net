@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Polly.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Polly service
+    /// Service metadata for Amazon Polly
     /// </summary>
     public partial class AmazonPollyMetadata : IServiceMetadata
     {

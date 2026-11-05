@@ -197,6 +197,73 @@ namespace AWSSDK.UnitTests.Custom.Marshalling
             }
         }
 
+        /// <summary>
+        /// The reader stops at the closing token of the error document, so the rest of the body (here, trailing
+        /// whitespace spanning several reader buffers) must still be read into the response body of the context.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        public void UnmarshalJsonErrorResponseBodyIncludesDataAfterRootValue()
+        {
+            var body = ValidJson + new string(' ', 8000);
+            var webResponse = new WebResponseData { StatusCode = HttpStatusCode.ServiceUnavailable };
+            webResponse.Headers.Add("Content-Length", Encoding.UTF8.GetBytes(body).Length.ToString());
+
+            var stream = AWSSDK_DotNet.UnitTests.Utils.CreateStreamFromString(body);
+            var context = new JsonUnmarshallerContext(stream, false, webResponse, isException: true);
+            var reader = new StreamingUtf8JsonReader(context.Stream);
+            var response = new JsonErrorResponseUnmarshaller().Unmarshall(context, ref reader);
+
+            Assert.AreEqual("message", response.Message);
+            Assert.AreEqual(body, context.ResponseBody);
+        }
+
+        /// <summary>
+        /// A failure while reading the remainder of the body (such as a connection reset) must not replace the
+        /// service error that has already been parsed.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        public void UnmarshalJsonErrorIgnoresFailureReadingRemainderOfBody()
+        {
+            var body = ValidJson + new string(' ', 8000);
+            var webResponse = new WebResponseData { StatusCode = HttpStatusCode.ServiceUnavailable };
+            webResponse.Headers.Add("Content-Length", Encoding.UTF8.GetBytes(body).Length.ToString());
+
+            var stream = new FailingStream(Encoding.UTF8.GetBytes(body), successfulReads: 1);
+            var context = new JsonUnmarshallerContext(stream, false, webResponse, isException: true);
+            var reader = new StreamingUtf8JsonReader(context.Stream);
+            var response = new JsonErrorResponseUnmarshaller().Unmarshall(context, ref reader);
+
+            Assert.IsTrue(stream.Failed);
+            Assert.AreEqual("type", response.Code);
+            Assert.AreEqual("message", response.Message);
+        }
+
+        // A stream that throws an IOException once the given number of reads have succeeded.
+        private sealed class FailingStream : MemoryStream
+        {
+            private int _remainingReads;
+
+            public FailingStream(byte[] buffer, int successfulReads) : base(buffer)
+            {
+                _remainingReads = successfulReads;
+            }
+
+            public bool Failed { get; private set; }
+
+            public override int Read(byte[] buffer, int offset, int count)
+            {
+                if (_remainingReads-- <= 0)
+                {
+                    Failed = true;
+                    throw new IOException("The connection was reset.");
+                }
+
+                return base.Read(buffer, offset, count);
+            }
+        }
+
         private void RunJsonErrorUnmarshallingTest(string body, string xAmzErrorTypeValue, string xAmznErrorMessageValue,
             string expectedMessage, string expectedCode, ErrorType expectedType)
         {

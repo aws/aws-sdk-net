@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Evs service
+    /// Service metadata for Amazon Elastic VMware Service
     /// </summary>
     public partial class AmazonEvsMetadata : IServiceMetadata
     {

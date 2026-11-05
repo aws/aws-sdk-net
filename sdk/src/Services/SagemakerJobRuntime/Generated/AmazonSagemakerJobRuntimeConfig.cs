@@ -27,12 +27,12 @@ using Amazon.SagemakerJobRuntime.Internal;
 namespace Amazon.SagemakerJobRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon SagemakerJobRuntime service
+    /// Configuration for accessing Sagemaker Job Runtime Service
     /// </summary>
     public partial class AmazonSagemakerJobRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SagemakerJobRuntime", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("SagemakerJobRuntime", "4.0.100.23");
 
         private static readonly AmazonSagemakerJobRuntimeEndpointResolver EndpointResolver =
             new AmazonSagemakerJobRuntimeEndpointResolver();

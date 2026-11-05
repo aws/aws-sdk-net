@@ -346,7 +346,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property QnAIntentConfiguration. 
         /// <para>
         /// Specifies the configuration of the built-in <c>Amazon.QnAIntent</c>. The <c>AMAZON.QnAIntent</c>
-        /// intent is called when Amazon Lex can't determine another intent to invoke. If you
+        /// intent is called when Amazon Lex V2 can't determine another intent to invoke. If you
         /// specify this field, you can't specify the <c>kendraConfiguration</c> field.
         /// </para>
         /// </summary>

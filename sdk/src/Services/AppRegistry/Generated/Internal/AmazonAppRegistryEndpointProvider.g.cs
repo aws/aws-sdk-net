@@ -26,7 +26,7 @@ using Amazon.AppRegistry.Endpoints;
 namespace Amazon.AppRegistry.Internal
 {
     /// <summary>
-    /// Amazon AppRegistry endpoint provider.
+    /// AWS Service Catalog App Registry endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AppRegistryEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

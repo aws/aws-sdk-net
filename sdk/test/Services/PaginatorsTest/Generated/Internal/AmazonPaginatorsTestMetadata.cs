@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaginatorsTest.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon PaginatorsTest service
+    /// Service metadata for Paginators-Test
     /// </summary>
     public partial class AmazonPaginatorsTestMetadata : IServiceMetadata
     {

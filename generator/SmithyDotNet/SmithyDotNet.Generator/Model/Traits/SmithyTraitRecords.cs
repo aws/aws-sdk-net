@@ -109,6 +109,16 @@ public record RequestCompressionTrait : TraitRecord
     public required IReadOnlyList<string> Encodings { get; init; }
 }
 
+/// <remarks><see href="https://smithy.io/2.0/spec/protocol-traits.html#xmlnamespace-trait" /></remarks>
+public record XmlNamespaceTrait : TraitRecord
+{
+    [JsonPropertyName("uri")]
+    public required string Uri { get; init; }
+
+    [JsonPropertyName("prefix")]
+    public string? Prefix { get; init; }
+}
+
 /// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#paginated-trait" /></remarks>
 public record PaginatedTrait : TraitRecord
 {

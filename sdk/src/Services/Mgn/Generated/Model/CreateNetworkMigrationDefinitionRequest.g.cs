@@ -59,6 +59,21 @@ namespace Amazon.Mgn.Model
         internal bool IsSetCidrMappings() => this.CidrMappings != null && (this.CidrMappings.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 64)]
+        public string ClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientToken property is set.
+        /// </summary>
+        internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the network migration definition.

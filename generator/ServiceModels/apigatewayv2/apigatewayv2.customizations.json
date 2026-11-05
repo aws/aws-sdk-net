@@ -3,8 +3,60 @@
         "DomainName": {
             "modify": [
                 {
-                    "DomainName": { "emitPropertyName": "Name" }
+                    "DomainName": {
+                        "emitPropertyName": "Name"
+                    }
                 }
+            ]
+        }
+    },
+    "paginators": {
+        "ListPortalProducts": {
+            "inputToken": [
+                "NextToken"
+            ],
+            "outputToken": [
+                "NextToken"
+            ],
+            "pageSize": "MaxResults",
+            "items": [
+                "Items"
+            ]
+        },
+        "ListPortals": {
+            "inputToken": [
+                "NextToken"
+            ],
+            "outputToken": [
+                "NextToken"
+            ],
+            "pageSize": "MaxResults",
+            "items": [
+                "Items"
+            ]
+        },
+        "ListProductPages": {
+            "inputToken": [
+                "NextToken"
+            ],
+            "outputToken": [
+                "NextToken"
+            ],
+            "pageSize": "MaxResults",
+            "items": [
+                "Items"
+            ]
+        },
+        "ListProductRestEndpointPages": {
+            "inputToken": [
+                "NextToken"
+            ],
+            "outputToken": [
+                "NextToken"
+            ],
+            "pageSize": "MaxResults",
+            "items": [
+                "Items"
             ]
         }
     }

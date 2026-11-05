@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Translate
 {
     /// <summary>
-    /// Configuration for accessing Amazon Translate service
+    /// Configuration for accessing Amazon Translate
     /// </summary>
     public static class AmazonTranslateDefaultConfiguration
     {

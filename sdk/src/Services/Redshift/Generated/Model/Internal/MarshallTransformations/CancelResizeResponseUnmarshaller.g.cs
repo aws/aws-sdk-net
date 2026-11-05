@@ -1,0 +1,256 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Redshift.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Redshift.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for CancelResize operation.
+    /// </summary>
+    public partial class CancelResizeResponseUnmarshaller : XmlResponseUnmarshaller
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
+            CancelResizeResponse response = new CancelResizeResponse();
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.IsStartElement)
+                {
+                    if (context.TestExpression("CancelResizeResult", 2))
+                    {
+                        UnmarshallResult(context, response);
+                        continue;
+                    }
+
+                    if (context.TestExpression("ResponseMetadata", 2))
+                    {
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
+                    }
+                }
+            }
+
+            return response;
+        }
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, CancelResizeResponse unmarshalledObject)
+        {
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument)
+            {
+                targetDepth += 2;
+            }
+
+            while (context.ReadAtDepth(originalDepth))
+            {
+                if (context.IsStartElement || context.IsAttribute)
+                {
+                    if (context.TestExpression("AvgResizeRateInMegaBytesPerSecond", targetDepth))
+                    {
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                        unmarshalledObject.AvgResizeRateInMegaBytesPerSecond = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("DataTransferProgressPercent", targetDepth))
+                    {
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                        unmarshalledObject.DataTransferProgressPercent = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("ElapsedTimeInSeconds", targetDepth))
+                    {
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
+                        unmarshalledObject.ElapsedTimeInSeconds = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("EstimatedTimeToCompletionInSeconds", targetDepth))
+                    {
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
+                        unmarshalledObject.EstimatedTimeToCompletionInSeconds = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("ImportTablesCompleted/member", targetDepth))
+                    {
+                        if (unmarshalledObject.ImportTablesCompleted == null)
+                        {
+                            unmarshalledObject.ImportTablesCompleted = new List<string>();
+                        }
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ImportTablesCompleted.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
+                    if (context.TestExpression("ImportTablesInProgress/member", targetDepth))
+                    {
+                        if (unmarshalledObject.ImportTablesInProgress == null)
+                        {
+                            unmarshalledObject.ImportTablesInProgress = new List<string>();
+                        }
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ImportTablesInProgress.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
+                    if (context.TestExpression("ImportTablesNotStarted/member", targetDepth))
+                    {
+                        if (unmarshalledObject.ImportTablesNotStarted == null)
+                        {
+                            unmarshalledObject.ImportTablesNotStarted = new List<string>();
+                        }
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ImportTablesNotStarted.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
+                    if (context.TestExpression("Message", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("ProgressInMegaBytes", targetDepth))
+                    {
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
+                        unmarshalledObject.ProgressInMegaBytes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("ResizeType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResizeType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("TargetClusterType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TargetClusterType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("TargetEncryptionType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TargetEncryptionType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("TargetNodeType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TargetNodeType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("TargetNumberOfNodes", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.TargetNumberOfNodes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("TotalResizeDataInMegaBytes", targetDepth))
+                    {
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
+                        unmarshalledObject.TotalResizeDataInMegaBytes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                }
+            }
+
+            return;
+        }
+
+        /// <summary>
+        /// Unmarshall error response to exception.
+        /// </summary>
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
+
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            {
+                using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, context.ResponseData))
+                {
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterNotFound"))
+                    {
+                        return ClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterState"))
+                    {
+                        return InvalidClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ResizeNotFound"))
+                    {
+                        return ResizeNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
+                    {
+                        return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    }
+                }
+            }
+            return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+        }
+
+        private static CancelResizeResponseUnmarshaller _instance = new CancelResizeResponseUnmarshaller();
+
+        internal static CancelResizeResponseUnmarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static CancelResizeResponseUnmarshaller Instance => _instance;
+    }
+}

@@ -26,7 +26,7 @@ using Amazon.DirectoryServiceData.Endpoints;
 namespace Amazon.DirectoryServiceData.Internal
 {
     /// <summary>
-    /// Amazon DirectoryServiceData endpoint provider.
+    /// AWS Directory Service Data endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DirectoryServiceDataEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

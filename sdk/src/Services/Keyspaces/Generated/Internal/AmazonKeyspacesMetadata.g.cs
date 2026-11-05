@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Keyspaces.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Keyspaces service
+    /// Service metadata for Amazon Keyspaces
     /// </summary>
     public partial class AmazonKeyspacesMetadata : IServiceMetadata
     {

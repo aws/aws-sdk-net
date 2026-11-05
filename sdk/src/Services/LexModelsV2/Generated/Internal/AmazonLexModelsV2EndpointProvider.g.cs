@@ -26,7 +26,7 @@ using Amazon.LexModelsV2.Endpoints;
 namespace Amazon.LexModelsV2.Internal
 {
     /// <summary>
-    /// Amazon LexModelsV2 endpoint provider.
+    /// Amazon Lex Model Building V2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="LexModelsV2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

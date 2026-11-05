@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Greengrass
 {
     /// <summary>
-    /// Configuration for accessing Amazon Greengrass service
+    /// Configuration for accessing AWS Greengrass
     /// </summary>
     public static class AmazonGreengrassDefaultConfiguration
     {

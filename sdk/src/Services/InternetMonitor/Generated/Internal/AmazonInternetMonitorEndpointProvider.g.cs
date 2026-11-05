@@ -26,7 +26,7 @@ using Amazon.InternetMonitor.Endpoints;
 namespace Amazon.InternetMonitor.Internal
 {
     /// <summary>
-    /// Amazon InternetMonitor endpoint provider.
+    /// Amazon CloudWatch Internet Monitor endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="InternetMonitorEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -2,118 +2,147 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.CancelMetadataModelConversionRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.CancelMetadataModelCreationRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.CreateReplicationInstanceRequest.ReplicationInstanceClass</property>
+    <min>0</min>
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeConversionConfigurationRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeDataMigrationsRequest.Marker</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeDataMigrationsResponse.Marker</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeExtensionPackAssociationsRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeMetadataModelRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeMetadataModelAssessmentsRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeMetadataModelChildrenRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeMetadataModelConversionsRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeMetadataModelCreationsRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeMetadataModelExportsAsScriptRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeMetadataModelExportsToTargetRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeMetadataModelImportsRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.ExportMetadataModelAssessmentRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.GetTargetSelectionRulesRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.ModifyConversionConfigurationRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.ModifyReplicationInstanceRequest.ReplicationInstanceClass</property>
+    <min>0</min>
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.StartExtensionPackAssociationRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.StartMetadataModelAssessmentRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.StartMetadataModelConversionRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.StartMetadataModelCreationRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.StartMetadataModelExportAsScriptRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.StartMetadataModelExportToTargetRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.StartMetadataModelImportRequest.MigrationProjectIdentifier</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.OrderableReplicationInstance.ReplicationInstanceClass</property>
+    <min>0</min>
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.ReplicationInstance.ReplicationInstanceClass</property>
+    <min>0</min>
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.ReplicationPendingModifiedValues.ReplicationInstanceClass</property>
+    <min>0</min>
     <max>30</max>
   </property-value-rule>
 </property-value-rules>

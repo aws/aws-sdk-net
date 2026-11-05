@@ -1,0 +1,56 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CloudWatchLogs.Model
+{
+    /// <summary>
+    /// Container for the parameters to the PutStorageTierPolicy operation. Sets the storage
+    /// tier policy for the account. When you set the storage tier to <c>INTELLIGENT_TIERING</c>,
+    /// the service automatically moves log data to the most cost-effective storage tier based
+    /// on access frequency.
+    /// </summary>
+    public partial class PutStorageTierPolicyRequest : AmazonCloudWatchLogsRequest
+    {
+        /// <summary>
+        /// Gets and sets the property StorageTier. 
+        /// <para>
+        /// The storage tier to set for the account. Use <c>INTELLIGENT_TIERING</c> to automatically
+        /// optimize storage costs by moving log data to the appropriate tier based on access
+        /// frequency.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public StorageTier StorageTier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StorageTier property is set.
+        /// </summary>
+        internal bool IsSetStorageTier() => this.StorageTier != null;
+    }
+}

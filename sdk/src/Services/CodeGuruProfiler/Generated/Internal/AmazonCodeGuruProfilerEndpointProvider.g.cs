@@ -26,7 +26,7 @@ using Amazon.CodeGuruProfiler.Endpoints;
 namespace Amazon.CodeGuruProfiler.Internal
 {
     /// <summary>
-    /// Amazon CodeGuruProfiler endpoint provider.
+    /// Amazon CodeGuru Profiler endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CodeGuruProfilerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

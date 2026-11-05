@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.NetworkFlowMonitor
 {
     /// <summary>
-    /// Configuration for accessing Amazon NetworkFlowMonitor service
+    /// Configuration for accessing Network Flow Monitor
     /// </summary>
     public static class AmazonNetworkFlowMonitorDefaultConfiguration
     {

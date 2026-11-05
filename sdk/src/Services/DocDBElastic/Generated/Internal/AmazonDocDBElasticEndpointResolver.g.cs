@@ -31,7 +31,7 @@ using Amazon.DocDBElastic.Endpoints;
 namespace Amazon.DocDBElastic.Internal
 {
     /// <summary>
-    /// Amazon DocDBElastic endpoint resolver.
+    /// Amazon DocumentDB Elastic Clusters endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DocDBElastic service requests.
     /// <para />

@@ -1,0 +1,801 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.AutoScaling.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateAutoScalingGroup operation. <b>We strongly
+    /// recommend using a launch template when calling this operation to ensure full functionality
+    /// for Amazon EC2 Auto Scaling and Amazon EC2.</b> <para> Creates an Auto Scaling group
+    /// with the specified name and attributes. </para> <para> If you exceed your maximum
+    /// limit of Auto Scaling groups, the call fails. To query this limit, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+    /// API. For information about updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-quotas.html">Quotas
+    /// for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// </para> <para> If you're new to Amazon EC2 Auto Scaling, see the introductory tutorials
+    /// in <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/get-started-with-ec2-auto-scaling.html">Get
+    /// started with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// </para> <para> Every Auto Scaling group has three size properties (<c>DesiredCapacity</c>,
+    /// <c>MaxSize</c>, and <c>MinSize</c>). Usually, you set these sizes based on a specific
+    /// number of instances. However, if you configure a mixed instances policy that defines
+    /// weights for the instance types, you must specify these sizes with the same units that
+    /// you use for weighting instances. </para>
+    /// </summary>
+    public partial class CreateAutoScalingGroupRequest : AmazonAutoScalingRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AutoScalingGroupName. 
+        /// <para>
+        /// The name of the Auto Scaling group. This name must be unique per Region per account.
+        /// </para>
+        ///  
+        /// <para>
+        /// The name can contain any ASCII character 33 to 126 including most punctuation characters,
+        /// digits, and upper and lowercased letters.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot use a colon (:) in the name.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 255)]
+        public string AutoScalingGroupName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AutoScalingGroupName property is set.
+        /// </summary>
+        internal bool IsSetAutoScalingGroupName() => this.AutoScalingGroupName != null;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneDistribution. 
+        /// <para>
+        /// The instance capacity distribution across Availability Zones.
+        /// </para>
+        /// </summary>
+        public AvailabilityZoneDistribution AvailabilityZoneDistribution { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AvailabilityZoneDistribution property is set.
+        /// </summary>
+        internal bool IsSetAvailabilityZoneDistribution() => this.AvailabilityZoneDistribution != null;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneIds. 
+        /// <para>
+        ///  A list of Availability Zone IDs where the Auto Scaling group can launch instances.
+        /// You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.
+        /// 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AvailabilityZoneIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the AvailabilityZoneIds property is set.
+        /// </summary>
+        internal bool IsSetAvailabilityZoneIds() => this.AvailabilityZoneIds != null && (this.AvailabilityZoneIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneImpairmentPolicy. 
+        /// <para>
+        ///  The policy for Availability Zone impairment. 
+        /// </para>
+        /// </summary>
+        public AvailabilityZoneImpairmentPolicy AvailabilityZoneImpairmentPolicy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AvailabilityZoneImpairmentPolicy property is set.
+        /// </summary>
+        internal bool IsSetAvailabilityZoneImpairmentPolicy() => this.AvailabilityZoneImpairmentPolicy != null;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZones. 
+        /// <para>
+        /// A list of Availability Zones where instances in the Auto Scaling group can be created.
+        /// Used for launching into the default VPC subnet in each Availability Zone when not
+        /// using the <c>VPCZoneIdentifier</c> property, or for attaching a network interface
+        /// when an existing network interface ID is specified in a launch template.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AvailabilityZones { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the AvailabilityZones property is set.
+        /// </summary>
+        internal bool IsSetAvailabilityZones() => this.AvailabilityZones != null && (this.AvailabilityZones.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property CapacityRebalance. 
+        /// <para>
+        /// Indicates whether Capacity Rebalancing is enabled. Otherwise, Capacity Rebalancing
+        /// is disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts
+        /// to launch a Spot Instance whenever Amazon EC2 notifies that a Spot Instance is at
+        /// an elevated risk of interruption. After launching a new instance, it then terminates
+        /// an old instance. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use
+        /// Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool? CapacityRebalance { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CapacityRebalance property is set.
+        /// </summary>
+        internal bool IsSetCapacityRebalance() => this.CapacityRebalance.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationSpecification. 
+        /// <para>
+        ///  The capacity reservation specification for the Auto Scaling group. 
+        /// </para>
+        /// </summary>
+        public CapacityReservationSpecification CapacityReservationSpecification { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CapacityReservationSpecification property is set.
+        /// </summary>
+        internal bool IsSetCapacityReservationSpecification() => this.CapacityReservationSpecification != null;
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public string Context { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Context property is set.
+        /// </summary>
+        internal bool IsSetContext() => this.Context != null;
+
+        /// <summary>
+        /// Gets and sets the property DefaultCooldown. 
+        /// <para>
+        ///  <i>Only needed if you use simple scaling policies.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The amount of time, in seconds, between one scaling activity ending and another one
+        /// starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-scaling-cooldowns.html">Scaling
+        /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>300</c> seconds
+        /// </para>
+        /// </summary>
+        public int? DefaultCooldown { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DefaultCooldown property is set.
+        /// </summary>
+        internal bool IsSetDefaultCooldown() => this.DefaultCooldown.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DefaultInstanceWarmup. 
+        /// <para>
+        /// The amount of time, in seconds, until a new instance is considered to have finished
+        /// initializing and resource consumption to become stable after it enters the <c>InService</c>
+        /// state. 
+        /// </para>
+        ///  
+        /// <para>
+        /// During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after
+        /// it replaces an instance before it moves on to replacing the next instance. Amazon
+        /// EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics
+        /// for new instances with existing instances in the Amazon CloudWatch metrics that are
+        /// used for scaling, resulting in more reliable usage data. For more information, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+        /// the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To manage various warm-up settings at the group level, we recommend that you set the
+        /// default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value
+        /// that you previously set, include the property but specify <c>-1</c> for the value.
+        /// However, we strongly recommend keeping the default instance warmup enabled by specifying
+        /// a value of <c>0</c> or other nominal value.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Default: None 
+        /// </para>
+        /// </summary>
+        public int? DefaultInstanceWarmup { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DefaultInstanceWarmup property is set.
+        /// </summary>
+        internal bool IsSetDefaultInstanceWarmup() => this.DefaultInstanceWarmup.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        ///  The deletion protection setting for the Auto Scaling group. This setting helps safeguard
+        /// your Auto Scaling group and its instances by controlling whether the <c>DeleteAutoScalingGroup</c>
+        /// operation is allowed. When deletion protection is enabled, users cannot delete the
+        /// Auto Scaling group according to the specified protection level until the setting is
+        /// changed back to a less restrictive level. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The valid values are <c>none</c>, <c>prevent-force-deletion</c>, and <c>prevent-all-deletion</c>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <c>none</c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/resource-deletion-protection.html">
+        /// Configure deletion protection for your Amazon EC2 Auto Scaling resources</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public DeletionProtection DeletionProtection { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeletionProtection property is set.
+        /// </summary>
+        internal bool IsSetDeletionProtection() => this.DeletionProtection != null;
+
+        /// <summary>
+        /// Gets and sets the property DesiredCapacity. 
+        /// <para>
+        /// The desired capacity is the initial capacity of the Auto Scaling group at the time
+        /// of its creation and the capacity it attempts to maintain. It can scale beyond this
+        /// capacity if you configure auto scaling. This number must be greater than or equal
+        /// to the minimum size of the group and less than or equal to the maximum size of the
+        /// group. If you do not specify a desired capacity, the default is the minimum size of
+        /// the group.
+        /// </para>
+        /// </summary>
+        public int? DesiredCapacity { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DesiredCapacity property is set.
+        /// </summary>
+        internal bool IsSetDesiredCapacity() => this.DesiredCapacity.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DesiredCapacityType. 
+        /// <para>
+        /// The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto
+        /// Scaling supports <c>DesiredCapacityType</c> for attribute-based instance type selection
+        /// only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-mixed-instances-group-attribute-based-instance-type-selection.html">Create
+        /// a mixed instances group using attribute-based instance type selection</a> in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, Amazon EC2 Auto Scaling specifies <c>units</c>, which translates into
+        /// number of instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>units</c> | <c>vcpu</c> | <c>memory-mib</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string DesiredCapacityType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DesiredCapacityType property is set.
+        /// </summary>
+        internal bool IsSetDesiredCapacityType() => this.DesiredCapacityType != null;
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckGracePeriod. 
+        /// <para>
+        /// The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking
+        /// the health status of an EC2 instance that has come into service and marking it unhealthy
+        /// due to a failed health check. This is useful if your instances do not immediately
+        /// pass their health checks after they enter the <c>InService</c> state. For more information,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+        /// the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>0</c> seconds
+        /// </para>
+        /// </summary>
+        public int? HealthCheckGracePeriod { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HealthCheckGracePeriod property is set.
+        /// </summary>
+        internal bool IsSetHealthCheckGracePeriod() => this.HealthCheckGracePeriod.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckType. 
+        /// <para>
+        /// A comma-separated value string of one or more health check types.
+        /// </para>
+        ///  
+        /// <para>
+        /// The valid values are <c>EC2</c>, <c>EBS</c>, <c>ELB</c>, and <c>VPC_LATTICE</c>. <c>EC2</c>
+        /// is the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html">Health
+        /// checks for instances in an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only specify <c>EC2</c> if you must clear a value that was previously set.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 32)]
+        public string HealthCheckType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HealthCheckType property is set.
+        /// </summary>
+        internal bool IsSetHealthCheckType() => this.HealthCheckType != null;
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance used to base the launch configuration on. If specified, Amazon
+        /// EC2 Auto Scaling uses the configuration values from the specified instance to create
+        /// a new launch configuration. To get the instance ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+        /// API operation. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Create
+        /// an Auto Scaling group using parameters from an existing instance</a> in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 19)]
+        public string InstanceId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceId property is set.
+        /// </summary>
+        internal bool IsSetInstanceId() => this.InstanceId != null;
+
+        /// <summary>
+        /// Gets and sets the property InstanceLifecyclePolicy. 
+        /// <para>
+        ///  The instance lifecycle policy for the Auto Scaling group. This policy controls instance
+        /// behavior when an instance transitions through its lifecycle states. Configure retention
+        /// triggers to specify when instances should move to a <c>Retained</c> state instead
+        /// of automatic termination. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-lifecycle-policy.html">
+        /// Control instance retention with instance lifecycle policies</a> in the <i>Amazon EC2
+        /// Auto Scaling User Guide</i>. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Instances in a Retained state will continue to incur standard EC2 charges until terminated.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public InstanceLifecyclePolicy InstanceLifecyclePolicy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceLifecyclePolicy property is set.
+        /// </summary>
+        internal bool IsSetInstanceLifecyclePolicy() => this.InstanceLifecyclePolicy != null;
+
+        /// <summary>
+        /// Gets and sets the property InstanceMaintenancePolicy. 
+        /// <para>
+        /// An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set
+        /// instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        public InstanceMaintenancePolicy InstanceMaintenancePolicy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceMaintenancePolicy property is set.
+        /// </summary>
+        internal bool IsSetInstanceMaintenancePolicy() => this.InstanceMaintenancePolicy != null;
+
+        /// <summary>
+        /// Gets and sets the property LaunchConfigurationName. 
+        /// <para>
+        /// The name of the launch configuration to use to launch instances. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: You must specify either a launch template (<c>LaunchTemplate</c> or <c>MixedInstancesPolicy</c>)
+        /// or a launch configuration (<c>LaunchConfigurationName</c> or <c>InstanceId</c>).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string LaunchConfigurationName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LaunchConfigurationName property is set.
+        /// </summary>
+        internal bool IsSetLaunchConfigurationName() => this.LaunchConfigurationName != null;
+
+        /// <summary>
+        /// Gets and sets the property LaunchTemplate. 
+        /// <para>
+        /// Information used to specify the launch template and version to use to launch instances.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: You must specify either a launch template (<c>LaunchTemplate</c> or <c>MixedInstancesPolicy</c>)
+        /// or a launch configuration (<c>LaunchConfigurationName</c> or <c>InstanceId</c>).
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The launch template that is specified must be configured for use with an Auto Scaling
+        /// group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Create
+        /// a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public LaunchTemplateSpecification LaunchTemplate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LaunchTemplate property is set.
+        /// </summary>
+        internal bool IsSetLaunchTemplate() => this.LaunchTemplate != null;
+
+        /// <summary>
+        /// Gets and sets the property LifecycleHookSpecificationList. 
+        /// <para>
+        /// One or more lifecycle hooks to add to the Auto Scaling group before instances are
+        /// launched.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<LifecycleHookSpecification> LifecycleHookSpecificationList { get; set; } = AWSConfigs.InitializeCollections ? new List<LifecycleHookSpecification>() : null;
+
+        /// <summary>
+        /// Checks to see if the LifecycleHookSpecificationList property is set.
+        /// </summary>
+        internal bool IsSetLifecycleHookSpecificationList() => this.LifecycleHookSpecificationList != null && (this.LifecycleHookSpecificationList.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerNames. 
+        /// <para>
+        /// A list of Classic Load Balancers associated with this Auto Scaling group. For Application
+        /// Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify the <c>TargetGroupARNs</c>
+        /// property instead.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> LoadBalancerNames { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the LoadBalancerNames property is set.
+        /// </summary>
+        internal bool IsSetLoadBalancerNames() => this.LoadBalancerNames != null && (this.LoadBalancerNames.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property MaxInstanceLifetime. 
+        /// <para>
+        /// The maximum amount of time, in seconds, that an instance can be in service. The default
+        /// is null. If specified, the value must be either 0 or a number equal to or greater
+        /// than 86,400 seconds (1 day). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replace
+        /// Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon EC2
+        /// Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        public int? MaxInstanceLifetime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxInstanceLifetime property is set.
+        /// </summary>
+        internal bool IsSetMaxInstanceLifetime() => this.MaxInstanceLifetime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MaxSize. 
+        /// <para>
+        /// The maximum size of the group.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling
+        /// may need to go above <c>MaxSize</c> to meet your capacity requirements. In this event,
+        /// Amazon EC2 Auto Scaling will never go above <c>MaxSize</c> by more than your largest
+        /// instance weight (weights that define how many units each instance contributes to the
+        /// desired capacity of the group).
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public int? MaxSize { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxSize property is set.
+        /// </summary>
+        internal bool IsSetMaxSize() => this.MaxSize.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MinSize. 
+        /// <para>
+        /// The minimum size of the group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public int? MinSize { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MinSize property is set.
+        /// </summary>
+        internal bool IsSetMinSize() => this.MinSize.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MixedInstancesPolicy. 
+        /// <para>
+        /// The mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
+        /// Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>. To learn how to prioritize multiple capacity types,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/use-distribution-segments.html">Use
+        /// Distribution Segments to target multiple capacity types</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        public MixedInstancesPolicy MixedInstancesPolicy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MixedInstancesPolicy property is set.
+        /// </summary>
+        internal bool IsSetMixedInstancesPolicy() => this.MixedInstancesPolicy != null;
+
+        /// <summary>
+        /// Gets and sets the property NewInstancesProtectedFromScaleIn. 
+        /// <para>
+        /// Indicates whether newly launched instances are protected from termination by Amazon
+        /// EC2 Auto Scaling when scaling in. For more information about preventing instances
+        /// from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Use
+        /// instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool? NewInstancesProtectedFromScaleIn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NewInstancesProtectedFromScaleIn property is set.
+        /// </summary>
+        internal bool IsSetNewInstancesProtectedFromScaleIn() => this.NewInstancesProtectedFromScaleIn.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The entity that manages the Auto Scaling group. If you specify this parameter, Amazon
+        /// EC2 Auto Scaling passes the operator identity to EC2 for instance launches and only
+        /// allows the designated operator to make changes to the Auto Scaling group. All mutating
+        /// API calls from non-operator callers are rejected with an <c>AccessDenied</c> exception.
+        /// </para>
+        /// </summary>
+        public Operator Operator { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Operator property is set.
+        /// </summary>
+        internal bool IsSetOperator() => this.Operator != null;
+
+        /// <summary>
+        /// Gets and sets the property PlacementGroup. 
+        /// <para>
+        /// The name of the placement group into which to launch your instances. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// groups</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// A <i>cluster</i> placement group is a logical grouping of instances within a single
+        /// Availability Zone. You cannot specify multiple Availability Zones and a cluster placement
+        /// group. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string PlacementGroup { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PlacementGroup property is set.
+        /// </summary>
+        internal bool IsSetPlacementGroup() => this.PlacementGroup != null;
+
+        /// <summary>
+        /// Gets and sets the property ServiceLinkedRoleARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group
+        /// uses to call other Amazon Web Services service on your behalf. By default, Amazon
+        /// EC2 Auto Scaling uses a service-linked role named <c>AWSServiceRoleForAutoScaling</c>,
+        /// which it creates if it does not exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+        /// roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1600)]
+        public string ServiceLinkedRoleARN { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ServiceLinkedRoleARN property is set.
+        /// </summary>
+        internal bool IsSetServiceLinkedRoleARN() => this.ServiceLinkedRoleARN != null;
+
+        /// <summary>
+        /// Gets and sets the property SkipZonalShiftValidation. 
+        /// <para>
+        ///  If you enable zonal shift with cross-zone disabled load balancers, capacity could
+        /// become imbalanced across Availability Zones. To skip the validation, specify <c>true</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto
+        /// Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public bool? SkipZonalShiftValidation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SkipZonalShiftValidation property is set.
+        /// </summary>
+        internal bool IsSetSkipZonalShiftValidation() => this.SkipZonalShiftValidation.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// One or more tags. You can tag your Auto Scaling group and propagate the tags to the
+        /// Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS volumes. To
+        /// add tags to Amazon EBS volumes, specify the tags in a launch template but use caution.
+        /// If the launch template specifies an instance tag with a key that is also specified
+        /// for the Auto Scaling group, Amazon EC2 Auto Scaling overrides the value of that instance
+        /// tag with the value specified by the Auto Scaling group. For more information, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag
+        /// Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Tag> Tags { get; set; } = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property TargetGroupARNs. 
+        /// <para>
+        /// The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate
+        /// with the Auto Scaling group. Instances are registered as targets with the target groups.
+        /// The target groups receive incoming traffic and route requests to one or more registered
+        /// targets. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+        /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
+        /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> TargetGroupARNs { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the TargetGroupARNs property is set.
+        /// </summary>
+        internal bool IsSetTargetGroupARNs() => this.TargetGroupARNs != null && (this.TargetGroupARNs.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property TerminationPolicies. 
+        /// <para>
+        /// A policy or a list of policies that are used to select the instance to terminate.
+        /// These policies are executed in the order that you list them. For more information,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Configure
+        /// termination policies for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>Default</c> | <c>AllocationStrategy</c> | <c>ClosestToNextInstanceHour</c>
+        /// | <c>NewestInstance</c> | <c>OldestInstance</c> | <c>OldestLaunchConfiguration</c>
+        /// | <c>OldestLaunchTemplate</c> | <c>arn:aws:lambda:region:account-id:function:my-function:my-alias</c>
+        /// 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> TerminationPolicies { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the TerminationPolicies property is set.
+        /// </summary>
+        internal bool IsSetTerminationPolicies() => this.TerminationPolicies != null && (this.TerminationPolicies.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property TrafficSources. 
+        /// <para>
+        /// The list of traffic sources to attach to this Auto Scaling group. You can use any
+        /// of the following as traffic sources for an Auto Scaling group: Classic Load Balancer,
+        /// Application Load Balancer, Gateway Load Balancer, Network Load Balancer, and VPC Lattice.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TrafficSourceIdentifier> TrafficSources { get; set; } = AWSConfigs.InitializeCollections ? new List<TrafficSourceIdentifier>() : null;
+
+        /// <summary>
+        /// Checks to see if the TrafficSources property is set.
+        /// </summary>
+        internal bool IsSetTrafficSources() => this.TrafficSources != null && (this.TrafficSources.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property VPCZoneIdentifier. 
+        /// <para>
+        /// A comma-separated list of subnet IDs for a virtual private cloud (VPC) where instances
+        /// in the Auto Scaling group can be created. If you specify <c>VPCZoneIdentifier</c>
+        /// with <c>AvailabilityZones</c>, the subnets that you specify must reside in those Availability
+        /// Zones.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 5000)]
+        public string VPCZoneIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VPCZoneIdentifier property is set.
+        /// </summary>
+        internal bool IsSetVPCZoneIdentifier() => this.VPCZoneIdentifier != null;
+    }
+}

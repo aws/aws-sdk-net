@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BCMDashboards.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon BCMDashboards service
+    /// Service metadata for AWS Billing and Cost Management Dashboards
     /// </summary>
     public partial class AmazonBCMDashboardsMetadata : IServiceMetadata
     {

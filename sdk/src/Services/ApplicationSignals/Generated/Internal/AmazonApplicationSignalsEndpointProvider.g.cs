@@ -26,7 +26,7 @@ using Amazon.ApplicationSignals.Endpoints;
 namespace Amazon.ApplicationSignals.Internal
 {
     /// <summary>
-    /// Amazon ApplicationSignals endpoint provider.
+    /// Amazon CloudWatch Application Signals endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ApplicationSignalsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

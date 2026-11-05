@@ -282,6 +282,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -322,6 +325,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -352,6 +358,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <returns>The response from the CreateTrustAnchor service method, as returned by IAMRolesAnywhere.</returns>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -396,6 +405,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -420,6 +432,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -458,6 +473,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -487,6 +505,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteCrl">REST API Reference for DeleteCrl Operation</seealso>
         public virtual DeleteCrlResponse DeleteCrl(DeleteCrlRequest request)
@@ -527,6 +548,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteCrl">REST API Reference for DeleteCrl Operation</seealso>
         public virtual Task<DeleteCrlResponse> DeleteCrlAsync(DeleteCrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -553,6 +577,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual DeleteProfileResponse DeleteProfile(DeleteProfileRequest request)
@@ -593,6 +620,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual Task<DeleteProfileResponse> DeleteProfileAsync(DeleteProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -619,6 +649,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteTrustAnchor">REST API Reference for DeleteTrustAnchor Operation</seealso>
         public virtual DeleteTrustAnchorResponse DeleteTrustAnchor(DeleteTrustAnchorRequest request)
@@ -659,6 +692,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteTrustAnchor">REST API Reference for DeleteTrustAnchor Operation</seealso>
         public virtual Task<DeleteTrustAnchorResponse> DeleteTrustAnchorAsync(DeleteTrustAnchorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -685,6 +721,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DisableCrl">REST API Reference for DisableCrl Operation</seealso>
         public virtual DisableCrlResponse DisableCrl(DisableCrlRequest request)
@@ -725,6 +764,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DisableCrl">REST API Reference for DisableCrl Operation</seealso>
         public virtual Task<DisableCrlResponse> DisableCrlAsync(DisableCrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -752,6 +794,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DisableProfile">REST API Reference for DisableProfile Operation</seealso>
         public virtual DisableProfileResponse DisableProfile(DisableProfileRequest request)
@@ -793,6 +838,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DisableProfile">REST API Reference for DisableProfile Operation</seealso>
         public virtual Task<DisableProfileResponse> DisableProfileAsync(DisableProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -820,6 +868,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DisableTrustAnchor">REST API Reference for DisableTrustAnchor Operation</seealso>
         public virtual DisableTrustAnchorResponse DisableTrustAnchor(DisableTrustAnchorRequest request)
@@ -861,6 +912,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DisableTrustAnchor">REST API Reference for DisableTrustAnchor Operation</seealso>
         public virtual Task<DisableTrustAnchorResponse> DisableTrustAnchorAsync(DisableTrustAnchorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -888,6 +942,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/EnableCrl">REST API Reference for EnableCrl Operation</seealso>
         public virtual EnableCrlResponse EnableCrl(EnableCrlRequest request)
@@ -929,6 +986,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/EnableCrl">REST API Reference for EnableCrl Operation</seealso>
         public virtual Task<EnableCrlResponse> EnableCrlAsync(EnableCrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -955,6 +1015,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/EnableProfile">REST API Reference for EnableProfile Operation</seealso>
         public virtual EnableProfileResponse EnableProfile(EnableProfileRequest request)
@@ -995,6 +1058,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/EnableProfile">REST API Reference for EnableProfile Operation</seealso>
         public virtual Task<EnableProfileResponse> EnableProfileAsync(EnableProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1022,6 +1088,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/EnableTrustAnchor">REST API Reference for EnableTrustAnchor Operation</seealso>
         public virtual EnableTrustAnchorResponse EnableTrustAnchor(EnableTrustAnchorRequest request)
@@ -1063,6 +1132,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/EnableTrustAnchor">REST API Reference for EnableTrustAnchor Operation</seealso>
         public virtual Task<EnableTrustAnchorResponse> EnableTrustAnchorAsync(EnableTrustAnchorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1086,6 +1158,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <returns>The response from the GetCrl service method, as returned by IAMRolesAnywhere.</returns>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetCrl">REST API Reference for GetCrl Operation</seealso>
         public virtual GetCrlResponse GetCrl(GetCrlRequest request)
@@ -1123,6 +1198,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetCrl">REST API Reference for GetCrl Operation</seealso>
         public virtual Task<GetCrlResponse> GetCrlAsync(GetCrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1149,6 +1227,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetProfile">REST API Reference for GetProfile Operation</seealso>
         public virtual GetProfileResponse GetProfile(GetProfileRequest request)
@@ -1189,6 +1270,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetProfile">REST API Reference for GetProfile Operation</seealso>
         public virtual Task<GetProfileResponse> GetProfileAsync(GetProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1218,6 +1302,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetSubject">REST API Reference for GetSubject Operation</seealso>
         public virtual GetSubjectResponse GetSubject(GetSubjectRequest request)
@@ -1261,6 +1348,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetSubject">REST API Reference for GetSubject Operation</seealso>
         public virtual Task<GetSubjectResponse> GetSubjectAsync(GetSubjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1287,6 +1377,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -1330,6 +1423,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -1359,6 +1455,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <returns>The response from the ImportCrl service method, as returned by IAMRolesAnywhere.</returns>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -1402,6 +1501,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -1429,6 +1531,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <returns>The response from the ListCrls service method, as returned by IAMRolesAnywhere.</returns>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -1470,6 +1575,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -1496,6 +1604,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <returns>The response from the ListProfiles service method, as returned by IAMRolesAnywhere.</returns>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -1536,6 +1647,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -1562,6 +1676,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <returns>The response from the ListSubjects service method, as returned by IAMRolesAnywhere.</returns>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -1602,6 +1719,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -1631,6 +1751,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -1674,6 +1797,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -1700,6 +1826,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <returns>The response from the ListTrustAnchors service method, as returned by IAMRolesAnywhere.</returns>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -1740,6 +1869,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -1766,6 +1898,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -1806,6 +1941,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -1840,6 +1978,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -1888,6 +2029,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -1918,6 +2062,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -1962,6 +2109,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -1991,6 +2141,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.TooManyTagsException">
         /// Too many tags.
@@ -2037,6 +2190,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.TooManyTagsException">
         /// Too many tags.
         /// </exception>
@@ -2069,6 +2225,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -2112,6 +2271,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -2143,6 +2305,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -2188,6 +2353,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -2218,6 +2386,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -2262,6 +2433,9 @@ namespace Amazon.IAMRolesAnywhere
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
         /// </exception>
@@ -2295,6 +2469,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.
@@ -2341,6 +2518,9 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
         /// </exception>
         /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
         /// Validation exception error.

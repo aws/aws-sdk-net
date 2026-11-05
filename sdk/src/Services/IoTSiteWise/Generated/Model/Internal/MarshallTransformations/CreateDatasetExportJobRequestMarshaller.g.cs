@@ -109,6 +109,11 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetJobName())
+            {
+                context.Writer.WritePropertyName("jobName");
+                context.Writer.WriteStringValue(publicRequest.JobName);
+            }
 
             writer.WriteEndObject();
             writer.Flush();

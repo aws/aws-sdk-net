@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DataZone
 {
     /// <summary>
-    /// Configuration for accessing Amazon DataZone service
+    /// Configuration for accessing Amazon DataZone
     /// </summary>
     public static class AmazonDataZoneDefaultConfiguration
     {

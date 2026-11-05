@@ -395,6 +395,67 @@ namespace Amazon.Neptunedata
     }
 
     /// <summary>
+    /// Constants used for properties of type RebuildStatus.
+    /// </summary>
+    public class RebuildStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CANCELLED for RebuildStatus
+        /// </summary>
+        public static readonly RebuildStatus CANCELLED = new RebuildStatus("CANCELLED");
+
+        /// <summary>
+        /// Constant CANCELLING for RebuildStatus
+        /// </summary>
+        public static readonly RebuildStatus CANCELLING = new RebuildStatus("CANCELLING");
+
+        /// <summary>
+        /// Constant COMPLETED for RebuildStatus
+        /// </summary>
+        public static readonly RebuildStatus COMPLETED = new RebuildStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for RebuildStatus
+        /// </summary>
+        public static readonly RebuildStatus FAILED = new RebuildStatus("FAILED");
+
+        /// <summary>
+        /// Constant PREPARING for RebuildStatus
+        /// </summary>
+        public static readonly RebuildStatus PREPARING = new RebuildStatus("PREPARING");
+
+        /// <summary>
+        /// Constant REBUILDING for RebuildStatus
+        /// </summary>
+        public static readonly RebuildStatus REBUILDING = new RebuildStatus("REBUILDING");
+
+        /// <summary>
+        /// Constructs a custom RebuildStatus for a value not among the defined constants.
+        /// </summary>
+        public RebuildStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RebuildStatus FindValue(string value)
+        {
+            return FindValue<RebuildStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RebuildStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type S3BucketRegion.
     /// </summary>
     public class S3BucketRegion : ConstantClass
@@ -606,6 +667,52 @@ namespace Amazon.Neptunedata
     }
 
     /// <summary>
+    /// Constants used for properties of type Scope.
+    /// </summary>
+    public class Scope : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL for Scope
+        /// </summary>
+        public static readonly Scope ALL = new Scope("ALL");
+
+        /// <summary>
+        /// Constant DICTIONARIES for Scope
+        /// </summary>
+        public static readonly Scope DICTIONARIES = new Scope("DICTIONARIES");
+
+        /// <summary>
+        /// Constant QUADS for Scope
+        /// </summary>
+        public static readonly Scope QUADS = new Scope("QUADS");
+
+        /// <summary>
+        /// Constructs a custom Scope for a value not among the defined constants.
+        /// </summary>
+        public Scope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Scope FindValue(string value)
+        {
+            return FindValue<Scope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Scope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type StatisticsAutoGenerationMode.
     /// </summary>
     public class StatisticsAutoGenerationMode : ConstantClass
@@ -646,6 +753,52 @@ namespace Amazon.Neptunedata
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StatisticsAutoGenerationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type WriteBufferSize.
+    /// </summary>
+    public class WriteBufferSize : ConstantClass
+    {
+        /// <summary>
+        /// Constant HIGH for WriteBufferSize
+        /// </summary>
+        public static readonly WriteBufferSize HIGH = new WriteBufferSize("HIGH");
+
+        /// <summary>
+        /// Constant LOW for WriteBufferSize
+        /// </summary>
+        public static readonly WriteBufferSize LOW = new WriteBufferSize("LOW");
+
+        /// <summary>
+        /// Constant MEDIUM for WriteBufferSize
+        /// </summary>
+        public static readonly WriteBufferSize MEDIUM = new WriteBufferSize("MEDIUM");
+
+        /// <summary>
+        /// Constructs a custom WriteBufferSize for a value not among the defined constants.
+        /// </summary>
+        public WriteBufferSize(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WriteBufferSize FindValue(string value)
+        {
+            return FindValue<WriteBufferSize>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WriteBufferSize(string value)
         {
             return FindValue(value);
         }

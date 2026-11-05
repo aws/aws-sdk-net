@@ -26,7 +26,7 @@ using Amazon.EBS.Endpoints;
 namespace Amazon.EBS.Internal
 {
     /// <summary>
-    /// Amazon EBS endpoint provider.
+    /// Amazon Elastic Block Store endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="EBSEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

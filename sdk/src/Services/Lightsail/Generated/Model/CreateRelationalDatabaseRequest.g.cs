@@ -1,0 +1,450 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Lightsail.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateRelationalDatabase operation. Creates a
+    /// new database in Amazon Lightsail. <para> The <c>create relational database</c> operation
+    /// supports tag-based access control via request tags. For more information, see the
+    /// <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// Lightsail Developer Guide</a>. </para>
+    /// </summary>
+    public partial class CreateRelationalDatabaseRequest : AmazonLightsailRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The Availability Zone in which to create your new database. Use the <c>us-east-2a</c>
+        /// case-sensitive format.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can get a list of Availability Zones by using the <c>get regions</c> operation.
+        /// Be sure to add the <c>include relational database Availability Zones</c> parameter
+        /// to your request.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AvailabilityZone property is set.
+        /// </summary>
+        internal bool IsSetAvailabilityZone() => this.AvailabilityZone != null;
+
+        /// <summary>
+        /// Gets and sets the property MasterDatabaseName. 
+        /// <para>
+        /// The meaning of this parameter differs according to the database engine you use.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The name of the database to create when the Lightsail database resource is created.
+        /// If this parameter isn't specified, no database is created in the database resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain 1 to 64 letters or numbers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must begin with a letter. Subsequent characters can be letters, underscores, or digits
+        /// (0- 9).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be a word reserved by the specified database engine.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about reserved words in MySQL, see the Keywords and Reserved
+        /// Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL
+        /// 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>,
+        /// and <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The name of the database to create when the Lightsail database resource is created.
+        /// If this parameter isn't specified, a database named <c>postgres</c> is created in
+        /// the database resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain 1 to 63 letters or numbers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must begin with a letter. Subsequent characters can be letters, underscores, or digits
+        /// (0- 9).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be a word reserved by the specified database engine.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about reserved words in PostgreSQL, see the SQL Key Words articles
+        /// for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL
+        /// 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL
+        /// 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL
+        /// 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL
+        /// 12</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string MasterDatabaseName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MasterDatabaseName property is set.
+        /// </summary>
+        internal bool IsSetMasterDatabaseName() => this.MasterDatabaseName != null;
+
+        /// <summary>
+        /// Gets and sets the property MasterUserPassword. 
+        /// <para>
+        /// The password for the master user. The password can include any printable ASCII character
+        /// except "/", """, or "@". It cannot contain spaces.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 41 characters.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 128 characters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public string MasterUserPassword { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MasterUserPassword property is set.
+        /// </summary>
+        internal bool IsSetMasterUserPassword() => this.MasterUserPassword != null;
+
+        /// <summary>
+        /// Gets and sets the property MasterUsername. 
+        /// <para>
+        /// The name for the master user.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Required for MySQL.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be 1 to 16 letters or numbers. Can contain underscores.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be a reserved word for the chosen database engine.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and
+        /// Reserved Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL
+        /// 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>,
+        /// or <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Required for PostgreSQL.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be 1 to 63 letters or numbers. Can contain underscores.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be a reserved word for the chosen database engine.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and
+        /// Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL
+        /// 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL
+        /// 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL
+        /// 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL
+        /// 12</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string MasterUsername { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MasterUsername property is set.
+        /// </summary>
+        internal bool IsSetMasterUsername() => this.MasterUsername != null;
+
+        /// <summary>
+        /// Gets and sets the property PreferredBackupWindow. 
+        /// <para>
+        /// The daily time range during which automated backups are created for your new database
+        /// if automated backups are enabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is a 30-minute window selected at random from an 8-hour block of time
+        /// for each AWS Region. For more information about the preferred backup window time blocks
+        /// for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working
+        /// With Backups</a> guide in the Amazon Relational Database Service documentation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be in the <c>hh24:mi-hh24:mi</c> format.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>16:00-16:30</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specified in Coordinated Universal Time (UTC).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not conflict with the preferred maintenance window.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be at least 30 minutes.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string PreferredBackupWindow { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PreferredBackupWindow property is set.
+        /// </summary>
+        internal bool IsSetPreferredBackupWindow() => this.PreferredBackupWindow != null;
+
+        /// <summary>
+        /// Gets and sets the property PreferredMaintenanceWindow. 
+        /// <para>
+        /// The weekly time range during which system maintenance can occur on your new database.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is a 30-minute window selected at random from an 8-hour block of time
+        /// for each AWS Region, occurring on a random day of the week.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be in the <c>ddd:hh24:mi-ddd:hh24:mi</c> format.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be at least 30 minutes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specified in Coordinated Universal Time (UTC).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: <c>Tue:17:00-Tue:17:30</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string PreferredMaintenanceWindow { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PreferredMaintenanceWindow property is set.
+        /// </summary>
+        internal bool IsSetPreferredMaintenanceWindow() => this.PreferredMaintenanceWindow != null;
+
+        /// <summary>
+        /// Gets and sets the property PubliclyAccessible. 
+        /// <para>
+        /// Specifies the accessibility options for your new database. A value of <c>true</c>
+        /// specifies a database that is available to resources outside of your Lightsail account.
+        /// A value of <c>false</c> specifies a database that is available only to your Lightsail
+        /// resources in the same region as your database.
+        /// </para>
+        /// </summary>
+        public bool? PubliclyAccessible { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PubliclyAccessible property is set.
+        /// </summary>
+        internal bool IsSetPubliclyAccessible() => this.PubliclyAccessible.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RelationalDatabaseBlueprintId. 
+        /// <para>
+        /// The blueprint ID for your new database. A blueprint describes the major engine version
+        /// of a database.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can get a list of database blueprints IDs by using the <c>get relational database
+        /// blueprints</c> operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string RelationalDatabaseBlueprintId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RelationalDatabaseBlueprintId property is set.
+        /// </summary>
+        internal bool IsSetRelationalDatabaseBlueprintId() => this.RelationalDatabaseBlueprintId != null;
+
+        /// <summary>
+        /// Gets and sets the property RelationalDatabaseBundleId. 
+        /// <para>
+        /// The bundle ID for your new database. A bundle describes the performance specifications
+        /// for your database.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can get a list of database bundle IDs by using the <c>get relational database
+        /// bundles</c> operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string RelationalDatabaseBundleId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RelationalDatabaseBundleId property is set.
+        /// </summary>
+        internal bool IsSetRelationalDatabaseBundleId() => this.RelationalDatabaseBundleId != null;
+
+        /// <summary>
+        /// Gets and sets the property RelationalDatabaseName. 
+        /// <para>
+        /// The name to use for your new Lightsail database resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 2 to 255 alphanumeric characters, or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The first and last character must be a letter or number.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string RelationalDatabaseName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RelationalDatabaseName property is set.
+        /// </summary>
+        internal bool IsSetRelationalDatabaseName() => this.RelationalDatabaseName != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tag keys and optional values to add to the resource during create.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>TagResource</c> action to tag a resource after it's created.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Tag> Tags { get; set; } = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

@@ -31,7 +31,7 @@ using Amazon.IAMToolbox.Endpoints;
 namespace Amazon.IAMToolbox.Internal
 {
     /// <summary>
-    /// Amazon IAMToolbox endpoint resolver.
+    /// IAM Toolbox (Preview) endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IAMToolbox service requests.
     /// <para />

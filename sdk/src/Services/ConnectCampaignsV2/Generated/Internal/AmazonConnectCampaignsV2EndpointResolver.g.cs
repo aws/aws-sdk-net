@@ -31,7 +31,7 @@ using Amazon.ConnectCampaignsV2.Endpoints;
 namespace Amazon.ConnectCampaignsV2.Internal
 {
     /// <summary>
-    /// Amazon ConnectCampaignsV2 endpoint resolver.
+    /// AmazonConnectCampaignServiceV2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ConnectCampaignsV2 service requests.
     /// <para />

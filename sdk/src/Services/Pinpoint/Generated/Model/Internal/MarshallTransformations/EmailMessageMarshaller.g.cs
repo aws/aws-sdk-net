@@ -1,0 +1,123 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Pinpoint.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// EmailMessage Marshaller
+    /// </summary>
+    public partial class EmailMessageMarshaller : IRequestMarshaller<EmailMessage, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(EmailMessage requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetBody())
+            {
+                context.Writer.WritePropertyName("Body");
+                context.Writer.WriteStringValue(requestObject.Body);
+            }
+
+            if (requestObject.IsSetFeedbackForwardingAddress())
+            {
+                context.Writer.WritePropertyName("FeedbackForwardingAddress");
+                context.Writer.WriteStringValue(requestObject.FeedbackForwardingAddress);
+            }
+
+            if (requestObject.IsSetFromAddress())
+            {
+                context.Writer.WritePropertyName("FromAddress");
+                context.Writer.WriteStringValue(requestObject.FromAddress);
+            }
+
+            if (requestObject.IsSetRawEmail())
+            {
+                context.Writer.WritePropertyName("RawEmail");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RawEmailMarshaller.Instance;
+                marshaller.Marshall(requestObject.RawEmail, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetReplyToAddresses())
+            {
+                context.Writer.WritePropertyName("ReplyToAddresses");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectReplyToAddressesListValue in requestObject.ReplyToAddresses)
+                {
+                    context.Writer.WriteStringValue(requestObjectReplyToAddressesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetSimpleEmail())
+            {
+                context.Writer.WritePropertyName("SimpleEmail");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SimpleEmailMarshaller.Instance;
+                marshaller.Marshall(requestObject.SimpleEmail, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSubstitutions())
+            {
+                context.Writer.WritePropertyName("Substitutions");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectSubstitutionsKvp in requestObject.Substitutions)
+                {
+                    context.Writer.WritePropertyName(requestObjectSubstitutionsKvp.Key);
+                    var requestObjectSubstitutionsValue = requestObjectSubstitutionsKvp.Value;
+                    context.Writer.WriteStartArray();
+                    foreach (var requestObjectSubstitutionsValueListValue in requestObjectSubstitutionsValue)
+                    {
+                        context.Writer.WriteStringValue(requestObjectSubstitutionsValueListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static EmailMessageMarshaller Instance = new EmailMessageMarshaller();
+    }
+}

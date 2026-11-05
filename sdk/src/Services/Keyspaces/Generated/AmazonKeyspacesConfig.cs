@@ -27,12 +27,12 @@ using Amazon.Keyspaces.Internal;
 namespace Amazon.Keyspaces
 {
     /// <summary>
-    /// Configuration for accessing Amazon Keyspaces service
+    /// Configuration for accessing Amazon Keyspaces
     /// </summary>
     public partial class AmazonKeyspacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Keyspaces", "4.0.101.3");
+            InternalSDKUtils.BuildUserAgentString("Keyspaces", "4.0.101.6");
 
         private static readonly AmazonKeyspacesEndpointResolver EndpointResolver =
             new AmazonKeyspacesEndpointResolver();

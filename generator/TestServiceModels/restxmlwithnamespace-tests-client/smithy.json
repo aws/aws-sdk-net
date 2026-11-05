@@ -180,7 +180,16 @@
                 }
             }
         },
-        "aws.protocols#HttpConfiguration": {
+        "aws.protocols#StringList": {
+            "type": "list",
+            "member": {
+                "target": "smithy.api#String"
+            },
+            "traits": {
+                "smithy.api#private": {}
+            }
+        },
+        "aws.protocols#restXml": {
             "type": "structure",
             "members": {
                 "http": {
@@ -194,35 +203,7 @@
                     "traits": {
                         "smithy.api#documentation": "The priority ordered list of supported HTTP protocol versions that\nare required when using event streams with the service. If not set,\nthis value defaults to the value of the `http` member. Any entry in\n`eventStreamHttp` MUST also appear in `http`."
                     }
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "Contains HTTP protocol configuration for HTTP-based protocols.",
-                "smithy.api#mixin": {
-                    "localTraits": [
-                        "smithy.api#private"
-                    ]
                 },
-                "smithy.api#private": {}
-            }
-        },
-        "aws.protocols#StringList": {
-            "type": "list",
-            "member": {
-                "target": "smithy.api#String"
-            },
-            "traits": {
-                "smithy.api#private": {}
-            }
-        },
-        "aws.protocols#restXml": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocols#HttpConfiguration"
-                }
-            ],
-            "members": {
                 "noErrorWrapping": {
                     "target": "smithy.api#Boolean",
                     "traits": {
@@ -377,7 +358,7 @@
                 ]
             }
         },
-        "aws.protocoltests.restxml.xmlns#SimpleScalarPropertiesInputOutput": {
+        "aws.protocoltests.restxml.xmlns#SimpleScalarPropertiesRequest": {
             "type": "structure",
             "members": {
                 "foo": {
@@ -427,29 +408,58 @@
                 }
             },
             "traits": {
-                "smithy.api#mixin": {}
-            }
-        },
-        "aws.protocoltests.restxml.xmlns#SimpleScalarPropertiesRequest": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml.xmlns#SimpleScalarPropertiesInputOutput"
-                }
-            ],
-            "members": {},
-            "traits": {
                 "smithy.api#input": {}
             }
         },
         "aws.protocoltests.restxml.xmlns#SimpleScalarPropertiesResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml.xmlns#SimpleScalarPropertiesInputOutput"
+            "members": {
+                "foo": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#httpHeader": "X-Foo"
+                    }
+                },
+                "stringValue": {
+                    "target": "smithy.api#String"
+                },
+                "trueBooleanValue": {
+                    "target": "smithy.api#Boolean"
+                },
+                "falseBooleanValue": {
+                    "target": "smithy.api#Boolean"
+                },
+                "byteValue": {
+                    "target": "smithy.api#Integer"
+                },
+                "shortValue": {
+                    "target": "smithy.api#Integer"
+                },
+                "integerValue": {
+                    "target": "smithy.api#Integer"
+                },
+                "longValue": {
+                    "target": "smithy.api#Long"
+                },
+                "floatValue": {
+                    "target": "smithy.api#Float"
+                },
+                "Nested": {
+                    "target": "aws.protocoltests.restxml.xmlns#NestedWithNamespace",
+                    "traits": {
+                        "smithy.api#xmlNamespace": {
+                            "prefix": "xsi",
+                            "uri": "https://example.com"
+                        }
+                    }
+                },
+                "doubleValue": {
+                    "target": "smithy.api#Double",
+                    "traits": {
+                        "smithy.api#xmlName": "DoubleDribble"
+                    }
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#output": {}
             }
@@ -476,7 +486,7 @@
                 "smithy.api#private": {}
             }
         },
-        "smithy.test#HttpMessageMixin": {
+        "smithy.test#HttpRequestTestCase": {
             "type": "structure",
             "members": {
                 "headers": {
@@ -508,22 +518,7 @@
                     "traits": {
                         "smithy.api#documentation": "The media type of the `body`.\n\nThis is used to help test runners to parse and validate the expected\ndata against generated data."
                     }
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "A mixin that adds HTTP message members and supporting protocol test members,\nsuitable for both requests and responses.",
-                "smithy.api#mixin": {},
-                "smithy.api#private": {}
-            }
-        },
-        "smithy.test#HttpRequestMixin": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "smithy.test#HttpMessageMixin"
-                }
-            ],
-            "members": {
+                },
                 "method": {
                     "target": "smithy.api#String",
                     "traits": {
@@ -573,22 +568,7 @@
                     "traits": {
                         "smithy.api#documentation": "A list of query string parameter names that MUST appear in the\nserialized request URI, but no assertion is made on the value.\n\nEach value MUST appear in the format in which it is sent over the\nwire; if a key needs to be percent-encoded, then it MUST appear\npercent-encoded in this list."
                     }
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "A mixin that adds HTTP request members and supporting protocol test members.",
-                "smithy.api#mixin": {},
-                "smithy.api#private": {}
-            }
-        },
-        "smithy.test#HttpRequestTestCase": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "smithy.test#HttpRequestMixin"
-                }
-            ],
-            "members": {
+                },
                 "id": {
                     "target": "smithy.api#String",
                     "traits": {
@@ -659,17 +639,43 @@
                 }
             },
             "traits": {
+                "smithy.api#documentation": "A mixin that adds HTTP request members and supporting protocol test members.",
                 "smithy.api#private": {}
             }
         },
-        "smithy.test#HttpResponseMixin": {
+        "smithy.test#HttpResponseTestCase": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "smithy.test#HttpMessageMixin"
-                }
-            ],
             "members": {
+                "headers": {
+                    "target": "smithy.test#StringMap",
+                    "traits": {
+                        "smithy.api#documentation": "Defines a map of expected HTTP headers.\n\nHeaders that are not listed in this map are ignored unless they are\nexplicitly forbidden through `forbidHeaders`."
+                    }
+                },
+                "forbidHeaders": {
+                    "target": "smithy.test#StringList",
+                    "traits": {
+                        "smithy.api#documentation": "A list of header field names that must not appear in the serialized\nHTTP request."
+                    }
+                },
+                "requireHeaders": {
+                    "target": "smithy.test#StringList",
+                    "traits": {
+                        "smithy.api#documentation": "A list of header field names that must appear in the serialized\nHTTP message, but no assertion is made on the value.\n\nHeaders listed in `headers` do not need to appear in this list."
+                    }
+                },
+                "body": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "The expected HTTP message body.\n\nIf no request body is defined, then no assertions are made about\nthe body of the message."
+                    }
+                },
+                "bodyMediaType": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "The media type of the `body`.\n\nThis is used to help test runners to parse and validate the expected\ndata against generated data."
+                    }
+                },
                 "code": {
                     "target": "smithy.api#Integer",
                     "traits": {
@@ -680,22 +686,7 @@
                         },
                         "smithy.api#required": {}
                     }
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "A mixin that adds HTTP response members and supporting protocol test members.",
-                "smithy.api#mixin": {},
-                "smithy.api#private": {}
-            }
-        },
-        "smithy.test#HttpResponseTestCase": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "smithy.test#HttpResponseMixin"
-                }
-            ],
-            "members": {
+                },
                 "id": {
                     "target": "smithy.api#String",
                     "traits": {
@@ -766,6 +757,7 @@
                 }
             },
             "traits": {
+                "smithy.api#documentation": "A mixin that adds HTTP response members and supporting protocol test members.",
                 "smithy.api#private": {}
             }
         },

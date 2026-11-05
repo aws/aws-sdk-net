@@ -31,7 +31,7 @@ using Amazon.MediaPackageVod.Endpoints;
 namespace Amazon.MediaPackageVod.Internal
 {
     /// <summary>
-    /// Amazon MediaPackageVod endpoint resolver.
+    /// AWS Elemental MediaPackage VOD endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MediaPackageVod service requests.
     /// <para />

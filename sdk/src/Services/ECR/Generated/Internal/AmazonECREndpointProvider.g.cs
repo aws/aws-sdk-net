@@ -26,7 +26,7 @@ using Amazon.ECR.Endpoints;
 namespace Amazon.ECR.Internal
 {
     /// <summary>
-    /// Amazon ECR endpoint provider.
+    /// Amazon Elastic Container Registry endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ECREndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

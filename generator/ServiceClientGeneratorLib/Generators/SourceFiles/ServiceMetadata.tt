@@ -14,7 +14,7 @@ using Amazon.Runtime.Internal;
 namespace <#=this.Config.Namespace#>.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon <#=this.Config.ClassName#> service
+    /// Service metadata for <#=this.Config.ServiceModel.ServiceFullName#>
     /// </summary>
     public partial class Amazon<#=this.Config.ClassName#>Metadata : IServiceMetadata
     {

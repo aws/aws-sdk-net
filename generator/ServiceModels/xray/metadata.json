@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS X-Ray helps developers analyze and debug distributed applications. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors.",
+  "base-name": "XRay",
   "legacy-service-id": "XRay"
 }

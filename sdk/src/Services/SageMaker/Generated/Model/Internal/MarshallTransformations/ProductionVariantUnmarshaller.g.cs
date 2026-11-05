@@ -53,6 +53,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AcceleratorPartitionLayouts", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AcceleratorPartitionLayout, AcceleratorPartitionLayoutUnmarshaller>(AcceleratorPartitionLayoutUnmarshaller.Instance);
+                    unmarshalledObject.AcceleratorPartitionLayouts = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("AcceleratorType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

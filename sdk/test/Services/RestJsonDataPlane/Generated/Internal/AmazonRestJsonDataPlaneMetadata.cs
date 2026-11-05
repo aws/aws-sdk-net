@@ -24,7 +24,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RestJsonDataPlane.Internal
 {
     /// <summary>
-    /// Service metadata for  Amazon RestJsonDataPlane service
+    /// Service metadata for AWS REST JSON Data Plane
     /// </summary>
     public partial class AmazonRestJsonDataPlaneMetadata : IServiceMetadata
     {

@@ -31,7 +31,7 @@ using Amazon.KinesisVideo.Endpoints;
 namespace Amazon.KinesisVideo.Internal
 {
     /// <summary>
-    /// Amazon KinesisVideo endpoint resolver.
+    /// Amazon Kinesis Video Streams endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for KinesisVideo service requests.
     /// <para />

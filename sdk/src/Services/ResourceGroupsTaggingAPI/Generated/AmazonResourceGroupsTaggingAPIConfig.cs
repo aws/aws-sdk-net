@@ -27,12 +27,12 @@ using Amazon.ResourceGroupsTaggingAPI.Internal;
 namespace Amazon.ResourceGroupsTaggingAPI
 {
     /// <summary>
-    /// Configuration for accessing Amazon ResourceGroupsTaggingAPI service
+    /// Configuration for accessing AWS Resource Groups Tagging API
     /// </summary>
     public partial class AmazonResourceGroupsTaggingAPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Resource Groups Tagging API", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("Resource Groups Tagging API", "4.0.100.22");
 
         private static readonly AmazonResourceGroupsTaggingAPIEndpointResolver EndpointResolver =
             new AmazonResourceGroupsTaggingAPIEndpointResolver();

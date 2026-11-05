@@ -60,6 +60,11 @@ namespace Amazon.ECS.Model
     /// <c>fluentd</c>, <c>gelf</c>, <c>json-file</c>, <c>journald</c>,<c>syslog</c>, <c>splunk</c>,
     /// and <c>awsfirelens</c>.
     /// </para>
+    ///  
+    /// <para>
+    /// For tasks on Amazon ECS Managed Instances, the supported log drivers are <c>awslogs</c>,
+    /// <c>splunk</c>, <c>awsfirelens</c>, and <c>json-file</c>.
+    /// </para>
     ///  </li> <li> 
     /// <para>
     /// This parameter requires version 1.18 of the Docker Remote API or greater on your container
@@ -100,6 +105,11 @@ namespace Amazon.ECS.Model
         /// For tasks hosted on Amazon EC2 instances, the supported log drivers are <c>awslogs</c>,
         /// <c>fluentd</c>, <c>gelf</c>, <c>json-file</c>, <c>journald</c>, <c>syslog</c>, <c>splunk</c>,
         /// and <c>awsfirelens</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For tasks on Amazon ECS Managed Instances, the supported log drivers are <c>awslogs</c>,
+        /// <c>splunk</c>, <c>awsfirelens</c>, and <c>json-file</c>.
         /// </para>
         ///  
         /// <para>

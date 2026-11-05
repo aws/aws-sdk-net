@@ -31,7 +31,7 @@ using Amazon.CodeGuruSecurity.Endpoints;
 namespace Amazon.CodeGuruSecurity.Internal
 {
     /// <summary>
-    /// Amazon CodeGuruSecurity endpoint resolver.
+    /// Amazon CodeGuru Security endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CodeGuruSecurity service requests.
     /// <para />

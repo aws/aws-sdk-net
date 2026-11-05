@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ChimeSDKMediaPipelines service
+    /// Service metadata for Amazon Chime SDK Media Pipelines
     /// </summary>
     public partial class AmazonChimeSDKMediaPipelinesMetadata : IServiceMetadata
     {

@@ -31,7 +31,7 @@ using Amazon.ConnectHealth.Endpoints;
 namespace Amazon.ConnectHealth.Internal
 {
     /// <summary>
-    /// Amazon ConnectHealth endpoint resolver.
+    /// Connect Health endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ConnectHealth service requests.
     /// <para />

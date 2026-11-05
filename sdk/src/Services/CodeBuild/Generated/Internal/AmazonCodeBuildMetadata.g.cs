@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CodeBuild service
+    /// Service metadata for AWS CodeBuild
     /// </summary>
     public partial class AmazonCodeBuildMetadata : IServiceMetadata
     {

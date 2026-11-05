@@ -27,12 +27,12 @@ using Amazon.GameLiftStreams.Internal;
 namespace Amazon.GameLiftStreams
 {
     /// <summary>
-    /// Configuration for accessing Amazon GameLiftStreams service
+    /// Configuration for accessing Amazon GameLift Streams
     /// </summary>
     public partial class AmazonGameLiftStreamsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("GameLiftStreams", "4.0.104.13");
+            InternalSDKUtils.BuildUserAgentString("GameLiftStreams", "4.0.104.16");
 
         private static readonly AmazonGameLiftStreamsEndpointResolver EndpointResolver =
             new AmazonGameLiftStreamsEndpointResolver();

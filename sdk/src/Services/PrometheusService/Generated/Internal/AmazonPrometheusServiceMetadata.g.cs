@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon PrometheusService service
+    /// Service metadata for Amazon Prometheus Service
     /// </summary>
     public partial class AmazonPrometheusServiceMetadata : IServiceMetadata
     {

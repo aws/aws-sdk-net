@@ -1,0 +1,13 @@
+{
+    "paginators": {
+        "ListEarthObservationJobs": {
+            "pageSize": "MaxResults"
+        },
+        "ListRasterDataCollections": {
+            "pageSize": "MaxResults"
+        },
+        "ListVectorEnrichmentJobs": {
+            "pageSize": "MaxResults"
+        }
+    }
+}

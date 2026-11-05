@@ -41,8 +41,7 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
         writer.OpenNamespace(context.Namespace, () =>
         {
             writer.WriteLine("/// <summary>");
-            // Class doc uses the BaseName (e.g. CloudTrailData), not the sdkId.
-            writer.WriteLine($"/// Configuration for accessing Amazon {context.BaseName} service");
+            writer.WriteLine($"/// Configuration for accessing {context.ServiceTitle}");
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public partial class {configName} : ClientConfig", () =>
             {

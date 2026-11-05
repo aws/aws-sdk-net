@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SageMaker
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMaker service
+    /// Configuration for accessing Amazon SageMaker Service
     /// </summary>
     public static class AmazonSageMakerDefaultConfiguration
     {

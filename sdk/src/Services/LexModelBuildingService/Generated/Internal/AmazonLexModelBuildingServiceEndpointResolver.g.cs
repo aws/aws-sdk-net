@@ -31,7 +31,7 @@ using Amazon.LexModelBuildingService.Endpoints;
 namespace Amazon.LexModelBuildingService.Internal
 {
     /// <summary>
-    /// Amazon LexModelBuildingService endpoint resolver.
+    /// Amazon Lex Model Building Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for LexModelBuildingService service requests.
     /// <para />

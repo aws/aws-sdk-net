@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.PartnerCentralBenefits
 {
     /// <summary>
-    /// Configuration for accessing Amazon PartnerCentralBenefits service
+    /// Configuration for accessing Partner Central Benefits API
     /// </summary>
     public static class AmazonPartnerCentralBenefitsDefaultConfiguration
     {

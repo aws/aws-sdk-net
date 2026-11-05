@@ -27,12 +27,12 @@ using Amazon.IoTTwinMaker.Internal;
 namespace Amazon.IoTTwinMaker
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTTwinMaker service
+    /// Configuration for accessing AWS IoT TwinMaker
     /// </summary>
     public partial class AmazonIoTTwinMakerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoTTwinMaker", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("IoTTwinMaker", "4.0.100.23");
 
         private static readonly AmazonIoTTwinMakerEndpointResolver EndpointResolver =
             new AmazonIoTTwinMakerEndpointResolver();

@@ -334,6 +334,11 @@ namespace Amazon.CleanRooms
         public static readonly AnalysisFormat PYSPARK_1_0 = new AnalysisFormat("PYSPARK_1_0");
 
         /// <summary>
+        /// Constant PYSPARK_2_0 for AnalysisFormat
+        /// </summary>
+        public static readonly AnalysisFormat PYSPARK_2_0 = new AnalysisFormat("PYSPARK_2_0");
+
+        /// <summary>
         /// Constant SQL for AnalysisFormat
         /// </summary>
         public static readonly AnalysisFormat SQL = new AnalysisFormat("SQL");

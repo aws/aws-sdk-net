@@ -168,6 +168,145 @@ namespace Amazon.Neptunedata
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Cancels an in-progress index rebuild operation.
+        /// 
+        ///  
+        /// <para>
+        /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+        /// the IAM user or role making the request must have a policy attached that allows the
+        /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelindexrebuild">neptune-db:CancelIndexRebuild</a>
+        /// IAM action in that cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelIndexRebuild service method.</param>
+        /// <returns>The response from the CancelIndexRebuild service method, as returned by Neptunedata.</returns>
+        /// <exception cref="Amazon.Neptunedata.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByMaintenanceException">
+        /// Raised when a request is cancelled because the storage layer entered maintenance mode.
+        /// This typically happens during a customer-initiated operation such as an index rebuild.
+        /// It should be treated like <c>ConcurrentModificationException</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByUserException">
+        /// Raised when a user cancelled a request.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ClientTimeoutException">
+        /// Raised when a request timed out in the client.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ConstraintViolationException">
+        /// Raised when a value in a request field did not satisfy required constraints.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.IllegalArgumentException">
+        /// Raised when an argument in a request is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InternalFailureException">
+        /// Raised when the processing of the request failed unexpectedly.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidArgumentException">
+        /// Raised when an argument in a request has an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidParameterException">
+        /// Raised when a parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.MethodNotAllowedException">
+        /// Raised when the HTTP method used by a request is not supported by the endpoint being
+        /// used.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.PreconditionsFailedException">
+        /// Raised when a precondition for processing a request is not satisfied.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ReadOnlyViolationException">
+        /// Raised when a request attempts to write to a read-only resource.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ServerShutdownException">
+        /// Raised when the server shuts down while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.TooManyRequestsException">
+        /// Raised when the number of requests being processed exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.UnsupportedOperationException">
+        /// Raised when a request attempts to initiate an operation that is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ValidationException">
+        /// Raised when a parameter value is not valid or is malformed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelIndexRebuild">REST API Reference for CancelIndexRebuild Operation</seealso>
+        CancelIndexRebuildResponse CancelIndexRebuild(CancelIndexRebuildRequest request);
+#endif
+
+        /// <summary>
+        /// Cancels an in-progress index rebuild operation.
+        /// 
+        ///  
+        /// <para>
+        /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+        /// the IAM user or role making the request must have a policy attached that allows the
+        /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelindexrebuild">neptune-db:CancelIndexRebuild</a>
+        /// IAM action in that cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelIndexRebuild service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CancelIndexRebuild service method, as returned by Neptunedata.</returns>
+        /// <exception cref="Amazon.Neptunedata.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByMaintenanceException">
+        /// Raised when a request is cancelled because the storage layer entered maintenance mode.
+        /// This typically happens during a customer-initiated operation such as an index rebuild.
+        /// It should be treated like <c>ConcurrentModificationException</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByUserException">
+        /// Raised when a user cancelled a request.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ClientTimeoutException">
+        /// Raised when a request timed out in the client.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ConstraintViolationException">
+        /// Raised when a value in a request field did not satisfy required constraints.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.IllegalArgumentException">
+        /// Raised when an argument in a request is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InternalFailureException">
+        /// Raised when the processing of the request failed unexpectedly.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidArgumentException">
+        /// Raised when an argument in a request has an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidParameterException">
+        /// Raised when a parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.MethodNotAllowedException">
+        /// Raised when the HTTP method used by a request is not supported by the endpoint being
+        /// used.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.PreconditionsFailedException">
+        /// Raised when a precondition for processing a request is not satisfied.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ReadOnlyViolationException">
+        /// Raised when a request attempts to write to a read-only resource.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ServerShutdownException">
+        /// Raised when the server shuts down while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.TooManyRequestsException">
+        /// Raised when the number of requests being processed exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.UnsupportedOperationException">
+        /// Raised when a request attempts to initiate an operation that is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ValidationException">
+        /// Raised when a parameter value is not valid or is malformed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelIndexRebuild">REST API Reference for CancelIndexRebuild Operation</seealso>
+        Task<CancelIndexRebuildResponse> CancelIndexRebuildAsync(CancelIndexRebuildRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Cancels a specified load job. This is an HTTP <c>DELETE</c> request. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/load-api-reference-status.htm">Neptune
         /// Loader Get-Status API</a> for more information.
         /// 
@@ -1358,6 +1497,11 @@ namespace Amazon.Neptunedata
         /// <exception cref="Amazon.Neptunedata.Model.BadRequestException">
         /// Raised when a request is submitted that cannot be processed.
         /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByMaintenanceException">
+        /// Raised when a request is cancelled because the storage layer entered maintenance mode.
+        /// This typically happens during a customer-initiated operation such as an index rebuild.
+        /// It should be treated like <c>ConcurrentModificationException</c>.
+        /// </exception>
         /// <exception cref="Amazon.Neptunedata.Model.CancelledByUserException">
         /// Raised when a user cancelled a request.
         /// </exception>
@@ -1477,6 +1621,11 @@ namespace Amazon.Neptunedata
         /// <exception cref="Amazon.Neptunedata.Model.BadRequestException">
         /// Raised when a request is submitted that cannot be processed.
         /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByMaintenanceException">
+        /// Raised when a request is cancelled because the storage layer entered maintenance mode.
+        /// This typically happens during a customer-initiated operation such as an index rebuild.
+        /// It should be treated like <c>ConcurrentModificationException</c>.
+        /// </exception>
         /// <exception cref="Amazon.Neptunedata.Model.CancelledByUserException">
         /// Raised when a user cancelled a request.
         /// </exception>
@@ -1566,6 +1715,11 @@ namespace Amazon.Neptunedata
         /// <returns>The response from the ExecuteGremlinProfileQuery service method, as returned by Neptunedata.</returns>
         /// <exception cref="Amazon.Neptunedata.Model.BadRequestException">
         /// Raised when a request is submitted that cannot be processed.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByMaintenanceException">
+        /// Raised when a request is cancelled because the storage layer entered maintenance mode.
+        /// This typically happens during a customer-initiated operation such as an index rebuild.
+        /// It should be treated like <c>ConcurrentModificationException</c>.
         /// </exception>
         /// <exception cref="Amazon.Neptunedata.Model.CancelledByUserException">
         /// Raised when a user cancelled a request.
@@ -1659,6 +1813,11 @@ namespace Amazon.Neptunedata
         /// <returns>The response from the ExecuteGremlinProfileQuery service method, as returned by Neptunedata.</returns>
         /// <exception cref="Amazon.Neptunedata.Model.BadRequestException">
         /// Raised when a request is submitted that cannot be processed.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByMaintenanceException">
+        /// Raised when a request is cancelled because the storage layer entered maintenance mode.
+        /// This typically happens during a customer-initiated operation such as an index rebuild.
+        /// It should be treated like <c>ConcurrentModificationException</c>.
         /// </exception>
         /// <exception cref="Amazon.Neptunedata.Model.CancelledByUserException">
         /// Raised when a user cancelled a request.
@@ -1766,6 +1925,11 @@ namespace Amazon.Neptunedata
         /// <returns>The response from the ExecuteGremlinQuery service method, as returned by Neptunedata.</returns>
         /// <exception cref="Amazon.Neptunedata.Model.BadRequestException">
         /// Raised when a request is submitted that cannot be processed.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByMaintenanceException">
+        /// Raised when a request is cancelled because the storage layer entered maintenance mode.
+        /// This typically happens during a customer-initiated operation such as an index rebuild.
+        /// It should be treated like <c>ConcurrentModificationException</c>.
         /// </exception>
         /// <exception cref="Amazon.Neptunedata.Model.CancelledByUserException">
         /// Raised when a user cancelled a request.
@@ -1877,6 +2041,11 @@ namespace Amazon.Neptunedata
         /// <exception cref="Amazon.Neptunedata.Model.BadRequestException">
         /// Raised when a request is submitted that cannot be processed.
         /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByMaintenanceException">
+        /// Raised when a request is cancelled because the storage layer entered maintenance mode.
+        /// This typically happens during a customer-initiated operation such as an index rebuild.
+        /// It should be treated like <c>ConcurrentModificationException</c>.
+        /// </exception>
         /// <exception cref="Amazon.Neptunedata.Model.CancelledByUserException">
         /// Raised when a user cancelled a request.
         /// </exception>
@@ -1965,6 +2134,11 @@ namespace Amazon.Neptunedata
         /// <returns>The response from the ExecuteOpenCypherExplainQuery service method, as returned by Neptunedata.</returns>
         /// <exception cref="Amazon.Neptunedata.Model.BadRequestException">
         /// Raised when a request is submitted that cannot be processed.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByMaintenanceException">
+        /// Raised when a request is cancelled because the storage layer entered maintenance mode.
+        /// This typically happens during a customer-initiated operation such as an index rebuild.
+        /// It should be treated like <c>ConcurrentModificationException</c>.
         /// </exception>
         /// <exception cref="Amazon.Neptunedata.Model.CancelledByUserException">
         /// Raised when a user cancelled a request.
@@ -2060,6 +2234,11 @@ namespace Amazon.Neptunedata
         /// <returns>The response from the ExecuteOpenCypherExplainQuery service method, as returned by Neptunedata.</returns>
         /// <exception cref="Amazon.Neptunedata.Model.BadRequestException">
         /// Raised when a request is submitted that cannot be processed.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByMaintenanceException">
+        /// Raised when a request is cancelled because the storage layer entered maintenance mode.
+        /// This typically happens during a customer-initiated operation such as an index rebuild.
+        /// It should be treated like <c>ConcurrentModificationException</c>.
         /// </exception>
         /// <exception cref="Amazon.Neptunedata.Model.CancelledByUserException">
         /// Raised when a user cancelled a request.
@@ -2180,6 +2359,11 @@ namespace Amazon.Neptunedata
         /// <returns>The response from the ExecuteOpenCypherQuery service method, as returned by Neptunedata.</returns>
         /// <exception cref="Amazon.Neptunedata.Model.BadRequestException">
         /// Raised when a request is submitted that cannot be processed.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByMaintenanceException">
+        /// Raised when a request is cancelled because the storage layer entered maintenance mode.
+        /// This typically happens during a customer-initiated operation such as an index rebuild.
+        /// It should be treated like <c>ConcurrentModificationException</c>.
         /// </exception>
         /// <exception cref="Amazon.Neptunedata.Model.CancelledByUserException">
         /// Raised when a user cancelled a request.
@@ -2303,6 +2487,11 @@ namespace Amazon.Neptunedata
         /// <returns>The response from the ExecuteOpenCypherQuery service method, as returned by Neptunedata.</returns>
         /// <exception cref="Amazon.Neptunedata.Model.BadRequestException">
         /// Raised when a request is submitted that cannot be processed.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.CancelledByMaintenanceException">
+        /// Raised when a request is cancelled because the storage layer entered maintenance mode.
+        /// This typically happens during a customer-initiated operation such as an index rebuild.
+        /// It should be treated like <c>ConcurrentModificationException</c>.
         /// </exception>
         /// <exception cref="Amazon.Neptunedata.Model.CancelledByUserException">
         /// Raised when a user cancelled a request.
@@ -2604,6 +2793,117 @@ namespace Amazon.Neptunedata
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetGremlinQueryStatus">REST API Reference for GetGremlinQueryStatus Operation</seealso>
         Task<GetGremlinQueryStatusResponse> GetGremlinQueryStatusAsync(GetGremlinQueryStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the status of an index rebuild operation.
+        /// 
+        ///  
+        /// <para>
+        /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+        /// the IAM user or role making the request must have a policy attached that allows the
+        /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getindexrebuildstatus">neptune-db:GetIndexRebuildStatus</a>
+        /// IAM action in that cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIndexRebuildStatus service method.</param>
+        /// <returns>The response from the GetIndexRebuildStatus service method, as returned by Neptunedata.</returns>
+        /// <exception cref="Amazon.Neptunedata.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ClientTimeoutException">
+        /// Raised when a request timed out in the client.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ConstraintViolationException">
+        /// Raised when a value in a request field did not satisfy required constraints.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.IllegalArgumentException">
+        /// Raised when an argument in a request is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InternalFailureException">
+        /// Raised when the processing of the request failed unexpectedly.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidArgumentException">
+        /// Raised when an argument in a request has an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidParameterException">
+        /// Raised when a parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.MethodNotAllowedException">
+        /// Raised when the HTTP method used by a request is not supported by the endpoint being
+        /// used.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.PreconditionsFailedException">
+        /// Raised when a precondition for processing a request is not satisfied.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.TooManyRequestsException">
+        /// Raised when the number of requests being processed exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.UnsupportedOperationException">
+        /// Raised when a request attempts to initiate an operation that is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ValidationException">
+        /// Raised when a parameter value is not valid or is malformed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetIndexRebuildStatus">REST API Reference for GetIndexRebuildStatus Operation</seealso>
+        GetIndexRebuildStatusResponse GetIndexRebuildStatus(GetIndexRebuildStatusRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the status of an index rebuild operation.
+        /// 
+        ///  
+        /// <para>
+        /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+        /// the IAM user or role making the request must have a policy attached that allows the
+        /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getindexrebuildstatus">neptune-db:GetIndexRebuildStatus</a>
+        /// IAM action in that cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIndexRebuildStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetIndexRebuildStatus service method, as returned by Neptunedata.</returns>
+        /// <exception cref="Amazon.Neptunedata.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ClientTimeoutException">
+        /// Raised when a request timed out in the client.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ConstraintViolationException">
+        /// Raised when a value in a request field did not satisfy required constraints.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.IllegalArgumentException">
+        /// Raised when an argument in a request is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InternalFailureException">
+        /// Raised when the processing of the request failed unexpectedly.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidArgumentException">
+        /// Raised when an argument in a request has an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidParameterException">
+        /// Raised when a parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.MethodNotAllowedException">
+        /// Raised when the HTTP method used by a request is not supported by the endpoint being
+        /// used.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.PreconditionsFailedException">
+        /// Raised when a precondition for processing a request is not satisfied.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.TooManyRequestsException">
+        /// Raised when the number of requests being processed exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.UnsupportedOperationException">
+        /// Raised when a request attempts to initiate an operation that is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ValidationException">
+        /// Raised when a parameter value is not valid or is malformed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetIndexRebuildStatus">REST API Reference for GetIndexRebuildStatus Operation</seealso>
+        Task<GetIndexRebuildStatusResponse> GetIndexRebuildStatusAsync(GetIndexRebuildStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -4113,6 +4413,181 @@ namespace Amazon.Neptunedata
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves storage information for the Neptune database instance, including approximate
+        /// total storage used and per-category size and entry counts. Storage categories include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Quad indexes</i> - the indexes that store graph data, for both RDF (SPARQL) and
+        /// Property Graph (Gremlin/openCypher) models.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Dictionaries</i> - the term dictionaries, including total dictionary storage and
+        /// the portion used by blob (large value) entries.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Undo logs</i> - the undo logs, reported as a total size and the number of entries
+        /// in the undo log list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Streams</i> - the change-log streams.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Schema</i> - the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>DFE statistics</i> - the DFE engine statistics.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>System metadata</i> - internal system metadata.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+        /// the IAM user or role making the request must have a policy attached that allows the
+        /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstorageinfo">neptune-db:GetStorageInfo</a>
+        /// IAM action in that cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStorageInfo service method.</param>
+        /// <returns>The response from the GetStorageInfo service method, as returned by Neptunedata.</returns>
+        /// <exception cref="Amazon.Neptunedata.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ClientTimeoutException">
+        /// Raised when a request timed out in the client.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ConstraintViolationException">
+        /// Raised when a value in a request field did not satisfy required constraints.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.IllegalArgumentException">
+        /// Raised when an argument in a request is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InternalFailureException">
+        /// Raised when the processing of the request failed unexpectedly.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidArgumentException">
+        /// Raised when an argument in a request has an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidParameterException">
+        /// Raised when a parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.MethodNotAllowedException">
+        /// Raised when the HTTP method used by a request is not supported by the endpoint being
+        /// used.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.PreconditionsFailedException">
+        /// Raised when a precondition for processing a request is not satisfied.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ServerShutdownException">
+        /// Raised when the server shuts down while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.TooManyRequestsException">
+        /// Raised when the number of requests being processed exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.UnsupportedOperationException">
+        /// Raised when a request attempts to initiate an operation that is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetStorageInfo">REST API Reference for GetStorageInfo Operation</seealso>
+        GetStorageInfoResponse GetStorageInfo(GetStorageInfoRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves storage information for the Neptune database instance, including approximate
+        /// total storage used and per-category size and entry counts. Storage categories include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Quad indexes</i> - the indexes that store graph data, for both RDF (SPARQL) and
+        /// Property Graph (Gremlin/openCypher) models.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Dictionaries</i> - the term dictionaries, including total dictionary storage and
+        /// the portion used by blob (large value) entries.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Undo logs</i> - the undo logs, reported as a total size and the number of entries
+        /// in the undo log list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Streams</i> - the change-log streams.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Schema</i> - the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>DFE statistics</i> - the DFE engine statistics.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>System metadata</i> - internal system metadata.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+        /// the IAM user or role making the request must have a policy attached that allows the
+        /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstorageinfo">neptune-db:GetStorageInfo</a>
+        /// IAM action in that cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStorageInfo service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetStorageInfo service method, as returned by Neptunedata.</returns>
+        /// <exception cref="Amazon.Neptunedata.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ClientTimeoutException">
+        /// Raised when a request timed out in the client.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ConstraintViolationException">
+        /// Raised when a value in a request field did not satisfy required constraints.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.IllegalArgumentException">
+        /// Raised when an argument in a request is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InternalFailureException">
+        /// Raised when the processing of the request failed unexpectedly.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidArgumentException">
+        /// Raised when an argument in a request has an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidParameterException">
+        /// Raised when a parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.MethodNotAllowedException">
+        /// Raised when the HTTP method used by a request is not supported by the endpoint being
+        /// used.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.PreconditionsFailedException">
+        /// Raised when a precondition for processing a request is not satisfied.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ServerShutdownException">
+        /// Raised when the server shuts down while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.TooManyRequestsException">
+        /// Raised when the number of requests being processed exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.UnsupportedOperationException">
+        /// Raised when a request attempts to initiate an operation that is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetStorageInfo">REST API Reference for GetStorageInfo Operation</seealso>
+        Task<GetStorageInfoResponse> GetStorageInfoAsync(GetStorageInfoRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists active Gremlin queries. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-api-status.html">Gremlin
         /// query status API</a> for details about the output.
         /// 
@@ -4261,6 +4736,111 @@ namespace Amazon.Neptunedata
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListGremlinQueries">REST API Reference for ListGremlinQueries Operation</seealso>
         Task<ListGremlinQueriesResponse> ListGremlinQueriesAsync(ListGremlinQueriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves a list of all index rebuild operation identifiers.
+        /// 
+        ///  
+        /// <para>
+        /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+        /// the IAM user or role making the request must have a policy attached that allows the
+        /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#listindexrebuilds">neptune-db:ListIndexRebuilds</a>
+        /// IAM action in that cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIndexRebuilds service method.</param>
+        /// <returns>The response from the ListIndexRebuilds service method, as returned by Neptunedata.</returns>
+        /// <exception cref="Amazon.Neptunedata.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ClientTimeoutException">
+        /// Raised when a request timed out in the client.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ConstraintViolationException">
+        /// Raised when a value in a request field did not satisfy required constraints.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.IllegalArgumentException">
+        /// Raised when an argument in a request is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InternalFailureException">
+        /// Raised when the processing of the request failed unexpectedly.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidArgumentException">
+        /// Raised when an argument in a request has an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidParameterException">
+        /// Raised when a parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.MethodNotAllowedException">
+        /// Raised when the HTTP method used by a request is not supported by the endpoint being
+        /// used.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.PreconditionsFailedException">
+        /// Raised when a precondition for processing a request is not satisfied.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.TooManyRequestsException">
+        /// Raised when the number of requests being processed exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.UnsupportedOperationException">
+        /// Raised when a request attempts to initiate an operation that is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListIndexRebuilds">REST API Reference for ListIndexRebuilds Operation</seealso>
+        ListIndexRebuildsResponse ListIndexRebuilds(ListIndexRebuildsRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves a list of all index rebuild operation identifiers.
+        /// 
+        ///  
+        /// <para>
+        /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+        /// the IAM user or role making the request must have a policy attached that allows the
+        /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#listindexrebuilds">neptune-db:ListIndexRebuilds</a>
+        /// IAM action in that cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIndexRebuilds service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListIndexRebuilds service method, as returned by Neptunedata.</returns>
+        /// <exception cref="Amazon.Neptunedata.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ClientTimeoutException">
+        /// Raised when a request timed out in the client.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ConstraintViolationException">
+        /// Raised when a value in a request field did not satisfy required constraints.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.IllegalArgumentException">
+        /// Raised when an argument in a request is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InternalFailureException">
+        /// Raised when the processing of the request failed unexpectedly.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidArgumentException">
+        /// Raised when an argument in a request has an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidParameterException">
+        /// Raised when a parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.MethodNotAllowedException">
+        /// Raised when the HTTP method used by a request is not supported by the endpoint being
+        /// used.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.PreconditionsFailedException">
+        /// Raised when a precondition for processing a request is not satisfied.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.TooManyRequestsException">
+        /// Raised when the number of requests being processed exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.UnsupportedOperationException">
+        /// Raised when a request attempts to initiate an operation that is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListIndexRebuilds">REST API Reference for ListIndexRebuilds Operation</seealso>
+        Task<ListIndexRebuildsResponse> ListIndexRebuildsAsync(ListIndexRebuildsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -5177,6 +5757,149 @@ namespace Amazon.Neptunedata
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ManageSparqlStatistics">REST API Reference for ManageSparqlStatistics Operation</seealso>
         Task<ManageSparqlStatisticsResponse> ManageSparqlStatisticsAsync(ManageSparqlStatisticsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Initiates an index rebuild operation to optimize storage and improve query performance.
+        /// The rebuild operation reorganizes index to reclaim space and improve efficiency.
+        /// 
+        ///  
+        /// <para>
+        /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+        /// the IAM user or role making the request must have a policy attached that allows the
+        /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#startindexrebuild">neptune-db:StartIndexRebuild</a>
+        /// IAM action in that cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartIndexRebuild service method.</param>
+        /// <returns>The response from the StartIndexRebuild service method, as returned by Neptunedata.</returns>
+        /// <exception cref="Amazon.Neptunedata.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ClientTimeoutException">
+        /// Raised when a request timed out in the client.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ConcurrentModificationException">
+        /// Raised when a request attempts to modify data that is concurrently being modified
+        /// by another process.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ConstraintViolationException">
+        /// Raised when a value in a request field did not satisfy required constraints.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.IllegalArgumentException">
+        /// Raised when an argument in a request is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InternalFailureException">
+        /// Raised when the processing of the request failed unexpectedly.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidArgumentException">
+        /// Raised when an argument in a request has an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidParameterException">
+        /// Raised when a parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.MemoryLimitExceededException">
+        /// Raised when a request fails because of insufficient memory resources. The request
+        /// can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.MethodNotAllowedException">
+        /// Raised when the HTTP method used by a request is not supported by the endpoint being
+        /// used.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.PreconditionsFailedException">
+        /// Raised when a precondition for processing a request is not satisfied.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ReadOnlyViolationException">
+        /// Raised when a request attempts to write to a read-only resource.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ResourceNotFoundException">
+        /// Raised when the specified resource could not be found. The resource might have been
+        /// deleted or the identifier might be incorrect.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ServerShutdownException">
+        /// Raised when the server shuts down while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.TooManyRequestsException">
+        /// Raised when the number of requests being processed exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.UnsupportedOperationException">
+        /// Raised when a request attempts to initiate an operation that is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/StartIndexRebuild">REST API Reference for StartIndexRebuild Operation</seealso>
+        StartIndexRebuildResponse StartIndexRebuild(StartIndexRebuildRequest request);
+#endif
+
+        /// <summary>
+        /// Initiates an index rebuild operation to optimize storage and improve query performance.
+        /// The rebuild operation reorganizes index to reclaim space and improve efficiency.
+        /// 
+        ///  
+        /// <para>
+        /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+        /// the IAM user or role making the request must have a policy attached that allows the
+        /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#startindexrebuild">neptune-db:StartIndexRebuild</a>
+        /// IAM action in that cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartIndexRebuild service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartIndexRebuild service method, as returned by Neptunedata.</returns>
+        /// <exception cref="Amazon.Neptunedata.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ClientTimeoutException">
+        /// Raised when a request timed out in the client.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ConcurrentModificationException">
+        /// Raised when a request attempts to modify data that is concurrently being modified
+        /// by another process.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ConstraintViolationException">
+        /// Raised when a value in a request field did not satisfy required constraints.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.IllegalArgumentException">
+        /// Raised when an argument in a request is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InternalFailureException">
+        /// Raised when the processing of the request failed unexpectedly.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidArgumentException">
+        /// Raised when an argument in a request has an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.InvalidParameterException">
+        /// Raised when a parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.MemoryLimitExceededException">
+        /// Raised when a request fails because of insufficient memory resources. The request
+        /// can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.MethodNotAllowedException">
+        /// Raised when the HTTP method used by a request is not supported by the endpoint being
+        /// used.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.PreconditionsFailedException">
+        /// Raised when a precondition for processing a request is not satisfied.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ReadOnlyViolationException">
+        /// Raised when a request attempts to write to a read-only resource.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ResourceNotFoundException">
+        /// Raised when the specified resource could not be found. The resource might have been
+        /// deleted or the identifier might be incorrect.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.ServerShutdownException">
+        /// Raised when the server shuts down while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.TooManyRequestsException">
+        /// Raised when the number of requests being processed exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.Neptunedata.Model.UnsupportedOperationException">
+        /// Raised when a request attempts to initiate an operation that is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/StartIndexRebuild">REST API Reference for StartIndexRebuild Operation</seealso>
+        Task<StartIndexRebuildResponse> StartIndexRebuildAsync(StartIndexRebuildRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

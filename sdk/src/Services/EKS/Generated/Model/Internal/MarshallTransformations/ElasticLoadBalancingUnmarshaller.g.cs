@@ -59,6 +59,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("gatewayApi", targetDepth, ref reader))
+                {
+                    var unmarshaller = GatewayApiConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.GatewayApi = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -14,6 +14,11 @@
         "DescribeReservedDBInstancesOfferings",
         "DescribeAccountAttributes"
     ],
+    "operationModifiers": {
+        "DownloadDBLogFilePortion": {
+            "stopPaginationOnSameToken": true
+        }
+    },
     "runtimePipelineOverride": {
         "overrides": [
             {

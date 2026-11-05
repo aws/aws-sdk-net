@@ -36,13 +36,9 @@ public class MetadataWriterTests
     }
 
     [Fact]
-    public void ClassSummary_UsesSingleSpace()
+    public void ClassSummary_UsesServiceTitle()
     {
-        // The shipping C2J output has a double space after "for" (a quirk of the legacy
-        // ServiceMetadata.tt template). That spacing is a doc defect, not API, so the writer
-        // emits a single space and does not reproduce the double-space artifact.
-        Assert.Contains("/// Service metadata for Amazon CloudTrailData service", _output);
-        Assert.DoesNotContain("/// Service metadata for  Amazon CloudTrailData service", _output);
+        Assert.Contains("/// Service metadata for AWS CloudTrail Data Service", _output);
     }
 
     [Fact]

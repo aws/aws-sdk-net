@@ -59,6 +59,27 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Capacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("plugins", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<PluginDescription, PluginDescriptionUnmarshaller>(PluginDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.Plugins = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("useDefaultWorkerConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.UseDefaultWorkerConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("workerConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = WorkerConfigurationDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.WorkerConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

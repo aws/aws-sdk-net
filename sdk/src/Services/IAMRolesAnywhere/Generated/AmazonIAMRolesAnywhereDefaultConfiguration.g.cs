@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.IAMRolesAnywhere
 {
     /// <summary>
-    /// Configuration for accessing Amazon IAMRolesAnywhere service
+    /// Configuration for accessing IAM Roles Anywhere
     /// </summary>
     public static class AmazonIAMRolesAnywhereDefaultConfiguration
     {

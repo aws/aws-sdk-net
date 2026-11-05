@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AccessAnalyzer
 {
     /// <summary>
-    /// Configuration for accessing Amazon AccessAnalyzer service
+    /// Configuration for accessing Access Analyzer
     /// </summary>
     public static class AmazonAccessAnalyzerDefaultConfiguration
     {

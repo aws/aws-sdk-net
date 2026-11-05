@@ -31,7 +31,7 @@ namespace Amazon.Runtime.Credentials.Internal
         public string LoginSession { get; set; }
 
         /// <summary>
-        /// AWS region where the AWS Signin service is hosted.
+        /// AWS region used to call the AWS Signin service when the cached Login Token does not record the region it was issued in.
         /// </summary>
         public string Region { get; set; }
 

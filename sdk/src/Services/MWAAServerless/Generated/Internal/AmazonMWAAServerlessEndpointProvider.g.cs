@@ -26,7 +26,7 @@ using Amazon.MWAAServerless.Endpoints;
 namespace Amazon.MWAAServerless.Internal
 {
     /// <summary>
-    /// Amazon MWAAServerless endpoint provider.
+    /// AmazonMWAAServerless endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MWAAServerlessEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

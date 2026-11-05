@@ -1,0 +1,207 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Imagebuilder.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateLifecyclePolicy operation. Creates a lifecycle
+    /// policy resource.
+    /// </summary>
+    public partial class CreateLifecyclePolicyRequest : AmazonImagebuilderRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string ClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientToken property is set.
+        /// </summary>
+        internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Optional description for the lifecycle policy.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1024)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Validates the required permissions and request parameters without performing the operation.
+        /// If validation succeeds, the operation returns a <c>DryRunOperationException</c> error
+        /// response.
+        /// </para>
+        /// </summary>
+        public bool? DryRun { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DryRun property is set.
+        /// </summary>
+        internal bool IsSetDryRun() => this.DryRun.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRole. 
+        /// <para>
+        /// The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image
+        /// Builder access to run lifecycle actions. You must have permission to pass the role,
+        /// and the role's trust policy must allow the Image Builder service principal to assume
+        /// it.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 2048)]
+        public string ExecutionRole { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExecutionRole property is set.
+        /// </summary>
+        internal bool IsSetExecutionRole() => this.ExecutionRole != null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the lifecycle policy to create. Policy names must be unique to your account
+        /// in each Amazon Web Services Region. Image Builder generates the policy ARN from a
+        /// normalized form of the name, so names that differ only in case, spaces, or underscores
+        /// count as the same name. You can't change the name after creation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property PolicyDetails. 
+        /// <para>
+        /// Configuration details for the lifecycle policy rules. A policy can contain at most
+        /// one rule per action type: one <c>DELETE</c>, one <c>DEPRECATE</c>, and one <c>DISABLE</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 3)]
+        public List<LifecyclePolicyDetail> PolicyDetails { get; set; } = AWSConfigs.InitializeCollections ? new List<LifecyclePolicyDetail>() : null;
+
+        /// <summary>
+        /// Checks to see if the PolicyDetails property is set.
+        /// </summary>
+        internal bool IsSetPolicyDetails() => this.PolicyDetails != null && (this.PolicyDetails.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ResourceSelection. 
+        /// <para>
+        /// Selection criteria for the resources that the lifecycle policy applies to. You must
+        /// specify exactly one selection criteria: either recipes or a tag map, not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public LifecyclePolicyResourceSelection ResourceSelection { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceSelection property is set.
+        /// </summary>
+        internal bool IsSetResourceSelection() => this.ResourceSelection != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The type of Image Builder resource that the lifecycle policy applies to. The resource
+        /// type determines the allowed rule actions: policies for AMI-based Image Builder images
+        /// support <c>DELETE</c>, <c>DEPRECATE</c>, and <c>DISABLE</c>, and policies for container-based
+        /// Image Builder images support only <c>DELETE</c>. You can't change the resource type
+        /// after creation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public LifecyclePolicyResourceType ResourceType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceType property is set.
+        /// </summary>
+        internal bool IsSetResourceType() => this.ResourceType != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Indicates whether the lifecycle policy resource is enabled. If you don't specify a
+        /// status, it defaults to <c>ENABLED</c>. Only enabled policies run on their schedule.
+        /// </para>
+        /// </summary>
+        public LifecyclePolicyStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to apply to the lifecycle policy resource.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 50)]
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

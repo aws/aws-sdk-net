@@ -31,7 +31,7 @@ using Amazon.CloudControlApi.Endpoints;
 namespace Amazon.CloudControlApi.Internal
 {
     /// <summary>
-    /// Amazon CloudControlApi endpoint resolver.
+    /// AWS Cloud Control API endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CloudControlApi service requests.
     /// <para />

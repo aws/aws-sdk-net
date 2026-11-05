@@ -63,6 +63,47 @@ namespace Amazon.Billing
     }
 
     /// <summary>
+    /// Constants used for properties of type AssociationStatus.
+    /// </summary>
+    public class AssociationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ASSOCIATED for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus ASSOCIATED = new AssociationStatus("ASSOCIATED");
+
+        /// <summary>
+        /// Constant NOT_ASSOCIATED for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus NOT_ASSOCIATED = new AssociationStatus("NOT_ASSOCIATED");
+
+        /// <summary>
+        /// Constructs a custom AssociationStatus for a value not among the defined constants.
+        /// </summary>
+        public AssociationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationStatus FindValue(string value)
+        {
+            return FindValue<AssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type BillingDomain.
     /// </summary>
     public class BillingDomain : ConstantClass
@@ -384,6 +425,88 @@ namespace Amazon.Billing
     }
 
     /// <summary>
+    /// Constants used for properties of type ContractRestriction.
+    /// </summary>
+    public class ContractRestriction : ConstantClass
+    {
+        /// <summary>
+        /// Constant ATTESTATION_SELF_SERVICE_BLOCKED for ContractRestriction
+        /// </summary>
+        public static readonly ContractRestriction ATTESTATION_SELF_SERVICE_BLOCKED = new ContractRestriction("ATTESTATION_SELF_SERVICE_BLOCKED");
+
+        /// <summary>
+        /// Constructs a custom ContractRestriction for a value not among the defined constants.
+        /// </summary>
+        public ContractRestriction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContractRestriction FindValue(string value)
+        {
+            return FindValue<ContractRestriction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContractRestriction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContractType.
+    /// </summary>
+    public class ContractType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CrossService for ContractType
+        /// </summary>
+        public static readonly ContractType CrossService = new ContractType("Cross-Service");
+
+        /// <summary>
+        /// Constant Other for ContractType
+        /// </summary>
+        public static readonly ContractType Other = new ContractType("Other");
+
+        /// <summary>
+        /// Constant ServiceSpecific for ContractType
+        /// </summary>
+        public static readonly ContractType ServiceSpecific = new ContractType("Service-Specific");
+
+        /// <summary>
+        /// Constructs a custom ContractType for a value not among the defined constants.
+        /// </summary>
+        public ContractType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContractType FindValue(string value)
+        {
+            return FindValue<ContractType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContractType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type CreditSharingType.
     /// </summary>
     public class CreditSharingType : ConstantClass
@@ -506,6 +629,149 @@ namespace Amazon.Billing
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Dimension(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InvestmentAttestationStatus.
+    /// </summary>
+    public class InvestmentAttestationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CANCELLED for InvestmentAttestationStatus
+        /// </summary>
+        public static readonly InvestmentAttestationStatus CANCELLED = new InvestmentAttestationStatus("CANCELLED");
+
+        /// <summary>
+        /// Constant DISBURSED for InvestmentAttestationStatus
+        /// </summary>
+        public static readonly InvestmentAttestationStatus DISBURSED = new InvestmentAttestationStatus("DISBURSED");
+
+        /// <summary>
+        /// Constant PENDING_CANCELLATION for InvestmentAttestationStatus
+        /// </summary>
+        public static readonly InvestmentAttestationStatus PENDING_CANCELLATION = new InvestmentAttestationStatus("PENDING_CANCELLATION");
+
+        /// <summary>
+        /// Constant PENDING_C_LEVEL_APPROVAL for InvestmentAttestationStatus
+        /// </summary>
+        public static readonly InvestmentAttestationStatus PENDING_C_LEVEL_APPROVAL = new InvestmentAttestationStatus("PENDING_C_LEVEL_APPROVAL");
+
+        /// <summary>
+        /// Constant PENDING_REVIEW for InvestmentAttestationStatus
+        /// </summary>
+        public static readonly InvestmentAttestationStatus PENDING_REVIEW = new InvestmentAttestationStatus("PENDING_REVIEW");
+
+        /// <summary>
+        /// Constant REJECTED for InvestmentAttestationStatus
+        /// </summary>
+        public static readonly InvestmentAttestationStatus REJECTED = new InvestmentAttestationStatus("REJECTED");
+
+        /// <summary>
+        /// Constructs a custom InvestmentAttestationStatus for a value not among the defined constants.
+        /// </summary>
+        public InvestmentAttestationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvestmentAttestationStatus FindValue(string value)
+        {
+            return FindValue<InvestmentAttestationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvestmentAttestationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InvestmentType.
+    /// </summary>
+    public class InvestmentType : ConstantClass
+    {
+        /// <summary>
+        /// Constant MILESTONE_BASED for InvestmentType
+        /// </summary>
+        public static readonly InvestmentType MILESTONE_BASED = new InvestmentType("MILESTONE_BASED");
+
+        /// <summary>
+        /// Constant OUTCOME_BASED for InvestmentType
+        /// </summary>
+        public static readonly InvestmentType OUTCOME_BASED = new InvestmentType("OUTCOME_BASED");
+
+        /// <summary>
+        /// Constructs a custom InvestmentType for a value not among the defined constants.
+        /// </summary>
+        public InvestmentType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvestmentType FindValue(string value)
+        {
+            return FindValue<InvestmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvestmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MultiplierType.
+    /// </summary>
+    public class MultiplierType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CURRENCY_AMOUNT for MultiplierType
+        /// </summary>
+        public static readonly MultiplierType CURRENCY_AMOUNT = new MultiplierType("CURRENCY_AMOUNT");
+
+        /// <summary>
+        /// Constant PERCENTAGE for MultiplierType
+        /// </summary>
+        public static readonly MultiplierType PERCENTAGE = new MultiplierType("PERCENTAGE");
+
+        /// <summary>
+        /// Constructs a custom MultiplierType for a value not among the defined constants.
+        /// </summary>
+        public MultiplierType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultiplierType FindValue(string value)
+        {
+            return FindValue<MultiplierType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultiplierType(string value)
         {
             return FindValue(value);
         }

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SecurityLake
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecurityLake service
+    /// Configuration for accessing Amazon Security Lake
     /// </summary>
     public static class AmazonSecurityLakeDefaultConfiguration
     {

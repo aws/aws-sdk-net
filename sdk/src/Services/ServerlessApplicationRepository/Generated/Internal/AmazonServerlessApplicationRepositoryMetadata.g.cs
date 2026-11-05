@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerlessApplicationRepository.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ServerlessApplicationRepository service
+    /// Service metadata for AWSServerlessApplicationRepository
     /// </summary>
     public partial class AmazonServerlessApplicationRepositoryMetadata : IServiceMetadata
     {

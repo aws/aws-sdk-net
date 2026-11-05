@@ -26,7 +26,7 @@ using Amazon.MQ.Endpoints;
 namespace Amazon.MQ.Internal
 {
     /// <summary>
-    /// Amazon MQ endpoint provider.
+    /// AmazonMQ endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MQEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

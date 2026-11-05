@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppFabric.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AppFabric service
+    /// Service metadata for AppFabric
     /// </summary>
     public partial class AmazonAppFabricMetadata : IServiceMetadata
     {

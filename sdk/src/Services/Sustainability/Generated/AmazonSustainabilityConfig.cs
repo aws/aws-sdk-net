@@ -27,12 +27,12 @@ using Amazon.Sustainability.Internal;
 namespace Amazon.Sustainability
 {
     /// <summary>
-    /// Configuration for accessing Amazon Sustainability service
+    /// Configuration for accessing AWS Sustainability
     /// </summary>
     public partial class AmazonSustainabilityConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Sustainability", "4.0.101.16");
+            InternalSDKUtils.BuildUserAgentString("Sustainability", "4.0.101.19");
 
         private static readonly AmazonSustainabilityEndpointResolver EndpointResolver =
             new AmazonSustainabilityEndpointResolver();

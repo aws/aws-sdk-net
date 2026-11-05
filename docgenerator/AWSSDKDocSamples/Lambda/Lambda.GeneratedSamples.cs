@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
     {
         public void LambdaAddLayerVersionPermission()
         {
-            #region example-1
+            #region AddLayerVersionPermission-1
 
             var client = new AmazonLambdaClient();
-            var response = client.AddLayerVersionPermission(new AddLayerVersionPermissionRequest 
+            var response = client.AddLayerVersionPermission(new AddLayerVersionPermissionRequest
             {
                 Action = "lambda:GetLayerVersion",
                 LayerName = "my-layer",
@@ -33,10 +34,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaAddPermission()
         {
-            #region example-1
+            #region AddPermission-1
 
             var client = new AmazonLambdaClient();
-            var response = client.AddPermission(new AddPermissionRequest 
+            var response = client.AddPermission(new AddPermissionRequest
             {
                 Action = "lambda:InvokeFunction",
                 FunctionName = "my-function",
@@ -53,10 +54,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaAddPermission()
         {
-            #region example-2
+            #region AddPermission-2
 
             var client = new AmazonLambdaClient();
-            var response = client.AddPermission(new AddPermissionRequest 
+            var response = client.AddPermission(new AddPermissionRequest
             {
                 Action = "lambda:InvokeFunction",
                 FunctionName = "my-function",
@@ -71,10 +72,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaCreateAlias()
         {
-            #region example-1
+            #region CreateAlias-1
 
             var client = new AmazonLambdaClient();
-            var response = client.CreateAlias(new CreateAliasRequest 
+            var response = client.CreateAlias(new CreateAliasRequest
             {
                 Description = "alias for live version of function",
                 FunctionName = "my-function",
@@ -93,20 +94,20 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaCreateEventSourceMapping()
         {
-            #region example-1
+            #region CreateEventSourceMapping-1
 
             var client = new AmazonLambdaClient();
-            var response = client.CreateEventSourceMapping(new CreateEventSourceMappingRequest 
+            var response = client.CreateEventSourceMapping(new CreateEventSourceMappingRequest
             {
                 BatchSize = 5,
                 EventSourceArn = "arn:aws:sqs:us-west-2:123456789012:my-queue",
                 FunctionName = "my-function"
             });
 
-            int batchSize = response.BatchSize;
+            int? batchSize = response.BatchSize;
             string eventSourceArn = response.EventSourceArn;
             string functionArn = response.FunctionArn;
-            DateTime lastModified = response.LastModified;
+            DateTime? lastModified = response.LastModified;
             string state = response.State;
             string stateTransitionReason = response.StateTransitionReason;
             string uuid = response.UUID;
@@ -116,10 +117,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaCreateFunction()
         {
-            #region example-1
+            #region CreateFunction-1
 
             var client = new AmazonLambdaClient();
-            var response = client.CreateFunction(new CreateFunctionRequest 
+            var response = client.CreateFunction(new CreateFunctionRequest
             {
                 Code = new FunctionCode {
                     S3Bucket = "my-bucket-1xpuxmplzrlbh",
@@ -149,7 +150,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             });
 
             string codeSha256 = response.CodeSha256;
-            long codeSize = response.CodeSize;
+            long? codeSize = response.CodeSize;
             string description = response.Description;
             DurableConfig durableConfig = response.DurableConfig;
             EnvironmentResponse environment = response.Environment;
@@ -158,13 +159,13 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             string handler = response.Handler;
             string kmsKeyArn = response.KMSKeyArn;
             string lastModified = response.LastModified;
-            string lastUpdateStatus = response.LastUpdateStatus;
-            int memorySize = response.MemorySize;
+            LastUpdateStatus lastUpdateStatus = response.LastUpdateStatus;
+            int? memorySize = response.MemorySize;
             string revisionId = response.RevisionId;
             string role = response.Role;
-            string runtime = response.Runtime;
-            string state = response.State;
-            int timeout = response.Timeout;
+            Runtime runtime = response.Runtime;
+            State state = response.State;
+            int? timeout = response.Timeout;
             TracingConfigResponse tracingConfig = response.TracingConfig;
             string version = response.Version;
 
@@ -173,10 +174,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaDeleteAlias()
         {
-            #region example-1
+            #region DeleteAlias-1
 
             var client = new AmazonLambdaClient();
-            var response = client.DeleteAlias(new DeleteAliasRequest 
+            var response = client.DeleteAlias(new DeleteAliasRequest
             {
                 FunctionName = "my-function",
                 Name = "BLUE"
@@ -188,18 +189,18 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaDeleteEventSourceMapping()
         {
-            #region example-1
+            #region DeleteEventSourceMapping-1
 
             var client = new AmazonLambdaClient();
-            var response = client.DeleteEventSourceMapping(new DeleteEventSourceMappingRequest 
+            var response = client.DeleteEventSourceMapping(new DeleteEventSourceMappingRequest
             {
                 UUID = "14e0db71-xmpl-4eb5-b481-8945cf9d10c2"
             });
 
-            int batchSize = response.BatchSize;
+            int? batchSize = response.BatchSize;
             string eventSourceArn = response.EventSourceArn;
             string functionArn = response.FunctionArn;
-            DateTime lastModified = response.LastModified;
+            DateTime? lastModified = response.LastModified;
             string state = response.State;
             string stateTransitionReason = response.StateTransitionReason;
             string uuid = response.UUID;
@@ -209,10 +210,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaDeleteFunction()
         {
-            #region example-1
+            #region DeleteFunction-1
 
             var client = new AmazonLambdaClient();
-            var response = client.DeleteFunction(new DeleteFunctionRequest 
+            var response = client.DeleteFunction(new DeleteFunctionRequest
             {
                 FunctionName = "my-function",
                 Qualifier = "1"
@@ -224,10 +225,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaDeleteFunctionConcurrency()
         {
-            #region example-1
+            #region DeleteFunctionConcurrency-1
 
             var client = new AmazonLambdaClient();
-            var response = client.DeleteFunctionConcurrency(new DeleteFunctionConcurrencyRequest 
+            var response = client.DeleteFunctionConcurrency(new DeleteFunctionConcurrencyRequest
             {
                 FunctionName = "my-function"
             });
@@ -238,10 +239,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaDeleteFunctionEventInvokeConfig()
         {
-            #region example-1
+            #region DeleteFunctionEventInvokeConfig-1
 
             var client = new AmazonLambdaClient();
-            var response = client.DeleteFunctionEventInvokeConfig(new DeleteFunctionEventInvokeConfigRequest 
+            var response = client.DeleteFunctionEventInvokeConfig(new DeleteFunctionEventInvokeConfigRequest
             {
                 FunctionName = "my-function",
                 Qualifier = "GREEN"
@@ -253,10 +254,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaDeleteLayerVersion()
         {
-            #region example-1
+            #region DeleteLayerVersion-1
 
             var client = new AmazonLambdaClient();
-            var response = client.DeleteLayerVersion(new DeleteLayerVersionRequest 
+            var response = client.DeleteLayerVersion(new DeleteLayerVersionRequest
             {
                 LayerName = "my-layer",
                 VersionNumber = 2
@@ -268,10 +269,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaDeleteProvisionedConcurrencyConfig()
         {
-            #region example-1
+            #region DeleteProvisionedConcurrencyConfig-1
 
             var client = new AmazonLambdaClient();
-            var response = client.DeleteProvisionedConcurrencyConfig(new DeleteProvisionedConcurrencyConfigRequest 
+            var response = client.DeleteProvisionedConcurrencyConfig(new DeleteProvisionedConcurrencyConfigRequest
             {
                 FunctionName = "my-function",
                 Qualifier = "GREEN"
@@ -283,10 +284,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaGetAccountSettings()
         {
-            #region example-1
+            #region GetAccountSettings-1
 
             var client = new AmazonLambdaClient();
-            var response = client.GetAccountSettings(new GetAccountSettingsRequest 
+            var response = client.GetAccountSettings(new GetAccountSettingsRequest
             {
             });
 
@@ -298,10 +299,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaGetAlias()
         {
-            #region example-1
+            #region GetAlias-1
 
             var client = new AmazonLambdaClient();
-            var response = client.GetAlias(new GetAliasRequest 
+            var response = client.GetAlias(new GetAliasRequest
             {
                 FunctionName = "my-function",
                 Name = "BLUE"
@@ -318,23 +319,23 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaGetEventSourceMapping()
         {
-            #region example-1
+            #region GetEventSourceMapping-1
 
             var client = new AmazonLambdaClient();
-            var response = client.GetEventSourceMapping(new GetEventSourceMappingRequest 
+            var response = client.GetEventSourceMapping(new GetEventSourceMappingRequest
             {
                 UUID = "14e0db71-xmpl-4eb5-b481-8945cf9d10c2"
             });
 
-            int batchSize = response.BatchSize;
-            bool bisectBatchOnFunctionError = response.BisectBatchOnFunctionError;
+            int? batchSize = response.BatchSize;
+            bool? bisectBatchOnFunctionError = response.BisectBatchOnFunctionError;
             DestinationConfig destinationConfig = response.DestinationConfig;
             string eventSourceArn = response.EventSourceArn;
             string functionArn = response.FunctionArn;
-            DateTime lastModified = response.LastModified;
+            DateTime? lastModified = response.LastModified;
             string lastProcessingResult = response.LastProcessingResult;
-            int maximumRecordAgeInSeconds = response.MaximumRecordAgeInSeconds;
-            int maximumRetryAttempts = response.MaximumRetryAttempts;
+            int? maximumRecordAgeInSeconds = response.MaximumRecordAgeInSeconds;
+            int? maximumRetryAttempts = response.MaximumRetryAttempts;
             string state = response.State;
             string stateTransitionReason = response.StateTransitionReason;
             string uuid = response.UUID;
@@ -344,10 +345,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaGetFunction()
         {
-            #region example-1
+            #region GetFunction-1
 
             var client = new AmazonLambdaClient();
-            var response = client.GetFunction(new GetFunctionRequest 
+            var response = client.GetFunction(new GetFunctionRequest
             {
                 FunctionName = "my-function",
                 Qualifier = "1"
@@ -362,32 +363,32 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaGetFunctionConcurrency()
         {
-            #region example-1
+            #region GetFunctionConcurrency-1
 
             var client = new AmazonLambdaClient();
-            var response = client.GetFunctionConcurrency(new GetFunctionConcurrencyRequest 
+            var response = client.GetFunctionConcurrency(new GetFunctionConcurrencyRequest
             {
                 FunctionName = "my-function"
             });
 
-            int reservedConcurrentExecutions = response.ReservedConcurrentExecutions;
+            int? reservedConcurrentExecutions = response.ReservedConcurrentExecutions;
 
             #endregion
         }
 
         public void LambdaGetFunctionConfiguration()
         {
-            #region example-1
+            #region GetFunctionConfiguration-1
 
             var client = new AmazonLambdaClient();
-            var response = client.GetFunctionConfiguration(new GetFunctionConfigurationRequest 
+            var response = client.GetFunctionConfiguration(new GetFunctionConfigurationRequest
             {
                 FunctionName = "my-function",
                 Qualifier = "1"
             });
 
             string codeSha256 = response.CodeSha256;
-            long codeSize = response.CodeSize;
+            long? codeSize = response.CodeSize;
             string description = response.Description;
             DurableConfig durableConfig = response.DurableConfig;
             EnvironmentResponse environment = response.Environment;
@@ -396,13 +397,13 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             string handler = response.Handler;
             string kmsKeyArn = response.KMSKeyArn;
             string lastModified = response.LastModified;
-            string lastUpdateStatus = response.LastUpdateStatus;
-            int memorySize = response.MemorySize;
+            LastUpdateStatus lastUpdateStatus = response.LastUpdateStatus;
+            int? memorySize = response.MemorySize;
             string revisionId = response.RevisionId;
             string role = response.Role;
-            string runtime = response.Runtime;
-            string state = response.State;
-            int timeout = response.Timeout;
+            Runtime runtime = response.Runtime;
+            State state = response.State;
+            int? timeout = response.Timeout;
             TracingConfigResponse tracingConfig = response.TracingConfig;
             string version = response.Version;
 
@@ -411,10 +412,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaGetFunctionEventInvokeConfig()
         {
-            #region example-1
+            #region GetFunctionEventInvokeConfig-1
 
             var client = new AmazonLambdaClient();
-            var response = client.GetFunctionEventInvokeConfig(new GetFunctionEventInvokeConfigRequest 
+            var response = client.GetFunctionEventInvokeConfig(new GetFunctionEventInvokeConfigRequest
             {
                 FunctionName = "my-function",
                 Qualifier = "BLUE"
@@ -422,19 +423,19 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
             DestinationConfig destinationConfig = response.DestinationConfig;
             string functionArn = response.FunctionArn;
-            DateTime lastModified = response.LastModified;
-            int maximumEventAgeInSeconds = response.MaximumEventAgeInSeconds;
-            int maximumRetryAttempts = response.MaximumRetryAttempts;
+            DateTime? lastModified = response.LastModified;
+            int? maximumEventAgeInSeconds = response.MaximumEventAgeInSeconds;
+            int? maximumRetryAttempts = response.MaximumRetryAttempts;
 
             #endregion
         }
 
         public void LambdaGetLayerVersion()
         {
-            #region example-1
+            #region GetLayerVersion-1
 
             var client = new AmazonLambdaClient();
-            var response = client.GetLayerVersion(new GetLayerVersionRequest 
+            var response = client.GetLayerVersion(new GetLayerVersionRequest
             {
                 LayerName = "my-layer",
                 VersionNumber = 1
@@ -447,17 +448,17 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             string layerArn = response.LayerArn;
             string layerVersionArn = response.LayerVersionArn;
             string licenseInfo = response.LicenseInfo;
-            long version = response.Version;
+            long? version = response.Version;
 
             #endregion
         }
 
         public void LambdaGetLayerVersionByArn()
         {
-            #region example-1
+            #region GetLayerVersionByArn-1
 
             var client = new AmazonLambdaClient();
-            var response = client.GetLayerVersionByArn(new GetLayerVersionByArnRequest 
+            var response = client.GetLayerVersionByArn(new GetLayerVersionByArnRequest
             {
                 Arn = "arn:aws:lambda:ca-central-1:123456789012:layer:blank-python-lib:3"
             });
@@ -468,17 +469,17 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             string description = response.Description;
             string layerArn = response.LayerArn;
             string layerVersionArn = response.LayerVersionArn;
-            long version = response.Version;
+            long? version = response.Version;
 
             #endregion
         }
 
         public void LambdaGetPolicy()
         {
-            #region example-1
+            #region GetPolicy-1
 
             var client = new AmazonLambdaClient();
-            var response = client.GetPolicy(new GetPolicyRequest 
+            var response = client.GetPolicy(new GetPolicyRequest
             {
                 FunctionName = "my-function",
                 Qualifier = "1"
@@ -492,50 +493,50 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaGetProvisionedConcurrencyConfig()
         {
-            #region example-1
+            #region GetProvisionedConcurrencyConfig-1
 
             var client = new AmazonLambdaClient();
-            var response = client.GetProvisionedConcurrencyConfig(new GetProvisionedConcurrencyConfigRequest 
+            var response = client.GetProvisionedConcurrencyConfig(new GetProvisionedConcurrencyConfigRequest
             {
                 FunctionName = "my-function",
                 Qualifier = "BLUE"
             });
 
-            int allocatedProvisionedConcurrentExecutions = response.AllocatedProvisionedConcurrentExecutions;
-            int availableProvisionedConcurrentExecutions = response.AvailableProvisionedConcurrentExecutions;
+            int? allocatedProvisionedConcurrentExecutions = response.AllocatedProvisionedConcurrentExecutions;
+            int? availableProvisionedConcurrentExecutions = response.AvailableProvisionedConcurrentExecutions;
             string lastModified = response.LastModified;
-            int requestedProvisionedConcurrentExecutions = response.RequestedProvisionedConcurrentExecutions;
-            string status = response.Status;
+            int? requestedProvisionedConcurrentExecutions = response.RequestedProvisionedConcurrentExecutions;
+            ProvisionedConcurrencyStatusEnum status = response.Status;
 
             #endregion
         }
 
         public void LambdaGetProvisionedConcurrencyConfig()
         {
-            #region example-2
+            #region GetProvisionedConcurrencyConfig-2
 
             var client = new AmazonLambdaClient();
-            var response = client.GetProvisionedConcurrencyConfig(new GetProvisionedConcurrencyConfigRequest 
+            var response = client.GetProvisionedConcurrencyConfig(new GetProvisionedConcurrencyConfigRequest
             {
                 FunctionName = "my-function",
                 Qualifier = "BLUE"
             });
 
-            int allocatedProvisionedConcurrentExecutions = response.AllocatedProvisionedConcurrentExecutions;
-            int availableProvisionedConcurrentExecutions = response.AvailableProvisionedConcurrentExecutions;
+            int? allocatedProvisionedConcurrentExecutions = response.AllocatedProvisionedConcurrentExecutions;
+            int? availableProvisionedConcurrentExecutions = response.AvailableProvisionedConcurrentExecutions;
             string lastModified = response.LastModified;
-            int requestedProvisionedConcurrentExecutions = response.RequestedProvisionedConcurrentExecutions;
-            string status = response.Status;
+            int? requestedProvisionedConcurrentExecutions = response.RequestedProvisionedConcurrentExecutions;
+            ProvisionedConcurrencyStatusEnum status = response.Status;
 
             #endregion
         }
 
         public void LambdaInvoke()
         {
-            #region example-1
+            #region Invoke-1
 
             var client = new AmazonLambdaClient();
-            var response = client.Invoke(new InvokeRequest 
+            var response = client.Invoke(new InvokeRequest
             {
                 DurableExecutionName = "myExecution",
                 FunctionName = "my-function",
@@ -544,17 +545,17 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             });
 
             MemoryStream payload = response.Payload;
-            int statusCode = response.StatusCode;
+            int? statusCode = response.StatusCode;
 
             #endregion
         }
 
         public void LambdaInvoke()
         {
-            #region example-2
+            #region Invoke-2
 
             var client = new AmazonLambdaClient();
-            var response = client.Invoke(new InvokeRequest 
+            var response = client.Invoke(new InvokeRequest
             {
                 FunctionName = "my-function",
                 InvocationType = "Event",
@@ -562,17 +563,17 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             });
 
             MemoryStream payload = response.Payload;
-            int statusCode = response.StatusCode;
+            int? statusCode = response.StatusCode;
 
             #endregion
         }
 
         public void LambdaListAliases()
         {
-            #region example-1
+            #region ListAliases-1
 
             var client = new AmazonLambdaClient();
-            var response = client.ListAliases(new ListAliasesRequest 
+            var response = client.ListAliases(new ListAliasesRequest
             {
                 FunctionName = "my-function"
             });
@@ -584,10 +585,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaListEventSourceMappings()
         {
-            #region example-1
+            #region ListEventSourceMappings-1
 
             var client = new AmazonLambdaClient();
-            var response = client.ListEventSourceMappings(new ListEventSourceMappingsRequest 
+            var response = client.ListEventSourceMappings(new ListEventSourceMappingsRequest
             {
                 FunctionName = "my-function"
             });
@@ -599,10 +600,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaListFunctionEventInvokeConfigs()
         {
-            #region example-1
+            #region ListFunctionEventInvokeConfigs-1
 
             var client = new AmazonLambdaClient();
-            var response = client.ListFunctionEventInvokeConfigs(new ListFunctionEventInvokeConfigsRequest 
+            var response = client.ListFunctionEventInvokeConfigs(new ListFunctionEventInvokeConfigsRequest
             {
                 FunctionName = "my-function"
             });
@@ -614,10 +615,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaListFunctions()
         {
-            #region example-1
+            #region ListFunctions-1
 
             var client = new AmazonLambdaClient();
-            var response = client.ListFunctions(new ListFunctionsRequest 
+            var response = client.ListFunctions(new ListFunctionsRequest
             {
             });
 
@@ -629,10 +630,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaListLayers()
         {
-            #region example-1
+            #region ListLayers-1
 
             var client = new AmazonLambdaClient();
-            var response = client.ListLayers(new ListLayersRequest 
+            var response = client.ListLayers(new ListLayersRequest
             {
                 CompatibleRuntime = "python3.7"
             });
@@ -644,10 +645,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaListLayerVersions()
         {
-            #region example-1
+            #region ListLayerVersions-1
 
             var client = new AmazonLambdaClient();
-            var response = client.ListLayerVersions(new ListLayerVersionsRequest 
+            var response = client.ListLayerVersions(new ListLayerVersionsRequest
             {
                 LayerName = "blank-java-lib"
             });
@@ -659,10 +660,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaListProvisionedConcurrencyConfigs()
         {
-            #region example-1
+            #region ListProvisionedConcurrencyConfigs-1
 
             var client = new AmazonLambdaClient();
-            var response = client.ListProvisionedConcurrencyConfigs(new ListProvisionedConcurrencyConfigsRequest 
+            var response = client.ListProvisionedConcurrencyConfigs(new ListProvisionedConcurrencyConfigsRequest
             {
                 FunctionName = "my-function"
             });
@@ -674,10 +675,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaListTags()
         {
-            #region example-1
+            #region ListTags-1
 
             var client = new AmazonLambdaClient();
-            var response = client.ListTags(new ListTagsRequest 
+            var response = client.ListTags(new ListTagsRequest
             {
                 Resource = "arn:aws:lambda:us-west-2:123456789012:function:my-function"
             });
@@ -689,10 +690,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaListVersionsByFunction()
         {
-            #region example-1
+            #region ListVersionsByFunction-1
 
             var client = new AmazonLambdaClient();
-            var response = client.ListVersionsByFunction(new ListVersionsByFunctionRequest 
+            var response = client.ListVersionsByFunction(new ListVersionsByFunctionRequest
             {
                 FunctionName = "my-function"
             });
@@ -704,10 +705,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaPublishLayerVersion()
         {
-            #region example-1
+            #region PublishLayerVersion-1
 
             var client = new AmazonLambdaClient();
-            var response = client.PublishLayerVersion(new PublishLayerVersionRequest 
+            var response = client.PublishLayerVersion(new PublishLayerVersionRequest
             {
                 CompatibleRuntimes = new List<string> {
                     "python3.6",
@@ -729,17 +730,17 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             string layerArn = response.LayerArn;
             string layerVersionArn = response.LayerVersionArn;
             string licenseInfo = response.LicenseInfo;
-            long version = response.Version;
+            long? version = response.Version;
 
             #endregion
         }
 
         public void LambdaPublishVersion()
         {
-            #region example-1
+            #region PublishVersion-1
 
             var client = new AmazonLambdaClient();
-            var response = client.PublishVersion(new PublishVersionRequest 
+            var response = client.PublishVersion(new PublishVersionRequest
             {
                 CodeSha256 = "",
                 Description = "",
@@ -747,7 +748,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             });
 
             string codeSha256 = response.CodeSha256;
-            long codeSize = response.CodeSize;
+            long? codeSize = response.CodeSize;
             string description = response.Description;
             EnvironmentResponse environment = response.Environment;
             string functionArn = response.FunctionArn;
@@ -755,13 +756,13 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             string handler = response.Handler;
             string kmsKeyArn = response.KMSKeyArn;
             string lastModified = response.LastModified;
-            string lastUpdateStatus = response.LastUpdateStatus;
-            int memorySize = response.MemorySize;
+            LastUpdateStatus lastUpdateStatus = response.LastUpdateStatus;
+            int? memorySize = response.MemorySize;
             string revisionId = response.RevisionId;
             string role = response.Role;
-            string runtime = response.Runtime;
-            string state = response.State;
-            int timeout = response.Timeout;
+            Runtime runtime = response.Runtime;
+            State state = response.State;
+            int? timeout = response.Timeout;
             TracingConfigResponse tracingConfig = response.TracingConfig;
             string version = response.Version;
 
@@ -770,26 +771,26 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaPutFunctionConcurrency()
         {
-            #region example-1
+            #region PutFunctionConcurrency-1
 
             var client = new AmazonLambdaClient();
-            var response = client.PutFunctionConcurrency(new PutFunctionConcurrencyRequest 
+            var response = client.PutFunctionConcurrency(new PutFunctionConcurrencyRequest
             {
                 FunctionName = "my-function",
                 ReservedConcurrentExecutions = 100
             });
 
-            int reservedConcurrentExecutions = response.ReservedConcurrentExecutions;
+            int? reservedConcurrentExecutions = response.ReservedConcurrentExecutions;
 
             #endregion
         }
 
         public void LambdaPutFunctionEventInvokeConfig()
         {
-            #region example-1
+            #region PutFunctionEventInvokeConfig-1
 
             var client = new AmazonLambdaClient();
-            var response = client.PutFunctionEventInvokeConfig(new PutFunctionEventInvokeConfigRequest 
+            var response = client.PutFunctionEventInvokeConfig(new PutFunctionEventInvokeConfigRequest
             {
                 FunctionName = "my-function",
                 MaximumEventAgeInSeconds = 3600,
@@ -798,39 +799,39 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
             DestinationConfig destinationConfig = response.DestinationConfig;
             string functionArn = response.FunctionArn;
-            DateTime lastModified = response.LastModified;
-            int maximumEventAgeInSeconds = response.MaximumEventAgeInSeconds;
-            int maximumRetryAttempts = response.MaximumRetryAttempts;
+            DateTime? lastModified = response.LastModified;
+            int? maximumEventAgeInSeconds = response.MaximumEventAgeInSeconds;
+            int? maximumRetryAttempts = response.MaximumRetryAttempts;
 
             #endregion
         }
 
         public void LambdaPutProvisionedConcurrencyConfig()
         {
-            #region example-1
+            #region PutProvisionedConcurrencyConfig-1
 
             var client = new AmazonLambdaClient();
-            var response = client.PutProvisionedConcurrencyConfig(new PutProvisionedConcurrencyConfigRequest 
+            var response = client.PutProvisionedConcurrencyConfig(new PutProvisionedConcurrencyConfigRequest
             {
                 FunctionName = "my-function",
                 ProvisionedConcurrentExecutions = 100,
                 Qualifier = "BLUE"
             });
 
-            int allocatedProvisionedConcurrentExecutions = response.AllocatedProvisionedConcurrentExecutions;
+            int? allocatedProvisionedConcurrentExecutions = response.AllocatedProvisionedConcurrentExecutions;
             string lastModified = response.LastModified;
-            int requestedProvisionedConcurrentExecutions = response.RequestedProvisionedConcurrentExecutions;
-            string status = response.Status;
+            int? requestedProvisionedConcurrentExecutions = response.RequestedProvisionedConcurrentExecutions;
+            ProvisionedConcurrencyStatusEnum status = response.Status;
 
             #endregion
         }
 
         public void LambdaRemoveLayerVersionPermission()
         {
-            #region example-1
+            #region RemoveLayerVersionPermission-1
 
             var client = new AmazonLambdaClient();
-            var response = client.RemoveLayerVersionPermission(new RemoveLayerVersionPermissionRequest 
+            var response = client.RemoveLayerVersionPermission(new RemoveLayerVersionPermissionRequest
             {
                 LayerName = "my-layer",
                 StatementId = "xaccount",
@@ -843,10 +844,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaRemovePermission()
         {
-            #region example-1
+            #region RemovePermission-1
 
             var client = new AmazonLambdaClient();
-            var response = client.RemovePermission(new RemovePermissionRequest 
+            var response = client.RemovePermission(new RemovePermissionRequest
             {
                 FunctionName = "my-function",
                 Qualifier = "PROD",
@@ -859,10 +860,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonLambdaClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 Resource = "arn:aws:lambda:us-west-2:123456789012:function:my-function",
                 Tags = new Dictionary<string, string> {
@@ -876,10 +877,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonLambdaClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 Resource = "arn:aws:lambda:us-west-2:123456789012:function:my-function",
                 TagKeys = new List<string> {
@@ -893,10 +894,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaUpdateAlias()
         {
-            #region example-1
+            #region UpdateAlias-1
 
             var client = new AmazonLambdaClient();
-            var response = client.UpdateAlias(new UpdateAliasRequest 
+            var response = client.UpdateAlias(new UpdateAliasRequest
             {
                 FunctionName = "my-function",
                 FunctionVersion = "2",
@@ -918,10 +919,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaUpdateEventSourceMapping()
         {
-            #region example-1
+            #region UpdateEventSourceMapping-1
 
             var client = new AmazonLambdaClient();
-            var response = client.UpdateEventSourceMapping(new UpdateEventSourceMappingRequest 
+            var response = client.UpdateEventSourceMapping(new UpdateEventSourceMappingRequest
             {
                 BatchSize = 123,
                 Enabled = true,
@@ -929,10 +930,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
                 UUID = "a1b2c3d4-5678-90ab-cdef-11111EXAMPLE"
             });
 
-            int batchSize = response.BatchSize;
+            int? batchSize = response.BatchSize;
             string eventSourceArn = response.EventSourceArn;
             string functionArn = response.FunctionArn;
-            DateTime lastModified = response.LastModified;
+            DateTime? lastModified = response.LastModified;
             string lastProcessingResult = response.LastProcessingResult;
             string state = response.State;
             string stateTransitionReason = response.StateTransitionReason;
@@ -943,10 +944,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaUpdateFunctionCode()
         {
-            #region example-1
+            #region UpdateFunctionCode-1
 
             var client = new AmazonLambdaClient();
-            var response = client.UpdateFunctionCode(new UpdateFunctionCodeRequest 
+            var response = client.UpdateFunctionCode(new UpdateFunctionCodeRequest
             {
                 FunctionName = "my-function",
                 S3Bucket = "my-bucket-1xpuxmplzrlbh",
@@ -954,17 +955,17 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             });
 
             string codeSha256 = response.CodeSha256;
-            long codeSize = response.CodeSize;
+            long? codeSize = response.CodeSize;
             string description = response.Description;
             string functionArn = response.FunctionArn;
             string functionName = response.FunctionName;
             string handler = response.Handler;
             string lastModified = response.LastModified;
-            int memorySize = response.MemorySize;
+            int? memorySize = response.MemorySize;
             string revisionId = response.RevisionId;
             string role = response.Role;
-            string runtime = response.Runtime;
-            int timeout = response.Timeout;
+            Runtime runtime = response.Runtime;
+            int? timeout = response.Timeout;
             TracingConfigResponse tracingConfig = response.TracingConfig;
             string version = response.Version;
 
@@ -973,10 +974,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaUpdateFunctionConfiguration()
         {
-            #region example-1
+            #region UpdateFunctionConfiguration-1
 
             var client = new AmazonLambdaClient();
-            var response = client.UpdateFunctionConfiguration(new UpdateFunctionConfigurationRequest 
+            var response = client.UpdateFunctionConfiguration(new UpdateFunctionConfigurationRequest
             {
                 DurableConfig = new DurableConfig {
                     ExecutionTimeout = 3600,
@@ -987,18 +988,18 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             });
 
             string codeSha256 = response.CodeSha256;
-            long codeSize = response.CodeSize;
+            long? codeSize = response.CodeSize;
             string description = response.Description;
             DurableConfig durableConfig = response.DurableConfig;
             string functionArn = response.FunctionArn;
             string functionName = response.FunctionName;
             string handler = response.Handler;
             string lastModified = response.LastModified;
-            int memorySize = response.MemorySize;
+            int? memorySize = response.MemorySize;
             string revisionId = response.RevisionId;
             string role = response.Role;
-            string runtime = response.Runtime;
-            int timeout = response.Timeout;
+            Runtime runtime = response.Runtime;
+            int? timeout = response.Timeout;
             TracingConfigResponse tracingConfig = response.TracingConfig;
             string version = response.Version;
 
@@ -1007,10 +1008,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaUpdateFunctionEventInvokeConfig()
         {
-            #region example-1
+            #region UpdateFunctionEventInvokeConfig-1
 
             var client = new AmazonLambdaClient();
-            var response = client.UpdateFunctionEventInvokeConfig(new UpdateFunctionEventInvokeConfigRequest 
+            var response = client.UpdateFunctionEventInvokeConfig(new UpdateFunctionEventInvokeConfigRequest
             {
                 DestinationConfig = new DestinationConfig { OnFailure = new OnFailure { Destination = "arn:aws:sqs:us-east-2:123456789012:destination" } },
                 FunctionName = "my-function"
@@ -1018,20 +1019,17 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
             DestinationConfig destinationConfig = response.DestinationConfig;
             string functionArn = response.FunctionArn;
-            DateTime lastModified = response.LastModified;
-            int maximumEventAgeInSeconds = response.MaximumEventAgeInSeconds;
-            int maximumRetryAttempts = response.MaximumRetryAttempts;
+            DateTime? lastModified = response.LastModified;
+            int? maximumEventAgeInSeconds = response.MaximumEventAgeInSeconds;
+            int? maximumRetryAttempts = response.MaximumRetryAttempts;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

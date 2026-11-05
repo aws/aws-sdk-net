@@ -26,7 +26,7 @@ using Amazon.WorkMailMessageFlow.Endpoints;
 namespace Amazon.WorkMailMessageFlow.Internal
 {
     /// <summary>
-    /// Amazon WorkMailMessageFlow endpoint provider.
+    /// Amazon WorkMail Message Flow endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="WorkMailMessageFlowEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

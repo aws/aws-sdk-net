@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DocDBElastic
 {
     /// <summary>
-    /// Configuration for accessing Amazon DocDBElastic service
+    /// Configuration for accessing Amazon DocumentDB Elastic Clusters
     /// </summary>
     public static class AmazonDocDBElasticDefaultConfiguration
     {

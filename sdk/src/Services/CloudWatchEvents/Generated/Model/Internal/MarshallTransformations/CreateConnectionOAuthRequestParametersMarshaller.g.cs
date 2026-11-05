@@ -1,0 +1,88 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.CloudWatchEvents.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// CreateConnectionOAuthRequestParameters Marshaller
+    /// </summary>
+    public partial class CreateConnectionOAuthRequestParametersMarshaller : IRequestMarshaller<CreateConnectionOAuthRequestParameters, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(CreateConnectionOAuthRequestParameters requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAuthorizationEndpoint())
+            {
+                context.Writer.WritePropertyName("AuthorizationEndpoint");
+                context.Writer.WriteStringValue(requestObject.AuthorizationEndpoint);
+            }
+
+            if (requestObject.IsSetClientParameters())
+            {
+                context.Writer.WritePropertyName("ClientParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreateConnectionOAuthClientRequestParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.ClientParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetHttpMethod())
+            {
+                context.Writer.WritePropertyName("HttpMethod");
+                context.Writer.WriteStringValue(requestObject.HttpMethod);
+            }
+
+            if (requestObject.IsSetOAuthHttpParameters())
+            {
+                context.Writer.WritePropertyName("OAuthHttpParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConnectionHttpParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.OAuthHttpParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static CreateConnectionOAuthRequestParametersMarshaller Instance = new CreateConnectionOAuthRequestParametersMarshaller();
+    }
+}

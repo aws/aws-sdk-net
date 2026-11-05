@@ -26,7 +26,7 @@ using Amazon.ApplicationCostProfiler.Endpoints;
 namespace Amazon.ApplicationCostProfiler.Internal
 {
     /// <summary>
-    /// Amazon ApplicationCostProfiler endpoint provider.
+    /// AWS Application Cost Profiler endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ApplicationCostProfilerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

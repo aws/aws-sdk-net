@@ -31,7 +31,7 @@ using Amazon.SageMakerRuntimeHTTP2.Endpoints;
 namespace Amazon.SageMakerRuntimeHTTP2.Internal
 {
     /// <summary>
-    /// Amazon SageMakerRuntimeHTTP2 endpoint resolver.
+    /// Amazon SageMaker Runtime HTTP2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SageMakerRuntimeHTTP2 service requests.
     /// <para />

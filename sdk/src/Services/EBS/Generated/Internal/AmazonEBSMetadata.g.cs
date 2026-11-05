@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EBS.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon EBS service
+    /// Service metadata for Amazon Elastic Block Store
     /// </summary>
     public partial class AmazonEBSMetadata : IServiceMetadata
     {

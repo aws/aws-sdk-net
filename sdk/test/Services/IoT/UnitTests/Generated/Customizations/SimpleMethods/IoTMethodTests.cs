@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the iot-2015-05-28.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -73,7 +73,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "TransferCertificate", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "UpdateCertificate", new Type[] { typeof(string), typeof(CertificateStatus), });
         }
-        
+
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
         {
             Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);

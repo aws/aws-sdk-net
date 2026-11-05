@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon HealthLake service
+    /// Service metadata for Amazon HealthLake
     /// </summary>
     public partial class AmazonHealthLakeMetadata : IServiceMetadata
     {

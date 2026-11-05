@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDeployment.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MarketplaceDeployment service
+    /// Service metadata for AWS Marketplace Deployment Service
     /// </summary>
     public partial class AmazonMarketplaceDeploymentMetadata : IServiceMetadata
     {

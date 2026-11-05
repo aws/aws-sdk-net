@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Kendra
 {
     /// <summary>
-    /// Configuration for accessing Amazon Kendra service
+    /// Configuration for accessing AWSKendraFrontendService
     /// </summary>
     public static class AmazonKendraDefaultConfiguration
     {

@@ -26,7 +26,7 @@ using Amazon.Kendra.Endpoints;
 namespace Amazon.Kendra.Internal
 {
     /// <summary>
-    /// Amazon Kendra endpoint provider.
+    /// AWSKendraFrontendService endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="KendraEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -90,11 +90,6 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ProfileId");
                 context.Writer.WriteStringValue(publicRequest.ProfileId);
             }
-            if (publicRequest.IsSetSourceFormat())
-            {
-                context.Writer.WritePropertyName("SourceFormat");
-                context.Writer.WriteStringValue(publicRequest.SourceFormat);
-            }
 
             writer.WriteEndObject();
             writer.Flush();

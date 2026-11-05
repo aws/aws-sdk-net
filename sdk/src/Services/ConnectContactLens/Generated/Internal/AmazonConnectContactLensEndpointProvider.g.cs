@@ -26,7 +26,7 @@ using Amazon.ConnectContactLens.Endpoints;
 namespace Amazon.ConnectContactLens.Internal
 {
     /// <summary>
-    /// Amazon ConnectContactLens endpoint provider.
+    /// Amazon Connect Contact Lens endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ConnectContactLensEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

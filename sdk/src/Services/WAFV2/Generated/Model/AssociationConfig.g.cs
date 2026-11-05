@@ -50,9 +50,83 @@ namespace Amazon.WAFV2.Model
     /// <para>
     /// For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
     /// </para>
+    ///  
+    /// <para>
+    /// You can also use this to have your CloudFront distributions insert the WAF challenge
+    /// JavaScript SDK into the HTML responses that they return. For more information, see
+    /// the <c>ChallengeJavascriptSdkInjection</c> setting. 
+    /// </para>
     /// </summary>
     public partial class AssociationConfig
     {
+        /// <summary>
+        /// Gets and sets the property ChallengeJavascriptSdkInjection. 
+        /// <para>
+        /// Specifies the CloudFront distributions that insert the WAF challenge JavaScript SDK
+        /// into the HTML responses that they return. When you enable this setting for a distribution,
+        /// you do not add the SDK to your web pages yourself. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can configure this setting only for CloudFront distributions, using the <c>CLOUDFRONT</c>
+        /// map key. WAF rejects any other resource type, and the setting is not available for
+        /// regional resources. To configure it, use the CloudFront scope. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Your web ACL must also contain at least one of the following qualifying managed rule
+        /// groups. WAF Bot Control qualifies only at the <c>TARGETED</c> inspection level, not
+        /// at <c>COMMON</c>: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The WAF Bot Control managed rule group <c>AWSManagedRulesBotControlRuleSet</c>, with
+        /// the inspection level set to <c>TARGETED</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The WAF Fraud Control account takeover prevention (ATP) managed rule group <c>AWSManagedRulesATPRuleSet</c>.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The WAF Fraud Control account creation fraud prevention (ACFP) managed rule group
+        /// <c>AWSManagedRulesACFPRuleSet</c>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you remove the last qualifying managed rule group from the web ACL, or lower the
+        /// WAF Bot Control inspection level from <c>TARGETED</c> to <c>COMMON</c>, you must remove
+        /// this setting in the same update. Otherwise, WAF rejects the update. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example JSON: <c> { "CLOUDFRONT": {} }</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this setting, CloudFront does not insert the SDK. When you omit it from
+        /// a web ACL that previously used it, cached HTML that already contains the SDK is still
+        /// served until it expires, or until you invalidate the cache for that distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-challenge-javascript-sdk-injection.html">Automatic
+        /// SDK integration for CloudFront distributions</a> in the <i>WAF Developer Guide</i>.
+        /// 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public Dictionary<string, ChallengeJavascriptSdkInjectionConfig> ChallengeJavascriptSdkInjection { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, ChallengeJavascriptSdkInjectionConfig>() : null;
+
+        /// <summary>
+        /// Checks to see if the ChallengeJavascriptSdkInjection property is set.
+        /// </summary>
+        internal bool IsSetChallengeJavascriptSdkInjection() => this.ChallengeJavascriptSdkInjection != null && (this.ChallengeJavascriptSdkInjection.Count > 0 || !AWSConfigs.InitializeCollections);
+
         /// <summary>
         /// Gets and sets the property RequestBody. 
         /// <para>

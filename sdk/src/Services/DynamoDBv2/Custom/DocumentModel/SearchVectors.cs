@@ -124,7 +124,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (TopK <= 0)
                 throw new ArgumentOutOfRangeException(nameof(TopK), "TopK must be greater than 0.");
             
-#if NETSTANDARD
+#if !NETFRAMEWORK
             var internalClient = SourceTable.DDBClient as AmazonDynamoDBClient;
             if (internalClient == null)
             {

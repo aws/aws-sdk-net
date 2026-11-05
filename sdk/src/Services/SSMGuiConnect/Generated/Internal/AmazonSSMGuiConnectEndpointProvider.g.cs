@@ -26,7 +26,7 @@ using Amazon.SSMGuiConnect.Endpoints;
 namespace Amazon.SSMGuiConnect.Internal
 {
     /// <summary>
-    /// Amazon SSMGuiConnect endpoint provider.
+    /// AWS SSM-GUIConnect endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SSMGuiConnectEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

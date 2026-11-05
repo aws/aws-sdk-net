@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IoTWireless service
+    /// Service metadata for AWS IoT Wireless
     /// </summary>
     public partial class AmazonIoTWirelessMetadata : IServiceMetadata
     {

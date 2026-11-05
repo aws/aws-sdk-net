@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Macie2 service
+    /// Service metadata for Amazon Macie 2
     /// </summary>
     public partial class AmazonMacie2Metadata : IServiceMetadata
     {

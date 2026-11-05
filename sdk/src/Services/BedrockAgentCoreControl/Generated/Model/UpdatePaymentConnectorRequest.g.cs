@@ -1,0 +1,132 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.BedrockAgentCoreControl.Model
+{
+    /// <summary>
+    /// Container for the parameters to the UpdatePaymentConnector operation. Updates an existing
+    /// payment connector. This operation uses PATCH semantics, so you only need to specify
+    /// the fields you want to change.
+    /// </summary>
+    public partial class UpdatePaymentConnectorRequest : AmazonBedrockAgentCoreControlRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier to ensure that the API request completes no more
+        /// than one time. If you don't specify this field, a value is randomly generated for
+        /// you. If this token matches a previous request, the service ignores the request, but
+        /// doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// idempotency</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 33, Max = 256)]
+        public string ClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientToken property is set.
+        /// </summary>
+        internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
+        /// Gets and sets the property CredentialProviderConfigurations. 
+        /// <para>
+        /// The updated credential provider configurations for the payment connector.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 1)]
+        public List<CredentialsProviderConfiguration> CredentialProviderConfigurations { get; set; } = AWSConfigs.InitializeCollections ? new List<CredentialsProviderConfiguration>() : null;
+
+        /// <summary>
+        /// Checks to see if the CredentialProviderConfigurations property is set.
+        /// </summary>
+        internal bool IsSetCredentialProviderConfigurations() => this.CredentialProviderConfigurations != null && (this.CredentialProviderConfigurations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The updated description of the payment connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 4096)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property PaymentConnectorId. 
+        /// <para>
+        /// The unique identifier of the payment connector to update.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 12, Max = 211)]
+        public string PaymentConnectorId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PaymentConnectorId property is set.
+        /// </summary>
+        internal bool IsSetPaymentConnectorId() => this.PaymentConnectorId != null;
+
+        /// <summary>
+        /// Gets and sets the property PaymentManagerId. 
+        /// <para>
+        /// The unique identifier of the parent payment manager.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 12, Max = 211)]
+        public string PaymentManagerId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PaymentManagerId property is set.
+        /// </summary>
+        internal bool IsSetPaymentManagerId() => this.PaymentManagerId != null;
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The updated type of the payment connector.
+        /// </para>
+        /// </summary>
+        public PaymentConnectorType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
+    }
+}

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon RAM service
+    /// Service metadata for AWS Resource Access Manager
     /// </summary>
     public partial class AmazonRAMMetadata : IServiceMetadata
     {

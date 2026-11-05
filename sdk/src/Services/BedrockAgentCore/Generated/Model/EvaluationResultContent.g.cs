@@ -85,6 +85,22 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetErrorMessage() => this.ErrorMessage != null;
 
         /// <summary>
+        /// Gets and sets the property EvaluationDimensionName. 
+        /// <para>
+        ///  The name of the dimension that this result scores. This field is set only on results
+        /// produced by an evaluator that uses a multi-dimensional rating scale, where each dimension
+        /// is scored independently. For evaluators with a single rating scale, this field is
+        /// absent. 
+        /// </para>
+        /// </summary>
+        public string EvaluationDimensionName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EvaluationDimensionName property is set.
+        /// </summary>
+        internal bool IsSetEvaluationDimensionName() => this.EvaluationDimensionName != null;
+
+        /// <summary>
         /// Gets and sets the property EvaluatorArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of the evaluator used to generate this result. For

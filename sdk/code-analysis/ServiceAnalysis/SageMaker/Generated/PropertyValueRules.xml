@@ -12434,6 +12434,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.InferenceComponentComputeResourceRequirements.AcceleratorPartitionType</property>
+    <max>32</max>
+    <pattern>^mig-[0-9]+g\.[0-9]+gb([+-][a-z0-9.]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.InferenceComponentComputeResourceRequirements.MaxMemoryRequiredInMb</property>
     <min>128</min>
   </property-value-rule>

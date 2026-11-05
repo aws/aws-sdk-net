@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.QConnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon QConnect service
+    /// Configuration for accessing Amazon Q Connect
     /// </summary>
     public static class AmazonQConnectDefaultConfiguration
     {

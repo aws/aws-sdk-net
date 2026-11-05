@@ -45,6 +45,12 @@ namespace Amazon.IVS.Model
         IListChannelsPaginator ListChannels(ListChannelsRequest request);
 
         /// <summary>
+        /// Paginator for ListFailoverSlateConfigurations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListFailoverSlateConfigurationsPaginator ListFailoverSlateConfigurations(ListFailoverSlateConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListPlaybackKeyPairs operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

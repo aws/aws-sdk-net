@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Mgn service
+    /// Service metadata for Application Migration Service
     /// </summary>
     public partial class AmazonMgnMetadata : IServiceMetadata
     {

@@ -1,0 +1,72 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.SimpleEmail.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ListCustomVerificationEmailTemplates operation.
+    /// Lists the existing custom verification email templates for your account in the current
+    /// Amazon Web Services Region. <para> For more information about custom verification
+    /// email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+    /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+    /// </para> <para> You can execute this operation no more than once per second. </para>
+    /// </summary>
+    public partial class ListCustomVerificationEmailTemplatesRequest : AmazonSimpleEmailServiceRequest
+    {
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of custom verification email templates to return. This value must
+        /// be at least 1 and less than or equal to 50. If you do not specify a value, or if you
+        /// specify a value less than 1 or greater than 50, the operation returns up to 50 results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 50)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// An array the contains the name and creation time stamp for each template in your Amazon
+        /// SES account.
+        /// </para>
+        /// </summary>
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+    }
+}

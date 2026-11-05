@@ -26,7 +26,7 @@ using Amazon.KeyspacesStreams.Endpoints;
 namespace Amazon.KeyspacesStreams.Internal
 {
     /// <summary>
-    /// Amazon KeyspacesStreams endpoint provider.
+    /// Amazon Keyspaces Streams endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="KeyspacesStreamsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -31,7 +31,7 @@ using Amazon.CleanRoomsML.Endpoints;
 namespace Amazon.CleanRoomsML.Internal
 {
     /// <summary>
-    /// Amazon CleanRoomsML endpoint resolver.
+    /// AWS Clean Rooms ML endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CleanRoomsML service requests.
     /// <para />

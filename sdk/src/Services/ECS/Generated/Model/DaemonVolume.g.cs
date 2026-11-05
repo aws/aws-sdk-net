@@ -49,6 +49,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetHost() => this.Host != null;
 
         /// <summary>
+        /// Gets and sets the property LogDriverVolumeConfiguration. 
+        /// <para>
+        /// The log driver volume configuration. With a log driver volume, the containers in a
+        /// daemon task can read the log files that a log driver writes for the other tasks on
+        /// the container instance. To read the log files, mount the volume into a container in
+        /// the daemon task with <c>mountPoints</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>host</c> to bind mount a path on the container instance. Use <c>logDriverVolumeConfiguration</c>
+        /// to read the log output of other tasks. You can't specify both for the same volume.
+        /// </para>
+        /// </summary>
+        public LogDriverVolumeConfiguration LogDriverVolumeConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LogDriverVolumeConfiguration property is set.
+        /// </summary>
+        internal bool IsSetLogDriverVolumeConfiguration() => this.LogDriverVolumeConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores,

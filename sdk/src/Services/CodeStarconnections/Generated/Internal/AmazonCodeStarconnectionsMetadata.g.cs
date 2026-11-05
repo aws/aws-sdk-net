@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarconnections.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CodeStarconnections service
+    /// Service metadata for AWS CodeStar connections
     /// </summary>
     public partial class AmazonCodeStarconnectionsMetadata : IServiceMetadata
     {

@@ -1,0 +1,297 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.GameLift.Model
+{
+    /// <summary>
+    /// Properties that describe a game server group resource. A game server group manages
+    /// certain properties related to a corresponding Amazon EC2 Auto Scaling group. 
+    /// 
+    ///  
+    /// <para>
+    /// A game server group is created by a successful call to <c>CreateGameServerGroup</c>
+    /// and deleted by calling <c>DeleteGameServerGroup</c>. Game server group activity can
+    /// be temporarily suspended and resumed by calling <c>SuspendGameServerGroup</c> and
+    /// <c>ResumeGameServerGroup</c>, respectively. 
+    /// </para>
+    /// </summary>
+    public partial class GameServerGroup
+    {
+        /// <summary>
+        /// Gets and sets the property AutoScalingGroupArn. 
+        /// <para>
+        /// A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with
+        /// this game server group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 256)]
+        public string AutoScalingGroupArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AutoScalingGroupArn property is set.
+        /// </summary>
+        internal bool IsSetAutoScalingGroupArn() => this.AutoScalingGroupArn != null;
+
+        /// <summary>
+        /// Gets and sets the property BalancingStrategy. 
+        /// <para>
+        /// Indicates how Amazon GameLift Servers FleetIQ balances the use of Spot Instances and
+        /// On-Demand Instances in the game server group. Method options include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SPOT_ONLY</c> - Only Spot Instances are used in the game server group. If Spot
+        /// Instances are unavailable or not viable for game hosting, the game server group provides
+        /// no hosting capacity until Spot Instances can again be used. Until then, no new instances
+        /// are started, and the existing nonviable Spot Instances are terminated (after current
+        /// gameplay ends) and are not replaced.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SPOT_PREFERRED</c> - (default value) Spot Instances are used whenever available
+        /// in the game server group. If Spot Instances are unavailable, the game server group
+        /// continues to provide hosting capacity by falling back to On-Demand Instances. Existing
+        /// nonviable Spot Instances are terminated (after current gameplay ends) and are replaced
+        /// with new On-Demand Instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ON_DEMAND_ONLY</c> - Only On-Demand Instances are used in the game server group.
+        /// No Spot Instances are used, even when available, while this balancing strategy is
+        /// in force.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public BalancingStrategy BalancingStrategy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BalancingStrategy property is set.
+        /// </summary>
+        internal bool IsSetBalancingStrategy() => this.BalancingStrategy != null;
+
+        /// <summary>
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// A time stamp indicating when this data object was created. Format is a number expressed
+        /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
+        /// </para>
+        /// </summary>
+        public DateTime? CreationTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreationTime property is set.
+        /// </summary>
+        internal bool IsSetCreationTime() => this.CreationTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property GameServerGroupArn. 
+        /// <para>
+        /// A generated unique ID for the game server group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string GameServerGroupArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GameServerGroupArn property is set.
+        /// </summary>
+        internal bool IsSetGameServerGroupArn() => this.GameServerGroupArn != null;
+
+        /// <summary>
+        /// Gets and sets the property GameServerGroupName. 
+        /// <para>
+        /// A developer-defined identifier for the game server group. The name is unique for each
+        /// Region in each Amazon Web Services account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string GameServerGroupName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GameServerGroupName property is set.
+        /// </summary>
+        internal bool IsSetGameServerGroupName() => this.GameServerGroupName != null;
+
+        /// <summary>
+        /// Gets and sets the property GameServerProtectionPolicy. 
+        /// <para>
+        /// A flag that indicates whether instances in the game server group are protected from
+        /// early termination. Unprotected instances that have active game servers running might
+        /// be terminated during a scale-down event, causing players to be dropped from the game.
+        /// Protected instances cannot be terminated while there are active game servers running
+        /// except in the event of a forced game server group deletion. An exception to this is
+        /// with Spot Instances, which can be terminated by Amazon Web Services regardless of
+        /// protection status. 
+        /// </para>
+        /// </summary>
+        public GameServerProtectionPolicy GameServerProtectionPolicy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GameServerProtectionPolicy property is set.
+        /// </summary>
+        internal bool IsSetGameServerProtectionPolicy() => this.GameServerProtectionPolicy != null;
+
+        /// <summary>
+        /// Gets and sets the property InstanceDefinitions. 
+        /// <para>
+        /// The set of Amazon EC2 instance types that Amazon GameLift Servers FleetIQ can use
+        /// when balancing and automatically scaling instances in the corresponding Auto Scaling
+        /// group. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 2, Max = 20)]
+        public List<InstanceDefinition> InstanceDefinitions { get; set; } = AWSConfigs.InitializeCollections ? new List<InstanceDefinition>() : null;
+
+        /// <summary>
+        /// Checks to see if the InstanceDefinitions property is set.
+        /// </summary>
+        internal bool IsSetInstanceDefinitions() => this.InstanceDefinitions != null && (this.InstanceDefinitions.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedTime. 
+        /// <para>
+        /// A timestamp that indicates when this game server group was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime? LastUpdatedTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastUpdatedTime property is set.
+        /// </summary>
+        internal bool IsSetLastUpdatedTime() => this.LastUpdatedTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// for an IAM role that allows Amazon GameLift Servers to access your Amazon EC2 Auto
+        /// Scaling groups.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string RoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RoleArn property is set.
+        /// </summary>
+        internal bool IsSetRoleArn() => this.RoleArn != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the game server group. Possible statuses include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>NEW</c> - Amazon GameLift Servers FleetIQ has validated the <c>CreateGameServerGroup()</c>
+        /// request. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ACTIVATING</c> - Amazon GameLift Servers FleetIQ is setting up a game server group,
+        /// which includes creating an Auto Scaling group in your Amazon Web Services account.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ACTIVE</c> - The game server group has been successfully created. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETE_SCHEDULED</c> - A request to delete the game server group has been received.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETING</c> - Amazon GameLift Servers FleetIQ has received a valid <c>DeleteGameServerGroup()</c>
+        /// request and is processing it. Amazon GameLift Servers FleetIQ must first complete
+        /// and release hosts before it deletes the Auto Scaling group and the game server group.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETED</c> - The game server group has been successfully deleted. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ERROR</c> - The asynchronous processes of activating or deleting a game server
+        /// group has failed, resulting in an error state.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public GameServerGroupStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// Additional information about the current game server group status. This information
+        /// might provide additional insight on groups that are in <c>ERROR</c> status.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1024)]
+        public string StatusReason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StatusReason property is set.
+        /// </summary>
+        internal bool IsSetStatusReason() => this.StatusReason != null;
+
+        /// <summary>
+        /// Gets and sets the property SuspendedActions. 
+        /// <para>
+        /// A list of activities that are currently suspended for this game server group. If this
+        /// property is empty, all activities are occurring.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1)]
+        public List<string> SuspendedActions { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the SuspendedActions property is set.
+        /// </summary>
+        internal bool IsSetSuspendedActions() => this.SuspendedActions != null && (this.SuspendedActions.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

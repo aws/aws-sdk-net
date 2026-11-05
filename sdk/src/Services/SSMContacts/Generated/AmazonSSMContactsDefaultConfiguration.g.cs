@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SSMContacts
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSMContacts service
+    /// Configuration for accessing AWS Systems Manager Incident Manager Contacts
     /// </summary>
     public static class AmazonSSMContactsDefaultConfiguration
     {

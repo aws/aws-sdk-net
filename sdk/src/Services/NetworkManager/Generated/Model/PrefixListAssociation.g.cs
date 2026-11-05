@@ -37,7 +37,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property CoreNetworkId. 
         /// <para>
-        /// The core network id in the association.
+        /// The ID of the core network in the association.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 50)]

@@ -26,7 +26,7 @@ using Amazon.MigrationHubConfig.Endpoints;
 namespace Amazon.MigrationHubConfig.Internal
 {
     /// <summary>
-    /// Amazon MigrationHubConfig endpoint provider.
+    /// AWS Migration Hub Config endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MigrationHubConfigEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

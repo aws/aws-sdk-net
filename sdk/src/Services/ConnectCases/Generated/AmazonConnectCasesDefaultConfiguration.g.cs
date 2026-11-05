@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ConnectCases
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectCases service
+    /// Configuration for accessing Amazon Connect Cases
     /// </summary>
     public static class AmazonConnectCasesDefaultConfiguration
     {

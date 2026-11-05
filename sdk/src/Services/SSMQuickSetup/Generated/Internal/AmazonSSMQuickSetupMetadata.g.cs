@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMQuickSetup.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SSMQuickSetup service
+    /// Service metadata for AWS Systems Manager QuickSetup
     /// </summary>
     public partial class AmazonSSMQuickSetupMetadata : IServiceMetadata
     {

@@ -31,7 +31,7 @@ using Amazon.S3Tables.Endpoints;
 namespace Amazon.S3Tables.Internal
 {
     /// <summary>
-    /// Amazon S3Tables endpoint resolver.
+    /// Amazon S3 Tables endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for S3Tables service requests.
     /// <para />

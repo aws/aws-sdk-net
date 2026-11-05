@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ComputeOptimizer service
+    /// Service metadata for AWS Compute Optimizer
     /// </summary>
     public partial class AmazonComputeOptimizerMetadata : IServiceMetadata
     {

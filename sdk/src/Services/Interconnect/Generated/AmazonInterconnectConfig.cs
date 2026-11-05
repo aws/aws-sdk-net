@@ -27,12 +27,12 @@ using Amazon.Interconnect.Internal;
 namespace Amazon.Interconnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon Interconnect service
+    /// Configuration for accessing Interconnect
     /// </summary>
     public partial class AmazonInterconnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Interconnect", "4.0.100.19");
+            InternalSDKUtils.BuildUserAgentString("Interconnect", "4.0.100.22");
 
         private static readonly AmazonInterconnectEndpointResolver EndpointResolver =
             new AmazonInterconnectEndpointResolver();

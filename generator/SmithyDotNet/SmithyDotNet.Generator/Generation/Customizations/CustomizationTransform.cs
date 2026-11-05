@@ -36,6 +36,11 @@ public static class CustomizationTransform
             }
         }
 
+        if (customizations.ShapeModifiers.Remove("*", out var global))
+        {
+            ExpandGlobal(model, global, customizations);
+        }
+
         foreach (var (shapeName, modifier) in customizations.ShapeModifiers)
         {
             var shape = FindSingleShape(model, shapeName, $"shapeModifiers['{shapeName}']");
@@ -243,7 +248,7 @@ public static class CustomizationTransform
 
     // The response keeps one property, wrappedResultMember, typed as the modeled output: a new structure with that
     // single member becomes the operation's output, and the modeled output turns into an ordinary class.
-    // JsonResponseUnmarshallerWriter reads that member from the whole body, and PaginationResolver resolves output
+    // The JSON and CBOR response unmarshallers read that member from the whole body, and PaginationResolver resolves output
     // paths through it.
     private static void WrapOutput(SmithyModel model, OperationShape operation, string operationName, OperationModifier modifier)
     {
@@ -335,13 +340,23 @@ public static class CustomizationTransform
     // TODO: C2J merges shapes renamed to one name (S3's Grant and TargetGrant both become S3Grant). This also
     // scans unreachable shapes: S3 renames Rule, used only by operations it excludes, to its existing LifecycleRule.
     // Exceptions share the model namespace, so compare the generated type names (error Foo emits FooException).
+    // Service, resource and operation shapes emit no type of their own (an operation emits FooRequest and
+    // FooResponse), so a rename may take their name, as C2J's models do (Pinpoint's CreateRecommenderConfiguration).
     private static void ThrowIfEmitted(SmithyModel model, Dictionary<string, string> renames, Shape? renamed, string newName, string context)
     {
         var typeName = TypeName(renamed, newName);
-        var clash = model.Shapes.FirstOrDefault(kvp => TypeName(kvp.Value, EmittedName(renames, ShapeId.Parse(kvp.Key))) == typeName).Key;
-        if (clash is not null)
+        foreach (var (id, shape) in model.Shapes)
         {
-            throw new GeneratorException($"{context}, which '{clash}' is already emitted as.");
+            if (shape is ServiceShape or ResourceShape or OperationShape)
+            {
+                continue;
+            }
+
+            var emittedName = EmittedName(renames, ShapeId.Parse(id));
+            if (TypeName(shape, emittedName) == typeName)
+            {
+                throw new GeneratorException($"{context}, which '{id}' is already emitted as.");
+            }
         }
     }
 
@@ -408,6 +423,47 @@ public static class CustomizationTransform
         && !member.IsHttpLabel() && !member.IsHostLabel() && !member.IsIdempotencyToken()
         && !member.IsEventHeader() && !member.IsEventPayload()
         && !swappedType.StartsWith("List<", StringComparison.Ordinal) && !swappedType.StartsWith("Dictionary<", StringComparison.Ordinal);
+
+    // "*" modifies a member of that name in every structure, unless the structure's own entry modifies it, so it
+    // becomes one entry per structure.
+    private static void ExpandGlobal(SmithyModel model, ShapeModifier global, CustomizationsModel customizations)
+    {
+        if (global.Exclude.Count > 0 || global.DeprecatedMessage is not null)
+        {
+            throw new GeneratorException("shapeModifiers['*'] only supports modify.");
+        }
+
+        foreach (var (memberName, property) in global.Modify.SelectMany(entry => entry))
+        {
+            var found = false;
+            foreach (var structure in model.Shapes.Values.OfType<StructureShape>())
+            {
+                if (!structure.Members.ContainsKey(memberName))
+                {
+                    continue;
+                }
+
+                found = true;
+                if (!customizations.ShapeModifiers.TryGetValue(structure.Id.Name, out var modifier))
+                {
+                    modifier = new ShapeModifier();
+                    customizations.ShapeModifiers[structure.Id.Name] = modifier;
+                }
+
+                if (!modifier.Modify.Any(entry => entry.ContainsKey(memberName)))
+                {
+                    var entry = new Dictionary<string, PropertyModifier>();
+                    entry[memberName] = property;
+                    modifier.Modify.Add(entry);
+                }
+            }
+
+            if (!found)
+            {
+                throw new GeneratorException($"shapeModifiers['*'] modifies member '{memberName}', which no structure has.");
+            }
+        }
+    }
 
     private static void ApplyMember(StructureShape structure, string memberName, PropertyModifier property, string shapeName, CustomizationsModel customizations)
     {

@@ -250,6 +250,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.RootDeviceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("scanResults", targetDepth))
+                    {
+                        var unmarshaller = ScanResultsUnmarshaller.Instance;
+                        unmarshalledObject.ScanResults = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("sourceImageId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

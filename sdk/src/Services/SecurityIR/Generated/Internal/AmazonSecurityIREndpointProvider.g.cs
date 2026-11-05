@@ -26,7 +26,7 @@ using Amazon.SecurityIR.Endpoints;
 namespace Amazon.SecurityIR.Internal
 {
     /// <summary>
-    /// Amazon SecurityIR endpoint provider.
+    /// Security Incident Response endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SecurityIREndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

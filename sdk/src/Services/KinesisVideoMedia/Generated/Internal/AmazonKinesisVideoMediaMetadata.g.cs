@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoMedia.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon KinesisVideoMedia service
+    /// Service metadata for Amazon Kinesis Video Streams Media
     /// </summary>
     public partial class AmazonKinesisVideoMediaMetadata : IServiceMetadata
     {

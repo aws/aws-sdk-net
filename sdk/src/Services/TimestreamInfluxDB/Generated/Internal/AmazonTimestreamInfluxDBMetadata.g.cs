@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamInfluxDB.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon TimestreamInfluxDB service
+    /// Service metadata for Timestream InfluxDB
     /// </summary>
     public partial class AmazonTimestreamInfluxDBMetadata : IServiceMetadata
     {

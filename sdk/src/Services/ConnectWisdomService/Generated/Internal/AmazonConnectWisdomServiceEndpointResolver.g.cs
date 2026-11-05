@@ -31,7 +31,7 @@ using Amazon.ConnectWisdomService.Endpoints;
 namespace Amazon.ConnectWisdomService.Internal
 {
     /// <summary>
-    /// Amazon ConnectWisdomService endpoint resolver.
+    /// Amazon Connect Wisdom Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ConnectWisdomService service requests.
     /// <para />

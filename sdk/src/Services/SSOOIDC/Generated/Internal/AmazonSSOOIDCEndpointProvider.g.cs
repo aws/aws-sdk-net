@@ -26,7 +26,7 @@ using Amazon.SSOOIDC.Endpoints;
 namespace Amazon.SSOOIDC.Internal
 {
     /// <summary>
-    /// Amazon SSOOIDC endpoint provider.
+    /// AWS SSO OIDC endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SSOOIDCEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

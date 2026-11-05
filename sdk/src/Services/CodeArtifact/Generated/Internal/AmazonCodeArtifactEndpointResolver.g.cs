@@ -31,7 +31,7 @@ using Amazon.CodeArtifact.Endpoints;
 namespace Amazon.CodeArtifact.Internal
 {
     /// <summary>
-    /// Amazon CodeArtifact endpoint resolver.
+    /// CodeArtifact endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CodeArtifact service requests.
     /// <para />

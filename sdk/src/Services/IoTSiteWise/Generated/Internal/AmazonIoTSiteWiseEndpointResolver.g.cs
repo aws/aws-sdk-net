@@ -31,7 +31,7 @@ using Amazon.IoTSiteWise.Endpoints;
 namespace Amazon.IoTSiteWise.Internal
 {
     /// <summary>
-    /// Amazon IoTSiteWise endpoint resolver.
+    /// AWS IoT SiteWise endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IoTSiteWise service requests.
     /// <para />

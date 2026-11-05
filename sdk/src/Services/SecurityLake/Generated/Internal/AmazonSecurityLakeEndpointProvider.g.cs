@@ -26,7 +26,7 @@ using Amazon.SecurityLake.Endpoints;
 namespace Amazon.SecurityLake.Internal
 {
     /// <summary>
-    /// Amazon SecurityLake endpoint provider.
+    /// Amazon Security Lake endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SecurityLakeEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

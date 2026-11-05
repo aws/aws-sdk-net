@@ -61,6 +61,22 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if (requestObject.IsSetClientCertificates())
+            {
+                context.Writer.WritePropertyName("clientCertificates");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectClientCertificatesListValue in requestObject.ClientCertificates)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ClientCertificateMarshaller.Instance;
+                    marshaller.Marshall(requestObjectClientCertificatesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if (requestObject.IsSetDocuments())
             {
                 context.Writer.WritePropertyName("documents");

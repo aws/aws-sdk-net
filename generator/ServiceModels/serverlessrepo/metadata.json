@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "First release of the AWS Serverless Application Repository SDK.",
   "generate-client-constructors": true,
+  "base-name": "ServerlessApplicationRepository",
   "legacy-service-id": "ServerlessApplicationRepository"
 }

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceExplorer2.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ResourceExplorer2 service
+    /// Service metadata for AWS Resource Explorer
     /// </summary>
     public partial class AmazonResourceExplorer2Metadata : IServiceMetadata
     {

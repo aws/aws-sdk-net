@@ -32,7 +32,7 @@ using Amazon.S3.Endpoints;
 namespace Amazon.S3.Internal
 {
     /// <summary>
-    /// Amazon S3 endpoint resolver.
+    /// Amazon Simple Storage Service endpoint resolver.
     /// Custom PipelineHandler responsible for resolving endpoint and setting authentication parameters for S3 service requests.
     /// Collects values for S3EndpointParameters and then tries to resolve endpoint by calling 
     /// ResolveEndpoint method on GlobalEndpoints.Provider if present, otherwise uses S3EndpointProvider.

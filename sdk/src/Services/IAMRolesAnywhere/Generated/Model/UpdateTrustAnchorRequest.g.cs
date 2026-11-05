@@ -41,6 +41,20 @@ namespace Amazon.IAMRolesAnywhere.Model
     public partial class UpdateTrustAnchorRequest : AmazonIAMRolesAnywhereRequest
     {
         /// <summary>
+        /// Gets and sets the property CrlDpRevocationEnabled. 
+        /// <para>
+        /// Specifies whether the trust anchor checks certificate revocation status against CRL
+        /// distribution points.
+        /// </para>
+        /// </summary>
+        public bool? CrlDpRevocationEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CrlDpRevocationEnabled property is set.
+        /// </summary>
+        internal bool IsSetCrlDpRevocationEnabled() => this.CrlDpRevocationEnabled.HasValue;
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the trust anchor.

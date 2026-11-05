@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ECS service
+    /// Service metadata for Amazon EC2 Container Service
     /// </summary>
     public partial class AmazonECSMetadata : IServiceMetadata
     {

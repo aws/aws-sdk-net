@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CodeGuruReviewer
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeGuruReviewer service
+    /// Configuration for accessing Amazon CodeGuru Reviewer
     /// </summary>
     public static class AmazonCodeGuruReviewerDefaultConfiguration
     {

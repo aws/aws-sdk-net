@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TrustedAdvisor.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon TrustedAdvisor service
+    /// Service metadata for TrustedAdvisor Public API
     /// </summary>
     public partial class AmazonTrustedAdvisorMetadata : IServiceMetadata
     {

@@ -26,7 +26,7 @@ using Amazon.CognitoIdentityProvider.Endpoints;
 namespace Amazon.CognitoIdentityProvider.Internal
 {
     /// <summary>
-    /// Amazon CognitoIdentityProvider endpoint provider.
+    /// Amazon Cognito Identity Provider endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CognitoIdentityProviderEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

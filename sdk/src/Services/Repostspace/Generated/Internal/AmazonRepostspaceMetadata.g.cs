@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Repostspace.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Repostspace service
+    /// Service metadata for AWS re:Post Private
     /// </summary>
     public partial class AmazonRepostspaceMetadata : IServiceMetadata
     {

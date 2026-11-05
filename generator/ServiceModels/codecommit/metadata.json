@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories.",
+  "base-name": "CodeCommit",
   "legacy-service-id": "CodeCommit"
 }

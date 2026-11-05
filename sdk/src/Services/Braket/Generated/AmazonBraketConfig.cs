@@ -27,12 +27,12 @@ using Amazon.Braket.Internal;
 namespace Amazon.Braket
 {
     /// <summary>
-    /// Configuration for accessing Amazon Braket service
+    /// Configuration for accessing Braket
     /// </summary>
     public partial class AmazonBraketConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Braket", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("Braket", "4.0.100.23");
 
         private static readonly AmazonBraketEndpointResolver EndpointResolver =
             new AmazonBraketEndpointResolver();

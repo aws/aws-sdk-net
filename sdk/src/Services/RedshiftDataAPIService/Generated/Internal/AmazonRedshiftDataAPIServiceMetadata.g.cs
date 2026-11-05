@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RedshiftDataAPIService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon RedshiftDataAPIService service
+    /// Service metadata for Redshift Data API Service
     /// </summary>
     public partial class AmazonRedshiftDataAPIServiceMetadata : IServiceMetadata
     {

@@ -144,6 +144,13 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("msteams", targetDepth, ref reader))
+                {
+                    var unmarshaller = MSTeamsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Msteams = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("pagerduty", targetDepth, ref reader))
                 {
                     var unmarshaller = PagerDutyConfigurationUnmarshaller.Instance;

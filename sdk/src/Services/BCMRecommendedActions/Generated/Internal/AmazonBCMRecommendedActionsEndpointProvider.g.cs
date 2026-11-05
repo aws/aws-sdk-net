@@ -26,7 +26,7 @@ using Amazon.BCMRecommendedActions.Endpoints;
 namespace Amazon.BCMRecommendedActions.Internal
 {
     /// <summary>
-    /// Amazon BCMRecommendedActions endpoint provider.
+    /// AWS Billing and Cost Management Recommended Actions endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BCMRecommendedActionsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

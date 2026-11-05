@@ -1,0 +1,94 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CloudWatchLogs.Model
+{
+    /// <summary>
+    /// Container for the parameters to the PutDestinationPolicy operation. Creates or updates
+    /// an access policy associated with an existing destination. An access policy is an <a
+    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM
+    /// policy document</a> that is used to authorize claims to register a subscription filter
+    /// against a given destination.
+    /// </summary>
+    public partial class PutDestinationPolicyRequest : AmazonCloudWatchLogsRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AccessPolicy. 
+        /// <para>
+        /// An IAM policy document that authorizes cross-account users to deliver their log events
+        /// to the associated destination. This can be up to 5120 bytes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1)]
+        public string AccessPolicy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AccessPolicy property is set.
+        /// </summary>
+        internal bool IsSetAccessPolicy() => this.AccessPolicy != null;
+
+        /// <summary>
+        /// Gets and sets the property DestinationName. 
+        /// <para>
+        /// A name for an existing destination.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 512)]
+        public string DestinationName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DestinationName property is set.
+        /// </summary>
+        internal bool IsSetDestinationName() => this.DestinationName != null;
+
+        /// <summary>
+        /// Gets and sets the property ForceUpdate. 
+        /// <para>
+        /// Specify true if you are updating an existing destination policy to grant permission
+        /// to an organization ID instead of granting permission to individual Amazon Web Services
+        /// accounts. Before you update a destination policy this way, you must first update the
+        /// subscription filters in the accounts that send logs to this destination. If you do
+        /// not, the subscription filters might stop working. By specifying <c>true</c> for <c>forceUpdate</c>,
+        /// you are affirming that you have already updated the subscription filters. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Cross-Account-Log_Subscription-Update.html">
+        /// Updating an existing cross-account subscription</a> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, the default of <c>false</c> is used.
+        /// </para>
+        /// </summary>
+        public bool? ForceUpdate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ForceUpdate property is set.
+        /// </summary>
+        internal bool IsSetForceUpdate() => this.ForceUpdate.HasValue;
+    }
+}

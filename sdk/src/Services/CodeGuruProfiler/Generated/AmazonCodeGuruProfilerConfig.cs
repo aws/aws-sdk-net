@@ -27,12 +27,12 @@ using Amazon.CodeGuruProfiler.Internal;
 namespace Amazon.CodeGuruProfiler
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeGuruProfiler service
+    /// Configuration for accessing Amazon CodeGuru Profiler
     /// </summary>
     public partial class AmazonCodeGuruProfilerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeGuruProfiler", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("CodeGuruProfiler", "4.0.100.23");
 
         private static readonly AmazonCodeGuruProfilerEndpointResolver EndpointResolver =
             new AmazonCodeGuruProfilerEndpointResolver();

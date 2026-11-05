@@ -27,12 +27,12 @@ using Amazon.CloudFrontKeyValueStore.Internal;
 namespace Amazon.CloudFrontKeyValueStore
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudFrontKeyValueStore service
+    /// Configuration for accessing Amazon CloudFront KeyValueStore
     /// </summary>
     public partial class AmazonCloudFrontKeyValueStoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudFront KeyValueStore", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("CloudFront KeyValueStore", "4.0.100.23");
 
         private static readonly AmazonCloudFrontKeyValueStoreEndpointResolver EndpointResolver =
             new AmazonCloudFrontKeyValueStoreEndpointResolver();

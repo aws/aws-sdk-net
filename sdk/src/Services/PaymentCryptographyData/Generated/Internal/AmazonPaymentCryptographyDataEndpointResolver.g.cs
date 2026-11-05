@@ -31,7 +31,7 @@ using Amazon.PaymentCryptographyData.Endpoints;
 namespace Amazon.PaymentCryptographyData.Internal
 {
     /// <summary>
-    /// Amazon PaymentCryptographyData endpoint resolver.
+    /// Payment Cryptography Data Plane endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PaymentCryptographyData service requests.
     /// <para />

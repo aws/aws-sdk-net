@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.OAM
 {
     /// <summary>
-    /// Configuration for accessing Amazon OAM service
+    /// Configuration for accessing CloudWatch Observability Access Manager
     /// </summary>
     public static class AmazonOAMDefaultConfiguration
     {

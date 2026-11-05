@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CodeGuruProfiler
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeGuruProfiler service
+    /// Configuration for accessing Amazon CodeGuru Profiler
     /// </summary>
     public static class AmazonCodeGuruProfilerDefaultConfiguration
     {

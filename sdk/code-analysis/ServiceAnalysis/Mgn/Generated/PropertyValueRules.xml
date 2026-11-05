@@ -311,6 +311,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateNetworkMigrationDefinitionRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.CreateNetworkMigrationDefinitionRequest.Description</property>
     <min>0</min>
     <max>600</max>

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AppSync service
+    /// Service metadata for AWS AppSync
     /// </summary>
     public partial class AmazonAppSyncMetadata : IServiceMetadata
     {

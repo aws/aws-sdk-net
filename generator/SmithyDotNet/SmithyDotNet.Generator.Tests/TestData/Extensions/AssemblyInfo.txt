@@ -1,0 +1,4 @@
+using System.Reflection;
+
+[assembly: AssemblyVersion("3.9")]
+[assembly: AssemblyFileVersion("4.0.1.0")]

@@ -31,7 +31,7 @@ using Amazon.ResourceExplorer2.Endpoints;
 namespace Amazon.ResourceExplorer2.Internal
 {
     /// <summary>
-    /// Amazon ResourceExplorer2 endpoint resolver.
+    /// AWS Resource Explorer endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ResourceExplorer2 service requests.
     /// <para />

@@ -31,7 +31,7 @@ using Amazon.PartnerCentralChannel.Endpoints;
 namespace Amazon.PartnerCentralChannel.Internal
 {
     /// <summary>
-    /// Amazon PartnerCentralChannel endpoint resolver.
+    /// Partner Central Channel API endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PartnerCentralChannel service requests.
     /// <para />

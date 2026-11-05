@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS CodePipeline is a continuous delivery service for fast and reliable application updates.",
+  "base-name": "CodePipeline",
   "legacy-service-id": "CodePipeline"
 }

@@ -49,6 +49,14 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
+        /// Paginator for ListFailoverSlateConfigurations operation
+        /// </summary>
+        public IListFailoverSlateConfigurationsPaginator ListFailoverSlateConfigurations(ListFailoverSlateConfigurationsRequest request)
+        {
+            return new ListFailoverSlateConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPlaybackKeyPairs operation
         /// </summary>
         public IListPlaybackKeyPairsPaginator ListPlaybackKeyPairs(ListPlaybackKeyPairsRequest request)
