@@ -12,6 +12,7 @@
     "AccessAnalyzer",
     "Account",
     "AccountAccess",
+    "AccountAccessRuntime",
     "AgentRegistry",
     "AgentRegistryControl",
     "Amplify",

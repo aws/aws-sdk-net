@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.AccountAccessRuntime.Model.GetRoleCredentialsRequest.SessionName</property>
+    <pattern>^[a-zA-Z0-9_+=,.@-]{2,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccountAccessRuntime.Model.GetRoleCredentialsRequest.TenantId</property>
+    <min>3</min>
+    <max>24</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccountAccessRuntime.Model.ListRolesRequest.TenantId</property>
+    <min>3</min>
+    <max>24</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccountAccessRuntime.Model.AccessDetails.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+</property-value-rules>
