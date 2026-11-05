@@ -53,6 +53,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("ConnectedAccountConfigs", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ConnectedAccountConfig, ConnectedAccountConfigUnmarshaller>(ConnectedAccountConfigUnmarshaller.Instance);
+                    unmarshalledObject.ConnectedAccountConfigs = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("CryptoConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CryptoConfigUnmarshaller.Instance;
