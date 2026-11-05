@@ -348,7 +348,7 @@
     <property>Amazon.Glue.Model.CreateDevEndpointRequest.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateDevEndpointRequest.RoleArn</property>
@@ -363,7 +363,7 @@
     <property>Amazon.Glue.Model.CreateDevEndpointResponse.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateDevEndpointResponse.RoleArn</property>
@@ -550,7 +550,7 @@
     <property>Amazon.Glue.Model.CreateJobRequest.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateJobRequest.MaintenanceWindow</property>
@@ -584,7 +584,7 @@
     <property>Amazon.Glue.Model.CreateMLTransformRequest.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateMLTransformRequest.Name</property>
@@ -744,7 +744,7 @@
     <property>Amazon.Glue.Model.CreateSessionRequest.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateSessionRequest.Id</property>
@@ -2000,6 +2000,28 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetJobUpgradeAnalysisRequest.AnalysisId</property>
+    <min>39</min>
+    <max>39</max>
+    <pattern>^ja-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetJobUpgradeAnalysisRequest.JobName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetJobUpgradeAnalysisResponse.AnalysisId</property>
+    <min>39</min>
+    <max>39</max>
+    <pattern>^ja-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetJobUpgradeAnalysisResponse.JobName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetJobsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -2048,7 +2070,7 @@
     <property>Amazon.Glue.Model.GetMLTransformResponse.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetMLTransformResponse.Name</property>
@@ -3637,6 +3659,28 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.StartJobUpgradeAnalysisRequest.AnalysisId</property>
+    <min>39</min>
+    <max>39</max>
+    <pattern>^ja-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartJobUpgradeAnalysisRequest.JobName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartJobUpgradeAnalysisResponse.AnalysisId</property>
+    <min>39</min>
+    <max>39</max>
+    <pattern>^ja-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartJobUpgradeAnalysisResponse.JobName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.StartMLEvaluationTaskRunRequest.TransformId</property>
     <min>1</min>
     <max>255</max>
@@ -3727,6 +3771,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.StopCrawlerScheduleRequest.CrawlerName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StopJobUpgradeAnalysisRequest.AnalysisId</property>
+    <min>39</min>
+    <max>39</max>
+    <pattern>^ja-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StopJobUpgradeAnalysisRequest.JobName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -4129,7 +4184,7 @@
     <property>Amazon.Glue.Model.UpdateMLTransformRequest.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateMLTransformRequest.Name</property>
@@ -4498,6 +4553,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.AutoDataQuality.EvaluationContext</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.AutoUpgradeMetadata.AnalysisId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.AutoUpgradeMetadata.SourceVersion</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.AutoUpgradeMetadata.TargetVersion</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.BasicAuthenticationCredentials.Password</property>
@@ -5654,7 +5726,7 @@
     <property>Amazon.Glue.Model.DevEndpoint.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DevEndpoint.RoleArn</property>
@@ -6354,7 +6426,7 @@
     <property>Amazon.Glue.Model.Job.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Job.MaintenanceWindow</property>
@@ -6412,7 +6484,7 @@
     <property>Amazon.Glue.Model.JobRun.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobRun.Id</property>
@@ -6471,7 +6543,7 @@
     <property>Amazon.Glue.Model.JobUpdate.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobUpdate.MaintenanceWindow</property>
@@ -6680,7 +6752,7 @@
     <property>Amazon.Glue.Model.MLTransform.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.MLTransform.Name</property>
@@ -7608,7 +7680,7 @@
     <property>Amazon.Glue.Model.Session.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Session.Id</property>
@@ -8080,7 +8152,7 @@
     <property>Amazon.Glue.Model.TransformFilterCriteria.GlueVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(\w+\.)+\w+$</pattern>
+    <pattern>^((\w+\.)+\w+|auto)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.TransformFilterCriteria.Name</property>

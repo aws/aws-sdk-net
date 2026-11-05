@@ -12035,6 +12035,80 @@ namespace Amazon.Glue
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves the current status and results of an upgrade analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobUpgradeAnalysis service method.</param>
+        /// <returns>The response from the GetJobUpgradeAnalysis service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobUpgradeAnalysis">REST API Reference for GetJobUpgradeAnalysis Operation</seealso>
+        public virtual GetJobUpgradeAnalysisResponse GetJobUpgradeAnalysis(GetJobUpgradeAnalysisRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetJobUpgradeAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobUpgradeAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<GetJobUpgradeAnalysisResponse>(request, options);
+        }
+#else
+        internal virtual GetJobUpgradeAnalysisResponse GetJobUpgradeAnalysis(GetJobUpgradeAnalysisRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetJobUpgradeAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobUpgradeAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<GetJobUpgradeAnalysisResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves the current status and results of an upgrade analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobUpgradeAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetJobUpgradeAnalysis service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobUpgradeAnalysis">REST API Reference for GetJobUpgradeAnalysis Operation</seealso>
+        public virtual Task<GetJobUpgradeAnalysisResponse> GetJobUpgradeAnalysisAsync(GetJobUpgradeAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetJobUpgradeAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobUpgradeAnalysisResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetJobUpgradeAnalysisResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves all current job definitions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobs service method.</param>
@@ -20431,6 +20505,92 @@ namespace Amazon.Glue
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Resumes an analysis that is waiting for upgrade consent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartJobUpgradeAnalysis service method.</param>
+        /// <returns>The response from the StartJobUpgradeAnalysis service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartJobUpgradeAnalysis">REST API Reference for StartJobUpgradeAnalysis Operation</seealso>
+        public virtual StartJobUpgradeAnalysisResponse StartJobUpgradeAnalysis(StartJobUpgradeAnalysisRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartJobUpgradeAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartJobUpgradeAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<StartJobUpgradeAnalysisResponse>(request, options);
+        }
+#else
+        internal virtual StartJobUpgradeAnalysisResponse StartJobUpgradeAnalysis(StartJobUpgradeAnalysisRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartJobUpgradeAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartJobUpgradeAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<StartJobUpgradeAnalysisResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Resumes an analysis that is waiting for upgrade consent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartJobUpgradeAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartJobUpgradeAnalysis service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartJobUpgradeAnalysis">REST API Reference for StartJobUpgradeAnalysis Operation</seealso>
+        public virtual Task<StartJobUpgradeAnalysisResponse> StartJobUpgradeAnalysisAsync(StartJobUpgradeAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartJobUpgradeAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartJobUpgradeAnalysisResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartJobUpgradeAnalysisResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Starts a task to estimate the quality of the transform. 
         /// 
         ///  
@@ -21167,6 +21327,86 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = StopCrawlerScheduleResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopCrawlerScheduleResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Stops an in-progress upgrade analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopJobUpgradeAnalysis service method.</param>
+        /// <returns>The response from the StopJobUpgradeAnalysis service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopJobUpgradeAnalysis">REST API Reference for StopJobUpgradeAnalysis Operation</seealso>
+        public virtual StopJobUpgradeAnalysisResponse StopJobUpgradeAnalysis(StopJobUpgradeAnalysisRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopJobUpgradeAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopJobUpgradeAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<StopJobUpgradeAnalysisResponse>(request, options);
+        }
+#else
+        internal virtual StopJobUpgradeAnalysisResponse StopJobUpgradeAnalysis(StopJobUpgradeAnalysisRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopJobUpgradeAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopJobUpgradeAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<StopJobUpgradeAnalysisResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Stops an in-progress upgrade analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopJobUpgradeAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StopJobUpgradeAnalysis service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopJobUpgradeAnalysis">REST API Reference for StopJobUpgradeAnalysis Operation</seealso>
+        public virtual Task<StopJobUpgradeAnalysisResponse> StopJobUpgradeAnalysisAsync(StopJobUpgradeAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopJobUpgradeAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopJobUpgradeAnalysisResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopJobUpgradeAnalysisResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

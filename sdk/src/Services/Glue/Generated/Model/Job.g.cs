@@ -61,6 +61,18 @@ namespace Amazon.Glue.Model
         internal bool IsSetAllocatedCapacity() => this.AllocatedCapacity.HasValue;
 
         /// <summary>
+        /// Gets and sets the property AutoUpgradeMetadata. <text>The auto-upgrade assessment
+        /// information for a job configured with glueVersion=auto. This field is null when the
+        /// job is not configured to auto.</text>
+        /// </summary>
+        public AutoUpgradeMetadata AutoUpgradeMetadata { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AutoUpgradeMetadata property is set.
+        /// </summary>
+        internal bool IsSetAutoUpgradeMetadata() => this.AutoUpgradeMetadata != null;
+
+        /// <summary>
         /// Gets and sets the property CodeGenConfigurationNodes. 
         /// <para>
         /// The representation of a directed acyclic graph on which both the Glue Studio visual
