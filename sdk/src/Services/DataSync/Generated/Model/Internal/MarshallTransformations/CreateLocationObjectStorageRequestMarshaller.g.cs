@@ -110,6 +110,16 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetFederatedIdentity())
+            {
+                context.Writer.WritePropertyName("FederatedIdentity");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ObjectStorageFederatedIdentityConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FederatedIdentity, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetSecretKey())
             {
                 context.Writer.WritePropertyName("SecretKey");

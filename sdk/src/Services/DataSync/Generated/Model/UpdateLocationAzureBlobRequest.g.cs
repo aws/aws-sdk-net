@@ -90,7 +90,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property AuthenticationType. 
         /// <para>
         /// Specifies the authentication method DataSync uses to access your Azure Blob Storage.
-        /// DataSync can access blob storage using a shared access signature (SAS).
+        /// DataSync can access blob storage using a shared access signature (SAS) or an OpenID
+        /// Connect (OIDC) token.
         /// </para>
         /// </summary>
         public AzureBlobAuthenticationType AuthenticationType { get; set; }
@@ -146,6 +147,22 @@ namespace Amazon.DataSync.Model
         /// Checks to see if the CustomSecretConfig property is set.
         /// </summary>
         internal bool IsSetCustomSecretConfig() => this.CustomSecretConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property FederatedIdentity. 
+        /// <para>
+        /// Specifies the federated identity configuration that allows DataSync to access your
+        /// Azure Blob Storage using an OpenID Connect (OIDC) token instead of a shared access
+        /// signature (SAS). Provide either <c>FederatedIdentity</c> or <c>SasConfiguration</c>,
+        /// but not both.
+        /// </para>
+        /// </summary>
+        public AzureFederatedIdentityConfig FederatedIdentity { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FederatedIdentity property is set.
+        /// </summary>
+        internal bool IsSetFederatedIdentity() => this.FederatedIdentity != null;
 
         /// <summary>
         /// Gets and sets the property LocationArn. 

@@ -101,6 +101,13 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("FederatedIdentity", targetDepth, ref reader))
+                {
+                    var unmarshaller = AzureFederatedIdentityConfigUnmarshaller.Instance;
+                    unmarshalledObject.FederatedIdentity = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("LocationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
