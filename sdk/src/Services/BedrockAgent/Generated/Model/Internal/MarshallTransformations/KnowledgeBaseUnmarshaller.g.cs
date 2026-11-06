@@ -95,6 +95,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("metadataConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<MetadataConfiguration, MetadataConfigurationUnmarshaller>(MetadataConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.MetadataConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -125,6 +125,33 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetKnowledgeBaseId() => this.KnowledgeBaseId != null;
 
         /// <summary>
+        /// Gets and sets the property MetadataConfigurations. 
+        /// <para>
+        /// The custom metadata field configurations of the knowledge base. Each configuration
+        /// specifies whether its field is searchable (<c>ENABLED</c> or <c>DISABLED</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// If the update fails, the knowledge base status becomes <c>UPDATE_UNSUCCESSFUL</c>,
+        /// the field configurations revert to their previous values, and <c>failureReasons</c>
+        /// describes the cause. You can retry the update from <c>UPDATE_UNSUCCESSFUL</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 30)]
+        public List<MetadataConfiguration> MetadataConfigurations { get; set; } = AWSConfigs.InitializeCollections ? new List<MetadataConfiguration>() : null;
+
+        /// <summary>
+        /// Checks to see if the MetadataConfigurations property is set.
+        /// </summary>
+        internal bool IsSetMetadataConfigurations() => this.MetadataConfigurations != null && (this.MetadataConfigurations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the knowledge base.
