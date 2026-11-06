@@ -32,7 +32,7 @@ namespace Amazon.IVSRealTime
     public partial class AmazonIVSRealTimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IVS RealTime", "4.0.102.3");
+            InternalSDKUtils.BuildUserAgentString("IVS RealTime", "4.0.102.4");
 
         private static readonly AmazonIVSRealTimeEndpointResolver EndpointResolver =
             new AmazonIVSRealTimeEndpointResolver();

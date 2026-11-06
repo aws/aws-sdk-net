@@ -1,3 +1,47 @@
+### 4.0.365.0 (2026-11-06 19:40 UTC)
+* Athena (4.0.101.0)
+	* Added support for Athena System Tables which writes Athena usage data to AWS S3 managed tables in Apache Iceberg format. Adds CreateSystemTableConfiguration, UpdateSystemTableConfiguration, DeleteSystemTableConfiguration, GetSystemTableConfiguration, and ListSystemTableStatuses.
+* AutoScaling (4.0.106.0)
+	* Amazon EC2 Auto Scaling now lets you exclude managed resources from describe API responses using the new optional IncludeManagedResources parameter. Set this parameter to false to exclude managed resources from the response. By default, managed resources are included.
+* BedrockAgent (4.0.106.0)
+	* Add support for configuring searchability for metadata fields via UpdateKnowledgeBase request for Managed Knowledge Base. Once a field is marked as searchable it can be queried via query text and is factored into Managed Knowledge Base's ranking algorithm.
+* CloudFront (4.0.103.6)
+	* CloudFront is now generated from its Smithy model. There are no changes to the public API.
+* CloudSearchDomain (4.0.100.24)
+	* Replaced legacy BCL preprocessor guards in hand-written code with NETFRAMEWORK. There are no changes to the public API.
+* Connect (4.0.131.0)
+	* Rules in Amazon Connect now support ending email contacts associated to a case based on case events.
+* ConnectCases (4.0.101.0)
+	* Amazon Connect Cases adds two Bulk Case Actions operations. BatchCreateRelatedItem adds a Comment-type related item to up to 100 cases per request, BatchUpdateCase updates fields (title, status, customer ID, custom) on up to 100 cases. Same domain, per-case success and failure results returned.
+* DataZone (4.0.112.0)
+	* Adds support for updating OAuth 2.0 connection settings with UpdateConnection.
+* EKSAuth (4.0.102.0)
+	* Added workloadIdentityProviderArn to the AssumeRoleForPodIdentity API response.
+* Glue (4.0.118.0)
+	* Adds support for user-defined functions governed by AWS Lake Formation.
+* Lightsail (4.0.107.0)
+	* Marking fields as sensitive in GetInstanceAccessDetails, CreateKeyPair, DownloadDefaultKeyPair, CreateBucketAccessKey, CreateContainerServiceRegistryLogin, and GetRelationalDatabase responses.
+* MediaConvert (4.0.107.0)
+	* Smart subtitling uses AWS Elemental Inference to generate captions from your content's audio, in embedded, burn-in, DVB-Sub, IMSC, SMI, SRT, teletext, TTML, or WebVTT outputs. Also fixes HEVC passthrough writing an incomplete codecs string to DASH and HLS manifests.
+* RAM (4.0.101.0)
+	* Adds support for using managed permission template parameters, discovering shared customer-managed permissions, and managing customer-managed permission deprecation.
+* Route53 (4.0.100.24)
+	* Route53 is now generated from its Smithy model. There are no changes to the public API.
+* S3Control (4.0.101.12)
+	* S3Control is now generated from its Smithy model. There are no changes to the public API.
+* SecurityToken (4.0.101.10)
+	* Replaced legacy NETSTANDARD preprocessor guards in hand-written code with !NETFRAMEWORK. There are no changes to the public API.
+* SimpleDB (4.0.100.24)
+	* SimpleDB is now generated from its Smithy model.
+	* Added paginators for the ListDomains and Select operations.
+* SimpleNotificationService (4.0.100.25)
+	* Flattened the hand-written platform-specific folders into the Custom folder. There are no changes to the public API.
+* SimpleSystemsManagement (4.0.105.0)
+	* AWS Systems Manager now provides two new APIs - RegisterDefaultHostManagementConfiguration and DeregisterDefaultHostManagementConfiguration - along with a new DefaultHostManagementConfiguration CloudFormation resource type.
+* Core 4.0.102.19
+	* Updating partitions.json file.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.364.0 (2026-11-05 19:17 UTC)
 * AccountAccessRuntime (4.0.100.0)
 	* Adds SDK support for Account Access user portal operations, enabling users to list out and get credentials for role assignments configured in AWS IAM Account Access Manager.

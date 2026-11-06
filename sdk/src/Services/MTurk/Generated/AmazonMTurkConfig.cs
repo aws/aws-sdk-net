@@ -32,7 +32,7 @@ namespace Amazon.MTurk
     public partial class AmazonMTurkConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MTurk", "4.0.100.24");
+            InternalSDKUtils.BuildUserAgentString("MTurk", "4.0.100.25");
 
         private static readonly AmazonMTurkEndpointResolver EndpointResolver =
             new AmazonMTurkEndpointResolver();

@@ -32,7 +32,7 @@ namespace Amazon.EMRContainers
     public partial class AmazonEMRContainersConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EMR containers", "4.0.104.4");
+            InternalSDKUtils.BuildUserAgentString("EMR containers", "4.0.104.5");
 
         private static readonly AmazonEMRContainersEndpointResolver EndpointResolver =
             new AmazonEMRContainersEndpointResolver();

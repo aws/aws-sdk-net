@@ -32,7 +32,7 @@ namespace Amazon.Comprehend
     public partial class AmazonComprehendConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Comprehend", "4.0.100.23");
+            InternalSDKUtils.BuildUserAgentString("Comprehend", "4.0.100.24");
 
         private static readonly AmazonComprehendEndpointResolver EndpointResolver =
             new AmazonComprehendEndpointResolver();
