@@ -1,0 +1,215 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CloudFront.Model
+{
+    /// <summary>
+    /// A summary of the information for a CloudFront streaming distribution.
+    /// </summary>
+    public partial class StreamingDistributionSummary
+    {
+        /// <summary>
+        /// Empty constructor used to set properties independently even when a simple constructor is available
+        /// </summary>
+        public StreamingDistributionSummary() { }
+
+        /// <summary>
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) for the streaming distribution. For example: <c>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</c>,
+        /// where <c>123456789012</c> is your Amazon Web Services account ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string ARN { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ARN property is set.
+        /// </summary>
+        internal bool IsSetARN() => this.ARN != null;
+
+        /// <summary>
+        /// Gets and sets the property Aliases. 
+        /// <para>
+        /// A complex type that contains information about CNAMEs (alternate domain names), if
+        /// any, for this streaming distribution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public Aliases Aliases { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Aliases property is set.
+        /// </summary>
+        internal bool IsSetAliases() => this.Aliases != null;
+
+        /// <summary>
+        /// Gets and sets the property Comment. 
+        /// <para>
+        /// The comment originally specified when this distribution was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string Comment { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Comment property is set.
+        /// </summary>
+        internal bool IsSetComment() => this.Comment != null;
+
+        /// <summary>
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The domain name corresponding to the distribution, for example, <c>d111111abcdef8.cloudfront.net</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string DomainName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DomainName property is set.
+        /// </summary>
+        internal bool IsSetDomainName() => this.DomainName != null;
+
+        /// <summary>
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Whether the distribution is enabled to accept end user requests for content.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public bool? Enabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Enabled property is set.
+        /// </summary>
+        internal bool IsSetEnabled() => this.Enabled.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The identifier for the distribution, for example, <c>EDFDVBD632BHDS5</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Id property is set.
+        /// </summary>
+        internal bool IsSetId() => this.Id != null;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The date and time the distribution was last modified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public DateTime? LastModifiedTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedTime property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedTime() => this.LastModifiedTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property PriceClass. 
+        /// <para>
+        /// A complex type that contains information about price class for this streaming distribution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public PriceClass PriceClass { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PriceClass property is set.
+        /// </summary>
+        internal bool IsSetPriceClass() => this.PriceClass != null;
+
+        /// <summary>
+        /// Gets and sets the property S3Origin. 
+        /// <para>
+        /// A complex type that contains information about the Amazon S3 bucket from which you
+        /// want CloudFront to get your media files for distribution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public S3Origin S3Origin { get; set; }
+
+        /// <summary>
+        /// Checks to see if the S3Origin property is set.
+        /// </summary>
+        internal bool IsSetS3Origin() => this.S3Origin != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Indicates the current status of the distribution. When the status is <c>Deployed</c>,
+        /// the distribution's information is fully propagated throughout the Amazon CloudFront
+        /// system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property TrustedSigners. 
+        /// <para>
+        /// A complex type that specifies the Amazon Web Services accounts, if any, that you want
+        /// to allow to create signed URLs for private content. If you want to require signed
+        /// URLs in requests for objects in the target origin that match the <c>PathPattern</c>
+        /// for this cache behavior, specify <c>true</c> for <c>Enabled</c>, and specify the applicable
+        /// values for <c>Quantity</c> and <c>Items</c>.If you don't want to require signed URLs
+        /// in requests for objects that match <c>PathPattern</c>, specify <c>false</c> for <c>Enabled</c>
+        /// and <c>0</c> for <c>Quantity</c>. Omit <c>Items</c>. To add, change, or remove one
+        /// or more trusted signers, change <c>Enabled</c> to <c>true</c> (if it's currently <c>false</c>),
+        /// change <c>Quantity</c> as applicable, and specify all of the trusted signers that
+        /// you want to include in the updated distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public TrustedSigners TrustedSigners { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TrustedSigners property is set.
+        /// </summary>
+        internal bool IsSetTrustedSigners() => this.TrustedSigners != null;
+    }
+}

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
     {
         public void Route53AssociateVPCWithHostedZone()
         {
-            #region to-associate-a-vpc-with-a-hosted-zone-1484069228699
+            #region AssociateVPCWithHostedZone-1
 
             var client = new AmazonRoute53Client();
-            var response = client.AssociateVPCWithHostedZone(new AssociateVPCWithHostedZoneRequest 
+            var response = client.AssociateVPCWithHostedZone(new AssociateVPCWithHostedZoneRequest
             {
                 Comment = "",
                 HostedZoneId = "Z3M3LMPEXAMPLE",
@@ -33,89 +34,10 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
 
         public void Route53ChangeResourceRecordSets()
         {
-            #region to-create-update-or-delete-resource-record-sets-1484344703668
+            #region ChangeResourceRecordSets-1
 
             var client = new AmazonRoute53Client();
-            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
-            {
-                ChangeBatch = new ChangeBatch {
-                    Changes = new List<Change> {
-                        new Change {
-                            Action = "CREATE",
-                            ResourceRecordSet = new ResourceRecordSet {
-                                Name = "example.com",
-                                ResourceRecords = new List<ResourceRecord> {
-                                    new ResourceRecord { Value = "192.0.2.44" }
-                                },
-                                TTL = 60,
-                                Type = "A"
-                            }
-                        }
-                    },
-                    Comment = "Web server for example.com"
-                },
-                HostedZoneId = "Z3M3LMPEXAMPLE"
-            });
-
-            ChangeInfo changeInfo = response.ChangeInfo;
-
-            #endregion
-        }
-
-        public void Route53ChangeResourceRecordSets()
-        {
-            #region to-create-weighted-resource-record-sets-1484348208522
-
-            var client = new AmazonRoute53Client();
-            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
-            {
-                ChangeBatch = new ChangeBatch {
-                    Changes = new List<Change> {
-                        new Change {
-                            Action = "CREATE",
-                            ResourceRecordSet = new ResourceRecordSet {
-                                HealthCheckId = "abcdef11-2222-3333-4444-555555fedcba",
-                                Name = "example.com",
-                                ResourceRecords = new List<ResourceRecord> {
-                                    new ResourceRecord { Value = "192.0.2.44" }
-                                },
-                                SetIdentifier = "Seattle data center",
-                                TTL = 60,
-                                Type = "A",
-                                Weight = 100
-                            }
-                        },
-                        new Change {
-                            Action = "CREATE",
-                            ResourceRecordSet = new ResourceRecordSet {
-                                HealthCheckId = "abcdef66-7777-8888-9999-000000fedcba",
-                                Name = "example.com",
-                                ResourceRecords = new List<ResourceRecord> {
-                                    new ResourceRecord { Value = "192.0.2.45" }
-                                },
-                                SetIdentifier = "Portland data center",
-                                TTL = 60,
-                                Type = "A",
-                                Weight = 200
-                            }
-                        }
-                    },
-                    Comment = "Web servers for example.com"
-                },
-                HostedZoneId = "Z3M3LMPEXAMPLE"
-            });
-
-            ChangeInfo changeInfo = response.ChangeInfo;
-
-            #endregion
-        }
-
-        public void Route53ChangeResourceRecordSets()
-        {
-            #region to-create-an-alias-resource-record-set-1484348404062
-
-            var client = new AmazonRoute53Client();
-            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
+            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest
             {
                 ChangeBatch = new ChangeBatch {
                     Changes = new List<Change> {
@@ -134,7 +56,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
                     },
                     Comment = "CloudFront distribution for example.com"
                 },
-                HostedZoneId = "Z3M3LMPEXAMPLE" // Depends on the type of resource that you want to route traffic to
+                HostedZoneId = "Z3M3LMPEXAMPLE"
             });
 
             ChangeInfo changeInfo = response.ChangeInfo;
@@ -144,10 +66,10 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
 
         public void Route53ChangeResourceRecordSets()
         {
-            #region to-create-weighted-alias-resource-record-sets-1484349467416
+            #region ChangeResourceRecordSets-2
 
             var client = new AmazonRoute53Client();
-            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
+            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest
             {
                 ChangeBatch = new ChangeBatch {
                     Changes = new List<Change> {
@@ -159,10 +81,10 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
                                     EvaluateTargetHealth = true,
                                     HostedZoneId = "Z3AADJGX6KTTL2"
                                 },
+                                Failover = "PRIMARY",
                                 Name = "example.com",
                                 SetIdentifier = "Ohio region",
-                                Type = "A",
-                                Weight = 100
+                                Type = "A"
                             }
                         },
                         new Change {
@@ -173,62 +95,14 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
                                     EvaluateTargetHealth = true,
                                     HostedZoneId = "Z1H1FL5HABSF5"
                                 },
+                                Failover = "SECONDARY",
                                 Name = "example.com",
                                 SetIdentifier = "Oregon region",
-                                Type = "A",
-                                Weight = 200
-                            }
-                        }
-                    },
-                    Comment = "ELB load balancers for example.com"
-                },
-                HostedZoneId = "Z3M3LMPEXAMPLE" // Depends on the type of resource that you want to route traffic to
-            });
-
-            ChangeInfo changeInfo = response.ChangeInfo;
-
-            #endregion
-        }
-
-        public void Route53ChangeResourceRecordSets()
-        {
-            #region to-create-latency-resource-record-sets-1484350219917
-
-            var client = new AmazonRoute53Client();
-            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
-            {
-                ChangeBatch = new ChangeBatch {
-                    Changes = new List<Change> {
-                        new Change {
-                            Action = "CREATE",
-                            ResourceRecordSet = new ResourceRecordSet {
-                                HealthCheckId = "abcdef11-2222-3333-4444-555555fedcba",
-                                Name = "example.com",
-                                Region = "us-east-2",
-                                ResourceRecords = new List<ResourceRecord> {
-                                    new ResourceRecord { Value = "192.0.2.44" }
-                                },
-                                SetIdentifier = "Ohio region",
-                                TTL = 60,
-                                Type = "A"
-                            }
-                        },
-                        new Change {
-                            Action = "CREATE",
-                            ResourceRecordSet = new ResourceRecordSet {
-                                HealthCheckId = "abcdef66-7777-8888-9999-000000fedcba",
-                                Name = "example.com",
-                                Region = "us-west-2",
-                                ResourceRecords = new List<ResourceRecord> {
-                                    new ResourceRecord { Value = "192.0.2.45" }
-                                },
-                                SetIdentifier = "Oregon region",
-                                TTL = 60,
                                 Type = "A"
                             }
                         }
                     },
-                    Comment = "EC2 instances for example.com"
+                    Comment = "Failover alias configuration for example.com"
                 },
                 HostedZoneId = "Z3M3LMPEXAMPLE"
             });
@@ -240,58 +114,10 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
 
         public void Route53ChangeResourceRecordSets()
         {
-            #region to-create-latency-alias-resource-record-sets-1484601774179
+            #region ChangeResourceRecordSets-3
 
             var client = new AmazonRoute53Client();
-            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
-            {
-                ChangeBatch = new ChangeBatch {
-                    Changes = new List<Change> {
-                        new Change {
-                            Action = "CREATE",
-                            ResourceRecordSet = new ResourceRecordSet {
-                                AliasTarget = new AliasTarget {
-                                    DNSName = "example-com-123456789.us-east-2.elb.amazonaws.com ",
-                                    EvaluateTargetHealth = true,
-                                    HostedZoneId = "Z3AADJGX6KTTL2"
-                                },
-                                Name = "example.com",
-                                Region = "us-east-2",
-                                SetIdentifier = "Ohio region",
-                                Type = "A"
-                            }
-                        },
-                        new Change {
-                            Action = "CREATE",
-                            ResourceRecordSet = new ResourceRecordSet {
-                                AliasTarget = new AliasTarget {
-                                    DNSName = "example-com-987654321.us-west-2.elb.amazonaws.com ",
-                                    EvaluateTargetHealth = true,
-                                    HostedZoneId = "Z1H1FL5HABSF5"
-                                },
-                                Name = "example.com",
-                                Region = "us-west-2",
-                                SetIdentifier = "Oregon region",
-                                Type = "A"
-                            }
-                        }
-                    },
-                    Comment = "ELB load balancers for example.com"
-                },
-                HostedZoneId = "Z3M3LMPEXAMPLE" // Depends on the type of resource that you want to route traffic to
-            });
-
-            ChangeInfo changeInfo = response.ChangeInfo;
-
-            #endregion
-        }
-
-        public void Route53ChangeResourceRecordSets()
-        {
-            #region to-create-failover-resource-record-sets-1484604541740
-
-            var client = new AmazonRoute53Client();
-            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
+            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest
             {
                 ChangeBatch = new ChangeBatch {
                     Changes = new List<Change> {
@@ -336,10 +162,10 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
 
         public void Route53ChangeResourceRecordSets()
         {
-            #region to-create-failover-alias-resource-record-sets-1484607497724
+            #region ChangeResourceRecordSets-4
 
             var client = new AmazonRoute53Client();
-            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
+            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest
             {
                 ChangeBatch = new ChangeBatch {
                     Changes = new List<Change> {
@@ -351,9 +177,9 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
                                     EvaluateTargetHealth = true,
                                     HostedZoneId = "Z3AADJGX6KTTL2"
                                 },
-                                Failover = "PRIMARY",
+                                GeoLocation = new GeoLocation { ContinentCode = "NA" },
                                 Name = "example.com",
-                                SetIdentifier = "Ohio region",
+                                SetIdentifier = "North America",
                                 Type = "A"
                             }
                         },
@@ -361,20 +187,48 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
                             Action = "CREATE",
                             ResourceRecordSet = new ResourceRecordSet {
                                 AliasTarget = new AliasTarget {
-                                    DNSName = "example-com-987654321.us-west-2.elb.amazonaws.com ",
+                                    DNSName = "example-com-234567890.sa-east-1.elb.amazonaws.com ",
                                     EvaluateTargetHealth = true,
-                                    HostedZoneId = "Z1H1FL5HABSF5"
+                                    HostedZoneId = "Z2P70J7HTTTPLU"
                                 },
-                                Failover = "SECONDARY",
+                                GeoLocation = new GeoLocation { ContinentCode = "SA" },
                                 Name = "example.com",
-                                SetIdentifier = "Oregon region",
+                                SetIdentifier = "South America",
+                                Type = "A"
+                            }
+                        },
+                        new Change {
+                            Action = "CREATE",
+                            ResourceRecordSet = new ResourceRecordSet {
+                                AliasTarget = new AliasTarget {
+                                    DNSName = "example-com-234567890.eu-central-1.elb.amazonaws.com ",
+                                    EvaluateTargetHealth = true,
+                                    HostedZoneId = "Z215JYRZR1TBD5"
+                                },
+                                GeoLocation = new GeoLocation { ContinentCode = "EU" },
+                                Name = "example.com",
+                                SetIdentifier = "Europe",
+                                Type = "A"
+                            }
+                        },
+                        new Change {
+                            Action = "CREATE",
+                            ResourceRecordSet = new ResourceRecordSet {
+                                AliasTarget = new AliasTarget {
+                                    DNSName = "example-com-234567890.ap-southeast-1.elb.amazonaws.com ",
+                                    EvaluateTargetHealth = true,
+                                    HostedZoneId = "Z1LMS91P8CMLE5"
+                                },
+                                GeoLocation = new GeoLocation { CountryCode = "*" },
+                                Name = "example.com",
+                                SetIdentifier = "Other locations",
                                 Type = "A"
                             }
                         }
                     },
-                    Comment = "Failover alias configuration for example.com"
+                    Comment = "Geolocation alias configuration for example.com"
                 },
-                HostedZoneId = "Z3M3LMPEXAMPLE" // Depends on the type of resource that you want to route traffic to
+                HostedZoneId = "Z3M3LMPEXAMPLE"
             });
 
             ChangeInfo changeInfo = response.ChangeInfo;
@@ -384,10 +238,10 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
 
         public void Route53ChangeResourceRecordSets()
         {
-            #region to-create-geolocation-resource-record-sets-1484612462466
+            #region ChangeResourceRecordSets-5
 
             var client = new AmazonRoute53Client();
-            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
+            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest
             {
                 ChangeBatch = new ChangeBatch {
                     Changes = new List<Change> {
@@ -456,40 +310,10 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
 
         public void Route53ChangeResourceRecordSets()
         {
-            #region txt-record-creation-1760568065880
+            #region ChangeResourceRecordSets-6
 
             var client = new AmazonRoute53Client();
-            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
-            {
-                ChangeBatch = new ChangeBatch { Changes = new List<Change> {
-                    new Change {
-                        Action = "CREATE",
-                        ResourceRecordSet = new ResourceRecordSet {
-                            Name = "example.com.",
-                            ResourceRecords = new List<ResourceRecord> {
-                                new ResourceRecord { Value = "\"verification_string = \\"google-site-verification=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef\"" },
-                                new ResourceRecord { Value = "\"1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcd\"" },
-                                new ResourceRecord { Value = "\"ef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890\\"\"" }
-                            },
-                            TTL = 300,
-                            Type = "TXT"
-                        }
-                    }
-                } },
-                HostedZoneId = "/hostedzone/Z06404571DIQRB3A5ZYSP"
-            });
-
-            ChangeInfo changeInfo = response.ChangeInfo;
-
-            #endregion
-        }
-
-        public void Route53ChangeResourceRecordSets()
-        {
-            #region to-create-geolocation-alias-resource-record-sets-1484612871203
-
-            var client = new AmazonRoute53Client();
-            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
+            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest
             {
                 ChangeBatch = new ChangeBatch {
                     Changes = new List<Change> {
@@ -501,9 +325,9 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
                                     EvaluateTargetHealth = true,
                                     HostedZoneId = "Z3AADJGX6KTTL2"
                                 },
-                                GeoLocation = new GeoLocation { ContinentCode = "NA" },
                                 Name = "example.com",
-                                SetIdentifier = "North America",
+                                Region = "us-east-2",
+                                SetIdentifier = "Ohio region",
                                 Type = "A"
                             }
                         },
@@ -511,48 +335,195 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
                             Action = "CREATE",
                             ResourceRecordSet = new ResourceRecordSet {
                                 AliasTarget = new AliasTarget {
-                                    DNSName = "example-com-234567890.sa-east-1.elb.amazonaws.com ",
+                                    DNSName = "example-com-987654321.us-west-2.elb.amazonaws.com ",
                                     EvaluateTargetHealth = true,
-                                    HostedZoneId = "Z2P70J7HTTTPLU"
+                                    HostedZoneId = "Z1H1FL5HABSF5"
                                 },
-                                GeoLocation = new GeoLocation { ContinentCode = "SA" },
                                 Name = "example.com",
-                                SetIdentifier = "South America",
-                                Type = "A"
-                            }
-                        },
-                        new Change {
-                            Action = "CREATE",
-                            ResourceRecordSet = new ResourceRecordSet {
-                                AliasTarget = new AliasTarget {
-                                    DNSName = "example-com-234567890.eu-central-1.elb.amazonaws.com ",
-                                    EvaluateTargetHealth = true,
-                                    HostedZoneId = "Z215JYRZR1TBD5"
-                                },
-                                GeoLocation = new GeoLocation { ContinentCode = "EU" },
-                                Name = "example.com",
-                                SetIdentifier = "Europe",
-                                Type = "A"
-                            }
-                        },
-                        new Change {
-                            Action = "CREATE",
-                            ResourceRecordSet = new ResourceRecordSet {
-                                AliasTarget = new AliasTarget {
-                                    DNSName = "example-com-234567890.ap-southeast-1.elb.amazonaws.com ",
-                                    EvaluateTargetHealth = true,
-                                    HostedZoneId = "Z1LMS91P8CMLE5"
-                                },
-                                GeoLocation = new GeoLocation { CountryCode = "*" },
-                                Name = "example.com",
-                                SetIdentifier = "Other locations",
+                                Region = "us-west-2",
+                                SetIdentifier = "Oregon region",
                                 Type = "A"
                             }
                         }
                     },
-                    Comment = "Geolocation alias configuration for example.com"
+                    Comment = "ELB load balancers for example.com"
                 },
-                HostedZoneId = "Z3M3LMPEXAMPLE" // Depends on the type of resource that you want to route traffic to
+                HostedZoneId = "Z3M3LMPEXAMPLE"
+            });
+
+            ChangeInfo changeInfo = response.ChangeInfo;
+
+            #endregion
+        }
+
+        public void Route53ChangeResourceRecordSets()
+        {
+            #region ChangeResourceRecordSets-7
+
+            var client = new AmazonRoute53Client();
+            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest
+            {
+                ChangeBatch = new ChangeBatch {
+                    Changes = new List<Change> {
+                        new Change {
+                            Action = "CREATE",
+                            ResourceRecordSet = new ResourceRecordSet {
+                                HealthCheckId = "abcdef11-2222-3333-4444-555555fedcba",
+                                Name = "example.com",
+                                Region = "us-east-2",
+                                ResourceRecords = new List<ResourceRecord> {
+                                    new ResourceRecord { Value = "192.0.2.44" }
+                                },
+                                SetIdentifier = "Ohio region",
+                                TTL = 60,
+                                Type = "A"
+                            }
+                        },
+                        new Change {
+                            Action = "CREATE",
+                            ResourceRecordSet = new ResourceRecordSet {
+                                HealthCheckId = "abcdef66-7777-8888-9999-000000fedcba",
+                                Name = "example.com",
+                                Region = "us-west-2",
+                                ResourceRecords = new List<ResourceRecord> {
+                                    new ResourceRecord { Value = "192.0.2.45" }
+                                },
+                                SetIdentifier = "Oregon region",
+                                TTL = 60,
+                                Type = "A"
+                            }
+                        }
+                    },
+                    Comment = "EC2 instances for example.com"
+                },
+                HostedZoneId = "Z3M3LMPEXAMPLE"
+            });
+
+            ChangeInfo changeInfo = response.ChangeInfo;
+
+            #endregion
+        }
+
+        public void Route53ChangeResourceRecordSets()
+        {
+            #region ChangeResourceRecordSets-8
+
+            var client = new AmazonRoute53Client();
+            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest
+            {
+                ChangeBatch = new ChangeBatch {
+                    Changes = new List<Change> {
+                        new Change {
+                            Action = "CREATE",
+                            ResourceRecordSet = new ResourceRecordSet {
+                                Name = "example.com",
+                                ResourceRecords = new List<ResourceRecord> {
+                                    new ResourceRecord { Value = "192.0.2.44" }
+                                },
+                                TTL = 60,
+                                Type = "A"
+                            }
+                        }
+                    },
+                    Comment = "Web server for example.com"
+                },
+                HostedZoneId = "Z3M3LMPEXAMPLE"
+            });
+
+            ChangeInfo changeInfo = response.ChangeInfo;
+
+            #endregion
+        }
+
+        public void Route53ChangeResourceRecordSets()
+        {
+            #region ChangeResourceRecordSets-9
+
+            var client = new AmazonRoute53Client();
+            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest
+            {
+                ChangeBatch = new ChangeBatch {
+                    Changes = new List<Change> {
+                        new Change {
+                            Action = "CREATE",
+                            ResourceRecordSet = new ResourceRecordSet {
+                                AliasTarget = new AliasTarget {
+                                    DNSName = "example-com-123456789.us-east-2.elb.amazonaws.com ",
+                                    EvaluateTargetHealth = true,
+                                    HostedZoneId = "Z3AADJGX6KTTL2"
+                                },
+                                Name = "example.com",
+                                SetIdentifier = "Ohio region",
+                                Type = "A",
+                                Weight = 100
+                            }
+                        },
+                        new Change {
+                            Action = "CREATE",
+                            ResourceRecordSet = new ResourceRecordSet {
+                                AliasTarget = new AliasTarget {
+                                    DNSName = "example-com-987654321.us-west-2.elb.amazonaws.com ",
+                                    EvaluateTargetHealth = true,
+                                    HostedZoneId = "Z1H1FL5HABSF5"
+                                },
+                                Name = "example.com",
+                                SetIdentifier = "Oregon region",
+                                Type = "A",
+                                Weight = 200
+                            }
+                        }
+                    },
+                    Comment = "ELB load balancers for example.com"
+                },
+                HostedZoneId = "Z3M3LMPEXAMPLE"
+            });
+
+            ChangeInfo changeInfo = response.ChangeInfo;
+
+            #endregion
+        }
+
+        public void Route53ChangeResourceRecordSets()
+        {
+            #region ChangeResourceRecordSets-10
+
+            var client = new AmazonRoute53Client();
+            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest
+            {
+                ChangeBatch = new ChangeBatch {
+                    Changes = new List<Change> {
+                        new Change {
+                            Action = "CREATE",
+                            ResourceRecordSet = new ResourceRecordSet {
+                                HealthCheckId = "abcdef11-2222-3333-4444-555555fedcba",
+                                Name = "example.com",
+                                ResourceRecords = new List<ResourceRecord> {
+                                    new ResourceRecord { Value = "192.0.2.44" }
+                                },
+                                SetIdentifier = "Seattle data center",
+                                TTL = 60,
+                                Type = "A",
+                                Weight = 100
+                            }
+                        },
+                        new Change {
+                            Action = "CREATE",
+                            ResourceRecordSet = new ResourceRecordSet {
+                                HealthCheckId = "abcdef66-7777-8888-9999-000000fedcba",
+                                Name = "example.com",
+                                ResourceRecords = new List<ResourceRecord> {
+                                    new ResourceRecord { Value = "192.0.2.45" }
+                                },
+                                SetIdentifier = "Portland data center",
+                                TTL = 60,
+                                Type = "A",
+                                Weight = 200
+                            }
+                        }
+                    },
+                    Comment = "Web servers for example.com"
+                },
+                HostedZoneId = "Z3M3LMPEXAMPLE"
             });
 
             ChangeInfo changeInfo = response.ChangeInfo;
@@ -562,10 +533,10 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
 
         public void Route53ChangeTagsForResource()
         {
-            #region to-add-or-remove-tags-from-a-hosted-zone-or-health-check-1484084752409
+            #region ChangeTagsForResource-1
 
             var client = new AmazonRoute53Client();
-            var response = client.ChangeTagsForResource(new ChangeTagsForResourceRequest 
+            var response = client.ChangeTagsForResource(new ChangeTagsForResourceRequest
             {
                 AddTags = new List<Tag> {
                     new Tag {
@@ -581,7 +552,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
                     "Nadir"
                 },
                 ResourceId = "Z3M3LMPEXAMPLE",
-                ResourceType = "hostedzone" // Valid values are healthcheck and hostedzone.
+                ResourceType = "hostedzone"
             });
 
 
@@ -590,10 +561,10 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
 
         public void Route53GetHostedZone()
         {
-            #region to-get-information-about-a-hosted-zone-1481752361124
+            #region GetHostedZone-1
 
             var client = new AmazonRoute53Client();
-            var response = client.GetHostedZone(new GetHostedZoneRequest 
+            var response = client.GetHostedZone(new GetHostedZoneRequest
             {
                 Id = "Z3M3LMPEXAMPLE"
             });
@@ -604,13 +575,10 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }
