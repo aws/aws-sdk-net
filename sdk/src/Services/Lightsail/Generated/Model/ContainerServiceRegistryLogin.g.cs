@@ -61,6 +61,7 @@ namespace Amazon.Lightsail.Model
         /// image registry of a Lightsail account
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive = true)]
         public string Password { get; set; }
 
         /// <summary>
