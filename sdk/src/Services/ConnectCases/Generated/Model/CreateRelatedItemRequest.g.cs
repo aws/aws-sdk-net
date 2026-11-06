@@ -32,12 +32,12 @@ namespace Amazon.ConnectCases.Model
     /// <summary>
     /// Container for the parameters to the CreateRelatedItem operation. Creates a related
     /// item (comments, tasks, and contacts) and associates it with a case. <para> There's
-    /// a quota for the number of fields allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
-    /// Connect Cases quotas</a>. </para> <para> <b>Use cases</b> </para> <para> Following
+    /// a quota for the number of fields allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+    /// Customer Cases quotas</a>. </para> <para> <b>Use cases</b> </para> <para> Following
     /// are examples of related items that you may want to associate with a case: </para>
     /// <ul> <li> <para> Related contacts, such as calls, chats, emails tasks </para> </li>
     /// <li> <para> Comments, for agent notes </para> </li> <li> <para> SLAs, to capture target
-    /// resolution goals </para> </li> <li> <para> Cases, to capture related Amazon Connect
+    /// resolution goals </para> </li> <li> <para> Cases, to capture related Connect Customer
     /// Cases </para> </li> <li> <para> Files, such as policy documentation or customer-provided
     /// attachments </para> </li> <li> <para> Custom related items, which provide flexibility
     /// for you to define related items that such as bookings, orders, products, notices,
@@ -49,12 +49,11 @@ namespace Amazon.ConnectCases.Model
     /// It may or may not have an external identifier linking it to an external resource (for
     /// example, a <c>contactArn</c>). All Related Items have their own internal identifier,
     /// the <c>relatedItemArn</c>. Examples of related items include <c>comments</c> and <c>contacts</c>.
-    /// </para> </li> <li> <para> If you provide a value for <c>performedBy.userArn</c> you
+    /// </para> </li> <li> <para> If you provide a value for <c>performedBy.userArn</c>, you
     /// must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
-    /// permission on the ARN of the user that you provide. </para> </li> <li> <para> The
-    /// <c>type</c> field is reserved for internal use only. </para> </li> </ul> <para> <b>Endpoints</b>:
-    /// See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-    /// Connect endpoints and quotas</a>. </para>
+    /// permission on the ARN of the user that you provide. </para> </li> </ul> <para> <b>Endpoints</b>:
+    /// See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+    /// Customer endpoints and quotas</a>. </para>
     /// </summary>
     public partial class CreateRelatedItemRequest : AmazonConnectCasesRequest
     {

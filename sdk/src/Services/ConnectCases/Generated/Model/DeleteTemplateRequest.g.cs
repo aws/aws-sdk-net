@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteTemplate operation. Deletes a cases template.
-    /// You can delete up to 100 templates per domain. <para> After a cases template is deleted:
+    /// Container for the parameters to the DeleteTemplate operation. Deletes a Cases template.
+    /// You can delete up to 100 templates per domain. <para> After a Cases template is deleted:
     /// </para> <ul> <li> <para> You can still retrieve the template by calling <c>GetTemplate</c>.
     /// </para> </li> <li> <para> You cannot update the template. </para> </li> <li> <para>
     /// You cannot create a case by using the deleted template. </para> </li> <li> <para>

@@ -51,7 +51,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property UserArn. 
         /// <para>
-        /// Represents the Amazon Connect ARN of the user.
+        /// Represents the Connect Customer ARN of the user.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 500)]

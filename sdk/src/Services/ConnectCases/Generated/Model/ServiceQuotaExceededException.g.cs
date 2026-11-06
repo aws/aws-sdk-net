@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-    /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+    /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

@@ -31,7 +31,7 @@ namespace Amazon.ConnectCases.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetCaseRule operation. Gets a batch of case
-    /// rules. In the Amazon Connect admin website, case rules are known as <i>case field
+    /// rules. In the Connect Customer admin website, case rules are known as <i>case field
     /// conditions</i>. For more information about case field conditions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
     /// case field conditions to a case template</a>.
     /// </summary>

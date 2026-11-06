@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ConnectCases.Model.BatchCreateRelatedItemRequest.ClientToken</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.BatchCreateRelatedItemRequest.DomainId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCases.Model.BatchGetCaseRuleRequest.DomainId</property>
     <min>1</min>
     <max>500</max>
@@ -19,6 +28,33 @@
     <property>Amazon.ConnectCases.Model.BatchPutFieldOptionsRequest.FieldId</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.BatchUpdateCaseRequest.ClientToken</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.BatchUpdateCaseRequest.CustomerId</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^[a-zA-Z0-9/_\-:.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.BatchUpdateCaseRequest.DomainId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.BatchUpdateCaseRequest.Status</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.BatchUpdateCaseRequest.Title</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.CreateCaseRequest.ClientToken</property>
@@ -43,6 +79,7 @@
     <property>Amazon.ConnectCases.Model.CreateCaseResponse.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.CreateCaseRuleRequest.Description</property>
@@ -135,6 +172,7 @@
     <property>Amazon.ConnectCases.Model.CreateRelatedItemRequest.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.CreateRelatedItemRequest.DomainId</property>
@@ -180,6 +218,7 @@
     <property>Amazon.ConnectCases.Model.DeleteCaseRequest.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.DeleteCaseRequest.DomainId</property>
@@ -225,6 +264,7 @@
     <property>Amazon.ConnectCases.Model.DeleteRelatedItemRequest.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.DeleteRelatedItemRequest.DomainId</property>
@@ -250,6 +290,7 @@
     <property>Amazon.ConnectCases.Model.GetCaseRequest.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.GetCaseRequest.DomainId</property>
@@ -275,6 +316,7 @@
     <property>Amazon.ConnectCases.Model.GetCaseAuditEventsRequest.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.GetCaseAuditEventsRequest.DomainId</property>
@@ -586,6 +628,7 @@
     <property>Amazon.ConnectCases.Model.SearchRelatedItemsRequest.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.SearchRelatedItemsRequest.DomainId</property>
@@ -621,6 +664,7 @@
     <property>Amazon.ConnectCases.Model.UpdateCaseRequest.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.UpdateCaseRequest.DomainId</property>
@@ -687,6 +731,7 @@
     <property>Amazon.ConnectCases.Model.UpdateRelatedItemRequest.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.UpdateRelatedItemRequest.DomainId</property>
@@ -748,6 +793,46 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCases.Model.BatchCreateRelatedItemSuccessEntry.RelatedItemArn</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.BatchCreateRelatedItemSuccessEntry.RelatedItemId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.CaseIdentifier.CaseId</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.CaseIdentifier.ReferenceId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.CaseIdentifier.ReferenceNumber</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.CaseIdentifierUnion.CaseId</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.CaseIdentifierUnion.ReferenceId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCases.Model.CaseRuleError.Id</property>
     <min>1</min>
     <max>500</max>
@@ -781,6 +866,7 @@
     <property>Amazon.ConnectCases.Model.CaseSummary.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.CaseSummary.TemplateId</property>
@@ -801,16 +887,19 @@
     <property>Amazon.ConnectCases.Model.ConnectCaseContent.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.ConnectCaseFilter.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.ConnectCaseInputContent.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.Contact.ContactArn</property>
@@ -861,6 +950,17 @@
     <property>Amazon.ConnectCases.Model.FieldIdentifier.Id</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.FieldIdentifierUnion.Id</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.FieldIdentifierUnion.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^.*[\S]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.FieldItem.Id</property>
@@ -1016,6 +1116,7 @@
     <property>Amazon.ConnectCases.Model.SearchAllRelatedItemsResponseItem.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.SearchAllRelatedItemsResponseItem.RelatedItemId</property>
@@ -1026,6 +1127,7 @@
     <property>Amazon.ConnectCases.Model.SearchCasesResponseItem.CaseId</property>
     <min>1</min>
     <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.SearchCasesResponseItem.TemplateId</property>
