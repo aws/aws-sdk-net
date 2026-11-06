@@ -119,6 +119,11 @@ namespace Amazon.Connect
         public static readonly ActionType CREATE_TASK = new ActionType("CREATE_TASK");
 
         /// <summary>
+        /// Constant END_ASSOCIATED_EMAILS for ActionType
+        /// </summary>
+        public static readonly ActionType END_ASSOCIATED_EMAILS = new ActionType("END_ASSOCIATED_EMAILS");
+
+        /// <summary>
         /// Constant END_ASSOCIATED_TASKS for ActionType
         /// </summary>
         public static readonly ActionType END_ASSOCIATED_TASKS = new ActionType("END_ASSOCIATED_TASKS");
