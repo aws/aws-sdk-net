@@ -946,6 +946,74 @@ namespace Amazon.Athena
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Enables system tables for the current account. System tables are enabled or disabled
+        /// for the entire account: creating this configuration enables them. If a configuration
+        /// already exists, use <a>UpdateSystemTableConfiguration</a> to update it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSystemTableConfiguration service method.</param>
+        /// <returns>The response from the CreateSystemTableConfiguration service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateSystemTableConfiguration">REST API Reference for CreateSystemTableConfiguration Operation</seealso>
+        public virtual CreateSystemTableConfigurationResponse CreateSystemTableConfiguration(CreateSystemTableConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateSystemTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSystemTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSystemTableConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual CreateSystemTableConfigurationResponse CreateSystemTableConfiguration(CreateSystemTableConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateSystemTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSystemTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSystemTableConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Enables system tables for the current account. System tables are enabled or disabled
+        /// for the entire account: creating this configuration enables them. If a configuration
+        /// already exists, use <a>UpdateSystemTableConfiguration</a> to update it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSystemTableConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateSystemTableConfiguration service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateSystemTableConfiguration">REST API Reference for CreateSystemTableConfiguration Operation</seealso>
+        public virtual Task<CreateSystemTableConfigurationResponse> CreateSystemTableConfigurationAsync(CreateSystemTableConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateSystemTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSystemTableConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSystemTableConfigurationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a workgroup with the specified name. A workgroup can be an Apache Spark enabled
         /// workgroup or an Athena SQL workgroup.
         /// </summary>
@@ -1314,6 +1382,74 @@ namespace Amazon.Athena
             options.ResponseUnmarshaller = DeletePreparedStatementResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePreparedStatementResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Disables system tables for the current account by deleting the account-level configuration.
+        /// If the configuration doesn't exist, the operation succeeds without making any changes.
+        /// The system table and previously published data are left intact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSystemTableConfiguration service method.</param>
+        /// <returns>The response from the DeleteSystemTableConfiguration service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteSystemTableConfiguration">REST API Reference for DeleteSystemTableConfiguration Operation</seealso>
+        public virtual DeleteSystemTableConfigurationResponse DeleteSystemTableConfiguration(DeleteSystemTableConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSystemTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSystemTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSystemTableConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual DeleteSystemTableConfigurationResponse DeleteSystemTableConfiguration(DeleteSystemTableConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSystemTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSystemTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSystemTableConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Disables system tables for the current account by deleting the account-level configuration.
+        /// If the configuration doesn't exist, the operation succeeds without making any changes.
+        /// The system table and previously published data are left intact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSystemTableConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteSystemTableConfiguration service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteSystemTableConfiguration">REST API Reference for DeleteSystemTableConfiguration Operation</seealso>
+        public virtual Task<DeleteSystemTableConfigurationResponse> DeleteSystemTableConfigurationAsync(DeleteSystemTableConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSystemTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSystemTableConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSystemTableConfigurationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -2560,6 +2696,78 @@ namespace Amazon.Athena
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the account-level system tables configuration. Fails with a <c>ResourceNotFoundException</c>
+        /// if system tables are not enabled for the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSystemTableConfiguration service method.</param>
+        /// <returns>The response from the GetSystemTableConfiguration service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSystemTableConfiguration">REST API Reference for GetSystemTableConfiguration Operation</seealso>
+        public virtual GetSystemTableConfigurationResponse GetSystemTableConfiguration(GetSystemTableConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSystemTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSystemTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetSystemTableConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual GetSystemTableConfigurationResponse GetSystemTableConfiguration(GetSystemTableConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSystemTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSystemTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetSystemTableConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the account-level system tables configuration. Fails with a <c>ResourceNotFoundException</c>
+        /// if system tables are not enabled for the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSystemTableConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetSystemTableConfiguration service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSystemTableConfiguration">REST API Reference for GetSystemTableConfiguration Operation</seealso>
+        public virtual Task<GetSystemTableConfigurationResponse> GetSystemTableConfigurationAsync(GetSystemTableConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSystemTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSystemTableConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSystemTableConfigurationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns table metadata for the specified catalog, database, and table.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTableMetadata service method.</param>
@@ -3600,6 +3808,74 @@ namespace Amazon.Athena
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListSessionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the system tables that the account-level configuration activates, along with
+        /// whether each is currently enabled. Because system tables are enabled at the account
+        /// level, every entry reflects the same account-wide state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSystemTableStatuses service method.</param>
+        /// <returns>The response from the ListSystemTableStatuses service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSystemTableStatuses">REST API Reference for ListSystemTableStatuses Operation</seealso>
+        public virtual ListSystemTableStatusesResponse ListSystemTableStatuses(ListSystemTableStatusesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSystemTableStatusesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSystemTableStatusesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSystemTableStatusesResponse>(request, options);
+        }
+#else
+        internal virtual ListSystemTableStatusesResponse ListSystemTableStatuses(ListSystemTableStatusesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSystemTableStatusesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSystemTableStatusesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSystemTableStatusesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the system tables that the account-level configuration activates, along with
+        /// whether each is currently enabled. Because system tables are enabled at the account
+        /// level, every entry reflects the same account-wide state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSystemTableStatuses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListSystemTableStatuses service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSystemTableStatuses">REST API Reference for ListSystemTableStatuses Operation</seealso>
+        public virtual Task<ListSystemTableStatusesResponse> ListSystemTableStatusesAsync(ListSystemTableStatusesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSystemTableStatusesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSystemTableStatusesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSystemTableStatusesResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -4820,6 +5096,80 @@ namespace Amazon.Athena
             options.ResponseUnmarshaller = UpdatePreparedStatementResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdatePreparedStatementResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the account-level system tables configuration. If no configuration exists,
+        /// use <a>CreateSystemTableConfiguration</a> to create one. Fields that you omit retain
+        /// their current values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSystemTableConfiguration service method.</param>
+        /// <returns>The response from the UpdateSystemTableConfiguration service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateSystemTableConfiguration">REST API Reference for UpdateSystemTableConfiguration Operation</seealso>
+        public virtual UpdateSystemTableConfigurationResponse UpdateSystemTableConfiguration(UpdateSystemTableConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateSystemTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSystemTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSystemTableConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual UpdateSystemTableConfigurationResponse UpdateSystemTableConfiguration(UpdateSystemTableConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateSystemTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSystemTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSystemTableConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates the account-level system tables configuration. If no configuration exists,
+        /// use <a>CreateSystemTableConfiguration</a> to create one. Fields that you omit retain
+        /// their current values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSystemTableConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateSystemTableConfiguration service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateSystemTableConfiguration">REST API Reference for UpdateSystemTableConfiguration Operation</seealso>
+        public virtual Task<UpdateSystemTableConfigurationResponse> UpdateSystemTableConfigurationAsync(UpdateSystemTableConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateSystemTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSystemTableConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSystemTableConfigurationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
