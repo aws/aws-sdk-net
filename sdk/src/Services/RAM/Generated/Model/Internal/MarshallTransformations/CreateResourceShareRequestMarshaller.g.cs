@@ -93,6 +93,21 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetPermissionTemplateParameters())
+            {
+                context.Writer.WritePropertyName("permissionTemplateParameters");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestPermissionTemplateParametersListValue in publicRequest.PermissionTemplateParameters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PermissionArnAndTemplateParametersMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPermissionTemplateParametersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetPrincipals())
             {
                 context.Writer.WritePropertyName("principals");

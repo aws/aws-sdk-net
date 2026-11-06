@@ -78,6 +78,22 @@ namespace Amazon.RAM.Model
         internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
+        /// Gets and sets the property PermissionStatus. 
+        /// <para>
+        /// Specifies that you want to filter the results to include only permissions with the
+        /// specified status. For example, use <c>ATTACHABLE</c> to list only permissions that
+        /// can be associated with resource shares, or <c>DEPRECATED</c> to list only deprecated
+        /// permissions.
+        /// </para>
+        /// </summary>
+        public PermissionStatus PermissionStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PermissionStatus property is set.
+        /// </summary>
+        internal bool IsSetPermissionStatus() => this.PermissionStatus != null;
+
+        /// <summary>
         /// Gets and sets the property PermissionType. 
         /// <para>
         /// Specifies that you want to list only permissions of this type:
@@ -106,6 +122,29 @@ namespace Amazon.RAM.Model
         /// Checks to see if the PermissionType property is set.
         /// </summary>
         internal bool IsSetPermissionType() => this.PermissionType != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwner. 
+        /// <para>
+        /// Specifies that you want to list only permissions owned by a specific entity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SELF</c> – returns only permissions owned by the calling account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OTHER-ACCOUNTS</c> – returns only permissions shared with the calling account
+        /// by other accounts.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResourceOwner ResourceOwner { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceOwner property is set.
+        /// </summary>
+        internal bool IsSetResourceOwner() => this.ResourceOwner != null;
 
         /// <summary>
         /// Gets and sets the property ResourceType. 

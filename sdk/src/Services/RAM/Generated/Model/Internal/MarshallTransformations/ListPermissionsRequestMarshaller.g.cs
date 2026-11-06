@@ -78,10 +78,20 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("nextToken");
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
+            if (publicRequest.IsSetPermissionStatus())
+            {
+                context.Writer.WritePropertyName("permissionStatus");
+                context.Writer.WriteStringValue(publicRequest.PermissionStatus);
+            }
             if (publicRequest.IsSetPermissionType())
             {
                 context.Writer.WritePropertyName("permissionType");
                 context.Writer.WriteStringValue(publicRequest.PermissionType);
+            }
+            if (publicRequest.IsSetResourceOwner())
+            {
+                context.Writer.WritePropertyName("resourceOwner");
+                context.Writer.WriteStringValue(publicRequest.ResourceOwner);
             }
             if (publicRequest.IsSetResourceType())
             {

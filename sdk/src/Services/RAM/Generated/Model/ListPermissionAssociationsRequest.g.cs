@@ -156,6 +156,49 @@ namespace Amazon.RAM.Model
         internal bool IsSetPermissionVersion() => this.PermissionVersion.HasValue;
 
         /// <summary>
+        /// Gets and sets the property ResourceOwner. 
+        /// <para>
+        /// Specifies that you want to list only those associations with resource shares owned
+        /// by a specific entity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SELF</c> – returns only associations with resource shares owned by the calling
+        /// account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OTHER-ACCOUNTS</c> – returns only associations with resource shares owned by other
+        /// Amazon Web Services accounts.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify this parameter, the default is <c>SELF</c>.
+        /// </para>
+        /// </summary>
+        public ResourceOwner ResourceOwner { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceOwner property is set.
+        /// </summary>
+        internal bool IsSetResourceOwner() => this.ResourceOwner != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareArn. 
+        /// <para>
+        /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> of the resource share for which you want to retrieve permission
+        /// associations.
+        /// </para>
+        /// </summary>
+        public string ResourceShareArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceShareArn property is set.
+        /// </summary>
+        internal bool IsSetResourceShareArn() => this.ResourceShareArn != null;
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// Specifies that you want to list only those associations with resource shares that

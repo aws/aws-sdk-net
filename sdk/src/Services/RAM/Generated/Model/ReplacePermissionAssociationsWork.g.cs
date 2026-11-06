@@ -103,6 +103,26 @@ namespace Amazon.RAM.Model
         internal bool IsSetLastUpdatedTime() => this.LastUpdatedTime.HasValue;
 
         /// <summary>
+        /// Gets and sets the property PermissionTemplateParameters. 
+        /// <para>
+        /// The template parameter values to apply when replacing the permission. This field is
+        /// present only if the target permission is a template with declared parameters.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<PermissionTemplateParameter> PermissionTemplateParameters { get; set; } = AWSConfigs.InitializeCollections ? new List<PermissionTemplateParameter>() : null;
+
+        /// <summary>
+        /// Checks to see if the PermissionTemplateParameters property is set.
+        /// </summary>
+        internal bool IsSetPermissionTemplateParameters() => this.PermissionTemplateParameters != null && (this.PermissionTemplateParameters.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// Specifies the current status of the background tasks for the specified ID. The output

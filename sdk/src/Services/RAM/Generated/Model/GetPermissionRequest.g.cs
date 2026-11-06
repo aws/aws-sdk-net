@@ -31,7 +31,12 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPermission operation. Retrieves the contents
-    /// of a managed permission in JSON format.
+    /// of a managed permission in JSON format. <para> If the permission has template parameters,
+    /// you can include the <c>permissionTemplateParameters</c> parameter in your request.
+    /// The operation then renders the returned policy with the specified values in place
+    /// of the template parameter placeholders. If you omit <c>permissionTemplateParameters</c>,
+    /// the operation returns the raw policy template with <c>@{parameterName}</c> placeholders
+    /// unchanged. </para>
     /// </summary>
     public partial class GetPermissionRequest : AmazonRAMRequest
     {
@@ -53,6 +58,38 @@ namespace Amazon.RAM.Model
         /// Checks to see if the PermissionArn property is set.
         /// </summary>
         internal bool IsSetPermissionArn() => this.PermissionArn != null;
+
+        /// <summary>
+        /// Gets and sets the property PermissionTemplateParameters. 
+        /// <para>
+        /// Specifies the template parameter values to use when rendering the permission's policy
+        /// template. Each entry supplies a parameter name and its values. When you provide this
+        /// parameter, the response contains the rendered policy with the specified values in
+        /// place of the template parameter placeholders.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <c>STRING</c> type parameters, provide a single value. For <c>STRING_LIST</c>
+        /// type parameters, provide one or more values.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify this parameter only for permissions that declare template parameters.
+        /// You must provide values for all parameters declared in the permission template.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<PermissionTemplateParameterInput> PermissionTemplateParameters { get; set; } = AWSConfigs.InitializeCollections ? new List<PermissionTemplateParameterInput>() : null;
+
+        /// <summary>
+        /// Checks to see if the PermissionTemplateParameters property is set.
+        /// </summary>
+        internal bool IsSetPermissionTemplateParameters() => this.PermissionTemplateParameters != null && (this.PermissionTemplateParameters.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property PermissionVersion. 
