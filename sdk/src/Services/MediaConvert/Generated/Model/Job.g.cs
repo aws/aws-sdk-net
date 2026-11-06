@@ -137,6 +137,17 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetElementalInferenceConfiguration() => this.ElementalInferenceConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property ElementalInferenceSettings. The Elemental Inference settings
+        /// used in this job.
+        /// </summary>
+        public ElementalInferenceSettings ElementalInferenceSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ElementalInferenceSettings property is set.
+        /// </summary>
+        internal bool IsSetElementalInferenceSettings() => this.ElementalInferenceSettings != null;
+
+        /// <summary>
         /// Gets and sets the property ErrorCode. Error code for the job
         /// </summary>
         public int? ErrorCode { get; set; }
