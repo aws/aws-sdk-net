@@ -8252,6 +8252,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.UserDefinedFunction.ArtifactLocation</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.UserDefinedFunction.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -8275,6 +8280,11 @@
     <property>Amazon.Glue.Model.UserDefinedFunction.OwnerName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UserDefinedFunctionInput.ArtifactLocation</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UserDefinedFunctionInput.ClassName</property>

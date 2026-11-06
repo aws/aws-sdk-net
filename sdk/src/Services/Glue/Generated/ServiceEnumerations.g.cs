@@ -3834,6 +3834,47 @@ namespace Amazon.Glue
     }
 
     /// <summary>
+    /// Constants used for properties of type GovernanceMode.
+    /// </summary>
+    public class GovernanceMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant IAM_ONLY for GovernanceMode
+        /// </summary>
+        public static readonly GovernanceMode IAM_ONLY = new GovernanceMode("IAM_ONLY");
+
+        /// <summary>
+        /// Constant LAKE_FORMATION for GovernanceMode
+        /// </summary>
+        public static readonly GovernanceMode LAKE_FORMATION = new GovernanceMode("LAKE_FORMATION");
+
+        /// <summary>
+        /// Constructs a custom GovernanceMode for a value not among the defined constants.
+        /// </summary>
+        public GovernanceMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GovernanceMode FindValue(string value)
+        {
+            return FindValue<GovernanceMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GovernanceMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type HTTPMethod.
     /// </summary>
     public class HTTPMethod : ConstantClass
