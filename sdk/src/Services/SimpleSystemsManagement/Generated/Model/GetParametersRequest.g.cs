@@ -33,21 +33,27 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Container for the parameters to the GetParameters operation. Get information about
     /// one or more parameters by specifying multiple parameter names. <note> <para> To get
     /// information about a single parameter, you can use the <a>GetParameter</a> operation
-    /// instead. </para> </note> <para> Parameter names can't contain spaces. The service
-    /// removes any spaces specified for the beginning or end of a parameter name. If the
-    /// specified name for a parameter contains spaces between characters, the request fails
-    /// with a <c>ValidationException</c> error. </para> <note> <para> Parameter Store throughput
-    /// defines the number of API transactions per second (TPS) that Systems Manager can process.
-    /// This applies to <c>GetParameter</c>, <c>GetParameters</c>, and <c>PutParameter</c>
-    /// API calls for your Amazon Web Services account and Amazon Web Services Region. By
-    /// default, Parameter Store is configured with a standard throughput quota suitable for
-    /// low- to moderate-volume workloads. Applications that retrieve configuration data infrequently
-    /// or operate at smaller scale can use this default setting without additional cost.
-    /// </para> <para> For higher-volume workloads, you can enable higher throughput. This
-    /// increases the maximum number of supported transactions per second for your account
-    /// and Region. Increased throughput supports applications and workloads that need concurrent
-    /// access to multiple parameters. If you experience <c>ThrottlingException: Rate exceeded</c>
-    /// errors, enable higher throughput. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
+    /// instead. </para> </note> <important> <para> This operation is authorized against the
+    /// <c>ssm:GetParameters</c> action, not against <c>ssm:GetParameter</c>. Denying <c>ssm:GetParameter</c>
+    /// for a parameter doesn't prevent a principal from retrieving that parameter with this
+    /// operation. To restrict access to a parameter value, deny every action that can return
+    /// it. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-retrieval-authorization.html">How
+    /// Parameter Store authorizes parameter retrieval</a> in the <i>Amazon Web Services Systems
+    /// Manager User Guide</i>. </para> </important> <para> Parameter names can't contain
+    /// spaces. The service removes any spaces specified for the beginning or end of a parameter
+    /// name. If the specified name for a parameter contains spaces between characters, the
+    /// request fails with a <c>ValidationException</c> error. </para> <note> <para> Parameter
+    /// Store throughput defines the number of API transactions per second (TPS) that Systems
+    /// Manager can process. This applies to <c>GetParameter</c>, <c>GetParameters</c>, and
+    /// <c>PutParameter</c> API calls for your Amazon Web Services account and Amazon Web
+    /// Services Region. By default, Parameter Store is configured with a standard throughput
+    /// quota suitable for low- to moderate-volume workloads. Applications that retrieve configuration
+    /// data infrequently or operate at smaller scale can use this default setting without
+    /// additional cost. </para> <para> For higher-volume workloads, you can enable higher
+    /// throughput. This increases the maximum number of supported transactions per second
+    /// for your account and Region. Increased throughput supports applications and workloads
+    /// that need concurrent access to multiple parameters. If you experience <c>ThrottlingException:
+    /// Rate exceeded</c> errors, enable higher throughput. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
     /// Parameter Store throughput</a>. </para> </note>
     /// </summary>
     public partial class GetParametersRequest : AmazonSimpleSystemsManagementRequest

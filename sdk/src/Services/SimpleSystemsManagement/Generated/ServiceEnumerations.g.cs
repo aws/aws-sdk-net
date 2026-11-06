@@ -1433,6 +1433,47 @@ namespace Amazon.SimpleSystemsManagement
     }
 
     /// <summary>
+    /// Constants used for properties of type DHMCPermissionModel.
+    /// </summary>
+    public class DHMCPermissionModel : ConstantClass
+    {
+        /// <summary>
+        /// Constant SELF_MANAGED for DHMCPermissionModel
+        /// </summary>
+        public static readonly DHMCPermissionModel SELF_MANAGED = new DHMCPermissionModel("SELF_MANAGED");
+
+        /// <summary>
+        /// Constant SERVICE_MANAGED for DHMCPermissionModel
+        /// </summary>
+        public static readonly DHMCPermissionModel SERVICE_MANAGED = new DHMCPermissionModel("SERVICE_MANAGED");
+
+        /// <summary>
+        /// Constructs a custom DHMCPermissionModel for a value not among the defined constants.
+        /// </summary>
+        public DHMCPermissionModel(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DHMCPermissionModel FindValue(string value)
+        {
+            return FindValue<DHMCPermissionModel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DHMCPermissionModel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DeletionMode.
     /// </summary>
     public class DeletionMode : ConstantClass

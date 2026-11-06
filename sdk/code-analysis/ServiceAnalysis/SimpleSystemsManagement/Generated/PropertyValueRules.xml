@@ -1568,6 +1568,18 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterDefaultHostManagementConfigurationRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z0-9-]*:iam::\d{12}:role/[\w+=,.@/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterDefaultHostManagementConfigurationResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z0-9-]*:iam::\d{12}:role/[\w+=,.@/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.RegisterDefaultPatchBaselineRequest.BaselineId</property>
     <min>20</min>
     <max>128</max>

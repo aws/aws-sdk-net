@@ -3264,6 +3264,16 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Delete a parameter from the system. After deleting a parameter, wait for at least
         /// 30 seconds to create a parameter with the same name.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is authorized against the <c>ssm:DeleteParameter</c> action. Denying
+        /// that action alone doesn't restrict <a>DeleteParameters</a>, which is authorized against
+        /// its own action. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-restrict-parameter-access.html">Restricting
+        /// access to specific parameters and paths</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteParameter service method.</param>
         /// <returns>The response from the DeleteParameter service method, as returned by SimpleSystemsManagement.</returns>
@@ -3304,6 +3314,16 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Delete a parameter from the system. After deleting a parameter, wait for at least
         /// 30 seconds to create a parameter with the same name.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is authorized against the <c>ssm:DeleteParameter</c> action. Denying
+        /// that action alone doesn't restrict <a>DeleteParameters</a>, which is authorized against
+        /// its own action. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-restrict-parameter-access.html">Restricting
+        /// access to specific parameters and paths</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteParameter service method.</param>
         /// <param name="cancellationToken">
@@ -3338,6 +3358,17 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Delete a list of parameters. After deleting a parameter, wait for at least 30 seconds
         /// to create a parameter with the same name.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This operation is authorized against the <c>ssm:DeleteParameters</c> action, not against
+        /// <c>ssm:DeleteParameter</c>. Denying <c>ssm:DeleteParameter</c> for a parameter doesn't
+        /// prevent a principal from deleting that parameter with this operation. For more information,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-restrict-parameter-access.html">Restricting
+        /// access to specific parameters and paths</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteParameters service method.</param>
         /// <returns>The response from the DeleteParameters service method, as returned by SimpleSystemsManagement.</returns>
@@ -3367,6 +3398,17 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Delete a list of parameters. After deleting a parameter, wait for at least 30 seconds
         /// to create a parameter with the same name.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This operation is authorized against the <c>ssm:DeleteParameters</c> action, not against
+        /// <c>ssm:DeleteParameter</c>. Denying <c>ssm:DeleteParameter</c> for a parameter doesn't
+        /// prevent a principal from deleting that parameter with this operation. For more information,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-restrict-parameter-access.html">Restricting
+        /// access to specific parameters and paths</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteParameters service method.</param>
         /// <param name="cancellationToken">
@@ -3640,6 +3682,94 @@ namespace Amazon.SimpleSystemsManagement
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes the Default Host Management Configuration (DHMC) for an Amazon Web Services
+        /// account and Amazon Web Services Region. After you deregister DHMC, Amazon EC2 instances
+        /// are no longer automatically managed as managed nodes by Amazon Web Services Systems
+        /// Manager.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You need the <c>ssm:GetServiceSetting</c> and <c>ssm:ResetServiceSetting</c> permissions
+        /// for the <c>/ssm/managed-instance/default-ec2-instance-management-role</c> service
+        /// setting.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the registered role is service-managed, you also need the <c>iam:DeleteRole</c>
+        /// permission so that Amazon Web Services Systems Manager can remove the role it created.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterDefaultHostManagementConfiguration service method.</param>
+        /// <returns>The response from the DeregisterDefaultHostManagementConfiguration service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterDefaultHostManagementConfiguration">REST API Reference for DeregisterDefaultHostManagementConfiguration Operation</seealso>
+        public virtual DeregisterDefaultHostManagementConfigurationResponse DeregisterDefaultHostManagementConfiguration(DeregisterDefaultHostManagementConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeregisterDefaultHostManagementConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterDefaultHostManagementConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterDefaultHostManagementConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual DeregisterDefaultHostManagementConfigurationResponse DeregisterDefaultHostManagementConfiguration(DeregisterDefaultHostManagementConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeregisterDefaultHostManagementConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterDefaultHostManagementConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterDefaultHostManagementConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Removes the Default Host Management Configuration (DHMC) for an Amazon Web Services
+        /// account and Amazon Web Services Region. After you deregister DHMC, Amazon EC2 instances
+        /// are no longer automatically managed as managed nodes by Amazon Web Services Systems
+        /// Manager.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You need the <c>ssm:GetServiceSetting</c> and <c>ssm:ResetServiceSetting</c> permissions
+        /// for the <c>/ssm/managed-instance/default-ec2-instance-management-role</c> service
+        /// setting.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the registered role is service-managed, you also need the <c>iam:DeleteRole</c>
+        /// permission so that Amazon Web Services Systems Manager can remove the role it created.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterDefaultHostManagementConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeregisterDefaultHostManagementConfiguration service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterDefaultHostManagementConfiguration">REST API Reference for DeregisterDefaultHostManagementConfiguration Operation</seealso>
+        public virtual Task<DeregisterDefaultHostManagementConfigurationResponse> DeregisterDefaultHostManagementConfigurationAsync(DeregisterDefaultHostManagementConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeregisterDefaultHostManagementConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterDefaultHostManagementConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterDefaultHostManagementConfigurationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -8648,6 +8778,15 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </note> <note> 
         /// <para>
+        /// This operation is authorized against the <c>ssm:GetParameter</c> action. Denying that
+        /// action alone doesn't restrict <a>GetParameters</a>, <a>GetParameterHistory</a>, or
+        /// <a>GetParametersByPath</a>, each of which is authorized against its own action. For
+        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-retrieval-authorization.html">How
+        /// Parameter Store authorizes parameter retrieval</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
         /// Parameter Store throughput defines the number of API transactions per second (TPS)
         /// that Systems Manager can process. This applies to <c>GetParameter</c>, <c>GetParameters</c>,
         /// and <c>PutParameter</c> API calls for your Amazon Web Services account and Amazon
@@ -8726,6 +8865,15 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </note> <note> 
         /// <para>
+        /// This operation is authorized against the <c>ssm:GetParameter</c> action. Denying that
+        /// action alone doesn't restrict <a>GetParameters</a>, <a>GetParameterHistory</a>, or
+        /// <a>GetParametersByPath</a>, each of which is authorized against its own action. For
+        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-retrieval-authorization.html">How
+        /// Parameter Store authorizes parameter retrieval</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
         /// Parameter Store throughput defines the number of API transactions per second (TPS)
         /// that Systems Manager can process. This applies to <c>GetParameter</c>, <c>GetParameters</c>,
         /// and <c>PutParameter</c> API calls for your Amazon Web Services account and Amazon
@@ -8797,6 +8945,17 @@ namespace Amazon.SimpleSystemsManagement
         /// you must also update the key alias the parameter uses to reference KMS. Otherwise,
         /// <c>GetParameterHistory</c> retrieves whatever the original key alias was referencing.
         /// </para>
+        ///  </important> <important> 
+        /// <para>
+        /// This operation is authorized against the <c>ssm:GetParameterHistory</c> action, not
+        /// against <c>ssm:GetParameter</c>. Because parameter history includes every version
+        /// of a parameter, including the current one, a principal who is denied <c>ssm:GetParameter</c>,
+        /// <c>ssm:GetParameters</c>, and <c>ssm:GetParametersByPath</c> but allowed <c>ssm:GetParameterHistory</c>
+        /// can still read the current value. To restrict access to a parameter value, deny every
+        /// action that can return it. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-retrieval-authorization.html">How
+        /// Parameter Store authorizes parameter retrieval</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
+        /// </para>
         ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameterHistory service method.</param>
@@ -8856,6 +9015,17 @@ namespace Amazon.SimpleSystemsManagement
         /// you must also update the key alias the parameter uses to reference KMS. Otherwise,
         /// <c>GetParameterHistory</c> retrieves whatever the original key alias was referencing.
         /// </para>
+        ///  </important> <important> 
+        /// <para>
+        /// This operation is authorized against the <c>ssm:GetParameterHistory</c> action, not
+        /// against <c>ssm:GetParameter</c>. Because parameter history includes every version
+        /// of a parameter, including the current one, a principal who is denied <c>ssm:GetParameter</c>,
+        /// <c>ssm:GetParameters</c>, and <c>ssm:GetParametersByPath</c> but allowed <c>ssm:GetParameterHistory</c>
+        /// can still read the current value. To restrict access to a parameter value, deny every
+        /// action that can return it. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-retrieval-authorization.html">How
+        /// Parameter Store authorizes parameter retrieval</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
+        /// </para>
         ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameterHistory service method.</param>
@@ -8902,7 +9072,17 @@ namespace Amazon.SimpleSystemsManagement
         /// To get information about a single parameter, you can use the <a>GetParameter</a> operation
         /// instead.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// This operation is authorized against the <c>ssm:GetParameters</c> action, not against
+        /// <c>ssm:GetParameter</c>. Denying <c>ssm:GetParameter</c> for a parameter doesn't prevent
+        /// a principal from retrieving that parameter with this operation. To restrict access
+        /// to a parameter value, deny every action that can return it. For more information,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-retrieval-authorization.html">How
+        /// Parameter Store authorizes parameter retrieval</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Parameter names can't contain spaces. The service removes any spaces specified for
         /// the beginning or end of a parameter name. If the specified name for a parameter contains
@@ -8965,7 +9145,17 @@ namespace Amazon.SimpleSystemsManagement
         /// To get information about a single parameter, you can use the <a>GetParameter</a> operation
         /// instead.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// This operation is authorized against the <c>ssm:GetParameters</c> action, not against
+        /// <c>ssm:GetParameter</c>. Denying <c>ssm:GetParameter</c> for a parameter doesn't prevent
+        /// a principal from retrieving that parameter with this operation. To restrict access
+        /// to a parameter value, deny every action that can return it. For more information,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-retrieval-authorization.html">How
+        /// Parameter Store authorizes parameter retrieval</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Parameter names can't contain spaces. The service removes any spaces specified for
         /// the beginning or end of a parameter name. If the specified name for a parameter contains
@@ -9018,7 +9208,24 @@ namespace Amazon.SimpleSystemsManagement
         /// Retrieve information about one or more parameters under a specified level in a hierarchy.
         /// 
         /// 
+        ///  <important> 
+        /// <para>
+        /// This operation is authorized against the <c>ssm:GetParametersByPath</c> action for
+        /// the path that you specify in the request. It isn't authorized against the individual
+        /// parameters that it returns, and it isn't authorized against <c>ssm:GetParameter</c>.
+        /// A principal who is allowed to call this operation for the path <c>/a</c> with <c>Recursive</c>
+        /// set to <c>true</c> receives every parameter under that path, including <c>/a/b</c>,
+        /// even if a policy explicitly denies access to <c>/a/b</c>.
+        /// </para>
         ///  
+        /// <para>
+        /// To prevent a parameter from being returned by this operation, deny the <c>ssm:GetParametersByPath</c>
+        /// action on every ancestor path that could include the parameter in its results. For
+        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-restrict-parameter-access.html">Restricting
+        /// access to specific parameters and paths</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Request results are returned on a best-effort basis. If you specify <c>MaxResults</c>
         /// in the request, the response includes information up to the limit specified. The number
@@ -9079,7 +9286,24 @@ namespace Amazon.SimpleSystemsManagement
         /// Retrieve information about one or more parameters under a specified level in a hierarchy.
         /// 
         /// 
+        ///  <important> 
+        /// <para>
+        /// This operation is authorized against the <c>ssm:GetParametersByPath</c> action for
+        /// the path that you specify in the request. It isn't authorized against the individual
+        /// parameters that it returns, and it isn't authorized against <c>ssm:GetParameter</c>.
+        /// A principal who is allowed to call this operation for the path <c>/a</c> with <c>Recursive</c>
+        /// set to <c>true</c> receives every parameter under that path, including <c>/a/b</c>,
+        /// even if a policy explicitly denies access to <c>/a/b</c>.
+        /// </para>
         ///  
+        /// <para>
+        /// To prevent a parameter from being returned by this operation, deny the <c>ssm:GetParametersByPath</c>
+        /// action on every ancestor path that could include the parameter in its results. For
+        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-restrict-parameter-access.html">Restricting
+        /// access to specific parameters and paths</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Request results are returned on a best-effort basis. If you specify <c>MaxResults</c>
         /// in the request, the response includes information up to the limit specified. The number
@@ -12565,6 +12789,106 @@ namespace Amazon.SimpleSystemsManagement
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Enables Default Host Management Configuration (DHMC) for the current Amazon Web Services
+        /// account and Amazon Web Services Region. With DHMC enabled, you don't need to configure
+        /// additional resources, such as an instance profile, to use your Amazon EC2 instances
+        /// as managed nodes in Amazon Web Services Systems Manager.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You need the <c>ssm:GetServiceSetting</c> and <c>ssm:UpdateServiceSetting</c> permissions
+        /// for the <c>/ssm/managed-instance/default-ec2-instance-management-role</c> service
+        /// setting.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You need the <c>iam:GetRole</c> and <c>iam:PassRole</c> permissions for the role used
+        /// for Default Host Management Configuration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If <c>PermissionModel</c> is <c>SERVICE_MANAGED</c>, you also need the <c>iam:CreateRole</c>
+        /// and <c>iam:AttachRolePolicy</c> permissions so that Amazon Web Services Systems Manager
+        /// can create and configure the role on your behalf.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDefaultHostManagementConfiguration service method.</param>
+        /// <returns>The response from the RegisterDefaultHostManagementConfiguration service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultHostManagementConfiguration">REST API Reference for RegisterDefaultHostManagementConfiguration Operation</seealso>
+        public virtual RegisterDefaultHostManagementConfigurationResponse RegisterDefaultHostManagementConfiguration(RegisterDefaultHostManagementConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterDefaultHostManagementConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDefaultHostManagementConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterDefaultHostManagementConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual RegisterDefaultHostManagementConfigurationResponse RegisterDefaultHostManagementConfiguration(RegisterDefaultHostManagementConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterDefaultHostManagementConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDefaultHostManagementConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterDefaultHostManagementConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Enables Default Host Management Configuration (DHMC) for the current Amazon Web Services
+        /// account and Amazon Web Services Region. With DHMC enabled, you don't need to configure
+        /// additional resources, such as an instance profile, to use your Amazon EC2 instances
+        /// as managed nodes in Amazon Web Services Systems Manager.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You need the <c>ssm:GetServiceSetting</c> and <c>ssm:UpdateServiceSetting</c> permissions
+        /// for the <c>/ssm/managed-instance/default-ec2-instance-management-role</c> service
+        /// setting.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You need the <c>iam:GetRole</c> and <c>iam:PassRole</c> permissions for the role used
+        /// for Default Host Management Configuration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If <c>PermissionModel</c> is <c>SERVICE_MANAGED</c>, you also need the <c>iam:CreateRole</c>
+        /// and <c>iam:AttachRolePolicy</c> permissions so that Amazon Web Services Systems Manager
+        /// can create and configure the role on your behalf.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDefaultHostManagementConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RegisterDefaultHostManagementConfiguration service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultHostManagementConfiguration">REST API Reference for RegisterDefaultHostManagementConfiguration Operation</seealso>
+        public virtual Task<RegisterDefaultHostManagementConfigurationResponse> RegisterDefaultHostManagementConfigurationAsync(RegisterDefaultHostManagementConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterDefaultHostManagementConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDefaultHostManagementConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterDefaultHostManagementConfigurationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
