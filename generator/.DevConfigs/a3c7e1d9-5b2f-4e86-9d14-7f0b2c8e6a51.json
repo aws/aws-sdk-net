@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Fixed a memory leak on .NET 11 where instance metadata and container credential requests created a new HttpClientHandler per request (https://github.com/dotnet/runtime/issues/136418)"
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
