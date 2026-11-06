@@ -64,7 +64,9 @@ namespace Amazon.AutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>InService</c> - At least one Auto Scaling instance passed an <c>ELB</c> health
-        /// check.
+        /// check. Note that the load balancer enters this state immediately if you attach it
+        /// in the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a>
+        /// API call.
         /// </para>
         ///  </li> <li> 
         /// <para>
