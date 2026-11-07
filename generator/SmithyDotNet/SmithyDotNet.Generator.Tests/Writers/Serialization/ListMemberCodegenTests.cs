@@ -37,6 +37,17 @@ public class ListMemberCodegenTests
         .Write(_doLists, TestContext.Current.CancellationToken);
 
     [Fact]
+    public void NumericTypeLists_UseInvariantStringConversions()
+    {
+        // The Full Numeric Type Support specification types pass their invariant-culture formatter and parser:
+        // the untyped FromValueTypeList/ToValueTypeList overloads use the current culture.
+        var marshaller = RequestMarshaller;
+        Assert.Contains("""request.ParameterCollection.Add("bigDecimals", publicRequest.BigDecimals.ConvertAll<string>(item => StringUtils.FromBigDecimal(item)));""", marshaller);
+        Assert.Contains("""request.Headers["x-shorts"] = StringUtils.FromValueTypeList(publicRequest.Shorts, StringUtils.FromShort);""", marshaller);
+        Assert.Contains("""unmarshalledObject.BigIntegerHeader = MultiValueHeaderParser.ToValueTypeList<System.Numerics.BigInteger>(context.ResponseData.GetHeaderValue("x-big-integers"), s => System.Numerics.BigInteger.Parse(s, CultureInfo.InvariantCulture));""", ResponseUnmarshaller);
+    }
+
+    [Fact]
     public void RequestMarshaller_QueryStringList_AddsToParameterCollection()
     {
         // A list<string> query member adds the List<string> directly to the typed ParameterCollection

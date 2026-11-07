@@ -403,10 +403,8 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             var format = HttpBindingConversions.TimestampFormatName(element.TimestampFormat ?? "http-date");
             return $"""MultiValueHeaderParser.ToDateTimeList({value}, "{format}")""";
         }
-        if (element is { IsScalar: true, IsSparse: false, Target: ByteShape or ShortShape or BigIntegerShape or BigDecimalShape })
+        if (element is { IsScalar: true, IsSparse: false, NeedsTypedHeaderConverter: true })
         {
-            // The untyped overload converts with Convert.ChangeType in the current culture, and BigInteger and
-            // BigDecimal are not IConvertible, so the numeric types from the specification pass an invariant-culture parser.
             return $"MultiValueHeaderParser.ToValueTypeList<{element.DotNetType}>({value}, s => {element.DotNetType}.Parse(s, CultureInfo.InvariantCulture))";
         }
         if (element is { IsScalar: true, IsSparse: false })

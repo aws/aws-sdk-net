@@ -102,6 +102,14 @@ public sealed record TypeDescriptor(
     /// converts implicitly to/from <c>string</c>, matching C2J).
     /// </summary>
     public bool MarshalsAsString => IsString || IsEnum;
+
+    /// <summary>
+    /// True for the byte, short, bigInteger and bigDecimal types from the Full Numeric Type Support specification. Header
+    /// lists of these pass an explicit invariant-culture converter: the untyped <c>StringUtils.FromValueTypeList</c> formats
+    /// with the current culture, and the untyped <c>MultiValueHeaderParser.ToValueTypeList</c> uses
+    /// <c>Convert.ChangeType</c>, which also uses the current culture and fails for BigInteger and BigDecimal (not IConvertible).
+    /// </summary>
+    public bool NeedsTypedHeaderConverter => Target is ByteShape or ShortShape or BigIntegerShape or BigDecimalShape;
 }
 
 /// <summary>

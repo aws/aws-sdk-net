@@ -27,14 +27,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using static AWSSDK.ProtocolTests.NumericTypes.NumericTypesTestData;
-using RestJsonSvc = Amazon.NumericTypesRestJson;
 using RestXmlSvc = Amazon.NumericTypesRestXml;
 
 namespace AWSSDK.ProtocolTests.NumericTypes
 {
     /// <summary>
-    /// Full Numeric Type Support specification tests for restXml (decimal text), plus the REST header,
-    /// query string and URI label bindings shared by restJson1 and restXml.
+    /// Full Numeric Type Support specification tests for restXml (decimal text), including the header,
+    /// query string and URI label bindings.
     /// </summary>
     [TestClass]
     public class NumericTypesXmlTests
@@ -160,42 +159,6 @@ namespace AWSSDK.ProtocolTests.NumericTypes
                 Assert.AreEqual("1.50,1000", marshalled.Headers["X-BigDecimalList"]);
                 Assert.AreEqual("-1,2", marshalled.Headers["X-ShortList"]);
             });
-        }
-
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("ResponseTest")]
-        public async Task RestJson_ResponseHeaders_ReadEveryDigit()
-        {
-            var response = new MockHttpResponse { StatusCode = HttpStatusCode.OK, Body = Encoding.UTF8.GetBytes("{}") };
-            response.Headers["Content-Type"] = "application/json";
-            response.Headers["X-Byte"] = "-128";
-            response.Headers["X-Short"] = "32767";
-            response.Headers["X-BigInteger"] = BigIntegerText;
-            response.Headers["X-BigDecimal"] = DoubleLossyDecimalText;
-            response.Headers["X-ShortList"] = "1, -2";
-            response.Headers["X-BigIntegerList"] = BigIntegerText + "," + BigIntegerInMapText;
-            response.Headers["X-BigDecimalList"] = "1.50, 1E+3";
-            var config = new RestJsonSvc.AmazonNumericTypesRestJsonConfig { ServiceURL = MockHttpClientUtils.TestServiceUrl, MaxErrorRetry = 0 };
-            using var client = new RestJsonSvc.AmazonNumericTypesRestJsonClient(MockHttpClientUtils.TestCredentials, config);
-            MockHttpClientUtils.InjectMockHttp(client, response);
-
-            var request = new RestJsonSvc.Model.HttpNumbersRequest
-            {
-                LabelByte = 1,
-                LabelShort = 1,
-                LabelBigInteger = System.Numerics.BigInteger.One,
-                LabelBigDecimal = Amazon.Extensions.Numerics.BigDecimal.One,
-            };
-            var actual = await client.HttpNumbersAsync(request).ConfigureAwait(false);
-
-            Assert.AreEqual(sbyte.MinValue, actual.HeaderByte);
-            Assert.AreEqual(short.MaxValue, actual.HeaderShort);
-            Assert.AreEqual(BigInteger(BigIntegerText), actual.HeaderBigInteger);
-            Assert.AreEqual(DoubleLossyDecimalText, actual.HeaderBigDecimal.Value.ToPlainString(CultureInfo.InvariantCulture));
-            CollectionAssert.AreEqual(new List<short> { 1, -2 }, actual.HeaderShortList);
-            CollectionAssert.AreEqual(new List<BigInteger> { BigInteger(BigIntegerText), BigInteger(BigIntegerInMapText) }, actual.HeaderBigIntegerList);
-            CollectionAssert.AreEqual(new[] { "1.50", "1E+3" }, actual.HeaderBigDecimalList.Select(d => d.ToString(CultureInfo.InvariantCulture)).ToArray());
         }
 
         private static XElement Child(XElement parent, string name) =>

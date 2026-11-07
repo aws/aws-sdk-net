@@ -10,7 +10,8 @@ namespace SmithyDotNet.Generator.Tests.Writers.Serialization;
 /// <summary>
 /// Drives the JSON marshaller/unmarshaller writers against the shared codegen model, whose
 /// DoScalars operation covers the supported scalars (bool/int/long/float/double/timestamp) in body, query,
-/// header, and label positions. Complements <see cref="TypeMapperTests"/> (type mapping) by
+/// header, and label positions, plus the byte, short, bigInteger and bigDecimal types from the Full Numeric Type
+/// Support specification (in body, collection, query, header and label positions). Complements <see cref="TypeMapperTests"/> (type mapping) by
 /// asserting the generated marshalling code for each scalar.
 /// </summary>
 public class ScalarMemberCodegenTests
@@ -49,6 +50,58 @@ public class ScalarMemberCodegenTests
         var requestId = ShapeId.Parse($"{Namespace}#DoScalarsRequest");
         _requestStructure = new StructureWriter(_context, ModelFileName)
             .Write(_context.Structures[requestId], TestContext.Current.CancellationToken);
+    }
+
+    [Fact]
+    public void Structure_MapsSignedByteAndArbitraryPrecisionTypes()
+    {
+        Assert.Contains("public sbyte? ByteValue", _requestStructure);
+        Assert.Contains("public short? ShortValue", _requestStructure);
+        Assert.Contains("public System.Numerics.BigInteger? BigIntegerValue", _requestStructure);
+        Assert.Contains("public Amazon.Extensions.Numerics.BigDecimal? BigDecimalValue", _requestStructure);
+        Assert.Contains("List<Amazon.Extensions.Numerics.BigDecimal>", _requestStructure);
+    }
+
+    [Fact]
+    public void RequestMarshaller_NumericTypes_WriteNumbersWithoutLosingDigits()
+    {
+        // byte and short are plain JSON numbers; bigInteger and bigDecimal have no Utf8JsonWriter overload and
+        // go through the runtime helper, which writes every digit.
+        Assert.Contains("context.Writer.WriteNumberValue(publicRequest.ByteValue.Value);", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(publicRequest.ShortValue.Value);", _requestMarshaller);
+        Assert.Contains("StringUtils.WriteBigIntegerValue(context.Writer, publicRequest.BigIntegerValue.Value);", _requestMarshaller);
+        Assert.Contains("StringUtils.WriteBigDecimalValue(context.Writer, publicRequest.BigDecimalValue.Value);", _requestMarshaller);
+        Assert.Contains("StringUtils.WriteBigDecimalValue(context.Writer, publicRequestBigDecimalListListValue);", _requestMarshaller);
+        Assert.Contains("StringUtils.WriteBigIntegerValue(context.Writer, publicRequestBigIntegerMapValue);", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(publicRequestShortMapValue);", _requestMarshaller);
+        Assert.Contains("StringUtils.WriteBigIntegerValue(context.Writer, publicRequestSparseBigIntegerListListValue.Value);", _requestMarshaller);
+    }
+
+    [Fact]
+    public void RequestMarshaller_NumericTypeHttpBindings_UseInvariantStringConversions()
+    {
+        Assert.Contains("""request.Parameters.Add("byte", StringUtils.FromSByte(publicRequest.QueryByte.Value));""", _requestMarshaller);
+        Assert.Contains("""request.Headers["x-big-integer"] = StringUtils.FromBigInteger(publicRequest.HeaderBigInteger.Value);""", _requestMarshaller);
+        Assert.Contains("""request.AddPathResource("{labelShort}", StringUtils.FromShort(publicRequest.LabelShort.Value));""", _requestMarshaller);
+    }
+
+    [Fact]
+    public void ResponseUnmarshaller_NumericTypes_UseNumericUnmarshallers()
+    {
+        Assert.Contains("var unmarshaller = NullableSByteUnmarshaller.Instance;", _responseUnmarshaller);
+        Assert.Contains("var unmarshaller = NullableShortUnmarshaller.Instance;", _responseUnmarshaller);
+        Assert.Contains("var unmarshaller = NullableBigIntegerUnmarshaller.Instance;", _responseUnmarshaller);
+        Assert.Contains("var unmarshaller = NullableBigDecimalUnmarshaller.Instance;", _responseUnmarshaller);
+        Assert.Contains("new JsonListUnmarshaller<Amazon.Extensions.Numerics.BigDecimal, BigDecimalUnmarshaller>(BigDecimalUnmarshaller.Instance)", _responseUnmarshaller);
+        Assert.Contains("new JsonDictionaryUnmarshaller<string, sbyte, StringUnmarshaller, SByteUnmarshaller>(StringUnmarshaller.Instance, SByteUnmarshaller.Instance)", _responseUnmarshaller);
+        Assert.Contains("new JsonListUnmarshaller<System.Numerics.BigInteger?, NullableBigIntegerUnmarshaller>(NullableBigIntegerUnmarshaller.Instance)", _responseUnmarshaller);
+    }
+
+    [Fact]
+    public void ResponseUnmarshaller_NumericTypeHeaders_ParseWithInvariantCulture()
+    {
+        Assert.Contains("""unmarshalledObject.HeaderByte = sbyte.Parse(context.ResponseData.GetHeaderValue("x-byte"), CultureInfo.InvariantCulture);""", _responseUnmarshaller);
+        Assert.Contains("""unmarshalledObject.HeaderBigDecimal = Amazon.Extensions.Numerics.BigDecimal.Parse(context.ResponseData.GetHeaderValue("x-big-decimal"), CultureInfo.InvariantCulture);""", _responseUnmarshaller);
     }
 
     [Fact]
