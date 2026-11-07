@@ -117,7 +117,7 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
 
     @Override
     public Symbol shortShape(ShortShape shortShape) {
-        return createSymbolBuilder(shortShape, "int").build();
+        return createSymbolBuilder(shortShape, "short").build();
     }
 
     @Override
@@ -152,12 +152,12 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
 
     @Override
     public Symbol bigIntegerShape(BigIntegerShape bigIntegerShape) {
-        throw new CodegenException("Big Integer shape is not supported by the C# code generator.");
+        return createSymbolBuilder(bigIntegerShape, "System.Numerics.BigInteger").build();
     }
 
     @Override
     public Symbol bigDecimalShape(BigDecimalShape bigDecimalShape) {
-        throw new CodegenException("Big Decimal shape is not supported by the C# code generator");
+        return createSymbolBuilder(bigDecimalShape, "Amazon.Extensions.Numerics.BigDecimal").build();
     }
 
     @Override

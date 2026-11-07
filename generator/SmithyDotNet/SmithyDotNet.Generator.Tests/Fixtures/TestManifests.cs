@@ -19,6 +19,7 @@ internal static class TestManifests
         ExtensionVersions = new Dictionary<string, ServiceVersion>
         {
             ["Extensions.CborProtocol"] = new() { Version = "4.0.100.14" },
+            ["Extensions.Numerics"] = new() { Version = "4.0.0.2" },
         },
     };
 
@@ -34,6 +35,11 @@ internal static class TestManifests
                 AssemblyVersionOverride = "4.0",
                 Dependencies = new Dictionary<string, string> { ["Core"] = "4.0.100.3" },
             },
+        },
+        // Core's nuspec depends on this extension, so a batch run that writes Core needs its entry.
+        ExtensionVersions = new Dictionary<string, ServiceVersion>
+        {
+            ["Extensions.Numerics"] = new() { Version = "4.0.0.2" },
         },
     };
 }

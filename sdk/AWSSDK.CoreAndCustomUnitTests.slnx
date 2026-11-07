@@ -11,6 +11,7 @@
   <Folder Name="/Core/">
     <Project Path="../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj" />
     <Project Path="../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetStandard.csproj" />
+    <Project Path="../extensions/src/AWSSDK.Extensions.Numerics/AWSSDK.Extensions.Numerics.csproj" />
     <Project Path="src/Core/AWSSDK.Core.NetFramework.csproj" />
     <Project Path="src/Core/AWSSDK.Core.NetStandard.csproj" />
   </Folder>
