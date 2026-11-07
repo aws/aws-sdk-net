@@ -19,11 +19,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
+using System.Threading;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Endpoints;
 using ThirdParty.RuntimeBackports;
 using Amazon.Runtime.Identity;
+#if NET8_0_OR_GREATER
+using System.Security.Cryptography;
+#endif
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -77,8 +81,19 @@ namespace Amazon.Runtime.Internal.Auth
         private static readonly ConcurrentDictionary<string, SigningKeyCacheEntry> _signingKeyCache = new();
         private static readonly ConcurrentQueue<string> _signingKeyCacheOrder = new();
 
+        /// <summary>
+        /// A cached signing key. On .NET 8+ it also pools keyed HMAC-SHA256 instances for the signature step,
+        /// so that step doesn't re-key OS crypto on every request. When the entry is replaced at the UTC date
+        /// change or evicted, its pooled instances are not disposed, because concurrent callers may still be
+        /// using them; they are left for the GC and finalizer to reclaim.
+        /// </summary>
         private sealed class SigningKeyCacheEntry
         {
+#if NET8_0_OR_GREATER
+            private const int MaxPooledHmacs = 4;
+            private readonly IncrementalHash[] _hmacs = new IncrementalHash[MaxPooledHmacs];
+#endif
+
             public SigningKeyCacheEntry(string dateStamp, byte[] key)
             {
                 DateStamp = dateStamp;
@@ -87,6 +102,54 @@ namespace Amazon.Runtime.Internal.Auth
 
             public string DateStamp { get; }
             public byte[] Key { get; }
+
+#if NET8_0_OR_GREATER
+            /// <summary>
+            /// Computes HMAC-SHA256 of <paramref name="data"/> with this key into <paramref name="destination"/>.
+            /// Uses a pooled keyed instance when one is free; otherwise creates one, which is pooled on return
+            /// if a slot is free and disposed if not.
+            /// </summary>
+            internal void ComputeHmac(ReadOnlySpan<byte> data, Span<byte> destination)
+            {
+                var hmac = RentHmac();
+                try
+                {
+                    hmac.AppendData(data);
+                    hmac.GetHashAndReset(destination);
+                }
+                catch
+                {
+                    // The instance may hold partial input; drop it.
+                    hmac.Dispose();
+                    throw;
+                }
+
+                ReturnHmac(hmac);
+            }
+
+            private IncrementalHash RentHmac()
+            {
+                for (int i = 0; i < MaxPooledHmacs; i++)
+                {
+                    var hmac = Interlocked.Exchange(ref _hmacs[i], null);
+                    if (hmac != null)
+                        return hmac;
+                }
+
+                return IncrementalHash.CreateHMAC(HashAlgorithmName.SHA256, Key);
+            }
+
+            private void ReturnHmac(IncrementalHash hmac)
+            {
+                for (int i = 0; i < MaxPooledHmacs; i++)
+                {
+                    if (Interlocked.CompareExchange(ref _hmacs[i], hmac, null) == null)
+                        return;
+                }
+
+                hmac.Dispose();
+            }
+#endif
         }
 
         public AWS4Signer()
@@ -449,41 +512,41 @@ namespace Amazon.Runtime.Internal.Auth
                                                          RequestMetrics metrics)
         {
             var dateStamp = FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat);
-            var scope = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}", dateStamp, region, service, Terminator);
+            var scope = $"{dateStamp}/{region}/{service}/{Terminator}";
+            var canonicalRequestHash = AWSSDKUtils.ToHex(ComputeHash(canonicalRequest), true);
+            var stringToSign = $"{AWS4AlgorithmTag}\n{FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat)}\n{scope}\n{canonicalRequestHash}";
 
-            var stringToSignBuilder = new StringBuilder();
-            stringToSignBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0}-{1}\n{2}\n{3}\n",
-                                      Scheme,
-                                      Algorithm,
-                                      FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat),
-                                      scope);
+            if (metrics != null && metrics.IsEnabled)
+                metrics.AddProperty(Metric.StringToSign, new StringBuilder(stringToSign));
 
-            var canonicalRequestHashBytes = ComputeHash(canonicalRequest);
-            stringToSignBuilder.Append(AWSSDKUtils.ToHex(canonicalRequestHashBytes, true));
+            var signingKeyEntry = GetSigningKeyEntry(awsSecretAccessKey, region, dateStamp, service);
+#if NET8_0_OR_GREATER
+            var signature = new byte[HMACSHA256.HashSizeInBytes];
+            signingKeyEntry.ComputeHmac(Encoding.UTF8.GetBytes(stringToSign), signature);
+#else
+            var signature = ComputeKeyedHash(SignerAlgorithm, signingKeyEntry.Key, stringToSign);
+#endif
+            return new AWS4SigningResult(awsAccessKey, awsSecretAccessKey, signedAt, signedHeaders, scope, signingKeyEntry.Key, signature);
+        }
 
-            if (metrics != null)
-                metrics.AddProperty(Metric.StringToSign, stringToSignBuilder);
+        private static string ComputePayloadHashHex(byte[] payloadBytes)
+        {
+            if (payloadBytes != null && payloadBytes.Length == 0)
+                return EmptyBodySha256;
 
-            var key = GetSigningKey(awsSecretAccessKey,
-                                    region,
-                                    dateStamp,
-                                    service);
-
-            var stringToSign = stringToSignBuilder.ToString();
-            var signature = ComputeKeyedHash(SignerAlgorithm, key, stringToSign);
-            return new AWS4SigningResult(awsAccessKey, awsSecretAccessKey, signedAt, signedHeaders, scope, key, signature);
+            return AWSSDKUtils.ToHex(CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(payloadBytes), true);
         }
 
         /// <summary>
-        /// Returns the signing key for the supplied scope, deriving and caching it on first use.
-        /// The returned array is shared and must not be modified by callers.
+        /// Returns the cache entry for the supplied scope, deriving and caching its signing key on first use.
+        /// The entry's key array is shared and must not be modified by callers.
         /// </summary>
-        private static byte[] GetSigningKey(string awsSecretAccessKey, string region, string dateStamp, string service)
+        private static SigningKeyCacheEntry GetSigningKeyEntry(string awsSecretAccessKey, string region, string dateStamp, string service)
         {
             var cacheKey = string.Concat(awsSecretAccessKey, "/", region, "/", service);
             if (_signingKeyCache.TryGetValue(cacheKey, out var entry) && entry.DateStamp == dateStamp)
             {
-                return entry.Key;
+                return entry;
             }
 
             var key = ComposeSigningKey(awsSecretAccessKey, region, dateStamp, service);
@@ -501,8 +564,13 @@ namespace Amazon.Runtime.Internal.Auth
                     _signingKeyCache.TryRemove(oldest, out _);
                 }
             }
+            else if (_signingKeyCache.TryGetValue(cacheKey, out var winner) && winner.DateStamp == dateStamp)
+            {
+                // Another thread cached this scope first: share its entry, and so its HMAC pool.
+                return winner;
+            }
 
-            return key;
+            return newEntry;
         }
 
         /// <summary>
@@ -637,8 +705,7 @@ namespace Amazon.Runtime.Internal.Auth
                 else
                 {
                     byte[] payloadBytes = AWSSDKUtils.GetRequestPayloadBytes(request, request.UseQueryString);
-                    byte[] payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(payloadBytes);
-                    computedContentHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
+                    computedContentHash = ComputePayloadHashHex(payloadBytes);
                 }
             }
 
@@ -738,11 +805,7 @@ namespace Amazon.Runtime.Internal.Auth
         #region Private Signing Helpers
         internal static string SetPayloadSignatureHeader(IRequest request, string payloadHash)
         {
-            if (request.Headers.ContainsKey(HeaderKeys.XAmzContentSha256Header))
-                request.Headers[HeaderKeys.XAmzContentSha256Header] = payloadHash;
-            else
-                request.Headers.Add(HeaderKeys.XAmzContentSha256Header, payloadHash);
-
+            request.Headers[HeaderKeys.XAmzContentSha256Header] = payloadHash;
             return payloadHash;
         }
 

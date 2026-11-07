@@ -89,13 +89,8 @@ namespace Amazon.Runtime.Internal.Auth
         {
             get
             {
-                var authorizationHeader = new StringBuilder()
-                    .Append(AWS4Signer.AWS4AlgorithmTag)
-                    .AppendFormat(" {0}={1}/{2},", AWS4Signer.Credential, AccessKeyId, Scope)
-                    .AppendFormat(" {0}={1},", AWS4Signer.SignedHeaders, SignedHeaders)
-                    .AppendFormat(" {0}={1}", AWS4Signer.Signature, Signature);
-
-                return authorizationHeader.ToString();
+                return $"{AWS4Signer.AWS4AlgorithmTag} {AWS4Signer.Credential}={AccessKeyId}/{Scope}, " +
+                       $"{AWS4Signer.SignedHeaders}={SignedHeaders}, {AWS4Signer.Signature}={Signature}";
             }
         }
 
