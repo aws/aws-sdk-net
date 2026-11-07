@@ -124,7 +124,7 @@ Keep N at or below the number of idle cores; beyond that the result measures tim
 
 ## Pipeline breakdown (`--breakdown`)
 
-`--breakdown` inserts a probe handler above the pipeline and below every handler, using `RuntimePipelineCustomizerRegistry`. For each case it reports every handler's time and allocated bytes in each direction, with the mocked transport separately. Each probe adds about 0.03 µs on x86 and 0.04 µs on ARM (the smallest stage's reading on metal), so trivial handlers read slightly high. Use the breakdown to see where time goes, not as an ops/CPU-sec number. It needs the default `--transport stub`, because the in-process `MockHttpHandler` stamps the transport stage; with `--transport https` the run exits with code 2.
+`--breakdown` inserts a probe handler above the pipeline and below every handler, using `RuntimePipelineCustomizerRegistry`. For each case it reports every handler's time and allocated bytes in each direction, with the mocked transport separately. Each probe adds about 0.03 µs on x86 and 0.04 µs on ARM (the smallest stage's reading on metal), so trivial handlers read slightly high. Use the breakdown to see where time goes, not as an ops/CPU-sec number. The breakdown is custom because neither existing tool gives this split. `dotnet-trace` attributes samples by stack, not by handler and direction, and the SDK's `LogMetrics` has no marshalling time, no request/response split and no allocated bytes, and allocates per event. It needs the default `--transport stub`, because the in-process `MockHttpHandler` stamps the transport stage; with `--transport https` the run exits with code 2.
 
 ## Regenerating the benchmark payloads
 
