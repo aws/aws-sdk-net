@@ -126,43 +126,6 @@ Keep N at or below the number of idle cores; beyond that the result measures tim
 
 `--breakdown` inserts a probe handler above the pipeline and below every handler, using `RuntimePipelineCustomizerRegistry`. For each case it reports every handler's time and allocated bytes in each direction, with the mocked transport separately. Each probe adds about 0.03 µs on x86 and 0.04 µs on ARM (the smallest stage's reading on metal), so trivial handlers read slightly high. Use the breakdown to see where time goes, not as an ops/CPU-sec number. It needs the default `--transport stub`, because the in-process `MockHttpHandler` stamps the transport stage; with `--transport https` the run exits with code 2.
 
-## Sampling profile (Linux, `profiling/profile.sh`)
-
-To see where time goes inside a stage, or CPU on other threads such as the GC, profile one case with `perf`. It uses `perf` rather than `dotnet-trace` because `dotnet-trace`'s sample profiler records managed stacks only, so OpenSSL, GC and other runtime time shows up as one opaque unmanaged-code frame, and on Linux OpenSSL is a large part of signing. `perf_report.py` adds what neither tool does: it drops the samples taken before tiered compilation settles, and groups the rest by pipeline stage.
-
-```bash
-cd sdk/test/Performance/SerdeBenchmarks
-BIN=$(mktemp -d)
-dotnet build SerdeBenchmarksRunner/SerdeBenchmarksRunner.csproj -c Release -o "$BIN"
-FLAMEGRAPH_DIR=<clone of https://github.com/brendangregg/FlameGraph> \
-    profiling/profile.sh "$BIN" awsJson1_0_GetItemOutput_S
-```
-
-This recipe has been tested on awsJson cases. rpcv2Cbor cases currently fail to load `System.Formats.Cbor` from a runner built this way.
-
-The script runs the case under `perf record -g` with the default warmup until 30 seconds of CPU, and keeps only samples from 0.5 seconds after tiered compilation finishes (in the first 5 seconds, about half the samples are JIT and unoptimized code). It writes to `./profile-<case>/`:
-
-- `<case>.summary.txt`: thread shares, where the CPU was (managed code, GC, OpenSSL, ...), the pipeline stage of each sample from a benchmark call (on any thread), and the hottest methods inside each stage.
-- `<case>.folded` (all threads) and `<case>.main.folded` (benchmark thread): collapsed stacks. Open them in [speedscope](https://www.speedscope.app), or with `FLAMEGRAPH_DIR` set the script also renders `<case>.svg` and `<case>.main.svg`.
-
-The run sets `DOTNET_PerfMapEnabled=1` so `perf` can name JIT-compiled methods, and `DOTNET_EnableWriteXorExecute=0`, without which .NET 8 and later keep JIT code in a mapping `perf` cannot resolve. Both change the runtime: read the profile as shares, and never report the runner's numbers from a profiled run.
-
-`perf` needs `kernel.perf_event_paranoid` at 2 or lower to profile your own processes; the script records user-space call chains only (`--user-callchains`), which that setting allows. Two gaps in attribution:
-
-- Without runtime symbols, GC and allocation samples show as raw `libcoreclr.so` addresses. To fix that, put the symbols in `perf`'s build-id cache:
-
-  ```bash
-  dotnet tool install -g dotnet-symbol
-  CLR=$DOTNET_ROOT/shared/Microsoft.NETCore.App/<version>/libcoreclr.so
-  SYM=$(mktemp -d)
-  dotnet-symbol --symbols -o "$SYM" $CLR
-  BID=$(readelf -n $CLR | awk '/Build ID/{print $3}')
-  mkdir -p ~/.debug/.build-id/${BID:0:2}/${BID:2}
-  cp "$SYM/libcoreclr.so.dbg" ~/.debug/.build-id/${BID:0:2}/${BID:2}/debug
-  ```
-
-- `libcrypto` has no frame pointers, so its samples lose their managed caller ("native, caller lost" in the summary). With SigV4 they are almost all signing.
-
 ## Regenerating the benchmark payloads
 
 All three suites take their payloads from the `serde-benchmark` tagged `@httpRequestTests` / `@httpResponseTests` in the AwsSdkPerformanceBenchmarkModels models. Two files are generated from them; don't edit either by hand:
