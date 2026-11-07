@@ -46,6 +46,26 @@ public class NumericTypesTests
     }
 
     [Theory]
+    // Major type 1 encodes -1 - n for an unsigned 64-bit n, so it covers [-2^64, -1].
+    [InlineData("3B8000000000000000", "-9223372036854775809")]   // -2^63 - 1, first value below long.MinValue
+    [InlineData("3BFFFFFFFFFFFFFFFF", "-18446744073709551616")]  // -2^64, most negative major type 1 value
+    public void BigInteger_AcceptsNegativeIntegersBelowInt64(string hex, string expected)
+    {
+        var value = BigInteger.Parse(expected, CultureInfo.InvariantCulture);
+        Assert.Equal(value, Read(CborBigIntegerUnmarshaller.Instance, FromHex(hex)));
+        AssertSameDigitsAndScale(new BigDecimal(value), Read(CborBigDecimalUnmarshaller.Instance, FromHex(hex)));
+    }
+
+    [Fact]
+    public void BigDecimal_AcceptsMantissaBelowInt64()
+    {
+        // Tag 4 [exponent -1, mantissa -2^64] = -1844674407370955161.6
+        var actual = Read(CborBigDecimalUnmarshaller.Instance, FromHex("C482203BFFFFFFFFFFFFFFFF"));
+        Assert.Equal(BigInteger.Parse("-18446744073709551616", CultureInfo.InvariantCulture), actual.UnscaledValue);
+        Assert.Equal(1, actual.Scale);
+    }
+
+    [Theory]
     // RFC 8949 section 3.4.4: 273.15 is the decimal fraction [-2, 27315].
     [InlineData("273.15", "C48221196AB3")]
     [InlineData("1.50", "C482211896")]
