@@ -20,6 +20,7 @@ using Amazon.Runtime.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Numerics;
@@ -34,7 +35,7 @@ namespace AWSSDK.ProtocolTests.NumericTypes
 {
     /// <summary>
     /// Full Numeric Type Support specification tests for awsJson1.1 and restJson1: byte, short, bigInteger and bigDecimal
-    /// are JSON numbers, written and read without losing digits or scale.
+    /// are JSON numbers, written and read without losing digits or scale, and restJson1 headers are decimal text.
     /// </summary>
     [TestClass]
     public class NumericTypesJsonTests
@@ -202,6 +203,41 @@ namespace AWSSDK.ProtocolTests.NumericTypes
 
             AssertSameAsIntOverflow(intOverflow, actual);
             Assert.IsInstanceOfType(actual, typeof(AmazonUnmarshallingException));
+        }
+
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        public async Task RestJson_ResponseHeaders_ReadEveryDigit()
+        {
+            var response = JsonResponse("{}", "application/json");
+            response.Headers["X-Byte"] = "-128";
+            response.Headers["X-Short"] = "32767";
+            response.Headers["X-BigInteger"] = BigIntegerText;
+            response.Headers["X-BigDecimal"] = DoubleLossyDecimalText;
+            response.Headers["X-ShortList"] = "1, -2";
+            response.Headers["X-BigIntegerList"] = BigIntegerText + "," + BigIntegerInMapText;
+            response.Headers["X-BigDecimalList"] = "1.50, 1E+3";
+            var config = new RestJsonSvc.AmazonNumericTypesRestJsonConfig { ServiceURL = MockHttpClientUtils.TestServiceUrl, MaxErrorRetry = 0 };
+            using var client = new RestJsonSvc.AmazonNumericTypesRestJsonClient(MockHttpClientUtils.TestCredentials, config);
+            MockHttpClientUtils.InjectMockHttp(client, response);
+
+            var request = new RestJsonSvc.Model.HttpNumbersRequest
+            {
+                LabelByte = 1,
+                LabelShort = 1,
+                LabelBigInteger = System.Numerics.BigInteger.One,
+                LabelBigDecimal = Amazon.Extensions.Numerics.BigDecimal.One,
+            };
+            var actual = await client.HttpNumbersAsync(request).ConfigureAwait(false);
+
+            Assert.AreEqual(sbyte.MinValue, actual.HeaderByte);
+            Assert.AreEqual(short.MaxValue, actual.HeaderShort);
+            Assert.AreEqual(BigInteger(BigIntegerText), actual.HeaderBigInteger);
+            Assert.AreEqual(DoubleLossyDecimalText, actual.HeaderBigDecimal.Value.ToPlainString(CultureInfo.InvariantCulture));
+            CollectionAssert.AreEqual(new List<short> { 1, -2 }, actual.HeaderShortList);
+            CollectionAssert.AreEqual(new List<BigInteger> { BigInteger(BigIntegerText), BigInteger(BigIntegerInMapText) }, actual.HeaderBigIntegerList);
+            CollectionAssert.AreEqual(new[] { "1.50", "1E+3" }, actual.HeaderBigDecimalList.Select(d => d.ToString(CultureInfo.InvariantCulture)).ToArray());
         }
 
         private static MockHttpResponse JsonResponse(string body, string contentType)

@@ -257,9 +257,8 @@ public sealed class HttpRequestBindings(GenerationContext context)
         {
             throw new GeneratorException($"@httpHeader list of timestamps with @timestampFormat '{format}' is not supported (StringUtils.FromValueTypeList always emits RFC822); member: {member.PropertyName}.");
         }
-        // The numeric types from the specification pass their invariant-culture StringUtils.From* formatter: the
-        // untyped overload uses the current culture's ToString() and would write BigDecimal in exponent form.
-        var formatter = element.Target is ByteShape or ShortShape or BigIntegerShape or BigDecimalShape
+        // The untyped overload uses the current culture's ToString() and would write BigDecimal in exponent form.
+        var formatter = element.NeedsTypedHeaderConverter
             ? $", {QueryElementConverter(element)}"
             : "";
         writer.WriteLine($"""request.Headers["{headerName}"] = StringUtils.FromValueTypeList(publicRequest.{member.PropertyName}{formatter});""");
