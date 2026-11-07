@@ -72,8 +72,14 @@ dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchm
 | `--transport stub\|https` | `stub` | `stub`: the in-process `MockHttpHandler`. `https`: see [HTTPS loopback mode](#https-loopback-mode) |
 | `--https-server IP:PORT` | `127.0.0.1:18443` | The fixture server's HTTPS address (https only; loopback addresses only) |
 | `--fixture-control IP:PORT` | `127.0.0.1:18080` | The fixture server's control address (https only; loopback addresses only) |
+| `--case-filter REGEX` | (all) | Run only the cases whose name matches |
+| `--threads N` | 1 | Concurrent workers per case on the shared client. See [Concurrency regression check](#concurrency-regression-check---threads-n). Not the cross-SDK metric when N > 1 |
+| `--breakdown` | off | Per-stage pipeline timing. See [Pipeline breakdown](#pipeline-breakdown---breakdown). Requires `--threads 1` and `--transport stub` |
+| `--breakdown-csv PATH` | — | Append the breakdown rows to a CSV file |
 
-An invalid value, or a transport option without `--cpu-time`, exits with code 2. The run banner prints the transport used.
+An invalid or missing value, an option used without the one it depends on, or a `--case-filter` that matches no case exits with code 2. The run banner prints the transport used.
+
+Don't pin the process to one core (`taskset -c N`): the runtime's JIT and GC threads then share it, and early cases run up to 2x slow.
 
 ## HTTPS loopback mode
 
@@ -97,6 +103,28 @@ dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchm
 - **Fail fast:** the run stops right away if either address doesn't accept connections, or if the control address doesn't answer `204`.
 - **CPU/wall ratio:** above 1 in this mode, because socket I/O completes on other threads.
 - **Platform:** use Linux. On other systems the loopback cost is larger and noisier.
+
+## Concurrency regression check (`--threads N`)
+
+`--threads N` with N > 1 checks that SDK state shared between calls (signing-key cache, HMAC pool, User-Agent and `Uri` caches, thread-static buffers) holds up under concurrency. **It is a regression check, not the cross-SDK metric:** compare N > 1 runs only with runs at the same N on the same machine.
+
+```bash
+dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchmarksRunner/SerdeBenchmarksRunner.csproj -- --cpu-time --threads 4
+```
+
+`--threads 1` (the default) runs the single-threaded loop unchanged. With N > 1:
+
+- N `Task.Run` workers share the case's client and request. The thread-pool minimum is raised to N + 1 so they all start at once.
+- Warmup is `--warmup` iterations in total across the workers, then a forced GC.
+- The run stops at `--min-iterations` × N total ops or `--min-cpu-seconds` × N process CPU, checked by each worker every 100 of its iterations. Every completed op is counted.
+- Ops/CPU-s is total ops / process CPU seconds; Ops/Wall-s is aggregate throughput. CPU/Wall should be about N; well below N means workers were blocked or starved.
+- The 12 cases whose request holds a `MemoryStream` (`*_PutItemRequest_BinaryData_*`, `*_PutObject_*`) are skipped, since concurrent calls would race on the stream position. The geomean then covers 59 cases.
+
+Keep N at or below the number of idle cores; beyond that the result measures time-slicing as much as contention.
+
+## Pipeline breakdown (`--breakdown`)
+
+`--breakdown` inserts a probe handler above the pipeline and below every handler, using `RuntimePipelineCustomizerRegistry`. For each case it reports every handler's time and allocated bytes in each direction, with the mocked transport separately. Each probe adds about 0.03 µs on x86 and 0.04 µs on ARM (the smallest stage's reading on metal), so trivial handlers read slightly high. Use the breakdown to see where time goes, not as an ops/CPU-sec number. The breakdown is custom because neither existing tool gives this split. `dotnet-trace` attributes samples by stack, not by handler and direction, and the SDK's `LogMetrics` has no marshalling time, no request/response split and no allocated bytes, and allocates per event. It needs the default `--transport stub`, because the in-process `MockHttpHandler` stamps the transport stage; with `--transport https` the run exits with code 2.
 
 ## Regenerating the benchmark payloads
 
