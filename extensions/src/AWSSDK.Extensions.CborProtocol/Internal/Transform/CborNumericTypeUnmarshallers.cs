@@ -58,7 +58,9 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
                 case CborReaderState.UnsignedInteger:
                     return new BigInteger(reader.ReadUInt64());
                 case CborReaderState.NegativeInteger:
-                    return new BigInteger(reader.ReadInt64());
+                    // Major type 1 encodes -1 - n for an unsigned 64-bit n, so read the raw n
+                    // rather than ReadInt64, which overflows below long.MinValue.
+                    return BigInteger.MinusOne - reader.ReadCborNegativeIntegerRepresentation();
                 case CborReaderState.Tag:
                     return ReadTaggedBigInteger(reader, reader.ReadTag());
                 default:

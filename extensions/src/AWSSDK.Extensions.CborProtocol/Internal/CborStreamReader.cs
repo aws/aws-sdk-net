@@ -192,6 +192,8 @@ namespace Amazon.Extensions.CborProtocol.Internal
         public int ReadInt32() => ExecuteRead(static (_, r) => r.ReadInt32());
         public long ReadInt64() => ExecuteRead(static (_, r) => r.ReadInt64());
         public ulong ReadUInt64() => ExecuteRead(static (_, r) => r.ReadUInt64());
+        // Returns the raw argument n of a major type 1 integer, whose value is -1 - n. Covers the full [-2^64, -1] range.
+        internal ulong ReadCborNegativeIntegerRepresentation() => ExecuteRead(static (_, r) => r.ReadCborNegativeIntegerRepresentation());
         public decimal ReadDecimal() => ExecuteRead(static (_, r) => r.ReadDecimal());
         public double ReadDouble() => ExecuteRead(static (_, r) => r.ReadDouble());
         public bool ReadBoolean() => ExecuteRead(static (_, r) => r.ReadBoolean());
