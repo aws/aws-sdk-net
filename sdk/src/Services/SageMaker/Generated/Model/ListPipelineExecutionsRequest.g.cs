@@ -108,6 +108,22 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineName() => this.PipelineName != null;
 
         /// <summary>
+        /// Gets and sets the property PipelineVersionAlias. 
+        /// <para>
+        /// The alias of a pipeline version. The response includes only the executions of the
+        /// version that has this alias when you make the request. If no version of the pipeline
+        /// has this alias, the request fails with a <c>ResourceNotFound</c> error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string PipelineVersionAlias { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PipelineVersionAlias property is set.
+        /// </summary>
+        internal bool IsSetPipelineVersionAlias() => this.PipelineVersionAlias != null;
+
+        /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
         /// The field by which to sort results. The default is <c>CreatedTime</c>.

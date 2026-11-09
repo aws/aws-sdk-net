@@ -200,6 +200,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineExperimentConfig() => this.PipelineExperimentConfig != null;
 
         /// <summary>
+        /// Gets and sets the property PipelineVersionAliases. 
+        /// <para>
+        /// The aliases currently assigned to the pipeline version that the execution ran.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 10)]
+        public List<string> PipelineVersionAliases { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the PipelineVersionAliases property is set.
+        /// </summary>
+        internal bool IsSetPipelineVersionAliases() => this.PipelineVersionAliases != null && (this.PipelineVersionAliases.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property PipelineVersionId. 
         /// <para>
         /// The ID of the pipeline version.
@@ -212,6 +232,21 @@ namespace Amazon.SageMaker.Model
         /// Checks to see if the PipelineVersionId property is set.
         /// </summary>
         internal bool IsSetPipelineVersionId() => this.PipelineVersionId.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that the execution uses. SageMaker
+        /// returns this value only for executions of pipelines that AWS manages.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 2048)]
+        public string RoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RoleArn property is set.
+        /// </summary>
+        internal bool IsSetRoleArn() => this.RoleArn != null;
 
         /// <summary>
         /// Gets and sets the property SelectiveExecutionConfig. 

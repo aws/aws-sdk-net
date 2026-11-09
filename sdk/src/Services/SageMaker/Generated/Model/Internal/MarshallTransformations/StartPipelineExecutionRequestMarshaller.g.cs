@@ -125,10 +125,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetPipelineVersionAlias())
+            {
+                context.Writer.WritePropertyName("PipelineVersionAlias");
+                context.Writer.WriteStringValue(publicRequest.PipelineVersionAlias);
+            }
             if (publicRequest.IsSetPipelineVersionId())
             {
                 context.Writer.WritePropertyName("PipelineVersionId");
                 context.Writer.WriteNumberValue(publicRequest.PipelineVersionId.Value);
+            }
+            if (publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
             }
             if (publicRequest.IsSetSelectiveExecutionConfig())
             {

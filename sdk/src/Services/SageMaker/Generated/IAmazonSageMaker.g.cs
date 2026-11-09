@@ -1234,6 +1234,53 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Installs an extension, such as <c>sagemaker-observability</c>, on a SageMaker HyperPod
+        /// cluster orchestrated by Slurm. The cluster must have <c>NodeProvisioningMode</c> set
+        /// to <c>Continuous</c> and can have only one extension with a given name. To track the
+        /// installation, call <c>DescribeClusterExtension</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClusterExtension service method.</param>
+        /// <returns>The response from the CreateClusterExtension service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateClusterExtension">REST API Reference for CreateClusterExtension Operation</seealso>
+        CreateClusterExtensionResponse CreateClusterExtension(CreateClusterExtensionRequest request);
+#endif
+
+        /// <summary>
+        /// Installs an extension, such as <c>sagemaker-observability</c>, on a SageMaker HyperPod
+        /// cluster orchestrated by Slurm. The cluster must have <c>NodeProvisioningMode</c> set
+        /// to <c>Continuous</c> and can have only one extension with a given name. To track the
+        /// installation, call <c>DescribeClusterExtension</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClusterExtension service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateClusterExtension service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateClusterExtension">REST API Reference for CreateClusterExtension Operation</seealso>
+        Task<CreateClusterExtensionResponse> CreateClusterExtensionAsync(CreateClusterExtensionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Create cluster policy configuration. This policy is used for task prioritization and
         /// fair-share allocation of idle compute. This helps prioritize critical workloads and
         /// distributes idle compute across entities.
@@ -5634,6 +5681,69 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes an extension from a SageMaker HyperPod cluster. SageMaker HyperPod removes
+        /// the extension's software from every node in the cluster. While SageMaker HyperPod
+        /// removes the extension, its status is <c>Deleting</c>. After SageMaker HyperPod removes
+        /// the extension from all nodes, it no longer appears in <c>ListClusterExtensions</c>,
+        /// and <c>DescribeClusterExtension</c> returns a <c>ResourceNotFound</c> error.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting an extension doesn't delete data that the extension sent to other Amazon
+        /// Web Services services, such as metrics in Amazon CloudWatch or Amazon Managed Service
+        /// for Prometheus.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterExtension service method.</param>
+        /// <returns>The response from the DeleteClusterExtension service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteClusterExtension">REST API Reference for DeleteClusterExtension Operation</seealso>
+        DeleteClusterExtensionResponse DeleteClusterExtension(DeleteClusterExtensionRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an extension from a SageMaker HyperPod cluster. SageMaker HyperPod removes
+        /// the extension's software from every node in the cluster. While SageMaker HyperPod
+        /// removes the extension, its status is <c>Deleting</c>. After SageMaker HyperPod removes
+        /// the extension from all nodes, it no longer appears in <c>ListClusterExtensions</c>,
+        /// and <c>DescribeClusterExtension</c> returns a <c>ResourceNotFound</c> error.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting an extension doesn't delete data that the extension sent to other Amazon
+        /// Web Services services, such as metrics in Amazon CloudWatch or Amazon Managed Service
+        /// for Prometheus.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterExtension service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteClusterExtension service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteClusterExtension">REST API Reference for DeleteClusterExtension Operation</seealso>
+        Task<DeleteClusterExtensionResponse> DeleteClusterExtensionAsync(DeleteClusterExtensionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes the cluster policy of the cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSchedulerConfig service method.</param>
@@ -7853,6 +7963,39 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterEvent">REST API Reference for DescribeClusterEvent Operation</seealso>
         Task<DescribeClusterEventResponse> DescribeClusterEventAsync(DescribeClusterEventRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about an extension installed on a SageMaker HyperPod cluster.
+        /// The information includes the extension's version, configuration, and status, and a
+        /// summary of how many cluster nodes are running the current version and configuration
+        /// of the extension.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterExtension service method.</param>
+        /// <returns>The response from the DescribeClusterExtension service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterExtension">REST API Reference for DescribeClusterExtension Operation</seealso>
+        DescribeClusterExtensionResponse DescribeClusterExtension(DescribeClusterExtensionRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about an extension installed on a SageMaker HyperPod cluster.
+        /// The information includes the extension's version, configuration, and status, and a
+        /// summary of how many cluster nodes are running the current version and configuration
+        /// of the extension.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterExtension service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeClusterExtension service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterExtension">REST API Reference for DescribeClusterExtension Operation</seealso>
+        Task<DescribeClusterExtensionResponse> DescribeClusterExtensionAsync(DescribeClusterExtensionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -10521,6 +10664,33 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterEvents">REST API Reference for ListClusterEvents Operation</seealso>
         Task<ListClusterEventsResponse> ListClusterEventsAsync(ListClusterEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the extensions installed on a SageMaker HyperPod cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterExtensions service method.</param>
+        /// <returns>The response from the ListClusterExtensions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterExtensions">REST API Reference for ListClusterExtensions Operation</seealso>
+        ListClusterExtensionsResponse ListClusterExtensions(ListClusterExtensionsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the extensions installed on a SageMaker HyperPod cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterExtensions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListClusterExtensions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterExtensions">REST API Reference for ListClusterExtensions Operation</seealso>
+        Task<ListClusterExtensionsResponse> ListClusterExtensionsAsync(ListClusterExtensionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -14136,6 +14306,79 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the configuration or the version of an extension installed on a SageMaker
+        /// HyperPod cluster. SageMaker HyperPod applies the change to every node in the cluster.
+        /// You can change the configuration, the version, or both in one request.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Configuration:</b> You can change settings by sending <c>ConfigurationValues</c>.
+        /// Settings that you include are changed. Settings that you omit keep their current values.
+        /// A setting with the value <c>null</c> is removed and returns to its default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Version:</b> You can update to a later version. You can't update to an earlier
+        /// version. To use an earlier version, delete the extension and create it again with
+        /// that version.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't update an extension while it is being deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterExtension service method.</param>
+        /// <returns>The response from the UpdateClusterExtension service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterExtension">REST API Reference for UpdateClusterExtension Operation</seealso>
+        UpdateClusterExtensionResponse UpdateClusterExtension(UpdateClusterExtensionRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the configuration or the version of an extension installed on a SageMaker
+        /// HyperPod cluster. SageMaker HyperPod applies the change to every node in the cluster.
+        /// You can change the configuration, the version, or both in one request.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Configuration:</b> You can change settings by sending <c>ConfigurationValues</c>.
+        /// Settings that you include are changed. Settings that you omit keep their current values.
+        /// A setting with the value <c>null</c> is removed and returns to its default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Version:</b> You can update to a later version. You can't update to an earlier
+        /// version. To use an earlier version, delete the extension and create it again with
+        /// that version.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't update an extension while it is being deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterExtension service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateClusterExtension service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterExtension">REST API Reference for UpdateClusterExtension Operation</seealso>
+        Task<UpdateClusterExtensionResponse> UpdateClusterExtensionAsync(UpdateClusterExtensionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
