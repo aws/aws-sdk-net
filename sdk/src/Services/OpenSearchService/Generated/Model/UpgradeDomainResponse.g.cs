@@ -67,6 +67,19 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetChangeProgressDetails() => this.ChangeProgressDetails != null;
 
         /// <summary>
+        /// Gets and sets the property DeploymentStrategyOptions. 
+        /// <para>
+        /// The deployment strategy override used for the upgrade.
+        /// </para>
+        /// </summary>
+        public DeploymentStrategyOverrideOptions DeploymentStrategyOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeploymentStrategyOptions property is set.
+        /// </summary>
+        internal bool IsSetDeploymentStrategyOptions() => this.DeploymentStrategyOptions != null;
+
+        /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
         /// The name of the domain that was upgraded.

@@ -74,6 +74,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ClonedBlueGreenUpgradeDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = ClonedBlueGreenUpgradeDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ClonedBlueGreenUpgradeDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("CompletedProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

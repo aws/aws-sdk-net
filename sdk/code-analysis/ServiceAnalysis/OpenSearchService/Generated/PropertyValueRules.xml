@@ -1038,6 +1038,23 @@
     <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateCloneRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateCloneResponse.ChangeId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateCloneResponse.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.UpdateDataSourceRequest.Description</property>
     <min>0</min>
     <max>1000</max>
@@ -1841,6 +1858,21 @@
     <min>0</min>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.TrafficPercents.CloneReadTrafficPercent</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.TrafficPercents.PrimaryReadTrafficPercent</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.TrafficSplitRequestOptions.CloneReadTrafficPercent</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.VersionStatus.Options</property>
