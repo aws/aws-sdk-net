@@ -87,7 +87,7 @@ namespace AWSSDK.UnitTests
                 var capacity = MockAdaptiveRetryPolicy.CurrentCapacityManagerInstance.GetRetryCapacity(config.ServiceURL);
                 Assert.AreEqual(DefaultMaxRetries, executionContext.RequestContext.Retries);
                 Assert.AreEqual(3, Tester.CallCount);
-                Assert.AreEqual(495, capacity.AvailableCapacity);
+                Assert.AreEqual(486, capacity.AvailableCapacity);
 
                 retryPolicy.AssertDelaysMatch(new int[] { 1000, 2000 });
             }, config);
@@ -119,7 +119,7 @@ namespace AWSSDK.UnitTests
                 var capacity = MockAdaptiveRetryPolicy.CurrentCapacityManagerInstance.GetRetryCapacity(config.ServiceURL);
                 Assert.AreEqual(DefaultMaxRetries, executionContext.RequestContext.Retries);
                 Assert.AreEqual(3, Tester.CallCount);
-                Assert.AreEqual(490, capacity.AvailableCapacity);
+                Assert.AreEqual(472, capacity.AvailableCapacity);
 
                 retryPolicy.AssertDelaysMatch(new int[] { 1000, 2000 });
             }, config);
@@ -225,7 +225,7 @@ namespace AWSSDK.UnitTests
                 var capacity = MockAdaptiveRetryPolicy.CurrentCapacityManagerInstance.GetRetryCapacity(config.ServiceURL);
                 Assert.AreEqual(4, executionContext.RequestContext.Retries);
                 Assert.AreEqual(5, Tester.CallCount);
-                Assert.AreEqual(480, capacity.AvailableCapacity);
+                Assert.AreEqual(444, capacity.AvailableCapacity);
 
                 retryPolicy.AssertDelaysMatch(new int[] { 1000, 2000, 4000, 8000 });
             }, config);
@@ -258,7 +258,7 @@ namespace AWSSDK.UnitTests
                 var capacity = MockAdaptiveRetryPolicy.CurrentCapacityManagerInstance.GetRetryCapacity(config.ServiceURL);
                 Assert.AreEqual(4, executionContext.RequestContext.Retries);
                 Assert.AreEqual(5, Tester.CallCount);
-                Assert.AreEqual(480, capacity.AvailableCapacity);
+                Assert.AreEqual(444, capacity.AvailableCapacity);
 
                 retryPolicy.AssertDelaysMatch(new int[] { 1000, 2000, 3000, 3000 });
             }, config);

@@ -31,23 +31,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 </ListBucketResult>";
 
         /// <summary>
-        /// Background Info:- Each retry request requires 5 capacity. On successful retry response 5 would be put back into the
-        /// capacity. On a successful response which is not a retry request 1 is added to the capacity. The capacity has a max cap 
+        /// Background Info:- Each retry request requires 14 capacity. On successful retry response 14 would be put back into the
+        /// capacity. On a successful response which is not a retry request 1 is added to the capacity. The capacity has a max cap
         /// that is not exceeded.
         /// Dependency: This test uses the ListObjectsResponseXml constant which contains a sample success ListObject response.
         /// This Integration test works in three phases.
-        /// Phase 1. Keeping in mind that we can make a 100 requests with the current set configurations, 500 requests are made
-        /// to a mock servlet which returns back a 500 error which leads to 500 retry requests. As the capacity can only handle 
-        /// a 100, this leads to the capacity getting depleted. An assert proves the number of retry requests that was made.
+        /// Phase 1. Keeping in mind that we can make 35 retry requests with the current set configurations, 500 requests are made
+        /// to a mock servlet which returns back a 500 error which leads to 500 retry requests. As the capacity can only handle
+        /// 35, this leads to the capacity getting depleted. An assert proves the number of retry requests that was made.
         /// Phase 2. With the capacity completely entry, phase 2 makes 500 requests for which the mock servlet returns a success
-        /// response. This puts back enough capacity to make a 100 retry requests.
+        /// response. This puts back enough capacity to make 35 retry requests.
         /// Phase 3. Phase 1 is repeated again with an assert to prove that Phase 2 added the said capacity.
         /// </summary>
         [Fact]
         public void S3CapacityManagerIntegrationTest()
         {
             int TotalRequests = 500;
-            int RetryRequests = 100;
+
+            //Retry Behavior 2.1 charges RETRY_COST (14) per non-throttling retry against the
+            //500 initial retry tokens, and TryAcquireCapacity requires the full cost to be
+            //available, so 500 / 14 = 35 retries can be made before the quota is depleted.
+            int RetryRequests = 35;
             int ExtraRequests = TotalRequests-RetryRequests;
             requestCount = 0;
             var retryFlag = true;

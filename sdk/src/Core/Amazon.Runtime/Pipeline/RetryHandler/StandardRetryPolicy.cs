@@ -31,11 +31,13 @@ namespace Amazon.Runtime.Internal
         private static Random _randomJitter = new Random();
                 
         //The status code returned from a service request when an invalid endpoint is used.
-        private const int INVALID_ENDPOINT_EXCEPTION_STATUSCODE = 421;        
-        
-        protected static CapacityManager CapacityManagerInstance { get; set; } = UseNewRetries2026
-            ? new CapacityManager(initialRetryTokens: 500, retryCost: 14, noRetryIncrement: 1, timeoutRetryCost: 10, throttlingRetryCost: 5)
-            : new CapacityManager(initialRetryTokens: 500, retryCost: 5, noRetryIncrement: 1, timeoutRetryCost: 10, throttlingRetryCost: 0);
+        private const int INVALID_ENDPOINT_EXCEPTION_STATUSCODE = 421;
+
+        //The default number of retries (3 retries, 4 attempts) for DynamoDB and DynamoDB Streams.
+        private const int DynamoDBDefaultMaxRetries = 3;
+
+        protected static CapacityManager CapacityManagerInstance { get; set; } =
+            new CapacityManager(initialRetryTokens: 500, retryCost: 14, noRetryIncrement: 1, timeoutRetryCost: 14, throttlingRetryCost: 5);
 
         /// <summary>
         /// The maximum value of exponential backoff in milliseconds, which will be used to wait
@@ -65,16 +67,17 @@ namespace Amazon.Runtime.Internal
         {
             this.MaxRetries = config.MaxErrorRetry;
 
-            // DynamoDB and DynamoDB Streams retry count handling:
-            // Previously, MaxErrorRetry was set to 10 in the generated AmazonDynamoDBConfig/AmazonDynamoDBStreamsConfig.
-            // This was moved here to the retry policy so we can apply the correct default based on the
-            // UseNewRetries2026 flag. When UseNewRetries2026 is enabled, DynamoDB uses 3 retries (4 attempts)
-            // per SEP 2.1. When disabled, it preserves the legacy default of 10 retries.
-            // TODO: After the UseNewRetries2026 flag is removed (end of 2026), update the generated
-            // DynamoDB/DynamoDB Streams configs to set MaxErrorRetry to 3 directly and remove this block.
-            if (!config.IsMaxErrorRetrySet && IsDynamoDBService(config))
+            // DynamoDB and DynamoDB Streams use 3 retries (4 attempts) by default, rather than the
+            // general default. The default applies only when no retry count is configured:
+            // MaxErrorRetry on the config, the AWS_MAX_ATTEMPTS environment variable or max_attempts
+            // in the shared config file. When either of the latter is set, config.MaxErrorRetry
+            // already returns that value. The default is applied here rather than in the generated
+            // AmazonDynamoDBConfig/AmazonDynamoDBStreamsConfig because setting MaxErrorRetry there
+            // would mark IsMaxErrorRetrySet and override AWS_MAX_ATTEMPTS and max_attempts.
+            if (IsDynamoDBService(config) && !config.IsMaxErrorRetrySet
+                && !FallbackInternalConfigurationFactory.MaxAttempts.HasValue)
             {
-                this.MaxRetries = UseNewRetries2026 ? 3 : 10;
+                this.MaxRetries = DynamoDBDefaultMaxRetries;
             }
 
             if (config.ThrottleRetries)
@@ -151,9 +154,9 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
-        /// Virtual method that gets called on a success Response. If its a retry success response, the entire 
-        /// retry acquired capacity is released(default is 5). If its just a success response a lesser value capacity 
-        /// is released(default is 1).
+        /// Virtual method that gets called on a success Response. If its a retry success response, the capacity
+        /// acquired by the retry is released (by default 14 for a retry and 5 for a throttling retry). If its just
+        /// a success response a lesser value capacity is released (default is 1).
         /// </summary>
         /// <param name="executionContext">Request context containing the state of the request.</param>
         public override void NotifySuccess(IExecutionContext executionContext)
@@ -223,6 +226,27 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// Returns true if the exception is a throttling error. In addition to the errors the
+        /// base implementation treats as throttling (a modeled throttling exception or a known
+        /// throttling error code), an HTTP 429 response is treated as throttling unless the
+        /// service model marks the exception as retryable, in which case the model decides.
+        /// </summary>
+        /// <param name="exception">The exception to check.</param>
+        /// <returns>True if the exception is a throttling error, else false.</returns>
+        public override bool IsThrottlingError(Exception exception)
+        {
+            if (base.IsThrottlingError(exception))
+            {
+                return true;
+            }
+
+            var serviceException = exception as AmazonServiceException;
+            return serviceException != null
+                && serviceException.Retryable == null
+                && serviceException.StatusCode == (HttpStatusCode)429;
+        }
+
+        /// <summary>
         /// Checks if the retry limit is reached.
         /// </summary>
         /// <param name="executionContext">Request context containing the state of the request.</param>
@@ -283,9 +307,9 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
-        /// Calculates the retry delay in milliseconds. When UseNewRetries2026 is enabled, uses the
-        /// SEP 2.1 formula with service-aware base delay, MAX_BACKOFF applied before jitter, and
-        /// x-amz-retry-after header clamping. Otherwise uses the legacy 2.0 formula.
+        /// Calculates the retry delay in milliseconds using exponential backoff with full jitter,
+        /// a service-aware base delay, the maximum backoff applied before jitter, and
+        /// x-amz-retry-after header clamping.
         /// </summary>
         /// <param name="executionContext">The execution context for the current request.</param>
         /// <param name="maxBackoffInMilliseconds">The maximum backoff in milliseconds.</param>
@@ -298,12 +322,7 @@ namespace Amazon.Runtime.Internal
                 jitter = _randomJitter.NextDouble();
             }
 
-            if (!UseNewRetries2026)
-            {
-                return Convert.ToInt32(Math.Min(jitter * Math.Pow(2, retries - 1) * 1000.0, maxBackoffInMilliseconds));
-            }
-
-            // SEP 2.1: Determine the base delay multiplier (x) based on error type and service.
+            // Determine the base delay multiplier (x) based on error type and service.
             //   - 1.0 (1000ms) for throttling errors
             //   - 0.05 (50ms) for non-throttling errors on most services
             //   - 0.025 (25ms) for non-throttling errors on DynamoDB/DynamoDB Streams
@@ -322,14 +341,14 @@ namespace Amazon.Runtime.Internal
                 baseDelayMs = 50.0;
             }
 
-            // SEP 2.1: MAX_BACKOFF is applied before jitter.
+            // MAX_BACKOFF is applied before jitter.
             // Formula: jitter * Min(baseDelayMs * 2^(retries-1), MAX_BACKOFF)
             // where baseDelayMs is 1000, 50, or 25 depending on the service.
             double rawDelay = baseDelayMs * Math.Pow(2, retries - 1);
             double cappedDelay = Math.Min(rawDelay, maxBackoffInMilliseconds);
             var backoffDelayMs = Convert.ToInt32(jitter * cappedDelay);
 
-            // SEP 2.1: x-amz-retry-after header clamping.
+            // x-amz-retry-after header clamping.
             // The header value (ms) is clamped to [backoffDelay, 5000 + backoffDelay]. MAX_BACKOFF is NOT applied.
             if (executionContext.RequestContext.ContextAttributes.TryGetValue(RetryAfterContextKey, out var retryAfterObj)
                 && retryAfterObj is int retryAfterMs)

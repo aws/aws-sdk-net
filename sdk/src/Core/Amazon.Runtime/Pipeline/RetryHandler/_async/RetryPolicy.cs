@@ -50,12 +50,10 @@ namespace Amazon.Runtime
                     {
                         return false;
                     }
-                    if (UseNewRetries2026)
-                    {
-                        executionContext.RequestContext.LastCapacityType = IsThrottlingError(exception) ?
-                            CapacityManager.CapacityType.Throttling : CapacityManager.CapacityType.Retry;
-                        StoreRetryAfterHeader(executionContext, exception);
-                    }
+                    executionContext.RequestContext.LastCapacityType = IsThrottlingError(exception) ?
+                        CapacityManager.CapacityType.Throttling : CapacityManager.CapacityType.Retry;
+                    StoreRetryAfterHeader(executionContext, exception);
+
                     // Clock Skew Correction specification: skew retries consume retry quota
                     // (RETRY_COST) and count toward MAX_ATTEMPTS.
                     return OnRetry(executionContext, false, IsThrottlingError(exception));
