@@ -539,3 +539,22 @@ awsQuery writers with EC2's differences; only EC2 and the EC2Protocol test clien
   (`new {Error}Exception(errorResponse.Message, …)`), with no body copy or per-error unmarshaller call,
   matching C2J's `AWSQueryEC2ResponseUnmarshaller.tt`. The exception unmarshallers themselves are the awsQuery
   ones.
+- **EC2 customizations** — `CustomizationTransform` folds most into the model (only EC2 uses them), so the
+  writers above only add:
+  - `emitAsShape` + `emitFromMember` (`AttributeValue` → `string`): `TypeMapper` types the member as the wrapper's
+    value and sets `TypeDescriptor.Unwrapped`; the wire keeps the wrapper (`InstanceType.Value`, `instanceType/value`;
+    a list item `Name.{i}.Value`, `name/item/value`). `listMemberSuffixExclusions` drops the item suffix for the
+    listed operations' requests.
+  - `emitAsShape` alone retargets members to another modeled shape. The old name's `shapeModifiers` are merged
+    into the new shape's, since C2J applies them only while marshalling the substituted member; this fails when
+    a request already sends the new shape, when a key would change the emitted class, or when the new shape has
+    an `inject`, `locationName` or `customMarshall` the old name does not set with the same values or skip with
+    `customMarshall`.
+  - `inject` adds a real member; its `locationName` becomes `@xmlName`, so the request name upper-cases it and
+    the response name lower-cases it, as C2J. An injected name a renamed member already has moves that member
+    to its emitted name, keeping its wire name.
+  - `modify.locationName` becomes `@ec2QueryName` (upper-cased): request only, ranked above the model's name.
+  - `marshallNameOverrides` names a member for one operation's request, above every other rule (upper-cased).
+  - `customMarshall` keeps the member on the class but out of the request; hand-written code sends it.
+  - `suppressResultGeneration` makes the output Unit: an empty response class whose unmarshaller reads no
+    members.

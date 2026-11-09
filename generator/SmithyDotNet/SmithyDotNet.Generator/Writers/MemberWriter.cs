@@ -77,18 +77,19 @@ public static class MemberWriter
             return;
         }
 
+        var declaration = $"{(member.IsInternal ? "internal" : "public")} {modifier}{member.Type.DotNetType} {member.PropertyName}";
         if (field is not null)
         {
-            writer.WriteLine($"public {modifier}{member.Type.DotNetType} {member.PropertyName} {{ get => this.{field}; set => this.{field} = value; }}");
+            writer.WriteLine($"{declaration} {{ get => this.{field}; set => this.{field} = value; }}");
             WriteIsSetFlag(writer, member, field);
         }
         else if (member.Type.IsCollection)
         {
-            writer.WriteLine($"public {modifier}{member.Type.DotNetType} {member.PropertyName} {{ get; set; }} = AWSConfigs.InitializeCollections ? new {member.Type.DotNetType}() : null;");
+            writer.WriteLine($"{declaration} {{ get; set; }} = AWSConfigs.InitializeCollections ? new {member.Type.DotNetType}() : null;");
         }
         else
         {
-            writer.WriteLine($"public {modifier}{member.Type.DotNetType} {member.PropertyName} {{ get; set; }}");
+            writer.WriteLine($"{declaration} {{ get; set; }}");
         }
 
         writer.WriteLine();

@@ -426,4 +426,167 @@ public class CustomizationTransformTests
         var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
         Assert.Contains($"skipUriPropertyValidation['{propertyName}'] is not the property of any @httpLabel member.", ex.Message);
     }
+
+    // EC2-only hooks; the fixture's PutValue, AttributeValue, SpotSpec and Spec copy EC2's shapes.
+
+    [Fact]
+    public void SuppressResultGeneration_DropsTheOutput()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.SuppressResultGeneration.Add("ListBuckets");
+
+        var model = Apply(customizations);
+
+        Assert.Equal(ShapeId.Unit, Assert.IsType<OperationShape>(model.Shapes["com.example#ListBuckets"]).Output);
+    }
+
+    // ec2's BlobAttributeValue.Value targets Blob, which is itself substituted, so the value's type resolves through it.
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public void UnwrappedValue_WhoseTypeIsSubstituted_AppliesInEitherOrder(bool valueTypeFirst)
+    {
+        var customizations = new CustomizationsModel();
+        var valueType = new ShapeSubstitution { EmitAsShape = "Text" };
+        if (valueTypeFirst)
+        {
+            customizations.ShapeSubstitutions["LegacyId"] = valueType;
+        }
+        customizations.ShapeSubstitutions["IdValue"] = new ShapeSubstitution { EmitAsShape = "Text", EmitFromMember = "Value" };
+        if (!valueTypeFirst)
+        {
+            customizations.ShapeSubstitutions["LegacyId"] = valueType;
+        }
+
+        var model = Apply(customizations);
+
+        var wrapper = Assert.IsType<StructureShape>(model.Shapes["com.example#IdValue"]);
+        Assert.Equal("com.example#Text", wrapper.Members["Value"].Target.AbsoluteName);
+    }
+
+    // The old name sets the new shape's request-only keys with the same values, so they merge.
+    [Fact]
+    public void SubstitutedShape_OldNameMirroringTheNewShape_Merges()
+    {
+        var customizations = new CustomizationsModel();
+        var spec = TestCustomizations.Inject("Names", new PropertyInjector { Shape = "NameList", LocationName = "group" });
+        TestCustomizations.Modify("Kind", new PropertyModifier { LocationName = "type" }, spec);
+        customizations.ShapeModifiers["Spec"] = spec;
+        var spotSpec = TestCustomizations.Inject("Names", new PropertyInjector { Shape = "NameList", LocationName = "group", CustomMarshall = true });
+        TestCustomizations.Modify("Kind", new PropertyModifier { LocationName = "type" }, spotSpec);
+        customizations.ShapeModifiers["SpotSpec"] = spotSpec;
+        customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
+
+        Apply(customizations);
+
+        Assert.True(customizations.CustomMarshall("Spec", "Names"));
+    }
+
+    [Theory]
+    [InlineData("mixed", "mixes renameShape with emitAsShape")]
+    [InlineData("memberWithoutEmitAsShape", "sets emitFromMember or listMemberSuffixExclusions, which need emitAsShape")]
+    [InlineData("exclusionsWithoutMember", "lists listMemberSuffixExclusions without an emitFromMember")]
+    [InlineData("staleExclusion", "listMemberSuffixExclusions['Bucket'] targets a 'structure' shape, not an operation")]
+    [InlineData("missingValueMember", "emits from member 'Missing', which the shape does not have")]
+    [InlineData("wrongValueType", "emits 'Boolean', but member 'Value' targets 'smithy.api#String'")]
+    [InlineData("operationInput", "substitutes the input or output of 'com.example#PutValue'")]
+    [InlineData("unwrappedOperationInput", "substitutes the input or output of 'com.example#PutValue'")]
+    [InlineData("unwrappedMapValue", "substitutes a key or value of map 'com.example#NameValueMap'")]
+    [InlineData("sentByRequest", "which a request already sends")]
+    [InlineData("oldNameRename", "changes the emitted 'Spec' class")]
+    [InlineData("oldNameInject", "does not inject as 'IdList'")]
+    [InlineData("newNameOnly", "sets an inject, locationName or customMarshall on 'Groups' that shapeModifiers['SpotSpec'] does not mirror")]
+    [InlineData("differentLocationName", "sets an inject, locationName or customMarshall on 'Groups' that shapeModifiers['SpotSpec'] does not mirror")]
+    [InlineData("injectNotSkipped", "sets an inject, locationName or customMarshall on 'Groups' that shapeModifiers['SpotSpec'] does not mirror")]
+    [InlineData("substitutedAwayOverride", "marshallNameOverrides does not match any shape")]
+    [InlineData("injectTaken", "injects 'Kind', which the shape already has")]
+    [InlineData("accessModifier", "only 'internal' is supported")]
+    [InlineData("marshallNameOverride", "'PutValueRequest.Missing', which is not a property of the shape")]
+    [InlineData("suppressWrapped", "suppresses an output that operationModifiers wraps")]
+    public void Ec2Hooks_Invalid_Throws(string invalid, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        var overrides = new Dictionary<string, Dictionary<string, MarshallNameOverride>>();
+        var names = new Dictionary<string, MarshallNameOverride>();
+        switch (invalid)
+        {
+            case "mixed":
+                customizations.ShapeSubstitutions["Bucket"] = new ShapeSubstitution { RenamedShapeName = "Bin", EmitAsShape = "String" };
+                break;
+            case "memberWithoutEmitAsShape":
+                customizations.ShapeSubstitutions["AttributeValue"] = new ShapeSubstitution { EmitFromMember = "Value" };
+                break;
+            case "exclusionsWithoutMember":
+                customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec", ListMemberSuffixExclusions = ["PutValue"] };
+                break;
+            case "staleExclusion":
+                customizations.ShapeSubstitutions["AttributeValue"] = new ShapeSubstitution { EmitAsShape = "String", EmitFromMember = "Value", ListMemberSuffixExclusions = ["Bucket"] };
+                break;
+            case "missingValueMember":
+                customizations.ShapeSubstitutions["AttributeValue"] = new ShapeSubstitution { EmitAsShape = "String", EmitFromMember = "Missing" };
+                break;
+            case "wrongValueType":
+                customizations.ShapeSubstitutions["AttributeValue"] = new ShapeSubstitution { EmitAsShape = "Boolean", EmitFromMember = "Value" };
+                break;
+            case "operationInput":
+                customizations.ShapeSubstitutions["PutValueRequest"] = new ShapeSubstitution { EmitAsShape = "Spec" };
+                break;
+            case "unwrappedOperationInput":
+                customizations.ShapeSubstitutions["PutValueRequest"] = new ShapeSubstitution { EmitAsShape = "AttributeValue", EmitFromMember = "value" };
+                break;
+            case "unwrappedMapValue":
+                customizations.ShapeSubstitutions["NameValue"] = new ShapeSubstitution { EmitAsShape = "Text", EmitFromMember = "Value" };
+                break;
+            case "sentByRequest":
+                customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "AttributeValue" };
+                customizations.ShapeModifiers["SpotSpec"] = TestCustomizations.Modify("Value", new PropertyModifier { CustomMarshall = true });
+                break;
+            case "oldNameRename":
+                customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
+                customizations.ShapeModifiers["SpotSpec"] = TestCustomizations.RenameMember("Kind", "Type");
+                break;
+            case "oldNameInject":
+                customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
+                customizations.ShapeModifiers["SpotSpec"] = TestCustomizations.Inject("Groups", new PropertyInjector { Shape = "IdList", CustomMarshall = true });
+                break;
+            case "newNameOnly":
+                customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
+                customizations.ShapeModifiers["Spec"] = TestCustomizations.Modify("Groups", new PropertyModifier { CustomMarshall = true });
+                break;
+            case "differentLocationName":
+                customizations.ShapeModifiers["Spec"] = TestCustomizations.Modify("Groups", new PropertyModifier { LocationName = "type" });
+                customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
+                customizations.ShapeModifiers["SpotSpec"] = TestCustomizations.Modify("Groups", new PropertyModifier { LocationName = "G" });
+                break;
+            case "injectNotSkipped":
+                customizations.ShapeModifiers["Spec"] = TestCustomizations.Inject("Groups", new PropertyInjector { Shape = "NameList", LocationName = "group" });
+                customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
+                customizations.ShapeModifiers["SpotSpec"] = TestCustomizations.Inject("Groups", new PropertyInjector { Shape = "NameList" });
+                break;
+            case "substitutedAwayOverride":
+                names["Kind"] = new MarshallNameOverride { MarshallName = "Type" };
+                overrides["SpotSpec"] = names;
+                customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
+                customizations.OperationModifiers["PutValue"] = new OperationModifier { MarshallNameOverrides = [overrides] };
+                break;
+            case "injectTaken":
+                customizations.ShapeModifiers["Spec"] = TestCustomizations.Inject("Kind", new PropertyInjector { Shape = "NameList" });
+                break;
+            case "accessModifier":
+                customizations.ShapeModifiers["Spec"] = TestCustomizations.Modify("Kind", new PropertyModifier { AccessModifier = "private" });
+                break;
+            case "marshallNameOverride":
+                names["Missing"] = new MarshallNameOverride { MarshallName = "Value" };
+                overrides["PutValueRequest"] = names;
+                customizations.OperationModifiers["PutValue"] = new OperationModifier { MarshallNameOverrides = [overrides] };
+                break;
+            case "suppressWrapped":
+                customizations.OperationModifiers["ListBuckets"] = new OperationModifier { UseWrappingResult = true, WrappedResultShape = "BucketPage", WrappedResultMember = "Page" };
+                customizations.SuppressResultGeneration.Add("ListBuckets");
+                break;
+        }
+
+        var ex = Assert.Throws<GeneratorException>(() => Apply(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
 }

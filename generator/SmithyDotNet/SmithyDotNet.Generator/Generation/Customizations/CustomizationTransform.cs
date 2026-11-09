@@ -1,18 +1,20 @@
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
-using SmithyDotNet.Generator.Writers.Shapes;
 
 namespace SmithyDotNet.Generator.Generation.Customizations;
 
 /// <summary>
 /// Applies model-shaped customization hooks to the Smithy model in place, before the
 /// <see cref="ServiceIndex"/> is built. Only a hook with a Smithy trait equivalent (<c>deprecatedMessage</c>;
-/// <c>renameShape</c> adds a service <c>rename</c> entry) or a structural edit (a member-keyed <c>renameShape</c>
-/// copies the member's target; <c>exclude</c> unbinds an operation or drops members; <c>useWrappingResult</c> wraps an
-/// output) is applied to the model; the rest, member renames included, are checked here and
-/// read from <see cref="GenerationContext.Customizations"/> by shape and member name where the member is resolved.
-/// A stale shape/member reference throws — it must fail the build, not silently stop applying.
+/// <c>renameShape</c> adds a service <c>rename</c> entry; <c>locationName</c> sets <c>@ec2QueryName</c>) or a
+/// structural edit (a member-keyed <c>renameShape</c> copies the member's target; <c>exclude</c> unbinds an operation
+/// or drops members; <c>useWrappingResult</c> wraps an output; <c>emitAsShape</c> retargets members; <c>inject</c> adds
+/// one; <c>suppressResultGeneration</c> drops an output) is applied to the model; the rest, member renames included,
+/// are checked here and read from <see cref="GenerationContext.Customizations"/> by shape and member name where the
+/// member is resolved.
+/// Each hook family is applied by its own class (<see cref="ShapeSubstitutions"/>, <see cref="ShapeModifiers"/>,
+/// <see cref="OperationModifiers"/>). A stale shape/member reference throws — it must fail the build, not silently stop applying.
 /// </summary>
 public static class CustomizationTransform
 {
@@ -20,93 +22,9 @@ public static class CustomizationTransform
     {
         // First, so a member-keyed copy exists for the hooks below. Every hook keys a shape by its modeled name,
         // unlike C2J, which keys a renamed structure by its new name (S3's customizations need rekeying).
-        foreach (var (key, substitution) in customizations.ShapeSubstitutions)
-        {
-            if (string.IsNullOrWhiteSpace(substitution.RenamedShapeName))
-            {
-                throw new GeneratorException($"shapeSubstitutions['{key}'] must specify a non-empty 'renameShape'.");
-            }
-            if (key.Split('$') is [var structureName, var memberName])
-            {
-                RenameMemberTarget(model, structureName, memberName, substitution.RenamedShapeName);
-            }
-            else
-            {
-                ApplyRename(model, key, substitution.RenamedShapeName);
-            }
-        }
-
-        if (customizations.ShapeModifiers.Remove("*", out var global))
-        {
-            ExpandGlobal(model, global, customizations);
-        }
-
-        foreach (var (shapeName, modifier) in customizations.ShapeModifiers)
-        {
-            var shape = FindSingleShape(model, shapeName, $"shapeModifiers['{shapeName}']");
-
-            if (modifier.DeprecatedMessage is { } shapeMessage)
-            {
-                shape.SetDeprecatedMessage(shapeMessage);
-            }
-
-            // TODO: S3's excludeFromMarshalling and excludeFromUnmarshalling keep the member on the class but off the
-            // wire, so they need a marshalling-level flag rather than this removal.
-            foreach (var memberName in modifier.Exclude)
-            {
-                if (shape is not StructureShape excluded || !excluded.Members.Remove(memberName))
-                {
-                    throw new GeneratorException($"shapeModifiers['{shapeName}'] excludes member '{memberName}', which the shape does not have.");
-                }
-            }
-
-            // The structure/enum restriction only bites member modifications - a shape-level hook (e.g.
-            // deprecatedMessage on a string shape) applies to any shape.
-            if (modifier.Modify.Count == 0)
-            {
-                continue;
-            }
-
-            switch (shape)
-            {
-                case StructureShape structure:
-                    foreach (var (memberName, property) in modifier.Modify.SelectMany(entry => entry))
-                    {
-                        ApplyMember(structure, memberName, property, shapeName, customizations);
-                    }
-                    break;
-                case EnumShape:
-                    // Enum entries are keyed by wire value and applied (with the stale-reference
-                    // check) by TypeMapper.ResolveEnumMembers, where the constant names are derived.
-                    break;
-                default:
-                    throw new GeneratorException($"shapeModifiers['{shapeName}'] modifies members of a '{shape.Type}' shape; only structures and enums are supported.");
-            }
-        }
-
-        foreach (var (operationName, modifier) in customizations.OperationModifiers)
-        {
-            var shape = FindSingleShape(model, operationName, $"operationModifiers['{operationName}']");
-            if (shape is not OperationShape operation)
-            {
-                throw new GeneratorException($"operationModifiers['{operationName}'] targets a '{shape.Type}' shape, not an operation.");
-            }
-
-            if (modifier.DeprecatedMessage is { } message)
-            {
-                operation.SetDeprecatedMessage(message);
-            }
-
-            if (modifier.Exclude)
-            {
-                ExcludeOperation(model, operation, operationName);
-            }
-
-            if (modifier.UseWrappingResult || modifier.WrappedResultShape is not null || modifier.WrappedResultMember is not null)
-            {
-                WrapOutput(model, operation, operationName, modifier);
-            }
-        }
+        ShapeSubstitutions.Apply(model, customizations);
+        ShapeModifiers.Apply(model, customizations);
+        OperationModifiers.Apply(model, customizations);
     }
 
     /// <summary>
@@ -231,155 +149,21 @@ public static class CustomizationTransform
 
     private static bool ModelHasShape<T>(SmithyModel model, string bareName) where T : Shape =>
         model.Shapes.Any(entry => ShapeId.Parse(entry.Key).Name == bareName && entry.Value is T);
-    // Structures are emitted only when reachable from the service's operations, so the ones only this operation used go too.
-    private static void ExcludeOperation(SmithyModel model, OperationShape operation, string operationName)
-    {
-        var unbound = model.Shapes.Values.Sum(shape => shape switch
-        {
-            ServiceShape service => service.Operations.RemoveAll(id => id == operation.Id),
-            ResourceShape resource => resource.Operations.RemoveAll(id => id == operation.Id) + resource.CollectionOperations.RemoveAll(id => id == operation.Id),
-            _ => 0,
-        });
-        if (unbound == 0)
-        {
-            throw new GeneratorException($"operationModifiers['{operationName}'] excludes an operation that no service or resource lists in its operations; resource lifecycle bindings are not supported.");
-        }
-    }
-
-    // The response keeps one property, wrappedResultMember, typed as the modeled output: a new structure with that
-    // single member becomes the operation's output, and the modeled output turns into an ordinary class.
-    // The JSON and CBOR response unmarshallers read that member from the whole body, and PaginationResolver resolves output
-    // paths through it.
-    private static void WrapOutput(SmithyModel model, OperationShape operation, string operationName, OperationModifier modifier)
-    {
-        var memberName = modifier.WrappedResultMember;
-        if (!modifier.UseWrappingResult || string.IsNullOrWhiteSpace(memberName))
-        {
-            throw new GeneratorException($"operationModifiers['{operationName}'] needs both useWrappingResult and a wrappedResultMember.");
-        }
-
-        if (modifier.WrappedResultShape != operation.Output.Name || model.Shapes.GetValueOrDefault(operation.Output.AbsoluteName) is not { } output)
-        {
-            throw new GeneratorException($"operationModifiers['{operationName}'] wrappedResultShape must name the output, '{operation.Output.Name}'.");
-        }
-
-        var wrapperId = new ShapeId(operation.Id.Namespace, $"{operation.Id.Name}WrappedOutput");
-        if (model.Shapes.ContainsKey(wrapperId.AbsoluteName))
-        {
-            throw new GeneratorException($"operationModifiers['{operationName}'] wraps the output as '{wrapperId}', which is already a shape in the model.");
-        }
-
-        var wrapper = new StructureShape { Id = wrapperId };
-        wrapper.Members[memberName] = new MemberShape { Target = output.Id };
-        model.Shapes[wrapperId.AbsoluteName] = wrapper;
-
-        output.Traits.Remove("smithy.api#output");
-        model.Shapes[operation.Id.AbsoluteName] = operation with { Output = wrapperId };
-    }
-
-    // A C# rename is exactly what Smithy's service `rename` expresses, and ServiceIndex.ToDotNetName already
-    // applies it to every emitted symbol; the shape ID stays put, so member targets still resolve.
-    private static void ApplyRename(SmithyModel model, string shapeName, string newName)
-    {
-        var context = $"shapeSubstitutions['{shapeName}']";
-        var service = model.Shapes.Values.OfType<ServiceShape>().SingleOrDefault()
-            ?? throw new GeneratorException($"{context} needs a single service shape to record the rename on.");
-        var id = FindSingleShapeId(model, shapeName, context);
-        var shape = model.Shapes[id.AbsoluteName];
-
-        // Even an identical rename means the customization is stale and should be removed.
-        if (service.Rename.TryGetValue(id.AbsoluteName, out var existing))
-        {
-            throw new GeneratorException($"{context} renames '{id}' to '{newName}', but the model already renames it to '{existing}'.");
-        }
-
-        ThrowIfEmitted(model, service.Rename, shape, newName, $"{context} renames '{id}' to '{newName}'");
-        service.Rename[id.AbsoluteName] = newName;
-    }
-
-    // Smithy-only form, keyed "Structure$member": one Smithy shape can stand for several C2J shapes (QApps'
-    // Action is C2J's PermissionInputActionEnum and PermissionOutputActionEnum), so the member gets its own
-    // copy under the C2J name. The original is dropped once nothing targets it, or it would still be emitted.
-    private static void RenameMemberTarget(SmithyModel model, string structureName, string memberName, string newName)
-    {
-        var context = $"shapeSubstitutions['{structureName}${memberName}']";
-        var structureId = FindSingleShapeId(model, structureName, context);
-        if (model.Shapes[structureId.AbsoluteName] is not StructureShape structure || !structure.Members.TryGetValue(memberName, out var member))
-        {
-            throw new GeneratorException($"{context} does not name a structure member in the model.");
-        }
-
-        var original = model.Shapes.GetValueOrDefault(member.Target.AbsoluteName)
-            ?? throw new GeneratorException($"{context} targets '{member.Target}', which is not a shape in the model.");
-
-        // TODO: a structure copy would share its Members with the original, so a member rename would hit both.
-        if (original is StructureShape)
-        {
-            throw new GeneratorException($"{context} targets structure '{member.Target}'; duplicating a structure is not supported yet.");
-        }
-
-        var renames = model.Shapes.Values.OfType<ServiceShape>().SingleOrDefault()?.Rename ?? [];
-        ThrowIfEmitted(model, renames, original, newName, $"{context} copies '{member.Target}' as '{newName}'");
-
-        // ThrowIfEmitted compares emitted names, so it misses a shape at this ID that the service renames away.
-        var id = new ShapeId(member.Target.Namespace, newName);
-        if (model.Shapes.ContainsKey(id.AbsoluteName))
-        {
-            throw new GeneratorException($"{context} copies '{member.Target}' as '{newName}', but '{id}' is already a shape in the model.");
-        }
-
-        model.Shapes[id.AbsoluteName] = original with { Id = id, Traits = new(original.Traits) };
-        structure.Members[memberName] = member with { Target = id };
-
-        if (!IsTargeted(model, member.Target))
-        {
-            model.Shapes.Remove(member.Target.AbsoluteName);
-        }
-    }
-
-    // TODO: C2J merges shapes renamed to one name (S3's Grant and TargetGrant both become S3Grant). This also
-    // scans unreachable shapes: S3 renames Rule, used only by operations it excludes, to its existing LifecycleRule.
-    // Exceptions share the model namespace, so compare the generated type names (error Foo emits FooException).
-    // Service, resource and operation shapes emit no type of their own (an operation emits FooRequest and
-    // FooResponse), so a rename may take their name, as C2J's models do (Pinpoint's CreateRecommenderConfiguration).
-    private static void ThrowIfEmitted(SmithyModel model, Dictionary<string, string> renames, Shape? renamed, string newName, string context)
-    {
-        var typeName = TypeName(renamed, newName);
-        foreach (var (id, shape) in model.Shapes)
-        {
-            if (shape is ServiceShape or ResourceShape or OperationShape)
-            {
-                continue;
-            }
-
-            var emittedName = EmittedName(renames, ShapeId.Parse(id));
-            if (TypeName(shape, emittedName) == typeName)
-            {
-                throw new GeneratorException($"{context}, which '{id}' is already emitted as.");
-            }
-        }
-    }
-
-    private static string TypeName(Shape? shape, string name) => shape?.IsError() == true ? ExceptionWriter.ToExceptionName(name) : name;
-
-    private static bool IsTargeted(SmithyModel model, ShapeId id) => model.Shapes.Values.Any(shape => shape switch
-    {
-        StructureShape structure => structure.Members.Values.Any(member => member.Target == id),
-        ListShape list => list.Member.Target == id,
-        MapShape map => map.Key.Target == id || map.Value.Target == id,
-        _ => false,
-    });
-
-    private static string EmittedName(Dictionary<string, string> renames, ShapeId id) => renames.GetValueOrDefault(id.AbsoluteName, id.Name);
 
     // Customizations key shapes by bare name (C2J has no namespaces).
-    private static Shape FindSingleShape(SmithyModel model, string bareName, string context)
+    internal static Shape FindSingleShape(SmithyModel model, string bareName, string context)
     {
         var id = FindSingleShapeId(model, bareName, context);
         return model.Shapes[id.AbsoluteName] ?? throw new GeneratorException($"{context} matched a null shape entry '{id}'.");
     }
 
-    private static ShapeId FindSingleShapeId(SmithyModel model, string bareName, string context)
+    internal static OperationShape FindOperation(SmithyModel model, string bareName, string context)
+    {
+        var shape = FindSingleShape(model, bareName, context);
+        return shape as OperationShape ?? throw new GeneratorException($"{context} targets a '{shape.Type}' shape, not an operation.");
+    }
+
+    internal static ShapeId FindSingleShapeId(SmithyModel model, string bareName, string context)
     {
         var matches = model.Shapes.Keys.Where(k => ShapeId.Parse(k).Name == bareName).ToList();
         if (matches.Count != 1)
@@ -423,78 +207,6 @@ public static class CustomizationTransform
         && !member.IsHttpLabel() && !member.IsHostLabel() && !member.IsIdempotencyToken()
         && !member.IsEventHeader() && !member.IsEventPayload()
         && !swappedType.StartsWith("List<", StringComparison.Ordinal) && !swappedType.StartsWith("Dictionary<", StringComparison.Ordinal);
-
-    // "*" modifies a member of that name in every structure, unless the structure's own entry modifies it, so it
-    // becomes one entry per structure.
-    private static void ExpandGlobal(SmithyModel model, ShapeModifier global, CustomizationsModel customizations)
-    {
-        if (global.Exclude.Count > 0 || global.DeprecatedMessage is not null)
-        {
-            throw new GeneratorException("shapeModifiers['*'] only supports modify.");
-        }
-
-        foreach (var (memberName, property) in global.Modify.SelectMany(entry => entry))
-        {
-            var found = false;
-            foreach (var structure in model.Shapes.Values.OfType<StructureShape>())
-            {
-                if (!structure.Members.ContainsKey(memberName))
-                {
-                    continue;
-                }
-
-                found = true;
-                if (!customizations.ShapeModifiers.TryGetValue(structure.Id.Name, out var modifier))
-                {
-                    modifier = new ShapeModifier();
-                    customizations.ShapeModifiers[structure.Id.Name] = modifier;
-                }
-
-                if (!modifier.Modify.Any(entry => entry.ContainsKey(memberName)))
-                {
-                    var entry = new Dictionary<string, PropertyModifier>();
-                    entry[memberName] = property;
-                    modifier.Modify.Add(entry);
-                }
-            }
-
-            if (!found)
-            {
-                throw new GeneratorException($"shapeModifiers['*'] modifies member '{memberName}', which no structure has.");
-            }
-        }
-    }
-
-    private static void ApplyMember(StructureShape structure, string memberName, PropertyModifier property, string shapeName, CustomizationsModel customizations)
-    {
-        if (!structure.Members.TryGetValue(memberName, out var member))
-        {
-            throw new GeneratorException($"shapeModifiers['{shapeName}'] modifies member '{memberName}', which the shape does not have.");
-        }
-
-        if (property.DeprecatedMessage is { } message)
-        {
-            member.SetDeprecatedMessage(message);
-        }
-
-        // The rename stays out of the model (CustomizationsModel.PropertyName applies it), so these only check it.
-        if (property.EmitPropertyName is { } newName && newName != memberName)
-        {
-            // TODO: C2J sends a renamed event under its new name, which the service wouldn't recognize; no
-            // service renames one, so neither behavior is picked until one does.
-            if (structure is UnionShape && structure.IsStreaming())
-            {
-                throw new GeneratorException($"shapeModifiers['{shapeName}'] renames event '{memberName}' of an event stream, which is not supported.");
-            }
-
-            // Compare property names, not keys: 'expiry' and a rename to 'Expiry' both emit 'Expiry'.
-            var propertyName = customizations.PropertyName(shapeName, memberName);
-            if (structure.Members.Keys.Any(k => k != memberName && customizations.PropertyName(shapeName, k) == propertyName))
-            {
-                throw new GeneratorException($"shapeModifiers['{shapeName}'] renames '{memberName}' to '{newName}', which the shape already has.");
-            }
-        }
-    }
 
     private static MemberShape? FindByEmittedName(StructureShape structure, string shapeName, string emittedName, CustomizationsModel customizations) =>
         structure.Members.FirstOrDefault(entry => customizations.EmittedName(shapeName, entry.Key) == emittedName).Value;

@@ -9,6 +9,8 @@ namespace SmithyDotNet.Generator.Model.Traits;
 /// </summary>
 public static class AWSTraits
 {
+    private const string Ec2QueryNameTrait = "aws.protocols#ec2QueryName";
+
     #region Protocol annotation traits
 
     #endregion
@@ -38,7 +40,9 @@ public static class AWSTraits
 
     /// <summary>The member's <c>aws.protocols#ec2QueryName</c>: its ec2Query request parameter name, used verbatim.</summary>
     /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-ec2-query-protocol.html#aws-protocols-ec2queryname-trait" /></remarks>
-    public static string? GetEc2QueryName(this Shape shape) => GetStringTrait(shape, "aws.protocols#ec2QueryName");
+    public static string? GetEc2QueryName(this Shape shape) => GetStringTrait(shape, Ec2QueryNameTrait);
+
+    public static void SetEc2QueryName(this Shape shape, string name) => SetStringTrait(shape, Ec2QueryNameTrait, name);
 
     /// <summary>The error's <c>aws.protocols#awsQueryError</c> customization (the wire <c>Code</c> awsQuery dispatches on), or null.</summary>
     /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsqueryerror-trait" /></remarks>

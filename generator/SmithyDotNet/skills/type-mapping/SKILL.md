@@ -61,6 +61,16 @@ swapped type there), or to a `List<>`/`Dictionary<>` type (C2J then treats the m
 The XML-only entry fields `isFlattened` and `alternateLocationName` are rejected until an XML protocol is
 supported.
 
+## Substituted and Injected Members (ec2Query)
+
+An `emitFromMember` wrapper stays in the model: `ResolveType` types a member that targets it as the wrapper's value
+(`AttributeValue` → `string`, `AttributeBooleanValue` → `bool?`) and sets `TypeDescriptor.Unwrapped` for the query
+writers, and `Unwrap` does the same for a list element (`List<string>`) and a doc sample's list item. The wrapper gets
+no class or unmarshaller. `CustomizationTransform` rewrites the rest, so `ResolveMembers` sees ordinary members:
+`emitAsShape` alone types a member as the named shape, its old shape is removed, and an injected member is typed by its
+`shape`. `accessModifier` (only `internal`) sets
+`Member.IsInternal` for the property; `IsSet` is internal anyway.
+
 ## Collection Defaults
 
 Collections default to `null` (V4) and to an empty list when `AWSConfigs.InitializeCollections` is on

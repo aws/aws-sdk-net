@@ -113,6 +113,34 @@ public sealed record CustomizationsModel
     [JsonPropertyName("generateUnmarshaller")]
     public List<string> GenerateUnmarshaller { get; init; } = [];
 
+    /// <summary>Operations whose output is dropped, so the response class is emitted empty.</summary>
+    [JsonPropertyName("suppressResultGeneration")]
+    public List<string> SuppressResultGeneration { get; init; } = [];
+
+    /// <summary>The value member an <c>emitFromMember</c> substitution unwraps <paramref name="shapeName"/> to, or null.</summary>
+    public string? EmittedValueMember(string shapeName) => ShapeSubstitutions.GetValueOrDefault(shapeName)?.EmitFromMember;
+
+    /// <summary>
+    /// True when <c>customMarshall</c> is set on modeled or injected member <paramref name="memberName"/>: the member stays
+    /// on the class, but the generated marshaller skips it because hand-written code sends it.
+    /// </summary>
+    public bool CustomMarshall(string shapeName, string memberName) =>
+        (PropertyModifierFor(shapeName, memberName)?.CustomMarshall ?? false)
+        || (ShapeModifiers.TryGetValue(shapeName, out var modifier) && (modifier.InjectorFor(memberName)?.CustomMarshall ?? false));
+
+    /// <summary>True when <c>accessModifier</c> makes modeled member <paramref name="memberName"/> <c>internal</c>, the only value supported.</summary>
+    public bool IsInternal(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.AccessModifier == "internal";
+
+    /// <summary>
+    /// The <c>marshallNameOverrides</c> wire name <paramref name="operationName"/>'s request gives property
+    /// <paramref name="propertyName"/> of <paramref name="shapeName"/>, or null.
+    /// </summary>
+    public string? MarshallNameOverride(string operationName, string shapeName, string propertyName) =>
+        OperationModifiers.TryGetValue(operationName, out var modifier)
+            ? modifier.MarshallNameOverrides.SelectMany(entry => entry).Where(entry => entry.Key == shapeName)
+                .Select(entry => entry.Value.GetValueOrDefault(propertyName)?.MarshallName).FirstOrDefault(name => name is not null)
+            : null;
+
     /// <summary>
     /// The <c>emitPropertyName</c> of modeled member <paramref name="memberName"/>, or the modeled name when it isn't
     /// renamed. C2J keys <c>emitIsSetProperties</c> and <c>dataTypeSwap</c> by this name.
@@ -124,7 +152,7 @@ public sealed record CustomizationsModel
 
     private PropertyModifier? PropertyModifierFor(string shapeName, string memberName) =>
         ShapeModifiers.TryGetValue(shapeName, out var modifier)
-            ? modifier.Modify.SelectMany(entry => entry).FirstOrDefault(entry => entry.Key == memberName).Value
+            ? modifier.PropertyFor(memberName)
             : null;
 
     /// <summary>
@@ -154,6 +182,7 @@ public sealed record CustomizationsModel
         var skipUriPropertyValidation = new List<string>();
         var generateUnmarshaller = new List<string>();
         var retainOriginalMemberOrdering = false;
+        var suppressResultGeneration = new List<string>();
 
         foreach (var path in paths)
         {
@@ -281,6 +310,7 @@ public sealed record CustomizationsModel
 
             skipUriPropertyValidation.AddRange(file.SkipUriPropertyValidation);
             generateUnmarshaller.AddRange(file.GenerateUnmarshaller);
+            suppressResultGeneration.AddRange(file.SuppressResultGeneration);
         }
 
         return new CustomizationsModel
@@ -298,7 +328,8 @@ public sealed record CustomizationsModel
             OverrideContentType = overrideContentType,
             SkipUriPropertyValidation = skipUriPropertyValidation,
             GenerateUnmarshaller = generateUnmarshaller,
-            RetainOriginalMemberOrdering = retainOriginalMemberOrdering
+            RetainOriginalMemberOrdering = retainOriginalMemberOrdering,
+            SuppressResultGeneration = suppressResultGeneration,
         };
     }
 }
@@ -337,6 +368,10 @@ public sealed record ShapeModifier
     [JsonPropertyName("modify")]
     public List<Dictionary<string, PropertyModifier>> Modify { get; init; } = [];
 
+    /// <summary>Members the model lacks, added to the shape; each is a single-key object like <c>modify</c>'s.</summary>
+    [JsonPropertyName("inject")]
+    public List<Dictionary<string, PropertyInjector>> Inject { get; init; } = [];
+
     /// <summary>Members dropped from the shape, so they are neither emitted nor sent or read.</summary>
     [JsonPropertyName("exclude")]
     public List<string> Exclude { get; init; } = [];
@@ -344,6 +379,12 @@ public sealed record ShapeModifier
     /// <summary>The <c>[Obsolete]</c> message for the shape (e.g. a request/response class); applied only when the shape is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
     public string? DeprecatedMessage { get; init; }
+
+    /// <summary>The <c>modify</c> entry for <paramref name="memberName"/>, or null.</summary>
+    public PropertyModifier? PropertyFor(string memberName) => Modify.SelectMany(entry => entry).FirstOrDefault(entry => entry.Key == memberName).Value;
+
+    /// <summary>The <c>inject</c> entry for <paramref name="memberName"/>, or null.</summary>
+    public PropertyInjector? InjectorFor(string memberName) => Inject.SelectMany(entry => entry).FirstOrDefault(entry => entry.Key == memberName).Value;
 }
 
 /// <summary>A single member's modifications inside a <c>modify</c> entry.</summary>
@@ -364,6 +405,36 @@ public sealed record PropertyModifier
     /// </summary>
     [JsonPropertyName("overridesBaseMember")]
     public bool OverridesBaseMember { get; init; }
+
+    /// <summary>ec2Query-only: the request parameter name, upper-cased as C2J does; responses keep the modeled name.</summary>
+    [JsonPropertyName("locationName")]
+    public string? LocationName { get; init; }
+
+    /// <summary>ec2Query-only: see <see cref="CustomizationsModel.CustomMarshall"/>.</summary>
+    [JsonPropertyName("customMarshall")]
+    public bool CustomMarshall { get; init; }
+
+    /// <summary>The property's accessibility instead of <c>public</c>; only <c>internal</c> is accepted (ec2's SDK-filled PresignedUrl).</summary>
+    [JsonPropertyName("accessModifier")]
+    public string? AccessModifier { get; init; }
+}
+
+/// <summary>An <c>inject</c> entry: a member the model lacks, typed by the modeled shape <see cref="Shape"/>.</summary>
+public sealed record PropertyInjector
+{
+    [JsonPropertyName("shape")]
+    public required string Shape { get; init; }
+
+    [JsonPropertyName("documentation")]
+    public string? Documentation { get; init; }
+
+    /// <summary>ec2Query-only: the wire name (upper-cased in requests, lower-cased in responses, as C2J does).</summary>
+    [JsonPropertyName("locationName")]
+    public string? LocationName { get; init; }
+
+    /// <summary>ec2Query-only: see <see cref="CustomizationsModel.CustomMarshall"/>.</summary>
+    [JsonPropertyName("customMarshall")]
+    public bool CustomMarshall { get; init; }
 }
 
 /// <summary>An <c>operationModifiers</c> entry, keyed by operation name.</summary>
@@ -412,6 +483,20 @@ public sealed record OperationModifier
     /// </summary>
     [JsonPropertyName("skipChecksumDuringMarshalling")]
     public bool SkipChecksumDuringMarshalling { get; init; }
+
+    /// <summary>
+    /// ec2Query-only: wire names for this operation's request, keyed by shape name then property name; they take
+    /// precedence over every other naming rule.
+    /// </summary>
+    [JsonPropertyName("marshallNameOverrides")]
+    public List<Dictionary<string, Dictionary<string, MarshallNameOverride>>> MarshallNameOverrides { get; init; } = [];
+}
+
+/// <summary>A <c>marshallNameOverrides</c> entry; C2J's <c>marshallLocationName</c> is rejected as no service uses it.</summary>
+public sealed record MarshallNameOverride
+{
+    [JsonPropertyName("marshallName")]
+    public required string MarshallName { get; init; }
 }
 
 /// <summary>
@@ -438,11 +523,25 @@ public sealed record DataTypeSwap
     public string? AlternateLocationName { get; init; }
 }
 
+/// <summary>A <c>shapeSubstitutions</c> entry: either <c>renameShape</c> or <c>emitAsShape</c>.</summary>
 public sealed record ShapeSubstitution
 {
-    // TODO: C2J also has emitAsShape and emitFromMember; the loader rejects them as unknown keys.
     [JsonPropertyName("renameShape")]
-    public required string RenamedShapeName { get; init; }
+    public string? RenamedShapeName { get; init; }
+
+    /// <summary>
+    /// ec2Query-only: members targeting this shape target the named shape instead; with <see cref="EmitFromMember"/>,
+    /// the named shape is the type of that member of this wrapper, which the wire keeps.
+    /// </summary>
+    [JsonPropertyName("emitAsShape")]
+    public string? EmitAsShape { get; init; }
+
+    [JsonPropertyName("emitFromMember")]
+    public string? EmitFromMember { get; init; }
+
+    /// <summary>Operations whose requests send a list of this wrapper without the member suffix on each item.</summary>
+    [JsonPropertyName("listMemberSuffixExclusions")]
+    public List<string> ListMemberSuffixExclusions { get; init; } = [];
 }
 
 /// <summary>A <c>runtimePipelineOverride</c> entry: its <c>overrides</c> are applied in order.</summary>
@@ -499,4 +598,3 @@ public sealed record PaginatorCustomization
     [JsonPropertyName("items")]
     public List<string>? Items { get; init; }
 }
-

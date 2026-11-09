@@ -15,9 +15,10 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// <c>{name}.{i}</c> when <c>@xmlFlattened</c>), its item element named by the list value's <c>@xmlName</c>;
 /// a map is <c>{name}.entry.{i}.key</c>/<c>.value</c> (or <c>{name}.{i}.*</c> when flattened). Indices are
 /// 1-based, matching C2J (<c>AWSQueryRequestMarshaller.tt</c>). ec2Query names a member by
-/// <see cref="XmlNames.Ec2QueryName"/> and writes every list flattened.
+/// <see cref="XmlNames.Ec2QueryName"/> and writes every list flattened. <paramref name="operationName"/> selects
+/// the ec2 customizations that apply to one operation's request only.
 /// </summary>
-internal sealed class QueryBodyMemberMarshaller(GenerationContext context)
+internal sealed class QueryBodyMemberMarshaller(GenerationContext context, string operationName)
 {
     // awsQuery body timestamps default to date-time (ISO8601) when @timestampFormat is unset.
     // https://smithy.io/2.0/aws/protocols/aws-query-protocol.html
@@ -32,9 +33,14 @@ internal sealed class QueryBodyMemberMarshaller(GenerationContext context)
     {
         foreach (var member in members)
         {
+            // Sent by hand-written code instead (ec2's AmazonEC2PostMarshallHandler).
+            if (context.Customizations.CustomMarshall(owner.Id.Name, member.ModeledName))
+            {
+                continue;
+            }
+
             var memberShape = owner.Members[member.ModeledName];
-            var name = context.Protocol == AWSProtocol.Ec2Query ? XmlNames.Ec2QueryName(memberShape, member.ModeledName) : XmlNames.ElementName(memberShape, member.ModeledName);
-            var paramName = Join(prefix, name);
+            var paramName = Join(prefix, ParameterName(owner, memberShape, member));
             var access = $"{objectVar}.{member.PropertyName}";
 
             writer.OpenBlock($"if ({objectVar}.IsSet{member.PropertyName}())", () =>
@@ -51,6 +57,21 @@ internal sealed class QueryBodyMemberMarshaller(GenerationContext context)
                 });
             }
         }
+    }
+
+    // ec2Query: a marshallNameOverrides name outranks the modeled one (C2J upper-cases both), and an unwrapped value
+    // keeps its wrapper element.
+    private string ParameterName(StructureShape owner, MemberShape memberShape, Member member)
+    {
+        if (context.Protocol != AWSProtocol.Ec2Query)
+        {
+            return XmlNames.ElementName(memberShape, member.ModeledName);
+        }
+
+        var name = context.Customizations.MarshallNameOverride(operationName, owner.Id.Name, member.PropertyName) is { } overridden
+            ? SdkNaming.ToUpperFirstCharacter(overridden)
+            : XmlNames.Ec2QueryName(memberShape, member.ModeledName);
+        return member.Type.Unwrapped is { } unwrapped ? $"{name}.{unwrapped.QueryName}" : name;
     }
 
     private void WriteMember(CodeWriter writer, MemberShape memberShape, Member member, string access, string paramName, int depth)
@@ -110,6 +131,10 @@ internal sealed class QueryBodyMemberMarshaller(GenerationContext context)
                 {
                     var conversion = ScalarConversion(element, itemVar, nullable: false)
                         ?? throw new GeneratorException($"Unsupported awsQuery list element type '{element.DotNetType}'.");
+                    if (element.Unwrapped is { } unwrapped && !context.Customizations.ShapeSubstitutions[unwrapped.Wrapper].ListMemberSuffixExclusions.Contains(operationName))
+                    {
+                        itemParam = Join(itemParam, unwrapped.QueryName);
+                    }
                     writer.WriteLine($"request.Parameters.Add({itemParam}, {conversion});");
                 }
                 writer.WriteLine($"{indexVar}++;");

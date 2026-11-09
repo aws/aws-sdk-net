@@ -58,6 +58,26 @@
         "bucket": { "target": "com.example#Bucket" }
       }
     },
+    "com.example#IdValue": {
+      "type": "structure",
+      "members": {
+        "Value": { "target": "com.example#LegacyId" }
+      }
+    },
+    "com.example#Text": {
+      "type": "string"
+    },
+    "com.example#NameValue": {
+      "type": "structure",
+      "members": {
+        "Value": { "target": "com.example#Text" }
+      }
+    },
+    "com.example#NameValueMap": {
+      "type": "map",
+      "key": { "target": "smithy.api#String" },
+      "value": { "target": "com.example#NameValue" }
+    },
     "com.example#LegacyId": {
       "type": "string",
       "traits": { "smithy.api#deprecated": {} }
@@ -132,6 +152,44 @@
     "com.example#Chunk": {
       "type": "structure",
       "members": {}
+    },
+    "com.example#PutValue": {
+      "type": "operation",
+      "input": { "target": "com.example#PutValueRequest" }
+    },
+    "com.example#PutValueRequest": {
+      "type": "structure",
+      "members": {
+        "value": { "target": "com.example#AttributeValue" },
+        "spec": { "target": "com.example#SpotSpec" }
+      }
+    },
+    "com.example#AttributeValue": {
+      "type": "structure",
+      "members": {
+        "Value": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#SpotSpec": {
+      "type": "structure",
+      "members": {
+        "Kind": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#Spec": {
+      "type": "structure",
+      "members": {
+        "Kind": { "target": "smithy.api#String" },
+        "Groups": { "target": "com.example#IdList" }
+      }
+    },
+    "com.example#IdList": {
+      "type": "list",
+      "member": { "target": "smithy.api#String" }
+    },
+    "com.example#NameList": {
+      "type": "list",
+      "member": { "target": "smithy.api#String" }
     },
     "com.example#Dup": {
       "type": "structure",

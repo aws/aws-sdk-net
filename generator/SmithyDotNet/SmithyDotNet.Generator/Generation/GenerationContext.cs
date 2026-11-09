@@ -331,7 +331,8 @@ public class GenerationContext
             {
                 errors[shapeId] = structure;
             }
-            else if (!structure.IsInput() && !structure.IsOutput())
+            // An emitFromMember wrapper is never emitted: members typed as it expose its value (TypeMapper.ResolveType).
+            else if (!structure.IsInput() && !structure.IsOutput() && Customizations.EmittedValueMember(shapeId.Name) is null)
             {
                 structures[shapeId] = structure;
             }

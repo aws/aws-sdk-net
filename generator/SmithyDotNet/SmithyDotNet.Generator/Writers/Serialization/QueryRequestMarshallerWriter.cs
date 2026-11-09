@@ -15,8 +15,6 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// </summary>
 public sealed class QueryRequestMarshallerWriter(GenerationContext context, string modelFileName)
 {
-    private readonly QueryBodyMemberMarshaller _body = new(context);
-
     public string Write(Operation operation, CancellationToken cancellationToken = default)
     {
         var className = $"{operation.Name}Request";
@@ -81,7 +79,7 @@ public sealed class QueryRequestMarshallerWriter(GenerationContext context, stri
             writer.WriteLine($"""request.Parameters.Add("Version", "{context.ApiVersion}");""");
             writer.WriteLine("");
 
-            _body.WriteStructureBody(writer, operation.Input, partitioned.BodyMembers, "publicRequest", prefix: null, depth: 0);
+            new QueryBodyMemberMarshaller(context, operation.Name).WriteStructureBody(writer, operation.Input, partitioned.BodyMembers, "publicRequest", prefix: null, depth: 0);
             writer.WriteLine("");
 
             // Cache the URL-encoded body up front (the runtime signs and sends it), except under SigV2: that

@@ -540,7 +540,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
             if (context.Resolve(structureId) is StructureShape structure)
             {
-                if (structure.IsError())
+                if (structure.IsError() || context.Customizations.EmittedValueMember(structureId.Name) is not null)
                 {
                     continue;
                 }

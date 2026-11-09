@@ -80,6 +80,19 @@ public class OperationWriterTests
     }
 
     [Fact]
+    public void Request_AccessModifier_AppliesToTheProperty()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["PutAuditEventsRequest"] = TestCustomizations.Modify("channelArn", new PropertyModifier { AccessModifier = "internal" });
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, customizations: customizations);
+        var operation = context.Operations.Single(o => o.Name == "PutAuditEvents");
+
+        var output = new OperationWriter(context, ModelFileName).WriteRequest(operation, TestContext.Current.CancellationToken);
+
+        Assert.Contains("internal string ChannelArn { get; set; }", output);
+    }
+
+    [Fact]
     public void ServiceRequest_EmitsBaseClassInServiceNamespace()
     {
         Assert.Contains("namespace Amazon.CloudTrailData", _serviceRequest);

@@ -119,6 +119,21 @@ public class ServiceGeneratorTests : IDisposable
     }
 
     [Fact]
+    public void EmitFromMemberWrapper_GetsNoUnmarshaller()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeSubstitutions["AttributeValue"] = new ShapeSubstitution { EmitAsShape = "String", EmitFromMember = "Value" };
+        var context = TestModels.Context(TestModels.Load("Codegen/ec2-model.json"), customizations);
+        var outputDir = Path.Combine(_outputDir, "ec2");
+        var generator = new ServiceGenerator(context, ModelFileName, ServiceFileVersion, _fixture.DefaultConfigurationModes);
+        var written = generator.Generate(outputDir, Path.Combine(outputDir, "code-analysis"), testsOutputPath: null, TestContext.Current.CancellationToken);
+
+        var marshalling = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations");
+        Assert.Contains(Path.Combine(marshalling, "DoThingResponseUnmarshaller.g.cs"), written);
+        Assert.DoesNotContain(Path.Combine(marshalling, "AttributeValueUnmarshaller.g.cs"), written);
+    }
+
+    [Fact]
     public void WritesResponseUnmarshallerFiles()
     {
         var marshalling = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations");
