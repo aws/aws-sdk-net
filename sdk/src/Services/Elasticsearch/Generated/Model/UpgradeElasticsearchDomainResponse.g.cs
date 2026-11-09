@@ -45,6 +45,19 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetChangeProgressDetails() => this.ChangeProgressDetails != null;
 
         /// <summary>
+        /// Gets and sets the property DeploymentStrategyOptions. 
+        /// <para>
+        /// The deployment strategy override used for the upgrade.
+        /// </para>
+        /// </summary>
+        public DeploymentStrategyOverrideOptions DeploymentStrategyOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeploymentStrategyOptions property is set.
+        /// </summary>
+        internal bool IsSetDeploymentStrategyOptions() => this.DeploymentStrategyOptions != null;
+
+        /// <summary>
         /// Gets and sets the property DomainName.
         /// </summary>
         [AWSProperty(Min = 3, Max = 28)]

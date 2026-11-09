@@ -59,6 +59,13 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("DeploymentStrategyOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = DeploymentStrategyOverrideOptionsUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentStrategyOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("DomainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
