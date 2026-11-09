@@ -166,6 +166,20 @@ namespace Amazon.Batch.Model
         internal bool IsSetMetadata() => this.Metadata != null;
 
         /// <summary>
+        /// Gets and sets the property SecurityContext. 
+        /// <para>
+        /// The security context to apply to the pod. The settings apply to all containers in
+        /// the pod unless an individual container specifies an overriding value.
+        /// </para>
+        /// </summary>
+        public EksPodSecurityContext SecurityContext { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SecurityContext property is set.
+        /// </summary>
+        internal bool IsSetSecurityContext() => this.SecurityContext != null;
+
+        /// <summary>
         /// Gets and sets the property ServiceAccountName. 
         /// <para>
         /// The name of the service account that's used to run the pod. For more information,

@@ -51,6 +51,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.AllowPrivilegeEscalation.Value);
             }
 
+            if (requestObject.IsSetCapabilities())
+            {
+                context.Writer.WritePropertyName("capabilities");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EksContainerLinuxCapabilitiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Capabilities, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetPrivileged())
             {
                 context.Writer.WritePropertyName("privileged");
@@ -79,6 +90,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("runAsUser");
                 context.Writer.WriteNumberValue(requestObject.RunAsUser.Value);
+            }
+
+            if (requestObject.IsSetSeccompProfile())
+            {
+                context.Writer.WritePropertyName("seccompProfile");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EksSeccompProfileMarshaller.Instance;
+                marshaller.Marshall(requestObject.SeccompProfile, context);
+
+                context.Writer.WriteEndObject();
             }
         }
 

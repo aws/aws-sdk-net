@@ -681,6 +681,52 @@ namespace Amazon.Batch
     }
 
     /// <summary>
+    /// Constants used for properties of type EksSeccompProfileType.
+    /// </summary>
+    public class EksSeccompProfileType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Localhost for EksSeccompProfileType
+        /// </summary>
+        public static readonly EksSeccompProfileType Localhost = new EksSeccompProfileType("Localhost");
+
+        /// <summary>
+        /// Constant RuntimeDefault for EksSeccompProfileType
+        /// </summary>
+        public static readonly EksSeccompProfileType RuntimeDefault = new EksSeccompProfileType("RuntimeDefault");
+
+        /// <summary>
+        /// Constant Unconfined for EksSeccompProfileType
+        /// </summary>
+        public static readonly EksSeccompProfileType Unconfined = new EksSeccompProfileType("Unconfined");
+
+        /// <summary>
+        /// Constructs a custom EksSeccompProfileType for a value not among the defined constants.
+        /// </summary>
+        public EksSeccompProfileType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EksSeccompProfileType FindValue(string value)
+        {
+            return FindValue<EksSeccompProfileType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EksSeccompProfileType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FirelensConfigurationType.
     /// </summary>
     public class FirelensConfigurationType : ConstantClass
