@@ -224,6 +224,16 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
+        public void ConvertFromUnixEpochSecondsOutOfRangeThrows()
+        {
+            // Epoch milliseconds sent in a seconds field must not wrap into a valid DateTime.
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => AWSSDKUtils.ConvertFromUnixDecimalEpochSeconds(1794182400000m));
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => AWSSDKUtils.ConvertFromUnixDoubleEpochSeconds(1794182400000));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
         public void ConvertFromUnixEpochMilliseconds()
         {
             // Sample UTC value: 9/8/2020 18:48:34.970
