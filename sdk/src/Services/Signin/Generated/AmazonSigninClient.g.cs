@@ -250,6 +250,76 @@ namespace Amazon.Signin
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a bearer token that represents your IAM credentials and can be used to access
+        /// a supported AWS service. By default, the token is valid for 12 hours.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBearerToken service method.</param>
+        /// <returns>The response from the CreateBearerToken service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// The request failed because of an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// The request failed because you exceeded the request rate limit for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// The request failed because it contains a malformed, missing, or invalid parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/CreateBearerToken">REST API Reference for CreateBearerToken Operation</seealso>
+        public virtual CreateBearerTokenResponse CreateBearerToken(CreateBearerTokenRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateBearerTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBearerTokenResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBearerTokenResponse>(request, options);
+        }
+#else
+        internal virtual CreateBearerTokenResponse CreateBearerToken(CreateBearerTokenRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateBearerTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBearerTokenResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBearerTokenResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a bearer token that represents your IAM credentials and can be used to access
+        /// a supported AWS service. By default, the token is valid for 12 hours.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBearerToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateBearerToken service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// The request failed because of an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// The request failed because you exceeded the request rate limit for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// The request failed because it contains a malformed, missing, or invalid parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/CreateBearerToken">REST API Reference for CreateBearerToken Operation</seealso>
+        public virtual Task<CreateBearerTokenResponse> CreateBearerTokenAsync(CreateBearerTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateBearerTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBearerTokenResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateBearerTokenResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Exchanges an authorization code or refresh token for an OAuth 2.0 access token and
         /// refresh token.
         /// </summary>

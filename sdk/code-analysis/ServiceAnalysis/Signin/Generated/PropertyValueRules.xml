@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Signin.Model.CreateBearerTokenRequest.DurationSeconds</property>
+    <min>300</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateBearerTokenRequest.GrantType</property>
+    <pattern>^client_credentials$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateBearerTokenRequest.Resource</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateBearerTokenResponse.AccessToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateBearerTokenResponse.ExpiresIn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateBearerTokenResponse.TokenType</property>
+    <pattern>^Bearer$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenWithIAMRequest.GrantType</property>
     <pattern>^client_credentials$</pattern>
   </property-value-rule>

@@ -85,6 +85,11 @@ namespace Amazon.Signin.Internal
             }
 
             // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "CreateBearerTokenRequest")
+            {
+                result.IsOAuthEndpoint = true;
+                return result;
+            }
             if (requestContext.RequestName == "CreateOAuth2TokenRequest")
             {
                 result.IsControlPlane = false;
