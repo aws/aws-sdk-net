@@ -198,14 +198,6 @@
                     ]
                 ]
             },
-            "ActivateLicenseRequest"                   : {
-                "constructorForms" : [
-                    [
-                        "LicenseId",
-                        "Capacity"
-                    ]
-                ]
-            },
             "CreateSecurityGroupRequest"               : {
                 "constructorForms" : [
                     [
@@ -488,14 +480,6 @@
                     [
                         "AvailabilityZone",
                         "SnapshotId"
-                    ]
-                ]
-            },
-            "DeactivateLicenseRequest"                 : {
-                "constructorForms" : [
-                    [
-                        "LicenseId",
-                        "Capacity"
                     ]
                 ]
             },

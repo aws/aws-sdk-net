@@ -146,6 +146,7 @@
     "DynamoDBStreams",
     "DynamoDBv2",
     "EBS",
+    "EC2",
     "EC2InstanceConnect",
     "EC2Protocol",
     "ECR",
