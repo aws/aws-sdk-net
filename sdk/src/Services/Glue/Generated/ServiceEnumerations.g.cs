@@ -2555,6 +2555,180 @@ namespace Amazon.Glue
     }
 
     /// <summary>
+    /// Constants used for properties of type DataQualityEvaluationConfigLevel.
+    /// </summary>
+    public class DataQualityEvaluationConfigLevel : ConstantClass
+    {
+        /// <summary>
+        /// Constant CATALOG for DataQualityEvaluationConfigLevel
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigLevel CATALOG = new DataQualityEvaluationConfigLevel("CATALOG");
+
+        /// <summary>
+        /// Constant DATABASE for DataQualityEvaluationConfigLevel
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigLevel DATABASE = new DataQualityEvaluationConfigLevel("DATABASE");
+
+        /// <summary>
+        /// Constant TABLE for DataQualityEvaluationConfigLevel
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigLevel TABLE = new DataQualityEvaluationConfigLevel("TABLE");
+
+        /// <summary>
+        /// Constructs a custom DataQualityEvaluationConfigLevel for a value not among the defined constants.
+        /// </summary>
+        public DataQualityEvaluationConfigLevel(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataQualityEvaluationConfigLevel FindValue(string value)
+        {
+            return FindValue<DataQualityEvaluationConfigLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataQualityEvaluationConfigLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataQualityEvaluationConfigManagedRuleset.
+    /// </summary>
+    public class DataQualityEvaluationConfigManagedRuleset : ConstantClass
+    {
+        /// <summary>
+        /// Constant ADVANCED for DataQualityEvaluationConfigManagedRuleset
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigManagedRuleset ADVANCED = new DataQualityEvaluationConfigManagedRuleset("ADVANCED");
+
+        /// <summary>
+        /// Constant SIMPLE for DataQualityEvaluationConfigManagedRuleset
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigManagedRuleset SIMPLE = new DataQualityEvaluationConfigManagedRuleset("SIMPLE");
+
+        /// <summary>
+        /// Constructs a custom DataQualityEvaluationConfigManagedRuleset for a value not among the defined constants.
+        /// </summary>
+        public DataQualityEvaluationConfigManagedRuleset(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataQualityEvaluationConfigManagedRuleset FindValue(string value)
+        {
+            return FindValue<DataQualityEvaluationConfigManagedRuleset>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataQualityEvaluationConfigManagedRuleset(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataQualityEvaluationConfigTrigger.
+    /// </summary>
+    public class DataQualityEvaluationConfigTrigger : ConstantClass
+    {
+        /// <summary>
+        /// Constant METADATA_CHANGE for DataQualityEvaluationConfigTrigger
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigTrigger METADATA_CHANGE = new DataQualityEvaluationConfigTrigger("METADATA_CHANGE");
+
+        /// <summary>
+        /// Constant ONCE for DataQualityEvaluationConfigTrigger
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigTrigger ONCE = new DataQualityEvaluationConfigTrigger("ONCE");
+
+        /// <summary>
+        /// Constant SCHEDULE for DataQualityEvaluationConfigTrigger
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigTrigger SCHEDULE = new DataQualityEvaluationConfigTrigger("SCHEDULE");
+
+        /// <summary>
+        /// Constructs a custom DataQualityEvaluationConfigTrigger for a value not among the defined constants.
+        /// </summary>
+        public DataQualityEvaluationConfigTrigger(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataQualityEvaluationConfigTrigger FindValue(string value)
+        {
+            return FindValue<DataQualityEvaluationConfigTrigger>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataQualityEvaluationConfigTrigger(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataQualityEvaluationRunMode.
+    /// </summary>
+    public class DataQualityEvaluationRunMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant EVALUATION_CONFIG for DataQualityEvaluationRunMode
+        /// </summary>
+        public static readonly DataQualityEvaluationRunMode EVALUATION_CONFIG = new DataQualityEvaluationRunMode("EVALUATION_CONFIG");
+
+        /// <summary>
+        /// Constant ON_DEMAND for DataQualityEvaluationRunMode
+        /// </summary>
+        public static readonly DataQualityEvaluationRunMode ON_DEMAND = new DataQualityEvaluationRunMode("ON_DEMAND");
+
+        /// <summary>
+        /// Constructs a custom DataQualityEvaluationRunMode for a value not among the defined constants.
+        /// </summary>
+        public DataQualityEvaluationRunMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataQualityEvaluationRunMode FindValue(string value)
+        {
+            return FindValue<DataQualityEvaluationRunMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataQualityEvaluationRunMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DataQualityModelStatus.
     /// </summary>
     public class DataQualityModelStatus : ConstantClass

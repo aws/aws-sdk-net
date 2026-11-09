@@ -35,6 +35,21 @@ namespace Amazon.Glue.Model
     public partial class DataQualityResultDescription
     {
         /// <summary>
+        /// Gets and sets the property DataQualityEvaluationConfig. 
+        /// <para>
+        /// The name of the data quality evaluation configuration that started the evaluation
+        /// run, returned when <c>EvaluationRunMode</c> is <c>EVALUATION_CONFIG</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string DataQualityEvaluationConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataQualityEvaluationConfig property is set.
+        /// </summary>
+        internal bool IsSetDataQualityEvaluationConfig() => this.DataQualityEvaluationConfig != null;
+
+        /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
         /// The table name associated with the data quality result.
@@ -46,6 +61,22 @@ namespace Amazon.Glue.Model
         /// Checks to see if the DataSource property is set.
         /// </summary>
         internal bool IsSetDataSource() => this.DataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property EvaluationRunMode. 
+        /// <para>
+        /// How the evaluation run that produced the result started: <c>ON_DEMAND</c> for a run
+        /// started by <c>StartDataQualityRulesetEvaluationRun</c>, or <c>EVALUATION_CONFIG</c>
+        /// for a run started by a data quality evaluation configuration. Not returned for results
+        /// that no evaluation run produced, such as results from any ETL job.
+        /// </para>
+        /// </summary>
+        public DataQualityEvaluationRunMode EvaluationRunMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EvaluationRunMode property is set.
+        /// </summary>
+        internal bool IsSetEvaluationRunMode() => this.EvaluationRunMode != null;
 
         /// <summary>
         /// Gets and sets the property JobName. 

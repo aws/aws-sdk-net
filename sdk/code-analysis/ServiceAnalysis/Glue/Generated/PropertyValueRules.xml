@@ -310,6 +310,36 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateDataQualityEvaluationConfigRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateDataQualityEvaluationConfigRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateDataQualityEvaluationConfigRequest.RulesetName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateDataQualityEvaluationConfigRequest.ScheduleExpression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateDataQualityEvaluationConfigRequest.Timeout</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateDataQualityEvaluationConfigResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateDataQualityRulesetRequest.ClientToken</property>
     <min>1</min>
     <max>255</max>
@@ -1026,6 +1056,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteDataQualityEvaluationConfigRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DeleteDataQualityRulesetRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -1653,6 +1688,30 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetDataQualityEvaluationConfigRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetDataQualityEvaluationConfigResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetDataQualityEvaluationConfigResponse.RulesetName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetDataQualityEvaluationConfigResponse.ScheduleExpression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetDataQualityEvaluationConfigResponse.Timeout</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetDataQualityModelRequest.ProfileId</property>
     <min>1</min>
     <max>255</max>
@@ -1679,6 +1738,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetDataQualityResultRequest.ResultId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetDataQualityResultResponse.DataQualityEvaluationConfig</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -1719,6 +1783,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetDataQualityResultV2Request.ResultId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetDataQualityResultV2Response.DataQualityEvaluationConfig</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -2731,6 +2800,11 @@
     <property>Amazon.Glue.Model.ListCustomEntityTypesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListDataQualityEvaluationConfigsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ListDataQualityResultsRequest.MaxResults</property>
@@ -3999,6 +4073,44 @@
     <property>Amazon.Glue.Model.UpdateCrawlerScheduleRequest.CrawlerName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateDataQualityEvaluationConfigRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateDataQualityEvaluationConfigRequest.RulesetName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateDataQualityEvaluationConfigRequest.ScheduleExpression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateDataQualityEvaluationConfigRequest.Timeout</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateDataQualityEvaluationConfigResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateDataQualityEvaluationConfigResponse.RulesetName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateDataQualityEvaluationConfigResponse.ScheduleExpression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateDataQualityEvaluationConfigResponse.Timeout</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateDataQualityRulesetRequest.Description</property>
@@ -5410,6 +5522,56 @@
     <pattern>^$|arn:aws[a-z0-9-]*:kms:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityEvaluationConfigGlueTables.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityEvaluationConfigGlueTables.ConnectionName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityEvaluationConfigGlueTables.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityEvaluationConfigGlueTables.PreProcessingQuery</property>
+    <min>0</min>
+    <max>51200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityEvaluationConfigGlueTables.TableNamePattern</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityEvaluationConfigListDetails.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityEvaluationConfigListDetails.RulesetName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityEvaluationConfigListGlueTables.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityEvaluationConfigListGlueTables.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityEvaluationConfigListGlueTables.TableNamePattern</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityGlueTable.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -5438,6 +5600,11 @@
     <property>Amazon.Glue.Model.DataQualityObservation.Description</property>
     <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityResult.DataQualityEvaluationConfig</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityResult.JobName</property>
@@ -5475,6 +5642,11 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityResultDescription.DataQualityEvaluationConfig</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityResultDescription.JobName</property>
     <min>1</min>
     <max>255</max>
@@ -5490,12 +5662,22 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityResultFilterCriteria.DataQualityEvaluationConfig</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityResultFilterCriteria.JobName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityResultFilterCriteria.JobRunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityResultV2Item.DataQualityEvaluationConfig</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -5520,12 +5702,22 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityResultsV2Description.DataQualityEvaluationConfig</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityResultsV2Description.EvaluationContext</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityResultsV2Description.ResultId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityResultsV2FilterCriteria.DataQualityEvaluationConfig</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

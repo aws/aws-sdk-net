@@ -207,6 +207,12 @@ namespace Amazon.Glue.Model
         IListCustomEntityTypesPaginator ListCustomEntityTypes(ListCustomEntityTypesRequest request);
 
         /// <summary>
+        /// Paginator for ListDataQualityEvaluationConfigs operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListDataQualityEvaluationConfigsPaginator ListDataQualityEvaluationConfigs(ListDataQualityEvaluationConfigsRequest request);
+
+        /// <summary>
         /// Paginator for ListDataQualityResults operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

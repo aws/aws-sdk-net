@@ -1806,6 +1806,97 @@ namespace Amazon.Glue
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a data quality evaluation configuration, which evaluates the data quality
+        /// of a collection of tables in the Glue Data Catalog once, on a schedule, or when table
+        /// metadata changes. A configuration applies to a catalog, a database, or a single table,
+        /// and evaluates every table in scope, including tables added later, without per-table
+        /// setup.
+        /// 
+        ///  
+        /// <para>
+        /// When configurations at more than one level apply to the same table, the most specific
+        /// configuration applies. Each table is evaluated at most once an hour, whichever triggers
+        /// you choose.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataQualityEvaluationConfig service method.</param>
+        /// <returns>The response from the CreateDataQualityEvaluationConfig service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDataQualityEvaluationConfig">REST API Reference for CreateDataQualityEvaluationConfig Operation</seealso>
+        CreateDataQualityEvaluationConfigResponse CreateDataQualityEvaluationConfig(CreateDataQualityEvaluationConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a data quality evaluation configuration, which evaluates the data quality
+        /// of a collection of tables in the Glue Data Catalog once, on a schedule, or when table
+        /// metadata changes. A configuration applies to a catalog, a database, or a single table,
+        /// and evaluates every table in scope, including tables added later, without per-table
+        /// setup.
+        /// 
+        ///  
+        /// <para>
+        /// When configurations at more than one level apply to the same table, the most specific
+        /// configuration applies. Each table is evaluated at most once an hour, whichever triggers
+        /// you choose.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataQualityEvaluationConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateDataQualityEvaluationConfig service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDataQualityEvaluationConfig">REST API Reference for CreateDataQualityEvaluationConfig Operation</seealso>
+        Task<CreateDataQualityEvaluationConfigResponse> CreateDataQualityEvaluationConfigAsync(CreateDataQualityEvaluationConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a data quality ruleset with DQDL rules applied to a specified Glue table.
         /// 
         ///  
@@ -4158,6 +4249,57 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCustomEntityType">REST API Reference for DeleteCustomEntityType Operation</seealso>
         Task<DeleteCustomEntityTypeResponse> DeleteCustomEntityTypeAsync(DeleteCustomEntityTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a data quality evaluation configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataQualityEvaluationConfig service method.</param>
+        /// <returns>The response from the DeleteDataQualityEvaluationConfig service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDataQualityEvaluationConfig">REST API Reference for DeleteDataQualityEvaluationConfig Operation</seealso>
+        DeleteDataQualityEvaluationConfigResponse DeleteDataQualityEvaluationConfig(DeleteDataQualityEvaluationConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a data quality evaluation configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataQualityEvaluationConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteDataQualityEvaluationConfig service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDataQualityEvaluationConfig">REST API Reference for DeleteDataQualityEvaluationConfig Operation</seealso>
+        Task<DeleteDataQualityEvaluationConfigResponse> DeleteDataQualityEvaluationConfigAsync(DeleteDataQualityEvaluationConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -7106,6 +7248,57 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogExportConfiguration">REST API Reference for GetDataCatalogExportConfiguration Operation</seealso>
         Task<GetDataCatalogExportConfigurationResponse> GetDataCatalogExportConfigurationAsync(GetDataCatalogExportConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves a data quality evaluation configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityEvaluationConfig service method.</param>
+        /// <returns>The response from the GetDataQualityEvaluationConfig service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityEvaluationConfig">REST API Reference for GetDataQualityEvaluationConfig Operation</seealso>
+        GetDataQualityEvaluationConfigResponse GetDataQualityEvaluationConfig(GetDataQualityEvaluationConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves a data quality evaluation configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityEvaluationConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDataQualityEvaluationConfig service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityEvaluationConfig">REST API Reference for GetDataQualityEvaluationConfig Operation</seealso>
+        Task<GetDataQualityEvaluationConfigResponse> GetDataQualityEvaluationConfigAsync(GetDataQualityEvaluationConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -11089,6 +11282,53 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCustomEntityTypes">REST API Reference for ListCustomEntityTypes Operation</seealso>
         Task<ListCustomEntityTypesResponse> ListCustomEntityTypesAsync(ListCustomEntityTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the data quality evaluation configurations in your account, optionally filtered
+        /// by level.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityEvaluationConfigs service method.</param>
+        /// <returns>The response from the ListDataQualityEvaluationConfigs service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityEvaluationConfigs">REST API Reference for ListDataQualityEvaluationConfigs Operation</seealso>
+        ListDataQualityEvaluationConfigsResponse ListDataQualityEvaluationConfigs(ListDataQualityEvaluationConfigsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the data quality evaluation configurations in your account, optionally filtered
+        /// by level.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityEvaluationConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDataQualityEvaluationConfigs service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityEvaluationConfigs">REST API Reference for ListDataQualityEvaluationConfigs Operation</seealso>
+        Task<ListDataQualityEvaluationConfigsResponse> ListDataQualityEvaluationConfigsAsync(ListDataQualityEvaluationConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -15929,6 +16169,65 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawlerSchedule">REST API Reference for UpdateCrawlerSchedule Operation</seealso>
         Task<UpdateCrawlerScheduleResponse> UpdateCrawlerScheduleAsync(UpdateCrawlerScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a data quality evaluation configuration. Fields that you don't specify keep
+        /// their current values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataQualityEvaluationConfig service method.</param>
+        /// <returns>The response from the UpdateDataQualityEvaluationConfig service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDataQualityEvaluationConfig">REST API Reference for UpdateDataQualityEvaluationConfig Operation</seealso>
+        UpdateDataQualityEvaluationConfigResponse UpdateDataQualityEvaluationConfig(UpdateDataQualityEvaluationConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a data quality evaluation configuration. Fields that you don't specify keep
+        /// their current values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataQualityEvaluationConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateDataQualityEvaluationConfig service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDataQualityEvaluationConfig">REST API Reference for UpdateDataQualityEvaluationConfig Operation</seealso>
+        Task<UpdateDataQualityEvaluationConfigResponse> UpdateDataQualityEvaluationConfigAsync(UpdateDataQualityEvaluationConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
