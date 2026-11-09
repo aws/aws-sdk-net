@@ -253,6 +253,36 @@ namespace Amazon.ECS.Model
         internal bool IsSetNetworkConfiguration() => this.NetworkConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property NitroEnclavesEnabled. 
+        /// <para>
+        /// Specifies whether instances that this capacity provider launches have <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-ec2-nitro-sandboxes.html">Nitro
+        /// Sandbox</a> enabled. Enable this setting to run tasks that use the <c>ISOLATED_SANDBOX</c>
+        /// or <c>CONFIDENTIAL_SANDBOX</c> isolation mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you enable this setting, the capacity provider must include at least one instance
+        /// type that supports Nitro Sandbox. You can't enable this setting together with local
+        /// storage (the <c>useLocalStorage</c> setting in <c>localStorageConfiguration</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/isolated-confidential-tasks.html">Isolated
+        /// and confidential tasks</a> in <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool? NitroEnclavesEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NitroEnclavesEnabled property is set.
+        /// </summary>
+        internal bool IsSetNitroEnclavesEnabled() => this.NitroEnclavesEnabled.HasValue;
+
+        /// <summary>
         /// Gets and sets the property StorageConfiguration. 
         /// <para>
         /// The storage configuration for Amazon ECS Managed Instances. This defines the data

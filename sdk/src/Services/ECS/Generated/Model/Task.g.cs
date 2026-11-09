@@ -687,6 +687,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetTaskDefinitionArn() => this.TaskDefinitionArn != null;
 
         /// <summary>
+        /// Gets and sets the property TrustedExecutionSummary. 
+        /// <para>
+        /// A summary of the trusted execution configuration for the task, including the isolation
+        /// mode. This is a read-only view of the configuration that was set on the task definition.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Trusted execution is supported only for Amazon ECS Managed Instances.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public TrustedExecutionSummary TrustedExecutionSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TrustedExecutionSummary property is set.
+        /// </summary>
+        internal bool IsSetTrustedExecutionSummary() => this.TrustedExecutionSummary != null;
+
+        /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
         /// The version counter for the task. Every time a task experiences a change that starts

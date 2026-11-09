@@ -305,6 +305,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("trustedExecutionSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = TrustedExecutionSummaryUnmarshaller.Instance;
+                    unmarshalledObject.TrustedExecutionSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("version", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;

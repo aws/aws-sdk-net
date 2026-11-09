@@ -215,6 +215,16 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("taskRoleArn");
                 context.Writer.WriteStringValue(publicRequest.TaskRoleArn);
             }
+            if (publicRequest.IsSetTrustedExecutionConfiguration())
+            {
+                context.Writer.WritePropertyName("trustedExecutionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TrustedExecutionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TrustedExecutionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetVolumes())
             {
                 context.Writer.WritePropertyName("volumes");

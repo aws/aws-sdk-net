@@ -113,6 +113,16 @@ namespace Amazon.ECS
         public static readonly AcceleratorName K80 = new AcceleratorName("k80");
 
         /// <summary>
+        /// Constant L4 for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName L4 = new AcceleratorName("l4");
+
+        /// <summary>
+        /// Constant L40s for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName L40s = new AcceleratorName("l40s");
+
+        /// <summary>
         /// Constant M60 for AcceleratorName
         /// </summary>
         public static readonly AcceleratorName M60 = new AcceleratorName("m60");
@@ -398,6 +408,42 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AssignPublicIp(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AttestationPolicyStatus.
+    /// </summary>
+    public class AttestationPolicyStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONFIGURED for AttestationPolicyStatus
+        /// </summary>
+        public static readonly AttestationPolicyStatus CONFIGURED = new AttestationPolicyStatus("CONFIGURED");
+
+        /// <summary>
+        /// Constructs a custom AttestationPolicyStatus for a value not among the defined constants.
+        /// </summary>
+        public AttestationPolicyStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttestationPolicyStatus FindValue(string value)
+        {
+            return FindValue<AttestationPolicyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttestationPolicyStatus(string value)
         {
             return FindValue(value);
         }
@@ -3229,6 +3275,52 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IpcMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IsolationMode.
+    /// </summary>
+    public class IsolationMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONFIDENTIAL_SANDBOX for IsolationMode
+        /// </summary>
+        public static readonly IsolationMode CONFIDENTIAL_SANDBOX = new IsolationMode("CONFIDENTIAL_SANDBOX");
+
+        /// <summary>
+        /// Constant ISOLATED_SANDBOX for IsolationMode
+        /// </summary>
+        public static readonly IsolationMode ISOLATED_SANDBOX = new IsolationMode("ISOLATED_SANDBOX");
+
+        /// <summary>
+        /// Constant SHARED for IsolationMode
+        /// </summary>
+        public static readonly IsolationMode SHARED = new IsolationMode("SHARED");
+
+        /// <summary>
+        /// Constructs a custom IsolationMode for a value not among the defined constants.
+        /// </summary>
+        public IsolationMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IsolationMode FindValue(string value)
+        {
+            return FindValue<IsolationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IsolationMode(string value)
         {
             return FindValue(value);
         }
