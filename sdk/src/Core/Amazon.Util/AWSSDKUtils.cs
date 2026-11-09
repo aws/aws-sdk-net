@@ -1812,9 +1812,22 @@ namespace Amazon.Util
         }
 
 #if NETSTANDARD
+        // A handler owns a connection pool, and from .NET 11 also two System.Net.Http metric instruments that are never released.
+        // Requests therefore share one handler per proxy, and each still gets its own HttpClient for its timeout and headers.
+        // The .NET 11 leak is tracked in https://github.com/dotnet/runtime/issues/136418.
+        private static readonly Lazy<HttpClientHandler> _defaultProxyHandler = new Lazy<HttpClientHandler>(() => CreateHandler(null));
+        private static readonly ConditionalWeakTable<IWebProxy, HttpClientHandler> _proxyHandlers = new ConditionalWeakTable<IWebProxy, HttpClientHandler>();
+
+        private static HttpClientHandler CreateHandler(IWebProxy proxy)
+        {
+            // Without this, a shared handler would send cookies from one response with every later request.
+            return new HttpClientHandler { Proxy = proxy, UseCookies = false };
+        }
+
         private static HttpClient CreateClient(Uri uri, TimeSpan timeout, IWebProxy proxy, IDictionary<string, string> headers)
         {
-            var client = new HttpClient(new System.Net.Http.HttpClientHandler() { Proxy = proxy });
+            var handler = proxy == null ? _defaultProxyHandler.Value : _proxyHandlers.GetValue(proxy, CreateHandler);
+            var client = new HttpClient(handler, disposeHandler: false);
             
             if (timeout > TimeSpan.Zero)
             {
