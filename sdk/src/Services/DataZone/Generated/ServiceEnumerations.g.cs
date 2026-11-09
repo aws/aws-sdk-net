@@ -643,6 +643,16 @@ namespace Amazon.DataZone
         public static readonly ConnectionType VPC = new ConnectionType("VPC");
 
         /// <summary>
+        /// Constant WORKDAYICEBERGRESTCATALOG for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType WORKDAYICEBERGRESTCATALOG = new ConnectionType("WORKDAYICEBERGRESTCATALOG");
+
+        /// <summary>
+        /// Constant WORKDAYLDQ for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType WORKDAYLDQ = new ConnectionType("WORKDAYLDQ");
+
+        /// <summary>
         /// Constant WORKFLOWS_MWAA for ConnectionType
         /// </summary>
         public static readonly ConnectionType WORKFLOWS_MWAA = new ConnectionType("WORKFLOWS_MWAA");
@@ -2059,6 +2069,16 @@ namespace Amazon.DataZone
         /// Constant VERTICA for GlueConnectionType
         /// </summary>
         public static readonly GlueConnectionType VERTICA = new GlueConnectionType("VERTICA");
+
+        /// <summary>
+        /// Constant WORKDAYICEBERGRESTCATALOG for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType WORKDAYICEBERGRESTCATALOG = new GlueConnectionType("WORKDAYICEBERGRESTCATALOG");
+
+        /// <summary>
+        /// Constant WORKDAYLDQ for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType WORKDAYLDQ = new GlueConnectionType("WORKDAYLDQ");
 
         /// <summary>
         /// Constructs a custom GlueConnectionType for a value not among the defined constants.

@@ -1719,7 +1719,8 @@ namespace Amazon.DataZone
 #if NETFRAMEWORK
         /// <summary>
         /// Creates a new user-defined designation with a Cedar permit policy. The designation
-        /// defines a named role that can be assigned to project members.
+        /// defines a named role that can be assigned to project members through <c>CreateProjectMembership</c>
+        /// or granted through <c>AddPolicyGrant</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDesignation service method.</param>
         /// <returns>The response from the CreateDesignation service method, as returned by DataZone.</returns>
@@ -1753,7 +1754,8 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a new user-defined designation with a Cedar permit policy. The designation
-        /// defines a named role that can be assigned to project members.
+        /// defines a named role that can be assigned to project members through <c>CreateProjectMembership</c>
+        /// or granted through <c>AddPolicyGrant</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDesignation service method.</param>
         /// <param name="cancellationToken">
@@ -4001,7 +4003,9 @@ namespace Amazon.DataZone
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Deletes a designation. Managed designations cannot be deleted. This operation is idempotent.
+        /// Deletes a user-created designation. Managed designations cannot be deleted. The call
+        /// fails if the designation has <c>deletionProtection</c> enabled or if any project member
+        /// still holds it. This operation is idempotent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDesignation service method.</param>
         /// <returns>The response from the DeleteDesignation service method, as returned by DataZone.</returns>
@@ -4031,7 +4035,9 @@ namespace Amazon.DataZone
 #endif
 
         /// <summary>
-        /// Deletes a designation. Managed designations cannot be deleted. This operation is idempotent.
+        /// Deletes a user-created designation. Managed designations cannot be deleted. The call
+        /// fails if the designation has <c>deletionProtection</c> enabled or if any project member
+        /// still holds it. This operation is idempotent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDesignation service method.</param>
         /// <param name="cancellationToken">
@@ -6352,7 +6358,8 @@ namespace Amazon.DataZone
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Gets the details of a designation, including its Cedar policy.
+        /// Gets the details of a designation, including its Cedar permit policy. Returns the
+        /// full designation record for both system-managed and user-created designations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDesignation service method.</param>
         /// <returns>The response from the GetDesignation service method, as returned by DataZone.</returns>
@@ -6379,7 +6386,8 @@ namespace Amazon.DataZone
 #endif
 
         /// <summary>
-        /// Gets the details of a designation, including its Cedar policy.
+        /// Gets the details of a designation, including its Cedar permit policy. Returns the
+        /// full designation record for both system-managed and user-created designations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDesignation service method.</param>
         /// <param name="cancellationToken">
@@ -8988,8 +8996,9 @@ namespace Amazon.DataZone
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Lists the designations in a domain. Returns system-managed designations first, followed
-        /// by user-created designations sorted alphabetically by name.
+        /// Lists the designations in a domain. The response returns system-managed designations
+        /// first, followed by user-created designations in alphabetical order by name. Results
+        /// are paginated. Use <c>nextToken</c> to retrieve additional pages of results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDesignations service method.</param>
         /// <returns>The response from the ListDesignations service method, as returned by DataZone.</returns>
@@ -9016,8 +9025,9 @@ namespace Amazon.DataZone
 #endif
 
         /// <summary>
-        /// Lists the designations in a domain. Returns system-managed designations first, followed
-        /// by user-created designations sorted alphabetically by name.
+        /// Lists the designations in a domain. The response returns system-managed designations
+        /// first, followed by user-created designations in alphabetical order by name. Results
+        /// are paginated. Use <c>nextToken</c> to retrieve additional pages of results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDesignations service method.</param>
         /// <param name="cancellationToken">
@@ -12755,7 +12765,8 @@ namespace Amazon.DataZone
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates an existing designation. Managed designations cannot be modified.
+        /// Updates an existing user-created designation. Managed designations cannot be modified.
+        /// Omit a field to leave its current value unchanged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDesignation service method.</param>
         /// <returns>The response from the UpdateDesignation service method, as returned by DataZone.</returns>
@@ -12785,7 +12796,8 @@ namespace Amazon.DataZone
 #endif
 
         /// <summary>
-        /// Updates an existing designation. Managed designations cannot be modified.
+        /// Updates an existing user-created designation. Managed designations cannot be modified.
+        /// Omit a field to leave its current value unchanged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDesignation service method.</param>
         /// <param name="cancellationToken">

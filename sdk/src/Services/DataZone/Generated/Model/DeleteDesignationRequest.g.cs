@@ -30,8 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDesignation operation. Deletes a designation.
-    /// Managed designations cannot be deleted. This operation is idempotent.
+    /// Container for the parameters to the DeleteDesignation operation. Deletes a user-created
+    /// designation. Managed designations cannot be deleted. The call fails if the designation
+    /// has <c>deletionProtection</c> enabled or if any project member still holds it. This
+    /// operation is idempotent.
     /// </summary>
     public partial class DeleteDesignationRequest : AmazonDataZoneRequest
     {
