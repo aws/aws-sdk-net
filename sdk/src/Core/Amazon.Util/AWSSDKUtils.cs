@@ -761,8 +761,22 @@ namespace Amazon.Util
         /// <returns>Converted DateTime structure</returns>
         public static DateTime ConvertFromUnixDoubleEpochSeconds(double seconds)
         {
-            var ticksSinceEpoch = (long)(seconds * TicksPerSecond);
-            return new DateTime(ticksSinceEpoch + EPOCH_START.Ticks, DateTimeKind.Utc);
+            // Casting to decimal rounds to 15 significant digits, which removes the floating-point error of the double
+            // (1762594202.123 is stored as 1762594202.12299990...). Sub-millisecond digits can round up before truncation.
+            return ConvertFromUnixDecimalEpochSeconds((decimal)seconds);
+        }
+
+        /// <summary>
+        /// Utility method for converting Unix epoch seconds to DateTime structure.
+        /// Epoch seconds carry at most millisecond precision; any further fractional digits are truncated
+        /// (1762594202.1239 is .123), as the Smithy epoch-seconds timestamp format specifies.
+        /// </summary>
+        /// <param name="seconds">The number of seconds since January 1, 1970.</param>
+        /// <returns>Converted DateTime structure</returns>
+        public static DateTime ConvertFromUnixDecimalEpochSeconds(decimal seconds)
+        {
+            var millisecondsSinceEpoch = (long)(seconds * 1000);
+            return new DateTime(millisecondsSinceEpoch * TimeSpan.TicksPerMillisecond + EPOCH_START.Ticks, DateTimeKind.Utc);
         }
 
         /// <summary>

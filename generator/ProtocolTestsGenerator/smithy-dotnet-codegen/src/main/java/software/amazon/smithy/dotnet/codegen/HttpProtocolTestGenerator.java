@@ -38,6 +38,7 @@ import software.amazon.smithy.protocoltests.traits.eventstream.EventType;
 import software.amazon.smithy.utils.StringUtils;
 import software.amazon.smithy.dotnet.codegen.customizations.*;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeParseException;
 import java.util.*;
@@ -1007,7 +1008,15 @@ public final class HttpProtocolTestGenerator implements Runnable {
         @Override
         public Void numberNode(NumberNode node) {
             if (inputShape.isTimestampShape()) {
-                writer.write("ProtocolTestConstants.epoch.AddSeconds($L)", node.getValue());
+                // Fractional epoch seconds are converted to whole milliseconds here so the expected value is exact;
+                // AddSeconds(double) would carry the same floating-point error as a buggy unmarshaller and hide it.
+                BigDecimal seconds = new BigDecimal(node.getValue().toString());
+                if (seconds.scale() <= 0) {
+                    writer.write("ProtocolTestConstants.epoch.AddSeconds($L)", node.getValue());
+                } else {
+                    long milliseconds = seconds.multiply(BigDecimal.valueOf(1000)).longValueExact();
+                    writer.write("ProtocolTestConstants.epoch.AddMilliseconds($L)", milliseconds);
+                }
             } else if (inputShape.isFloatShape()) {
                 writer.writeInline("$LF", node.getValue());
             } else {
