@@ -896,6 +896,12 @@
     <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.GetDataAccessResponse.MatchedInstanceArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z\-]+:s3:[a-z0-9\-]+:\d{12}:access\-grants\/[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.GetJobTaggingRequest.AccountId</property>
     <min>0</min>
     <max>64</max>
@@ -1865,6 +1871,12 @@
     <min>1</min>
     <max>2000</max>
     <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListCallerAccessGrantsEntry.AccessGrantsInstanceArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z\-]+:s3:[a-z0-9\-]+:\d{12}:access\-grants\/[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.ListCallerAccessGrantsEntry.ApplicationArn</property>

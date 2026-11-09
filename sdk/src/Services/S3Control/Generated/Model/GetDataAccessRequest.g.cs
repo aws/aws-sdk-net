@@ -33,12 +33,15 @@ namespace Amazon.S3Control.Model
     /// Container for the parameters to the GetDataAccess operation. Returns a temporary access
     /// credential from S3 Access Grants to the grantee or client application. The <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_Credentials.html">temporary
     /// credential</a> is an Amazon Web Services STS token that grants them access to the
-    /// S3 data. <dl> <dt>Permissions</dt> <dd> <para> You must have the <c>s3:GetDataAccess</c>
-    /// permission to use this operation. </para> </dd> <dt>Additional Permissions</dt> <dd>
-    /// <para> The IAM role that S3 Access Grants assumes must have the following permissions
-    /// specified in the trust policy when registering the location: <c>sts:AssumeRole</c>,
-    /// for directory users or groups <c>sts:SetContext</c>, and for IAM users or roles <c>sts:SetSourceIdentity</c>.
-    /// </para> </dd> </dl>
+    /// S3 data. By default, S3 Access Grants searches for a matching grant in the instance
+    /// of the Amazon Web Services account ID in the request. To also search instances shared
+    /// with the caller through Amazon Web Services Resource Access Manager (RAM), set the
+    /// <c>InstanceScope</c> parameter to <c>ALL</c>. <dl> <dt>Permissions</dt> <dd> <para>
+    /// You must have the <c>s3:GetDataAccess</c> permission to use this operation. </para>
+    /// </dd> <dt>Additional Permissions</dt> <dd> <para> The IAM role that S3 Access Grants
+    /// assumes must have the following permissions specified in the trust policy when registering
+    /// the location: <c>sts:AssumeRole</c>, for directory users or groups <c>sts:SetContext</c>,
+    /// and for IAM users or roles <c>sts:SetSourceIdentity</c>. </para> </dd> </dl>
     /// </summary>
     public partial class GetDataAccessRequest : AmazonS3ControlRequest
     {
@@ -88,6 +91,32 @@ namespace Amazon.S3Control.Model
         /// Checks to see if the DurationSeconds property is set.
         /// </summary>
         internal bool IsSetDurationSeconds() => this.DurationSeconds.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property InstanceScope. 
+        /// <para>
+        /// The scope of S3 Access Grants instances to search for a grant matching the requested
+        /// S3 URI path.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SELF</c> – Searches only the instance of the Amazon Web Services account ID in
+        /// the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ALL</c> – Searches the instance of the Amazon Web Services account ID in the request
+        /// and all instances shared with the caller's account through Amazon Web Services Resource
+        /// Access Manager (RAM).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public InstanceScope InstanceScope { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceScope property is set.
+        /// </summary>
+        internal bool IsSetInstanceScope() => this.InstanceScope != null;
 
         /// <summary>
         /// Gets and sets the property Permission. 

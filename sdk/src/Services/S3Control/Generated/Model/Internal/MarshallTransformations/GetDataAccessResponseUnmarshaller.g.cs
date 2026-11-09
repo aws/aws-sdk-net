@@ -87,6 +87,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.MatchedGrantTarget = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    if (context.TestExpression("MatchedInstanceArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MatchedInstanceArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

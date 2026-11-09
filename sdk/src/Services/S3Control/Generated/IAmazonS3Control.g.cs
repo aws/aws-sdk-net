@@ -4286,7 +4286,10 @@ namespace Amazon.S3Control
         /// Returns a temporary access credential from S3 Access Grants to the grantee or client
         /// application. The <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_Credentials.html">temporary
         /// credential</a> is an Amazon Web Services STS token that grants them access to the
-        /// S3 data. 
+        /// S3 data. By default, S3 Access Grants searches for a matching grant in the instance
+        /// of the Amazon Web Services account ID in the request. To also search instances shared
+        /// with the caller through Amazon Web Services Resource Access Manager (RAM), set the
+        /// <c>InstanceScope</c> parameter to <c>ALL</c>.
         /// 
         ///  <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -4311,7 +4314,10 @@ namespace Amazon.S3Control
         /// Returns a temporary access credential from S3 Access Grants to the grantee or client
         /// application. The <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_Credentials.html">temporary
         /// credential</a> is an Amazon Web Services STS token that grants them access to the
-        /// S3 data. 
+        /// S3 data. By default, S3 Access Grants searches for a matching grant in the instance
+        /// of the Amazon Web Services account ID in the request. To also search instances shared
+        /// with the caller through Amazon Web Services Resource Access Manager (RAM), set the
+        /// <c>InstanceScope</c> parameter to <c>ALL</c>.
         /// 
         ///  <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -5365,12 +5371,16 @@ namespace Amazon.S3Control
         /// through S3 Access Grants. The caller (grantee) can be an Identity and Access Management
         /// (IAM) identity or Amazon Web Services Identity Center corporate directory identity.
         /// You must pass the Amazon Web Services account of the S3 data owner (grantor) in the
-        /// request. You can, optionally, narrow the results by <c>GrantScope</c>, using a fragment
-        /// of the data's S3 path, and S3 Access Grants will return only the grants with a path
-        /// that contains the path fragment. You can also pass the <c>AllowedByApplication</c>
-        /// filter in the request, which returns only the grants authorized for applications,
-        /// whether the application is the caller's Identity Center application or any other application
-        /// (<c>ALL</c>). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-list-grants.html">List
+        /// request. By default, S3 Access Grants returns grants from the instance of the Amazon
+        /// Web Services account ID in the request. To return grants from all instances shared
+        /// with the caller's account through Amazon Web Services Resource Access Manager (RAM),
+        /// set the <c>InstanceScope</c> parameter to <c>ALL</c>. You can, optionally, narrow
+        /// the results by <c>GrantScope</c>, using a fragment of the data's S3 path, and S3 Access
+        /// Grants will return only the grants with a path that contains the path fragment. You
+        /// can also pass the <c>AllowedByApplication</c> filter in the request, which returns
+        /// only the grants authorized for applications, whether the application is the caller's
+        /// Identity Center application or any other application (<c>ALL</c>). For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-list-grants.html">List
         /// the caller's access grants</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///  <dl> <dt>Permissions</dt> <dd> 
@@ -5391,12 +5401,16 @@ namespace Amazon.S3Control
         /// through S3 Access Grants. The caller (grantee) can be an Identity and Access Management
         /// (IAM) identity or Amazon Web Services Identity Center corporate directory identity.
         /// You must pass the Amazon Web Services account of the S3 data owner (grantor) in the
-        /// request. You can, optionally, narrow the results by <c>GrantScope</c>, using a fragment
-        /// of the data's S3 path, and S3 Access Grants will return only the grants with a path
-        /// that contains the path fragment. You can also pass the <c>AllowedByApplication</c>
-        /// filter in the request, which returns only the grants authorized for applications,
-        /// whether the application is the caller's Identity Center application or any other application
-        /// (<c>ALL</c>). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-list-grants.html">List
+        /// request. By default, S3 Access Grants returns grants from the instance of the Amazon
+        /// Web Services account ID in the request. To return grants from all instances shared
+        /// with the caller's account through Amazon Web Services Resource Access Manager (RAM),
+        /// set the <c>InstanceScope</c> parameter to <c>ALL</c>. You can, optionally, narrow
+        /// the results by <c>GrantScope</c>, using a fragment of the data's S3 path, and S3 Access
+        /// Grants will return only the grants with a path that contains the path fragment. You
+        /// can also pass the <c>AllowedByApplication</c> filter in the request, which returns
+        /// only the grants authorized for applications, whether the application is the caller's
+        /// Identity Center application or any other application (<c>ALL</c>). For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-list-grants.html">List
         /// the caller's access grants</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///  <dl> <dt>Permissions</dt> <dd> 

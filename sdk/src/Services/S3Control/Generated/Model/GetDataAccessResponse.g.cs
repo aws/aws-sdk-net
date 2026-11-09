@@ -78,5 +78,20 @@ namespace Amazon.S3Control.Model
         /// Checks to see if the MatchedGrantTarget property is set.
         /// </summary>
         internal bool IsSetMatchedGrantTarget() => this.MatchedGrantTarget != null;
+
+        /// <summary>
+        /// Gets and sets the property MatchedInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the S3 Access Grants instance containing the grant
+        /// that matched the requested S3 URI path.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string MatchedInstanceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MatchedInstanceArn property is set.
+        /// </summary>
+        internal bool IsSetMatchedInstanceArn() => this.MatchedInstanceArn != null;
     }
 }

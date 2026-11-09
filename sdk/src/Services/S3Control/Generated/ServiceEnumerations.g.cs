@@ -614,6 +614,47 @@ namespace Amazon.S3Control
     }
 
     /// <summary>
+    /// Constants used for properties of type InstanceScope.
+    /// </summary>
+    public class InstanceScope : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL for InstanceScope
+        /// </summary>
+        public static readonly InstanceScope ALL = new InstanceScope("ALL");
+
+        /// <summary>
+        /// Constant SELF for InstanceScope
+        /// </summary>
+        public static readonly InstanceScope SELF = new InstanceScope("SELF");
+
+        /// <summary>
+        /// Constructs a custom InstanceScope for a value not among the defined constants.
+        /// </summary>
+        public InstanceScope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceScope FindValue(string value)
+        {
+            return FindValue<InstanceScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type JobManifestFieldName.
     /// </summary>
     public class JobManifestFieldName : ConstantClass

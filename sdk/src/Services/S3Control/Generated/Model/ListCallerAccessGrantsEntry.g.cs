@@ -31,12 +31,28 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Part of <c>ListCallerAccessGrantsResult</c>. Each entry includes the permission level
-    /// (READ, WRITE, or READWRITE) and the grant scope of the access grant. If the grant
-    /// also includes an application ARN, the grantee can only access the S3 data through
-    /// this application.
+    /// (READ, WRITE, or READWRITE) and the grant scope of the access grant. Each entry also
+    /// includes the ARN of the S3 Access Grants instance in which the grant was created.
+    /// If the grant also includes an application ARN, the grantee can only access the S3
+    /// data through this application.
     /// </summary>
     public partial class ListCallerAccessGrantsEntry
     {
+        /// <summary>
+        /// Gets and sets the property AccessGrantsInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the S3 Access Grants instance in which the grant
+        /// was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string AccessGrantsInstanceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AccessGrantsInstanceArn property is set.
+        /// </summary>
+        internal bool IsSetAccessGrantsInstanceArn() => this.AccessGrantsInstanceArn != null;
+
         /// <summary>
         /// Gets and sets the property ApplicationArn. 
         /// <para>

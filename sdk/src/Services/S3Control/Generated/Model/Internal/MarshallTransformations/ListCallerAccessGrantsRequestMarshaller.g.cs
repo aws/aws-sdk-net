@@ -71,6 +71,11 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Parameters.Add("grantscope", StringUtils.FromString(publicRequest.GrantScope));
             }
 
+            if (publicRequest.IsSetInstanceScope())
+            {
+                request.Parameters.Add("instanceScope", StringUtils.FromString(publicRequest.InstanceScope));
+            }
+
             if (publicRequest.IsSetMaxResults())
             {
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults.Value));

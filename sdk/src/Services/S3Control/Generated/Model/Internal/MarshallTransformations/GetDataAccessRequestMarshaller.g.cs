@@ -71,6 +71,11 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Parameters.Add("durationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds.Value));
             }
 
+            if (publicRequest.IsSetInstanceScope())
+            {
+                request.Parameters.Add("instanceScope", StringUtils.FromString(publicRequest.InstanceScope));
+            }
+
             if (string.IsNullOrEmpty(publicRequest.Permission))
             {
                 throw new AmazonS3ControlException("Request object does not have required field Permission set");
