@@ -362,6 +362,14 @@ public sealed record ServiceCustomizations
     /// <summary>No doc samples from <c>smithy.api#examples</c>; S3's are hand-written.</summary>
     [JsonPropertyName("skipDocSamples")]
     public bool SkipDocSamples { get; init; }
+
+    /// <summary>Replaces <c>Amazon{BaseName}Request</c> as the request base; S3's partials declare <c>AmazonWebServiceRequest</c>.</summary>
+    [JsonPropertyName("requestBaseClass")]
+    public string? RequestBaseClass { get; init; }
+
+    /// <summary>Base for a response with a <c>@streaming</c> blob; the member is dropped and the unmarshaller assigns the base's <c>ResponseStream</c> (S3's <c>StreamResponse</c>).</summary>
+    [JsonPropertyName("streamingResponseBaseClass")]
+    public string? StreamingResponseBaseClass { get; init; }
 }
 
 /// <summary>The <c>simpleMethods</c> hook: convenience client overloads keyed by operation name.</summary>

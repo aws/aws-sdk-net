@@ -78,9 +78,13 @@ public class CustomizationsModelTests
     [Fact]
     public void Load_Service_ReadsSection()
     {
-        var model = LoadFiles("""{ "service": { "skipClientContextParams": ["UseArnRegion"], "skipDocSamples": true } }""");
+        var model = LoadFiles("""
+            { "service": { "skipClientContextParams": ["UseArnRegion"], "skipDocSamples": true, "requestBaseClass": "AmazonWebServiceRequest", "streamingResponseBaseClass": "StreamResponse" } }
+            """);
         Assert.Equal(["UseArnRegion"], model.Service?.SkipClientContextParams);
         Assert.True(model.Service?.SkipDocSamples);
+        Assert.Equal("AmazonWebServiceRequest", model.Service?.RequestBaseClass);
+        Assert.Equal("StreamResponse", model.Service?.StreamingResponseBaseClass);
     }
 
     [Fact]

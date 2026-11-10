@@ -107,6 +107,18 @@ public class OperationWriterTests
     }
 
     [Fact]
+    public void Request_WithRequestBaseClass_DerivesFromIt()
+    {
+        var service = new ServiceCustomizations { RequestBaseClass = "AmazonWebServiceRequest" };
+        var context = TestModels.Context(TestModels.Load("Codegen/payload-model.json"), new CustomizationsModel { Service = service });
+        var operation = context.Operations.Single(o => o.Name == "GetStreamingBlobPayload");
+
+        var request = new OperationWriter(context, "example-2023-01-01.normal.json").WriteRequest(operation, TestContext.Current.CancellationToken);
+
+        Assert.Contains("public partial class GetStreamingBlobPayloadRequest : AmazonWebServiceRequest", request);
+    }
+
+    [Fact]
     public void Request_EmitsClassDocumentation()
     {
         Assert.Contains("Container for the parameters to the PutAuditEvents operation.", _request);
@@ -174,6 +186,23 @@ public class OperationWriterTests
         Assert.Contains("protected virtual void Dispose(bool disposing)", response);
         Assert.Contains("this.Body?.Dispose();", response);
         Assert.Contains("this.Body = null;", response);
+    }
+
+    [Fact]
+    public void Response_WithStreamingResponseBaseClass_DerivesFromItWithoutTheStream()
+    {
+        var service = new ServiceCustomizations { StreamingResponseBaseClass = "StreamResponse" };
+        var context = TestModels.Context(TestModels.Load("Codegen/payload-model.json"), new CustomizationsModel { Service = service });
+        var writer = new OperationWriter(context, "example-2023-01-01.normal.json");
+
+        var response = writer.WriteResponse(context.Operations.Single(o => o.Name == "GetStreamingBlobPayload"), TestContext.Current.CancellationToken);
+        var blobResponse = writer.WriteResponse(context.Operations.Single(o => o.Name == "GetBlobPayload"), TestContext.Current.CancellationToken);
+
+        Assert.Contains("public partial class GetStreamingBlobPayloadResponse : StreamResponse", response);
+        Assert.Contains("public string Trace", response);
+        Assert.DoesNotContain("Body", response);
+        Assert.DoesNotContain("Dispose", response);
+        Assert.Contains("public partial class GetBlobPayloadResponse : AmazonWebServiceResponse", blobResponse);
     }
 
     [Fact]

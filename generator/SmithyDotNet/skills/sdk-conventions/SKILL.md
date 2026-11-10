@@ -250,8 +250,8 @@ differ (see `marshalling`). Each `@streaming` union is emitted once, however man
 | Client class | `AmazonServiceClient, IAmazon{BaseName}` |
 | Service exception base | `AmazonServiceException` |
 | Service request base | `AmazonWebServiceRequest` |
-| Request classes | `Amazon{BaseName}Request` (the service request base) |
-| Response classes | `AmazonWebServiceResponse`, plus `, IDisposable` when an output member is `@streaming` (emits a `#region Dispose Pattern` that disposes each streaming member's stream) |
+| Request classes | `Amazon{BaseName}Request` (the service request base), or `service.requestBaseClass` |
+| Response classes | `AmazonWebServiceResponse`, plus `, IDisposable` when an output member is `@streaming` (emits a `#region Dispose Pattern` that disposes each streaming member's stream). With `service.streamingResponseBaseClass`, a response with a `@streaming` blob member derives from that class instead, without the member (the unmarshaller assigns its `ResponseStream`) |
 | Structure classes | No base type (plain class) |
 | Exception classes | `Amazon{BaseName}Exception` (the service exception base) |
 | Config class (`Amazon{BaseName}Config`) | `ClientConfig` |
@@ -352,7 +352,8 @@ nothing targets it.
   `UploadPart`).
 - The Smithy-only `service` section (one file per service) replaces C2J's `ServiceId == "S3"` branches:
   `skipClientContextParams` keeps the listed params out of the generated config (hand-written for S3, S3 Control; an
-  unmodeled name fails), `skipDocSamples` emits none.
+  unmodeled name fails), `skipDocSamples` emits none, `requestBaseClass` and `streamingResponseBaseClass` replace
+  the generated bases (see Base Types).
 
 Three convenience hooks add hand-picked public members, read from `GenerationContext.Customizations` (not folded into the
 model). A form names members by C# property name (case-insensitive); a stale operation/class/member reference fails

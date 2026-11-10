@@ -1,7 +1,9 @@
 {
     "service": {
         "skipClientContextParams": ["ForcePathStyle", "UseArnRegion", "DisableMultiRegionAccessPoints", "Accelerate", "DisableS3ExpressSessionAuth"],
-        "skipDocSamples": true
+        "skipDocSamples": true,
+        "requestBaseClass": "AmazonWebServiceRequest",
+        "streamingResponseBaseClass": "StreamResponse"
     },
     "runtimePipelineOverride": {
         "overrides": [

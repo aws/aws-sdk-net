@@ -226,7 +226,7 @@ A `@httpPayload` output member IS the whole body (replaces the named-field loop;
 - **Structure** → reader + `if (reader.Reader.IsFinalBlock) return unmarshalledObject;` + `{Type}Unmarshaller.Instance.Unmarshall(context, ref reader)`.
 - **Document** → the structure scaffold with `Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance`. C2J models a document as a structure flagged `document: true`, so its output takes the structure-payload branch; we emit the same (bedrock-agentcore `GetAgentCardResponse`).
 - **Blob** (non-streaming, `MemoryStream`) → `Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms)` into a new `MemoryStream`; assigned only when `ms.Length > 0`, so an empty body leaves the property null (matches C2J).
-- **Streaming blob** (`@streaming`, `Stream`) → assigns the raw `context.Stream` unbuffered and the unmarshaller class overrides `public override bool HasStreamingProperty => true` (matches C2J, see Polly `SynthesizeSpeech`).
+- **Streaming blob** (`@streaming`, `Stream`) → assigns the raw `context.Stream` unbuffered (to the base's `ResponseStream` under `service.streamingResponseBaseClass`) and the unmarshaller class overrides `public override bool HasStreamingProperty => true` (matches C2J, see Polly `SynthesizeSpeech`).
 
 `@httpHeader` members read from `context.ResponseData` after. An `@httpPayload` **error** member fails
 loud: C2J never bound an error body to a payload, and emitting a never-populated property would be worse.

@@ -285,6 +285,20 @@ public class RestXmlCodegenTests
         Assert.Contains("return new AmazonExampleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);", source);
     }
 
+    [Theory]
+    [InlineData(null, "Body")]
+    [InlineData("StreamResponse", "ResponseStream")]
+    public void Response_StreamingBlobPayload_AssignsRawStreamAndOverridesHasStreamingProperty(string? streamingResponseBaseClass, string property)
+    {
+        var service = new ServiceCustomizations { StreamingResponseBaseClass = streamingResponseBaseClass };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), new CustomizationsModel { Service = service });
+        var source = new XmlResponseUnmarshallerWriter(context, ModelFileName)
+            .Write(context.Operations.Single(o => o.Name == "GetThingStream"), TestContext.Current.CancellationToken);
+
+        Assert.Contains($"unmarshalledObject.{property} = context.Stream;", source);
+        Assert.Contains("public override bool HasStreamingProperty => true;", source);
+    }
+
     [Fact]
     public void StructureUnmarshaller()
     {

@@ -89,7 +89,7 @@ public sealed class XmlResponseUnmarshallerWriter(GenerationContext context, str
             // body members both go through the UnmarshallResult element loop.
             if (members.PayloadMember is { } payload && structurePayload is null)
             {
-                MarshallerCommon.WritePayloadUnmarshall(writer, payload, context.Protocol);
+                MarshallerCommon.WritePayloadUnmarshall(writer, context, payload);
             }
             else if (hasBodyLoop)
             {

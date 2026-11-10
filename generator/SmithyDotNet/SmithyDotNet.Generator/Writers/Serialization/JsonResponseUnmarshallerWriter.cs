@@ -1,6 +1,5 @@
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Operations;
-using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Shapes;
@@ -36,7 +35,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             WriteClassDocumentation(writer, operation.Name);
             writer.OpenBlock($"public partial class {unmarshallerClassName} : JsonResponseUnmarshaller", () =>
             {
-                WriteUnmarshallMethod(writer, className, members, context.Protocol);
+                WriteUnmarshallMethod(writer, className, members);
                 if (members.EventStreamMember is not null && members.BodyMembers.Count > 0)
                 {
                     writer.WriteLine("");
@@ -81,7 +80,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         writer.WriteLine("/// </summary>");
     }
 
-    private static void WriteUnmarshallMethod(CodeWriter writer, string className, PartitionedMembers members, AWSProtocol protocol)
+    private void WriteUnmarshallMethod(CodeWriter writer, string className, PartitionedMembers members)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Unmarshaller the response from the service to the response class.");
@@ -103,7 +102,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             // emits no reader/loop.
             else if (members.PayloadMember is { } payload)
             {
-                MarshallerCommon.WritePayloadUnmarshall(writer, payload, protocol);
+                MarshallerCommon.WritePayloadUnmarshall(writer, context, payload);
             }
             else if (members.BodyMembers.Count > 0)
             {

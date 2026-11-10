@@ -38,7 +38,7 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
     public string WriteRequest(Operation operation, CancellationToken cancellationToken = default)
     {
         var className = $"{operation.Name}Request";
-        var baseClass = $"Amazon{context.BaseName}Request";
+        var baseClass = context.Customizations.Service?.RequestBaseClass ?? $"Amazon{context.BaseName}Request";
 
         // Cleanup the operation doc on its own first so its leading <p> wrapper is stripped,
         // then prepend the request preface so it reads as a single paragraph.
@@ -88,6 +88,13 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         // AmazonWebServiceResponse already declares it, and the unmarshaller assigns the inherited property.
         members.RemoveAll(m => m.PropertyName == "ContentLength");
 
+        var baseClass = "AmazonWebServiceResponse";
+        if (context.Customizations.Service?.StreamingResponseBaseClass is { } streamingBase && members.Any(m => m.Type.IsStreaming))
+        {
+            members.RemoveAll(m => m.Type.IsStreaming);
+            baseClass = streamingBase;
+        }
+
         // A @streaming output member (raw blob stream or event stream) hands back a stream the caller
         // must dispose. The trait lives on the target shape, so detect it via the resolved member type.
         var streamingMembers = members.Where(m => m.Type.IsStreaming || m.Type.IsEventStream).ToList();
@@ -95,7 +102,6 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         // The response of an operation that sends an event stream owns the request handle Core gives it
         // (C2J: `Operation.IsEventStreamInput`); an output-only stream doesn't.
         var hasRequestEventStream = context.RequestEventStreams.Any(stream => stream.Operations.Contains(operation));
-        var baseClass = "AmazonWebServiceResponse";
 
         if (hasRequestEventStream)
         {

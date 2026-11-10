@@ -239,7 +239,7 @@ public static class MarshallerCommon
     // A @httpPayload response member IS the whole body, read into the in-scope unmarshalledObject local. restXml
     // reads a structure/union payload through the element loop instead (handled by the caller), so only the JSON
     // protocols reach the structure/document branch; a stray XML document payload falls through to the fail-loud throw.
-    internal static void WritePayloadUnmarshall(CodeWriter writer, Member payload, AWSProtocol protocol)
+    internal static void WritePayloadUnmarshall(CodeWriter writer, GenerationContext context, Member payload)
     {
         if (payload.Type.MarshalsAsString)
         {
@@ -250,7 +250,7 @@ public static class MarshallerCommon
             return;
         }
 
-        if (protocol is not AWSProtocol.RestXml && (payload.Type.IsStructure || payload.Type.IsDocument))
+        if (context.Protocol is not AWSProtocol.RestXml && (payload.Type.IsStructure || payload.Type.IsDocument))
         {
             // A document reuses the DocumentUnmarshaller that body-member and collection-element documents
             // resolve to (see JsonBodyMemberUnmarshaller); a structure uses its generated unmarshaller.
@@ -266,9 +266,11 @@ public static class MarshallerCommon
 
         if (payload.Type.IsStreaming)
         {
-            // A streaming blob hands back the raw response stream unbuffered (the caller reads it);
-            // the class also overrides HasStreamingProperty. Matches C2J (see Polly SynthesizeSpeech).
-            writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = context.Stream;");
+            // A streaming blob hands back the raw response stream unbuffered (the caller reads it), as the base's
+            // ResponseStream under service.streamingResponseBaseClass; the class also overrides HasStreamingProperty.
+            // Matches C2J (see Polly SynthesizeSpeech).
+            var property = context.Customizations.Service?.StreamingResponseBaseClass is null ? payload.PropertyName : "ResponseStream";
+            writer.WriteLine($"unmarshalledObject.{property} = context.Stream;");
             return;
         }
 

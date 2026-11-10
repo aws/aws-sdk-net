@@ -7,6 +7,7 @@
       "operations": [
         { "target": "com.example#PutThing" },
         { "target": "com.example#GetThing" },
+        { "target": "com.example#GetThingStream" },
         { "target": "com.example#PutPayload" },
         { "target": "com.example#PutChecksummedThing" },
         { "target": "com.example#GetChecksummedThing" },
@@ -87,6 +88,19 @@
       }
     },
 
+    "com.example#GetThingStream": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#GetThingStreamResponse" },
+      "traits": { "smithy.api#http": { "uri": "/thing-stream", "method": "GET" } }
+    },
+    "com.example#GetThingStreamResponse": {
+      "type": "structure",
+      "members": {
+        "body": { "target": "com.example#StreamingBlob", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#StreamingBlob": { "type": "blob", "traits": { "smithy.api#streaming": {} } },
     "com.example#PutPayload": {
       "type": "operation",
       "input": { "target": "com.example#PutPayloadRequest" },
