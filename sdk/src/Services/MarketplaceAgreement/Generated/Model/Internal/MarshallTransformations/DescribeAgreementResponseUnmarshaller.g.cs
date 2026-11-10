@@ -97,6 +97,12 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "freeTrialSummary":
+                        context.AddPathSegment("FreeTrialSummary");
+                        unmarshalledObject.FreeTrialSummary = FreeTrialSummaryUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "initialAgreementId":
                         context.AddPathSegment("InitialAgreementId");
                         unmarshalledObject.InitialAgreementId = CborStringUnmarshaller.Instance.Unmarshall(context);
