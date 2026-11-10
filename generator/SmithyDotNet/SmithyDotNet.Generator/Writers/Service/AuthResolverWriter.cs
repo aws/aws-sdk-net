@@ -7,25 +7,12 @@ namespace SmithyDotNet.Generator.Writers.Service;
 /// <summary>
 /// Emits a service's auth resolver: the auth-scheme parameters (<c>Region</c> only for SigV4 services), the
 /// handler that maps a request context into them, and the resolver whose switch returns each operation's
-/// modeled <c>smithy.api#auth</c> list, with the discard arm returning the service-level list. Services in
-/// <see cref="EndpointAuthDelegatedServices"/> ask the endpoint resolver first; a metadata.json
+/// modeled <c>smithy.api#auth</c> list, with the discard arm returning the service-level list. A metadata.json
+/// <c>endpoint-resolves-auth</c> makes the handler ask the endpoint resolver first; a metadata.json
 /// <c>signature-version</c> adds a <c>GetSigner</c> override.
 /// </summary>
 public sealed class AuthResolverWriter(GenerationContext context, string modelFileName)
 {
-    /// <summary>
-    /// Services whose endpoint rule set selects the auth scheme (e.g. SigV4a for SESv2 multi-region
-    /// endpoints). Many rule sets carry <c>authSchemes</c>, but C2J only delegates for these four
-    /// (<c>ModeledResolver.partial.cs</c>), so the list is kept by name rather than derived from the rules.
-    /// </summary>
-    private static readonly HashSet<string> EndpointAuthDelegatedServices =
-    [
-        "S3",
-        "EventBridge",
-        "SimpleEmailServiceV2",
-        "CloudFrontKeyValueStore",
-    ];
-
     // The signer C2J swapped in for a non-SigV4 signatureVersion (GeneratorHelpers.DetermineSignerOverride). S3 is
     // qualified because its own S3Signer shadows Core's.
     private string? SignerOverride => context.Metadata?.SignatureVersion switch
@@ -38,7 +25,7 @@ public sealed class AuthResolverWriter(GenerationContext context, string modelFi
 
     // The endpoint resolver type only exists when the model carries a rule set.
     private bool DelegatesToEndpoint =>
-        context.HasEndpointRuleSet && EndpointAuthDelegatedServices.Contains(context.BaseName);
+        context.HasEndpointRuleSet && context.Metadata?.EndpointResolvesAuth == true;
 
     /// <summary>
     /// Emits the complete formatted auth resolver source for the service.

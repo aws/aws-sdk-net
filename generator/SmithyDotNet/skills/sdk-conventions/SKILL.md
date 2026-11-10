@@ -36,6 +36,9 @@ A **removed** line in generated output is a red flag — investigate it, do not 
   `signatureVersion`: `"v2"` sdb → `QueryStringSigner`, `"S3"` S3 → `Amazon.S3.Internal.S3Signer`, `"S3V4"`
   S3Control → Core's `S3Signer`; values are case-insensitive). `v2` also keeps the SigV4 default and `Region`
   although the model carries no auth trait, Smithy having no SigV2 trait
+- The auth scheme handler's endpoint-first resolution, from metadata.json `endpoint-resolves-auth` (S3, EventBridge,
+  SESv2, CloudFront KeyValueStore: C2J's allowlist in `ModeledResolver.partial.cs`; many other rule sets carry
+  `authSchemes` but are not consulted)
 
 ## What Can Differ
 
@@ -312,7 +315,11 @@ internal bool IsSetAuditEvents() => this.AuditEvents != null && (this.AuditEvent
 
 ## Customizations (`*.customizations.json`)
 
-The .NET-owned override layer (not part of the shared, upstream Smithy model). A hook with a Smithy
+The .NET-owned override layer (not part of the shared, upstream Smithy model). metadata.json describes the package
+(names, namespace, dependencies, visibility); customizations describe where generated code deviates from the model,
+including what hand-written code supplies instead. A new knob goes in the second unless it would exist for a service
+with nothing hand-written; the C2J-inherited `generate-client-constructors` and `signature-version` predate the rule
+and stay in metadata.json. A hook with a Smithy
 trait equivalent (`deprecatedMessage`, `renameShape`), or a structural edit (a member-keyed `renameShape`, `exclude`, `useWrappingResult`), is folded into the model in-memory by
 `CustomizationTransform.Apply` before the `ServiceIndex` is built; every other hook is checked by
 `CustomizationTransform` and read from `GenerationContext.Customizations` by shape and member
@@ -328,21 +335,24 @@ A Smithy-only `"Structure$member"` key instead copies that member's target under
 `Action` enum is C2J's `PermissionInputActionEnum` and `PermissionOutputActionEnum`); the original is dropped once
 nothing targets it.
 
-`emitPropertyName` renames only the C# property, so the member keeps its modeled name and with it its wire
-name on every protocol. `CustomizationsModel.PropertyName` is used wherever a member's C# name is derived.
-As in C2J, the name's first letter is upper-cased (iot's `marker` is `Marker`) and
-`emitIsSetProperties`/`dataTypeSwap` list a renamed member under its new name.
-The Smithy-only `overridesBaseMember` emits a member with `override` when a hand-written partial gives its structure a
-base class declaring the same member: CognitoIdentity's and SecurityToken's `Credentials` derive from `AWSCredentials`,
-whose `BaseIdentity.Expiration` is virtual. C2J hard-codes that case instead.
-`paginators.{Operation}` supplies what `@paginated` lacks but the shipped paginator has: `pageSize` (PowerShell reads
-`LimitKey`); `inputToken`/`outputToken` arrays, which make a trait-less operation paginated — map tokens loop while entries
-remain (DynamoDB `BatchGetItem`), several tokens page together (Route 53 `ListResourceRecordSets`); `items` (dotted paths)
-added to the modeled one. A field the trait already has fails generation.
-`operationModifiers.{Operation}.stopPaginationOnSameToken` stops on a repeated token (CloudWatch Logs `GetLogEvents`).
-Unlike the C2J-inherited hooks above, `paginators` names members as the model does (like `@paginated`), not by their
-emitted name.
-`operationModifiers.{Operation}.skipChecksumDuringMarshalling` drops the marshaller's checksum call (S3 `PutObject`, `UploadPart`).
+- `emitPropertyName` renames only the C# property, so the member keeps its modeled name and with it its wire name on
+  every protocol. `CustomizationsModel.PropertyName` is used wherever a member's C# name is derived. As in C2J, the
+  name's first letter is upper-cased (iot's `marker` is `Marker`) and `emitIsSetProperties`/`dataTypeSwap` list a
+  renamed member under its new name.
+- The Smithy-only `overridesBaseMember` emits a member with `override` when a hand-written partial gives its structure a
+  base class declaring the same member: CognitoIdentity's and SecurityToken's `Credentials` derive from
+  `AWSCredentials`, whose `BaseIdentity.Expiration` is virtual. C2J hard-codes that case instead.
+- `paginators.{Operation}` supplies what `@paginated` lacks but the shipped paginator has: `pageSize` (PowerShell reads
+  `LimitKey`); `inputToken`/`outputToken` arrays, which make a trait-less operation paginated — map tokens loop while
+  entries remain (DynamoDB `BatchGetItem`), several tokens page together (Route 53 `ListResourceRecordSets`); `items`
+  (dotted paths) added to the modeled one. A field the trait already has fails generation. Unlike the C2J-inherited
+  hooks above, `paginators` names members as the model does (like `@paginated`), not by their emitted name.
+- `operationModifiers.{Operation}.stopPaginationOnSameToken` stops on a repeated token (CloudWatch Logs `GetLogEvents`).
+- `operationModifiers.{Operation}.skipChecksumDuringMarshalling` drops the marshaller's checksum call (S3 `PutObject`,
+  `UploadPart`).
+- The Smithy-only `service` section (one file per service) replaces C2J's `ServiceId == "S3"` branches:
+  `skipClientContextParams` keeps the listed params out of the generated config (hand-written for S3, S3 Control; an
+  unmodeled name fails), `skipDocSamples` emits none.
 
 Three convenience hooks add hand-picked public members, read from `GenerationContext.Customizations` (not folded into the
 model). A form names members by C# property name (case-insensitive); a stale operation/class/member reference fails

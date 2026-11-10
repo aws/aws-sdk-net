@@ -76,6 +76,23 @@ public class CustomizationsModelTests
     }
 
     [Fact]
+    public void Load_Service_ReadsSection()
+    {
+        var model = LoadFiles("""{ "service": { "skipClientContextParams": ["UseArnRegion"], "skipDocSamples": true } }""");
+        Assert.Equal(["UseArnRegion"], model.Service?.SkipClientContextParams);
+        Assert.True(model.Service?.SkipDocSamples);
+    }
+
+    [Fact]
+    public void Load_Service_InTwoFiles_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
+            """{ "service": { "skipDocSamples": true } }""",
+            """{ "service": { "skipDocSamples": true } }"""));
+        Assert.Contains("service appears in more than one customizations file", ex.Message);
+    }
+
+    [Fact]
     public void Load_UnsupportedNestedHook_Throws()
     {
         var ex = Assert.Throws<GeneratorException>(() => LoadFiles("""{ "shapeModifiers": { "Thing": { "modify": [{ "m": { "unsupportedHook": "x" } }] } } }"""));

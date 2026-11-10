@@ -26,7 +26,7 @@ public class AuthResolverWriterTests
     private static readonly string DualSigningOutput = Write("dual-signing-model.json", "dual-signing-2024-01-01.normal.json");
     private static readonly string DualSigningExplicitOutput = Write("dual-signing-explicit-model.json", "dual-signing-explicit-2024-01-01.normal.json");
     private static readonly string EmptyAuthOutput = Write("empty-auth-model.json", "empty-auth-2024-01-01.normal.json");
-    private static readonly string EventBridgeOutput = Write("eventbridge-model.json", "eventbridge-2015-10-07.normal.json");
+    private static readonly string EventBridgeOutput = Write("eventbridge-model.json", "eventbridge-2015-10-07.normal.json", new ServiceMetadata { EndpointResolvesAuth = true });
     private static readonly string SimpleDbOutput = Write("simpledb-model.json", "sdb-2009-04-15.normal.json", new ServiceMetadata { SignatureVersion = SignatureVersion.V2 });
     private static readonly string S3ControlOutput = Write("s3control-model.json", "s3control-2018-08-20.normal.json", new ServiceMetadata { SignatureVersion = SignatureVersion.S3V4 });
 
@@ -177,9 +177,9 @@ public class AuthResolverWriterTests
     [Fact]
     public void EndpointAuthDelegatedService_ResolvesFromEndpointFirst()
     {
-        // EventBridge is one of the four services whose endpoint rule set selects the auth scheme, so
-        // the handler holds an endpoint resolver and returns the endpoint's schemes before the modeled
-        // switch - matching C2J's allowlisted output.
+        // EventBridge's metadata.json sets endpoint-resolves-auth (its endpoint rule set selects the auth
+        // scheme), so the handler holds an endpoint resolver and returns the endpoint's schemes before the
+        // modeled switch - matching C2J's allowlisted output.
         Assert.Contains("private readonly AmazonEventBridgeEndpointResolver _endpointResolver = new();", EventBridgeOutput);
         Assert.Contains("var endpoint = _endpointResolver.GetEndpoint(executionContext);", EventBridgeOutput);
         Assert.Contains("var endpointAuthSchemes = RetrieveSchemesFromEndpoint(endpoint);", EventBridgeOutput);

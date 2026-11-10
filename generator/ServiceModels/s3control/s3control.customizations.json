@@ -1,4 +1,7 @@
 {
+  "service": {
+    "skipClientContextParams": ["UseArnRegion"]
+  },
   "runtimePipelineOverride": {
     "overrides": [
       {

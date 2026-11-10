@@ -1,7 +1,5 @@
-using System.Text.Json;
 using System.Text.RegularExpressions;
 using SmithyDotNet.Generator.Generation.Customizations;
-using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Examples;
 using Xunit;
@@ -161,15 +159,13 @@ public class DocSamplesWriterTests
     }
 
     [Fact]
-    public void Collect_OnlyForAModelWithExamples_AndNeverForS3()
+    public void Collect_OnlyForAModelWithExamples_AndNotWhenSkipped()
     {
         Assert.NotEmpty(DocSamplesWriter.Collect(TestModels.Context(ModelPath)));
         Assert.Empty(DocSamplesWriter.Collect(TestModels.Context("Codegen/codegen-model.json")));
 
-        var s3 = TestModels.Load(ModelPath);
-        var service = Assert.IsType<ServiceShape>(s3.Shapes["com.amazonaws.samples#SamplesService"]);
-        service.Traits["aws.api#service"] = JsonSerializer.SerializeToElement(new { sdkId = "S3", endpointPrefix = "s3" });
-        Assert.Empty(DocSamplesWriter.Collect(TestModels.Context(s3)));
+        var service = new ServiceCustomizations { SkipDocSamples = true };
+        Assert.Empty(DocSamplesWriter.Collect(TestModels.Context(TestModels.Load(ModelPath), new CustomizationsModel { Service = service })));
     }
 
     // Surfaced as a GeneratorException so the batch names the failing service.

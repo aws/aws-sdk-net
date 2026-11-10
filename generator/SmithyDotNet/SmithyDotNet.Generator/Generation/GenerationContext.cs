@@ -272,7 +272,7 @@ public class GenerationContext
 
         EndpointRuleSet = index.Service.GetEndpointRuleSet();
         HasEndpointRuleSet = EndpointRuleSet is not null;
-        ClientContextParameters = EndpointContextResolver.ResolveClientParameters(index, SdkId);
+        ClientContextParameters = EndpointContextResolver.ResolveClientParameters(index, Customizations);
 
         EndpointTests = index.Service.GetEndpointTests();
         HasEndpointTests = EndpointTests is not null;

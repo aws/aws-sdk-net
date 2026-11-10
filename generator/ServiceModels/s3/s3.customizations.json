@@ -1,4 +1,8 @@
 {
+    "service": {
+        "skipClientContextParams": ["ForcePathStyle", "UseArnRegion", "DisableMultiRegionAccessPoints", "Accelerate", "DisableS3ExpressSessionAuth"],
+        "skipDocSamples": true
+    },
     "runtimePipelineOverride": {
         "overrides": [
             { "operation": "addBefore", "newType": "Amazon.S3.Internal.AmazonS3PreMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
