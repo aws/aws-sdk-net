@@ -86,6 +86,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "LogConfiguration":
+                        context.AddPathSegment("LogConfiguration");
+                        unmarshalledObject.LogConfiguration = GameSessionQueueLogConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "Name":
                         context.AddPathSegment("Name");
                         unmarshalledObject.Name = CborStringUnmarshaller.Instance.Unmarshall(context);

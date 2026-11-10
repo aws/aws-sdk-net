@@ -79,34 +79,48 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DeploymentStatus. 
         /// <para>
-        /// The status of fleet deployment activity in the location. 
+        /// The status of the fleet deployment. For per-location status, see <c>LocationalDeployment</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>IN_PROGRESS</c> -- The deployment is in progress.
+        ///  <c>PENDING</c> -- Amazon GameLift Servers has accepted the deployment and hasn't
+        /// started it yet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>IMPAIRED</c> -- The deployment failed and the fleet has some impaired containers.
-        /// 
+        ///  <c>IN_PROGRESS</c> -- The deployment is in progress. This status covers validation
+        /// as well as the replacement of the fleet's containers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>COMPLETE</c> -- The deployment has completed successfully.
+        ///  <c>IMPAIRED</c> -- The deployment failed validation, and the fleet kept the containers
+        /// that failed validation so that you can inspect them. A deployment reaches this status
+        /// when its impairment strategy is <c>MAINTAIN</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>COMPLETE</c> -- The deployment has completed successfully in every fleet location.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>ROLLBACK_IN_PROGRESS</c> -- The deployment failed and rollback has been initiated.
+        /// A deployment reaches this status when its impairment strategy is <c>ROLLBACK</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ROLLBACK_IN_COMPLETE</c> -- The deployment failed and rollback has been completed.
+        ///  <c>ROLLBACK_COMPLETE</c> -- The deployment failed and rollback has been completed.
+        /// The fleet is running the configuration from the last successful deployment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CANCELLED</c> -- The deployment was cancelled.
+        ///  <c>CANCELLED</c> -- The deployment was cancelled because a new deployment started
+        /// for the same fleet.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For how to debug an impaired deployment or cancel one, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/containers-deployment-validation.html">Container
+        /// fleet deployments</a>.
+        /// </para>
         /// </summary>
         public DeploymentStatus DeploymentStatus { get; set; }
 

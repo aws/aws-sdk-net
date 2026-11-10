@@ -5760,6 +5760,52 @@ namespace Amazon.GameLift
     }
 
     /// <summary>
+    /// Constants used for properties of type LogDeliveryDestinationType.
+    /// </summary>
+    public class LogDeliveryDestinationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLOUDWATCH for LogDeliveryDestinationType
+        /// </summary>
+        public static readonly LogDeliveryDestinationType CLOUDWATCH = new LogDeliveryDestinationType("CLOUDWATCH");
+
+        /// <summary>
+        /// Constant FIREHOSE for LogDeliveryDestinationType
+        /// </summary>
+        public static readonly LogDeliveryDestinationType FIREHOSE = new LogDeliveryDestinationType("FIREHOSE");
+
+        /// <summary>
+        /// Constant S3 for LogDeliveryDestinationType
+        /// </summary>
+        public static readonly LogDeliveryDestinationType S3 = new LogDeliveryDestinationType("S3");
+
+        /// <summary>
+        /// Constructs a custom LogDeliveryDestinationType for a value not among the defined constants.
+        /// </summary>
+        public LogDeliveryDestinationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogDeliveryDestinationType FindValue(string value)
+        {
+            return FindValue<LogDeliveryDestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogDeliveryDestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type LogDestination.
     /// </summary>
     public class LogDestination : ConstantClass

@@ -67,6 +67,21 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             {
                 writer.WriteStartMap(null);
                 var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAddLogDeliveryDestinations())
+                {
+                    context.Writer.WriteTextString("AddLogDeliveryDestinations");
+                    context.Writer.WriteStartArray(publicRequest.AddLogDeliveryDestinations.Count);
+                    foreach (var publicRequestAddLogDeliveryDestinationsListValue in publicRequest.AddLogDeliveryDestinations)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = LogDeliveryDestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAddLogDeliveryDestinationsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
                 if (publicRequest.IsSetCustomEventData())
                 {
                     context.Writer.WriteTextString("CustomEventData");
@@ -131,6 +146,21 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.PriorityConfiguration, context);
 
                     context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetRemoveLogDeliveryDestinations())
+                {
+                    context.Writer.WriteTextString("RemoveLogDeliveryDestinations");
+                    context.Writer.WriteStartArray(publicRequest.RemoveLogDeliveryDestinations.Count);
+                    foreach (var publicRequestRemoveLogDeliveryDestinationsListValue in publicRequest.RemoveLogDeliveryDestinations)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = LogDeliveryDestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRemoveLogDeliveryDestinationsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
                 }
                 if (publicRequest.IsSetTimeoutInSeconds())
                 {

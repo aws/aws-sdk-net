@@ -32,9 +32,8 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the CreateGameSessionQueue operation. <b>This API
     /// works with the following fleet types:</b> EC2, Anywhere, Container <para> Creates
-    /// a placement queue that processes requests for new game sessions. A queue uses FleetIQ
-    /// algorithms to locate the best available placement locations for a new game session,
-    /// and then prompts the game server process to start a new game session. </para> <para>
+    /// a placement queue that processes requests for new game sessions. A queue finds the
+    /// best available game server, then prompts it to start a new game session. </para> <para>
     /// A game session queue is configured with a set of destinations (Amazon GameLift Servers
     /// fleets or aliases) that determine where the queue can place new game sessions. These
     /// destinations can span multiple Amazon Web Services Regions, can use different instance
@@ -59,7 +58,10 @@ namespace Amazon.GameLift.Model
     /// <li> <para> <c>PriorityConfiguration</c> </para> </li> </ul> </li> <li> <para> Create
     /// a queue with special rules for processing player latency data. </para> <ul> <li> <para>
     /// Required parameters <c>Name</c> and <c>Destinations</c> </para> </li> <li> <para>
-    /// <c>PlayerLatencyPolicies</c> </para> </li> </ul> </li> </ul> <para> <b>Results</b>
+    /// <c>PlayerLatencyPolicies</c> </para> </li> </ul> </li> <li> <para> Create a queue
+    /// that delivers game session placement insight logs to one or more log destinations.
+    /// </para> <ul> <li> <para> Required parameters <c>Name</c> and <c>Destinations</c> </para>
+    /// </li> <li> <para> <c>LogConfiguration</c> </para> </li> </ul> </li> </ul> <para> <b>Results</b>
     /// </para> <para> If successful, this operation returns a new <c>GameSessionQueue</c>
     /// object with an assigned queue ARN. Use the queue's name or ARN when submitting new
     /// game session requests with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
@@ -127,6 +129,23 @@ namespace Amazon.GameLift.Model
         internal bool IsSetFilterConfiguration() => this.FilterConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// An optional configuration that delivers game session placement insight logs to one
+        /// or more destinations of your choice. Use these logs to diagnose why a game session
+        /// placement is <c>FULFILLED</c>, <c>CANCELLED</c>, <c>TIMED_OUT</c>, or <c>FAILED</c>,
+        /// which locations were evaluated, and the latency and cost factors that influenced each
+        /// decision.
+        /// </para>
+        /// </summary>
+        public GameSessionQueueLogConfiguration LogConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LogConfiguration property is set.
+        /// </summary>
+        internal bool IsSetLogConfiguration() => this.LogConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// A descriptive label that is associated with game session queue. Queue names must be
@@ -183,9 +202,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PriorityConfiguration. 
         /// <para>
         /// Custom settings to use when prioritizing destinations and locations for game session
-        /// placements. This configuration replaces the FleetIQ default prioritization process.
-        /// Priority types that are not explicitly named will be automatically applied at the
-        /// end of the prioritization process. 
+        /// placements. This configuration replaces the default prioritization process. Priority
+        /// types that are not explicitly named will be automatically applied at the end of the
+        /// prioritization process. 
         /// </para>
         /// </summary>
         public PriorityConfiguration PriorityConfiguration { get; set; }

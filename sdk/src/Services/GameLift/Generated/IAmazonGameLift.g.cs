@@ -2491,9 +2491,8 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// Creates a placement queue that processes requests for new game sessions. A queue uses
-        /// FleetIQ algorithms to locate the best available placement locations for a new game
-        /// session, and then prompts the game server process to start a new game session.
+        /// Creates a placement queue that processes requests for new game sessions. A queue finds
+        /// the best available game server, then prompts it to start a new game session.
         /// </para>
         ///  
         /// <para>
@@ -2569,6 +2568,19 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <c>PlayerLatencyPolicies</c> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Create a queue that delivers game session placement insight logs to one or more log
+        /// destinations.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Required parameters <c>Name</c> and <c>Destinations</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LogConfiguration</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -2643,9 +2655,8 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// Creates a placement queue that processes requests for new game sessions. A queue uses
-        /// FleetIQ algorithms to locate the best available placement locations for a new game
-        /// session, and then prompts the game server process to start a new game session.
+        /// Creates a placement queue that processes requests for new game sessions. A queue finds
+        /// the best available game server, then prompts it to start a new game session.
         /// </para>
         ///  
         /// <para>
@@ -2721,6 +2732,19 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <c>PlayerLatencyPolicies</c> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Create a queue that delivers game session placement insight logs to one or more log
+        /// destinations.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Required parameters <c>Name</c> and <c>Destinations</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LogConfiguration</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>

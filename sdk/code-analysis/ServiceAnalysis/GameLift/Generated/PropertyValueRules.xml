@@ -3082,6 +3082,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.LogDeliveryDestination.DestinationArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:[a-zA-Z0-9:/*._#-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.ManagedCapacityConfiguration.ScaleInAfterInactivityMinutes</property>
     <min>5</min>
     <max>1440</max>
