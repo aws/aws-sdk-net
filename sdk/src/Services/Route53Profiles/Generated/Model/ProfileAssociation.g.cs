@@ -105,6 +105,22 @@ namespace Amazon.Route53Profiles.Model
         internal bool IsSetOwnerId() => this.OwnerId != null;
 
         /// <summary>
+        /// Gets and sets the property Priority. 
+        /// <para>
+        ///  The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile
+        /// associations for a VPC in priority order, starting with the lowest value. Associations
+        /// created without a priority have priority 100. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 100, Max = 9900)]
+        public int? Priority { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Priority property is set.
+        /// </summary>
+        internal bool IsSetPriority() => this.Priority.HasValue;
+
+        /// <summary>
         /// Gets and sets the property ProfileId. 
         /// <para>
         ///  ID of the Profile. 

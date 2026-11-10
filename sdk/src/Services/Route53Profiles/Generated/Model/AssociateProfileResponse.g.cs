@@ -38,7 +38,7 @@ namespace Amazon.Route53Profiles.Model
         /// Gets and sets the property ProfileAssociation. 
         /// <para>
         ///  The association that you just created. The association has an ID that you can use
-        /// to identify it in other requests, like update and delete. 
+        /// to identify it in other requests, such as update and delete. 
         /// </para>
         /// </summary>
         public ProfileAssociation ProfileAssociation { get; set; }
