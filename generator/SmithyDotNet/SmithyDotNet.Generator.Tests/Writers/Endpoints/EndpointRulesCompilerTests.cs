@@ -35,7 +35,7 @@ public class EndpointRulesCompilerTests
     [Fact]
     public void ThrowsOnUnsupportedFunction()
     {
-        Assert.Throws<GeneratorException>(() => CompileCondition("aws.isVirtualHostableS3Bucket", """
+        Assert.Throws<GeneratorException>(() => CompileCondition("aws.unknownFunction", """
             "x"
             """));
     }
@@ -109,12 +109,14 @@ public class EndpointRulesCompilerTests
         Assert.Contains("""if (ParseArn((string)refs["Bucket"]) != null)""", output);
     }
 
-    [Fact]
-    public void IsValidHostLabelEmitsCastArgumentsAsBooleanCall()
+    // Boolean functions, so no "!= null"; their args are cast to (string) and (bool).
+    [Theory]
+    [InlineData("isValidHostLabel", "IsValidHostLabel")]
+    [InlineData("aws.isVirtualHostableS3Bucket", "IsVirtualHostableS3Bucket")]
+    public void HostLabelCheckEmitsCastArgumentsAsBooleanCall(string fn, string method)
     {
-        // isValidHostLabel is boolean, so no "!= null"; its args are cast to (string) and (bool).
-        var output = CompileCondition("isValidHostLabel", """{"ref": "Region"}""", "false");
-        Assert.Contains("""if (IsValidHostLabel((string)refs["Region"], false))""", output);
+        var output = CompileCondition(fn, """{"ref": "Bucket"}""", "false");
+        Assert.Contains($$"""if ({{method}}((string)refs["Bucket"], false))""", output);
     }
 
     [Fact]
