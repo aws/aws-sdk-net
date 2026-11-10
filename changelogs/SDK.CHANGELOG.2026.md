@@ -1,3 +1,40 @@
+### 4.0.367.0 (2026-11-10 19:10 UTC)
+* ARCRegionswitch (4.0.106.0)
+	* Adds RetryableConflictException to UpdatePlan so AWS SDKs automatically retry updates that conflict with a concurrent change.
+* BedrockAgentCoreControl (4.0.127.0)
+	* Amazon Bedrock AgentCore Gateway now supports domainOverride so JWT-authorized gateways can advertise your public domain in OAuth discovery behind a proxy or custom domain. AgentCore Runtime adds warmup lifecycle hooks and specifying runtime memory via hooksConfiguration and resourceConfigurations.
+* CloudWatchOmni (4.0.103.0)
+	* Release of GetSpaceDataAccess API - Used to get temporary credentials, limited to the requested actions, for working with data in a space.
+* Connect (4.0.132.0)
+	* Amazon Connect now returns Contact Lens conversational analytics configuration in the DescribeContact API. Customers can retrieve a contact's analytics, redaction, summarization, and sentiment settings, consistent with the configuration already available in contact trace records and contact events.
+* DeviceFarm (4.0.103.0)
+	* Adds the NONE insights type to disable insights generation for a run, a testPackageArn field in run details, and a new artifact type for device connect command logs.
+* EC2 (4.0.132.3)
+	* EC2 is now generated from its Smithy model. There are no changes to the public API.
+* GameLift (4.0.105.0)
+	* Amazon GameLift Servers adds game session placement insights. Logs show how the queue's priority configuration, along with player latency and cost data, are applied to each placement request. Use game session placement insights to diagnose why game session placements succeed, fail, or time out.
+* LakeFormation (4.0.102.0)
+	* Adds support for governing AWS Glue user-defined functions with Lake Formation permissions. This release adds the UserDefinedFunction and AnyResource resources, the EXECUTE permission, and the GetTemporaryGlueFunctionCredentials and GetGlueFunctionSessionContext APIs.
+* MarketplaceAgreement (4.0.104.0)
+	* This release adds the freeTrialSummary.trialEndTime field to DescribeAgreement and the freeTrialEndTime field to SearchAgreements results, so you can see when an agreement's free trial ends.
+* NetworkFirewall (4.0.107.0)
+	* Firewall Policy V2 for Network Firewall
+* PCS (4.0.104.0)
+	* Added support for configuring AMIs, Amazon EC2 security groups, SSH key pairs, and launch template modes when creating or updating AWS PCS compute node groups.
+* Route53Profiles (4.0.101.0)
+	* Adds support for having multiple profiles on one VPC. This is done using a priority system to handle conflicts on the dataplane.
+* S3Tables (4.0.102.0)
+	* Adds support for server access logging for Amazon S3 table buckets with the new PutTableBucketLogging and GetTableBucketLogging APIs.
+* SimpleNotificationService (4.0.100.26)
+	* Fixed `FindTopic` throwing `ArgumentNullException` when `ListTopics` returns no topics (https://github.com/aws/aws-sdk-net/issues/4586)
+* VerifiedPermissions (4.0.101.0)
+	* Inconsequential changes to model formatting
+* Core 4.0.103.0
+	* Fixed epoch-seconds timestamps in responses picking up sub-millisecond floating-point error (for example `1762594202.123` unmarshalled as `.1229999`). Epoch-seconds values are now truncated to millisecond precision, per the Smithy timestamp format.
+	* Reduce per-request overhead of disabled request metrics and the no-op tracer provider by avoiding allocations and locks when they are not collected.
+	* The updated Standard retry behavior is now the default: transient errors are retried with shorter backoff, and throttling errors consume less retry quota. HTTP 429 responses without a recognized error code are now retried as throttling errors. DynamoDB and DynamoDB Streams clients now default to 3 retries (previously 10) unless AWS_MAX_ATTEMPTS, max_attempts or MaxErrorRetry is set. The AWS_NEW_RETRIES_2026 environment variable is no longer used.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.366.0 (2026-11-09 19:43 UTC)
 * Batch (4.0.105.0)
 	* Adds support for additional Amazon EKS security context settings in AWS Batch. Pod-level settings include fsGroup, runAsUser, runAsGroup, runAsNonRoot, and seccompProfile. Container-level settings add Linux capabilities and seccompProfile to existing runAsUser, runAsGroup, and runAsNonRoot support.
