@@ -1,0 +1,9 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Fixed epoch-seconds timestamps in responses picking up sub-millisecond floating-point error (for example `1762594202.123` unmarshalled as `.1229999`). Epoch-seconds values are now truncated to millisecond precision, per the Smithy timestamp format."
+        ],
+        "type": "patch",
+        "updateMinimum": true
+    }
+}

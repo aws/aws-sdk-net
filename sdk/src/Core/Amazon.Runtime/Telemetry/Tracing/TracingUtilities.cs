@@ -14,6 +14,7 @@
  */
 
 using System;
+using Amazon.Runtime.Telemetry.Tracing.NoOp;
 using Amazon.Util;
 
 namespace Amazon.Runtime.Telemetry.Tracing
@@ -23,6 +24,20 @@ namespace Amazon.Runtime.Telemetry.Tracing
     /// </summary>
     internal static class TracingUtilities
     {
+        /// <summary>
+        /// Shared span returned when tracing uses the SDK's no-op tracer provider.
+        /// </summary>
+        internal static readonly TraceSpan NoOpSpan = new NoOpTraceSpan();
+
+        /// <summary>
+        /// Returns true when the configured tracer provider is the SDK's no-op provider,
+        /// in which case creating spans has no observable effect.
+        /// </summary>
+        internal static bool IsNoOp(IClientConfig config)
+        {
+            return config.TelemetryProvider.TracerProvider is NoOpTracerProvider;
+        }
+
         /// <summary>
         /// Creates a new span from the requestContext using the span details.
         /// </summary>
@@ -39,6 +54,9 @@ namespace Amazon.Runtime.Telemetry.Tracing
             SpanKind spanKind = SpanKind.INTERNAL,
             SpanContext parentContext = null)
         {
+            if (IsNoOp(requestContext.ClientConfig))
+                return NoOpSpan;
+
             var serviceId = requestContext.ClientConfig.ServiceId;
 
             if (initialAttributes == null)

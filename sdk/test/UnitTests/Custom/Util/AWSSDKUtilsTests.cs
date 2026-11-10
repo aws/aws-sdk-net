@@ -202,6 +202,38 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
+        public void ConvertFromUnixDoubleEpochSecondsTruncatesToMilliseconds()
+        {
+            // 1398796238.005 cannot be represented exactly as a double; the result must still be exactly 5 milliseconds.
+            var expectedDateTime = new DateTime(2014, 4, 29, 18, 30, 38, 5, DateTimeKind.Utc);
+            Assert.AreEqual(expectedDateTime, AWSSDKUtils.ConvertFromUnixDoubleEpochSeconds(1398796238.005));
+            Assert.AreEqual(expectedDateTime.AddMilliseconds(118), AWSSDKUtils.ConvertFromUnixDoubleEpochSeconds(1398796238.123));
+            Assert.AreEqual(expectedDateTime.AddMilliseconds(118), AWSSDKUtils.ConvertFromUnixDoubleEpochSeconds(1398796238.1239));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        public void ConvertFromUnixDecimalEpochSecondsTruncatesToMilliseconds()
+        {
+            var expectedDateTime = new DateTime(2025, 11, 8, 9, 30, 2, 123, DateTimeKind.Utc);
+            Assert.AreEqual(expectedDateTime, AWSSDKUtils.ConvertFromUnixDecimalEpochSeconds(1762594202.123m));
+            Assert.AreEqual(expectedDateTime, AWSSDKUtils.ConvertFromUnixDecimalEpochSeconds(1762594202.1239m));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        public void ConvertFromUnixEpochSecondsOutOfRangeThrows()
+        {
+            // Epoch milliseconds sent in a seconds field must not wrap into a valid DateTime.
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => AWSSDKUtils.ConvertFromUnixDecimalEpochSeconds(1794182400000m));
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => AWSSDKUtils.ConvertFromUnixDoubleEpochSeconds(1794182400000));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
         public void ConvertFromUnixEpochMilliseconds()
         {
             // Sample UTC value: 9/8/2020 18:48:34.970

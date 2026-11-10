@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "SimpleNotificationService",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fixed `FindTopic` throwing `ArgumentNullException` when `ListTopics` returns no topics (https://github.com/aws/aws-sdk-net/issues/4586)"
+      ]
+    }
+  ]
+}

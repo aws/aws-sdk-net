@@ -154,8 +154,22 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(double.Parse(text, CultureInfo.InvariantCulture), UnmarshallValue(DoubleUnmarshaller.Instance, text));
             Assert.AreEqual(float.Parse(text, CultureInfo.InvariantCulture), UnmarshallValue(FloatUnmarshaller.Instance, text));
             Assert.AreEqual(decimal.Parse(text, CultureInfo.InvariantCulture), UnmarshallValue(DecimalUnmarshaller.Instance, text));
-            Assert.AreEqual(AWSSDKUtils.EPOCH_START.AddSeconds(double.Parse("1533081600.123456789", CultureInfo.InvariantCulture)), UnmarshallValue(DateTimeUnmarshaller.Instance, "1533081600.123456789"));
+            Assert.AreEqual(new DateTime(2018, 8, 1, 0, 0, 0, 123, DateTimeKind.Utc), UnmarshallValue(DateTimeUnmarshaller.Instance, "1533081600.123456789"));
             Assert.AreEqual(100000m, UnmarshallValue(DecimalUnmarshaller.Instance, "1e5"));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestEpochSecondsWithMillisecondsIsExact()
+        {
+            // 1762594202.123 cannot be represented exactly as a double; the result must still be exactly 123 milliseconds.
+            var expected = new DateTime(2025, 11, 8, 9, 30, 2, 123, DateTimeKind.Utc);
+            Assert.AreEqual(expected, UnmarshallValue(DateTimeUnmarshaller.Instance, "1762594202.123"));
+            Assert.AreEqual(expected, UnmarshallValue(DateTimeUnmarshaller.Instance, "\"1762594202.123\""));
+            Assert.AreEqual(expected, UnmarshallValue(NullableDateTimeUnmarshaller.Instance, "1762594202.123"));
+            Assert.AreEqual(expected, UnmarshallValue(NullableDateTimeUnmarshaller.Instance, "\"1762594202.123\""));
+            Assert.AreEqual(expected, DateTimeUnmarshaller.UnmarshallInternal("1762594202.123", treatAsNullable: false));
         }
 
         [TestMethod]

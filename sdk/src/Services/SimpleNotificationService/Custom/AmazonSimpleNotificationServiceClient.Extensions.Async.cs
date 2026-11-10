@@ -157,15 +157,13 @@ namespace Amazon.SimpleNotificationService
             {
                 var response = await this.ListTopicsAsync(new ListTopicsRequest { NextToken = nextToken }).ConfigureAwait(false);
 
-                var matchedTopic = response.Topics.FirstOrDefault(x => TopicNameMatcher(x.TopicArn, topicName));
-
+                var matchedTopic = response.Topics?.FirstOrDefault(x => TopicNameMatcher(x.TopicArn, topicName));
                 if (matchedTopic != null)
                 {
                     return matchedTopic;
                 }
 
                 nextToken = response.NextToken;
-
             } while (!string.IsNullOrEmpty(nextToken));
 
             return null;
