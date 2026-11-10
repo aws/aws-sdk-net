@@ -30,13 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// The VPC and subnets for a proxy mode firewall endpoint. This is used in <a>CreateFirewall</a>
+    /// Contains the VPC and subnets for a proxy mode firewall endpoint. You use it in <c>CreateFirewall</c>
     /// when <c>NoSourcePreservation</c> is <c>TRUE</c>, to specify where Network Firewall
     /// creates the firewall endpoint. 
     /// 
     ///  
     /// <para>
-    /// This differs from <a>VpcEndpointAssociation</a>, which defines additional secondary
+    /// This differs from <c>VpcEndpointAssociation</c>, which defines additional secondary
     /// endpoints for a firewall in other VPCs. 
     /// </para>
     /// </summary>

@@ -100,6 +100,26 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetFirewallRuleGroup())
+            {
+                context.Writer.WritePropertyName("FirewallRuleGroup");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FirewallRuleGroupMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FirewallRuleGroup, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetIpsRuleGroup())
+            {
+                context.Writer.WritePropertyName("IpsRuleGroup");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IpsRuleGroupMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IpsRuleGroup, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetRuleGroup())
             {
                 context.Writer.WritePropertyName("RuleGroup");

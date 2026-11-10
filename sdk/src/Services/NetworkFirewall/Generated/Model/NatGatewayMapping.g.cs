@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// A NAT gateway that a proxy mode firewall uses to proxy traffic. This is used in <a>CreateFirewall</a>
+    /// A NAT gateway that a proxy mode firewall uses to proxy traffic. This is used in <c>CreateFirewall</c>
     /// when <c>NoSourcePreservation</c> is <c>TRUE</c>.
     /// </summary>
     public partial class NatGatewayMapping

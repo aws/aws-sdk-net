@@ -52,6 +52,20 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("FirewallRuleGroup", targetDepth, ref reader))
+                {
+                    var unmarshaller = FirewallRuleGroupUnmarshaller.Instance;
+                    unmarshalledObject.FirewallRuleGroup = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("IpsRuleGroup", targetDepth, ref reader))
+                {
+                    var unmarshaller = IpsRuleGroupUnmarshaller.Instance;
+                    unmarshalledObject.IpsRuleGroup = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("RuleGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleGroupUnmarshaller.Instance;

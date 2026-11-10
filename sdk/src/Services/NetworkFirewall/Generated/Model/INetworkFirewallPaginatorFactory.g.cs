@@ -57,6 +57,12 @@ namespace Amazon.NetworkFirewall.Model
         IListFirewallPoliciesPaginator ListFirewallPolicies(ListFirewallPoliciesRequest request);
 
         /// <summary>
+        /// Paginator for ListFirewallPoliciesV2 operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListFirewallPoliciesV2Paginator ListFirewallPoliciesV2(ListFirewallPoliciesV2Request request);
+
+        /// <summary>
         /// Paginator for ListFirewalls operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
