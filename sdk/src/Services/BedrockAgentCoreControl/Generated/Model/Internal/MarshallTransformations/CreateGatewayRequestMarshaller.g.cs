@@ -98,6 +98,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("description");
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
+            if (publicRequest.IsSetDomainOverride())
+            {
+                context.Writer.WritePropertyName("domainOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DomainOverrideMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DomainOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetExceptionLevel())
             {
                 context.Writer.WritePropertyName("exceptionLevel");

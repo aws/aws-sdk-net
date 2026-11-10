@@ -143,6 +143,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("hooksConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = RuntimeHooksConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.HooksConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("lastUpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -189,6 +196,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RequestHeaderConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RequestHeaderConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("resourceConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceConfiguration, ResourceConfigurationUnmarshaller>(ResourceConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ResourceConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
