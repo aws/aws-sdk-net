@@ -1172,6 +1172,10 @@ namespace Amazon.ARCRegionswitch
         /// HTTP Status Code: 404
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.RetryableConflictException">
+        /// The request conflicted with a concurrent modification of the same resource and did
+        /// not take effect.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlan">REST API Reference for UpdatePlan Operation</seealso>
         UpdatePlanResponse UpdatePlan(UpdatePlanRequest request);
 #endif
@@ -1192,6 +1196,10 @@ namespace Amazon.ARCRegionswitch
         /// <para>
         /// HTTP Status Code: 404
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.RetryableConflictException">
+        /// The request conflicted with a concurrent modification of the same resource and did
+        /// not take effect.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlan">REST API Reference for UpdatePlan Operation</seealso>
         Task<UpdatePlanResponse> UpdatePlanAsync(UpdatePlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
