@@ -125,8 +125,11 @@ public static class CoreNuspecDependencies
 {
     private static readonly Dictionary<string, PackageRef[]> ByTargetFramework = new()
     {
-        ["net472"] = [new("System.Buffers", "4.5.1"), new("System.Memory", "4.5.5"), new("System.Text.Json", "8.0.6")],
-        ["netstandard2.0"] = [new("Microsoft.Bcl.AsyncInterfaces", "8.0.0"), new("System.Buffers", "4.5.1"), new("System.Memory", "4.5.5"), new("System.Text.Json", "8.0.6")],
+        ["net472"] = [new("System.Buffers", "4.5.1"), new("System.Memory", "4.5.5"), new("System.Text.Json", "8.0.6"), new("System.IO.Hashing", "11.0.0")],
+        ["netstandard2.0"] = [new("Microsoft.Bcl.AsyncInterfaces", "8.0.0"), new("System.Buffers", "4.5.1"), new("System.Memory", "4.5.5"), new("System.Text.Json", "8.0.6"), new("System.IO.Hashing", "11.0.0")],
+        ["net8.0"] = [new("System.IO.Hashing", "11.0.0")],
+        ["net10.0"] = [new("System.IO.Hashing", "11.0.0")],
+        ["ne11.0"] = [new("System.IO.Hashing", "11.0.0")]
     };
 
     public static IReadOnlyList<PackageRef> For(string targetFramework) => ByTargetFramework.GetValueOrDefault(targetFramework, []);
