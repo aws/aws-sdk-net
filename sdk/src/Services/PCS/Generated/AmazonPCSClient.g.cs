@@ -573,10 +573,13 @@ namespace Amazon.PCS
         /// PCS uses the information you provide to this API action to launch compute nodes in
         /// your account. You can only specify subnets in the same Amazon VPC as your cluster.
         /// You receive billing charges for the compute nodes that PCS launches in your account.
-        /// You must already have a launch template before you call this API. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
-        /// an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide for Linux Instances</i>.
+        /// You can configure common instance settings, such as the AMI, security groups, and
+        /// SSH key pair, directly on the compute node group, or you can provide a custom EC2
+        /// launch template. To use a launch template that PCS manages, set <c>launchTemplateMode</c>
+        /// to <c>MANAGED</c> and don't provide <c>customLaunchTemplate</c>. In this case, you
+        /// must specify <c>amiId</c> and <c>securityGroupIds</c>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_cng_instance-settings.html">Configuring
+        /// instance settings for compute node groups in PCS</a> in the <i>PCS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComputeNodeGroup service method.</param>
         /// <returns>The response from the CreateComputeNodeGroup service method, as returned by PCS.</returns>
@@ -726,10 +729,13 @@ namespace Amazon.PCS
         /// PCS uses the information you provide to this API action to launch compute nodes in
         /// your account. You can only specify subnets in the same Amazon VPC as your cluster.
         /// You receive billing charges for the compute nodes that PCS launches in your account.
-        /// You must already have a launch template before you call this API. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
-        /// an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide for Linux Instances</i>.
+        /// You can configure common instance settings, such as the AMI, security groups, and
+        /// SSH key pair, directly on the compute node group, or you can provide a custom EC2
+        /// launch template. To use a launch template that PCS manages, set <c>launchTemplateMode</c>
+        /// to <c>MANAGED</c> and don't provide <c>customLaunchTemplate</c>. In this case, you
+        /// must specify <c>amiId</c> and <c>securityGroupIds</c>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_cng_instance-settings.html">Configuring
+        /// instance settings for compute node groups in PCS</a> in the <i>PCS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComputeNodeGroup service method.</param>
         /// <param name="cancellationToken">

@@ -38,7 +38,7 @@ namespace Amazon.PCS.Model
         /// Gets and sets the property AmiId. 
         /// <para>
         /// The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not
-        /// provided, PCS uses the AMI ID specified in the custom launch template.
+        /// present, PCS uses the AMI ID specified in the custom launch template.
         /// </para>
         /// </summary>
         public string AmiId { get; set; }
@@ -91,9 +91,13 @@ namespace Amazon.PCS.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CustomLaunchTemplate.
+        /// Gets and sets the property CustomLaunchTemplate. 
+        /// <para>
+        /// The custom Amazon EC2 launch template associated with the compute node group. This
+        /// value is present when <c>launchTemplateMode</c> is <c>CUSTOM</c> and isn't present
+        /// when <c>launchTemplateMode</c> is <c>MANAGED</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public CustomLaunchTemplate CustomLaunchTemplate { get; set; }
 
         /// <summary>
@@ -174,6 +178,33 @@ namespace Amazon.PCS.Model
         internal bool IsSetInstanceConfigs() => this.InstanceConfigs != null && (this.InstanceConfigs.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property LaunchTemplateMode. 
+        /// <para>
+        /// Indicates whether the compute node group uses a custom launch template or a launch
+        /// template that PCS manages. The default value is <c>CUSTOM</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CUSTOM</c> – The compute node group uses the launch template in <c>customLaunchTemplate</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MANAGED</c> – PCS creates and manages the launch template.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public LaunchTemplateMode LaunchTemplateMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LaunchTemplateMode property is set.
+        /// </summary>
+        internal bool IsSetLaunchTemplateMode() => this.LaunchTemplateMode != null;
+
+        /// <summary>
         /// Gets and sets the property ModifiedAt. 
         /// <para>
         /// The date and time the resource was modified.
@@ -250,6 +281,29 @@ namespace Amazon.PCS.Model
         internal bool IsSetScalingConfiguration() => this.ScalingConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        /// The IDs of the EC2 security groups configured directly on the compute node group.
+        /// PCS uses these security groups instead of the security groups in the custom launch
+        /// template. This value isn't present if security groups aren't configured directly on
+        /// the compute node group. In that case, PCS uses the security groups in the custom launch
+        /// template.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> SecurityGroupIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the SecurityGroupIds property is set.
+        /// </summary>
+        internal bool IsSetSecurityGroupIds() => this.SecurityGroupIds != null && (this.SecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property SlurmConfiguration.
         /// </summary>
         public ComputeNodeGroupSlurmConfiguration SlurmConfiguration { get; set; }
@@ -268,6 +322,23 @@ namespace Amazon.PCS.Model
         /// Checks to see if the SpotOptions property is set.
         /// </summary>
         internal bool IsSetSpotOptions() => this.SpotOptions != null;
+
+        /// <summary>
+        /// Gets and sets the property SshKeyName. 
+        /// <para>
+        /// The name of the EC2 key pair configured directly on the compute node group. PCS uses
+        /// this key pair instead of the key pair in the custom launch template. This value isn't
+        /// present if a key pair isn't configured directly on the compute node group. In that
+        /// case, PCS uses the key pair in the custom launch template, if one is specified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string SshKeyName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SshKeyName property is set.
+        /// </summary>
+        internal bool IsSetSshKeyName() => this.SshKeyName != null;
 
         /// <summary>
         /// Gets and sets the property Status. 

@@ -43,7 +43,7 @@ namespace Amazon.PCS.Model
         /// idempotent request, if the original request completes successfully, the subsequent
         /// retries with the same client token return the result from the original successful
         /// request and they have no additional effect. If you don't specify a client token, the
-        /// CLI and SDK automatically generate 1 for you.
+        /// CLI and SDK automatically generate one for you.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 8, Max = 100)]

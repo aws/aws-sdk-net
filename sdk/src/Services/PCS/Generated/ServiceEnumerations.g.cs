@@ -317,6 +317,47 @@ namespace Amazon.PCS
     }
 
     /// <summary>
+    /// Constants used for properties of type LaunchTemplateMode.
+    /// </summary>
+    public class LaunchTemplateMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant CUSTOM for LaunchTemplateMode
+        /// </summary>
+        public static readonly LaunchTemplateMode CUSTOM = new LaunchTemplateMode("CUSTOM");
+
+        /// <summary>
+        /// Constant MANAGED for LaunchTemplateMode
+        /// </summary>
+        public static readonly LaunchTemplateMode MANAGED = new LaunchTemplateMode("MANAGED");
+
+        /// <summary>
+        /// Constructs a custom LaunchTemplateMode for a value not among the defined constants.
+        /// </summary>
+        public LaunchTemplateMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LaunchTemplateMode FindValue(string value)
+        {
+            return FindValue<LaunchTemplateMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LaunchTemplateMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type NetworkType.
     /// </summary>
     public class NetworkType : ConstantClass
