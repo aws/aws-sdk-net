@@ -138,6 +138,11 @@ namespace Amazon.DeviceFarm
         public static readonly ArtifactType CUSTOMER_ARTIFACT_LOG = new ArtifactType("CUSTOMER_ARTIFACT_LOG");
 
         /// <summary>
+        /// Constant DEVICE_CONNECT_COMMAND_LOG for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType DEVICE_CONNECT_COMMAND_LOG = new ArtifactType("DEVICE_CONNECT_COMMAND_LOG");
+
+        /// <summary>
         /// Constant DEVICE_LOG for ArtifactType
         /// </summary>
         public static readonly ArtifactType DEVICE_LOG = new ArtifactType("DEVICE_LOG");
@@ -864,6 +869,11 @@ namespace Amazon.DeviceFarm
     /// </summary>
     public class InsightsType : ConstantClass
     {
+        /// <summary>
+        /// Constant NONE for InsightsType
+        /// </summary>
+        public static readonly InsightsType NONE = new InsightsType("NONE");
+
         /// <summary>
         /// Constant TEST_REPORT for InsightsType
         /// </summary>

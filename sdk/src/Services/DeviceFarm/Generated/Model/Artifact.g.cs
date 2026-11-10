@@ -168,6 +168,10 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// TESTSPEC_OUTPUT
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DEVICE_CONNECT_COMMAND_LOG
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ArtifactType Type { get; set; }

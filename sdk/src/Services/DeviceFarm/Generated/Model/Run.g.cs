@@ -579,6 +579,21 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetStopped() => this.Stopped.HasValue;
 
         /// <summary>
+        /// Gets and sets the property TestPackageArn. 
+        /// <para>
+        /// The ARN of the test package the run was scheduled with. This field is not returned
+        /// for test types that do not use a test package, such as <c>BUILTIN_FUZZ</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 32, Max = 1011)]
+        public string TestPackageArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TestPackageArn property is set.
+        /// </summary>
+        internal bool IsSetTestPackageArn() => this.TestPackageArn != null;
+
+        /// <summary>
         /// Gets and sets the property TestSpecArn. 
         /// <para>
         /// The ARN of the YAML-formatted test specification for the run.
