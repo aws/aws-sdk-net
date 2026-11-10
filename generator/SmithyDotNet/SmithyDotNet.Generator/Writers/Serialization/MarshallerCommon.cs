@@ -177,6 +177,8 @@ public static class MarshallerCommon
             BooleanShape => $"SetBool({value}.Value)",
             IntegerShape or IntEnumShape => $"SetInt32({value}.Value)",
             LongShape => $"SetInt64({value}.Value)",
+            ByteShape => $"SetSByte({value}.Value)",
+            ShortShape => $"SetInt16({value}.Value)",
             TimestampShape => $"SetTimestamp({value}.Value)",
             BlobShape => $"SetByteBuf({value}.ToArray())",
             var other => throw new GeneratorException($"Unsupported @eventHeader type '{other.Type}' on member '{member.ModeledName}'."),

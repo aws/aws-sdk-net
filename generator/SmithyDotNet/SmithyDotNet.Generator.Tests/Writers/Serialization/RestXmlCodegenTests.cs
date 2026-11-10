@@ -76,6 +76,10 @@ public class RestXmlCodegenTests
         Assert.Contains("""context.Writer.WriteElementString("ThingName", StringUtils.FromString(publicRequest.Name));""", source);
         Assert.Contains("""context.Writer.WriteElementString("count", StringUtils.FromInt(publicRequest.Count.Value));""", source);
         Assert.Contains("""context.Writer.WriteElementString("big", StringUtils.FromLong(publicRequest.Big.Value));""", source);
+        // Full Numeric Type Support specification: decimal text, never through double.
+        Assert.Contains("""context.Writer.WriteElementString("tiny", StringUtils.FromSByte(publicRequest.Tiny.Value));""", source);
+        Assert.Contains("""context.Writer.WriteElementString("huge", StringUtils.FromBigInteger(publicRequest.Huge.Value));""", source);
+        Assert.Contains("""context.Writer.WriteElementString("precise", StringUtils.FromBigDecimal(publicRequest.Precise.Value));""", source);
         Assert.Contains("""context.Writer.WriteElementString("flag", StringUtils.FromBool(publicRequest.Flag.Value));""", source);
         Assert.Contains("""context.Writer.WriteElementString("ratio", StringUtils.FromDouble(publicRequest.Ratio.Value));""", source);
         Assert.Contains("""context.Writer.WriteElementString("when", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.When.Value));""", source);

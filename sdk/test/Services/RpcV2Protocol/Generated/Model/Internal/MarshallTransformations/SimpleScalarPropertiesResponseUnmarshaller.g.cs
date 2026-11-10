@@ -63,7 +63,7 @@ namespace Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations
 
                     case "byteValue":
                         context.AddPathSegment("ByteValue");
-                        unmarshalledObject.ByteValue = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        unmarshalledObject.ByteValue = CborNullableSByteUnmarshaller.Instance.Unmarshall(context);
                         context.PopPathSegment();
                         break;
 
@@ -99,7 +99,7 @@ namespace Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations
 
                     case "shortValue":
                         context.AddPathSegment("ShortValue");
-                        unmarshalledObject.ShortValue = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        unmarshalledObject.ShortValue = CborNullableShortUnmarshaller.Instance.Unmarshall(context);
                         context.PopPathSegment();
                         break;
 

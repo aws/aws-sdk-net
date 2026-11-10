@@ -53,7 +53,7 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property HeaderByte.
         /// </summary>
-        public int? HeaderByte { get; set; }
+        public sbyte? HeaderByte { get; set; }
 
         /// <summary>
         /// Checks to see if the HeaderByte property is set.
@@ -155,7 +155,7 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property HeaderShort.
         /// </summary>
-        public int? HeaderShort { get; set; }
+        public short? HeaderShort { get; set; }
 
         /// <summary>
         /// Checks to see if the HeaderShort property is set.
