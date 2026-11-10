@@ -737,6 +737,47 @@ namespace Amazon.S3Tables
     }
 
     /// <summary>
+    /// Constants used for properties of type PartitionDateSource.
+    /// </summary>
+    public class PartitionDateSource : ConstantClass
+    {
+        /// <summary>
+        /// Constant DeliveryTime for PartitionDateSource
+        /// </summary>
+        public static readonly PartitionDateSource DeliveryTime = new PartitionDateSource("DeliveryTime");
+
+        /// <summary>
+        /// Constant EventTime for PartitionDateSource
+        /// </summary>
+        public static readonly PartitionDateSource EventTime = new PartitionDateSource("EventTime");
+
+        /// <summary>
+        /// Constructs a custom PartitionDateSource for a value not among the defined constants.
+        /// </summary>
+        public PartitionDateSource(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PartitionDateSource FindValue(string value)
+        {
+            return FindValue<PartitionDateSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PartitionDateSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ReplicationStatus.
     /// </summary>
     public class ReplicationStatus : ConstantClass
