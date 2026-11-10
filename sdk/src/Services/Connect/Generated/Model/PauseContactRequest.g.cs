@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the PauseContact operation. Allows pausing an ongoing
-    /// task contact.
+    /// Container for the parameters to the PauseContact operation. Pauses an ongoing task
+    /// or email contact.
     /// </summary>
     public partial class PauseContactRequest : AmazonConnectRequest
     {

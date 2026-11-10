@@ -24724,7 +24724,7 @@ namespace Amazon.Connect
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Allows pausing an ongoing task contact.
+        /// Pauses an ongoing task or email contact.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PauseContact service method.</param>
         /// <returns>The response from the PauseContact service method, as returned by Connect.</returns>
@@ -24774,7 +24774,7 @@ namespace Amazon.Connect
 #endif
 
         /// <summary>
-        /// Allows pausing an ongoing task contact.
+        /// Pauses an ongoing task or email contact.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PauseContact service method.</param>
         /// <param name="cancellationToken">
@@ -25186,7 +25186,7 @@ namespace Amazon.Connect
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Allows resuming a task contact in a paused state.
+        /// Resumes a task or email contact in a paused state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResumeContact service method.</param>
         /// <returns>The response from the ResumeContact service method, as returned by Connect.</returns>
@@ -25233,7 +25233,7 @@ namespace Amazon.Connect
 #endif
 
         /// <summary>
-        /// Allows resuming a task contact in a paused state.
+        /// Resumes a task or email contact in a paused state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResumeContact service method.</param>
         /// <param name="cancellationToken">

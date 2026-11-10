@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the ResumeContact operation. Allows resuming a task
+    /// Container for the parameters to the ResumeContact operation. Resumes a task or email
     /// contact in a paused state.
     /// </summary>
     public partial class ResumeContactRequest : AmazonConnectRequest
