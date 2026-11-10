@@ -1,0 +1,318 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.EC2.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateImage operation. Creates an Amazon EBS-backed
+    /// AMI from an Amazon EBS-backed instance that is either running or stopped. <para> If
+    /// you customized your instance with instance store volumes or Amazon EBS volumes in
+    /// addition to the root device volume, the new AMI contains block device mapping information
+    /// for those volumes. When you launch an instance from this new AMI, the instance automatically
+    /// launches with those additional volumes. </para> <para> The location of the source
+    /// instance determines where you can create the snapshots of the AMI: </para> <ul> <li>
+    /// <para> If the source instance is in a Region, you must create the snapshots in the
+    /// same Region as the instance. </para> </li> <li> <para> If the source instance is in
+    /// a Local Zone, you can create the snapshots in the same Local Zone or in its parent
+    /// Region. </para> </li> <li> <para> If the source instance is on an Outpost that supports
+    /// local snapshots, you can create the snapshots on the same Outpost or in the parent
+    /// Region of that Outpost. In this case, you must use the <c>SnapshotLocation</c> parameter
+    /// to specify where to create the snapshots. </para> </li> </ul> <para> For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create
+    /// an Amazon EBS-backed AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    /// </summary>
+    public partial class CreateImageRequest : AmazonEC2Request
+    {
+        /// <summary>
+        /// Empty constructor used to set properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateImageRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateImageRequest with the parameterized properties
+        /// </summary>
+        /// <param name="instanceId">The ID of the instance.</param>
+        /// <param name="name">A name for the new image.   Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces   ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or   underscores(_)</param>
+        public CreateImageRequest(string instanceId, string name)
+        {
+            this.InstanceId = instanceId;
+            this.Name = name;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BlockDeviceMappings. 
+        /// <para>
+        /// The block device mappings.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using the CreateImage action:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't change the volume size using the VolumeSize parameter. If you want a different
+        /// volume size, you must first change the volume size of the source instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't modify the encryption status of existing volumes or snapshots. To create
+        /// an AMI with volumes or snapshots that have a different encryption status (for example,
+        /// where the source volume and snapshots are unencrypted, and you want to create an AMI
+        /// with encrypted volumes or snapshots), copy the image instead.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The only option that can be changed for existing mappings or snapshots is <c>DeleteOnTermination</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<BlockDeviceMapping> BlockDeviceMappings { get; set; } = AWSConfigs.InitializeCollections ? new List<BlockDeviceMapping>() : null;
+
+        /// <summary>
+        /// Checks to see if the BlockDeviceMappings property is set.
+        /// </summary>
+        internal bool IsSetBlockDeviceMappings() => this.BlockDeviceMappings != null && (this.BlockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property BootModeOverride. 
+        /// <para>
+        /// The boot mode of the new image, which overrides the default boot mode. By default,
+        /// if you do not specify this parameter, the new image inherits the <c>boot-mode</c>
+        /// from the source instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// A value of <c>uefi</c> indicates that the image only supports UEFI boot mode. You
+        /// can specify this parameter only if the <c>current-instance-boot-mode</c> of the source
+        /// instance is <c>uefi</c>. To find the <c>boot-mode</c> or <c>current-instance-boot-mode</c>
+        /// of an instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The operating system contained in the AMI must be configured to support the specified
+        /// boot mode.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Instance
+        /// launch behavior with Amazon EC2 boot modes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public BootModeOverrideValues BootModeOverride { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BootModeOverride property is set.
+        /// </summary>
+        internal bool IsSetBootModeOverride() => this.BootModeOverride != null;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description for the new image.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 255)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required permissions,
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
+        /// </para>
+        /// </summary>
+        public bool? DryRun { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DryRun property is set.
+        /// </summary>
+        internal bool IsSetDryRun() => this.DryRun.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string InstanceId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceId property is set.
+        /// </summary>
+        internal bool IsSetInstanceId() => this.InstanceId != null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// A name for the new image.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]),
+        /// spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@),
+        /// or underscores(_)
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 3, Max = 128)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property NoReboot. 
+        /// <para>
+        /// Indicates whether or not the instance should be automatically rebooted before creating
+        /// the image. Specify one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>true</c> - The instance is not rebooted before creating the image. This creates
+        /// crash-consistent snapshots that include only the data that has been written to the
+        /// volumes at the time the snapshots are created. Buffered data and data in memory that
+        /// has not yet been written to the volumes is not included in the snapshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>false</c> - The instance is rebooted before creating the image. This ensures that
+        /// all buffered data and data in memory is written to the volumes before the snapshots
+        /// are created.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <c>false</c> 
+        /// </para>
+        /// </summary>
+        public bool? NoReboot { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NoReboot property is set.
+        /// </summary>
+        internal bool IsSetNoReboot() => this.NoReboot.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property SnapshotLocation. <note> 
+        /// <para>
+        /// Only supported for instances in Local Zones and for instances on Outposts that support
+        /// local snapshots. If the source instance is not in one of these locations, omit this
+        /// parameter.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The Amazon S3 location where the snapshots will be stored.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To create local snapshots in the same Local Zone or on the same Outpost as the source
+        /// instance, specify <c>local</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create regional snapshots in the parent Region of the Local Zone or Outpost, specify
+        /// <c>regional</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the source instance is in a Local Zone and you omit this parameter, regional snapshots
+        /// are created in the parent Region of the Local Zone.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the source instance is on an Outpost that supports local snapshots, this parameter
+        /// is required. If you omit it, the request fails with an <c>InvalidParameterValue</c>
+        /// error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>regional</c> (for instances in Local Zones only)
+        /// </para>
+        /// </summary>
+        public SnapshotLocationEnum SnapshotLocation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SnapshotLocation property is set.
+        /// </summary>
+        internal bool IsSetSnapshotLocation() => this.SnapshotLocation != null;
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the AMI and snapshots on creation. You can tag the AMI, the snapshots,
+        /// or both.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To tag the AMI, the value for <c>ResourceType</c> must be <c>image</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To tag the snapshots that are created of the root volume and of other Amazon EBS volumes
+        /// that are attached to the instance, the value for <c>ResourceType</c> must be <c>snapshot</c>.
+        /// The same tag is applied to all of the snapshots that are created.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you specify other values for <c>ResourceType</c>, the request fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+        /// 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications { get; set; } = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+
+        /// <summary>
+        /// Checks to see if the TagSpecifications property is set.
+        /// </summary>
+        internal bool IsSetTagSpecifications() => this.TagSpecifications != null && (this.TagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

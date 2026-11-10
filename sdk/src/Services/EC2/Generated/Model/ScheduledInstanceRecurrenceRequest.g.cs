@@ -1,0 +1,115 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.EC2.Model
+{
+    /// <summary>
+    /// Describes the recurring schedule for a Scheduled Instance.
+    /// </summary>
+    public partial class ScheduledInstanceRecurrenceRequest
+    {
+        /// <summary>
+        /// Gets and sets the property Frequency. 
+        /// <para>
+        /// The frequency (<c>Daily</c>, <c>Weekly</c>, or <c>Monthly</c>).
+        /// </para>
+        /// </summary>
+        public string Frequency { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Frequency property is set.
+        /// </summary>
+        internal bool IsSetFrequency() => this.Frequency != null;
+
+        /// <summary>
+        /// Gets and sets the property Interval. 
+        /// <para>
+        /// The interval quantity. The interval unit depends on the value of <c>Frequency</c>.
+        /// For example, every 2 weeks or every 2 months.
+        /// </para>
+        /// </summary>
+        public int? Interval { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Interval property is set.
+        /// </summary>
+        internal bool IsSetInterval() => this.Interval.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property OccurrenceDays. 
+        /// <para>
+        /// The days. For a monthly schedule, this is one or more days of the month (1-31). For
+        /// a weekly schedule, this is one or more days of the week (1-7, where 1 is Sunday).
+        /// You can't specify this value with a daily schedule. If the occurrence is relative
+        /// to the end of the month, you can specify only a single day.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<int> OccurrenceDays { get; set; } = AWSConfigs.InitializeCollections ? new List<int>() : null;
+
+        /// <summary>
+        /// Checks to see if the OccurrenceDays property is set.
+        /// </summary>
+        internal bool IsSetOccurrenceDays() => this.OccurrenceDays != null && (this.OccurrenceDays.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property OccurrenceRelativeToEnd. 
+        /// <para>
+        /// Indicates whether the occurrence is relative to the end of the specified week or month.
+        /// You can't specify this value with a daily schedule.
+        /// </para>
+        /// </summary>
+        public bool? OccurrenceRelativeToEnd { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OccurrenceRelativeToEnd property is set.
+        /// </summary>
+        internal bool IsSetOccurrenceRelativeToEnd() => this.OccurrenceRelativeToEnd.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property OccurrenceUnit. 
+        /// <para>
+        /// The unit for <c>OccurrenceDays</c> (<c>DayOfWeek</c> or <c>DayOfMonth</c>). This value
+        /// is required for a monthly schedule. You can't specify <c>DayOfWeek</c> with a weekly
+        /// schedule. You can't specify this value with a daily schedule.
+        /// </para>
+        /// </summary>
+        public string OccurrenceUnit { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OccurrenceUnit property is set.
+        /// </summary>
+        internal bool IsSetOccurrenceUnit() => this.OccurrenceUnit != null;
+    }
+}

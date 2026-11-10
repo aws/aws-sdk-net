@@ -9,7 +9,7 @@
     <property>Amazon.EC2.Model.AssociateCapacityReservationBillingOwnerRequest.UnusedReservationBillingOwnerId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.AttachImageWatermarkRequest.WatermarkName</property>
@@ -103,7 +103,7 @@
     <property>Amazon.EC2.Model.CreateLaunchTemplateVersionRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
+    <pattern>^[a-zA-Z0-9\(\)\.\-/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateLaunchTemplateVersionRequest.VersionDescription</property>
@@ -141,22 +141,22 @@
     <property>Amazon.EC2.Model.DeleteLaunchTemplateRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
+    <pattern>^[a-zA-Z0-9\(\)\.\-/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DeleteLaunchTemplateVersionsRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeAddressesAttributeRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
+    <pattern>^[a-zA-Z0-9\(\)\.\-/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeAddressTransfersRequest.MaxResults</property>
     <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeAddressesAttributeRequest.MaxResults</property>
+    <min>1</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -200,12 +200,12 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeCapacityBlocksRequest.MaxResults</property>
+    <property>Amazon.EC2.Model.DescribeCapacityBlockStatusRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeCapacityBlockStatusRequest.MaxResults</property>
+    <property>Amazon.EC2.Model.DescribeCapacityBlocksRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -235,14 +235,14 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeCapacityReservationsRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeCapacityReservationTopologyRequest.MaxResults</property>
     <min>1</min>
     <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeCapacityReservationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeCarrierGatewaysRequest.MaxResults</property>
@@ -427,12 +427,12 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeIpamPrefixListResolversRequest.MaxResults</property>
+    <property>Amazon.EC2.Model.DescribeIpamPrefixListResolverTargetsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeIpamPrefixListResolverTargetsRequest.MaxResults</property>
+    <property>Amazon.EC2.Model.DescribeIpamPrefixListResolversRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -447,12 +447,12 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeIpamsRequest.MaxResults</property>
+    <property>Amazon.EC2.Model.DescribeIpamScopesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeIpamScopesRequest.MaxResults</property>
+    <property>Amazon.EC2.Model.DescribeIpamsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -462,20 +462,15 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeLaunchTemplatesRequest.MaxResults</property>
-    <min>1</min>
-    <max>200</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeLaunchTemplateVersionsRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
+    <pattern>^[a-zA-Z0-9\(\)\.\-/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeLocalGatewayRouteTablesRequest.MaxResults</property>
-    <min>5</min>
-    <max>1000</max>
+    <property>Amazon.EC2.Model.DescribeLaunchTemplatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest.MaxResults</property>
@@ -488,7 +483,7 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeLocalGatewaysRequest.MaxResults</property>
+    <property>Amazon.EC2.Model.DescribeLocalGatewayRouteTablesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -499,6 +494,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeLocalGatewayVirtualInterfacesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeLocalGatewaysRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -633,12 +633,12 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeSecurityGroupsRequest.MaxResults</property>
+    <property>Amazon.EC2.Model.DescribeSecurityGroupVpcAssociationsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeSecurityGroupVpcAssociationsRequest.MaxResults</property>
+    <property>Amazon.EC2.Model.DescribeSecurityGroupsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -743,12 +743,12 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeTransitGatewaysRequest.MaxResults</property>
+    <property>Amazon.EC2.Model.DescribeTransitGatewayVpcAttachmentsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeTransitGatewayVpcAttachmentsRequest.MaxResults</property>
+    <property>Amazon.EC2.Model.DescribeTransitGatewaysRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -831,7 +831,7 @@
     <property>Amazon.EC2.Model.DisassociateCapacityReservationBillingOwnerRequest.UnusedReservationBillingOwnerId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DisassociateNatGatewayAddressRequest.MaxDrainDurationSeconds</property>
@@ -840,7 +840,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.EnableInstanceSqlHaStandbyDetectionsRequest.SqlServerCredentials</property>
-    <pattern>^(?=.{20,2048}$)arn:aws[a-z-]*:secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=.@-]+</pattern>
+    <pattern>^(?=.{20,2048}$)arn:aws[a-z-]*:secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetAssociatedIpv6PoolCidrsRequest.MaxResults</property>
@@ -1124,7 +1124,7 @@
     <property>Amazon.EC2.Model.ModifyLaunchTemplateRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
+    <pattern>^[a-zA-Z0-9\(\)\.\-/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.RegisterImageRequest.Description</property>
@@ -1204,13 +1204,13 @@
     <property>Amazon.EC2.Model.CapacityReservation.UnusedReservationBillingOwnerId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CapacityReservationBillingRequest.UnusedReservationBillingOwnerId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CoipPool.PoolArn</property>
@@ -1284,11 +1284,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.Explanation.ComponentAccount</property>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.Explanation.ComponentRegion</property>
-    <pattern>[a-z]{2}-[a-z]+-[1-9]+</pattern>
+    <pattern>^[a-z]{2}-[a-z]+-[1-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.Explanation.LoadBalancerArn</property>
@@ -1343,13 +1343,13 @@
     <property>Amazon.EC2.Model.FleetLaunchTemplateSpecification.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
+    <pattern>^[a-zA-Z0-9\(\)\.\-/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.FleetLaunchTemplateSpecificationRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
+    <pattern>^[a-zA-Z0-9\(\)\.\-/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.InstanceEventWindowTimeRange.EndHour</property>
@@ -1465,7 +1465,7 @@
     <property>Amazon.EC2.Model.LaunchTemplate.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
+    <pattern>^[a-zA-Z0-9\(\)\.\-/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.LaunchTemplateElasticInferenceAccelerator.Count</property>
@@ -1475,7 +1475,7 @@
     <property>Amazon.EC2.Model.LaunchTemplateVersion.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
+    <pattern>^[a-zA-Z0-9\(\)\.\-/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.LaunchTemplateVersion.VersionDescription</property>
