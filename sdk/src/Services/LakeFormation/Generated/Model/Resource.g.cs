@@ -35,6 +35,21 @@ namespace Amazon.LakeFormation.Model
     public partial class Resource
     {
         /// <summary>
+        /// Gets and sets the property AnyResource. 
+        /// <para>
+        /// All resources of the specified type in a Data Catalog. When you grant or revoke permissions
+        /// on this resource, the principal must be a user-defined function whose <c>GovernanceMode</c>
+        /// is <c>LAKE_FORMATION</c>, and the Data Catalog must be in your account.
+        /// </para>
+        /// </summary>
+        public AnyResource AnyResource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AnyResource property is set.
+        /// </summary>
+        internal bool IsSetAnyResource() => this.AnyResource != null;
+
+        /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
         /// The identifier for the Data Catalog. By default, the account ID. The Data Catalog
@@ -173,5 +188,40 @@ namespace Amazon.LakeFormation.Model
         /// Checks to see if the TableWithColumns property is set.
         /// </summary>
         internal bool IsSetTableWithColumns() => this.TableWithColumns != null;
+
+        /// <summary>
+        /// Gets and sets the property UserDefinedFunction. 
+        /// <para>
+        /// The user-defined function that you want to grant or revoke permissions on. The function's
+        /// <c>GovernanceMode</c> must be <c>LAKE_FORMATION</c>. You can grant the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>EXECUTE</c> – Use the function in a job, and get credentials to download its artifacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DESCRIBE</c> – View the function's definition.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ALTER</c> – Update the function.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DROP</c> – Delete the function.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ALL</c> – All of the preceding permissions.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public UserDefinedFunctionResource UserDefinedFunction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UserDefinedFunction property is set.
+        /// </summary>
+        internal bool IsSetUserDefinedFunction() => this.UserDefinedFunction != null;
     }
 }

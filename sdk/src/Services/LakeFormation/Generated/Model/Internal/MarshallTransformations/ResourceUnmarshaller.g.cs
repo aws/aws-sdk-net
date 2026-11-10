@@ -53,6 +53,13 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AnyResource", targetDepth, ref reader))
+                {
+                    var unmarshaller = AnyResourceUnmarshaller.Instance;
+                    unmarshalledObject.AnyResource = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Catalog", targetDepth, ref reader))
                 {
                     var unmarshaller = CatalogResourceUnmarshaller.Instance;
@@ -120,6 +127,13 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = TableWithColumnsResourceUnmarshaller.Instance;
                     unmarshalledObject.TableWithColumns = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("UserDefinedFunction", targetDepth, ref reader))
+                {
+                    var unmarshaller = UserDefinedFunctionResourceUnmarshaller.Instance;
+                    unmarshalledObject.UserDefinedFunction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
