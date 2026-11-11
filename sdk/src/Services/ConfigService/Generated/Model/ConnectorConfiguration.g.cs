@@ -47,5 +47,18 @@ namespace Amazon.ConfigService.Model
         /// Checks to see if the Azure property is set.
         /// </summary>
         internal bool IsSetAzure() => this.Azure != null;
+
+        /// <summary>
+        /// Gets and sets the property Gcp. 
+        /// <para>
+        /// The configuration for a Google Cloud connector.
+        /// </para>
+        /// </summary>
+        public GcpConnectorConfiguration Gcp { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Gcp property is set.
+        /// </summary>
+        internal bool IsSetGcp() => this.Gcp != null;
     }
 }

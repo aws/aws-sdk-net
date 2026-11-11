@@ -1277,6 +1277,11 @@ namespace Amazon.ConfigService
         public static readonly Provider AZURE = new Provider("AZURE");
 
         /// <summary>
+        /// Constant GCP for Provider
+        /// </summary>
+        public static readonly Provider GCP = new Provider("GCP");
+
+        /// <summary>
         /// Constructs a custom Provider for a value not among the defined constants.
         /// </summary>
         public Provider(string value) : base(value) { }
