@@ -23685,7 +23685,8 @@ namespace Amazon.EC2
         ///  </li> </ul> <note> 
         /// <para>
         ///  <c>GetFlowLogsIntegrationTemplate</c> does not support integration between Amazon
-        /// Web Services Transit Gateway Flow Logs and Amazon Athena.
+        /// Web Services Transit Gateway Flow Logs or Amazon Web Services Cloud WAN Flow Logs
+        /// and Amazon Athena.
         /// </para>
         ///  </note>
         /// </summary>
@@ -23721,7 +23722,8 @@ namespace Amazon.EC2
         ///  </li> </ul> <note> 
         /// <para>
         ///  <c>GetFlowLogsIntegrationTemplate</c> does not support integration between Amazon
-        /// Web Services Transit Gateway Flow Logs and Amazon Athena.
+        /// Web Services Transit Gateway Flow Logs or Amazon Web Services Cloud WAN Flow Logs
+        /// and Amazon Athena.
         /// </para>
         ///  </note>
         /// </summary>

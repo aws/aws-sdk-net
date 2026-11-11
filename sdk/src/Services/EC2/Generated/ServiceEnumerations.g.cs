@@ -7466,6 +7466,21 @@ namespace Amazon.EC2
     public class FlowLogsResourceType : ConstantClass
     {
         /// <summary>
+        /// Constant CoreNetwork for FlowLogsResourceType
+        /// </summary>
+        public static readonly FlowLogsResourceType CoreNetwork = new FlowLogsResourceType("CoreNetwork");
+
+        /// <summary>
+        /// Constant CoreNetworkAttachment for FlowLogsResourceType
+        /// </summary>
+        public static readonly FlowLogsResourceType CoreNetworkAttachment = new FlowLogsResourceType("CoreNetworkAttachment");
+
+        /// <summary>
+        /// Constant CoreNetworkEdge for FlowLogsResourceType
+        /// </summary>
+        public static readonly FlowLogsResourceType CoreNetworkEdge = new FlowLogsResourceType("CoreNetworkEdge");
+
+        /// <summary>
         /// Constant NetworkInterface for FlowLogsResourceType
         /// </summary>
         public static readonly FlowLogsResourceType NetworkInterface = new FlowLogsResourceType("NetworkInterface");
