@@ -3612,6 +3612,106 @@ namespace Amazon.CognitoIdentityProvider
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the active sessions for a specified user as an administrator. The response includes
+        /// both token sessions and SSO sessions. Only active sessions are returned; revoked and
+        /// expired sessions aren't included. Amazon Cognito returns all of a user's sessions
+        /// in a single page of up to 125 sessions. The results are eventually consistent, and
+        /// new sessions are typically included within a few seconds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminListUserSessions service method.</param>
+        /// <returns>The response from the AdminListUserSessions service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListUserSessions">REST API Reference for AdminListUserSessions Operation</seealso>
+        public virtual AdminListUserSessionsResponse AdminListUserSessions(AdminListUserSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AdminListUserSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AdminListUserSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<AdminListUserSessionsResponse>(request, options);
+        }
+#else
+        internal virtual AdminListUserSessionsResponse AdminListUserSessions(AdminListUserSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AdminListUserSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AdminListUserSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<AdminListUserSessionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the active sessions for a specified user as an administrator. The response includes
+        /// both token sessions and SSO sessions. Only active sessions are returned; revoked and
+        /// expired sessions aren't included. Amazon Cognito returns all of a user's sessions
+        /// in a single page of up to 125 sessions. The results are eventually consistent, and
+        /// new sessions are typically included within a few seconds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminListUserSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AdminListUserSessions service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListUserSessions">REST API Reference for AdminListUserSessions Operation</seealso>
+        public virtual Task<AdminListUserSessionsResponse> AdminListUserSessionsAsync(AdminListUserSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AdminListUserSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AdminListUserSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminListUserSessionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Given a username and a group name, removes them from the group. User pool groups are
         /// identifiers that you can reference from the contents of ID and access tokens, and
         /// set preferred IAM roles for identity-pool authentication. For more information, see
@@ -4326,6 +4426,104 @@ namespace Amazon.CognitoIdentityProvider
             options.ResponseUnmarshaller = AdminRespondToAuthChallengeResponseUnmarshaller.Instance;
 
             return InvokeAsync<AdminRespondToAuthChallengeResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Revokes a specific user session as an administrator. Amazon Cognito revokes all refresh
+        /// and access tokens that are associated with the session and deletes the session record.
+        /// You can revoke either a token session or an SSO session, and you can optionally cascade
+        /// the revocation to linked sessions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminRevokeUserSession service method.</param>
+        /// <returns>The response from the AdminRevokeUserSession service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRevokeUserSession">REST API Reference for AdminRevokeUserSession Operation</seealso>
+        public virtual AdminRevokeUserSessionResponse AdminRevokeUserSession(AdminRevokeUserSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AdminRevokeUserSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AdminRevokeUserSessionResponseUnmarshaller.Instance;
+
+            return Invoke<AdminRevokeUserSessionResponse>(request, options);
+        }
+#else
+        internal virtual AdminRevokeUserSessionResponse AdminRevokeUserSession(AdminRevokeUserSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AdminRevokeUserSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AdminRevokeUserSessionResponseUnmarshaller.Instance;
+
+            return Invoke<AdminRevokeUserSessionResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Revokes a specific user session as an administrator. Amazon Cognito revokes all refresh
+        /// and access tokens that are associated with the session and deletes the session record.
+        /// You can revoke either a token session or an SSO session, and you can optionally cascade
+        /// the revocation to linked sessions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminRevokeUserSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AdminRevokeUserSession service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRevokeUserSession">REST API Reference for AdminRevokeUserSession Operation</seealso>
+        public virtual Task<AdminRevokeUserSessionResponse> AdminRevokeUserSessionAsync(AdminRevokeUserSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AdminRevokeUserSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AdminRevokeUserSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminRevokeUserSessionResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -13584,6 +13782,96 @@ namespace Amazon.CognitoIdentityProvider
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves the session configuration for a user pool app client. If you have never
+        /// called <c>SetUserPoolClientSessionConfiguration</c> for the app client, this operation
+        /// returns the default SSO session maximum validity of <c>60</c> minutes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserPoolClientSessionConfiguration service method.</param>
+        /// <returns>The response from the GetUserPoolClientSessionConfiguration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolClientSessionConfiguration">REST API Reference for GetUserPoolClientSessionConfiguration Operation</seealso>
+        public virtual GetUserPoolClientSessionConfigurationResponse GetUserPoolClientSessionConfiguration(GetUserPoolClientSessionConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetUserPoolClientSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserPoolClientSessionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserPoolClientSessionConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual GetUserPoolClientSessionConfigurationResponse GetUserPoolClientSessionConfiguration(GetUserPoolClientSessionConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetUserPoolClientSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserPoolClientSessionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserPoolClientSessionConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves the session configuration for a user pool app client. If you have never
+        /// called <c>SetUserPoolClientSessionConfiguration</c> for the app client, this operation
+        /// returns the default SSO session maximum validity of <c>60</c> minutes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserPoolClientSessionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetUserPoolClientSessionConfiguration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolClientSessionConfiguration">REST API Reference for GetUserPoolClientSessionConfiguration Operation</seealso>
+        public virtual Task<GetUserPoolClientSessionConfigurationResponse> GetUserPoolClientSessionConfigurationAsync(GetUserPoolClientSessionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetUserPoolClientSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserPoolClientSessionConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUserPoolClientSessionConfigurationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Given a user pool ID, returns configuration for sign-in with WebAuthn authenticators
         /// and for multi-factor authentication (MFA). This operation describes the following:
         /// 
@@ -13734,6 +14022,100 @@ namespace Amazon.CognitoIdentityProvider
             options.ResponseUnmarshaller = GetUserPoolMfaConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetUserPoolMfaConfigResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the session tracking configuration for a user pool, including whether session
+        /// tracking is enabled and the pool-wide maximum number of active token sessions for
+        /// each user. If you have never called <c>SetUserPoolSessionConfiguration</c> for the
+        /// user pool, this operation returns the default values: <c>UserSessionTracking</c> as
+        /// <c>DISABLED</c> and a <c>MaxPerUser</c> value of <c>20</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserPoolSessionConfiguration service method.</param>
+        /// <returns>The response from the GetUserPoolSessionConfiguration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolSessionConfiguration">REST API Reference for GetUserPoolSessionConfiguration Operation</seealso>
+        public virtual GetUserPoolSessionConfigurationResponse GetUserPoolSessionConfiguration(GetUserPoolSessionConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetUserPoolSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserPoolSessionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserPoolSessionConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual GetUserPoolSessionConfigurationResponse GetUserPoolSessionConfiguration(GetUserPoolSessionConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetUserPoolSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserPoolSessionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserPoolSessionConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves the session tracking configuration for a user pool, including whether session
+        /// tracking is enabled and the pool-wide maximum number of active token sessions for
+        /// each user. If you have never called <c>SetUserPoolSessionConfiguration</c> for the
+        /// user pool, this operation returns the default values: <c>UserSessionTracking</c> as
+        /// <c>DISABLED</c> and a <c>MaxPerUser</c> value of <c>20</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserPoolSessionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetUserPoolSessionConfiguration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolSessionConfiguration">REST API Reference for GetUserPoolSessionConfiguration Operation</seealso>
+        public virtual Task<GetUserPoolSessionConfigurationResponse> GetUserPoolSessionConfigurationAsync(GetUserPoolSessionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetUserPoolSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserPoolSessionConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUserPoolSessionConfigurationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -15580,6 +15962,128 @@ namespace Amazon.CognitoIdentityProvider
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the active sessions for the currently signed-in user. Amazon Cognito authorizes
+        /// this operation with the user's access token and returns all of the user's active sessions
+        /// across every app client in the user pool, including both token sessions and SSO sessions.
+        /// The <c>IsCurrentSession</c> field identifies the session that the calling access token
+        /// belongs to. The results are eventually consistent, and new sessions are typically
+        /// included within a few seconds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserSessions service method.</param>
+        /// <returns>The response from the ListUserSessions service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user isn't confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserSessions">REST API Reference for ListUserSessions Operation</seealso>
+        public virtual ListUserSessionsResponse ListUserSessions(ListUserSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListUserSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserSessionsResponse>(request, options);
+        }
+#else
+        internal virtual ListUserSessionsResponse ListUserSessions(ListUserSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListUserSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserSessionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the active sessions for the currently signed-in user. Amazon Cognito authorizes
+        /// this operation with the user's access token and returns all of the user's active sessions
+        /// across every app client in the user pool, including both token sessions and SSO sessions.
+        /// The <c>IsCurrentSession</c> field identifies the session that the calling access token
+        /// belongs to. The results are eventually consistent, and new sessions are typically
+        /// included within a few seconds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListUserSessions service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user isn't confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserSessions">REST API Reference for ListUserSessions Operation</seealso>
+        public virtual Task<ListUserSessionsResponse> ListUserSessionsAsync(ListUserSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListUserSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListUserSessionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Given a user pool ID, returns a list of users and their basic details in a user pool.
         /// 
         ///  
@@ -16650,6 +17154,124 @@ namespace Amazon.CognitoIdentityProvider
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Revokes a specific session for the currently signed-in user. Amazon Cognito authorizes
+        /// this operation with the user's access token, revokes all refresh and access tokens
+        /// that are associated with the session, and deletes the session record. You can't revoke
+        /// the session that the calling access token belongs to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeUserSession service method.</param>
+        /// <returns>The response from the RevokeUserSession service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user isn't confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RevokeUserSession">REST API Reference for RevokeUserSession Operation</seealso>
+        public virtual RevokeUserSessionResponse RevokeUserSession(RevokeUserSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RevokeUserSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeUserSessionResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeUserSessionResponse>(request, options);
+        }
+#else
+        internal virtual RevokeUserSessionResponse RevokeUserSession(RevokeUserSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RevokeUserSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeUserSessionResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeUserSessionResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Revokes a specific session for the currently signed-in user. Amazon Cognito authorizes
+        /// this operation with the user's access token, revokes all refresh and access tokens
+        /// that are associated with the session, and deletes the session record. You can't revoke
+        /// the session that the calling access token belongs to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeUserSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RevokeUserSession service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user isn't confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RevokeUserSession">REST API Reference for RevokeUserSession Operation</seealso>
+        public virtual Task<RevokeUserSessionResponse> RevokeUserSessionAsync(RevokeUserSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RevokeUserSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeUserSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RevokeUserSessionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Sets up or modifies the logging configuration of a user pool. User pools can export
         /// user notification logs and, when threat protection is active, user-activity logs.
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/exporting-quotas-and-usage.html">Exporting
@@ -17240,6 +17862,144 @@ namespace Amazon.CognitoIdentityProvider
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Sets the session configuration for a user pool app client. The configurable client-level
+        /// setting is the maximum validity period for silent reuse of an SSO session. This operation
+        /// performs a full replacement of the client-level session configuration; every request
+        /// parameter is required, and session tracking must be enabled for the user pool. The
+        /// user pool must be in the Essentials or Plus tier. Otherwise, this operation returns
+        /// a <c>FeatureUnavailableInTierException</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetUserPoolClientSessionConfiguration service method.</param>
+        /// <returns>The response from the SetUserPoolClientSessionConfiguration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolClientSessionConfiguration">REST API Reference for SetUserPoolClientSessionConfiguration Operation</seealso>
+        public virtual SetUserPoolClientSessionConfigurationResponse SetUserPoolClientSessionConfiguration(SetUserPoolClientSessionConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SetUserPoolClientSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetUserPoolClientSessionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<SetUserPoolClientSessionConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual SetUserPoolClientSessionConfigurationResponse SetUserPoolClientSessionConfiguration(SetUserPoolClientSessionConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SetUserPoolClientSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetUserPoolClientSessionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<SetUserPoolClientSessionConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Sets the session configuration for a user pool app client. The configurable client-level
+        /// setting is the maximum validity period for silent reuse of an SSO session. This operation
+        /// performs a full replacement of the client-level session configuration; every request
+        /// parameter is required, and session tracking must be enabled for the user pool. The
+        /// user pool must be in the Essentials or Plus tier. Otherwise, this operation returns
+        /// a <c>FeatureUnavailableInTierException</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetUserPoolClientSessionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the SetUserPoolClientSessionConfiguration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolClientSessionConfiguration">REST API Reference for SetUserPoolClientSessionConfiguration Operation</seealso>
+        public virtual Task<SetUserPoolClientSessionConfigurationResponse> SetUserPoolClientSessionConfigurationAsync(SetUserPoolClientSessionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SetUserPoolClientSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetUserPoolClientSessionConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetUserPoolClientSessionConfigurationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Sets user pool multi-factor authentication (MFA) and passkey configuration. For more
         /// information about user pool MFA, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
         /// MFA</a>. For more information about WebAuthn passkeys see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html#amazon-cognito-user-pools-authentication-flow-methods-passkey">Authentication
@@ -17436,6 +18196,142 @@ namespace Amazon.CognitoIdentityProvider
             options.ResponseUnmarshaller = SetUserPoolMfaConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetUserPoolMfaConfigResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Enables or disables session tracking for a user pool, and sets the pool-wide maximum
+        /// number of active token sessions that each user can have. This operation performs a
+        /// full replacement of the pool-level session configuration; every request parameter
+        /// is required. The user pool must be in the Essentials or Plus tier. Otherwise, this
+        /// operation returns a <c>FeatureUnavailableInTierException</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetUserPoolSessionConfiguration service method.</param>
+        /// <returns>The response from the SetUserPoolSessionConfiguration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolSessionConfiguration">REST API Reference for SetUserPoolSessionConfiguration Operation</seealso>
+        public virtual SetUserPoolSessionConfigurationResponse SetUserPoolSessionConfiguration(SetUserPoolSessionConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SetUserPoolSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetUserPoolSessionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<SetUserPoolSessionConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual SetUserPoolSessionConfigurationResponse SetUserPoolSessionConfiguration(SetUserPoolSessionConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SetUserPoolSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetUserPoolSessionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<SetUserPoolSessionConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Enables or disables session tracking for a user pool, and sets the pool-wide maximum
+        /// number of active token sessions that each user can have. This operation performs a
+        /// full replacement of the pool-level session configuration; every request parameter
+        /// is required. The user pool must be in the Essentials or Plus tier. Otherwise, this
+        /// operation returns a <c>FeatureUnavailableInTierException</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetUserPoolSessionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the SetUserPoolSessionConfiguration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolSessionConfiguration">REST API Reference for SetUserPoolSessionConfiguration Operation</seealso>
+        public virtual Task<SetUserPoolSessionConfigurationResponse> SetUserPoolSessionConfigurationAsync(SetUserPoolSessionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SetUserPoolSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetUserPoolSessionConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetUserPoolSessionConfigurationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

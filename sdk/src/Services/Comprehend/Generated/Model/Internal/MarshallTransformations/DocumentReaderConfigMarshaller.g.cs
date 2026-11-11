@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,34 +39,34 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// DocumentReaderConfig Marshaller
     /// </summary>
-    public partial class DocumentReaderConfigMarshaller : IRequestMarshaller<DocumentReaderConfig, JsonMarshallerContext>
+    public partial class DocumentReaderConfigMarshaller : IRequestMarshaller<DocumentReaderConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DocumentReaderConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(DocumentReaderConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDocumentReadAction())
             {
-                context.Writer.WritePropertyName("DocumentReadAction");
-                context.Writer.WriteStringValue(requestObject.DocumentReadAction);
+                context.Writer.WriteTextString("DocumentReadAction");
+                context.Writer.WriteTextString(requestObject.DocumentReadAction);
             }
 
             if (requestObject.IsSetDocumentReadMode())
             {
-                context.Writer.WritePropertyName("DocumentReadMode");
-                context.Writer.WriteStringValue(requestObject.DocumentReadMode);
+                context.Writer.WriteTextString("DocumentReadMode");
+                context.Writer.WriteTextString(requestObject.DocumentReadMode);
             }
 
             if (requestObject.IsSetFeatureTypes())
             {
-                context.Writer.WritePropertyName("FeatureTypes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("FeatureTypes");
+                context.Writer.WriteStartArray(requestObject.FeatureTypes.Count);
                 foreach (var requestObjectFeatureTypesListValue in requestObject.FeatureTypes)
                 {
-                    context.Writer.WriteStringValue(requestObjectFeatureTypesListValue);
+                    context.Writer.WriteTextString(requestObjectFeatureTypesListValue);
                 }
                 context.Writer.WriteEndArray();
             }

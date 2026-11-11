@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,37 +39,37 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// RelativeTimeRange Marshaller
     /// </summary>
-    public partial class RelativeTimeRangeMarshaller : IRequestMarshaller<RelativeTimeRange, JsonMarshallerContext>
+    public partial class RelativeTimeRangeMarshaller : IRequestMarshaller<RelativeTimeRange, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RelativeTimeRange requestObject, JsonMarshallerContext context)
+        public void Marshall(RelativeTimeRange requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetEndPercentage())
             {
-                context.Writer.WritePropertyName("EndPercentage");
-                context.Writer.WriteNumberValue(requestObject.EndPercentage.Value);
+                context.Writer.WriteTextString("EndPercentage");
+                context.Writer.WriteInt32(requestObject.EndPercentage.Value);
             }
 
             if (requestObject.IsSetFirst())
             {
-                context.Writer.WritePropertyName("First");
-                context.Writer.WriteNumberValue(requestObject.First.Value);
+                context.Writer.WriteTextString("First");
+                context.Writer.WriteInt32(requestObject.First.Value);
             }
 
             if (requestObject.IsSetLast())
             {
-                context.Writer.WritePropertyName("Last");
-                context.Writer.WriteNumberValue(requestObject.Last.Value);
+                context.Writer.WriteTextString("Last");
+                context.Writer.WriteInt32(requestObject.Last.Value);
             }
 
             if (requestObject.IsSetStartPercentage())
             {
-                context.Writer.WritePropertyName("StartPercentage");
-                context.Writer.WriteNumberValue(requestObject.StartPercentage.Value);
+                context.Writer.WriteTextString("StartPercentage");
+                context.Writer.WriteInt32(requestObject.StartPercentage.Value);
             }
         }
 

@@ -32,6 +32,9 @@ public sealed record CustomizationsModel
     [JsonPropertyName("runtimePipelineOverride")]
     public RuntimePipelineOverride? RuntimePipelineOverride { get; init; }
 
+    [JsonPropertyName("service")]
+    public ServiceCustomizations? Service { get; init; }
+
     [JsonPropertyName("overrideContentType")]
     public string? OverrideContentType { get; init; }
 
@@ -174,6 +177,7 @@ public sealed record CustomizationsModel
         var dataTypeSwaps = new Dictionary<string, Dictionary<string, DataTypeSwap>>();
         var shapeSubstitutions = new Dictionary<string, ShapeSubstitution>();
         RuntimePipelineOverride? runtimePipelineOverride = null;
+        ServiceCustomizations? service = null;
         var paginators = new Dictionary<string, PaginatorCustomization>();
         var noArgOverloads = new List<string>();
         var simpleMethods = new Dictionary<string, SimpleMethodForms>();
@@ -233,6 +237,16 @@ public sealed record CustomizationsModel
                 }
 
                 runtimePipelineOverride = pipelineOverride;
+            }
+
+            if (file.Service is { } serviceSection)
+            {
+                if (service is not null)
+                {
+                    throw new GeneratorException($"'{path}': service appears in more than one customizations file; merging is not supported yet.");
+                }
+
+                service = serviceSection;
             }
 
             foreach (var (operationName, modifier) in file.OperationModifiers)
@@ -321,6 +335,7 @@ public sealed record CustomizationsModel
             EmitIsSetProperties = emitIsSetProperties,
             ShapeSubstitutions = shapeSubstitutions,
             RuntimePipelineOverride = runtimePipelineOverride,
+            Service = service,
             Paginators = paginators,
             NoArgOverloads = noArgOverloads,
             SimpleMethods = simpleMethods.Count > 0 ? new SimpleMethodsCustomization { Operations = simpleMethods } : null,
@@ -332,6 +347,21 @@ public sealed record CustomizationsModel
             SuppressResultGeneration = suppressResultGeneration,
         };
     }
+}
+
+/// <summary>
+/// The Smithy-only <c>service</c> section: what hand-written code supplies instead of the generator, where C2J
+/// branched on <c>ServiceId == "S3"</c>. Allowed in one customizations file per service.
+/// </summary>
+public sealed record ServiceCustomizations
+{
+    /// <summary><c>clientContextParams</c> whose config properties are hand-written (S3, S3 Control).</summary>
+    [JsonPropertyName("skipClientContextParams")]
+    public List<string> SkipClientContextParams { get; init; } = [];
+
+    /// <summary>No doc samples from <c>smithy.api#examples</c>; S3's are hand-written.</summary>
+    [JsonPropertyName("skipDocSamples")]
+    public bool SkipDocSamples { get; init; }
 }
 
 /// <summary>The <c>simpleMethods</c> hook: convenience client overloads keyed by operation name.</summary>

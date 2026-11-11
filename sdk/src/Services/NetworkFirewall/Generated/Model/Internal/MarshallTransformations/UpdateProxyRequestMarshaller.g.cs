@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.NetworkFirewall.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -54,88 +55,94 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateProxyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NetworkFirewall");
-            string target = "NetworkFirewall_20201112.UpdateProxy";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-12";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/NetworkFirewall_20201112/operation/UpdateProxy";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetListenerPropertiesToAdd())
+                {
+                    context.Writer.WriteTextString("ListenerPropertiesToAdd");
+                    context.Writer.WriteStartArray(publicRequest.ListenerPropertiesToAdd.Count);
+                    foreach (var publicRequestListenerPropertiesToAddListValue in publicRequest.ListenerPropertiesToAdd)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = ListenerPropertyRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestListenerPropertiesToAddListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetListenerPropertiesToRemove())
+                {
+                    context.Writer.WriteTextString("ListenerPropertiesToRemove");
+                    context.Writer.WriteStartArray(publicRequest.ListenerPropertiesToRemove.Count);
+                    foreach (var publicRequestListenerPropertiesToRemoveListValue in publicRequest.ListenerPropertiesToRemove)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = ListenerPropertyRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestListenerPropertiesToRemoveListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetNatGatewayId())
+                {
+                    context.Writer.WriteTextString("NatGatewayId");
+                    context.Writer.WriteTextString(publicRequest.NatGatewayId);
+                }
+                if (publicRequest.IsSetProxyArn())
+                {
+                    context.Writer.WriteTextString("ProxyArn");
+                    context.Writer.WriteTextString(publicRequest.ProxyArn);
+                }
+                if (publicRequest.IsSetProxyName())
+                {
+                    context.Writer.WriteTextString("ProxyName");
+                    context.Writer.WriteTextString(publicRequest.ProxyName);
+                }
+                if (publicRequest.IsSetTlsInterceptProperties())
+                {
+                    context.Writer.WriteTextString("TlsInterceptProperties");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = TlsInterceptPropertiesRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TlsInterceptProperties, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetUpdateToken())
+                {
+                    context.Writer.WriteTextString("UpdateToken");
+                    context.Writer.WriteTextString(publicRequest.UpdateToken);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetListenerPropertiesToAdd())
-            {
-                context.Writer.WritePropertyName("ListenerPropertiesToAdd");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestListenerPropertiesToAddListValue in publicRequest.ListenerPropertiesToAdd)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = ListenerPropertyRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequestListenerPropertiesToAddListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
             }
-            if (publicRequest.IsSetListenerPropertiesToRemove())
+            finally
             {
-                context.Writer.WritePropertyName("ListenerPropertiesToRemove");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestListenerPropertiesToRemoveListValue in publicRequest.ListenerPropertiesToRemove)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = ListenerPropertyRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequestListenerPropertiesToRemoveListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetNatGatewayId())
-            {
-                context.Writer.WritePropertyName("NatGatewayId");
-                context.Writer.WriteStringValue(publicRequest.NatGatewayId);
-            }
-            if (publicRequest.IsSetProxyArn())
-            {
-                context.Writer.WritePropertyName("ProxyArn");
-                context.Writer.WriteStringValue(publicRequest.ProxyArn);
-            }
-            if (publicRequest.IsSetProxyName())
-            {
-                context.Writer.WritePropertyName("ProxyName");
-                context.Writer.WriteStringValue(publicRequest.ProxyName);
-            }
-            if (publicRequest.IsSetTlsInterceptProperties())
-            {
-                context.Writer.WritePropertyName("TlsInterceptProperties");
-                context.Writer.WriteStartObject();
-
-                var marshaller = TlsInterceptPropertiesRequestMarshaller.Instance;
-                marshaller.Marshall(publicRequest.TlsInterceptProperties, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetUpdateToken())
-            {
-                context.Writer.WritePropertyName("UpdateToken");
-                context.Writer.WriteStringValue(publicRequest.UpdateToken);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

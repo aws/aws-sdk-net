@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for WarningsListItem Object
     /// </summary>
-    public partial class WarningsListItemUnmarshaller : IJsonUnmarshaller<WarningsListItem, JsonUnmarshallerContext>
+    public partial class WarningsListItemUnmarshaller : ICborUnmarshaller<WarningsListItem, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public WarningsListItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WarningsListItem Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new WarningsListItem();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Page", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Page = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("WarnCode", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WarnCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Page":
+                        context.AddPathSegment("Page");
+                        unmarshalledObject.Page = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("WarnMessage", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WarnMessage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "WarnCode":
+                        context.AddPathSegment("WarnCode");
+                        unmarshalledObject.WarnCode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "WarnMessage":
+                        context.AddPathSegment("WarnMessage");
+                        unmarshalledObject.WarnMessage = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

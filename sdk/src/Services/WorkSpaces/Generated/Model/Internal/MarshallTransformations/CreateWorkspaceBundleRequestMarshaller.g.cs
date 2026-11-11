@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.WorkSpaces.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -54,88 +55,94 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateWorkspaceBundleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkSpaces");
-            string target = "WorkspacesService.CreateWorkspaceBundle";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-08";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetBundleDescription())
+            request.ResourcePath = "service/WorkspacesService/operation/CreateWorkspaceBundle";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("BundleDescription");
-                context.Writer.WriteStringValue(publicRequest.BundleDescription);
-            }
-            if (publicRequest.IsSetBundleName())
-            {
-                context.Writer.WritePropertyName("BundleName");
-                context.Writer.WriteStringValue(publicRequest.BundleName);
-            }
-            if (publicRequest.IsSetComputeType())
-            {
-                context.Writer.WritePropertyName("ComputeType");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ComputeTypeMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ComputeType, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetImageId())
-            {
-                context.Writer.WritePropertyName("ImageId");
-                context.Writer.WriteStringValue(publicRequest.ImageId);
-            }
-            if (publicRequest.IsSetRootStorage())
-            {
-                context.Writer.WritePropertyName("RootStorage");
-                context.Writer.WriteStartObject();
-
-                var marshaller = RootStorageMarshaller.Instance;
-                marshaller.Marshall(publicRequest.RootStorage, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetBundleDescription())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("BundleDescription");
+                    context.Writer.WriteTextString(publicRequest.BundleDescription);
                 }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetUserStorage())
-            {
-                context.Writer.WritePropertyName("UserStorage");
-                context.Writer.WriteStartObject();
+                if (publicRequest.IsSetBundleName())
+                {
+                    context.Writer.WriteTextString("BundleName");
+                    context.Writer.WriteTextString(publicRequest.BundleName);
+                }
+                if (publicRequest.IsSetComputeType())
+                {
+                    context.Writer.WriteTextString("ComputeType");
+                    context.Writer.WriteStartMap(null);
 
-                var marshaller = UserStorageMarshaller.Instance;
-                marshaller.Marshall(publicRequest.UserStorage, context);
+                    var marshaller = ComputeTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ComputeType, context);
 
-                context.Writer.WriteEndObject();
-            }
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetImageId())
+                {
+                    context.Writer.WriteTextString("ImageId");
+                    context.Writer.WriteTextString(publicRequest.ImageId);
+                }
+                if (publicRequest.IsSetRootStorage())
+                {
+                    context.Writer.WriteTextString("RootStorage");
+                    context.Writer.WriteStartMap(null);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    var marshaller = RootStorageMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RootStorage, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetUserStorage())
+                {
+                    context.Writer.WriteTextString("UserStorage");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = UserStorageMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UserStorage, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

@@ -26,13 +26,13 @@ public sealed class DocSamplesWriter(GenerationContext context)
     private static readonly double MaxEpochMilliseconds = (DateTime.MaxValue - DateTime.UnixEpoch).TotalMilliseconds;
 
     /// <summary>
-    /// The service's examples in emission order, or none for S3, which C2J skips because its samples are
-    /// hand-written. The trait carries no example id (C2J's came from the retiring examples.json), so each
+    /// The service's examples in emission order, or none when <c>service.skipDocSamples</c> says they are
+    /// hand-written (S3). The trait carries no example id (C2J's came from the retiring examples.json), so each
     /// region id is <c>{Operation}-{n}</c>; it must be unique, since the docs build takes the first matching region.
     /// </summary>
     public static IReadOnlyList<DocSample> Collect(GenerationContext context)
     {
-        if (context.SdkId == "S3")
+        if (context.Customizations.Service?.SkipDocSamples == true)
         {
             return [];
         }

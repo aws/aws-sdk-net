@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TestReportSummary Object
     /// </summary>
-    public partial class TestReportSummaryUnmarshaller : IJsonUnmarshaller<TestReportSummary, JsonUnmarshallerContext>
+    public partial class TestReportSummaryUnmarshaller : ICborUnmarshaller<TestReportSummary, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public TestReportSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TestReportSummary Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new TestReportSummary();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("durationInNanoSeconds", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.DurationInNanoSeconds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("statusCounts", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
-                    unmarshalledObject.StatusCounts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "durationInNanoSeconds":
+                        context.AddPathSegment("DurationInNanoSeconds");
+                        unmarshalledObject.DurationInNanoSeconds = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("total", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Total = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "statusCounts":
+                        context.AddPathSegment("StatusCounts");
+                        unmarshalledObject.StatusCounts = new CborDictionaryUnmarshaller<string, int, CborStringUnmarshaller, CborIntUnmarshaller>(CborStringUnmarshaller.Instance, CborIntUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "total":
+                        context.AddPathSegment("Total");
+                        unmarshalledObject.Total = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,79 +38,84 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FirewallPolicyV2 Object
     /// </summary>
-    public partial class FirewallPolicyV2Unmarshaller : IJsonUnmarshaller<FirewallPolicyV2, JsonUnmarshallerContext>
+    public partial class FirewallPolicyV2Unmarshaller : ICborUnmarshaller<FirewallPolicyV2, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public FirewallPolicyV2 Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FirewallPolicyV2 Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new FirewallPolicyV2();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("FirewallDefaultAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FirewallDefaultAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("FirewallRuleGroupEntries", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<FirewallRuleGroupEntry, FirewallRuleGroupEntryUnmarshaller>(FirewallRuleGroupEntryUnmarshaller.Instance);
-                    unmarshalledObject.FirewallRuleGroupEntries = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FirewallDefaultAction":
+                        context.AddPathSegment("FirewallDefaultAction");
+                        unmarshalledObject.FirewallDefaultAction = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("IpsRuleGroupEntries", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<IpsRuleGroupEntry, IpsRuleGroupEntryUnmarshaller>(IpsRuleGroupEntryUnmarshaller.Instance);
-                    unmarshalledObject.IpsRuleGroupEntries = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FirewallRuleGroupEntries":
+                        context.AddPathSegment("FirewallRuleGroupEntries");
+                        unmarshalledObject.FirewallRuleGroupEntries = new CborListUnmarshaller<FirewallRuleGroupEntry, FirewallRuleGroupEntryUnmarshaller>(FirewallRuleGroupEntryUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("PolicyMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PolicyMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "IpsRuleGroupEntries":
+                        context.AddPathSegment("IpsRuleGroupEntries");
+                        unmarshalledObject.IpsRuleGroupEntries = new CborListUnmarshaller<IpsRuleGroupEntry, IpsRuleGroupEntryUnmarshaller>(IpsRuleGroupEntryUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("PolicyVariables", targetDepth, ref reader))
-                {
-                    var unmarshaller = PolicyVariablesUnmarshaller.Instance;
-                    unmarshalledObject.PolicyVariables = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "PolicyMode":
+                        context.AddPathSegment("PolicyMode");
+                        unmarshalledObject.PolicyMode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Route53ResolvedIPValidation", targetDepth, ref reader))
-                {
-                    var unmarshaller = Route53ResolvedIPValidationUnmarshaller.Instance;
-                    unmarshalledObject.Route53ResolvedIPValidation = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "PolicyVariables":
+                        context.AddPathSegment("PolicyVariables");
+                        unmarshalledObject.PolicyVariables = PolicyVariablesUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StatefulEngineOptions", targetDepth, ref reader))
-                {
-                    var unmarshaller = StatefulEngineOptionsV2Unmarshaller.Instance;
-                    unmarshalledObject.StatefulEngineOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Route53ResolvedIPValidation":
+                        context.AddPathSegment("Route53ResolvedIPValidation");
+                        unmarshalledObject.Route53ResolvedIPValidation = Route53ResolvedIPValidationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TLSInspectionConfigurationArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TLSInspectionConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "StatefulEngineOptions":
+                        context.AddPathSegment("StatefulEngineOptions");
+                        unmarshalledObject.StatefulEngineOptions = StatefulEngineOptionsV2Unmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "TLSInspectionConfigurationArn":
+                        context.AddPathSegment("TLSInspectionConfigurationArn");
+                        unmarshalledObject.TLSInspectionConfigurationArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

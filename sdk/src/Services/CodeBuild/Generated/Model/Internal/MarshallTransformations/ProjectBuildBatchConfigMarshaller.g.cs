@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,48 +39,48 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProjectBuildBatchConfig Marshaller
     /// </summary>
-    public partial class ProjectBuildBatchConfigMarshaller : IRequestMarshaller<ProjectBuildBatchConfig, JsonMarshallerContext>
+    public partial class ProjectBuildBatchConfigMarshaller : IRequestMarshaller<ProjectBuildBatchConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProjectBuildBatchConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ProjectBuildBatchConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetBatchReportMode())
             {
-                context.Writer.WritePropertyName("batchReportMode");
-                context.Writer.WriteStringValue(requestObject.BatchReportMode);
+                context.Writer.WriteTextString("batchReportMode");
+                context.Writer.WriteTextString(requestObject.BatchReportMode);
             }
 
             if (requestObject.IsSetCombineArtifacts())
             {
-                context.Writer.WritePropertyName("combineArtifacts");
-                context.Writer.WriteBooleanValue(requestObject.CombineArtifacts.Value);
+                context.Writer.WriteTextString("combineArtifacts");
+                context.Writer.WriteBoolean(requestObject.CombineArtifacts.Value);
             }
 
             if (requestObject.IsSetRestrictions())
             {
-                context.Writer.WritePropertyName("restrictions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("restrictions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = BatchRestrictionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Restrictions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetServiceRole())
             {
-                context.Writer.WritePropertyName("serviceRole");
-                context.Writer.WriteStringValue(requestObject.ServiceRole);
+                context.Writer.WriteTextString("serviceRole");
+                context.Writer.WriteTextString(requestObject.ServiceRole);
             }
 
             if (requestObject.IsSetTimeoutInMins())
             {
-                context.Writer.WritePropertyName("timeoutInMins");
-                context.Writer.WriteNumberValue(requestObject.TimeoutInMins.Value);
+                context.Writer.WriteTextString("timeoutInMins");
+                context.Writer.WriteInt32(requestObject.TimeoutInMins.Value);
             }
         }
 

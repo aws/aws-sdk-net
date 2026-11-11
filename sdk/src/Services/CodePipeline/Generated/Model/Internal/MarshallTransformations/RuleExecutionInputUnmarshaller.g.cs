@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
@@ -36,65 +38,72 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RuleExecutionInput Object
     /// </summary>
-    public partial class RuleExecutionInputUnmarshaller : IJsonUnmarshaller<RuleExecutionInput, JsonUnmarshallerContext>
+    public partial class RuleExecutionInputUnmarshaller : ICborUnmarshaller<RuleExecutionInput, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public RuleExecutionInput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RuleExecutionInput Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new RuleExecutionInput();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("configuration", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Configuration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("inputArtifacts", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<ArtifactDetail, ArtifactDetailUnmarshaller>(ArtifactDetailUnmarshaller.Instance);
-                    unmarshalledObject.InputArtifacts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "configuration":
+                        context.AddPathSegment("Configuration");
+                        unmarshalledObject.Configuration = new CborDictionaryUnmarshaller<string, string, CborStringUnmarshaller, CborStringUnmarshaller>(CborStringUnmarshaller.Instance, CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("region", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "inputArtifacts":
+                        context.AddPathSegment("InputArtifacts");
+                        unmarshalledObject.InputArtifacts = new CborListUnmarshaller<ArtifactDetail, ArtifactDetailUnmarshaller>(ArtifactDetailUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("resolvedConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.ResolvedConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "region":
+                        context.AddPathSegment("Region");
+                        unmarshalledObject.Region = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("roleArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "resolvedConfiguration":
+                        context.AddPathSegment("ResolvedConfiguration");
+                        unmarshalledObject.ResolvedConfiguration = new CborDictionaryUnmarshaller<string, string, CborStringUnmarshaller, CborStringUnmarshaller>(CborStringUnmarshaller.Instance, CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ruleTypeId", targetDepth, ref reader))
-                {
-                    var unmarshaller = RuleTypeIdUnmarshaller.Instance;
-                    unmarshalledObject.RuleTypeId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "roleArn":
+                        context.AddPathSegment("RoleArn");
+                        unmarshalledObject.RoleArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ruleTypeId":
+                        context.AddPathSegment("RuleTypeId");
+                        unmarshalledObject.RuleTypeId = RuleTypeIdUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

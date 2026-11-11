@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// The application is not available for this operation.
+    /// The application or snapshot is not available for this operation.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

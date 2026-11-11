@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// FailureDetails Marshaller
     /// </summary>
-    public partial class FailureDetailsMarshaller : IRequestMarshaller<FailureDetails, JsonMarshallerContext>
+    public partial class FailureDetailsMarshaller : IRequestMarshaller<FailureDetails, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(FailureDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(FailureDetails requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetExternalExecutionId())
             {
-                context.Writer.WritePropertyName("externalExecutionId");
-                context.Writer.WriteStringValue(requestObject.ExternalExecutionId);
+                context.Writer.WriteTextString("externalExecutionId");
+                context.Writer.WriteTextString(requestObject.ExternalExecutionId);
             }
 
             if (requestObject.IsSetMessage())
             {
-                context.Writer.WritePropertyName("message");
-                context.Writer.WriteStringValue(requestObject.Message);
+                context.Writer.WriteTextString("message");
+                context.Writer.WriteTextString(requestObject.Message);
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

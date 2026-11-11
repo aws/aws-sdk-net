@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,37 +38,48 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StatelessRule Object
     /// </summary>
-    public partial class StatelessRuleUnmarshaller : IJsonUnmarshaller<StatelessRule, JsonUnmarshallerContext>
+    public partial class StatelessRuleUnmarshaller : ICborUnmarshaller<StatelessRule, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public StatelessRule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public StatelessRule Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new StatelessRule();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Priority", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("RuleDefinition", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = RuleDefinitionUnmarshaller.Instance;
-                    unmarshalledObject.RuleDefinition = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Priority":
+                        context.AddPathSegment("Priority");
+                        unmarshalledObject.Priority = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "RuleDefinition":
+                        context.AddPathSegment("RuleDefinition");
+                        unmarshalledObject.RuleDefinition = RuleDefinitionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

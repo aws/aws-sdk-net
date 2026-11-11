@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,73 +39,73 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProjectArtifacts Marshaller
     /// </summary>
-    public partial class ProjectArtifactsMarshaller : IRequestMarshaller<ProjectArtifacts, JsonMarshallerContext>
+    public partial class ProjectArtifactsMarshaller : IRequestMarshaller<ProjectArtifacts, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProjectArtifacts requestObject, JsonMarshallerContext context)
+        public void Marshall(ProjectArtifacts requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetArtifactIdentifier())
             {
-                context.Writer.WritePropertyName("artifactIdentifier");
-                context.Writer.WriteStringValue(requestObject.ArtifactIdentifier);
+                context.Writer.WriteTextString("artifactIdentifier");
+                context.Writer.WriteTextString(requestObject.ArtifactIdentifier);
             }
 
             if (requestObject.IsSetBucketOwnerAccess())
             {
-                context.Writer.WritePropertyName("bucketOwnerAccess");
-                context.Writer.WriteStringValue(requestObject.BucketOwnerAccess);
+                context.Writer.WriteTextString("bucketOwnerAccess");
+                context.Writer.WriteTextString(requestObject.BucketOwnerAccess);
             }
 
             if (requestObject.IsSetEncryptionDisabled())
             {
-                context.Writer.WritePropertyName("encryptionDisabled");
-                context.Writer.WriteBooleanValue(requestObject.EncryptionDisabled.Value);
+                context.Writer.WriteTextString("encryptionDisabled");
+                context.Writer.WriteBoolean(requestObject.EncryptionDisabled.Value);
             }
 
             if (requestObject.IsSetLocation())
             {
-                context.Writer.WritePropertyName("location");
-                context.Writer.WriteStringValue(requestObject.Location);
+                context.Writer.WriteTextString("location");
+                context.Writer.WriteTextString(requestObject.Location);
             }
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
 
             if (requestObject.IsSetNamespaceType())
             {
-                context.Writer.WritePropertyName("namespaceType");
-                context.Writer.WriteStringValue(requestObject.NamespaceType);
+                context.Writer.WriteTextString("namespaceType");
+                context.Writer.WriteTextString(requestObject.NamespaceType);
             }
 
             if (requestObject.IsSetOverrideArtifactName())
             {
-                context.Writer.WritePropertyName("overrideArtifactName");
-                context.Writer.WriteBooleanValue(requestObject.OverrideArtifactName.Value);
+                context.Writer.WriteTextString("overrideArtifactName");
+                context.Writer.WriteBoolean(requestObject.OverrideArtifactName.Value);
             }
 
             if (requestObject.IsSetPackaging())
             {
-                context.Writer.WritePropertyName("packaging");
-                context.Writer.WriteStringValue(requestObject.Packaging);
+                context.Writer.WriteTextString("packaging");
+                context.Writer.WriteTextString(requestObject.Packaging);
             }
 
             if (requestObject.IsSetPath())
             {
-                context.Writer.WritePropertyName("path");
-                context.Writer.WriteStringValue(requestObject.Path);
+                context.Writer.WriteTextString("path");
+                context.Writer.WriteTextString(requestObject.Path);
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

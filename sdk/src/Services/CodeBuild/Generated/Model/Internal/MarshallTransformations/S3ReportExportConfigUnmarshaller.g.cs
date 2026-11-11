@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
@@ -36,65 +38,72 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3ReportExportConfig Object
     /// </summary>
-    public partial class S3ReportExportConfigUnmarshaller : IJsonUnmarshaller<S3ReportExportConfig, JsonUnmarshallerContext>
+    public partial class S3ReportExportConfigUnmarshaller : ICborUnmarshaller<S3ReportExportConfig, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public S3ReportExportConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public S3ReportExportConfig Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new S3ReportExportConfig();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("bucket", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("bucketOwner", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BucketOwner = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "bucket":
+                        context.AddPathSegment("Bucket");
+                        unmarshalledObject.Bucket = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("encryptionDisabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionDisabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "bucketOwner":
+                        context.AddPathSegment("BucketOwner");
+                        unmarshalledObject.BucketOwner = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("encryptionKey", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionKey = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "encryptionDisabled":
+                        context.AddPathSegment("EncryptionDisabled");
+                        unmarshalledObject.EncryptionDisabled = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("packaging", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Packaging = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "encryptionKey":
+                        context.AddPathSegment("EncryptionKey");
+                        unmarshalledObject.EncryptionKey = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("path", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "packaging":
+                        context.AddPathSegment("Packaging");
+                        unmarshalledObject.Packaging = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "path":
+                        context.AddPathSegment("Path");
+                        unmarshalledObject.Path = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

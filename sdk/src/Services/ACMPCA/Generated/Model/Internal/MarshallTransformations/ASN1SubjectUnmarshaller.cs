@@ -29,124 +29,165 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ASN1Subject Object
     /// </summary>  
-    public class ASN1SubjectUnmarshaller : IJsonUnmarshaller<ASN1Subject, JsonUnmarshallerContext>
+    public class ASN1SubjectUnmarshaller : ICborUnmarshaller<ASN1Subject, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ASN1Subject Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ASN1Subject Unmarshall(CborUnmarshallerContext context)
         {
             ASN1Subject unmarshalledObject = new ASN1Subject();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CommonName", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CommonName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Country", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Country = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CustomAttributes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<CustomAttribute, CustomAttributeUnmarshaller>(CustomAttributeUnmarshaller.Instance);
-                    unmarshalledObject.CustomAttributes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DistinguishedNameQualifier", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DistinguishedNameQualifier = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GenerationQualifier", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GenerationQualifier = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GivenName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GivenName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Initials", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Initials = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Locality", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Locality = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Organization", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Organization = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("OrganizationalUnit", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OrganizationalUnit = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Pseudonym", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Pseudonym = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SerialNumber", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SerialNumber = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Surname", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Surname = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Title", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "CommonName":
+                        {
+                            context.AddPathSegment("CommonName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CommonName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Country":
+                        {
+                            context.AddPathSegment("Country");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Country = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "CustomAttributes":
+                        {
+                            context.AddPathSegment("CustomAttributes");
+                            var unmarshaller = new CborListUnmarshaller<CustomAttribute, CustomAttributeUnmarshaller>(CustomAttributeUnmarshaller.Instance);
+                            unmarshalledObject.CustomAttributes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DistinguishedNameQualifier":
+                        {
+                            context.AddPathSegment("DistinguishedNameQualifier");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DistinguishedNameQualifier = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GenerationQualifier":
+                        {
+                            context.AddPathSegment("GenerationQualifier");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GenerationQualifier = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GivenName":
+                        {
+                            context.AddPathSegment("GivenName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GivenName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Initials":
+                        {
+                            context.AddPathSegment("Initials");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Initials = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Locality":
+                        {
+                            context.AddPathSegment("Locality");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Locality = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Organization":
+                        {
+                            context.AddPathSegment("Organization");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Organization = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "OrganizationalUnit":
+                        {
+                            context.AddPathSegment("OrganizationalUnit");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.OrganizationalUnit = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Pseudonym":
+                        {
+                            context.AddPathSegment("Pseudonym");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Pseudonym = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SerialNumber":
+                        {
+                            context.AddPathSegment("SerialNumber");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SerialNumber = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "State":
+                        {
+                            context.AddPathSegment("State");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Surname":
+                        {
+                            context.AddPathSegment("Surname");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Surname = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Title":
+                        {
+                            context.AddPathSegment("Title");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Title = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

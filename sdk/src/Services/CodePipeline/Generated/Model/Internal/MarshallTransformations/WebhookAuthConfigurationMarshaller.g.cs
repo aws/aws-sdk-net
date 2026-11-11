@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// WebhookAuthConfiguration Marshaller
     /// </summary>
-    public partial class WebhookAuthConfigurationMarshaller : IRequestMarshaller<WebhookAuthConfiguration, JsonMarshallerContext>
+    public partial class WebhookAuthConfigurationMarshaller : IRequestMarshaller<WebhookAuthConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(WebhookAuthConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(WebhookAuthConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAllowedIPRange())
             {
-                context.Writer.WritePropertyName("AllowedIPRange");
-                context.Writer.WriteStringValue(requestObject.AllowedIPRange);
+                context.Writer.WriteTextString("AllowedIPRange");
+                context.Writer.WriteTextString(requestObject.AllowedIPRange);
             }
 
             if (requestObject.IsSetSecretToken())
             {
-                context.Writer.WritePropertyName("SecretToken");
-                context.Writer.WriteStringValue(requestObject.SecretToken);
+                context.Writer.WriteTextString("SecretToken");
+                context.Writer.WriteTextString(requestObject.SecretToken);
             }
         }
 

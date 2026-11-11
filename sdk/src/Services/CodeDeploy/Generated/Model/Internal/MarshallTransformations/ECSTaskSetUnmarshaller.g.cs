@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -36,79 +38,84 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ECSTaskSet Object
     /// </summary>
-    public partial class ECSTaskSetUnmarshaller : IJsonUnmarshaller<ECSTaskSet, JsonUnmarshallerContext>
+    public partial class ECSTaskSetUnmarshaller : ICborUnmarshaller<ECSTaskSet, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ECSTaskSet Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ECSTaskSet Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ECSTaskSet();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("desiredCount", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.DesiredCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("identifer", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Identifer = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "desiredCount":
+                        context.AddPathSegment("DesiredCount");
+                        unmarshalledObject.DesiredCount = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("pendingCount", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.PendingCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "identifer":
+                        context.AddPathSegment("Identifer");
+                        unmarshalledObject.Identifer = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("runningCount", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RunningCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "pendingCount":
+                        context.AddPathSegment("PendingCount");
+                        unmarshalledObject.PendingCount = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "runningCount":
+                        context.AddPathSegment("RunningCount");
+                        unmarshalledObject.RunningCount = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("targetGroup", targetDepth, ref reader))
-                {
-                    var unmarshaller = TargetGroupInfoUnmarshaller.Instance;
-                    unmarshalledObject.TargetGroup = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "status":
+                        context.AddPathSegment("Status");
+                        unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("taskSetLabel", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskSetLabel = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "targetGroup":
+                        context.AddPathSegment("TargetGroup");
+                        unmarshalledObject.TargetGroup = TargetGroupInfoUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("trafficWeight", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.TrafficWeight = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "taskSetLabel":
+                        context.AddPathSegment("TaskSetLabel");
+                        unmarshalledObject.TaskSetLabel = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "trafficWeight":
+                        context.AddPathSegment("TrafficWeight");
+                        unmarshalledObject.TrafficWeight = CborNullableDoubleUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

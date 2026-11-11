@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceDiscovery.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
     /// <summary>
     /// SOA Marshaller
     /// </summary>
-    public partial class SOAMarshaller : IRequestMarshaller<SOA, JsonMarshallerContext>
+    public partial class SOAMarshaller : IRequestMarshaller<SOA, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(SOA requestObject, JsonMarshallerContext context)
+        public void Marshall(SOA requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetTTL())
             {
-                context.Writer.WritePropertyName("TTL");
-                context.Writer.WriteNumberValue(requestObject.TTL.Value);
+                context.Writer.WriteTextString("TTL");
+                context.Writer.WriteInt64(requestObject.TTL.Value);
             }
         }
 

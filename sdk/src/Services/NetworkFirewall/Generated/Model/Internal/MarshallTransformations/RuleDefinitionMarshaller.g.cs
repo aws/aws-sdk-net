@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,35 +39,35 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// RuleDefinition Marshaller
     /// </summary>
-    public partial class RuleDefinitionMarshaller : IRequestMarshaller<RuleDefinition, JsonMarshallerContext>
+    public partial class RuleDefinitionMarshaller : IRequestMarshaller<RuleDefinition, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RuleDefinition requestObject, JsonMarshallerContext context)
+        public void Marshall(RuleDefinition requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetActions())
             {
-                context.Writer.WritePropertyName("Actions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Actions");
+                context.Writer.WriteStartArray(requestObject.Actions.Count);
                 foreach (var requestObjectActionsListValue in requestObject.Actions)
                 {
-                    context.Writer.WriteStringValue(requestObjectActionsListValue);
+                    context.Writer.WriteTextString(requestObjectActionsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetMatchAttributes())
             {
-                context.Writer.WritePropertyName("MatchAttributes");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("MatchAttributes");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = MatchAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.MatchAttributes, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

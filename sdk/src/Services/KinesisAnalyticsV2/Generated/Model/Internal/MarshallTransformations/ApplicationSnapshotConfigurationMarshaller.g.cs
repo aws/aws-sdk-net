@@ -45,6 +45,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetSnapshotMode())
+            {
+                context.Writer.WritePropertyName("SnapshotMode");
+                context.Writer.WriteStringValue(requestObject.SnapshotMode);
+            }
+
             if (requestObject.IsSetSnapshotsEnabled())
             {
                 context.Writer.WritePropertyName("SnapshotsEnabled");

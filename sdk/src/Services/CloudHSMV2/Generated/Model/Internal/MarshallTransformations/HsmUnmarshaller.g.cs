@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CloudHSMV2.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
@@ -36,93 +38,96 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Hsm Object
     /// </summary>
-    public partial class HsmUnmarshaller : IJsonUnmarshaller<Hsm, JsonUnmarshallerContext>
+    public partial class HsmUnmarshaller : ICborUnmarshaller<Hsm, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Hsm Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Hsm Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Hsm();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AvailabilityZone", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ClusterId", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AvailabilityZone":
+                        context.AddPathSegment("AvailabilityZone");
+                        unmarshalledObject.AvailabilityZone = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EniId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EniId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ClusterId":
+                        context.AddPathSegment("ClusterId");
+                        unmarshalledObject.ClusterId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EniIp", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EniIp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EniId":
+                        context.AddPathSegment("EniId");
+                        unmarshalledObject.EniId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EniIpV6", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EniIpV6 = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EniIp":
+                        context.AddPathSegment("EniIp");
+                        unmarshalledObject.EniIp = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("HsmId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HsmId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EniIpV6":
+                        context.AddPathSegment("EniIpV6");
+                        unmarshalledObject.EniIpV6 = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("HsmType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HsmType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "HsmId":
+                        context.AddPathSegment("HsmId");
+                        unmarshalledObject.HsmId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("State", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "HsmType":
+                        context.AddPathSegment("HsmType");
+                        unmarshalledObject.HsmType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StateMessage", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StateMessage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "State":
+                        context.AddPathSegment("State");
+                        unmarshalledObject.State = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SubnetId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "StateMessage":
+                        context.AddPathSegment("StateMessage");
+                        unmarshalledObject.StateMessage = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "SubnetId":
+                        context.AddPathSegment("SubnetId");
+                        unmarshalledObject.SubnetId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

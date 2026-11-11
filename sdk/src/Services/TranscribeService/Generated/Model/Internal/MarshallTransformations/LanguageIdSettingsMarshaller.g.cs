@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// LanguageIdSettings Marshaller
     /// </summary>
-    public partial class LanguageIdSettingsMarshaller : IRequestMarshaller<LanguageIdSettings, JsonMarshallerContext>
+    public partial class LanguageIdSettingsMarshaller : IRequestMarshaller<LanguageIdSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(LanguageIdSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(LanguageIdSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetLanguageModelName())
             {
-                context.Writer.WritePropertyName("LanguageModelName");
-                context.Writer.WriteStringValue(requestObject.LanguageModelName);
+                context.Writer.WriteTextString("LanguageModelName");
+                context.Writer.WriteTextString(requestObject.LanguageModelName);
             }
 
             if (requestObject.IsSetVocabularyFilterName())
             {
-                context.Writer.WritePropertyName("VocabularyFilterName");
-                context.Writer.WriteStringValue(requestObject.VocabularyFilterName);
+                context.Writer.WriteTextString("VocabularyFilterName");
+                context.Writer.WriteTextString(requestObject.VocabularyFilterName);
             }
 
             if (requestObject.IsSetVocabularyName())
             {
-                context.Writer.WritePropertyName("VocabularyName");
-                context.Writer.WriteStringValue(requestObject.VocabularyName);
+                context.Writer.WriteTextString("VocabularyName");
+                context.Writer.WriteTextString(requestObject.VocabularyName);
             }
         }
 

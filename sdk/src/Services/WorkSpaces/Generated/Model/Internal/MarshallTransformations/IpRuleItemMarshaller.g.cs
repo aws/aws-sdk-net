@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// IpRuleItem Marshaller
     /// </summary>
-    public partial class IpRuleItemMarshaller : IRequestMarshaller<IpRuleItem, JsonMarshallerContext>
+    public partial class IpRuleItemMarshaller : IRequestMarshaller<IpRuleItem, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(IpRuleItem requestObject, JsonMarshallerContext context)
+        public void Marshall(IpRuleItem requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetIpRule())
             {
-                context.Writer.WritePropertyName("ipRule");
-                context.Writer.WriteStringValue(requestObject.IpRule);
+                context.Writer.WriteTextString("ipRule");
+                context.Writer.WriteTextString(requestObject.IpRule);
             }
 
             if (requestObject.IsSetRuleDesc())
             {
-                context.Writer.WritePropertyName("ruleDesc");
-                context.Writer.WriteStringValue(requestObject.RuleDesc);
+                context.Writer.WriteTextString("ruleDesc");
+                context.Writer.WriteTextString(requestObject.RuleDesc);
             }
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,57 +39,57 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// DatasetInputDataConfig Marshaller
     /// </summary>
-    public partial class DatasetInputDataConfigMarshaller : IRequestMarshaller<DatasetInputDataConfig, JsonMarshallerContext>
+    public partial class DatasetInputDataConfigMarshaller : IRequestMarshaller<DatasetInputDataConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DatasetInputDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(DatasetInputDataConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAugmentedManifests())
             {
-                context.Writer.WritePropertyName("AugmentedManifests");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("AugmentedManifests");
+                context.Writer.WriteStartArray(requestObject.AugmentedManifests.Count);
                 foreach (var requestObjectAugmentedManifestsListValue in requestObject.AugmentedManifests)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = DatasetAugmentedManifestsListItemMarshaller.Instance;
                     marshaller.Marshall(requestObjectAugmentedManifestsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetDataFormat())
             {
-                context.Writer.WritePropertyName("DataFormat");
-                context.Writer.WriteStringValue(requestObject.DataFormat);
+                context.Writer.WriteTextString("DataFormat");
+                context.Writer.WriteTextString(requestObject.DataFormat);
             }
 
             if (requestObject.IsSetDocumentClassifierInputDataConfig())
             {
-                context.Writer.WritePropertyName("DocumentClassifierInputDataConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("DocumentClassifierInputDataConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DatasetDocumentClassifierInputDataConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DocumentClassifierInputDataConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetEntityRecognizerInputDataConfig())
             {
-                context.Writer.WritePropertyName("EntityRecognizerInputDataConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("EntityRecognizerInputDataConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DatasetEntityRecognizerInputDataConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.EntityRecognizerInputDataConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

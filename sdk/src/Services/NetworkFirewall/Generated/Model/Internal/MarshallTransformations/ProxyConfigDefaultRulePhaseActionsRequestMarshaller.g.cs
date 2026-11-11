@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProxyConfigDefaultRulePhaseActionsRequest Marshaller
     /// </summary>
-    public partial class ProxyConfigDefaultRulePhaseActionsRequestMarshaller : IRequestMarshaller<ProxyConfigDefaultRulePhaseActionsRequest, JsonMarshallerContext>
+    public partial class ProxyConfigDefaultRulePhaseActionsRequestMarshaller : IRequestMarshaller<ProxyConfigDefaultRulePhaseActionsRequest, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProxyConfigDefaultRulePhaseActionsRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(ProxyConfigDefaultRulePhaseActionsRequest requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetPostRESPONSE())
             {
-                context.Writer.WritePropertyName("PostRESPONSE");
-                context.Writer.WriteStringValue(requestObject.PostRESPONSE);
+                context.Writer.WriteTextString("PostRESPONSE");
+                context.Writer.WriteTextString(requestObject.PostRESPONSE);
             }
 
             if (requestObject.IsSetPreDNS())
             {
-                context.Writer.WritePropertyName("PreDNS");
-                context.Writer.WriteStringValue(requestObject.PreDNS);
+                context.Writer.WriteTextString("PreDNS");
+                context.Writer.WriteTextString(requestObject.PreDNS);
             }
 
             if (requestObject.IsSetPreREQUEST())
             {
-                context.Writer.WritePropertyName("PreREQUEST");
-                context.Writer.WriteStringValue(requestObject.PreREQUEST);
+                context.Writer.WriteTextString("PreREQUEST");
+                context.Writer.WriteTextString(requestObject.PreREQUEST);
             }
         }
 

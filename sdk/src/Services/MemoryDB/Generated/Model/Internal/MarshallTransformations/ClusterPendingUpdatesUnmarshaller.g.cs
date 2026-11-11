@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.MemoryDB.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterPendingUpdates Object
     /// </summary>
-    public partial class ClusterPendingUpdatesUnmarshaller : IJsonUnmarshaller<ClusterPendingUpdates, JsonUnmarshallerContext>
+    public partial class ClusterPendingUpdatesUnmarshaller : ICborUnmarshaller<ClusterPendingUpdates, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ClusterPendingUpdates Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ClusterPendingUpdates Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ClusterPendingUpdates();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ACLs", targetDepth, ref reader))
-                {
-                    var unmarshaller = ACLsUpdateStatusUnmarshaller.Instance;
-                    unmarshalledObject.ACLs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Resharding", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = ReshardingStatusUnmarshaller.Instance;
-                    unmarshalledObject.Resharding = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ACLs":
+                        context.AddPathSegment("ACLs");
+                        unmarshalledObject.ACLs = ACLsUpdateStatusUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ServiceUpdates", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<PendingModifiedServiceUpdate, PendingModifiedServiceUpdateUnmarshaller>(PendingModifiedServiceUpdateUnmarshaller.Instance);
-                    unmarshalledObject.ServiceUpdates = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Resharding":
+                        context.AddPathSegment("Resharding");
+                        unmarshalledObject.Resharding = ReshardingStatusUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ServiceUpdates":
+                        context.AddPathSegment("ServiceUpdates");
+                        unmarshalledObject.ServiceUpdates = new CborListUnmarshaller<PendingModifiedServiceUpdate, PendingModifiedServiceUpdateUnmarshaller>(PendingModifiedServiceUpdateUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

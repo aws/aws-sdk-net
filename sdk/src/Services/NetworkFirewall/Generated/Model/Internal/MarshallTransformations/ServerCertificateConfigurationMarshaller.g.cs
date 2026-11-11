@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,60 +39,60 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// ServerCertificateConfiguration Marshaller
     /// </summary>
-    public partial class ServerCertificateConfigurationMarshaller : IRequestMarshaller<ServerCertificateConfiguration, JsonMarshallerContext>
+    public partial class ServerCertificateConfigurationMarshaller : IRequestMarshaller<ServerCertificateConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ServerCertificateConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ServerCertificateConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCertificateAuthorityArn())
             {
-                context.Writer.WritePropertyName("CertificateAuthorityArn");
-                context.Writer.WriteStringValue(requestObject.CertificateAuthorityArn);
+                context.Writer.WriteTextString("CertificateAuthorityArn");
+                context.Writer.WriteTextString(requestObject.CertificateAuthorityArn);
             }
 
             if (requestObject.IsSetCheckCertificateRevocationStatus())
             {
-                context.Writer.WritePropertyName("CheckCertificateRevocationStatus");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("CheckCertificateRevocationStatus");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CheckCertificateRevocationStatusActionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CheckCertificateRevocationStatus, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetScopes())
             {
-                context.Writer.WritePropertyName("Scopes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Scopes");
+                context.Writer.WriteStartArray(requestObject.Scopes.Count);
                 foreach (var requestObjectScopesListValue in requestObject.Scopes)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ServerCertificateScopeMarshaller.Instance;
                     marshaller.Marshall(requestObjectScopesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetServerCertificates())
             {
-                context.Writer.WritePropertyName("ServerCertificates");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ServerCertificates");
+                context.Writer.WriteStartArray(requestObject.ServerCertificates.Count);
                 foreach (var requestObjectServerCertificatesListValue in requestObject.ServerCertificates)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ServerCertificateMarshaller.Instance;
                     marshaller.Marshall(requestObjectServerCertificatesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

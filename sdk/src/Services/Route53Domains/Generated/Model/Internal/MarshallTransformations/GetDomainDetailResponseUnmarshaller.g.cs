@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Route53Domains.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Globalization;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
@@ -38,188 +38,174 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetDomainDetail operation.
     /// </summary>
-    public partial class GetDomainDetailResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class GetDomainDetailResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new GetDomainDetailResponse();
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = context.Reader;
 
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            context.AddPathSegment("GetDomainDetail");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.TestExpression("AbuseContactEmail", targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AbuseContactEmail = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AbuseContactEmail":
+                        context.AddPathSegment("AbuseContactEmail");
+                        unmarshalledObject.AbuseContactEmail = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("AbuseContactPhone", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AbuseContactPhone = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AbuseContactPhone":
+                        context.AddPathSegment("AbuseContactPhone");
+                        unmarshalledObject.AbuseContactPhone = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("AdminContact", targetDepth, ref reader))
-                {
-                    var unmarshaller = ContactDetailUnmarshaller.Instance;
-                    unmarshalledObject.AdminContact = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AdminContact":
+                        context.AddPathSegment("AdminContact");
+                        unmarshalledObject.AdminContact = ContactDetailUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("AdminPrivacy", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AdminPrivacy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AdminPrivacy":
+                        context.AddPathSegment("AdminPrivacy");
+                        unmarshalledObject.AdminPrivacy = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("AutoRenew", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AutoRenew = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AutoRenew":
+                        context.AddPathSegment("AutoRenew");
+                        unmarshalledObject.AutoRenew = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("BillingContact", targetDepth, ref reader))
-                {
-                    var unmarshaller = ContactDetailUnmarshaller.Instance;
-                    unmarshalledObject.BillingContact = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BillingContact":
+                        context.AddPathSegment("BillingContact");
+                        unmarshalledObject.BillingContact = ContactDetailUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("BillingPrivacy", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.BillingPrivacy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BillingPrivacy":
+                        context.AddPathSegment("BillingPrivacy");
+                        unmarshalledObject.BillingPrivacy = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("CreationDate", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CreationDate":
+                        context.AddPathSegment("CreationDate");
+                        unmarshalledObject.CreationDate = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DnsSec", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsSec = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DnsSec":
+                        context.AddPathSegment("DnsSec");
+                        unmarshalledObject.DnsSec = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DnssecKeys", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<DnssecKey, DnssecKeyUnmarshaller>(DnssecKeyUnmarshaller.Instance);
-                    unmarshalledObject.DnssecKeys = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DnssecKeys":
+                        context.AddPathSegment("DnssecKeys");
+                        unmarshalledObject.DnssecKeys = new CborListUnmarshaller<DnssecKey, DnssecKeyUnmarshaller>(DnssecKeyUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DomainName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DomainName":
+                        context.AddPathSegment("DomainName");
+                        unmarshalledObject.DomainName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ExpirationDate", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ExpirationDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ExpirationDate":
+                        context.AddPathSegment("ExpirationDate");
+                        unmarshalledObject.ExpirationDate = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Nameservers", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Nameserver, NameserverUnmarshaller>(NameserverUnmarshaller.Instance);
-                    unmarshalledObject.Nameservers = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Nameservers":
+                        context.AddPathSegment("Nameservers");
+                        unmarshalledObject.Nameservers = new CborListUnmarshaller<Nameserver, NameserverUnmarshaller>(NameserverUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RegistrantContact", targetDepth, ref reader))
-                {
-                    var unmarshaller = ContactDetailUnmarshaller.Instance;
-                    unmarshalledObject.RegistrantContact = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RegistrantContact":
+                        context.AddPathSegment("RegistrantContact");
+                        unmarshalledObject.RegistrantContact = ContactDetailUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RegistrantPrivacy", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RegistrantPrivacy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RegistrantPrivacy":
+                        context.AddPathSegment("RegistrantPrivacy");
+                        unmarshalledObject.RegistrantPrivacy = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RegistrarName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegistrarName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RegistrarName":
+                        context.AddPathSegment("RegistrarName");
+                        unmarshalledObject.RegistrarName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RegistrarUrl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegistrarUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RegistrarUrl":
+                        context.AddPathSegment("RegistrarUrl");
+                        unmarshalledObject.RegistrarUrl = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RegistryDomainId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegistryDomainId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RegistryDomainId":
+                        context.AddPathSegment("RegistryDomainId");
+                        unmarshalledObject.RegistryDomainId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Reseller", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reseller = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Reseller":
+                        context.AddPathSegment("Reseller");
+                        unmarshalledObject.Reseller = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StatusList", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.StatusList = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StatusList":
+                        context.AddPathSegment("StatusList");
+                        unmarshalledObject.StatusList = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TechContact", targetDepth, ref reader))
-                {
-                    var unmarshaller = ContactDetailUnmarshaller.Instance;
-                    unmarshalledObject.TechContact = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TechContact":
+                        context.AddPathSegment("TechContact");
+                        unmarshalledObject.TechContact = ContactDetailUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TechPrivacy", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.TechPrivacy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TechPrivacy":
+                        context.AddPathSegment("TechPrivacy");
+                        unmarshalledObject.TechPrivacy = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("UpdatedDate", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "UpdatedDate":
+                        context.AddPathSegment("UpdatedDate");
+                        unmarshalledObject.UpdatedDate = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("WhoIsServer", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WhoIsServer = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "WhoIsServer":
+                        context.AddPathSegment("WhoIsServer");
+                        unmarshalledObject.WhoIsServer = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }
@@ -227,11 +213,9 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <summary>
         /// Unmarshall error response to exception.
         /// </summary>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
-
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -239,16 +223,15 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             {
-                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
                     {
-                        return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedTLD"))
                     {
-                        return UnsupportedTLDExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return UnsupportedTLDExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                 }
             }

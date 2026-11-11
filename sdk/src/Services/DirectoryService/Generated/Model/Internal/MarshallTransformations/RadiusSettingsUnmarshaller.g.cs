@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -36,86 +38,90 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RadiusSettings Object
     /// </summary>
-    public partial class RadiusSettingsUnmarshaller : IJsonUnmarshaller<RadiusSettings, JsonUnmarshallerContext>
+    public partial class RadiusSettingsUnmarshaller : ICborUnmarshaller<RadiusSettings, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public RadiusSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RadiusSettings Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new RadiusSettings();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AuthenticationProtocol", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationProtocol = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("DisplayLabel", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayLabel = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AuthenticationProtocol":
+                        context.AddPathSegment("AuthenticationProtocol");
+                        unmarshalledObject.AuthenticationProtocol = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RadiusPort", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RadiusPort = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DisplayLabel":
+                        context.AddPathSegment("DisplayLabel");
+                        unmarshalledObject.DisplayLabel = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RadiusRetries", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RadiusRetries = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RadiusPort":
+                        context.AddPathSegment("RadiusPort");
+                        unmarshalledObject.RadiusPort = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RadiusServers", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.RadiusServers = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RadiusRetries":
+                        context.AddPathSegment("RadiusRetries");
+                        unmarshalledObject.RadiusRetries = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RadiusServersIpv6", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.RadiusServersIpv6 = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RadiusServers":
+                        context.AddPathSegment("RadiusServers");
+                        unmarshalledObject.RadiusServers = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RadiusTimeout", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RadiusTimeout = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RadiusServersIpv6":
+                        context.AddPathSegment("RadiusServersIpv6");
+                        unmarshalledObject.RadiusServersIpv6 = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SharedSecret", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SharedSecret = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RadiusTimeout":
+                        context.AddPathSegment("RadiusTimeout");
+                        unmarshalledObject.RadiusTimeout = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("UseSameUsername", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UseSameUsername = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "SharedSecret":
+                        context.AddPathSegment("SharedSecret");
+                        unmarshalledObject.SharedSecret = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "UseSameUsername":
+                        context.AddPathSegment("UseSameUsername");
+                        unmarshalledObject.UseSameUsername = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

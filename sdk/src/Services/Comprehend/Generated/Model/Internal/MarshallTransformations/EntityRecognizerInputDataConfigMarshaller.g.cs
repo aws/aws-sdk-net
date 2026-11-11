@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,82 +39,82 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// EntityRecognizerInputDataConfig Marshaller
     /// </summary>
-    public partial class EntityRecognizerInputDataConfigMarshaller : IRequestMarshaller<EntityRecognizerInputDataConfig, JsonMarshallerContext>
+    public partial class EntityRecognizerInputDataConfigMarshaller : IRequestMarshaller<EntityRecognizerInputDataConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(EntityRecognizerInputDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(EntityRecognizerInputDataConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAnnotations())
             {
-                context.Writer.WritePropertyName("Annotations");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Annotations");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = EntityRecognizerAnnotationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Annotations, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetAugmentedManifests())
             {
-                context.Writer.WritePropertyName("AugmentedManifests");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("AugmentedManifests");
+                context.Writer.WriteStartArray(requestObject.AugmentedManifests.Count);
                 foreach (var requestObjectAugmentedManifestsListValue in requestObject.AugmentedManifests)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = AugmentedManifestsListItemMarshaller.Instance;
                     marshaller.Marshall(requestObjectAugmentedManifestsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetDataFormat())
             {
-                context.Writer.WritePropertyName("DataFormat");
-                context.Writer.WriteStringValue(requestObject.DataFormat);
+                context.Writer.WriteTextString("DataFormat");
+                context.Writer.WriteTextString(requestObject.DataFormat);
             }
 
             if (requestObject.IsSetDocuments())
             {
-                context.Writer.WritePropertyName("Documents");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Documents");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = EntityRecognizerDocumentsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Documents, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetEntityList())
             {
-                context.Writer.WritePropertyName("EntityList");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("EntityList");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = EntityRecognizerEntityListMarshaller.Instance;
                 marshaller.Marshall(requestObject.EntityList, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetEntityTypes())
             {
-                context.Writer.WritePropertyName("EntityTypes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("EntityTypes");
+                context.Writer.WriteStartArray(requestObject.EntityTypes.Count);
                 foreach (var requestObjectEntityTypesListValue in requestObject.EntityTypes)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = EntityTypesListItemMarshaller.Instance;
                     marshaller.Marshall(requestObjectEntityTypesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// ServerCertificate Marshaller
     /// </summary>
-    public partial class ServerCertificateMarshaller : IRequestMarshaller<ServerCertificate, JsonMarshallerContext>
+    public partial class ServerCertificateMarshaller : IRequestMarshaller<ServerCertificate, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ServerCertificate requestObject, JsonMarshallerContext context)
+        public void Marshall(ServerCertificate requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetResourceArn())
             {
-                context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.WriteStringValue(requestObject.ResourceArn);
+                context.Writer.WriteTextString("ResourceArn");
+                context.Writer.WriteTextString(requestObject.ResourceArn);
             }
         }
 

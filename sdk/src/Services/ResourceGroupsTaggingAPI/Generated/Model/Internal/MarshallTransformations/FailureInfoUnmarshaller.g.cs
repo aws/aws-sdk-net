@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ResourceGroupsTaggingAPI.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FailureInfo Object
     /// </summary>
-    public partial class FailureInfoUnmarshaller : IJsonUnmarshaller<FailureInfo, JsonUnmarshallerContext>
+    public partial class FailureInfoUnmarshaller : ICborUnmarshaller<FailureInfo, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public FailureInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FailureInfo Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new FailureInfo();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ErrorCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ErrorMessage", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ErrorCode":
+                        context.AddPathSegment("ErrorCode");
+                        unmarshalledObject.ErrorCode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StatusCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ErrorMessage":
+                        context.AddPathSegment("ErrorMessage");
+                        unmarshalledObject.ErrorMessage = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "StatusCode":
+                        context.AddPathSegment("StatusCode");
+                        unmarshalledObject.StatusCode = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

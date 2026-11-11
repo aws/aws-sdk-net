@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,37 +39,37 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// DatasetFilter Marshaller
     /// </summary>
-    public partial class DatasetFilterMarshaller : IRequestMarshaller<DatasetFilter, JsonMarshallerContext>
+    public partial class DatasetFilterMarshaller : IRequestMarshaller<DatasetFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DatasetFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(DatasetFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCreationTimeAfter())
             {
-                context.Writer.WritePropertyName("CreationTimeAfter");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.CreationTimeAfter.Value));
+                context.Writer.WriteTextString("CreationTimeAfter");
+                context.Writer.WriteDateTime(requestObject.CreationTimeAfter.Value);
             }
 
             if (requestObject.IsSetCreationTimeBefore())
             {
-                context.Writer.WritePropertyName("CreationTimeBefore");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.CreationTimeBefore.Value));
+                context.Writer.WriteTextString("CreationTimeBefore");
+                context.Writer.WriteDateTime(requestObject.CreationTimeBefore.Value);
             }
 
             if (requestObject.IsSetDatasetType())
             {
-                context.Writer.WritePropertyName("DatasetType");
-                context.Writer.WriteStringValue(requestObject.DatasetType);
+                context.Writer.WriteTextString("DatasetType");
+                context.Writer.WriteTextString(requestObject.DatasetType);
             }
 
             if (requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("Status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WriteTextString("Status");
+                context.Writer.WriteTextString(requestObject.Status);
             }
         }
 

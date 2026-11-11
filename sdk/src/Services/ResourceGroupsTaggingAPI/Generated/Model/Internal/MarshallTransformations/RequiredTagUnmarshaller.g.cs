@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ResourceGroupsTaggingAPI.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RequiredTag Object
     /// </summary>
-    public partial class RequiredTagUnmarshaller : IJsonUnmarshaller<RequiredTag, JsonUnmarshallerContext>
+    public partial class RequiredTagUnmarshaller : ICborUnmarshaller<RequiredTag, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public RequiredTag Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RequiredTag Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new RequiredTag();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CloudFormationResourceTypes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.CloudFormationResourceTypes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ReportingTagKeys", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ReportingTagKeys = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CloudFormationResourceTypes":
+                        context.AddPathSegment("CloudFormationResourceTypes");
+                        unmarshalledObject.CloudFormationResourceTypes = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ResourceType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ReportingTagKeys":
+                        context.AddPathSegment("ReportingTagKeys");
+                        unmarshalledObject.ReportingTagKeys = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ResourceType":
+                        context.AddPathSegment("ResourceType");
+                        unmarshalledObject.ResourceType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

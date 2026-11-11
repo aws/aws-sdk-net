@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,58 +39,58 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// DirectoryConnectSettings Marshaller
     /// </summary>
-    public partial class DirectoryConnectSettingsMarshaller : IRequestMarshaller<DirectoryConnectSettings, JsonMarshallerContext>
+    public partial class DirectoryConnectSettingsMarshaller : IRequestMarshaller<DirectoryConnectSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DirectoryConnectSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(DirectoryConnectSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCustomerDnsIps())
             {
-                context.Writer.WritePropertyName("CustomerDnsIps");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("CustomerDnsIps");
+                context.Writer.WriteStartArray(requestObject.CustomerDnsIps.Count);
                 foreach (var requestObjectCustomerDnsIpsListValue in requestObject.CustomerDnsIps)
                 {
-                    context.Writer.WriteStringValue(requestObjectCustomerDnsIpsListValue);
+                    context.Writer.WriteTextString(requestObjectCustomerDnsIpsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetCustomerDnsIpsV6())
             {
-                context.Writer.WritePropertyName("CustomerDnsIpsV6");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("CustomerDnsIpsV6");
+                context.Writer.WriteStartArray(requestObject.CustomerDnsIpsV6.Count);
                 foreach (var requestObjectCustomerDnsIpsV6ListValue in requestObject.CustomerDnsIpsV6)
                 {
-                    context.Writer.WriteStringValue(requestObjectCustomerDnsIpsV6ListValue);
+                    context.Writer.WriteTextString(requestObjectCustomerDnsIpsV6ListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetCustomerUserName())
             {
-                context.Writer.WritePropertyName("CustomerUserName");
-                context.Writer.WriteStringValue(requestObject.CustomerUserName);
+                context.Writer.WriteTextString("CustomerUserName");
+                context.Writer.WriteTextString(requestObject.CustomerUserName);
             }
 
             if (requestObject.IsSetSubnetIds())
             {
-                context.Writer.WritePropertyName("SubnetIds");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("SubnetIds");
+                context.Writer.WriteStartArray(requestObject.SubnetIds.Count);
                 foreach (var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
                 {
-                    context.Writer.WriteStringValue(requestObjectSubnetIdsListValue);
+                    context.Writer.WriteTextString(requestObjectSubnetIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetVpcId())
             {
-                context.Writer.WritePropertyName("VpcId");
-                context.Writer.WriteStringValue(requestObject.VpcId);
+                context.Writer.WriteTextString("VpcId");
+                context.Writer.WriteTextString(requestObject.VpcId);
             }
         }
 

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExtendedKeyUsage Marshaller
     /// </summary>
-    public class ExtendedKeyUsageMarshaller : IRequestMarshaller<ExtendedKeyUsage, JsonMarshallerContext> 
+    public class ExtendedKeyUsageMarshaller : IRequestMarshaller<ExtendedKeyUsage, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ExtendedKeyUsage requestObject, JsonMarshallerContext context)
+        public void Marshall(ExtendedKeyUsage requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetExtendedKeyUsageObjectIdentifier())
-            {
-                context.Writer.WritePropertyName("ExtendedKeyUsageObjectIdentifier");
-                context.Writer.WriteStringValue(requestObject.ExtendedKeyUsageObjectIdentifier);
-            }
 
-            if(requestObject.IsSetExtendedKeyUsageType())
+            if (requestObject.IsSetExtendedKeyUsageObjectIdentifier())
             {
-                context.Writer.WritePropertyName("ExtendedKeyUsageType");
-                context.Writer.WriteStringValue(requestObject.ExtendedKeyUsageType);
+                context.Writer.WriteTextString("ExtendedKeyUsageObjectIdentifier");
+                context.Writer.WriteTextString(requestObject.ExtendedKeyUsageObjectIdentifier);
             }
-
+            if (requestObject.IsSetExtendedKeyUsageType())
+            {
+                context.Writer.WriteTextString("ExtendedKeyUsageType");
+                context.Writer.WriteTextString(requestObject.ExtendedKeyUsageType);
+            }
         }
 
         /// <summary>

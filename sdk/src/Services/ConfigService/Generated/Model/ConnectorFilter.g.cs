@@ -50,8 +50,17 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property FilterValues. 
         /// <para>
-        /// The value of the filter. For <c>provider</c>, valid values include: <c>AZURE</c>.
+        /// The value of the filter. For <c>provider</c>, valid values include:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AZURE</c> – The connector is for Microsoft Azure
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GCP</c> – The connector is for Google Cloud
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

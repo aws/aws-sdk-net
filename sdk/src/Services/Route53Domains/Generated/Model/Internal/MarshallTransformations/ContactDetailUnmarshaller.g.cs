@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Route53Domains.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
@@ -36,121 +38,120 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ContactDetail Object
     /// </summary>
-    public partial class ContactDetailUnmarshaller : IJsonUnmarshaller<ContactDetail, JsonUnmarshallerContext>
+    public partial class ContactDetailUnmarshaller : ICborUnmarshaller<ContactDetail, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ContactDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ContactDetail Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ContactDetail();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AddressLine1", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddressLine1 = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("AddressLine2", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddressLine2 = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AddressLine1":
+                        context.AddPathSegment("AddressLine1");
+                        unmarshalledObject.AddressLine1 = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("City", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.City = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AddressLine2":
+                        context.AddPathSegment("AddressLine2");
+                        unmarshalledObject.AddressLine2 = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ContactType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContactType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "City":
+                        context.AddPathSegment("City");
+                        unmarshalledObject.City = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("CountryCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CountryCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ContactType":
+                        context.AddPathSegment("ContactType");
+                        unmarshalledObject.ContactType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Email", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Email = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CountryCode":
+                        context.AddPathSegment("CountryCode");
+                        unmarshalledObject.CountryCode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ExtraParams", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ExtraParam, ExtraParamUnmarshaller>(ExtraParamUnmarshaller.Instance);
-                    unmarshalledObject.ExtraParams = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Email":
+                        context.AddPathSegment("Email");
+                        unmarshalledObject.Email = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Fax", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Fax = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ExtraParams":
+                        context.AddPathSegment("ExtraParams");
+                        unmarshalledObject.ExtraParams = new CborListUnmarshaller<ExtraParam, ExtraParamUnmarshaller>(ExtraParamUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FirstName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FirstName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Fax":
+                        context.AddPathSegment("Fax");
+                        unmarshalledObject.Fax = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LastName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FirstName":
+                        context.AddPathSegment("FirstName");
+                        unmarshalledObject.FirstName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("OrganizationName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OrganizationName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LastName":
+                        context.AddPathSegment("LastName");
+                        unmarshalledObject.LastName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("PhoneNumber", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PhoneNumber = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "OrganizationName":
+                        context.AddPathSegment("OrganizationName");
+                        unmarshalledObject.OrganizationName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("State", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "PhoneNumber":
+                        context.AddPathSegment("PhoneNumber");
+                        unmarshalledObject.PhoneNumber = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ZipCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ZipCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "State":
+                        context.AddPathSegment("State");
+                        unmarshalledObject.State = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ZipCode":
+                        context.AddPathSegment("ZipCode");
+                        unmarshalledObject.ZipCode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

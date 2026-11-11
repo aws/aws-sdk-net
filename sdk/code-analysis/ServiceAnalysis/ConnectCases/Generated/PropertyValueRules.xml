@@ -391,6 +391,23 @@
     <pattern>^.*[\S]$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCases.Model.GetMergeCasesStatusRequest.CaseId</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.GetMergeCasesStatusRequest.DomainId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.GetMergeCasesStatusResponse.PrimaryCaseId</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCases.Model.GetTemplateRequest.DomainId</property>
     <min>1</min>
     <max>500</max>
@@ -651,6 +668,17 @@
     <max>9000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCases.Model.StartMergeCasesRequest.CaseId</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.StartMergeCasesRequest.DomainId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCases.Model.TagResourceRequest.Arn</property>
     <min>1</min>
     <max>500</max>
@@ -791,6 +819,23 @@
     <property>Amazon.ConnectCases.Model.AuditEventPerformedBy.IamPrincipalArn</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.AuditMergeMetadata.MergeEventId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.AuditMergeMetadata.PrimaryCaseId</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.AuditMergeMetadata.SecondaryCaseId</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.BatchCreateRelatedItemSuccessEntry.RelatedItemArn</property>
@@ -1019,6 +1064,12 @@
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.FieldValueUnion.StringValue</property>
     <max>4100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.FieldsConfiguration.SourceCaseId</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^[A-Za-z0-9\-._/:#=+-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.FileContent.FileArn</property>

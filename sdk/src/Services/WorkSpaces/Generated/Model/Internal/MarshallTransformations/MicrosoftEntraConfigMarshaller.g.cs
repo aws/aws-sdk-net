@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// MicrosoftEntraConfig Marshaller
     /// </summary>
-    public partial class MicrosoftEntraConfigMarshaller : IRequestMarshaller<MicrosoftEntraConfig, JsonMarshallerContext>
+    public partial class MicrosoftEntraConfigMarshaller : IRequestMarshaller<MicrosoftEntraConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(MicrosoftEntraConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(MicrosoftEntraConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetApplicationConfigSecretArn())
             {
-                context.Writer.WritePropertyName("ApplicationConfigSecretArn");
-                context.Writer.WriteStringValue(requestObject.ApplicationConfigSecretArn);
+                context.Writer.WriteTextString("ApplicationConfigSecretArn");
+                context.Writer.WriteTextString(requestObject.ApplicationConfigSecretArn);
             }
 
             if (requestObject.IsSetTenantId())
             {
-                context.Writer.WritePropertyName("TenantId");
-                context.Writer.WriteStringValue(requestObject.TenantId);
+                context.Writer.WriteTextString("TenantId");
+                context.Writer.WriteTextString(requestObject.TenantId);
             }
         }
 

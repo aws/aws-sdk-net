@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,36 +39,36 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// InputDataConfig Marshaller
     /// </summary>
-    public partial class InputDataConfigMarshaller : IRequestMarshaller<InputDataConfig, JsonMarshallerContext>
+    public partial class InputDataConfigMarshaller : IRequestMarshaller<InputDataConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(InputDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(InputDataConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDocumentReaderConfig())
             {
-                context.Writer.WritePropertyName("DocumentReaderConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("DocumentReaderConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DocumentReaderConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DocumentReaderConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetInputFormat())
             {
-                context.Writer.WritePropertyName("InputFormat");
-                context.Writer.WriteStringValue(requestObject.InputFormat);
+                context.Writer.WriteTextString("InputFormat");
+                context.Writer.WriteTextString(requestObject.InputFormat);
             }
 
             if (requestObject.IsSetS3Uri())
             {
-                context.Writer.WritePropertyName("S3Uri");
-                context.Writer.WriteStringValue(requestObject.S3Uri);
+                context.Writer.WriteTextString("S3Uri");
+                context.Writer.WriteTextString(requestObject.S3Uri);
             }
         }
 

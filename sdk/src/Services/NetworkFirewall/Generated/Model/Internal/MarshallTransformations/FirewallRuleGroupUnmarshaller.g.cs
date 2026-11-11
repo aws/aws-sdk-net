@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FirewallRuleGroup Object
     /// </summary>
-    public partial class FirewallRuleGroupUnmarshaller : IJsonUnmarshaller<FirewallRuleGroup, JsonUnmarshallerContext>
+    public partial class FirewallRuleGroupUnmarshaller : ICborUnmarshaller<FirewallRuleGroup, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public FirewallRuleGroup Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FirewallRuleGroup Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new FirewallRuleGroup();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ReferenceSets", targetDepth, ref reader))
-                {
-                    var unmarshaller = ReferenceSetsUnmarshaller.Instance;
-                    unmarshalledObject.ReferenceSets = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("RuleVariables", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = RuleVariablesUnmarshaller.Instance;
-                    unmarshalledObject.RuleVariables = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ReferenceSets":
+                        context.AddPathSegment("ReferenceSets");
+                        unmarshalledObject.ReferenceSets = ReferenceSetsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RulesSource", targetDepth, ref reader))
-                {
-                    var unmarshaller = FirewallRulesSourceUnmarshaller.Instance;
-                    unmarshalledObject.RulesSource = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "RuleVariables":
+                        context.AddPathSegment("RuleVariables");
+                        unmarshalledObject.RuleVariables = RuleVariablesUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "RulesSource":
+                        context.AddPathSegment("RulesSource");
+                        unmarshalledObject.RulesSource = FirewallRulesSourceUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -45,6 +45,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetCertificateConfigurations())
+            {
+                context.Writer.WritePropertyName("certificateConfigurations");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectCertificateConfigurationsListValue in requestObject.CertificateConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CertificateConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCertificateConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if (requestObject.IsSetClientAuthenticationMethod())
             {
                 context.Writer.WritePropertyName("clientAuthenticationMethod");

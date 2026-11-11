@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,27 +39,27 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// LoggingConfiguration Marshaller
     /// </summary>
-    public partial class LoggingConfigurationMarshaller : IRequestMarshaller<LoggingConfiguration, JsonMarshallerContext>
+    public partial class LoggingConfigurationMarshaller : IRequestMarshaller<LoggingConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(LoggingConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(LoggingConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetLogDestinationConfigs())
             {
-                context.Writer.WritePropertyName("LogDestinationConfigs");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("LogDestinationConfigs");
+                context.Writer.WriteStartArray(requestObject.LogDestinationConfigs.Count);
                 foreach (var requestObjectLogDestinationConfigsListValue in requestObject.LogDestinationConfigs)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = LogDestinationConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectLogDestinationConfigsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

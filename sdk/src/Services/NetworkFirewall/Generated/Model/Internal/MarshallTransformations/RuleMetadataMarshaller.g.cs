@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// RuleMetadata Marshaller
     /// </summary>
-    public partial class RuleMetadataMarshaller : IRequestMarshaller<RuleMetadata, JsonMarshallerContext>
+    public partial class RuleMetadataMarshaller : IRequestMarshaller<RuleMetadata, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RuleMetadata requestObject, JsonMarshallerContext context)
+        public void Marshall(RuleMetadata requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetRuleDescription())
             {
-                context.Writer.WritePropertyName("RuleDescription");
-                context.Writer.WriteStringValue(requestObject.RuleDescription);
+                context.Writer.WriteTextString("RuleDescription");
+                context.Writer.WriteTextString(requestObject.RuleDescription);
             }
 
             if (requestObject.IsSetRuleEnabled())
             {
-                context.Writer.WritePropertyName("RuleEnabled");
-                context.Writer.WriteBooleanValue(requestObject.RuleEnabled.Value);
+                context.Writer.WriteTextString("RuleEnabled");
+                context.Writer.WriteBoolean(requestObject.RuleEnabled.Value);
             }
         }
 

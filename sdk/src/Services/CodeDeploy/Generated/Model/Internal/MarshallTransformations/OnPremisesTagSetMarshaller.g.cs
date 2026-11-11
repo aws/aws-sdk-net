@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// OnPremisesTagSet Marshaller
     /// </summary>
-    public partial class OnPremisesTagSetMarshaller : IRequestMarshaller<OnPremisesTagSet, JsonMarshallerContext>
+    public partial class OnPremisesTagSetMarshaller : IRequestMarshaller<OnPremisesTagSet, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(OnPremisesTagSet requestObject, JsonMarshallerContext context)
+        public void Marshall(OnPremisesTagSet requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetOnPremisesTagSetList())
             {
-                context.Writer.WritePropertyName("onPremisesTagSetList");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("onPremisesTagSetList");
+                context.Writer.WriteStartArray(requestObject.OnPremisesTagSetList.Count);
                 foreach (var requestObjectOnPremisesTagSetListListValue in requestObject.OnPremisesTagSetList)
                 {
-                    context.Writer.WriteStartArray();
+                    context.Writer.WriteStartArray(requestObjectOnPremisesTagSetListListValue.Count);
                     foreach (var requestObjectOnPremisesTagSetListListValueListValue in requestObjectOnPremisesTagSetListListValue)
                     {
-                        context.Writer.WriteStartObject();
+                        context.Writer.WriteStartMap(null);
 
                         var marshaller = TagFilterMarshaller.Instance;
                         marshaller.Marshall(requestObjectOnPremisesTagSetListListValueListValue, context);
 
-                        context.Writer.WriteEndObject();
+                        context.Writer.WriteEndMap();
                     }
                     context.Writer.WriteEndArray();
                 }

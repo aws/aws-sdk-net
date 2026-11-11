@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// DocumentClassificationConfig Marshaller
     /// </summary>
-    public partial class DocumentClassificationConfigMarshaller : IRequestMarshaller<DocumentClassificationConfig, JsonMarshallerContext>
+    public partial class DocumentClassificationConfigMarshaller : IRequestMarshaller<DocumentClassificationConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DocumentClassificationConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(DocumentClassificationConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetLabels())
             {
-                context.Writer.WritePropertyName("Labels");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Labels");
+                context.Writer.WriteStartArray(requestObject.Labels.Count);
                 foreach (var requestObjectLabelsListValue in requestObject.Labels)
                 {
-                    context.Writer.WriteStringValue(requestObjectLabelsListValue);
+                    context.Writer.WriteTextString(requestObjectLabelsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetMode())
             {
-                context.Writer.WritePropertyName("Mode");
-                context.Writer.WriteStringValue(requestObject.Mode);
+                context.Writer.WriteTextString("Mode");
+                context.Writer.WriteTextString(requestObject.Mode);
             }
         }
 

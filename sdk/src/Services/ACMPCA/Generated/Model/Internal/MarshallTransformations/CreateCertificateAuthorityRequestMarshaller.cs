@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
@@ -59,92 +58,93 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateCertificateAuthorityRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ACMPCA");
-            string target = "ACMPrivateCA.CreateCertificateAuthority";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/ACMPrivateCA/operation/CreateCertificateAuthority";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-22";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetCertificateAuthorityConfiguration())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("CertificateAuthorityConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CertificateAuthorityConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.CertificateAuthorityConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetCertificateAuthorityType())
-            {
-                context.Writer.WritePropertyName("CertificateAuthorityType");
-                context.Writer.WriteStringValue(publicRequest.CertificateAuthorityType);
-            }
-
-            if(publicRequest.IsSetIdempotencyToken())
-            {
-                context.Writer.WritePropertyName("IdempotencyToken");
-                context.Writer.WriteStringValue(publicRequest.IdempotencyToken);
-            }
-
-            if(publicRequest.IsSetKeyStorageSecurityStandard())
-            {
-                context.Writer.WritePropertyName("KeyStorageSecurityStandard");
-                context.Writer.WriteStringValue(publicRequest.KeyStorageSecurityStandard);
-            }
-
-            if(publicRequest.IsSetRevocationConfiguration())
-            {
-                context.Writer.WritePropertyName("RevocationConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = RevocationConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.RevocationConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetCertificateAuthorityConfiguration())
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteTextString("CertificateAuthorityConfiguration");
+                    context.Writer.WriteStartMap(null);
 
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
+                    var marshaller = CertificateAuthorityConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CertificateAuthorityConfiguration, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetCertificateAuthorityType())
+                {
+                    context.Writer.WriteTextString("CertificateAuthorityType");
+                    context.Writer.WriteTextString(publicRequest.CertificateAuthorityType);
+                }
+                if (publicRequest.IsSetIdempotencyToken())
+                {
+                    context.Writer.WriteTextString("IdempotencyToken");
+                    context.Writer.WriteTextString(publicRequest.IdempotencyToken);
+                }
+                if (publicRequest.IsSetKeyStorageSecurityStandard())
+                {
+                    context.Writer.WriteTextString("KeyStorageSecurityStandard");
+                    context.Writer.WriteTextString(publicRequest.KeyStorageSecurityStandard);
+                }
+                if (publicRequest.IsSetRevocationConfiguration())
+                {
+                    context.Writer.WriteTextString("RevocationConfiguration");
+                    context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetUsageMode())
-            {
-                context.Writer.WritePropertyName("UsageMode");
-                context.Writer.WriteStringValue(publicRequest.UsageMode);
-            }
+                    var marshaller = RevocationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RevocationConfiguration, context);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetUsageMode())
+                {
+                    context.Writer.WriteTextString("UsageMode");
+                    context.Writer.WriteTextString(publicRequest.UsageMode);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static CreateCertificateAuthorityRequestMarshaller _instance = new CreateCertificateAuthorityRequestMarshaller();        

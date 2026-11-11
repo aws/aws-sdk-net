@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Route53Domains.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DomainSuggestion Object
     /// </summary>
-    public partial class DomainSuggestionUnmarshaller : IJsonUnmarshaller<DomainSuggestion, JsonUnmarshallerContext>
+    public partial class DomainSuggestionUnmarshaller : ICborUnmarshaller<DomainSuggestion, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DomainSuggestion Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DomainSuggestion Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DomainSuggestion();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Availability", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Availability = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("DomainName", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Availability":
+                        context.AddPathSegment("Availability");
+                        unmarshalledObject.Availability = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Price", targetDepth, ref reader))
-                {
-                    var unmarshaller = PriceWithCurrencyUnmarshaller.Instance;
-                    unmarshalledObject.Price = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "DomainName":
+                        context.AddPathSegment("DomainName");
+                        unmarshalledObject.DomainName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Price":
+                        context.AddPathSegment("Price");
+                        unmarshalledObject.Price = PriceWithCurrencyUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

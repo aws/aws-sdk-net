@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ActionTypeSettings Object
     /// </summary>
-    public partial class ActionTypeSettingsUnmarshaller : IJsonUnmarshaller<ActionTypeSettings, JsonUnmarshallerContext>
+    public partial class ActionTypeSettingsUnmarshaller : ICborUnmarshaller<ActionTypeSettings, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ActionTypeSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ActionTypeSettings Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ActionTypeSettings();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("entityUrlTemplate", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntityUrlTemplate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("executionUrlTemplate", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionUrlTemplate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "entityUrlTemplate":
+                        context.AddPathSegment("EntityUrlTemplate");
+                        unmarshalledObject.EntityUrlTemplate = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("revisionUrlTemplate", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RevisionUrlTemplate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "executionUrlTemplate":
+                        context.AddPathSegment("ExecutionUrlTemplate");
+                        unmarshalledObject.ExecutionUrlTemplate = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("thirdPartyConfigurationUrl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThirdPartyConfigurationUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "revisionUrlTemplate":
+                        context.AddPathSegment("RevisionUrlTemplate");
+                        unmarshalledObject.RevisionUrlTemplate = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "thirdPartyConfigurationUrl":
+                        context.AddPathSegment("ThirdPartyConfigurationUrl");
+                        unmarshalledObject.ThirdPartyConfigurationUrl = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

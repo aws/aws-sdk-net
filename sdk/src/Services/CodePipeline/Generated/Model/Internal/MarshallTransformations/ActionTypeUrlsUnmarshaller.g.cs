@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ActionTypeUrls Object
     /// </summary>
-    public partial class ActionTypeUrlsUnmarshaller : IJsonUnmarshaller<ActionTypeUrls, JsonUnmarshallerContext>
+    public partial class ActionTypeUrlsUnmarshaller : ICborUnmarshaller<ActionTypeUrls, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ActionTypeUrls Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ActionTypeUrls Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ActionTypeUrls();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("configurationUrl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("entityUrlTemplate", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntityUrlTemplate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "configurationUrl":
+                        context.AddPathSegment("ConfigurationUrl");
+                        unmarshalledObject.ConfigurationUrl = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("executionUrlTemplate", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionUrlTemplate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "entityUrlTemplate":
+                        context.AddPathSegment("EntityUrlTemplate");
+                        unmarshalledObject.EntityUrlTemplate = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("revisionUrlTemplate", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RevisionUrlTemplate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "executionUrlTemplate":
+                        context.AddPathSegment("ExecutionUrlTemplate");
+                        unmarshalledObject.ExecutionUrlTemplate = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "revisionUrlTemplate":
+                        context.AddPathSegment("RevisionUrlTemplate");
+                        unmarshalledObject.RevisionUrlTemplate = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

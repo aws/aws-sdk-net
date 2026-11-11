@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.WorkSpaces.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -54,53 +55,59 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public IRequest Marshall(ModifySamlPropertiesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkSpaces");
-            string target = "WorkspacesService.ModifySamlProperties";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-08";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetPropertiesToDelete())
+            request.ResourcePath = "service/WorkspacesService/operation/ModifySamlProperties";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("PropertiesToDelete");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestPropertiesToDeleteListValue in publicRequest.PropertiesToDelete)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetPropertiesToDelete())
                 {
-                    context.Writer.WriteStringValue(publicRequestPropertiesToDeleteListValue);
+                    context.Writer.WriteTextString("PropertiesToDelete");
+                    context.Writer.WriteStartArray(publicRequest.PropertiesToDelete.Count);
+                    foreach (var publicRequestPropertiesToDeleteListValue in publicRequest.PropertiesToDelete)
+                    {
+                        context.Writer.WriteTextString(publicRequestPropertiesToDeleteListValue);
+                    }
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetResourceId())
-            {
-                context.Writer.WritePropertyName("ResourceId");
-                context.Writer.WriteStringValue(publicRequest.ResourceId);
-            }
-            if (publicRequest.IsSetSamlProperties())
-            {
-                context.Writer.WritePropertyName("SamlProperties");
-                context.Writer.WriteStartObject();
+                if (publicRequest.IsSetResourceId())
+                {
+                    context.Writer.WriteTextString("ResourceId");
+                    context.Writer.WriteTextString(publicRequest.ResourceId);
+                }
+                if (publicRequest.IsSetSamlProperties())
+                {
+                    context.Writer.WriteTextString("SamlProperties");
+                    context.Writer.WriteStartMap(null);
 
-                var marshaller = SamlPropertiesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.SamlProperties, context);
+                    var marshaller = SamlPropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SamlProperties, context);
 
-                context.Writer.WriteEndObject();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

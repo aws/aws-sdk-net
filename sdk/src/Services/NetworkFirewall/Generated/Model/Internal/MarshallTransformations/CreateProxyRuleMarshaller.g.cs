@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,53 +39,53 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// CreateProxyRule Marshaller
     /// </summary>
-    public partial class CreateProxyRuleMarshaller : IRequestMarshaller<CreateProxyRule, JsonMarshallerContext>
+    public partial class CreateProxyRuleMarshaller : IRequestMarshaller<CreateProxyRule, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(CreateProxyRule requestObject, JsonMarshallerContext context)
+        public void Marshall(CreateProxyRule requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("Action");
-                context.Writer.WriteStringValue(requestObject.Action);
+                context.Writer.WriteTextString("Action");
+                context.Writer.WriteTextString(requestObject.Action);
             }
 
             if (requestObject.IsSetConditions())
             {
-                context.Writer.WritePropertyName("Conditions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Conditions");
+                context.Writer.WriteStartArray(requestObject.Conditions.Count);
                 foreach (var requestObjectConditionsListValue in requestObject.Conditions)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ProxyRuleConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectConditionsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(requestObject.Description);
+                context.Writer.WriteTextString("Description");
+                context.Writer.WriteTextString(requestObject.Description);
             }
 
             if (requestObject.IsSetInsertPosition())
             {
-                context.Writer.WritePropertyName("InsertPosition");
-                context.Writer.WriteNumberValue(requestObject.InsertPosition.Value);
+                context.Writer.WriteTextString("InsertPosition");
+                context.Writer.WriteInt32(requestObject.InsertPosition.Value);
             }
 
             if (requestObject.IsSetProxyRuleName())
             {
-                context.Writer.WritePropertyName("ProxyRuleName");
-                context.Writer.WriteStringValue(requestObject.ProxyRuleName);
+                context.Writer.WriteTextString("ProxyRuleName");
+                context.Writer.WriteTextString(requestObject.ProxyRuleName);
             }
         }
 

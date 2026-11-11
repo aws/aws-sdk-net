@@ -54,6 +54,12 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The filter values. Filter values are case-sensitive.
         /// </para>
+        ///  
+        /// <para>
+        /// The <c>name</c> filter can use a wildcard: <c>web*</c> matches names that begin with
+        /// <c>web</c>, and <c>*web*</c> matches names that contain <c>web</c>. The wildcard isn't
+        /// supported in other positions or in other filters.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

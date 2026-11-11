@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.WorkSpaces.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -54,113 +55,119 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public IRequest Marshall(RegisterWorkspaceDirectoryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkSpaces");
-            string target = "WorkspacesService.RegisterWorkspaceDirectory";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-08";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/WorkspacesService/operation/RegisterWorkspaceDirectory";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetActiveDirectoryConfig())
+                {
+                    context.Writer.WriteTextString("ActiveDirectoryConfig");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ActiveDirectoryConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ActiveDirectoryConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetDirectoryId())
+                {
+                    context.Writer.WriteTextString("DirectoryId");
+                    context.Writer.WriteTextString(publicRequest.DirectoryId);
+                }
+                if (publicRequest.IsSetEnableSelfService())
+                {
+                    context.Writer.WriteTextString("EnableSelfService");
+                    context.Writer.WriteBoolean(publicRequest.EnableSelfService.Value);
+                }
+                if (publicRequest.IsSetIdcInstanceArn())
+                {
+                    context.Writer.WriteTextString("IdcInstanceArn");
+                    context.Writer.WriteTextString(publicRequest.IdcInstanceArn);
+                }
+                if (publicRequest.IsSetMicrosoftEntraConfig())
+                {
+                    context.Writer.WriteTextString("MicrosoftEntraConfig");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = MicrosoftEntraConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MicrosoftEntraConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetSubnetIds())
+                {
+                    context.Writer.WriteTextString("SubnetIds");
+                    context.Writer.WriteStartArray(publicRequest.SubnetIds.Count);
+                    foreach (var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                    {
+                        context.Writer.WriteTextString(publicRequestSubnetIdsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTenancy())
+                {
+                    context.Writer.WriteTextString("Tenancy");
+                    context.Writer.WriteTextString(publicRequest.Tenancy);
+                }
+                if (publicRequest.IsSetUserIdentityType())
+                {
+                    context.Writer.WriteTextString("UserIdentityType");
+                    context.Writer.WriteTextString(publicRequest.UserIdentityType);
+                }
+                if (publicRequest.IsSetWorkspaceDirectoryDescription())
+                {
+                    context.Writer.WriteTextString("WorkspaceDirectoryDescription");
+                    context.Writer.WriteTextString(publicRequest.WorkspaceDirectoryDescription);
+                }
+                if (publicRequest.IsSetWorkspaceDirectoryName())
+                {
+                    context.Writer.WriteTextString("WorkspaceDirectoryName");
+                    context.Writer.WriteTextString(publicRequest.WorkspaceDirectoryName);
+                }
+                if (publicRequest.IsSetWorkspaceType())
+                {
+                    context.Writer.WriteTextString("WorkspaceType");
+                    context.Writer.WriteTextString(publicRequest.WorkspaceType);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetActiveDirectoryConfig())
-            {
-                context.Writer.WritePropertyName("ActiveDirectoryConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ActiveDirectoryConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ActiveDirectoryConfig, context);
-
-                context.Writer.WriteEndObject();
             }
-            if (publicRequest.IsSetDirectoryId())
+            finally
             {
-                context.Writer.WritePropertyName("DirectoryId");
-                context.Writer.WriteStringValue(publicRequest.DirectoryId);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetEnableSelfService())
-            {
-                context.Writer.WritePropertyName("EnableSelfService");
-                context.Writer.WriteBooleanValue(publicRequest.EnableSelfService.Value);
-            }
-            if (publicRequest.IsSetIdcInstanceArn())
-            {
-                context.Writer.WritePropertyName("IdcInstanceArn");
-                context.Writer.WriteStringValue(publicRequest.IdcInstanceArn);
-            }
-            if (publicRequest.IsSetMicrosoftEntraConfig())
-            {
-                context.Writer.WritePropertyName("MicrosoftEntraConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = MicrosoftEntraConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.MicrosoftEntraConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetSubnetIds())
-            {
-                context.Writer.WritePropertyName("SubnetIds");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
-                {
-                    context.Writer.WriteStringValue(publicRequestSubnetIdsListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetTenancy())
-            {
-                context.Writer.WritePropertyName("Tenancy");
-                context.Writer.WriteStringValue(publicRequest.Tenancy);
-            }
-            if (publicRequest.IsSetUserIdentityType())
-            {
-                context.Writer.WritePropertyName("UserIdentityType");
-                context.Writer.WriteStringValue(publicRequest.UserIdentityType);
-            }
-            if (publicRequest.IsSetWorkspaceDirectoryDescription())
-            {
-                context.Writer.WritePropertyName("WorkspaceDirectoryDescription");
-                context.Writer.WriteStringValue(publicRequest.WorkspaceDirectoryDescription);
-            }
-            if (publicRequest.IsSetWorkspaceDirectoryName())
-            {
-                context.Writer.WritePropertyName("WorkspaceDirectoryName");
-                context.Writer.WriteStringValue(publicRequest.WorkspaceDirectoryName);
-            }
-            if (publicRequest.IsSetWorkspaceType())
-            {
-                context.Writer.WritePropertyName("WorkspaceType");
-                context.Writer.WriteStringValue(publicRequest.WorkspaceType);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

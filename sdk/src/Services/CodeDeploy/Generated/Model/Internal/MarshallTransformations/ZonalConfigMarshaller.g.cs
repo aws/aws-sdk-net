@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,36 +39,36 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// ZonalConfig Marshaller
     /// </summary>
-    public partial class ZonalConfigMarshaller : IRequestMarshaller<ZonalConfig, JsonMarshallerContext>
+    public partial class ZonalConfigMarshaller : IRequestMarshaller<ZonalConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ZonalConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ZonalConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetFirstZoneMonitorDurationInSeconds())
             {
-                context.Writer.WritePropertyName("firstZoneMonitorDurationInSeconds");
-                context.Writer.WriteNumberValue(requestObject.FirstZoneMonitorDurationInSeconds.Value);
+                context.Writer.WriteTextString("firstZoneMonitorDurationInSeconds");
+                context.Writer.WriteInt64(requestObject.FirstZoneMonitorDurationInSeconds.Value);
             }
 
             if (requestObject.IsSetMinimumHealthyHostsPerZone())
             {
-                context.Writer.WritePropertyName("minimumHealthyHostsPerZone");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("minimumHealthyHostsPerZone");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = MinimumHealthyHostsPerZoneMarshaller.Instance;
                 marshaller.Marshall(requestObject.MinimumHealthyHostsPerZone, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetMonitorDurationInSeconds())
             {
-                context.Writer.WritePropertyName("monitorDurationInSeconds");
-                context.Writer.WriteNumberValue(requestObject.MonitorDurationInSeconds.Value);
+                context.Writer.WriteTextString("monitorDurationInSeconds");
+                context.Writer.WriteInt64(requestObject.MonitorDurationInSeconds.Value);
             }
         }
 

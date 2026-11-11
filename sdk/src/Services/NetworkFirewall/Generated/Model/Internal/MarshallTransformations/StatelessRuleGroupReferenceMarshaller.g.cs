@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// StatelessRuleGroupReference Marshaller
     /// </summary>
-    public partial class StatelessRuleGroupReferenceMarshaller : IRequestMarshaller<StatelessRuleGroupReference, JsonMarshallerContext>
+    public partial class StatelessRuleGroupReferenceMarshaller : IRequestMarshaller<StatelessRuleGroupReference, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(StatelessRuleGroupReference requestObject, JsonMarshallerContext context)
+        public void Marshall(StatelessRuleGroupReference requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetPriority())
             {
-                context.Writer.WritePropertyName("Priority");
-                context.Writer.WriteNumberValue(requestObject.Priority.Value);
+                context.Writer.WriteTextString("Priority");
+                context.Writer.WriteInt32(requestObject.Priority.Value);
             }
 
             if (requestObject.IsSetResourceArn())
             {
-                context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.WriteStringValue(requestObject.ResourceArn);
+                context.Writer.WriteTextString("ResourceArn");
+                context.Writer.WriteTextString(requestObject.ResourceArn);
             }
         }
 

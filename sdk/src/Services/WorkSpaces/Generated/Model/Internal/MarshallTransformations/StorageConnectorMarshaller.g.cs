@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// StorageConnector Marshaller
     /// </summary>
-    public partial class StorageConnectorMarshaller : IRequestMarshaller<StorageConnector, JsonMarshallerContext>
+    public partial class StorageConnectorMarshaller : IRequestMarshaller<StorageConnector, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(StorageConnector requestObject, JsonMarshallerContext context)
+        public void Marshall(StorageConnector requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetConnectorType())
             {
-                context.Writer.WritePropertyName("ConnectorType");
-                context.Writer.WriteStringValue(requestObject.ConnectorType);
+                context.Writer.WriteTextString("ConnectorType");
+                context.Writer.WriteTextString(requestObject.ConnectorType);
             }
 
             if (requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("Status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WriteTextString("Status");
+                context.Writer.WriteTextString(requestObject.Status);
             }
         }
 

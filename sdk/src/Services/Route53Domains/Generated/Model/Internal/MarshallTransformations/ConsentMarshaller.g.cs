@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Route53Domains.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,32 +39,25 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// Consent Marshaller
     /// </summary>
-    public partial class ConsentMarshaller : IRequestMarshaller<Consent, JsonMarshallerContext>
+    public partial class ConsentMarshaller : IRequestMarshaller<Consent, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Consent requestObject, JsonMarshallerContext context)
+        public void Marshall(Consent requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCurrency())
             {
-                context.Writer.WritePropertyName("Currency");
-                context.Writer.WriteStringValue(requestObject.Currency);
+                context.Writer.WriteTextString("Currency");
+                context.Writer.WriteTextString(requestObject.Currency);
             }
 
             if (requestObject.IsSetMaxPrice())
             {
-                context.Writer.WritePropertyName("MaxPrice");
-                if (StringUtils.IsSpecialDoubleValue(requestObject.MaxPrice.Value))
-                {
-                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MaxPrice.Value));
-                }
-                else
-                {
-                    context.Writer.WriteNumberValue(requestObject.MaxPrice.Value);
-                }
+                context.Writer.WriteTextString("MaxPrice");
+                context.Writer.WriteOptimizedNumber(requestObject.MaxPrice.Value);
             }
         }
 

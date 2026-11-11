@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
@@ -36,37 +38,48 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StageConditionState Object
     /// </summary>
-    public partial class StageConditionStateUnmarshaller : IJsonUnmarshaller<StageConditionState, JsonUnmarshallerContext>
+    public partial class StageConditionStateUnmarshaller : ICborUnmarshaller<StageConditionState, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public StageConditionState Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public StageConditionState Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new StageConditionState();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("conditionStates", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ConditionState, ConditionStateUnmarshaller>(ConditionStateUnmarshaller.Instance);
-                    unmarshalledObject.ConditionStates = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("latestExecution", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StageConditionsExecutionUnmarshaller.Instance;
-                    unmarshalledObject.LatestExecution = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "conditionStates":
+                        context.AddPathSegment("ConditionStates");
+                        unmarshalledObject.ConditionStates = new CborListUnmarshaller<ConditionState, ConditionStateUnmarshaller>(ConditionStateUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "latestExecution":
+                        context.AddPathSegment("LatestExecution");
+                        unmarshalledObject.LatestExecution = StageConditionsExecutionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

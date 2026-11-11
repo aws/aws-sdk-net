@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Shield.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
     /// <summary>
     /// EmergencyContact Marshaller
     /// </summary>
-    public partial class EmergencyContactMarshaller : IRequestMarshaller<EmergencyContact, JsonMarshallerContext>
+    public partial class EmergencyContactMarshaller : IRequestMarshaller<EmergencyContact, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(EmergencyContact requestObject, JsonMarshallerContext context)
+        public void Marshall(EmergencyContact requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetContactNotes())
             {
-                context.Writer.WritePropertyName("ContactNotes");
-                context.Writer.WriteStringValue(requestObject.ContactNotes);
+                context.Writer.WriteTextString("ContactNotes");
+                context.Writer.WriteTextString(requestObject.ContactNotes);
             }
 
             if (requestObject.IsSetEmailAddress())
             {
-                context.Writer.WritePropertyName("EmailAddress");
-                context.Writer.WriteStringValue(requestObject.EmailAddress);
+                context.Writer.WriteTextString("EmailAddress");
+                context.Writer.WriteTextString(requestObject.EmailAddress);
             }
 
             if (requestObject.IsSetPhoneNumber())
             {
-                context.Writer.WritePropertyName("PhoneNumber");
-                context.Writer.WriteStringValue(requestObject.PhoneNumber);
+                context.Writer.WriteTextString("PhoneNumber");
+                context.Writer.WriteTextString(requestObject.PhoneNumber);
             }
         }
 

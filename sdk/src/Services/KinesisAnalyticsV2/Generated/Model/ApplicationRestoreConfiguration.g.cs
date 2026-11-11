@@ -50,6 +50,22 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationRestoreType() => this.ApplicationRestoreType != null;
 
         /// <summary>
+        /// Gets and sets the property SnapshotArn. 
+        /// <para>
+        /// The identifier of an existing enhanced snapshot of application state to use to restart
+        /// an application. The application uses this value if <c>RESTORE_FROM_CUSTOM_SNAPSHOT</c>
+        /// is specified for the <c>ApplicationRestoreType</c> and <c>SnapshotMode</c> is <c>ENHANCED_SNAPSHOTS</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string SnapshotArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SnapshotArn property is set.
+        /// </summary>
+        internal bool IsSetSnapshotArn() => this.SnapshotArn != null;
+
+        /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
         /// The identifier of an existing snapshot of application state to use to restart an application.

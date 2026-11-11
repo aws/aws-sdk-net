@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeploymentStyle Marshaller
     /// </summary>
-    public partial class DeploymentStyleMarshaller : IRequestMarshaller<DeploymentStyle, JsonMarshallerContext>
+    public partial class DeploymentStyleMarshaller : IRequestMarshaller<DeploymentStyle, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DeploymentStyle requestObject, JsonMarshallerContext context)
+        public void Marshall(DeploymentStyle requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDeploymentOption())
             {
-                context.Writer.WritePropertyName("deploymentOption");
-                context.Writer.WriteStringValue(requestObject.DeploymentOption);
+                context.Writer.WriteTextString("deploymentOption");
+                context.Writer.WriteTextString(requestObject.DeploymentOption);
             }
 
             if (requestObject.IsSetDeploymentType())
             {
-                context.Writer.WritePropertyName("deploymentType");
-                context.Writer.WriteStringValue(requestObject.DeploymentType);
+                context.Writer.WriteTextString("deploymentType");
+                context.Writer.WriteTextString(requestObject.DeploymentType);
             }
         }
 

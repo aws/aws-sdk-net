@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.NetworkFirewall.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -54,58 +55,64 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateProxyRuleGroupPrioritiesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NetworkFirewall");
-            string target = "NetworkFirewall_20201112.UpdateProxyRuleGroupPriorities";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-12";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetProxyConfigurationArn())
+            request.ResourcePath = "service/NetworkFirewall_20201112/operation/UpdateProxyRuleGroupPriorities";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("ProxyConfigurationArn");
-                context.Writer.WriteStringValue(publicRequest.ProxyConfigurationArn);
-            }
-            if (publicRequest.IsSetProxyConfigurationName())
-            {
-                context.Writer.WritePropertyName("ProxyConfigurationName");
-                context.Writer.WriteStringValue(publicRequest.ProxyConfigurationName);
-            }
-            if (publicRequest.IsSetRuleGroups())
-            {
-                context.Writer.WritePropertyName("RuleGroups");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestRuleGroupsListValue in publicRequest.RuleGroups)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetProxyConfigurationArn())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = ProxyRuleGroupPriorityMarshaller.Instance;
-                    marshaller.Marshall(publicRequestRuleGroupsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("ProxyConfigurationArn");
+                    context.Writer.WriteTextString(publicRequest.ProxyConfigurationArn);
                 }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetUpdateToken())
-            {
-                context.Writer.WritePropertyName("UpdateToken");
-                context.Writer.WriteStringValue(publicRequest.UpdateToken);
-            }
+                if (publicRequest.IsSetProxyConfigurationName())
+                {
+                    context.Writer.WriteTextString("ProxyConfigurationName");
+                    context.Writer.WriteTextString(publicRequest.ProxyConfigurationName);
+                }
+                if (publicRequest.IsSetRuleGroups())
+                {
+                    context.Writer.WriteTextString("RuleGroups");
+                    context.Writer.WriteStartArray(publicRequest.RuleGroups.Count);
+                    foreach (var publicRequestRuleGroupsListValue in publicRequest.RuleGroups)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                        var marshaller = ProxyRuleGroupPriorityMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRuleGroupsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetUpdateToken())
+                {
+                    context.Writer.WriteTextString("UpdateToken");
+                    context.Writer.WriteTextString(publicRequest.UpdateToken);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

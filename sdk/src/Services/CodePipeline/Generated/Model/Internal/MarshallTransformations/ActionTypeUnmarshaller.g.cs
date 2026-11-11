@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
@@ -36,58 +38,66 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ActionType Object
     /// </summary>
-    public partial class ActionTypeUnmarshaller : IJsonUnmarshaller<ActionType, JsonUnmarshallerContext>
+    public partial class ActionTypeUnmarshaller : ICborUnmarshaller<ActionType, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ActionType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ActionType Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ActionType();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("actionConfigurationProperties", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ActionConfigurationProperty, ActionConfigurationPropertyUnmarshaller>(ActionConfigurationPropertyUnmarshaller.Instance);
-                    unmarshalledObject.ActionConfigurationProperties = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("id", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = ActionTypeIdUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "actionConfigurationProperties":
+                        context.AddPathSegment("ActionConfigurationProperties");
+                        unmarshalledObject.ActionConfigurationProperties = new CborListUnmarshaller<ActionConfigurationProperty, ActionConfigurationPropertyUnmarshaller>(ActionConfigurationPropertyUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("inputArtifactDetails", targetDepth, ref reader))
-                {
-                    var unmarshaller = ArtifactDetailsUnmarshaller.Instance;
-                    unmarshalledObject.InputArtifactDetails = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "id":
+                        context.AddPathSegment("Id");
+                        unmarshalledObject.Id = ActionTypeIdUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("outputArtifactDetails", targetDepth, ref reader))
-                {
-                    var unmarshaller = ArtifactDetailsUnmarshaller.Instance;
-                    unmarshalledObject.OutputArtifactDetails = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "inputArtifactDetails":
+                        context.AddPathSegment("InputArtifactDetails");
+                        unmarshalledObject.InputArtifactDetails = ArtifactDetailsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("settings", targetDepth, ref reader))
-                {
-                    var unmarshaller = ActionTypeSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Settings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "outputArtifactDetails":
+                        context.AddPathSegment("OutputArtifactDetails");
+                        unmarshalledObject.OutputArtifactDetails = ArtifactDetailsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "settings":
+                        context.AddPathSegment("Settings");
+                        unmarshalledObject.Settings = ActionTypeSettingsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

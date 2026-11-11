@@ -124,10 +124,17 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The quantity of usage consumed by the customer for the given dimension and time. Defaults
-        /// to <c>0</c> if not specified.
+        /// The quantity of usage consumed by the customer for the given dimension and time, as
+        /// a whole number. Defaults to <c>0</c> if neither <c>Quantity</c> nor <c>QuantityAsDecimal</c>
+        /// is specified.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>QuantityAsDecimal</c> instead. You can't specify both <c>Quantity</c> and <c>QuantityAsDecimal</c>
+        /// in a usage record.
         /// </para>
         /// </summary>
+        [Obsolete("Use QuantityAsDecimal instead.")]
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? Quantity { get; set; }
 
@@ -135,6 +142,38 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Checks to see if the Quantity property is set.
         /// </summary>
         internal bool IsSetQuantity() => this.Quantity.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property QuantityAsDecimal. 
+        /// <para>
+        /// The quantity of usage consumed by the customer for the given dimension and time, as
+        /// a decimal string. Use this instead of <c>Quantity</c> to report fractional usage.
+        /// </para>
+        ///  
+        /// <para>
+        /// A non-negative decimal number, for example <c>17.42</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't specify both <c>Quantity</c> and <c>QuantityAsDecimal</c> in a usage record.
+        /// If you provide <c>UsageAllocations</c>, each allocation must use <c>AllocatedUsageQuantityAsDecimal</c>.
+        /// If any usage record fails these checks, the entire <c>BatchMeterUsage</c> request
+        /// fails and no records are processed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Quantities are compared by value when checking for duplicate records, so <c>17</c>,
+        /// <c>17.0</c>, and <c>17.00</c> are the same quantity, whether you send it in <c>Quantity</c>
+        /// or <c>QuantityAsDecimal</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 17)]
+        public string QuantityAsDecimal { get; set; }
+
+        /// <summary>
+        /// Checks to see if the QuantityAsDecimal property is set.
+        /// </summary>
+        internal bool IsSetQuantityAsDecimal() => this.QuantityAsDecimal != null;
 
         /// <summary>
         /// Gets and sets the property Timestamp. 
@@ -164,7 +203,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Gets and sets the property UsageAllocations. 
         /// <para>
         /// The set of <c>UsageAllocations</c> to submit. The sum of all <c>UsageAllocation</c>
-        /// quantities must equal the Quantity of the <c>UsageRecord</c>.
+        /// quantities must equal the quantity of the <c>UsageRecord</c> (<c>Quantity</c> or <c>QuantityAsDecimal</c>).
+        /// Allocations must use the same type of quantity as the usage record: <c>AllocatedUsageQuantity</c>
+        /// with <c>Quantity</c>, or <c>AllocatedUsageQuantityAsDecimal</c> with <c>QuantityAsDecimal</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

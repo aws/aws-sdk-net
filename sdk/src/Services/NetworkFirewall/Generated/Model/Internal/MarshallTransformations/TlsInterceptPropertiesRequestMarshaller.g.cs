@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// TlsInterceptPropertiesRequest Marshaller
     /// </summary>
-    public partial class TlsInterceptPropertiesRequestMarshaller : IRequestMarshaller<TlsInterceptPropertiesRequest, JsonMarshallerContext>
+    public partial class TlsInterceptPropertiesRequestMarshaller : IRequestMarshaller<TlsInterceptPropertiesRequest, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TlsInterceptPropertiesRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(TlsInterceptPropertiesRequest requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetPcaArn())
             {
-                context.Writer.WritePropertyName("PcaArn");
-                context.Writer.WriteStringValue(requestObject.PcaArn);
+                context.Writer.WriteTextString("PcaArn");
+                context.Writer.WriteTextString(requestObject.PcaArn);
             }
 
             if (requestObject.IsSetTlsInterceptMode())
             {
-                context.Writer.WritePropertyName("TlsInterceptMode");
-                context.Writer.WriteStringValue(requestObject.TlsInterceptMode);
+                context.Writer.WriteTextString("TlsInterceptMode");
+                context.Writer.WriteTextString(requestObject.TlsInterceptMode);
             }
         }
 

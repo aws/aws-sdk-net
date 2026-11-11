@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Globalization;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -38,90 +38,90 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DescribeCustomWorkspaceImageImport operation.
     /// </summary>
-    public partial class DescribeCustomWorkspaceImageImportResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class DescribeCustomWorkspaceImageImportResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DescribeCustomWorkspaceImageImportResponse();
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = context.Reader;
 
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            context.AddPathSegment("DescribeCustomWorkspaceImageImport");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.TestExpression("Created", targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Created = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Created":
+                        context.AddPathSegment("Created");
+                        unmarshalledObject.Created = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ErrorDetails", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<CustomWorkspaceImageImportErrorDetails, CustomWorkspaceImageImportErrorDetailsUnmarshaller>(CustomWorkspaceImageImportErrorDetailsUnmarshaller.Instance);
-                    unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ErrorDetails":
+                        context.AddPathSegment("ErrorDetails");
+                        unmarshalledObject.ErrorDetails = new CborListUnmarshaller<CustomWorkspaceImageImportErrorDetails, CustomWorkspaceImageImportErrorDetailsUnmarshaller>(CustomWorkspaceImageImportErrorDetailsUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ImageBuilderInstanceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageBuilderInstanceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ImageBuilderInstanceId":
+                        context.AddPathSegment("ImageBuilderInstanceId");
+                        unmarshalledObject.ImageBuilderInstanceId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ImageId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ImageId":
+                        context.AddPathSegment("ImageId");
+                        unmarshalledObject.ImageId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ImageSource", targetDepth, ref reader))
-                {
-                    var unmarshaller = ImageSourceIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.ImageSource = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ImageSource":
+                        context.AddPathSegment("ImageSource");
+                        unmarshalledObject.ImageSource = ImageSourceIdentifierUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("InfrastructureConfigurationArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InfrastructureConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "InfrastructureConfigurationArn":
+                        context.AddPathSegment("InfrastructureConfigurationArn");
+                        unmarshalledObject.InfrastructureConfigurationArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LastUpdatedTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LastUpdatedTime":
+                        context.AddPathSegment("LastUpdatedTime");
+                        unmarshalledObject.LastUpdatedTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ProgressPercentage", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ProgressPercentage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ProgressPercentage":
+                        context.AddPathSegment("ProgressPercentage");
+                        unmarshalledObject.ProgressPercentage = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("State", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "State":
+                        context.AddPathSegment("State");
+                        unmarshalledObject.State = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StateMessage", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StateMessage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "StateMessage":
+                        context.AddPathSegment("StateMessage");
+                        unmarshalledObject.StateMessage = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }
@@ -129,11 +129,9 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <summary>
         /// Unmarshall error response to exception.
         /// </summary>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
-
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -141,16 +139,15 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             {
-                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                     {
-                        return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                     {
-                        return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                 }
             }

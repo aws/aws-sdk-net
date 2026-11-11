@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.MemoryDB.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
@@ -54,53 +55,59 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateACLRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MemoryDB");
-            string target = "AmazonMemoryDB.UpdateACL";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/AmazonMemoryDB/operation/UpdateACL";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetACLName())
+                {
+                    context.Writer.WriteTextString("ACLName");
+                    context.Writer.WriteTextString(publicRequest.ACLName);
+                }
+                if (publicRequest.IsSetUserNamesToAdd())
+                {
+                    context.Writer.WriteTextString("UserNamesToAdd");
+                    context.Writer.WriteStartArray(publicRequest.UserNamesToAdd.Count);
+                    foreach (var publicRequestUserNamesToAddListValue in publicRequest.UserNamesToAdd)
+                    {
+                        context.Writer.WriteTextString(publicRequestUserNamesToAddListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetUserNamesToRemove())
+                {
+                    context.Writer.WriteTextString("UserNamesToRemove");
+                    context.Writer.WriteStartArray(publicRequest.UserNamesToRemove.Count);
+                    foreach (var publicRequestUserNamesToRemoveListValue in publicRequest.UserNamesToRemove)
+                    {
+                        context.Writer.WriteTextString(publicRequestUserNamesToRemoveListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetACLName())
-            {
-                context.Writer.WritePropertyName("ACLName");
-                context.Writer.WriteStringValue(publicRequest.ACLName);
             }
-            if (publicRequest.IsSetUserNamesToAdd())
+            finally
             {
-                context.Writer.WritePropertyName("UserNamesToAdd");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestUserNamesToAddListValue in publicRequest.UserNamesToAdd)
-                {
-                    context.Writer.WriteStringValue(publicRequestUserNamesToAddListValue);
-                }
-                context.Writer.WriteEndArray();
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetUserNamesToRemove())
-            {
-                context.Writer.WritePropertyName("UserNamesToRemove");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestUserNamesToRemoveListValue in publicRequest.UserNamesToRemove)
-                {
-                    context.Writer.WriteStringValue(publicRequestUserNamesToRemoveListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

@@ -32,6 +32,11 @@ namespace Amazon.ConnectCases
         public static readonly AuditEventType CaseCreated = new AuditEventType("Case.Created");
 
         /// <summary>
+        /// Constant CaseMerged for AuditEventType
+        /// </summary>
+        public static readonly AuditEventType CaseMerged = new AuditEventType("Case.Merged");
+
+        /// <summary>
         /// Constant CaseUpdated for AuditEventType
         /// </summary>
         public static readonly AuditEventType CaseUpdated = new AuditEventType("Case.Updated");
@@ -261,6 +266,47 @@ namespace Amazon.ConnectCases
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FieldType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MergeStatus.
+    /// </summary>
+    public class MergeStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for MergeStatus
+        /// </summary>
+        public static readonly MergeStatus COMPLETED = new MergeStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for MergeStatus
+        /// </summary>
+        public static readonly MergeStatus IN_PROGRESS = new MergeStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom MergeStatus for a value not among the defined constants.
+        /// </summary>
+        public MergeStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MergeStatus FindValue(string value)
+        {
+            return FindValue<MergeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MergeStatus(string value)
         {
             return FindValue(value);
         }

@@ -42,8 +42,10 @@ namespace Amazon.ConnectCases.Model
     /// included as part of this request will be removed. </para> </li> <li> <para> If you
     /// provide a value for <c>performedBy.userArn</c>, you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
     /// permission on the ARN of the user that you provide. </para> </li> <li> <para> <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html#system-case-fields">System
-    /// case fields</a> cannot be used in a custom related item. </para> </li> </ul> <para>
-    /// <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+    /// case fields</a> cannot be used in a custom related item. </para> </li> <li> <para>
+    /// If the case is the secondary case of a merge that is running, the request fails with
+    /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+    /// </para> </li> </ul> <para> <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
     /// Customer endpoints and quotas</a>. </para>
     /// </summary>
     public partial class UpdateRelatedItemRequest : AmazonConnectCasesRequest

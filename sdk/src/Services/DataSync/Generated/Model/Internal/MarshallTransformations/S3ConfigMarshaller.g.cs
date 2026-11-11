@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// S3Config Marshaller
     /// </summary>
-    public partial class S3ConfigMarshaller : IRequestMarshaller<S3Config, JsonMarshallerContext>
+    public partial class S3ConfigMarshaller : IRequestMarshaller<S3Config, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(S3Config requestObject, JsonMarshallerContext context)
+        public void Marshall(S3Config requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetBucketAccessRoleArn())
             {
-                context.Writer.WritePropertyName("BucketAccessRoleArn");
-                context.Writer.WriteStringValue(requestObject.BucketAccessRoleArn);
+                context.Writer.WriteTextString("BucketAccessRoleArn");
+                context.Writer.WriteTextString(requestObject.BucketAccessRoleArn);
             }
         }
 

@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Globalization;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
@@ -38,125 +38,120 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DescribeLocationHdfs operation.
     /// </summary>
-    public partial class DescribeLocationHdfsResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class DescribeLocationHdfsResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DescribeLocationHdfsResponse();
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = context.Reader;
 
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            context.AddPathSegment("DescribeLocationHdfs");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.TestExpression("AgentArns", targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AgentArns = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AgentArns":
+                        context.AddPathSegment("AgentArns");
+                        unmarshalledObject.AgentArns = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("AuthenticationType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AuthenticationType":
+                        context.AddPathSegment("AuthenticationType");
+                        unmarshalledObject.AuthenticationType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("BlockSize", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BlockSize = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BlockSize":
+                        context.AddPathSegment("BlockSize");
+                        unmarshalledObject.BlockSize = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("CmkSecretConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = CmkSecretConfigUnmarshaller.Instance;
-                    unmarshalledObject.CmkSecretConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CmkSecretConfig":
+                        context.AddPathSegment("CmkSecretConfig");
+                        unmarshalledObject.CmkSecretConfig = CmkSecretConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("CreationTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CreationTime":
+                        context.AddPathSegment("CreationTime");
+                        unmarshalledObject.CreationTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("CustomSecretConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = CustomSecretConfigUnmarshaller.Instance;
-                    unmarshalledObject.CustomSecretConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CustomSecretConfig":
+                        context.AddPathSegment("CustomSecretConfig");
+                        unmarshalledObject.CustomSecretConfig = CustomSecretConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("KerberosPrincipal", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KerberosPrincipal = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "KerberosPrincipal":
+                        context.AddPathSegment("KerberosPrincipal");
+                        unmarshalledObject.KerberosPrincipal = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("KmsKeyProviderUri", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyProviderUri = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "KmsKeyProviderUri":
+                        context.AddPathSegment("KmsKeyProviderUri");
+                        unmarshalledObject.KmsKeyProviderUri = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LocationArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LocationArn":
+                        context.AddPathSegment("LocationArn");
+                        unmarshalledObject.LocationArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LocationUri", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationUri = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LocationUri":
+                        context.AddPathSegment("LocationUri");
+                        unmarshalledObject.LocationUri = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ManagedSecretConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = ManagedSecretConfigUnmarshaller.Instance;
-                    unmarshalledObject.ManagedSecretConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ManagedSecretConfig":
+                        context.AddPathSegment("ManagedSecretConfig");
+                        unmarshalledObject.ManagedSecretConfig = ManagedSecretConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NameNodes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<HdfsNameNode, HdfsNameNodeUnmarshaller>(HdfsNameNodeUnmarshaller.Instance);
-                    unmarshalledObject.NameNodes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "NameNodes":
+                        context.AddPathSegment("NameNodes");
+                        unmarshalledObject.NameNodes = new CborListUnmarshaller<HdfsNameNode, HdfsNameNodeUnmarshaller>(HdfsNameNodeUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("QopConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = QopConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.QopConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "QopConfiguration":
+                        context.AddPathSegment("QopConfiguration");
+                        unmarshalledObject.QopConfiguration = QopConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ReplicationFactor", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationFactor = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ReplicationFactor":
+                        context.AddPathSegment("ReplicationFactor");
+                        unmarshalledObject.ReplicationFactor = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SimpleUser", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SimpleUser = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "SimpleUser":
+                        context.AddPathSegment("SimpleUser");
+                        unmarshalledObject.SimpleUser = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }
@@ -164,11 +159,9 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <summary>
         /// Unmarshall error response to exception.
         /// </summary>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
-
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -176,16 +169,15 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             {
-                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
                     {
-                        return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                     {
-                        return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                 }
             }

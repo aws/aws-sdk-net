@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,35 +39,35 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// ExecutorConfiguration Marshaller
     /// </summary>
-    public partial class ExecutorConfigurationMarshaller : IRequestMarshaller<ExecutorConfiguration, JsonMarshallerContext>
+    public partial class ExecutorConfigurationMarshaller : IRequestMarshaller<ExecutorConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ExecutorConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ExecutorConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetJobWorkerExecutorConfiguration())
             {
-                context.Writer.WritePropertyName("jobWorkerExecutorConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("jobWorkerExecutorConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = JobWorkerExecutorConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.JobWorkerExecutorConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetLambdaExecutorConfiguration())
             {
-                context.Writer.WritePropertyName("lambdaExecutorConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("lambdaExecutorConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = LambdaExecutorConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LambdaExecutorConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

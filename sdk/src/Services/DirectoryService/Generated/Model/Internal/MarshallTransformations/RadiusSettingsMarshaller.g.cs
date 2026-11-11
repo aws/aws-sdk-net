@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,77 +39,77 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// RadiusSettings Marshaller
     /// </summary>
-    public partial class RadiusSettingsMarshaller : IRequestMarshaller<RadiusSettings, JsonMarshallerContext>
+    public partial class RadiusSettingsMarshaller : IRequestMarshaller<RadiusSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RadiusSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(RadiusSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAuthenticationProtocol())
             {
-                context.Writer.WritePropertyName("AuthenticationProtocol");
-                context.Writer.WriteStringValue(requestObject.AuthenticationProtocol);
+                context.Writer.WriteTextString("AuthenticationProtocol");
+                context.Writer.WriteTextString(requestObject.AuthenticationProtocol);
             }
 
             if (requestObject.IsSetDisplayLabel())
             {
-                context.Writer.WritePropertyName("DisplayLabel");
-                context.Writer.WriteStringValue(requestObject.DisplayLabel);
+                context.Writer.WriteTextString("DisplayLabel");
+                context.Writer.WriteTextString(requestObject.DisplayLabel);
             }
 
             if (requestObject.IsSetRadiusPort())
             {
-                context.Writer.WritePropertyName("RadiusPort");
-                context.Writer.WriteNumberValue(requestObject.RadiusPort.Value);
+                context.Writer.WriteTextString("RadiusPort");
+                context.Writer.WriteInt32(requestObject.RadiusPort.Value);
             }
 
             if (requestObject.IsSetRadiusRetries())
             {
-                context.Writer.WritePropertyName("RadiusRetries");
-                context.Writer.WriteNumberValue(requestObject.RadiusRetries.Value);
+                context.Writer.WriteTextString("RadiusRetries");
+                context.Writer.WriteInt32(requestObject.RadiusRetries.Value);
             }
 
             if (requestObject.IsSetRadiusServers())
             {
-                context.Writer.WritePropertyName("RadiusServers");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("RadiusServers");
+                context.Writer.WriteStartArray(requestObject.RadiusServers.Count);
                 foreach (var requestObjectRadiusServersListValue in requestObject.RadiusServers)
                 {
-                    context.Writer.WriteStringValue(requestObjectRadiusServersListValue);
+                    context.Writer.WriteTextString(requestObjectRadiusServersListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetRadiusServersIpv6())
             {
-                context.Writer.WritePropertyName("RadiusServersIpv6");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("RadiusServersIpv6");
+                context.Writer.WriteStartArray(requestObject.RadiusServersIpv6.Count);
                 foreach (var requestObjectRadiusServersIpv6ListValue in requestObject.RadiusServersIpv6)
                 {
-                    context.Writer.WriteStringValue(requestObjectRadiusServersIpv6ListValue);
+                    context.Writer.WriteTextString(requestObjectRadiusServersIpv6ListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetRadiusTimeout())
             {
-                context.Writer.WritePropertyName("RadiusTimeout");
-                context.Writer.WriteNumberValue(requestObject.RadiusTimeout.Value);
+                context.Writer.WriteTextString("RadiusTimeout");
+                context.Writer.WriteInt32(requestObject.RadiusTimeout.Value);
             }
 
             if (requestObject.IsSetSharedSecret())
             {
-                context.Writer.WritePropertyName("SharedSecret");
-                context.Writer.WriteStringValue(requestObject.SharedSecret);
+                context.Writer.WriteTextString("SharedSecret");
+                context.Writer.WriteTextString(requestObject.SharedSecret);
             }
 
             if (requestObject.IsSetUseSameUsername())
             {
-                context.Writer.WritePropertyName("UseSameUsername");
-                context.Writer.WriteBooleanValue(requestObject.UseSameUsername.Value);
+                context.Writer.WriteTextString("UseSameUsername");
+                context.Writer.WriteBoolean(requestObject.UseSameUsername.Value);
             }
         }
 

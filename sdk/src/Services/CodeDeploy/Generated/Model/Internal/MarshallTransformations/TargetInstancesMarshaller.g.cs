@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,49 +39,49 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// TargetInstances Marshaller
     /// </summary>
-    public partial class TargetInstancesMarshaller : IRequestMarshaller<TargetInstances, JsonMarshallerContext>
+    public partial class TargetInstancesMarshaller : IRequestMarshaller<TargetInstances, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TargetInstances requestObject, JsonMarshallerContext context)
+        public void Marshall(TargetInstances requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAutoScalingGroups())
             {
-                context.Writer.WritePropertyName("autoScalingGroups");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("autoScalingGroups");
+                context.Writer.WriteStartArray(requestObject.AutoScalingGroups.Count);
                 foreach (var requestObjectAutoScalingGroupsListValue in requestObject.AutoScalingGroups)
                 {
-                    context.Writer.WriteStringValue(requestObjectAutoScalingGroupsListValue);
+                    context.Writer.WriteTextString(requestObjectAutoScalingGroupsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetEc2TagSet())
             {
-                context.Writer.WritePropertyName("ec2TagSet");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("ec2TagSet");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = EC2TagSetMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ec2TagSet, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetTagFilters())
             {
-                context.Writer.WritePropertyName("tagFilters");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("tagFilters");
+                context.Writer.WriteStartArray(requestObject.TagFilters.Count);
                 foreach (var requestObjectTagFiltersListValue in requestObject.TagFilters)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = EC2TagFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagFiltersListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

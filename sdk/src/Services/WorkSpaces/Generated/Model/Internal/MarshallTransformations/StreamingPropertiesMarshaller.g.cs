@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,60 +39,60 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// StreamingProperties Marshaller
     /// </summary>
-    public partial class StreamingPropertiesMarshaller : IRequestMarshaller<StreamingProperties, JsonMarshallerContext>
+    public partial class StreamingPropertiesMarshaller : IRequestMarshaller<StreamingProperties, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(StreamingProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(StreamingProperties requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetGlobalAccelerator())
             {
-                context.Writer.WritePropertyName("GlobalAccelerator");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("GlobalAccelerator");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = GlobalAcceleratorForDirectoryMarshaller.Instance;
                 marshaller.Marshall(requestObject.GlobalAccelerator, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetStorageConnectors())
             {
-                context.Writer.WritePropertyName("StorageConnectors");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("StorageConnectors");
+                context.Writer.WriteStartArray(requestObject.StorageConnectors.Count);
                 foreach (var requestObjectStorageConnectorsListValue in requestObject.StorageConnectors)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = StorageConnectorMarshaller.Instance;
                     marshaller.Marshall(requestObjectStorageConnectorsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetStreamingExperiencePreferredProtocol())
             {
-                context.Writer.WritePropertyName("StreamingExperiencePreferredProtocol");
-                context.Writer.WriteStringValue(requestObject.StreamingExperiencePreferredProtocol);
+                context.Writer.WriteTextString("StreamingExperiencePreferredProtocol");
+                context.Writer.WriteTextString(requestObject.StreamingExperiencePreferredProtocol);
             }
 
             if (requestObject.IsSetUserSettings())
             {
-                context.Writer.WritePropertyName("UserSettings");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("UserSettings");
+                context.Writer.WriteStartArray(requestObject.UserSettings.Count);
                 foreach (var requestObjectUserSettingsListValue in requestObject.UserSettings)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = UserSettingMarshaller.Instance;
                     marshaller.Marshall(requestObjectUserSettingsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

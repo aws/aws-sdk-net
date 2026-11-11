@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CrlDistributionPointExtensionConfiguration Marshaller
     /// </summary>
-    public class CrlDistributionPointExtensionConfigurationMarshaller : IRequestMarshaller<CrlDistributionPointExtensionConfiguration, JsonMarshallerContext> 
+    public class CrlDistributionPointExtensionConfigurationMarshaller : IRequestMarshaller<CrlDistributionPointExtensionConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CrlDistributionPointExtensionConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(CrlDistributionPointExtensionConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetOmitExtension())
-            {
-                context.Writer.WritePropertyName("OmitExtension");
-                context.Writer.WriteBooleanValue(requestObject.OmitExtension.Value);
-            }
 
+            if (requestObject.IsSetOmitExtension())
+            {
+                context.Writer.WriteTextString("OmitExtension");
+                context.Writer.WriteBoolean(requestObject.OmitExtension.Value);
+            }
         }
 
         /// <summary>

@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.MemoryDB.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
@@ -54,48 +55,54 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public IRequest Marshall(ResetParameterGroupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MemoryDB");
-            string target = "AmazonMemoryDB.ResetParameterGroup";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAllParameters())
+            request.ResourcePath = "service/AmazonMemoryDB/operation/ResetParameterGroup";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("AllParameters");
-                context.Writer.WriteBooleanValue(publicRequest.AllParameters.Value);
-            }
-            if (publicRequest.IsSetParameterGroupName())
-            {
-                context.Writer.WritePropertyName("ParameterGroupName");
-                context.Writer.WriteStringValue(publicRequest.ParameterGroupName);
-            }
-            if (publicRequest.IsSetParameterNames())
-            {
-                context.Writer.WritePropertyName("ParameterNames");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestParameterNamesListValue in publicRequest.ParameterNames)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAllParameters())
                 {
-                    context.Writer.WriteStringValue(publicRequestParameterNamesListValue);
+                    context.Writer.WriteTextString("AllParameters");
+                    context.Writer.WriteBoolean(publicRequest.AllParameters.Value);
                 }
-                context.Writer.WriteEndArray();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                if (publicRequest.IsSetParameterGroupName())
+                {
+                    context.Writer.WriteTextString("ParameterGroupName");
+                    context.Writer.WriteTextString(publicRequest.ParameterGroupName);
+                }
+                if (publicRequest.IsSetParameterNames())
+                {
+                    context.Writer.WriteTextString("ParameterNames");
+                    context.Writer.WriteStartArray(publicRequest.ParameterNames.Count);
+                    foreach (var publicRequestParameterNamesListValue in publicRequest.ParameterNames)
+                    {
+                        context.Writer.WriteTextString(publicRequestParameterNamesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

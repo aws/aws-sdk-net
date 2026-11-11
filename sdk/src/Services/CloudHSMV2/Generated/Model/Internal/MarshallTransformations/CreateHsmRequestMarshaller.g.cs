@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.CloudHSMV2.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
@@ -54,43 +55,49 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateHsmRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudHSMV2");
-            string target = "BaldrApiService.CreateHsm";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-28";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/BaldrApiService/operation/CreateHsm";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAvailabilityZone())
+                {
+                    context.Writer.WriteTextString("AvailabilityZone");
+                    context.Writer.WriteTextString(publicRequest.AvailabilityZone);
+                }
+                if (publicRequest.IsSetClusterId())
+                {
+                    context.Writer.WriteTextString("ClusterId");
+                    context.Writer.WriteTextString(publicRequest.ClusterId);
+                }
+                if (publicRequest.IsSetIpAddress())
+                {
+                    context.Writer.WriteTextString("IpAddress");
+                    context.Writer.WriteTextString(publicRequest.IpAddress);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAvailabilityZone())
-            {
-                context.Writer.WritePropertyName("AvailabilityZone");
-                context.Writer.WriteStringValue(publicRequest.AvailabilityZone);
             }
-            if (publicRequest.IsSetClusterId())
+            finally
             {
-                context.Writer.WritePropertyName("ClusterId");
-                context.Writer.WriteStringValue(publicRequest.ClusterId);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetIpAddress())
-            {
-                context.Writer.WritePropertyName("IpAddress");
-                context.Writer.WriteStringValue(publicRequest.IpAddress);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

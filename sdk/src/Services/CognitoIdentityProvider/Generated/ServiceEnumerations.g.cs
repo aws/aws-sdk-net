@@ -2125,6 +2125,47 @@ namespace Amazon.CognitoIdentityProvider
     }
 
     /// <summary>
+    /// Constants used for properties of type RevokeAssociatedSessionsType.
+    /// </summary>
+    public class RevokeAssociatedSessionsType : ConstantClass
+    {
+        /// <summary>
+        /// Constant LINKED for RevokeAssociatedSessionsType
+        /// </summary>
+        public static readonly RevokeAssociatedSessionsType LINKED = new RevokeAssociatedSessionsType("LINKED");
+
+        /// <summary>
+        /// Constant NONE for RevokeAssociatedSessionsType
+        /// </summary>
+        public static readonly RevokeAssociatedSessionsType NONE = new RevokeAssociatedSessionsType("NONE");
+
+        /// <summary>
+        /// Constructs a custom RevokeAssociatedSessionsType for a value not among the defined constants.
+        /// </summary>
+        public RevokeAssociatedSessionsType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RevokeAssociatedSessionsType FindValue(string value)
+        {
+            return FindValue<RevokeAssociatedSessionsType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RevokeAssociatedSessionsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RiskDecisionType.
     /// </summary>
     public class RiskDecisionType : ConstantClass
@@ -2257,6 +2298,47 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SecurityPolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SessionTypeType.
+    /// </summary>
+    public class SessionTypeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant SSO for SessionTypeType
+        /// </summary>
+        public static readonly SessionTypeType SSO = new SessionTypeType("SSO");
+
+        /// <summary>
+        /// Constant TOKEN for SessionTypeType
+        /// </summary>
+        public static readonly SessionTypeType TOKEN = new SessionTypeType("TOKEN");
+
+        /// <summary>
+        /// Constructs a custom SessionTypeType for a value not among the defined constants.
+        /// </summary>
+        public SessionTypeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionTypeType FindValue(string value)
+        {
+            return FindValue<SessionTypeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionTypeType(string value)
         {
             return FindValue(value);
         }
@@ -2625,6 +2707,47 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UserPoolTierType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UserSessionTrackingType.
+    /// </summary>
+    public class UserSessionTrackingType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for UserSessionTrackingType
+        /// </summary>
+        public static readonly UserSessionTrackingType DISABLED = new UserSessionTrackingType("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for UserSessionTrackingType
+        /// </summary>
+        public static readonly UserSessionTrackingType ENABLED = new UserSessionTrackingType("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom UserSessionTrackingType for a value not among the defined constants.
+        /// </summary>
+        public UserSessionTrackingType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserSessionTrackingType FindValue(string value)
+        {
+            return FindValue<UserSessionTrackingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserSessionTrackingType(string value)
         {
             return FindValue(value);
         }

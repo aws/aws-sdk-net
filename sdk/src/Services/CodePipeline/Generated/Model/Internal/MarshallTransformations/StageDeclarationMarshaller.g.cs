@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,84 +39,84 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// StageDeclaration Marshaller
     /// </summary>
-    public partial class StageDeclarationMarshaller : IRequestMarshaller<StageDeclaration, JsonMarshallerContext>
+    public partial class StageDeclarationMarshaller : IRequestMarshaller<StageDeclaration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(StageDeclaration requestObject, JsonMarshallerContext context)
+        public void Marshall(StageDeclaration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetActions())
             {
-                context.Writer.WritePropertyName("actions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("actions");
+                context.Writer.WriteStartArray(requestObject.Actions.Count);
                 foreach (var requestObjectActionsListValue in requestObject.Actions)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ActionDeclarationMarshaller.Instance;
                     marshaller.Marshall(requestObjectActionsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetBeforeEntry())
             {
-                context.Writer.WritePropertyName("beforeEntry");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("beforeEntry");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = BeforeEntryConditionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BeforeEntry, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetBlockers())
             {
-                context.Writer.WritePropertyName("blockers");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("blockers");
+                context.Writer.WriteStartArray(requestObject.Blockers.Count);
                 foreach (var requestObjectBlockersListValue in requestObject.Blockers)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = BlockerDeclarationMarshaller.Instance;
                     marshaller.Marshall(requestObjectBlockersListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
 
             if (requestObject.IsSetOnFailure())
             {
-                context.Writer.WritePropertyName("onFailure");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("onFailure");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = FailureConditionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.OnFailure, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetOnSuccess())
             {
-                context.Writer.WritePropertyName("onSuccess");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("onSuccess");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = SuccessConditionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.OnSuccess, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

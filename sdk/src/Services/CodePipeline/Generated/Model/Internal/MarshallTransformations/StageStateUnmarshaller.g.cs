@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
@@ -36,93 +38,96 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StageState Object
     /// </summary>
-    public partial class StageStateUnmarshaller : IJsonUnmarshaller<StageState, JsonUnmarshallerContext>
+    public partial class StageStateUnmarshaller : ICborUnmarshaller<StageState, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public StageState Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public StageState Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new StageState();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("actionStates", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ActionState, ActionStateUnmarshaller>(ActionStateUnmarshaller.Instance);
-                    unmarshalledObject.ActionStates = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("beforeEntryConditionState", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StageConditionStateUnmarshaller.Instance;
-                    unmarshalledObject.BeforeEntryConditionState = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "actionStates":
+                        context.AddPathSegment("ActionStates");
+                        unmarshalledObject.ActionStates = new CborListUnmarshaller<ActionState, ActionStateUnmarshaller>(ActionStateUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("inboundExecution", targetDepth, ref reader))
-                {
-                    var unmarshaller = StageExecutionUnmarshaller.Instance;
-                    unmarshalledObject.InboundExecution = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "beforeEntryConditionState":
+                        context.AddPathSegment("BeforeEntryConditionState");
+                        unmarshalledObject.BeforeEntryConditionState = StageConditionStateUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("inboundExecutions", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<StageExecution, StageExecutionUnmarshaller>(StageExecutionUnmarshaller.Instance);
-                    unmarshalledObject.InboundExecutions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "inboundExecution":
+                        context.AddPathSegment("InboundExecution");
+                        unmarshalledObject.InboundExecution = StageExecutionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("inboundTransitionState", targetDepth, ref reader))
-                {
-                    var unmarshaller = TransitionStateUnmarshaller.Instance;
-                    unmarshalledObject.InboundTransitionState = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "inboundExecutions":
+                        context.AddPathSegment("InboundExecutions");
+                        unmarshalledObject.InboundExecutions = new CborListUnmarshaller<StageExecution, StageExecutionUnmarshaller>(StageExecutionUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("latestExecution", targetDepth, ref reader))
-                {
-                    var unmarshaller = StageExecutionUnmarshaller.Instance;
-                    unmarshalledObject.LatestExecution = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "inboundTransitionState":
+                        context.AddPathSegment("InboundTransitionState");
+                        unmarshalledObject.InboundTransitionState = TransitionStateUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("onFailureConditionState", targetDepth, ref reader))
-                {
-                    var unmarshaller = StageConditionStateUnmarshaller.Instance;
-                    unmarshalledObject.OnFailureConditionState = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "latestExecution":
+                        context.AddPathSegment("LatestExecution");
+                        unmarshalledObject.LatestExecution = StageExecutionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("onSuccessConditionState", targetDepth, ref reader))
-                {
-                    var unmarshaller = StageConditionStateUnmarshaller.Instance;
-                    unmarshalledObject.OnSuccessConditionState = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "onFailureConditionState":
+                        context.AddPathSegment("OnFailureConditionState");
+                        unmarshalledObject.OnFailureConditionState = StageConditionStateUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("retryStageMetadata", targetDepth, ref reader))
-                {
-                    var unmarshaller = RetryStageMetadataUnmarshaller.Instance;
-                    unmarshalledObject.RetryStageMetadata = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "onSuccessConditionState":
+                        context.AddPathSegment("OnSuccessConditionState");
+                        unmarshalledObject.OnSuccessConditionState = StageConditionStateUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("stageName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StageName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "retryStageMetadata":
+                        context.AddPathSegment("RetryStageMetadata");
+                        unmarshalledObject.RetryStageMetadata = RetryStageMetadataUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "stageName":
+                        context.AddPathSegment("StageName");
+                        unmarshalledObject.StageName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

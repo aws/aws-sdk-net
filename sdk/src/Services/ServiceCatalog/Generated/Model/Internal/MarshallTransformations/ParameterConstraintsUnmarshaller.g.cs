@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
@@ -36,72 +38,78 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ParameterConstraints Object
     /// </summary>
-    public partial class ParameterConstraintsUnmarshaller : IJsonUnmarshaller<ParameterConstraints, JsonUnmarshallerContext>
+    public partial class ParameterConstraintsUnmarshaller : ICborUnmarshaller<ParameterConstraints, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ParameterConstraints Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ParameterConstraints Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ParameterConstraints();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AllowedPattern", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AllowedPattern = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("AllowedValues", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AllowedPattern":
+                        context.AddPathSegment("AllowedPattern");
+                        unmarshalledObject.AllowedPattern = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ConstraintDescription", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConstraintDescription = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AllowedValues":
+                        context.AddPathSegment("AllowedValues");
+                        unmarshalledObject.AllowedValues = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("MaxLength", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaxLength = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ConstraintDescription":
+                        context.AddPathSegment("ConstraintDescription");
+                        unmarshalledObject.ConstraintDescription = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("MaxValue", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaxValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "MaxLength":
+                        context.AddPathSegment("MaxLength");
+                        unmarshalledObject.MaxLength = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("MinLength", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MinLength = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "MaxValue":
+                        context.AddPathSegment("MaxValue");
+                        unmarshalledObject.MaxValue = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("MinValue", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MinValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "MinLength":
+                        context.AddPathSegment("MinLength");
+                        unmarshalledObject.MinLength = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "MinValue":
+                        context.AddPathSegment("MinValue");
+                        unmarshalledObject.MinValue = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

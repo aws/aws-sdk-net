@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,36 +39,36 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// FleetProxyRule Marshaller
     /// </summary>
-    public partial class FleetProxyRuleMarshaller : IRequestMarshaller<FleetProxyRule, JsonMarshallerContext>
+    public partial class FleetProxyRuleMarshaller : IRequestMarshaller<FleetProxyRule, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(FleetProxyRule requestObject, JsonMarshallerContext context)
+        public void Marshall(FleetProxyRule requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetEffect())
             {
-                context.Writer.WritePropertyName("effect");
-                context.Writer.WriteStringValue(requestObject.Effect);
+                context.Writer.WriteTextString("effect");
+                context.Writer.WriteTextString(requestObject.Effect);
             }
 
             if (requestObject.IsSetEntities())
             {
-                context.Writer.WritePropertyName("entities");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("entities");
+                context.Writer.WriteStartArray(requestObject.Entities.Count);
                 foreach (var requestObjectEntitiesListValue in requestObject.Entities)
                 {
-                    context.Writer.WriteStringValue(requestObjectEntitiesListValue);
+                    context.Writer.WriteTextString(requestObjectEntitiesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

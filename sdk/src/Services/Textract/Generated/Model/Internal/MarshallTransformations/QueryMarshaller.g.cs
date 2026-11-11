@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,36 +39,36 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// Query Marshaller
     /// </summary>
-    public partial class QueryMarshaller : IRequestMarshaller<Query, JsonMarshallerContext>
+    public partial class QueryMarshaller : IRequestMarshaller<Query, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Query requestObject, JsonMarshallerContext context)
+        public void Marshall(Query requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAlias())
             {
-                context.Writer.WritePropertyName("Alias");
-                context.Writer.WriteStringValue(requestObject.Alias);
+                context.Writer.WriteTextString("Alias");
+                context.Writer.WriteTextString(requestObject.Alias);
             }
 
             if (requestObject.IsSetPages())
             {
-                context.Writer.WritePropertyName("Pages");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Pages");
+                context.Writer.WriteStartArray(requestObject.Pages.Count);
                 foreach (var requestObjectPagesListValue in requestObject.Pages)
                 {
-                    context.Writer.WriteStringValue(requestObjectPagesListValue);
+                    context.Writer.WriteTextString(requestObjectPagesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetText())
             {
-                context.Writer.WritePropertyName("Text");
-                context.Writer.WriteStringValue(requestObject.Text);
+                context.Writer.WriteTextString("Text");
+                context.Writer.WriteTextString(requestObject.Text);
             }
         }
 

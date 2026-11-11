@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OcspConfiguration Marshaller
     /// </summary>
-    public class OcspConfigurationMarshaller : IRequestMarshaller<OcspConfiguration, JsonMarshallerContext> 
+    public class OcspConfigurationMarshaller : IRequestMarshaller<OcspConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OcspConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(OcspConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEnabled())
-            {
-                context.Writer.WritePropertyName("Enabled");
-                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
-            }
 
-            if(requestObject.IsSetOcspCustomCname())
+            if (requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("OcspCustomCname");
-                context.Writer.WriteStringValue(requestObject.OcspCustomCname);
+                context.Writer.WriteTextString("Enabled");
+                context.Writer.WriteBoolean(requestObject.Enabled.Value);
             }
-
+            if (requestObject.IsSetOcspCustomCname())
+            {
+                context.Writer.WriteTextString("OcspCustomCname");
+                context.Writer.WriteTextString(requestObject.OcspCustomCname);
+            }
         }
 
         /// <summary>

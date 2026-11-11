@@ -67,6 +67,13 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("mergeMetadata", targetDepth, ref reader))
+                {
+                    var unmarshaller = AuditMergeMetadataUnmarshaller.Instance;
+                    unmarshalledObject.MergeMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("performedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = AuditEventPerformedByUnmarshaller.Instance;

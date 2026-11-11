@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
@@ -36,128 +38,126 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Block Object
     /// </summary>
-    public partial class BlockUnmarshaller : IJsonUnmarshaller<Block, JsonUnmarshallerContext>
+    public partial class BlockUnmarshaller : ICborUnmarshaller<Block, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Block Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Block Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Block();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("BlockType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BlockType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ColumnIndex", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ColumnIndex = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BlockType":
+                        context.AddPathSegment("BlockType");
+                        unmarshalledObject.BlockType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ColumnSpan", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ColumnSpan = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ColumnIndex":
+                        context.AddPathSegment("ColumnIndex");
+                        unmarshalledObject.ColumnIndex = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Confidence", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ColumnSpan":
+                        context.AddPathSegment("ColumnSpan");
+                        unmarshalledObject.ColumnSpan = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EntityTypes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.EntityTypes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Confidence":
+                        context.AddPathSegment("Confidence");
+                        unmarshalledObject.Confidence = CborNullableFloatUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Geometry", targetDepth, ref reader))
-                {
-                    var unmarshaller = GeometryUnmarshaller.Instance;
-                    unmarshalledObject.Geometry = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EntityTypes":
+                        context.AddPathSegment("EntityTypes");
+                        unmarshalledObject.EntityTypes = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Id", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Geometry":
+                        context.AddPathSegment("Geometry");
+                        unmarshalledObject.Geometry = GeometryUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Page", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Page = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Id":
+                        context.AddPathSegment("Id");
+                        unmarshalledObject.Id = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Query", targetDepth, ref reader))
-                {
-                    var unmarshaller = QueryUnmarshaller.Instance;
-                    unmarshalledObject.Query = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Page":
+                        context.AddPathSegment("Page");
+                        unmarshalledObject.Page = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Relationships", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Relationship, RelationshipUnmarshaller>(RelationshipUnmarshaller.Instance);
-                    unmarshalledObject.Relationships = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Query":
+                        context.AddPathSegment("Query");
+                        unmarshalledObject.Query = QueryUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RowIndex", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RowIndex = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Relationships":
+                        context.AddPathSegment("Relationships");
+                        unmarshalledObject.Relationships = new CborListUnmarshaller<Relationship, RelationshipUnmarshaller>(RelationshipUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RowSpan", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RowSpan = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RowIndex":
+                        context.AddPathSegment("RowIndex");
+                        unmarshalledObject.RowIndex = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SelectionStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SelectionStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RowSpan":
+                        context.AddPathSegment("RowSpan");
+                        unmarshalledObject.RowSpan = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Text", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "SelectionStatus":
+                        context.AddPathSegment("SelectionStatus");
+                        unmarshalledObject.SelectionStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TextType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TextType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Text":
+                        context.AddPathSegment("Text");
+                        unmarshalledObject.Text = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "TextType":
+                        context.AddPathSegment("TextType");
+                        unmarshalledObject.TextType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

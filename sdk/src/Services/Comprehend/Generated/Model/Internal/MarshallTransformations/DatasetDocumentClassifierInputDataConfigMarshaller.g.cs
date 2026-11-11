@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// DatasetDocumentClassifierInputDataConfig Marshaller
     /// </summary>
-    public partial class DatasetDocumentClassifierInputDataConfigMarshaller : IRequestMarshaller<DatasetDocumentClassifierInputDataConfig, JsonMarshallerContext>
+    public partial class DatasetDocumentClassifierInputDataConfigMarshaller : IRequestMarshaller<DatasetDocumentClassifierInputDataConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DatasetDocumentClassifierInputDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(DatasetDocumentClassifierInputDataConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetLabelDelimiter())
             {
-                context.Writer.WritePropertyName("LabelDelimiter");
-                context.Writer.WriteStringValue(requestObject.LabelDelimiter);
+                context.Writer.WriteTextString("LabelDelimiter");
+                context.Writer.WriteTextString(requestObject.LabelDelimiter);
             }
 
             if (requestObject.IsSetS3Uri())
             {
-                context.Writer.WritePropertyName("S3Uri");
-                context.Writer.WriteStringValue(requestObject.S3Uri);
+                context.Writer.WriteTextString("S3Uri");
+                context.Writer.WriteTextString(requestObject.S3Uri);
             }
         }
 

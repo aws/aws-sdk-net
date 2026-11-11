@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -36,37 +38,48 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GlobalAcceleratorForWorkSpace Object
     /// </summary>
-    public partial class GlobalAcceleratorForWorkSpaceUnmarshaller : IJsonUnmarshaller<GlobalAcceleratorForWorkSpace, JsonUnmarshallerContext>
+    public partial class GlobalAcceleratorForWorkSpaceUnmarshaller : ICborUnmarshaller<GlobalAcceleratorForWorkSpace, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public GlobalAcceleratorForWorkSpace Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public GlobalAcceleratorForWorkSpace Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new GlobalAcceleratorForWorkSpace();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Mode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("PreferredProtocol", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PreferredProtocol = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Mode":
+                        context.AddPathSegment("Mode");
+                        unmarshalledObject.Mode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "PreferredProtocol":
+                        context.AddPathSegment("PreferredProtocol");
+                        unmarshalledObject.PreferredProtocol = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

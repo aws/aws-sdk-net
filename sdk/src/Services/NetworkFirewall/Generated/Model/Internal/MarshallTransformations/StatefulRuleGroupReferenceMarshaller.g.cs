@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,42 +39,42 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// StatefulRuleGroupReference Marshaller
     /// </summary>
-    public partial class StatefulRuleGroupReferenceMarshaller : IRequestMarshaller<StatefulRuleGroupReference, JsonMarshallerContext>
+    public partial class StatefulRuleGroupReferenceMarshaller : IRequestMarshaller<StatefulRuleGroupReference, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(StatefulRuleGroupReference requestObject, JsonMarshallerContext context)
+        public void Marshall(StatefulRuleGroupReference requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDeepThreatInspection())
             {
-                context.Writer.WritePropertyName("DeepThreatInspection");
-                context.Writer.WriteBooleanValue(requestObject.DeepThreatInspection.Value);
+                context.Writer.WriteTextString("DeepThreatInspection");
+                context.Writer.WriteBoolean(requestObject.DeepThreatInspection.Value);
             }
 
             if (requestObject.IsSetOverride())
             {
-                context.Writer.WritePropertyName("Override");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Override");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = StatefulRuleGroupOverrideMarshaller.Instance;
                 marshaller.Marshall(requestObject.Override, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetPriority())
             {
-                context.Writer.WritePropertyName("Priority");
-                context.Writer.WriteNumberValue(requestObject.Priority.Value);
+                context.Writer.WriteTextString("Priority");
+                context.Writer.WriteInt32(requestObject.Priority.Value);
             }
 
             if (requestObject.IsSetResourceArn())
             {
-                context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.WriteStringValue(requestObject.ResourceArn);
+                context.Writer.WriteTextString("ResourceArn");
+                context.Writer.WriteTextString(requestObject.ResourceArn);
             }
         }
 

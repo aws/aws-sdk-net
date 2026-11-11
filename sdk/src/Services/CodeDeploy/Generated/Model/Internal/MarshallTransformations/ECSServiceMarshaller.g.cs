@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// ECSService Marshaller
     /// </summary>
-    public partial class ECSServiceMarshaller : IRequestMarshaller<ECSService, JsonMarshallerContext>
+    public partial class ECSServiceMarshaller : IRequestMarshaller<ECSService, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ECSService requestObject, JsonMarshallerContext context)
+        public void Marshall(ECSService requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetClusterName())
             {
-                context.Writer.WritePropertyName("clusterName");
-                context.Writer.WriteStringValue(requestObject.ClusterName);
+                context.Writer.WriteTextString("clusterName");
+                context.Writer.WriteTextString(requestObject.ClusterName);
             }
 
             if (requestObject.IsSetServiceName())
             {
-                context.Writer.WritePropertyName("serviceName");
-                context.Writer.WriteStringValue(requestObject.ServiceName);
+                context.Writer.WriteTextString("serviceName");
+                context.Writer.WriteTextString(requestObject.ServiceName);
             }
         }
 

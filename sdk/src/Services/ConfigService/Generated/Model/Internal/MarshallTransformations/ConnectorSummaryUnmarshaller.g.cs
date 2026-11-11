@@ -67,6 +67,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("gcpOrganizationId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GcpOrganizationId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -78,6 +85,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Provider = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("serviceAccountEmail", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceAccountEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

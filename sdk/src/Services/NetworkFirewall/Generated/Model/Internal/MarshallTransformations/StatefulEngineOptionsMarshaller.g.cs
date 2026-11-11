@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,36 +39,36 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// StatefulEngineOptions Marshaller
     /// </summary>
-    public partial class StatefulEngineOptionsMarshaller : IRequestMarshaller<StatefulEngineOptions, JsonMarshallerContext>
+    public partial class StatefulEngineOptionsMarshaller : IRequestMarshaller<StatefulEngineOptions, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(StatefulEngineOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(StatefulEngineOptions requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetFlowTimeouts())
             {
-                context.Writer.WritePropertyName("FlowTimeouts");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("FlowTimeouts");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = FlowTimeoutsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FlowTimeouts, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetRuleOrder())
             {
-                context.Writer.WritePropertyName("RuleOrder");
-                context.Writer.WriteStringValue(requestObject.RuleOrder);
+                context.Writer.WriteTextString("RuleOrder");
+                context.Writer.WriteTextString(requestObject.RuleOrder);
             }
 
             if (requestObject.IsSetStreamExceptionPolicy())
             {
-                context.Writer.WritePropertyName("StreamExceptionPolicy");
-                context.Writer.WriteStringValue(requestObject.StreamExceptionPolicy);
+                context.Writer.WriteTextString("StreamExceptionPolicy");
+                context.Writer.WriteTextString(requestObject.StreamExceptionPolicy);
             }
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// EncryptionConfiguration Marshaller
     /// </summary>
-    public partial class EncryptionConfigurationMarshaller : IRequestMarshaller<EncryptionConfiguration, JsonMarshallerContext>
+    public partial class EncryptionConfigurationMarshaller : IRequestMarshaller<EncryptionConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(EncryptionConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(EncryptionConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetKeyId())
             {
-                context.Writer.WritePropertyName("KeyId");
-                context.Writer.WriteStringValue(requestObject.KeyId);
+                context.Writer.WriteTextString("KeyId");
+                context.Writer.WriteTextString(requestObject.KeyId);
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("Type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

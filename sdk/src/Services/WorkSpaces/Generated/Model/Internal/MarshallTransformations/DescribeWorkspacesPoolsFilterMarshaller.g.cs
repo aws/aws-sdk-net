@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,34 +39,34 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeWorkspacesPoolsFilter Marshaller
     /// </summary>
-    public partial class DescribeWorkspacesPoolsFilterMarshaller : IRequestMarshaller<DescribeWorkspacesPoolsFilter, JsonMarshallerContext>
+    public partial class DescribeWorkspacesPoolsFilterMarshaller : IRequestMarshaller<DescribeWorkspacesPoolsFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DescribeWorkspacesPoolsFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(DescribeWorkspacesPoolsFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("Name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
 
             if (requestObject.IsSetOperator())
             {
-                context.Writer.WritePropertyName("Operator");
-                context.Writer.WriteStringValue(requestObject.Operator);
+                context.Writer.WriteTextString("Operator");
+                context.Writer.WriteTextString(requestObject.Operator);
             }
 
             if (requestObject.IsSetValues())
             {
-                context.Writer.WritePropertyName("Values");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Values");
+                context.Writer.WriteStartArray(requestObject.Values.Count);
                 foreach (var requestObjectValuesListValue in requestObject.Values)
                 {
-                    context.Writer.WriteStringValue(requestObjectValuesListValue);
+                    context.Writer.WriteTextString(requestObjectValuesListValue);
                 }
                 context.Writer.WriteEndArray();
             }

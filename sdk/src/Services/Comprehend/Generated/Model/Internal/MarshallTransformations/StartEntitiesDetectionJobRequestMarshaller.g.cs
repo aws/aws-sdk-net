@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.Comprehend.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
@@ -54,113 +55,119 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartEntitiesDetectionJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Comprehend");
-            string target = "Comprehend_20171127.StartEntitiesDetectionJob";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetClientRequestToken())
+            request.ResourcePath = "service/Comprehend_20171127/operation/StartEntitiesDetectionJob";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("ClientRequestToken");
-                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
-            }
-            else
-            {
-                context.Writer.WritePropertyName("ClientRequestToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if (publicRequest.IsSetDataAccessRoleArn())
-            {
-                context.Writer.WritePropertyName("DataAccessRoleArn");
-                context.Writer.WriteStringValue(publicRequest.DataAccessRoleArn);
-            }
-            if (publicRequest.IsSetEntityRecognizerArn())
-            {
-                context.Writer.WritePropertyName("EntityRecognizerArn");
-                context.Writer.WriteStringValue(publicRequest.EntityRecognizerArn);
-            }
-            if (publicRequest.IsSetFlywheelArn())
-            {
-                context.Writer.WritePropertyName("FlywheelArn");
-                context.Writer.WriteStringValue(publicRequest.FlywheelArn);
-            }
-            if (publicRequest.IsSetInputDataConfig())
-            {
-                context.Writer.WritePropertyName("InputDataConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = InputDataConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.InputDataConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetJobName())
-            {
-                context.Writer.WritePropertyName("JobName");
-                context.Writer.WriteStringValue(publicRequest.JobName);
-            }
-            if (publicRequest.IsSetLanguageCode())
-            {
-                context.Writer.WritePropertyName("LanguageCode");
-                context.Writer.WriteStringValue(publicRequest.LanguageCode);
-            }
-            if (publicRequest.IsSetOutputDataConfig())
-            {
-                context.Writer.WritePropertyName("OutputDataConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = OutputDataConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.OutputDataConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetClientRequestToken())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("ClientRequestToken");
+                    context.Writer.WriteTextString(publicRequest.ClientRequestToken);
                 }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetVolumeKmsKeyId())
-            {
-                context.Writer.WritePropertyName("VolumeKmsKeyId");
-                context.Writer.WriteStringValue(publicRequest.VolumeKmsKeyId);
-            }
-            if (publicRequest.IsSetVpcConfig())
-            {
-                context.Writer.WritePropertyName("VpcConfig");
-                context.Writer.WriteStartObject();
+                else
+                {
+                    context.Writer.WriteTextString("ClientRequestToken");
+                    context.Writer.WriteTextString(Guid.NewGuid().ToString());
+                }
+                if (publicRequest.IsSetDataAccessRoleArn())
+                {
+                    context.Writer.WriteTextString("DataAccessRoleArn");
+                    context.Writer.WriteTextString(publicRequest.DataAccessRoleArn);
+                }
+                if (publicRequest.IsSetEntityRecognizerArn())
+                {
+                    context.Writer.WriteTextString("EntityRecognizerArn");
+                    context.Writer.WriteTextString(publicRequest.EntityRecognizerArn);
+                }
+                if (publicRequest.IsSetFlywheelArn())
+                {
+                    context.Writer.WriteTextString("FlywheelArn");
+                    context.Writer.WriteTextString(publicRequest.FlywheelArn);
+                }
+                if (publicRequest.IsSetInputDataConfig())
+                {
+                    context.Writer.WriteTextString("InputDataConfig");
+                    context.Writer.WriteStartMap(null);
 
-                var marshaller = VpcConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.VpcConfig, context);
+                    var marshaller = InputDataConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InputDataConfig, context);
 
-                context.Writer.WriteEndObject();
-            }
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetJobName())
+                {
+                    context.Writer.WriteTextString("JobName");
+                    context.Writer.WriteTextString(publicRequest.JobName);
+                }
+                if (publicRequest.IsSetLanguageCode())
+                {
+                    context.Writer.WriteTextString("LanguageCode");
+                    context.Writer.WriteTextString(publicRequest.LanguageCode);
+                }
+                if (publicRequest.IsSetOutputDataConfig())
+                {
+                    context.Writer.WriteTextString("OutputDataConfig");
+                    context.Writer.WriteStartMap(null);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    var marshaller = OutputDataConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutputDataConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetVolumeKmsKeyId())
+                {
+                    context.Writer.WriteTextString("VolumeKmsKeyId");
+                    context.Writer.WriteTextString(publicRequest.VolumeKmsKeyId);
+                }
+                if (publicRequest.IsSetVpcConfig())
+                {
+                    context.Writer.WriteTextString("VpcConfig");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = VpcConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

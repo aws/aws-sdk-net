@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,46 +39,46 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// GitPullRequestFilter Marshaller
     /// </summary>
-    public partial class GitPullRequestFilterMarshaller : IRequestMarshaller<GitPullRequestFilter, JsonMarshallerContext>
+    public partial class GitPullRequestFilterMarshaller : IRequestMarshaller<GitPullRequestFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(GitPullRequestFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(GitPullRequestFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetBranches())
             {
-                context.Writer.WritePropertyName("branches");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("branches");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = GitBranchFilterCriteriaMarshaller.Instance;
                 marshaller.Marshall(requestObject.Branches, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetEvents())
             {
-                context.Writer.WritePropertyName("events");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("events");
+                context.Writer.WriteStartArray(requestObject.Events.Count);
                 foreach (var requestObjectEventsListValue in requestObject.Events)
                 {
-                    context.Writer.WriteStringValue(requestObjectEventsListValue);
+                    context.Writer.WriteTextString(requestObjectEventsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetFilePaths())
             {
-                context.Writer.WritePropertyName("filePaths");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("filePaths");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = GitFilePathFilterCriteriaMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilePaths, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

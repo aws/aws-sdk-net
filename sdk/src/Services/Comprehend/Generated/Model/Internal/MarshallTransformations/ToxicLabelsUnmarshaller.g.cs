@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
@@ -36,37 +38,48 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ToxicLabels Object
     /// </summary>
-    public partial class ToxicLabelsUnmarshaller : IJsonUnmarshaller<ToxicLabels, JsonUnmarshallerContext>
+    public partial class ToxicLabelsUnmarshaller : ICborUnmarshaller<ToxicLabels, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ToxicLabels Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ToxicLabels Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ToxicLabels();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Labels", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ToxicContent, ToxicContentUnmarshaller>(ToxicContentUnmarshaller.Instance);
-                    unmarshalledObject.Labels = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Toxicity", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.Toxicity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Labels":
+                        context.AddPathSegment("Labels");
+                        unmarshalledObject.Labels = new CborListUnmarshaller<ToxicContent, ToxicContentUnmarshaller>(ToxicContentUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Toxicity":
+                        context.AddPathSegment("Toxicity");
+                        unmarshalledObject.Toxicity = CborNullableFloatUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -58,6 +58,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetOutboundAuth())
+            {
+                context.Writer.WritePropertyName("outboundAuth");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HarnessRemoteMcpOutboundAuthMarshaller.Instance;
+                marshaller.Marshall(requestObject.OutboundAuth, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("url");

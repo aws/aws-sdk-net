@@ -51,8 +51,10 @@ namespace Amazon.ConnectCases.Model
     /// the <c>relatedItemArn</c>. Examples of related items include <c>comments</c> and <c>contacts</c>.
     /// </para> </li> <li> <para> If you provide a value for <c>performedBy.userArn</c>, you
     /// must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
-    /// permission on the ARN of the user that you provide. </para> </li> </ul> <para> <b>Endpoints</b>:
-    /// See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+    /// permission on the ARN of the user that you provide. </para> </li> <li> <para> If the
+    /// case is the secondary case of a merge that is running, the request fails with a <c>ConflictException</c>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+    /// </para> </li> </ul> <para> <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
     /// Customer endpoints and quotas</a>. </para>
     /// </summary>
     public partial class CreateRelatedItemRequest : AmazonConnectCasesRequest

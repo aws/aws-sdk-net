@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,36 +39,36 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// ArtifactStore Marshaller
     /// </summary>
-    public partial class ArtifactStoreMarshaller : IRequestMarshaller<ArtifactStore, JsonMarshallerContext>
+    public partial class ArtifactStoreMarshaller : IRequestMarshaller<ArtifactStore, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ArtifactStore requestObject, JsonMarshallerContext context)
+        public void Marshall(ArtifactStore requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetEncryptionKey())
             {
-                context.Writer.WritePropertyName("encryptionKey");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("encryptionKey");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = EncryptionKeyMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionKey, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetLocation())
             {
-                context.Writer.WritePropertyName("location");
-                context.Writer.WriteStringValue(requestObject.Location);
+                context.Writer.WriteTextString("location");
+                context.Writer.WriteTextString(requestObject.Location);
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.DataSync.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
@@ -54,108 +55,114 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateLocationObjectStorageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DataSync");
-            string target = "FmrsService.UpdateLocationObjectStorage";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-09";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAccessKey())
+            request.ResourcePath = "service/FmrsService/operation/UpdateLocationObjectStorage";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("AccessKey");
-                context.Writer.WriteStringValue(publicRequest.AccessKey);
-            }
-            if (publicRequest.IsSetAgentArns())
-            {
-                context.Writer.WritePropertyName("AgentArns");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAccessKey())
                 {
-                    context.Writer.WriteStringValue(publicRequestAgentArnsListValue);
+                    context.Writer.WriteTextString("AccessKey");
+                    context.Writer.WriteTextString(publicRequest.AccessKey);
                 }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetCmkSecretConfig())
-            {
-                context.Writer.WritePropertyName("CmkSecretConfig");
-                context.Writer.WriteStartObject();
+                if (publicRequest.IsSetAgentArns())
+                {
+                    context.Writer.WriteTextString("AgentArns");
+                    context.Writer.WriteStartArray(publicRequest.AgentArns.Count);
+                    foreach (var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                    {
+                        context.Writer.WriteTextString(publicRequestAgentArnsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetCmkSecretConfig())
+                {
+                    context.Writer.WriteTextString("CmkSecretConfig");
+                    context.Writer.WriteStartMap(null);
 
-                var marshaller = CmkSecretConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.CmkSecretConfig, context);
+                    var marshaller = CmkSecretConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CmkSecretConfig, context);
 
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetCustomSecretConfig())
-            {
-                context.Writer.WritePropertyName("CustomSecretConfig");
-                context.Writer.WriteStartObject();
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetCustomSecretConfig())
+                {
+                    context.Writer.WriteTextString("CustomSecretConfig");
+                    context.Writer.WriteStartMap(null);
 
-                var marshaller = CustomSecretConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.CustomSecretConfig, context);
+                    var marshaller = CustomSecretConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomSecretConfig, context);
 
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetFederatedIdentity())
-            {
-                context.Writer.WritePropertyName("FederatedIdentity");
-                context.Writer.WriteStartObject();
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetFederatedIdentity())
+                {
+                    context.Writer.WriteTextString("FederatedIdentity");
+                    context.Writer.WriteStartMap(null);
 
-                var marshaller = ObjectStorageFederatedIdentityConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.FederatedIdentity, context);
+                    var marshaller = ObjectStorageFederatedIdentityConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FederatedIdentity, context);
 
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetLocationArn())
-            {
-                context.Writer.WritePropertyName("LocationArn");
-                context.Writer.WriteStringValue(publicRequest.LocationArn);
-            }
-            if (publicRequest.IsSetSecretKey())
-            {
-                context.Writer.WritePropertyName("SecretKey");
-                context.Writer.WriteStringValue(publicRequest.SecretKey);
-            }
-            if (publicRequest.IsSetServerCertificate())
-            {
-                context.Writer.WritePropertyName("ServerCertificate");
-                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.ServerCertificate);
-            }
-            if (publicRequest.IsSetServerHostname())
-            {
-                context.Writer.WritePropertyName("ServerHostname");
-                context.Writer.WriteStringValue(publicRequest.ServerHostname);
-            }
-            if (publicRequest.IsSetServerPort())
-            {
-                context.Writer.WritePropertyName("ServerPort");
-                context.Writer.WriteNumberValue(publicRequest.ServerPort.Value);
-            }
-            if (publicRequest.IsSetServerProtocol())
-            {
-                context.Writer.WritePropertyName("ServerProtocol");
-                context.Writer.WriteStringValue(publicRequest.ServerProtocol);
-            }
-            if (publicRequest.IsSetSubdirectory())
-            {
-                context.Writer.WritePropertyName("Subdirectory");
-                context.Writer.WriteStringValue(publicRequest.Subdirectory);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetLocationArn())
+                {
+                    context.Writer.WriteTextString("LocationArn");
+                    context.Writer.WriteTextString(publicRequest.LocationArn);
+                }
+                if (publicRequest.IsSetSecretKey())
+                {
+                    context.Writer.WriteTextString("SecretKey");
+                    context.Writer.WriteTextString(publicRequest.SecretKey);
+                }
+                if (publicRequest.IsSetServerCertificate())
+                {
+                    context.Writer.WriteTextString("ServerCertificate");
+                    context.Writer.WriteByteString(publicRequest.ServerCertificate);
+                }
+                if (publicRequest.IsSetServerHostname())
+                {
+                    context.Writer.WriteTextString("ServerHostname");
+                    context.Writer.WriteTextString(publicRequest.ServerHostname);
+                }
+                if (publicRequest.IsSetServerPort())
+                {
+                    context.Writer.WriteTextString("ServerPort");
+                    context.Writer.WriteInt32(publicRequest.ServerPort.Value);
+                }
+                if (publicRequest.IsSetServerProtocol())
+                {
+                    context.Writer.WriteTextString("ServerProtocol");
+                    context.Writer.WriteTextString(publicRequest.ServerProtocol);
+                }
+                if (publicRequest.IsSetSubdirectory())
+                {
+                    context.Writer.WriteTextString("Subdirectory");
+                    context.Writer.WriteTextString(publicRequest.Subdirectory);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.Shield.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
@@ -54,43 +55,49 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateApplicationLayerAutomaticResponseRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Shield");
-            string target = "AWSShield_20160616.UpdateApplicationLayerAutomaticResponse";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-02";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/AWSShield_20160616/operation/UpdateApplicationLayerAutomaticResponse";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAction())
+                {
+                    context.Writer.WriteTextString("Action");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ResponseActionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Action, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetResourceArn())
+                {
+                    context.Writer.WriteTextString("ResourceArn");
+                    context.Writer.WriteTextString(publicRequest.ResourceArn);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAction())
-            {
-                context.Writer.WritePropertyName("Action");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ResponseActionMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Action, context);
-
-                context.Writer.WriteEndObject();
             }
-            if (publicRequest.IsSetResourceArn())
+            finally
             {
-                context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.WriteStringValue(publicRequest.ResourceArn);
+                CborWriterPool.Return(writer);
             }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

@@ -97,7 +97,13 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetFilesystemConfigurations() => this.FilesystemConfigurations != null && (this.FilesystemConfigurations.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property LifecycleConfiguration.
+        /// Gets and sets the property LifecycleConfiguration. 
+        /// <para>
+        /// The lifecycle configuration for the harness's runtime environment. For a harness,
+        /// <c>idleRuntimeSessionTimeout</c> and <c>maxLifetime</c> each accept a value between
+        /// 60 and 28800 seconds (8 hours), and <c>idleRuntimeSessionTimeout</c> must be less
+        /// than or equal to <c>maxLifetime</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public LifecycleConfiguration LifecycleConfiguration { get; set; }

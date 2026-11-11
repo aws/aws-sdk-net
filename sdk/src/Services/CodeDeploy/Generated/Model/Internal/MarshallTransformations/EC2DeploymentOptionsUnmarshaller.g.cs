@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -36,30 +38,42 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EC2DeploymentOptions Object
     /// </summary>
-    public partial class EC2DeploymentOptionsUnmarshaller : IJsonUnmarshaller<EC2DeploymentOptions, JsonUnmarshallerContext>
+    public partial class EC2DeploymentOptionsUnmarshaller : ICborUnmarshaller<EC2DeploymentOptions, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public EC2DeploymentOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EC2DeploymentOptions Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new EC2DeploymentOptions();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("autoScalingGroupProcessesToSuspend", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AutoScalingGroupProcessesToSuspend = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "autoScalingGroupProcessesToSuspend":
+                        context.AddPathSegment("AutoScalingGroupProcessesToSuspend");
+                        unmarshalledObject.AutoScalingGroupProcessesToSuspend = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

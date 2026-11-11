@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,41 +39,41 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// VpcConfig Marshaller
     /// </summary>
-    public partial class VpcConfigMarshaller : IRequestMarshaller<VpcConfig, JsonMarshallerContext>
+    public partial class VpcConfigMarshaller : IRequestMarshaller<VpcConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(VpcConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(VpcConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetSecurityGroupIds())
             {
-                context.Writer.WritePropertyName("securityGroupIds");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("securityGroupIds");
+                context.Writer.WriteStartArray(requestObject.SecurityGroupIds.Count);
                 foreach (var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                    context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
+                    context.Writer.WriteTextString(requestObjectSecurityGroupIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetSubnets())
             {
-                context.Writer.WritePropertyName("subnets");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("subnets");
+                context.Writer.WriteStartArray(requestObject.Subnets.Count);
                 foreach (var requestObjectSubnetsListValue in requestObject.Subnets)
                 {
-                    context.Writer.WriteStringValue(requestObjectSubnetsListValue);
+                    context.Writer.WriteTextString(requestObjectSubnetsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetVpcId())
             {
-                context.Writer.WritePropertyName("vpcId");
-                context.Writer.WriteStringValue(requestObject.VpcId);
+                context.Writer.WriteTextString("vpcId");
+                context.Writer.WriteTextString(requestObject.VpcId);
             }
         }
 

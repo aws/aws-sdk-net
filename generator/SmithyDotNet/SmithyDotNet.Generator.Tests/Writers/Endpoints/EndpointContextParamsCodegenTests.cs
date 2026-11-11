@@ -1,5 +1,6 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Writers;
 using SmithyDotNet.Generator.Writers.Endpoints;
@@ -110,6 +111,25 @@ public class EndpointContextParamsCodegenTests
         Assert.Contains("public string CustomSetting { get; set; }", config);
         Assert.Contains("/// A custom flag.", config);
         Assert.Contains("public bool CustomFlag { get; set; }", config);
+    }
+
+    // S3 and S3 Control hand-write some of their client context params' config properties.
+    [Fact]
+    public void SkippedClientContextParam_IsLeftToHandWrittenConfig()
+    {
+        var service = new ServiceCustomizations { SkipClientContextParams = ["CustomFlag"] };
+        var context = TestModels.Context(TestModels.Load("Codegen/endpoint-context-params-model.json"), new CustomizationsModel { Service = service });
+        Assert.Equal(["CustomSetting"], context.ClientContextParameters.Select(parameter => parameter.Name));
+    }
+
+    [Theory]
+    [InlineData("Codegen/endpoint-context-params-model.json")]
+    [InlineData("Codegen/codegen-model.json")]
+    public void SkippedClientContextParam_NotDeclared_Throws(string modelPath)
+    {
+        var service = new ServiceCustomizations { SkipClientContextParams = ["Missing"] };
+        var exception = Assert.Throws<GeneratorException>(() => TestModels.Context(TestModels.Load(modelPath), new CustomizationsModel { Service = service }));
+        Assert.Contains("skipClientContextParams lists 'Missing'", exception.Message);
     }
 
     [Fact]

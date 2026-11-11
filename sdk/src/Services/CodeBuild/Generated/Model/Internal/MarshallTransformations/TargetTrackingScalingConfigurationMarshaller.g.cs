@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,32 +39,25 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// TargetTrackingScalingConfiguration Marshaller
     /// </summary>
-    public partial class TargetTrackingScalingConfigurationMarshaller : IRequestMarshaller<TargetTrackingScalingConfiguration, JsonMarshallerContext>
+    public partial class TargetTrackingScalingConfigurationMarshaller : IRequestMarshaller<TargetTrackingScalingConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TargetTrackingScalingConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(TargetTrackingScalingConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetMetricType())
             {
-                context.Writer.WritePropertyName("metricType");
-                context.Writer.WriteStringValue(requestObject.MetricType);
+                context.Writer.WriteTextString("metricType");
+                context.Writer.WriteTextString(requestObject.MetricType);
             }
 
             if (requestObject.IsSetTargetValue())
             {
-                context.Writer.WritePropertyName("targetValue");
-                if (StringUtils.IsSpecialDoubleValue(requestObject.TargetValue.Value))
-                {
-                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue.Value));
-                }
-                else
-                {
-                    context.Writer.WriteNumberValue(requestObject.TargetValue.Value);
-                }
+                context.Writer.WriteTextString("targetValue");
+                context.Writer.WriteOptimizedNumber(requestObject.TargetValue.Value);
             }
         }
 

@@ -1961,6 +1961,18 @@
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.IamCredentialProvider.Region</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.IamCredentialProvider.Service</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InputContentBlock.Blob</property>
     <max>100000000</max>
   </property-value-rule>

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// ConnectionAliasPermission Marshaller
     /// </summary>
-    public partial class ConnectionAliasPermissionMarshaller : IRequestMarshaller<ConnectionAliasPermission, JsonMarshallerContext>
+    public partial class ConnectionAliasPermissionMarshaller : IRequestMarshaller<ConnectionAliasPermission, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ConnectionAliasPermission requestObject, JsonMarshallerContext context)
+        public void Marshall(ConnectionAliasPermission requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAllowAssociation())
             {
-                context.Writer.WritePropertyName("AllowAssociation");
-                context.Writer.WriteBooleanValue(requestObject.AllowAssociation.Value);
+                context.Writer.WriteTextString("AllowAssociation");
+                context.Writer.WriteBoolean(requestObject.AllowAssociation.Value);
             }
 
             if (requestObject.IsSetSharedAccountId())
             {
-                context.Writer.WritePropertyName("SharedAccountId");
-                context.Writer.WriteStringValue(requestObject.SharedAccountId);
+                context.Writer.WriteTextString("SharedAccountId");
+                context.Writer.WriteTextString(requestObject.SharedAccountId);
             }
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// DocumentClassifierDocuments Marshaller
     /// </summary>
-    public partial class DocumentClassifierDocumentsMarshaller : IRequestMarshaller<DocumentClassifierDocuments, JsonMarshallerContext>
+    public partial class DocumentClassifierDocumentsMarshaller : IRequestMarshaller<DocumentClassifierDocuments, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DocumentClassifierDocuments requestObject, JsonMarshallerContext context)
+        public void Marshall(DocumentClassifierDocuments requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetS3Uri())
             {
-                context.Writer.WritePropertyName("S3Uri");
-                context.Writer.WriteStringValue(requestObject.S3Uri);
+                context.Writer.WriteTextString("S3Uri");
+                context.Writer.WriteTextString(requestObject.S3Uri);
             }
 
             if (requestObject.IsSetTestS3Uri())
             {
-                context.Writer.WritePropertyName("TestS3Uri");
-                context.Writer.WriteStringValue(requestObject.TestS3Uri);
+                context.Writer.WriteTextString("TestS3Uri");
+                context.Writer.WriteTextString(requestObject.TestS3Uri);
             }
         }
 

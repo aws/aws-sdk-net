@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,27 +39,27 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// EntityRecognitionConfig Marshaller
     /// </summary>
-    public partial class EntityRecognitionConfigMarshaller : IRequestMarshaller<EntityRecognitionConfig, JsonMarshallerContext>
+    public partial class EntityRecognitionConfigMarshaller : IRequestMarshaller<EntityRecognitionConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(EntityRecognitionConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(EntityRecognitionConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetEntityTypes())
             {
-                context.Writer.WritePropertyName("EntityTypes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("EntityTypes");
+                context.Writer.WriteStartArray(requestObject.EntityTypes.Count);
                 foreach (var requestObjectEntityTypesListValue in requestObject.EntityTypes)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = EntityTypesListItemMarshaller.Instance;
                     marshaller.Marshall(requestObjectEntityTypesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

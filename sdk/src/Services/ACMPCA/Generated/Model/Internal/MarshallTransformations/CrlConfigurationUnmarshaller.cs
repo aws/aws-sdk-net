@@ -29,82 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CrlConfiguration Object
     /// </summary>  
-    public class CrlConfigurationUnmarshaller : IJsonUnmarshaller<CrlConfiguration, JsonUnmarshallerContext>
+    public class CrlConfigurationUnmarshaller : ICborUnmarshaller<CrlConfiguration, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CrlConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CrlConfiguration Unmarshall(CborUnmarshallerContext context)
         {
             CrlConfiguration unmarshalledObject = new CrlConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CrlDistributionPointExtensionConfiguration", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = CrlDistributionPointExtensionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CrlDistributionPointExtensionConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CrlType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CrlType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CustomCname", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomCname = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CustomPath", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomPath = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Enabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ExpirationInDays", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ExpirationInDays = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("S3BucketName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("S3ObjectAcl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3ObjectAcl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "CrlDistributionPointExtensionConfiguration":
+                        {
+                            context.AddPathSegment("CrlDistributionPointExtensionConfiguration");
+                            var unmarshaller = CrlDistributionPointExtensionConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.CrlDistributionPointExtensionConfiguration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "CrlType":
+                        {
+                            context.AddPathSegment("CrlType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CrlType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "CustomCname":
+                        {
+                            context.AddPathSegment("CustomCname");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CustomCname = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "CustomPath":
+                        {
+                            context.AddPathSegment("CustomPath");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CustomPath = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Enabled":
+                        {
+                            context.AddPathSegment("Enabled");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ExpirationInDays":
+                        {
+                            context.AddPathSegment("ExpirationInDays");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.ExpirationInDays = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "S3BucketName":
+                        {
+                            context.AddPathSegment("S3BucketName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "S3ObjectAcl":
+                        {
+                            context.AddPathSegment("S3ObjectAcl");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.S3ObjectAcl = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

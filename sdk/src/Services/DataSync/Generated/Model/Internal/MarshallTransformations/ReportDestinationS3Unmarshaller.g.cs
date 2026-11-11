@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReportDestinationS3 Object
     /// </summary>
-    public partial class ReportDestinationS3Unmarshaller : IJsonUnmarshaller<ReportDestinationS3, JsonUnmarshallerContext>
+    public partial class ReportDestinationS3Unmarshaller : ICborUnmarshaller<ReportDestinationS3, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ReportDestinationS3 Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ReportDestinationS3 Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ReportDestinationS3();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("BucketAccessRoleArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BucketAccessRoleArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("S3BucketArn", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3BucketArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BucketAccessRoleArn":
+                        context.AddPathSegment("BucketAccessRoleArn");
+                        unmarshalledObject.BucketAccessRoleArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Subdirectory", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Subdirectory = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "S3BucketArn":
+                        context.AddPathSegment("S3BucketArn");
+                        unmarshalledObject.S3BucketArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Subdirectory":
+                        context.AddPathSegment("Subdirectory");
+                        unmarshalledObject.Subdirectory = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

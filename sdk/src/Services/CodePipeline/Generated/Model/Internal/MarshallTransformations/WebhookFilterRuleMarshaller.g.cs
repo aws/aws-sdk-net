@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// WebhookFilterRule Marshaller
     /// </summary>
-    public partial class WebhookFilterRuleMarshaller : IRequestMarshaller<WebhookFilterRule, JsonMarshallerContext>
+    public partial class WebhookFilterRuleMarshaller : IRequestMarshaller<WebhookFilterRule, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(WebhookFilterRule requestObject, JsonMarshallerContext context)
+        public void Marshall(WebhookFilterRule requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetJsonPath())
             {
-                context.Writer.WritePropertyName("jsonPath");
-                context.Writer.WriteStringValue(requestObject.JsonPath);
+                context.Writer.WriteTextString("jsonPath");
+                context.Writer.WriteTextString(requestObject.JsonPath);
             }
 
             if (requestObject.IsSetMatchEquals())
             {
-                context.Writer.WritePropertyName("matchEquals");
-                context.Writer.WriteStringValue(requestObject.MatchEquals);
+                context.Writer.WriteTextString("matchEquals");
+                context.Writer.WriteTextString(requestObject.MatchEquals);
             }
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,35 +39,35 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// VpcEndpoint Marshaller
     /// </summary>
-    public partial class VpcEndpointMarshaller : IRequestMarshaller<VpcEndpoint, JsonMarshallerContext>
+    public partial class VpcEndpointMarshaller : IRequestMarshaller<VpcEndpoint, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(VpcEndpoint requestObject, JsonMarshallerContext context)
+        public void Marshall(VpcEndpoint requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetSubnetMappings())
             {
-                context.Writer.WritePropertyName("SubnetMappings");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("SubnetMappings");
+                context.Writer.WriteStartArray(requestObject.SubnetMappings.Count);
                 foreach (var requestObjectSubnetMappingsListValue in requestObject.SubnetMappings)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = SubnetMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectSubnetMappingsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetVpcId())
             {
-                context.Writer.WritePropertyName("VpcId");
-                context.Writer.WriteStringValue(requestObject.VpcId);
+                context.Writer.WriteTextString("VpcId");
+                context.Writer.WriteTextString(requestObject.VpcId);
             }
         }
 

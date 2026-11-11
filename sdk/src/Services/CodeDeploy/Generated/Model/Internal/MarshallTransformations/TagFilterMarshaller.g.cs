@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// TagFilter Marshaller
     /// </summary>
-    public partial class TagFilterMarshaller : IRequestMarshaller<TagFilter, JsonMarshallerContext>
+    public partial class TagFilterMarshaller : IRequestMarshaller<TagFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TagFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(TagFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("Key");
-                context.Writer.WriteStringValue(requestObject.Key);
+                context.Writer.WriteTextString("Key");
+                context.Writer.WriteTextString(requestObject.Key);
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("Type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
 
             if (requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("Value");
-                context.Writer.WriteStringValue(requestObject.Value);
+                context.Writer.WriteTextString("Value");
+                context.Writer.WriteTextString(requestObject.Value);
             }
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,27 +39,27 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProxySettings Marshaller
     /// </summary>
-    public partial class ProxySettingsMarshaller : IRequestMarshaller<ProxySettings, JsonMarshallerContext>
+    public partial class ProxySettingsMarshaller : IRequestMarshaller<ProxySettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProxySettings requestObject, JsonMarshallerContext context)
+        public void Marshall(ProxySettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetListenerProperties())
             {
-                context.Writer.WritePropertyName("ListenerProperties");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ListenerProperties");
+                context.Writer.WriteStartArray(requestObject.ListenerProperties.Count);
                 foreach (var requestObjectListenerPropertiesListValue in requestObject.ListenerProperties)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ListenerPropertyMarshaller.Instance;
                     marshaller.Marshall(requestObjectListenerPropertiesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

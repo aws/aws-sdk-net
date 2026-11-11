@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,24 +39,24 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// SourceConnectionParameters Marshaller
     /// </summary>
-    public partial class SourceConnectionParametersMarshaller : IRequestMarshaller<SourceConnectionParameters, JsonMarshallerContext>
+    public partial class SourceConnectionParametersMarshaller : IRequestMarshaller<SourceConnectionParameters, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(SourceConnectionParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(SourceConnectionParameters requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCodeStar())
             {
-                context.Writer.WritePropertyName("CodeStar");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("CodeStar");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CodeStarParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.CodeStar, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

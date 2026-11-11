@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceDiscovery.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,41 +39,41 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
     /// <summary>
     /// DnsConfig Marshaller
     /// </summary>
-    public partial class DnsConfigMarshaller : IRequestMarshaller<DnsConfig, JsonMarshallerContext>
+    public partial class DnsConfigMarshaller : IRequestMarshaller<DnsConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DnsConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(DnsConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDnsRecords())
             {
-                context.Writer.WritePropertyName("DnsRecords");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("DnsRecords");
+                context.Writer.WriteStartArray(requestObject.DnsRecords.Count);
                 foreach (var requestObjectDnsRecordsListValue in requestObject.DnsRecords)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = DnsRecordMarshaller.Instance;
                     marshaller.Marshall(requestObjectDnsRecordsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetNamespaceId())
             {
-                context.Writer.WritePropertyName("NamespaceId");
-                context.Writer.WriteStringValue(requestObject.NamespaceId);
+                context.Writer.WriteTextString("NamespaceId");
+                context.Writer.WriteTextString(requestObject.NamespaceId);
             }
 
             if (requestObject.IsSetRoutingPolicy())
             {
-                context.Writer.WritePropertyName("RoutingPolicy");
-                context.Writer.WriteStringValue(requestObject.RoutingPolicy);
+                context.Writer.WriteTextString("RoutingPolicy");
+                context.Writer.WriteTextString(requestObject.RoutingPolicy);
             }
         }
 

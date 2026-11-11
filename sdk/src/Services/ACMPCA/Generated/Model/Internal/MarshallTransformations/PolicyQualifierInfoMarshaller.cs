@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PolicyQualifierInfo Marshaller
     /// </summary>
-    public class PolicyQualifierInfoMarshaller : IRequestMarshaller<PolicyQualifierInfo, JsonMarshallerContext> 
+    public class PolicyQualifierInfoMarshaller : IRequestMarshaller<PolicyQualifierInfo, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PolicyQualifierInfo requestObject, JsonMarshallerContext context)
+        public void Marshall(PolicyQualifierInfo requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetPolicyQualifierId())
-            {
-                context.Writer.WritePropertyName("PolicyQualifierId");
-                context.Writer.WriteStringValue(requestObject.PolicyQualifierId);
-            }
 
-            if(requestObject.IsSetQualifier())
+            if (requestObject.IsSetPolicyQualifierId())
             {
-                context.Writer.WritePropertyName("Qualifier");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PolicyQualifierId");
+                context.Writer.WriteTextString(requestObject.PolicyQualifierId);
+            }
+            if (requestObject.IsSetQualifier())
+            {
+                context.Writer.WriteTextString("Qualifier");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = QualifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Qualifier, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

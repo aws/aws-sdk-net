@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomExtension Marshaller
     /// </summary>
-    public class CustomExtensionMarshaller : IRequestMarshaller<CustomExtension, JsonMarshallerContext> 
+    public class CustomExtensionMarshaller : IRequestMarshaller<CustomExtension, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CustomExtension requestObject, JsonMarshallerContext context)
+        public void Marshall(CustomExtension requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCritical())
-            {
-                context.Writer.WritePropertyName("Critical");
-                context.Writer.WriteBooleanValue(requestObject.Critical.Value);
-            }
 
-            if(requestObject.IsSetObjectIdentifier())
+            if (requestObject.IsSetCritical())
             {
-                context.Writer.WritePropertyName("ObjectIdentifier");
-                context.Writer.WriteStringValue(requestObject.ObjectIdentifier);
+                context.Writer.WriteTextString("Critical");
+                context.Writer.WriteBoolean(requestObject.Critical.Value);
             }
-
-            if(requestObject.IsSetValue())
+            if (requestObject.IsSetObjectIdentifier())
             {
-                context.Writer.WritePropertyName("Value");
-                context.Writer.WriteStringValue(requestObject.Value);
+                context.Writer.WriteTextString("ObjectIdentifier");
+                context.Writer.WriteTextString(requestObject.ObjectIdentifier);
             }
-
+            if (requestObject.IsSetValue())
+            {
+                context.Writer.WriteTextString("Value");
+                context.Writer.WriteTextString(requestObject.Value);
+            }
         }
 
         /// <summary>

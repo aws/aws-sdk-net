@@ -67,6 +67,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("BandwidthReportingMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BandwidthReportingMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("BaseUrls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DashBaseUrl, DashBaseUrlUnmarshaller>(DashBaseUrlUnmarshaller.Instance);

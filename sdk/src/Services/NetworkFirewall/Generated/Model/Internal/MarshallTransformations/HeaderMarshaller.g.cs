@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,49 +39,49 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Header Marshaller
     /// </summary>
-    public partial class HeaderMarshaller : IRequestMarshaller<Header, JsonMarshallerContext>
+    public partial class HeaderMarshaller : IRequestMarshaller<Header, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Header requestObject, JsonMarshallerContext context)
+        public void Marshall(Header requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDestination())
             {
-                context.Writer.WritePropertyName("Destination");
-                context.Writer.WriteStringValue(requestObject.Destination);
+                context.Writer.WriteTextString("Destination");
+                context.Writer.WriteTextString(requestObject.Destination);
             }
 
             if (requestObject.IsSetDestinationPort())
             {
-                context.Writer.WritePropertyName("DestinationPort");
-                context.Writer.WriteStringValue(requestObject.DestinationPort);
+                context.Writer.WriteTextString("DestinationPort");
+                context.Writer.WriteTextString(requestObject.DestinationPort);
             }
 
             if (requestObject.IsSetDirection())
             {
-                context.Writer.WritePropertyName("Direction");
-                context.Writer.WriteStringValue(requestObject.Direction);
+                context.Writer.WriteTextString("Direction");
+                context.Writer.WriteTextString(requestObject.Direction);
             }
 
             if (requestObject.IsSetProtocol())
             {
-                context.Writer.WritePropertyName("Protocol");
-                context.Writer.WriteStringValue(requestObject.Protocol);
+                context.Writer.WriteTextString("Protocol");
+                context.Writer.WriteTextString(requestObject.Protocol);
             }
 
             if (requestObject.IsSetSource())
             {
-                context.Writer.WritePropertyName("Source");
-                context.Writer.WriteStringValue(requestObject.Source);
+                context.Writer.WriteTextString("Source");
+                context.Writer.WriteTextString(requestObject.Source);
             }
 
             if (requestObject.IsSetSourcePort())
             {
-                context.Writer.WritePropertyName("SourcePort");
-                context.Writer.WriteStringValue(requestObject.SourcePort);
+                context.Writer.WriteTextString("SourcePort");
+                context.Writer.WriteTextString(requestObject.SourcePort);
             }
         }
 

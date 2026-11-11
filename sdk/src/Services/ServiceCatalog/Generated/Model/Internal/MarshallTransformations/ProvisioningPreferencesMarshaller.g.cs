@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,57 +39,57 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProvisioningPreferences Marshaller
     /// </summary>
-    public partial class ProvisioningPreferencesMarshaller : IRequestMarshaller<ProvisioningPreferences, JsonMarshallerContext>
+    public partial class ProvisioningPreferencesMarshaller : IRequestMarshaller<ProvisioningPreferences, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProvisioningPreferences requestObject, JsonMarshallerContext context)
+        public void Marshall(ProvisioningPreferences requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetStackSetAccounts())
             {
-                context.Writer.WritePropertyName("StackSetAccounts");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("StackSetAccounts");
+                context.Writer.WriteStartArray(requestObject.StackSetAccounts.Count);
                 foreach (var requestObjectStackSetAccountsListValue in requestObject.StackSetAccounts)
                 {
-                    context.Writer.WriteStringValue(requestObjectStackSetAccountsListValue);
+                    context.Writer.WriteTextString(requestObjectStackSetAccountsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetStackSetFailureToleranceCount())
             {
-                context.Writer.WritePropertyName("StackSetFailureToleranceCount");
-                context.Writer.WriteNumberValue(requestObject.StackSetFailureToleranceCount.Value);
+                context.Writer.WriteTextString("StackSetFailureToleranceCount");
+                context.Writer.WriteInt32(requestObject.StackSetFailureToleranceCount.Value);
             }
 
             if (requestObject.IsSetStackSetFailureTolerancePercentage())
             {
-                context.Writer.WritePropertyName("StackSetFailureTolerancePercentage");
-                context.Writer.WriteNumberValue(requestObject.StackSetFailureTolerancePercentage.Value);
+                context.Writer.WriteTextString("StackSetFailureTolerancePercentage");
+                context.Writer.WriteInt32(requestObject.StackSetFailureTolerancePercentage.Value);
             }
 
             if (requestObject.IsSetStackSetMaxConcurrencyCount())
             {
-                context.Writer.WritePropertyName("StackSetMaxConcurrencyCount");
-                context.Writer.WriteNumberValue(requestObject.StackSetMaxConcurrencyCount.Value);
+                context.Writer.WriteTextString("StackSetMaxConcurrencyCount");
+                context.Writer.WriteInt32(requestObject.StackSetMaxConcurrencyCount.Value);
             }
 
             if (requestObject.IsSetStackSetMaxConcurrencyPercentage())
             {
-                context.Writer.WritePropertyName("StackSetMaxConcurrencyPercentage");
-                context.Writer.WriteNumberValue(requestObject.StackSetMaxConcurrencyPercentage.Value);
+                context.Writer.WriteTextString("StackSetMaxConcurrencyPercentage");
+                context.Writer.WriteInt32(requestObject.StackSetMaxConcurrencyPercentage.Value);
             }
 
             if (requestObject.IsSetStackSetRegions())
             {
-                context.Writer.WritePropertyName("StackSetRegions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("StackSetRegions");
+                context.Writer.WriteStartArray(requestObject.StackSetRegions.Count);
                 foreach (var requestObjectStackSetRegionsListValue in requestObject.StackSetRegions)
                 {
-                    context.Writer.WriteStringValue(requestObjectStackSetRegionsListValue);
+                    context.Writer.WriteTextString(requestObjectStackSetRegionsListValue);
                 }
                 context.Writer.WriteEndArray();
             }

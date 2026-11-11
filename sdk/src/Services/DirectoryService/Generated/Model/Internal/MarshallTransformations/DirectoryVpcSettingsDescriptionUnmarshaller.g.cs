@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DirectoryVpcSettingsDescription Object
     /// </summary>
-    public partial class DirectoryVpcSettingsDescriptionUnmarshaller : IJsonUnmarshaller<DirectoryVpcSettingsDescription, JsonUnmarshallerContext>
+    public partial class DirectoryVpcSettingsDescriptionUnmarshaller : ICborUnmarshaller<DirectoryVpcSettingsDescription, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DirectoryVpcSettingsDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DirectoryVpcSettingsDescription Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DirectoryVpcSettingsDescription();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AvailabilityZones", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AvailabilityZones = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("SecurityGroupId", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecurityGroupId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AvailabilityZones":
+                        context.AddPathSegment("AvailabilityZones");
+                        unmarshalledObject.AvailabilityZones = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SubnetIds", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "SecurityGroupId":
+                        context.AddPathSegment("SecurityGroupId");
+                        unmarshalledObject.SecurityGroupId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VpcId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "SubnetIds":
+                        context.AddPathSegment("SubnetIds");
+                        unmarshalledObject.SubnetIds = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "VpcId":
+                        context.AddPathSegment("VpcId");
+                        unmarshalledObject.VpcId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

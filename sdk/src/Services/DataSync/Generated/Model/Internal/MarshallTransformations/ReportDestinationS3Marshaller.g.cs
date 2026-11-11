@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// ReportDestinationS3 Marshaller
     /// </summary>
-    public partial class ReportDestinationS3Marshaller : IRequestMarshaller<ReportDestinationS3, JsonMarshallerContext>
+    public partial class ReportDestinationS3Marshaller : IRequestMarshaller<ReportDestinationS3, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ReportDestinationS3 requestObject, JsonMarshallerContext context)
+        public void Marshall(ReportDestinationS3 requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetBucketAccessRoleArn())
             {
-                context.Writer.WritePropertyName("BucketAccessRoleArn");
-                context.Writer.WriteStringValue(requestObject.BucketAccessRoleArn);
+                context.Writer.WriteTextString("BucketAccessRoleArn");
+                context.Writer.WriteTextString(requestObject.BucketAccessRoleArn);
             }
 
             if (requestObject.IsSetS3BucketArn())
             {
-                context.Writer.WritePropertyName("S3BucketArn");
-                context.Writer.WriteStringValue(requestObject.S3BucketArn);
+                context.Writer.WriteTextString("S3BucketArn");
+                context.Writer.WriteTextString(requestObject.S3BucketArn);
             }
 
             if (requestObject.IsSetSubdirectory())
             {
-                context.Writer.WritePropertyName("Subdirectory");
-                context.Writer.WriteStringValue(requestObject.Subdirectory);
+                context.Writer.WriteTextString("Subdirectory");
+                context.Writer.WriteTextString(requestObject.Subdirectory);
             }
         }
 

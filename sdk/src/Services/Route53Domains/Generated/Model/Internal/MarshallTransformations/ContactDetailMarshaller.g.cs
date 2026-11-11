@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Route53Domains.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,107 +39,107 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// ContactDetail Marshaller
     /// </summary>
-    public partial class ContactDetailMarshaller : IRequestMarshaller<ContactDetail, JsonMarshallerContext>
+    public partial class ContactDetailMarshaller : IRequestMarshaller<ContactDetail, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ContactDetail requestObject, JsonMarshallerContext context)
+        public void Marshall(ContactDetail requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAddressLine1())
             {
-                context.Writer.WritePropertyName("AddressLine1");
-                context.Writer.WriteStringValue(requestObject.AddressLine1);
+                context.Writer.WriteTextString("AddressLine1");
+                context.Writer.WriteTextString(requestObject.AddressLine1);
             }
 
             if (requestObject.IsSetAddressLine2())
             {
-                context.Writer.WritePropertyName("AddressLine2");
-                context.Writer.WriteStringValue(requestObject.AddressLine2);
+                context.Writer.WriteTextString("AddressLine2");
+                context.Writer.WriteTextString(requestObject.AddressLine2);
             }
 
             if (requestObject.IsSetCity())
             {
-                context.Writer.WritePropertyName("City");
-                context.Writer.WriteStringValue(requestObject.City);
+                context.Writer.WriteTextString("City");
+                context.Writer.WriteTextString(requestObject.City);
             }
 
             if (requestObject.IsSetContactType())
             {
-                context.Writer.WritePropertyName("ContactType");
-                context.Writer.WriteStringValue(requestObject.ContactType);
+                context.Writer.WriteTextString("ContactType");
+                context.Writer.WriteTextString(requestObject.ContactType);
             }
 
             if (requestObject.IsSetCountryCode())
             {
-                context.Writer.WritePropertyName("CountryCode");
-                context.Writer.WriteStringValue(requestObject.CountryCode);
+                context.Writer.WriteTextString("CountryCode");
+                context.Writer.WriteTextString(requestObject.CountryCode);
             }
 
             if (requestObject.IsSetEmail())
             {
-                context.Writer.WritePropertyName("Email");
-                context.Writer.WriteStringValue(requestObject.Email);
+                context.Writer.WriteTextString("Email");
+                context.Writer.WriteTextString(requestObject.Email);
             }
 
             if (requestObject.IsSetExtraParams())
             {
-                context.Writer.WritePropertyName("ExtraParams");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ExtraParams");
+                context.Writer.WriteStartArray(requestObject.ExtraParams.Count);
                 foreach (var requestObjectExtraParamsListValue in requestObject.ExtraParams)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ExtraParamMarshaller.Instance;
                     marshaller.Marshall(requestObjectExtraParamsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetFax())
             {
-                context.Writer.WritePropertyName("Fax");
-                context.Writer.WriteStringValue(requestObject.Fax);
+                context.Writer.WriteTextString("Fax");
+                context.Writer.WriteTextString(requestObject.Fax);
             }
 
             if (requestObject.IsSetFirstName())
             {
-                context.Writer.WritePropertyName("FirstName");
-                context.Writer.WriteStringValue(requestObject.FirstName);
+                context.Writer.WriteTextString("FirstName");
+                context.Writer.WriteTextString(requestObject.FirstName);
             }
 
             if (requestObject.IsSetLastName())
             {
-                context.Writer.WritePropertyName("LastName");
-                context.Writer.WriteStringValue(requestObject.LastName);
+                context.Writer.WriteTextString("LastName");
+                context.Writer.WriteTextString(requestObject.LastName);
             }
 
             if (requestObject.IsSetOrganizationName())
             {
-                context.Writer.WritePropertyName("OrganizationName");
-                context.Writer.WriteStringValue(requestObject.OrganizationName);
+                context.Writer.WriteTextString("OrganizationName");
+                context.Writer.WriteTextString(requestObject.OrganizationName);
             }
 
             if (requestObject.IsSetPhoneNumber())
             {
-                context.Writer.WritePropertyName("PhoneNumber");
-                context.Writer.WriteStringValue(requestObject.PhoneNumber);
+                context.Writer.WriteTextString("PhoneNumber");
+                context.Writer.WriteTextString(requestObject.PhoneNumber);
             }
 
             if (requestObject.IsSetState())
             {
-                context.Writer.WritePropertyName("State");
-                context.Writer.WriteStringValue(requestObject.State);
+                context.Writer.WriteTextString("State");
+                context.Writer.WriteTextString(requestObject.State);
             }
 
             if (requestObject.IsSetZipCode())
             {
-                context.Writer.WritePropertyName("ZipCode");
-                context.Writer.WriteStringValue(requestObject.ZipCode);
+                context.Writer.WriteTextString("ZipCode");
+                context.Writer.WriteTextString(requestObject.ZipCode);
             }
         }
 

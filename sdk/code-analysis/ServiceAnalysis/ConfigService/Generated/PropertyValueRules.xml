@@ -1208,9 +1208,20 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConnectorSummary.GcpOrganizationId</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.ConnectorSummary.Name</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConnectorSummary.ServiceAccountEmail</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-z][a-z0-9\-]*@[a-z][a-z0-9\-]*[a-z0-9]\.iam\.gserviceaccount\.com$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ConnectorSummary.TenantIdentifier</property>
@@ -1298,6 +1309,23 @@
     <property>Amazon.ConfigService.Model.ExternalEvaluation.ComplianceResourceType</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GcpConnectorConfiguration.GcpOrganizationId</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GcpConnectorConfiguration.ServiceAccountEmail</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-z][a-z0-9\-]*@[a-z][a-z0-9\-]*[a-z0-9]\.iam\.gserviceaccount\.com$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GcpConnectorConfiguration.WorkloadIdentityPoolProvider</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^projects/[0-9]+/locations/global/workloadIdentityPools/[^/]+/providers/[^/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.GroupedResourceCount.GroupName</property>

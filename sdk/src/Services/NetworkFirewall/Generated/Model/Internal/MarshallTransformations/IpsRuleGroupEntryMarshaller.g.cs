@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,41 +39,41 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// IpsRuleGroupEntry Marshaller
     /// </summary>
-    public partial class IpsRuleGroupEntryMarshaller : IRequestMarshaller<IpsRuleGroupEntry, JsonMarshallerContext>
+    public partial class IpsRuleGroupEntryMarshaller : IRequestMarshaller<IpsRuleGroupEntry, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(IpsRuleGroupEntry requestObject, JsonMarshallerContext context)
+        public void Marshall(IpsRuleGroupEntry requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetInlineRuleGroup())
             {
-                context.Writer.WritePropertyName("InlineRuleGroup");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("InlineRuleGroup");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = IpsRuleGroupMarshaller.Instance;
                 marshaller.Marshall(requestObject.InlineRuleGroup, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetOverride())
             {
-                context.Writer.WritePropertyName("Override");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Override");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = IpsRuleGroupOverrideMarshaller.Instance;
                 marshaller.Marshall(requestObject.Override, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetResourceArn())
             {
-                context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.WriteStringValue(requestObject.ResourceArn);
+                context.Writer.WriteTextString("ResourceArn");
+                context.Writer.WriteTextString(requestObject.ResourceArn);
             }
         }
 

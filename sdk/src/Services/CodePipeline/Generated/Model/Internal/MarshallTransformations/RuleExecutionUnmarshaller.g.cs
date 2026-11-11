@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
@@ -36,86 +38,90 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RuleExecution Object
     /// </summary>
-    public partial class RuleExecutionUnmarshaller : IJsonUnmarshaller<RuleExecution, JsonUnmarshallerContext>
+    public partial class RuleExecutionUnmarshaller : ICborUnmarshaller<RuleExecution, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public RuleExecution Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RuleExecution Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new RuleExecution();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("errorDetails", targetDepth, ref reader))
-                {
-                    var unmarshaller = ErrorDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("externalExecutionId", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalExecutionId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "errorDetails":
+                        context.AddPathSegment("ErrorDetails");
+                        unmarshalledObject.ErrorDetails = ErrorDetailsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("externalExecutionUrl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalExecutionUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "externalExecutionId":
+                        context.AddPathSegment("ExternalExecutionId");
+                        unmarshalledObject.ExternalExecutionId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("lastStatusChange", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastStatusChange = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "externalExecutionUrl":
+                        context.AddPathSegment("ExternalExecutionUrl");
+                        unmarshalledObject.ExternalExecutionUrl = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("lastUpdatedBy", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedBy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "lastStatusChange":
+                        context.AddPathSegment("LastStatusChange");
+                        unmarshalledObject.LastStatusChange = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ruleExecutionId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleExecutionId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "lastUpdatedBy":
+                        context.AddPathSegment("LastUpdatedBy");
+                        unmarshalledObject.LastUpdatedBy = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ruleExecutionId":
+                        context.AddPathSegment("RuleExecutionId");
+                        unmarshalledObject.RuleExecutionId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("summary", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Summary = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "status":
+                        context.AddPathSegment("Status");
+                        unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("token", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Token = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "summary":
+                        context.AddPathSegment("Summary");
+                        unmarshalledObject.Summary = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "token":
+                        context.AddPathSegment("Token");
+                        unmarshalledObject.Token = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

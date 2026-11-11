@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
@@ -36,37 +38,48 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BatchDetectEntitiesItemResult Object
     /// </summary>
-    public partial class BatchDetectEntitiesItemResultUnmarshaller : IJsonUnmarshaller<BatchDetectEntitiesItemResult, JsonUnmarshallerContext>
+    public partial class BatchDetectEntitiesItemResultUnmarshaller : ICborUnmarshaller<BatchDetectEntitiesItemResult, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public BatchDetectEntitiesItemResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public BatchDetectEntitiesItemResult Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new BatchDetectEntitiesItemResult();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Entities", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Entity, EntityUnmarshaller>(EntityUnmarshaller.Instance);
-                    unmarshalledObject.Entities = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Index", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Index = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Entities":
+                        context.AddPathSegment("Entities");
+                        unmarshalledObject.Entities = new CborListUnmarshaller<Entity, EntityUnmarshaller>(EntityUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Index":
+                        context.AddPathSegment("Index");
+                        unmarshalledObject.Index = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

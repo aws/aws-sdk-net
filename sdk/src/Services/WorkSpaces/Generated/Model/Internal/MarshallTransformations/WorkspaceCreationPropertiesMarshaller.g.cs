@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,49 +39,49 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// WorkspaceCreationProperties Marshaller
     /// </summary>
-    public partial class WorkspaceCreationPropertiesMarshaller : IRequestMarshaller<WorkspaceCreationProperties, JsonMarshallerContext>
+    public partial class WorkspaceCreationPropertiesMarshaller : IRequestMarshaller<WorkspaceCreationProperties, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(WorkspaceCreationProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(WorkspaceCreationProperties requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCustomSecurityGroupId())
             {
-                context.Writer.WritePropertyName("CustomSecurityGroupId");
-                context.Writer.WriteStringValue(requestObject.CustomSecurityGroupId);
+                context.Writer.WriteTextString("CustomSecurityGroupId");
+                context.Writer.WriteTextString(requestObject.CustomSecurityGroupId);
             }
 
             if (requestObject.IsSetDefaultOu())
             {
-                context.Writer.WritePropertyName("DefaultOu");
-                context.Writer.WriteStringValue(requestObject.DefaultOu);
+                context.Writer.WriteTextString("DefaultOu");
+                context.Writer.WriteTextString(requestObject.DefaultOu);
             }
 
             if (requestObject.IsSetEnableInternetAccess())
             {
-                context.Writer.WritePropertyName("EnableInternetAccess");
-                context.Writer.WriteBooleanValue(requestObject.EnableInternetAccess.Value);
+                context.Writer.WriteTextString("EnableInternetAccess");
+                context.Writer.WriteBoolean(requestObject.EnableInternetAccess.Value);
             }
 
             if (requestObject.IsSetEnableMaintenanceMode())
             {
-                context.Writer.WritePropertyName("EnableMaintenanceMode");
-                context.Writer.WriteBooleanValue(requestObject.EnableMaintenanceMode.Value);
+                context.Writer.WriteTextString("EnableMaintenanceMode");
+                context.Writer.WriteBoolean(requestObject.EnableMaintenanceMode.Value);
             }
 
             if (requestObject.IsSetInstanceIamRoleArn())
             {
-                context.Writer.WritePropertyName("InstanceIamRoleArn");
-                context.Writer.WriteStringValue(requestObject.InstanceIamRoleArn);
+                context.Writer.WriteTextString("InstanceIamRoleArn");
+                context.Writer.WriteTextString(requestObject.InstanceIamRoleArn);
             }
 
             if (requestObject.IsSetUserEnabledAsLocalAdministrator())
             {
-                context.Writer.WritePropertyName("UserEnabledAsLocalAdministrator");
-                context.Writer.WriteBooleanValue(requestObject.UserEnabledAsLocalAdministrator.Value);
+                context.Writer.WriteTextString("UserEnabledAsLocalAdministrator");
+                context.Writer.WriteBoolean(requestObject.UserEnabledAsLocalAdministrator.Value);
             }
         }
 

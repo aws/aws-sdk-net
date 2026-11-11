@@ -34,8 +34,11 @@ namespace Amazon.ConnectCases.Model
     /// deletes a case and all its associated resources from the cases data store. After a
     /// successful deletion, you cannot: <ul> <li> <para> Retrieve related items </para> </li>
     /// <li> <para> Access audit history </para> </li> <li> <para> Perform any operations
-    /// that require the CaseID </para> </li> </ul> <important> <para> This action is irreversible.
-    /// After you delete a case, you cannot recover its data. </para> </important>
+    /// that require the CaseID </para> </li> </ul> <para> You can't delete a case while it's
+    /// part of a merge that is running, as either the primary or the secondary case. The
+    /// request fails with a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+    /// </para> <important> <para> This action is irreversible. After you delete a case, you
+    /// cannot recover its data. </para> </important>
     /// </summary>
     public partial class DeleteCaseRequest : AmazonConnectCasesRequest
     {

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,50 +39,50 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProvisioningArtifactProperties Marshaller
     /// </summary>
-    public partial class ProvisioningArtifactPropertiesMarshaller : IRequestMarshaller<ProvisioningArtifactProperties, JsonMarshallerContext>
+    public partial class ProvisioningArtifactPropertiesMarshaller : IRequestMarshaller<ProvisioningArtifactProperties, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProvisioningArtifactProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(ProvisioningArtifactProperties requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(requestObject.Description);
+                context.Writer.WriteTextString("Description");
+                context.Writer.WriteTextString(requestObject.Description);
             }
 
             if (requestObject.IsSetDisableTemplateValidation())
             {
-                context.Writer.WritePropertyName("DisableTemplateValidation");
-                context.Writer.WriteBooleanValue(requestObject.DisableTemplateValidation.Value);
+                context.Writer.WriteTextString("DisableTemplateValidation");
+                context.Writer.WriteBoolean(requestObject.DisableTemplateValidation.Value);
             }
 
             if (requestObject.IsSetInfo())
             {
-                context.Writer.WritePropertyName("Info");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Info");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectInfoKvp in requestObject.Info)
                 {
-                    context.Writer.WritePropertyName(requestObjectInfoKvp.Key);
+                    context.Writer.WriteTextString(requestObjectInfoKvp.Key);
                     var requestObjectInfoValue = requestObjectInfoKvp.Value;
-                    context.Writer.WriteStringValue(requestObjectInfoValue);
+                    context.Writer.WriteTextString(requestObjectInfoValue);
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("Name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("Type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

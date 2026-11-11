@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.Route53Domains.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
@@ -54,73 +55,79 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListOperationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53Domains");
-            string target = "Route53Domains_v20140515.ListOperations";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-05-15";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/Route53Domains_v20140515/operation/ListOperations";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetMarker())
+                {
+                    context.Writer.WriteTextString("Marker");
+                    context.Writer.WriteTextString(publicRequest.Marker);
+                }
+                if (publicRequest.IsSetMaxItems())
+                {
+                    context.Writer.WriteTextString("MaxItems");
+                    context.Writer.WriteInt32(publicRequest.MaxItems.Value);
+                }
+                if (publicRequest.IsSetSortBy())
+                {
+                    context.Writer.WriteTextString("SortBy");
+                    context.Writer.WriteTextString(publicRequest.SortBy);
+                }
+                if (publicRequest.IsSetSortOrder())
+                {
+                    context.Writer.WriteTextString("SortOrder");
+                    context.Writer.WriteTextString(publicRequest.SortOrder);
+                }
+                if (publicRequest.IsSetStatus())
+                {
+                    context.Writer.WriteTextString("Status");
+                    context.Writer.WriteStartArray(publicRequest.Status.Count);
+                    foreach (var publicRequestStatusListValue in publicRequest.Status)
+                    {
+                        context.Writer.WriteTextString(publicRequestStatusListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetSubmittedSince())
+                {
+                    context.Writer.WriteTextString("SubmittedSince");
+                    context.Writer.WriteDateTime(publicRequest.SubmittedSince.Value);
+                }
+                if (publicRequest.IsSetType())
+                {
+                    context.Writer.WriteTextString("Type");
+                    context.Writer.WriteStartArray(publicRequest.Type.Count);
+                    foreach (var publicRequestTypeListValue in publicRequest.Type)
+                    {
+                        context.Writer.WriteTextString(publicRequestTypeListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetMarker())
-            {
-                context.Writer.WritePropertyName("Marker");
-                context.Writer.WriteStringValue(publicRequest.Marker);
             }
-            if (publicRequest.IsSetMaxItems())
+            finally
             {
-                context.Writer.WritePropertyName("MaxItems");
-                context.Writer.WriteNumberValue(publicRequest.MaxItems.Value);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetSortBy())
-            {
-                context.Writer.WritePropertyName("SortBy");
-                context.Writer.WriteStringValue(publicRequest.SortBy);
-            }
-            if (publicRequest.IsSetSortOrder())
-            {
-                context.Writer.WritePropertyName("SortOrder");
-                context.Writer.WriteStringValue(publicRequest.SortOrder);
-            }
-            if (publicRequest.IsSetStatus())
-            {
-                context.Writer.WritePropertyName("Status");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestStatusListValue in publicRequest.Status)
-                {
-                    context.Writer.WriteStringValue(publicRequestStatusListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetSubmittedSince())
-            {
-                context.Writer.WritePropertyName("SubmittedSince");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.SubmittedSince.Value));
-            }
-            if (publicRequest.IsSetType())
-            {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTypeListValue in publicRequest.Type)
-                {
-                    context.Writer.WriteStringValue(publicRequestTypeListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

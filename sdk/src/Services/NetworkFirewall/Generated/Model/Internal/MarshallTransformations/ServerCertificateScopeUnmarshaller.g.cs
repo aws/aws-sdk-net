@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,58 +38,66 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServerCertificateScope Object
     /// </summary>
-    public partial class ServerCertificateScopeUnmarshaller : IJsonUnmarshaller<ServerCertificateScope, JsonUnmarshallerContext>
+    public partial class ServerCertificateScopeUnmarshaller : ICborUnmarshaller<ServerCertificateScope, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ServerCertificateScope Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ServerCertificateScope Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ServerCertificateScope();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DestinationPorts", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<PortRange, PortRangeUnmarshaller>(PortRangeUnmarshaller.Instance);
-                    unmarshalledObject.DestinationPorts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Destinations", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<Address, AddressUnmarshaller>(AddressUnmarshaller.Instance);
-                    unmarshalledObject.Destinations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DestinationPorts":
+                        context.AddPathSegment("DestinationPorts");
+                        unmarshalledObject.DestinationPorts = new CborListUnmarshaller<PortRange, PortRangeUnmarshaller>(PortRangeUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Protocols", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
-                    unmarshalledObject.Protocols = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Destinations":
+                        context.AddPathSegment("Destinations");
+                        unmarshalledObject.Destinations = new CborListUnmarshaller<Address, AddressUnmarshaller>(AddressUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SourcePorts", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<PortRange, PortRangeUnmarshaller>(PortRangeUnmarshaller.Instance);
-                    unmarshalledObject.SourcePorts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Protocols":
+                        context.AddPathSegment("Protocols");
+                        unmarshalledObject.Protocols = new CborListUnmarshaller<int, CborIntUnmarshaller>(CborIntUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Sources", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Address, AddressUnmarshaller>(AddressUnmarshaller.Instance);
-                    unmarshalledObject.Sources = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "SourcePorts":
+                        context.AddPathSegment("SourcePorts");
+                        unmarshalledObject.SourcePorts = new CborListUnmarshaller<PortRange, PortRangeUnmarshaller>(PortRangeUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Sources":
+                        context.AddPathSegment("Sources");
+                        unmarshalledObject.Sources = new CborListUnmarshaller<Address, AddressUnmarshaller>(AddressUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

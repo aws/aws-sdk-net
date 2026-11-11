@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.Route53Domains.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
@@ -54,53 +55,59 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateDomainContactPrivacyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53Domains");
-            string target = "Route53Domains_v20140515.UpdateDomainContactPrivacy";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-05-15";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/Route53Domains_v20140515/operation/UpdateDomainContactPrivacy";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAdminPrivacy())
+                {
+                    context.Writer.WriteTextString("AdminPrivacy");
+                    context.Writer.WriteBoolean(publicRequest.AdminPrivacy.Value);
+                }
+                if (publicRequest.IsSetBillingPrivacy())
+                {
+                    context.Writer.WriteTextString("BillingPrivacy");
+                    context.Writer.WriteBoolean(publicRequest.BillingPrivacy.Value);
+                }
+                if (publicRequest.IsSetDomainName())
+                {
+                    context.Writer.WriteTextString("DomainName");
+                    context.Writer.WriteTextString(publicRequest.DomainName);
+                }
+                if (publicRequest.IsSetRegistrantPrivacy())
+                {
+                    context.Writer.WriteTextString("RegistrantPrivacy");
+                    context.Writer.WriteBoolean(publicRequest.RegistrantPrivacy.Value);
+                }
+                if (publicRequest.IsSetTechPrivacy())
+                {
+                    context.Writer.WriteTextString("TechPrivacy");
+                    context.Writer.WriteBoolean(publicRequest.TechPrivacy.Value);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAdminPrivacy())
-            {
-                context.Writer.WritePropertyName("AdminPrivacy");
-                context.Writer.WriteBooleanValue(publicRequest.AdminPrivacy.Value);
             }
-            if (publicRequest.IsSetBillingPrivacy())
+            finally
             {
-                context.Writer.WritePropertyName("BillingPrivacy");
-                context.Writer.WriteBooleanValue(publicRequest.BillingPrivacy.Value);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetDomainName())
-            {
-                context.Writer.WritePropertyName("DomainName");
-                context.Writer.WriteStringValue(publicRequest.DomainName);
-            }
-            if (publicRequest.IsSetRegistrantPrivacy())
-            {
-                context.Writer.WritePropertyName("RegistrantPrivacy");
-                context.Writer.WriteBooleanValue(publicRequest.RegistrantPrivacy.Value);
-            }
-            if (publicRequest.IsSetTechPrivacy())
-            {
-                context.Writer.WritePropertyName("TechPrivacy");
-                context.Writer.WriteBooleanValue(publicRequest.TechPrivacy.Value);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

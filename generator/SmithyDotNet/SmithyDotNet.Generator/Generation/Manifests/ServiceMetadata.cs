@@ -65,6 +65,13 @@ public record ServiceMetadata
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public SignatureVersion? SignatureVersion { get; init; }
 
+    /// <summary>
+    /// Whether the auth scheme handler asks the endpoint resolver before the modeled resolver. C2J's allowlist
+    /// (S3, EventBridge, SESv2, CloudFront KeyValueStore); not derived from the rule set's <c>authSchemes</c>.
+    /// </summary>
+    [JsonPropertyName("endpoint-resolves-auth")]
+    public bool EndpointResolvesAuth { get; init; }
+
     /// <summary>Free-form tags declared for the service.</summary>
     [JsonPropertyName("tags")]
     public IReadOnlyList<string> Tags { get; init; } = [];

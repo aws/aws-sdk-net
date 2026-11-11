@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateProvisioningParameter Marshaller
     /// </summary>
-    public partial class UpdateProvisioningParameterMarshaller : IRequestMarshaller<UpdateProvisioningParameter, JsonMarshallerContext>
+    public partial class UpdateProvisioningParameterMarshaller : IRequestMarshaller<UpdateProvisioningParameter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(UpdateProvisioningParameter requestObject, JsonMarshallerContext context)
+        public void Marshall(UpdateProvisioningParameter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("Key");
-                context.Writer.WriteStringValue(requestObject.Key);
+                context.Writer.WriteTextString("Key");
+                context.Writer.WriteTextString(requestObject.Key);
             }
 
             if (requestObject.IsSetUsePreviousValue())
             {
-                context.Writer.WritePropertyName("UsePreviousValue");
-                context.Writer.WriteBooleanValue(requestObject.UsePreviousValue.Value);
+                context.Writer.WriteTextString("UsePreviousValue");
+                context.Writer.WriteBoolean(requestObject.UsePreviousValue.Value);
             }
 
             if (requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("Value");
-                context.Writer.WriteStringValue(requestObject.Value);
+                context.Writer.WriteTextString("Value");
+                context.Writer.WriteTextString(requestObject.Value);
             }
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// ObjectStorageFederatedIdentityConfig Marshaller
     /// </summary>
-    public partial class ObjectStorageFederatedIdentityConfigMarshaller : IRequestMarshaller<ObjectStorageFederatedIdentityConfig, JsonMarshallerContext>
+    public partial class ObjectStorageFederatedIdentityConfigMarshaller : IRequestMarshaller<ObjectStorageFederatedIdentityConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ObjectStorageFederatedIdentityConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ObjectStorageFederatedIdentityConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAwsIamRole())
             {
-                context.Writer.WritePropertyName("AwsIamRole");
-                context.Writer.WriteStringValue(requestObject.AwsIamRole);
+                context.Writer.WriteTextString("AwsIamRole");
+                context.Writer.WriteTextString(requestObject.AwsIamRole);
             }
 
             if (requestObject.IsSetExternalIdentity())
             {
-                context.Writer.WritePropertyName("ExternalIdentity");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("ExternalIdentity");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ObjectStorageExternalIdentityConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExternalIdentity, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

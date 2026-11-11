@@ -29,6 +29,12 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AWSMarketplaceMetering.Model.MeterUsageRequest.UsageQuantityAsDecimal</property>
+    <min>1</min>
+    <max>17</max>
+    <pattern>^(0|[1-9][0-9]{0,9})(\.[0-9]{1,6})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.RegisterUsageRequest.Nonce</property>
     <min>0</min>
     <max>255</max>
@@ -98,6 +104,12 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AWSMarketplaceMetering.Model.UsageAllocation.AllocatedUsageQuantityAsDecimal</property>
+    <min>1</min>
+    <max>17</max>
+    <pattern>^(0|[1-9][0-9]{0,9})(\.[0-9]{1,6})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.UsageRecord.CustomerAWSAccountId</property>
     <min>1</min>
     <max>255</max>
@@ -123,5 +135,11 @@
     <property>Amazon.AWSMarketplaceMetering.Model.UsageRecord.Quantity</property>
     <min>0</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceMetering.Model.UsageRecord.QuantityAsDecimal</property>
+    <min>1</min>
+    <max>17</max>
+    <pattern>^(0|[1-9][0-9]{0,9})(\.[0-9]{1,6})?$</pattern>
   </property-value-rule>
 </property-value-rules>

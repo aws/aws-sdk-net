@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,24 +39,24 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// ReportDestination Marshaller
     /// </summary>
-    public partial class ReportDestinationMarshaller : IRequestMarshaller<ReportDestination, JsonMarshallerContext>
+    public partial class ReportDestinationMarshaller : IRequestMarshaller<ReportDestination, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ReportDestination requestObject, JsonMarshallerContext context)
+        public void Marshall(ReportDestination requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetS3())
             {
-                context.Writer.WritePropertyName("S3");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("S3");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ReportDestinationS3Marshaller.Instance;
                 marshaller.Marshall(requestObject.S3, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

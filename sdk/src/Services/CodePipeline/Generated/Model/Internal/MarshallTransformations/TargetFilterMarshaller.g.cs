@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,28 +39,28 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// TargetFilter Marshaller
     /// </summary>
-    public partial class TargetFilterMarshaller : IRequestMarshaller<TargetFilter, JsonMarshallerContext>
+    public partial class TargetFilterMarshaller : IRequestMarshaller<TargetFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TargetFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(TargetFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
 
             if (requestObject.IsSetValues())
             {
-                context.Writer.WritePropertyName("values");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("values");
+                context.Writer.WriteStartArray(requestObject.Values.Count);
                 foreach (var requestObjectValuesListValue in requestObject.Values)
                 {
-                    context.Writer.WriteStringValue(requestObjectValuesListValue);
+                    context.Writer.WriteTextString(requestObjectValuesListValue);
                 }
                 context.Writer.WriteEndArray();
             }

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// NatGatewayMapping Marshaller
     /// </summary>
-    public partial class NatGatewayMappingMarshaller : IRequestMarshaller<NatGatewayMapping, JsonMarshallerContext>
+    public partial class NatGatewayMappingMarshaller : IRequestMarshaller<NatGatewayMapping, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(NatGatewayMapping requestObject, JsonMarshallerContext context)
+        public void Marshall(NatGatewayMapping requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetNatGatewayId())
             {
-                context.Writer.WritePropertyName("NatGatewayId");
-                context.Writer.WriteStringValue(requestObject.NatGatewayId);
+                context.Writer.WriteTextString("NatGatewayId");
+                context.Writer.WriteTextString(requestObject.NatGatewayId);
             }
         }
 

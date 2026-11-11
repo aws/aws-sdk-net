@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,109 +39,109 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// Options Marshaller
     /// </summary>
-    public partial class OptionsMarshaller : IRequestMarshaller<Options, JsonMarshallerContext>
+    public partial class OptionsMarshaller : IRequestMarshaller<Options, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Options requestObject, JsonMarshallerContext context)
+        public void Marshall(Options requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAtime())
             {
-                context.Writer.WritePropertyName("Atime");
-                context.Writer.WriteStringValue(requestObject.Atime);
+                context.Writer.WriteTextString("Atime");
+                context.Writer.WriteTextString(requestObject.Atime);
             }
 
             if (requestObject.IsSetBytesPerSecond())
             {
-                context.Writer.WritePropertyName("BytesPerSecond");
-                context.Writer.WriteNumberValue(requestObject.BytesPerSecond.Value);
+                context.Writer.WriteTextString("BytesPerSecond");
+                context.Writer.WriteInt64(requestObject.BytesPerSecond.Value);
             }
 
             if (requestObject.IsSetGid())
             {
-                context.Writer.WritePropertyName("Gid");
-                context.Writer.WriteStringValue(requestObject.Gid);
+                context.Writer.WriteTextString("Gid");
+                context.Writer.WriteTextString(requestObject.Gid);
             }
 
             if (requestObject.IsSetLogLevel())
             {
-                context.Writer.WritePropertyName("LogLevel");
-                context.Writer.WriteStringValue(requestObject.LogLevel);
+                context.Writer.WriteTextString("LogLevel");
+                context.Writer.WriteTextString(requestObject.LogLevel);
             }
 
             if (requestObject.IsSetMtime())
             {
-                context.Writer.WritePropertyName("Mtime");
-                context.Writer.WriteStringValue(requestObject.Mtime);
+                context.Writer.WriteTextString("Mtime");
+                context.Writer.WriteTextString(requestObject.Mtime);
             }
 
             if (requestObject.IsSetObjectMetadata())
             {
-                context.Writer.WritePropertyName("ObjectMetadata");
-                context.Writer.WriteStringValue(requestObject.ObjectMetadata);
+                context.Writer.WriteTextString("ObjectMetadata");
+                context.Writer.WriteTextString(requestObject.ObjectMetadata);
             }
 
             if (requestObject.IsSetObjectTags())
             {
-                context.Writer.WritePropertyName("ObjectTags");
-                context.Writer.WriteStringValue(requestObject.ObjectTags);
+                context.Writer.WriteTextString("ObjectTags");
+                context.Writer.WriteTextString(requestObject.ObjectTags);
             }
 
             if (requestObject.IsSetOverwriteMode())
             {
-                context.Writer.WritePropertyName("OverwriteMode");
-                context.Writer.WriteStringValue(requestObject.OverwriteMode);
+                context.Writer.WriteTextString("OverwriteMode");
+                context.Writer.WriteTextString(requestObject.OverwriteMode);
             }
 
             if (requestObject.IsSetPosixPermissions())
             {
-                context.Writer.WritePropertyName("PosixPermissions");
-                context.Writer.WriteStringValue(requestObject.PosixPermissions);
+                context.Writer.WriteTextString("PosixPermissions");
+                context.Writer.WriteTextString(requestObject.PosixPermissions);
             }
 
             if (requestObject.IsSetPreserveDeletedFiles())
             {
-                context.Writer.WritePropertyName("PreserveDeletedFiles");
-                context.Writer.WriteStringValue(requestObject.PreserveDeletedFiles);
+                context.Writer.WriteTextString("PreserveDeletedFiles");
+                context.Writer.WriteTextString(requestObject.PreserveDeletedFiles);
             }
 
             if (requestObject.IsSetPreserveDevices())
             {
-                context.Writer.WritePropertyName("PreserveDevices");
-                context.Writer.WriteStringValue(requestObject.PreserveDevices);
+                context.Writer.WriteTextString("PreserveDevices");
+                context.Writer.WriteTextString(requestObject.PreserveDevices);
             }
 
             if (requestObject.IsSetSecurityDescriptorCopyFlags())
             {
-                context.Writer.WritePropertyName("SecurityDescriptorCopyFlags");
-                context.Writer.WriteStringValue(requestObject.SecurityDescriptorCopyFlags);
+                context.Writer.WriteTextString("SecurityDescriptorCopyFlags");
+                context.Writer.WriteTextString(requestObject.SecurityDescriptorCopyFlags);
             }
 
             if (requestObject.IsSetTaskQueueing())
             {
-                context.Writer.WritePropertyName("TaskQueueing");
-                context.Writer.WriteStringValue(requestObject.TaskQueueing);
+                context.Writer.WriteTextString("TaskQueueing");
+                context.Writer.WriteTextString(requestObject.TaskQueueing);
             }
 
             if (requestObject.IsSetTransferMode())
             {
-                context.Writer.WritePropertyName("TransferMode");
-                context.Writer.WriteStringValue(requestObject.TransferMode);
+                context.Writer.WriteTextString("TransferMode");
+                context.Writer.WriteTextString(requestObject.TransferMode);
             }
 
             if (requestObject.IsSetUid())
             {
-                context.Writer.WritePropertyName("Uid");
-                context.Writer.WriteStringValue(requestObject.Uid);
+                context.Writer.WriteTextString("Uid");
+                context.Writer.WriteTextString(requestObject.Uid);
             }
 
             if (requestObject.IsSetVerifyMode())
             {
-                context.Writer.WritePropertyName("VerifyMode");
-                context.Writer.WriteStringValue(requestObject.VerifyMode);
+                context.Writer.WriteTextString("VerifyMode");
+                context.Writer.WriteTextString(requestObject.VerifyMode);
             }
         }
 

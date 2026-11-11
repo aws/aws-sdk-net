@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,34 +39,34 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// RedactionConfig Marshaller
     /// </summary>
-    public partial class RedactionConfigMarshaller : IRequestMarshaller<RedactionConfig, JsonMarshallerContext>
+    public partial class RedactionConfigMarshaller : IRequestMarshaller<RedactionConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RedactionConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(RedactionConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetMaskCharacter())
             {
-                context.Writer.WritePropertyName("MaskCharacter");
-                context.Writer.WriteStringValue(requestObject.MaskCharacter);
+                context.Writer.WriteTextString("MaskCharacter");
+                context.Writer.WriteTextString(requestObject.MaskCharacter);
             }
 
             if (requestObject.IsSetMaskMode())
             {
-                context.Writer.WritePropertyName("MaskMode");
-                context.Writer.WriteStringValue(requestObject.MaskMode);
+                context.Writer.WriteTextString("MaskMode");
+                context.Writer.WriteTextString(requestObject.MaskMode);
             }
 
             if (requestObject.IsSetPiiEntityTypes())
             {
-                context.Writer.WritePropertyName("PiiEntityTypes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("PiiEntityTypes");
+                context.Writer.WriteStartArray(requestObject.PiiEntityTypes.Count);
                 foreach (var requestObjectPiiEntityTypesListValue in requestObject.PiiEntityTypes)
                 {
-                    context.Writer.WriteStringValue(requestObjectPiiEntityTypesListValue);
+                    context.Writer.WriteTextString(requestObjectPiiEntityTypesListValue);
                 }
                 context.Writer.WriteEndArray();
             }

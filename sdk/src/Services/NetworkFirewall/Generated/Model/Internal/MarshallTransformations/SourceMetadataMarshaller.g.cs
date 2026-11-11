@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// SourceMetadata Marshaller
     /// </summary>
-    public partial class SourceMetadataMarshaller : IRequestMarshaller<SourceMetadata, JsonMarshallerContext>
+    public partial class SourceMetadataMarshaller : IRequestMarshaller<SourceMetadata, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(SourceMetadata requestObject, JsonMarshallerContext context)
+        public void Marshall(SourceMetadata requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetSourceArn())
             {
-                context.Writer.WritePropertyName("SourceArn");
-                context.Writer.WriteStringValue(requestObject.SourceArn);
+                context.Writer.WriteTextString("SourceArn");
+                context.Writer.WriteTextString(requestObject.SourceArn);
             }
 
             if (requestObject.IsSetSourceUpdateToken())
             {
-                context.Writer.WritePropertyName("SourceUpdateToken");
-                context.Writer.WriteStringValue(requestObject.SourceUpdateToken);
+                context.Writer.WriteTextString("SourceUpdateToken");
+                context.Writer.WriteTextString(requestObject.SourceUpdateToken);
             }
         }
 
