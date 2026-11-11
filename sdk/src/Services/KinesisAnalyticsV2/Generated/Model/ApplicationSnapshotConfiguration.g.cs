@@ -35,6 +35,28 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class ApplicationSnapshotConfiguration
     {
         /// <summary>
+        /// Gets and sets the property SnapshotMode. 
+        /// <para>
+        /// Specifies the snapshot mode for a Managed Service for Apache Flink application. To
+        /// use enhanced snapshots, specify <c>ENHANCED_SNAPSHOTS</c>. If you don't specify this
+        /// parameter, the application uses <c>APPLICATION_SNAPSHOTS_LEGACY</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/managed-flink/latest/java/how-snapshots.html">Enhanced
+        /// Snapshots</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use <c>ENHANCED_SNAPSHOTS</c>, the application must use Apache Flink version 1.20
+        /// or later.
+        /// </para>
+        /// </summary>
+        public SnapshotMode SnapshotMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SnapshotMode property is set.
+        /// </summary>
+        internal bool IsSetSnapshotMode() => this.SnapshotMode != null;
+
+        /// <summary>
         /// Gets and sets the property SnapshotsEnabled. 
         /// <para>
         /// Describes whether snapshots are enabled for a Managed Service for Apache Flink application.

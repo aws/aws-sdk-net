@@ -36,6 +36,32 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class ApplicationSnapshotConfigurationUpdate
     {
         /// <summary>
+        /// Gets and sets the property SnapshotModeUpdate. 
+        /// <para>
+        /// Describes updates to the snapshot mode of a Managed Service for Apache Flink application.
+        /// You can update the snapshot mode from <c>APPLICATION_SNAPSHOTS_LEGACY</c> to <c>ENHANCED_SNAPSHOTS</c>.
+        /// You can't use <c>UpdateApplication</c> to change the snapshot mode back to <c>APPLICATION_SNAPSHOTS_LEGACY</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To return to <c>APPLICATION_SNAPSHOTS_LEGACY</c>, use <c>RollbackApplication</c>.
+        /// After you update an application that uses <c>ENHANCED_SNAPSHOTS</c>, you can't roll
+        /// it back to <c>APPLICATION_SNAPSHOTS_LEGACY</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use <c>ENHANCED_SNAPSHOTS</c>, the application must use Apache Flink version 1.20
+        /// or later.
+        /// </para>
+        /// </summary>
+        public SnapshotMode SnapshotModeUpdate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SnapshotModeUpdate property is set.
+        /// </summary>
+        internal bool IsSetSnapshotModeUpdate() => this.SnapshotModeUpdate != null;
+
+        /// <summary>
         /// Gets and sets the property SnapshotsEnabledUpdate. 
         /// <para>
         /// Describes updates to whether snapshots are enabled for an application.

@@ -55,5 +55,17 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "Limit", OutputToken = ["NextToken"])]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSnapshotOperations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "Limit", OutputToken = ["NextToken"])]
+        IListSnapshotOperationsPaginator ListSnapshotOperations(ListSnapshotOperationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSnapshots operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "Limit", OutputToken = ["NextToken"])]
+        IListSnapshotsPaginator ListSnapshots(ListSnapshotsRequest request);
     }
 }

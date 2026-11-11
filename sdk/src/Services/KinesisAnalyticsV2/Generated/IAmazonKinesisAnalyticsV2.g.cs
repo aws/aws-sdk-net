@@ -58,9 +58,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the AddApplicationCloudWatchLoggingOption service method.</param>
         /// <returns>The response from the AddApplicationCloudWatchLoggingOption service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -72,10 +72,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationCloudWatchLoggingOption">REST API Reference for AddApplicationCloudWatchLoggingOption Operation</seealso>
         AddApplicationCloudWatchLoggingOptionResponse AddApplicationCloudWatchLoggingOption(AddApplicationCloudWatchLoggingOptionRequest request);
@@ -90,9 +90,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the AddApplicationCloudWatchLoggingOption service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -104,10 +104,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationCloudWatchLoggingOption">REST API Reference for AddApplicationCloudWatchLoggingOption Operation</seealso>
         Task<AddApplicationCloudWatchLoggingOptionResponse> AddApplicationCloudWatchLoggingOptionAsync(AddApplicationCloudWatchLoggingOptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -136,9 +136,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// error.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -147,10 +147,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInput">REST API Reference for AddApplicationInput Operation</seealso>
         AddApplicationInputResponse AddApplicationInput(AddApplicationInputRequest request);
@@ -182,9 +182,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// error.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -193,10 +193,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInput">REST API Reference for AddApplicationInput Operation</seealso>
         Task<AddApplicationInputResponse> AddApplicationInputAsync(AddApplicationInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -211,9 +211,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the AddApplicationInputProcessingConfiguration service method.</param>
         /// <returns>The response from the AddApplicationInputProcessingConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -222,10 +222,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInputProcessingConfiguration">REST API Reference for AddApplicationInputProcessingConfiguration Operation</seealso>
         AddApplicationInputProcessingConfigurationResponse AddApplicationInputProcessingConfiguration(AddApplicationInputProcessingConfigurationRequest request);
@@ -243,9 +243,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the AddApplicationInputProcessingConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -254,10 +254,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInputProcessingConfiguration">REST API Reference for AddApplicationInputProcessingConfiguration Operation</seealso>
         Task<AddApplicationInputProcessingConfigurationResponse> AddApplicationInputProcessingConfigurationAsync(AddApplicationInputProcessingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -290,9 +290,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the AddApplicationOutput service method.</param>
         /// <returns>The response from the AddApplicationOutput service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -301,10 +301,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationOutput">REST API Reference for AddApplicationOutput Operation</seealso>
         AddApplicationOutputResponse AddApplicationOutput(AddApplicationOutputRequest request);
@@ -340,9 +340,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the AddApplicationOutput service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -351,10 +351,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationOutput">REST API Reference for AddApplicationOutput Operation</seealso>
         Task<AddApplicationOutputResponse> AddApplicationOutputAsync(AddApplicationOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -375,9 +375,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the AddApplicationReferenceDataSource service method.</param>
         /// <returns>The response from the AddApplicationReferenceDataSource service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -386,10 +386,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationReferenceDataSource">REST API Reference for AddApplicationReferenceDataSource Operation</seealso>
         AddApplicationReferenceDataSourceResponse AddApplicationReferenceDataSource(AddApplicationReferenceDataSourceRequest request);
@@ -413,9 +413,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the AddApplicationReferenceDataSource service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -424,10 +424,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationReferenceDataSource">REST API Reference for AddApplicationReferenceDataSource Operation</seealso>
         Task<AddApplicationReferenceDataSourceResponse> AddApplicationReferenceDataSourceAsync(AddApplicationReferenceDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -456,9 +456,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the AddApplicationVpcConfiguration service method.</param>
         /// <returns>The response from the AddApplicationVpcConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -467,10 +467,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationVpcConfiguration">REST API Reference for AddApplicationVpcConfiguration Operation</seealso>
         AddApplicationVpcConfigurationResponse AddApplicationVpcConfiguration(AddApplicationVpcConfigurationRequest request);
@@ -502,9 +502,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the AddApplicationVpcConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -513,10 +513,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationVpcConfiguration">REST API Reference for AddApplicationVpcConfiguration Operation</seealso>
         Task<AddApplicationVpcConfigurationResponse> AddApplicationVpcConfigurationAsync(AddApplicationVpcConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -534,9 +534,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// error.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -548,7 +548,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The number of allowed resources has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.TooManyTagsException">
         /// Application created with too many tags, or too many tags added to an application.
@@ -578,9 +578,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// error.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -592,7 +592,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The number of allowed resources has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.TooManyTagsException">
         /// Application created with too many tags, or too many tags added to an application.
@@ -637,10 +637,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl">REST API Reference for CreateApplicationPresignedUrl Operation</seealso>
         CreateApplicationPresignedUrlResponse CreateApplicationPresignedUrl(CreateApplicationPresignedUrlRequest request);
@@ -679,10 +679,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl">REST API Reference for CreateApplicationPresignedUrl Operation</seealso>
         Task<CreateApplicationPresignedUrlResponse> CreateApplicationPresignedUrlAsync(CreateApplicationPresignedUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -706,10 +706,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The number of allowed resources has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -740,10 +740,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The number of allowed resources has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -754,15 +754,122 @@ namespace Amazon.KinesisAnalyticsV2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates an enhanced snapshot of the state data of a running Managed Service for Apache
+        /// Flink application. The application must be in the <c>RUNNING</c> status, use Apache
+        /// Flink version 1.20 or later, and use the <c>ENHANCED_SNAPSHOTS</c> snapshot mode.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is asynchronous. The response returns the snapshot ARN with the <c>CREATING</c>
+        /// status. To check the status of the snapshot, use <c>DescribeSnapshot</c>. To track
+        /// the progress of the operation, use <c>DescribeSnapshotOperation</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// An application can have only one <c>CreateSnapshot</c> operation in progress at a
+        /// time. For information about limits, see <a href="https://docs.aws.amazon.com/managed-flink/latest/java/limits.html">Managed
+        /// Service for Apache Flink Quotas</a>. For more information about snapshots, see <a
+        /// href="https://docs.aws.amazon.com/managed-flink/latest/java/how-snapshots.html">Enhanced
+        /// Snapshots</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
+        /// <returns>The response from the CreateSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
+        /// The user-provided application configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.LimitExceededException">
+        /// The number of allowed resources has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application or snapshot is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.TooManyTagsException">
+        /// Application created with too many tags, or too many tags added to an application.
+        /// Note that the maximum number of application tags includes system tags. The maximum
+        /// number of user-defined application tags is 50.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
+        CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an enhanced snapshot of the state data of a running Managed Service for Apache
+        /// Flink application. The application must be in the <c>RUNNING</c> status, use Apache
+        /// Flink version 1.20 or later, and use the <c>ENHANCED_SNAPSHOTS</c> snapshot mode.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is asynchronous. The response returns the snapshot ARN with the <c>CREATING</c>
+        /// status. To check the status of the snapshot, use <c>DescribeSnapshot</c>. To track
+        /// the progress of the operation, use <c>DescribeSnapshotOperation</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// An application can have only one <c>CreateSnapshot</c> operation in progress at a
+        /// time. For information about limits, see <a href="https://docs.aws.amazon.com/managed-flink/latest/java/limits.html">Managed
+        /// Service for Apache Flink Quotas</a>. For more information about snapshots, see <a
+        /// href="https://docs.aws.amazon.com/managed-flink/latest/java/how-snapshots.html">Enhanced
+        /// Snapshots</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
+        /// The user-provided application configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.LimitExceededException">
+        /// The number of allowed resources has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application or snapshot is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.TooManyTagsException">
+        /// Application created with too many tags, or too many tags added to an application.
+        /// Note that the maximum number of application tags includes system tags. The maximum
+        /// number of user-defined application tags is 50.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
+        Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes the specified application. Managed Service for Apache Flink halts application
         /// execution and deletes the application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// <returns>The response from the DeleteApplication service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -774,10 +881,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request);
@@ -793,9 +900,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the DeleteApplication service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -807,10 +914,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -822,9 +929,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationCloudWatchLoggingOption service method.</param>
         /// <returns>The response from the DeleteApplicationCloudWatchLoggingOption service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -836,10 +943,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationCloudWatchLoggingOption">REST API Reference for DeleteApplicationCloudWatchLoggingOption Operation</seealso>
         DeleteApplicationCloudWatchLoggingOptionResponse DeleteApplicationCloudWatchLoggingOption(DeleteApplicationCloudWatchLoggingOptionRequest request);
@@ -854,9 +961,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the DeleteApplicationCloudWatchLoggingOption service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -868,10 +975,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationCloudWatchLoggingOption">REST API Reference for DeleteApplicationCloudWatchLoggingOption Operation</seealso>
         Task<DeleteApplicationCloudWatchLoggingOptionResponse> DeleteApplicationCloudWatchLoggingOptionAsync(DeleteApplicationCloudWatchLoggingOptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -883,9 +990,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationInputProcessingConfiguration service method.</param>
         /// <returns>The response from the DeleteApplicationInputProcessingConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -894,10 +1001,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationInputProcessingConfiguration">REST API Reference for DeleteApplicationInputProcessingConfiguration Operation</seealso>
         DeleteApplicationInputProcessingConfigurationResponse DeleteApplicationInputProcessingConfiguration(DeleteApplicationInputProcessingConfigurationRequest request);
@@ -912,9 +1019,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the DeleteApplicationInputProcessingConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -923,10 +1030,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationInputProcessingConfiguration">REST API Reference for DeleteApplicationInputProcessingConfiguration Operation</seealso>
         Task<DeleteApplicationInputProcessingConfigurationResponse> DeleteApplicationInputProcessingConfigurationAsync(DeleteApplicationInputProcessingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -940,9 +1047,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationOutput service method.</param>
         /// <returns>The response from the DeleteApplicationOutput service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -951,10 +1058,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationOutput">REST API Reference for DeleteApplicationOutput Operation</seealso>
         DeleteApplicationOutputResponse DeleteApplicationOutput(DeleteApplicationOutputRequest request);
@@ -971,9 +1078,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the DeleteApplicationOutput service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -982,10 +1089,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationOutput">REST API Reference for DeleteApplicationOutput Operation</seealso>
         Task<DeleteApplicationOutputResponse> DeleteApplicationOutputAsync(DeleteApplicationOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1005,9 +1112,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationReferenceDataSource service method.</param>
         /// <returns>The response from the DeleteApplicationReferenceDataSource service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -1016,10 +1123,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationReferenceDataSource">REST API Reference for DeleteApplicationReferenceDataSource Operation</seealso>
         DeleteApplicationReferenceDataSourceResponse DeleteApplicationReferenceDataSource(DeleteApplicationReferenceDataSourceRequest request);
@@ -1042,9 +1149,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the DeleteApplicationReferenceDataSource service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -1053,10 +1160,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationReferenceDataSource">REST API Reference for DeleteApplicationReferenceDataSource Operation</seealso>
         Task<DeleteApplicationReferenceDataSourceResponse> DeleteApplicationReferenceDataSourceAsync(DeleteApplicationReferenceDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1068,9 +1175,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationSnapshot service method.</param>
         /// <returns>The response from the DeleteApplicationSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -1079,10 +1186,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1101,9 +1208,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the DeleteApplicationSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -1112,10 +1219,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1131,9 +1238,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationVpcConfiguration service method.</param>
         /// <returns>The response from the DeleteApplicationVpcConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -1142,10 +1249,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationVpcConfiguration">REST API Reference for DeleteApplicationVpcConfiguration Operation</seealso>
         DeleteApplicationVpcConfigurationResponse DeleteApplicationVpcConfiguration(DeleteApplicationVpcConfigurationRequest request);
@@ -1160,9 +1267,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the DeleteApplicationVpcConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -1171,13 +1278,98 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationVpcConfiguration">REST API Reference for DeleteApplicationVpcConfiguration Operation</seealso>
         Task<DeleteApplicationVpcConfigurationResponse> DeleteApplicationVpcConfigurationAsync(DeleteApplicationVpcConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes an enhanced snapshot. Snapshots are not scoped to an application, so you can
+        /// delete a snapshot independently of the application that it was created from.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is asynchronous. The response returns the snapshot ARN with the <c>DELETING</c>
+        /// status. To track the progress of the operation, use <c>DescribeSnapshotOperation</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can delete a snapshot in the <c>READY</c> or <c>FAILED</c> status. If a snapshot
+        /// operation, such as an export, uses the snapshot, Managed Service for Apache Flink
+        /// waits for that operation to finish before it deletes the snapshot. For a snapshot
+        /// in any other status, <c>ResourceInUseException</c> is returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot service method.</param>
+        /// <returns>The response from the DeleteSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application or snapshot is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
+        DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an enhanced snapshot. Snapshots are not scoped to an application, so you can
+        /// delete a snapshot independently of the application that it was created from.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is asynchronous. The response returns the snapshot ARN with the <c>DELETING</c>
+        /// status. To track the progress of the operation, use <c>DescribeSnapshotOperation</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can delete a snapshot in the <c>READY</c> or <c>FAILED</c> status. If a snapshot
+        /// operation, such as an export, uses the snapshot, Managed Service for Apache Flink
+        /// waits for that operation to finish before it deletes the snapshot. For a snapshot
+        /// in any other status, <c>ResourceInUseException</c> is returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application or snapshot is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
+        Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1198,7 +1390,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
         DescribeApplicationResponse DescribeApplication(DescribeApplicationRequest request);
@@ -1225,7 +1417,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
         Task<DescribeApplicationResponse> DescribeApplicationAsync(DescribeApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1248,7 +1440,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1278,7 +1470,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1297,7 +1489,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1319,7 +1511,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1346,7 +1538,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1376,7 +1568,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1384,6 +1576,102 @@ namespace Amazon.KinesisAnalyticsV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationVersion">REST API Reference for DescribeApplicationVersion Operation</seealso>
         Task<DescribeApplicationVersionResponse> DescribeApplicationVersionAsync(DescribeApplicationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns information about an enhanced snapshot. To see a list of the snapshots in
+        /// your account, use <c>ListSnapshots</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshot service method.</param>
+        /// <returns>The response from the DescribeSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeSnapshot">REST API Reference for DescribeSnapshot Operation</seealso>
+        DescribeSnapshotResponse DescribeSnapshot(DescribeSnapshotRequest request);
+#endif
+
+        /// <summary>
+        /// Returns information about an enhanced snapshot. To see a list of the snapshots in
+        /// your account, use <c>ListSnapshots</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeSnapshot">REST API Reference for DescribeSnapshot Operation</seealso>
+        Task<DescribeSnapshotResponse> DescribeSnapshotAsync(DescribeSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Provides a detailed description of a specified operation that was performed on an
+        /// enhanced snapshot. To see a list of the operations of a snapshot, use <c>ListSnapshotOperations</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Snapshot operations are available for 90 days after they are created.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotOperation service method.</param>
+        /// <returns>The response from the DescribeSnapshotOperation service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeSnapshotOperation">REST API Reference for DescribeSnapshotOperation Operation</seealso>
+        DescribeSnapshotOperationResponse DescribeSnapshotOperation(DescribeSnapshotOperationRequest request);
+#endif
+
+        /// <summary>
+        /// Provides a detailed description of a specified operation that was performed on an
+        /// enhanced snapshot. To see a list of the operations of a snapshot, use <c>ListSnapshotOperations</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Snapshot operations are available for 90 days after they are created.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeSnapshotOperation service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeSnapshotOperation">REST API Reference for DescribeSnapshotOperation Operation</seealso>
+        Task<DescribeSnapshotOperationResponse> DescribeSnapshotOperationAsync(DescribeSnapshotOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1474,6 +1762,196 @@ namespace Amazon.KinesisAnalyticsV2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Exports the data of an enhanced snapshot to an Amazon S3 location. Managed Service
+        /// for Apache Flink assumes the IAM role that you specify in <c>ExportDestinationConfiguration</c>
+        /// to write the snapshot data. The snapshot must be in the <c>READY</c> status.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is asynchronous. To track the progress of the export, use <c>DescribeSnapshotOperation</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A snapshot can have only one export in progress at a time. If an export of the snapshot
+        /// is already in progress, <c>LimitExceededException</c> is returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/managed-flink/latest/java/snapshots-import-export.html">Import
+        /// and export</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportSnapshot service method.</param>
+        /// <returns>The response from the ExportSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.LimitExceededException">
+        /// The number of allowed resources has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application or snapshot is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ExportSnapshot">REST API Reference for ExportSnapshot Operation</seealso>
+        ExportSnapshotResponse ExportSnapshot(ExportSnapshotRequest request);
+#endif
+
+        /// <summary>
+        /// Exports the data of an enhanced snapshot to an Amazon S3 location. Managed Service
+        /// for Apache Flink assumes the IAM role that you specify in <c>ExportDestinationConfiguration</c>
+        /// to write the snapshot data. The snapshot must be in the <c>READY</c> status.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is asynchronous. To track the progress of the export, use <c>DescribeSnapshotOperation</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A snapshot can have only one export in progress at a time. If an export of the snapshot
+        /// is already in progress, <c>LimitExceededException</c> is returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/managed-flink/latest/java/snapshots-import-export.html">Import
+        /// and export</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ExportSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.LimitExceededException">
+        /// The number of allowed resources has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application or snapshot is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ExportSnapshot">REST API Reference for ExportSnapshot Operation</seealso>
+        Task<ExportSnapshotResponse> ExportSnapshotAsync(ExportSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Imports an Apache Flink savepoint from an Amazon S3 location as an enhanced snapshot.
+        /// Managed Service for Apache Flink assumes the IAM role that you specify in <c>ImportSourceConfiguration</c>
+        /// to read the savepoint data.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is asynchronous. The response returns the snapshot ARN with the <c>CREATING</c>
+        /// status. To track the progress of the import, use <c>DescribeSnapshotOperation</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/managed-flink/latest/java/snapshots-import-export.html">Import
+        /// and export</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportSnapshot service method.</param>
+        /// <returns>The response from the ImportSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.LimitExceededException">
+        /// The number of allowed resources has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application or snapshot is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.TooManyTagsException">
+        /// Application created with too many tags, or too many tags added to an application.
+        /// Note that the maximum number of application tags includes system tags. The maximum
+        /// number of user-defined application tags is 50.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ImportSnapshot">REST API Reference for ImportSnapshot Operation</seealso>
+        ImportSnapshotResponse ImportSnapshot(ImportSnapshotRequest request);
+#endif
+
+        /// <summary>
+        /// Imports an Apache Flink savepoint from an Amazon S3 location as an enhanced snapshot.
+        /// Managed Service for Apache Flink assumes the IAM role that you specify in <c>ImportSourceConfiguration</c>
+        /// to read the savepoint data.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is asynchronous. The response returns the snapshot ARN with the <c>CREATING</c>
+        /// status. To track the progress of the import, use <c>DescribeSnapshotOperation</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/managed-flink/latest/java/snapshots-import-export.html">Import
+        /// and export</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ImportSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.LimitExceededException">
+        /// The number of allowed resources has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application or snapshot is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.TooManyTagsException">
+        /// Application created with too many tags, or too many tags added to an application.
+        /// Note that the maximum number of application tags includes system tags. The maximum
+        /// number of user-defined application tags is 50.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ImportSnapshot">REST API Reference for ImportSnapshot Operation</seealso>
+        Task<ImportSnapshotResponse> ImportSnapshotAsync(ImportSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists all the operations performed for the specified application such as UpdateApplication,
         /// StartApplication etc. The response also includes a summary of the operation.
         /// 
@@ -1494,7 +1972,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1528,7 +2006,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1595,7 +2073,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1630,7 +2108,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1682,6 +2160,136 @@ namespace Amazon.KinesisAnalyticsV2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the operations that were performed on the specified enhanced snapshot, such
+        /// as <c>CreateSnapshot</c>, <c>ImportSnapshot</c>, and <c>ExportSnapshot</c>. The response
+        /// includes a summary of each operation.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify only one of the <c>SnapshotOperation</c> or <c>SnapshotOperationStatus</c>
+        /// filters in a request. If you specify both, <c>InvalidArgumentException</c> is returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the complete description of a specific operation, use <c>DescribeSnapshotOperation</c>.
+        /// Snapshot operations are available for 90 days after they are created.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSnapshotOperations service method.</param>
+        /// <returns>The response from the ListSnapshotOperations service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListSnapshotOperations">REST API Reference for ListSnapshotOperations Operation</seealso>
+        ListSnapshotOperationsResponse ListSnapshotOperations(ListSnapshotOperationsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the operations that were performed on the specified enhanced snapshot, such
+        /// as <c>CreateSnapshot</c>, <c>ImportSnapshot</c>, and <c>ExportSnapshot</c>. The response
+        /// includes a summary of each operation.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify only one of the <c>SnapshotOperation</c> or <c>SnapshotOperationStatus</c>
+        /// filters in a request. If you specify both, <c>InvalidArgumentException</c> is returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the complete description of a specific operation, use <c>DescribeSnapshotOperation</c>.
+        /// Snapshot operations are available for 90 days after they are created.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSnapshotOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListSnapshotOperations service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListSnapshotOperations">REST API Reference for ListSnapshotOperations Operation</seealso>
+        Task<ListSnapshotOperationsResponse> ListSnapshotOperationsAsync(ListSnapshotOperationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the enhanced snapshots in your account. Snapshots are not scoped to an application.
+        /// To list the snapshots that were created from a specific application, use the <c>SourceApplicationName</c>
+        /// parameter.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify only one of the following filters in a request: <c>SourceApplicationName</c>,
+        /// <c>SnapshotInitiator</c>, <c>SnapshotInitiatorOperation</c>, or <c>SnapshotStatus</c>.
+        /// If you specify more than one filter, <c>InvalidArgumentException</c> is returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// The results are sorted in descending order of snapshot creation timestamp. To get
+        /// detailed information about a specific snapshot, use <c>DescribeSnapshot</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSnapshots service method.</param>
+        /// <returns>The response from the ListSnapshots service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListSnapshots">REST API Reference for ListSnapshots Operation</seealso>
+        ListSnapshotsResponse ListSnapshots(ListSnapshotsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the enhanced snapshots in your account. Snapshots are not scoped to an application.
+        /// To list the snapshots that were created from a specific application, use the <c>SourceApplicationName</c>
+        /// parameter.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify only one of the following filters in a request: <c>SourceApplicationName</c>,
+        /// <c>SnapshotInitiator</c>, <c>SnapshotInitiatorOperation</c>, or <c>SnapshotStatus</c>.
+        /// If you specify more than one filter, <c>InvalidArgumentException</c> is returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// The results are sorted in descending order of snapshot creation timestamp. To get
+        /// detailed information about a specific snapshot, use <c>DescribeSnapshot</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSnapshots service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListSnapshots service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListSnapshots">REST API Reference for ListSnapshots Operation</seealso>
+        Task<ListSnapshotsResponse> ListSnapshotsAsync(ListSnapshotsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves the list of key-value tags assigned to the application. For more information,
         /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
         /// Tagging</a>.
@@ -1689,15 +2297,15 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <returns>The response from the ListTagsForResource service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -1714,15 +2322,15 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the ListTagsForResource service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1747,9 +2355,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the RollbackApplication service method.</param>
         /// <returns>The response from the RollbackApplication service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -1758,10 +2366,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1793,9 +2401,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the RollbackApplication service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -1804,10 +2412,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -1833,10 +2441,14 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StartApplication">REST API Reference for StartApplication Operation</seealso>
         StartApplicationResponse StartApplication(StartApplicationRequest request);
@@ -1861,10 +2473,14 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StartApplication">REST API Reference for StartApplication Operation</seealso>
         Task<StartApplicationResponse> StartApplicationAsync(StartApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1888,9 +2504,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the StopApplication service method.</param>
         /// <returns>The response from the StopApplication service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -1902,10 +2518,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication">REST API Reference for StopApplication Operation</seealso>
         StopApplicationResponse StopApplication(StopApplicationRequest request);
@@ -1932,9 +2548,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the StopApplication service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -1946,10 +2562,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// The request JSON is not valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication">REST API Reference for StopApplication Operation</seealso>
         Task<StopApplicationResponse> StopApplicationAsync(StopApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1964,18 +2580,18 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <returns>The response from the TagResource service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.TooManyTagsException">
         /// Application created with too many tags, or too many tags added to an application.
@@ -1998,18 +2614,18 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the TagResource service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.TooManyTagsException">
         /// Application created with too many tags, or too many tags added to an application.
@@ -2028,18 +2644,18 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <returns>The response from the UntagResource service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.TooManyTagsException">
         /// Application created with too many tags, or too many tags added to an application.
@@ -2061,18 +2677,18 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the UntagResource service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.TooManyTagsException">
         /// Application created with too many tags, or too many tags added to an application.
@@ -2100,9 +2716,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// error.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -2117,10 +2733,14 @@ namespace Amazon.KinesisAnalyticsV2
         /// The number of allowed resources has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request);
@@ -2146,9 +2766,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// error.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
         /// The user-provided application configuration is not valid.
@@ -2163,10 +2783,14 @@ namespace Amazon.KinesisAnalyticsV2
         /// The number of allowed resources has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2207,18 +2831,18 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationMaintenanceConfiguration service method.</param>
         /// <returns>The response from the UpdateApplicationMaintenanceConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
@@ -2266,18 +2890,18 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// <returns>The response from the UpdateApplicationMaintenanceConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
-        /// Exception thrown as a result of concurrent modifications to an application. This error
-        /// can be the result of attempting to modify an application without using the current
-        /// application ID.
+        /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+        /// This error can be the result of attempting to modify an application without using
+        /// the current application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
-        /// The application is not available for this operation.
+        /// The application or snapshot is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
-        /// Specified application can't be found.
+        /// The specified application, snapshot, or snapshot operation can't be found.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified

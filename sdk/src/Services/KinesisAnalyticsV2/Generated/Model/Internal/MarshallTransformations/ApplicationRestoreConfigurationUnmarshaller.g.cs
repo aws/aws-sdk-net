@@ -60,6 +60,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("SnapshotArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SnapshotArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("SnapshotName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

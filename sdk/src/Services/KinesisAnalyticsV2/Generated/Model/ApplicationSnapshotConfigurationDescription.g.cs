@@ -35,6 +35,19 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class ApplicationSnapshotConfigurationDescription
     {
         /// <summary>
+        /// Gets and sets the property SnapshotMode. 
+        /// <para>
+        /// Describes the snapshot mode of a Managed Service for Apache Flink application.
+        /// </para>
+        /// </summary>
+        public SnapshotMode SnapshotMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SnapshotMode property is set.
+        /// </summary>
+        internal bool IsSetSnapshotMode() => this.SnapshotMode != null;
+
+        /// <summary>
         /// Gets and sets the property SnapshotsEnabled. 
         /// <para>
         /// Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
