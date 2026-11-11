@@ -34,8 +34,11 @@ namespace Amazon.ConnectCases.Model
     /// a value for <c>PerformedBy.UserArn</c>, you must also have the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
     /// permission on the user ARN that you provide. </para> </note> <para> Updates the values
     /// of fields on a case. Fields to be updated are received as an array of id/value pairs
-    /// identical to the <c>CreateCase</c> input. </para> <para> If the action is successful,
-    /// the service sends back an HTTP 200 response with an empty HTTP body. </para>
+    /// identical to the <c>CreateCase</c> input. </para> <para> If the case is the secondary
+    /// case of a merge that is running, the request fails with a <c>ConflictException</c>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+    /// </para> <para> If the action is successful, the service sends back an HTTP 200 response
+    /// with an empty HTTP body. </para>
     /// </summary>
     public partial class UpdateCaseRequest : AmazonConnectCasesRequest
     {

@@ -69,6 +69,20 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetFields() => this.Fields != null && (this.Fields.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property MergeMetadata. 
+        /// <para>
+        /// Information about the merge that produced this audit event. Present only on audit
+        /// events produced by a merge. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
+        /// </summary>
+        public AuditMergeMetadata MergeMetadata { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MergeMetadata property is set.
+        /// </summary>
+        internal bool IsSetMergeMetadata() => this.MergeMetadata != null;
+
+        /// <summary>
         /// Gets and sets the property PerformedBy. 
         /// <para>
         /// Information of the user which performed the audit.
@@ -116,7 +130,12 @@ namespace Amazon.ConnectCases.Model
         ///  
         /// <para>
         /// Valid Values: <c>Case.Created</c> | <c>Case.Updated</c> | <c>RelatedItem.Created</c>
-        /// | <c>RelatedItem.Updated</c> | <c>RelatedItem.Deleted</c> 
+        /// | <c>RelatedItem.Updated</c> | <c>RelatedItem.Deleted</c> | <c>Case.Merged</c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>Case.Merged</c> summarizes a merge on each of the two cases that took part in
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

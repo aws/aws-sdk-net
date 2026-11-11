@@ -1129,6 +1129,11 @@ namespace Amazon.ConnectCases
         /// If you provide a value for <c>performedBy.userArn</c>, you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
         /// permission on the ARN of the user that you provide.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
@@ -1139,6 +1144,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the CreateRelatedItem service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -1226,6 +1236,11 @@ namespace Amazon.ConnectCases
         /// If you provide a value for <c>performedBy.userArn</c>, you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
         /// permission on the ARN of the user that you provide.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
@@ -1239,6 +1254,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the CreateRelatedItem service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -1413,7 +1433,13 @@ namespace Amazon.ConnectCases
         /// <para>
         /// Perform any operations that require the CaseID
         /// </para>
-        ///  </li> </ul> <important> 
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't delete a case while it's part of a merge that is running, as either the
+        /// primary or the secondary case. The request fails with a <c>ConflictException</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
+        ///  <important> 
         /// <para>
         /// This action is irreversible. After you delete a case, you cannot recover its data.
         /// </para>
@@ -1423,6 +1449,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the DeleteCase service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -1458,7 +1489,13 @@ namespace Amazon.ConnectCases
         /// <para>
         /// Perform any operations that require the CaseID
         /// </para>
-        ///  </li> </ul> <important> 
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't delete a case while it's part of a merge that is running, as either the
+        /// primary or the secondary case. The request fails with a <c>ConflictException</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
+        ///  <important> 
         /// <para>
         /// This action is irreversible. After you delete a case, you cannot recover its data.
         /// </para>
@@ -1471,6 +1508,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the DeleteCase service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -1941,12 +1983,21 @@ namespace Amazon.ConnectCases
         /// file, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteAttachedFile.html">DeleteAttachedFile</a>
         /// API
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRelatedItem service method.</param>
         /// <returns>The response from the DeleteRelatedItem service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -1975,7 +2026,11 @@ namespace Amazon.ConnectCases
         /// file, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteAttachedFile.html">DeleteAttachedFile</a>
         /// API
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRelatedItem service method.</param>
         /// <param name="cancellationToken">
@@ -1984,6 +2039,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the DeleteRelatedItem service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -2385,6 +2445,113 @@ namespace Amazon.ConnectCases
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetLayout">REST API Reference for GetLayout Operation</seealso>
         Task<GetLayoutResponse> GetLayoutAsync(GetLayoutRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the merge status of a case. Use this operation to track a merge that you started
+        /// with <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>,
+        /// or to check whether a case is part of a merge before you modify it.
+        /// 
+        ///  
+        /// <para>
+        /// The operation returns the following, depending on the case:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For the primary case or the secondary case of a merge that is running, it returns
+        /// <c>IN_PROGRESS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a case that was merged into another case as the secondary case, it returns <c>COMPLETED</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For any other case, it returns a <c>ResourceNotFoundException</c>. This includes the
+        /// primary case after its merge finishes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMergeCasesStatus service method.</param>
+        /// <returns>The response from the GetMergeCasesStatus service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetMergeCasesStatus">REST API Reference for GetMergeCasesStatus Operation</seealso>
+        GetMergeCasesStatusResponse GetMergeCasesStatus(GetMergeCasesStatusRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the merge status of a case. Use this operation to track a merge that you started
+        /// with <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>,
+        /// or to check whether a case is part of a merge before you modify it.
+        /// 
+        ///  
+        /// <para>
+        /// The operation returns the following, depending on the case:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For the primary case or the secondary case of a merge that is running, it returns
+        /// <c>IN_PROGRESS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a case that was merged into another case as the secondary case, it returns <c>COMPLETED</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For any other case, it returns a <c>ResourceNotFoundException</c>. This includes the
+        /// primary case after its merge finishes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMergeCasesStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetMergeCasesStatus service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetMergeCasesStatus">REST API Reference for GetMergeCasesStatus Operation</seealso>
+        Task<GetMergeCasesStatusResponse> GetMergeCasesStatusAsync(GetMergeCasesStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -3339,6 +3506,225 @@ namespace Amazon.ConnectCases
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Merges a secondary case into a primary case. The primary case, which you specify in
+        /// the request URI, remains active. Both cases must belong to the same domain.
+        /// 
+        ///  
+        /// <para>
+        /// The merge runs asynchronously. To track its progress, call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetMergeCasesStatus.html">GetMergeCasesStatus</a>.
+        /// When the merge finishes, the selected field values and related items from the secondary
+        /// case are on the primary case, the two cases are linked, and the secondary case is
+        /// closed. Both cases record the merge in their audit history. For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCaseAuditEvents.html">GetCaseAuditEvents</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Both cases must have the same customer, or at least one of them must have no customer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// While the merge runs, you can't modify the secondary case or its related items, and
+        /// you can't delete the primary case. These requests return a <c>ConflictException</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After the merge, the secondary case can be reopened, updated, and deleted, but it
+        /// can't be merged again.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The request fails with a <c>ValidationException</c>, and no merge starts, if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The primary case and the secondary case are the same case.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Either case is closed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Both cases have a customer, and the customers are different.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>fieldsConfiguration</c> selects a field that can't be merged, or a field that
+        /// the secondary case doesn't have.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After the merge, the primary case would have more than 500 field values, or would
+        /// exceed the maximum case size.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The request fails with a <c>ServiceQuotaExceededException</c> if, after the merge,
+        /// either case would exceed the quota for related items per case. For the primary case,
+        /// the count is its existing related items, plus the related items moved from the secondary
+        /// case, plus the new case link. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+        /// Customer Cases quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The request fails with a <c>ConflictException</c> if either case is already part of
+        /// a merge that is running, or was previously merged into another case as the secondary
+        /// case.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMergeCases service method.</param>
+        /// <returns>The response from the StartMergeCases service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/StartMergeCases">REST API Reference for StartMergeCases Operation</seealso>
+        StartMergeCasesResponse StartMergeCases(StartMergeCasesRequest request);
+#endif
+
+        /// <summary>
+        /// Merges a secondary case into a primary case. The primary case, which you specify in
+        /// the request URI, remains active. Both cases must belong to the same domain.
+        /// 
+        ///  
+        /// <para>
+        /// The merge runs asynchronously. To track its progress, call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetMergeCasesStatus.html">GetMergeCasesStatus</a>.
+        /// When the merge finishes, the selected field values and related items from the secondary
+        /// case are on the primary case, the two cases are linked, and the secondary case is
+        /// closed. Both cases record the merge in their audit history. For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCaseAuditEvents.html">GetCaseAuditEvents</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Both cases must have the same customer, or at least one of them must have no customer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// While the merge runs, you can't modify the secondary case or its related items, and
+        /// you can't delete the primary case. These requests return a <c>ConflictException</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After the merge, the secondary case can be reopened, updated, and deleted, but it
+        /// can't be merged again.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The request fails with a <c>ValidationException</c>, and no merge starts, if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The primary case and the secondary case are the same case.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Either case is closed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Both cases have a customer, and the customers are different.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>fieldsConfiguration</c> selects a field that can't be merged, or a field that
+        /// the secondary case doesn't have.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After the merge, the primary case would have more than 500 field values, or would
+        /// exceed the maximum case size.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The request fails with a <c>ServiceQuotaExceededException</c> if, after the merge,
+        /// either case would exceed the quota for related items per case. For the primary case,
+        /// the count is its existing related items, plus the related items moved from the secondary
+        /// case, plus the new case link. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+        /// Customer Cases quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The request fails with a <c>ConflictException</c> if either case is already part of
+        /// a merge that is running, or was previously merged into another case as the secondary
+        /// case.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMergeCases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartMergeCases service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/StartMergeCases">REST API Reference for StartMergeCases Operation</seealso>
+        Task<StartMergeCasesResponse> StartMergeCasesAsync(StartMergeCasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Adds tags to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -3461,6 +3847,11 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  
         /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// If the action is successful, the service sends back an HTTP 200 response with an empty
         /// HTTP body.
         /// </para>
@@ -3469,6 +3860,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the UpdateCase service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -3501,6 +3897,11 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  
         /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// If the action is successful, the service sends back an HTTP 200 response with an empty
         /// HTTP body.
         /// </para>
@@ -3512,6 +3913,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the UpdateCase service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -3815,6 +4221,11 @@ namespace Amazon.ConnectCases
         ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html#system-case-fields">System
         /// case fields</a> cannot be used in a custom related item.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
@@ -3825,6 +4236,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the UpdateRelatedItem service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -3883,6 +4299,11 @@ namespace Amazon.ConnectCases
         ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html#system-case-fields">System
         /// case fields</a> cannot be used in a custom related item.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
@@ -3896,6 +4317,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the UpdateRelatedItem service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
