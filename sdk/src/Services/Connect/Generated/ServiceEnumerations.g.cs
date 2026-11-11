@@ -3095,9 +3095,129 @@ namespace Amazon.Connect
     public class EvaluationFormLanguageCode : ConstantClass
     {
         /// <summary>
+        /// Constant AfZA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode AfZA = new EvaluationFormLanguageCode("af-ZA");
+
+        /// <summary>
+        /// Constant AmET for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode AmET = new EvaluationFormLanguageCode("am-ET");
+
+        /// <summary>
+        /// Constant ArAE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ArAE = new EvaluationFormLanguageCode("ar-AE");
+
+        /// <summary>
+        /// Constant ArSA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ArSA = new EvaluationFormLanguageCode("ar-SA");
+
+        /// <summary>
+        /// Constant BeBY for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode BeBY = new EvaluationFormLanguageCode("be-BY");
+
+        /// <summary>
+        /// Constant BgBG for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode BgBG = new EvaluationFormLanguageCode("bg-BG");
+
+        /// <summary>
+        /// Constant BnBD for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode BnBD = new EvaluationFormLanguageCode("bn-BD");
+
+        /// <summary>
+        /// Constant BsBA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode BsBA = new EvaluationFormLanguageCode("bs-BA");
+
+        /// <summary>
+        /// Constant CaES for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode CaES = new EvaluationFormLanguageCode("ca-ES");
+
+        /// <summary>
+        /// Constant CkbIQ for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode CkbIQ = new EvaluationFormLanguageCode("ckb-IQ");
+
+        /// <summary>
+        /// Constant CkbIR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode CkbIR = new EvaluationFormLanguageCode("ckb-IR");
+
+        /// <summary>
+        /// Constant CsCZ for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode CsCZ = new EvaluationFormLanguageCode("cs-CZ");
+
+        /// <summary>
+        /// Constant CyGB for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode CyGB = new EvaluationFormLanguageCode("cy-GB");
+
+        /// <summary>
+        /// Constant DaDK for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode DaDK = new EvaluationFormLanguageCode("da-DK");
+
+        /// <summary>
+        /// Constant DeAT for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode DeAT = new EvaluationFormLanguageCode("de-AT");
+
+        /// <summary>
+        /// Constant DeCH for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode DeCH = new EvaluationFormLanguageCode("de-CH");
+
+        /// <summary>
         /// Constant DeDE for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode DeDE = new EvaluationFormLanguageCode("de-DE");
+
+        /// <summary>
+        /// Constant ElGR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ElGR = new EvaluationFormLanguageCode("el-GR");
+
+        /// <summary>
+        /// Constant EnAB for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnAB = new EvaluationFormLanguageCode("en-AB");
+
+        /// <summary>
+        /// Constant EnAU for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnAU = new EvaluationFormLanguageCode("en-AU");
+
+        /// <summary>
+        /// Constant EnGB for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnGB = new EvaluationFormLanguageCode("en-GB");
+
+        /// <summary>
+        /// Constant EnIE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnIE = new EvaluationFormLanguageCode("en-IE");
+
+        /// <summary>
+        /// Constant EnIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnIN = new EvaluationFormLanguageCode("en-IN");
+
+        /// <summary>
+        /// Constant EnNZ for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnNZ = new EvaluationFormLanguageCode("en-NZ");
+
+        /// <summary>
+        /// Constant EnSG for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnSG = new EvaluationFormLanguageCode("en-SG");
 
         /// <summary>
         /// Constant EnUS for EvaluationFormLanguageCode
@@ -3105,14 +3225,129 @@ namespace Amazon.Connect
         public static readonly EvaluationFormLanguageCode EnUS = new EvaluationFormLanguageCode("en-US");
 
         /// <summary>
+        /// Constant EnWL for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnWL = new EvaluationFormLanguageCode("en-WL");
+
+        /// <summary>
+        /// Constant EnZA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnZA = new EvaluationFormLanguageCode("en-ZA");
+
+        /// <summary>
         /// Constant EsES for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode EsES = new EvaluationFormLanguageCode("es-ES");
 
         /// <summary>
+        /// Constant EsMX for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EsMX = new EvaluationFormLanguageCode("es-MX");
+
+        /// <summary>
+        /// Constant EsUS for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EsUS = new EvaluationFormLanguageCode("es-US");
+
+        /// <summary>
+        /// Constant EtEE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EtEE = new EvaluationFormLanguageCode("et-EE");
+
+        /// <summary>
+        /// Constant EuES for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EuES = new EvaluationFormLanguageCode("eu-ES");
+
+        /// <summary>
+        /// Constant FaAF for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode FaAF = new EvaluationFormLanguageCode("fa-AF");
+
+        /// <summary>
+        /// Constant FaIR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode FaIR = new EvaluationFormLanguageCode("fa-IR");
+
+        /// <summary>
+        /// Constant FiFI for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode FiFI = new EvaluationFormLanguageCode("fi-FI");
+
+        /// <summary>
+        /// Constant FrBE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode FrBE = new EvaluationFormLanguageCode("fr-BE");
+
+        /// <summary>
+        /// Constant FrCA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode FrCA = new EvaluationFormLanguageCode("fr-CA");
+
+        /// <summary>
         /// Constant FrFR for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode FrFR = new EvaluationFormLanguageCode("fr-FR");
+
+        /// <summary>
+        /// Constant GaIE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode GaIE = new EvaluationFormLanguageCode("ga-IE");
+
+        /// <summary>
+        /// Constant GlES for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode GlES = new EvaluationFormLanguageCode("gl-ES");
+
+        /// <summary>
+        /// Constant GuIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode GuIN = new EvaluationFormLanguageCode("gu-IN");
+
+        /// <summary>
+        /// Constant HeIL for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode HeIL = new EvaluationFormLanguageCode("he-IL");
+
+        /// <summary>
+        /// Constant HiIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode HiIN = new EvaluationFormLanguageCode("hi-IN");
+
+        /// <summary>
+        /// Constant Hmn for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode Hmn = new EvaluationFormLanguageCode("hmn");
+
+        /// <summary>
+        /// Constant HrHR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode HrHR = new EvaluationFormLanguageCode("hr-HR");
+
+        /// <summary>
+        /// Constant HtHT for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode HtHT = new EvaluationFormLanguageCode("ht-HT");
+
+        /// <summary>
+        /// Constant HuHU for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode HuHU = new EvaluationFormLanguageCode("hu-HU");
+
+        /// <summary>
+        /// Constant HyAM for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode HyAM = new EvaluationFormLanguageCode("hy-AM");
+
+        /// <summary>
+        /// Constant IdID for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode IdID = new EvaluationFormLanguageCode("id-ID");
+
+        /// <summary>
+        /// Constant IsIS for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode IsIS = new EvaluationFormLanguageCode("is-IS");
 
         /// <summary>
         /// Constant ItIT for EvaluationFormLanguageCode
@@ -3125,9 +3360,69 @@ namespace Amazon.Connect
         public static readonly EvaluationFormLanguageCode JaJP = new EvaluationFormLanguageCode("ja-JP");
 
         /// <summary>
+        /// Constant JvID for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode JvID = new EvaluationFormLanguageCode("jv-ID");
+
+        /// <summary>
+        /// Constant KaGE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode KaGE = new EvaluationFormLanguageCode("ka-GE");
+
+        /// <summary>
+        /// Constant KkKZ for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode KkKZ = new EvaluationFormLanguageCode("kk-KZ");
+
+        /// <summary>
+        /// Constant KmKH for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode KmKH = new EvaluationFormLanguageCode("km-KH");
+
+        /// <summary>
+        /// Constant KnIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode KnIN = new EvaluationFormLanguageCode("kn-IN");
+
+        /// <summary>
         /// Constant KoKR for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode KoKR = new EvaluationFormLanguageCode("ko-KR");
+
+        /// <summary>
+        /// Constant LgUG for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode LgUG = new EvaluationFormLanguageCode("lg-UG");
+
+        /// <summary>
+        /// Constant LoLA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode LoLA = new EvaluationFormLanguageCode("lo-LA");
+
+        /// <summary>
+        /// Constant LtLT for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode LtLT = new EvaluationFormLanguageCode("lt-LT");
+
+        /// <summary>
+        /// Constant LvLV for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode LvLV = new EvaluationFormLanguageCode("lv-LV");
+
+        /// <summary>
+        /// Constant MkMK for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode MkMK = new EvaluationFormLanguageCode("mk-MK");
+
+        /// <summary>
+        /// Constant MlIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode MlIN = new EvaluationFormLanguageCode("ml-IN");
+
+        /// <summary>
+        /// Constant MrIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode MrIN = new EvaluationFormLanguageCode("mr-IN");
 
         /// <summary>
         /// Constant MsMY for EvaluationFormLanguageCode
@@ -3135,14 +3430,199 @@ namespace Amazon.Connect
         public static readonly EvaluationFormLanguageCode MsMY = new EvaluationFormLanguageCode("ms-MY");
 
         /// <summary>
+        /// Constant MyMM for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode MyMM = new EvaluationFormLanguageCode("my-MM");
+
+        /// <summary>
+        /// Constant NeNP for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode NeNP = new EvaluationFormLanguageCode("ne-NP");
+
+        /// <summary>
+        /// Constant NlBE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode NlBE = new EvaluationFormLanguageCode("nl-BE");
+
+        /// <summary>
+        /// Constant NlNL for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode NlNL = new EvaluationFormLanguageCode("nl-NL");
+
+        /// <summary>
+        /// Constant NoNO for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode NoNO = new EvaluationFormLanguageCode("no-NO");
+
+        /// <summary>
+        /// Constant OrIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode OrIN = new EvaluationFormLanguageCode("or-IN");
+
+        /// <summary>
+        /// Constant PaIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode PaIN = new EvaluationFormLanguageCode("pa-IN");
+
+        /// <summary>
+        /// Constant PlPL for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode PlPL = new EvaluationFormLanguageCode("pl-PL");
+
+        /// <summary>
+        /// Constant PsAF for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode PsAF = new EvaluationFormLanguageCode("ps-AF");
+
+        /// <summary>
         /// Constant PtBR for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode PtBR = new EvaluationFormLanguageCode("pt-BR");
 
         /// <summary>
+        /// Constant PtPT for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode PtPT = new EvaluationFormLanguageCode("pt-PT");
+
+        /// <summary>
+        /// Constant RoRO for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode RoRO = new EvaluationFormLanguageCode("ro-RO");
+
+        /// <summary>
+        /// Constant RuRU for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode RuRU = new EvaluationFormLanguageCode("ru-RU");
+
+        /// <summary>
+        /// Constant SiLK for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SiLK = new EvaluationFormLanguageCode("si-LK");
+
+        /// <summary>
+        /// Constant SkSK for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SkSK = new EvaluationFormLanguageCode("sk-SK");
+
+        /// <summary>
+        /// Constant SlSI for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SlSI = new EvaluationFormLanguageCode("sl-SI");
+
+        /// <summary>
+        /// Constant SoSO for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SoSO = new EvaluationFormLanguageCode("so-SO");
+
+        /// <summary>
+        /// Constant SqAL for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SqAL = new EvaluationFormLanguageCode("sq-AL");
+
+        /// <summary>
+        /// Constant SrRS for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SrRS = new EvaluationFormLanguageCode("sr-RS");
+
+        /// <summary>
+        /// Constant SuID for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SuID = new EvaluationFormLanguageCode("su-ID");
+
+        /// <summary>
+        /// Constant SvSE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SvSE = new EvaluationFormLanguageCode("sv-SE");
+
+        /// <summary>
+        /// Constant SwBI for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SwBI = new EvaluationFormLanguageCode("sw-BI");
+
+        /// <summary>
+        /// Constant SwKE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SwKE = new EvaluationFormLanguageCode("sw-KE");
+
+        /// <summary>
+        /// Constant SwRW for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SwRW = new EvaluationFormLanguageCode("sw-RW");
+
+        /// <summary>
+        /// Constant SwTZ for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SwTZ = new EvaluationFormLanguageCode("sw-TZ");
+
+        /// <summary>
+        /// Constant SwUG for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SwUG = new EvaluationFormLanguageCode("sw-UG");
+
+        /// <summary>
+        /// Constant TaIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode TaIN = new EvaluationFormLanguageCode("ta-IN");
+
+        /// <summary>
+        /// Constant TeIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode TeIN = new EvaluationFormLanguageCode("te-IN");
+
+        /// <summary>
+        /// Constant ThTH for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ThTH = new EvaluationFormLanguageCode("th-TH");
+
+        /// <summary>
+        /// Constant TlPH for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode TlPH = new EvaluationFormLanguageCode("tl-PH");
+
+        /// <summary>
+        /// Constant TrTR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode TrTR = new EvaluationFormLanguageCode("tr-TR");
+
+        /// <summary>
+        /// Constant UkUA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode UkUA = new EvaluationFormLanguageCode("uk-UA");
+
+        /// <summary>
+        /// Constant UzUZ for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode UzUZ = new EvaluationFormLanguageCode("uz-UZ");
+
+        /// <summary>
+        /// Constant ViVN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ViVN = new EvaluationFormLanguageCode("vi-VN");
+
+        /// <summary>
+        /// Constant XhZA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode XhZA = new EvaluationFormLanguageCode("xh-ZA");
+
+        /// <summary>
+        /// Constant YueHK for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode YueHK = new EvaluationFormLanguageCode("yue-HK");
+
+        /// <summary>
         /// Constant ZhCN for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode ZhCN = new EvaluationFormLanguageCode("zh-CN");
+
+        /// <summary>
+        /// Constant ZhTW for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ZhTW = new EvaluationFormLanguageCode("zh-TW");
+
+        /// <summary>
+        /// Constant ZuZA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ZuZA = new EvaluationFormLanguageCode("zu-ZA");
 
         /// <summary>
         /// Constructs a custom EvaluationFormLanguageCode for a value not among the defined constants.
