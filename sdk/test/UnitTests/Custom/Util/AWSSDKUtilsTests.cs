@@ -214,6 +214,39 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
+        public void ConvertFromUnixDoubleEpochSecondsMatchesWrittenMilliseconds()
+        {
+            // Services write epoch seconds with at most millisecond precision. Whatever runtime is used to convert the
+            // double to decimal (the cast rounds to 15 significant digits before .NET 11 and is exact starting with
+            // .NET 11), the result must be the millisecond that was written, not the one below it.
+            var random = new Random(20261110);
+            for (int i = 0; i < 100000; i++)
+            {
+                // Whole seconds up to 2100-01-01 plus 0 to 3 fractional digits.
+                decimal written = random.Next(0, int.MaxValue) * 1.9m;
+                written = decimal.Truncate(written) + decimal.Round((decimal)random.NextDouble(), random.Next(0, 4));
+
+                var expected = AWSSDKUtils.EPOCH_START.AddMilliseconds((long)(written * 1000));
+                var actual = AWSSDKUtils.ConvertFromUnixDoubleEpochSeconds((double)written);
+                Assert.AreEqual(expected, actual, $"Input {written.ToString(CultureInfo.InvariantCulture)}");
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        public void ConvertFromUnixDoubleEpochSecondsKeeps15DigitsBelowPowerOfTen()
+        {
+            // Math.Log10 returns the next whole number for these values, which would round to 14 significant digits
+            // and carry the value up to the next whole second (999.9999999999994 would become 1000).
+            Assert.AreEqual(AWSSDKUtils.EPOCH_START.AddMilliseconds(999999), AWSSDKUtils.ConvertFromUnixDoubleEpochSeconds(999.9999999999994));
+            Assert.AreEqual(AWSSDKUtils.EPOCH_START.AddMilliseconds(99999999), AWSSDKUtils.ConvertFromUnixDoubleEpochSeconds(99999.99999999994));
+            Assert.AreEqual(AWSSDKUtils.EPOCH_START.AddMilliseconds(999999999), AWSSDKUtils.ConvertFromUnixDoubleEpochSeconds(999999.9999999994));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
         public void ConvertFromUnixDecimalEpochSecondsTruncatesToMilliseconds()
         {
             var expectedDateTime = new DateTime(2025, 11, 8, 9, 30, 2, 123, DateTimeKind.Utc);
