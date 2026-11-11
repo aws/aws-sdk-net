@@ -33,6 +33,7 @@ public sealed class XmlResponseUnmarshallerWriter(GenerationContext context, str
         var loopMembers = structurePayload is not null ? new List<Member> { structurePayload } : members.BodyMembers;
         var hasBodyLoop = (structurePayload is not null || members.PayloadMember is null) && loopMembers.Count > 0;
         var allowEmptyResult = context.Customizations.AllowsEmptyResult(operation.Name);
+        var baseClass = context.Customizations.Service?.CustomErrorHandling?.ResponseUnmarshallerBaseClass;
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
@@ -44,7 +45,7 @@ public sealed class XmlResponseUnmarshallerWriter(GenerationContext context, str
             writer.WriteLine("/// <summary>");
             writer.WriteLine($"/// Response Unmarshaller for {operation.Name} operation.");
             writer.WriteLine("/// </summary>");
-            writer.OpenBlock($"public partial class {unmarshallerClassName} : XmlResponseUnmarshaller", () =>
+            writer.OpenBlock($"public partial class {unmarshallerClassName} : {baseClass ?? "XmlResponseUnmarshaller"}", () =>
             {
                 WriteUnmarshallMethod(writer, className, members, structurePayload, hasBodyLoop, allowEmptyResult);
                 writer.WriteLine("");
@@ -53,8 +54,12 @@ public sealed class XmlResponseUnmarshallerWriter(GenerationContext context, str
                     WriteUnmarshallResult(writer, className, operation, members.BodyMembers, structurePayload);
                     writer.WriteLine("");
                 }
-                WriteUnmarshallExceptionMethod(writer, operation);
-                writer.WriteLine("");
+                // The hand-written base unmarshalls the errors an operation doesn't model.
+                if (baseClass is null || operation.Errors.Count > 0)
+                {
+                    WriteUnmarshallExceptionMethod(writer, operation);
+                    writer.WriteLine("");
+                }
                 writer.WriteLine($"partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, {className} unmarshalledObject);");
                 if (members.PayloadMember is { Type.IsStreaming: true })
                 {
@@ -187,7 +192,10 @@ public sealed class XmlResponseUnmarshallerWriter(GenerationContext context, str
         writer.WriteLine("/// </summary>");
         writer.OpenBlock("public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)", () =>
         {
-            writer.WriteLine("ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);");
+            var errorHandling = context.Customizations.Service?.CustomErrorHandling;
+            writer.WriteLine(errorHandling is null
+                ? "ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);"
+                : $"{errorHandling.ErrorResponseType} errorResponse = {errorHandling.ErrorResponseType}Unmarshaller.Instance.Unmarshall(context);");
             writer.WriteLine("errorResponse.InnerException = innerException;");
             writer.WriteLine("errorResponse.StatusCode = statusCode;");
             writer.WriteLine("");
@@ -207,7 +215,9 @@ public sealed class XmlResponseUnmarshallerWriter(GenerationContext context, str
                     }
                 });
             });
-            writer.WriteLine($"return new Amazon{context.BaseName}Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);");
+            writer.WriteLine(errorHandling is null
+                ? $"return new Amazon{context.BaseName}Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);"
+                : $"return base.{errorHandling.ExceptionFactory}(context, errorResponse, innerException, statusCode);");
         });
     }
 

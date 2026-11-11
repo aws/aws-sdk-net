@@ -79,12 +79,28 @@ public class CustomizationsModelTests
     public void Load_Service_ReadsSection()
     {
         var model = LoadFiles("""
-            { "service": { "skipClientContextParams": ["UseArnRegion"], "skipDocSamples": true, "requestBaseClass": "AmazonWebServiceRequest", "streamingResponseBaseClass": "StreamResponse" } }
+            { "service": { "skipClientContextParams": ["UseArnRegion"], "skipDocSamples": true, "requestBaseClass": "AmazonWebServiceRequest", "streamingResponseBaseClass": "StreamResponse",
+              "customErrorHandling": { "responseUnmarshallerBaseClass": "S3ReponseUnmarshaller", "errorResponseType": "S3ErrorResponse", "exceptionFactory": "ConstructS3Exception" } } }
             """);
         Assert.Equal(["UseArnRegion"], model.Service?.SkipClientContextParams);
         Assert.True(model.Service?.SkipDocSamples);
         Assert.Equal("AmazonWebServiceRequest", model.Service?.RequestBaseClass);
         Assert.Equal("StreamResponse", model.Service?.StreamingResponseBaseClass);
+        Assert.Equal(TestCustomizations.ErrorHandling().CustomErrorHandling, model.Service?.CustomErrorHandling);
+    }
+
+    // Each part only works with the others, so a partial set fails at load, not in the generated code.
+    [Theory]
+    [InlineData("responseUnmarshallerBaseClass")]
+    [InlineData("errorResponseType")]
+    [InlineData("exceptionFactory")]
+    public void Load_CustomErrorHandling_MissingPart_Throws(string missing)
+    {
+        var parts = new[] { "responseUnmarshallerBaseClass", "errorResponseType", "exceptionFactory" }
+            .Where(part => part != missing)
+            .Select(part => $""" "{part}": "X" """);
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles($$"""{ "service": { "customErrorHandling": { {{string.Join(", ", parts)}} } } }"""));
+        Assert.Contains($"missing required properties, including the following: {missing}", ex.Message);
     }
 
     [Fact]

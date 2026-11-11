@@ -28,9 +28,16 @@ public class RestXmlCodegenTests
         new XmlStructureMarshallerWriter(context, ModelFileName)
             .Write(context.Structures[shape], TestContext.Current.CancellationToken);
 
-    private static string ResponseUnmarshaller(string operationName) =>
-        new XmlResponseUnmarshallerWriter(Context, ModelFileName)
-            .Write(Context.Operations.Single(o => o.Name == operationName), TestContext.Current.CancellationToken);
+    private static string ResponseUnmarshaller(GenerationContext context, string operationName) =>
+        new XmlResponseUnmarshallerWriter(context, ModelFileName)
+            .Write(context.Operations.Single(o => o.Name == operationName), TestContext.Current.CancellationToken);
+
+    private static string WriteExceptionUnmarshaller(GenerationContext context, ShapeId shape) =>
+        new XmlExceptionUnmarshallerWriter(context, ModelFileName)
+            .Write(context.Errors[shape], TestContext.Current.CancellationToken);
+
+    private static GenerationContext ServiceContext(ServiceCustomizations service) =>
+        TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), new CustomizationsModel { Service = service });
 
     [Fact]
     public void Protocol_ResolvesRestXml()
@@ -176,7 +183,7 @@ public class RestXmlCodegenTests
         var request = RequestMarshaller(Context, "PutThing");
         Assert.Contains("""context.Writer.WriteElementString("data", StringUtils.FromMemoryStream(publicRequest.Data));""", request);
 
-        var response = ResponseUnmarshaller("PutThing");
+        var response = ResponseUnmarshaller(Context, "PutThing");
         Assert.Contains("""if (context.TestExpression("data", targetDepth))""", response);
         Assert.Contains("var unmarshaller = MemoryStreamUnmarshaller.Instance;", response);
     }
@@ -242,7 +249,7 @@ public class RestXmlCodegenTests
     [Fact]
     public void Response_BodyLoop_HeadersAndStatusCode()
     {
-        var source = ResponseUnmarshaller("PutThing");
+        var source = ResponseUnmarshaller(Context, "PutThing");
 
         Assert.Contains("public partial class PutThingResponseUnmarshaller : XmlResponseUnmarshaller", source);
         Assert.Contains("private static void UnmarshallResult(XmlUnmarshallerContext context, PutThingResponse unmarshalledObject)", source);
@@ -265,7 +272,7 @@ public class RestXmlCodegenTests
     [Fact]
     public void Response_NestedMap_UsesNestedDictionaryUnmarshaller()
     {
-        var source = ResponseUnmarshaller("PutThing");
+        var source = ResponseUnmarshaller(Context, "PutThing");
 
         Assert.Contains("""if (context.TestExpression("nestedProps", targetDepth))""", source);
         Assert.Contains(
@@ -276,7 +283,7 @@ public class RestXmlCodegenTests
     [Fact]
     public void Response_ErrorDispatch()
     {
-        var source = ResponseUnmarshaller("PutThing");
+        var source = ResponseUnmarshaller(Context, "PutThing");
 
         Assert.Contains("ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);", source);
         Assert.Contains("using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, context.ResponseData))", source);
@@ -290,13 +297,41 @@ public class RestXmlCodegenTests
     [InlineData("StreamResponse", "ResponseStream")]
     public void Response_StreamingBlobPayload_AssignsRawStreamAndOverridesHasStreamingProperty(string? streamingResponseBaseClass, string property)
     {
-        var service = new ServiceCustomizations { StreamingResponseBaseClass = streamingResponseBaseClass };
-        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), new CustomizationsModel { Service = service });
-        var source = new XmlResponseUnmarshallerWriter(context, ModelFileName)
-            .Write(context.Operations.Single(o => o.Name == "GetThingStream"), TestContext.Current.CancellationToken);
+        var source = ResponseUnmarshaller(ServiceContext(new ServiceCustomizations { StreamingResponseBaseClass = streamingResponseBaseClass }), "GetThingStream");
 
         Assert.Contains($"unmarshalledObject.{property} = context.Stream;", source);
         Assert.Contains("public override bool HasStreamingProperty => true;", source);
+    }
+
+    [Fact]
+    public void Response_WithCustomErrorHandling_OverridesUnmarshallExceptionOnlyForModeledErrors()
+    {
+        var context = ServiceContext(TestCustomizations.ErrorHandling());
+
+        var withErrors = ResponseUnmarshaller(context, "PutThing");
+        var withoutErrors = ResponseUnmarshaller(context, "GetThing");
+
+        Assert.Contains("public partial class PutThingResponseUnmarshaller : S3ReponseUnmarshaller", withErrors);
+        Assert.Contains("UnmarshallException", withErrors);
+        Assert.Contains("public partial class GetThingResponseUnmarshaller : S3ReponseUnmarshaller", withoutErrors);
+        Assert.DoesNotContain("UnmarshallException", withoutErrors);
+        Assert.Contains("UnmarshallException", ResponseUnmarshaller(Context, "GetThing"));
+    }
+
+    [Fact]
+    public void Response_WithCustomErrorHandling_ParsesWithErrorResponseUnmarshaller()
+    {
+        var source = ResponseUnmarshaller(ServiceContext(TestCustomizations.ErrorHandling()), "PutThing");
+
+        Assert.Contains("S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);", source);
+    }
+
+    [Fact]
+    public void Response_WithCustomErrorHandling_FallsBackToExceptionFactory()
+    {
+        var source = ResponseUnmarshaller(ServiceContext(TestCustomizations.ErrorHandling()), "PutThing");
+
+        Assert.Contains("return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);", source);
     }
 
     [Fact]
@@ -315,8 +350,7 @@ public class RestXmlCodegenTests
     [Fact]
     public void ExceptionUnmarshaller()
     {
-        var source = new XmlExceptionUnmarshallerWriter(Context, ModelFileName)
-            .Write(Context.Errors[ThingConflict], TestContext.Current.CancellationToken);
+        var source = WriteExceptionUnmarshaller(Context, ThingConflict);
 
         Assert.Contains("public partial class ThingConflictExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ThingConflictException, XmlUnmarshallerContext>", source);
         Assert.Contains("throw new NotImplementedException();", source);
@@ -328,6 +362,14 @@ public class RestXmlCodegenTests
         Assert.Contains("""if (context.TestExpression("reason"))""", source);
         Assert.DoesNotContain("context.ReadAtDepth(originalDepth)", source);
         Assert.Contains("unmarshalledObject.Reason = unmarshaller.Unmarshall(context);", source);
+    }
+
+    [Fact]
+    public void ExceptionUnmarshaller_WithCustomErrorHandling_PassesIds()
+    {
+        var source = WriteExceptionUnmarshaller(ServiceContext(TestCustomizations.ErrorHandling()), ThingConflict);
+
+        Assert.Contains("errorResponse.StatusCode, (errorResponse as S3ErrorResponse)?.Id2, (errorResponse as S3ErrorResponse)?.AmzCfId);", source);
     }
 
     [Fact]

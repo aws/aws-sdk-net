@@ -12,6 +12,17 @@ internal static class TestCustomizations
         return customizations;
     }
 
+    // S3's, the one service that sets it.
+    public static ServiceCustomizations ErrorHandling() => new()
+    {
+        CustomErrorHandling = new CustomErrorHandling
+        {
+            ResponseUnmarshallerBaseClass = "S3ReponseUnmarshaller",
+            ErrorResponseType = "S3ErrorResponse",
+            ExceptionFactory = "ConstructS3Exception",
+        },
+    };
+
     public static ShapeModifier RenameMember(string member, string newName) =>
         Modify(member, new PropertyModifier { EmitPropertyName = newName });
 

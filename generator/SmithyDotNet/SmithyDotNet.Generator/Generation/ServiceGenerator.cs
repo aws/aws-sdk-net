@@ -199,7 +199,11 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         }
 
         var exceptionWriter = new ExceptionWriter(context, modelFileName);
-        Emit(Path.Combine(generated, $"{clientName}Exception.g.cs"), exceptionWriter.WriteServiceException(cancellationToken));
+        // Custom error handling pairs with a hand-written service exception that takes the extra ids.
+        if (context.Customizations.Service?.CustomErrorHandling is null)
+        {
+            Emit(Path.Combine(generated, $"{clientName}Exception.g.cs"), exceptionWriter.WriteServiceException(cancellationToken));
+        }
 
         if (context.ResponseEventStreams.Count > 0)
         {

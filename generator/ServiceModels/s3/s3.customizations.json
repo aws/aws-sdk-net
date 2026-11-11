@@ -3,7 +3,12 @@
         "skipClientContextParams": ["ForcePathStyle", "UseArnRegion", "DisableMultiRegionAccessPoints", "Accelerate", "DisableS3ExpressSessionAuth"],
         "skipDocSamples": true,
         "requestBaseClass": "AmazonWebServiceRequest",
-        "streamingResponseBaseClass": "StreamResponse"
+        "streamingResponseBaseClass": "StreamResponse",
+        "customErrorHandling": {
+            "responseUnmarshallerBaseClass": "S3ReponseUnmarshaller",
+            "errorResponseType": "S3ErrorResponse",
+            "exceptionFactory": "ConstructS3Exception"
+        }
     },
     "runtimePipelineOverride": {
         "overrides": [

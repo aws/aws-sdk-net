@@ -134,6 +134,20 @@ public class ServiceGeneratorTests : IDisposable
     }
 
     [Fact]
+    public void CustomErrorHandling_EmitsNoServiceException()
+    {
+        var customizations = new CustomizationsModel { Service = TestCustomizations.ErrorHandling() };
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, _fixture.Context.Metadata, customizations);
+        var outputDir = Path.Combine(_outputDir, "custom-error-handling");
+        var generator = new ServiceGenerator(context, ModelFileName, ServiceFileVersion, _fixture.DefaultConfigurationModes);
+        var written = generator.Generate(outputDir, Path.Combine(outputDir, "code-analysis"), testsOutputPath: null, TestContext.Current.CancellationToken);
+
+        var serviceException = Path.Combine("Generated", "AmazonCloudTrailDataException.g.cs");
+        Assert.Contains(serviceException, _written);
+        Assert.DoesNotContain(serviceException, written);
+    }
+
+    [Fact]
     public void WritesResponseUnmarshallerFiles()
     {
         var marshalling = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations");

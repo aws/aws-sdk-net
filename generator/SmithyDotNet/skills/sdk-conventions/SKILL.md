@@ -358,7 +358,8 @@ nothing targets it.
 - The Smithy-only `service` section (one file per service) replaces C2J's `ServiceId == "S3"` branches:
   `skipClientContextParams` keeps the listed params out of the generated config (hand-written for S3, S3 Control; an
   unmodeled name fails), `skipDocSamples` emits none, `requestBaseClass` and `streamingResponseBaseClass` replace
-  the generated bases (see Base Types).
+  the generated bases (see Base Types), and `customErrorHandling` replaces the error handling and leaves the service
+  exception to hand-written code (see marshalling → restXml).
 
 Three convenience hooks add hand-picked public members, read from `GenerationContext.Customizations` (not folded into the
 model). A form names members by C# property name (case-insensitive); a stale operation/class/member reference fails
@@ -438,6 +439,7 @@ Must expose these public constructors:
 4. `(Exception innerException)`
 5. `(string message, Exception innerException, ErrorType, string errorCode, string requestId, HttpStatusCode)`
 6. `(string message, ErrorType, string errorCode, string requestId, HttpStatusCode)`
+7. With `service.customErrorHandling`: item 5 plus `string amazonId2, string amazonCfId`. The service exception is then hand-written, since the generated one lacks it.
 
 Operation exceptions also include a `#if !NETSTANDARD` block containing:
 - `[Serializable]` attribute on the class
@@ -445,7 +447,7 @@ Operation exceptions also include a `#if !NETSTANDARD` block containing:
 - `public override void GetObjectData(SerializationInfo, StreamingContext)` carrying all three attributes as a unit: `[System.Security.SecurityCritical]` plus the CA2123 and CA2134 `SuppressMessage` attributes; body is `base.GetObjectData(info, context)` then `info.AddValue(...)` per additional member.
   The serialization constructor and `GetObjectData` are symmetric: both loop over the same member set, every modeled member except `message` (C2J parity), so base-owned `RequestId`/`ErrorCode` are serialized here even though they get no property (see "Exception Member Property Names"). Both are keyed on the .NET property name. For exceptions whose only member is `message` (e.g. all CloudTrail Data exceptions), both bodies contain only the `base` call.
 
-The service-level exception base (`Amazon{BaseName}Exception`) inherits from `AmazonServiceException`, exposes the same six public constructors as operation exceptions, and includes `[Serializable]` plus the protected serialization constructor, but does not need its own `GetObjectData` override unless it adds serialized fields.
+The service-level exception base (`Amazon{BaseName}Exception`) inherits from `AmazonServiceException`, exposes constructors 1-6 above, and includes `[Serializable]` plus the protected serialization constructor, but does not need its own `GetObjectData` override unless it adds serialized fields.
 
 ### Exception Member Property Names
 

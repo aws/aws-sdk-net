@@ -486,7 +486,7 @@ Writers and their output are pinned by `RestXmlCodegenTests` and the restXml pro
   `@mediaType`). The `@endpoint` host prefix is skipped when a `@hostLabel` member is also a `@contextParam`
   (the endpoint ruleset already consumes it into the host; only S3 Control matches today) — derived from the
   model, not hard-coded.
-- **Response body** — `XmlResponseUnmarshallerWriter` (base `XmlResponseUnmarshaller`) reads the body
+- **Response body** — `XmlResponseUnmarshallerWriter` (base `XmlResponseUnmarshaller`, or `service.customErrorHandling.responseUnmarshallerBaseClass`) reads the body
   through a `UnmarshallResult` element loop matching on `context.TestExpression("{xmlName}", targetDepth)`
   (C2J parity), not a JSON reader. A structure `@httpPayload` is matched by its root element name through
   that loop; string/blob/streaming payloads read the raw stream via the shared,
@@ -494,7 +494,12 @@ Writers and their output are pinned by `RestXmlCodegenTests` and the restXml pro
   restJson1 emitters. The s3control `allowEmptyResult` customization returns early on a successful empty
   body (the loop would otherwise throw); it is rejected at generation time on any non-restXml protocol.
 - **Errors** — `XmlErrorResponseUnmarshaller` parses the `ErrorResponse/Error/Code` envelope; dispatch is
-  on `errorResponse.Code` against the Smithy shape name, same structure as the JSON path.
+  on `errorResponse.Code` against the Smithy shape name, same structure as the JSON path. S3 supplies its own
+  error handling through `service.customErrorHandling`, whose three parts are all required (a partial set fails at
+  load): `responseUnmarshallerBaseClass` (which handles unmodeled errors, so only an operation with modeled errors
+  overrides `UnmarshallException`), `errorResponseType` (parsed by `{type}Unmarshaller`; exception unmarshallers
+  pass its `Id2`/`AmzCfId`) and `exceptionFactory` (the base's fallback for an unmatched code). Setting it also
+  skips the generated service exception, since the hand-written one takes those ids.
 
 ## awsQueryCompatible
 

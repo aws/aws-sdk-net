@@ -380,6 +380,35 @@ public sealed record ServiceCustomizations
     /// <summary>Base for a response with a <c>@streaming</c> blob; the member is dropped and the unmarshaller assigns the base's <c>ResponseStream</c> (S3's <c>StreamResponse</c>).</summary>
     [JsonPropertyName("streamingResponseBaseClass")]
     public string? StreamingResponseBaseClass { get; init; }
+
+    /// <summary>
+    /// Hand-written error handling; the generated service exception is skipped (S3's <c>AmazonS3Exception</c> is
+    /// hand-written). The parts only work together, so each is required.
+    /// </summary>
+    [JsonPropertyName("customErrorHandling")]
+    public CustomErrorHandling? CustomErrorHandling { get; init; }
+}
+
+/// <summary>The <c>service.customErrorHandling</c> hook. Read by the restXml writers today.</summary>
+public sealed record CustomErrorHandling
+{
+    /// <summary>
+    /// Base for response unmarshallers (S3's <c>S3ReponseUnmarshaller</c>, sic: the shipped name). It unmarshalls the
+    /// errors an operation doesn't model, so only an operation with modeled errors overrides <c>UnmarshallException</c>.
+    /// </summary>
+    [JsonPropertyName("responseUnmarshallerBaseClass")]
+    public required string ResponseUnmarshallerBaseClass { get; init; }
+
+    /// <summary>
+    /// Error response parsed by its <c>{type}Unmarshaller</c> (S3's <c>S3ErrorResponse</c>); exceptions also take its
+    /// <c>Id2</c> and <c>AmzCfId</c>, which the hand-written service exception accepts.
+    /// </summary>
+    [JsonPropertyName("errorResponseType")]
+    public required string ErrorResponseType { get; init; }
+
+    /// <summary>The base unmarshaller's method that builds the exception for an unmodeled error code (S3's <c>ConstructS3Exception</c>).</summary>
+    [JsonPropertyName("exceptionFactory")]
+    public required string ExceptionFactory { get; init; }
 }
 
 /// <summary>The <c>simpleMethods</c> hook: convenience client overloads keyed by operation name.</summary>
