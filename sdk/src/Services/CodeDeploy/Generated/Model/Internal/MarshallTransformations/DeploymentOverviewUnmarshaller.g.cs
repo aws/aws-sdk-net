@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -36,65 +38,72 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeploymentOverview Object
     /// </summary>
-    public partial class DeploymentOverviewUnmarshaller : IJsonUnmarshaller<DeploymentOverview, JsonUnmarshallerContext>
+    public partial class DeploymentOverviewUnmarshaller : ICborUnmarshaller<DeploymentOverview, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DeploymentOverview Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DeploymentOverview Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DeploymentOverview();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Failed", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.Failed = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("InProgress", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.InProgress = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Failed":
+                        context.AddPathSegment("Failed");
+                        unmarshalledObject.Failed = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Pending", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.Pending = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "InProgress":
+                        context.AddPathSegment("InProgress");
+                        unmarshalledObject.InProgress = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Ready", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.Ready = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Pending":
+                        context.AddPathSegment("Pending");
+                        unmarshalledObject.Pending = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Skipped", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.Skipped = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Ready":
+                        context.AddPathSegment("Ready");
+                        unmarshalledObject.Ready = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Succeeded", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.Succeeded = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Skipped":
+                        context.AddPathSegment("Skipped");
+                        unmarshalledObject.Skipped = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Succeeded":
+                        context.AddPathSegment("Succeeded");
+                        unmarshalledObject.Succeeded = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

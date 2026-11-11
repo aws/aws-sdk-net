@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CrlConfiguration Marshaller
     /// </summary>
-    public class CrlConfigurationMarshaller : IRequestMarshaller<CrlConfiguration, JsonMarshallerContext> 
+    public class CrlConfigurationMarshaller : IRequestMarshaller<CrlConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,63 +45,56 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CrlConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(CrlConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCrlDistributionPointExtensionConfiguration())
+
+            if (requestObject.IsSetCrlDistributionPointExtensionConfiguration())
             {
-                context.Writer.WritePropertyName("CrlDistributionPointExtensionConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("CrlDistributionPointExtensionConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CrlDistributionPointExtensionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CrlDistributionPointExtensionConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetCrlType())
+            if (requestObject.IsSetCrlType())
             {
-                context.Writer.WritePropertyName("CrlType");
-                context.Writer.WriteStringValue(requestObject.CrlType);
+                context.Writer.WriteTextString("CrlType");
+                context.Writer.WriteTextString(requestObject.CrlType);
             }
-
-            if(requestObject.IsSetCustomCname())
+            if (requestObject.IsSetCustomCname())
             {
-                context.Writer.WritePropertyName("CustomCname");
-                context.Writer.WriteStringValue(requestObject.CustomCname);
+                context.Writer.WriteTextString("CustomCname");
+                context.Writer.WriteTextString(requestObject.CustomCname);
             }
-
-            if(requestObject.IsSetCustomPath())
+            if (requestObject.IsSetCustomPath())
             {
-                context.Writer.WritePropertyName("CustomPath");
-                context.Writer.WriteStringValue(requestObject.CustomPath);
+                context.Writer.WriteTextString("CustomPath");
+                context.Writer.WriteTextString(requestObject.CustomPath);
             }
-
-            if(requestObject.IsSetEnabled())
+            if (requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("Enabled");
-                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
+                context.Writer.WriteTextString("Enabled");
+                context.Writer.WriteBoolean(requestObject.Enabled.Value);
             }
-
-            if(requestObject.IsSetExpirationInDays())
+            if (requestObject.IsSetExpirationInDays())
             {
-                context.Writer.WritePropertyName("ExpirationInDays");
-                context.Writer.WriteNumberValue(requestObject.ExpirationInDays.Value);
+                context.Writer.WriteTextString("ExpirationInDays");
+                context.Writer.WriteInt32(requestObject.ExpirationInDays.Value);
             }
-
-            if(requestObject.IsSetS3BucketName())
+            if (requestObject.IsSetS3BucketName())
             {
-                context.Writer.WritePropertyName("S3BucketName");
-                context.Writer.WriteStringValue(requestObject.S3BucketName);
+                context.Writer.WriteTextString("S3BucketName");
+                context.Writer.WriteTextString(requestObject.S3BucketName);
             }
-
-            if(requestObject.IsSetS3ObjectAcl())
+            if (requestObject.IsSetS3ObjectAcl())
             {
-                context.Writer.WritePropertyName("S3ObjectAcl");
-                context.Writer.WriteStringValue(requestObject.S3ObjectAcl);
+                context.Writer.WriteTextString("S3ObjectAcl");
+                context.Writer.WriteTextString(requestObject.S3ObjectAcl);
             }
-
         }
 
         /// <summary>

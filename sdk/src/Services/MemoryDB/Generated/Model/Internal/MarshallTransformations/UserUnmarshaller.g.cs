@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.MemoryDB.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
@@ -36,72 +38,78 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for User Object
     /// </summary>
-    public partial class UserUnmarshaller : IJsonUnmarshaller<User, JsonUnmarshallerContext>
+    public partial class UserUnmarshaller : ICborUnmarshaller<User, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public User Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public User Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new User();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ACLNames", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ACLNames = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ARN", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ARN = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ACLNames":
+                        context.AddPathSegment("ACLNames");
+                        unmarshalledObject.ACLNames = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("AccessString", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessString = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ARN":
+                        context.AddPathSegment("ARN");
+                        unmarshalledObject.ARN = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Authentication", targetDepth, ref reader))
-                {
-                    var unmarshaller = AuthenticationUnmarshaller.Instance;
-                    unmarshalledObject.Authentication = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AccessString":
+                        context.AddPathSegment("AccessString");
+                        unmarshalledObject.AccessString = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("MinimumEngineVersion", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MinimumEngineVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Authentication":
+                        context.AddPathSegment("Authentication");
+                        unmarshalledObject.Authentication = AuthenticationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "MinimumEngineVersion":
+                        context.AddPathSegment("MinimumEngineVersion");
+                        unmarshalledObject.MinimumEngineVersion = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Name":
+                        context.AddPathSegment("Name");
+                        unmarshalledObject.Name = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Status":
+                        context.AddPathSegment("Status");
+                        unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

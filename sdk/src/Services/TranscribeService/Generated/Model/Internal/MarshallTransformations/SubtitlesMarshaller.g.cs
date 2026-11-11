@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Subtitles Marshaller
     /// </summary>
-    public partial class SubtitlesMarshaller : IRequestMarshaller<Subtitles, JsonMarshallerContext>
+    public partial class SubtitlesMarshaller : IRequestMarshaller<Subtitles, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Subtitles requestObject, JsonMarshallerContext context)
+        public void Marshall(Subtitles requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetFormats())
             {
-                context.Writer.WritePropertyName("Formats");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Formats");
+                context.Writer.WriteStartArray(requestObject.Formats.Count);
                 foreach (var requestObjectFormatsListValue in requestObject.Formats)
                 {
-                    context.Writer.WriteStringValue(requestObjectFormatsListValue);
+                    context.Writer.WriteTextString(requestObjectFormatsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetOutputStartIndex())
             {
-                context.Writer.WritePropertyName("OutputStartIndex");
-                context.Writer.WriteNumberValue(requestObject.OutputStartIndex.Value);
+                context.Writer.WriteTextString("OutputStartIndex");
+                context.Writer.WriteInt32(requestObject.OutputStartIndex.Value);
             }
         }
 

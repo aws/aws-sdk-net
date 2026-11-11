@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PolicyInformation Marshaller
     /// </summary>
-    public class PolicyInformationMarshaller : IRequestMarshaller<PolicyInformation, JsonMarshallerContext> 
+    public class PolicyInformationMarshaller : IRequestMarshaller<PolicyInformation, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,32 +45,31 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PolicyInformation requestObject, JsonMarshallerContext context)
+        public void Marshall(PolicyInformation requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCertPolicyId())
-            {
-                context.Writer.WritePropertyName("CertPolicyId");
-                context.Writer.WriteStringValue(requestObject.CertPolicyId);
-            }
 
-            if(requestObject.IsSetPolicyQualifiers())
+            if (requestObject.IsSetCertPolicyId())
             {
-                context.Writer.WritePropertyName("PolicyQualifiers");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("CertPolicyId");
+                context.Writer.WriteTextString(requestObject.CertPolicyId);
+            }
+            if (requestObject.IsSetPolicyQualifiers())
+            {
+                context.Writer.WriteTextString("PolicyQualifiers");
+                context.Writer.WriteStartArray(requestObject.PolicyQualifiers.Count);
                 foreach(var requestObjectPolicyQualifiersListValue in requestObject.PolicyQualifiers)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = PolicyQualifierInfoMarshaller.Instance;
                     marshaller.Marshall(requestObjectPolicyQualifiersListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

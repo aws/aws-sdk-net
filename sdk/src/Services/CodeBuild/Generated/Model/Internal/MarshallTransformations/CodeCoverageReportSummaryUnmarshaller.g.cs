@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
@@ -36,65 +38,72 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CodeCoverageReportSummary Object
     /// </summary>
-    public partial class CodeCoverageReportSummaryUnmarshaller : IJsonUnmarshaller<CodeCoverageReportSummary, JsonUnmarshallerContext>
+    public partial class CodeCoverageReportSummaryUnmarshaller : ICborUnmarshaller<CodeCoverageReportSummary, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public CodeCoverageReportSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CodeCoverageReportSummary Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new CodeCoverageReportSummary();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("branchCoveragePercentage", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.BranchCoveragePercentage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("branchesCovered", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BranchesCovered = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "branchCoveragePercentage":
+                        context.AddPathSegment("BranchCoveragePercentage");
+                        unmarshalledObject.BranchCoveragePercentage = CborNullableDoubleUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("branchesMissed", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BranchesMissed = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "branchesCovered":
+                        context.AddPathSegment("BranchesCovered");
+                        unmarshalledObject.BranchesCovered = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("lineCoveragePercentage", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LineCoveragePercentage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "branchesMissed":
+                        context.AddPathSegment("BranchesMissed");
+                        unmarshalledObject.BranchesMissed = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("linesCovered", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.LinesCovered = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "lineCoveragePercentage":
+                        context.AddPathSegment("LineCoveragePercentage");
+                        unmarshalledObject.LineCoveragePercentage = CborNullableDoubleUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("linesMissed", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.LinesMissed = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "linesCovered":
+                        context.AddPathSegment("LinesCovered");
+                        unmarshalledObject.LinesCovered = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "linesMissed":
+                        context.AddPathSegment("LinesMissed");
+                        unmarshalledObject.LinesMissed = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

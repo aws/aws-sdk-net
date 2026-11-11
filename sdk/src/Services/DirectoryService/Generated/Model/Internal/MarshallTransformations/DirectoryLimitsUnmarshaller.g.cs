@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -36,86 +38,90 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DirectoryLimits Object
     /// </summary>
-    public partial class DirectoryLimitsUnmarshaller : IJsonUnmarshaller<DirectoryLimits, JsonUnmarshallerContext>
+    public partial class DirectoryLimitsUnmarshaller : ICborUnmarshaller<DirectoryLimits, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DirectoryLimits Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DirectoryLimits Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DirectoryLimits();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CloudOnlyDirectoriesCurrentCount", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CloudOnlyDirectoriesCurrentCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("CloudOnlyDirectoriesLimit", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CloudOnlyDirectoriesLimit = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CloudOnlyDirectoriesCurrentCount":
+                        context.AddPathSegment("CloudOnlyDirectoriesCurrentCount");
+                        unmarshalledObject.CloudOnlyDirectoriesCurrentCount = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("CloudOnlyDirectoriesLimitReached", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CloudOnlyDirectoriesLimitReached = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CloudOnlyDirectoriesLimit":
+                        context.AddPathSegment("CloudOnlyDirectoriesLimit");
+                        unmarshalledObject.CloudOnlyDirectoriesLimit = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("CloudOnlyMicrosoftADCurrentCount", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CloudOnlyMicrosoftADCurrentCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CloudOnlyDirectoriesLimitReached":
+                        context.AddPathSegment("CloudOnlyDirectoriesLimitReached");
+                        unmarshalledObject.CloudOnlyDirectoriesLimitReached = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("CloudOnlyMicrosoftADLimit", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CloudOnlyMicrosoftADLimit = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CloudOnlyMicrosoftADCurrentCount":
+                        context.AddPathSegment("CloudOnlyMicrosoftADCurrentCount");
+                        unmarshalledObject.CloudOnlyMicrosoftADCurrentCount = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("CloudOnlyMicrosoftADLimitReached", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CloudOnlyMicrosoftADLimitReached = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CloudOnlyMicrosoftADLimit":
+                        context.AddPathSegment("CloudOnlyMicrosoftADLimit");
+                        unmarshalledObject.CloudOnlyMicrosoftADLimit = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ConnectedDirectoriesCurrentCount", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ConnectedDirectoriesCurrentCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CloudOnlyMicrosoftADLimitReached":
+                        context.AddPathSegment("CloudOnlyMicrosoftADLimitReached");
+                        unmarshalledObject.CloudOnlyMicrosoftADLimitReached = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ConnectedDirectoriesLimit", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ConnectedDirectoriesLimit = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ConnectedDirectoriesCurrentCount":
+                        context.AddPathSegment("ConnectedDirectoriesCurrentCount");
+                        unmarshalledObject.ConnectedDirectoriesCurrentCount = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ConnectedDirectoriesLimitReached", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ConnectedDirectoriesLimitReached = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ConnectedDirectoriesLimit":
+                        context.AddPathSegment("ConnectedDirectoriesLimit");
+                        unmarshalledObject.ConnectedDirectoriesLimit = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ConnectedDirectoriesLimitReached":
+                        context.AddPathSegment("ConnectedDirectoriesLimitReached");
+                        unmarshalledObject.ConnectedDirectoriesLimitReached = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

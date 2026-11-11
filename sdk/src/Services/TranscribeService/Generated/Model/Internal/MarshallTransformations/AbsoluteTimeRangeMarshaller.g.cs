@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,37 +39,37 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// AbsoluteTimeRange Marshaller
     /// </summary>
-    public partial class AbsoluteTimeRangeMarshaller : IRequestMarshaller<AbsoluteTimeRange, JsonMarshallerContext>
+    public partial class AbsoluteTimeRangeMarshaller : IRequestMarshaller<AbsoluteTimeRange, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(AbsoluteTimeRange requestObject, JsonMarshallerContext context)
+        public void Marshall(AbsoluteTimeRange requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetEndTime())
             {
-                context.Writer.WritePropertyName("EndTime");
-                context.Writer.WriteNumberValue(requestObject.EndTime.Value);
+                context.Writer.WriteTextString("EndTime");
+                context.Writer.WriteInt64(requestObject.EndTime.Value);
             }
 
             if (requestObject.IsSetFirst())
             {
-                context.Writer.WritePropertyName("First");
-                context.Writer.WriteNumberValue(requestObject.First.Value);
+                context.Writer.WriteTextString("First");
+                context.Writer.WriteInt64(requestObject.First.Value);
             }
 
             if (requestObject.IsSetLast())
             {
-                context.Writer.WritePropertyName("Last");
-                context.Writer.WriteNumberValue(requestObject.Last.Value);
+                context.Writer.WriteTextString("Last");
+                context.Writer.WriteInt64(requestObject.Last.Value);
             }
 
             if (requestObject.IsSetStartTime())
             {
-                context.Writer.WritePropertyName("StartTime");
-                context.Writer.WriteNumberValue(requestObject.StartTime.Value);
+                context.Writer.WriteTextString("StartTime");
+                context.Writer.WriteInt64(requestObject.StartTime.Value);
             }
         }
 

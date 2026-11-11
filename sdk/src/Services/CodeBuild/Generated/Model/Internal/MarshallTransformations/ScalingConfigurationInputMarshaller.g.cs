@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,39 +39,39 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// ScalingConfigurationInput Marshaller
     /// </summary>
-    public partial class ScalingConfigurationInputMarshaller : IRequestMarshaller<ScalingConfigurationInput, JsonMarshallerContext>
+    public partial class ScalingConfigurationInputMarshaller : IRequestMarshaller<ScalingConfigurationInput, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ScalingConfigurationInput requestObject, JsonMarshallerContext context)
+        public void Marshall(ScalingConfigurationInput requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetMaxCapacity())
             {
-                context.Writer.WritePropertyName("maxCapacity");
-                context.Writer.WriteNumberValue(requestObject.MaxCapacity.Value);
+                context.Writer.WriteTextString("maxCapacity");
+                context.Writer.WriteInt32(requestObject.MaxCapacity.Value);
             }
 
             if (requestObject.IsSetScalingType())
             {
-                context.Writer.WritePropertyName("scalingType");
-                context.Writer.WriteStringValue(requestObject.ScalingType);
+                context.Writer.WriteTextString("scalingType");
+                context.Writer.WriteTextString(requestObject.ScalingType);
             }
 
             if (requestObject.IsSetTargetTrackingScalingConfigs())
             {
-                context.Writer.WritePropertyName("targetTrackingScalingConfigs");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("targetTrackingScalingConfigs");
+                context.Writer.WriteStartArray(requestObject.TargetTrackingScalingConfigs.Count);
                 foreach (var requestObjectTargetTrackingScalingConfigsListValue in requestObject.TargetTrackingScalingConfigs)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = TargetTrackingScalingConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetTrackingScalingConfigsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

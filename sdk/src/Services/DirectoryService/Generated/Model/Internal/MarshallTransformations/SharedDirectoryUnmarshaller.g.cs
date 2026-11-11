@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -36,86 +38,90 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SharedDirectory Object
     /// </summary>
-    public partial class SharedDirectoryUnmarshaller : IJsonUnmarshaller<SharedDirectory, JsonUnmarshallerContext>
+    public partial class SharedDirectoryUnmarshaller : ICborUnmarshaller<SharedDirectory, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public SharedDirectory Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SharedDirectory Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new SharedDirectory();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CreatedDateTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedDateTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("LastUpdatedDateTime", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CreatedDateTime":
+                        context.AddPathSegment("CreatedDateTime");
+                        unmarshalledObject.CreatedDateTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("OwnerAccountId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LastUpdatedDateTime":
+                        context.AddPathSegment("LastUpdatedDateTime");
+                        unmarshalledObject.LastUpdatedDateTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("OwnerDirectoryId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerDirectoryId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "OwnerAccountId":
+                        context.AddPathSegment("OwnerAccountId");
+                        unmarshalledObject.OwnerAccountId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ShareMethod", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ShareMethod = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "OwnerDirectoryId":
+                        context.AddPathSegment("OwnerDirectoryId");
+                        unmarshalledObject.OwnerDirectoryId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ShareNotes", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ShareNotes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ShareMethod":
+                        context.AddPathSegment("ShareMethod");
+                        unmarshalledObject.ShareMethod = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ShareStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ShareStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ShareNotes":
+                        context.AddPathSegment("ShareNotes");
+                        unmarshalledObject.ShareNotes = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SharedAccountId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SharedAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ShareStatus":
+                        context.AddPathSegment("ShareStatus");
+                        unmarshalledObject.ShareStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SharedDirectoryId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SharedDirectoryId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "SharedAccountId":
+                        context.AddPathSegment("SharedAccountId");
+                        unmarshalledObject.SharedAccountId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "SharedDirectoryId":
+                        context.AddPathSegment("SharedDirectoryId");
+                        unmarshalledObject.SharedDirectoryId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

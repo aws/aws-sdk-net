@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// QopConfiguration Marshaller
     /// </summary>
-    public partial class QopConfigurationMarshaller : IRequestMarshaller<QopConfiguration, JsonMarshallerContext>
+    public partial class QopConfigurationMarshaller : IRequestMarshaller<QopConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(QopConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(QopConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDataTransferProtection())
             {
-                context.Writer.WritePropertyName("DataTransferProtection");
-                context.Writer.WriteStringValue(requestObject.DataTransferProtection);
+                context.Writer.WriteTextString("DataTransferProtection");
+                context.Writer.WriteTextString(requestObject.DataTransferProtection);
             }
 
             if (requestObject.IsSetRpcProtection())
             {
-                context.Writer.WritePropertyName("RpcProtection");
-                context.Writer.WriteStringValue(requestObject.RpcProtection);
+                context.Writer.WriteTextString("RpcProtection");
+                context.Writer.WriteTextString(requestObject.RpcProtection);
             }
         }
 

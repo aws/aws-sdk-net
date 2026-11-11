@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Shield.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
@@ -36,65 +38,72 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Protection Object
     /// </summary>
-    public partial class ProtectionUnmarshaller : IJsonUnmarshaller<Protection, JsonUnmarshallerContext>
+    public partial class ProtectionUnmarshaller : ICborUnmarshaller<Protection, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Protection Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Protection Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Protection();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ApplicationLayerAutomaticResponseConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = ApplicationLayerAutomaticResponseConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationLayerAutomaticResponseConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("HealthCheckIds", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.HealthCheckIds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ApplicationLayerAutomaticResponseConfiguration":
+                        context.AddPathSegment("ApplicationLayerAutomaticResponseConfiguration");
+                        unmarshalledObject.ApplicationLayerAutomaticResponseConfiguration = ApplicationLayerAutomaticResponseConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Id", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "HealthCheckIds":
+                        context.AddPathSegment("HealthCheckIds");
+                        unmarshalledObject.HealthCheckIds = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Id":
+                        context.AddPathSegment("Id");
+                        unmarshalledObject.Id = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ProtectionArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProtectionArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Name":
+                        context.AddPathSegment("Name");
+                        unmarshalledObject.Name = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ResourceArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ProtectionArn":
+                        context.AddPathSegment("ProtectionArn");
+                        unmarshalledObject.ProtectionArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ResourceArn":
+                        context.AddPathSegment("ResourceArn");
+                        unmarshalledObject.ResourceArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

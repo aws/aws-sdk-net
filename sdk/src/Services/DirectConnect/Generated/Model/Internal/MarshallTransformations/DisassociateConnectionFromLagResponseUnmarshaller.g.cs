@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectConnect.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Globalization;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
@@ -38,223 +38,204 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DisassociateConnectionFromLag operation.
     /// </summary>
-    public partial class DisassociateConnectionFromLagResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class DisassociateConnectionFromLagResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DisassociateConnectionFromLagResponse();
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = context.Reader;
 
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            context.AddPathSegment("DisassociateConnectionFromLag");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.TestExpression("awsDevice", targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsDevice = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "awsDevice":
+                        context.AddPathSegment("AwsDevice");
+                        unmarshalledObject.AwsDevice = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("awsDeviceV2", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsDeviceV2 = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "awsDeviceV2":
+                        context.AddPathSegment("AwsDeviceV2");
+                        unmarshalledObject.AwsDeviceV2 = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("awsLogicalDeviceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsLogicalDeviceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "awsLogicalDeviceId":
+                        context.AddPathSegment("AwsLogicalDeviceId");
+                        unmarshalledObject.AwsLogicalDeviceId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("bandwidth", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Bandwidth = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "bandwidth":
+                        context.AddPathSegment("Bandwidth");
+                        unmarshalledObject.Bandwidth = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("billingMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BillingMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "billingMode":
+                        context.AddPathSegment("BillingMode");
+                        unmarshalledObject.BillingMode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("connectionId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "connectionId":
+                        context.AddPathSegment("ConnectionId");
+                        unmarshalledObject.ConnectionId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("connectionName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "connectionName":
+                        context.AddPathSegment("ConnectionName");
+                        unmarshalledObject.ConnectionName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("connectionState", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionState = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "connectionState":
+                        context.AddPathSegment("ConnectionState");
+                        unmarshalledObject.ConnectionState = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("encryptionMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "encryptionMode":
+                        context.AddPathSegment("EncryptionMode");
+                        unmarshalledObject.EncryptionMode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("hasLogicalRedundancy", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HasLogicalRedundancy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "hasLogicalRedundancy":
+                        context.AddPathSegment("HasLogicalRedundancy");
+                        unmarshalledObject.HasLogicalRedundancy = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("jumboFrameCapable", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.JumboFrameCapable = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "jumboFrameCapable":
+                        context.AddPathSegment("JumboFrameCapable");
+                        unmarshalledObject.JumboFrameCapable = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("lagId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LagId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "lagId":
+                        context.AddPathSegment("LagId");
+                        unmarshalledObject.LagId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("loaIssueTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LoaIssueTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "loaIssueTime":
+                        context.AddPathSegment("LoaIssueTime");
+                        unmarshalledObject.LoaIssueTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("location", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "location":
+                        context.AddPathSegment("Location");
+                        unmarshalledObject.Location = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("macSecCapable", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.MacSecCapable = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "macSecCapable":
+                        context.AddPathSegment("MacSecCapable");
+                        unmarshalledObject.MacSecCapable = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("macSecKeys", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<MacSecKey, MacSecKeyUnmarshaller>(MacSecKeyUnmarshaller.Instance);
-                    unmarshalledObject.MacSecKeys = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "macSecKeys":
+                        context.AddPathSegment("MacSecKeys");
+                        unmarshalledObject.MacSecKeys = new CborListUnmarshaller<MacSecKey, MacSecKeyUnmarshaller>(MacSecKeyUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ownerAccount", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerAccount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ownerAccount":
+                        context.AddPathSegment("OwnerAccount");
+                        unmarshalledObject.OwnerAccount = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("partnerInterconnectMacSecCapable", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.PartnerInterconnectMacSecCapable = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "partnerInterconnectMacSecCapable":
+                        context.AddPathSegment("PartnerInterconnectMacSecCapable");
+                        unmarshalledObject.PartnerInterconnectMacSecCapable = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("partnerName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PartnerName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "partnerName":
+                        context.AddPathSegment("PartnerName");
+                        unmarshalledObject.PartnerName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("portEncryptionStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PortEncryptionStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "portEncryptionStatus":
+                        context.AddPathSegment("PortEncryptionStatus");
+                        unmarshalledObject.PortEncryptionStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("prefixPoolSizeIpv4", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PrefixPoolSizeIpv4 = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "prefixPoolSizeIpv4":
+                        context.AddPathSegment("PrefixPoolSizeIpv4");
+                        unmarshalledObject.PrefixPoolSizeIpv4 = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("prefixPoolSizeIpv6", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PrefixPoolSizeIpv6 = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "prefixPoolSizeIpv6":
+                        context.AddPathSegment("PrefixPoolSizeIpv6");
+                        unmarshalledObject.PrefixPoolSizeIpv6 = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("prefixPoolUnallocatedCountIpv4", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PrefixPoolUnallocatedCountIpv4 = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "prefixPoolUnallocatedCountIpv4":
+                        context.AddPathSegment("PrefixPoolUnallocatedCountIpv4");
+                        unmarshalledObject.PrefixPoolUnallocatedCountIpv4 = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("prefixPoolUnallocatedCountIpv6", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PrefixPoolUnallocatedCountIpv6 = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "prefixPoolUnallocatedCountIpv6":
+                        context.AddPathSegment("PrefixPoolUnallocatedCountIpv6");
+                        unmarshalledObject.PrefixPoolUnallocatedCountIpv6 = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("providerName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProviderName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "providerName":
+                        context.AddPathSegment("ProviderName");
+                        unmarshalledObject.ProviderName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("rateLimiterStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = RateLimiterStatusUnmarshaller.Instance;
-                    unmarshalledObject.RateLimiterStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "rateLimiterStatus":
+                        context.AddPathSegment("RateLimiterStatus");
+                        unmarshalledObject.RateLimiterStatus = RateLimiterStatusUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("region", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "region":
+                        context.AddPathSegment("Region");
+                        unmarshalledObject.Region = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("tags", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "tags":
+                        context.AddPathSegment("Tags");
+                        unmarshalledObject.Tags = new CborListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("vlan", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Vlan = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "vlan":
+                        context.AddPathSegment("Vlan");
+                        unmarshalledObject.Vlan = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }
@@ -262,11 +243,9 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Unmarshall error response to exception.
         /// </summary>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
-
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -274,16 +253,15 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             {
-                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectClientException"))
                     {
-                        return DirectConnectClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return DirectConnectClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectServerException"))
                     {
-                        return DirectConnectServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return DirectConnectServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                 }
             }

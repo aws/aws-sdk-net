@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccessDescription Marshaller
     /// </summary>
-    public class AccessDescriptionMarshaller : IRequestMarshaller<AccessDescription, JsonMarshallerContext> 
+    public class AccessDescriptionMarshaller : IRequestMarshaller<AccessDescription, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,32 +45,31 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AccessDescription requestObject, JsonMarshallerContext context)
+        public void Marshall(AccessDescription requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAccessLocation())
+
+            if (requestObject.IsSetAccessLocation())
             {
-                context.Writer.WritePropertyName("AccessLocation");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("AccessLocation");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = GeneralNameMarshaller.Instance;
                 marshaller.Marshall(requestObject.AccessLocation, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetAccessMethod())
+            if (requestObject.IsSetAccessMethod())
             {
-                context.Writer.WritePropertyName("AccessMethod");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("AccessMethod");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AccessMethodMarshaller.Instance;
                 marshaller.Marshall(requestObject.AccessMethod, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

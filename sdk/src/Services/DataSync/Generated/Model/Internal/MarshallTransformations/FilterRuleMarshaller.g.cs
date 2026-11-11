@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// FilterRule Marshaller
     /// </summary>
-    public partial class FilterRuleMarshaller : IRequestMarshaller<FilterRule, JsonMarshallerContext>
+    public partial class FilterRuleMarshaller : IRequestMarshaller<FilterRule, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(FilterRule requestObject, JsonMarshallerContext context)
+        public void Marshall(FilterRule requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetFilterType())
             {
-                context.Writer.WritePropertyName("FilterType");
-                context.Writer.WriteStringValue(requestObject.FilterType);
+                context.Writer.WriteTextString("FilterType");
+                context.Writer.WriteTextString(requestObject.FilterType);
             }
 
             if (requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("Value");
-                context.Writer.WriteStringValue(requestObject.Value);
+                context.Writer.WriteTextString("Value");
+                context.Writer.WriteTextString(requestObject.Value);
             }
         }
 

@@ -18,19 +18,19 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Globalization;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
 using System.Net;
-using System.Text;
-using System.Xml.Serialization;
-
-using Amazon.WorkSpaces.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+
+using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -38,37 +38,44 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Exception Unmarshaller for ResourceNotFoundException
     /// </summary>
-    public partial class ResourceNotFoundExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<ResourceNotFoundException, JsonUnmarshallerContext>
+    public partial class ResourceNotFoundExceptionUnmarshaller : ICborErrorResponseUnmarshaller<ResourceNotFoundException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public ResourceNotFoundException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ResourceNotFoundException Unmarshall(CborUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public ResourceNotFoundException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        public ResourceNotFoundException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             var unmarshalledObject = new ResourceNotFoundException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
-            if (context.Stream.Length > 0)
+            var reader = context.Reader;
+            context.AddPathSegment("ResourceNotFoundException");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                context.Read(ref reader);
-                int targetDepth = context.CurrentDepth;
-                while (context.ReadAtDepth(targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    if (context.TestExpression("ResourceId", targetDepth, ref reader))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
-                        continue;
-                    }
+                    case "ResourceId":
+                        context.AddPathSegment("ResourceId");
+                        unmarshalledObject.ResourceId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }

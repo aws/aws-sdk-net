@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,43 +39,43 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// SelfservicePermissions Marshaller
     /// </summary>
-    public partial class SelfservicePermissionsMarshaller : IRequestMarshaller<SelfservicePermissions, JsonMarshallerContext>
+    public partial class SelfservicePermissionsMarshaller : IRequestMarshaller<SelfservicePermissions, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(SelfservicePermissions requestObject, JsonMarshallerContext context)
+        public void Marshall(SelfservicePermissions requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetChangeComputeType())
             {
-                context.Writer.WritePropertyName("ChangeComputeType");
-                context.Writer.WriteStringValue(requestObject.ChangeComputeType);
+                context.Writer.WriteTextString("ChangeComputeType");
+                context.Writer.WriteTextString(requestObject.ChangeComputeType);
             }
 
             if (requestObject.IsSetIncreaseVolumeSize())
             {
-                context.Writer.WritePropertyName("IncreaseVolumeSize");
-                context.Writer.WriteStringValue(requestObject.IncreaseVolumeSize);
+                context.Writer.WriteTextString("IncreaseVolumeSize");
+                context.Writer.WriteTextString(requestObject.IncreaseVolumeSize);
             }
 
             if (requestObject.IsSetRebuildWorkspace())
             {
-                context.Writer.WritePropertyName("RebuildWorkspace");
-                context.Writer.WriteStringValue(requestObject.RebuildWorkspace);
+                context.Writer.WriteTextString("RebuildWorkspace");
+                context.Writer.WriteTextString(requestObject.RebuildWorkspace);
             }
 
             if (requestObject.IsSetRestartWorkspace())
             {
-                context.Writer.WritePropertyName("RestartWorkspace");
-                context.Writer.WriteStringValue(requestObject.RestartWorkspace);
+                context.Writer.WriteTextString("RestartWorkspace");
+                context.Writer.WriteTextString(requestObject.RestartWorkspace);
             }
 
             if (requestObject.IsSetSwitchRunningMode())
             {
-                context.Writer.WritePropertyName("SwitchRunningMode");
-                context.Writer.WriteStringValue(requestObject.SwitchRunningMode);
+                context.Writer.WriteTextString("SwitchRunningMode");
+                context.Writer.WriteTextString(requestObject.SwitchRunningMode);
             }
         }
 

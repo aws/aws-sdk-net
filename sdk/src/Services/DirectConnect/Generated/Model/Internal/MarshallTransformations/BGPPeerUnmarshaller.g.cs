@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectConnect.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
@@ -36,100 +38,102 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BGPPeer Object
     /// </summary>
-    public partial class BGPPeerUnmarshaller : IJsonUnmarshaller<BGPPeer, JsonUnmarshallerContext>
+    public partial class BGPPeerUnmarshaller : ICborUnmarshaller<BGPPeer, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public BGPPeer Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public BGPPeer Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new BGPPeer();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("addressFamily", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddressFamily = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("amazonAddress", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AmazonAddress = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "addressFamily":
+                        context.AddPathSegment("AddressFamily");
+                        unmarshalledObject.AddressFamily = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("asn", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Asn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "amazonAddress":
+                        context.AddPathSegment("AmazonAddress");
+                        unmarshalledObject.AmazonAddress = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("asnLong", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.AsnLong = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "asn":
+                        context.AddPathSegment("Asn");
+                        unmarshalledObject.Asn = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("authKey", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthKey = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "asnLong":
+                        context.AddPathSegment("AsnLong");
+                        unmarshalledObject.AsnLong = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("awsDeviceV2", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsDeviceV2 = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "authKey":
+                        context.AddPathSegment("AuthKey");
+                        unmarshalledObject.AuthKey = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("awsLogicalDeviceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsLogicalDeviceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "awsDeviceV2":
+                        context.AddPathSegment("AwsDeviceV2");
+                        unmarshalledObject.AwsDeviceV2 = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("bgpPeerId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BgpPeerId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "awsLogicalDeviceId":
+                        context.AddPathSegment("AwsLogicalDeviceId");
+                        unmarshalledObject.AwsLogicalDeviceId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("bgpPeerState", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BgpPeerState = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "bgpPeerId":
+                        context.AddPathSegment("BgpPeerId");
+                        unmarshalledObject.BgpPeerId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("bgpStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BgpStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "bgpPeerState":
+                        context.AddPathSegment("BgpPeerState");
+                        unmarshalledObject.BgpPeerState = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("customerAddress", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomerAddress = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "bgpStatus":
+                        context.AddPathSegment("BgpStatus");
+                        unmarshalledObject.BgpStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "customerAddress":
+                        context.AddPathSegment("CustomerAddress");
+                        unmarshalledObject.CustomerAddress = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

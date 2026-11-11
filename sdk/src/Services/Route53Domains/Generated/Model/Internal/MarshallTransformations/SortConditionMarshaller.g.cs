@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Route53Domains.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// SortCondition Marshaller
     /// </summary>
-    public partial class SortConditionMarshaller : IRequestMarshaller<SortCondition, JsonMarshallerContext>
+    public partial class SortConditionMarshaller : IRequestMarshaller<SortCondition, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(SortCondition requestObject, JsonMarshallerContext context)
+        public void Marshall(SortCondition requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("Name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
 
             if (requestObject.IsSetSortOrder())
             {
-                context.Writer.WritePropertyName("SortOrder");
-                context.Writer.WriteStringValue(requestObject.SortOrder);
+                context.Writer.WriteTextString("SortOrder");
+                context.Writer.WriteTextString(requestObject.SortOrder);
             }
         }
 

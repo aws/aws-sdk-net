@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// AccessEndpoint Marshaller
     /// </summary>
-    public partial class AccessEndpointMarshaller : IRequestMarshaller<AccessEndpoint, JsonMarshallerContext>
+    public partial class AccessEndpointMarshaller : IRequestMarshaller<AccessEndpoint, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(AccessEndpoint requestObject, JsonMarshallerContext context)
+        public void Marshall(AccessEndpoint requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAccessEndpointType())
             {
-                context.Writer.WritePropertyName("AccessEndpointType");
-                context.Writer.WriteStringValue(requestObject.AccessEndpointType);
+                context.Writer.WriteTextString("AccessEndpointType");
+                context.Writer.WriteTextString(requestObject.AccessEndpointType);
             }
 
             if (requestObject.IsSetVpcEndpointId())
             {
-                context.Writer.WritePropertyName("VpcEndpointId");
-                context.Writer.WriteStringValue(requestObject.VpcEndpointId);
+                context.Writer.WriteTextString("VpcEndpointId");
+                context.Writer.WriteTextString(requestObject.VpcEndpointId);
             }
         }
 

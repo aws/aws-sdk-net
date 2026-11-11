@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
@@ -36,226 +38,210 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Project Object
     /// </summary>
-    public partial class ProjectUnmarshaller : IJsonUnmarshaller<Project, JsonUnmarshallerContext>
+    public partial class ProjectUnmarshaller : ICborUnmarshaller<Project, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Project Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Project Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Project();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("arn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("artifacts", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = ProjectArtifactsUnmarshaller.Instance;
-                    unmarshalledObject.Artifacts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "arn":
+                        context.AddPathSegment("Arn");
+                        unmarshalledObject.Arn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("autoRetryLimit", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AutoRetryLimit = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "artifacts":
+                        context.AddPathSegment("Artifacts");
+                        unmarshalledObject.Artifacts = ProjectArtifactsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("badge", targetDepth, ref reader))
-                {
-                    var unmarshaller = ProjectBadgeUnmarshaller.Instance;
-                    unmarshalledObject.Badge = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "autoRetryLimit":
+                        context.AddPathSegment("AutoRetryLimit");
+                        unmarshalledObject.AutoRetryLimit = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("buildBatchConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = ProjectBuildBatchConfigUnmarshaller.Instance;
-                    unmarshalledObject.BuildBatchConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "badge":
+                        context.AddPathSegment("Badge");
+                        unmarshalledObject.Badge = ProjectBadgeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("cache", targetDepth, ref reader))
-                {
-                    var unmarshaller = ProjectCacheUnmarshaller.Instance;
-                    unmarshalledObject.Cache = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "buildBatchConfig":
+                        context.AddPathSegment("BuildBatchConfig");
+                        unmarshalledObject.BuildBatchConfig = ProjectBuildBatchConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("concurrentBuildLimit", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ConcurrentBuildLimit = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "cache":
+                        context.AddPathSegment("Cache");
+                        unmarshalledObject.Cache = ProjectCacheUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("created", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Created = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "concurrentBuildLimit":
+                        context.AddPathSegment("ConcurrentBuildLimit");
+                        unmarshalledObject.ConcurrentBuildLimit = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("description", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "created":
+                        context.AddPathSegment("Created");
+                        unmarshalledObject.Created = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("encryptionKey", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionKey = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "description":
+                        context.AddPathSegment("Description");
+                        unmarshalledObject.Description = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("environment", targetDepth, ref reader))
-                {
-                    var unmarshaller = ProjectEnvironmentUnmarshaller.Instance;
-                    unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "encryptionKey":
+                        context.AddPathSegment("EncryptionKey");
+                        unmarshalledObject.EncryptionKey = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("fileSystemLocations", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ProjectFileSystemLocation, ProjectFileSystemLocationUnmarshaller>(ProjectFileSystemLocationUnmarshaller.Instance);
-                    unmarshalledObject.FileSystemLocations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "environment":
+                        context.AddPathSegment("Environment");
+                        unmarshalledObject.Environment = ProjectEnvironmentUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("lastModified", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "fileSystemLocations":
+                        context.AddPathSegment("FileSystemLocations");
+                        unmarshalledObject.FileSystemLocations = new CborListUnmarshaller<ProjectFileSystemLocation, ProjectFileSystemLocationUnmarshaller>(ProjectFileSystemLocationUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("logsConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = LogsConfigUnmarshaller.Instance;
-                    unmarshalledObject.LogsConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "lastModified":
+                        context.AddPathSegment("LastModified");
+                        unmarshalledObject.LastModified = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "logsConfig":
+                        context.AddPathSegment("LogsConfig");
+                        unmarshalledObject.LogsConfig = LogsConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("projectVisibility", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectVisibility = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "name":
+                        context.AddPathSegment("Name");
+                        unmarshalledObject.Name = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("publicProjectAlias", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PublicProjectAlias = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "projectVisibility":
+                        context.AddPathSegment("ProjectVisibility");
+                        unmarshalledObject.ProjectVisibility = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("queuedTimeoutInMinutes", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.QueuedTimeoutInMinutes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "publicProjectAlias":
+                        context.AddPathSegment("PublicProjectAlias");
+                        unmarshalledObject.PublicProjectAlias = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("resourceAccessRole", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceAccessRole = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "queuedTimeoutInMinutes":
+                        context.AddPathSegment("QueuedTimeoutInMinutes");
+                        unmarshalledObject.QueuedTimeoutInMinutes = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("secondaryArtifacts", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ProjectArtifacts, ProjectArtifactsUnmarshaller>(ProjectArtifactsUnmarshaller.Instance);
-                    unmarshalledObject.SecondaryArtifacts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "resourceAccessRole":
+                        context.AddPathSegment("ResourceAccessRole");
+                        unmarshalledObject.ResourceAccessRole = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("secondarySourceVersions", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ProjectSourceVersion, ProjectSourceVersionUnmarshaller>(ProjectSourceVersionUnmarshaller.Instance);
-                    unmarshalledObject.SecondarySourceVersions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "secondaryArtifacts":
+                        context.AddPathSegment("SecondaryArtifacts");
+                        unmarshalledObject.SecondaryArtifacts = new CborListUnmarshaller<ProjectArtifacts, ProjectArtifactsUnmarshaller>(ProjectArtifactsUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("secondarySources", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ProjectSource, ProjectSourceUnmarshaller>(ProjectSourceUnmarshaller.Instance);
-                    unmarshalledObject.SecondarySources = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "secondarySourceVersions":
+                        context.AddPathSegment("SecondarySourceVersions");
+                        unmarshalledObject.SecondarySourceVersions = new CborListUnmarshaller<ProjectSourceVersion, ProjectSourceVersionUnmarshaller>(ProjectSourceVersionUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("serviceRole", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceRole = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "secondarySources":
+                        context.AddPathSegment("SecondarySources");
+                        unmarshalledObject.SecondarySources = new CborListUnmarshaller<ProjectSource, ProjectSourceUnmarshaller>(ProjectSourceUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("source", targetDepth, ref reader))
-                {
-                    var unmarshaller = ProjectSourceUnmarshaller.Instance;
-                    unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "serviceRole":
+                        context.AddPathSegment("ServiceRole");
+                        unmarshalledObject.ServiceRole = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("sourceVersion", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "source":
+                        context.AddPathSegment("Source");
+                        unmarshalledObject.Source = ProjectSourceUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("tags", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "sourceVersion":
+                        context.AddPathSegment("SourceVersion");
+                        unmarshalledObject.SourceVersion = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("timeoutInMinutes", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TimeoutInMinutes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "tags":
+                        context.AddPathSegment("Tags");
+                        unmarshalledObject.Tags = new CborListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("vpcConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = VpcConfigUnmarshaller.Instance;
-                    unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "timeoutInMinutes":
+                        context.AddPathSegment("TimeoutInMinutes");
+                        unmarshalledObject.TimeoutInMinutes = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("webhook", targetDepth, ref reader))
-                {
-                    var unmarshaller = WebhookUnmarshaller.Instance;
-                    unmarshalledObject.Webhook = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "vpcConfig":
+                        context.AddPathSegment("VpcConfig");
+                        unmarshalledObject.VpcConfig = VpcConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "webhook":
+                        context.AddPathSegment("Webhook");
+                        unmarshalledObject.Webhook = WebhookUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

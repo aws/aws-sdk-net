@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,33 +39,33 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProxyConfiguration Marshaller
     /// </summary>
-    public partial class ProxyConfigurationMarshaller : IRequestMarshaller<ProxyConfiguration, JsonMarshallerContext>
+    public partial class ProxyConfigurationMarshaller : IRequestMarshaller<ProxyConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProxyConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ProxyConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDefaultBehavior())
             {
-                context.Writer.WritePropertyName("defaultBehavior");
-                context.Writer.WriteStringValue(requestObject.DefaultBehavior);
+                context.Writer.WriteTextString("defaultBehavior");
+                context.Writer.WriteTextString(requestObject.DefaultBehavior);
             }
 
             if (requestObject.IsSetOrderedProxyRules())
             {
-                context.Writer.WritePropertyName("orderedProxyRules");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("orderedProxyRules");
+                context.Writer.WriteStartArray(requestObject.OrderedProxyRules.Count);
                 foreach (var requestObjectOrderedProxyRulesListValue in requestObject.OrderedProxyRules)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = FleetProxyRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectOrderedProxyRulesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

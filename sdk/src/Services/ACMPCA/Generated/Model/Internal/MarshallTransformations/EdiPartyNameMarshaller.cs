@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EdiPartyName Marshaller
     /// </summary>
-    public class EdiPartyNameMarshaller : IRequestMarshaller<EdiPartyName, JsonMarshallerContext> 
+    public class EdiPartyNameMarshaller : IRequestMarshaller<EdiPartyName, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EdiPartyName requestObject, JsonMarshallerContext context)
+        public void Marshall(EdiPartyName requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetNameAssigner())
-            {
-                context.Writer.WritePropertyName("NameAssigner");
-                context.Writer.WriteStringValue(requestObject.NameAssigner);
-            }
 
-            if(requestObject.IsSetPartyName())
+            if (requestObject.IsSetNameAssigner())
             {
-                context.Writer.WritePropertyName("PartyName");
-                context.Writer.WriteStringValue(requestObject.PartyName);
+                context.Writer.WriteTextString("NameAssigner");
+                context.Writer.WriteTextString(requestObject.NameAssigner);
             }
-
+            if (requestObject.IsSetPartyName())
+            {
+                context.Writer.WriteTextString("PartyName");
+                context.Writer.WriteTextString(requestObject.PartyName);
+            }
         }
 
         /// <summary>

@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ImageSourceIdentifier Object
     /// </summary>
-    public partial class ImageSourceIdentifierUnmarshaller : IJsonUnmarshaller<ImageSourceIdentifier, JsonUnmarshallerContext>
+    public partial class ImageSourceIdentifierUnmarshaller : ICborUnmarshaller<ImageSourceIdentifier, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ImageSourceIdentifier Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ImageSourceIdentifier Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ImageSourceIdentifier();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Ec2ImageId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Ec2ImageId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Ec2ImportTaskId", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Ec2ImportTaskId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Ec2ImageId":
+                        context.AddPathSegment("Ec2ImageId");
+                        unmarshalledObject.Ec2ImageId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ImageBuildVersionArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageBuildVersionArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Ec2ImportTaskId":
+                        context.AddPathSegment("Ec2ImportTaskId");
+                        unmarshalledObject.Ec2ImportTaskId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ImageBuildVersionArn":
+                        context.AddPathSegment("ImageBuildVersionArn");
+                        unmarshalledObject.ImageBuildVersionArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

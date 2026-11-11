@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// DockerServerStatus Marshaller
     /// </summary>
-    public partial class DockerServerStatusMarshaller : IRequestMarshaller<DockerServerStatus, JsonMarshallerContext>
+    public partial class DockerServerStatusMarshaller : IRequestMarshaller<DockerServerStatus, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DockerServerStatus requestObject, JsonMarshallerContext context)
+        public void Marshall(DockerServerStatus requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetMessage())
             {
-                context.Writer.WritePropertyName("message");
-                context.Writer.WriteStringValue(requestObject.Message);
+                context.Writer.WriteTextString("message");
+                context.Writer.WriteTextString(requestObject.Message);
             }
 
             if (requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WriteTextString("status");
+                context.Writer.WriteTextString(requestObject.Status);
             }
         }
 

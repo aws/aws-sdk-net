@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,24 +39,24 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// FsxProtocolNfs Marshaller
     /// </summary>
-    public partial class FsxProtocolNfsMarshaller : IRequestMarshaller<FsxProtocolNfs, JsonMarshallerContext>
+    public partial class FsxProtocolNfsMarshaller : IRequestMarshaller<FsxProtocolNfs, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(FsxProtocolNfs requestObject, JsonMarshallerContext context)
+        public void Marshall(FsxProtocolNfs requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetMountOptions())
             {
-                context.Writer.WritePropertyName("MountOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("MountOptions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = NfsMountOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MountOptions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

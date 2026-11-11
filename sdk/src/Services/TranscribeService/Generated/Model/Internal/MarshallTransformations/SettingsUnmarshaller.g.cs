@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
@@ -36,79 +38,84 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Settings Object
     /// </summary>
-    public partial class SettingsUnmarshaller : IJsonUnmarshaller<Settings, JsonUnmarshallerContext>
+    public partial class SettingsUnmarshaller : ICborUnmarshaller<Settings, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Settings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Settings Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Settings();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ChannelIdentification", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ChannelIdentification = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("MaxAlternatives", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxAlternatives = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ChannelIdentification":
+                        context.AddPathSegment("ChannelIdentification");
+                        unmarshalledObject.ChannelIdentification = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("MaxSpeakerLabels", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxSpeakerLabels = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "MaxAlternatives":
+                        context.AddPathSegment("MaxAlternatives");
+                        unmarshalledObject.MaxAlternatives = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ShowAlternatives", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ShowAlternatives = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "MaxSpeakerLabels":
+                        context.AddPathSegment("MaxSpeakerLabels");
+                        unmarshalledObject.MaxSpeakerLabels = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ShowSpeakerLabels", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ShowSpeakerLabels = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ShowAlternatives":
+                        context.AddPathSegment("ShowAlternatives");
+                        unmarshalledObject.ShowAlternatives = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VocabularyFilterMethod", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyFilterMethod = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ShowSpeakerLabels":
+                        context.AddPathSegment("ShowSpeakerLabels");
+                        unmarshalledObject.ShowSpeakerLabels = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VocabularyFilterName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyFilterName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "VocabularyFilterMethod":
+                        context.AddPathSegment("VocabularyFilterMethod");
+                        unmarshalledObject.VocabularyFilterMethod = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VocabularyName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "VocabularyFilterName":
+                        context.AddPathSegment("VocabularyFilterName");
+                        unmarshalledObject.VocabularyFilterName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "VocabularyName":
+                        context.AddPathSegment("VocabularyName");
+                        unmarshalledObject.VocabularyName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

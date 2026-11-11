@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,22 +39,22 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// OnPremConfig Marshaller
     /// </summary>
-    public partial class OnPremConfigMarshaller : IRequestMarshaller<OnPremConfig, JsonMarshallerContext>
+    public partial class OnPremConfigMarshaller : IRequestMarshaller<OnPremConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(OnPremConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(OnPremConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAgentArns())
             {
-                context.Writer.WritePropertyName("AgentArns");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("AgentArns");
+                context.Writer.WriteStartArray(requestObject.AgentArns.Count);
                 foreach (var requestObjectAgentArnsListValue in requestObject.AgentArns)
                 {
-                    context.Writer.WriteStringValue(requestObjectAgentArnsListValue);
+                    context.Writer.WriteTextString(requestObjectAgentArnsListValue);
                 }
                 context.Writer.WriteEndArray();
             }

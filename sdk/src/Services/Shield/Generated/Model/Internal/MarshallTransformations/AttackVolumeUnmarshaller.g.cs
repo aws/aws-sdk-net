@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Shield.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AttackVolume Object
     /// </summary>
-    public partial class AttackVolumeUnmarshaller : IJsonUnmarshaller<AttackVolume, JsonUnmarshallerContext>
+    public partial class AttackVolumeUnmarshaller : ICborUnmarshaller<AttackVolume, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public AttackVolume Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AttackVolume Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new AttackVolume();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("BitsPerSecond", targetDepth, ref reader))
-                {
-                    var unmarshaller = AttackVolumeStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.BitsPerSecond = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("PacketsPerSecond", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = AttackVolumeStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.PacketsPerSecond = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BitsPerSecond":
+                        context.AddPathSegment("BitsPerSecond");
+                        unmarshalledObject.BitsPerSecond = AttackVolumeStatisticsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RequestsPerSecond", targetDepth, ref reader))
-                {
-                    var unmarshaller = AttackVolumeStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.RequestsPerSecond = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "PacketsPerSecond":
+                        context.AddPathSegment("PacketsPerSecond");
+                        unmarshalledObject.PacketsPerSecond = AttackVolumeStatisticsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "RequestsPerSecond":
+                        context.AddPathSegment("RequestsPerSecond");
+                        unmarshalledObject.RequestsPerSecond = AttackVolumeStatisticsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

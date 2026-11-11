@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ApiPassthrough Marshaller
     /// </summary>
-    public class ApiPassthroughMarshaller : IRequestMarshaller<ApiPassthrough, JsonMarshallerContext> 
+    public class ApiPassthroughMarshaller : IRequestMarshaller<ApiPassthrough, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,32 +45,31 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ApiPassthrough requestObject, JsonMarshallerContext context)
+        public void Marshall(ApiPassthrough requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetExtensions())
+
+            if (requestObject.IsSetExtensions())
             {
-                context.Writer.WritePropertyName("Extensions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Extensions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ExtensionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Extensions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetSubject())
+            if (requestObject.IsSetSubject())
             {
-                context.Writer.WritePropertyName("Subject");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Subject");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ASN1SubjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.Subject, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

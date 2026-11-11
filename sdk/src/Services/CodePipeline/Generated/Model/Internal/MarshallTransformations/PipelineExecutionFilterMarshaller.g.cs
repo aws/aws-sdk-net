@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,24 +39,24 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// PipelineExecutionFilter Marshaller
     /// </summary>
-    public partial class PipelineExecutionFilterMarshaller : IRequestMarshaller<PipelineExecutionFilter, JsonMarshallerContext>
+    public partial class PipelineExecutionFilterMarshaller : IRequestMarshaller<PipelineExecutionFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(PipelineExecutionFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(PipelineExecutionFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetSucceededInStage())
             {
-                context.Writer.WritePropertyName("succeededInStage");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("succeededInStage");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = SucceededInStageFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.SucceededInStage, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

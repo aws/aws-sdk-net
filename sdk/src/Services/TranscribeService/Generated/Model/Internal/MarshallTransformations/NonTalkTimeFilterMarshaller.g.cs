@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,47 +39,47 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// NonTalkTimeFilter Marshaller
     /// </summary>
-    public partial class NonTalkTimeFilterMarshaller : IRequestMarshaller<NonTalkTimeFilter, JsonMarshallerContext>
+    public partial class NonTalkTimeFilterMarshaller : IRequestMarshaller<NonTalkTimeFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(NonTalkTimeFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(NonTalkTimeFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAbsoluteTimeRange())
             {
-                context.Writer.WritePropertyName("AbsoluteTimeRange");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("AbsoluteTimeRange");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AbsoluteTimeRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.AbsoluteTimeRange, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetNegate())
             {
-                context.Writer.WritePropertyName("Negate");
-                context.Writer.WriteBooleanValue(requestObject.Negate.Value);
+                context.Writer.WriteTextString("Negate");
+                context.Writer.WriteBoolean(requestObject.Negate.Value);
             }
 
             if (requestObject.IsSetRelativeTimeRange())
             {
-                context.Writer.WritePropertyName("RelativeTimeRange");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("RelativeTimeRange");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RelativeTimeRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.RelativeTimeRange, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetThreshold())
             {
-                context.Writer.WritePropertyName("Threshold");
-                context.Writer.WriteNumberValue(requestObject.Threshold.Value);
+                context.Writer.WriteTextString("Threshold");
+                context.Writer.WriteInt64(requestObject.Threshold.Value);
             }
         }
 

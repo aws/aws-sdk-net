@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Route53Domains.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
@@ -36,58 +38,66 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BillingRecord Object
     /// </summary>
-    public partial class BillingRecordUnmarshaller : IJsonUnmarshaller<BillingRecord, JsonUnmarshallerContext>
+    public partial class BillingRecordUnmarshaller : ICborUnmarshaller<BillingRecord, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public BillingRecord Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public BillingRecord Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new BillingRecord();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("BillDate", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.BillDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("DomainName", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BillDate":
+                        context.AddPathSegment("BillDate");
+                        unmarshalledObject.BillDate = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("InvoiceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InvoiceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DomainName":
+                        context.AddPathSegment("DomainName");
+                        unmarshalledObject.DomainName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Operation", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Operation = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "InvoiceId":
+                        context.AddPathSegment("InvoiceId");
+                        unmarshalledObject.InvoiceId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Price", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Price = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Operation":
+                        context.AddPathSegment("Operation");
+                        unmarshalledObject.Operation = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Price":
+                        context.AddPathSegment("Price");
+                        unmarshalledObject.Price = CborNullableDoubleUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

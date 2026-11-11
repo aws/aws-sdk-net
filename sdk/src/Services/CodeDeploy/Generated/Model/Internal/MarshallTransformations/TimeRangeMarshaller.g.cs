@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// TimeRange Marshaller
     /// </summary>
-    public partial class TimeRangeMarshaller : IRequestMarshaller<TimeRange, JsonMarshallerContext>
+    public partial class TimeRangeMarshaller : IRequestMarshaller<TimeRange, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TimeRange requestObject, JsonMarshallerContext context)
+        public void Marshall(TimeRange requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetEnd())
             {
-                context.Writer.WritePropertyName("end");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.End.Value));
+                context.Writer.WriteTextString("end");
+                context.Writer.WriteDateTime(requestObject.End.Value);
             }
 
             if (requestObject.IsSetStart())
             {
-                context.Writer.WritePropertyName("start");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.Start.Value));
+                context.Writer.WriteTextString("start");
+                context.Writer.WriteDateTime(requestObject.Start.Value);
             }
         }
 

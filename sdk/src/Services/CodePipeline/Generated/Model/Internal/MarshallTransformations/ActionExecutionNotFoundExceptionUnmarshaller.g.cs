@@ -18,19 +18,19 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Globalization;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
 using System.Net;
-using System.Text;
-using System.Xml.Serialization;
-
-using Amazon.CodePipeline.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+
+using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
@@ -38,20 +38,20 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// Exception Unmarshaller for ActionExecutionNotFoundException
     /// </summary>
-    public partial class ActionExecutionNotFoundExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<ActionExecutionNotFoundException, JsonUnmarshallerContext>
+    public partial class ActionExecutionNotFoundExceptionUnmarshaller : ICborErrorResponseUnmarshaller<ActionExecutionNotFoundException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public ActionExecutionNotFoundException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ActionExecutionNotFoundException Unmarshall(CborUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public ActionExecutionNotFoundException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        public ActionExecutionNotFoundException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             var unmarshalledObject = new ActionExecutionNotFoundException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 

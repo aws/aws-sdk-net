@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,27 +39,27 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// QueriesConfig Marshaller
     /// </summary>
-    public partial class QueriesConfigMarshaller : IRequestMarshaller<QueriesConfig, JsonMarshallerContext>
+    public partial class QueriesConfigMarshaller : IRequestMarshaller<QueriesConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(QueriesConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(QueriesConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetQueries())
             {
-                context.Writer.WritePropertyName("Queries");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Queries");
+                context.Writer.WriteStartArray(requestObject.Queries.Count);
                 foreach (var requestObjectQueriesListValue in requestObject.Queries)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = QueryMarshaller.Instance;
                     marshaller.Marshall(requestObjectQueriesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

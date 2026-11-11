@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// ClientCertAuthSettings Marshaller
     /// </summary>
-    public partial class ClientCertAuthSettingsMarshaller : IRequestMarshaller<ClientCertAuthSettings, JsonMarshallerContext>
+    public partial class ClientCertAuthSettingsMarshaller : IRequestMarshaller<ClientCertAuthSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ClientCertAuthSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(ClientCertAuthSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetOCSPUrl())
             {
-                context.Writer.WritePropertyName("OCSPUrl");
-                context.Writer.WriteStringValue(requestObject.OCSPUrl);
+                context.Writer.WriteTextString("OCSPUrl");
+                context.Writer.WriteTextString(requestObject.OCSPUrl);
             }
         }
 

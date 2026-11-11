@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
@@ -36,37 +38,48 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Media Object
     /// </summary>
-    public partial class MediaUnmarshaller : IJsonUnmarshaller<Media, JsonUnmarshallerContext>
+    public partial class MediaUnmarshaller : ICborUnmarshaller<Media, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Media Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Media Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Media();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("MediaFileUri", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaFileUri = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("RedactedMediaFileUri", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RedactedMediaFileUri = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "MediaFileUri":
+                        context.AddPathSegment("MediaFileUri");
+                        unmarshalledObject.MediaFileUri = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "RedactedMediaFileUri":
+                        context.AddPathSegment("RedactedMediaFileUri");
+                        unmarshalledObject.RedactedMediaFileUri = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

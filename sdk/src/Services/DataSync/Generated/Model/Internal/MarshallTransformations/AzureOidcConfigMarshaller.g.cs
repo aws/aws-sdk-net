@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// AzureOidcConfig Marshaller
     /// </summary>
-    public partial class AzureOidcConfigMarshaller : IRequestMarshaller<AzureOidcConfig, JsonMarshallerContext>
+    public partial class AzureOidcConfigMarshaller : IRequestMarshaller<AzureOidcConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(AzureOidcConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AzureOidcConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetClientId())
             {
-                context.Writer.WritePropertyName("ClientId");
-                context.Writer.WriteStringValue(requestObject.ClientId);
+                context.Writer.WriteTextString("ClientId");
+                context.Writer.WriteTextString(requestObject.ClientId);
             }
 
             if (requestObject.IsSetTenantId())
             {
-                context.Writer.WritePropertyName("TenantId");
-                context.Writer.WriteStringValue(requestObject.TenantId);
+                context.Writer.WriteTextString("TenantId");
+                context.Writer.WriteTextString(requestObject.TenantId);
             }
         }
 

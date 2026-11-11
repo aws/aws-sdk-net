@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// LambdaExecutorConfiguration Marshaller
     /// </summary>
-    public partial class LambdaExecutorConfigurationMarshaller : IRequestMarshaller<LambdaExecutorConfiguration, JsonMarshallerContext>
+    public partial class LambdaExecutorConfigurationMarshaller : IRequestMarshaller<LambdaExecutorConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(LambdaExecutorConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(LambdaExecutorConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetLambdaFunctionArn())
             {
-                context.Writer.WritePropertyName("lambdaFunctionArn");
-                context.Writer.WriteStringValue(requestObject.LambdaFunctionArn);
+                context.Writer.WriteTextString("lambdaFunctionArn");
+                context.Writer.WriteTextString(requestObject.LambdaFunctionArn);
             }
         }
 

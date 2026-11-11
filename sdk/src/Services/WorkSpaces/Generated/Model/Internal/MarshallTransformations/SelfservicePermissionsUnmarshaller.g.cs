@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -36,58 +38,66 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SelfservicePermissions Object
     /// </summary>
-    public partial class SelfservicePermissionsUnmarshaller : IJsonUnmarshaller<SelfservicePermissions, JsonUnmarshallerContext>
+    public partial class SelfservicePermissionsUnmarshaller : ICborUnmarshaller<SelfservicePermissions, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public SelfservicePermissions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SelfservicePermissions Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new SelfservicePermissions();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ChangeComputeType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChangeComputeType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("IncreaseVolumeSize", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IncreaseVolumeSize = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ChangeComputeType":
+                        context.AddPathSegment("ChangeComputeType");
+                        unmarshalledObject.ChangeComputeType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RebuildWorkspace", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RebuildWorkspace = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "IncreaseVolumeSize":
+                        context.AddPathSegment("IncreaseVolumeSize");
+                        unmarshalledObject.IncreaseVolumeSize = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RestartWorkspace", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RestartWorkspace = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RebuildWorkspace":
+                        context.AddPathSegment("RebuildWorkspace");
+                        unmarshalledObject.RebuildWorkspace = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SwitchRunningMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SwitchRunningMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "RestartWorkspace":
+                        context.AddPathSegment("RestartWorkspace");
+                        unmarshalledObject.RestartWorkspace = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "SwitchRunningMode":
+                        context.AddPathSegment("SwitchRunningMode");
+                        unmarshalledObject.SwitchRunningMode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.TranscribeService.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
@@ -54,68 +55,74 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateVocabularyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.TranscribeService");
-            string target = "Transcribe.UpdateVocabulary";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetDataAccessRoleArn())
+            request.ResourcePath = "service/Transcribe/operation/UpdateVocabulary";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("DataAccessRoleArn");
-                context.Writer.WriteStringValue(publicRequest.DataAccessRoleArn);
-            }
-            if (publicRequest.IsSetEncryptionConfiguration())
-            {
-                context.Writer.WritePropertyName("EncryptionConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EncryptionConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetLanguageCode())
-            {
-                context.Writer.WritePropertyName("LanguageCode");
-                context.Writer.WriteStringValue(publicRequest.LanguageCode);
-            }
-            if (publicRequest.IsSetPhrases())
-            {
-                context.Writer.WritePropertyName("Phrases");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestPhrasesListValue in publicRequest.Phrases)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDataAccessRoleArn())
                 {
-                    context.Writer.WriteStringValue(publicRequestPhrasesListValue);
+                    context.Writer.WriteTextString("DataAccessRoleArn");
+                    context.Writer.WriteTextString(publicRequest.DataAccessRoleArn);
                 }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetVocabularyFileUri())
-            {
-                context.Writer.WritePropertyName("VocabularyFileUri");
-                context.Writer.WriteStringValue(publicRequest.VocabularyFileUri);
-            }
-            if (publicRequest.IsSetVocabularyName())
-            {
-                context.Writer.WritePropertyName("VocabularyName");
-                context.Writer.WriteStringValue(publicRequest.VocabularyName);
-            }
+                if (publicRequest.IsSetEncryptionConfiguration())
+                {
+                    context.Writer.WriteTextString("EncryptionConfiguration");
+                    context.Writer.WriteStartMap(null);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    var marshaller = EncryptionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetLanguageCode())
+                {
+                    context.Writer.WriteTextString("LanguageCode");
+                    context.Writer.WriteTextString(publicRequest.LanguageCode);
+                }
+                if (publicRequest.IsSetPhrases())
+                {
+                    context.Writer.WriteTextString("Phrases");
+                    context.Writer.WriteStartArray(publicRequest.Phrases.Count);
+                    foreach (var publicRequestPhrasesListValue in publicRequest.Phrases)
+                    {
+                        context.Writer.WriteTextString(publicRequestPhrasesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetVocabularyFileUri())
+                {
+                    context.Writer.WriteTextString("VocabularyFileUri");
+                    context.Writer.WriteTextString(publicRequest.VocabularyFileUri);
+                }
+                if (publicRequest.IsSetVocabularyName())
+                {
+                    context.Writer.WriteTextString("VocabularyName");
+                    context.Writer.WriteTextString(publicRequest.VocabularyName);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

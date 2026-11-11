@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccessMethod Marshaller
     /// </summary>
-    public class AccessMethodMarshaller : IRequestMarshaller<AccessMethod, JsonMarshallerContext> 
+    public class AccessMethodMarshaller : IRequestMarshaller<AccessMethod, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AccessMethod requestObject, JsonMarshallerContext context)
+        public void Marshall(AccessMethod requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAccessMethodType())
-            {
-                context.Writer.WritePropertyName("AccessMethodType");
-                context.Writer.WriteStringValue(requestObject.AccessMethodType);
-            }
 
-            if(requestObject.IsSetCustomObjectIdentifier())
+            if (requestObject.IsSetAccessMethodType())
             {
-                context.Writer.WritePropertyName("CustomObjectIdentifier");
-                context.Writer.WriteStringValue(requestObject.CustomObjectIdentifier);
+                context.Writer.WriteTextString("AccessMethodType");
+                context.Writer.WriteTextString(requestObject.AccessMethodType);
             }
-
+            if (requestObject.IsSetCustomObjectIdentifier())
+            {
+                context.Writer.WriteTextString("CustomObjectIdentifier");
+                context.Writer.WriteTextString(requestObject.CustomObjectIdentifier);
+            }
         }
 
         /// <summary>

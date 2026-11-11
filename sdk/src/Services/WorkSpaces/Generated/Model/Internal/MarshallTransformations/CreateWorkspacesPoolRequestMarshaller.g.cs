@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.WorkSpaces.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -54,98 +55,104 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateWorkspacesPoolRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkSpaces");
-            string target = "WorkspacesService.CreateWorkspacesPool";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-08";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetApplicationSettings())
+            request.ResourcePath = "service/WorkspacesService/operation/CreateWorkspacesPool";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("ApplicationSettings");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ApplicationSettingsRequestMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ApplicationSettings, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetBundleId())
-            {
-                context.Writer.WritePropertyName("BundleId");
-                context.Writer.WriteStringValue(publicRequest.BundleId);
-            }
-            if (publicRequest.IsSetCapacity())
-            {
-                context.Writer.WritePropertyName("Capacity");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CapacityMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Capacity, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-            if (publicRequest.IsSetDirectoryId())
-            {
-                context.Writer.WritePropertyName("DirectoryId");
-                context.Writer.WriteStringValue(publicRequest.DirectoryId);
-            }
-            if (publicRequest.IsSetPoolName())
-            {
-                context.Writer.WritePropertyName("PoolName");
-                context.Writer.WriteStringValue(publicRequest.PoolName);
-            }
-            if (publicRequest.IsSetRunningMode())
-            {
-                context.Writer.WritePropertyName("RunningMode");
-                context.Writer.WriteStringValue(publicRequest.RunningMode);
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetApplicationSettings())
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteTextString("ApplicationSettings");
+                    context.Writer.WriteStartMap(null);
 
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
+                    var marshaller = ApplicationSettingsRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ApplicationSettings, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetTimeoutSettings())
-            {
-                context.Writer.WritePropertyName("TimeoutSettings");
-                context.Writer.WriteStartObject();
+                if (publicRequest.IsSetBundleId())
+                {
+                    context.Writer.WriteTextString("BundleId");
+                    context.Writer.WriteTextString(publicRequest.BundleId);
+                }
+                if (publicRequest.IsSetCapacity())
+                {
+                    context.Writer.WriteTextString("Capacity");
+                    context.Writer.WriteStartMap(null);
 
-                var marshaller = TimeoutSettingsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.TimeoutSettings, context);
+                    var marshaller = CapacityMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Capacity, context);
 
-                context.Writer.WriteEndObject();
-            }
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetDirectoryId())
+                {
+                    context.Writer.WriteTextString("DirectoryId");
+                    context.Writer.WriteTextString(publicRequest.DirectoryId);
+                }
+                if (publicRequest.IsSetPoolName())
+                {
+                    context.Writer.WriteTextString("PoolName");
+                    context.Writer.WriteTextString(publicRequest.PoolName);
+                }
+                if (publicRequest.IsSetRunningMode())
+                {
+                    context.Writer.WriteTextString("RunningMode");
+                    context.Writer.WriteTextString(publicRequest.RunningMode);
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTimeoutSettings())
+                {
+                    context.Writer.WriteTextString("TimeoutSettings");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = TimeoutSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TimeoutSettings, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

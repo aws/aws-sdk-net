@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// ClientProperties Marshaller
     /// </summary>
-    public partial class ClientPropertiesMarshaller : IRequestMarshaller<ClientProperties, JsonMarshallerContext>
+    public partial class ClientPropertiesMarshaller : IRequestMarshaller<ClientProperties, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ClientProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(ClientProperties requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetClientExperiencePolicy())
             {
-                context.Writer.WritePropertyName("ClientExperiencePolicy");
-                context.Writer.WriteStringValue(requestObject.ClientExperiencePolicy);
+                context.Writer.WriteTextString("ClientExperiencePolicy");
+                context.Writer.WriteTextString(requestObject.ClientExperiencePolicy);
             }
 
             if (requestObject.IsSetLogUploadEnabled())
             {
-                context.Writer.WritePropertyName("LogUploadEnabled");
-                context.Writer.WriteStringValue(requestObject.LogUploadEnabled);
+                context.Writer.WriteTextString("LogUploadEnabled");
+                context.Writer.WriteTextString(requestObject.LogUploadEnabled);
             }
 
             if (requestObject.IsSetReconnectEnabled())
             {
-                context.Writer.WritePropertyName("ReconnectEnabled");
-                context.Writer.WriteStringValue(requestObject.ReconnectEnabled);
+                context.Writer.WriteTextString("ReconnectEnabled");
+                context.Writer.WriteTextString(requestObject.ReconnectEnabled);
             }
         }
 

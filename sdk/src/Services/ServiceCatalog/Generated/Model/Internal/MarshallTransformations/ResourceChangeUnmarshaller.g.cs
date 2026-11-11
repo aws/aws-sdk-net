@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
@@ -36,72 +38,78 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceChange Object
     /// </summary>
-    public partial class ResourceChangeUnmarshaller : IJsonUnmarshaller<ResourceChange, JsonUnmarshallerContext>
+    public partial class ResourceChangeUnmarshaller : ICborUnmarshaller<ResourceChange, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ResourceChange Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ResourceChange Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ResourceChange();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Action", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Details", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<ResourceChangeDetail, ResourceChangeDetailUnmarshaller>(ResourceChangeDetailUnmarshaller.Instance);
-                    unmarshalledObject.Details = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Action":
+                        context.AddPathSegment("Action");
+                        unmarshalledObject.Action = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LogicalResourceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogicalResourceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Details":
+                        context.AddPathSegment("Details");
+                        unmarshalledObject.Details = new CborListUnmarshaller<ResourceChangeDetail, ResourceChangeDetailUnmarshaller>(ResourceChangeDetailUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("PhysicalResourceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PhysicalResourceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LogicalResourceId":
+                        context.AddPathSegment("LogicalResourceId");
+                        unmarshalledObject.LogicalResourceId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Replacement", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Replacement = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "PhysicalResourceId":
+                        context.AddPathSegment("PhysicalResourceId");
+                        unmarshalledObject.PhysicalResourceId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ResourceType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Replacement":
+                        context.AddPathSegment("Replacement");
+                        unmarshalledObject.Replacement = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Scope", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ResourceType":
+                        context.AddPathSegment("ResourceType");
+                        unmarshalledObject.ResourceType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Scope":
+                        context.AddPathSegment("Scope");
+                        unmarshalledObject.Scope = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

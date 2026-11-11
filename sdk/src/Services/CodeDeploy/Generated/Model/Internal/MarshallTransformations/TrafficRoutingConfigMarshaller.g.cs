@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,41 +39,41 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// TrafficRoutingConfig Marshaller
     /// </summary>
-    public partial class TrafficRoutingConfigMarshaller : IRequestMarshaller<TrafficRoutingConfig, JsonMarshallerContext>
+    public partial class TrafficRoutingConfigMarshaller : IRequestMarshaller<TrafficRoutingConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TrafficRoutingConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(TrafficRoutingConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetTimeBasedCanary())
             {
-                context.Writer.WritePropertyName("timeBasedCanary");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("timeBasedCanary");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = TimeBasedCanaryMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeBasedCanary, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetTimeBasedLinear())
             {
-                context.Writer.WritePropertyName("timeBasedLinear");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("timeBasedLinear");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = TimeBasedLinearMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeBasedLinear, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

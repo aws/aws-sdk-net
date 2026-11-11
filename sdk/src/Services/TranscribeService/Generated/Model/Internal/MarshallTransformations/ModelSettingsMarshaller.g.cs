@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// ModelSettings Marshaller
     /// </summary>
-    public partial class ModelSettingsMarshaller : IRequestMarshaller<ModelSettings, JsonMarshallerContext>
+    public partial class ModelSettingsMarshaller : IRequestMarshaller<ModelSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ModelSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(ModelSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetLanguageModelName())
             {
-                context.Writer.WritePropertyName("LanguageModelName");
-                context.Writer.WriteStringValue(requestObject.LanguageModelName);
+                context.Writer.WriteTextString("LanguageModelName");
+                context.Writer.WriteTextString(requestObject.LanguageModelName);
             }
         }
 

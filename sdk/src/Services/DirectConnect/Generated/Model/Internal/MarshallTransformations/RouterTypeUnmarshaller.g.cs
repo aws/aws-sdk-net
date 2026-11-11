@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectConnect.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
@@ -36,65 +38,72 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RouterType Object
     /// </summary>
-    public partial class RouterTypeUnmarshaller : IJsonUnmarshaller<RouterType, JsonUnmarshallerContext>
+    public partial class RouterTypeUnmarshaller : ICborUnmarshaller<RouterType, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public RouterType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RouterType Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new RouterType();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("platform", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Platform = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("routerTypeIdentifier", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RouterTypeIdentifier = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "platform":
+                        context.AddPathSegment("Platform");
+                        unmarshalledObject.Platform = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("software", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Software = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "routerTypeIdentifier":
+                        context.AddPathSegment("RouterTypeIdentifier");
+                        unmarshalledObject.RouterTypeIdentifier = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("vendor", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Vendor = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "software":
+                        context.AddPathSegment("Software");
+                        unmarshalledObject.Software = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("xsltTemplateName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.XsltTemplateName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "vendor":
+                        context.AddPathSegment("Vendor");
+                        unmarshalledObject.Vendor = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("xsltTemplateNameForMacSec", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.XsltTemplateNameForMacSec = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "xsltTemplateName":
+                        context.AddPathSegment("XsltTemplateName");
+                        unmarshalledObject.XsltTemplateName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "xsltTemplateNameForMacSec":
+                        context.AddPathSegment("XsltTemplateNameForMacSec");
+                        unmarshalledObject.XsltTemplateNameForMacSec = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

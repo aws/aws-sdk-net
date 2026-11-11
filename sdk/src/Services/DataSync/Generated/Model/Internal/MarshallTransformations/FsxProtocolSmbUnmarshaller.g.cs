@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
@@ -36,72 +38,78 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FsxProtocolSmb Object
     /// </summary>
-    public partial class FsxProtocolSmbUnmarshaller : IJsonUnmarshaller<FsxProtocolSmb, JsonUnmarshallerContext>
+    public partial class FsxProtocolSmbUnmarshaller : ICborUnmarshaller<FsxProtocolSmb, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public FsxProtocolSmb Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FsxProtocolSmb Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new FsxProtocolSmb();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CmkSecretConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = CmkSecretConfigUnmarshaller.Instance;
-                    unmarshalledObject.CmkSecretConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("CustomSecretConfig", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = CustomSecretConfigUnmarshaller.Instance;
-                    unmarshalledObject.CustomSecretConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CmkSecretConfig":
+                        context.AddPathSegment("CmkSecretConfig");
+                        unmarshalledObject.CmkSecretConfig = CmkSecretConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Domain", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Domain = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CustomSecretConfig":
+                        context.AddPathSegment("CustomSecretConfig");
+                        unmarshalledObject.CustomSecretConfig = CustomSecretConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ManagedSecretConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = ManagedSecretConfigUnmarshaller.Instance;
-                    unmarshalledObject.ManagedSecretConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Domain":
+                        context.AddPathSegment("Domain");
+                        unmarshalledObject.Domain = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("MountOptions", targetDepth, ref reader))
-                {
-                    var unmarshaller = SmbMountOptionsUnmarshaller.Instance;
-                    unmarshalledObject.MountOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ManagedSecretConfig":
+                        context.AddPathSegment("ManagedSecretConfig");
+                        unmarshalledObject.ManagedSecretConfig = ManagedSecretConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Password", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Password = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "MountOptions":
+                        context.AddPathSegment("MountOptions");
+                        unmarshalledObject.MountOptions = SmbMountOptionsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("User", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.User = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Password":
+                        context.AddPathSegment("Password");
+                        unmarshalledObject.Password = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "User":
+                        context.AddPathSegment("User");
+                        unmarshalledObject.User = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

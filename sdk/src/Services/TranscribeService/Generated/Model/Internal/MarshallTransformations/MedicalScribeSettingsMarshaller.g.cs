@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,60 +39,60 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// MedicalScribeSettings Marshaller
     /// </summary>
-    public partial class MedicalScribeSettingsMarshaller : IRequestMarshaller<MedicalScribeSettings, JsonMarshallerContext>
+    public partial class MedicalScribeSettingsMarshaller : IRequestMarshaller<MedicalScribeSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(MedicalScribeSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(MedicalScribeSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetChannelIdentification())
             {
-                context.Writer.WritePropertyName("ChannelIdentification");
-                context.Writer.WriteBooleanValue(requestObject.ChannelIdentification.Value);
+                context.Writer.WriteTextString("ChannelIdentification");
+                context.Writer.WriteBoolean(requestObject.ChannelIdentification.Value);
             }
 
             if (requestObject.IsSetClinicalNoteGenerationSettings())
             {
-                context.Writer.WritePropertyName("ClinicalNoteGenerationSettings");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("ClinicalNoteGenerationSettings");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ClinicalNoteGenerationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClinicalNoteGenerationSettings, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetMaxSpeakerLabels())
             {
-                context.Writer.WritePropertyName("MaxSpeakerLabels");
-                context.Writer.WriteNumberValue(requestObject.MaxSpeakerLabels.Value);
+                context.Writer.WriteTextString("MaxSpeakerLabels");
+                context.Writer.WriteInt32(requestObject.MaxSpeakerLabels.Value);
             }
 
             if (requestObject.IsSetShowSpeakerLabels())
             {
-                context.Writer.WritePropertyName("ShowSpeakerLabels");
-                context.Writer.WriteBooleanValue(requestObject.ShowSpeakerLabels.Value);
+                context.Writer.WriteTextString("ShowSpeakerLabels");
+                context.Writer.WriteBoolean(requestObject.ShowSpeakerLabels.Value);
             }
 
             if (requestObject.IsSetVocabularyFilterMethod())
             {
-                context.Writer.WritePropertyName("VocabularyFilterMethod");
-                context.Writer.WriteStringValue(requestObject.VocabularyFilterMethod);
+                context.Writer.WriteTextString("VocabularyFilterMethod");
+                context.Writer.WriteTextString(requestObject.VocabularyFilterMethod);
             }
 
             if (requestObject.IsSetVocabularyFilterName())
             {
-                context.Writer.WritePropertyName("VocabularyFilterName");
-                context.Writer.WriteStringValue(requestObject.VocabularyFilterName);
+                context.Writer.WriteTextString("VocabularyFilterName");
+                context.Writer.WriteTextString(requestObject.VocabularyFilterName);
             }
 
             if (requestObject.IsSetVocabularyName())
             {
-                context.Writer.WritePropertyName("VocabularyName");
-                context.Writer.WriteStringValue(requestObject.VocabularyName);
+                context.Writer.WriteTextString("VocabularyName");
+                context.Writer.WriteTextString(requestObject.VocabularyName);
             }
         }
 

@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.MemoryDB.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
@@ -54,123 +55,129 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateClusterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MemoryDB");
-            string target = "AmazonMemoryDB.UpdateCluster";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetACLName())
+            request.ResourcePath = "service/AmazonMemoryDB/operation/UpdateCluster";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("ACLName");
-                context.Writer.WriteStringValue(publicRequest.ACLName);
-            }
-            if (publicRequest.IsSetClusterName())
-            {
-                context.Writer.WritePropertyName("ClusterName");
-                context.Writer.WriteStringValue(publicRequest.ClusterName);
-            }
-            if (publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-            if (publicRequest.IsSetEngine())
-            {
-                context.Writer.WritePropertyName("Engine");
-                context.Writer.WriteStringValue(publicRequest.Engine);
-            }
-            if (publicRequest.IsSetEngineVersion())
-            {
-                context.Writer.WritePropertyName("EngineVersion");
-                context.Writer.WriteStringValue(publicRequest.EngineVersion);
-            }
-            if (publicRequest.IsSetIpDiscovery())
-            {
-                context.Writer.WritePropertyName("IpDiscovery");
-                context.Writer.WriteStringValue(publicRequest.IpDiscovery);
-            }
-            if (publicRequest.IsSetMaintenanceWindow())
-            {
-                context.Writer.WritePropertyName("MaintenanceWindow");
-                context.Writer.WriteStringValue(publicRequest.MaintenanceWindow);
-            }
-            if (publicRequest.IsSetNodeType())
-            {
-                context.Writer.WritePropertyName("NodeType");
-                context.Writer.WriteStringValue(publicRequest.NodeType);
-            }
-            if (publicRequest.IsSetParameterGroupName())
-            {
-                context.Writer.WritePropertyName("ParameterGroupName");
-                context.Writer.WriteStringValue(publicRequest.ParameterGroupName);
-            }
-            if (publicRequest.IsSetReplicaConfiguration())
-            {
-                context.Writer.WritePropertyName("ReplicaConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ReplicaConfigurationRequestMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ReplicaConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetSecurityGroupIds())
-            {
-                context.Writer.WritePropertyName("SecurityGroupIds");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetACLName())
                 {
-                    context.Writer.WriteStringValue(publicRequestSecurityGroupIdsListValue);
+                    context.Writer.WriteTextString("ACLName");
+                    context.Writer.WriteTextString(publicRequest.ACLName);
                 }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetShardConfiguration())
-            {
-                context.Writer.WritePropertyName("ShardConfiguration");
-                context.Writer.WriteStartObject();
+                if (publicRequest.IsSetClusterName())
+                {
+                    context.Writer.WriteTextString("ClusterName");
+                    context.Writer.WriteTextString(publicRequest.ClusterName);
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetEngine())
+                {
+                    context.Writer.WriteTextString("Engine");
+                    context.Writer.WriteTextString(publicRequest.Engine);
+                }
+                if (publicRequest.IsSetEngineVersion())
+                {
+                    context.Writer.WriteTextString("EngineVersion");
+                    context.Writer.WriteTextString(publicRequest.EngineVersion);
+                }
+                if (publicRequest.IsSetIpDiscovery())
+                {
+                    context.Writer.WriteTextString("IpDiscovery");
+                    context.Writer.WriteTextString(publicRequest.IpDiscovery);
+                }
+                if (publicRequest.IsSetMaintenanceWindow())
+                {
+                    context.Writer.WriteTextString("MaintenanceWindow");
+                    context.Writer.WriteTextString(publicRequest.MaintenanceWindow);
+                }
+                if (publicRequest.IsSetNodeType())
+                {
+                    context.Writer.WriteTextString("NodeType");
+                    context.Writer.WriteTextString(publicRequest.NodeType);
+                }
+                if (publicRequest.IsSetParameterGroupName())
+                {
+                    context.Writer.WriteTextString("ParameterGroupName");
+                    context.Writer.WriteTextString(publicRequest.ParameterGroupName);
+                }
+                if (publicRequest.IsSetReplicaConfiguration())
+                {
+                    context.Writer.WriteTextString("ReplicaConfiguration");
+                    context.Writer.WriteStartMap(null);
 
-                var marshaller = ShardConfigurationRequestMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ShardConfiguration, context);
+                    var marshaller = ReplicaConfigurationRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ReplicaConfiguration, context);
 
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetSnapshotRetentionLimit())
-            {
-                context.Writer.WritePropertyName("SnapshotRetentionLimit");
-                context.Writer.WriteNumberValue(publicRequest.SnapshotRetentionLimit.Value);
-            }
-            if (publicRequest.IsSetSnapshotWindow())
-            {
-                context.Writer.WritePropertyName("SnapshotWindow");
-                context.Writer.WriteStringValue(publicRequest.SnapshotWindow);
-            }
-            if (publicRequest.IsSetSnsTopicArn())
-            {
-                context.Writer.WritePropertyName("SnsTopicArn");
-                context.Writer.WriteStringValue(publicRequest.SnsTopicArn);
-            }
-            if (publicRequest.IsSetSnsTopicStatus())
-            {
-                context.Writer.WritePropertyName("SnsTopicStatus");
-                context.Writer.WriteStringValue(publicRequest.SnsTopicStatus);
-            }
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetSecurityGroupIds())
+                {
+                    context.Writer.WriteTextString("SecurityGroupIds");
+                    context.Writer.WriteStartArray(publicRequest.SecurityGroupIds.Count);
+                    foreach (var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                    {
+                        context.Writer.WriteTextString(publicRequestSecurityGroupIdsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetShardConfiguration())
+                {
+                    context.Writer.WriteTextString("ShardConfiguration");
+                    context.Writer.WriteStartMap(null);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    var marshaller = ShardConfigurationRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ShardConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetSnapshotRetentionLimit())
+                {
+                    context.Writer.WriteTextString("SnapshotRetentionLimit");
+                    context.Writer.WriteInt32(publicRequest.SnapshotRetentionLimit.Value);
+                }
+                if (publicRequest.IsSetSnapshotWindow())
+                {
+                    context.Writer.WriteTextString("SnapshotWindow");
+                    context.Writer.WriteTextString(publicRequest.SnapshotWindow);
+                }
+                if (publicRequest.IsSetSnsTopicArn())
+                {
+                    context.Writer.WriteTextString("SnsTopicArn");
+                    context.Writer.WriteTextString(publicRequest.SnsTopicArn);
+                }
+                if (publicRequest.IsSetSnsTopicStatus())
+                {
+                    context.Writer.WriteTextString("SnsTopicStatus");
+                    context.Writer.WriteTextString(publicRequest.SnsTopicStatus);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// HdfsNameNode Marshaller
     /// </summary>
-    public partial class HdfsNameNodeMarshaller : IRequestMarshaller<HdfsNameNode, JsonMarshallerContext>
+    public partial class HdfsNameNodeMarshaller : IRequestMarshaller<HdfsNameNode, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(HdfsNameNode requestObject, JsonMarshallerContext context)
+        public void Marshall(HdfsNameNode requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetHostname())
             {
-                context.Writer.WritePropertyName("Hostname");
-                context.Writer.WriteStringValue(requestObject.Hostname);
+                context.Writer.WriteTextString("Hostname");
+                context.Writer.WriteTextString(requestObject.Hostname);
             }
 
             if (requestObject.IsSetPort())
             {
-                context.Writer.WritePropertyName("Port");
-                context.Writer.WriteNumberValue(requestObject.Port.Value);
+                context.Writer.WriteTextString("Port");
+                context.Writer.WriteInt32(requestObject.Port.Value);
             }
         }
 

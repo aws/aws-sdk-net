@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceDiscovery.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,41 +39,41 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
     /// <summary>
     /// ServiceChange Marshaller
     /// </summary>
-    public partial class ServiceChangeMarshaller : IRequestMarshaller<ServiceChange, JsonMarshallerContext>
+    public partial class ServiceChangeMarshaller : IRequestMarshaller<ServiceChange, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ServiceChange requestObject, JsonMarshallerContext context)
+        public void Marshall(ServiceChange requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(requestObject.Description);
+                context.Writer.WriteTextString("Description");
+                context.Writer.WriteTextString(requestObject.Description);
             }
 
             if (requestObject.IsSetDnsConfig())
             {
-                context.Writer.WritePropertyName("DnsConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("DnsConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DnsConfigChangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.DnsConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetHealthCheckConfig())
             {
-                context.Writer.WritePropertyName("HealthCheckConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("HealthCheckConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = HealthCheckConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.HealthCheckConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
@@ -36,79 +38,84 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CallAnalyticsJobSettings Object
     /// </summary>
-    public partial class CallAnalyticsJobSettingsUnmarshaller : IJsonUnmarshaller<CallAnalyticsJobSettings, JsonUnmarshallerContext>
+    public partial class CallAnalyticsJobSettingsUnmarshaller : ICborUnmarshaller<CallAnalyticsJobSettings, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public CallAnalyticsJobSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CallAnalyticsJobSettings Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new CallAnalyticsJobSettings();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ContentRedaction", targetDepth, ref reader))
-                {
-                    var unmarshaller = ContentRedactionUnmarshaller.Instance;
-                    unmarshalledObject.ContentRedaction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("LanguageIdSettings", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, LanguageIdSettings, StringUnmarshaller, LanguageIdSettingsUnmarshaller>(StringUnmarshaller.Instance, LanguageIdSettingsUnmarshaller.Instance);
-                    unmarshalledObject.LanguageIdSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ContentRedaction":
+                        context.AddPathSegment("ContentRedaction");
+                        unmarshalledObject.ContentRedaction = ContentRedactionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LanguageModelName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageModelName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LanguageIdSettings":
+                        context.AddPathSegment("LanguageIdSettings");
+                        unmarshalledObject.LanguageIdSettings = new CborDictionaryUnmarshaller<string, LanguageIdSettings, CborStringUnmarshaller, LanguageIdSettingsUnmarshaller>(CborStringUnmarshaller.Instance, LanguageIdSettingsUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LanguageOptions", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.LanguageOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LanguageModelName":
+                        context.AddPathSegment("LanguageModelName");
+                        unmarshalledObject.LanguageModelName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Summarization", targetDepth, ref reader))
-                {
-                    var unmarshaller = SummarizationUnmarshaller.Instance;
-                    unmarshalledObject.Summarization = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LanguageOptions":
+                        context.AddPathSegment("LanguageOptions");
+                        unmarshalledObject.LanguageOptions = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VocabularyFilterMethod", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyFilterMethod = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Summarization":
+                        context.AddPathSegment("Summarization");
+                        unmarshalledObject.Summarization = SummarizationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VocabularyFilterName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyFilterName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "VocabularyFilterMethod":
+                        context.AddPathSegment("VocabularyFilterMethod");
+                        unmarshalledObject.VocabularyFilterMethod = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VocabularyName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "VocabularyFilterName":
+                        context.AddPathSegment("VocabularyFilterName");
+                        unmarshalledObject.VocabularyFilterName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "VocabularyName":
+                        context.AddPathSegment("VocabularyName");
+                        unmarshalledObject.VocabularyName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

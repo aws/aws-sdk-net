@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// BlueInstanceTerminationOption Marshaller
     /// </summary>
-    public partial class BlueInstanceTerminationOptionMarshaller : IRequestMarshaller<BlueInstanceTerminationOption, JsonMarshallerContext>
+    public partial class BlueInstanceTerminationOptionMarshaller : IRequestMarshaller<BlueInstanceTerminationOption, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(BlueInstanceTerminationOption requestObject, JsonMarshallerContext context)
+        public void Marshall(BlueInstanceTerminationOption requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("action");
-                context.Writer.WriteStringValue(requestObject.Action);
+                context.Writer.WriteTextString("action");
+                context.Writer.WriteTextString(requestObject.Action);
             }
 
             if (requestObject.IsSetTerminationWaitTimeInMinutes())
             {
-                context.Writer.WritePropertyName("terminationWaitTimeInMinutes");
-                context.Writer.WriteNumberValue(requestObject.TerminationWaitTimeInMinutes.Value);
+                context.Writer.WriteTextString("terminationWaitTimeInMinutes");
+                context.Writer.WriteInt32(requestObject.TerminationWaitTimeInMinutes.Value);
             }
         }
 

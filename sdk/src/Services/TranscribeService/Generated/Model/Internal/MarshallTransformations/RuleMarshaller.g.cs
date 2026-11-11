@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,57 +39,57 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Rule Marshaller
     /// </summary>
-    public partial class RuleMarshaller : IRequestMarshaller<Rule, JsonMarshallerContext>
+    public partial class RuleMarshaller : IRequestMarshaller<Rule, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Rule requestObject, JsonMarshallerContext context)
+        public void Marshall(Rule requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetInterruptionFilter())
             {
-                context.Writer.WritePropertyName("InterruptionFilter");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("InterruptionFilter");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = InterruptionFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.InterruptionFilter, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetNonTalkTimeFilter())
             {
-                context.Writer.WritePropertyName("NonTalkTimeFilter");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("NonTalkTimeFilter");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = NonTalkTimeFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.NonTalkTimeFilter, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetSentimentFilter())
             {
-                context.Writer.WritePropertyName("SentimentFilter");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("SentimentFilter");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = SentimentFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.SentimentFilter, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetTranscriptFilter())
             {
-                context.Writer.WritePropertyName("TranscriptFilter");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("TranscriptFilter");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = TranscriptFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.TranscriptFilter, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

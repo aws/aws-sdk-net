@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,22 +39,22 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// ToxicityDetectionSettings Marshaller
     /// </summary>
-    public partial class ToxicityDetectionSettingsMarshaller : IRequestMarshaller<ToxicityDetectionSettings, JsonMarshallerContext>
+    public partial class ToxicityDetectionSettingsMarshaller : IRequestMarshaller<ToxicityDetectionSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ToxicityDetectionSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(ToxicityDetectionSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetToxicityCategories())
             {
-                context.Writer.WritePropertyName("ToxicityCategories");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ToxicityCategories");
+                context.Writer.WriteStartArray(requestObject.ToxicityCategories.Count);
                 foreach (var requestObjectToxicityCategoriesListValue in requestObject.ToxicityCategories)
                 {
-                    context.Writer.WriteStringValue(requestObjectToxicityCategoriesListValue);
+                    context.Writer.WriteTextString(requestObjectToxicityCategoriesListValue);
                 }
                 context.Writer.WriteEndArray();
             }

@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -36,247 +38,228 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeploymentInfo Object
     /// </summary>
-    public partial class DeploymentInfoUnmarshaller : IJsonUnmarshaller<DeploymentInfo, JsonUnmarshallerContext>
+    public partial class DeploymentInfoUnmarshaller : ICborUnmarshaller<DeploymentInfo, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DeploymentInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DeploymentInfo Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DeploymentInfo();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("additionalDeploymentStatusInfo", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdditionalDeploymentStatusInfo = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("applicationName", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "additionalDeploymentStatusInfo":
+                        context.AddPathSegment("AdditionalDeploymentStatusInfo");
+                        unmarshalledObject.AdditionalDeploymentStatusInfo = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("autoRollbackConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = AutoRollbackConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AutoRollbackConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "applicationName":
+                        context.AddPathSegment("ApplicationName");
+                        unmarshalledObject.ApplicationName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("blueGreenDeploymentConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = BlueGreenDeploymentConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.BlueGreenDeploymentConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "autoRollbackConfiguration":
+                        context.AddPathSegment("AutoRollbackConfiguration");
+                        unmarshalledObject.AutoRollbackConfiguration = AutoRollbackConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("completeTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CompleteTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "blueGreenDeploymentConfiguration":
+                        context.AddPathSegment("BlueGreenDeploymentConfiguration");
+                        unmarshalledObject.BlueGreenDeploymentConfiguration = BlueGreenDeploymentConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("computePlatform", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComputePlatform = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "completeTime":
+                        context.AddPathSegment("CompleteTime");
+                        unmarshalledObject.CompleteTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("createTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "computePlatform":
+                        context.AddPathSegment("ComputePlatform");
+                        unmarshalledObject.ComputePlatform = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("creator", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Creator = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "createTime":
+                        context.AddPathSegment("CreateTime");
+                        unmarshalledObject.CreateTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("deploymentConfigName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentConfigName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "creator":
+                        context.AddPathSegment("Creator");
+                        unmarshalledObject.Creator = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("deploymentGroupName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentGroupName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "deploymentConfigName":
+                        context.AddPathSegment("DeploymentConfigName");
+                        unmarshalledObject.DeploymentConfigName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("deploymentId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "deploymentGroupName":
+                        context.AddPathSegment("DeploymentGroupName");
+                        unmarshalledObject.DeploymentGroupName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("deploymentMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "deploymentId":
+                        context.AddPathSegment("DeploymentId");
+                        unmarshalledObject.DeploymentId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("deploymentOverview", targetDepth, ref reader))
-                {
-                    var unmarshaller = DeploymentOverviewUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentOverview = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "deploymentMode":
+                        context.AddPathSegment("DeploymentMode");
+                        unmarshalledObject.DeploymentMode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("deploymentStatusMessages", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DeploymentStatusMessages = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "deploymentOverview":
+                        context.AddPathSegment("DeploymentOverview");
+                        unmarshalledObject.DeploymentOverview = DeploymentOverviewUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("deploymentStyle", targetDepth, ref reader))
-                {
-                    var unmarshaller = DeploymentStyleUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentStyle = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "deploymentStatusMessages":
+                        context.AddPathSegment("DeploymentStatusMessages");
+                        unmarshalledObject.DeploymentStatusMessages = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("description", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "deploymentStyle":
+                        context.AddPathSegment("DeploymentStyle");
+                        unmarshalledObject.DeploymentStyle = DeploymentStyleUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ec2DeploymentOptions", targetDepth, ref reader))
-                {
-                    var unmarshaller = EC2DeploymentOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Ec2DeploymentOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "description":
+                        context.AddPathSegment("Description");
+                        unmarshalledObject.Description = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("errorInformation", targetDepth, ref reader))
-                {
-                    var unmarshaller = ErrorInformationUnmarshaller.Instance;
-                    unmarshalledObject.ErrorInformation = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ec2DeploymentOptions":
+                        context.AddPathSegment("Ec2DeploymentOptions");
+                        unmarshalledObject.Ec2DeploymentOptions = EC2DeploymentOptionsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("externalId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "errorInformation":
+                        context.AddPathSegment("ErrorInformation");
+                        unmarshalledObject.ErrorInformation = ErrorInformationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("fileExistsBehavior", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FileExistsBehavior = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "externalId":
+                        context.AddPathSegment("ExternalId");
+                        unmarshalledObject.ExternalId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ignoreApplicationStopFailures", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IgnoreApplicationStopFailures = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "fileExistsBehavior":
+                        context.AddPathSegment("FileExistsBehavior");
+                        unmarshalledObject.FileExistsBehavior = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("instanceTerminationWaitTimeStarted", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.InstanceTerminationWaitTimeStarted = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ignoreApplicationStopFailures":
+                        context.AddPathSegment("IgnoreApplicationStopFailures");
+                        unmarshalledObject.IgnoreApplicationStopFailures = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("loadBalancerInfo", targetDepth, ref reader))
-                {
-                    var unmarshaller = LoadBalancerInfoUnmarshaller.Instance;
-                    unmarshalledObject.LoadBalancerInfo = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "instanceTerminationWaitTimeStarted":
+                        context.AddPathSegment("InstanceTerminationWaitTimeStarted");
+                        unmarshalledObject.InstanceTerminationWaitTimeStarted = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("overrideAlarmConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = AlarmConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OverrideAlarmConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "loadBalancerInfo":
+                        context.AddPathSegment("LoadBalancerInfo");
+                        unmarshalledObject.LoadBalancerInfo = LoadBalancerInfoUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("previousRevision", targetDepth, ref reader))
-                {
-                    var unmarshaller = RevisionLocationUnmarshaller.Instance;
-                    unmarshalledObject.PreviousRevision = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "overrideAlarmConfiguration":
+                        context.AddPathSegment("OverrideAlarmConfiguration");
+                        unmarshalledObject.OverrideAlarmConfiguration = AlarmConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("relatedDeployments", targetDepth, ref reader))
-                {
-                    var unmarshaller = RelatedDeploymentsUnmarshaller.Instance;
-                    unmarshalledObject.RelatedDeployments = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "previousRevision":
+                        context.AddPathSegment("PreviousRevision");
+                        unmarshalledObject.PreviousRevision = RevisionLocationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("revision", targetDepth, ref reader))
-                {
-                    var unmarshaller = RevisionLocationUnmarshaller.Instance;
-                    unmarshalledObject.Revision = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "relatedDeployments":
+                        context.AddPathSegment("RelatedDeployments");
+                        unmarshalledObject.RelatedDeployments = RelatedDeploymentsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("rollbackInfo", targetDepth, ref reader))
-                {
-                    var unmarshaller = RollbackInfoUnmarshaller.Instance;
-                    unmarshalledObject.RollbackInfo = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "revision":
+                        context.AddPathSegment("Revision");
+                        unmarshalledObject.Revision = RevisionLocationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("startTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "rollbackInfo":
+                        context.AddPathSegment("RollbackInfo");
+                        unmarshalledObject.RollbackInfo = RollbackInfoUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "startTime":
+                        context.AddPathSegment("StartTime");
+                        unmarshalledObject.StartTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("targetInstances", targetDepth, ref reader))
-                {
-                    var unmarshaller = TargetInstancesUnmarshaller.Instance;
-                    unmarshalledObject.TargetInstances = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "status":
+                        context.AddPathSegment("Status");
+                        unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("updateOutdatedInstancesOnly", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UpdateOutdatedInstancesOnly = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "targetInstances":
+                        context.AddPathSegment("TargetInstances");
+                        unmarshalledObject.TargetInstances = TargetInstancesUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "updateOutdatedInstancesOnly":
+                        context.AddPathSegment("UpdateOutdatedInstancesOnly");
+                        unmarshalledObject.UpdateOutdatedInstancesOnly = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

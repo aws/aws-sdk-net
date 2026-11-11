@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
@@ -36,65 +38,72 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for WebhookDefinition Object
     /// </summary>
-    public partial class WebhookDefinitionUnmarshaller : IJsonUnmarshaller<WebhookDefinition, JsonUnmarshallerContext>
+    public partial class WebhookDefinitionUnmarshaller : ICborUnmarshaller<WebhookDefinition, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public WebhookDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WebhookDefinition Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new WebhookDefinition();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("authentication", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Authentication = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("authenticationConfiguration", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = WebhookAuthConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "authentication":
+                        context.AddPathSegment("Authentication");
+                        unmarshalledObject.Authentication = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("filters", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<WebhookFilterRule, WebhookFilterRuleUnmarshaller>(WebhookFilterRuleUnmarshaller.Instance);
-                    unmarshalledObject.Filters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "authenticationConfiguration":
+                        context.AddPathSegment("AuthenticationConfiguration");
+                        unmarshalledObject.AuthenticationConfiguration = WebhookAuthConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "filters":
+                        context.AddPathSegment("Filters");
+                        unmarshalledObject.Filters = new CborListUnmarshaller<WebhookFilterRule, WebhookFilterRuleUnmarshaller>(WebhookFilterRuleUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("targetAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "name":
+                        context.AddPathSegment("Name");
+                        unmarshalledObject.Name = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("targetPipeline", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetPipeline = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "targetAction":
+                        context.AddPathSegment("TargetAction");
+                        unmarshalledObject.TargetAction = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "targetPipeline":
+                        context.AddPathSegment("TargetPipeline");
+                        unmarshalledObject.TargetPipeline = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

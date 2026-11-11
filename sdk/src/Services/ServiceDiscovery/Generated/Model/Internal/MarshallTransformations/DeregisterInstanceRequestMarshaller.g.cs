@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.ServiceDiscovery.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
@@ -54,38 +55,44 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeregisterInstanceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceDiscovery");
-            string target = "Route53AutoNaming_v20170314.DeregisterInstance";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-14";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/Route53AutoNaming_v20170314/operation/DeregisterInstance";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetInstanceId())
+                {
+                    context.Writer.WriteTextString("InstanceId");
+                    context.Writer.WriteTextString(publicRequest.InstanceId);
+                }
+                if (publicRequest.IsSetServiceId())
+                {
+                    context.Writer.WriteTextString("ServiceId");
+                    context.Writer.WriteTextString(publicRequest.ServiceId);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetInstanceId())
-            {
-                context.Writer.WritePropertyName("InstanceId");
-                context.Writer.WriteStringValue(publicRequest.InstanceId);
             }
-            if (publicRequest.IsSetServiceId())
+            finally
             {
-                context.Writer.WritePropertyName("ServiceId");
-                context.Writer.WriteStringValue(publicRequest.ServiceId);
+                CborWriterPool.Return(writer);
             }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

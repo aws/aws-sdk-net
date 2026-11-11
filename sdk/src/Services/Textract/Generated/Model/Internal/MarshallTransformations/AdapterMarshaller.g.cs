@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,36 +39,36 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// Adapter Marshaller
     /// </summary>
-    public partial class AdapterMarshaller : IRequestMarshaller<Adapter, JsonMarshallerContext>
+    public partial class AdapterMarshaller : IRequestMarshaller<Adapter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Adapter requestObject, JsonMarshallerContext context)
+        public void Marshall(Adapter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAdapterId())
             {
-                context.Writer.WritePropertyName("AdapterId");
-                context.Writer.WriteStringValue(requestObject.AdapterId);
+                context.Writer.WriteTextString("AdapterId");
+                context.Writer.WriteTextString(requestObject.AdapterId);
             }
 
             if (requestObject.IsSetPages())
             {
-                context.Writer.WritePropertyName("Pages");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Pages");
+                context.Writer.WriteStartArray(requestObject.Pages.Count);
                 foreach (var requestObjectPagesListValue in requestObject.Pages)
                 {
-                    context.Writer.WriteStringValue(requestObjectPagesListValue);
+                    context.Writer.WriteTextString(requestObjectPagesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetVersion())
             {
-                context.Writer.WritePropertyName("Version");
-                context.Writer.WriteStringValue(requestObject.Version);
+                context.Writer.WriteTextString("Version");
+                context.Writer.WriteTextString(requestObject.Version);
             }
         }
 

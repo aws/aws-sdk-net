@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ResourceGroupsTaggingAPI.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,28 +39,28 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
     /// <summary>
     /// TagFilter Marshaller
     /// </summary>
-    public partial class TagFilterMarshaller : IRequestMarshaller<TagFilter, JsonMarshallerContext>
+    public partial class TagFilterMarshaller : IRequestMarshaller<TagFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TagFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(TagFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("Key");
-                context.Writer.WriteStringValue(requestObject.Key);
+                context.Writer.WriteTextString("Key");
+                context.Writer.WriteTextString(requestObject.Key);
             }
 
             if (requestObject.IsSetValues())
             {
-                context.Writer.WritePropertyName("Values");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Values");
+                context.Writer.WriteStartArray(requestObject.Values.Count);
                 foreach (var requestObjectValuesListValue in requestObject.Values)
                 {
-                    context.Writer.WriteStringValue(requestObjectValuesListValue);
+                    context.Writer.WriteTextString(requestObjectValuesListValue);
                 }
                 context.Writer.WriteEndArray();
             }

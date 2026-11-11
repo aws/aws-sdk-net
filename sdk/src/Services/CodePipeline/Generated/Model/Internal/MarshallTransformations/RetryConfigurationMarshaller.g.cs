@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// RetryConfiguration Marshaller
     /// </summary>
-    public partial class RetryConfigurationMarshaller : IRequestMarshaller<RetryConfiguration, JsonMarshallerContext>
+    public partial class RetryConfigurationMarshaller : IRequestMarshaller<RetryConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RetryConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(RetryConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetRetryMode())
             {
-                context.Writer.WritePropertyName("retryMode");
-                context.Writer.WriteStringValue(requestObject.RetryMode);
+                context.Writer.WriteTextString("retryMode");
+                context.Writer.WriteTextString(requestObject.RetryMode);
             }
         }
 

@@ -18,19 +18,19 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Globalization;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
 using System.Net;
-using System.Text;
-using System.Xml.Serialization;
-
-using Amazon.Textract.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+
+using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
@@ -38,58 +38,62 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// Exception Unmarshaller for HumanLoopQuotaExceededException
     /// </summary>
-    public partial class HumanLoopQuotaExceededExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<HumanLoopQuotaExceededException, JsonUnmarshallerContext>
+    public partial class HumanLoopQuotaExceededExceptionUnmarshaller : ICborErrorResponseUnmarshaller<HumanLoopQuotaExceededException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public HumanLoopQuotaExceededException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public HumanLoopQuotaExceededException Unmarshall(CborUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public HumanLoopQuotaExceededException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        public HumanLoopQuotaExceededException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             var unmarshalledObject = new HumanLoopQuotaExceededException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
-            if (context.Stream.Length > 0)
+            var reader = context.Reader;
+            context.AddPathSegment("HumanLoopQuotaExceededException");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                context.Read(ref reader);
-                int targetDepth = context.CurrentDepth;
-                while (context.ReadAtDepth(targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    if (context.TestExpression("Code", targetDepth, ref reader))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Code = unmarshaller.Unmarshall(context, ref reader);
-                        continue;
-                    }
+                    case "Code":
+                        context.AddPathSegment("Code");
+                        unmarshalledObject.Code = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                    if (context.TestExpression("QuotaCode", targetDepth, ref reader))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.QuotaCode = unmarshaller.Unmarshall(context, ref reader);
-                        continue;
-                    }
+                    case "QuotaCode":
+                        context.AddPathSegment("QuotaCode");
+                        unmarshalledObject.QuotaCode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                    if (context.TestExpression("ResourceType", targetDepth, ref reader))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
-                        continue;
-                    }
+                    case "ResourceType":
+                        context.AddPathSegment("ResourceType");
+                        unmarshalledObject.ResourceType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                    if (context.TestExpression("ServiceCode", targetDepth, ref reader))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ServiceCode = unmarshaller.Unmarshall(context, ref reader);
-                        continue;
-                    }
+                    case "ServiceCode":
+                        context.AddPathSegment("ServiceCode");
+                        unmarshalledObject.ServiceCode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }

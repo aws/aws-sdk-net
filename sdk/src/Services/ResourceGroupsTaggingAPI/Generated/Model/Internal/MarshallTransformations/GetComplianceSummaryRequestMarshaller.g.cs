@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.ResourceGroupsTaggingAPI.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
@@ -54,88 +55,94 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetComplianceSummaryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResourceGroupsTaggingAPI");
-            string target = "ResourceGroupsTaggingAPI_20170126.GetComplianceSummary";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/ResourceGroupsTaggingAPI_20170126/operation/GetComplianceSummary";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetGroupBy())
+                {
+                    context.Writer.WriteTextString("GroupBy");
+                    context.Writer.WriteStartArray(publicRequest.GroupBy.Count);
+                    foreach (var publicRequestGroupByListValue in publicRequest.GroupBy)
+                    {
+                        context.Writer.WriteTextString(publicRequestGroupByListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WriteTextString("MaxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
+                }
+                if (publicRequest.IsSetPaginationToken())
+                {
+                    context.Writer.WriteTextString("PaginationToken");
+                    context.Writer.WriteTextString(publicRequest.PaginationToken);
+                }
+                if (publicRequest.IsSetRegionFilters())
+                {
+                    context.Writer.WriteTextString("RegionFilters");
+                    context.Writer.WriteStartArray(publicRequest.RegionFilters.Count);
+                    foreach (var publicRequestRegionFiltersListValue in publicRequest.RegionFilters)
+                    {
+                        context.Writer.WriteTextString(publicRequestRegionFiltersListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetResourceTypeFilters())
+                {
+                    context.Writer.WriteTextString("ResourceTypeFilters");
+                    context.Writer.WriteStartArray(publicRequest.ResourceTypeFilters.Count);
+                    foreach (var publicRequestResourceTypeFiltersListValue in publicRequest.ResourceTypeFilters)
+                    {
+                        context.Writer.WriteTextString(publicRequestResourceTypeFiltersListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTagKeyFilters())
+                {
+                    context.Writer.WriteTextString("TagKeyFilters");
+                    context.Writer.WriteStartArray(publicRequest.TagKeyFilters.Count);
+                    foreach (var publicRequestTagKeyFiltersListValue in publicRequest.TagKeyFilters)
+                    {
+                        context.Writer.WriteTextString(publicRequestTagKeyFiltersListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTargetIdFilters())
+                {
+                    context.Writer.WriteTextString("TargetIdFilters");
+                    context.Writer.WriteStartArray(publicRequest.TargetIdFilters.Count);
+                    foreach (var publicRequestTargetIdFiltersListValue in publicRequest.TargetIdFilters)
+                    {
+                        context.Writer.WriteTextString(publicRequestTargetIdFiltersListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetGroupBy())
-            {
-                context.Writer.WritePropertyName("GroupBy");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestGroupByListValue in publicRequest.GroupBy)
-                {
-                    context.Writer.WriteStringValue(publicRequestGroupByListValue);
-                }
-                context.Writer.WriteEndArray();
             }
-            if (publicRequest.IsSetMaxResults())
+            finally
             {
-                context.Writer.WritePropertyName("MaxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetPaginationToken())
-            {
-                context.Writer.WritePropertyName("PaginationToken");
-                context.Writer.WriteStringValue(publicRequest.PaginationToken);
-            }
-            if (publicRequest.IsSetRegionFilters())
-            {
-                context.Writer.WritePropertyName("RegionFilters");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestRegionFiltersListValue in publicRequest.RegionFilters)
-                {
-                    context.Writer.WriteStringValue(publicRequestRegionFiltersListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetResourceTypeFilters())
-            {
-                context.Writer.WritePropertyName("ResourceTypeFilters");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestResourceTypeFiltersListValue in publicRequest.ResourceTypeFilters)
-                {
-                    context.Writer.WriteStringValue(publicRequestResourceTypeFiltersListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetTagKeyFilters())
-            {
-                context.Writer.WritePropertyName("TagKeyFilters");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagKeyFiltersListValue in publicRequest.TagKeyFilters)
-                {
-                    context.Writer.WriteStringValue(publicRequestTagKeyFiltersListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetTargetIdFilters())
-            {
-                context.Writer.WritePropertyName("TargetIdFilters");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTargetIdFiltersListValue in publicRequest.TargetIdFilters)
-                {
-                    context.Writer.WriteStringValue(publicRequestTargetIdFiltersListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

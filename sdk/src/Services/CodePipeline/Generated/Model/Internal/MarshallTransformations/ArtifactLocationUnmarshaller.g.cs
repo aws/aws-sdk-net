@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
@@ -36,37 +38,48 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ArtifactLocation Object
     /// </summary>
-    public partial class ArtifactLocationUnmarshaller : IJsonUnmarshaller<ArtifactLocation, JsonUnmarshallerContext>
+    public partial class ArtifactLocationUnmarshaller : ICborUnmarshaller<ArtifactLocation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ArtifactLocation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ArtifactLocation Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ArtifactLocation();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("s3Location", targetDepth, ref reader))
-                {
-                    var unmarshaller = S3ArtifactLocationUnmarshaller.Instance;
-                    unmarshalledObject.S3Location = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("type", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "s3Location":
+                        context.AddPathSegment("S3Location");
+                        unmarshalledObject.S3Location = S3ArtifactLocationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "type":
+                        context.AddPathSegment("Type");
+                        unmarshalledObject.Type = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

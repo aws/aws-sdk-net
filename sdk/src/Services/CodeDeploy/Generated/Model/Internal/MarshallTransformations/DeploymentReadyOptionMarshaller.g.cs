@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeploymentReadyOption Marshaller
     /// </summary>
-    public partial class DeploymentReadyOptionMarshaller : IRequestMarshaller<DeploymentReadyOption, JsonMarshallerContext>
+    public partial class DeploymentReadyOptionMarshaller : IRequestMarshaller<DeploymentReadyOption, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DeploymentReadyOption requestObject, JsonMarshallerContext context)
+        public void Marshall(DeploymentReadyOption requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetActionOnTimeout())
             {
-                context.Writer.WritePropertyName("actionOnTimeout");
-                context.Writer.WriteStringValue(requestObject.ActionOnTimeout);
+                context.Writer.WriteTextString("actionOnTimeout");
+                context.Writer.WriteTextString(requestObject.ActionOnTimeout);
             }
 
             if (requestObject.IsSetWaitTimeInMinutes())
             {
-                context.Writer.WritePropertyName("waitTimeInMinutes");
-                context.Writer.WriteNumberValue(requestObject.WaitTimeInMinutes.Value);
+                context.Writer.WriteTextString("waitTimeInMinutes");
+                context.Writer.WriteInt32(requestObject.WaitTimeInMinutes.Value);
             }
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// AzureFederatedIdentityConfig Marshaller
     /// </summary>
-    public partial class AzureFederatedIdentityConfigMarshaller : IRequestMarshaller<AzureFederatedIdentityConfig, JsonMarshallerContext>
+    public partial class AzureFederatedIdentityConfigMarshaller : IRequestMarshaller<AzureFederatedIdentityConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(AzureFederatedIdentityConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AzureFederatedIdentityConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAwsIamRole())
             {
-                context.Writer.WritePropertyName("AwsIamRole");
-                context.Writer.WriteStringValue(requestObject.AwsIamRole);
+                context.Writer.WriteTextString("AwsIamRole");
+                context.Writer.WriteTextString(requestObject.AwsIamRole);
             }
 
             if (requestObject.IsSetAzureOidc())
             {
-                context.Writer.WritePropertyName("AzureOidc");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("AzureOidc");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AzureOidcConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AzureOidc, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

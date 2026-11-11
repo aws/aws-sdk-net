@@ -29,58 +29,77 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CertificateAuthorityConfiguration Object
     /// </summary>  
-    public class CertificateAuthorityConfigurationUnmarshaller : IJsonUnmarshaller<CertificateAuthorityConfiguration, JsonUnmarshallerContext>
+    public class CertificateAuthorityConfigurationUnmarshaller : ICborUnmarshaller<CertificateAuthorityConfiguration, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CertificateAuthorityConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CertificateAuthorityConfiguration Unmarshall(CborUnmarshallerContext context)
         {
             CertificateAuthorityConfiguration unmarshalledObject = new CertificateAuthorityConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CsrExtensions", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = CsrExtensionsUnmarshaller.Instance;
-                    unmarshalledObject.CsrExtensions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("KeyAlgorithm", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyAlgorithm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SigningAlgorithm", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SigningAlgorithm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Subject", targetDepth, ref reader))
-                {
-                    var unmarshaller = ASN1SubjectUnmarshaller.Instance;
-                    unmarshalledObject.Subject = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "CsrExtensions":
+                        {
+                            context.AddPathSegment("CsrExtensions");
+                            var unmarshaller = CsrExtensionsUnmarshaller.Instance;
+                            unmarshalledObject.CsrExtensions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "KeyAlgorithm":
+                        {
+                            context.AddPathSegment("KeyAlgorithm");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.KeyAlgorithm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SigningAlgorithm":
+                        {
+                            context.AddPathSegment("SigningAlgorithm");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SigningAlgorithm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Subject":
+                        {
+                            context.AddPathSegment("Subject");
+                            var unmarshaller = ASN1SubjectUnmarshaller.Instance;
+                            unmarshalledObject.Subject = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.ServiceCatalog.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
@@ -54,108 +55,114 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateProductRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceCatalog");
-            string target = "AWS242ServiceCatalogService.UpdateProduct";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/AWS242ServiceCatalogService/operation/UpdateProduct";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAcceptLanguage())
+                {
+                    context.Writer.WriteTextString("AcceptLanguage");
+                    context.Writer.WriteTextString(publicRequest.AcceptLanguage);
+                }
+                if (publicRequest.IsSetAddTags())
+                {
+                    context.Writer.WriteTextString("AddTags");
+                    context.Writer.WriteStartArray(publicRequest.AddTags.Count);
+                    foreach (var publicRequestAddTagsListValue in publicRequest.AddTags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAddTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetDistributor())
+                {
+                    context.Writer.WriteTextString("Distributor");
+                    context.Writer.WriteTextString(publicRequest.Distributor);
+                }
+                if (publicRequest.IsSetId())
+                {
+                    context.Writer.WriteTextString("Id");
+                    context.Writer.WriteTextString(publicRequest.Id);
+                }
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("Name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                if (publicRequest.IsSetOwner())
+                {
+                    context.Writer.WriteTextString("Owner");
+                    context.Writer.WriteTextString(publicRequest.Owner);
+                }
+                if (publicRequest.IsSetRemoveTags())
+                {
+                    context.Writer.WriteTextString("RemoveTags");
+                    context.Writer.WriteStartArray(publicRequest.RemoveTags.Count);
+                    foreach (var publicRequestRemoveTagsListValue in publicRequest.RemoveTags)
+                    {
+                        context.Writer.WriteTextString(publicRequestRemoveTagsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetSourceConnection())
+                {
+                    context.Writer.WriteTextString("SourceConnection");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = SourceConnectionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SourceConnection, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetSupportDescription())
+                {
+                    context.Writer.WriteTextString("SupportDescription");
+                    context.Writer.WriteTextString(publicRequest.SupportDescription);
+                }
+                if (publicRequest.IsSetSupportEmail())
+                {
+                    context.Writer.WriteTextString("SupportEmail");
+                    context.Writer.WriteTextString(publicRequest.SupportEmail);
+                }
+                if (publicRequest.IsSetSupportUrl())
+                {
+                    context.Writer.WriteTextString("SupportUrl");
+                    context.Writer.WriteTextString(publicRequest.SupportUrl);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAcceptLanguage())
-            {
-                context.Writer.WritePropertyName("AcceptLanguage");
-                context.Writer.WriteStringValue(publicRequest.AcceptLanguage);
             }
-            if (publicRequest.IsSetAddTags())
+            finally
             {
-                context.Writer.WritePropertyName("AddTags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestAddTagsListValue in publicRequest.AddTags)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestAddTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-            if (publicRequest.IsSetDistributor())
-            {
-                context.Writer.WritePropertyName("Distributor");
-                context.Writer.WriteStringValue(publicRequest.Distributor);
-            }
-            if (publicRequest.IsSetId())
-            {
-                context.Writer.WritePropertyName("Id");
-                context.Writer.WriteStringValue(publicRequest.Id);
-            }
-            if (publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-            if (publicRequest.IsSetOwner())
-            {
-                context.Writer.WritePropertyName("Owner");
-                context.Writer.WriteStringValue(publicRequest.Owner);
-            }
-            if (publicRequest.IsSetRemoveTags())
-            {
-                context.Writer.WritePropertyName("RemoveTags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestRemoveTagsListValue in publicRequest.RemoveTags)
-                {
-                    context.Writer.WriteStringValue(publicRequestRemoveTagsListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetSourceConnection())
-            {
-                context.Writer.WritePropertyName("SourceConnection");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SourceConnectionMarshaller.Instance;
-                marshaller.Marshall(publicRequest.SourceConnection, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetSupportDescription())
-            {
-                context.Writer.WritePropertyName("SupportDescription");
-                context.Writer.WriteStringValue(publicRequest.SupportDescription);
-            }
-            if (publicRequest.IsSetSupportEmail())
-            {
-                context.Writer.WritePropertyName("SupportEmail");
-                context.Writer.WriteStringValue(publicRequest.SupportEmail);
-            }
-            if (publicRequest.IsSetSupportUrl())
-            {
-                context.Writer.WritePropertyName("SupportUrl");
-                context.Writer.WriteStringValue(publicRequest.SupportUrl);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

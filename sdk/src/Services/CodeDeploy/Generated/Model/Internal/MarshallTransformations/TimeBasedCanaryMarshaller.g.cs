@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// TimeBasedCanary Marshaller
     /// </summary>
-    public partial class TimeBasedCanaryMarshaller : IRequestMarshaller<TimeBasedCanary, JsonMarshallerContext>
+    public partial class TimeBasedCanaryMarshaller : IRequestMarshaller<TimeBasedCanary, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TimeBasedCanary requestObject, JsonMarshallerContext context)
+        public void Marshall(TimeBasedCanary requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCanaryInterval())
             {
-                context.Writer.WritePropertyName("canaryInterval");
-                context.Writer.WriteNumberValue(requestObject.CanaryInterval.Value);
+                context.Writer.WriteTextString("canaryInterval");
+                context.Writer.WriteInt32(requestObject.CanaryInterval.Value);
             }
 
             if (requestObject.IsSetCanaryPercentage())
             {
-                context.Writer.WritePropertyName("canaryPercentage");
-                context.Writer.WriteNumberValue(requestObject.CanaryPercentage.Value);
+                context.Writer.WriteTextString("canaryPercentage");
+                context.Writer.WriteInt32(requestObject.CanaryPercentage.Value);
             }
         }
 

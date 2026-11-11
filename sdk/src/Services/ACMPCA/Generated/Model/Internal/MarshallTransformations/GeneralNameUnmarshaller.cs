@@ -29,82 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GeneralName Object
     /// </summary>  
-    public class GeneralNameUnmarshaller : IJsonUnmarshaller<GeneralName, JsonUnmarshallerContext>
+    public class GeneralNameUnmarshaller : ICborUnmarshaller<GeneralName, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GeneralName Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public GeneralName Unmarshall(CborUnmarshallerContext context)
         {
             GeneralName unmarshalledObject = new GeneralName();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DirectoryName", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = ASN1SubjectUnmarshaller.Instance;
-                    unmarshalledObject.DirectoryName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DnsName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EdiPartyName", targetDepth, ref reader))
-                {
-                    var unmarshaller = EdiPartyNameUnmarshaller.Instance;
-                    unmarshalledObject.EdiPartyName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IpAddress", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("OtherName", targetDepth, ref reader))
-                {
-                    var unmarshaller = OtherNameUnmarshaller.Instance;
-                    unmarshalledObject.OtherName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RegisteredId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegisteredId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Rfc822Name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Rfc822Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UniformResourceIdentifier", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UniformResourceIdentifier = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "DirectoryName":
+                        {
+                            context.AddPathSegment("DirectoryName");
+                            var unmarshaller = ASN1SubjectUnmarshaller.Instance;
+                            unmarshalledObject.DirectoryName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DnsName":
+                        {
+                            context.AddPathSegment("DnsName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DnsName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EdiPartyName":
+                        {
+                            context.AddPathSegment("EdiPartyName");
+                            var unmarshaller = EdiPartyNameUnmarshaller.Instance;
+                            unmarshalledObject.EdiPartyName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IpAddress":
+                        {
+                            context.AddPathSegment("IpAddress");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "OtherName":
+                        {
+                            context.AddPathSegment("OtherName");
+                            var unmarshaller = OtherNameUnmarshaller.Instance;
+                            unmarshalledObject.OtherName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RegisteredId":
+                        {
+                            context.AddPathSegment("RegisteredId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RegisteredId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Rfc822Name":
+                        {
+                            context.AddPathSegment("Rfc822Name");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Rfc822Name = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "UniformResourceIdentifier":
+                        {
+                            context.AddPathSegment("UniformResourceIdentifier");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.UniformResourceIdentifier = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

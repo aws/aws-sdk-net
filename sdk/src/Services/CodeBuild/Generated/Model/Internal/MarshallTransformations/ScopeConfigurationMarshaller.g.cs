@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// ScopeConfiguration Marshaller
     /// </summary>
-    public partial class ScopeConfigurationMarshaller : IRequestMarshaller<ScopeConfiguration, JsonMarshallerContext>
+    public partial class ScopeConfigurationMarshaller : IRequestMarshaller<ScopeConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ScopeConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ScopeConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDomain())
             {
-                context.Writer.WritePropertyName("domain");
-                context.Writer.WriteStringValue(requestObject.Domain);
+                context.Writer.WriteTextString("domain");
+                context.Writer.WriteTextString(requestObject.Domain);
             }
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
 
             if (requestObject.IsSetScope())
             {
-                context.Writer.WritePropertyName("scope");
-                context.Writer.WriteStringValue(requestObject.Scope);
+                context.Writer.WriteTextString("scope");
+                context.Writer.WriteTextString(requestObject.Scope);
             }
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,48 +39,48 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// DatasetAugmentedManifestsListItem Marshaller
     /// </summary>
-    public partial class DatasetAugmentedManifestsListItemMarshaller : IRequestMarshaller<DatasetAugmentedManifestsListItem, JsonMarshallerContext>
+    public partial class DatasetAugmentedManifestsListItemMarshaller : IRequestMarshaller<DatasetAugmentedManifestsListItem, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DatasetAugmentedManifestsListItem requestObject, JsonMarshallerContext context)
+        public void Marshall(DatasetAugmentedManifestsListItem requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAnnotationDataS3Uri())
             {
-                context.Writer.WritePropertyName("AnnotationDataS3Uri");
-                context.Writer.WriteStringValue(requestObject.AnnotationDataS3Uri);
+                context.Writer.WriteTextString("AnnotationDataS3Uri");
+                context.Writer.WriteTextString(requestObject.AnnotationDataS3Uri);
             }
 
             if (requestObject.IsSetAttributeNames())
             {
-                context.Writer.WritePropertyName("AttributeNames");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("AttributeNames");
+                context.Writer.WriteStartArray(requestObject.AttributeNames.Count);
                 foreach (var requestObjectAttributeNamesListValue in requestObject.AttributeNames)
                 {
-                    context.Writer.WriteStringValue(requestObjectAttributeNamesListValue);
+                    context.Writer.WriteTextString(requestObjectAttributeNamesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetDocumentType())
             {
-                context.Writer.WritePropertyName("DocumentType");
-                context.Writer.WriteStringValue(requestObject.DocumentType);
+                context.Writer.WriteTextString("DocumentType");
+                context.Writer.WriteTextString(requestObject.DocumentType);
             }
 
             if (requestObject.IsSetS3Uri())
             {
-                context.Writer.WritePropertyName("S3Uri");
-                context.Writer.WriteStringValue(requestObject.S3Uri);
+                context.Writer.WriteTextString("S3Uri");
+                context.Writer.WriteTextString(requestObject.S3Uri);
             }
 
             if (requestObject.IsSetSourceDocumentsS3Uri())
             {
-                context.Writer.WritePropertyName("SourceDocumentsS3Uri");
-                context.Writer.WriteStringValue(requestObject.SourceDocumentsS3Uri);
+                context.Writer.WriteTextString("SourceDocumentsS3Uri");
+                context.Writer.WriteTextString(requestObject.SourceDocumentsS3Uri);
             }
         }
 

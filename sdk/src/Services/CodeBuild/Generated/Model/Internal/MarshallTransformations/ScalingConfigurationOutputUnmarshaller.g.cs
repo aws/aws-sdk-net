@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ScalingConfigurationOutput Object
     /// </summary>
-    public partial class ScalingConfigurationOutputUnmarshaller : IJsonUnmarshaller<ScalingConfigurationOutput, JsonUnmarshallerContext>
+    public partial class ScalingConfigurationOutputUnmarshaller : ICborUnmarshaller<ScalingConfigurationOutput, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ScalingConfigurationOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ScalingConfigurationOutput Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ScalingConfigurationOutput();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("desiredCapacity", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DesiredCapacity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("maxCapacity", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxCapacity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "desiredCapacity":
+                        context.AddPathSegment("DesiredCapacity");
+                        unmarshalledObject.DesiredCapacity = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("scalingType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScalingType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "maxCapacity":
+                        context.AddPathSegment("MaxCapacity");
+                        unmarshalledObject.MaxCapacity = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("targetTrackingScalingConfigs", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<TargetTrackingScalingConfiguration, TargetTrackingScalingConfigurationUnmarshaller>(TargetTrackingScalingConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.TargetTrackingScalingConfigs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "scalingType":
+                        context.AddPathSegment("ScalingType");
+                        unmarshalledObject.ScalingType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "targetTrackingScalingConfigs":
+                        context.AddPathSegment("TargetTrackingScalingConfigs");
+                        unmarshalledObject.TargetTrackingScalingConfigs = new CborListUnmarshaller<TargetTrackingScalingConfiguration, TargetTrackingScalingConfigurationUnmarshaller>(TargetTrackingScalingConfigurationUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

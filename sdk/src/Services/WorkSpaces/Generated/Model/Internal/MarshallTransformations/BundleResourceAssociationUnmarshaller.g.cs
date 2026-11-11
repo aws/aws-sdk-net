@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -36,72 +38,78 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BundleResourceAssociation Object
     /// </summary>
-    public partial class BundleResourceAssociationUnmarshaller : IJsonUnmarshaller<BundleResourceAssociation, JsonUnmarshallerContext>
+    public partial class BundleResourceAssociationUnmarshaller : ICborUnmarshaller<BundleResourceAssociation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public BundleResourceAssociation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public BundleResourceAssociation Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new BundleResourceAssociation();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AssociatedResourceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssociatedResourceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("AssociatedResourceType", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssociatedResourceType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AssociatedResourceId":
+                        context.AddPathSegment("AssociatedResourceId");
+                        unmarshalledObject.AssociatedResourceId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("BundleId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BundleId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AssociatedResourceType":
+                        context.AddPathSegment("AssociatedResourceType");
+                        unmarshalledObject.AssociatedResourceType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Created", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Created = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BundleId":
+                        context.AddPathSegment("BundleId");
+                        unmarshalledObject.BundleId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LastUpdatedTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Created":
+                        context.AddPathSegment("Created");
+                        unmarshalledObject.Created = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("State", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LastUpdatedTime":
+                        context.AddPathSegment("LastUpdatedTime");
+                        unmarshalledObject.LastUpdatedTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StateReason", targetDepth, ref reader))
-                {
-                    var unmarshaller = AssociationStateReasonUnmarshaller.Instance;
-                    unmarshalledObject.StateReason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "State":
+                        context.AddPathSegment("State");
+                        unmarshalledObject.State = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "StateReason":
+                        context.AddPathSegment("StateReason");
+                        unmarshalledObject.StateReason = AssociationStateReasonUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

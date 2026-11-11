@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CertificateAuthorityConfiguration Marshaller
     /// </summary>
-    public class CertificateAuthorityConfigurationMarshaller : IRequestMarshaller<CertificateAuthorityConfiguration, JsonMarshallerContext> 
+    public class CertificateAuthorityConfigurationMarshaller : IRequestMarshaller<CertificateAuthorityConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,44 +45,41 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CertificateAuthorityConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(CertificateAuthorityConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCsrExtensions())
+
+            if (requestObject.IsSetCsrExtensions())
             {
-                context.Writer.WritePropertyName("CsrExtensions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("CsrExtensions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CsrExtensionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CsrExtensions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetKeyAlgorithm())
+            if (requestObject.IsSetKeyAlgorithm())
             {
-                context.Writer.WritePropertyName("KeyAlgorithm");
-                context.Writer.WriteStringValue(requestObject.KeyAlgorithm);
+                context.Writer.WriteTextString("KeyAlgorithm");
+                context.Writer.WriteTextString(requestObject.KeyAlgorithm);
             }
-
-            if(requestObject.IsSetSigningAlgorithm())
+            if (requestObject.IsSetSigningAlgorithm())
             {
-                context.Writer.WritePropertyName("SigningAlgorithm");
-                context.Writer.WriteStringValue(requestObject.SigningAlgorithm);
+                context.Writer.WriteTextString("SigningAlgorithm");
+                context.Writer.WriteTextString(requestObject.SigningAlgorithm);
             }
-
-            if(requestObject.IsSetSubject())
+            if (requestObject.IsSetSubject())
             {
-                context.Writer.WritePropertyName("Subject");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Subject");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ASN1SubjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.Subject, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

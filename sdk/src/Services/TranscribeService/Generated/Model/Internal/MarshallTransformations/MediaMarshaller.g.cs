@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Media Marshaller
     /// </summary>
-    public partial class MediaMarshaller : IRequestMarshaller<Media, JsonMarshallerContext>
+    public partial class MediaMarshaller : IRequestMarshaller<Media, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Media requestObject, JsonMarshallerContext context)
+        public void Marshall(Media requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetMediaFileUri())
             {
-                context.Writer.WritePropertyName("MediaFileUri");
-                context.Writer.WriteStringValue(requestObject.MediaFileUri);
+                context.Writer.WriteTextString("MediaFileUri");
+                context.Writer.WriteTextString(requestObject.MediaFileUri);
             }
 
             if (requestObject.IsSetRedactedMediaFileUri())
             {
-                context.Writer.WritePropertyName("RedactedMediaFileUri");
-                context.Writer.WriteStringValue(requestObject.RedactedMediaFileUri);
+                context.Writer.WriteTextString("RedactedMediaFileUri");
+                context.Writer.WriteTextString(requestObject.RedactedMediaFileUri);
             }
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,37 +39,37 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// GoogleOidcConfig Marshaller
     /// </summary>
-    public partial class GoogleOidcConfigMarshaller : IRequestMarshaller<GoogleOidcConfig, JsonMarshallerContext>
+    public partial class GoogleOidcConfigMarshaller : IRequestMarshaller<GoogleOidcConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(GoogleOidcConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(GoogleOidcConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetIdentityPoolName())
             {
-                context.Writer.WritePropertyName("IdentityPoolName");
-                context.Writer.WriteStringValue(requestObject.IdentityPoolName);
+                context.Writer.WriteTextString("IdentityPoolName");
+                context.Writer.WriteTextString(requestObject.IdentityPoolName);
             }
 
             if (requestObject.IsSetIdentityProviderName())
             {
-                context.Writer.WritePropertyName("IdentityProviderName");
-                context.Writer.WriteStringValue(requestObject.IdentityProviderName);
+                context.Writer.WriteTextString("IdentityProviderName");
+                context.Writer.WriteTextString(requestObject.IdentityProviderName);
             }
 
             if (requestObject.IsSetProjectName())
             {
-                context.Writer.WritePropertyName("ProjectName");
-                context.Writer.WriteStringValue(requestObject.ProjectName);
+                context.Writer.WriteTextString("ProjectName");
+                context.Writer.WriteTextString(requestObject.ProjectName);
             }
 
             if (requestObject.IsSetProjectNumber())
             {
-                context.Writer.WritePropertyName("ProjectNumber");
-                context.Writer.WriteStringValue(requestObject.ProjectNumber);
+                context.Writer.WriteTextString("ProjectNumber");
+                context.Writer.WriteTextString(requestObject.ProjectNumber);
             }
         }
 

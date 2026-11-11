@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KeyUsage Marshaller
     /// </summary>
-    public class KeyUsageMarshaller : IRequestMarshaller<KeyUsage, JsonMarshallerContext> 
+    public class KeyUsageMarshaller : IRequestMarshaller<KeyUsage, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,64 +45,56 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(KeyUsage requestObject, JsonMarshallerContext context)
+        public void Marshall(KeyUsage requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCRLSign())
-            {
-                context.Writer.WritePropertyName("CRLSign");
-                context.Writer.WriteBooleanValue(requestObject.CRLSign.Value);
-            }
 
-            if(requestObject.IsSetDataEncipherment())
+            if (requestObject.IsSetCRLSign())
             {
-                context.Writer.WritePropertyName("DataEncipherment");
-                context.Writer.WriteBooleanValue(requestObject.DataEncipherment.Value);
+                context.Writer.WriteTextString("CRLSign");
+                context.Writer.WriteBoolean(requestObject.CRLSign.Value);
             }
-
-            if(requestObject.IsSetDecipherOnly())
+            if (requestObject.IsSetDataEncipherment())
             {
-                context.Writer.WritePropertyName("DecipherOnly");
-                context.Writer.WriteBooleanValue(requestObject.DecipherOnly.Value);
+                context.Writer.WriteTextString("DataEncipherment");
+                context.Writer.WriteBoolean(requestObject.DataEncipherment.Value);
             }
-
-            if(requestObject.IsSetDigitalSignature())
+            if (requestObject.IsSetDecipherOnly())
             {
-                context.Writer.WritePropertyName("DigitalSignature");
-                context.Writer.WriteBooleanValue(requestObject.DigitalSignature.Value);
+                context.Writer.WriteTextString("DecipherOnly");
+                context.Writer.WriteBoolean(requestObject.DecipherOnly.Value);
             }
-
-            if(requestObject.IsSetEncipherOnly())
+            if (requestObject.IsSetDigitalSignature())
             {
-                context.Writer.WritePropertyName("EncipherOnly");
-                context.Writer.WriteBooleanValue(requestObject.EncipherOnly.Value);
+                context.Writer.WriteTextString("DigitalSignature");
+                context.Writer.WriteBoolean(requestObject.DigitalSignature.Value);
             }
-
-            if(requestObject.IsSetKeyAgreement())
+            if (requestObject.IsSetEncipherOnly())
             {
-                context.Writer.WritePropertyName("KeyAgreement");
-                context.Writer.WriteBooleanValue(requestObject.KeyAgreement.Value);
+                context.Writer.WriteTextString("EncipherOnly");
+                context.Writer.WriteBoolean(requestObject.EncipherOnly.Value);
             }
-
-            if(requestObject.IsSetKeyCertSign())
+            if (requestObject.IsSetKeyAgreement())
             {
-                context.Writer.WritePropertyName("KeyCertSign");
-                context.Writer.WriteBooleanValue(requestObject.KeyCertSign.Value);
+                context.Writer.WriteTextString("KeyAgreement");
+                context.Writer.WriteBoolean(requestObject.KeyAgreement.Value);
             }
-
-            if(requestObject.IsSetKeyEncipherment())
+            if (requestObject.IsSetKeyCertSign())
             {
-                context.Writer.WritePropertyName("KeyEncipherment");
-                context.Writer.WriteBooleanValue(requestObject.KeyEncipherment.Value);
+                context.Writer.WriteTextString("KeyCertSign");
+                context.Writer.WriteBoolean(requestObject.KeyCertSign.Value);
             }
-
-            if(requestObject.IsSetNonRepudiation())
+            if (requestObject.IsSetKeyEncipherment())
             {
-                context.Writer.WritePropertyName("NonRepudiation");
-                context.Writer.WriteBooleanValue(requestObject.NonRepudiation.Value);
+                context.Writer.WriteTextString("KeyEncipherment");
+                context.Writer.WriteBoolean(requestObject.KeyEncipherment.Value);
             }
-
+            if (requestObject.IsSetNonRepudiation())
+            {
+                context.Writer.WriteTextString("NonRepudiation");
+                context.Writer.WriteBoolean(requestObject.NonRepudiation.Value);
+            }
         }
 
         /// <summary>

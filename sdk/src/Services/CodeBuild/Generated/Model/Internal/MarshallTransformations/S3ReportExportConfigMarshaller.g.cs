@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,49 +39,49 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// S3ReportExportConfig Marshaller
     /// </summary>
-    public partial class S3ReportExportConfigMarshaller : IRequestMarshaller<S3ReportExportConfig, JsonMarshallerContext>
+    public partial class S3ReportExportConfigMarshaller : IRequestMarshaller<S3ReportExportConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(S3ReportExportConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(S3ReportExportConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetBucket())
             {
-                context.Writer.WritePropertyName("bucket");
-                context.Writer.WriteStringValue(requestObject.Bucket);
+                context.Writer.WriteTextString("bucket");
+                context.Writer.WriteTextString(requestObject.Bucket);
             }
 
             if (requestObject.IsSetBucketOwner())
             {
-                context.Writer.WritePropertyName("bucketOwner");
-                context.Writer.WriteStringValue(requestObject.BucketOwner);
+                context.Writer.WriteTextString("bucketOwner");
+                context.Writer.WriteTextString(requestObject.BucketOwner);
             }
 
             if (requestObject.IsSetEncryptionDisabled())
             {
-                context.Writer.WritePropertyName("encryptionDisabled");
-                context.Writer.WriteBooleanValue(requestObject.EncryptionDisabled.Value);
+                context.Writer.WriteTextString("encryptionDisabled");
+                context.Writer.WriteBoolean(requestObject.EncryptionDisabled.Value);
             }
 
             if (requestObject.IsSetEncryptionKey())
             {
-                context.Writer.WritePropertyName("encryptionKey");
-                context.Writer.WriteStringValue(requestObject.EncryptionKey);
+                context.Writer.WriteTextString("encryptionKey");
+                context.Writer.WriteTextString(requestObject.EncryptionKey);
             }
 
             if (requestObject.IsSetPackaging())
             {
-                context.Writer.WritePropertyName("packaging");
-                context.Writer.WriteStringValue(requestObject.Packaging);
+                context.Writer.WriteTextString("packaging");
+                context.Writer.WriteTextString(requestObject.Packaging);
             }
 
             if (requestObject.IsSetPath())
             {
-                context.Writer.WritePropertyName("path");
-                context.Writer.WriteStringValue(requestObject.Path);
+                context.Writer.WriteTextString("path");
+                context.Writer.WriteTextString(requestObject.Path);
             }
         }
 

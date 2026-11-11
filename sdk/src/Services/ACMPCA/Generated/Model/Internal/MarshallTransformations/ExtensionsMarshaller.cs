@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Extensions Marshaller
     /// </summary>
-    public class ExtensionsMarshaller : IRequestMarshaller<Extensions, JsonMarshallerContext> 
+    public class ExtensionsMarshaller : IRequestMarshaller<Extensions, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,85 +45,81 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Extensions requestObject, JsonMarshallerContext context)
+        public void Marshall(Extensions requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCertificatePolicies())
+
+            if (requestObject.IsSetCertificatePolicies())
             {
-                context.Writer.WritePropertyName("CertificatePolicies");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("CertificatePolicies");
+                context.Writer.WriteStartArray(requestObject.CertificatePolicies.Count);
                 foreach(var requestObjectCertificatePoliciesListValue in requestObject.CertificatePolicies)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = PolicyInformationMarshaller.Instance;
                     marshaller.Marshall(requestObjectCertificatePoliciesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetCustomExtensions())
+            if (requestObject.IsSetCustomExtensions())
             {
-                context.Writer.WritePropertyName("CustomExtensions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("CustomExtensions");
+                context.Writer.WriteStartArray(requestObject.CustomExtensions.Count);
                 foreach(var requestObjectCustomExtensionsListValue in requestObject.CustomExtensions)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = CustomExtensionMarshaller.Instance;
                     marshaller.Marshall(requestObjectCustomExtensionsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetExtendedKeyUsage())
+            if (requestObject.IsSetExtendedKeyUsage())
             {
-                context.Writer.WritePropertyName("ExtendedKeyUsage");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ExtendedKeyUsage");
+                context.Writer.WriteStartArray(requestObject.ExtendedKeyUsage.Count);
                 foreach(var requestObjectExtendedKeyUsageListValue in requestObject.ExtendedKeyUsage)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ExtendedKeyUsageMarshaller.Instance;
                     marshaller.Marshall(requestObjectExtendedKeyUsageListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetKeyUsage())
+            if (requestObject.IsSetKeyUsage())
             {
-                context.Writer.WritePropertyName("KeyUsage");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("KeyUsage");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = KeyUsageMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyUsage, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetSubjectAlternativeNames())
+            if (requestObject.IsSetSubjectAlternativeNames())
             {
-                context.Writer.WritePropertyName("SubjectAlternativeNames");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("SubjectAlternativeNames");
+                context.Writer.WriteStartArray(requestObject.SubjectAlternativeNames.Count);
                 foreach(var requestObjectSubjectAlternativeNamesListValue in requestObject.SubjectAlternativeNames)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = GeneralNameMarshaller.Instance;
                     marshaller.Marshall(requestObjectSubjectAlternativeNamesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

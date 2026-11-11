@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// ArtifactDetails Marshaller
     /// </summary>
-    public partial class ArtifactDetailsMarshaller : IRequestMarshaller<ArtifactDetails, JsonMarshallerContext>
+    public partial class ArtifactDetailsMarshaller : IRequestMarshaller<ArtifactDetails, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ArtifactDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(ArtifactDetails requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetMaximumCount())
             {
-                context.Writer.WritePropertyName("maximumCount");
-                context.Writer.WriteNumberValue(requestObject.MaximumCount.Value);
+                context.Writer.WriteTextString("maximumCount");
+                context.Writer.WriteInt32(requestObject.MaximumCount.Value);
             }
 
             if (requestObject.IsSetMinimumCount())
             {
-                context.Writer.WritePropertyName("minimumCount");
-                context.Writer.WriteNumberValue(requestObject.MinimumCount.Value);
+                context.Writer.WriteTextString("minimumCount");
+                context.Writer.WriteInt32(requestObject.MinimumCount.Value);
             }
         }
 

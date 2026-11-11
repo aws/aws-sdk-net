@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// SourceRevisionOverride Marshaller
     /// </summary>
-    public partial class SourceRevisionOverrideMarshaller : IRequestMarshaller<SourceRevisionOverride, JsonMarshallerContext>
+    public partial class SourceRevisionOverrideMarshaller : IRequestMarshaller<SourceRevisionOverride, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(SourceRevisionOverride requestObject, JsonMarshallerContext context)
+        public void Marshall(SourceRevisionOverride requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetActionName())
             {
-                context.Writer.WritePropertyName("actionName");
-                context.Writer.WriteStringValue(requestObject.ActionName);
+                context.Writer.WriteTextString("actionName");
+                context.Writer.WriteTextString(requestObject.ActionName);
             }
 
             if (requestObject.IsSetRevisionType())
             {
-                context.Writer.WritePropertyName("revisionType");
-                context.Writer.WriteStringValue(requestObject.RevisionType);
+                context.Writer.WriteTextString("revisionType");
+                context.Writer.WriteTextString(requestObject.RevisionType);
             }
 
             if (requestObject.IsSetRevisionValue())
             {
-                context.Writer.WritePropertyName("revisionValue");
-                context.Writer.WriteStringValue(requestObject.RevisionValue);
+                context.Writer.WriteTextString("revisionValue");
+                context.Writer.WriteTextString(requestObject.RevisionValue);
             }
         }
 

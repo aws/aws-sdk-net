@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,37 +39,37 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// RuleTypeId Marshaller
     /// </summary>
-    public partial class RuleTypeIdMarshaller : IRequestMarshaller<RuleTypeId, JsonMarshallerContext>
+    public partial class RuleTypeIdMarshaller : IRequestMarshaller<RuleTypeId, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RuleTypeId requestObject, JsonMarshallerContext context)
+        public void Marshall(RuleTypeId requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCategory())
             {
-                context.Writer.WritePropertyName("category");
-                context.Writer.WriteStringValue(requestObject.Category);
+                context.Writer.WriteTextString("category");
+                context.Writer.WriteTextString(requestObject.Category);
             }
 
             if (requestObject.IsSetOwner())
             {
-                context.Writer.WritePropertyName("owner");
-                context.Writer.WriteStringValue(requestObject.Owner);
+                context.Writer.WriteTextString("owner");
+                context.Writer.WriteTextString(requestObject.Owner);
             }
 
             if (requestObject.IsSetProvider())
             {
-                context.Writer.WritePropertyName("provider");
-                context.Writer.WriteStringValue(requestObject.Provider);
+                context.Writer.WriteTextString("provider");
+                context.Writer.WriteTextString(requestObject.Provider);
             }
 
             if (requestObject.IsSetVersion())
             {
-                context.Writer.WritePropertyName("version");
-                context.Writer.WriteStringValue(requestObject.Version);
+                context.Writer.WriteTextString("version");
+                context.Writer.WriteTextString(requestObject.Version);
             }
         }
 

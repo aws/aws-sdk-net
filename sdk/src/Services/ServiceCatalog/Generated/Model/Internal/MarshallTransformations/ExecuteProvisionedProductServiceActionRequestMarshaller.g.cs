@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.ServiceCatalog.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
@@ -54,70 +55,76 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public IRequest Marshall(ExecuteProvisionedProductServiceActionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceCatalog");
-            string target = "AWS242ServiceCatalogService.ExecuteProvisionedProductServiceAction";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAcceptLanguage())
+            request.ResourcePath = "service/AWS242ServiceCatalogService/operation/ExecuteProvisionedProductServiceAction";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("AcceptLanguage");
-                context.Writer.WriteStringValue(publicRequest.AcceptLanguage);
-            }
-            if (publicRequest.IsSetExecuteToken())
-            {
-                context.Writer.WritePropertyName("ExecuteToken");
-                context.Writer.WriteStringValue(publicRequest.ExecuteToken);
-            }
-            else
-            {
-                context.Writer.WritePropertyName("ExecuteToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if (publicRequest.IsSetParameters())
-            {
-                context.Writer.WritePropertyName("Parameters");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAcceptLanguage())
                 {
-                    context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                    var publicRequestParametersValue = publicRequestParametersKvp.Value;
-                    context.Writer.WriteStartArray();
-                    foreach (var publicRequestParametersValueListValue in publicRequestParametersValue)
-                    {
-                        context.Writer.WriteStringValue(publicRequestParametersValueListValue);
-                    }
-                    context.Writer.WriteEndArray();
+                    context.Writer.WriteTextString("AcceptLanguage");
+                    context.Writer.WriteTextString(publicRequest.AcceptLanguage);
                 }
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetProvisionedProductId())
-            {
-                context.Writer.WritePropertyName("ProvisionedProductId");
-                context.Writer.WriteStringValue(publicRequest.ProvisionedProductId);
-            }
-            if (publicRequest.IsSetServiceActionId())
-            {
-                context.Writer.WritePropertyName("ServiceActionId");
-                context.Writer.WriteStringValue(publicRequest.ServiceActionId);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                if (publicRequest.IsSetExecuteToken())
+                {
+                    context.Writer.WriteTextString("ExecuteToken");
+                    context.Writer.WriteTextString(publicRequest.ExecuteToken);
+                }
+                else
+                {
+                    context.Writer.WriteTextString("ExecuteToken");
+                    context.Writer.WriteTextString(Guid.NewGuid().ToString());
+                }
+                if (publicRequest.IsSetParameters())
+                {
+                    context.Writer.WriteTextString("Parameters");
+                    context.Writer.WriteStartMap(null);
+                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                    {
+                        context.Writer.WriteTextString(publicRequestParametersKvp.Key);
+                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
+                        context.Writer.WriteStartArray(publicRequestParametersValue.Count);
+                        foreach (var publicRequestParametersValueListValue in publicRequestParametersValue)
+                        {
+                            context.Writer.WriteTextString(publicRequestParametersValueListValue);
+                        }
+                        context.Writer.WriteEndArray();
+                    }
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetProvisionedProductId())
+                {
+                    context.Writer.WriteTextString("ProvisionedProductId");
+                    context.Writer.WriteTextString(publicRequest.ProvisionedProductId);
+                }
+                if (publicRequest.IsSetServiceActionId())
+                {
+                    context.Writer.WriteTextString("ServiceActionId");
+                    context.Writer.WriteTextString(publicRequest.ServiceActionId);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

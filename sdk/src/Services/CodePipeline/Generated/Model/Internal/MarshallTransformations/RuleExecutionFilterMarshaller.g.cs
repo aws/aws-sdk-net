@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// RuleExecutionFilter Marshaller
     /// </summary>
-    public partial class RuleExecutionFilterMarshaller : IRequestMarshaller<RuleExecutionFilter, JsonMarshallerContext>
+    public partial class RuleExecutionFilterMarshaller : IRequestMarshaller<RuleExecutionFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RuleExecutionFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(RuleExecutionFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetLatestInPipelineExecution())
             {
-                context.Writer.WritePropertyName("latestInPipelineExecution");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("latestInPipelineExecution");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = LatestInPipelineExecutionFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.LatestInPipelineExecution, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetPipelineExecutionId())
             {
-                context.Writer.WritePropertyName("pipelineExecutionId");
-                context.Writer.WriteStringValue(requestObject.PipelineExecutionId);
+                context.Writer.WriteTextString("pipelineExecutionId");
+                context.Writer.WriteTextString(requestObject.PipelineExecutionId);
             }
         }
 

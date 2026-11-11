@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TargetInstances Object
     /// </summary>
-    public partial class TargetInstancesUnmarshaller : IJsonUnmarshaller<TargetInstances, JsonUnmarshallerContext>
+    public partial class TargetInstancesUnmarshaller : ICborUnmarshaller<TargetInstances, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public TargetInstances Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TargetInstances Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new TargetInstances();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("autoScalingGroups", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AutoScalingGroups = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ec2TagSet", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = EC2TagSetUnmarshaller.Instance;
-                    unmarshalledObject.Ec2TagSet = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "autoScalingGroups":
+                        context.AddPathSegment("AutoScalingGroups");
+                        unmarshalledObject.AutoScalingGroups = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("tagFilters", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<EC2TagFilter, EC2TagFilterUnmarshaller>(EC2TagFilterUnmarshaller.Instance);
-                    unmarshalledObject.TagFilters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ec2TagSet":
+                        context.AddPathSegment("Ec2TagSet");
+                        unmarshalledObject.Ec2TagSet = EC2TagSetUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "tagFilters":
+                        context.AddPathSegment("TagFilters");
+                        unmarshalledObject.TagFilters = new CborListUnmarshaller<EC2TagFilter, EC2TagFilterUnmarshaller>(EC2TagFilterUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

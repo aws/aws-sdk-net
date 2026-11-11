@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CsrExtensions Marshaller
     /// </summary>
-    public class CsrExtensionsMarshaller : IRequestMarshaller<CsrExtensions, JsonMarshallerContext> 
+    public class CsrExtensionsMarshaller : IRequestMarshaller<CsrExtensions, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +45,36 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CsrExtensions requestObject, JsonMarshallerContext context)
+        public void Marshall(CsrExtensions requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetKeyUsage())
+
+            if (requestObject.IsSetKeyUsage())
             {
-                context.Writer.WritePropertyName("KeyUsage");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("KeyUsage");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = KeyUsageMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyUsage, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetSubjectInformationAccess())
+            if (requestObject.IsSetSubjectInformationAccess())
             {
-                context.Writer.WritePropertyName("SubjectInformationAccess");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("SubjectInformationAccess");
+                context.Writer.WriteStartArray(requestObject.SubjectInformationAccess.Count);
                 foreach(var requestObjectSubjectInformationAccessListValue in requestObject.SubjectInformationAccess)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = AccessDescriptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectSubjectInformationAccessListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

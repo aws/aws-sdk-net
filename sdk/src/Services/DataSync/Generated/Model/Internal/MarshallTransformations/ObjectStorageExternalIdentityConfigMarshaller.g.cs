@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,24 +39,24 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// ObjectStorageExternalIdentityConfig Marshaller
     /// </summary>
-    public partial class ObjectStorageExternalIdentityConfigMarshaller : IRequestMarshaller<ObjectStorageExternalIdentityConfig, JsonMarshallerContext>
+    public partial class ObjectStorageExternalIdentityConfigMarshaller : IRequestMarshaller<ObjectStorageExternalIdentityConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ObjectStorageExternalIdentityConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ObjectStorageExternalIdentityConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetGoogleOidc())
             {
-                context.Writer.WritePropertyName("GoogleOidc");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("GoogleOidc");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = GoogleOidcConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.GoogleOidc, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

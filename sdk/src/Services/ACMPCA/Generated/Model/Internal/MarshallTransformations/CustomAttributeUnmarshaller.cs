@@ -29,46 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomAttribute Object
     /// </summary>  
-    public class CustomAttributeUnmarshaller : IJsonUnmarshaller<CustomAttribute, JsonUnmarshallerContext>
+    public class CustomAttributeUnmarshaller : ICborUnmarshaller<CustomAttribute, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomAttribute Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CustomAttribute Unmarshall(CborUnmarshallerContext context)
         {
             CustomAttribute unmarshalledObject = new CustomAttribute();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ObjectIdentifier", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ObjectIdentifier = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Value", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ObjectIdentifier":
+                        {
+                            context.AddPathSegment("ObjectIdentifier");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ObjectIdentifier = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Value":
+                        {
+                            context.AddPathSegment("Value");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

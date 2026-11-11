@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// TimeoutSettings Marshaller
     /// </summary>
-    public partial class TimeoutSettingsMarshaller : IRequestMarshaller<TimeoutSettings, JsonMarshallerContext>
+    public partial class TimeoutSettingsMarshaller : IRequestMarshaller<TimeoutSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TimeoutSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(TimeoutSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDisconnectTimeoutInSeconds())
             {
-                context.Writer.WritePropertyName("DisconnectTimeoutInSeconds");
-                context.Writer.WriteNumberValue(requestObject.DisconnectTimeoutInSeconds.Value);
+                context.Writer.WriteTextString("DisconnectTimeoutInSeconds");
+                context.Writer.WriteInt32(requestObject.DisconnectTimeoutInSeconds.Value);
             }
 
             if (requestObject.IsSetIdleDisconnectTimeoutInSeconds())
             {
-                context.Writer.WritePropertyName("IdleDisconnectTimeoutInSeconds");
-                context.Writer.WriteNumberValue(requestObject.IdleDisconnectTimeoutInSeconds.Value);
+                context.Writer.WriteTextString("IdleDisconnectTimeoutInSeconds");
+                context.Writer.WriteInt32(requestObject.IdleDisconnectTimeoutInSeconds.Value);
             }
 
             if (requestObject.IsSetMaxUserDurationInSeconds())
             {
-                context.Writer.WritePropertyName("MaxUserDurationInSeconds");
-                context.Writer.WriteNumberValue(requestObject.MaxUserDurationInSeconds.Value);
+                context.Writer.WriteTextString("MaxUserDurationInSeconds");
+                context.Writer.WriteInt32(requestObject.MaxUserDurationInSeconds.Value);
             }
         }
 

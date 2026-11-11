@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,88 +39,88 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// WorkspaceRequest Marshaller
     /// </summary>
-    public partial class WorkspaceRequestMarshaller : IRequestMarshaller<WorkspaceRequest, JsonMarshallerContext>
+    public partial class WorkspaceRequestMarshaller : IRequestMarshaller<WorkspaceRequest, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(WorkspaceRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(WorkspaceRequest requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetBundleId())
             {
-                context.Writer.WritePropertyName("BundleId");
-                context.Writer.WriteStringValue(requestObject.BundleId);
+                context.Writer.WriteTextString("BundleId");
+                context.Writer.WriteTextString(requestObject.BundleId);
             }
 
             if (requestObject.IsSetDirectoryId())
             {
-                context.Writer.WritePropertyName("DirectoryId");
-                context.Writer.WriteStringValue(requestObject.DirectoryId);
+                context.Writer.WriteTextString("DirectoryId");
+                context.Writer.WriteTextString(requestObject.DirectoryId);
             }
 
             if (requestObject.IsSetIpv6Address())
             {
-                context.Writer.WritePropertyName("Ipv6Address");
-                context.Writer.WriteStringValue(requestObject.Ipv6Address);
+                context.Writer.WriteTextString("Ipv6Address");
+                context.Writer.WriteTextString(requestObject.Ipv6Address);
             }
 
             if (requestObject.IsSetRootVolumeEncryptionEnabled())
             {
-                context.Writer.WritePropertyName("RootVolumeEncryptionEnabled");
-                context.Writer.WriteBooleanValue(requestObject.RootVolumeEncryptionEnabled.Value);
+                context.Writer.WriteTextString("RootVolumeEncryptionEnabled");
+                context.Writer.WriteBoolean(requestObject.RootVolumeEncryptionEnabled.Value);
             }
 
             if (requestObject.IsSetTags())
             {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Tags");
+                context.Writer.WriteStartArray(requestObject.Tags.Count);
                 foreach (var requestObjectTagsListValue in requestObject.Tags)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetUserName())
             {
-                context.Writer.WritePropertyName("UserName");
-                context.Writer.WriteStringValue(requestObject.UserName);
+                context.Writer.WriteTextString("UserName");
+                context.Writer.WriteTextString(requestObject.UserName);
             }
 
             if (requestObject.IsSetUserVolumeEncryptionEnabled())
             {
-                context.Writer.WritePropertyName("UserVolumeEncryptionEnabled");
-                context.Writer.WriteBooleanValue(requestObject.UserVolumeEncryptionEnabled.Value);
+                context.Writer.WriteTextString("UserVolumeEncryptionEnabled");
+                context.Writer.WriteBoolean(requestObject.UserVolumeEncryptionEnabled.Value);
             }
 
             if (requestObject.IsSetVolumeEncryptionKey())
             {
-                context.Writer.WritePropertyName("VolumeEncryptionKey");
-                context.Writer.WriteStringValue(requestObject.VolumeEncryptionKey);
+                context.Writer.WriteTextString("VolumeEncryptionKey");
+                context.Writer.WriteTextString(requestObject.VolumeEncryptionKey);
             }
 
             if (requestObject.IsSetWorkspaceName())
             {
-                context.Writer.WritePropertyName("WorkspaceName");
-                context.Writer.WriteStringValue(requestObject.WorkspaceName);
+                context.Writer.WriteTextString("WorkspaceName");
+                context.Writer.WriteTextString(requestObject.WorkspaceName);
             }
 
             if (requestObject.IsSetWorkspaceProperties())
             {
-                context.Writer.WritePropertyName("WorkspaceProperties");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("WorkspaceProperties");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = WorkspacePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.WorkspaceProperties, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

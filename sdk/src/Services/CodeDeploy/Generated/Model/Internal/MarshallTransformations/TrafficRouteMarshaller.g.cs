@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,22 +39,22 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// TrafficRoute Marshaller
     /// </summary>
-    public partial class TrafficRouteMarshaller : IRequestMarshaller<TrafficRoute, JsonMarshallerContext>
+    public partial class TrafficRouteMarshaller : IRequestMarshaller<TrafficRoute, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TrafficRoute requestObject, JsonMarshallerContext context)
+        public void Marshall(TrafficRoute requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetListenerArns())
             {
-                context.Writer.WritePropertyName("listenerArns");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("listenerArns");
+                context.Writer.WriteStartArray(requestObject.ListenerArns.Count);
                 foreach (var requestObjectListenerArnsListValue in requestObject.ListenerArns)
                 {
-                    context.Writer.WriteStringValue(requestObjectListenerArnsListValue);
+                    context.Writer.WriteTextString(requestObjectListenerArnsListValue);
                 }
                 context.Writer.WriteEndArray();
             }

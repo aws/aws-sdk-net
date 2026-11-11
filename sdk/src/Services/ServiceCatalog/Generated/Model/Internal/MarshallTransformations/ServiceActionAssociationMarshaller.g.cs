@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// ServiceActionAssociation Marshaller
     /// </summary>
-    public partial class ServiceActionAssociationMarshaller : IRequestMarshaller<ServiceActionAssociation, JsonMarshallerContext>
+    public partial class ServiceActionAssociationMarshaller : IRequestMarshaller<ServiceActionAssociation, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ServiceActionAssociation requestObject, JsonMarshallerContext context)
+        public void Marshall(ServiceActionAssociation requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetProductId())
             {
-                context.Writer.WritePropertyName("ProductId");
-                context.Writer.WriteStringValue(requestObject.ProductId);
+                context.Writer.WriteTextString("ProductId");
+                context.Writer.WriteTextString(requestObject.ProductId);
             }
 
             if (requestObject.IsSetProvisioningArtifactId())
             {
-                context.Writer.WritePropertyName("ProvisioningArtifactId");
-                context.Writer.WriteStringValue(requestObject.ProvisioningArtifactId);
+                context.Writer.WriteTextString("ProvisioningArtifactId");
+                context.Writer.WriteTextString(requestObject.ProvisioningArtifactId);
             }
 
             if (requestObject.IsSetServiceActionId())
             {
-                context.Writer.WritePropertyName("ServiceActionId");
-                context.Writer.WriteStringValue(requestObject.ServiceActionId);
+                context.Writer.WriteTextString("ServiceActionId");
+                context.Writer.WriteTextString(requestObject.ServiceActionId);
             }
         }
 

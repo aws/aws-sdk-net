@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceDiscovery.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DnsConfig Object
     /// </summary>
-    public partial class DnsConfigUnmarshaller : IJsonUnmarshaller<DnsConfig, JsonUnmarshallerContext>
+    public partial class DnsConfigUnmarshaller : ICborUnmarshaller<DnsConfig, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DnsConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DnsConfig Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DnsConfig();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DnsRecords", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<DnsRecord, DnsRecordUnmarshaller>(DnsRecordUnmarshaller.Instance);
-                    unmarshalledObject.DnsRecords = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("NamespaceId", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NamespaceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DnsRecords":
+                        context.AddPathSegment("DnsRecords");
+                        unmarshalledObject.DnsRecords = new CborListUnmarshaller<DnsRecord, DnsRecordUnmarshaller>(DnsRecordUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RoutingPolicy", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoutingPolicy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "NamespaceId":
+                        context.AddPathSegment("NamespaceId");
+                        unmarshalledObject.NamespaceId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "RoutingPolicy":
+                        context.AddPathSegment("RoutingPolicy");
+                        unmarshalledObject.RoutingPolicy = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// MedicalScribePatientContext Marshaller
     /// </summary>
-    public partial class MedicalScribePatientContextMarshaller : IRequestMarshaller<MedicalScribePatientContext, JsonMarshallerContext>
+    public partial class MedicalScribePatientContextMarshaller : IRequestMarshaller<MedicalScribePatientContext, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(MedicalScribePatientContext requestObject, JsonMarshallerContext context)
+        public void Marshall(MedicalScribePatientContext requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetPronouns())
             {
-                context.Writer.WritePropertyName("Pronouns");
-                context.Writer.WriteStringValue(requestObject.Pronouns);
+                context.Writer.WriteTextString("Pronouns");
+                context.Writer.WriteTextString(requestObject.Pronouns);
             }
         }
 

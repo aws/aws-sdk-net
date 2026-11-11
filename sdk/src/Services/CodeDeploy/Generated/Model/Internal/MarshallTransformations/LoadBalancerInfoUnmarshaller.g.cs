@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LoadBalancerInfo Object
     /// </summary>
-    public partial class LoadBalancerInfoUnmarshaller : IJsonUnmarshaller<LoadBalancerInfo, JsonUnmarshallerContext>
+    public partial class LoadBalancerInfoUnmarshaller : ICborUnmarshaller<LoadBalancerInfo, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public LoadBalancerInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LoadBalancerInfo Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new LoadBalancerInfo();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("elbInfoList", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ELBInfo, ELBInfoUnmarshaller>(ELBInfoUnmarshaller.Instance);
-                    unmarshalledObject.ElbInfoList = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("targetGroupInfoList", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<TargetGroupInfo, TargetGroupInfoUnmarshaller>(TargetGroupInfoUnmarshaller.Instance);
-                    unmarshalledObject.TargetGroupInfoList = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "elbInfoList":
+                        context.AddPathSegment("ElbInfoList");
+                        unmarshalledObject.ElbInfoList = new CborListUnmarshaller<ELBInfo, ELBInfoUnmarshaller>(ELBInfoUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("targetGroupPairInfoList", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<TargetGroupPairInfo, TargetGroupPairInfoUnmarshaller>(TargetGroupPairInfoUnmarshaller.Instance);
-                    unmarshalledObject.TargetGroupPairInfoList = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "targetGroupInfoList":
+                        context.AddPathSegment("TargetGroupInfoList");
+                        unmarshalledObject.TargetGroupInfoList = new CborListUnmarshaller<TargetGroupInfo, TargetGroupInfoUnmarshaller>(TargetGroupInfoUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "targetGroupPairInfoList":
+                        context.AddPathSegment("TargetGroupPairInfoList");
+                        unmarshalledObject.TargetGroupPairInfoList = new CborListUnmarshaller<TargetGroupPairInfo, TargetGroupPairInfoUnmarshaller>(TargetGroupPairInfoUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

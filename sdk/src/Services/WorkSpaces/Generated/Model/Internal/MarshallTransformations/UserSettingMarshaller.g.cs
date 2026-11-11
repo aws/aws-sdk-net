@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// UserSetting Marshaller
     /// </summary>
-    public partial class UserSettingMarshaller : IRequestMarshaller<UserSetting, JsonMarshallerContext>
+    public partial class UserSettingMarshaller : IRequestMarshaller<UserSetting, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(UserSetting requestObject, JsonMarshallerContext context)
+        public void Marshall(UserSetting requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("Action");
-                context.Writer.WriteStringValue(requestObject.Action);
+                context.Writer.WriteTextString("Action");
+                context.Writer.WriteTextString(requestObject.Action);
             }
 
             if (requestObject.IsSetMaximumLength())
             {
-                context.Writer.WritePropertyName("MaximumLength");
-                context.Writer.WriteNumberValue(requestObject.MaximumLength.Value);
+                context.Writer.WriteTextString("MaximumLength");
+                context.Writer.WriteInt32(requestObject.MaximumLength.Value);
             }
 
             if (requestObject.IsSetPermission())
             {
-                context.Writer.WritePropertyName("Permission");
-                context.Writer.WriteStringValue(requestObject.Permission);
+                context.Writer.WriteTextString("Permission");
+                context.Writer.WriteTextString(requestObject.Permission);
             }
         }
 

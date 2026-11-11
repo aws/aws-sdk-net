@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// ChannelDefinition Marshaller
     /// </summary>
-    public partial class ChannelDefinitionMarshaller : IRequestMarshaller<ChannelDefinition, JsonMarshallerContext>
+    public partial class ChannelDefinitionMarshaller : IRequestMarshaller<ChannelDefinition, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ChannelDefinition requestObject, JsonMarshallerContext context)
+        public void Marshall(ChannelDefinition requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetChannelId())
             {
-                context.Writer.WritePropertyName("ChannelId");
-                context.Writer.WriteNumberValue(requestObject.ChannelId.Value);
+                context.Writer.WriteTextString("ChannelId");
+                context.Writer.WriteInt32(requestObject.ChannelId.Value);
             }
 
             if (requestObject.IsSetParticipantRole())
             {
-                context.Writer.WritePropertyName("ParticipantRole");
-                context.Writer.WriteStringValue(requestObject.ParticipantRole);
+                context.Writer.WriteTextString("ParticipantRole");
+                context.Writer.WriteTextString(requestObject.ParticipantRole);
             }
         }
 

@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.ServiceDiscovery.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
@@ -54,103 +55,109 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateServiceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceDiscovery");
-            string target = "Route53AutoNaming_v20170314.CreateService";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-14";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetCreatorRequestId())
+            request.ResourcePath = "service/Route53AutoNaming_v20170314/operation/CreateService";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("CreatorRequestId");
-                context.Writer.WriteStringValue(publicRequest.CreatorRequestId);
-            }
-            else
-            {
-                context.Writer.WritePropertyName("CreatorRequestId");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if (publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-            if (publicRequest.IsSetDnsConfig())
-            {
-                context.Writer.WritePropertyName("DnsConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DnsConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.DnsConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetHealthCheckConfig())
-            {
-                context.Writer.WritePropertyName("HealthCheckConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = HealthCheckConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.HealthCheckConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetHealthCheckCustomConfig())
-            {
-                context.Writer.WritePropertyName("HealthCheckCustomConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = HealthCheckCustomConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.HealthCheckCustomConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-            if (publicRequest.IsSetNamespaceId())
-            {
-                context.Writer.WritePropertyName("NamespaceId");
-                context.Writer.WriteStringValue(publicRequest.NamespaceId);
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetCreatorRequestId())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("CreatorRequestId");
+                    context.Writer.WriteTextString(publicRequest.CreatorRequestId);
                 }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetType())
-            {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(publicRequest.Type);
-            }
+                else
+                {
+                    context.Writer.WriteTextString("CreatorRequestId");
+                    context.Writer.WriteTextString(Guid.NewGuid().ToString());
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetDnsConfig())
+                {
+                    context.Writer.WriteTextString("DnsConfig");
+                    context.Writer.WriteStartMap(null);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    var marshaller = DnsConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DnsConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetHealthCheckConfig())
+                {
+                    context.Writer.WriteTextString("HealthCheckConfig");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = HealthCheckConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.HealthCheckConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetHealthCheckCustomConfig())
+                {
+                    context.Writer.WriteTextString("HealthCheckCustomConfig");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = HealthCheckCustomConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.HealthCheckCustomConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("Name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                if (publicRequest.IsSetNamespaceId())
+                {
+                    context.Writer.WriteTextString("NamespaceId");
+                    context.Writer.WriteTextString(publicRequest.NamespaceId);
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetType())
+                {
+                    context.Writer.WriteTextString("Type");
+                    context.Writer.WriteTextString(publicRequest.Type);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

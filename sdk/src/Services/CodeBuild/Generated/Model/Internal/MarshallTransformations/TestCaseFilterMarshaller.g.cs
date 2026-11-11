@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// TestCaseFilter Marshaller
     /// </summary>
-    public partial class TestCaseFilterMarshaller : IRequestMarshaller<TestCaseFilter, JsonMarshallerContext>
+    public partial class TestCaseFilterMarshaller : IRequestMarshaller<TestCaseFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TestCaseFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(TestCaseFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetKeyword())
             {
-                context.Writer.WritePropertyName("keyword");
-                context.Writer.WriteStringValue(requestObject.Keyword);
+                context.Writer.WriteTextString("keyword");
+                context.Writer.WriteTextString(requestObject.Keyword);
             }
 
             if (requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WriteTextString("status");
+                context.Writer.WriteTextString(requestObject.Status);
             }
         }
 

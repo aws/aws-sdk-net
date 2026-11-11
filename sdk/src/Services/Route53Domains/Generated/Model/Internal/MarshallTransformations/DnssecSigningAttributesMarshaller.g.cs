@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Route53Domains.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// DnssecSigningAttributes Marshaller
     /// </summary>
-    public partial class DnssecSigningAttributesMarshaller : IRequestMarshaller<DnssecSigningAttributes, JsonMarshallerContext>
+    public partial class DnssecSigningAttributesMarshaller : IRequestMarshaller<DnssecSigningAttributes, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DnssecSigningAttributes requestObject, JsonMarshallerContext context)
+        public void Marshall(DnssecSigningAttributes requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAlgorithm())
             {
-                context.Writer.WritePropertyName("Algorithm");
-                context.Writer.WriteNumberValue(requestObject.Algorithm.Value);
+                context.Writer.WriteTextString("Algorithm");
+                context.Writer.WriteInt32(requestObject.Algorithm.Value);
             }
 
             if (requestObject.IsSetFlags())
             {
-                context.Writer.WritePropertyName("Flags");
-                context.Writer.WriteNumberValue(requestObject.Flags.Value);
+                context.Writer.WriteTextString("Flags");
+                context.Writer.WriteInt32(requestObject.Flags.Value);
             }
 
             if (requestObject.IsSetPublicKey())
             {
-                context.Writer.WritePropertyName("PublicKey");
-                context.Writer.WriteStringValue(requestObject.PublicKey);
+                context.Writer.WriteTextString("PublicKey");
+                context.Writer.WriteTextString(requestObject.PublicKey);
             }
         }
 

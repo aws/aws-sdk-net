@@ -18,19 +18,19 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Globalization;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
 using System.Net;
-using System.Text;
-using System.Xml.Serialization;
-
-using Amazon.DirectoryService.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+
+using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -38,37 +38,44 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Exception Unmarshaller for UnsupportedOperationException
     /// </summary>
-    public partial class UnsupportedOperationExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<UnsupportedOperationException, JsonUnmarshallerContext>
+    public partial class UnsupportedOperationExceptionUnmarshaller : ICborErrorResponseUnmarshaller<UnsupportedOperationException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public UnsupportedOperationException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public UnsupportedOperationException Unmarshall(CborUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public UnsupportedOperationException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        public UnsupportedOperationException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             var unmarshalledObject = new UnsupportedOperationException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
-            if (context.Stream.Length > 0)
+            var reader = context.Reader;
+            context.AddPathSegment("UnsupportedOperationException");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                context.Read(ref reader);
-                int targetDepth = context.CurrentDepth;
-                while (context.ReadAtDepth(targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    if (context.TestExpression("RequestId", targetDepth, ref reader))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.RequestId = unmarshaller.Unmarshall(context, ref reader);
-                        continue;
-                    }
+                    case "RequestId":
+                        context.AddPathSegment("RequestId");
+                        unmarshalledObject.RequestId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }

@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.ServiceCatalog.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
@@ -54,63 +55,69 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdatePortfolioShareRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceCatalog");
-            string target = "AWS242ServiceCatalogService.UpdatePortfolioShare";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/AWS242ServiceCatalogService/operation/UpdatePortfolioShare";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAcceptLanguage())
+                {
+                    context.Writer.WriteTextString("AcceptLanguage");
+                    context.Writer.WriteTextString(publicRequest.AcceptLanguage);
+                }
+                if (publicRequest.IsSetAccountId())
+                {
+                    context.Writer.WriteTextString("AccountId");
+                    context.Writer.WriteTextString(publicRequest.AccountId);
+                }
+                if (publicRequest.IsSetOrganizationNode())
+                {
+                    context.Writer.WriteTextString("OrganizationNode");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = OrganizationNodeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OrganizationNode, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetPortfolioId())
+                {
+                    context.Writer.WriteTextString("PortfolioId");
+                    context.Writer.WriteTextString(publicRequest.PortfolioId);
+                }
+                if (publicRequest.IsSetSharePrincipals())
+                {
+                    context.Writer.WriteTextString("SharePrincipals");
+                    context.Writer.WriteBoolean(publicRequest.SharePrincipals.Value);
+                }
+                if (publicRequest.IsSetShareTagOptions())
+                {
+                    context.Writer.WriteTextString("ShareTagOptions");
+                    context.Writer.WriteBoolean(publicRequest.ShareTagOptions.Value);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAcceptLanguage())
-            {
-                context.Writer.WritePropertyName("AcceptLanguage");
-                context.Writer.WriteStringValue(publicRequest.AcceptLanguage);
             }
-            if (publicRequest.IsSetAccountId())
+            finally
             {
-                context.Writer.WritePropertyName("AccountId");
-                context.Writer.WriteStringValue(publicRequest.AccountId);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetOrganizationNode())
-            {
-                context.Writer.WritePropertyName("OrganizationNode");
-                context.Writer.WriteStartObject();
-
-                var marshaller = OrganizationNodeMarshaller.Instance;
-                marshaller.Marshall(publicRequest.OrganizationNode, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetPortfolioId())
-            {
-                context.Writer.WritePropertyName("PortfolioId");
-                context.Writer.WriteStringValue(publicRequest.PortfolioId);
-            }
-            if (publicRequest.IsSetSharePrincipals())
-            {
-                context.Writer.WritePropertyName("SharePrincipals");
-                context.Writer.WriteBooleanValue(publicRequest.SharePrincipals.Value);
-            }
-            if (publicRequest.IsSetShareTagOptions())
-            {
-                context.Writer.WritePropertyName("ShareTagOptions");
-                context.Writer.WriteBooleanValue(publicRequest.ShareTagOptions.Value);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

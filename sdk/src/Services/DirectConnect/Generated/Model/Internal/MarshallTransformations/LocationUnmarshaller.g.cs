@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectConnect.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
@@ -36,72 +38,78 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Location Object
     /// </summary>
-    public partial class LocationUnmarshaller : IJsonUnmarshaller<Location, JsonUnmarshallerContext>
+    public partial class LocationUnmarshaller : ICborUnmarshaller<Location, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Location Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Location Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Location();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("availableBillingModes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<AvailableBillingMode, AvailableBillingModeUnmarshaller>(AvailableBillingModeUnmarshaller.Instance);
-                    unmarshalledObject.AvailableBillingModes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("availableMacSecPortSpeeds", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AvailableMacSecPortSpeeds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "availableBillingModes":
+                        context.AddPathSegment("AvailableBillingModes");
+                        unmarshalledObject.AvailableBillingModes = new CborListUnmarshaller<AvailableBillingMode, AvailableBillingModeUnmarshaller>(AvailableBillingModeUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("availablePortSpeeds", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AvailablePortSpeeds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "availableMacSecPortSpeeds":
+                        context.AddPathSegment("AvailableMacSecPortSpeeds");
+                        unmarshalledObject.AvailableMacSecPortSpeeds = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("availableProviders", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AvailableProviders = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "availablePortSpeeds":
+                        context.AddPathSegment("AvailablePortSpeeds");
+                        unmarshalledObject.AvailablePortSpeeds = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("locationCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "availableProviders":
+                        context.AddPathSegment("AvailableProviders");
+                        unmarshalledObject.AvailableProviders = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("locationName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "locationCode":
+                        context.AddPathSegment("LocationCode");
+                        unmarshalledObject.LocationCode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("region", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "locationName":
+                        context.AddPathSegment("LocationName");
+                        unmarshalledObject.LocationName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "region":
+                        context.AddPathSegment("Region");
+                        unmarshalledObject.Region = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

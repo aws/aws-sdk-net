@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// RootStorage Marshaller
     /// </summary>
-    public partial class RootStorageMarshaller : IRequestMarshaller<RootStorage, JsonMarshallerContext>
+    public partial class RootStorageMarshaller : IRequestMarshaller<RootStorage, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RootStorage requestObject, JsonMarshallerContext context)
+        public void Marshall(RootStorage requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCapacity())
             {
-                context.Writer.WritePropertyName("Capacity");
-                context.Writer.WriteStringValue(requestObject.Capacity);
+                context.Writer.WriteTextString("Capacity");
+                context.Writer.WriteTextString(requestObject.Capacity);
             }
         }
 

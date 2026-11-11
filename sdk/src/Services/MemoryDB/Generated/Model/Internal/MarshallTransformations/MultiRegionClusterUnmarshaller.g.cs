@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.MemoryDB.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
@@ -36,100 +38,102 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MultiRegionCluster Object
     /// </summary>
-    public partial class MultiRegionClusterUnmarshaller : IJsonUnmarshaller<MultiRegionCluster, JsonUnmarshallerContext>
+    public partial class MultiRegionClusterUnmarshaller : ICborUnmarshaller<MultiRegionCluster, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public MultiRegionCluster Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MultiRegionCluster Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new MultiRegionCluster();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ARN", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ARN = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Clusters", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<RegionalCluster, RegionalClusterUnmarshaller>(RegionalClusterUnmarshaller.Instance);
-                    unmarshalledObject.Clusters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ARN":
+                        context.AddPathSegment("ARN");
+                        unmarshalledObject.ARN = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Description", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Clusters":
+                        context.AddPathSegment("Clusters");
+                        unmarshalledObject.Clusters = new CborListUnmarshaller<RegionalCluster, RegionalClusterUnmarshaller>(RegionalClusterUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Engine", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Engine = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Description":
+                        context.AddPathSegment("Description");
+                        unmarshalledObject.Description = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EngineVersion", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Engine":
+                        context.AddPathSegment("Engine");
+                        unmarshalledObject.Engine = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("MultiRegionClusterName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MultiRegionClusterName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EngineVersion":
+                        context.AddPathSegment("EngineVersion");
+                        unmarshalledObject.EngineVersion = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("MultiRegionParameterGroupName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MultiRegionParameterGroupName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "MultiRegionClusterName":
+                        context.AddPathSegment("MultiRegionClusterName");
+                        unmarshalledObject.MultiRegionClusterName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NodeType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NodeType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "MultiRegionParameterGroupName":
+                        context.AddPathSegment("MultiRegionParameterGroupName");
+                        unmarshalledObject.MultiRegionParameterGroupName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NumberOfShards", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfShards = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "NodeType":
+                        context.AddPathSegment("NodeType");
+                        unmarshalledObject.NodeType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "NumberOfShards":
+                        context.AddPathSegment("NumberOfShards");
+                        unmarshalledObject.NumberOfShards = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TLSEnabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.TLSEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Status":
+                        context.AddPathSegment("Status");
+                        unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "TLSEnabled":
+                        context.AddPathSegment("TLSEnabled");
+                        unmarshalledObject.TLSEnabled = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

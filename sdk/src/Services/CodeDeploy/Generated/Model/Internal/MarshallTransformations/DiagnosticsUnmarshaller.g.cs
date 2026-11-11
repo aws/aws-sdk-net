@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Diagnostics Object
     /// </summary>
-    public partial class DiagnosticsUnmarshaller : IJsonUnmarshaller<Diagnostics, JsonUnmarshallerContext>
+    public partial class DiagnosticsUnmarshaller : ICborUnmarshaller<Diagnostics, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Diagnostics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Diagnostics Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Diagnostics();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("errorCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("logTail", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogTail = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "errorCode":
+                        context.AddPathSegment("ErrorCode");
+                        unmarshalledObject.ErrorCode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("message", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "logTail":
+                        context.AddPathSegment("LogTail");
+                        unmarshalledObject.LogTail = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("scriptName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScriptName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "message":
+                        context.AddPathSegment("Message");
+                        unmarshalledObject.Message = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "scriptName":
+                        context.AddPathSegment("ScriptName");
+                        unmarshalledObject.ScriptName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

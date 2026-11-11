@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.MemoryDB.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// AuthenticationMode Marshaller
     /// </summary>
-    public partial class AuthenticationModeMarshaller : IRequestMarshaller<AuthenticationMode, JsonMarshallerContext>
+    public partial class AuthenticationModeMarshaller : IRequestMarshaller<AuthenticationMode, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(AuthenticationMode requestObject, JsonMarshallerContext context)
+        public void Marshall(AuthenticationMode requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetPasswords())
             {
-                context.Writer.WritePropertyName("Passwords");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Passwords");
+                context.Writer.WriteStartArray(requestObject.Passwords.Count);
                 foreach (var requestObjectPasswordsListValue in requestObject.Passwords)
                 {
-                    context.Writer.WriteStringValue(requestObjectPasswordsListValue);
+                    context.Writer.WriteTextString(requestObjectPasswordsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("Type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

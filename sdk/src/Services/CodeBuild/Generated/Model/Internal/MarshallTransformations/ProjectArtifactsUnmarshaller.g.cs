@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
@@ -36,93 +38,96 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ProjectArtifacts Object
     /// </summary>
-    public partial class ProjectArtifactsUnmarshaller : IJsonUnmarshaller<ProjectArtifacts, JsonUnmarshallerContext>
+    public partial class ProjectArtifactsUnmarshaller : ICborUnmarshaller<ProjectArtifacts, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ProjectArtifacts Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ProjectArtifacts Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ProjectArtifacts();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("artifactIdentifier", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ArtifactIdentifier = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("bucketOwnerAccess", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BucketOwnerAccess = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "artifactIdentifier":
+                        context.AddPathSegment("ArtifactIdentifier");
+                        unmarshalledObject.ArtifactIdentifier = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("encryptionDisabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionDisabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "bucketOwnerAccess":
+                        context.AddPathSegment("BucketOwnerAccess");
+                        unmarshalledObject.BucketOwnerAccess = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("location", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "encryptionDisabled":
+                        context.AddPathSegment("EncryptionDisabled");
+                        unmarshalledObject.EncryptionDisabled = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "location":
+                        context.AddPathSegment("Location");
+                        unmarshalledObject.Location = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("namespaceType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NamespaceType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "name":
+                        context.AddPathSegment("Name");
+                        unmarshalledObject.Name = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("overrideArtifactName", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.OverrideArtifactName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "namespaceType":
+                        context.AddPathSegment("NamespaceType");
+                        unmarshalledObject.NamespaceType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("packaging", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Packaging = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "overrideArtifactName":
+                        context.AddPathSegment("OverrideArtifactName");
+                        unmarshalledObject.OverrideArtifactName = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("path", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "packaging":
+                        context.AddPathSegment("Packaging");
+                        unmarshalledObject.Packaging = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("type", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "path":
+                        context.AddPathSegment("Path");
+                        unmarshalledObject.Path = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "type":
+                        context.AddPathSegment("Type");
+                        unmarshalledObject.Type = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

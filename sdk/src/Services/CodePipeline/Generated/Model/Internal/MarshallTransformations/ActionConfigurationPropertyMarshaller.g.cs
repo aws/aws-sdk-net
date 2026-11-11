@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,55 +39,55 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// ActionConfigurationProperty Marshaller
     /// </summary>
-    public partial class ActionConfigurationPropertyMarshaller : IRequestMarshaller<ActionConfigurationProperty, JsonMarshallerContext>
+    public partial class ActionConfigurationPropertyMarshaller : IRequestMarshaller<ActionConfigurationProperty, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ActionConfigurationProperty requestObject, JsonMarshallerContext context)
+        public void Marshall(ActionConfigurationProperty requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("description");
-                context.Writer.WriteStringValue(requestObject.Description);
+                context.Writer.WriteTextString("description");
+                context.Writer.WriteTextString(requestObject.Description);
             }
 
             if (requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("key");
-                context.Writer.WriteBooleanValue(requestObject.Key.Value);
+                context.Writer.WriteTextString("key");
+                context.Writer.WriteBoolean(requestObject.Key.Value);
             }
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
 
             if (requestObject.IsSetQueryable())
             {
-                context.Writer.WritePropertyName("queryable");
-                context.Writer.WriteBooleanValue(requestObject.Queryable.Value);
+                context.Writer.WriteTextString("queryable");
+                context.Writer.WriteBoolean(requestObject.Queryable.Value);
             }
 
             if (requestObject.IsSetRequired())
             {
-                context.Writer.WritePropertyName("required");
-                context.Writer.WriteBooleanValue(requestObject.Required.Value);
+                context.Writer.WriteTextString("required");
+                context.Writer.WriteBoolean(requestObject.Required.Value);
             }
 
             if (requestObject.IsSetSecret())
             {
-                context.Writer.WritePropertyName("secret");
-                context.Writer.WriteBooleanValue(requestObject.Secret.Value);
+                context.Writer.WriteTextString("secret");
+                context.Writer.WriteBoolean(requestObject.Secret.Value);
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

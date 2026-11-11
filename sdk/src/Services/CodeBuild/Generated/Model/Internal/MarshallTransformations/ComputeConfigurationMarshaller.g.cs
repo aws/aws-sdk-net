@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,43 +39,43 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// ComputeConfiguration Marshaller
     /// </summary>
-    public partial class ComputeConfigurationMarshaller : IRequestMarshaller<ComputeConfiguration, JsonMarshallerContext>
+    public partial class ComputeConfigurationMarshaller : IRequestMarshaller<ComputeConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ComputeConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ComputeConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDisk())
             {
-                context.Writer.WritePropertyName("disk");
-                context.Writer.WriteNumberValue(requestObject.Disk.Value);
+                context.Writer.WriteTextString("disk");
+                context.Writer.WriteInt64(requestObject.Disk.Value);
             }
 
             if (requestObject.IsSetInstanceType())
             {
-                context.Writer.WritePropertyName("instanceType");
-                context.Writer.WriteStringValue(requestObject.InstanceType);
+                context.Writer.WriteTextString("instanceType");
+                context.Writer.WriteTextString(requestObject.InstanceType);
             }
 
             if (requestObject.IsSetMachineType())
             {
-                context.Writer.WritePropertyName("machineType");
-                context.Writer.WriteStringValue(requestObject.MachineType);
+                context.Writer.WriteTextString("machineType");
+                context.Writer.WriteTextString(requestObject.MachineType);
             }
 
             if (requestObject.IsSetMemory())
             {
-                context.Writer.WritePropertyName("memory");
-                context.Writer.WriteNumberValue(requestObject.Memory.Value);
+                context.Writer.WriteTextString("memory");
+                context.Writer.WriteInt64(requestObject.Memory.Value);
             }
 
             if (requestObject.IsSetVCpu())
             {
-                context.Writer.WritePropertyName("vCpu");
-                context.Writer.WriteNumberValue(requestObject.VCpu.Value);
+                context.Writer.WriteTextString("vCpu");
+                context.Writer.WriteInt64(requestObject.VCpu.Value);
             }
         }
 

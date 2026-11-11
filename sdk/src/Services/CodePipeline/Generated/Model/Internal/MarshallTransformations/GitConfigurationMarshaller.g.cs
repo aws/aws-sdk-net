@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,51 +39,51 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// GitConfiguration Marshaller
     /// </summary>
-    public partial class GitConfigurationMarshaller : IRequestMarshaller<GitConfiguration, JsonMarshallerContext>
+    public partial class GitConfigurationMarshaller : IRequestMarshaller<GitConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(GitConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(GitConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetPullRequest())
             {
-                context.Writer.WritePropertyName("pullRequest");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("pullRequest");
+                context.Writer.WriteStartArray(requestObject.PullRequest.Count);
                 foreach (var requestObjectPullRequestListValue in requestObject.PullRequest)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = GitPullRequestFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectPullRequestListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetPush())
             {
-                context.Writer.WritePropertyName("push");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("push");
+                context.Writer.WriteStartArray(requestObject.Push.Count);
                 foreach (var requestObjectPushListValue in requestObject.Push)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = GitPushFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectPushListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetSourceActionName())
             {
-                context.Writer.WritePropertyName("sourceActionName");
-                context.Writer.WriteStringValue(requestObject.SourceActionName);
+                context.Writer.WriteTextString("sourceActionName");
+                context.Writer.WriteTextString(requestObject.SourceActionName);
             }
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// TimeBasedLinear Marshaller
     /// </summary>
-    public partial class TimeBasedLinearMarshaller : IRequestMarshaller<TimeBasedLinear, JsonMarshallerContext>
+    public partial class TimeBasedLinearMarshaller : IRequestMarshaller<TimeBasedLinear, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TimeBasedLinear requestObject, JsonMarshallerContext context)
+        public void Marshall(TimeBasedLinear requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetLinearInterval())
             {
-                context.Writer.WritePropertyName("linearInterval");
-                context.Writer.WriteNumberValue(requestObject.LinearInterval.Value);
+                context.Writer.WriteTextString("linearInterval");
+                context.Writer.WriteInt32(requestObject.LinearInterval.Value);
             }
 
             if (requestObject.IsSetLinearPercentage())
             {
-                context.Writer.WritePropertyName("linearPercentage");
-                context.Writer.WriteNumberValue(requestObject.LinearPercentage.Value);
+                context.Writer.WriteTextString("linearPercentage");
+                context.Writer.WriteInt32(requestObject.LinearPercentage.Value);
             }
         }
 

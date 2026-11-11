@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,46 +39,46 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// FailureConditions Marshaller
     /// </summary>
-    public partial class FailureConditionsMarshaller : IRequestMarshaller<FailureConditions, JsonMarshallerContext>
+    public partial class FailureConditionsMarshaller : IRequestMarshaller<FailureConditions, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(FailureConditions requestObject, JsonMarshallerContext context)
+        public void Marshall(FailureConditions requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetConditions())
             {
-                context.Writer.WritePropertyName("conditions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("conditions");
+                context.Writer.WriteStartArray(requestObject.Conditions.Count);
                 foreach (var requestObjectConditionsListValue in requestObject.Conditions)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectConditionsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetResult())
             {
-                context.Writer.WritePropertyName("result");
-                context.Writer.WriteStringValue(requestObject.Result);
+                context.Writer.WriteTextString("result");
+                context.Writer.WriteTextString(requestObject.Result);
             }
 
             if (requestObject.IsSetRetryConfiguration())
             {
-                context.Writer.WritePropertyName("retryConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("retryConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RetryConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetryConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

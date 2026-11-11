@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// SamlProperties Marshaller
     /// </summary>
-    public partial class SamlPropertiesMarshaller : IRequestMarshaller<SamlProperties, JsonMarshallerContext>
+    public partial class SamlPropertiesMarshaller : IRequestMarshaller<SamlProperties, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(SamlProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(SamlProperties requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetRelayStateParameterName())
             {
-                context.Writer.WritePropertyName("RelayStateParameterName");
-                context.Writer.WriteStringValue(requestObject.RelayStateParameterName);
+                context.Writer.WriteTextString("RelayStateParameterName");
+                context.Writer.WriteTextString(requestObject.RelayStateParameterName);
             }
 
             if (requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("Status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WriteTextString("Status");
+                context.Writer.WriteTextString(requestObject.Status);
             }
 
             if (requestObject.IsSetUserAccessUrl())
             {
-                context.Writer.WritePropertyName("UserAccessUrl");
-                context.Writer.WriteStringValue(requestObject.UserAccessUrl);
+                context.Writer.WriteTextString("UserAccessUrl");
+                context.Writer.WriteTextString(requestObject.UserAccessUrl);
             }
         }
 

@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.DirectConnect.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
@@ -54,73 +55,79 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateDirectConnectGatewayAssociationProposalRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectConnect");
-            string target = "OvertureService.CreateDirectConnectGatewayAssociationProposal";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-10-25";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/OvertureService/operation/CreateDirectConnectGatewayAssociationProposal";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAddAllowedPrefixesToDirectConnectGateway())
+                {
+                    context.Writer.WriteTextString("addAllowedPrefixesToDirectConnectGateway");
+                    context.Writer.WriteStartArray(publicRequest.AddAllowedPrefixesToDirectConnectGateway.Count);
+                    foreach (var publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue in publicRequest.AddAllowedPrefixesToDirectConnectGateway)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = RouteFilterPrefixMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetDirectConnectGatewayId())
+                {
+                    context.Writer.WriteTextString("directConnectGatewayId");
+                    context.Writer.WriteTextString(publicRequest.DirectConnectGatewayId);
+                }
+                if (publicRequest.IsSetDirectConnectGatewayOwnerAccount())
+                {
+                    context.Writer.WriteTextString("directConnectGatewayOwnerAccount");
+                    context.Writer.WriteTextString(publicRequest.DirectConnectGatewayOwnerAccount);
+                }
+                if (publicRequest.IsSetGatewayId())
+                {
+                    context.Writer.WriteTextString("gatewayId");
+                    context.Writer.WriteTextString(publicRequest.GatewayId);
+                }
+                if (publicRequest.IsSetRemoveAllowedPrefixesToDirectConnectGateway())
+                {
+                    context.Writer.WriteTextString("removeAllowedPrefixesToDirectConnectGateway");
+                    context.Writer.WriteStartArray(publicRequest.RemoveAllowedPrefixesToDirectConnectGateway.Count);
+                    foreach (var publicRequestRemoveAllowedPrefixesToDirectConnectGatewayListValue in publicRequest.RemoveAllowedPrefixesToDirectConnectGateway)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = RouteFilterPrefixMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRemoveAllowedPrefixesToDirectConnectGatewayListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAddAllowedPrefixesToDirectConnectGateway())
-            {
-                context.Writer.WritePropertyName("addAllowedPrefixesToDirectConnectGateway");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue in publicRequest.AddAllowedPrefixesToDirectConnectGateway)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = RouteFilterPrefixMarshaller.Instance;
-                    marshaller.Marshall(publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
             }
-            if (publicRequest.IsSetDirectConnectGatewayId())
+            finally
             {
-                context.Writer.WritePropertyName("directConnectGatewayId");
-                context.Writer.WriteStringValue(publicRequest.DirectConnectGatewayId);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetDirectConnectGatewayOwnerAccount())
-            {
-                context.Writer.WritePropertyName("directConnectGatewayOwnerAccount");
-                context.Writer.WriteStringValue(publicRequest.DirectConnectGatewayOwnerAccount);
-            }
-            if (publicRequest.IsSetGatewayId())
-            {
-                context.Writer.WritePropertyName("gatewayId");
-                context.Writer.WriteStringValue(publicRequest.GatewayId);
-            }
-            if (publicRequest.IsSetRemoveAllowedPrefixesToDirectConnectGateway())
-            {
-                context.Writer.WritePropertyName("removeAllowedPrefixesToDirectConnectGateway");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestRemoveAllowedPrefixesToDirectConnectGatewayListValue in publicRequest.RemoveAllowedPrefixesToDirectConnectGateway)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = RouteFilterPrefixMarshaller.Instance;
-                    marshaller.Marshall(publicRequestRemoveAllowedPrefixesToDirectConnectGatewayListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

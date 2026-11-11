@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.Shield.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
@@ -54,73 +55,79 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateProtectionGroupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Shield");
-            string target = "AWSShield_20160616.CreateProtectionGroup";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-02";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/AWSShield_20160616/operation/CreateProtectionGroup";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAggregation())
+                {
+                    context.Writer.WriteTextString("Aggregation");
+                    context.Writer.WriteTextString(publicRequest.Aggregation);
+                }
+                if (publicRequest.IsSetMembers())
+                {
+                    context.Writer.WriteTextString("Members");
+                    context.Writer.WriteStartArray(publicRequest.Members.Count);
+                    foreach (var publicRequestMembersListValue in publicRequest.Members)
+                    {
+                        context.Writer.WriteTextString(publicRequestMembersListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetPattern())
+                {
+                    context.Writer.WriteTextString("Pattern");
+                    context.Writer.WriteTextString(publicRequest.Pattern);
+                }
+                if (publicRequest.IsSetProtectionGroupId())
+                {
+                    context.Writer.WriteTextString("ProtectionGroupId");
+                    context.Writer.WriteTextString(publicRequest.ProtectionGroupId);
+                }
+                if (publicRequest.IsSetResourceType())
+                {
+                    context.Writer.WriteTextString("ResourceType");
+                    context.Writer.WriteTextString(publicRequest.ResourceType);
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAggregation())
-            {
-                context.Writer.WritePropertyName("Aggregation");
-                context.Writer.WriteStringValue(publicRequest.Aggregation);
             }
-            if (publicRequest.IsSetMembers())
+            finally
             {
-                context.Writer.WritePropertyName("Members");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestMembersListValue in publicRequest.Members)
-                {
-                    context.Writer.WriteStringValue(publicRequestMembersListValue);
-                }
-                context.Writer.WriteEndArray();
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetPattern())
-            {
-                context.Writer.WritePropertyName("Pattern");
-                context.Writer.WriteStringValue(publicRequest.Pattern);
-            }
-            if (publicRequest.IsSetProtectionGroupId())
-            {
-                context.Writer.WritePropertyName("ProtectionGroupId");
-                context.Writer.WriteStringValue(publicRequest.ProtectionGroupId);
-            }
-            if (publicRequest.IsSetResourceType())
-            {
-                context.Writer.WritePropertyName("ResourceType");
-                context.Writer.WriteStringValue(publicRequest.ResourceType);
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

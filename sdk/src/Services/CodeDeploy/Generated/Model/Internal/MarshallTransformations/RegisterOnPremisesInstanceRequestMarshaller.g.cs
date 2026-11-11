@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.CodeDeploy.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -54,43 +55,49 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public IRequest Marshall(RegisterOnPremisesInstanceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeDeploy");
-            string target = "CodeDeploy_20141006.RegisterOnPremisesInstance";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-10-06";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/CodeDeploy_20141006/operation/RegisterOnPremisesInstance";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetIamSessionArn())
+                {
+                    context.Writer.WriteTextString("iamSessionArn");
+                    context.Writer.WriteTextString(publicRequest.IamSessionArn);
+                }
+                if (publicRequest.IsSetIamUserArn())
+                {
+                    context.Writer.WriteTextString("iamUserArn");
+                    context.Writer.WriteTextString(publicRequest.IamUserArn);
+                }
+                if (publicRequest.IsSetInstanceName())
+                {
+                    context.Writer.WriteTextString("instanceName");
+                    context.Writer.WriteTextString(publicRequest.InstanceName);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetIamSessionArn())
-            {
-                context.Writer.WritePropertyName("iamSessionArn");
-                context.Writer.WriteStringValue(publicRequest.IamSessionArn);
             }
-            if (publicRequest.IsSetIamUserArn())
+            finally
             {
-                context.Writer.WritePropertyName("iamUserArn");
-                context.Writer.WriteStringValue(publicRequest.IamUserArn);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetInstanceName())
-            {
-                context.Writer.WritePropertyName("instanceName");
-                context.Writer.WriteStringValue(publicRequest.InstanceName);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

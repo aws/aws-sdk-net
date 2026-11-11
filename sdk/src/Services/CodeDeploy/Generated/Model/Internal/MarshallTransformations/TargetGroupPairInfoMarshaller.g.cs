@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,51 +39,51 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// TargetGroupPairInfo Marshaller
     /// </summary>
-    public partial class TargetGroupPairInfoMarshaller : IRequestMarshaller<TargetGroupPairInfo, JsonMarshallerContext>
+    public partial class TargetGroupPairInfoMarshaller : IRequestMarshaller<TargetGroupPairInfo, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TargetGroupPairInfo requestObject, JsonMarshallerContext context)
+        public void Marshall(TargetGroupPairInfo requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetProdTrafficRoute())
             {
-                context.Writer.WritePropertyName("prodTrafficRoute");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("prodTrafficRoute");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = TrafficRouteMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProdTrafficRoute, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetTargetGroups())
             {
-                context.Writer.WritePropertyName("targetGroups");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("targetGroups");
+                context.Writer.WriteStartArray(requestObject.TargetGroups.Count);
                 foreach (var requestObjectTargetGroupsListValue in requestObject.TargetGroups)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = TargetGroupInfoMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetGroupsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetTestTrafficRoute())
             {
-                context.Writer.WritePropertyName("testTrafficRoute");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("testTrafficRoute");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = TrafficRouteMarshaller.Instance;
                 marshaller.Marshall(requestObject.TestTrafficRoute, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

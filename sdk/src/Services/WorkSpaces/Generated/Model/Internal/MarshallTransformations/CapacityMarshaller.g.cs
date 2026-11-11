@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Capacity Marshaller
     /// </summary>
-    public partial class CapacityMarshaller : IRequestMarshaller<Capacity, JsonMarshallerContext>
+    public partial class CapacityMarshaller : IRequestMarshaller<Capacity, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Capacity requestObject, JsonMarshallerContext context)
+        public void Marshall(Capacity requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDesiredUserSessions())
             {
-                context.Writer.WritePropertyName("DesiredUserSessions");
-                context.Writer.WriteNumberValue(requestObject.DesiredUserSessions.Value);
+                context.Writer.WriteTextString("DesiredUserSessions");
+                context.Writer.WriteInt32(requestObject.DesiredUserSessions.Value);
             }
         }
 

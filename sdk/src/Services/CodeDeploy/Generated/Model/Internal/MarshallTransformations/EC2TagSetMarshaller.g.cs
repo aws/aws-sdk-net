@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// EC2TagSet Marshaller
     /// </summary>
-    public partial class EC2TagSetMarshaller : IRequestMarshaller<EC2TagSet, JsonMarshallerContext>
+    public partial class EC2TagSetMarshaller : IRequestMarshaller<EC2TagSet, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(EC2TagSet requestObject, JsonMarshallerContext context)
+        public void Marshall(EC2TagSet requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetEc2TagSetList())
             {
-                context.Writer.WritePropertyName("ec2TagSetList");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ec2TagSetList");
+                context.Writer.WriteStartArray(requestObject.Ec2TagSetList.Count);
                 foreach (var requestObjectEc2TagSetListListValue in requestObject.Ec2TagSetList)
                 {
-                    context.Writer.WriteStartArray();
+                    context.Writer.WriteStartArray(requestObjectEc2TagSetListListValue.Count);
                     foreach (var requestObjectEc2TagSetListListValueListValue in requestObjectEc2TagSetListListValue)
                     {
-                        context.Writer.WriteStartObject();
+                        context.Writer.WriteStartMap(null);
 
                         var marshaller = EC2TagFilterMarshaller.Instance;
                         marshaller.Marshall(requestObjectEc2TagSetListListValueListValue, context);
 
-                        context.Writer.WriteEndObject();
+                        context.Writer.WriteEndMap();
                     }
                     context.Writer.WriteEndArray();
                 }

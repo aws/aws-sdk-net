@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,36 +39,36 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// TriggerConfig Marshaller
     /// </summary>
-    public partial class TriggerConfigMarshaller : IRequestMarshaller<TriggerConfig, JsonMarshallerContext>
+    public partial class TriggerConfigMarshaller : IRequestMarshaller<TriggerConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TriggerConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(TriggerConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetTriggerEvents())
             {
-                context.Writer.WritePropertyName("triggerEvents");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("triggerEvents");
+                context.Writer.WriteStartArray(requestObject.TriggerEvents.Count);
                 foreach (var requestObjectTriggerEventsListValue in requestObject.TriggerEvents)
                 {
-                    context.Writer.WriteStringValue(requestObjectTriggerEventsListValue);
+                    context.Writer.WriteTextString(requestObjectTriggerEventsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetTriggerName())
             {
-                context.Writer.WritePropertyName("triggerName");
-                context.Writer.WriteStringValue(requestObject.TriggerName);
+                context.Writer.WriteTextString("triggerName");
+                context.Writer.WriteTextString(requestObject.TriggerName);
             }
 
             if (requestObject.IsSetTriggerTargetArn())
             {
-                context.Writer.WritePropertyName("triggerTargetArn");
-                context.Writer.WriteStringValue(requestObject.TriggerTargetArn);
+                context.Writer.WriteTextString("triggerTargetArn");
+                context.Writer.WriteTextString(requestObject.TriggerTargetArn);
             }
         }
 

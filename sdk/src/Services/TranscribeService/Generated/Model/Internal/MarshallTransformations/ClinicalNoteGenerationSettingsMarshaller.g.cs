@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// ClinicalNoteGenerationSettings Marshaller
     /// </summary>
-    public partial class ClinicalNoteGenerationSettingsMarshaller : IRequestMarshaller<ClinicalNoteGenerationSettings, JsonMarshallerContext>
+    public partial class ClinicalNoteGenerationSettingsMarshaller : IRequestMarshaller<ClinicalNoteGenerationSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ClinicalNoteGenerationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(ClinicalNoteGenerationSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetNoteTemplate())
             {
-                context.Writer.WritePropertyName("NoteTemplate");
-                context.Writer.WriteStringValue(requestObject.NoteTemplate);
+                context.Writer.WriteTextString("NoteTemplate");
+                context.Writer.WriteTextString(requestObject.NoteTemplate);
             }
         }
 

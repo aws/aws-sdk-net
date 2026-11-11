@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// NotificationChannel Marshaller
     /// </summary>
-    public partial class NotificationChannelMarshaller : IRequestMarshaller<NotificationChannel, JsonMarshallerContext>
+    public partial class NotificationChannelMarshaller : IRequestMarshaller<NotificationChannel, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(NotificationChannel requestObject, JsonMarshallerContext context)
+        public void Marshall(NotificationChannel requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("RoleArn");
-                context.Writer.WriteStringValue(requestObject.RoleArn);
+                context.Writer.WriteTextString("RoleArn");
+                context.Writer.WriteTextString(requestObject.RoleArn);
             }
 
             if (requestObject.IsSetSNSTopicArn())
             {
-                context.Writer.WritePropertyName("SNSTopicArn");
-                context.Writer.WriteStringValue(requestObject.SNSTopicArn);
+                context.Writer.WriteTextString("SNSTopicArn");
+                context.Writer.WriteTextString(requestObject.SNSTopicArn);
             }
         }
 
