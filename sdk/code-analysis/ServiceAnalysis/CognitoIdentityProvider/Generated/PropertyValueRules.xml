@@ -332,6 +332,30 @@
     <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.AdminListUserSessionsRequest.NextToken</property>
+    <min>1</min>
+    <max>131072</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.AdminListUserSessionsRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.AdminListUserSessionsRequest.Username</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.AdminListUserSessionsResponse.NextToken</property>
+    <min>1</min>
+    <max>131072</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminRemoveUserFromGroupRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
@@ -382,6 +406,24 @@
     <property>Amazon.CognitoIdentityProvider.Model.AdminRespondToAuthChallengeResponse.Session</property>
     <min>20</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.AdminRevokeUserSessionRequest.SessionId</property>
+    <min>28</min>
+    <max>28</max>
+    <pattern>^(tkn|sso)[a-z0-9]{25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.AdminRevokeUserSessionRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.AdminRevokeUserSessionRequest.Username</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminSetUserMFAPreferenceRequest.UserPoolId</property>
@@ -1238,7 +1280,43 @@
     <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetUserPoolClientSessionConfigurationRequest.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetUserPoolClientSessionConfigurationRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetUserPoolClientSessionConfigurationResponse.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetUserPoolClientSessionConfigurationResponse.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.GetUserPoolMfaConfigRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetUserPoolSessionConfigurationRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetUserPoolSessionConfigurationResponse.UserPoolId</property>
     <min>1</min>
     <max>55</max>
     <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
@@ -1474,6 +1552,22 @@
     <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListUserSessionsRequest.AccessToken</property>
+    <pattern>^[A-Za-z0-9-_=.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListUserSessionsRequest.NextToken</property>
+    <min>1</min>
+    <max>131072</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListUserSessionsResponse.NextToken</property>
+    <min>1</min>
+    <max>131072</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ListUsersRequest.Filter</property>
     <min>0</min>
     <max>256</max>
@@ -1600,6 +1694,16 @@
     <pattern>^[A-Za-z0-9-_=.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.RevokeUserSessionRequest.AccessToken</property>
+    <pattern>^[A-Za-z0-9-_=.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.RevokeUserSessionRequest.SessionId</property>
+    <min>28</min>
+    <max>28</max>
+    <pattern>^(tkn|sso)[a-z0-9]{25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.SetLogDeliveryConfigurationRequest.UserPoolId</property>
     <min>1</min>
     <max>55</max>
@@ -1644,7 +1748,43 @@
     <pattern>^[A-Za-z0-9-_=.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SetUserPoolClientSessionConfigurationRequest.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SetUserPoolClientSessionConfigurationRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SetUserPoolClientSessionConfigurationResponse.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SetUserPoolClientSessionConfigurationResponse.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.SetUserPoolMfaConfigRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SetUserPoolSessionConfigurationRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SetUserPoolSessionConfigurationResponse.UserPoolId</property>
     <min>1</min>
     <max>55</max>
     <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
@@ -2083,6 +2223,11 @@
     <property>Amazon.CognitoIdentityProvider.Model.ClientAuthenticationResultType.TokenType</property>
     <min>0</min>
     <max>131072</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ClientSSOSessionConfigType.MaxValidityMinutes</property>
+    <min>0</min>
+    <max>129600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ClientSecretDescriptorType.ClientSecretId</property>
@@ -2642,6 +2787,44 @@
     <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SessionDescriptionType.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SessionDescriptionType.DeviceType</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SessionDescriptionType.LastIPAddress</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SessionDescriptionType.OriginSessionId</property>
+    <min>28</min>
+    <max>28</max>
+    <pattern>^(tkn|sso)[a-z0-9]{25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SessionDescriptionType.SessionId</property>
+    <min>28</min>
+    <max>28</max>
+    <pattern>^(tkn|sso)[a-z0-9]{25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SessionLocationType.City</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SessionLocationType.Country</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.SmsConfigurationType.ExternalId</property>
     <min>0</min>
     <max>131072</max>
@@ -2853,6 +3036,11 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:[\w+=/,.@-]+:[\w+=/,.@-]+:([\w+=/,.@-]*)?:[0-9]+:[\w+=/,.@-]+(:[\w+=/,.@-]+)?(:[\w+=/,.@-]+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UserPoolTokenSessionConfigType.MaxPerUser</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.UserPoolType.Arn</property>
