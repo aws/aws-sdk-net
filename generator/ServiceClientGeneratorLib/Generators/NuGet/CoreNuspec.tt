@@ -17,16 +17,16 @@
     <dependencies>
       <group targetFramework="net472">
         <dependency id="AWSSDK.Extensions.Numerics" version="<#=this.Session["NumericsVersionRange"]#>" />
-        <dependency id="System.Buffers" version="4.5.1" />
-        <dependency id="System.Memory" version="4.5.5" />
+        <dependency id="System.Buffers" version="4.6.1" />
+        <dependency id="System.Memory" version="4.6.3" />
         <dependency id="System.Text.Json" version="8.0.6" />
         <dependency id="System.IO.Hashing" version="11.0.0" />
       </group>
       <group targetFramework="netstandard2.0">
         <dependency id="AWSSDK.Extensions.Numerics" version="<#=this.Session["NumericsVersionRange"]#>" />
         <dependency id="Microsoft.Bcl.AsyncInterfaces" version="8.0.0" />
-        <dependency id="System.Buffers" version="4.5.1" />
-        <dependency id="System.Memory" version="4.5.5" />
+        <dependency id="System.Buffers" version="4.6.1" />
+        <dependency id="System.Memory" version="4.6.3" />
         <dependency id="System.Text.Json" version="8.0.6" />
         <dependency id="System.IO.Hashing" version="11.0.0" />
       </group>

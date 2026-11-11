@@ -57,8 +57,8 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line default
             #line hidden
             this.Write(@""" />
-        <dependency id=""System.Buffers"" version=""4.5.1"" />
-        <dependency id=""System.Memory"" version=""4.5.5"" />
+        <dependency id=""System.Buffers"" version=""4.6.1"" />
+        <dependency id=""System.Memory"" version=""4.6.3"" />
         <dependency id=""System.Text.Json"" version=""8.0.6"" />
         <dependency id=""System.IO.Hashing"" version=""11.0.0"" />
       </group>
@@ -72,8 +72,8 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write(@""" />
         <dependency id=""Microsoft.Bcl.AsyncInterfaces"" version=""8.0.0"" />
-        <dependency id=""System.Buffers"" version=""4.5.1"" />
-        <dependency id=""System.Memory"" version=""4.5.5"" />
+        <dependency id=""System.Buffers"" version=""4.6.1"" />
+        <dependency id=""System.Memory"" version=""4.6.3"" />
         <dependency id=""System.Text.Json"" version=""8.0.6"" />
         <dependency id=""System.IO.Hashing"" version=""11.0.0"" />
       </group>
