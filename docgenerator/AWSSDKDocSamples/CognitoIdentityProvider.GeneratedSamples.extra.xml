@@ -18,6 +18,38 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.AdminListUserSessions(Amazon.CognitoIdentityProvider.Model.AdminListUserSessionsRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.AdminListUserSessions(Amazon.CognitoIdentityProvider.Model.AdminListUserSessionsRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.AdminListUserSessionsRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.AdminListUserSessionsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists the active sessions for the user testuser. The response contains one token session that originated from an SSO session, and the SSO session it came through.
+        </para>
+        <code title="Example list the active sessions of a user as an administrator" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="AdminListUserSessions-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.AdminRevokeUserSession(Amazon.CognitoIdentityProvider.Model.AdminRevokeUserSessionRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.AdminRevokeUserSession(Amazon.CognitoIdentityProvider.Model.AdminRevokeUserSessionRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.AdminRevokeUserSessionRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.AdminRevokeUserSessionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example revokes a token session for the user testuser and cascades the revocation to the parent SSO session that the token session came through.
+        </para>
+        <code title="Example revoke a user session as an administrator" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="AdminRevokeUserSession-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.CreateUserPool(Amazon.CognitoIdentityProvider.Model.CreateUserPoolRequest)" />
       <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.CreateUserPool(Amazon.CognitoIdentityProvider.Model.CreateUserPoolRequest)" />
       <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolRequest" />
@@ -114,6 +146,38 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.GetUserPoolClientSessionConfiguration(Amazon.CognitoIdentityProvider.Model.GetUserPoolClientSessionConfigurationRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.GetUserPoolClientSessionConfiguration(Amazon.CognitoIdentityProvider.Model.GetUserPoolClientSessionConfigurationRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.GetUserPoolClientSessionConfigurationRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.GetUserPoolClientSessionConfigurationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example returns the per-client session configuration, showing an SSO session validity of 43200 minutes (30 days).
+        </para>
+        <code title="Example get the session configuration of an app client" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="GetUserPoolClientSessionConfiguration-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.GetUserPoolSessionConfiguration(Amazon.CognitoIdentityProvider.Model.GetUserPoolSessionConfigurationRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.GetUserPoolSessionConfiguration(Amazon.CognitoIdentityProvider.Model.GetUserPoolSessionConfigurationRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.GetUserPoolSessionConfigurationRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.GetUserPoolSessionConfigurationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example returns the pool-level session configuration, showing that session tracking is enabled with a maximum of 20 concurrent token sessions per user.
+        </para>
+        <code title="Example get the session configuration of a user pool" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="GetUserPoolSessionConfiguration-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.InitiateAuth(Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest)" />
       <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.InitiateAuth(Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest)" />
       <member name="T:Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest" />
@@ -157,6 +221,70 @@
           This request submits a value for all possible parameters for ListUsers. By iterating the PaginationToken, you can page through and collect all users in a user pool.
         </para>
         <code title="A ListUsers request for the next 3 users whose email address starts with &quot;testuser.&quot;" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="ListUsers-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.ListUserSessions(Amazon.CognitoIdentityProvider.Model.ListUserSessionsRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.ListUserSessions(Amazon.CognitoIdentityProvider.Model.ListUserSessionsRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.ListUserSessionsRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.ListUserSessionsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists the active sessions for the user who owns the provided access token. The IsCurrentSession field identifies the session that the access token belongs to.
+        </para>
+        <code title="Example list a user's own active sessions" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="ListUserSessions-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.RevokeUserSession(Amazon.CognitoIdentityProvider.Model.RevokeUserSessionRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.RevokeUserSession(Amazon.CognitoIdentityProvider.Model.RevokeUserSessionRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.RevokeUserSessionRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.RevokeUserSessionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example revokes a single token session that belongs to the user who owns the provided access token, such as signing out a lost or stolen device. Only the targeted session is revoked.
+        </para>
+        <code title="Example revoke one of a user's own sessions" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="RevokeUserSession-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.SetUserPoolClientSessionConfiguration(Amazon.CognitoIdentityProvider.Model.SetUserPoolClientSessionConfigurationRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.SetUserPoolClientSessionConfiguration(Amazon.CognitoIdentityProvider.Model.SetUserPoolClientSessionConfigurationRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.SetUserPoolClientSessionConfigurationRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.SetUserPoolClientSessionConfigurationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example configures an app client to silently reuse an SSO session for up to 43200 minutes (30 days) since the last authentication before requiring the user to sign in again.
+        </para>
+        <code title="Example set the SSO session validity for an app client" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="SetUserPoolClientSessionConfiguration-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.SetUserPoolSessionConfiguration(Amazon.CognitoIdentityProvider.Model.SetUserPoolSessionConfigurationRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.SetUserPoolSessionConfiguration(Amazon.CognitoIdentityProvider.Model.SetUserPoolSessionConfigurationRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.SetUserPoolSessionConfigurationRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.SetUserPoolSessionConfigurationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example enables server-side session tracking for a user pool and sets the pool-wide maximum to 20 concurrent token sessions per user.
+        </para>
+        <code title="Example enable session tracking for a user pool" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="SetUserPoolSessionConfiguration-1" />
       </example>
     </value>
   </doc>
