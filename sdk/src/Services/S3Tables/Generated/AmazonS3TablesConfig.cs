@@ -32,7 +32,7 @@ namespace Amazon.S3Tables
     public partial class AmazonS3TablesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("S3Tables", "4.0.102.0");
+            InternalSDKUtils.BuildUserAgentString("S3Tables", "4.1.0.0");
 
         private static readonly AmazonS3TablesEndpointResolver EndpointResolver =
             new AmazonS3TablesEndpointResolver();

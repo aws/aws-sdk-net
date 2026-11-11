@@ -1,3 +1,21 @@
+### 4.1.0.0 (2026-11-11 23:14 UTC)
+* S3 (4.1.0.0)
+	* Fixed a bug where TransferUtility.Download/DownloadAsync (the non-multipart path) always waited 100ms after a successful download. The backoff delay now only applies before an actual retry, and the async path uses a non-blocking await instead of a blocking Thread.Sleep.
+* Extensions.CborProtocol (4.1.0.0)
+	* Added Smithy RPC v2 CBOR support for the byte, short, bigInteger and bigDecimal types (Full Numeric Type Support specification): byte and short as CBOR integers, bigInteger as a bignum (tags 2/3) and bigDecimal as a decimal fraction (tag 4) via the new CborWriterExtensions.WriteBigDecimal.
+* Extensions.Numerics (4.1.0.0)
+	* Breaking Change: The assembly now has AssemblyVersion 4.0.0.0 and AssemblyFileVersion 4.0.0.x. Version 4.0.0.2 shipped with 0.0.0.0 because the project was missing Properties/AssemblyInfo.cs, so the version from _sdk-versions.json was never applied.
+* Core 4.1.0.0
+	* Added AWS4aSigner class that implements SigV4a signing in managed code. AWS CRT is no longer used by the SDK for this purpose, and the related APIs were deprecated.
+	* Added build targets for .NET 10 and .NET 11
+	* Added support for the byte, short, bigInteger and bigDecimal model types (Full Numeric Type Support specification): byte maps to sbyte, short to short, bigInteger to System.Numerics.BigInteger and bigDecimal to Amazon.Extensions.Numerics.BigDecimal, serialized without losing digits or scale.
+	* AWSSDK.Core now depends on AWSSDK.Extensions.Numerics, which provides BigDecimal.
+	* Breaking Change: Removed support .NET Core 3.1
+	* Fixed a buffer overflow in ChunkedUploadWrapperStream when an encrypting stream is uploaded with a buffer size that does not divide the chunk size, and reduced the per-chunk allocations of chunked uploads.
+	* Reduce CPU and memory used by checksums and chunked uploads: stop allocating per 64-byte block in the managed MD5 used to validate GetObject responses, size aws-chunked upload buffers to small payloads, stop allocating a temporary buffer per read when sending trailing checksums, and compute CRC32 with a faster slicing-by-16 implementation on targets where System.IO.Hashing is not vectorized (.NET 8, .NET Standard and .NET Framework).
+	* Replace checksum provider from the native Amazon Common Runtime to System.IO.Hashing
+	* All service and extension packages updated to require new Core
+
 ### 4.0.368.0 (2026-11-11 19:09 UTC)
 * ACMPCA (4.0.102.0)
 	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.1. The SDK will prioritize its most performant protocol.

@@ -32,7 +32,7 @@ namespace Amazon.MachineLearning
     public partial class AmazonMachineLearningConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Machine Learning", "4.0.100.26");
+            InternalSDKUtils.BuildUserAgentString("Machine Learning", "4.1.0.0");
 
         private static readonly AmazonMachineLearningEndpointResolver EndpointResolver =
             new AmazonMachineLearningEndpointResolver();
