@@ -62,6 +62,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetBandwidthReportingMode())
+            {
+                context.Writer.WritePropertyName("BandwidthReportingMode");
+                context.Writer.WriteStringValue(requestObject.BandwidthReportingMode);
+            }
+
             if (requestObject.IsSetBaseUrls())
             {
                 context.Writer.WritePropertyName("BaseUrls");

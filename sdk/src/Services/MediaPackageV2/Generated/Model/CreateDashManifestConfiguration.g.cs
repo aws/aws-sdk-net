@@ -77,6 +77,39 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetAvailabilityStartTimeConfiguration() => this.AvailabilityStartTimeConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property BandwidthReportingMode. 
+        /// <para>
+        /// Specifies how MediaPackage calculates the <c>bandwidth</c> attribute of regular (non-iFrame)
+        /// video <c>Representation</c> elements in the DASH manifest. Audio, subtitle, image,
+        /// and iFrame-only (trick-play) representations are unchanged.
+        /// </para>
+        ///  
+        /// <para>
+        /// The allowed values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AVERAGE</c> – MediaPackage reports the average bitrate of the source video track.
+        /// This is the default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MAX</c> – MediaPackage reports the peak bitrate of the video stream.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For information about bandwidth reporting, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/dash-bandwidth-reporting.html">DASH
+        /// bandwidth reporting</a> in the <i>Elemental MediaPackage v2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public DashBandwidthReportingMode BandwidthReportingMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BandwidthReportingMode property is set.
+        /// </summary>
+        internal bool IsSetBandwidthReportingMode() => this.BandwidthReportingMode != null;
+
+        /// <summary>
         /// Gets and sets the property BaseUrls. 
         /// <para>
         /// The base URLs to use for retrieving segments.
