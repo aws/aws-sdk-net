@@ -42,7 +42,7 @@
   </Choose>  	
 
   <ItemGroup>
-    <PackageReference Include="System.Formats.Cbor" Version="9.0.5" />
+    <PackageReference Include="System.Formats.Cbor" Version="9.0.24" />
   </ItemGroup>
 
   <ItemGroup>
