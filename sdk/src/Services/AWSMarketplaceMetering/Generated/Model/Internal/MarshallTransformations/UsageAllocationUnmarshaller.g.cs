@@ -60,6 +60,13 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("AllocatedUsageQuantityAsDecimal", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AllocatedUsageQuantityAsDecimal = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);

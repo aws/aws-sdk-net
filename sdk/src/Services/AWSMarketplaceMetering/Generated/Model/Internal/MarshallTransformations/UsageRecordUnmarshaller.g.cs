@@ -88,6 +88,13 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("QuantityAsDecimal", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QuantityAsDecimal = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

@@ -73,10 +73,12 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// Web Services Billing and Cost Management console. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/metering-for-usage.html#saas-vendor-metered-tagging">Vendor-metered
     /// tagging</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-tagging">BatchMeterUsage
     /// with usage allocation tagging code example</a> in the <i>Amazon Web Services Marketplace
-    /// Seller Guide</i>. </para> <para> <c>BatchMeterUsage</c> returns a list of <c>UsageRecordResult</c>
-    /// objects, which have each <c>UsageRecord</c>. It also returns a list of <c>UnprocessedRecords</c>,
-    /// which indicate errors on the service side that should be retried. </para> <para> For
-    /// Amazon Web Services Regions that support <c>BatchMeterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#batchmeterusage-region-support">BatchMeterUsage
+    /// Seller Guide</i>. </para> <para> To report fractional usage, use <c>QuantityAsDecimal</c>
+    /// instead of <c>Quantity</c> in each <c>UsageRecord</c>. </para> <para> <c>BatchMeterUsage</c>
+    /// returns a list of <c>UsageRecordResult</c> objects, which have each <c>UsageRecord</c>.
+    /// It also returns a list of <c>UnprocessedRecords</c>, which indicate errors on the
+    /// service side that should be retried. </para> <para> For Amazon Web Services Regions
+    /// that support <c>BatchMeterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#batchmeterusage-region-support">BatchMeterUsage
     /// Region support</a>. </para> <note> <para> For an example of <c>BatchMeterUsage</c>,
     /// see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-example">
     /// BatchMeterUsage code example</a> in the <i>Amazon Web Services Marketplace Seller

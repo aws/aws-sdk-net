@@ -75,6 +75,12 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Quantity.Value);
             }
 
+            if (requestObject.IsSetQuantityAsDecimal())
+            {
+                context.Writer.WritePropertyName("QuantityAsDecimal");
+                context.Writer.WriteStringValue(requestObject.QuantityAsDecimal);
+            }
+
             if (requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");

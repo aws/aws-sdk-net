@@ -42,16 +42,46 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property AllocatedUsageQuantity. 
         /// <para>
-        /// The total quantity allocated to this bucket of usage.
+        /// The total quantity allocated to this bucket of usage, as a whole number.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>AllocatedUsageQuantityAsDecimal</c> instead. Each allocation must specify exactly
+        /// one of <c>AllocatedUsageQuantity</c> or <c>AllocatedUsageQuantityAsDecimal</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 0, Max = 2147483647)]
+        [Obsolete("Use AllocatedUsageQuantityAsDecimal instead.")]
+        [AWSProperty(Min = 0, Max = 2147483647)]
         public int? AllocatedUsageQuantity { get; set; }
 
         /// <summary>
         /// Checks to see if the AllocatedUsageQuantity property is set.
         /// </summary>
         internal bool IsSetAllocatedUsageQuantity() => this.AllocatedUsageQuantity.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property AllocatedUsageQuantityAsDecimal. 
+        /// <para>
+        /// The total quantity allocated to this bucket of usage, as a decimal string. Use this
+        /// when the usage quantity of the request or usage record is specified as a decimal (<c>UsageQuantityAsDecimal</c>
+        /// or <c>QuantityAsDecimal</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// A non-negative decimal number, for example <c>17.42</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each allocation must specify exactly one of <c>AllocatedUsageQuantity</c> or <c>AllocatedUsageQuantityAsDecimal</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 17)]
+        public string AllocatedUsageQuantityAsDecimal { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AllocatedUsageQuantityAsDecimal property is set.
+        /// </summary>
+        internal bool IsSetAllocatedUsageQuantityAsDecimal() => this.AllocatedUsageQuantityAsDecimal != null;
 
         /// <summary>
         /// Gets and sets the property Tags. 

@@ -68,9 +68,10 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// Requests with duplicate <c>Timestamps</c> are aggregated as long as the <c>ClientToken</c>
     /// is unique. </para> </li> </ul> <para> If you submit records more than six hours after
     /// events occur, the records won't be accepted. The timestamp in your request determines
-    /// when an event is recorded. </para> <para> You can optionally include multiple usage
-    /// allocations, to provide customers with usage data split into buckets by tags that
-    /// you define or allow the customer to define. </para> <para> For Amazon Web Services
+    /// when an event is recorded. </para> <para> To report fractional usage, use <c>UsageQuantityAsDecimal</c>
+    /// instead of <c>UsageQuantity</c>. </para> <para> You can optionally include multiple
+    /// usage allocations, to provide customers with usage data split into buckets by tags
+    /// that you define or allow the customer to define. </para> <para> For Amazon Web Services
     /// Regions that support <c>MeterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ec2">MeterUsage
     /// Region support for Amazon EC2</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ecs-eks">MeterUsage
     /// Region support for Amazon ECS and Amazon EKS</a>. </para>
@@ -161,9 +162,11 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// </para>
         ///  
         /// <para>
-        /// The sum of all <c>UsageAllocation</c> quantities must equal the <c>UsageQuantity</c>
-        /// of the <c>MeterUsage</c> request, and each <c>UsageAllocation</c> must have a unique
-        /// set of tags (include no tags).
+        /// The sum of all <c>UsageAllocation</c> quantities must equal the usage quantity of
+        /// the <c>MeterUsage</c> request (<c>UsageQuantity</c> or <c>UsageQuantityAsDecimal</c>),
+        /// and each <c>UsageAllocation</c> must have a unique set of tags (include no tags).
+        /// Allocations must use the same type of quantity as the request: <c>AllocatedUsageQuantity</c>
+        /// with <c>UsageQuantity</c>, or <c>AllocatedUsageQuantityAsDecimal</c> with <c>UsageQuantityAsDecimal</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -197,9 +200,16 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property UsageQuantity. 
         /// <para>
-        /// Consumption value for the hour. Defaults to <c>0</c> if not specified.
+        /// The consumption value for the hour, as a whole number. Defaults to <c>0</c> if neither
+        /// <c>UsageQuantity</c> nor <c>UsageQuantityAsDecimal</c> is specified.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>UsageQuantityAsDecimal</c> instead. You can't specify both <c>UsageQuantity</c>
+        /// and <c>UsageQuantityAsDecimal</c>.
         /// </para>
         /// </summary>
+        [Obsolete("Use UsageQuantityAsDecimal instead.")]
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? UsageQuantity { get; set; }
 
@@ -207,5 +217,35 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Checks to see if the UsageQuantity property is set.
         /// </summary>
         internal bool IsSetUsageQuantity() => this.UsageQuantity.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property UsageQuantityAsDecimal. 
+        /// <para>
+        /// The consumption value for the hour, as a decimal string. Use this instead of <c>UsageQuantity</c>
+        /// to report fractional usage.
+        /// </para>
+        ///  
+        /// <para>
+        /// A non-negative decimal number, for example <c>17.42</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't specify both <c>UsageQuantity</c> and <c>UsageQuantityAsDecimal</c>. If
+        /// you provide <c>UsageAllocations</c>, each allocation must use <c>AllocatedUsageQuantityAsDecimal</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Quantities are compared by value when checking for duplicate or retried requests,
+        /// so <c>17</c>, <c>17.0</c>, and <c>17.00</c> are the same quantity, whether you send
+        /// it in <c>UsageQuantity</c> or <c>UsageQuantityAsDecimal</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 17)]
+        public string UsageQuantityAsDecimal { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UsageQuantityAsDecimal property is set.
+        /// </summary>
+        internal bool IsSetUsageQuantityAsDecimal() => this.UsageQuantityAsDecimal != null;
     }
 }

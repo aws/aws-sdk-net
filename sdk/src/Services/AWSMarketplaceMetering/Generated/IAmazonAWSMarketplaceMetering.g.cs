@@ -267,6 +267,11 @@ namespace Amazon.AWSMarketplaceMetering
         /// </para>
         ///  
         /// <para>
+        /// To report fractional usage, use <c>QuantityAsDecimal</c> instead of <c>Quantity</c>
+        /// in each <c>UsageRecord</c>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <c>BatchMeterUsage</c> returns a list of <c>UsageRecordResult</c> objects, which
         /// have each <c>UsageRecord</c>. It also returns a list of <c>UnprocessedRecords</c>,
         /// which indicate errors on the service side that should be retried.
@@ -307,7 +312,8 @@ namespace Amazon.AWSMarketplaceMetering
         /// The tag is invalid, or the number of tags is greater than 5.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageAllocationsException">
-        /// Sum of allocated usage quantities is not equal to the usage quantity.
+        /// Sum of allocated usage quantities is not equal to the usage quantity, or the allocations
+        /// don't use the same type of quantity (whole number or decimal) as the usage quantity.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
         /// The usage dimension does not match one of the <c>UsageDimensions</c> associated with
@@ -399,6 +405,11 @@ namespace Amazon.AWSMarketplaceMetering
         /// </para>
         ///  
         /// <para>
+        /// To report fractional usage, use <c>QuantityAsDecimal</c> instead of <c>Quantity</c>
+        /// in each <c>UsageRecord</c>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <c>BatchMeterUsage</c> returns a list of <c>UsageRecordResult</c> objects, which
         /// have each <c>UsageRecord</c>. It also returns a list of <c>UnprocessedRecords</c>,
         /// which indicate errors on the service side that should be retried.
@@ -442,7 +453,8 @@ namespace Amazon.AWSMarketplaceMetering
         /// The tag is invalid, or the number of tags is greater than 5.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageAllocationsException">
-        /// Sum of allocated usage quantities is not equal to the usage quantity.
+        /// Sum of allocated usage quantities is not equal to the usage quantity, or the allocations
+        /// don't use the same type of quantity (whole number or decimal) as the usage quantity.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
         /// The usage dimension does not match one of the <c>UsageDimensions</c> associated with
@@ -531,6 +543,10 @@ namespace Amazon.AWSMarketplaceMetering
         /// </para>
         ///  
         /// <para>
+        /// To report fractional usage, use <c>UsageQuantityAsDecimal</c> instead of <c>UsageQuantity</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// You can optionally include multiple usage allocations, to provide customers with usage
         /// data split into buckets by tags that you define or allow the customer to define.
         /// </para>
@@ -549,6 +565,8 @@ namespace Amazon.AWSMarketplaceMetering
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.DuplicateRequestException">
         /// A metering record has already been emitted by the same EC2 instance, ECS task, or
         /// EKS pod for the given {<c>usageDimension</c>, <c>timestamp</c>} with a different <c>usageQuantity</c>.
+        /// Quantities are compared by value, so a whole-number and a decimal quantity with the
+        /// same value (for example, <c>17</c> and <c>17.00</c>) are not different.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.IdempotencyConflictException">
         /// The <c>ClientToken</c> is being used for multiple requests.
@@ -569,7 +587,8 @@ namespace Amazon.AWSMarketplaceMetering
         /// The tag is invalid, or the number of tags is greater than 5.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageAllocationsException">
-        /// Sum of allocated usage quantities is not equal to the usage quantity.
+        /// Sum of allocated usage quantities is not equal to the usage quantity, or the allocations
+        /// don't use the same type of quantity (whole number or decimal) as the usage quantity.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
         /// The usage dimension does not match one of the <c>UsageDimensions</c> associated with
@@ -658,6 +677,10 @@ namespace Amazon.AWSMarketplaceMetering
         /// </para>
         ///  
         /// <para>
+        /// To report fractional usage, use <c>UsageQuantityAsDecimal</c> instead of <c>UsageQuantity</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// You can optionally include multiple usage allocations, to provide customers with usage
         /// data split into buckets by tags that you define or allow the customer to define.
         /// </para>
@@ -679,6 +702,8 @@ namespace Amazon.AWSMarketplaceMetering
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.DuplicateRequestException">
         /// A metering record has already been emitted by the same EC2 instance, ECS task, or
         /// EKS pod for the given {<c>usageDimension</c>, <c>timestamp</c>} with a different <c>usageQuantity</c>.
+        /// Quantities are compared by value, so a whole-number and a decimal quantity with the
+        /// same value (for example, <c>17</c> and <c>17.00</c>) are not different.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.IdempotencyConflictException">
         /// The <c>ClientToken</c> is being used for multiple requests.
@@ -699,7 +724,8 @@ namespace Amazon.AWSMarketplaceMetering
         /// The tag is invalid, or the number of tags is greater than 5.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageAllocationsException">
-        /// Sum of allocated usage quantities is not equal to the usage quantity.
+        /// Sum of allocated usage quantities is not equal to the usage quantity, or the allocations
+        /// don't use the same type of quantity (whole number or decimal) as the usage quantity.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
         /// The usage dimension does not match one of the <c>UsageDimensions</c> associated with
