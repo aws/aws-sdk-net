@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,24 +39,24 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// ActionDefinition Marshaller
     /// </summary>
-    public partial class ActionDefinitionMarshaller : IRequestMarshaller<ActionDefinition, JsonMarshallerContext>
+    public partial class ActionDefinitionMarshaller : IRequestMarshaller<ActionDefinition, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ActionDefinition requestObject, JsonMarshallerContext context)
+        public void Marshall(ActionDefinition requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetPublishMetricAction())
             {
-                context.Writer.WritePropertyName("PublishMetricAction");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PublishMetricAction");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = PublishMetricActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.PublishMetricAction, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

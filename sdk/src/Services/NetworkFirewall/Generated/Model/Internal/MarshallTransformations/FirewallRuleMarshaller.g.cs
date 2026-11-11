@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,106 +39,106 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// FirewallRule Marshaller
     /// </summary>
-    public partial class FirewallRuleMarshaller : IRequestMarshaller<FirewallRule, JsonMarshallerContext>
+    public partial class FirewallRuleMarshaller : IRequestMarshaller<FirewallRule, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(FirewallRule requestObject, JsonMarshallerContext context)
+        public void Marshall(FirewallRule requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAcceptPriorHooks())
             {
-                context.Writer.WritePropertyName("AcceptPriorHooks");
-                context.Writer.WriteBooleanValue(requestObject.AcceptPriorHooks.Value);
+                context.Writer.WriteTextString("AcceptPriorHooks");
+                context.Writer.WriteBoolean(requestObject.AcceptPriorHooks.Value);
             }
 
             if (requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("Action");
-                context.Writer.WriteStringValue(requestObject.Action);
+                context.Writer.WriteTextString("Action");
+                context.Writer.WriteTextString(requestObject.Action);
             }
 
             if (requestObject.IsSetActionScope())
             {
-                context.Writer.WritePropertyName("ActionScope");
-                context.Writer.WriteStringValue(requestObject.ActionScope);
+                context.Writer.WriteTextString("ActionScope");
+                context.Writer.WriteTextString(requestObject.ActionScope);
             }
 
             if (requestObject.IsSetAlertEnabled())
             {
-                context.Writer.WritePropertyName("AlertEnabled");
-                context.Writer.WriteBooleanValue(requestObject.AlertEnabled.Value);
+                context.Writer.WriteTextString("AlertEnabled");
+                context.Writer.WriteBoolean(requestObject.AlertEnabled.Value);
             }
 
             if (requestObject.IsSetBypassIPSEnabled())
             {
-                context.Writer.WritePropertyName("BypassIPSEnabled");
-                context.Writer.WriteBooleanValue(requestObject.BypassIPSEnabled.Value);
+                context.Writer.WriteTextString("BypassIPSEnabled");
+                context.Writer.WriteBoolean(requestObject.BypassIPSEnabled.Value);
             }
 
             if (requestObject.IsSetDestIPs())
             {
-                context.Writer.WritePropertyName("DestIPs");
-                context.Writer.WriteStringValue(requestObject.DestIPs);
+                context.Writer.WriteTextString("DestIPs");
+                context.Writer.WriteTextString(requestObject.DestIPs);
             }
 
             if (requestObject.IsSetDestPorts())
             {
-                context.Writer.WritePropertyName("DestPorts");
-                context.Writer.WriteStringValue(requestObject.DestPorts);
+                context.Writer.WriteTextString("DestPorts");
+                context.Writer.WriteTextString(requestObject.DestPorts);
             }
 
             if (requestObject.IsSetHook())
             {
-                context.Writer.WritePropertyName("Hook");
-                context.Writer.WriteStringValue(requestObject.Hook);
+                context.Writer.WriteTextString("Hook");
+                context.Writer.WriteTextString(requestObject.Hook);
             }
 
             if (requestObject.IsSetProtocol())
             {
-                context.Writer.WritePropertyName("Protocol");
-                context.Writer.WriteStringValue(requestObject.Protocol);
+                context.Writer.WriteTextString("Protocol");
+                context.Writer.WriteTextString(requestObject.Protocol);
             }
 
             if (requestObject.IsSetRuleMetadata())
             {
-                context.Writer.WritePropertyName("RuleMetadata");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("RuleMetadata");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RuleMetadataMarshaller.Instance;
                 marshaller.Marshall(requestObject.RuleMetadata, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetRuleOptions())
             {
-                context.Writer.WritePropertyName("RuleOptions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("RuleOptions");
+                context.Writer.WriteStartArray(requestObject.RuleOptions.Count);
                 foreach (var requestObjectRuleOptionsListValue in requestObject.RuleOptions)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = RuleOptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectRuleOptionsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetSourceIPs())
             {
-                context.Writer.WritePropertyName("SourceIPs");
-                context.Writer.WriteStringValue(requestObject.SourceIPs);
+                context.Writer.WriteTextString("SourceIPs");
+                context.Writer.WriteTextString(requestObject.SourceIPs);
             }
 
             if (requestObject.IsSetSourcePorts())
             {
-                context.Writer.WritePropertyName("SourcePorts");
-                context.Writer.WriteStringValue(requestObject.SourcePorts);
+                context.Writer.WriteTextString("SourcePorts");
+                context.Writer.WriteTextString(requestObject.SourcePorts);
             }
         }
 

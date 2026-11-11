@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,100 +38,102 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FirewallPolicy Object
     /// </summary>
-    public partial class FirewallPolicyUnmarshaller : IJsonUnmarshaller<FirewallPolicy, JsonUnmarshallerContext>
+    public partial class FirewallPolicyUnmarshaller : ICborUnmarshaller<FirewallPolicy, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public FirewallPolicy Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FirewallPolicy Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new FirewallPolicy();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("EnableTLSSessionHolding", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableTLSSessionHolding = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("PolicyVariables", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = PolicyVariablesUnmarshaller.Instance;
-                    unmarshalledObject.PolicyVariables = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EnableTLSSessionHolding":
+                        context.AddPathSegment("EnableTLSSessionHolding");
+                        unmarshalledObject.EnableTLSSessionHolding = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Route53ResolvedIPValidation", targetDepth, ref reader))
-                {
-                    var unmarshaller = Route53ResolvedIPValidationUnmarshaller.Instance;
-                    unmarshalledObject.Route53ResolvedIPValidation = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "PolicyVariables":
+                        context.AddPathSegment("PolicyVariables");
+                        unmarshalledObject.PolicyVariables = PolicyVariablesUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StatefulDefaultActions", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.StatefulDefaultActions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Route53ResolvedIPValidation":
+                        context.AddPathSegment("Route53ResolvedIPValidation");
+                        unmarshalledObject.Route53ResolvedIPValidation = Route53ResolvedIPValidationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StatefulEngineOptions", targetDepth, ref reader))
-                {
-                    var unmarshaller = StatefulEngineOptionsUnmarshaller.Instance;
-                    unmarshalledObject.StatefulEngineOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StatefulDefaultActions":
+                        context.AddPathSegment("StatefulDefaultActions");
+                        unmarshalledObject.StatefulDefaultActions = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StatefulRuleGroupReferences", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<StatefulRuleGroupReference, StatefulRuleGroupReferenceUnmarshaller>(StatefulRuleGroupReferenceUnmarshaller.Instance);
-                    unmarshalledObject.StatefulRuleGroupReferences = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StatefulEngineOptions":
+                        context.AddPathSegment("StatefulEngineOptions");
+                        unmarshalledObject.StatefulEngineOptions = StatefulEngineOptionsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StatelessCustomActions", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<CustomAction, CustomActionUnmarshaller>(CustomActionUnmarshaller.Instance);
-                    unmarshalledObject.StatelessCustomActions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StatefulRuleGroupReferences":
+                        context.AddPathSegment("StatefulRuleGroupReferences");
+                        unmarshalledObject.StatefulRuleGroupReferences = new CborListUnmarshaller<StatefulRuleGroupReference, StatefulRuleGroupReferenceUnmarshaller>(StatefulRuleGroupReferenceUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StatelessDefaultActions", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.StatelessDefaultActions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StatelessCustomActions":
+                        context.AddPathSegment("StatelessCustomActions");
+                        unmarshalledObject.StatelessCustomActions = new CborListUnmarshaller<CustomAction, CustomActionUnmarshaller>(CustomActionUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StatelessFragmentDefaultActions", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.StatelessFragmentDefaultActions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StatelessDefaultActions":
+                        context.AddPathSegment("StatelessDefaultActions");
+                        unmarshalledObject.StatelessDefaultActions = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StatelessRuleGroupReferences", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<StatelessRuleGroupReference, StatelessRuleGroupReferenceUnmarshaller>(StatelessRuleGroupReferenceUnmarshaller.Instance);
-                    unmarshalledObject.StatelessRuleGroupReferences = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StatelessFragmentDefaultActions":
+                        context.AddPathSegment("StatelessFragmentDefaultActions");
+                        unmarshalledObject.StatelessFragmentDefaultActions = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TLSInspectionConfigurationArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TLSInspectionConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "StatelessRuleGroupReferences":
+                        context.AddPathSegment("StatelessRuleGroupReferences");
+                        unmarshalledObject.StatelessRuleGroupReferences = new CborListUnmarshaller<StatelessRuleGroupReference, StatelessRuleGroupReferenceUnmarshaller>(StatelessRuleGroupReferenceUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "TLSInspectionConfigurationArn":
+                        context.AddPathSegment("TLSInspectionConfigurationArn");
+                        unmarshalledObject.TLSInspectionConfigurationArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

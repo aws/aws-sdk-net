@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,34 +39,34 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProxyRuleCondition Marshaller
     /// </summary>
-    public partial class ProxyRuleConditionMarshaller : IRequestMarshaller<ProxyRuleCondition, JsonMarshallerContext>
+    public partial class ProxyRuleConditionMarshaller : IRequestMarshaller<ProxyRuleCondition, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProxyRuleCondition requestObject, JsonMarshallerContext context)
+        public void Marshall(ProxyRuleCondition requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetConditionKey())
             {
-                context.Writer.WritePropertyName("ConditionKey");
-                context.Writer.WriteStringValue(requestObject.ConditionKey);
+                context.Writer.WriteTextString("ConditionKey");
+                context.Writer.WriteTextString(requestObject.ConditionKey);
             }
 
             if (requestObject.IsSetConditionOperator())
             {
-                context.Writer.WritePropertyName("ConditionOperator");
-                context.Writer.WriteStringValue(requestObject.ConditionOperator);
+                context.Writer.WriteTextString("ConditionOperator");
+                context.Writer.WriteTextString(requestObject.ConditionOperator);
             }
 
             if (requestObject.IsSetConditionValues())
             {
-                context.Writer.WritePropertyName("ConditionValues");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ConditionValues");
+                context.Writer.WriteStartArray(requestObject.ConditionValues.Count);
                 foreach (var requestObjectConditionValuesListValue in requestObject.ConditionValues)
                 {
-                    context.Writer.WriteStringValue(requestObjectConditionValuesListValue);
+                    context.Writer.WriteTextString(requestObjectConditionValuesListValue);
                 }
                 context.Writer.WriteEndArray();
             }

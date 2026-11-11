@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.NetworkFirewall.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -54,178 +55,184 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateFirewallRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NetworkFirewall");
-            string target = "NetworkFirewall_20201112.CreateFirewall";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-12";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/NetworkFirewall_20201112/operation/CreateFirewall";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAvailabilityZoneChangeProtection())
+                {
+                    context.Writer.WriteTextString("AvailabilityZoneChangeProtection");
+                    context.Writer.WriteBoolean(publicRequest.AvailabilityZoneChangeProtection.Value);
+                }
+                if (publicRequest.IsSetAvailabilityZoneMappings())
+                {
+                    context.Writer.WriteTextString("AvailabilityZoneMappings");
+                    context.Writer.WriteStartArray(publicRequest.AvailabilityZoneMappings.Count);
+                    foreach (var publicRequestAvailabilityZoneMappingsListValue in publicRequest.AvailabilityZoneMappings)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = AvailabilityZoneMappingMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAvailabilityZoneMappingsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetDeleteProtection())
+                {
+                    context.Writer.WriteTextString("DeleteProtection");
+                    context.Writer.WriteBoolean(publicRequest.DeleteProtection.Value);
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetEnabledAnalysisTypes())
+                {
+                    context.Writer.WriteTextString("EnabledAnalysisTypes");
+                    context.Writer.WriteStartArray(publicRequest.EnabledAnalysisTypes.Count);
+                    foreach (var publicRequestEnabledAnalysisTypesListValue in publicRequest.EnabledAnalysisTypes)
+                    {
+                        context.Writer.WriteTextString(publicRequestEnabledAnalysisTypesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetEncryptionConfiguration())
+                {
+                    context.Writer.WriteTextString("EncryptionConfiguration");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = EncryptionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetFirewallName())
+                {
+                    context.Writer.WriteTextString("FirewallName");
+                    context.Writer.WriteTextString(publicRequest.FirewallName);
+                }
+                if (publicRequest.IsSetFirewallPolicyArn())
+                {
+                    context.Writer.WriteTextString("FirewallPolicyArn");
+                    context.Writer.WriteTextString(publicRequest.FirewallPolicyArn);
+                }
+                if (publicRequest.IsSetFirewallPolicyChangeProtection())
+                {
+                    context.Writer.WriteTextString("FirewallPolicyChangeProtection");
+                    context.Writer.WriteBoolean(publicRequest.FirewallPolicyChangeProtection.Value);
+                }
+                if (publicRequest.IsSetNatGatewayMappings())
+                {
+                    context.Writer.WriteTextString("NatGatewayMappings");
+                    context.Writer.WriteStartArray(publicRequest.NatGatewayMappings.Count);
+                    foreach (var publicRequestNatGatewayMappingsListValue in publicRequest.NatGatewayMappings)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = NatGatewayMappingMarshaller.Instance;
+                        marshaller.Marshall(publicRequestNatGatewayMappingsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetNoSourcePreservation())
+                {
+                    context.Writer.WriteTextString("NoSourcePreservation");
+                    context.Writer.WriteBoolean(publicRequest.NoSourcePreservation.Value);
+                }
+                if (publicRequest.IsSetProxySettings())
+                {
+                    context.Writer.WriteTextString("ProxySettings");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ProxySettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProxySettings, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetSubnetChangeProtection())
+                {
+                    context.Writer.WriteTextString("SubnetChangeProtection");
+                    context.Writer.WriteBoolean(publicRequest.SubnetChangeProtection.Value);
+                }
+                if (publicRequest.IsSetSubnetMappings())
+                {
+                    context.Writer.WriteTextString("SubnetMappings");
+                    context.Writer.WriteStartArray(publicRequest.SubnetMappings.Count);
+                    foreach (var publicRequestSubnetMappingsListValue in publicRequest.SubnetMappings)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = SubnetMappingMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSubnetMappingsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTransitGatewayId())
+                {
+                    context.Writer.WriteTextString("TransitGatewayId");
+                    context.Writer.WriteTextString(publicRequest.TransitGatewayId);
+                }
+                if (publicRequest.IsSetVpcEndpoint())
+                {
+                    context.Writer.WriteTextString("VpcEndpoint");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = VpcEndpointMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcEndpoint, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetVpcId())
+                {
+                    context.Writer.WriteTextString("VpcId");
+                    context.Writer.WriteTextString(publicRequest.VpcId);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAvailabilityZoneChangeProtection())
-            {
-                context.Writer.WritePropertyName("AvailabilityZoneChangeProtection");
-                context.Writer.WriteBooleanValue(publicRequest.AvailabilityZoneChangeProtection.Value);
             }
-            if (publicRequest.IsSetAvailabilityZoneMappings())
+            finally
             {
-                context.Writer.WritePropertyName("AvailabilityZoneMappings");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestAvailabilityZoneMappingsListValue in publicRequest.AvailabilityZoneMappings)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = AvailabilityZoneMappingMarshaller.Instance;
-                    marshaller.Marshall(publicRequestAvailabilityZoneMappingsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetDeleteProtection())
-            {
-                context.Writer.WritePropertyName("DeleteProtection");
-                context.Writer.WriteBooleanValue(publicRequest.DeleteProtection.Value);
-            }
-            if (publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-            if (publicRequest.IsSetEnabledAnalysisTypes())
-            {
-                context.Writer.WritePropertyName("EnabledAnalysisTypes");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestEnabledAnalysisTypesListValue in publicRequest.EnabledAnalysisTypes)
-                {
-                    context.Writer.WriteStringValue(publicRequestEnabledAnalysisTypesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetEncryptionConfiguration())
-            {
-                context.Writer.WritePropertyName("EncryptionConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EncryptionConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetFirewallName())
-            {
-                context.Writer.WritePropertyName("FirewallName");
-                context.Writer.WriteStringValue(publicRequest.FirewallName);
-            }
-            if (publicRequest.IsSetFirewallPolicyArn())
-            {
-                context.Writer.WritePropertyName("FirewallPolicyArn");
-                context.Writer.WriteStringValue(publicRequest.FirewallPolicyArn);
-            }
-            if (publicRequest.IsSetFirewallPolicyChangeProtection())
-            {
-                context.Writer.WritePropertyName("FirewallPolicyChangeProtection");
-                context.Writer.WriteBooleanValue(publicRequest.FirewallPolicyChangeProtection.Value);
-            }
-            if (publicRequest.IsSetNatGatewayMappings())
-            {
-                context.Writer.WritePropertyName("NatGatewayMappings");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestNatGatewayMappingsListValue in publicRequest.NatGatewayMappings)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = NatGatewayMappingMarshaller.Instance;
-                    marshaller.Marshall(publicRequestNatGatewayMappingsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetNoSourcePreservation())
-            {
-                context.Writer.WritePropertyName("NoSourcePreservation");
-                context.Writer.WriteBooleanValue(publicRequest.NoSourcePreservation.Value);
-            }
-            if (publicRequest.IsSetProxySettings())
-            {
-                context.Writer.WritePropertyName("ProxySettings");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ProxySettingsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ProxySettings, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetSubnetChangeProtection())
-            {
-                context.Writer.WritePropertyName("SubnetChangeProtection");
-                context.Writer.WriteBooleanValue(publicRequest.SubnetChangeProtection.Value);
-            }
-            if (publicRequest.IsSetSubnetMappings())
-            {
-                context.Writer.WritePropertyName("SubnetMappings");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestSubnetMappingsListValue in publicRequest.SubnetMappings)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = SubnetMappingMarshaller.Instance;
-                    marshaller.Marshall(publicRequestSubnetMappingsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetTransitGatewayId())
-            {
-                context.Writer.WritePropertyName("TransitGatewayId");
-                context.Writer.WriteStringValue(publicRequest.TransitGatewayId);
-            }
-            if (publicRequest.IsSetVpcEndpoint())
-            {
-                context.Writer.WritePropertyName("VpcEndpoint");
-                context.Writer.WriteStartObject();
-
-                var marshaller = VpcEndpointMarshaller.Instance;
-                marshaller.Marshall(publicRequest.VpcEndpoint, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetVpcId())
-            {
-                context.Writer.WritePropertyName("VpcId");
-                context.Writer.WriteStringValue(publicRequest.VpcId);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

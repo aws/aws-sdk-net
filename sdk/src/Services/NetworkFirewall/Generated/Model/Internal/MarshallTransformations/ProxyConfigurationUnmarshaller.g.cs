@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,79 +38,84 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ProxyConfiguration Object
     /// </summary>
-    public partial class ProxyConfigurationUnmarshaller : IJsonUnmarshaller<ProxyConfiguration, JsonUnmarshallerContext>
+    public partial class ProxyConfigurationUnmarshaller : ICborUnmarshaller<ProxyConfiguration, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ProxyConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ProxyConfiguration Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ProxyConfiguration();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CreateTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("DefaultRulePhaseActions", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = ProxyConfigDefaultRulePhaseActionsRequestUnmarshaller.Instance;
-                    unmarshalledObject.DefaultRulePhaseActions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CreateTime":
+                        context.AddPathSegment("CreateTime");
+                        unmarshalledObject.CreateTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DeleteTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DeleteTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DefaultRulePhaseActions":
+                        context.AddPathSegment("DefaultRulePhaseActions");
+                        unmarshalledObject.DefaultRulePhaseActions = ProxyConfigDefaultRulePhaseActionsRequestUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Description", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DeleteTime":
+                        context.AddPathSegment("DeleteTime");
+                        unmarshalledObject.DeleteTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ProxyConfigurationArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProxyConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Description":
+                        context.AddPathSegment("Description");
+                        unmarshalledObject.Description = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ProxyConfigurationName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProxyConfigurationName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ProxyConfigurationArn":
+                        context.AddPathSegment("ProxyConfigurationArn");
+                        unmarshalledObject.ProxyConfigurationArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RuleGroups", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ProxyConfigRuleGroup, ProxyConfigRuleGroupUnmarshaller>(ProxyConfigRuleGroupUnmarshaller.Instance);
-                    unmarshalledObject.RuleGroups = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ProxyConfigurationName":
+                        context.AddPathSegment("ProxyConfigurationName");
+                        unmarshalledObject.ProxyConfigurationName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Tags", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "RuleGroups":
+                        context.AddPathSegment("RuleGroups");
+                        unmarshalledObject.RuleGroups = new CborListUnmarshaller<ProxyConfigRuleGroup, ProxyConfigRuleGroupUnmarshaller>(ProxyConfigRuleGroupUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Tags":
+                        context.AddPathSegment("Tags");
+                        unmarshalledObject.Tags = new CborListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

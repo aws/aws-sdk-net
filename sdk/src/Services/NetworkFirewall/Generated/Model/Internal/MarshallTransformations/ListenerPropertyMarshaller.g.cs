@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListenerProperty Marshaller
     /// </summary>
-    public partial class ListenerPropertyMarshaller : IRequestMarshaller<ListenerProperty, JsonMarshallerContext>
+    public partial class ListenerPropertyMarshaller : IRequestMarshaller<ListenerProperty, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ListenerProperty requestObject, JsonMarshallerContext context)
+        public void Marshall(ListenerProperty requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetPort())
             {
-                context.Writer.WritePropertyName("Port");
-                context.Writer.WriteNumberValue(requestObject.Port.Value);
+                context.Writer.WriteTextString("Port");
+                context.Writer.WriteInt32(requestObject.Port.Value);
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("Type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

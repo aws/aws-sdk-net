@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// PolicyVariables Marshaller
     /// </summary>
-    public partial class PolicyVariablesMarshaller : IRequestMarshaller<PolicyVariables, JsonMarshallerContext>
+    public partial class PolicyVariablesMarshaller : IRequestMarshaller<PolicyVariables, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(PolicyVariables requestObject, JsonMarshallerContext context)
+        public void Marshall(PolicyVariables requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetRuleVariables())
             {
-                context.Writer.WritePropertyName("RuleVariables");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("RuleVariables");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectRuleVariablesKvp in requestObject.RuleVariables)
                 {
-                    context.Writer.WritePropertyName(requestObjectRuleVariablesKvp.Key);
+                    context.Writer.WriteTextString(requestObjectRuleVariablesKvp.Key);
                     var requestObjectRuleVariablesValue = requestObjectRuleVariablesKvp.Value;
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = IPSetMarshaller.Instance;
                     marshaller.Marshall(requestObjectRuleVariablesValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.NetworkFirewall.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -54,83 +55,89 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateContainerAssociationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NetworkFirewall");
-            string target = "NetworkFirewall_20201112.UpdateContainerAssociation";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-12";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/NetworkFirewall_20201112/operation/UpdateContainerAssociation";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetContainerAssociationArn())
+                {
+                    context.Writer.WriteTextString("ContainerAssociationArn");
+                    context.Writer.WriteTextString(publicRequest.ContainerAssociationArn);
+                }
+                if (publicRequest.IsSetContainerAssociationName())
+                {
+                    context.Writer.WriteTextString("ContainerAssociationName");
+                    context.Writer.WriteTextString(publicRequest.ContainerAssociationName);
+                }
+                if (publicRequest.IsSetContainerMonitoringConfigurations())
+                {
+                    context.Writer.WriteTextString("ContainerMonitoringConfigurations");
+                    context.Writer.WriteStartArray(publicRequest.ContainerMonitoringConfigurations.Count);
+                    foreach (var publicRequestContainerMonitoringConfigurationsListValue in publicRequest.ContainerMonitoringConfigurations)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = ContainerMonitoringConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestContainerMonitoringConfigurationsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetType())
+                {
+                    context.Writer.WriteTextString("Type");
+                    context.Writer.WriteTextString(publicRequest.Type);
+                }
+                if (publicRequest.IsSetUpdateToken())
+                {
+                    context.Writer.WriteTextString("UpdateToken");
+                    context.Writer.WriteTextString(publicRequest.UpdateToken);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetContainerAssociationArn())
-            {
-                context.Writer.WritePropertyName("ContainerAssociationArn");
-                context.Writer.WriteStringValue(publicRequest.ContainerAssociationArn);
             }
-            if (publicRequest.IsSetContainerAssociationName())
+            finally
             {
-                context.Writer.WritePropertyName("ContainerAssociationName");
-                context.Writer.WriteStringValue(publicRequest.ContainerAssociationName);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetContainerMonitoringConfigurations())
-            {
-                context.Writer.WritePropertyName("ContainerMonitoringConfigurations");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestContainerMonitoringConfigurationsListValue in publicRequest.ContainerMonitoringConfigurations)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = ContainerMonitoringConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequestContainerMonitoringConfigurationsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetType())
-            {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(publicRequest.Type);
-            }
-            if (publicRequest.IsSetUpdateToken())
-            {
-                context.Writer.WritePropertyName("UpdateToken");
-                context.Writer.WriteStringValue(publicRequest.UpdateToken);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

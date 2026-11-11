@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,59 +39,59 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProxyRulesByRequestPhase Marshaller
     /// </summary>
-    public partial class ProxyRulesByRequestPhaseMarshaller : IRequestMarshaller<ProxyRulesByRequestPhase, JsonMarshallerContext>
+    public partial class ProxyRulesByRequestPhaseMarshaller : IRequestMarshaller<ProxyRulesByRequestPhase, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProxyRulesByRequestPhase requestObject, JsonMarshallerContext context)
+        public void Marshall(ProxyRulesByRequestPhase requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetPostRESPONSE())
             {
-                context.Writer.WritePropertyName("PostRESPONSE");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("PostRESPONSE");
+                context.Writer.WriteStartArray(requestObject.PostRESPONSE.Count);
                 foreach (var requestObjectPostRESPONSEListValue in requestObject.PostRESPONSE)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ProxyRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectPostRESPONSEListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetPreDNS())
             {
-                context.Writer.WritePropertyName("PreDNS");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("PreDNS");
+                context.Writer.WriteStartArray(requestObject.PreDNS.Count);
                 foreach (var requestObjectPreDNSListValue in requestObject.PreDNS)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ProxyRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectPreDNSListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetPreREQUEST())
             {
-                context.Writer.WritePropertyName("PreREQUEST");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("PreREQUEST");
+                context.Writer.WriteStartArray(requestObject.PreREQUEST.Count);
                 foreach (var requestObjectPreREQUESTListValue in requestObject.PreREQUEST)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ProxyRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectPreREQUESTListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,46 +39,46 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// FirewallRuleGroup Marshaller
     /// </summary>
-    public partial class FirewallRuleGroupMarshaller : IRequestMarshaller<FirewallRuleGroup, JsonMarshallerContext>
+    public partial class FirewallRuleGroupMarshaller : IRequestMarshaller<FirewallRuleGroup, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(FirewallRuleGroup requestObject, JsonMarshallerContext context)
+        public void Marshall(FirewallRuleGroup requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetReferenceSets())
             {
-                context.Writer.WritePropertyName("ReferenceSets");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("ReferenceSets");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ReferenceSetsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReferenceSets, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetRuleVariables())
             {
-                context.Writer.WritePropertyName("RuleVariables");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("RuleVariables");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RuleVariablesMarshaller.Instance;
                 marshaller.Marshall(requestObject.RuleVariables, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetRulesSource())
             {
-                context.Writer.WritePropertyName("RulesSource");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("RulesSource");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = FirewallRulesSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.RulesSource, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

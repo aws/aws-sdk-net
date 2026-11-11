@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,38 +39,38 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// LogDestinationConfig Marshaller
     /// </summary>
-    public partial class LogDestinationConfigMarshaller : IRequestMarshaller<LogDestinationConfig, JsonMarshallerContext>
+    public partial class LogDestinationConfigMarshaller : IRequestMarshaller<LogDestinationConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(LogDestinationConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(LogDestinationConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetLogDestination())
             {
-                context.Writer.WritePropertyName("LogDestination");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("LogDestination");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectLogDestinationKvp in requestObject.LogDestination)
                 {
-                    context.Writer.WritePropertyName(requestObjectLogDestinationKvp.Key);
+                    context.Writer.WriteTextString(requestObjectLogDestinationKvp.Key);
                     var requestObjectLogDestinationValue = requestObjectLogDestinationKvp.Value;
-                    context.Writer.WriteStringValue(requestObjectLogDestinationValue);
+                    context.Writer.WriteTextString(requestObjectLogDestinationValue);
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetLogDestinationType())
             {
-                context.Writer.WritePropertyName("LogDestinationType");
-                context.Writer.WriteStringValue(requestObject.LogDestinationType);
+                context.Writer.WriteTextString("LogDestinationType");
+                context.Writer.WriteTextString(requestObject.LogDestinationType);
             }
 
             if (requestObject.IsSetLogType())
             {
-                context.Writer.WritePropertyName("LogType");
-                context.Writer.WriteStringValue(requestObject.LogType);
+                context.Writer.WriteTextString("LogType");
+                context.Writer.WriteTextString(requestObject.LogType);
             }
         }
 

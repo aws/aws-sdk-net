@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.NetworkFirewall.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -54,88 +55,94 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateProxyRuleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NetworkFirewall");
-            string target = "NetworkFirewall_20201112.UpdateProxyRule";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-12";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/NetworkFirewall_20201112/operation/UpdateProxyRule";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAction())
+                {
+                    context.Writer.WriteTextString("Action");
+                    context.Writer.WriteTextString(publicRequest.Action);
+                }
+                if (publicRequest.IsSetAddConditions())
+                {
+                    context.Writer.WriteTextString("AddConditions");
+                    context.Writer.WriteStartArray(publicRequest.AddConditions.Count);
+                    foreach (var publicRequestAddConditionsListValue in publicRequest.AddConditions)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = ProxyRuleConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAddConditionsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetProxyRuleGroupArn())
+                {
+                    context.Writer.WriteTextString("ProxyRuleGroupArn");
+                    context.Writer.WriteTextString(publicRequest.ProxyRuleGroupArn);
+                }
+                if (publicRequest.IsSetProxyRuleGroupName())
+                {
+                    context.Writer.WriteTextString("ProxyRuleGroupName");
+                    context.Writer.WriteTextString(publicRequest.ProxyRuleGroupName);
+                }
+                if (publicRequest.IsSetProxyRuleName())
+                {
+                    context.Writer.WriteTextString("ProxyRuleName");
+                    context.Writer.WriteTextString(publicRequest.ProxyRuleName);
+                }
+                if (publicRequest.IsSetRemoveConditions())
+                {
+                    context.Writer.WriteTextString("RemoveConditions");
+                    context.Writer.WriteStartArray(publicRequest.RemoveConditions.Count);
+                    foreach (var publicRequestRemoveConditionsListValue in publicRequest.RemoveConditions)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = ProxyRuleConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRemoveConditionsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetUpdateToken())
+                {
+                    context.Writer.WriteTextString("UpdateToken");
+                    context.Writer.WriteTextString(publicRequest.UpdateToken);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAction())
-            {
-                context.Writer.WritePropertyName("Action");
-                context.Writer.WriteStringValue(publicRequest.Action);
             }
-            if (publicRequest.IsSetAddConditions())
+            finally
             {
-                context.Writer.WritePropertyName("AddConditions");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestAddConditionsListValue in publicRequest.AddConditions)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = ProxyRuleConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequestAddConditionsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-            if (publicRequest.IsSetProxyRuleGroupArn())
-            {
-                context.Writer.WritePropertyName("ProxyRuleGroupArn");
-                context.Writer.WriteStringValue(publicRequest.ProxyRuleGroupArn);
-            }
-            if (publicRequest.IsSetProxyRuleGroupName())
-            {
-                context.Writer.WritePropertyName("ProxyRuleGroupName");
-                context.Writer.WriteStringValue(publicRequest.ProxyRuleGroupName);
-            }
-            if (publicRequest.IsSetProxyRuleName())
-            {
-                context.Writer.WritePropertyName("ProxyRuleName");
-                context.Writer.WriteStringValue(publicRequest.ProxyRuleName);
-            }
-            if (publicRequest.IsSetRemoveConditions())
-            {
-                context.Writer.WritePropertyName("RemoveConditions");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestRemoveConditionsListValue in publicRequest.RemoveConditions)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = ProxyRuleConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequestRemoveConditionsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetUpdateToken())
-            {
-                context.Writer.WritePropertyName("UpdateToken");
-                context.Writer.WriteStringValue(publicRequest.UpdateToken);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

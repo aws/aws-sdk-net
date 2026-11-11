@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,100 +38,102 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TLSInspectionConfigurationResponse Object
     /// </summary>
-    public partial class TLSInspectionConfigurationResponseUnmarshaller : IJsonUnmarshaller<TLSInspectionConfigurationResponse, JsonUnmarshallerContext>
+    public partial class TLSInspectionConfigurationResponseUnmarshaller : ICborUnmarshaller<TLSInspectionConfigurationResponse, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public TLSInspectionConfigurationResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TLSInspectionConfigurationResponse Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new TLSInspectionConfigurationResponse();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CertificateAuthority", targetDepth, ref reader))
-                {
-                    var unmarshaller = TlsCertificateDataUnmarshaller.Instance;
-                    unmarshalledObject.CertificateAuthority = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Certificates", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<TlsCertificateData, TlsCertificateDataUnmarshaller>(TlsCertificateDataUnmarshaller.Instance);
-                    unmarshalledObject.Certificates = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CertificateAuthority":
+                        context.AddPathSegment("CertificateAuthority");
+                        unmarshalledObject.CertificateAuthority = TlsCertificateDataUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Description", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Certificates":
+                        context.AddPathSegment("Certificates");
+                        unmarshalledObject.Certificates = new CborListUnmarshaller<TlsCertificateData, TlsCertificateDataUnmarshaller>(TlsCertificateDataUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EncryptionConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Description":
+                        context.AddPathSegment("Description");
+                        unmarshalledObject.Description = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EncryptionConfiguration":
+                        context.AddPathSegment("EncryptionConfiguration");
+                        unmarshalledObject.EncryptionConfiguration = EncryptionConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NumberOfAssociations", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfAssociations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LastModifiedTime":
+                        context.AddPathSegment("LastModifiedTime");
+                        unmarshalledObject.LastModifiedTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TLSInspectionConfigurationArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TLSInspectionConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "NumberOfAssociations":
+                        context.AddPathSegment("NumberOfAssociations");
+                        unmarshalledObject.NumberOfAssociations = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TLSInspectionConfigurationId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TLSInspectionConfigurationId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TLSInspectionConfigurationArn":
+                        context.AddPathSegment("TLSInspectionConfigurationArn");
+                        unmarshalledObject.TLSInspectionConfigurationArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TLSInspectionConfigurationName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TLSInspectionConfigurationName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TLSInspectionConfigurationId":
+                        context.AddPathSegment("TLSInspectionConfigurationId");
+                        unmarshalledObject.TLSInspectionConfigurationId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TLSInspectionConfigurationStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TLSInspectionConfigurationStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TLSInspectionConfigurationName":
+                        context.AddPathSegment("TLSInspectionConfigurationName");
+                        unmarshalledObject.TLSInspectionConfigurationName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Tags", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "TLSInspectionConfigurationStatus":
+                        context.AddPathSegment("TLSInspectionConfigurationStatus");
+                        unmarshalledObject.TLSInspectionConfigurationStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Tags":
+                        context.AddPathSegment("Tags");
+                        unmarshalledObject.Tags = new CborListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

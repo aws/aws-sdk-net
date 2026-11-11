@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,177 +38,168 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Firewall Object
     /// </summary>
-    public partial class FirewallUnmarshaller : IJsonUnmarshaller<Firewall, JsonUnmarshallerContext>
+    public partial class FirewallUnmarshaller : ICborUnmarshaller<Firewall, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Firewall Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Firewall Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Firewall();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AvailabilityZoneChangeProtection", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityZoneChangeProtection = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("AvailabilityZoneMappings", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<AvailabilityZoneMapping, AvailabilityZoneMappingUnmarshaller>(AvailabilityZoneMappingUnmarshaller.Instance);
-                    unmarshalledObject.AvailabilityZoneMappings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AvailabilityZoneChangeProtection":
+                        context.AddPathSegment("AvailabilityZoneChangeProtection");
+                        unmarshalledObject.AvailabilityZoneChangeProtection = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DeleteProtection", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DeleteProtection = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AvailabilityZoneMappings":
+                        context.AddPathSegment("AvailabilityZoneMappings");
+                        unmarshalledObject.AvailabilityZoneMappings = new CborListUnmarshaller<AvailabilityZoneMapping, AvailabilityZoneMappingUnmarshaller>(AvailabilityZoneMappingUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Description", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DeleteProtection":
+                        context.AddPathSegment("DeleteProtection");
+                        unmarshalledObject.DeleteProtection = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EnabledAnalysisTypes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.EnabledAnalysisTypes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Description":
+                        context.AddPathSegment("Description");
+                        unmarshalledObject.Description = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EncryptionConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EnabledAnalysisTypes":
+                        context.AddPathSegment("EnabledAnalysisTypes");
+                        unmarshalledObject.EnabledAnalysisTypes = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FirewallArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FirewallArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EncryptionConfiguration":
+                        context.AddPathSegment("EncryptionConfiguration");
+                        unmarshalledObject.EncryptionConfiguration = EncryptionConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FirewallId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FirewallId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FirewallArn":
+                        context.AddPathSegment("FirewallArn");
+                        unmarshalledObject.FirewallArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FirewallName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FirewallName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FirewallId":
+                        context.AddPathSegment("FirewallId");
+                        unmarshalledObject.FirewallId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FirewallPolicyArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FirewallPolicyArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FirewallName":
+                        context.AddPathSegment("FirewallName");
+                        unmarshalledObject.FirewallName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FirewallPolicyChangeProtection", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.FirewallPolicyChangeProtection = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FirewallPolicyArn":
+                        context.AddPathSegment("FirewallPolicyArn");
+                        unmarshalledObject.FirewallPolicyArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NatGatewayMappings", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<NatGatewayMapping, NatGatewayMappingUnmarshaller>(NatGatewayMappingUnmarshaller.Instance);
-                    unmarshalledObject.NatGatewayMappings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FirewallPolicyChangeProtection":
+                        context.AddPathSegment("FirewallPolicyChangeProtection");
+                        unmarshalledObject.FirewallPolicyChangeProtection = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NoSourcePreservation", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.NoSourcePreservation = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "NatGatewayMappings":
+                        context.AddPathSegment("NatGatewayMappings");
+                        unmarshalledObject.NatGatewayMappings = new CborListUnmarshaller<NatGatewayMapping, NatGatewayMappingUnmarshaller>(NatGatewayMappingUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NumberOfAssociations", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfAssociations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "NoSourcePreservation":
+                        context.AddPathSegment("NoSourcePreservation");
+                        unmarshalledObject.NoSourcePreservation = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ProxySettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = ProxySettingsUnmarshaller.Instance;
-                    unmarshalledObject.ProxySettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "NumberOfAssociations":
+                        context.AddPathSegment("NumberOfAssociations");
+                        unmarshalledObject.NumberOfAssociations = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SubnetChangeProtection", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SubnetChangeProtection = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ProxySettings":
+                        context.AddPathSegment("ProxySettings");
+                        unmarshalledObject.ProxySettings = ProxySettingsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SubnetMappings", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<SubnetMapping, SubnetMappingUnmarshaller>(SubnetMappingUnmarshaller.Instance);
-                    unmarshalledObject.SubnetMappings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "SubnetChangeProtection":
+                        context.AddPathSegment("SubnetChangeProtection");
+                        unmarshalledObject.SubnetChangeProtection = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Tags", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "SubnetMappings":
+                        context.AddPathSegment("SubnetMappings");
+                        unmarshalledObject.SubnetMappings = new CborListUnmarshaller<SubnetMapping, SubnetMappingUnmarshaller>(SubnetMappingUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TransitGatewayId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransitGatewayId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Tags":
+                        context.AddPathSegment("Tags");
+                        unmarshalledObject.Tags = new CborListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TransitGatewayOwnerAccountId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransitGatewayOwnerAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TransitGatewayId":
+                        context.AddPathSegment("TransitGatewayId");
+                        unmarshalledObject.TransitGatewayId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VpcEndpoint", targetDepth, ref reader))
-                {
-                    var unmarshaller = VpcEndpointUnmarshaller.Instance;
-                    unmarshalledObject.VpcEndpoint = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TransitGatewayOwnerAccountId":
+                        context.AddPathSegment("TransitGatewayOwnerAccountId");
+                        unmarshalledObject.TransitGatewayOwnerAccountId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VpcId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "VpcEndpoint":
+                        context.AddPathSegment("VpcEndpoint");
+                        unmarshalledObject.VpcEndpoint = VpcEndpointUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "VpcId":
+                        context.AddPathSegment("VpcId");
+                        unmarshalledObject.VpcId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

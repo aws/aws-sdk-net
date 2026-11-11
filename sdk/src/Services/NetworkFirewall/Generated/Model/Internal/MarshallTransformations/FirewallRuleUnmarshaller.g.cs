@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,114 +38,114 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FirewallRule Object
     /// </summary>
-    public partial class FirewallRuleUnmarshaller : IJsonUnmarshaller<FirewallRule, JsonUnmarshallerContext>
+    public partial class FirewallRuleUnmarshaller : ICborUnmarshaller<FirewallRule, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public FirewallRule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FirewallRule Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new FirewallRule();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AcceptPriorHooks", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AcceptPriorHooks = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Action", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AcceptPriorHooks":
+                        context.AddPathSegment("AcceptPriorHooks");
+                        unmarshalledObject.AcceptPriorHooks = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ActionScope", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionScope = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Action":
+                        context.AddPathSegment("Action");
+                        unmarshalledObject.Action = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("AlertEnabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AlertEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ActionScope":
+                        context.AddPathSegment("ActionScope");
+                        unmarshalledObject.ActionScope = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("BypassIPSEnabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.BypassIPSEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AlertEnabled":
+                        context.AddPathSegment("AlertEnabled");
+                        unmarshalledObject.AlertEnabled = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DestIPs", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestIPs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BypassIPSEnabled":
+                        context.AddPathSegment("BypassIPSEnabled");
+                        unmarshalledObject.BypassIPSEnabled = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DestPorts", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestPorts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DestIPs":
+                        context.AddPathSegment("DestIPs");
+                        unmarshalledObject.DestIPs = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Hook", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Hook = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DestPorts":
+                        context.AddPathSegment("DestPorts");
+                        unmarshalledObject.DestPorts = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Protocol", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Hook":
+                        context.AddPathSegment("Hook");
+                        unmarshalledObject.Hook = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RuleMetadata", targetDepth, ref reader))
-                {
-                    var unmarshaller = RuleMetadataUnmarshaller.Instance;
-                    unmarshalledObject.RuleMetadata = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Protocol":
+                        context.AddPathSegment("Protocol");
+                        unmarshalledObject.Protocol = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RuleOptions", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RuleOption, RuleOptionUnmarshaller>(RuleOptionUnmarshaller.Instance);
-                    unmarshalledObject.RuleOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RuleMetadata":
+                        context.AddPathSegment("RuleMetadata");
+                        unmarshalledObject.RuleMetadata = RuleMetadataUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SourceIPs", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceIPs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RuleOptions":
+                        context.AddPathSegment("RuleOptions");
+                        unmarshalledObject.RuleOptions = new CborListUnmarshaller<RuleOption, RuleOptionUnmarshaller>(RuleOptionUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SourcePorts", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourcePorts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "SourceIPs":
+                        context.AddPathSegment("SourceIPs");
+                        unmarshalledObject.SourceIPs = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "SourcePorts":
+                        context.AddPathSegment("SourcePorts");
+                        unmarshalledObject.SourcePorts = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

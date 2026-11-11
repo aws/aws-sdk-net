@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,61 +39,61 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Route53ResolvedIPValidation Marshaller
     /// </summary>
-    public partial class Route53ResolvedIPValidationMarshaller : IRequestMarshaller<Route53ResolvedIPValidation, JsonMarshallerContext>
+    public partial class Route53ResolvedIPValidationMarshaller : IRequestMarshaller<Route53ResolvedIPValidation, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Route53ResolvedIPValidation requestObject, JsonMarshallerContext context)
+        public void Marshall(Route53ResolvedIPValidation requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("Action");
-                context.Writer.WriteStringValue(requestObject.Action);
+                context.Writer.WriteTextString("Action");
+                context.Writer.WriteTextString(requestObject.Action);
             }
 
             if (requestObject.IsSetBypassDestinationValidationIPRanges())
             {
-                context.Writer.WritePropertyName("BypassDestinationValidationIPRanges");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("BypassDestinationValidationIPRanges");
+                context.Writer.WriteStartArray(requestObject.BypassDestinationValidationIPRanges.Count);
                 foreach (var requestObjectBypassDestinationValidationIPRangesListValue in requestObject.BypassDestinationValidationIPRanges)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = AddressMarshaller.Instance;
                     marshaller.Marshall(requestObjectBypassDestinationValidationIPRangesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetDNSExpiryExceptionPolicy())
             {
-                context.Writer.WritePropertyName("DNSExpiryExceptionPolicy");
-                context.Writer.WriteStringValue(requestObject.DNSExpiryExceptionPolicy);
+                context.Writer.WriteTextString("DNSExpiryExceptionPolicy");
+                context.Writer.WriteTextString(requestObject.DNSExpiryExceptionPolicy);
             }
 
             if (requestObject.IsSetDNSFirewallRuleGroupId())
             {
-                context.Writer.WritePropertyName("DNSFirewallRuleGroupId");
-                context.Writer.WriteStringValue(requestObject.DNSFirewallRuleGroupId);
+                context.Writer.WriteTextString("DNSFirewallRuleGroupId");
+                context.Writer.WriteTextString(requestObject.DNSFirewallRuleGroupId);
             }
 
             if (requestObject.IsSetSourceIPRanges())
             {
-                context.Writer.WritePropertyName("SourceIPRanges");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("SourceIPRanges");
+                context.Writer.WriteStartArray(requestObject.SourceIPRanges.Count);
                 foreach (var requestObjectSourceIPRangesListValue in requestObject.SourceIPRanges)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = AddressMarshaller.Instance;
                     marshaller.Marshall(requestObjectSourceIPRangesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

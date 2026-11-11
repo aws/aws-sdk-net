@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,58 +38,66 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FirewallStatus Object
     /// </summary>
-    public partial class FirewallStatusUnmarshaller : IJsonUnmarshaller<FirewallStatus, JsonUnmarshallerContext>
+    public partial class FirewallStatusUnmarshaller : ICborUnmarshaller<FirewallStatus, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public FirewallStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FirewallStatus Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new FirewallStatus();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CapacityUsageSummary", targetDepth, ref reader))
-                {
-                    var unmarshaller = CapacityUsageSummaryUnmarshaller.Instance;
-                    unmarshalledObject.CapacityUsageSummary = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ConfigurationSyncStateSummary", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationSyncStateSummary = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CapacityUsageSummary":
+                        context.AddPathSegment("CapacityUsageSummary");
+                        unmarshalledObject.CapacityUsageSummary = CapacityUsageSummaryUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ConfigurationSyncStateSummary":
+                        context.AddPathSegment("ConfigurationSyncStateSummary");
+                        unmarshalledObject.ConfigurationSyncStateSummary = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SyncStates", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, SyncState, StringUnmarshaller, SyncStateUnmarshaller>(StringUnmarshaller.Instance, SyncStateUnmarshaller.Instance);
-                    unmarshalledObject.SyncStates = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Status":
+                        context.AddPathSegment("Status");
+                        unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TransitGatewayAttachmentSyncState", targetDepth, ref reader))
-                {
-                    var unmarshaller = TransitGatewayAttachmentSyncStateUnmarshaller.Instance;
-                    unmarshalledObject.TransitGatewayAttachmentSyncState = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "SyncStates":
+                        context.AddPathSegment("SyncStates");
+                        unmarshalledObject.SyncStates = new CborDictionaryUnmarshaller<string, SyncState, CborStringUnmarshaller, SyncStateUnmarshaller>(CborStringUnmarshaller.Instance, SyncStateUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "TransitGatewayAttachmentSyncState":
+                        context.AddPathSegment("TransitGatewayAttachmentSyncState");
+                        unmarshalledObject.TransitGatewayAttachmentSyncState = TransitGatewayAttachmentSyncStateUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.NetworkFirewall.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -54,83 +55,89 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateProxyConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NetworkFirewall");
-            string target = "NetworkFirewall_20201112.CreateProxyConfiguration";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-12";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/NetworkFirewall_20201112/operation/CreateProxyConfiguration";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDefaultRulePhaseActions())
+                {
+                    context.Writer.WriteTextString("DefaultRulePhaseActions");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ProxyConfigDefaultRulePhaseActionsRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultRulePhaseActions, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetProxyConfigurationName())
+                {
+                    context.Writer.WriteTextString("ProxyConfigurationName");
+                    context.Writer.WriteTextString(publicRequest.ProxyConfigurationName);
+                }
+                if (publicRequest.IsSetRuleGroupArns())
+                {
+                    context.Writer.WriteTextString("RuleGroupArns");
+                    context.Writer.WriteStartArray(publicRequest.RuleGroupArns.Count);
+                    foreach (var publicRequestRuleGroupArnsListValue in publicRequest.RuleGroupArns)
+                    {
+                        context.Writer.WriteTextString(publicRequestRuleGroupArnsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetRuleGroupNames())
+                {
+                    context.Writer.WriteTextString("RuleGroupNames");
+                    context.Writer.WriteStartArray(publicRequest.RuleGroupNames.Count);
+                    foreach (var publicRequestRuleGroupNamesListValue in publicRequest.RuleGroupNames)
+                    {
+                        context.Writer.WriteTextString(publicRequestRuleGroupNamesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetDefaultRulePhaseActions())
-            {
-                context.Writer.WritePropertyName("DefaultRulePhaseActions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ProxyConfigDefaultRulePhaseActionsRequestMarshaller.Instance;
-                marshaller.Marshall(publicRequest.DefaultRulePhaseActions, context);
-
-                context.Writer.WriteEndObject();
             }
-            if (publicRequest.IsSetDescription())
+            finally
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetProxyConfigurationName())
-            {
-                context.Writer.WritePropertyName("ProxyConfigurationName");
-                context.Writer.WriteStringValue(publicRequest.ProxyConfigurationName);
-            }
-            if (publicRequest.IsSetRuleGroupArns())
-            {
-                context.Writer.WritePropertyName("RuleGroupArns");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestRuleGroupArnsListValue in publicRequest.RuleGroupArns)
-                {
-                    context.Writer.WriteStringValue(publicRequestRuleGroupArnsListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetRuleGroupNames())
-            {
-                context.Writer.WritePropertyName("RuleGroupNames");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestRuleGroupNamesListValue in publicRequest.RuleGroupNames)
-                {
-                    context.Writer.WriteStringValue(publicRequestRuleGroupNamesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProxyRulePriority Marshaller
     /// </summary>
-    public partial class ProxyRulePriorityMarshaller : IRequestMarshaller<ProxyRulePriority, JsonMarshallerContext>
+    public partial class ProxyRulePriorityMarshaller : IRequestMarshaller<ProxyRulePriority, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProxyRulePriority requestObject, JsonMarshallerContext context)
+        public void Marshall(ProxyRulePriority requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetNewPosition())
             {
-                context.Writer.WritePropertyName("NewPosition");
-                context.Writer.WriteNumberValue(requestObject.NewPosition.Value);
+                context.Writer.WriteTextString("NewPosition");
+                context.Writer.WriteInt32(requestObject.NewPosition.Value);
             }
 
             if (requestObject.IsSetProxyRuleName())
             {
-                context.Writer.WritePropertyName("ProxyRuleName");
-                context.Writer.WriteStringValue(requestObject.ProxyRuleName);
+                context.Writer.WriteTextString("ProxyRuleName");
+                context.Writer.WriteTextString(requestObject.ProxyRuleName);
             }
         }
 

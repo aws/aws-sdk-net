@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// IpsRulesSource Marshaller
     /// </summary>
-    public partial class IpsRulesSourceMarshaller : IRequestMarshaller<IpsRulesSource, JsonMarshallerContext>
+    public partial class IpsRulesSourceMarshaller : IRequestMarshaller<IpsRulesSource, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(IpsRulesSource requestObject, JsonMarshallerContext context)
+        public void Marshall(IpsRulesSource requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetRulesString())
             {
-                context.Writer.WritePropertyName("RulesString");
-                context.Writer.WriteStringValue(requestObject.RulesString);
+                context.Writer.WriteTextString("RulesString");
+                context.Writer.WriteTextString(requestObject.RulesString);
             }
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// CheckCertificateRevocationStatusActions Marshaller
     /// </summary>
-    public partial class CheckCertificateRevocationStatusActionsMarshaller : IRequestMarshaller<CheckCertificateRevocationStatusActions, JsonMarshallerContext>
+    public partial class CheckCertificateRevocationStatusActionsMarshaller : IRequestMarshaller<CheckCertificateRevocationStatusActions, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(CheckCertificateRevocationStatusActions requestObject, JsonMarshallerContext context)
+        public void Marshall(CheckCertificateRevocationStatusActions requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetRevokedStatusAction())
             {
-                context.Writer.WritePropertyName("RevokedStatusAction");
-                context.Writer.WriteStringValue(requestObject.RevokedStatusAction);
+                context.Writer.WriteTextString("RevokedStatusAction");
+                context.Writer.WriteTextString(requestObject.RevokedStatusAction);
             }
 
             if (requestObject.IsSetUnknownStatusAction())
             {
-                context.Writer.WritePropertyName("UnknownStatusAction");
-                context.Writer.WriteStringValue(requestObject.UnknownStatusAction);
+                context.Writer.WriteTextString("UnknownStatusAction");
+                context.Writer.WriteTextString(requestObject.UnknownStatusAction);
             }
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// FlowTimeouts Marshaller
     /// </summary>
-    public partial class FlowTimeoutsMarshaller : IRequestMarshaller<FlowTimeouts, JsonMarshallerContext>
+    public partial class FlowTimeoutsMarshaller : IRequestMarshaller<FlowTimeouts, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(FlowTimeouts requestObject, JsonMarshallerContext context)
+        public void Marshall(FlowTimeouts requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetTcpIdleTimeoutSeconds())
             {
-                context.Writer.WritePropertyName("TcpIdleTimeoutSeconds");
-                context.Writer.WriteNumberValue(requestObject.TcpIdleTimeoutSeconds.Value);
+                context.Writer.WriteTextString("TcpIdleTimeoutSeconds");
+                context.Writer.WriteInt32(requestObject.TcpIdleTimeoutSeconds.Value);
             }
         }
 

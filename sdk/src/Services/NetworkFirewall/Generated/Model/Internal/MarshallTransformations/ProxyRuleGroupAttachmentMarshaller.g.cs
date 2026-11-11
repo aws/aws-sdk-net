@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProxyRuleGroupAttachment Marshaller
     /// </summary>
-    public partial class ProxyRuleGroupAttachmentMarshaller : IRequestMarshaller<ProxyRuleGroupAttachment, JsonMarshallerContext>
+    public partial class ProxyRuleGroupAttachmentMarshaller : IRequestMarshaller<ProxyRuleGroupAttachment, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProxyRuleGroupAttachment requestObject, JsonMarshallerContext context)
+        public void Marshall(ProxyRuleGroupAttachment requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetInsertPosition())
             {
-                context.Writer.WritePropertyName("InsertPosition");
-                context.Writer.WriteNumberValue(requestObject.InsertPosition.Value);
+                context.Writer.WriteTextString("InsertPosition");
+                context.Writer.WriteInt32(requestObject.InsertPosition.Value);
             }
 
             if (requestObject.IsSetProxyRuleGroupName())
             {
-                context.Writer.WritePropertyName("ProxyRuleGroupName");
-                context.Writer.WriteStringValue(requestObject.ProxyRuleGroupName);
+                context.Writer.WriteTextString("ProxyRuleGroupName");
+                context.Writer.WriteTextString(requestObject.ProxyRuleGroupName);
             }
         }
 

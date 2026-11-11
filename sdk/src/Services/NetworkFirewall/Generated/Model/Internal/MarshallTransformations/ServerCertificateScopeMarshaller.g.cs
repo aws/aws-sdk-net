@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,86 +39,86 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// ServerCertificateScope Marshaller
     /// </summary>
-    public partial class ServerCertificateScopeMarshaller : IRequestMarshaller<ServerCertificateScope, JsonMarshallerContext>
+    public partial class ServerCertificateScopeMarshaller : IRequestMarshaller<ServerCertificateScope, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ServerCertificateScope requestObject, JsonMarshallerContext context)
+        public void Marshall(ServerCertificateScope requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDestinationPorts())
             {
-                context.Writer.WritePropertyName("DestinationPorts");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("DestinationPorts");
+                context.Writer.WriteStartArray(requestObject.DestinationPorts.Count);
                 foreach (var requestObjectDestinationPortsListValue in requestObject.DestinationPorts)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = PortRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectDestinationPortsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetDestinations())
             {
-                context.Writer.WritePropertyName("Destinations");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Destinations");
+                context.Writer.WriteStartArray(requestObject.Destinations.Count);
                 foreach (var requestObjectDestinationsListValue in requestObject.Destinations)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = AddressMarshaller.Instance;
                     marshaller.Marshall(requestObjectDestinationsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetProtocols())
             {
-                context.Writer.WritePropertyName("Protocols");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Protocols");
+                context.Writer.WriteStartArray(requestObject.Protocols.Count);
                 foreach (var requestObjectProtocolsListValue in requestObject.Protocols)
                 {
-                    context.Writer.WriteNumberValue(requestObjectProtocolsListValue);
+                    context.Writer.WriteInt32(requestObjectProtocolsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetSourcePorts())
             {
-                context.Writer.WritePropertyName("SourcePorts");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("SourcePorts");
+                context.Writer.WriteStartArray(requestObject.SourcePorts.Count);
                 foreach (var requestObjectSourcePortsListValue in requestObject.SourcePorts)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = PortRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectSourcePortsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetSources())
             {
-                context.Writer.WritePropertyName("Sources");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Sources");
+                context.Writer.WriteStartArray(requestObject.Sources.Count);
                 foreach (var requestObjectSourcesListValue in requestObject.Sources)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = AddressMarshaller.Instance;
                     marshaller.Marshall(requestObjectSourcesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

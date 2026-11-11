@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,49 +39,49 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// RuleVariables Marshaller
     /// </summary>
-    public partial class RuleVariablesMarshaller : IRequestMarshaller<RuleVariables, JsonMarshallerContext>
+    public partial class RuleVariablesMarshaller : IRequestMarshaller<RuleVariables, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RuleVariables requestObject, JsonMarshallerContext context)
+        public void Marshall(RuleVariables requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetIPSets())
             {
-                context.Writer.WritePropertyName("IPSets");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("IPSets");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectIPSetsKvp in requestObject.IPSets)
                 {
-                    context.Writer.WritePropertyName(requestObjectIPSetsKvp.Key);
+                    context.Writer.WriteTextString(requestObjectIPSetsKvp.Key);
                     var requestObjectIPSetsValue = requestObjectIPSetsKvp.Value;
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = IPSetMarshaller.Instance;
                     marshaller.Marshall(requestObjectIPSetsValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetPortSets())
             {
-                context.Writer.WritePropertyName("PortSets");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PortSets");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectPortSetsKvp in requestObject.PortSets)
                 {
-                    context.Writer.WritePropertyName(requestObjectPortSetsKvp.Key);
+                    context.Writer.WriteTextString(requestObjectPortSetsKvp.Key);
                     var requestObjectPortSetsValue = requestObjectPortSetsKvp.Value;
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = PortSetMarshaller.Instance;
                     marshaller.Marshall(requestObjectPortSetsValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

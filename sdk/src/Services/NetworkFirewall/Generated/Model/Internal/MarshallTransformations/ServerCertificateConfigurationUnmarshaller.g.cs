@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServerCertificateConfiguration Object
     /// </summary>
-    public partial class ServerCertificateConfigurationUnmarshaller : IJsonUnmarshaller<ServerCertificateConfiguration, JsonUnmarshallerContext>
+    public partial class ServerCertificateConfigurationUnmarshaller : ICborUnmarshaller<ServerCertificateConfiguration, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ServerCertificateConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ServerCertificateConfiguration Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ServerCertificateConfiguration();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CertificateAuthorityArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateAuthorityArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("CheckCertificateRevocationStatus", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = CheckCertificateRevocationStatusActionsUnmarshaller.Instance;
-                    unmarshalledObject.CheckCertificateRevocationStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CertificateAuthorityArn":
+                        context.AddPathSegment("CertificateAuthorityArn");
+                        unmarshalledObject.CertificateAuthorityArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Scopes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ServerCertificateScope, ServerCertificateScopeUnmarshaller>(ServerCertificateScopeUnmarshaller.Instance);
-                    unmarshalledObject.Scopes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CheckCertificateRevocationStatus":
+                        context.AddPathSegment("CheckCertificateRevocationStatus");
+                        unmarshalledObject.CheckCertificateRevocationStatus = CheckCertificateRevocationStatusActionsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ServerCertificates", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ServerCertificate, ServerCertificateUnmarshaller>(ServerCertificateUnmarshaller.Instance);
-                    unmarshalledObject.ServerCertificates = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Scopes":
+                        context.AddPathSegment("Scopes");
+                        unmarshalledObject.Scopes = new CborListUnmarshaller<ServerCertificateScope, ServerCertificateScopeUnmarshaller>(ServerCertificateScopeUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ServerCertificates":
+                        context.AddPathSegment("ServerCertificates");
+                        unmarshalledObject.ServerCertificates = new CborListUnmarshaller<ServerCertificate, ServerCertificateUnmarshaller>(ServerCertificateUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

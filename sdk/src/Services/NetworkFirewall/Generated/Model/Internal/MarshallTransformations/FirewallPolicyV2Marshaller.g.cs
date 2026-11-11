@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,96 +39,96 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// FirewallPolicyV2 Marshaller
     /// </summary>
-    public partial class FirewallPolicyV2Marshaller : IRequestMarshaller<FirewallPolicyV2, JsonMarshallerContext>
+    public partial class FirewallPolicyV2Marshaller : IRequestMarshaller<FirewallPolicyV2, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(FirewallPolicyV2 requestObject, JsonMarshallerContext context)
+        public void Marshall(FirewallPolicyV2 requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetFirewallDefaultAction())
             {
-                context.Writer.WritePropertyName("FirewallDefaultAction");
-                context.Writer.WriteStringValue(requestObject.FirewallDefaultAction);
+                context.Writer.WriteTextString("FirewallDefaultAction");
+                context.Writer.WriteTextString(requestObject.FirewallDefaultAction);
             }
 
             if (requestObject.IsSetFirewallRuleGroupEntries())
             {
-                context.Writer.WritePropertyName("FirewallRuleGroupEntries");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("FirewallRuleGroupEntries");
+                context.Writer.WriteStartArray(requestObject.FirewallRuleGroupEntries.Count);
                 foreach (var requestObjectFirewallRuleGroupEntriesListValue in requestObject.FirewallRuleGroupEntries)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = FirewallRuleGroupEntryMarshaller.Instance;
                     marshaller.Marshall(requestObjectFirewallRuleGroupEntriesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetIpsRuleGroupEntries())
             {
-                context.Writer.WritePropertyName("IpsRuleGroupEntries");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("IpsRuleGroupEntries");
+                context.Writer.WriteStartArray(requestObject.IpsRuleGroupEntries.Count);
                 foreach (var requestObjectIpsRuleGroupEntriesListValue in requestObject.IpsRuleGroupEntries)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = IpsRuleGroupEntryMarshaller.Instance;
                     marshaller.Marshall(requestObjectIpsRuleGroupEntriesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetPolicyMode())
             {
-                context.Writer.WritePropertyName("PolicyMode");
-                context.Writer.WriteStringValue(requestObject.PolicyMode);
+                context.Writer.WriteTextString("PolicyMode");
+                context.Writer.WriteTextString(requestObject.PolicyMode);
             }
 
             if (requestObject.IsSetPolicyVariables())
             {
-                context.Writer.WritePropertyName("PolicyVariables");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PolicyVariables");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = PolicyVariablesMarshaller.Instance;
                 marshaller.Marshall(requestObject.PolicyVariables, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetRoute53ResolvedIPValidation())
             {
-                context.Writer.WritePropertyName("Route53ResolvedIPValidation");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Route53ResolvedIPValidation");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = Route53ResolvedIPValidationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Route53ResolvedIPValidation, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetStatefulEngineOptions())
             {
-                context.Writer.WritePropertyName("StatefulEngineOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("StatefulEngineOptions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = StatefulEngineOptionsV2Marshaller.Instance;
                 marshaller.Marshall(requestObject.StatefulEngineOptions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetTLSInspectionConfigurationArn())
             {
-                context.Writer.WritePropertyName("TLSInspectionConfigurationArn");
-                context.Writer.WriteStringValue(requestObject.TLSInspectionConfigurationArn);
+                context.Writer.WriteTextString("TLSInspectionConfigurationArn");
+                context.Writer.WriteTextString(requestObject.TLSInspectionConfigurationArn);
             }
         }
 

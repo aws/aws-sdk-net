@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// PortRange Marshaller
     /// </summary>
-    public partial class PortRangeMarshaller : IRequestMarshaller<PortRange, JsonMarshallerContext>
+    public partial class PortRangeMarshaller : IRequestMarshaller<PortRange, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(PortRange requestObject, JsonMarshallerContext context)
+        public void Marshall(PortRange requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetFromPort())
             {
-                context.Writer.WritePropertyName("FromPort");
-                context.Writer.WriteNumberValue(requestObject.FromPort.Value);
+                context.Writer.WriteTextString("FromPort");
+                context.Writer.WriteInt32(requestObject.FromPort.Value);
             }
 
             if (requestObject.IsSetToPort())
             {
-                context.Writer.WritePropertyName("ToPort");
-                context.Writer.WriteNumberValue(requestObject.ToPort.Value);
+                context.Writer.WriteTextString("ToPort");
+                context.Writer.WriteInt32(requestObject.ToPort.Value);
             }
         }
 
