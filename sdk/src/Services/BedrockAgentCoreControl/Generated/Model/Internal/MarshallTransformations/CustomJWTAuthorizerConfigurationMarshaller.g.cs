@@ -102,6 +102,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetCertificateConfigurations())
+            {
+                context.Writer.WritePropertyName("certificateConfigurations");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectCertificateConfigurationsListValue in requestObject.CertificateConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CertificateConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCertificateConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if (requestObject.IsSetCustomClaims())
             {
                 context.Writer.WritePropertyName("customClaims");
