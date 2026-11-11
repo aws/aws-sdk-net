@@ -31,7 +31,7 @@ using Amazon.Macie2.Endpoints;
 namespace Amazon.Macie2.Internal
 {
     /// <summary>
-    /// Amazon Macie2 endpoint resolver.
+    /// Amazon Macie 2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Macie2 service requests.
     /// <para />

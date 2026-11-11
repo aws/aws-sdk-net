@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Interconnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon Interconnect service
+    /// Configuration for accessing Interconnect
     /// </summary>
     public static class AmazonInterconnectDefaultConfiguration
     {

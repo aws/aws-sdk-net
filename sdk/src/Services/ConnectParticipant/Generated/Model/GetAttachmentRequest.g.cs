@@ -72,6 +72,29 @@ namespace Amazon.ConnectParticipant.Model
         internal bool IsSetConnectionToken() => this.ConnectionToken != null;
 
         /// <summary>
+        /// Gets and sets the property UrlContentDisposition. 
+        /// <para>
+        /// Specifies how a browser handles the file at the pre-signed URL. The following values
+        /// are valid:
+        /// </para>
+        ///  <dl> <dt>INLINE</dt> <dd> 
+        /// <para>
+        /// Displays the file in the browser.
+        /// </para>
+        ///  </dd> <dt>ATTACHMENT</dt> <dd> 
+        /// <para>
+        /// Downloads the file. This is the default behavior.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public ContentDisposition UrlContentDisposition { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UrlContentDisposition property is set.
+        /// </summary>
+        internal bool IsSetUrlContentDisposition() => this.UrlContentDisposition != null;
+
+        /// <summary>
         /// Gets and sets the property UrlExpiryInSeconds. 
         /// <para>
         /// The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format:

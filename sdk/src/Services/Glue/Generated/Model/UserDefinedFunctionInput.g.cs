@@ -35,6 +35,22 @@ namespace Amazon.Glue.Model
     public partial class UserDefinedFunctionInput
     {
         /// <summary>
+        /// Gets and sets the property ArtifactLocation. 
+        /// <para>
+        /// The Amazon S3 location that contains the function's artifacts. Required when <c>GovernanceMode</c>
+        /// is <c>LAKE_FORMATION</c>. You must register the location with Lake Formation, and
+        /// every resource URI must be under this location.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1024)]
+        public string ArtifactLocation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ArtifactLocation property is set.
+        /// </summary>
+        internal bool IsSetArtifactLocation() => this.ArtifactLocation != null;
+
+        /// <summary>
         /// Gets and sets the property ClassName. 
         /// <para>
         /// The Java class that contains the function code.
@@ -74,6 +90,45 @@ namespace Amazon.Glue.Model
         /// Checks to see if the FunctionType property is set.
         /// </summary>
         internal bool IsSetFunctionType() => this.FunctionType != null;
+
+        /// <summary>
+        /// Gets and sets the property GovernanceMode. 
+        /// <para>
+        /// How access to the function is governed. Specify <c>LAKE_FORMATION</c> to manage access
+        /// to the function with Lake Formation permissions. If you don't specify a value, the
+        /// default is <c>IAM_ONLY</c>. You can't change the governance mode after the function
+        /// is created.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>GovernanceMode</c> is <c>LAKE_FORMATION</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must be a data lake administrator or have all permissions on the Data Catalog
+        /// with the grant option.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have the <c>DATA_LOCATION_ACCESS</c> permission on the <c>ArtifactLocation</c>,
+        /// unless you're a data lake administrator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must specify from 1 to 10 resource URIs, each under the <c>ArtifactLocation</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't rename the function.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public GovernanceMode GovernanceMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GovernanceMode property is set.
+        /// </summary>
+        internal bool IsSetGovernanceMode() => this.GovernanceMode != null;
 
         /// <summary>
         /// Gets and sets the property OwnerName. 

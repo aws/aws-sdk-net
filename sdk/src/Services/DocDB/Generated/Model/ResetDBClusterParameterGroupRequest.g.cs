@@ -1,0 +1,93 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.DocDB.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ResetDBClusterParameterGroup operation. Modifies
+    /// the parameters of a cluster parameter group to the default value. To reset specific
+    /// parameters, submit a list of the following: <c>ParameterName</c> and <c>ApplyMethod</c>.
+    /// To reset the entire cluster parameter group, specify the <c>DBClusterParameterGroupName</c>
+    /// and <c>ResetAllParameters</c> parameters. <para> When you reset the entire group,
+    /// dynamic parameters are updated immediately and static parameters are set to <c>pending-reboot</c>
+    /// to take effect on the next DB instance reboot. </para>
+    /// </summary>
+    public partial class ResetDBClusterParameterGroupRequest : AmazonDocDBRequest
+    {
+        /// <summary>
+        /// Gets and sets the property DBClusterParameterGroupName. 
+        /// <para>
+        /// The name of the cluster parameter group to reset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string DBClusterParameterGroupName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DBClusterParameterGroupName property is set.
+        /// </summary>
+        internal bool IsSetDBClusterParameterGroupName() => this.DBClusterParameterGroupName != null;
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// A list of parameter names in the cluster parameter group to reset to the default values.
+        /// You can't use this parameter if the <c>ResetAllParameters</c> parameter is set to
+        /// <c>true</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Parameter> Parameters { get; set; } = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
+
+        /// <summary>
+        /// Checks to see if the Parameters property is set.
+        /// </summary>
+        internal bool IsSetParameters() => this.Parameters != null && (this.Parameters.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ResetAllParameters. 
+        /// <para>
+        /// A value that is set to <c>true</c> to reset all parameters in the cluster parameter
+        /// group to their default values, and <c>false</c> otherwise. You can't use this parameter
+        /// if there is a list of parameter names specified for the <c>Parameters</c> parameter.
+        /// </para>
+        /// </summary>
+        public bool? ResetAllParameters { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResetAllParameters property is set.
+        /// </summary>
+        internal bool IsSetResetAllParameters() => this.ResetAllParameters.HasValue;
+    }
+}

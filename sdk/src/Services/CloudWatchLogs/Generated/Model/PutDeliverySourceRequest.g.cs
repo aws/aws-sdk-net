@@ -1,0 +1,337 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CloudWatchLogs.Model
+{
+    /// <summary>
+    /// Container for the parameters to the PutDeliverySource operation. Creates or updates
+    /// a logical <i>delivery source</i>. A delivery source represents an Amazon Web Services
+    /// resource that sends logs to an logs delivery destination. The destination can be CloudWatch
+    /// Logs, Amazon S3, Firehose or X-Ray for sending traces. <para> To configure logs delivery
+    /// between a delivery destination and an Amazon Web Services service that is supported
+    /// as a delivery source, you must do the following: </para> <ul> <li> <para> Use <c>PutDeliverySource</c>
+    /// to create a delivery source, which is a logical object that represents the resource
+    /// that is actually sending the logs. </para> </li> <li> <para> Use <c>PutDeliveryDestination</c>
+    /// to create a <i>delivery destination</i>, which is a logical object that represents
+    /// the actual delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">PutDeliveryDestination</a>.
+    /// </para> </li> <li> <para> If you are delivering logs cross-account, you must use <a
+    /// href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a>
+    /// in the destination account to assign an IAM policy to the destination. This policy
+    /// allows delivery to that destination. </para> </li> <li> <para> Use <c>CreateDelivery</c>
+    /// to create a <i>delivery</i> by pairing exactly one delivery source and one delivery
+    /// destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
+    /// </para> </li> </ul> <para> You can configure a single delivery source to send logs
+    /// to multiple destinations by creating multiple deliveries. You can also create multiple
+    /// deliveries to configure multiple delivery sources to send logs to the same delivery
+    /// destination. </para> <para> Only some Amazon Web Services services support being configured
+    /// as a delivery source. These services are listed as <b>Supported [V2 Permissions]</b>
+    /// in the table at <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
+    /// logging from Amazon Web Services services.</a> </para> <para> If you use this operation
+    /// to update an existing delivery source, all the current delivery source parameters
+    /// are overwritten with the new parameter values that you specify. </para>
+    /// </summary>
+    public partial class PutDeliverySourceRequest : AmazonCloudWatchLogsRequest
+    {
+        /// <summary>
+        /// Gets and sets the property DeliverySourceConfiguration. 
+        /// <para>
+        /// A map of key-value pairs to configure the delivery source. Both keys and values must
+        /// be between 1 and 255 characters in length. For example, <c>{"samplingRate": "50"}</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> DeliverySourceConfiguration { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the DeliverySourceConfiguration property is set.
+        /// </summary>
+        internal bool IsSetDeliverySourceConfiguration() => this.DeliverySourceConfiguration != null && (this.DeliverySourceConfiguration.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property LogType. 
+        /// <para>
+        /// Defines the type of log that the source is sending.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For Amazon Web Services Amplify, the valid values are <c>ACCESS_LOGS</c> and <c>WAF_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Application Load Balancer, the valid values are <c>ALB_ACCESS_LOGS</c>, <c>ALB_CONNECTION_LOGS</c>,
+        /// and <c>ALB_HEALTH_CHECK_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Bedrock AgentCore Gateway, the valid values are <c>APPLICATION_LOGS</c>
+        /// and <c>TRACES</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Bedrock AgentCore Identity, the valid values are <c>APPLICATION_LOGS</c>
+        /// and <c>TRACES</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Bedrock AgentCore Memory, the valid values are <c>APPLICATION_LOGS</c>
+        /// and <c>TRACES</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Bedrock AgentCore Payments, the valid values are <c>APPLICATION_LOGS</c>
+        /// and <c>TRACES</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Bedrock AgentCore Runtime, the valid values are <c>APPLICATION_LOGS</c>,
+        /// <c>USAGE_LOGS</c>, and <c>TRACES</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Bedrock AgentCore Tools, the valid values are <c>APPLICATION_LOGS</c>,
+        /// <c>USAGE_LOGS</c>, and <c>TRACES</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Bedrock Agents, the valid values are <c>APPLICATION_LOGS</c> and <c>EVENT_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Bedrock Knowledge Bases, the valid values are <c>APPLICATION_LOGS</c> and
+        /// <c>TRACES</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For CloudFront, the valid value is <c>ACCESS_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For query execution logs from CloudWatch Logs Insights, the valid value is <c>INSIGHTS_QUERY_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon CodeWhisperer, the valid value is <c>EVENT_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DevOps Agent, the valid value is <c>APPLICATION_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon EKS Auto Mode, the valid values are <c>AUTO_MODE_BLOCK_STORAGE_LOGS</c>,
+        /// <c>AUTO_MODE_COMPUTE_LOGS</c>, <c>AUTO_MODE_IPAM_LOGS</c>, and <c>AUTO_MODE_LOAD_BALANCING_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon EKS Capability Logs, the valid values are <c>EKS_CAPABILITY_ACK_LOGS</c>,
+        /// <c>EKS_CAPABILITY_ARGOCD_APPLICATION_LOGS</c>, <c>EKS_CAPABILITY_ARGOCD_APPLICATIONSET_LOGS</c>,
+        /// <c>EKS_CAPABILITY_ARGOCD_COMMITSERVER_LOGS</c>, <c>EKS_CAPABILITY_ARGOCD_REPOSERVER_LOGS</c>,
+        /// <c>EKS_CAPABILITY_ARGOCD_SERVER_LOGS</c>, and <c>EKS_CAPABILITY_KRO_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Web Services Elemental Inference, the valid value is <c>APPLICATION_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Elemental MediaPackage, the valid values are <c>EGRESS_ACCESS_LOGS</c> and <c>INGRESS_ACCESS_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Elemental MediaTailor, the valid values are <c>AD_DECISION_SERVER_LOGS</c>, <c>MANIFEST_SERVICE_LOGS</c>,
+        /// and <c>TRANSCODE_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon ECS, the valid value is <c>ACTION_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Entity Resolution, the valid value is <c>WORKFLOW_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon EventBridge Event Bus (Custom), the valid values are <c>INFO_LOGS</c> and
+        /// <c>ERROR_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For IAM Identity Center, the valid value is <c>ERROR_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Network Firewall Proxy, the valid values are <c>ALERT_LOGS</c>, <c>ALLOW_LOGS</c>,
+        /// and <c>DENY_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Network Load Balancer, the valid value is <c>NLB_ACCESS_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PCS, the valid values are <c>PCS_SCHEDULER_LOGS</c>, <c>PCS_JOBCOMP_LOGS</c>,
+        /// <c>PCS_SCHEDULER_AUDIT_LOGS</c>, and <c>PCS_SCALING_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Q, the valid values are <c>EVENT_LOGS</c> and <c>SYNC_JOB_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Q in Connect AI agents, the valid value is <c>EVENT_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Quick, the valid values are <c>AGENT_HOURS_LOGS</c>, <c>AGENT_METADATA_LOGS</c>,
+        /// <c>CHAT_LOGS</c>, <c>DLP_LOGS</c>, <c>FEEDBACK_LOGS</c>, <c>INDEX_USAGE_LOGS</c>,
+        /// and <c>KB_FILE_SYNC_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Route 53 Global Resolver, the valid value is <c>GLOBAL_RESOLVER_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Web Services RTB Fabric, the valid value is <c>APPLICATION_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon S3, the valid value is <c>S3_SERVER_ACCESS_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Web Services Security Hub, the valid value is <c>SECURITY_FINDING_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Web Services Security Hub CSPM, the valid value is <c>SECURITY_FINDING_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon SES mail manager, the valid values are <c>APPLICATION_LOGS</c> and <c>TRAFFIC_POLICY_DEBUG_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Web Services Shield Advanced, the valid value is <c>FLOW_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon VPC Route Server, the valid value is <c>EVENT_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon WorkMail, the valid values are <c>ACCESS_CONTROL_LOGS</c>, <c>AUTHENTICATION_LOGS</c>,
+        /// <c>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</c>, <c>WORKMAIL_MAILBOX_ACCESS_LOGS</c>, and
+        /// <c>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 255)]
+        public string LogType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LogType property is set.
+        /// </summary>
+        internal bool IsSetLogType() => this.LogType != null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// A name for this delivery source. This name must be unique for all delivery sources
+        /// in your account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 60)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN of the Amazon Web Services resource that is generating and sending logs. For
+        /// example, <c>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For the <c>SECURITY_FINDING_LOGS</c> logType, use a wildcard ARN for the hub resource.
+        /// For Amazon Web Services Security Hub CSPM, use <c>arn:aws:securityhub:us-east-1:111122223333:hub/*</c>
+        /// and for Amazon Web Services Security Hub, use <c>arn:aws:securityhub:us-east-1:111122223333:hubv2/*</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For the <c>INSIGHTS_QUERY_LOGS</c> log type, use a wildcard log group ARN, such as
+        /// <c>arn:aws:logs:us-east-1:111122223333:log-group:*</c>. Amazon Web Services does not
+        /// support a specific log group ARN for this log type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string ResourceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceArn property is set.
+        /// </summary>
+        internal bool IsSetResourceArn() => this.ResourceArn != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An optional list of key-value pairs to associate with the resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services resources</a> 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 50)]
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

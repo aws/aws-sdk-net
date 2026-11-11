@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.EMRContainers
 {
     /// <summary>
-    /// Configuration for accessing Amazon EMRContainers service
+    /// Configuration for accessing Amazon EMR Containers
     /// </summary>
     public static class AmazonEMRContainersDefaultConfiguration
     {

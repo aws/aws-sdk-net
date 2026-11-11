@@ -26,7 +26,7 @@ using Amazon.AugmentedAIRuntime.Endpoints;
 namespace Amazon.AugmentedAIRuntime.Internal
 {
     /// <summary>
-    /// Amazon AugmentedAIRuntime endpoint provider.
+    /// Amazon Augmented AI Runtime endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AugmentedAIRuntimeEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Represents an empty operand value. In the Amazon Connect admin website, case rules
+    /// Represents an empty operand value. In the Connect Customer admin website, case rules
     /// are known as <i>case field conditions</i>. For more information about case field conditions,
     /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
     /// case field conditions to a case template</a>.

@@ -27,12 +27,12 @@ using Amazon.Glue.Internal;
 namespace Amazon.Glue
 {
     /// <summary>
-    /// Configuration for accessing Amazon Glue service
+    /// Configuration for accessing AWS Glue
     /// </summary>
     public partial class AmazonGlueConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Glue", "4.0.116.1");
+            InternalSDKUtils.BuildUserAgentString("Glue", "4.0.119.1");
 
         private static readonly AmazonGlueEndpointResolver EndpointResolver =
             new AmazonGlueEndpointResolver();

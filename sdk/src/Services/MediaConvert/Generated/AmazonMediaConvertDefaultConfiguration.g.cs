@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MediaConvert
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaConvert service
+    /// Configuration for accessing AWS Elemental MediaConvert
     /// </summary>
     public static class AmazonMediaConvertDefaultConfiguration
     {

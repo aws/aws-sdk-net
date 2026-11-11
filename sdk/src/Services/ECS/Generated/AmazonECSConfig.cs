@@ -27,12 +27,12 @@ using Amazon.ECS.Internal;
 namespace Amazon.ECS
 {
     /// <summary>
-    /// Configuration for accessing Amazon ECS service
+    /// Configuration for accessing Amazon EC2 Container Service
     /// </summary>
     public partial class AmazonECSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ECS", "4.0.108.2");
+            InternalSDKUtils.BuildUserAgentString("ECS", "4.0.111.1");
 
         private static readonly AmazonECSEndpointResolver EndpointResolver =
             new AmazonECSEndpointResolver();

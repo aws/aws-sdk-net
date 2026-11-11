@@ -27,12 +27,12 @@ using Amazon.PinpointEmail.Internal;
 namespace Amazon.PinpointEmail
 {
     /// <summary>
-    /// Configuration for accessing Amazon PinpointEmail service
+    /// Configuration for accessing Amazon Pinpoint Email Service
     /// </summary>
     public partial class AmazonPinpointEmailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pinpoint Email", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Pinpoint Email", "4.0.100.26");
 
         private static readonly AmazonPinpointEmailEndpointResolver EndpointResolver =
             new AmazonPinpointEmailEndpointResolver();

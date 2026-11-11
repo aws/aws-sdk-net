@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.IoTFleetWise
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTFleetWise service
+    /// Configuration for accessing AWS IoT FleetWise
     /// </summary>
     public static class AmazonIoTFleetWiseDefaultConfiguration
     {

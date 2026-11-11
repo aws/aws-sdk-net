@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SageMakerGeospatial service
+    /// Service metadata for Amazon SageMaker geospatial capabilities
     /// </summary>
     public partial class AmazonSageMakerGeospatialMetadata : IServiceMetadata
     {

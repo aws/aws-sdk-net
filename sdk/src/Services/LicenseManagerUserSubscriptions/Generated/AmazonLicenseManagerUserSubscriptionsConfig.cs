@@ -27,12 +27,12 @@ using Amazon.LicenseManagerUserSubscriptions.Internal;
 namespace Amazon.LicenseManagerUserSubscriptions
 {
     /// <summary>
-    /// Configuration for accessing Amazon LicenseManagerUserSubscriptions service
+    /// Configuration for accessing AWS License Manager User Subscriptions
     /// </summary>
     public partial class AmazonLicenseManagerUserSubscriptionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("License Manager User Subscriptions", "4.0.101.11");
+            InternalSDKUtils.BuildUserAgentString("License Manager User Subscriptions", "4.0.101.15");
 
         private static readonly AmazonLicenseManagerUserSubscriptionsEndpointResolver EndpointResolver =
             new AmazonLicenseManagerUserSubscriptionsEndpointResolver();

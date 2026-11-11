@@ -27,12 +27,12 @@ using Amazon.NetworkMonitor.Internal;
 namespace Amazon.NetworkMonitor
 {
     /// <summary>
-    /// Configuration for accessing Amazon NetworkMonitor service
+    /// Configuration for accessing Amazon CloudWatch Network Monitor
     /// </summary>
     public partial class AmazonNetworkMonitorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("NetworkMonitor", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("NetworkMonitor", "4.0.100.26");
 
         private static readonly AmazonNetworkMonitorEndpointResolver EndpointResolver =
             new AmazonNetworkMonitorEndpointResolver();

@@ -27,12 +27,12 @@ using Amazon.PinpointSMSVoice.Internal;
 namespace Amazon.PinpointSMSVoice
 {
     /// <summary>
-    /// Configuration for accessing Amazon PinpointSMSVoice service
+    /// Configuration for accessing Amazon Pinpoint SMS and Voice Service
     /// </summary>
     public partial class AmazonPinpointSMSVoiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pinpoint SMS Voice", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Pinpoint SMS Voice", "4.0.100.26");
 
         private static readonly AmazonPinpointSMSVoiceEndpointResolver EndpointResolver =
             new AmazonPinpointSMSVoiceEndpointResolver();

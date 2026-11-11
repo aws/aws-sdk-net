@@ -26,7 +26,7 @@ using Amazon.DLM.Endpoints;
 namespace Amazon.DLM.Internal
 {
     /// <summary>
-    /// Amazon DLM endpoint provider.
+    /// Amazon Data Lifecycle Manager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DLMEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -27,12 +27,12 @@ using Amazon.EC2InstanceConnect.Internal;
 namespace Amazon.EC2InstanceConnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon EC2InstanceConnect service
+    /// Configuration for accessing AWS EC2 Instance Connect
     /// </summary>
     public partial class AmazonEC2InstanceConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EC2 Instance Connect", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("EC2 Instance Connect", "4.0.100.26");
 
         private static readonly AmazonEC2InstanceConnectEndpointResolver EndpointResolver =
             new AmazonEC2InstanceConnectEndpointResolver();

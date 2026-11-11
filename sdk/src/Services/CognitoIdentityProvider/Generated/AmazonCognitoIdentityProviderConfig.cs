@@ -27,12 +27,12 @@ using Amazon.CognitoIdentityProvider.Internal;
 namespace Amazon.CognitoIdentityProvider
 {
     /// <summary>
-    /// Configuration for accessing Amazon CognitoIdentityProvider service
+    /// Configuration for accessing Amazon Cognito Identity Provider
     /// </summary>
     public partial class AmazonCognitoIdentityProviderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Cognito Identity Provider", "4.0.106.6");
+            InternalSDKUtils.BuildUserAgentString("Cognito Identity Provider", "4.0.106.10");
 
         private static readonly AmazonCognitoIdentityProviderEndpointResolver EndpointResolver =
             new AmazonCognitoIdentityProviderEndpointResolver();

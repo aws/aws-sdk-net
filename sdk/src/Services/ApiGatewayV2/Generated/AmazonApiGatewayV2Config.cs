@@ -27,12 +27,12 @@ using Amazon.ApiGatewayV2.Internal;
 namespace Amazon.ApiGatewayV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApiGatewayV2 service
+    /// Configuration for accessing AmazonApiGatewayV2
     /// </summary>
     public partial class AmazonApiGatewayV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ApiGatewayV2", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("ApiGatewayV2", "4.0.100.26");
 
         private static readonly AmazonApiGatewayV2EndpointResolver EndpointResolver =
             new AmazonApiGatewayV2EndpointResolver();

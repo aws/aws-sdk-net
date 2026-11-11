@@ -27,12 +27,12 @@ using Amazon.BackupGateway.Internal;
 namespace Amazon.BackupGateway
 {
     /// <summary>
-    /// Configuration for accessing Amazon BackupGateway service
+    /// Configuration for accessing AWS Backup Gateway
     /// </summary>
     public partial class AmazonBackupGatewayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Backup Gateway", "4.0.101.16");
+            InternalSDKUtils.BuildUserAgentString("Backup Gateway", "4.0.101.20");
 
         private static readonly AmazonBackupGatewayEndpointResolver EndpointResolver =
             new AmazonBackupGatewayEndpointResolver();

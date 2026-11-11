@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Rekognition service
+    /// Service metadata for Amazon Rekognition
     /// </summary>
     public partial class AmazonRekognitionMetadata : IServiceMetadata
     {

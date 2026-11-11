@@ -26,7 +26,7 @@ using Amazon.BCMDataExports.Endpoints;
 namespace Amazon.BCMDataExports.Internal
 {
     /// <summary>
-    /// Amazon BCMDataExports endpoint provider.
+    /// AWS Billing and Cost Management Data Exports endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BCMDataExportsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

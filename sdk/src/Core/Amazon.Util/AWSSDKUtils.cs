@@ -521,12 +521,16 @@ namespace Amazon.Util
             }
             string canonicalizedResourcePath = JoinResourcePathSegmentsV2(encodedSegments);
 
-            // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
-            Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
-                pathWasPreEncoded ? "Double" : "Single",
-                resourcePath,
-                endpoint == null ? "" : " with endpoint " + endpoint.AbsoluteUri,
-                canonicalizedResourcePath);
+            var logger = Logger.GetLogger(typeof(AWSSDKUtils));
+            if (logger.IsEnabled(Amazon.Runtime.Logging.SdkLogLevel.Debug))
+            {
+                logger.DebugFormat("{0} encoded {1}{2}{3} for canonicalization: {4}",
+                    pathWasPreEncoded ? "Double" : "Single",
+                    resourcePath,
+                    endpoint == null ? "" : " with endpoint ",
+                    endpoint == null ? "" : endpoint.AbsoluteUri,
+                    canonicalizedResourcePath);
+            }
 
             return canonicalizedResourcePath;
         }
@@ -752,13 +756,28 @@ namespace Amazon.Util
 
         /// <summary>
         /// Utility method for converting Unix epoch seconds to DateTime structure.
+        /// <para />
+        /// Digits past the millisecond are truncated (1762594202.1239 is .123), as the Smithy epoch-seconds timestamp format specifies.
+        /// Casting to decimal rounds to 15 significant digits, which removes the floating-point error of the double
+        /// (1762594202.123 is stored as 1762594202.12299990...). Sub-millisecond digits can round up before truncation.
         /// </summary>
         /// <param name="seconds">The number of seconds since January 1, 1970.</param>
         /// <returns>Converted DateTime structure</returns>
         public static DateTime ConvertFromUnixDoubleEpochSeconds(double seconds)
         {
-            var ticksSinceEpoch = (long)(seconds * TicksPerSecond);
-            return new DateTime(ticksSinceEpoch + EPOCH_START.Ticks, DateTimeKind.Utc);
+            return ConvertFromUnixDecimalEpochSeconds((decimal)seconds);
+        }
+
+        /// <summary>
+        /// Utility method for converting Unix epoch seconds to DateTime structure.
+        /// <para />
+        /// Digits past the millisecond are truncated (1762594202.1239 is .123), as the Smithy epoch-seconds timestamp format specifies.
+        /// </summary>
+        /// <param name="seconds">The number of seconds since January 1, 1970.</param>
+        /// <returns>Converted DateTime structure</returns>
+        public static DateTime ConvertFromUnixDecimalEpochSeconds(decimal seconds)
+        {
+            return EPOCH_START.AddMilliseconds((long)(seconds * 1000));
         }
 
         /// <summary>
@@ -1808,9 +1827,22 @@ namespace Amazon.Util
         }
 
 #if NETSTANDARD
+        // A handler owns a connection pool, and from .NET 11 also two System.Net.Http metric instruments that are never released.
+        // Requests therefore share one handler per proxy, and each still gets its own HttpClient for its timeout and headers.
+        // The .NET 11 leak is tracked in https://github.com/dotnet/runtime/issues/136418.
+        private static readonly Lazy<HttpClientHandler> _defaultProxyHandler = new Lazy<HttpClientHandler>(() => CreateHandler(null));
+        private static readonly ConditionalWeakTable<IWebProxy, HttpClientHandler> _proxyHandlers = new ConditionalWeakTable<IWebProxy, HttpClientHandler>();
+
+        private static HttpClientHandler CreateHandler(IWebProxy proxy)
+        {
+            // Without this, a shared handler would send cookies from one response with every later request.
+            return new HttpClientHandler { Proxy = proxy, UseCookies = false };
+        }
+
         private static HttpClient CreateClient(Uri uri, TimeSpan timeout, IWebProxy proxy, IDictionary<string, string> headers)
         {
-            var client = new HttpClient(new System.Net.Http.HttpClientHandler() { Proxy = proxy });
+            var handler = proxy == null ? _defaultProxyHandler.Value : _proxyHandlers.GetValue(proxy, CreateHandler);
+            var client = new HttpClient(handler, disposeHandler: false);
             
             if (timeout > TimeSpan.Zero)
             {

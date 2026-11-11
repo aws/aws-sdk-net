@@ -31,7 +31,7 @@ using Amazon.ECS.Endpoints;
 namespace Amazon.ECS.Internal
 {
     /// <summary>
-    /// Amazon ECS endpoint resolver.
+    /// Amazon EC2 Container Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ECS service requests.
     /// <para />

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IoTSiteWise service
+    /// Service metadata for AWS IoT SiteWise
     /// </summary>
     public partial class AmazonIoTSiteWiseMetadata : IServiceMetadata
     {

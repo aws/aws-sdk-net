@@ -27,12 +27,12 @@ using Amazon.BCMDashboards.Internal;
 namespace Amazon.BCMDashboards
 {
     /// <summary>
-    /// Configuration for accessing Amazon BCMDashboards service
+    /// Configuration for accessing AWS Billing and Cost Management Dashboards
     /// </summary>
     public partial class AmazonBCMDashboardsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("BCM Dashboards", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("BCM Dashboards", "4.0.100.25");
 
         private static readonly AmazonBCMDashboardsEndpointResolver EndpointResolver =
             new AmazonBCMDashboardsEndpointResolver();

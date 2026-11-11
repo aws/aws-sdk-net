@@ -26,7 +26,7 @@ using Amazon.MigrationHubRefactorSpaces.Endpoints;
 namespace Amazon.MigrationHubRefactorSpaces.Internal
 {
     /// <summary>
-    /// Amazon MigrationHubRefactorSpaces endpoint provider.
+    /// AWS Migration Hub Refactor Spaces endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MigrationHubRefactorSpacesEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

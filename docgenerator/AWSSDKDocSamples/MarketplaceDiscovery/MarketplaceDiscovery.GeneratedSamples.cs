@@ -630,7 +630,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
-                ProductId = "prod-sampleApiDynamicId"
+                ProductId = "prod-sampleCftId"
             });
 
             List<FulfillmentOption> fulfillmentOptions = response.FulfillmentOptions;
@@ -647,7 +647,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
-                ProductId = "prod-sampleCftId"
+                ProductId = "prod-sampleContainerId"
             });
 
             List<FulfillmentOption> fulfillmentOptions = response.FulfillmentOptions;
@@ -664,7 +664,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
-                ProductId = "prod-sampleContainerId"
+                ProductId = "prod-sampleHelmId"
             });
 
             List<FulfillmentOption> fulfillmentOptions = response.FulfillmentOptions;
@@ -681,7 +681,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
-                ProductId = "prod-sampleHelmId"
+                ProductId = "prod-sampleEksId"
             });
 
             List<FulfillmentOption> fulfillmentOptions = response.FulfillmentOptions;
@@ -698,7 +698,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
-                ProductId = "prod-sampleEksId"
+                ProductId = "prod-sampleImageBuilderId"
             });
 
             List<FulfillmentOption> fulfillmentOptions = response.FulfillmentOptions;
@@ -715,7 +715,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
-                ProductId = "prod-sampleImageBuilderId"
+                ProductId = "prod-sampleDataExchangeId"
             });
 
             List<FulfillmentOption> fulfillmentOptions = response.FulfillmentOptions;
@@ -732,7 +732,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
-                ProductId = "prod-sampleDataExchangeId"
+                ProductId = "prod-sampleProServId"
             });
 
             List<FulfillmentOption> fulfillmentOptions = response.FulfillmentOptions;
@@ -749,7 +749,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
-                ProductId = "prod-sampleProServId"
+                ProductId = "prod-sampleSaasId"
             });
 
             List<FulfillmentOption> fulfillmentOptions = response.FulfillmentOptions;
@@ -766,23 +766,6 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
-                ProductId = "prod-sampleSaasId"
-            });
-
-            List<FulfillmentOption> fulfillmentOptions = response.FulfillmentOptions;
-            string locale = response.Locale;
-
-            #endregion
-        }
-
-        public void MarketplaceDiscoveryListFulfillmentOptions()
-        {
-            #region ListFulfillmentOptions-12
-
-            var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
-            {
-                Locale = "en-US",
                 ProductId = "prod-sampleSmAlgoId"
             });
 
@@ -794,7 +777,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region ListFulfillmentOptions-13
+            #region ListFulfillmentOptions-12
 
             var client = new AmazonMarketplaceDiscoveryClient();
             var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest

@@ -27,12 +27,12 @@ using Amazon.MigrationHubRefactorSpaces.Internal;
 namespace Amazon.MigrationHubRefactorSpaces
 {
     /// <summary>
-    /// Configuration for accessing Amazon MigrationHubRefactorSpaces service
+    /// Configuration for accessing AWS Migration Hub Refactor Spaces
     /// </summary>
     public partial class AmazonMigrationHubRefactorSpacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Migration Hub Refactor Spaces", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Migration Hub Refactor Spaces", "4.0.100.26");
 
         private static readonly AmazonMigrationHubRefactorSpacesEndpointResolver EndpointResolver =
             new AmazonMigrationHubRefactorSpacesEndpointResolver();

@@ -31,7 +31,7 @@ using Amazon.ServiceCatalog.Endpoints;
 namespace Amazon.ServiceCatalog.Internal
 {
     /// <summary>
-    /// Amazon ServiceCatalog endpoint resolver.
+    /// AWS Service Catalog endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ServiceCatalog service requests.
     /// <para />

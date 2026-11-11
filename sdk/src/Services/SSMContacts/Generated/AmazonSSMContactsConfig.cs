@@ -27,12 +27,12 @@ using Amazon.SSMContacts.Internal;
 namespace Amazon.SSMContacts
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSMContacts service
+    /// Configuration for accessing AWS Systems Manager Incident Manager Contacts
     /// </summary>
     public partial class AmazonSSMContactsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSM Contacts", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("SSM Contacts", "4.0.100.26");
 
         private static readonly AmazonSSMContactsEndpointResolver EndpointResolver =
             new AmazonSSMContactsEndpointResolver();

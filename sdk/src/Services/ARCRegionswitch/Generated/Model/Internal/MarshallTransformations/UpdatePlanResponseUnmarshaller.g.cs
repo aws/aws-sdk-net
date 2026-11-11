@@ -85,6 +85,10 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                     {
                         return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("RetryableConflictException"))
+                    {
+                        return RetryableConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                 }
             }
             return new AmazonARCRegionswitchException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

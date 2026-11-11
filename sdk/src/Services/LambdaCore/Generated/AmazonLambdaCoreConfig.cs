@@ -27,12 +27,12 @@ using Amazon.LambdaCore.Internal;
 namespace Amazon.LambdaCore
 {
     /// <summary>
-    /// Configuration for accessing Amazon LambdaCore service
+    /// Configuration for accessing AWS Lambda Core
     /// </summary>
     public partial class AmazonLambdaCoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Lambda Core", "4.0.101.4");
+            InternalSDKUtils.BuildUserAgentString("Lambda Core", "4.0.101.8");
 
         private static readonly AmazonLambdaCoreEndpointResolver EndpointResolver =
             new AmazonLambdaCoreEndpointResolver();

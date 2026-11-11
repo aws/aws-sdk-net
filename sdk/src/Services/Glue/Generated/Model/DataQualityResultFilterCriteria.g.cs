@@ -35,6 +35,20 @@ namespace Amazon.Glue.Model
     public partial class DataQualityResultFilterCriteria
     {
         /// <summary>
+        /// Gets and sets the property DataQualityEvaluationConfig. 
+        /// <para>
+        /// Filter results by the evaluation configuration name which started the evaluation run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string DataQualityEvaluationConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataQualityEvaluationConfig property is set.
+        /// </summary>
+        internal bool IsSetDataQualityEvaluationConfig() => this.DataQualityEvaluationConfig != null;
+
+        /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
         /// Filter results by the specified data source. For example, retrieving all results for
@@ -47,6 +61,20 @@ namespace Amazon.Glue.Model
         /// Checks to see if the DataSource property is set.
         /// </summary>
         internal bool IsSetDataSource() => this.DataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property EvaluationRunMode. 
+        /// <para>
+        /// Filter results by how their evaluation run started: <c>ON_DEMAND</c> or <c>EVALUATION_CONFIG</c>.
+        /// Results that no evaluation run produced match neither value.
+        /// </para>
+        /// </summary>
+        public DataQualityEvaluationRunMode EvaluationRunMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EvaluationRunMode property is set.
+        /// </summary>
+        internal bool IsSetEvaluationRunMode() => this.EvaluationRunMode != null;
 
         /// <summary>
         /// Gets and sets the property JobName. 

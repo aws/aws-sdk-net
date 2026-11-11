@@ -31,7 +31,7 @@ using Amazon.CodeGuruProfiler.Endpoints;
 namespace Amazon.CodeGuruProfiler.Internal
 {
     /// <summary>
-    /// Amazon CodeGuruProfiler endpoint resolver.
+    /// Amazon CodeGuru Profiler endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CodeGuruProfiler service requests.
     /// <para />

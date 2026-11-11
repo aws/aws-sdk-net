@@ -18,7 +18,7 @@ using <#=this.Config.Namespace#>.Internal;
 namespace <#=this.Config.Namespace#>
 {
     /// <summary>
-    /// Configuration for accessing Amazon <#=this.Config.ClassName#> service
+    /// Configuration for accessing <#=this.Config.ServiceModel.ServiceFullName#>
     /// </summary>
     public partial class Amazon<#=this.Config.ClassName#>Config : ClientConfig
     {

@@ -35,6 +35,19 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class AgenticRetrieveAction
     {
         /// <summary>
+        /// Gets and sets the property CodeExecution. 
+        /// <para>
+        /// The details of code that the agent chose to run.
+        /// </para>
+        /// </summary>
+        public AgenticRetrieveCodeExecutionDetails CodeExecution { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CodeExecution property is set.
+        /// </summary>
+        internal bool IsSetCodeExecution() => this.CodeExecution != null;
+
+        /// <summary>
         /// Gets and sets the property FullDocumentExpansion. 
         /// <para>
         /// Details of a full document expansion action.

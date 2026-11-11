@@ -27,12 +27,12 @@ using Amazon.ApplicationDiscoveryService.Internal;
 namespace Amazon.ApplicationDiscoveryService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApplicationDiscoveryService service
+    /// Configuration for accessing AWS Application Discovery Service
     /// </summary>
     public partial class AmazonApplicationDiscoveryServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Application Discovery Service", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Application Discovery Service", "4.0.100.26");
 
         private static readonly AmazonApplicationDiscoveryServiceEndpointResolver EndpointResolver =
             new AmazonApplicationDiscoveryServiceEndpointResolver();

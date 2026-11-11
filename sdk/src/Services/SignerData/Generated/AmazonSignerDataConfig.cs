@@ -27,12 +27,12 @@ using Amazon.SignerData.Internal;
 namespace Amazon.SignerData
 {
     /// <summary>
-    /// Configuration for accessing Amazon SignerData service
+    /// Configuration for accessing AWS Signer Data Plane
     /// </summary>
     public partial class AmazonSignerDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Signer Data", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Signer Data", "4.0.100.26");
 
         private static readonly AmazonSignerDataEndpointResolver EndpointResolver =
             new AmazonSignerDataEndpointResolver();

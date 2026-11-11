@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Omics
 {
     /// <summary>
-    /// Configuration for accessing Amazon Omics service
+    /// Configuration for accessing Amazon Omics
     /// </summary>
     public static class AmazonOmicsDefaultConfiguration
     {

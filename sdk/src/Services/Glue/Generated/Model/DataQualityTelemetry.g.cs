@@ -34,7 +34,10 @@ namespace Amazon.Glue.Model
     public partial class DataQualityTelemetry
     {
         /// <summary>
-        /// Gets and sets the property Engine.
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// 
+        /// </para>
         /// </summary>
         public DataQualityEngine Engine { get; set; }
 
@@ -44,7 +47,10 @@ namespace Amazon.Glue.Model
         internal bool IsSetEngine() => this.Engine != null;
 
         /// <summary>
-        /// Gets and sets the property FlagsEnabled.
+        /// Gets and sets the property FlagsEnabled. 
+        /// <para>
+        /// 
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -61,7 +67,10 @@ namespace Amazon.Glue.Model
         internal bool IsSetFlagsEnabled() => this.FlagsEnabled != null && (this.FlagsEnabled.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property HostRuntimeVersion.
+        /// Gets and sets the property HostRuntimeVersion. 
+        /// <para>
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 255)]
         public string HostRuntimeVersion { get; set; }
@@ -72,7 +81,10 @@ namespace Amazon.Glue.Model
         internal bool IsSetHostRuntimeVersion() => this.HostRuntimeVersion != null;
 
         /// <summary>
-        /// Gets and sets the property LibraryVersion.
+        /// Gets and sets the property LibraryVersion. 
+        /// <para>
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 255)]
         public string LibraryVersion { get; set; }
@@ -83,7 +95,10 @@ namespace Amazon.Glue.Model
         internal bool IsSetLibraryVersion() => this.LibraryVersion != null;
 
         /// <summary>
-        /// Gets and sets the property SparkVersion.
+        /// Gets and sets the property SparkVersion. 
+        /// <para>
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 255)]
         public string SparkVersion { get; set; }
@@ -94,7 +109,10 @@ namespace Amazon.Glue.Model
         internal bool IsSetSparkVersion() => this.SparkVersion != null;
 
         /// <summary>
-        /// Gets and sets the property VcpuHours.
+        /// Gets and sets the property VcpuHours. 
+        /// <para>
+        /// 
+        /// </para>
         /// </summary>
         public double? VcpuHours { get; set; }
 

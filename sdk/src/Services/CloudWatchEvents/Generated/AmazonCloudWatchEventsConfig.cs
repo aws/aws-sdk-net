@@ -27,12 +27,12 @@ using Amazon.CloudWatchEvents.Internal;
 namespace Amazon.CloudWatchEvents
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudWatchEvents service
+    /// Configuration for accessing Amazon CloudWatch Events
     /// </summary>
     public partial class AmazonCloudWatchEventsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudWatch Events", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("CloudWatch Events", "4.0.100.25");
 
         private static readonly AmazonCloudWatchEventsEndpointResolver EndpointResolver =
             new AmazonCloudWatchEventsEndpointResolver();

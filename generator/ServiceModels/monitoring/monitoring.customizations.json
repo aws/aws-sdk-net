@@ -3,5 +3,16 @@
         "DescribeAlarmHistory",
         "DescribeAlarms",
         "ListMetrics"
-    ]
+    ],
+    "paginators": {
+        "DescribeAlarms": {
+            "items": [ "MetricAlarms", "CompositeAlarms", "LogAlarms" ]
+        },
+        "GetMetricData": {
+            "items": [ "MetricDataResults", "Messages" ]
+        },
+        "ListMetrics": {
+            "items": [ "Metrics", "OwningAccounts" ]
+        }
+    }
 }

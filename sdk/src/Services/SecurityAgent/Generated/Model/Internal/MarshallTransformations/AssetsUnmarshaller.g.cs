@@ -60,6 +60,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("clientCertificates", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ClientCertificate, ClientCertificateUnmarshaller>(ClientCertificateUnmarshaller.Instance);
+                    unmarshalledObject.ClientCertificates = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("documents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentInfo, DocumentInfoUnmarshaller>(DocumentInfoUnmarshaller.Instance);

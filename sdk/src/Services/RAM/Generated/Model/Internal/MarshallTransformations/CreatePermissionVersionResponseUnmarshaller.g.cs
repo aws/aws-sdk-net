@@ -112,6 +112,10 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     {
                         return MalformedPolicyTemplateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
+                    {
+                        return OperationNotPermittedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("PermissionVersionsLimitExceededException"))
                     {
                         return PermissionVersionsLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

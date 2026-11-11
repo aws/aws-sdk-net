@@ -26,7 +26,7 @@ using Amazon.Signin.Endpoints;
 namespace Amazon.Signin.Internal
 {
     /// <summary>
-    /// Amazon Signin endpoint provider.
+    /// AWS Sign-In Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SigninEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

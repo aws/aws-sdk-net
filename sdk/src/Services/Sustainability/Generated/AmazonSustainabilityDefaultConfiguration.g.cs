@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Sustainability
 {
     /// <summary>
-    /// Configuration for accessing Amazon Sustainability service
+    /// Configuration for accessing AWS Sustainability
     /// </summary>
     public static class AmazonSustainabilityDefaultConfiguration
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.WorkDocs
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkDocs service
+    /// Configuration for accessing Amazon WorkDocs
     /// </summary>
     public static class AmazonWorkDocsDefaultConfiguration
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SupplyChain.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SupplyChain service
+    /// Service metadata for AWS Supply Chain
     /// </summary>
     public partial class AmazonSupplyChainMetadata : IServiceMetadata
     {

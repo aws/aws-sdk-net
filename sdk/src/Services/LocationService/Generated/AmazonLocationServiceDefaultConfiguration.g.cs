@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.LocationService
 {
     /// <summary>
-    /// Configuration for accessing Amazon LocationService service
+    /// Configuration for accessing Amazon Location Service
     /// </summary>
     public static class AmazonLocationServiceDefaultConfiguration
     {

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.RestXmlProtocolNamespace
 {
     /// <summary>
-    /// Configuration for accessing Amazon RestXmlProtocolNamespace service
+    /// Configuration for accessing Sample Rest Xml Protocol Service With Namespace
     /// </summary>
     public static class AmazonRestXmlProtocolNamespaceDefaultConfiguration
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Budgets service
+    /// Service metadata for AWS Budgets
     /// </summary>
     public partial class AmazonBudgetsMetadata : IServiceMetadata
     {

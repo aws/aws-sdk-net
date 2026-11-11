@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Detective service
+    /// Service metadata for Amazon Detective
     /// </summary>
     public partial class AmazonDetectiveMetadata : IServiceMetadata
     {

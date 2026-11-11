@@ -35,6 +35,34 @@ namespace Amazon.NetworkFirewall.Model
     public partial class DescribeRuleGroupResponse : AmazonWebServiceResponse
     {
         /// <summary>
+        /// Gets and sets the property FirewallRuleGroup. 
+        /// <para>
+        /// The object that defines the rules in a firewall engine rule group, for use in a Next
+        /// Generation policy.
+        /// </para>
+        /// </summary>
+        public FirewallRuleGroup FirewallRuleGroup { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FirewallRuleGroup property is set.
+        /// </summary>
+        internal bool IsSetFirewallRuleGroup() => this.FirewallRuleGroup != null;
+
+        /// <summary>
+        /// Gets and sets the property IpsRuleGroup. 
+        /// <para>
+        /// The object that defines the rules in an IPS engine rule group, for use in a Next Generation
+        /// policy.
+        /// </para>
+        /// </summary>
+        public IpsRuleGroup IpsRuleGroup { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IpsRuleGroup property is set.
+        /// </summary>
+        internal bool IsSetIpsRuleGroup() => this.IpsRuleGroup != null;
+
+        /// <summary>
         /// Gets and sets the property RuleGroup. 
         /// <para>
         /// The object that defines the rules in a rule group. This, along with <a>RuleGroupResponse</a>,

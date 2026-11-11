@@ -61,6 +61,17 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if (requestObject.IsSetScanSources())
+            {
+                context.Writer.WritePropertyName("scanSources");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectScanSourcesListValue in requestObject.ScanSources)
+                {
+                    context.Writer.WriteStringValue(requestObjectScanSourcesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if (requestObject.IsSetSortBy())
             {
                 context.Writer.WritePropertyName("sortBy");

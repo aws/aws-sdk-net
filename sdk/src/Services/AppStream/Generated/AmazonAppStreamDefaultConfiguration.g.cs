@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AppStream
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppStream service
+    /// Configuration for accessing Amazon AppStream
     /// </summary>
     public static class AmazonAppStreamDefaultConfiguration
     {

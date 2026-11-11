@@ -27,12 +27,12 @@ using Amazon.Inspector2.Internal;
 namespace Amazon.Inspector2
 {
     /// <summary>
-    /// Configuration for accessing Amazon Inspector2 service
+    /// Configuration for accessing Inspector2
     /// </summary>
     public partial class AmazonInspector2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Inspector2", "4.0.106.8");
+            InternalSDKUtils.BuildUserAgentString("Inspector2", "4.0.107.4");
 
         private static readonly AmazonInspector2EndpointResolver EndpointResolver =
             new AmazonInspector2EndpointResolver();

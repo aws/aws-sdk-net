@@ -74,6 +74,11 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <para>
         /// Update the DB cluster to use the specified DB instance Type.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't specify both dbInstanceType and deploymentConfiguration in the same request.
+        /// When you use deploymentConfiguration, the instance type is specified per node group.
+        /// </para>
         /// </summary>
         public DbInstanceType DbInstanceType { get; set; }
 
@@ -95,6 +100,23 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Checks to see if the DbParameterGroupIdentifier property is set.
         /// </summary>
         internal bool IsSetDbParameterGroupIdentifier() => this.DbParameterGroupIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfiguration. 
+        /// <para>
+        /// The updated compute topology for the cluster, defined as a set of node groups. Use
+        /// deploymentConfiguration to change the cluster's topology or scale its compute in a
+        /// single call. You can't specify both deploymentConfiguration and dbInstanceType in
+        /// the same request. When you provide a deployment configuration, Timestream for InfluxDB
+        /// ignores any node-count parameters in the associated DB parameter group.
+        /// </para>
+        /// </summary>
+        public DeploymentConfiguration DeploymentConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeploymentConfiguration property is set.
+        /// </summary>
+        internal bool IsSetDeploymentConfiguration() => this.DeploymentConfiguration != null;
 
         /// <summary>
         /// Gets and sets the property FailoverMode. 

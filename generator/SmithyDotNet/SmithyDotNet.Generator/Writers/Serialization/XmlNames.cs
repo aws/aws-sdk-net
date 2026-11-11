@@ -1,3 +1,4 @@
+using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 
@@ -14,6 +15,20 @@ internal static class XmlNames
 {
     /// <summary>The element (or attribute) name for a member: its <c>@xmlName</c>, else the modeled name.</summary>
     public static string ElementName(MemberShape member, string modeledName) => member.GetXmlName() ?? modeledName;
+
+    /// <summary>An ec2Query request parameter name: its <c>ec2QueryName</c>, else the element name with an upper-case first letter.</summary>
+    public static string Ec2QueryName(MemberShape member, string modeledName) =>
+        member.GetEc2QueryName() ?? SdkNaming.ToUpperFirstCharacter(ElementName(member, modeledName));
+
+    /// <summary>
+    /// An ec2Query response element name: the element name with a lower-case first letter, as C2J emits it. The
+    /// runtime matches element names case-insensitively, so this only keeps the generated code identical.
+    /// </summary>
+    public static string Ec2ResponseName(MemberShape member, string modeledName)
+    {
+        var name = ElementName(member, modeledName);
+        return char.ToLowerInvariant(name[0]) + name[1..];
+    }
 
     /// <summary>The element name for a list's items: the list value member's <c>@xmlName</c>, else <c>member</c>.</summary>
     public static string ListItemName(ListShape list) => list.Member.GetXmlName() ?? "member";

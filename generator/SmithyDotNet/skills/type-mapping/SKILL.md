@@ -64,6 +64,16 @@ swapped type there), or to a `List<>`/`Dictionary<>` type (C2J then treats the m
 The XML-only entry fields `isFlattened` and `alternateLocationName` are rejected until an XML protocol is
 supported.
 
+## Substituted and Injected Members (ec2Query)
+
+An `emitFromMember` wrapper stays in the model: `ResolveType` types a member that targets it as the wrapper's value
+(`AttributeValue` → `string`, `AttributeBooleanValue` → `bool?`) and sets `TypeDescriptor.Unwrapped` for the query
+writers, and `Unwrap` does the same for a list element (`List<string>`) and a doc sample's list item. The wrapper gets
+no class or unmarshaller. `CustomizationTransform` rewrites the rest, so `ResolveMembers` sees ordinary members:
+`emitAsShape` alone types a member as the named shape, its old shape is removed, and an injected member is typed by its
+`shape`. `accessModifier` (only `internal`) sets
+`Member.IsInternal` for the property; `IsSet` is internal anyway.
+
 ## Collection Defaults
 
 Collections default to `null` (V4) and to an empty list when `AWSConfigs.InitializeCollections` is on
@@ -118,7 +128,7 @@ Two base-class adjustments follow (matching the current SDK):
 - A member named `errorType` is renamed to the property `RequestErrorType` (**property name only; the wire name stays `errorType`**) so it doesn't hide `AmazonServiceException.ErrorType`, whose type is the `ErrorType` enum rather than the member's own type.
 - A member named `Retryable` is emitted with the `new` modifier, hiding `AmazonServiceException.Retryable`.
 
-Independently of the exception-only rules, a member named `Equals` on **any** structure is emitted with `new` to hide `object.Equals(object)`.
+Independently of the exception-only rules, a member named `Equals` on **any** structure is emitted with `new` to hide `object.Equals(object)`, and a member with the `overridesBaseMember` property modifier is emitted with `override` (see sdk-conventions).
 
 A **response** member named `ContentLength` is not shadowed but omitted from the response class entirely: `AmazonWebServiceResponse` already declares it and the unmarshaller assigns the inherited property. See sdk-conventions.
 

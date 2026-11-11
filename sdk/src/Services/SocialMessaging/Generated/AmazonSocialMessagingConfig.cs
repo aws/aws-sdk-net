@@ -27,12 +27,12 @@ using Amazon.SocialMessaging.Internal;
 namespace Amazon.SocialMessaging
 {
     /// <summary>
-    /// Configuration for accessing Amazon SocialMessaging service
+    /// Configuration for accessing AWS End User Messaging Social
     /// </summary>
     public partial class AmazonSocialMessagingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SocialMessaging", "4.0.104.2");
+            InternalSDKUtils.BuildUserAgentString("SocialMessaging", "4.0.104.6");
 
         private static readonly AmazonSocialMessagingEndpointResolver EndpointResolver =
             new AmazonSocialMessagingEndpointResolver();

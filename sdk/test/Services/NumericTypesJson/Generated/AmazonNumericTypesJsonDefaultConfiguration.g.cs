@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.NumericTypesJson
 {
     /// <summary>
-    /// Configuration for accessing Amazon NumericTypesJson service
+    /// Configuration for accessing Sample Numeric Types Json Service
     /// </summary>
     public static class AmazonNumericTypesJsonDefaultConfiguration
     {

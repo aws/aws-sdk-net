@@ -102,6 +102,16 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetImage() => this.Image != null;
 
         /// <summary>
+        /// Gets and sets the property MachineImage.
+        /// </summary>
+        public MachineImageDetails MachineImage { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MachineImage property is set.
+        /// </summary>
+        internal bool IsSetMachineImage() => this.MachineImage != null;
+
+        /// <summary>
         /// Gets and sets the property ServerlessFunction. 
         /// <para>
         /// An object that contains details about a serverless function involved in the finding.

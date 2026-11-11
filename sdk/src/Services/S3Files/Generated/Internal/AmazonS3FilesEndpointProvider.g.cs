@@ -26,7 +26,7 @@ using Amazon.S3Files.Endpoints;
 namespace Amazon.S3Files.Internal
 {
     /// <summary>
-    /// Amazon S3Files endpoint provider.
+    /// Amazon S3 Files endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="S3FilesEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -27,12 +27,12 @@ using Amazon.ComprehendMedical.Internal;
 namespace Amazon.ComprehendMedical
 {
     /// <summary>
-    /// Configuration for accessing Amazon ComprehendMedical service
+    /// Configuration for accessing AWS Comprehend Medical
     /// </summary>
     public partial class AmazonComprehendMedicalConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ComprehendMedical", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("ComprehendMedical", "4.0.100.25");
 
         private static readonly AmazonComprehendMedicalEndpointResolver EndpointResolver =
             new AmazonComprehendMedicalEndpointResolver();

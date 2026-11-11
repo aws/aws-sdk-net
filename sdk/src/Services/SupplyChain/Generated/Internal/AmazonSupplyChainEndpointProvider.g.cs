@@ -26,7 +26,7 @@ using Amazon.SupplyChain.Endpoints;
 namespace Amazon.SupplyChain.Internal
 {
     /// <summary>
-    /// Amazon SupplyChain endpoint provider.
+    /// AWS Supply Chain endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SupplyChainEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

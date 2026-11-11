@@ -65,8 +65,8 @@ namespace Amazon.MWAAServerless.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The version ID of the object in Amazon S3. If not specified, the latest version is
-        /// used.
+        /// Specifies the version ID of the object in Amazon S3. If you don't specify a version,
+        /// we use the latest version.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1024)]

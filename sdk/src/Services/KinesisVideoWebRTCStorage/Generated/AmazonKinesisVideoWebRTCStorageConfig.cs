@@ -27,12 +27,12 @@ using Amazon.KinesisVideoWebRTCStorage.Internal;
 namespace Amazon.KinesisVideoWebRTCStorage
 {
     /// <summary>
-    /// Configuration for accessing Amazon KinesisVideoWebRTCStorage service
+    /// Configuration for accessing Amazon Kinesis Video WebRTC Storage
     /// </summary>
     public partial class AmazonKinesisVideoWebRTCStorageConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kinesis Video WebRTC Storage", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Kinesis Video WebRTC Storage", "4.0.100.26");
 
         private static readonly AmazonKinesisVideoWebRTCStorageEndpointResolver EndpointResolver =
             new AmazonKinesisVideoWebRTCStorageEndpointResolver();

@@ -30,12 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Elemental Inference Feed.
+    /// An AWS Elemental Inference Feed.
     /// </summary>
     public partial class ElementalInferenceFeed
     {
         /// <summary>
-        /// Gets and sets the property Arn. Feed ARN.
+        /// Gets and sets the property Arn. The ARN of an AWS Elemental Inference Feed.
         /// </summary>
         public string Arn { get; set; }
 

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.PCS
 {
     /// <summary>
-    /// Configuration for accessing Amazon PCS service
+    /// Configuration for accessing AWS Parallel Computing Service
     /// </summary>
     public static class AmazonPCSDefaultConfiguration
     {

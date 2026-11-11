@@ -27,12 +27,12 @@ using Amazon.QuickSight.Internal;
 namespace Amazon.QuickSight
 {
     /// <summary>
-    /// Configuration for accessing Amazon QuickSight service
+    /// Configuration for accessing Amazon QuickSight
     /// </summary>
     public partial class AmazonQuickSightConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("QuickSight", "4.0.112.1");
+            InternalSDKUtils.BuildUserAgentString("QuickSight", "4.0.113.2");
 
         private static readonly AmazonQuickSightEndpointResolver EndpointResolver =
             new AmazonQuickSightEndpointResolver();

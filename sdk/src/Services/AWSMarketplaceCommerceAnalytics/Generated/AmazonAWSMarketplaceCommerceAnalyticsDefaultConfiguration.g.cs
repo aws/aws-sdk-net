@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AWSMarketplaceCommerceAnalytics
 {
     /// <summary>
-    /// Configuration for accessing Amazon AWSMarketplaceCommerceAnalytics service
+    /// Configuration for accessing AWS Marketplace Commerce Analytics
     /// </summary>
     public static class AmazonAWSMarketplaceCommerceAnalyticsDefaultConfiguration
     {

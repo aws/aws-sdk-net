@@ -27,12 +27,12 @@ using Amazon.Backup.Internal;
 namespace Amazon.Backup
 {
     /// <summary>
-    /// Configuration for accessing Amazon Backup service
+    /// Configuration for accessing AWS Backup
     /// </summary>
     public partial class AmazonBackupConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Backup", "4.0.101.16");
+            InternalSDKUtils.BuildUserAgentString("Backup", "4.0.101.20");
 
         private static readonly AmazonBackupEndpointResolver EndpointResolver =
             new AmazonBackupEndpointResolver();

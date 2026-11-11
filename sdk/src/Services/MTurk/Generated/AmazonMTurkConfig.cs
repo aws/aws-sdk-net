@@ -27,12 +27,12 @@ using Amazon.MTurk.Internal;
 namespace Amazon.MTurk
 {
     /// <summary>
-    /// Configuration for accessing Amazon MTurk service
+    /// Configuration for accessing Amazon Mechanical Turk
     /// </summary>
     public partial class AmazonMTurkConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MTurk", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("MTurk", "4.0.100.26");
 
         private static readonly AmazonMTurkEndpointResolver EndpointResolver =
             new AmazonMTurkEndpointResolver();

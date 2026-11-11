@@ -28,12 +28,12 @@ using Amazon.ACMPCA.Internal;
 namespace Amazon.ACMPCA
 {
     /// <summary>
-    /// Configuration for accessing Amazon ACMPCA service
+    /// Configuration for accessing AWS Certificate Manager Private Certificate Authority
     /// </summary>
     public partial class AmazonACMPCAConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ACM PCA", "4.0.101.14");
+            InternalSDKUtils.BuildUserAgentString("ACM PCA", "4.0.101.18");
 
         private static readonly AmazonACMPCAEndpointResolver EndpointResolver =
             new AmazonACMPCAEndpointResolver();

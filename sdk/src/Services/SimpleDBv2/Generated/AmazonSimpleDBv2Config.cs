@@ -27,12 +27,12 @@ using Amazon.SimpleDBv2.Internal;
 namespace Amazon.SimpleDBv2
 {
     /// <summary>
-    /// Configuration for accessing Amazon SimpleDBv2 service
+    /// Configuration for accessing Amazon SimpleDB v2
     /// </summary>
     public partial class AmazonSimpleDBv2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SimpleDBv2", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("SimpleDBv2", "4.0.100.26");
 
         private static readonly AmazonSimpleDBv2EndpointResolver EndpointResolver =
             new AmazonSimpleDBv2EndpointResolver();

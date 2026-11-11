@@ -30,6 +30,21 @@ namespace Amazon.Util.Internal
         [DllImport("libc", EntryPoint = "chmod", SetLastError = true, CharSet = CharSet.Ansi, BestFitMapping = false, ThrowOnUnmappableChar = true)]
         [SuppressMessage("Microsoft.Globalization", "CA2101:SpecifyMarshalingForPInvokeStringArguments", Justification = "Ansi marshaling is appropriate for Unix file paths")]
         public static extern int Chmod(string path, int mode);
+
+        [DllImport("libc", EntryPoint = "creat", SetLastError = true, CharSet = CharSet.Ansi, BestFitMapping = false, ThrowOnUnmappableChar = true)]
+        [SuppressMessage("Microsoft.Globalization", "CA2101:SpecifyMarshalingForPInvokeStringArguments", Justification = "Ansi marshaling is appropriate for Unix file paths")]
+        public static extern int Creat(string path, int mode);
+
+        [DllImport("libc", EntryPoint = "close", SetLastError = true)]
+        public static extern int Close(int fd);
+
+        [DllImport("libc", EntryPoint = "link", SetLastError = true, CharSet = CharSet.Ansi, BestFitMapping = false, ThrowOnUnmappableChar = true)]
+        [SuppressMessage("Microsoft.Globalization", "CA2101:SpecifyMarshalingForPInvokeStringArguments", Justification = "Ansi marshaling is appropriate for Unix file paths")]
+        public static extern int Link(string existingPath, string newPath);
+
+        [DllImport("libc", EntryPoint = "unlink", SetLastError = true, CharSet = CharSet.Ansi, BestFitMapping = false, ThrowOnUnmappableChar = true)]
+        [SuppressMessage("Microsoft.Globalization", "CA2101:SpecifyMarshalingForPInvokeStringArguments", Justification = "Ansi marshaling is appropriate for Unix file paths")]
+        public static extern int Unlink(string path);
 #pragma warning restore CA1401
 #pragma warning restore PC003
     }

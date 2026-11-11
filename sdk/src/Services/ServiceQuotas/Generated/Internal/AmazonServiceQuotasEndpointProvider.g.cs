@@ -26,7 +26,7 @@ using Amazon.ServiceQuotas.Endpoints;
 namespace Amazon.ServiceQuotas.Internal
 {
     /// <summary>
-    /// Amazon ServiceQuotas endpoint provider.
+    /// Service Quotas endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ServiceQuotasEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

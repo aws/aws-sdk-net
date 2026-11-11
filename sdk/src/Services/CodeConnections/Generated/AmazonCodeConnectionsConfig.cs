@@ -27,12 +27,12 @@ using Amazon.CodeConnections.Internal;
 namespace Amazon.CodeConnections
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeConnections service
+    /// Configuration for accessing AWS CodeConnections
     /// </summary>
     public partial class AmazonCodeConnectionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeConnections", "4.0.102.2");
+            InternalSDKUtils.BuildUserAgentString("CodeConnections", "4.0.102.6");
 
         private static readonly AmazonCodeConnectionsEndpointResolver EndpointResolver =
             new AmazonCodeConnectionsEndpointResolver();

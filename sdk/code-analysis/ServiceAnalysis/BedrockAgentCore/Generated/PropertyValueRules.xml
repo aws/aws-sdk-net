@@ -729,6 +729,11 @@
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeResponse.SessionEndpointUrl</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequest.Accept</property>
     <min>1</min>
     <max>256</max>
@@ -832,6 +837,22 @@
     <property>Amazon.BedrockAgentCore.Model.InvokeHarnessRequest.TraceState</property>
     <min>0</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeWebSearchRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeWebSearchRequest.SearchQuery</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeWebSearchRequest.WebSearchId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-z0-9]+([.-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListABTestsRequest.MaxResults</property>

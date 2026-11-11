@@ -27,12 +27,12 @@ using Amazon.CertificateManager.Internal;
 namespace Amazon.CertificateManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon CertificateManager service
+    /// Configuration for accessing AWS Certificate Manager
     /// </summary>
     public partial class AmazonCertificateManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ACM", "4.0.102.13");
+            InternalSDKUtils.BuildUserAgentString("ACM", "4.0.103.4");
 
         private static readonly AmazonCertificateManagerEndpointResolver EndpointResolver =
             new AmazonCertificateManagerEndpointResolver();

@@ -27,12 +27,12 @@ using Amazon.SSMQuickSetup.Internal;
 namespace Amazon.SSMQuickSetup
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSMQuickSetup service
+    /// Configuration for accessing AWS Systems Manager QuickSetup
     /// </summary>
     public partial class AmazonSSMQuickSetupConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSM QuickSetup", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("SSM QuickSetup", "4.0.100.26");
 
         private static readonly AmazonSSMQuickSetupEndpointResolver EndpointResolver =
             new AmazonSSMQuickSetupEndpointResolver();

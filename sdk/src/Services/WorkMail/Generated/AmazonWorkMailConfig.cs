@@ -27,12 +27,12 @@ using Amazon.WorkMail.Internal;
 namespace Amazon.WorkMail
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkMail service
+    /// Configuration for accessing Amazon WorkMail
     /// </summary>
     public partial class AmazonWorkMailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WorkMail", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("WorkMail", "4.0.100.26");
 
         private static readonly AmazonWorkMailEndpointResolver EndpointResolver =
             new AmazonWorkMailEndpointResolver();

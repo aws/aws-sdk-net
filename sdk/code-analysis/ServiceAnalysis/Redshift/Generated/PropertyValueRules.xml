@@ -2,10 +2,12 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AcceptReservedNodeExchangeRequest.ReservedNodeId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AcceptReservedNodeExchangeRequest.TargetReservedNodeOfferingId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -16,193 +18,239 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AddPartnerRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AddPartnerRequest.DatabaseName</property>
+    <min>0</min>
     <max>127</max>
     <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AddPartnerRequest.PartnerName</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AddPartnerResponse.DatabaseName</property>
+    <min>0</min>
     <max>127</max>
     <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AddPartnerResponse.PartnerName</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AssociateDataShareConsumerRequest.ConsumerArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AssociateDataShareConsumerRequest.ConsumerRegion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AssociateDataShareConsumerRequest.DataShareArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AssociateDataShareConsumerResponse.DataShareArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AssociateDataShareConsumerResponse.ManagedBy</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AssociateDataShareConsumerResponse.ProducerArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeClusterSecurityGroupIngressRequest.CIDRIP</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeClusterSecurityGroupIngressRequest.ClusterSecurityGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeClusterSecurityGroupIngressRequest.EC2SecurityGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeClusterSecurityGroupIngressRequest.EC2SecurityGroupOwnerId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeDataShareRequest.ConsumerIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeDataShareRequest.DataShareArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeDataShareResponse.DataShareArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeDataShareResponse.ManagedBy</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeDataShareResponse.ProducerArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeEndpointAccessRequest.Account</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeEndpointAccessRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeEndpointAccessResponse.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeEndpointAccessResponse.ClusterStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeEndpointAccessResponse.Grantee</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeEndpointAccessResponse.Grantor</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeSnapshotAccessRequest.AccountWithRestoreAccess</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeSnapshotAccessRequest.SnapshotArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeSnapshotAccessRequest.SnapshotClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeSnapshotAccessRequest.SnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CancelResizeRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CancelResizeResponse.Message</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CancelResizeResponse.ResizeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CancelResizeResponse.Status</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CancelResizeResponse.TargetClusterType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CancelResizeResponse.TargetEncryptionType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CancelResizeResponse.TargetNodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CopyClusterSnapshotRequest.SourceSnapshotClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CopyClusterSnapshotRequest.SourceSnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CopyClusterSnapshotRequest.TargetSnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateAuthenticationProfileRequest.AuthenticationProfileContent</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateAuthenticationProfileRequest.AuthenticationProfileName</property>
+    <min>0</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateAuthenticationProfileResponse.AuthenticationProfileContent</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateAuthenticationProfileResponse.AuthenticationProfileName</property>
+    <min>0</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.AdditionalInfo</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.AvailabilityZone</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -213,129 +261,159 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.ClusterParameterGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.ClusterSubnetGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.ClusterType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.ClusterVersion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.DBName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.DefaultIamRoleArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.ElasticIp</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.HsmClientCertificateIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.HsmConfigurationIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.IpAddressType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.KmsKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.LoadSampleData</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.MaintenanceTrackName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.MasterPasswordSecretKmsKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.MasterUsername</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.NodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.PreferredMaintenanceWindow</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.RedshiftIdcApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.SnapshotScheduleIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterParameterGroupRequest.Description</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterParameterGroupRequest.ParameterGroupFamily</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterParameterGroupRequest.ParameterGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterSecurityGroupRequest.ClusterSecurityGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterSecurityGroupRequest.Description</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterSnapshotRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterSnapshotRequest.SnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterSubnetGroupRequest.ClusterSubnetGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterSubnetGroupRequest.Description</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateCustomDomainAssociationRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateCustomDomainAssociationRequest.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+    <pattern>^arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateCustomDomainAssociationRequest.CustomDomainName</property>
@@ -345,17 +423,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateCustomDomainAssociationResponse.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateCustomDomainAssociationResponse.CustomDomainCertExpiryTime</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateCustomDomainAssociationResponse.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+    <pattern>^arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateCustomDomainAssociationResponse.CustomDomainName</property>
@@ -365,86 +445,107 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEndpointAccessRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEndpointAccessRequest.EndpointName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEndpointAccessRequest.ResourceOwner</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEndpointAccessRequest.SubnetGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEndpointAccessResponse.Address</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEndpointAccessResponse.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEndpointAccessResponse.EndpointName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEndpointAccessResponse.EndpointStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEndpointAccessResponse.ResourceOwner</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEndpointAccessResponse.SubnetGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEventSubscriptionRequest.Severity</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEventSubscriptionRequest.SnsTopicArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEventSubscriptionRequest.SourceType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEventSubscriptionRequest.SubscriptionName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateHsmClientCertificateRequest.HsmClientCertificateIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateHsmConfigurationRequest.Description</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateHsmConfigurationRequest.HsmConfigurationIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateHsmConfigurationRequest.HsmIpAddress</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateHsmConfigurationRequest.HsmPartitionName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateHsmConfigurationRequest.HsmPartitionPassword</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateHsmConfigurationRequest.HsmServerPublicCertificate</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -461,6 +562,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateIntegrationRequest.KMSKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -495,6 +597,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateIntegrationResponse.KMSKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -513,30 +616,33 @@
     <property>Amazon.Redshift.Model.CreateQev2IdcApplicationRequest.IdcDisplayName</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateQev2IdcApplicationRequest.IdcInstanceArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateQev2IdcApplicationRequest.Qev2IdcApplicationName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateRedshiftIdcApplicationRequest.IamRoleArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateRedshiftIdcApplicationRequest.IdcDisplayName</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateRedshiftIdcApplicationRequest.IdcInstanceArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -549,140 +655,173 @@
     <property>Amazon.Redshift.Model.CreateRedshiftIdcApplicationRequest.RedshiftIdcApplicationName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateScheduledActionRequest.IamRole</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateScheduledActionRequest.Schedule</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateScheduledActionRequest.ScheduledActionDescription</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateScheduledActionRequest.ScheduledActionName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateScheduledActionResponse.IamRole</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateScheduledActionResponse.Schedule</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateScheduledActionResponse.ScheduledActionDescription</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateScheduledActionResponse.ScheduledActionName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateSnapshotCopyGrantRequest.KmsKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateSnapshotCopyGrantRequest.SnapshotCopyGrantName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateSnapshotScheduleRequest.ScheduleDescription</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateSnapshotScheduleRequest.ScheduleIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateSnapshotScheduleResponse.ScheduleDescription</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateSnapshotScheduleResponse.ScheduleIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateTagsRequest.ResourceName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateUsageLimitRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateUsageLimitResponse.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateUsageLimitResponse.UsageLimitId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeauthorizeDataShareRequest.ConsumerIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeauthorizeDataShareRequest.DataShareArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeauthorizeDataShareResponse.DataShareArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeauthorizeDataShareResponse.ManagedBy</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeauthorizeDataShareResponse.ProducerArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteAuthenticationProfileRequest.AuthenticationProfileName</property>
+    <min>0</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteAuthenticationProfileResponse.AuthenticationProfileName</property>
+    <min>0</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteClusterRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteClusterRequest.FinalClusterSnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteClusterParameterGroupRequest.ParameterGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteClusterSecurityGroupRequest.ClusterSecurityGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteClusterSnapshotRequest.SnapshotClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteClusterSnapshotRequest.SnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteClusterSubnetGroupRequest.ClusterSubnetGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteCustomDomainAssociationRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -693,42 +832,52 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteEndpointAccessRequest.EndpointName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteEndpointAccessResponse.Address</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteEndpointAccessResponse.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteEndpointAccessResponse.EndpointName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteEndpointAccessResponse.EndpointStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteEndpointAccessResponse.ResourceOwner</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteEndpointAccessResponse.SubnetGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteEventSubscriptionRequest.SubscriptionName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteHsmClientCertificateRequest.HsmClientCertificateIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteHsmConfigurationRequest.HsmConfigurationIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -757,6 +906,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteIntegrationResponse.KMSKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -779,203 +929,250 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeletePartnerRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeletePartnerRequest.DatabaseName</property>
+    <min>0</min>
     <max>127</max>
     <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeletePartnerRequest.PartnerName</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeletePartnerResponse.DatabaseName</property>
+    <min>0</min>
     <max>127</max>
     <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeletePartnerResponse.PartnerName</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteQev2IdcApplicationRequest.Qev2IdcApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteRedshiftIdcApplicationRequest.RedshiftIdcApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteResourcePolicyRequest.ResourceArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteScheduledActionRequest.ScheduledActionName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteSnapshotCopyGrantRequest.SnapshotCopyGrantName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteSnapshotScheduleRequest.ScheduleIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteTagsRequest.ResourceName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteUsageLimitRequest.UsageLimitId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeAuthenticationProfilesRequest.AuthenticationProfileName</property>
+    <min>0</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterDbRevisionsRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterDbRevisionsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterDbRevisionsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterParameterGroupsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterParameterGroupsRequest.ParameterGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterParameterGroupsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterParametersRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterParametersRequest.ParameterGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterParametersRequest.Source</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterParametersResponse.Marker</property>
-    <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Redshift.Model.DescribeClustersRequest.ClusterIdentifier</property>
-    <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Redshift.Model.DescribeClustersRequest.Marker</property>
-    <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Redshift.Model.DescribeClustersResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSecurityGroupsRequest.ClusterSecurityGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSecurityGroupsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSecurityGroupsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSnapshotsRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSnapshotsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSnapshotsRequest.OwnerAccount</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSnapshotsRequest.SnapshotArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSnapshotsRequest.SnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSnapshotsRequest.SnapshotType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSnapshotsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSubnetGroupsRequest.ClusterSubnetGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSubnetGroupsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSubnetGroupsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterTracksRequest.MaintenanceTrackName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterTracksRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterTracksResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterVersionsRequest.ClusterParameterGroupFamily</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterVersionsRequest.ClusterVersion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterVersionsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterVersionsResponse.Marker</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeClustersRequest.ClusterIdentifier</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeClustersRequest.Marker</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeClustersResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeCustomDomainAssociationsRequest.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+    <pattern>^arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeCustomDomainAssociationsRequest.CustomDomainName</property>
@@ -985,146 +1182,182 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeCustomDomainAssociationsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeCustomDomainAssociationsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeDataSharesRequest.DataShareArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeDataSharesRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeDataSharesResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeDataSharesForConsumerRequest.ConsumerArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeDataSharesForConsumerRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeDataSharesForConsumerResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeDataSharesForProducerRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeDataSharesForProducerRequest.ProducerArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeDataSharesForProducerResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeDefaultClusterParametersRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeDefaultClusterParametersRequest.ParameterGroupFamily</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEndpointAccessRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEndpointAccessRequest.EndpointName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEndpointAccessRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEndpointAccessRequest.ResourceOwner</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEndpointAccessRequest.VpcId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEndpointAccessResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEndpointAuthorizationRequest.Account</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEndpointAuthorizationRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEndpointAuthorizationRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEndpointAuthorizationResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEventCategoriesRequest.SourceType</property>
-    <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Redshift.Model.DescribeEventsRequest.Marker</property>
-    <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Redshift.Model.DescribeEventsRequest.SourceIdentifier</property>
-    <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Redshift.Model.DescribeEventsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEventSubscriptionsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEventSubscriptionsRequest.SubscriptionName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeEventSubscriptionsResponse.Marker</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeEventsRequest.Marker</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeEventsRequest.SourceIdentifier</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeEventsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeHsmClientCertificatesRequest.HsmClientCertificateIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeHsmClientCertificatesRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeHsmClientCertificatesResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeHsmConfigurationsRequest.HsmConfigurationIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeHsmConfigurationsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeHsmConfigurationsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1135,6 +1368,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeInboundIntegrationsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1145,6 +1379,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeInboundIntegrationsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1155,67 +1390,83 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeIntegrationsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeIntegrationsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeLoggingStatusRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeLoggingStatusResponse.BucketName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeLoggingStatusResponse.LastFailureMessage</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeLoggingStatusResponse.S3KeyPrefix</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]*</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=+\-@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeNodeConfigurationOptionsRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeNodeConfigurationOptionsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeNodeConfigurationOptionsRequest.OwnerAccount</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeNodeConfigurationOptionsRequest.SnapshotArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeNodeConfigurationOptionsRequest.SnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeNodeConfigurationOptionsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeOrderableClusterOptionsRequest.ClusterVersion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeOrderableClusterOptionsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeOrderableClusterOptionsRequest.NodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeOrderableClusterOptionsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1226,525 +1477,652 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribePartnersRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribePartnersRequest.DatabaseName</property>
+    <min>0</min>
     <max>127</max>
     <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribePartnersRequest.PartnerName</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeQev2IdcApplicationsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeQev2IdcApplicationsRequest.Qev2IdcApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeQev2IdcApplicationsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeRedshiftIdcApplicationsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeRedshiftIdcApplicationsRequest.RedshiftIdcApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeRedshiftIdcApplicationsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeReservedNodeExchangeStatusRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeReservedNodeExchangeStatusRequest.ReservedNodeExchangeRequestId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeReservedNodeExchangeStatusRequest.ReservedNodeId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeReservedNodeExchangeStatusResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeReservedNodeOfferingsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeReservedNodeOfferingsRequest.ReservedNodeOfferingId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeReservedNodeOfferingsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeReservedNodesRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeReservedNodesRequest.ReservedNodeId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeReservedNodesResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeResizeRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeResizeResponse.Message</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeResizeResponse.ResizeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeResizeResponse.Status</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeResizeResponse.TargetClusterType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeResizeResponse.TargetEncryptionType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeResizeResponse.TargetNodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeScheduledActionsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeScheduledActionsRequest.ScheduledActionName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeScheduledActionsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeSnapshotCopyGrantsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeSnapshotCopyGrantsRequest.SnapshotCopyGrantName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeSnapshotCopyGrantsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeSnapshotSchedulesRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeSnapshotSchedulesRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeSnapshotSchedulesRequest.ScheduleIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeSnapshotSchedulesResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeTableRestoreStatusRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeTableRestoreStatusRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeTableRestoreStatusRequest.TableRestoreRequestId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeTableRestoreStatusResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeTagsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeTagsRequest.ResourceName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeTagsRequest.ResourceType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeTagsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeUsageLimitsRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeUsageLimitsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeUsageLimitsRequest.UsageLimitId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeUsageLimitsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DisableLoggingRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DisableLoggingResponse.BucketName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DisableLoggingResponse.LastFailureMessage</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DisableLoggingResponse.S3KeyPrefix</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]*</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=+\-@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DisableSnapshotCopyRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DisassociateDataShareConsumerRequest.ConsumerArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DisassociateDataShareConsumerRequest.ConsumerRegion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DisassociateDataShareConsumerRequest.DataShareArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DisassociateDataShareConsumerResponse.DataShareArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DisassociateDataShareConsumerResponse.ManagedBy</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DisassociateDataShareConsumerResponse.ProducerArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EnableLoggingRequest.BucketName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EnableLoggingRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EnableLoggingRequest.S3KeyPrefix</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]*</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=+\-@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EnableLoggingRequest.S3TableGranularity</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EnableLoggingRequest.S3TableKmsKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EnableLoggingResponse.BucketName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EnableLoggingResponse.LastFailureMessage</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EnableLoggingResponse.S3KeyPrefix</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]*</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=+\-@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EnableSnapshotCopyRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EnableSnapshotCopyRequest.DestinationRegion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EnableSnapshotCopyRequest.SnapshotCopyGrantName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.FailoverPrimaryComputeRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsRequest.CustomDomainName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsRequest.DbName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsRequest.DbUser</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsResponse.DbUser</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsWithIAMRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsWithIAMRequest.CustomDomainName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsWithIAMRequest.DbName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsWithIAMResponse.DbUser</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetReservedNodeExchangeConfigurationOptionsRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetReservedNodeExchangeConfigurationOptionsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetReservedNodeExchangeConfigurationOptionsRequest.SnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetReservedNodeExchangeConfigurationOptionsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetReservedNodeExchangeOfferingsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetReservedNodeExchangeOfferingsRequest.ReservedNodeId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetReservedNodeExchangeOfferingsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetResourcePolicyRequest.ResourceArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ListRecommendationsRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ListRecommendationsRequest.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ListRecommendationsRequest.NamespaceArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ListRecommendationsResponse.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyAquaConfigurationRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyAuthenticationProfileRequest.AuthenticationProfileContent</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyAuthenticationProfileRequest.AuthenticationProfileName</property>
+    <min>0</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyAuthenticationProfileResponse.AuthenticationProfileContent</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyAuthenticationProfileResponse.AuthenticationProfileName</property>
+    <min>0</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.AvailabilityZone</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.ClusterParameterGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.ClusterType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.ClusterVersion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.ElasticIp</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.HsmClientCertificateIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.HsmConfigurationIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.IpAddressType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.KmsKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.MaintenanceTrackName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.MasterPasswordSecretKmsKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.NewClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.NodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.PreferredMaintenanceWindow</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterDbRevisionRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterDbRevisionRequest.RevisionTarget</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterIamRolesRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterIamRolesRequest.DefaultIamRoleArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterMaintenanceRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterMaintenanceRequest.DeferMaintenanceIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterParameterGroupRequest.ParameterGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterParameterGroupResponse.ParameterGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterParameterGroupResponse.ParameterGroupStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterSnapshotRequest.SnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterSnapshotScheduleRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterSnapshotScheduleRequest.ScheduleIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterSubnetGroupRequest.ClusterSubnetGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterSubnetGroupRequest.Description</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationRequest.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+    <pattern>^arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationRequest.CustomDomainName</property>
@@ -1754,17 +2132,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationResponse.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationResponse.CustomDomainCertExpiryTime</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationResponse.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+    <pattern>^arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationResponse.CustomDomainName</property>
@@ -1774,46 +2154,57 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyEndpointAccessRequest.EndpointName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyEndpointAccessResponse.Address</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyEndpointAccessResponse.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyEndpointAccessResponse.EndpointName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyEndpointAccessResponse.EndpointStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyEndpointAccessResponse.ResourceOwner</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyEndpointAccessResponse.SubnetGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyEventSubscriptionRequest.Severity</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyEventSubscriptionRequest.SnsTopicArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyEventSubscriptionRequest.SourceType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyEventSubscriptionRequest.SubscriptionName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1854,6 +2245,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyIntegrationResponse.KMSKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1876,47 +2268,55 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyLakehouseConfigurationRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyLakehouseConfigurationRequest.LakehouseIdcApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyLakehouseConfigurationResponse.CatalogArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyLakehouseConfigurationResponse.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyLakehouseConfigurationResponse.LakehouseIdcApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyLakehouseConfigurationResponse.LakehouseRegistrationStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyQev2IdcApplicationRequest.IdcDisplayName</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyQev2IdcApplicationRequest.Qev2IdcApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyRedshiftIdcApplicationRequest.IamRoleArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyRedshiftIdcApplicationRequest.IdcDisplayName</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyRedshiftIdcApplicationRequest.IdentityNamespace</property>
@@ -1926,142 +2326,177 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyRedshiftIdcApplicationRequest.RedshiftIdcApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyScheduledActionRequest.IamRole</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyScheduledActionRequest.Schedule</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyScheduledActionRequest.ScheduledActionDescription</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyScheduledActionRequest.ScheduledActionName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyScheduledActionResponse.IamRole</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyScheduledActionResponse.Schedule</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyScheduledActionResponse.ScheduledActionDescription</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyScheduledActionResponse.ScheduledActionName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifySnapshotCopyRetentionPeriodRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifySnapshotScheduleRequest.ScheduleIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifySnapshotScheduleResponse.ScheduleDescription</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifySnapshotScheduleResponse.ScheduleIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyUsageLimitRequest.UsageLimitId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyUsageLimitResponse.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyUsageLimitResponse.UsageLimitId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PauseClusterRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PurchaseReservedNodeOfferingRequest.ReservedNodeOfferingId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PutResourcePolicyRequest.Policy</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PutResourcePolicyRequest.ResourceArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RebootClusterRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RejectDataShareRequest.DataShareArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RejectDataShareResponse.DataShareArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RejectDataShareResponse.ManagedBy</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RejectDataShareResponse.ProducerArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ResetClusterParameterGroupRequest.ParameterGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ResetClusterParameterGroupResponse.ParameterGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ResetClusterParameterGroupResponse.ParameterGroupStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ResizeClusterRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ResizeClusterRequest.ClusterType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ResizeClusterRequest.NodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ResizeClusterRequest.ReservedNodeId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ResizeClusterRequest.TargetReservedNodeOfferingId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.AdditionalInfo</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.AvailabilityZone</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -2072,182 +2507,227 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.ClusterParameterGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.ClusterSubnetGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.DefaultIamRoleArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.ElasticIp</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.HsmClientCertificateIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.HsmConfigurationIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.IpAddressType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.KmsKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.MaintenanceTrackName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.MasterPasswordSecretKmsKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.NodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.OwnerAccount</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.PreferredMaintenanceWindow</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.RedshiftIdcApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.ReservedNodeId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.SnapshotArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.SnapshotClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.SnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.SnapshotScheduleIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.TargetReservedNodeOfferingId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreTableFromClusterSnapshotRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreTableFromClusterSnapshotRequest.NewTableName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreTableFromClusterSnapshotRequest.SnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreTableFromClusterSnapshotRequest.SourceDatabaseName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreTableFromClusterSnapshotRequest.SourceSchemaName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreTableFromClusterSnapshotRequest.SourceTableName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreTableFromClusterSnapshotRequest.TargetDatabaseName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreTableFromClusterSnapshotRequest.TargetSchemaName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ResumeClusterRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeClusterSecurityGroupIngressRequest.CIDRIP</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeClusterSecurityGroupIngressRequest.ClusterSecurityGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeClusterSecurityGroupIngressRequest.EC2SecurityGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeClusterSecurityGroupIngressRequest.EC2SecurityGroupOwnerId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeEndpointAccessRequest.Account</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeEndpointAccessRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeEndpointAccessResponse.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeEndpointAccessResponse.ClusterStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeEndpointAccessResponse.Grantee</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeEndpointAccessResponse.Grantor</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeSnapshotAccessRequest.AccountWithRestoreAccess</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeSnapshotAccessRequest.SnapshotArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeSnapshotAccessRequest.SnapshotClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeSnapshotAccessRequest.SnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RotateEncryptionKeyRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -2258,457 +2738,579 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.UpdatePartnerStatusRequest.ClusterIdentifier</property>
+    <min>0</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.UpdatePartnerStatusRequest.DatabaseName</property>
+    <min>0</min>
     <max>127</max>
     <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.UpdatePartnerStatusRequest.PartnerName</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.UpdatePartnerStatusRequest.StatusMessage</property>
+    <min>0</min>
     <max>262144</max>
     <pattern>^[\x20-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.UpdatePartnerStatusResponse.DatabaseName</property>
+    <min>0</min>
     <max>127</max>
     <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.UpdatePartnerStatusResponse.PartnerName</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AccountAttribute.AttributeName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AccountWithRestoreAccess.AccountAlias</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AccountWithRestoreAccess.AccountId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Association.CustomDomainCertificateArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AttributeValueTarget.AttributeValue</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthenticationProfile.AuthenticationProfileContent</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthenticationProfile.AuthenticationProfileName</property>
+    <min>0</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizedTokenIssuer.TrustedTokenIssuerArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AvailabilityZone.Name</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CertificateAssociation.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CertificateAssociation.CustomDomainName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.AvailabilityZone</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.AvailabilityZoneRelocationStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.CatalogArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ClusterAvailabilityStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ClusterNamespaceArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ClusterPublicKey</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ClusterRevisionNumber</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ClusterStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ClusterSubnetGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ClusterVersion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.CustomDomainCertificateArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.CustomDomainName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.DBName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.DefaultIamRoleArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ElasticResizeNumberOfNodeOptions</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ExpectedNextSnapshotScheduleTimeStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ExtraComputeForAutomaticOptimization</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.IpAddressType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.KmsKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.LakehouseRegistrationStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.MaintenanceTrackName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.MasterPasswordSecretArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.MasterPasswordSecretKmsKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.MasterUsername</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ModifyStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.MultiAZ</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.NodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.PreferredMaintenanceWindow</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.SnapshotScheduleIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.VpcId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterAssociatedToSchedule.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterDbRevision.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterDbRevision.CurrentDatabaseRevision</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterIamRole.ApplyStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterIamRole.IamRoleArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterNode.NodeRole</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterNode.PrivateIPAddress</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterNode.PublicIPAddress</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterParameterGroup.Description</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterParameterGroup.ParameterGroupFamily</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterParameterGroup.ParameterGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterParameterGroupStatus.ParameterApplyStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterParameterGroupStatus.ParameterGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterParameterStatus.ParameterApplyErrorDescription</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterParameterStatus.ParameterApplyStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterParameterStatus.ParameterName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterSecurityGroup.ClusterSecurityGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterSecurityGroup.Description</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterSecurityGroupMembership.ClusterSecurityGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterSecurityGroupMembership.Status</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterSnapshotCopyStatus.DestinationRegion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterSnapshotCopyStatus.SnapshotCopyGrantName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterSubnetGroup.ClusterSubnetGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterSubnetGroup.Description</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterSubnetGroup.SubnetGroupStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterSubnetGroup.VpcId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterVersion.ClusterParameterGroupFamily</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterVersion.Description</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ClusterVersion.Version</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DataShareAssociation.ConsumerIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DataShareAssociation.ConsumerRegion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DataTransferProgress.Status</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DefaultClusterParameters.Marker</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DefaultClusterParameters.ParameterGroupFamily</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeferredMaintenanceWindow.DeferMaintenanceIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EC2SecurityGroup.EC2SecurityGroupName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EC2SecurityGroup.EC2SecurityGroupOwnerId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EC2SecurityGroup.Status</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ElasticIpStatus.ElasticIp</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ElasticIpStatus.Status</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Endpoint.Address</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Event.EventId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Event.Message</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Event.Severity</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Event.SourceIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EventCategoriesMap.SourceType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EventInfoMap.EventDescription</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EventInfoMap.EventId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EventInfoMap.Severity</property>
-    <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Redshift.Model.EventSubscription.CustomerAwsId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EventSubscription.CustSubscriptionId</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.EventSubscription.CustomerAwsId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EventSubscription.Severity</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EventSubscription.SnsTopicArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EventSubscription.SourceType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.EventSubscription.Status</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.HsmClientCertificate.HsmClientCertificateIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.HsmClientCertificate.HsmClientCertificatePublicKey</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.HsmConfiguration.Description</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.HsmConfiguration.HsmConfigurationIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.HsmConfiguration.HsmIpAddress</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.HsmConfiguration.HsmPartitionName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.HsmStatus.HsmClientCertificateIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.HsmStatus.HsmConfigurationIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.HsmStatus.Status</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.IPRange.CIDRIP</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.IPRange.Status</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -2719,6 +3321,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.InboundIntegration.SourceArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -2729,231 +3332,273 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.IntegrationError.ErrorCode</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.IntegrationError.ErrorMessage</property>
-    <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Redshift.Model.IPRange.CIDRIP</property>
-    <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Redshift.Model.IPRange.Status</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.MaintenanceTrack.DatabaseVersion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.MaintenanceTrack.MaintenanceTrackName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.NetworkInterface.AvailabilityZone</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.NetworkInterface.Ipv6Address</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.NetworkInterface.NetworkInterfaceId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.NetworkInterface.PrivateIpAddress</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.NetworkInterface.SubnetId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.NodeConfigurationOption.NodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.OrderableClusterOption.ClusterType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.OrderableClusterOption.ClusterVersion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.OrderableClusterOption.NodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Parameter.AllowedValues</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Parameter.DataType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Parameter.Description</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Parameter.MinimumEngineVersion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Parameter.ParameterName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Parameter.ParameterValue</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Parameter.Source</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PartnerIntegrationInfo.DatabaseName</property>
+    <min>0</min>
     <max>127</max>
     <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PartnerIntegrationInfo.PartnerName</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PartnerIntegrationInfo.StatusMessage</property>
+    <min>0</min>
     <max>262144</max>
     <pattern>^[\x20-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PendingModifiedValues.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PendingModifiedValues.ClusterType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PendingModifiedValues.ClusterVersion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PendingModifiedValues.EncryptionType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PendingModifiedValues.MaintenanceTrackName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PendingModifiedValues.NodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ProvisionedIdentifier.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Qev2IdcApplication.IdcDisplayName</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Qev2IdcApplication.IdcInstanceArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Qev2IdcApplication.IdcManagedApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Qev2IdcApplication.IdcOnboardStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Qev2IdcApplication.Qev2IdcApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Qev2IdcApplication.Qev2IdcApplicationName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Recommendation.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Recommendation.Description</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Recommendation.Id</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Recommendation.NamespaceArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Recommendation.Observation</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Recommendation.RecommendationText</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Recommendation.RecommendationType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Recommendation.Title</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RecommendedAction.Command</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RecommendedAction.Database</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RecommendedAction.Text</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RecurringCharge.RecurringChargeFrequency</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RedshiftIdcApplication.IamRoleArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RedshiftIdcApplication.IdcDisplayName</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RedshiftIdcApplication.IdcInstanceArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RedshiftIdcApplication.IdcManagedApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RedshiftIdcApplication.IdcOnboardStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -2964,316 +3609,393 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RedshiftIdcApplication.RedshiftIdcApplicationArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RedshiftIdcApplication.RedshiftIdcApplicationName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReferenceLink.Link</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReferenceLink.Text</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNode.CurrencyCode</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNode.NodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNode.OfferingType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNode.ReservedNodeId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNode.ReservedNodeOfferingId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNode.State</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNodeExchangeStatus.ReservedNodeExchangeRequestId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNodeExchangeStatus.SourceReservedNodeId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNodeExchangeStatus.SourceReservedNodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNodeExchangeStatus.TargetReservedNodeOfferingId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNodeExchangeStatus.TargetReservedNodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNodeOffering.CurrencyCode</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNodeOffering.NodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNodeOffering.OfferingType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNodeOffering.ReservedNodeOfferingId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ResizeInfo.ResizeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ResourcePolicy.Policy</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ResourcePolicy.ResourceArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreStatus.Status</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevisionTarget.DatabaseRevision</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevisionTarget.Description</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.S3TablePublishStatus.S3TableGranularity</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.S3TablePublishStatus.S3TableNamespace</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.SecondaryClusterInfo.AvailabilityZone</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ServerlessIdentifier.NamespaceIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ServerlessIdentifier.WorkgroupIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.AvailabilityZone</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.ClusterVersion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.DBName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.EngineFullVersion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.KmsKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.MaintenanceTrackName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.MasterPasswordSecretArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.MasterPasswordSecretKmsKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.MasterUsername</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.NodeType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.OwnerAccount</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.SnapshotArn</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.SnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.SnapshotType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.SourceRegion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.Status</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.VpcId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.SnapshotCopyGrant.KmsKeyId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.SnapshotCopyGrant.SnapshotCopyGrantName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.SnapshotErrorMessage.FailureCode</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.SnapshotErrorMessage.FailureReason</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.SnapshotErrorMessage.SnapshotClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.SnapshotErrorMessage.SnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Subnet.SubnetIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Subnet.SubnetStatus</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.SupportedOperation.OperationName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.SupportedPlatform.Name</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.TableRestoreStatus.ClusterIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.TableRestoreStatus.Message</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.TableRestoreStatus.NewTableName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.TableRestoreStatus.SnapshotIdentifier</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.TableRestoreStatus.SourceDatabaseName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.TableRestoreStatus.SourceSchemaName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.TableRestoreStatus.SourceTableName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.TableRestoreStatus.TableRestoreRequestId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.TableRestoreStatus.TargetDatabaseName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.TableRestoreStatus.TargetSchemaName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Tag.Key</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Tag.Value</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.TaggedResource.ResourceName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.TaggedResource.ResourceType</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.UpdateTarget.DatabaseVersion</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.UpdateTarget.MaintenanceTrackName</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.VpcEndpoint.VpcEndpointId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.VpcEndpoint.VpcId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.VpcSecurityGroupMembership.Status</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.VpcSecurityGroupMembership.VpcSecurityGroupId</property>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
 </property-value-rules>

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SSMIncidents service
+    /// Service metadata for AWS Systems Manager Incident Manager
     /// </summary>
     public partial class AmazonSSMIncidentsMetadata : IServiceMetadata
     {

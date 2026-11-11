@@ -1,0 +1,157 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.SimpleSystemsManagement.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// PutParameter Request Marshaller
+    /// </summary>
+    public partial class PutParameterRequestMarshaller : IMarshaller<IRequest, PutParameterRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((PutParameterRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(PutParameterRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleSystemsManagement");
+            string target = "AmazonSSM.PutParameter";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-06";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAllowedPattern())
+            {
+                context.Writer.WritePropertyName("AllowedPattern");
+                context.Writer.WriteStringValue(publicRequest.AllowedPattern);
+            }
+            if (publicRequest.IsSetDataType())
+            {
+                context.Writer.WritePropertyName("DataType");
+                context.Writer.WriteStringValue(publicRequest.DataType);
+            }
+            if (publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+            if (publicRequest.IsSetKeyId())
+            {
+                context.Writer.WritePropertyName("KeyId");
+                context.Writer.WriteStringValue(publicRequest.KeyId);
+            }
+            if (publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+            if (publicRequest.IsSetOverwrite())
+            {
+                context.Writer.WritePropertyName("Overwrite");
+                context.Writer.WriteBooleanValue(publicRequest.Overwrite.Value);
+            }
+            if (publicRequest.IsSetPolicies())
+            {
+                context.Writer.WritePropertyName("Policies");
+                context.Writer.WriteStringValue(publicRequest.Policies);
+            }
+            if (publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetTier())
+            {
+                context.Writer.WritePropertyName("Tier");
+                context.Writer.WriteStringValue(publicRequest.Tier);
+            }
+            if (publicRequest.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                context.Writer.WriteStringValue(publicRequest.Type);
+            }
+            if (publicRequest.IsSetValue())
+            {
+                context.Writer.WritePropertyName("Value");
+                context.Writer.WriteStringValue(publicRequest.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly PutParameterRequestMarshaller _instance = new();
+
+        internal static PutParameterRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static PutParameterRequestMarshaller Instance => _instance;
+    }
+}

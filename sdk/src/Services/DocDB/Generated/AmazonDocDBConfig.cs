@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the docdb-2014-10-31.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,27 +27,23 @@ using Amazon.DocDB.Internal;
 namespace Amazon.DocDB
 {
     /// <summary>
-    /// Configuration for accessing Amazon DocDB service
+    /// Configuration for accessing Amazon DocumentDB with MongoDB compatibility
     /// </summary>
     public partial class AmazonDocDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DocDB", "4.0.101.7");
+            InternalSDKUtils.BuildUserAgentString("DocDB", "4.0.102.4");
 
         private static readonly AmazonDocDBEndpointResolver EndpointResolver =
             new AmazonDocDBEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "DocDB";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "DocDB";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.DocDB
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "rds";
-            }
-        }
+        public override string RegionEndpointServiceName => "rds";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2014-10-31";
-            }
-        }
+        public override string ServiceVersion => "2014-10-31";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.DocDB
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

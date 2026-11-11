@@ -31,7 +31,7 @@ using Amazon.AccessAnalyzer.Endpoints;
 namespace Amazon.AccessAnalyzer.Internal
 {
     /// <summary>
-    /// Amazon AccessAnalyzer endpoint resolver.
+    /// Access Analyzer endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AccessAnalyzer service requests.
     /// <para />

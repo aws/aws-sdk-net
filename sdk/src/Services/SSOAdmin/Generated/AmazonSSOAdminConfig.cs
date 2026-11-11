@@ -27,12 +27,12 @@ using Amazon.SSOAdmin.Internal;
 namespace Amazon.SSOAdmin
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSOAdmin service
+    /// Configuration for accessing AWS Single Sign-On Admin
     /// </summary>
     public partial class AmazonSSOAdminConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSO Admin", "4.0.104.0");
+            InternalSDKUtils.BuildUserAgentString("SSO Admin", "4.0.104.4");
 
         private static readonly AmazonSSOAdminEndpointResolver EndpointResolver =
             new AmazonSSOAdminEndpointResolver();

@@ -27,12 +27,12 @@ using Amazon.CloudHSMV2.Internal;
 namespace Amazon.CloudHSMV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudHSMV2 service
+    /// Configuration for accessing AWS CloudHSM V2
     /// </summary>
     public partial class AmazonCloudHSMV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudHSM V2", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("CloudHSM V2", "4.0.100.25");
 
         private static readonly AmazonCloudHSMV2EndpointResolver EndpointResolver =
             new AmazonCloudHSMV2EndpointResolver();

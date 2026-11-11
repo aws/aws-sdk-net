@@ -27,12 +27,12 @@ using Amazon.DatabaseMigrationService.Internal;
 namespace Amazon.DatabaseMigrationService
 {
     /// <summary>
-    /// Configuration for accessing Amazon DatabaseMigrationService service
+    /// Configuration for accessing AWS Database Migration Service
     /// </summary>
     public partial class AmazonDatabaseMigrationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Database Migration Service", "4.0.100.23");
+            InternalSDKUtils.BuildUserAgentString("Database Migration Service", "4.0.100.27");
 
         private static readonly AmazonDatabaseMigrationServiceEndpointResolver EndpointResolver =
             new AmazonDatabaseMigrationServiceEndpointResolver();

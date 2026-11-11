@@ -161,6 +161,14 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Paginator for ListOnDemandScans operation
+        /// </summary>
+        public IListOnDemandScansPaginator ListOnDemandScans(ListOnDemandScansRequest request)
+        {
+            return new ListOnDemandScansPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListUsageTotals operation
         /// </summary>
         public IListUsageTotalsPaginator ListUsageTotals(ListUsageTotalsRequest request)

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.BackupSearch
 {
     /// <summary>
-    /// Configuration for accessing Amazon BackupSearch service
+    /// Configuration for accessing AWS Backup Search
     /// </summary>
     public static class AmazonBackupSearchDefaultConfiguration
     {

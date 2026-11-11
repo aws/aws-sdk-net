@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SecretsManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecretsManager service
+    /// Configuration for accessing AWS Secrets Manager
     /// </summary>
     public static class AmazonSecretsManagerDefaultConfiguration
     {

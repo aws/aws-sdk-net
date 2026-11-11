@@ -27,12 +27,12 @@ using Amazon.CodeGuruSecurity.Internal;
 namespace Amazon.CodeGuruSecurity
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeGuruSecurity service
+    /// Configuration for accessing Amazon CodeGuru Security
     /// </summary>
     public partial class AmazonCodeGuruSecurityConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeGuru Security", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("CodeGuru Security", "4.0.100.26");
 
         private static readonly AmazonCodeGuruSecurityEndpointResolver EndpointResolver =
             new AmazonCodeGuruSecurityEndpointResolver();

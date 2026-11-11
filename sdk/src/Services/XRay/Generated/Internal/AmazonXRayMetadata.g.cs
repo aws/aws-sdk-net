@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon XRay service
+    /// Service metadata for AWS X-Ray
     /// </summary>
     public partial class AmazonXRayMetadata : IServiceMetadata
     {

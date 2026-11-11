@@ -38,8 +38,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property ActivationThresholdSeconds. 
         /// <para>
-        /// Number of seconds of ingest interruption before the failover slate activates. Minimum:
-        /// <c>3</c>. Maximum: <c>5</c>. Default: <c>3</c>.
+        /// Number of seconds of ingest interruption before the failover slate activates. Default:
+        /// <c>3</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 3, Max = 5)]
@@ -67,8 +67,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property MaxSlateDisplaySeconds. 
         /// <para>
-        /// Maximum number of seconds that the failover slate displays. Minimum: <c>60</c>. Maximum:
-        /// <c>180</c>. Default: <c>60</c>.
+        /// Maximum number of seconds that the failover slate displays. Default: <c>60</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 60, Max = 180)]
@@ -82,8 +81,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property MinSlateDisplaySeconds. 
         /// <para>
-        /// Minimum number of seconds that the failover slate displays after activation. Minimum:
-        /// <c>3</c>. Maximum: <c>10</c>. Default: <c>3</c>.
+        /// Minimum number of seconds that the failover slate displays after activation. Default:
+        /// <c>3</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 3, Max = 10)]

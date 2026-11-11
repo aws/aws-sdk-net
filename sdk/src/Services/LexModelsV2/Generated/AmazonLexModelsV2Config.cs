@@ -27,12 +27,12 @@ using Amazon.LexModelsV2.Internal;
 namespace Amazon.LexModelsV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon LexModelsV2 service
+    /// Configuration for accessing Amazon Lex Model Building V2
     /// </summary>
     public partial class AmazonLexModelsV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Lex Models V2", "4.0.102.1");
+            InternalSDKUtils.BuildUserAgentString("Lex Models V2", "4.0.102.5");
 
         private static readonly AmazonLexModelsV2EndpointResolver EndpointResolver =
             new AmazonLexModelsV2EndpointResolver();

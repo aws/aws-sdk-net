@@ -8190,6 +8190,77 @@ namespace Amazon.SageMaker
     }
 
     /// <summary>
+    /// Constants used for properties of type ExtensionStatus.
+    /// </summary>
+    public class ExtensionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Active for ExtensionStatus
+        /// </summary>
+        public static readonly ExtensionStatus Active = new ExtensionStatus("Active");
+
+        /// <summary>
+        /// Constant CreateFailed for ExtensionStatus
+        /// </summary>
+        public static readonly ExtensionStatus CreateFailed = new ExtensionStatus("CreateFailed");
+
+        /// <summary>
+        /// Constant Creating for ExtensionStatus
+        /// </summary>
+        public static readonly ExtensionStatus Creating = new ExtensionStatus("Creating");
+
+        /// <summary>
+        /// Constant Degraded for ExtensionStatus
+        /// </summary>
+        public static readonly ExtensionStatus Degraded = new ExtensionStatus("Degraded");
+
+        /// <summary>
+        /// Constant DeleteFailed for ExtensionStatus
+        /// </summary>
+        public static readonly ExtensionStatus DeleteFailed = new ExtensionStatus("DeleteFailed");
+
+        /// <summary>
+        /// Constant Deleting for ExtensionStatus
+        /// </summary>
+        public static readonly ExtensionStatus Deleting = new ExtensionStatus("Deleting");
+
+        /// <summary>
+        /// Constant UpdateFailed for ExtensionStatus
+        /// </summary>
+        public static readonly ExtensionStatus UpdateFailed = new ExtensionStatus("UpdateFailed");
+
+        /// <summary>
+        /// Constant Updating for ExtensionStatus
+        /// </summary>
+        public static readonly ExtensionStatus Updating = new ExtensionStatus("Updating");
+
+        /// <summary>
+        /// Constructs a custom ExtensionStatus for a value not among the defined constants.
+        /// </summary>
+        public ExtensionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExtensionStatus FindValue(string value)
+        {
+            return FindValue<ExtensionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExtensionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FailureHandlingPolicy.
     /// </summary>
     public class FailureHandlingPolicy : ConstantClass
@@ -15931,6 +16002,47 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PipelineExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PipelineManagedBy.
+    /// </summary>
+    public class PipelineManagedBy : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS for PipelineManagedBy
+        /// </summary>
+        public static readonly PipelineManagedBy AWS = new PipelineManagedBy("AWS");
+
+        /// <summary>
+        /// Constant CUSTOMER for PipelineManagedBy
+        /// </summary>
+        public static readonly PipelineManagedBy CUSTOMER = new PipelineManagedBy("CUSTOMER");
+
+        /// <summary>
+        /// Constructs a custom PipelineManagedBy for a value not among the defined constants.
+        /// </summary>
+        public PipelineManagedBy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PipelineManagedBy FindValue(string value)
+        {
+            return FindValue<PipelineManagedBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PipelineManagedBy(string value)
         {
             return FindValue(value);
         }

@@ -27,12 +27,12 @@ using Amazon.Outposts.Internal;
 namespace Amazon.Outposts
 {
     /// <summary>
-    /// Configuration for accessing Amazon Outposts service
+    /// Configuration for accessing AWS Outposts
     /// </summary>
     public partial class AmazonOutpostsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Outposts", "4.0.104.9");
+            InternalSDKUtils.BuildUserAgentString("Outposts", "4.0.104.13");
 
         private static readonly AmazonOutpostsEndpointResolver EndpointResolver =
             new AmazonOutpostsEndpointResolver();

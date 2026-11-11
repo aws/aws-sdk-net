@@ -27,12 +27,12 @@ using Amazon.SageMakerFeatureStoreRuntime.Internal;
 namespace Amazon.SageMakerFeatureStoreRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMakerFeatureStoreRuntime service
+    /// Configuration for accessing Amazon SageMaker Feature Store Runtime
     /// </summary>
     public partial class AmazonSageMakerFeatureStoreRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMaker FeatureStore Runtime", "4.0.101.11");
+            InternalSDKUtils.BuildUserAgentString("SageMaker FeatureStore Runtime", "4.0.101.15");
 
         private static readonly AmazonSageMakerFeatureStoreRuntimeEndpointResolver EndpointResolver =
             new AmazonSageMakerFeatureStoreRuntimeEndpointResolver();

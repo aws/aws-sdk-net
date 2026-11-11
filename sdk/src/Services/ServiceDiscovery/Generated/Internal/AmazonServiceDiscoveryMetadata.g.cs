@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ServiceDiscovery service
+    /// Service metadata for AWS Cloud Map
     /// </summary>
     public partial class AmazonServiceDiscoveryMetadata : IServiceMetadata
     {

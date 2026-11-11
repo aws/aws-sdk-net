@@ -22,6 +22,13 @@ public sealed class StandaloneGenerator(StandaloneOptions options)
         var context = new GenerationContext(index, new SdkVersionManifest());
         UnsupportedTraitValidator.Validate(index, context.Protocol);
 
+        // Repo mode fails on a missing title in AssemblyInfoWriter, which standalone skips; without
+        // this the csproj description and the Config/Metadata/Endpoint doc comments come out empty.
+        if (context.ServiceTitle is null)
+        {
+            throw new GeneratorException("Service shape is missing the smithy.api#title trait; the package description and doc comments use it.");
+        }
+
         var generator = new ServiceGenerator(context, Path.GetFileName(options.ModelPath), options.Version, DefaultConfigurationManifest.LoadEmbedded(), options);
         Log.Info($"Generating {context.AssemblyName} into '{options.OutputDirectory}'.");
 

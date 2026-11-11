@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Athena service
+    /// Service metadata for Amazon Athena
     /// </summary>
     public partial class AmazonAthenaMetadata : IServiceMetadata
     {

@@ -27,12 +27,12 @@ using Amazon.OAM.Internal;
 namespace Amazon.OAM
 {
     /// <summary>
-    /// Configuration for accessing Amazon OAM service
+    /// Configuration for accessing CloudWatch Observability Access Manager
     /// </summary>
     public partial class AmazonOAMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("OAM", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("OAM", "4.0.100.26");
 
         private static readonly AmazonOAMEndpointResolver EndpointResolver =
             new AmazonOAMEndpointResolver();

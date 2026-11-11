@@ -27,12 +27,12 @@ using Amazon.TaxSettings.Internal;
 namespace Amazon.TaxSettings
 {
     /// <summary>
-    /// Configuration for accessing Amazon TaxSettings service
+    /// Configuration for accessing Tax Settings
     /// </summary>
     public partial class AmazonTaxSettingsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("TaxSettings", "4.0.102.0");
+            InternalSDKUtils.BuildUserAgentString("TaxSettings", "4.0.103.3");
 
         private static readonly AmazonTaxSettingsEndpointResolver EndpointResolver =
             new AmazonTaxSettingsEndpointResolver();

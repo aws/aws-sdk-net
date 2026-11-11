@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Signer
 {
     /// <summary>
-    /// Configuration for accessing Amazon Signer service
+    /// Configuration for accessing AWS Signer
     /// </summary>
     public static class AmazonSignerDefaultConfiguration
     {

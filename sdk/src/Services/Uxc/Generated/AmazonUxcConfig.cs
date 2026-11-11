@@ -27,12 +27,12 @@ using Amazon.Uxc.Internal;
 namespace Amazon.Uxc
 {
     /// <summary>
-    /// Configuration for accessing Amazon Uxc service
+    /// Configuration for accessing AWS User Experience Customization
     /// </summary>
     public partial class AmazonUxcConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("uxc", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("uxc", "4.0.100.26");
 
         private static readonly AmazonUxcEndpointResolver EndpointResolver =
             new AmazonUxcEndpointResolver();

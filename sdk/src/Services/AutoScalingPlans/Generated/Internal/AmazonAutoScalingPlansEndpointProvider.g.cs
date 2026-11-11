@@ -26,7 +26,7 @@ using Amazon.AutoScalingPlans.Endpoints;
 namespace Amazon.AutoScalingPlans.Internal
 {
     /// <summary>
-    /// Amazon AutoScalingPlans endpoint provider.
+    /// AWS Auto Scaling Plans endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AutoScalingPlansEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

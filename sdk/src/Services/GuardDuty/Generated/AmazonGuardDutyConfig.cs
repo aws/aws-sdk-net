@@ -27,12 +27,12 @@ using Amazon.GuardDuty.Internal;
 namespace Amazon.GuardDuty
 {
     /// <summary>
-    /// Configuration for accessing Amazon GuardDuty service
+    /// Configuration for accessing Amazon GuardDuty
     /// </summary>
     public partial class AmazonGuardDutyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("GuardDuty", "4.0.111.3");
+            InternalSDKUtils.BuildUserAgentString("GuardDuty", "4.0.111.7");
 
         private static readonly AmazonGuardDutyEndpointResolver EndpointResolver =
             new AmazonGuardDutyEndpointResolver();

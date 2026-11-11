@@ -13,7 +13,7 @@ namespace Amazon.CloudSearchDomain.Internal
     /// </summary>
     public class ProcessRequestHandler : PipelineHandler
     {
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -27,7 +27,7 @@ namespace Amazon.CloudSearchDomain.Internal
         }
 #endif
 
-#if BCL
+#if NETFRAMEWORK
 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
@@ -44,7 +44,7 @@ namespace Amazon.CloudSearchDomain.Internal
         }
 #endif
 
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Custom pipeline handler.
         /// </summary>

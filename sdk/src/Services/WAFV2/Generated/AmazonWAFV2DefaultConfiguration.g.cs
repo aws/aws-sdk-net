@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.WAFV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon WAFV2 service
+    /// Configuration for accessing AWS WAFV2
     /// </summary>
     public static class AmazonWAFV2DefaultConfiguration
     {

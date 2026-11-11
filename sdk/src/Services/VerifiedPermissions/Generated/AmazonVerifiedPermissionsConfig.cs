@@ -27,12 +27,12 @@ using Amazon.VerifiedPermissions.Internal;
 namespace Amazon.VerifiedPermissions
 {
     /// <summary>
-    /// Configuration for accessing Amazon VerifiedPermissions service
+    /// Configuration for accessing Amazon Verified Permissions
     /// </summary>
     public partial class AmazonVerifiedPermissionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("VerifiedPermissions", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("VerifiedPermissions", "4.0.101.0");
 
         private static readonly AmazonVerifiedPermissionsEndpointResolver EndpointResolver =
             new AmazonVerifiedPermissionsEndpointResolver();

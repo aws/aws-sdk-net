@@ -26,7 +26,7 @@ using Amazon.TrustedAdvisor.Endpoints;
 namespace Amazon.TrustedAdvisor.Internal
 {
     /// <summary>
-    /// Amazon TrustedAdvisor endpoint provider.
+    /// TrustedAdvisor Public API endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="TrustedAdvisorEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

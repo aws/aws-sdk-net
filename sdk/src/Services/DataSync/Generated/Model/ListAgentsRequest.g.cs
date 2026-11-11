@@ -35,13 +35,7 @@ namespace Amazon.DataSync.Model
     /// specified in the request. <para> With pagination, you can reduce the number of agents
     /// returned in a response. If you get a truncated list of agents in a response, the response
     /// contains a marker that you can specify in your next request to fetch the next page
-    /// of agents. </para> <para> <c>ListAgents</c> is eventually consistent. This means the
-    /// result of running the operation might not reflect that you just created or deleted
-    /// an agent. For example, if you create an agent with <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateAgent.html">CreateAgent</a>
-    /// and then immediately run <c>ListAgents</c>, that agent might not show up in the list
-    /// right away. In situations like this, you can always confirm whether an agent has been
-    /// created (or deleted) by using <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeAgent.html">DescribeAgent</a>.
-    /// </para>
+    /// of agents. </para>
     /// </summary>
     public partial class ListAgentsRequest : AmazonDataSyncRequest
     {

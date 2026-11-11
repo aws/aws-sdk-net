@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMGuiConnect.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SSMGuiConnect service
+    /// Service metadata for AWS SSM-GUIConnect
     /// </summary>
     public partial class AmazonSSMGuiConnectMetadata : IServiceMetadata
     {

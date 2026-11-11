@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SecurityAgent service
+    /// Service metadata for AWS Security Agent
     /// </summary>
     public partial class AmazonSecurityAgentMetadata : IServiceMetadata
     {

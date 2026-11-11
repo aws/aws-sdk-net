@@ -31,7 +31,7 @@ using Amazon.Repostspace.Endpoints;
 namespace Amazon.Repostspace.Internal
 {
     /// <summary>
-    /// Amazon Repostspace endpoint resolver.
+    /// AWS re:Post Private endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Repostspace service requests.
     /// <para />

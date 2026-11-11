@@ -26,7 +26,7 @@ using Amazon.ServiceCatalog.Endpoints;
 namespace Amazon.ServiceCatalog.Internal
 {
     /// <summary>
-    /// Amazon ServiceCatalog endpoint provider.
+    /// AWS Service Catalog endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ServiceCatalogEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

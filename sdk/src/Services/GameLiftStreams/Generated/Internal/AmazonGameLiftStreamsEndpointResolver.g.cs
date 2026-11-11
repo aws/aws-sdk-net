@@ -31,7 +31,7 @@ using Amazon.GameLiftStreams.Endpoints;
 namespace Amazon.GameLiftStreams.Internal
 {
     /// <summary>
-    /// Amazon GameLiftStreams endpoint resolver.
+    /// Amazon GameLift Streams endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for GameLiftStreams service requests.
     /// <para />

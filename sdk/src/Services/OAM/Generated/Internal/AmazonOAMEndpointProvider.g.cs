@@ -26,7 +26,7 @@ using Amazon.OAM.Endpoints;
 namespace Amazon.OAM.Internal
 {
     /// <summary>
-    /// Amazon OAM endpoint provider.
+    /// CloudWatch Observability Access Manager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="OAMEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

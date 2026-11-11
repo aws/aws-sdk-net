@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LambdaMicrovms.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon LambdaMicrovms service
+    /// Service metadata for Lambda MicroVMs
     /// </summary>
     public partial class AmazonLambdaMicrovmsMetadata : IServiceMetadata
     {

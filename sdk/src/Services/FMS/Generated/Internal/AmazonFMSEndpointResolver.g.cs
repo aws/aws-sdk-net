@@ -31,7 +31,7 @@ using Amazon.FMS.Endpoints;
 namespace Amazon.FMS.Internal
 {
     /// <summary>
-    /// Amazon FMS endpoint resolver.
+    /// Firewall Management Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for FMS service requests.
     /// <para />

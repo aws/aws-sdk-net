@@ -27,12 +27,12 @@ using Amazon.SSMGuiConnect.Internal;
 namespace Amazon.SSMGuiConnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSMGuiConnect service
+    /// Configuration for accessing AWS SSM-GUIConnect
     /// </summary>
     public partial class AmazonSSMGuiConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSM GuiConnect", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("SSM GuiConnect", "4.0.100.26");
 
         private static readonly AmazonSSMGuiConnectEndpointResolver EndpointResolver =
             new AmazonSSMGuiConnectEndpointResolver();

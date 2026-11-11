@@ -26,7 +26,7 @@ using Amazon.SimpleDBv2.Endpoints;
 namespace Amazon.SimpleDBv2.Internal
 {
     /// <summary>
-    /// Amazon SimpleDBv2 endpoint provider.
+    /// Amazon SimpleDB v2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SimpleDBv2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

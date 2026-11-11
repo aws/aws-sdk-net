@@ -101,7 +101,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Constructors
 
-#if !NETSTANDARD
+#if NETFRAMEWORK
 
         /// <summary>
         /// Constructs a DynamoDBContext object with a default AmazonDynamoDBClient

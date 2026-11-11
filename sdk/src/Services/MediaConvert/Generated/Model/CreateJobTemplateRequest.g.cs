@@ -71,6 +71,17 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDescription() => this.Description != null;
 
         /// <summary>
+        /// Gets and sets the property ElementalInferenceSettings. The Elemental Inference settings
+        /// used in this job.
+        /// </summary>
+        public ElementalInferenceSettings ElementalInferenceSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ElementalInferenceSettings property is set.
+        /// </summary>
+        internal bool IsSetElementalInferenceSettings() => this.ElementalInferenceSettings != null;
+
+        /// <summary>
         /// Gets and sets the property HopDestinations. Optional. Use queue hopping to avoid overly
         /// long waits in the backlog of the queue that you submit your job to. Specify an alternate
         /// queue and the maximum time that your job will wait in the initial queue before hopping.

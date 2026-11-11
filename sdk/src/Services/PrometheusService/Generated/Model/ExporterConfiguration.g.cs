@@ -35,6 +35,20 @@ namespace Amazon.PrometheusService.Model
     public partial class ExporterConfiguration
     {
         /// <summary>
+        /// Gets and sets the property KafkaConfiguration. 
+        /// <para>
+        /// The configuration that the scraper uses to collect metrics from an Amazon MSK cluster
+        /// through a managed Kafka exporter.
+        /// </para>
+        /// </summary>
+        public KafkaExporterConfiguration KafkaConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KafkaConfiguration property is set.
+        /// </summary>
+        internal bool IsSetKafkaConfiguration() => this.KafkaConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property OpenSearchConfiguration. 
         /// <para>
         /// The configuration that the scraper uses to export metrics to an Amazon OpenSearch

@@ -809,6 +809,35 @@ namespace Amazon.Util
             throw new InvalidOperationException(errorMessage);
         }
 
+        /// <summary>
+        /// A relative path is resolved under <see cref="EC2MetadataRoot"/>. An absolute URL is returned as is when
+        /// it parses and its scheme, host and port are those of <see cref="ServiceEndpoint"/>, otherwise null.
+        /// Comparing the text with the endpoint is not enough: "http://169.254.169.254@other.host/" and
+        /// "http://169.254.169.254.other.host/" start with the endpoint but point at another host.
+        /// </summary>
+        private static Uri GetMetadataUri(string relativeOrAbsolutePath)
+        {
+            var isAbsolute = 
+                relativeOrAbsolutePath.StartsWith("http://", StringComparison.OrdinalIgnoreCase) || 
+                relativeOrAbsolutePath.StartsWith("https://", StringComparison.OrdinalIgnoreCase);
+            if (!isAbsolute)
+            {
+                return new Uri(EC2MetadataRoot + relativeOrAbsolutePath);
+            }
+
+            Uri uri;
+            if (Uri.TryCreate(relativeOrAbsolutePath, UriKind.Absolute, out uri))
+            {
+                var endpoint = new Uri(ServiceEndpoint);
+                if (Uri.Compare(uri, endpoint, UriComponents.SchemeAndServer, UriFormat.Unescaped, StringComparison.OrdinalIgnoreCase) == 0)
+                {
+                    return uri;
+                }
+            }
+
+            return null;
+        }
+
         private static List<string> GetItems(string relativeOrAbsolutePath, int tries, bool slurp)
         {
             return GetItems(relativeOrAbsolutePath, tries, slurp, null);
@@ -822,6 +851,13 @@ namespace Amazon.Util
         private static List<string> GetItems(string relativeOrAbsolutePath, int tries, bool slurp, string token)
         {
             Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("Attempting to get metadata for {0}", relativeOrAbsolutePath);
+            var uri = GetMetadataUri(relativeOrAbsolutePath);
+            if (uri == null)
+            {
+                Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(null, "Not requesting \"{0}\": it is not on the configured EC2 instance metadata endpoint {1}.", relativeOrAbsolutePath, ServiceEndpoint);
+                return null;
+            }
+
             var items = new List<string>();
             //For all meta-data queries we need to fetch an api token to use. In the event a 
             //token cannot be obtained we will fallback to not using a token.
@@ -848,12 +884,6 @@ namespace Amazon.Util
                 {
                     throw new IMDSDisabledException();
                 }
-
-                // if we are given a relative path, we assume the data we need exists under the
-                // main metadata root
-                var uri = relativeOrAbsolutePath.StartsWith(ServiceEndpoint, StringComparison.Ordinal)
-                            ? new Uri(relativeOrAbsolutePath)
-                            : new Uri(EC2MetadataRoot + relativeOrAbsolutePath);
 
                 var content = AWSSDKUtils.ExecuteHttpRequest(uri, "GET", null, TimeSpan.FromSeconds(5), Proxy, headers);
                 using (var stream = new StringReader(content))
@@ -909,6 +939,13 @@ namespace Amazon.Util
 
         private static async Task<List<string>> GetItemsAsync(string relativeOrAbsolutePath, int tries, bool slurp, string token)
         {
+            var uri = GetMetadataUri(relativeOrAbsolutePath);
+            if (uri == null)
+            {
+                Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(null, "Not requesting \"{0}\": it is not on the configured EC2 instance metadata endpoint {1}.", relativeOrAbsolutePath, ServiceEndpoint);
+                return null;
+            }
+
             var items = new List<string>();
             //For all meta-data queries we need to fetch an api token to use. In the event a 
             //token cannot be obtained we will fallback to not using a token.
@@ -935,12 +972,6 @@ namespace Amazon.Util
                 {
                     throw new IMDSDisabledException();
                 }
-
-                // if we are given a relative path, we assume the data we need exists under the
-                // main metadata root
-                var uri = relativeOrAbsolutePath.StartsWith(ServiceEndpoint, StringComparison.Ordinal)
-                            ? new Uri(relativeOrAbsolutePath)
-                            : new Uri(EC2MetadataRoot + relativeOrAbsolutePath);
 
                 var content = await AWSSDKUtils.ExecuteHttpRequestAsync(uri, "GET", null, TimeSpan.FromSeconds(5), Proxy, headers).ConfigureAwait(false);
                 using (var stream = new StringReader(content))

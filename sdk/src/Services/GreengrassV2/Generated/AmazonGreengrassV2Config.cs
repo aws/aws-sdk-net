@@ -27,12 +27,12 @@ using Amazon.GreengrassV2.Internal;
 namespace Amazon.GreengrassV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon GreengrassV2 service
+    /// Configuration for accessing AWS IoT Greengrass V2
     /// </summary>
     public partial class AmazonGreengrassV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("GreengrassV2", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("GreengrassV2", "4.0.100.25");
 
         private static readonly AmazonGreengrassV2EndpointResolver EndpointResolver =
             new AmazonGreengrassV2EndpointResolver();

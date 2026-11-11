@@ -31,7 +31,7 @@ using Amazon.WAFV2.Endpoints;
 namespace Amazon.WAFV2.Internal
 {
     /// <summary>
-    /// Amazon WAFV2 endpoint resolver.
+    /// AWS WAFV2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for WAFV2 service requests.
     /// <para />

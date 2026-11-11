@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CostExplorer
 {
     /// <summary>
-    /// Configuration for accessing Amazon CostExplorer service
+    /// Configuration for accessing AWS Cost Explorer Service
     /// </summary>
     public static class AmazonCostExplorerDefaultConfiguration
     {

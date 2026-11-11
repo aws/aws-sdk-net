@@ -117,6 +117,8 @@ namespace Amazon.Util
         }
         /// <summary>
         /// When to log responses.
+        /// Enabling this writes response bodies to the log, including any sensitive values they
+        /// carry, such as credentials. Treat the log output as sensitive.
         /// </summary>
         public ResponseLoggingOption LogResponses { get; set; }
 
@@ -129,6 +131,8 @@ namespace Amazon.Util
 
         /// <summary>
         /// Whether or not to log SDK metrics.
+        /// Enabling this writes the signed request to the log, including any sensitive values it
+        /// carries, such as the session token. Treat the log output as sensitive.
         /// </summary>
         public bool LogMetrics { get; set; }
 

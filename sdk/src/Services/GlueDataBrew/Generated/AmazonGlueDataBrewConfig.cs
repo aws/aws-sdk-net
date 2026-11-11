@@ -27,12 +27,12 @@ using Amazon.GlueDataBrew.Internal;
 namespace Amazon.GlueDataBrew
 {
     /// <summary>
-    /// Configuration for accessing Amazon GlueDataBrew service
+    /// Configuration for accessing AWS Glue DataBrew
     /// </summary>
     public partial class AmazonGlueDataBrewConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DataBrew", "4.0.101.2");
+            InternalSDKUtils.BuildUserAgentString("DataBrew", "4.0.101.6");
 
         private static readonly AmazonGlueDataBrewEndpointResolver EndpointResolver =
             new AmazonGlueDataBrewEndpointResolver();

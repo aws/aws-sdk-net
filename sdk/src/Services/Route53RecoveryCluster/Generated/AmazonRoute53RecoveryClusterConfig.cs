@@ -27,12 +27,12 @@ using Amazon.Route53RecoveryCluster.Internal;
 namespace Amazon.Route53RecoveryCluster
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53RecoveryCluster service
+    /// Configuration for accessing Route53 Recovery Cluster
     /// </summary>
     public partial class AmazonRoute53RecoveryClusterConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Route53 Recovery Cluster", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Route53 Recovery Cluster", "4.0.100.25");
 
         private static readonly AmazonRoute53RecoveryClusterEndpointResolver EndpointResolver =
             new AmazonRoute53RecoveryClusterEndpointResolver();

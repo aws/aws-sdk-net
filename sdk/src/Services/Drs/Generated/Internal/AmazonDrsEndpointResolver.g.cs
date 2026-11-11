@@ -31,7 +31,7 @@ using Amazon.Drs.Endpoints;
 namespace Amazon.Drs.Internal
 {
     /// <summary>
-    /// Amazon Drs endpoint resolver.
+    /// Elastic Disaster Recovery Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Drs service requests.
     /// <para />

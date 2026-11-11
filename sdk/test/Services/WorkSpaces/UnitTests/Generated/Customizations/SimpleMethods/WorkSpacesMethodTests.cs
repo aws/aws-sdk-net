@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the workspaces-2015-04-08.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -41,7 +41,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.WorkSpaces.AmazonWorkSpacesClient), "DescribeWorkspaceDirectories", new Type[] { });
             EnsureSimpleMethodExists(typeof(Amazon.WorkSpaces.AmazonWorkSpacesClient), "DescribeWorkspaces", new Type[] { });
         }
-        
+
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
         {
             Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);

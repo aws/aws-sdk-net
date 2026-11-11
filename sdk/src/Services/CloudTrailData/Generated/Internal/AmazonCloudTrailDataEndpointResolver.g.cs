@@ -31,7 +31,7 @@ using Amazon.CloudTrailData.Endpoints;
 namespace Amazon.CloudTrailData.Internal
 {
     /// <summary>
-    /// Amazon CloudTrailData endpoint resolver.
+    /// AWS CloudTrail Data Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CloudTrailData service requests.
     /// <para />

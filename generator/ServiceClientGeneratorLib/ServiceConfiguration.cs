@@ -115,39 +115,9 @@ namespace ServiceClientGenerator
                     return _className;
                 }
 
-                if (ClassNameOverride != null)
-                {
-                    _className = ClassNameOverride;
-                }
-                else if (!string.IsNullOrEmpty(this.LegacyServiceId))
-                {
-                    //Use legacy service class name calculation
-                    if (this.ServiceModel.ServiceAbbreviation != null)
-                    {
-                        _className = SanitizeStringForClassName(_serviceModel.ServiceAbbreviation);
-                    }
-                    else if (this.ServiceModel.ServiceFullName != null)
-                    {
-                        _className = SanitizeStringForClassName(_serviceModel.ServiceFullName);
-                    }
-                    else
-                    {
-                        throw new InvalidDataException("Generator was not able to determine the ClassName for a service.");
-                    }
-                }
-                else
-                {
-                    //All new services will not have a legacy-service-id metadata property value which indicates that they
-                    //must use the ServiceId for the class name.
-                    if (string.IsNullOrEmpty(this.ServiceId))
-                    {
-                        throw new InvalidDataException(
-                            "Generator was not able to determine the ClassName for a service.");
-                    }
-
-                    _className = SanitizeStringForClassName(this.ServiceId);
-                }
-
+                // Never derive from serviceFullName/serviceAbbreviation: a display-name change would rename
+                // public types. Names that differ from the serviceId are pinned by metadata.json base-name.
+                _className = ClassNameOverride ?? SanitizeStringForClassName(this.ServiceId);
                 return _className;
             }
         }
@@ -206,36 +176,24 @@ namespace ServiceClientGenerator
             }
         }
 
-        public string AssemblyDescription(
-            string versionIdentifier = "", 
-            bool includePreamble = true, 
-            bool includeBody = true, 
-            bool includePostamble = true)
+        /// <summary>
+        /// The assembly description, matching the Smithy generator's AssemblyInfoWriter. The synopsis is
+        /// not appended: it is the service's launch-time blurb and goes stale, while serviceFullName
+        /// tracks the model.
+        /// </summary>
+        public string AssemblyDescription(string versionIdentifier = "")
         {
-            if (!string.IsNullOrEmpty(versionIdentifier) && !versionIdentifier.StartsWith("("))
-                versionIdentifier = $"({versionIdentifier})";
-
-            var preamble =
-                includePreamble
-                    ? $"The Amazon Web Services SDK for .NET {versionIdentifier} - "
-                    : "";
-
-            string body = "";
-            if (includeBody)
-            {
-                body =
-                    !string.IsNullOrEmpty(ServiceModel.ServiceFullName)
-                        ? $"{ServiceModel.ServiceFullName}. "
-                        : $"{ServiceId}. ";
-            }
-            
-            var postamble =
-                includePostamble 
-                    ? $"{ (!string.IsNullOrEmpty(Synopsis) ? Synopsis.Replace("\"", "\\\"") : ServiceId) }"
-                    : "";
-            return $"{preamble}{body}{postamble}";
+            var version = string.IsNullOrEmpty(versionIdentifier) ? "" : $" ({versionIdentifier.Trim('(', ')')})";
+            var name = !string.IsNullOrEmpty(ServiceModel.ServiceFullName) ? ServiceModel.ServiceFullName : ServiceId;
+            return $"The Amazon Web Services SDK for .NET{version} - {name}.";
         }
-        
+
+        /// <summary>
+        /// The NuGet package description, in the Core package's form. Not the synopsis: that is the
+        /// service's launch-time blurb and goes stale.
+        /// </summary>
+        public string NuGetPackageDescription => $"The Amazon Web Services SDK for .NET - {ServiceModel.ServiceFullName}";
+
         public string BaseException
         {
             get

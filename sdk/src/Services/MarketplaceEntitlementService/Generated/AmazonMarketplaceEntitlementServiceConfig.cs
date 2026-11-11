@@ -27,12 +27,12 @@ using Amazon.MarketplaceEntitlementService.Internal;
 namespace Amazon.MarketplaceEntitlementService
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceEntitlementService service
+    /// Configuration for accessing AWS Marketplace Entitlement Service
     /// </summary>
     public partial class AmazonMarketplaceEntitlementServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Entitlement Service", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Entitlement Service", "4.0.100.25");
 
         private static readonly AmazonMarketplaceEntitlementServiceEndpointResolver EndpointResolver =
             new AmazonMarketplaceEntitlementServiceEndpointResolver();

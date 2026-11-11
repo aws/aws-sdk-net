@@ -27,12 +27,12 @@ using Amazon.AugmentedAIRuntime.Internal;
 namespace Amazon.AugmentedAIRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon AugmentedAIRuntime service
+    /// Configuration for accessing Amazon Augmented AI Runtime
     /// </summary>
     public partial class AmazonAugmentedAIRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMaker A2I Runtime", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("SageMaker A2I Runtime", "4.0.100.26");
 
         private static readonly AmazonAugmentedAIRuntimeEndpointResolver EndpointResolver =
             new AmazonAugmentedAIRuntimeEndpointResolver();

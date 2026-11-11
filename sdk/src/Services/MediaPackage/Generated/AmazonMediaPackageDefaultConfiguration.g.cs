@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MediaPackage
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaPackage service
+    /// Configuration for accessing AWS Elemental MediaPackage
     /// </summary>
     public static class AmazonMediaPackageDefaultConfiguration
     {

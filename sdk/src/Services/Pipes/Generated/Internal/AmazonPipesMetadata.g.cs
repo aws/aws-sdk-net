@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pipes.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Pipes service
+    /// Service metadata for Amazon EventBridge Pipes
     /// </summary>
     public partial class AmazonPipesMetadata : IServiceMetadata
     {

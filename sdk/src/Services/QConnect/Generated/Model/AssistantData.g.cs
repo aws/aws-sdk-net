@@ -69,6 +69,23 @@ namespace Amazon.QConnect.Model
         internal bool IsSetAssistantArn() => this.AssistantArn != null;
 
         /// <summary>
+        /// Gets and sets the property AssistantGlobalResiliencyStatus. Whether Amazon Connect
+        /// Global Resiliency replicates the Connect instance this assistant is associated with,
+        /// and so whether resources created under this assistant must satisfy the replication
+        /// group's model parity constraint. Answered from the ACGR side per request rather than
+        /// stored, so it reflects the customer's replication state now. Absent means "not applicable
+        /// or not known" - never read an absent field as DISABLED. It is absent on the operations
+        /// that return an assistant which is not yet associated with a Connect instance, because
+        /// replication cannot be established until it is.
+        /// </summary>
+        public AssistantGlobalResiliencyStatus AssistantGlobalResiliencyStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AssistantGlobalResiliencyStatus property is set.
+        /// </summary>
+        internal bool IsSetAssistantGlobalResiliencyStatus() => this.AssistantGlobalResiliencyStatus != null;
+
+        /// <summary>
         /// Gets and sets the property AssistantId. 
         /// <para>
         /// The identifier of the Amazon Q in Connect assistant.
@@ -121,6 +138,33 @@ namespace Amazon.QConnect.Model
         /// Checks to see if the IntegrationConfiguration property is set.
         /// </summary>
         internal bool IsSetIntegrationConfiguration() => this.IntegrationConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedRegion. 
+        /// <para>
+        /// The Amazon Web Services Region where the assistant was last modified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 8, Max = 31)]
+        public string LastModifiedRegion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedRegion property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedRegion() => this.LastModifiedRegion != null;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The timestamp when the assistant was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime? LastModifiedTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedTime property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedTime() => this.LastModifiedTime.HasValue;
 
         /// <summary>
         /// Gets and sets the property Name. 

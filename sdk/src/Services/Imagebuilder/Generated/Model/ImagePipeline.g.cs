@@ -231,8 +231,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageScanningConfiguration. 
         /// <para>
-        /// Contains settings for vulnerability scans that Amazon Inspector runs against the test
-        /// instance during image creation.
+        /// The settings that determine whether and how Amazon Inspector scans the images that
+        /// the pipeline creates.
         /// </para>
         /// </summary>
         public ImageScanningConfiguration ImageScanningConfiguration { get; set; }

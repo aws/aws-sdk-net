@@ -32,7 +32,7 @@ using Amazon.MobileAnalytics.Endpoints;
 namespace Amazon.MobileAnalytics.Internal
 {
     /// <summary>
-    /// Amazon MobileAnalytics endpoint resolver.
+    /// Amazon Mobile Analytics endpoint resolver.
     /// Custom PipelineHandler responsible for resolving endpoint and setting authentication parameters for MobileAnalytics service requests.
     /// Collects values for MobileAnalyticsEndpointParameters and then tries to resolve endpoint by calling 
     /// ResolveEndpoint method on GlobalEndpoints.Provider if present, otherwise uses MobileAnalyticsEndpointProvider.

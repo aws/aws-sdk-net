@@ -27,12 +27,12 @@ using Amazon.MediaPackageVod.Internal;
 namespace Amazon.MediaPackageVod
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaPackageVod service
+    /// Configuration for accessing AWS Elemental MediaPackage VOD
     /// </summary>
     public partial class AmazonMediaPackageVodConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MediaPackage Vod", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("MediaPackage Vod", "4.0.100.26");
 
         private static readonly AmazonMediaPackageVodEndpointResolver EndpointResolver =
             new AmazonMediaPackageVodEndpointResolver();

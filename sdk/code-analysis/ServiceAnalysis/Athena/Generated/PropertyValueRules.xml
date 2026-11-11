@@ -117,6 +117,23 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.CreateSystemTableConfigurationRequest.ClientRequestToken</property>
+    <min>32</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreateSystemTableConfigurationRequest.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:kms:[a-z0-9\-]+:\d{12}:(key/(mrk-)?[0-9a-f\-]+|alias/[a-zA-Z0-9/_\-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreateSystemTableConfigurationResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:kms:[a-z0-9\-]+:\d{12}:(key/(mrk-)?[0-9a-f\-]+|alias/[a-zA-Z0-9/_\-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.CreateWorkGroupRequest.Description</property>
     <min>0</min>
     <max>1024</max>
@@ -352,6 +369,12 @@
     <property>Amazon.Athena.Model.GetSessionStatusResponse.SessionId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetSystemTableConfigurationResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:kms:[a-z0-9\-]+:\d{12}:(key/(mrk-)?[0-9a-f\-]+|alias/[a-zA-Z0-9/_\-]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.GetTableMetadataRequest.CatalogName</property>
@@ -658,6 +681,21 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.ListSystemTableStatusesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListSystemTableStatusesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListSystemTableStatusesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.ListTableMetadataRequest.CatalogName</property>
     <min>1</min>
     <max>256</max>
@@ -938,6 +976,18 @@
     <pattern>^[a-zA-Z0-9._-]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateSystemTableConfigurationRequest.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:kms:[a-z0-9\-]+:\d{12}:(key/(mrk-)?[0-9a-f\-]+|alias/[a-zA-Z0-9/_\-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateSystemTableConfigurationResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:kms:[a-z0-9\-]+:\d{12}:(key/(mrk-)?[0-9a-f\-]+|alias/[a-zA-Z0-9/_\-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.UpdateWorkGroupRequest.Description</property>
     <min>0</min>
     <max>1024</max>
@@ -1066,7 +1116,7 @@
     <property>Amazon.Athena.Model.CustomerContentEncryptionConfiguration.KmsKey</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:key/?[a-zA-Z_0-9+=,.@\-_/]+$|^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:alias/?[a-zA-Z_0-9+=,.@\-_/]+$|^alias/[a-zA-Z0-9/_-]+$|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>^(arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:key/?[a-zA-Z_0-9+=,.@\-_/]+|arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:alias/?[a-zA-Z_0-9+=,.@\-_/]+|alias/[a-zA-Z0-9/_-]+|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.DataCatalog.Description</property>
@@ -1144,13 +1194,13 @@
     <property>Amazon.Athena.Model.ManagedLoggingConfiguration.KmsKey</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:key/?[a-zA-Z_0-9+=,.@\-_/]+$|^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:alias/?[a-zA-Z_0-9+=,.@\-_/]+$|^alias/[a-zA-Z0-9/_-]+$|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>^(arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:key/?[a-zA-Z_0-9+=,.@\-_/]+|arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:alias/?[a-zA-Z_0-9+=,.@\-_/]+|alias/[a-zA-Z0-9/_-]+|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.ManagedQueryResultsEncryptionConfiguration.KmsKey</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:key/?[a-zA-Z_0-9+=,.@\-_/]+$|^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:alias/?[a-zA-Z_0-9+=,.@\-_/]+$|^alias/[a-zA-Z0-9/_-]+$|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>^(arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:key/?[a-zA-Z_0-9+=,.@\-_/]+|arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:alias/?[a-zA-Z_0-9+=,.@\-_/]+|alias/[a-zA-Z0-9/_-]+|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.NamedQuery.Database</property>
@@ -1279,7 +1329,7 @@
     <property>Amazon.Athena.Model.S3LoggingConfiguration.KmsKey</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:key/?[a-zA-Z_0-9+=,.@\-_/]+$|^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:alias/?[a-zA-Z_0-9+=,.@\-_/]+$|^alias/[a-zA-Z0-9/_-]+$|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>^(arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:key/?[a-zA-Z_0-9+=,.@\-_/]+|arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:alias/?[a-zA-Z_0-9+=,.@\-_/]+|alias/[a-zA-Z0-9/_-]+|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.S3LoggingConfiguration.LogLocation</property>

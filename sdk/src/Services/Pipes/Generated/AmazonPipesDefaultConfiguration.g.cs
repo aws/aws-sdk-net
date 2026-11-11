@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Pipes
 {
     /// <summary>
-    /// Configuration for accessing Amazon Pipes service
+    /// Configuration for accessing Amazon EventBridge Pipes
     /// </summary>
     public static class AmazonPipesDefaultConfiguration
     {

@@ -27,12 +27,12 @@ using Amazon.SavingsPlans.Internal;
 namespace Amazon.SavingsPlans
 {
     /// <summary>
-    /// Configuration for accessing Amazon SavingsPlans service
+    /// Configuration for accessing AWS Savings Plans
     /// </summary>
     public partial class AmazonSavingsPlansConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("savingsplans", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("savingsplans", "4.0.100.26");
 
         private static readonly AmazonSavingsPlansEndpointResolver EndpointResolver =
             new AmazonSavingsPlansEndpointResolver();

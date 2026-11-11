@@ -31,7 +31,7 @@ using Amazon.DevOpsGuru.Endpoints;
 namespace Amazon.DevOpsGuru.Internal
 {
     /// <summary>
-    /// Amazon DevOpsGuru endpoint resolver.
+    /// Amazon DevOps Guru endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DevOpsGuru service requests.
     /// <para />

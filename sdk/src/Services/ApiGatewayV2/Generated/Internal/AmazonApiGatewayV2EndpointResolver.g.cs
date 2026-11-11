@@ -31,7 +31,7 @@ using Amazon.ApiGatewayV2.Endpoints;
 namespace Amazon.ApiGatewayV2.Internal
 {
     /// <summary>
-    /// Amazon ApiGatewayV2 endpoint resolver.
+    /// AmazonApiGatewayV2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ApiGatewayV2 service requests.
     /// <para />

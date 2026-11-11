@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DirectoryServiceData
 {
     /// <summary>
-    /// Configuration for accessing Amazon DirectoryServiceData service
+    /// Configuration for accessing AWS Directory Service Data
     /// </summary>
     public static class AmazonDirectoryServiceDataDefaultConfiguration
     {

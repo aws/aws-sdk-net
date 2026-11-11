@@ -27,12 +27,12 @@ using Amazon.Cloud9.Internal;
 namespace Amazon.Cloud9
 {
     /// <summary>
-    /// Configuration for accessing Amazon Cloud9 service
+    /// Configuration for accessing AWS Cloud9
     /// </summary>
     public partial class AmazonCloud9Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Cloud9", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Cloud9", "4.0.100.25");
 
         private static readonly AmazonCloud9EndpointResolver EndpointResolver =
             new AmazonCloud9EndpointResolver();

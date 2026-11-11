@@ -26,7 +26,7 @@ using Amazon.MigrationHubStrategyRecommendations.Endpoints;
 namespace Amazon.MigrationHubStrategyRecommendations.Internal
 {
     /// <summary>
-    /// Amazon MigrationHubStrategyRecommendations endpoint provider.
+    /// Migration Hub Strategy Recommendations endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MigrationHubStrategyRecommendationsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

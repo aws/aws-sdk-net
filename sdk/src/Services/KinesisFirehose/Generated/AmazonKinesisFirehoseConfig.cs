@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the firehose-2015-08-04.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,27 +27,23 @@ using Amazon.KinesisFirehose.Internal;
 namespace Amazon.KinesisFirehose
 {
     /// <summary>
-    /// Configuration for accessing Amazon KinesisFirehose service
+    /// Configuration for accessing Amazon Kinesis Firehose
     /// </summary>
     public partial class AmazonKinesisFirehoseConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Firehose", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Firehose", "4.0.100.26");
 
         private static readonly AmazonKinesisFirehoseEndpointResolver EndpointResolver =
             new AmazonKinesisFirehoseEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "Firehose";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "Firehose";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.KinesisFirehose
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "firehose";
-            }
-        }
+        public override string RegionEndpointServiceName => "firehose";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2015-08-04";
-            }
-        }
+        public override string ServiceVersion => "2015-08-04";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.KinesisFirehose
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

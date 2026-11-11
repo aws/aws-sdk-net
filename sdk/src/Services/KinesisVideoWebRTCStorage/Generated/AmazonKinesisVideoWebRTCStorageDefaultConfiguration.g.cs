@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.KinesisVideoWebRTCStorage
 {
     /// <summary>
-    /// Configuration for accessing Amazon KinesisVideoWebRTCStorage service
+    /// Configuration for accessing Amazon Kinesis Video WebRTC Storage
     /// </summary>
     public static class AmazonKinesisVideoWebRTCStorageDefaultConfiguration
     {

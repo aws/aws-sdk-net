@@ -427,6 +427,18 @@ namespace Amazon.Runtime.CredentialManagement
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
 
+            // Check the whole profile before either file is written.
+            IniFile.ThrowIfLineBreak(profile.Name, nameof(profile));
+            foreach (var pair in profileDictionary)
+            {
+                IniFile.ThrowIfLineBreak(pair.Key, nameof(profile));
+                IniFile.ThrowIfLineBreak(pair.Value, nameof(profile));
+                if (!IniFile.propertyNameRegex.IsMatch(pair.Key))
+                {
+                    throw new ArgumentException("Property name is not valid in an INI file.", nameof(profile));
+                }
+            }
+
             // The config file might contain parts of the profile
             // These parts are updated at the config file and removed from profileDictionary to avoid duplication
             UpdateConfigSectionsFromProfile(profile, profileDictionary);

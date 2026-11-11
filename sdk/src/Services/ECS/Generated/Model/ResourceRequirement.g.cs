@@ -40,6 +40,30 @@ namespace Amazon.ECS.Model
     public partial class ResourceRequirement
     {
         /// <summary>
+        /// Gets and sets the property SharingStrategy. 
+        /// <para>
+        /// The strategy that the container uses to share a GPU with other containers. Specify
+        /// a sharing strategy only when the type is <c>GPU</c>. For a GPU resource requirement,
+        /// specify either <c>value</c> or <c>sharingStrategy</c>, but not both. If you don't
+        /// specify a sharing strategy, the container has exclusive use of each GPU that Amazon
+        /// ECS assigns to it. The containers in a task that request GPUs must all use the same
+        /// option.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use GPU sharing with tasks that run on Amazon EC2 instances or Amazon ECS
+        /// Managed Instances. Task definitions that require <c>EXTERNAL</c> compatibility don't
+        /// support GPU sharing.
+        /// </para>
+        /// </summary>
+        public SharingStrategy SharingStrategy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SharingStrategy property is set.
+        /// </summary>
+        internal bool IsSetSharingStrategy() => this.SharingStrategy != null;
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of resource to assign to a container. 
@@ -57,6 +81,10 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The value for the specified resource type.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify this parameter unless the type is <c>GPU</c> and you specify <c>sharingStrategy</c>.
         /// </para>
         ///  
         /// <para>
@@ -80,7 +108,6 @@ namespace Amazon.ECS.Model
         /// specified in a task definition.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public string Value { get; set; }
 
         /// <summary>

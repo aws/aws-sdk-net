@@ -27,12 +27,12 @@ using Amazon.DevOpsAgent.Internal;
 namespace Amazon.DevOpsAgent
 {
     /// <summary>
-    /// Configuration for accessing Amazon DevOpsAgent service
+    /// Configuration for accessing AWS DevOps Agent Service
     /// </summary>
     public partial class AmazonDevOpsAgentConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DevOps Agent", "4.0.107.1");
+            InternalSDKUtils.BuildUserAgentString("DevOps Agent", "4.0.107.5");
 
         private static readonly AmazonDevOpsAgentEndpointResolver EndpointResolver =
             new AmazonDevOpsAgentEndpointResolver();

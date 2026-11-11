@@ -26,7 +26,7 @@ using Amazon.ManagedBlockchain.Endpoints;
 namespace Amazon.ManagedBlockchain.Internal
 {
     /// <summary>
-    /// Amazon ManagedBlockchain endpoint provider.
+    /// Amazon Managed Blockchain endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ManagedBlockchainEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

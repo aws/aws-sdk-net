@@ -282,6 +282,19 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetForEach() => this.ForEach != null;
 
         /// <summary>
+        /// Gets and sets the property HubContent. 
+        /// <para>
+        /// The metadata for the HubContent step execution.
+        /// </para>
+        /// </summary>
+        public HubContentStepMetadata HubContent { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HubContent property is set.
+        /// </summary>
+        internal bool IsSetHubContent() => this.HubContent != null;
+
+        /// <summary>
         /// Gets and sets the property InferenceComponent. 
         /// <para>
         ///  The metadata of the inference component used in pipeline execution step. 

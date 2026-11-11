@@ -105,6 +105,12 @@ namespace Amazon.Athena.Model
         IListSessionsPaginator ListSessions(ListSessionsRequest request);
 
         /// <summary>
+        /// Paginator for ListSystemTableStatuses operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListSystemTableStatusesPaginator ListSystemTableStatuses(ListSystemTableStatusesRequest request);
+
+        /// <summary>
         /// Paginator for ListTableMetadata operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

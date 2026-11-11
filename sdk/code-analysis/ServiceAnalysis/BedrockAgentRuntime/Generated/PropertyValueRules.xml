@@ -147,6 +147,12 @@
     <pattern>^[0-9a-zA-Z]{10}$|^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:knowledge-base/[0-9a-zA-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetDocumentContentRequest.MediaId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.GetExecutionFlowSnapshotRequest.ExecutionIdentifier</property>
     <max>2048</max>
     <pattern>^[a-zA-Z0-9-]{1,36}$|^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10}/execution/[a-zA-Z0-9-]{1,36})$</pattern>

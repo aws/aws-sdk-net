@@ -121,7 +121,7 @@ namespace Amazon.Runtime.Internal
                     shouldRetry = this.RetryPolicy.Retry(executionContext, exception);
                     if (!shouldRetry)
                     {
-                        // SEP 2.1: Long-polling operations must always back off when the error is
+                        // Long-polling operations must always back off when the error is
                         // retryable and retry quota is exhausted (but NOT when max attempts is reached).
                         // The RetryLimitReached check distinguishes quota exhaustion from max attempts.
                         if (IsLongPollingOperation(executionContext)
@@ -230,7 +230,7 @@ namespace Amazon.Runtime.Internal
                     shouldRetry = await this.RetryPolicy.RetryAsync(executionContext, capturedException.SourceException).ConfigureAwait(false);
                     if (!shouldRetry)
                     {
-                        // SEP 2.1: Long-polling operations must always back off when the error is
+                        // Long-polling operations must always back off when the error is
                         // retryable and retry quota is exhausted (but NOT when max attempts is reached).
                         // The RetryLimitReached check distinguishes quota exhaustion from max attempts.
                         if (IsLongPollingOperation(executionContext)
@@ -381,11 +381,12 @@ namespace Amazon.Runtime.Internal
 
         /// <summary>
         /// Determines if the current operation is a long-polling operation that should always back off
-        /// when retryable, even if retry quota is exhausted.
+        /// when retryable, even if retry quota is exhausted. This applies only to StandardRetryPolicy
+        /// and its subclasses. Other RetryPolicy implementations do not get the extra back-off.
         /// </summary>
-        private static bool IsLongPollingOperation(IExecutionContext executionContext)
+        private bool IsLongPollingOperation(IExecutionContext executionContext)
         {
-            if (!RetryPolicy.UseNewRetries2026) return false;
+            if (!(this.RetryPolicy is StandardRetryPolicy)) return false;
 
             // TODO: Check longPoll trait from model when available in C2J models.
             // Until the trait is available, use hard-coded service/operation combinations.

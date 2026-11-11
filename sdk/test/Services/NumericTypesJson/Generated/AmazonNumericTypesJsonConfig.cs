@@ -27,7 +27,7 @@ using Amazon.NumericTypesJson.Internal;
 namespace Amazon.NumericTypesJson
 {
     /// <summary>
-    /// Configuration for accessing Amazon NumericTypesJson service
+    /// Configuration for accessing Sample Numeric Types Json Service
     /// </summary>
     public partial class AmazonNumericTypesJsonConfig : ClientConfig
     {

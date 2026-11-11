@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AgentRegistry
 {
     /// <summary>
-    /// Configuration for accessing Amazon AgentRegistry service
+    /// Configuration for accessing Agent Registry
     /// </summary>
     public static class AmazonAgentRegistryDefaultConfiguration
     {

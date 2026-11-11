@@ -27,12 +27,12 @@ using Amazon.OpenSearchService.Internal;
 namespace Amazon.OpenSearchService
 {
     /// <summary>
-    /// Configuration for accessing Amazon OpenSearchService service
+    /// Configuration for accessing Amazon OpenSearch Service
     /// </summary>
     public partial class AmazonOpenSearchServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("OpenSearch", "4.0.105.2");
+            InternalSDKUtils.BuildUserAgentString("OpenSearch", "4.0.107.1");
 
         private static readonly AmazonOpenSearchServiceEndpointResolver EndpointResolver =
             new AmazonOpenSearchServiceEndpointResolver();

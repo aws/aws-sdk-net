@@ -26,7 +26,7 @@ using Amazon.ServerlessApplicationRepository.Endpoints;
 namespace Amazon.ServerlessApplicationRepository.Internal
 {
     /// <summary>
-    /// Amazon ServerlessApplicationRepository endpoint provider.
+    /// AWSServerlessApplicationRepository endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ServerlessApplicationRepositoryEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

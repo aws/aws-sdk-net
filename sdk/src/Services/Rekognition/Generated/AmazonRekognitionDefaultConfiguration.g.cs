@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Rekognition
 {
     /// <summary>
-    /// Configuration for accessing Amazon Rekognition service
+    /// Configuration for accessing Amazon Rekognition
     /// </summary>
     public static class AmazonRekognitionDefaultConfiguration
     {

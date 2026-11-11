@@ -26,7 +26,7 @@ using Amazon.RAM.Endpoints;
 namespace Amazon.RAM.Internal
 {
     /// <summary>
-    /// Amazon RAM endpoint provider.
+    /// AWS Resource Access Manager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="RAMEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

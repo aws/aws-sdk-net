@@ -24,9 +24,9 @@ namespace Amazon.Runtime.Internal
     ///
     /// This is the pure computation portion (no state): given the raw client
     /// send/receive timestamps and the server's <c>Date</c> response header, it
-    /// produces a candidate skew using the NTP-style midpoint formula and applies
-    /// the specification's discard guards (maximum trusted request duration and cache
-    /// <c>Age</c> header).
+    /// produces a candidate skew as the server time minus the time the response was
+    /// received, and applies the specification's discard guards (maximum trusted
+    /// request duration and cache <c>Age</c> header).
     ///
     /// Persistence of the resulting skew (ClientSkew / AttemptSkew) and the
     /// retry classification live elsewhere; see <see cref="CorrectClockSkew"/> and
@@ -51,9 +51,8 @@ namespace Amazon.Runtime.Internal
         /// Correction specification.
         ///
         /// <code>
-        /// elapsed   = timeResponseReceived - timeRequestSent
-        /// midpoint  = (timeRequestSent + timeResponseReceived) / 2
-        /// candidate = serverTime - midpoint
+        /// elapsed   = timeResponseReceived - timeRequestSent   (used only for the trust guard)
+        /// candidate = serverTime - timeResponseReceived
         /// </code>
         ///
         /// The candidate is discarded (returns <c>false</c>) when:
@@ -65,7 +64,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="serverTimeUtc">Parsed value of the response <c>Date</c> header in UTC, or null if absent/unparseable.</param>
         /// <param name="timeRequestSentUtc">Raw (unskewed) client UTC time when the request was sent.</param>
-        /// <param name="timeResponseReceivedUtc">Raw (unskewed) client UTC time when the response was received.</param>
+        /// <param name="timeResponseReceivedUtc">Raw (unskewed) client UTC time when the response status line and headers were received (before the body is read).</param>
         /// <param name="hasAgeHeader">True if the response contained an <c>Age</c> header.</param>
         /// <param name="candidateSkew">The computed candidate skew when the method returns true; otherwise <see cref="TimeSpan.Zero"/>.</param>
         /// <returns>True if a trustworthy candidate skew was produced; otherwise false.</returns>
@@ -89,18 +88,14 @@ namespace Amazon.Runtime.Internal
 
             var elapsed = timeResponseReceivedUtc - timeRequestSentUtc;
 
-            // A slow request makes the measurement unreliable (network delay is
-            // indistinguishable from clock drift beyond this bound).
+            // Response latency is counted as skew (HTTP has no server transmit timestamp),
+            // so a slow request is not trusted: a false skew beyond this bound could push
+            // the signing time outside the SigV4 validity window.
             if (elapsed > MaxTrustedRequestDuration)
                 return false;
 
-            // NTP-style midpoint: assume the server generated its Date value
-            // halfway through the round trip. This bounds the worst-case
-            // measurement error to elapsed / 2.
-            var midpointTicks = timeRequestSentUtc.Ticks + (elapsed.Ticks / 2);
-            var midpoint = new DateTime(midpointTicks, DateTimeKind.Utc);
-
-            candidateSkew = serverTimeUtc.Value - midpoint;
+            // Positive when the server clock is ahead of the client clock.
+            candidateSkew = serverTimeUtc.Value - timeResponseReceivedUtc;
             return true;
         }
 

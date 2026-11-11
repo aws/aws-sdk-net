@@ -27,12 +27,12 @@ using Amazon.ForecastService.Internal;
 namespace Amazon.ForecastService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ForecastService service
+    /// Configuration for accessing Amazon Forecast Service
     /// </summary>
     public partial class AmazonForecastServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("forecast", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("forecast", "4.0.100.26");
 
         private static readonly AmazonForecastServiceEndpointResolver EndpointResolver =
             new AmazonForecastServiceEndpointResolver();

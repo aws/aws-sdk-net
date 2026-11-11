@@ -27,12 +27,12 @@ using Amazon.Macie2.Internal;
 namespace Amazon.Macie2
 {
     /// <summary>
-    /// Configuration for accessing Amazon Macie2 service
+    /// Configuration for accessing Amazon Macie 2
     /// </summary>
     public partial class AmazonMacie2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Macie2", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Macie2", "4.0.100.26");
 
         private static readonly AmazonMacie2EndpointResolver EndpointResolver =
             new AmazonMacie2EndpointResolver();

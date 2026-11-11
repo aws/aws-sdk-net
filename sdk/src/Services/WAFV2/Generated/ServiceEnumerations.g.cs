@@ -307,6 +307,47 @@ namespace Amazon.WAFV2
     }
 
     /// <summary>
+    /// Constants used for properties of type ConnectedAccountChain.
+    /// </summary>
+    public class ConnectedAccountChain : ConstantClass
+    {
+        /// <summary>
+        /// Constant BASE for ConnectedAccountChain
+        /// </summary>
+        public static readonly ConnectedAccountChain BASE = new ConnectedAccountChain("BASE");
+
+        /// <summary>
+        /// Constant SOLANA for ConnectedAccountChain
+        /// </summary>
+        public static readonly ConnectedAccountChain SOLANA = new ConnectedAccountChain("SOLANA");
+
+        /// <summary>
+        /// Constructs a custom ConnectedAccountChain for a value not among the defined constants.
+        /// </summary>
+        public ConnectedAccountChain(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectedAccountChain FindValue(string value)
+        {
+            return FindValue<ConnectedAccountChain>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectedAccountChain(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type CountryCode.
     /// </summary>
     public class CountryCode : ConstantClass
@@ -2552,6 +2593,11 @@ namespace Amazon.WAFV2
         /// Constant CHALLENGE_CONFIG for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField CHALLENGE_CONFIG = new ParameterExceptionField("CHALLENGE_CONFIG");
+
+        /// <summary>
+        /// Constant CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG = new ParameterExceptionField("CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG");
 
         /// <summary>
         /// Constant CHANGE_PROPAGATION_STATUS for ParameterExceptionField

@@ -27,12 +27,12 @@ using Amazon.VoiceID.Internal;
 namespace Amazon.VoiceID
 {
     /// <summary>
-    /// Configuration for accessing Amazon VoiceID service
+    /// Configuration for accessing Amazon Voice ID
     /// </summary>
     public partial class AmazonVoiceIDConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Voice ID", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Voice ID", "4.0.100.25");
 
         private static readonly AmazonVoiceIDEndpointResolver EndpointResolver =
             new AmazonVoiceIDEndpointResolver();

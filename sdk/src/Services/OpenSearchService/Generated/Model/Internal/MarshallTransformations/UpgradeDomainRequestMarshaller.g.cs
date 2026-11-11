@@ -80,6 +80,16 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetDeploymentStrategyOptions())
+            {
+                context.Writer.WritePropertyName("DeploymentStrategyOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeploymentStrategyOverrideOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeploymentStrategyOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Appflow service
+    /// Service metadata for Amazon Appflow
     /// </summary>
     public partial class AmazonAppflowMetadata : IServiceMetadata
     {

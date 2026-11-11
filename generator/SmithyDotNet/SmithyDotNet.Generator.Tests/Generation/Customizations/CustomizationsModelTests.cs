@@ -109,10 +109,32 @@ public class CustomizationsModelTests
     }
 
     [Fact]
-    public void Load_ShapeSubstitutions_EmitAsShape_Throws()
+    public void Load_Ec2Hooks_ReadsHooks()
     {
-        var ex = Assert.Throws<GeneratorException>(() => LoadFiles("""{ "shapeSubstitutions": { "Thing": { "emitAsShape": "String" } } }"""));
-        Assert.Contains("emitAsShape", ex.Message);
+        var model = LoadFiles("""
+            {
+              "shapeSubstitutions": { "AttributeValue": { "emitAsShape": "String", "emitFromMember": "Value", "listMemberSuffixExclusions": ["CreateDhcpOptions"] } },
+              "shapeModifiers": {
+                "Reservation": {
+                  "modify": [{ "Url": { "locationName": "Location", "customMarshall": true, "accessModifier": "internal" } }],
+                  "inject": [{ "GroupNames": { "shape": "GroupNameStringList", "documentation": "Doc", "locationName": "groupName", "customMarshall": true } }]
+                }
+              },
+              "operationModifiers": { "CreateDhcpOptions": { "marshallNameOverrides": [{ "DhcpConfiguration": { "Values": { "marshallName": "Value" } } }] } },
+              "suppressResultGeneration": ["DeleteThing"]
+            }
+            """,
+            """{ "suppressResultGeneration": ["RejectThing"] }""");
+
+        var substitution = model.ShapeSubstitutions["AttributeValue"];
+        Assert.Equal(("String", "Value"), (substitution.EmitAsShape, substitution.EmitFromMember));
+        Assert.Equal(["CreateDhcpOptions"], substitution.ListMemberSuffixExclusions);
+        var property = model.ShapeModifiers["Reservation"].Modify[0]["Url"];
+        Assert.Equal(("Location", true, "internal"), (property.LocationName, property.CustomMarshall, property.AccessModifier));
+        var injector = model.ShapeModifiers["Reservation"].Inject[0]["GroupNames"];
+        Assert.Equal(("GroupNameStringList", "Doc", "groupName", true), (injector.Shape, injector.Documentation, injector.LocationName, injector.CustomMarshall));
+        Assert.Equal("Value", model.MarshallNameOverride("CreateDhcpOptions", "DhcpConfiguration", "Values"));
+        Assert.Equal(["DeleteThing", "RejectThing"], model.SuppressResultGeneration);
     }
 
     [Fact]

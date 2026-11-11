@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS Budget service will provide create/get/list/update/delete budgets for cost management. ",
+  "base-name": "Budgets",
   "legacy-service-id": "Budgets"
 }

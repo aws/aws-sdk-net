@@ -1,0 +1,126 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#DoThing" },
+        { "target": "com.example#AttachThing" },
+        { "target": "com.example#PutThing" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "smithy.api#title": "Example Service",
+        "aws.protocols#ec2Query": {},
+        "aws.auth#sigv4": { "name": "example" }
+      }
+    },
+
+    "com.example#DoThing": {
+      "type": "operation",
+      "input": { "target": "com.example#DoThingRequest" },
+      "output": { "target": "com.example#DoThingResponse" },
+      "errors": [ { "target": "com.example#BadThing" } ],
+      "traits": {
+        "smithy.api#examples": [{ "title": "Send values", "input": { "values": ["10.0.0.1", "10.0.0.2"] } }]
+      }
+    },
+    "com.example#DoThingRequest": {
+      "type": "structure",
+      "members": {
+        "queryNamed": { "target": "smithy.api#String", "traits": { "aws.protocols#ec2QueryName": "customName", "smithy.api#xmlName": "ignored" } },
+        "xmlNamed":   { "target": "smithy.api#String", "traits": { "smithy.api#xmlName": "renamed" } },
+        "plain":      { "target": "smithy.api#String" },
+        "items":      { "target": "com.example#ItemList" },
+        "wrapped":    { "target": "com.example#AttributeValue" },
+        "values":     { "target": "com.example#ValueList" },
+        "spec":       { "target": "com.example#SpotSpec" }
+      }
+    },
+    "com.example#DoThingResponse": {
+      "type": "structure",
+      "members": {
+        "Greeting": { "target": "smithy.api#String" },
+        "result":   { "target": "smithy.api#String", "traits": { "smithy.api#xmlName": "ResultValue" } },
+        "tags":     { "target": "com.example#TagMap" },
+        "wrapped":  { "target": "com.example#AttributeValue" },
+        "values":   { "target": "com.example#ValueList" },
+        "spec":     { "target": "com.example#Spec" }
+      }
+    },
+    "com.example#TagMap": {
+      "type": "map",
+      "key": { "target": "smithy.api#String" },
+      "value": { "target": "smithy.api#String" }
+    },
+    "com.example#ItemList": {
+      "type": "list",
+      "member": { "target": "smithy.api#String", "traits": { "smithy.api#xmlName": "item" } }
+    },
+    "com.example#BadThing": {
+      "type": "structure",
+      "members": {
+        "message": { "target": "smithy.api#String" },
+        "Reason": { "target": "smithy.api#String" }
+      },
+      "traits": { "smithy.api#error": "client" }
+    },
+
+    "com.example#AttributeValue": {
+      "type": "structure",
+      "members": {
+        "Value": { "target": "smithy.api#String", "traits": { "aws.protocols#ec2QueryName": "Value", "smithy.api#xmlName": "value" } }
+      }
+    },
+    "com.example#ValueList": {
+      "type": "list",
+      "member": { "target": "com.example#AttributeValue", "traits": { "smithy.api#xmlName": "item" } }
+    },
+    "com.example#SpotSpec": {
+      "type": "structure",
+      "members": {
+        "Kind": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#Spec": {
+      "type": "structure",
+      "members": {
+        "Kind":   { "target": "smithy.api#String", "traits": { "smithy.api#xmlName": "kind" } },
+        "Groups": { "target": "com.example#IdList" }
+      }
+    },
+    "com.example#IdList": {
+      "type": "list",
+      "member": { "target": "smithy.api#String", "traits": { "smithy.api#xmlName": "item" } }
+    },
+    "com.example#NameList": {
+      "type": "list",
+      "member": { "target": "smithy.api#String", "traits": { "smithy.api#xmlName": "GroupName" } }
+    },
+
+    "com.example#PutThing": {
+      "type": "operation",
+      "input": { "target": "com.example#PutThingRequest" },
+      "output": { "target": "smithy.api#Unit" }
+    },
+    "com.example#PutThingRequest": {
+      "type": "structure",
+      "members": {
+        "values": { "target": "com.example#ValueList" }
+      }
+    },
+
+    "com.example#AttachThing": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#Attachment" }
+    },
+    "com.example#Attachment": {
+      "type": "structure",
+      "members": {
+        "State": { "target": "smithy.api#String" }
+      }
+    }
+  }
+}

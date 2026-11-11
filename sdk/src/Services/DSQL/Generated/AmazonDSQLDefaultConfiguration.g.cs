@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DSQL
 {
     /// <summary>
-    /// Configuration for accessing Amazon DSQL service
+    /// Configuration for accessing Amazon Aurora DSQL
     /// </summary>
     public static class AmazonDSQLDefaultConfiguration
     {

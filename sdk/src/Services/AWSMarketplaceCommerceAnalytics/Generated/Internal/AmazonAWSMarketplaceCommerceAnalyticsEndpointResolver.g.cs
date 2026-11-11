@@ -31,7 +31,7 @@ using Amazon.AWSMarketplaceCommerceAnalytics.Endpoints;
 namespace Amazon.AWSMarketplaceCommerceAnalytics.Internal
 {
     /// <summary>
-    /// Amazon AWSMarketplaceCommerceAnalytics endpoint resolver.
+    /// AWS Marketplace Commerce Analytics endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AWSMarketplaceCommerceAnalytics service requests.
     /// <para />

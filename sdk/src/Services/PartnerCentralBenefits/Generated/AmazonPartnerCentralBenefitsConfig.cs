@@ -27,12 +27,12 @@ using Amazon.PartnerCentralBenefits.Internal;
 namespace Amazon.PartnerCentralBenefits
 {
     /// <summary>
-    /// Configuration for accessing Amazon PartnerCentralBenefits service
+    /// Configuration for accessing Partner Central Benefits API
     /// </summary>
     public partial class AmazonPartnerCentralBenefitsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PartnerCentral Benefits", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("PartnerCentral Benefits", "4.0.100.25");
 
         private static readonly AmazonPartnerCentralBenefitsEndpointResolver EndpointResolver =
             new AmazonPartnerCentralBenefitsEndpointResolver();

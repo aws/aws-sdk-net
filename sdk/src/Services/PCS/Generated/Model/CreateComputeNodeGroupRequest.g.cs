@@ -36,10 +36,13 @@ namespace Amazon.PCS.Model
     /// definition of the compute properties and lifecycle management. PCS uses the information
     /// you provide to this API action to launch compute nodes in your account. You can only
     /// specify subnets in the same Amazon VPC as your cluster. You receive billing charges
-    /// for the compute nodes that PCS launches in your account. You must already have a launch
-    /// template before you call this API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
-    /// an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud User
-    /// Guide for Linux Instances</i>.
+    /// for the compute nodes that PCS launches in your account. You can configure common
+    /// instance settings, such as the AMI, security groups, and SSH key pair, directly on
+    /// the compute node group, or you can provide a custom EC2 launch template. To use a
+    /// launch template that PCS manages, set <c>launchTemplateMode</c> to <c>MANAGED</c>
+    /// and don't provide <c>customLaunchTemplate</c>. In this case, you must specify <c>amiId</c>
+    /// and <c>securityGroupIds</c>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_cng_instance-settings.html">Configuring
+    /// instance settings for compute node groups in PCS</a> in the <i>PCS User Guide</i>.
     /// </summary>
     public partial class CreateComputeNodeGroupRequest : AmazonPCSRequest
     {
@@ -47,8 +50,9 @@ namespace Amazon.PCS.Model
         /// Gets and sets the property AmiId. 
         /// <para>
         ///  The ID of the Amazon Machine Image (AMI) that PCS uses to launch compute nodes (Amazon
-        /// EC2 instances). If you don't provide this value, PCS uses the AMI ID specified in
-        /// the custom launch template.
+        /// EC2 instances). This value overrides the AMI ID in the custom launch template. If
+        /// you don't provide this value, PCS uses the AMI ID specified in the custom launch template.
+        /// You must provide this value if <c>launchTemplateMode</c> is <c>MANAGED</c>.
         /// </para>
         /// </summary>
         public string AmiId { get; set; }
@@ -66,7 +70,7 @@ namespace Amazon.PCS.Model
         /// idempotent request, if the original request completes successfully, the subsequent
         /// retries with the same client token return the result from the original successful
         /// request and they have no additional effect. If you don't specify a client token, the
-        /// CLI and SDK automatically generate 1 for you.
+        /// CLI and SDK automatically generate one for you.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 8, Max = 100)]
@@ -106,9 +110,13 @@ namespace Amazon.PCS.Model
         internal bool IsSetComputeNodeGroupName() => this.ComputeNodeGroupName != null;
 
         /// <summary>
-        /// Gets and sets the property CustomLaunchTemplate.
+        /// Gets and sets the property CustomLaunchTemplate. 
+        /// <para>
+        /// The custom Amazon EC2 launch template to associate with the compute node group. Specify
+        /// the launch template <c>id</c> and <c>version</c> when <c>launchTemplateMode</c> is
+        /// <c>CUSTOM</c>. Don't specify this value when <c>launchTemplateMode</c> is <c>MANAGED</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public CustomLaunchTemplate CustomLaunchTemplate { get; set; }
 
         /// <summary>
@@ -154,6 +162,25 @@ namespace Amazon.PCS.Model
         /// Checks to see if the InstanceConfigs property is set.
         /// </summary>
         internal bool IsSetInstanceConfigs() => this.InstanceConfigs != null && (this.InstanceConfigs.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property LaunchTemplateMode. 
+        /// <para>
+        /// Specifies whether the compute node group uses a custom launch template or a launch
+        /// template that PCS manages. The default value is <c>CUSTOM</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is <c>CUSTOM</c>, provide <c>customLaunchTemplate</c>. If the value is
+        /// <c>MANAGED</c>, omit <c>customLaunchTemplate</c> and provide <c>amiId</c> and <c>securityGroupIds</c>.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateMode LaunchTemplateMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LaunchTemplateMode property is set.
+        /// </summary>
+        internal bool IsSetLaunchTemplateMode() => this.LaunchTemplateMode != null;
 
         /// <summary>
         /// Gets and sets the property NodeLifecycleActions. 
@@ -207,6 +234,32 @@ namespace Amazon.PCS.Model
         internal bool IsSetScalingConfiguration() => this.ScalingConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        /// The IDs of the EC2 security groups to configure directly on the compute node group.
+        /// The security groups must be in the same VPC as the cluster. PCS uses these security
+        /// groups instead of the security groups in the custom launch template. You can't specify
+        /// this value if the custom launch template defines network interfaces. If you don't
+        /// provide this value, PCS uses the security groups in the custom launch template. You
+        /// must provide this value if <c>launchTemplateMode</c> is <c>MANAGED</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_cng_instance-settings.html">Configuring
+        /// instance settings for compute node groups in PCS</a> in the <i>PCS User Guide</i>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> SecurityGroupIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the SecurityGroupIds property is set.
+        /// </summary>
+        internal bool IsSetSecurityGroupIds() => this.SecurityGroupIds != null && (this.SecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property SlurmConfiguration. 
         /// <para>
         /// Additional options related to the Slurm scheduler.
@@ -228,6 +281,26 @@ namespace Amazon.PCS.Model
         /// Checks to see if the SpotOptions property is set.
         /// </summary>
         internal bool IsSetSpotOptions() => this.SpotOptions != null;
+
+        /// <summary>
+        /// Gets and sets the property SshKeyName. 
+        /// <para>
+        /// The name of the EC2 key pair to configure directly on the compute node group. The
+        /// key pair must exist in your account and Amazon Web Services Region. PCS uses this
+        /// key pair instead of the key pair in the custom launch template. If you don't provide
+        /// this value, PCS uses the key pair in the custom launch template, if one is specified.
+        /// You must have permission for <c>ec2:DescribeKeyPairs</c>. If you delete the key pair
+        /// later, future instance launches can fail. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_cng_instance-settings.html">Configuring
+        /// instance settings for compute node groups in PCS</a> in the <i>PCS User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string SshKeyName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SshKeyName property is set.
+        /// </summary>
+        internal bool IsSetSshKeyName() => this.SshKeyName != null;
 
         /// <summary>
         /// Gets and sets the property SubnetIds. 

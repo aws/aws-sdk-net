@@ -26,7 +26,7 @@ using Amazon.Organizations.Endpoints;
 namespace Amazon.Organizations.Internal
 {
     /// <summary>
-    /// Amazon Organizations endpoint provider.
+    /// AWS Organizations endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="OrganizationsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

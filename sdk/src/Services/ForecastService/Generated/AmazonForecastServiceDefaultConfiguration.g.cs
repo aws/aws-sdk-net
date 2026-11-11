@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ForecastService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ForecastService service
+    /// Configuration for accessing Amazon Forecast Service
     /// </summary>
     public static class AmazonForecastServiceDefaultConfiguration
     {

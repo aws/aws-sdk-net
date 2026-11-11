@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SupportAuthZ.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SupportAuthZ service
+    /// Service metadata for SupportAuthZ
     /// </summary>
     public partial class AmazonSupportAuthZMetadata : IServiceMetadata
     {

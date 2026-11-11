@@ -27,12 +27,12 @@ using Amazon.MediaPackage.Internal;
 namespace Amazon.MediaPackage
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaPackage service
+    /// Configuration for accessing AWS Elemental MediaPackage
     /// </summary>
     public partial class AmazonMediaPackageConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MediaPackage", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("MediaPackage", "4.0.100.26");
 
         private static readonly AmazonMediaPackageEndpointResolver EndpointResolver =
             new AmazonMediaPackageEndpointResolver();

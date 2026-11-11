@@ -35,16 +35,6 @@ namespace Amazon.Runtime
     public abstract partial class RetryPolicy
     {
         /// <summary>
-        /// Temporary feature flag for updated retry behavior improvements including
-        /// revised backoff timing, updated retry quota costs, and other enhancements.
-        /// Enabled by setting the AWS_NEW_RETRIES_2026 environment variable to "true".
-        /// Defaults to false. This flag will be removed at end of 2026 when the new
-        /// behavior becomes the default.
-        /// </summary>
-        internal static bool UseNewRetries2026 { get; set; } =
-            string.Equals(Environment.GetEnvironmentVariable("AWS_NEW_RETRIES_2026"), "true", StringComparison.OrdinalIgnoreCase);
-
-        /// <summary>
         /// Maximum number of retries to be performed.
         /// This does not count the initial request.
         /// </summary>
@@ -156,17 +146,10 @@ namespace Amazon.Runtime
                         return false;
                     }
 
-                    if (UseNewRetries2026)
-                    {
-                        executionContext.RequestContext.LastCapacityType = IsThrottlingError(exception) ?
-                            CapacityManager.CapacityType.Throttling : CapacityManager.CapacityType.Retry;
-                        StoreRetryAfterHeader(executionContext, exception);
-                    }
-                    else
-                    {
-                        executionContext.RequestContext.LastCapacityType = IsServiceTimeoutError(exception) ?
-                            CapacityManager.CapacityType.Timeout : CapacityManager.CapacityType.Retry;
-                    }
+                    executionContext.RequestContext.LastCapacityType = IsThrottlingError(exception) ?
+                        CapacityManager.CapacityType.Throttling : CapacityManager.CapacityType.Retry;
+                    StoreRetryAfterHeader(executionContext, exception);
+
                     // Clock Skew Correction specification: skew retries consume retry quota
                     // (RETRY_COST) and count toward MAX_ATTEMPTS. There is never a reason to set
                     // bypassAcquireCapacity. 

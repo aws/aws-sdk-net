@@ -9,8 +9,13 @@ namespace SmithyDotNet.Generator.Model.Traits;
 /// </summary>
 public static class ScalarTraits
 {
+    private const string DocumentationTrait = "smithy.api#documentation";
+    private const string XmlNameTrait = "smithy.api#xmlName";
+
     /// <remarks><see href="https://smithy.io/2.0/spec/documentation-traits.html#documentation-trait" /></remarks>
-    public static string? GetDocumentation(this Shape shape) => GetStringTrait(shape, "smithy.api#documentation");
+    public static string? GetDocumentation(this Shape shape) => GetStringTrait(shape, DocumentationTrait);
+
+    public static void SetDocumentation(this Shape shape, string documentation) => SetStringTrait(shape, DocumentationTrait, documentation);
 
     /// <remarks><see href="https://smithy.io/2.0/spec/documentation-traits.html#title-trait" /></remarks>
     public static string? GetTitle(this Shape shape) => GetStringTrait(shape, "smithy.api#title");
@@ -29,7 +34,9 @@ public static class ScalarTraits
 
     /// <summary>The XML element/attribute name to use on the wire instead of the member name (restXml).</summary>
     /// <remarks><see href="https://smithy.io/2.0/spec/protocol-traits.html#xmlname-trait" /></remarks>
-    public static string? GetXmlName(this Shape shape) => GetStringTrait(shape, "smithy.api#xmlName");
+    public static string? GetXmlName(this Shape shape) => GetStringTrait(shape, XmlNameTrait);
+
+    public static void SetXmlName(this Shape shape, string name) => SetStringTrait(shape, XmlNameTrait, name);
 
     /// <remarks><see href="https://smithy.io/2.0/spec/constraint-traits.html#pattern-trait" /></remarks>
     public static string? GetPattern(this Shape shape) => GetStringTrait(shape, "smithy.api#pattern");

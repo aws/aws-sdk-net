@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ConnectHealth
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectHealth service
+    /// Configuration for accessing Connect Health
     /// </summary>
     public static class AmazonConnectHealthDefaultConfiguration
     {

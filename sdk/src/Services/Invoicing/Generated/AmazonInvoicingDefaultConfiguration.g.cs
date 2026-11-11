@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Invoicing
 {
     /// <summary>
-    /// Configuration for accessing Amazon Invoicing service
+    /// Configuration for accessing AWS Invoicing
     /// </summary>
     public static class AmazonInvoicingDefaultConfiguration
     {

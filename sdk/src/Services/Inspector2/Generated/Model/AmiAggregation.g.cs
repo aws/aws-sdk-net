@@ -55,6 +55,26 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAmis() => this.Amis != null && (this.Amis.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property ScanSources. 
+        /// <para>
+        /// The scan sources to filter the aggregation results by.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2)]
+        public List<string> ScanSources { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the ScanSources property is set.
+        /// </summary>
+        internal bool IsSetScanSources() => this.ScanSources != null && (this.ScanSources.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
         /// The value to sort results by.

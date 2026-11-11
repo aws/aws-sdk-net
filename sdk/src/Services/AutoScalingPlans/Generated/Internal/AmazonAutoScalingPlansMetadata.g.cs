@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AutoScalingPlans service
+    /// Service metadata for AWS Auto Scaling Plans
     /// </summary>
     public partial class AmazonAutoScalingPlansMetadata : IServiceMetadata
     {

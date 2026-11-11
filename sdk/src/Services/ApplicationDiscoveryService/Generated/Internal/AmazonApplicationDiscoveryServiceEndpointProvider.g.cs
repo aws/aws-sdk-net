@@ -26,7 +26,7 @@ using Amazon.ApplicationDiscoveryService.Endpoints;
 namespace Amazon.ApplicationDiscoveryService.Internal
 {
     /// <summary>
-    /// Amazon ApplicationDiscoveryService endpoint provider.
+    /// AWS Application Discovery Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ApplicationDiscoveryServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

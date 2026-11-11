@@ -27,12 +27,12 @@ using Amazon.ApplicationAutoScaling.Internal;
 namespace Amazon.ApplicationAutoScaling
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApplicationAutoScaling service
+    /// Configuration for accessing Application Auto Scaling
     /// </summary>
     public partial class AmazonApplicationAutoScalingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Application Auto Scaling", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Application Auto Scaling", "4.0.100.25");
 
         private static readonly AmazonApplicationAutoScalingEndpointResolver EndpointResolver =
             new AmazonApplicationAutoScalingEndpointResolver();

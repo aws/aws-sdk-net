@@ -31,7 +31,7 @@ using Amazon.RedshiftDataAPIService.Endpoints;
 namespace Amazon.RedshiftDataAPIService.Internal
 {
     /// <summary>
-    /// Amazon RedshiftDataAPIService endpoint resolver.
+    /// Redshift Data API Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for RedshiftDataAPIService service requests.
     /// <para />

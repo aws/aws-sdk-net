@@ -83,6 +83,21 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("agentRuntimeName");
                 context.Writer.WriteStringValue(publicRequest.AgentRuntimeName);
             }
+            if (publicRequest.IsSetAllowedPorts())
+            {
+                context.Writer.WritePropertyName("allowedPorts");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestAllowedPortsListValue in publicRequest.AllowedPorts)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AllowedPortMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAllowedPortsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetAuthorizerConfiguration())
             {
                 context.Writer.WritePropertyName("authorizerConfiguration");
@@ -145,6 +160,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetHooksConfiguration())
+            {
+                context.Writer.WritePropertyName("hooksConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RuntimeHooksConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HooksConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetLifecycleConfiguration())
             {
                 context.Writer.WritePropertyName("lifecycleConfiguration");
@@ -189,6 +214,21 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.RequestHeaderConfiguration, context);
 
                 context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetResourceConfigurations())
+            {
+                context.Writer.WritePropertyName("resourceConfigurations");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestResourceConfigurationsListValue in publicRequest.ResourceConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ResourceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestResourceConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
             if (publicRequest.IsSetRoleArn())
             {

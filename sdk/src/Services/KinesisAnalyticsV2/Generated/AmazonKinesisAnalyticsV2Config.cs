@@ -27,12 +27,12 @@ using Amazon.KinesisAnalyticsV2.Internal;
 namespace Amazon.KinesisAnalyticsV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon KinesisAnalyticsV2 service
+    /// Configuration for accessing Amazon Kinesis Analytics
     /// </summary>
     public partial class AmazonKinesisAnalyticsV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kinesis Analytics V2", "4.0.101.16");
+            InternalSDKUtils.BuildUserAgentString("Kinesis Analytics V2", "4.0.101.20");
 
         private static readonly AmazonKinesisAnalyticsV2EndpointResolver EndpointResolver =
             new AmazonKinesisAnalyticsV2EndpointResolver();

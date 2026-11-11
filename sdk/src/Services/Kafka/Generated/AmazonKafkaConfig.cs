@@ -27,12 +27,12 @@ using Amazon.Kafka.Internal;
 namespace Amazon.Kafka
 {
     /// <summary>
-    /// Configuration for accessing Amazon Kafka service
+    /// Configuration for accessing Managed Streaming for Kafka
     /// </summary>
     public partial class AmazonKafkaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kafka", "4.0.103.10");
+            InternalSDKUtils.BuildUserAgentString("Kafka", "4.0.103.14");
 
         private static readonly AmazonKafkaEndpointResolver EndpointResolver =
             new AmazonKafkaEndpointResolver();

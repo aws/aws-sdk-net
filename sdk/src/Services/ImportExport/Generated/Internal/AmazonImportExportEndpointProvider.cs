@@ -26,7 +26,7 @@ using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
 namespace Amazon.ImportExport.Internal
 {
     /// <summary>
-    /// Amazon ImportExport endpoint provider.
+    /// AWS Import/Export endpoint provider.
     /// Resolves endpoint for given set of ImportExportEndpointParameters.
     /// Can throw AmazonClientException if endpoint resolution is unsuccessful.
     /// </summary>

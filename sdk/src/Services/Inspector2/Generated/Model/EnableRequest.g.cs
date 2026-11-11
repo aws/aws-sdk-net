@@ -81,7 +81,7 @@ namespace Amazon.Inspector2.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 5)]
+        [AWSProperty(Required = true, Min = 1, Max = 6)]
         public List<string> ResourceTypes { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>

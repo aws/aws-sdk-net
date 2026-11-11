@@ -27,12 +27,12 @@ using Amazon.SecurityHub.Internal;
 namespace Amazon.SecurityHub
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecurityHub service
+    /// Configuration for accessing AWS SecurityHub
     /// </summary>
     public partial class AmazonSecurityHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SecurityHub", "4.0.106.4");
+            InternalSDKUtils.BuildUserAgentString("SecurityHub", "4.0.107.3");
 
         private static readonly AmazonSecurityHubEndpointResolver EndpointResolver =
             new AmazonSecurityHubEndpointResolver();

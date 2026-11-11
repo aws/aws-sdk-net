@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,15 +14,15 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
     {
         public void EC2AllocateAddress()
         {
-            #region ec2-allocate-address-1
+            #region AllocateAddress-1
 
             var client = new AmazonEC2Client();
-            var response = client.AllocateAddress(new AllocateAddressRequest 
+            var response = client.AllocateAddress(new AllocateAddressRequest
             {
             });
 
             string allocationId = response.AllocationId;
-            string domain = response.Domain;
+            DomainType domain = response.Domain;
             string networkBorderGroup = response.NetworkBorderGroup;
             string publicIp = response.PublicIp;
             string publicIpv4Pool = response.PublicIpv4Pool;
@@ -31,10 +32,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AssignPrivateIpAddresses()
         {
-            #region ec2-assign-private-ip-addresses-1
+            #region AssignPrivateIpAddresses-1
 
             var client = new AmazonEC2Client();
-            var response = client.AssignPrivateIpAddresses(new AssignPrivateIpAddressesRequest 
+            var response = client.AssignPrivateIpAddresses(new AssignPrivateIpAddressesRequest
             {
                 NetworkInterfaceId = "eni-e5aa89a3",
                 PrivateIpAddresses = new List<string> {
@@ -48,10 +49,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AssignPrivateIpAddresses()
         {
-            #region ec2-assign-private-ip-addresses-2
+            #region AssignPrivateIpAddresses-2
 
             var client = new AmazonEC2Client();
-            var response = client.AssignPrivateIpAddresses(new AssignPrivateIpAddressesRequest 
+            var response = client.AssignPrivateIpAddresses(new AssignPrivateIpAddressesRequest
             {
                 NetworkInterfaceId = "eni-e5aa89a3",
                 SecondaryPrivateIpAddressCount = 2
@@ -63,10 +64,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AssociateAddress()
         {
-            #region ec2-associate-address-1
+            #region AssociateAddress-1
 
             var client = new AmazonEC2Client();
-            var response = client.AssociateAddress(new AssociateAddressRequest 
+            var response = client.AssociateAddress(new AssociateAddressRequest
             {
                 AllocationId = "eipalloc-64d5890a",
                 InstanceId = "i-0b263919b6498b123"
@@ -79,10 +80,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AssociateAddress()
         {
-            #region ec2-associate-address-2
+            #region AssociateAddress-2
 
             var client = new AmazonEC2Client();
-            var response = client.AssociateAddress(new AssociateAddressRequest 
+            var response = client.AssociateAddress(new AssociateAddressRequest
             {
                 AllocationId = "eipalloc-64d5890a",
                 NetworkInterfaceId = "eni-1a2b3c4d"
@@ -95,10 +96,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AssociateApplicationStatusCheck()
         {
-            #region ec2-associate-application-status-check-1
+            #region AssociateApplicationStatusCheck-1
 
             var client = new AmazonEC2Client();
-            var response = client.AssociateApplicationStatusCheck(new AssociateApplicationStatusCheckRequest 
+            var response = client.AssociateApplicationStatusCheck(new AssociateApplicationStatusCheckRequest
             {
                 ApplicationStatusCheckId = "asc-0123456789abcdef0",
                 TargetTagAssociations = new List<CustomTagKeyValueRequestPair> {
@@ -117,10 +118,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AssociateDhcpOptions()
         {
-            #region ec2-associate-dhcp-options-1
+            #region AssociateDhcpOptions-1
 
             var client = new AmazonEC2Client();
-            var response = client.AssociateDhcpOptions(new AssociateDhcpOptionsRequest 
+            var response = client.AssociateDhcpOptions(new AssociateDhcpOptionsRequest
             {
                 DhcpOptionsId = "dopt-d9070ebb",
                 VpcId = "vpc-a01106c2"
@@ -132,10 +133,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AssociateDhcpOptions()
         {
-            #region ec2-associate-dhcp-options-2
+            #region AssociateDhcpOptions-2
 
             var client = new AmazonEC2Client();
-            var response = client.AssociateDhcpOptions(new AssociateDhcpOptionsRequest 
+            var response = client.AssociateDhcpOptions(new AssociateDhcpOptionsRequest
             {
                 DhcpOptionsId = "default",
                 VpcId = "vpc-a01106c2"
@@ -147,10 +148,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AssociateIamInstanceProfile()
         {
-            #region to-associate-an-iam-instance-profile-with-an-instance-1528928429850
+            #region AssociateIamInstanceProfile-1
 
             var client = new AmazonEC2Client();
-            var response = client.AssociateIamInstanceProfile(new AssociateIamInstanceProfileRequest 
+            var response = client.AssociateIamInstanceProfile(new AssociateIamInstanceProfileRequest
             {
                 IamInstanceProfile = new IamInstanceProfileSpecification { Name = "admin-role" },
                 InstanceId = "i-123456789abcde123"
@@ -163,10 +164,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AssociateRouteTable()
         {
-            #region ec2-associate-route-table-1
+            #region AssociateRouteTable-1
 
             var client = new AmazonEC2Client();
-            var response = client.AssociateRouteTable(new AssociateRouteTableRequest 
+            var response = client.AssociateRouteTable(new AssociateRouteTableRequest
             {
                 RouteTableId = "rtb-22574640",
                 SubnetId = "subnet-9d4a7b6"
@@ -179,10 +180,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AttachInternetGateway()
         {
-            #region ec2-attach-internet-gateway-1
+            #region AttachInternetGateway-1
 
             var client = new AmazonEC2Client();
-            var response = client.AttachInternetGateway(new AttachInternetGatewayRequest 
+            var response = client.AttachInternetGateway(new AttachInternetGatewayRequest
             {
                 InternetGatewayId = "igw-c0a643a9",
                 VpcId = "vpc-a01106c2"
@@ -194,10 +195,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AttachNetworkInterface()
         {
-            #region ec2-attach-network-interface-1
+            #region AttachNetworkInterface-1
 
             var client = new AmazonEC2Client();
-            var response = client.AttachNetworkInterface(new AttachNetworkInterfaceRequest 
+            var response = client.AttachNetworkInterface(new AttachNetworkInterfaceRequest
             {
                 DeviceIndex = 1,
                 InstanceId = "i-1234567890abcdef0",
@@ -211,31 +212,26 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AttachVolume()
         {
-            #region to-attach-a-volume-to-an-instance-1472499213109
+            #region AttachVolume-1
 
             var client = new AmazonEC2Client();
-            var response = client.AttachVolume(new AttachVolumeRequest 
+            var response = client.AttachVolume(new AttachVolumeRequest
             {
                 Device = "/dev/sdf",
                 InstanceId = "i-01474ef662b89480",
                 VolumeId = "vol-1234567890abcdef0"
             });
 
-            DateTime attachTime = response.AttachTime;
-            string device = response.Device;
-            string instanceId = response.InstanceId;
-            string state = response.State;
-            string volumeId = response.VolumeId;
 
             #endregion
         }
 
         public void EC2AuthorizeSecurityGroupEgress()
         {
-            #region to-add-a-rule-that-allows-outbound-traffic-to-a-specific-address-range-1528929309636
+            #region AuthorizeSecurityGroupEgress-1
 
             var client = new AmazonEC2Client();
-            var response = client.AuthorizeSecurityGroupEgress(new AuthorizeSecurityGroupEgressRequest 
+            var response = client.AuthorizeSecurityGroupEgress(new AuthorizeSecurityGroupEgressRequest
             {
                 GroupId = "sg-1a2b3c4d",
                 IpPermissions = new List<IpPermission> {
@@ -253,10 +249,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AuthorizeSecurityGroupEgress()
         {
-            #region to-add-a-rule-that-allows-outbound-traffic-to-a-specific-security-group-1528929760260
+            #region AuthorizeSecurityGroupEgress-2
 
             var client = new AmazonEC2Client();
-            var response = client.AuthorizeSecurityGroupEgress(new AuthorizeSecurityGroupEgressRequest 
+            var response = client.AuthorizeSecurityGroupEgress(new AuthorizeSecurityGroupEgressRequest
             {
                 GroupId = "sg-1a2b3c4d",
                 IpPermissions = new List<IpPermission> {
@@ -277,31 +273,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AuthorizeSecurityGroupIngress()
         {
-            #region to-add-a-rule-that-allows-inbound-ssh-traffic-1529011610328
+            #region AuthorizeSecurityGroupIngress-1
 
             var client = new AmazonEC2Client();
-            var response = client.AuthorizeSecurityGroupIngress(new AuthorizeSecurityGroupIngressRequest 
-            {
-                GroupId = "sg-903004f8",
-                IpPermissions = new List<IpPermission> {
-                    new IpPermission {
-                        FromPort = 22,
-                        IpProtocol = "tcp",
-                        ToPort = 22
-                    }
-                }
-            });
-
-
-            #endregion
-        }
-
-        public void EC2AuthorizeSecurityGroupIngress()
-        {
-            #region to-add-a-rule-that-allows-inbound-http-traffic-from-another-security-group-1529012163168
-
-            var client = new AmazonEC2Client();
-            var response = client.AuthorizeSecurityGroupIngress(new AuthorizeSecurityGroupIngressRequest 
+            var response = client.AuthorizeSecurityGroupIngress(new AuthorizeSecurityGroupIngressRequest
             {
                 GroupId = "sg-111aaa22",
                 IpPermissions = new List<IpPermission> {
@@ -325,10 +300,31 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2AuthorizeSecurityGroupIngress()
         {
-            #region to-add-a-rule-with-a-description-1529012418116
+            #region AuthorizeSecurityGroupIngress-2
 
             var client = new AmazonEC2Client();
-            var response = client.AuthorizeSecurityGroupIngress(new AuthorizeSecurityGroupIngressRequest 
+            var response = client.AuthorizeSecurityGroupIngress(new AuthorizeSecurityGroupIngressRequest
+            {
+                GroupId = "sg-903004f8",
+                IpPermissions = new List<IpPermission> {
+                    new IpPermission {
+                        FromPort = 22,
+                        IpProtocol = "tcp",
+                        ToPort = 22
+                    }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2AuthorizeSecurityGroupIngress()
+        {
+            #region AuthorizeSecurityGroupIngress-3
+
+            var client = new AmazonEC2Client();
+            var response = client.AuthorizeSecurityGroupIngress(new AuthorizeSecurityGroupIngressRequest
             {
                 GroupId = "sg-123abc12 ",
                 IpPermissions = new List<IpPermission> {
@@ -352,10 +348,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CancelSpotFleetRequests()
         {
-            #region ec2-cancel-spot-fleet-requests-1
+            #region CancelSpotFleetRequests-1
 
             var client = new AmazonEC2Client();
-            var response = client.CancelSpotFleetRequests(new CancelSpotFleetRequestsRequest 
+            var response = client.CancelSpotFleetRequests(new CancelSpotFleetRequestsRequest
             {
                 SpotFleetRequestIds = new List<string> {
                     "sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE"
@@ -370,10 +366,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CancelSpotFleetRequests()
         {
-            #region ec2-cancel-spot-fleet-requests-2
+            #region CancelSpotFleetRequests-2
 
             var client = new AmazonEC2Client();
-            var response = client.CancelSpotFleetRequests(new CancelSpotFleetRequestsRequest 
+            var response = client.CancelSpotFleetRequests(new CancelSpotFleetRequestsRequest
             {
                 SpotFleetRequestIds = new List<string> {
                     "sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE"
@@ -388,10 +384,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CancelSpotInstanceRequests()
         {
-            #region ec2-cancel-spot-instance-requests-1
+            #region CancelSpotInstanceRequests-1
 
             var client = new AmazonEC2Client();
-            var response = client.CancelSpotInstanceRequests(new CancelSpotInstanceRequestsRequest 
+            var response = client.CancelSpotInstanceRequests(new CancelSpotInstanceRequestsRequest
             {
                 SpotInstanceRequestIds = new List<string> {
                     "sir-08b93456"
@@ -405,10 +401,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ConfirmProductInstance()
         {
-            #region to-confirm-the-product-instance-1472712108494
+            #region ConfirmProductInstance-1
 
             var client = new AmazonEC2Client();
-            var response = client.ConfirmProductInstance(new ConfirmProductInstanceRequest 
+            var response = client.ConfirmProductInstance(new ConfirmProductInstanceRequest
             {
                 InstanceId = "i-1234567890abcdef0",
                 ProductCode = "774F4FF8"
@@ -421,10 +417,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CopyImage()
         {
-            #region to-copy-an-ami-to-another-region-1529022820832
+            #region CopyImage-1
 
             var client = new AmazonEC2Client();
-            var response = client.CopyImage(new CopyImageRequest 
+            var response = client.CopyImage(new CopyImageRequest
             {
                 Description = "",
                 Name = "My server",
@@ -439,10 +435,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CopySnapshot()
         {
-            #region to-copy-a-snapshot-1472502259774
+            #region CopySnapshot-1
 
             var client = new AmazonEC2Client();
-            var response = client.CopySnapshot(new CopySnapshotRequest 
+            var response = client.CopySnapshot(new CopySnapshotRequest
             {
                 Description = "This is my copied snapshot.",
                 DestinationRegion = "us-east-1",
@@ -457,10 +453,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateApplicationStatusCheck()
         {
-            #region ec2-create-application-status-check-1
+            #region CreateApplicationStatusCheck-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateApplicationStatusCheck(new CreateApplicationStatusCheckRequest 
+            var response = client.CreateApplicationStatusCheck(new CreateApplicationStatusCheckRequest
             {
                 Aggregation = "included",
                 Path = "/health",
@@ -475,10 +471,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateCustomerGateway()
         {
-            #region ec2-create-customer-gateway-1
+            #region CreateCustomerGateway-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateCustomerGateway(new CreateCustomerGatewayRequest 
+            var response = client.CreateCustomerGateway(new CreateCustomerGatewayRequest
             {
                 BgpAsn = 65534,
                 PublicIp = "12.1.2.3",
@@ -492,10 +488,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateDhcpOptions()
         {
-            #region ec2-create-dhcp-options-1
+            #region CreateDhcpOptions-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateDhcpOptions(new CreateDhcpOptionsRequest 
+            var response = client.CreateDhcpOptions(new CreateDhcpOptionsRequest
             {
                 DhcpConfigurations = new List<DhcpConfiguration> {
                     new DhcpConfiguration {
@@ -513,40 +509,12 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
-        public void EC2CreateImage()
-        {
-            #region to-create-an-ami-from-an-amazon-ebs-backed-instance-1529023150636
-
-            var client = new AmazonEC2Client();
-            var response = client.CreateImage(new CreateImageRequest 
-            {
-                BlockDeviceMappings = new List<BlockDeviceMapping> {
-                    new BlockDeviceMapping {
-                        DeviceName = "/dev/sdh",
-                        Ebs = new EbsBlockDevice { VolumeSize = 100 }
-                    },
-                    new BlockDeviceMapping {
-                        DeviceName = "/dev/sdc",
-                        VirtualName = "ephemeral1"
-                    }
-                },
-                Description = "An AMI for my server",
-                InstanceId = "i-1234567890abcdef0",
-                Name = "My server",
-                NoReboot = true
-            });
-
-            string imageId = response.ImageId;
-
-            #endregion
-        }
-
         public void EC2CreateInternetGateway()
         {
-            #region ec2-create-internet-gateway-1
+            #region CreateInternetGateway-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateInternetGateway(new CreateInternetGatewayRequest 
+            var response = client.CreateInternetGateway(new CreateInternetGatewayRequest
             {
             });
 
@@ -557,10 +525,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateKeyPair()
         {
-            #region ec2-create-key-pair-1
+            #region CreateKeyPair-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateKeyPair(new CreateKeyPairRequest 
+            var response = client.CreateKeyPair(new CreateKeyPairRequest
             {
                 KeyName = "my-key-pair"
             });
@@ -571,10 +539,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateLaunchTemplate()
         {
-            #region to-create-a-launch-template-1529023655488
+            #region CreateLaunchTemplate-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateLaunchTemplate(new CreateLaunchTemplateRequest 
+            var response = client.CreateLaunchTemplate(new CreateLaunchTemplateRequest
             {
                 LaunchTemplateData = new RequestLaunchTemplateData {
                     ImageId = "ami-8c1be5f6",
@@ -610,10 +578,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateLaunchTemplateVersion()
         {
-            #region to-create-a-launch-template-version-1529024195702
+            #region CreateLaunchTemplateVersion-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateLaunchTemplateVersion(new CreateLaunchTemplateVersionRequest 
+            var response = client.CreateLaunchTemplateVersion(new CreateLaunchTemplateVersionRequest
             {
                 LaunchTemplateData = new RequestLaunchTemplateData { ImageId = "ami-c998b6b2" },
                 LaunchTemplateId = "lt-0abcd290751193123",
@@ -628,10 +596,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateNatGateway()
         {
-            #region ec2-create-nat-gateway-1
+            #region CreateNatGateway-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateNatGateway(new CreateNatGatewayRequest 
+            var response = client.CreateNatGateway(new CreateNatGatewayRequest
             {
                 AllocationId = "eipalloc-37fc1a52",
                 SubnetId = "subnet-1a2b3c4d"
@@ -644,10 +612,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateNetworkAcl()
         {
-            #region ec2-create-network-acl-1
+            #region CreateNetworkAcl-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateNetworkAcl(new CreateNetworkAclRequest 
+            var response = client.CreateNetworkAcl(new CreateNetworkAclRequest
             {
                 VpcId = "vpc-a01106c2"
             });
@@ -659,10 +627,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateNetworkAclEntry()
         {
-            #region ec2-create-network-acl-entry-1
+            #region CreateNetworkAclEntry-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateNetworkAclEntry(new CreateNetworkAclEntryRequest 
+            var response = client.CreateNetworkAclEntry(new CreateNetworkAclEntryRequest
             {
                 CidrBlock = "0.0.0.0/0",
                 Egress = false,
@@ -680,32 +648,12 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
-        public void EC2CreateNetworkInterface()
-        {
-            #region ec2-create-network-interface-1
-
-            var client = new AmazonEC2Client();
-            var response = client.CreateNetworkInterface(new CreateNetworkInterfaceRequest 
-            {
-                Description = "my network interface",
-                Groups = new List<string> {
-                    "sg-903004f8"
-                },
-                PrivateIpAddress = "10.0.2.17",
-                SubnetId = "subnet-9d4a7b6c"
-            });
-
-            NetworkInterface networkInterface = response.NetworkInterface;
-
-            #endregion
-        }
-
         public void EC2CreatePlacementGroup()
         {
-            #region to-create-a-placement-group-1472712245768
+            #region CreatePlacementGroup-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreatePlacementGroup(new CreatePlacementGroupRequest 
+            var response = client.CreatePlacementGroup(new CreatePlacementGroupRequest
             {
                 GroupName = "my-cluster",
                 Strategy = "cluster"
@@ -717,10 +665,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateRoute()
         {
-            #region ec2-create-route-1
+            #region CreateRoute-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateRoute(new CreateRouteRequest 
+            var response = client.CreateRoute(new CreateRouteRequest
             {
                 DestinationCidrBlock = "0.0.0.0/0",
                 GatewayId = "igw-c0a643a9",
@@ -733,10 +681,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateRouteTable()
         {
-            #region ec2-create-route-table-1
+            #region CreateRouteTable-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateRouteTable(new CreateRouteTableRequest 
+            var response = client.CreateRouteTable(new CreateRouteTableRequest
             {
                 VpcId = "vpc-a01106c2"
             });
@@ -748,10 +696,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateSecondaryNetwork()
         {
-            #region ec2-create-secondary-network-1
+            #region CreateSecondaryNetwork-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateSecondaryNetwork(new CreateSecondaryNetworkRequest 
+            var response = client.CreateSecondaryNetwork(new CreateSecondaryNetworkRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440000",
                 Ipv4CidrBlock = "10.0.0.0/16",
@@ -777,10 +725,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateSecondarySubnet()
         {
-            #region ec2-create-secondary-subnet-1
+            #region CreateSecondarySubnet-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateSecondarySubnet(new CreateSecondarySubnetRequest 
+            var response = client.CreateSecondarySubnet(new CreateSecondarySubnetRequest
             {
                 AvailabilityZoneId = "use2-az1",
                 ClientToken = "550e8400-e29b-41d4-a716-446655440000",
@@ -811,10 +759,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateSecurityGroup()
         {
-            #region to-create-a-security-group-for-a-vpc-1529024532716
+            #region CreateSecurityGroup-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateSecurityGroup(new CreateSecurityGroupRequest 
+            var response = client.CreateSecurityGroup(new CreateSecurityGroupRequest
             {
                 Description = "My security group",
                 GroupName = "my-security-group",
@@ -828,33 +776,25 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateSnapshot()
         {
-            #region to-create-a-snapshot-1472502529790
+            #region CreateSnapshot-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateSnapshot(new CreateSnapshotRequest 
+            var response = client.CreateSnapshot(new CreateSnapshotRequest
             {
                 Description = "This is my root volume snapshot.",
                 VolumeId = "vol-1234567890abcdef0"
             });
 
-            string description = response.Description;
-            string ownerId = response.OwnerId;
-            string snapshotId = response.SnapshotId;
-            DateTime startTime = response.StartTime;
-            string state = response.State;
-            List<Tag> tags = response.Tags;
-            string volumeId = response.VolumeId;
-            int volumeSize = response.VolumeSize;
 
             #endregion
         }
 
         public void EC2CreateSpotDatafeedSubscription()
         {
-            #region ec2-create-spot-datafeed-subscription-1
+            #region CreateSpotDatafeedSubscription-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateSpotDatafeedSubscription(new CreateSpotDatafeedSubscriptionRequest 
+            var response = client.CreateSpotDatafeedSubscription(new CreateSpotDatafeedSubscriptionRequest
             {
                 Bucket = "my-s3-bucket",
                 Prefix = "spotdata"
@@ -867,10 +807,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateSubnet()
         {
-            #region ec2-create-subnet-1
+            #region CreateSubnet-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateSubnet(new CreateSubnetRequest 
+            var response = client.CreateSubnet(new CreateSubnetRequest
             {
                 CidrBlock = "10.0.1.0/24",
                 VpcId = "vpc-a01106c2"
@@ -883,10 +823,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateTags()
         {
-            #region ec2-create-tags-1
+            #region CreateTags-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateTags(new CreateTagsRequest 
+            var response = client.CreateTags(new CreateTagsRequest
             {
                 Resources = new List<string> {
                     "ami-78a54011"
@@ -905,35 +845,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2CreateVolume()
         {
-            #region to-create-a-new-volume-1472496724296
+            #region CreateVolume-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateVolume(new CreateVolumeRequest 
-            {
-                AvailabilityZone = "us-east-1a",
-                Size = 80,
-                VolumeType = "gp2"
-            });
-
-            string availabilityZone = response.AvailabilityZone;
-            DateTime createTime = response.CreateTime;
-            bool encrypted = response.Encrypted;
-            int iops = response.Iops;
-            int size = response.Size;
-            string snapshotId = response.SnapshotId;
-            string state = response.State;
-            string volumeId = response.VolumeId;
-            string volumeType = response.VolumeType;
-
-            #endregion
-        }
-
-        public void EC2CreateVolume()
-        {
-            #region to-create-a-new-provisioned-iops-ssd-volume-from-a-snapshot-1472498975176
-
-            var client = new AmazonEC2Client();
-            var response = client.CreateVolume(new CreateVolumeRequest 
+            var response = client.CreateVolume(new CreateVolumeRequest
             {
                 AvailabilityZone = "us-east-1a",
                 Iops = 1000,
@@ -941,26 +856,32 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
                 VolumeType = "io1"
             });
 
-            List<VolumeAttachment> attachments = response.Attachments;
-            string availabilityZone = response.AvailabilityZone;
-            DateTime createTime = response.CreateTime;
-            int iops = response.Iops;
-            int size = response.Size;
-            string snapshotId = response.SnapshotId;
-            string state = response.State;
-            List<Tag> tags = response.Tags;
-            string volumeId = response.VolumeId;
-            string volumeType = response.VolumeType;
+
+            #endregion
+        }
+
+        public void EC2CreateVolume()
+        {
+            #region CreateVolume-2
+
+            var client = new AmazonEC2Client();
+            var response = client.CreateVolume(new CreateVolumeRequest
+            {
+                AvailabilityZone = "us-east-1a",
+                Size = 80,
+                VolumeType = "gp2"
+            });
+
 
             #endregion
         }
 
         public void EC2CreateVpc()
         {
-            #region ec2-create-vpc-1
+            #region CreateVpc-1
 
             var client = new AmazonEC2Client();
-            var response = client.CreateVpc(new CreateVpcRequest 
+            var response = client.CreateVpc(new CreateVpcRequest
             {
                 CidrBlock = "10.0.0.0/16"
             });
@@ -972,10 +893,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteApplicationStatusCheck()
         {
-            #region ec2-delete-application-status-check-1
+            #region DeleteApplicationStatusCheck-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteApplicationStatusCheck(new DeleteApplicationStatusCheckRequest 
+            var response = client.DeleteApplicationStatusCheck(new DeleteApplicationStatusCheckRequest
             {
                 ApplicationStatusCheckId = "asc-0123456789abcdef0"
             });
@@ -987,10 +908,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteCustomerGateway()
         {
-            #region ec2-delete-customer-gateway-1
+            #region DeleteCustomerGateway-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteCustomerGateway(new DeleteCustomerGatewayRequest 
+            var response = client.DeleteCustomerGateway(new DeleteCustomerGatewayRequest
             {
                 CustomerGatewayId = "cgw-0e11f167"
             });
@@ -1001,10 +922,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteDhcpOptions()
         {
-            #region ec2-delete-dhcp-options-1
+            #region DeleteDhcpOptions-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteDhcpOptions(new DeleteDhcpOptionsRequest 
+            var response = client.DeleteDhcpOptions(new DeleteDhcpOptionsRequest
             {
                 DhcpOptionsId = "dopt-d9070ebb"
             });
@@ -1015,10 +936,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteInternetGateway()
         {
-            #region ec2-delete-internet-gateway-1
+            #region DeleteInternetGateway-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteInternetGateway(new DeleteInternetGatewayRequest 
+            var response = client.DeleteInternetGateway(new DeleteInternetGatewayRequest
             {
                 InternetGatewayId = "igw-c0a643a9"
             });
@@ -1029,10 +950,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteKeyPair()
         {
-            #region ec2-delete-key-pair-1
+            #region DeleteKeyPair-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteKeyPair(new DeleteKeyPairRequest 
+            var response = client.DeleteKeyPair(new DeleteKeyPairRequest
             {
                 KeyName = "my-key-pair"
             });
@@ -1043,10 +964,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteLaunchTemplate()
         {
-            #region to-delete-a-launch-template-1529024658216
+            #region DeleteLaunchTemplate-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteLaunchTemplate(new DeleteLaunchTemplateRequest 
+            var response = client.DeleteLaunchTemplate(new DeleteLaunchTemplateRequest
             {
                 LaunchTemplateId = "lt-0abcd290751193123"
             });
@@ -1058,10 +979,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteLaunchTemplateVersions()
         {
-            #region to-delete-a-launch-template-version-1529024790864
+            #region DeleteLaunchTemplateVersions-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteLaunchTemplateVersions(new DeleteLaunchTemplateVersionsRequest 
+            var response = client.DeleteLaunchTemplateVersions(new DeleteLaunchTemplateVersionsRequest
             {
                 LaunchTemplateId = "lt-0abcd290751193123",
                 Versions = new List<string> {
@@ -1077,10 +998,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteNatGateway()
         {
-            #region ec2-delete-nat-gateway-1
+            #region DeleteNatGateway-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteNatGateway(new DeleteNatGatewayRequest 
+            var response = client.DeleteNatGateway(new DeleteNatGatewayRequest
             {
                 NatGatewayId = "nat-04ae55e711cec5680"
             });
@@ -1092,10 +1013,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteNetworkAcl()
         {
-            #region ec2-delete-network-acl-1
+            #region DeleteNetworkAcl-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteNetworkAcl(new DeleteNetworkAclRequest 
+            var response = client.DeleteNetworkAcl(new DeleteNetworkAclRequest
             {
                 NetworkAclId = "acl-5fb85d36"
             });
@@ -1106,10 +1027,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteNetworkAclEntry()
         {
-            #region ec2-delete-network-acl-entry-1
+            #region DeleteNetworkAclEntry-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteNetworkAclEntry(new DeleteNetworkAclEntryRequest 
+            var response = client.DeleteNetworkAclEntry(new DeleteNetworkAclEntryRequest
             {
                 Egress = true,
                 NetworkAclId = "acl-5fb85d36",
@@ -1122,10 +1043,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteNetworkInterface()
         {
-            #region ec2-delete-network-interface-1
+            #region DeleteNetworkInterface-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteNetworkInterface(new DeleteNetworkInterfaceRequest 
+            var response = client.DeleteNetworkInterface(new DeleteNetworkInterfaceRequest
             {
                 NetworkInterfaceId = "eni-e5aa89a3"
             });
@@ -1136,10 +1057,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeletePlacementGroup()
         {
-            #region to-delete-a-placement-group-1472712349959
+            #region DeletePlacementGroup-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeletePlacementGroup(new DeletePlacementGroupRequest 
+            var response = client.DeletePlacementGroup(new DeletePlacementGroupRequest
             {
                 GroupName = "my-cluster"
             });
@@ -1150,10 +1071,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteRoute()
         {
-            #region ec2-delete-route-1
+            #region DeleteRoute-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteRoute(new DeleteRouteRequest 
+            var response = client.DeleteRoute(new DeleteRouteRequest
             {
                 DestinationCidrBlock = "0.0.0.0/0",
                 RouteTableId = "rtb-22574640"
@@ -1165,10 +1086,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteRouteTable()
         {
-            #region ec2-delete-route-table-1
+            #region DeleteRouteTable-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteRouteTable(new DeleteRouteTableRequest 
+            var response = client.DeleteRouteTable(new DeleteRouteTableRequest
             {
                 RouteTableId = "rtb-22574640"
             });
@@ -1179,10 +1100,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteSecondaryNetwork()
         {
-            #region ec2-delete-secondary-network-1
+            #region DeleteSecondaryNetwork-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteSecondaryNetwork(new DeleteSecondaryNetworkRequest 
+            var response = client.DeleteSecondaryNetwork(new DeleteSecondaryNetworkRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440000",
                 SecondaryNetworkId = "sn-0123456789abcdef0"
@@ -1196,10 +1117,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteSecondarySubnet()
         {
-            #region ec2-delete-secondary-subnet-1
+            #region DeleteSecondarySubnet-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteSecondarySubnet(new DeleteSecondarySubnetRequest 
+            var response = client.DeleteSecondarySubnet(new DeleteSecondarySubnetRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440000",
                 SecondarySubnetId = "ss-0123456789abcdef0"
@@ -1213,10 +1134,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteSecurityGroup()
         {
-            #region to-delete-a-security-group-1529024952972
+            #region DeleteSecurityGroup-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteSecurityGroup(new DeleteSecurityGroupRequest 
+            var response = client.DeleteSecurityGroup(new DeleteSecurityGroupRequest
             {
                 GroupId = "sg-903004f8"
             });
@@ -1227,10 +1148,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteSnapshot()
         {
-            #region to-delete-a-snapshot-1472503042567
+            #region DeleteSnapshot-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteSnapshot(new DeleteSnapshotRequest 
+            var response = client.DeleteSnapshot(new DeleteSnapshotRequest
             {
                 SnapshotId = "snap-1234567890abcdef0"
             });
@@ -1241,10 +1162,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteSpotDatafeedSubscription()
         {
-            #region ec2-delete-spot-datafeed-subscription-1
+            #region DeleteSpotDatafeedSubscription-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteSpotDatafeedSubscription(new DeleteSpotDatafeedSubscriptionRequest 
+            var response = client.DeleteSpotDatafeedSubscription(new DeleteSpotDatafeedSubscriptionRequest
             {
             });
 
@@ -1254,10 +1175,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteSubnet()
         {
-            #region ec2-delete-subnet-1
+            #region DeleteSubnet-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteSubnet(new DeleteSubnetRequest 
+            var response = client.DeleteSubnet(new DeleteSubnetRequest
             {
                 SubnetId = "subnet-9d4a7b6c"
             });
@@ -1268,10 +1189,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteTags()
         {
-            #region ec2-delete-tags-1
+            #region DeleteTags-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteTags(new DeleteTagsRequest 
+            var response = client.DeleteTags(new DeleteTagsRequest
             {
                 Resources = new List<string> {
                     "ami-78a54011"
@@ -1290,10 +1211,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteVolume()
         {
-            #region to-delete-a-volume-1472503111160
+            #region DeleteVolume-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteVolume(new DeleteVolumeRequest 
+            var response = client.DeleteVolume(new DeleteVolumeRequest
             {
                 VolumeId = "vol-049df61146c4d7901"
             });
@@ -1304,10 +1225,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DeleteVpc()
         {
-            #region ec2-delete-vpc-1
+            #region DeleteVpc-1
 
             var client = new AmazonEC2Client();
-            var response = client.DeleteVpc(new DeleteVpcRequest 
+            var response = client.DeleteVpc(new DeleteVpcRequest
             {
                 VpcId = "vpc-a01106c2"
             });
@@ -1318,10 +1239,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeAccountAttributes()
         {
-            #region ec2-describe-account-attributes-1
+            #region DescribeAccountAttributes-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeAccountAttributes(new DescribeAccountAttributesRequest 
+            var response = client.DescribeAccountAttributes(new DescribeAccountAttributesRequest
             {
                 AttributeNames = new List<string> {
                     "supported-platforms"
@@ -1335,10 +1256,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeAccountAttributes()
         {
-            #region ec2-describe-account-attributes-2
+            #region DescribeAccountAttributes-2
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeAccountAttributes(new DescribeAccountAttributesRequest 
+            var response = client.DescribeAccountAttributes(new DescribeAccountAttributesRequest
             {
             });
 
@@ -1349,10 +1270,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeAddresses()
         {
-            #region ec2-describe-addresses-1
+            #region DescribeAddresses-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeAddresses(new DescribeAddressesRequest 
+            var response = client.DescribeAddresses(new DescribeAddressesRequest
             {
             });
 
@@ -1363,10 +1284,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeApplicationStatus()
         {
-            #region ec2-describe-application-status-1
+            #region DescribeApplicationStatus-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeApplicationStatus(new DescribeApplicationStatusRequest 
+            var response = client.DescribeApplicationStatus(new DescribeApplicationStatusRequest
             {
                 InstanceIds = new List<string> {
                     "i-0123456789abcdef0"
@@ -1380,10 +1301,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeApplicationStatus()
         {
-            #region ec2-describe-application-status-2
+            #region DescribeApplicationStatus-2
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeApplicationStatus(new DescribeApplicationStatusRequest 
+            var response = client.DescribeApplicationStatus(new DescribeApplicationStatusRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -1409,10 +1330,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeApplicationStatusCheckAssociations()
         {
-            #region ec2-describe-application-status-check-associations-1
+            #region DescribeApplicationStatusCheckAssociations-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeApplicationStatusCheckAssociations(new DescribeApplicationStatusCheckAssociationsRequest 
+            var response = client.DescribeApplicationStatusCheckAssociations(new DescribeApplicationStatusCheckAssociationsRequest
             {
                 ApplicationStatusCheckIds = new List<string> {
                     "asc-0123456789abcdef0"
@@ -1434,10 +1355,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeApplicationStatusChecks()
         {
-            #region ec2-describe-application-status-checks-1
+            #region DescribeApplicationStatusChecks-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeApplicationStatusChecks(new DescribeApplicationStatusChecksRequest 
+            var response = client.DescribeApplicationStatusChecks(new DescribeApplicationStatusChecksRequest
             {
                 ApplicationStatusCheckIds = new List<string> {
                     "asc-0123456789abcdef0"
@@ -1451,10 +1372,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeApplicationStatusChecks()
         {
-            #region ec2-describe-application-status-checks-2
+            #region DescribeApplicationStatusChecks-2
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeApplicationStatusChecks(new DescribeApplicationStatusChecksRequest 
+            var response = client.DescribeApplicationStatusChecks(new DescribeApplicationStatusChecksRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -1474,10 +1395,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeAvailabilityZones()
         {
-            #region ec2-describe-availability-zones-1
+            #region DescribeAvailabilityZones-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeAvailabilityZones(new DescribeAvailabilityZonesRequest 
+            var response = client.DescribeAvailabilityZones(new DescribeAvailabilityZonesRequest
             {
             });
 
@@ -1488,10 +1409,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeCustomerGateways()
         {
-            #region ec2-describe-customer-gateways-1
+            #region DescribeCustomerGateways-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeCustomerGateways(new DescribeCustomerGatewaysRequest 
+            var response = client.DescribeCustomerGateways(new DescribeCustomerGatewaysRequest
             {
                 CustomerGatewayIds = new List<string> {
                     "cgw-0e11f167"
@@ -1505,10 +1426,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeDhcpOptions()
         {
-            #region ec2-describe-dhcp-options-1
+            #region DescribeDhcpOptions-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeDhcpOptions(new DescribeDhcpOptionsRequest 
+            var response = client.DescribeDhcpOptions(new DescribeDhcpOptionsRequest
             {
                 DhcpOptionsIds = new List<string> {
                     "dopt-d9070ebb"
@@ -1522,10 +1443,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeIamInstanceProfileAssociations()
         {
-            #region to-describe-an-iam-instance-profile-association-1529025123918
+            #region DescribeIamInstanceProfileAssociations-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeIamInstanceProfileAssociations(new DescribeIamInstanceProfileAssociationsRequest 
+            var response = client.DescribeIamInstanceProfileAssociations(new DescribeIamInstanceProfileAssociationsRequest
             {
                 AssociationIds = new List<string> {
                     "iip-assoc-0db249b1f25fa24b8"
@@ -1539,27 +1460,25 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeImageAttribute()
         {
-            #region to-describe-the-launch-permissions-for-an-ami-1529025296264
+            #region DescribeImageAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeImageAttribute(new DescribeImageAttributeRequest 
+            var response = client.DescribeImageAttribute(new DescribeImageAttributeRequest
             {
                 Attribute = "launchPermission",
                 ImageId = "ami-5731123e"
             });
 
-            string imageId = response.ImageId;
-            List<LaunchPermission> launchPermissions = response.LaunchPermissions;
 
             #endregion
         }
 
         public void EC2DescribeImages()
         {
-            #region to-describe-an-ami-1529025482866
+            #region DescribeImages-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeImages(new DescribeImagesRequest 
+            var response = client.DescribeImages(new DescribeImagesRequest
             {
                 ImageIds = new List<string> {
                     "ami-5731123e"
@@ -1573,61 +1492,40 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeInstanceAttribute()
         {
-            #region to-describe-the-instance-type-1472712432132
+            #region DescribeInstanceAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeInstanceAttribute(new DescribeInstanceAttributeRequest 
-            {
-                Attribute = "instanceType",
-                InstanceId = "i-1234567890abcdef0"
-            });
-
-            string instanceId = response.InstanceId;
-            string instanceType = response.InstanceType;
-
-            #endregion
-        }
-
-        public void EC2DescribeInstanceAttribute()
-        {
-            #region to-describe-the-disableapitermination-attribute-1472712533466
-
-            var client = new AmazonEC2Client();
-            var response = client.DescribeInstanceAttribute(new DescribeInstanceAttributeRequest 
-            {
-                Attribute = "disableApiTermination",
-                InstanceId = "i-1234567890abcdef0"
-            });
-
-            bool disableApiTermination = response.DisableApiTermination;
-            string instanceId = response.InstanceId;
-
-            #endregion
-        }
-
-        public void EC2DescribeInstanceAttribute()
-        {
-            #region to-describe-the-block-device-mapping-for-an-instance-1472712645423
-
-            var client = new AmazonEC2Client();
-            var response = client.DescribeInstanceAttribute(new DescribeInstanceAttributeRequest 
+            var response = client.DescribeInstanceAttribute(new DescribeInstanceAttributeRequest
             {
                 Attribute = "blockDeviceMapping",
                 InstanceId = "i-1234567890abcdef0"
             });
 
-            List<InstanceBlockDeviceMapping> blockDeviceMappings = response.BlockDeviceMappings;
-            string instanceId = response.InstanceId;
+
+            #endregion
+        }
+
+        public void EC2DescribeInstanceAttribute()
+        {
+            #region DescribeInstanceAttribute-2
+
+            var client = new AmazonEC2Client();
+            var response = client.DescribeInstanceAttribute(new DescribeInstanceAttributeRequest
+            {
+                Attribute = "instanceType",
+                InstanceId = "i-1234567890abcdef0"
+            });
+
 
             #endregion
         }
 
         public void EC2DescribeInstances()
         {
-            #region to-describe-an-amazon-ec2-instance-1529025982172
+            #region DescribeInstances-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeInstances(new DescribeInstancesRequest 
+            var response = client.DescribeInstances(new DescribeInstancesRequest
             {
                 InstanceIds = new List<string> {
                     "i-1234567890abcdef0"
@@ -1640,31 +1538,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeInstances()
         {
-            #region to-describe-the-instances-with-the-instance-type-t2micro-1529026147602
+            #region DescribeInstances-2
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeInstances(new DescribeInstancesRequest 
-            {
-                Filters = new List<Filter> {
-                    new Filter {
-                        Name = "instance-type",
-                        Values = new List<string> {
-                            "t2.micro"
-                        }
-                    }
-                }
-            });
-
-
-            #endregion
-        }
-
-        public void EC2DescribeInstances()
-        {
-            #region to-describe-the-instances-with-a-specific-tag-1529026251928
-
-            var client = new AmazonEC2Client();
-            var response = client.DescribeInstances(new DescribeInstancesRequest 
+            var response = client.DescribeInstances(new DescribeInstancesRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -1680,12 +1557,33 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
-        public void EC2DescribeInstanceStatus()
+        public void EC2DescribeInstances()
         {
-            #region to-describe-the-status-of-an-instance-1529025696830
+            #region DescribeInstances-3
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeInstanceStatus(new DescribeInstanceStatusRequest 
+            var response = client.DescribeInstances(new DescribeInstancesRequest
+            {
+                Filters = new List<Filter> {
+                    new Filter {
+                        Name = "instance-type",
+                        Values = new List<string> {
+                            "t2.micro"
+                        }
+                    }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2DescribeInstanceStatus()
+        {
+            #region DescribeInstanceStatus-1
+
+            var client = new AmazonEC2Client();
+            var response = client.DescribeInstanceStatus(new DescribeInstanceStatusRequest
             {
                 InstanceIds = new List<string> {
                     "i-1234567890abcdef0"
@@ -1699,10 +1597,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeInternetGateways()
         {
-            #region ec2-describe-internet-gateways-1
+            #region DescribeInternetGateways-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeInternetGateways(new DescribeInternetGatewaysRequest 
+            var response = client.DescribeInternetGateways(new DescribeInternetGatewaysRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -1721,10 +1619,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeKeyPairs()
         {
-            #region ec2-describe-key-pairs-1
+            #region DescribeKeyPairs-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeKeyPairs(new DescribeKeyPairsRequest 
+            var response = client.DescribeKeyPairs(new DescribeKeyPairsRequest
             {
                 KeyNames = new List<string> {
                     "my-key-pair"
@@ -1738,10 +1636,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeLaunchTemplates()
         {
-            #region to-describe-a-launch-template-1529344182862
+            #region DescribeLaunchTemplates-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeLaunchTemplates(new DescribeLaunchTemplatesRequest 
+            var response = client.DescribeLaunchTemplates(new DescribeLaunchTemplatesRequest
             {
                 LaunchTemplateIds = new List<string> {
                     "lt-01238c059e3466abc"
@@ -1755,10 +1653,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeLaunchTemplateVersions()
         {
-            #region to-describe-the-versions-for-a-launch-template-1529344425048
+            #region DescribeLaunchTemplateVersions-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeLaunchTemplateVersions(new DescribeLaunchTemplateVersionsRequest 
+            var response = client.DescribeLaunchTemplateVersions(new DescribeLaunchTemplateVersionsRequest
             {
                 LaunchTemplateId = "068f72b72934aff71"
             });
@@ -1770,10 +1668,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeMovingAddresses()
         {
-            #region ec2-describe-moving-addresses-1
+            #region DescribeMovingAddresses-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeMovingAddresses(new DescribeMovingAddressesRequest 
+            var response = client.DescribeMovingAddresses(new DescribeMovingAddressesRequest
             {
             });
 
@@ -1784,10 +1682,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeNatGateways()
         {
-            #region ec2-describe-nat-gateways-1
+            #region DescribeNatGateways-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeNatGateways(new DescribeNatGatewaysRequest 
+            var response = client.DescribeNatGateways(new DescribeNatGatewaysRequest
             {
                 Filter = new List<Filter> {
                     new Filter {
@@ -1806,10 +1704,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeNetworkAcls()
         {
-            #region ec2-
+            #region DescribeNetworkAcls-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeNetworkAcls(new DescribeNetworkAclsRequest 
+            var response = client.DescribeNetworkAcls(new DescribeNetworkAclsRequest
             {
                 NetworkAclIds = new List<string> {
                     "acl-5fb85d36"
@@ -1823,10 +1721,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeNetworkInterfaceAttribute()
         {
-            #region ec2-describe-network-interface-attribute-1
+            #region DescribeNetworkInterfaceAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeNetworkInterfaceAttribute(new DescribeNetworkInterfaceAttributeRequest 
+            var response = client.DescribeNetworkInterfaceAttribute(new DescribeNetworkInterfaceAttributeRequest
             {
                 Attribute = "attachment",
                 NetworkInterfaceId = "eni-686ea200"
@@ -1840,10 +1738,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeNetworkInterfaceAttribute()
         {
-            #region ec2-describe-network-interface-attribute-2
+            #region DescribeNetworkInterfaceAttribute-2
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeNetworkInterfaceAttribute(new DescribeNetworkInterfaceAttributeRequest 
+            var response = client.DescribeNetworkInterfaceAttribute(new DescribeNetworkInterfaceAttributeRequest
             {
                 Attribute = "description",
                 NetworkInterfaceId = "eni-686ea200"
@@ -1857,10 +1755,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeNetworkInterfaceAttribute()
         {
-            #region ec2-describe-network-interface-attribute-3
+            #region DescribeNetworkInterfaceAttribute-3
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeNetworkInterfaceAttribute(new DescribeNetworkInterfaceAttributeRequest 
+            var response = client.DescribeNetworkInterfaceAttribute(new DescribeNetworkInterfaceAttributeRequest
             {
                 Attribute = "groupSet",
                 NetworkInterfaceId = "eni-686ea200"
@@ -1874,27 +1772,27 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeNetworkInterfaceAttribute()
         {
-            #region ec2-describe-network-interface-attribute-4
+            #region DescribeNetworkInterfaceAttribute-4
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeNetworkInterfaceAttribute(new DescribeNetworkInterfaceAttributeRequest 
+            var response = client.DescribeNetworkInterfaceAttribute(new DescribeNetworkInterfaceAttributeRequest
             {
                 Attribute = "sourceDestCheck",
                 NetworkInterfaceId = "eni-686ea200"
             });
 
             string networkInterfaceId = response.NetworkInterfaceId;
-            bool sourceDestCheck = response.SourceDestCheck;
+            bool? sourceDestCheck = response.SourceDestCheck;
 
             #endregion
         }
 
         public void EC2DescribeNetworkInterfaces()
         {
-            #region ec2-describe-network-interfaces-1
+            #region DescribeNetworkInterfaces-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeNetworkInterfaces(new DescribeNetworkInterfacesRequest 
+            var response = client.DescribeNetworkInterfaces(new DescribeNetworkInterfacesRequest
             {
                 NetworkInterfaceIds = new List<string> {
                     "eni-e5aa89a3"
@@ -1908,10 +1806,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeRegions()
         {
-            #region ec2-describe-regions-1
+            #region DescribeRegions-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeRegions(new DescribeRegionsRequest 
+            var response = client.DescribeRegions(new DescribeRegionsRequest
             {
             });
 
@@ -1922,10 +1820,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeRouteTables()
         {
-            #region ec2-describe-route-tables-1
+            #region DescribeRouteTables-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeRouteTables(new DescribeRouteTablesRequest 
+            var response = client.DescribeRouteTables(new DescribeRouteTablesRequest
             {
                 RouteTableIds = new List<string> {
                     "rtb-1f382e7d"
@@ -1939,10 +1837,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSecondaryInterfaces()
         {
-            #region ec2-describe-secondary-interfaces-1
+            #region DescribeSecondaryInterfaces-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSecondaryInterfaces(new DescribeSecondaryInterfacesRequest 
+            var response = client.DescribeSecondaryInterfaces(new DescribeSecondaryInterfacesRequest
             {
             });
 
@@ -1953,10 +1851,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSecondaryInterfaces()
         {
-            #region ec2-describe-secondary-interfaces-2
+            #region DescribeSecondaryInterfaces-2
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSecondaryInterfaces(new DescribeSecondaryInterfacesRequest 
+            var response = client.DescribeSecondaryInterfaces(new DescribeSecondaryInterfacesRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -1977,10 +1875,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSecondaryNetworks()
         {
-            #region ec2-describe-secondary-networks-1
+            #region DescribeSecondaryNetworks-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSecondaryNetworks(new DescribeSecondaryNetworksRequest 
+            var response = client.DescribeSecondaryNetworks(new DescribeSecondaryNetworksRequest
             {
                 SecondaryNetworkIds = new List<string> {
                     "sn-0123456789abcdef0",
@@ -1995,10 +1893,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSecondaryNetworks()
         {
-            #region ec2-describe-secondary-networks-2
+            #region DescribeSecondaryNetworks-2
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSecondaryNetworks(new DescribeSecondaryNetworksRequest 
+            var response = client.DescribeSecondaryNetworks(new DescribeSecondaryNetworksRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -2025,10 +1923,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSecondarySubnets()
         {
-            #region ec2-describe-secondary-subnets-1
+            #region DescribeSecondarySubnets-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSecondarySubnets(new DescribeSecondarySubnetsRequest 
+            var response = client.DescribeSecondarySubnets(new DescribeSecondarySubnetsRequest
             {
                 SecondarySubnetIds = new List<string> {
                     "ss-0123456789abcdef0",
@@ -2043,10 +1941,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSecurityGroupReferences()
         {
-            #region to-describe-security-group-references-1529354312088
+            #region DescribeSecurityGroupReferences-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSecurityGroupReferences(new DescribeSecurityGroupReferencesRequest 
+            var response = client.DescribeSecurityGroupReferences(new DescribeSecurityGroupReferencesRequest
             {
                 GroupId = new List<string> {
                     "sg-903004f8"
@@ -2060,10 +1958,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSecurityGroups()
         {
-            #region to-describe-a-security-group-1529354426314
+            #region DescribeSecurityGroups-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSecurityGroups(new DescribeSecurityGroupsRequest 
+            var response = client.DescribeSecurityGroups(new DescribeSecurityGroupsRequest
             {
                 GroupIds = new List<string> {
                     "sg-903004f8"
@@ -2076,10 +1974,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSecurityGroups()
         {
-            #region to-describe-a-tagged-security-group-1529354553880
+            #region DescribeSecurityGroups-2
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSecurityGroups(new DescribeSecurityGroupsRequest 
+            var response = client.DescribeSecurityGroups(new DescribeSecurityGroupsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -2097,10 +1995,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSnapshotAttribute()
         {
-            #region to-describe-snapshot-attributes-1472503199736
+            #region DescribeSnapshotAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSnapshotAttribute(new DescribeSnapshotAttributeRequest 
+            var response = client.DescribeSnapshotAttribute(new DescribeSnapshotAttributeRequest
             {
                 Attribute = "createVolumePermission",
                 SnapshotId = "snap-066877671789bd71b"
@@ -2114,10 +2012,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSnapshots()
         {
-            #region to-describe-a-snapshot-1472503807850
+            #region DescribeSnapshots-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSnapshots(new DescribeSnapshotsRequest 
+            var response = client.DescribeSnapshots(new DescribeSnapshotsRequest
             {
                 SnapshotIds = new List<string> {
                     "snap-1234567890abcdef0"
@@ -2132,10 +2030,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSnapshots()
         {
-            #region to-describe-snapshots-using-filters-1472503929793
+            #region DescribeSnapshots-2
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSnapshots(new DescribeSnapshotsRequest 
+            var response = client.DescribeSnapshots(new DescribeSnapshotsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -2158,10 +2056,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSpotDatafeedSubscription()
         {
-            #region ec2-describe-spot-datafeed-subscription-1
+            #region DescribeSpotDatafeedSubscription-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSpotDatafeedSubscription(new DescribeSpotDatafeedSubscriptionRequest 
+            var response = client.DescribeSpotDatafeedSubscription(new DescribeSpotDatafeedSubscriptionRequest
             {
             });
 
@@ -2172,10 +2070,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSpotFleetInstances()
         {
-            #region ec2-describe-spot-fleet-instances-1
+            #region DescribeSpotFleetInstances-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSpotFleetInstances(new DescribeSpotFleetInstancesRequest 
+            var response = client.DescribeSpotFleetInstances(new DescribeSpotFleetInstancesRequest
             {
                 SpotFleetRequestId = "sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE"
             });
@@ -2188,29 +2086,29 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSpotFleetRequestHistory()
         {
-            #region ec2-describe-spot-fleet-request-history-1
+            #region DescribeSpotFleetRequestHistory-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSpotFleetRequestHistory(new DescribeSpotFleetRequestHistoryRequest 
+            var response = client.DescribeSpotFleetRequestHistory(new DescribeSpotFleetRequestHistoryRequest
             {
                 SpotFleetRequestId = "sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE",
-                StartTime = new DateTime(2015, 5, 26, 12, 0, 0, DateTimeKind.Utc)
+                StartTime = new DateTime(2015, 5, 26, 0, 0, 0, DateTimeKind.Utc)
             });
 
             List<HistoryRecord> historyRecords = response.HistoryRecords;
             string nextToken = response.NextToken;
             string spotFleetRequestId = response.SpotFleetRequestId;
-            DateTime startTime = response.StartTime;
+            DateTime? startTime = response.StartTime;
 
             #endregion
         }
 
         public void EC2DescribeSpotFleetRequests()
         {
-            #region ec2-describe-spot-fleet-requests-1
+            #region DescribeSpotFleetRequests-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSpotFleetRequests(new DescribeSpotFleetRequestsRequest 
+            var response = client.DescribeSpotFleetRequests(new DescribeSpotFleetRequestsRequest
             {
                 SpotFleetRequestIds = new List<string> {
                     "sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE"
@@ -2224,10 +2122,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSpotInstanceRequests()
         {
-            #region ec2-describe-spot-instance-requests-1
+            #region DescribeSpotInstanceRequests-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSpotInstanceRequests(new DescribeSpotInstanceRequestsRequest 
+            var response = client.DescribeSpotInstanceRequests(new DescribeSpotInstanceRequestsRequest
             {
                 SpotInstanceRequestIds = new List<string> {
                     "sir-08b93456"
@@ -2241,19 +2139,19 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSpotPriceHistory()
         {
-            #region ec2-describe-spot-price-history-1
+            #region DescribeSpotPriceHistory-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSpotPriceHistory(new DescribeSpotPriceHistoryRequest 
+            var response = client.DescribeSpotPriceHistory(new DescribeSpotPriceHistoryRequest
             {
-                EndTime = new DateTime(2014, 1, 6, 8, 9, 10, DateTimeKind.Utc),
+                EndTime = new DateTime(2014, 1, 6, 8, 9, 10, 50, DateTimeKind.Utc),
                 InstanceTypes = new List<string> {
                     "m1.xlarge"
                 },
                 ProductDescriptions = new List<string> {
                     "Linux/UNIX (Amazon VPC)"
                 },
-                StartTime = new DateTime(2014, 1, 6, 7, 8, 9, DateTimeKind.Utc)
+                StartTime = new DateTime(2014, 1, 6, 7, 8, 9, 50, DateTimeKind.Utc)
             });
 
             List<SpotPrice> spotPriceHistory = response.SpotPriceHistory;
@@ -2263,10 +2161,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeSubnets()
         {
-            #region ec2-describe-subnets-1
+            #region DescribeSubnets-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeSubnets(new DescribeSubnetsRequest 
+            var response = client.DescribeSubnets(new DescribeSubnetsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -2285,10 +2183,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeTags()
         {
-            #region ec2-describe-tags-1
+            #region DescribeTags-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeTags(new DescribeTagsRequest 
+            var response = client.DescribeTags(new DescribeTagsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -2307,16 +2205,16 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeVolumeAttribute()
         {
-            #region to-describe-a-volume-attribute-1472505773492
+            #region DescribeVolumeAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeVolumeAttribute(new DescribeVolumeAttributeRequest 
+            var response = client.DescribeVolumeAttribute(new DescribeVolumeAttributeRequest
             {
                 Attribute = "autoEnableIO",
                 VolumeId = "vol-049df61146c4d7901"
             });
 
-            bool autoEnableIO = response.AutoEnableIO;
+            bool? autoEnableIO = response.AutoEnableIO;
             string volumeId = response.VolumeId;
 
             #endregion
@@ -2324,10 +2222,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeVolumes()
         {
-            #region to-describe-all-volumes-1472506358883
+            #region DescribeVolumes-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeVolumes(new DescribeVolumesRequest 
+            var response = client.DescribeVolumes(new DescribeVolumesRequest
             {
             });
 
@@ -2339,10 +2237,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeVolumes()
         {
-            #region to-describe-volumes-that-are-attached-to-a-specific-instance-1472506613578
+            #region DescribeVolumes-2
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeVolumes(new DescribeVolumesRequest 
+            var response = client.DescribeVolumes(new DescribeVolumesRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -2367,10 +2265,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeVolumeStatus()
         {
-            #region to-describe-the-status-of-a-single-volume-1472507016193
+            #region DescribeVolumeStatus-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeVolumeStatus(new DescribeVolumeStatusRequest 
+            var response = client.DescribeVolumeStatus(new DescribeVolumeStatusRequest
             {
                 VolumeIds = new List<string> {
                     "vol-1234567890abcdef0"
@@ -2384,10 +2282,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeVolumeStatus()
         {
-            #region to-describe-the-status-of-impaired-volumes-1472507239821
+            #region DescribeVolumeStatus-2
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeVolumeStatus(new DescribeVolumeStatusRequest 
+            var response = client.DescribeVolumeStatus(new DescribeVolumeStatusRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -2406,16 +2304,16 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeVpcAttribute()
         {
-            #region ec2-describe-vpc-attribute-1
+            #region DescribeVpcAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeVpcAttribute(new DescribeVpcAttributeRequest 
+            var response = client.DescribeVpcAttribute(new DescribeVpcAttributeRequest
             {
                 Attribute = "enableDnsSupport",
                 VpcId = "vpc-a01106c2"
             });
 
-            bool enableDnsSupport = response.EnableDnsSupport;
+            bool? enableDnsSupport = response.EnableDnsSupport;
             string vpcId = response.VpcId;
 
             #endregion
@@ -2423,16 +2321,16 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeVpcAttribute()
         {
-            #region ec2-describe-vpc-attribute-2
+            #region DescribeVpcAttribute-2
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeVpcAttribute(new DescribeVpcAttributeRequest 
+            var response = client.DescribeVpcAttribute(new DescribeVpcAttributeRequest
             {
                 Attribute = "enableDnsHostnames",
                 VpcId = "vpc-a01106c2"
             });
 
-            bool enableDnsHostnames = response.EnableDnsHostnames;
+            bool? enableDnsHostnames = response.EnableDnsHostnames;
             string vpcId = response.VpcId;
 
             #endregion
@@ -2440,10 +2338,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DescribeVpcs()
         {
-            #region ec2-describe-vpcs-1
+            #region DescribeVpcs-1
 
             var client = new AmazonEC2Client();
-            var response = client.DescribeVpcs(new DescribeVpcsRequest 
+            var response = client.DescribeVpcs(new DescribeVpcsRequest
             {
                 VpcIds = new List<string> {
                     "vpc-a01106c2"
@@ -2457,10 +2355,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DetachInternetGateway()
         {
-            #region ec2-detach-internet-gateway-1
+            #region DetachInternetGateway-1
 
             var client = new AmazonEC2Client();
-            var response = client.DetachInternetGateway(new DetachInternetGatewayRequest 
+            var response = client.DetachInternetGateway(new DetachInternetGatewayRequest
             {
                 InternetGatewayId = "igw-c0a643a9",
                 VpcId = "vpc-a01106c2"
@@ -2472,10 +2370,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DetachNetworkInterface()
         {
-            #region ec2-detach-network-interface-1
+            #region DetachNetworkInterface-1
 
             var client = new AmazonEC2Client();
-            var response = client.DetachNetworkInterface(new DetachNetworkInterfaceRequest 
+            var response = client.DetachNetworkInterface(new DetachNetworkInterfaceRequest
             {
                 AttachmentId = "eni-attach-66c4350a"
             });
@@ -2486,29 +2384,24 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DetachVolume()
         {
-            #region to-detach-a-volume-from-an-instance-1472507977694
+            #region DetachVolume-1
 
             var client = new AmazonEC2Client();
-            var response = client.DetachVolume(new DetachVolumeRequest 
+            var response = client.DetachVolume(new DetachVolumeRequest
             {
                 VolumeId = "vol-1234567890abcdef0"
             });
 
-            DateTime attachTime = response.AttachTime;
-            string device = response.Device;
-            string instanceId = response.InstanceId;
-            string state = response.State;
-            string volumeId = response.VolumeId;
 
             #endregion
         }
 
         public void EC2DisableApplicationStatusCheckSuppression()
         {
-            #region ec2-disable-application-status-check-suppression-1
+            #region DisableApplicationStatusCheckSuppression-1
 
             var client = new AmazonEC2Client();
-            var response = client.DisableApplicationStatusCheckSuppression(new DisableApplicationStatusCheckSuppressionRequest 
+            var response = client.DisableApplicationStatusCheckSuppression(new DisableApplicationStatusCheckSuppressionRequest
             {
                 InstanceIds = new List<string> {
                     "i-0123456789abcdef0"
@@ -2523,10 +2416,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DisableVgwRoutePropagation()
         {
-            #region ec2-disable-vgw-route-propagation-1
+            #region DisableVgwRoutePropagation-1
 
             var client = new AmazonEC2Client();
-            var response = client.DisableVgwRoutePropagation(new DisableVgwRoutePropagationRequest 
+            var response = client.DisableVgwRoutePropagation(new DisableVgwRoutePropagationRequest
             {
                 GatewayId = "vgw-9a4cacf3",
                 RouteTableId = "rtb-22574640"
@@ -2538,10 +2431,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DisassociateAddress()
         {
-            #region ec2-disassociate-address-1
+            #region DisassociateAddress-1
 
             var client = new AmazonEC2Client();
-            var response = client.DisassociateAddress(new DisassociateAddressRequest 
+            var response = client.DisassociateAddress(new DisassociateAddressRequest
             {
                 AssociationId = "eipassoc-2bebb745"
             });
@@ -2552,10 +2445,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DisassociateApplicationStatusCheck()
         {
-            #region ec2-disassociate-application-status-check-1
+            #region DisassociateApplicationStatusCheck-1
 
             var client = new AmazonEC2Client();
-            var response = client.DisassociateApplicationStatusCheck(new DisassociateApplicationStatusCheckRequest 
+            var response = client.DisassociateApplicationStatusCheck(new DisassociateApplicationStatusCheckRequest
             {
                 ApplicationStatusCheckId = "asc-0123456789abcdef0",
                 TargetTagAssociations = new List<CustomTagKeyValueRequestPair> {
@@ -2574,10 +2467,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DisassociateIamInstanceProfile()
         {
-            #region to-disassociate-an-iam-instance-profile-1529355364478
+            #region DisassociateIamInstanceProfile-1
 
             var client = new AmazonEC2Client();
-            var response = client.DisassociateIamInstanceProfile(new DisassociateIamInstanceProfileRequest 
+            var response = client.DisassociateIamInstanceProfile(new DisassociateIamInstanceProfileRequest
             {
                 AssociationId = "iip-assoc-05020b59952902f5f"
             });
@@ -2589,10 +2482,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2DisassociateRouteTable()
         {
-            #region ec2-disassociate-route-table-1
+            #region DisassociateRouteTable-1
 
             var client = new AmazonEC2Client();
-            var response = client.DisassociateRouteTable(new DisassociateRouteTableRequest 
+            var response = client.DisassociateRouteTable(new DisassociateRouteTableRequest
             {
                 AssociationId = "rtbassoc-781d0d1a"
             });
@@ -2603,10 +2496,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2EnableApplicationStatusCheckSuppression()
         {
-            #region ec2-enable-application-status-check-suppression-1
+            #region EnableApplicationStatusCheckSuppression-1
 
             var client = new AmazonEC2Client();
-            var response = client.EnableApplicationStatusCheckSuppression(new EnableApplicationStatusCheckSuppressionRequest 
+            var response = client.EnableApplicationStatusCheckSuppression(new EnableApplicationStatusCheckSuppressionRequest
             {
                 DurationSeconds = 3600,
                 InstanceIds = new List<string> {
@@ -2622,10 +2515,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2EnableVgwRoutePropagation()
         {
-            #region ec2-enable-vgw-route-propagation-1
+            #region EnableVgwRoutePropagation-1
 
             var client = new AmazonEC2Client();
-            var response = client.EnableVgwRoutePropagation(new EnableVgwRoutePropagationRequest 
+            var response = client.EnableVgwRoutePropagation(new EnableVgwRoutePropagationRequest
             {
                 GatewayId = "vgw-9a4cacf3",
                 RouteTableId = "rtb-22574640"
@@ -2637,10 +2530,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2EnableVolumeIO()
         {
-            #region to-enable-io-for-a-volume-1472508114867
+            #region EnableVolumeIO-1
 
             var client = new AmazonEC2Client();
-            var response = client.EnableVolumeIO(new EnableVolumeIORequest 
+            var response = client.EnableVolumeIO(new EnableVolumeIORequest
             {
                 VolumeId = "vol-1234567890abcdef0"
             });
@@ -2651,27 +2544,27 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2GetConsoleOutput()
         {
-            #region to-get-the-console-output-1529355683194
+            #region GetConsoleOutput-1
 
             var client = new AmazonEC2Client();
-            var response = client.GetConsoleOutput(new GetConsoleOutputRequest 
+            var response = client.GetConsoleOutput(new GetConsoleOutputRequest
             {
                 InstanceId = "i-1234567890abcdef0"
             });
 
             string instanceId = response.InstanceId;
             string output = response.Output;
-            DateTime timestamp = response.Timestamp;
+            DateTime? timestamp = response.Timestamp;
 
             #endregion
         }
 
         public void EC2GetLaunchTemplateData()
         {
-            #region to-get-the-launch-template-data-for-an-instance--1529356515702
+            #region GetLaunchTemplateData-1
 
             var client = new AmazonEC2Client();
-            var response = client.GetLaunchTemplateData(new GetLaunchTemplateDataRequest 
+            var response = client.GetLaunchTemplateData(new GetLaunchTemplateDataRequest
             {
                 InstanceId = "0123d646e8048babc"
             });
@@ -2683,10 +2576,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ModifyApplicationStatusCheck()
         {
-            #region ec2-modify-application-status-check-1
+            #region ModifyApplicationStatusCheck-1
 
             var client = new AmazonEC2Client();
-            var response = client.ModifyApplicationStatusCheck(new ModifyApplicationStatusCheckRequest 
+            var response = client.ModifyApplicationStatusCheck(new ModifyApplicationStatusCheckRequest
             {
                 ApplicationStatusCheckId = "asc-0123456789abcdef0",
                 Path = "/healthv2",
@@ -2700,27 +2593,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ModifyImageAttribute()
         {
-            #region to-make-an-ami-public-1529357395278
+            #region ModifyImageAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.ModifyImageAttribute(new ModifyImageAttributeRequest 
-            {
-                ImageId = "ami-5731123e",
-                LaunchPermission = new LaunchPermissionModifications { Add = new List<LaunchPermission> {
-                    new LaunchPermission { Group = "all" }
-                } }
-            });
-
-
-            #endregion
-        }
-
-        public void EC2ModifyImageAttribute()
-        {
-            #region to-grant-launch-permissions-1529357727906
-
-            var client = new AmazonEC2Client();
-            var response = client.ModifyImageAttribute(new ModifyImageAttributeRequest 
+            var response = client.ModifyImageAttribute(new ModifyImageAttributeRequest
             {
                 ImageId = "ami-5731123e",
                 LaunchPermission = new LaunchPermissionModifications { Add = new List<LaunchPermission> {
@@ -2732,12 +2608,44 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
-        public void EC2ModifyInstanceAttribute()
+        public void EC2ModifyImageAttribute()
         {
-            #region to-modify-the-instance-type-1529357844378
+            #region ModifyImageAttribute-2
 
             var client = new AmazonEC2Client();
-            var response = client.ModifyInstanceAttribute(new ModifyInstanceAttributeRequest 
+            var response = client.ModifyImageAttribute(new ModifyImageAttributeRequest
+            {
+                ImageId = "ami-5731123e",
+                LaunchPermission = new LaunchPermissionModifications { Add = new List<LaunchPermission> {
+                    new LaunchPermission { Group = "all" }
+                } }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2ModifyInstanceAttribute()
+        {
+            #region ModifyInstanceAttribute-1
+
+            var client = new AmazonEC2Client();
+            var response = client.ModifyInstanceAttribute(new ModifyInstanceAttributeRequest
+            {
+                EnaSupport = <data>,
+                InstanceId = "i-1234567890abcdef0"
+            });
+
+
+            #endregion
+        }
+
+        public void EC2ModifyInstanceAttribute()
+        {
+            #region ModifyInstanceAttribute-2
+
+            var client = new AmazonEC2Client();
+            var response = client.ModifyInstanceAttribute(new ModifyInstanceAttributeRequest
             {
                 InstanceId = "i-1234567890abcdef0",
                 InstanceType = <data>
@@ -2747,27 +2655,12 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
-        public void EC2ModifyInstanceAttribute()
-        {
-            #region to-enable-enhanced-networking-1529358279870
-
-            var client = new AmazonEC2Client();
-            var response = client.ModifyInstanceAttribute(new ModifyInstanceAttributeRequest 
-            {
-                EnaSupport = jsondata object,
-                InstanceId = "i-1234567890abcdef0"
-            });
-
-
-            #endregion
-        }
-
         public void EC2ModifyLaunchTemplate()
         {
-            #region to-change-the-default-version-of-a-launch-template-1529358440364
+            #region ModifyLaunchTemplate-1
 
             var client = new AmazonEC2Client();
-            var response = client.ModifyLaunchTemplate(new ModifyLaunchTemplateRequest 
+            var response = client.ModifyLaunchTemplate(new ModifyLaunchTemplateRequest
             {
                 DefaultVersion = "2",
                 LaunchTemplateId = "lt-0abcd290751193123"
@@ -2780,10 +2673,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ModifyNetworkInterfaceAttribute()
         {
-            #region ec2-modify-network-interface-attribute-1
+            #region ModifyNetworkInterfaceAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.ModifyNetworkInterfaceAttribute(new ModifyNetworkInterfaceAttributeRequest 
+            var response = client.ModifyNetworkInterfaceAttribute(new ModifyNetworkInterfaceAttributeRequest
             {
                 Attachment = new NetworkInterfaceAttachmentChanges {
                     AttachmentId = "eni-attach-43348162",
@@ -2798,10 +2691,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ModifyNetworkInterfaceAttribute()
         {
-            #region ec2-modify-network-interface-attribute-2
+            #region ModifyNetworkInterfaceAttribute-2
 
             var client = new AmazonEC2Client();
-            var response = client.ModifyNetworkInterfaceAttribute(new ModifyNetworkInterfaceAttributeRequest 
+            var response = client.ModifyNetworkInterfaceAttribute(new ModifyNetworkInterfaceAttributeRequest
             {
                 Description = <data>,
                 NetworkInterfaceId = "eni-686ea200"
@@ -2813,10 +2706,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ModifyNetworkInterfaceAttribute()
         {
-            #region ec2-modify-network-interface-attribute-3
+            #region ModifyNetworkInterfaceAttribute-3
 
             var client = new AmazonEC2Client();
-            var response = client.ModifyNetworkInterfaceAttribute(new ModifyNetworkInterfaceAttributeRequest 
+            var response = client.ModifyNetworkInterfaceAttribute(new ModifyNetworkInterfaceAttributeRequest
             {
                 Groups = new List<string> {
                     "sg-903004f8",
@@ -2831,13 +2724,13 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ModifyNetworkInterfaceAttribute()
         {
-            #region ec2-modify-network-interface-attribute-4
+            #region ModifyNetworkInterfaceAttribute-4
 
             var client = new AmazonEC2Client();
-            var response = client.ModifyNetworkInterfaceAttribute(new ModifyNetworkInterfaceAttributeRequest 
+            var response = client.ModifyNetworkInterfaceAttribute(new ModifyNetworkInterfaceAttributeRequest
             {
                 NetworkInterfaceId = "eni-686ea200",
-                SourceDestCheck = jsondata object
+                SourceDestCheck = <data>
             });
 
 
@@ -2846,29 +2739,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ModifySnapshotAttribute()
         {
-            #region to-modify-a-snapshot-attribute-1472508385907
+            #region ModifySnapshotAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.ModifySnapshotAttribute(new ModifySnapshotAttributeRequest 
-            {
-                Attribute = "createVolumePermission",
-                OperationType = "remove",
-                SnapshotId = "snap-1234567890abcdef0",
-                UserIds = new List<string> {
-                    "123456789012"
-                }
-            });
-
-
-            #endregion
-        }
-
-        public void EC2ModifySnapshotAttribute()
-        {
-            #region to-make-a-snapshot-public-1472508470529
-
-            var client = new AmazonEC2Client();
-            var response = client.ModifySnapshotAttribute(new ModifySnapshotAttributeRequest 
+            var response = client.ModifySnapshotAttribute(new ModifySnapshotAttributeRequest
             {
                 Attribute = "createVolumePermission",
                 GroupNames = new List<string> {
@@ -2882,47 +2756,49 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
-        public void EC2ModifySpotFleetRequest()
+        public void EC2ModifySnapshotAttribute()
         {
-            #region ec2-modify-spot-fleet-request-1
+            #region ModifySnapshotAttribute-2
 
             var client = new AmazonEC2Client();
-            var response = client.ModifySpotFleetRequest(new ModifySpotFleetRequestRequest 
+            var response = client.ModifySnapshotAttribute(new ModifySnapshotAttributeRequest
             {
-                SpotFleetRequestId = "sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE",
-                TargetCapacity = 20
+                Attribute = "createVolumePermission",
+                OperationType = "remove",
+                SnapshotId = "snap-1234567890abcdef0",
+                UserIds = new List<string> {
+                    "123456789012"
+                }
             });
 
-            bool return = response.Return;
 
             #endregion
         }
 
         public void EC2ModifySpotFleetRequest()
         {
-            #region ec2-modify-spot-fleet-request-2
+            #region ModifySpotFleetRequest-1
 
             var client = new AmazonEC2Client();
-            var response = client.ModifySpotFleetRequest(new ModifySpotFleetRequestRequest 
+            var response = client.ModifySpotFleetRequest(new ModifySpotFleetRequestRequest
             {
-                ExcessCapacityTerminationPolicy = "NoTermination ",
                 SpotFleetRequestId = "sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE",
-                TargetCapacity = 10
+                TargetCapacity = 20
             });
 
-            bool return = response.Return;
+            bool? @return = response.Return;
 
             #endregion
         }
 
         public void EC2ModifySubnetAttribute()
         {
-            #region ec2-modify-subnet-attribute-1
+            #region ModifySubnetAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.ModifySubnetAttribute(new ModifySubnetAttributeRequest 
+            var response = client.ModifySubnetAttribute(new ModifySubnetAttributeRequest
             {
-                MapPublicIpOnLaunch = jsondata object,
+                MapPublicIpOnLaunch = <data>,
                 SubnetId = "subnet-1a2b3c4d"
             });
 
@@ -2932,12 +2808,12 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ModifyVolumeAttribute()
         {
-            #region to-modify-a-volume-attribute-1472508596749
+            #region ModifyVolumeAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.ModifyVolumeAttribute(new ModifyVolumeAttributeRequest 
+            var response = client.ModifyVolumeAttribute(new ModifyVolumeAttributeRequest
             {
-                AutoEnableIO = jsondata object,
+                AutoEnableIO = <data>,
                 DryRun = true,
                 VolumeId = "vol-1234567890abcdef0"
             });
@@ -2948,12 +2824,12 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ModifyVpcAttribute()
         {
-            #region ec2-modify-vpc-attribute-1
+            #region ModifyVpcAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.ModifyVpcAttribute(new ModifyVpcAttributeRequest 
+            var response = client.ModifyVpcAttribute(new ModifyVpcAttributeRequest
             {
-                EnableDnsSupport = jsondata object,
+                EnableDnsSupport = <data>,
                 VpcId = "vpc-a01106c2"
             });
 
@@ -2963,12 +2839,12 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ModifyVpcAttribute()
         {
-            #region ec2-modify-vpc-attribute-2
+            #region ModifyVpcAttribute-2
 
             var client = new AmazonEC2Client();
-            var response = client.ModifyVpcAttribute(new ModifyVpcAttributeRequest 
+            var response = client.ModifyVpcAttribute(new ModifyVpcAttributeRequest
             {
-                EnableDnsHostnames = jsondata object,
+                EnableDnsHostnames = <data>,
                 VpcId = "vpc-a01106c2"
             });
 
@@ -2978,25 +2854,25 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2MoveAddressToVpc()
         {
-            #region ec2-move-address-to-vpc-1
+            #region MoveAddressToVpc-1
 
             var client = new AmazonEC2Client();
-            var response = client.MoveAddressToVpc(new MoveAddressToVpcRequest 
+            var response = client.MoveAddressToVpc(new MoveAddressToVpcRequest
             {
                 PublicIp = "54.123.4.56"
             });
 
-            string status = response.Status;
+            Status status = response.Status;
 
             #endregion
         }
 
         public void EC2RebootInstances()
         {
-            #region to-reboot-an-ec2-instance-1529358566382
+            #region RebootInstances-1
 
             var client = new AmazonEC2Client();
-            var response = client.RebootInstances(new RebootInstancesRequest 
+            var response = client.RebootInstances(new RebootInstancesRequest
             {
                 InstanceIds = new List<string> {
                     "i-1234567890abcdef5"
@@ -3009,10 +2885,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ReleaseAddress()
         {
-            #region ec2-release-address-1
+            #region ReleaseAddress-1
 
             var client = new AmazonEC2Client();
-            var response = client.ReleaseAddress(new ReleaseAddressRequest 
+            var response = client.ReleaseAddress(new ReleaseAddressRequest
             {
                 AllocationId = "eipalloc-64d5890a"
             });
@@ -3023,10 +2899,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ReplaceNetworkAclAssociation()
         {
-            #region ec2-replace-network-acl-association-1
+            #region ReplaceNetworkAclAssociation-1
 
             var client = new AmazonEC2Client();
-            var response = client.ReplaceNetworkAclAssociation(new ReplaceNetworkAclAssociationRequest 
+            var response = client.ReplaceNetworkAclAssociation(new ReplaceNetworkAclAssociationRequest
             {
                 AssociationId = "aclassoc-e5b95c8c",
                 NetworkAclId = "acl-5fb85d36"
@@ -3039,10 +2915,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ReplaceNetworkAclEntry()
         {
-            #region ec2-replace-network-acl-entry-1
+            #region ReplaceNetworkAclEntry-1
 
             var client = new AmazonEC2Client();
-            var response = client.ReplaceNetworkAclEntry(new ReplaceNetworkAclEntryRequest 
+            var response = client.ReplaceNetworkAclEntry(new ReplaceNetworkAclEntryRequest
             {
                 CidrBlock = "203.0.113.12/24",
                 Egress = false,
@@ -3062,10 +2938,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ReplaceRoute()
         {
-            #region ec2-replace-route-1
+            #region ReplaceRoute-1
 
             var client = new AmazonEC2Client();
-            var response = client.ReplaceRoute(new ReplaceRouteRequest 
+            var response = client.ReplaceRoute(new ReplaceRouteRequest
             {
                 DestinationCidrBlock = "10.0.0.0/16",
                 GatewayId = "vgw-9a4cacf3",
@@ -3078,10 +2954,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ReplaceRouteTableAssociation()
         {
-            #region ec2-replace-route-table-association-1
+            #region ReplaceRouteTableAssociation-1
 
             var client = new AmazonEC2Client();
-            var response = client.ReplaceRouteTableAssociation(new ReplaceRouteTableAssociationRequest 
+            var response = client.ReplaceRouteTableAssociation(new ReplaceRouteTableAssociationRequest
             {
                 AssociationId = "rtbassoc-781d0d1a",
                 RouteTableId = "rtb-22574640"
@@ -3094,10 +2970,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2RequestSpotFleet()
         {
-            #region ec2-request-spot-fleet-1
+            #region RequestSpotFleet-1
 
             var client = new AmazonEC2Client();
-            var response = client.RequestSpotFleet(new RequestSpotFleetRequest 
+            var response = client.RequestSpotFleet(new RequestSpotFleetRequest
             {
                 SpotFleetRequestConfig = new SpotFleetRequestConfigData {
                     IamFleetRole = "arn:aws:iam::123456789012:role/my-spot-fleet-role",
@@ -3125,10 +3001,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2RequestSpotFleet()
         {
-            #region ec2-request-spot-fleet-2
+            #region RequestSpotFleet-2
 
             var client = new AmazonEC2Client();
-            var response = client.RequestSpotFleet(new RequestSpotFleetRequest 
+            var response = client.RequestSpotFleet(new RequestSpotFleetRequest
             {
                 SpotFleetRequestConfig = new SpotFleetRequestConfigData {
                     IamFleetRole = "arn:aws:iam::123456789012:role/my-spot-fleet-role",
@@ -3156,10 +3032,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2RequestSpotFleet()
         {
-            #region ec2-request-spot-fleet-3
+            #region RequestSpotFleet-3
 
             var client = new AmazonEC2Client();
-            var response = client.RequestSpotFleet(new RequestSpotFleetRequest 
+            var response = client.RequestSpotFleet(new RequestSpotFleetRequest
             {
                 SpotFleetRequestConfig = new SpotFleetRequestConfigData {
                     IamFleetRole = "arn:aws:iam::123456789012:role/my-spot-fleet-role",
@@ -3193,10 +3069,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2RequestSpotFleet()
         {
-            #region ec2-request-spot-fleet-4
+            #region RequestSpotFleet-4
 
             var client = new AmazonEC2Client();
-            var response = client.RequestSpotFleet(new RequestSpotFleetRequest 
+            var response = client.RequestSpotFleet(new RequestSpotFleetRequest
             {
                 SpotFleetRequestConfig = new SpotFleetRequestConfigData {
                     AllocationStrategy = "diversified",
@@ -3230,19 +3106,18 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2RequestSpotInstances()
         {
-            #region ec2-request-spot-instances-1
+            #region RequestSpotInstances-1
 
             var client = new AmazonEC2Client();
-            var response = client.RequestSpotInstances(new RequestSpotInstancesRequest 
+            var response = client.RequestSpotInstances(new RequestSpotInstancesRequest
             {
                 InstanceCount = 5,
-                LaunchSpecification = new RequestSpotLaunchSpecification {
+                LaunchSpecification = new LaunchSpecification {
                     IamInstanceProfile = new IamInstanceProfileSpecification { Arn = "arn:aws:iam::123456789012:instance-profile/my-iam-role" },
                     ImageId = "ami-1a2b3c4d",
                     InstanceType = "m3.medium",
                     KeyName = "my-key-pair",
                     Placement = new SpotPlacement { AvailabilityZone = "us-west-2a" },
-                    
                 },
                 SpotPrice = "0.03",
                 Type = "one-time"
@@ -3254,13 +3129,13 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2RequestSpotInstances()
         {
-            #region ec2-request-spot-instances-2
+            #region RequestSpotInstances-2
 
             var client = new AmazonEC2Client();
-            var response = client.RequestSpotInstances(new RequestSpotInstancesRequest 
+            var response = client.RequestSpotInstances(new RequestSpotInstancesRequest
             {
                 InstanceCount = 5,
-                LaunchSpecification = new RequestSpotLaunchSpecification {
+                LaunchSpecification = new LaunchSpecification {
                     IamInstanceProfile = new IamInstanceProfileSpecification { Arn = "arn:aws:iam::123456789012:instance-profile/my-iam-role" },
                     ImageId = "ami-1a2b3c4d",
                     InstanceType = "m3.medium",
@@ -3276,10 +3151,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ResetImageAttribute()
         {
-            #region to-reset-the-launchpermission-attribute-1529359519534
+            #region ResetImageAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.ResetImageAttribute(new ResetImageAttributeRequest 
+            var response = client.ResetImageAttribute(new ResetImageAttributeRequest
             {
                 Attribute = "launchPermission",
                 ImageId = "ami-5731123e"
@@ -3291,10 +3166,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ResetInstanceAttribute()
         {
-            #region to-reset-the-sourcedestcheck-attribute-1529359630708
+            #region ResetInstanceAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.ResetInstanceAttribute(new ResetInstanceAttributeRequest 
+            var response = client.ResetInstanceAttribute(new ResetInstanceAttributeRequest
             {
                 Attribute = "sourceDestCheck",
                 InstanceId = "i-1234567890abcdef0"
@@ -3306,10 +3181,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2ResetSnapshotAttribute()
         {
-            #region to-reset-a-snapshot-attribute-1472508825735
+            #region ResetSnapshotAttribute-1
 
             var client = new AmazonEC2Client();
-            var response = client.ResetSnapshotAttribute(new ResetSnapshotAttributeRequest 
+            var response = client.ResetSnapshotAttribute(new ResetSnapshotAttributeRequest
             {
                 Attribute = "createVolumePermission",
                 SnapshotId = "snap-1234567890abcdef0"
@@ -3321,10 +3196,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2RunInstances()
         {
-            #region to-launch-an-instance-1529360150806
+            #region RunInstances-1
 
             var client = new AmazonEC2Client();
-            var response = client.RunInstances(new RunInstancesRequest 
+            var response = client.RunInstances(new RunInstancesRequest
             {
                 BlockDeviceMappings = new List<BlockDeviceMapping> {
                     new BlockDeviceMapping {
@@ -3360,10 +3235,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2StartInstances()
         {
-            #region to-start-a-stopped-ec2-instance-1529358792730
+            #region StartInstances-1
 
             var client = new AmazonEC2Client();
-            var response = client.StartInstances(new StartInstancesRequest 
+            var response = client.StartInstances(new StartInstancesRequest
             {
                 InstanceIds = new List<string> {
                     "i-1234567890abcdef0"
@@ -3377,10 +3252,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2StopInstances()
         {
-            #region to-stop-a-running-ec2-instance-1529358905540
+            #region StopInstances-1
 
             var client = new AmazonEC2Client();
-            var response = client.StopInstances(new StopInstancesRequest 
+            var response = client.StopInstances(new StopInstancesRequest
             {
                 InstanceIds = new List<string> {
                     "i-1234567890abcdef0"
@@ -3394,10 +3269,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2TerminateInstances()
         {
-            #region to-terminate-an-ec2-instance-1529359350660
+            #region TerminateInstances-1
 
             var client = new AmazonEC2Client();
-            var response = client.TerminateInstances(new TerminateInstancesRequest 
+            var response = client.TerminateInstances(new TerminateInstancesRequest
             {
                 InstanceIds = new List<string> {
                     "i-1234567890abcdef0"
@@ -3411,10 +3286,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2UnassignPrivateIpAddresses()
         {
-            #region ec2-unassign-private-ip-addresses-1
+            #region UnassignPrivateIpAddresses-1
 
             var client = new AmazonEC2Client();
-            var response = client.UnassignPrivateIpAddresses(new UnassignPrivateIpAddressesRequest 
+            var response = client.UnassignPrivateIpAddresses(new UnassignPrivateIpAddressesRequest
             {
                 NetworkInterfaceId = "eni-e5aa89a3",
                 PrivateIpAddresses = new List<string> {
@@ -3428,10 +3303,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2UpdateSecurityGroupRuleDescriptionsEgress()
         {
-            #region to-update-an-outbound-security-group-rule-description-1529360481544
+            #region UpdateSecurityGroupRuleDescriptionsEgress-1
 
             var client = new AmazonEC2Client();
-            var response = client.UpdateSecurityGroupRuleDescriptionsEgress(new UpdateSecurityGroupRuleDescriptionsEgressRequest 
+            var response = client.UpdateSecurityGroupRuleDescriptionsEgress(new UpdateSecurityGroupRuleDescriptionsEgressRequest
             {
                 GroupId = "sg-123abc12",
                 IpPermissions = new List<IpPermission> {
@@ -3449,10 +3324,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
         public void EC2UpdateSecurityGroupRuleDescriptionsIngress()
         {
-            #region to-update-an-inbound-security-group-rule-description-1529360820372
+            #region UpdateSecurityGroupRuleDescriptionsIngress-1
 
             var client = new AmazonEC2Client();
-            var response = client.UpdateSecurityGroupRuleDescriptionsIngress(new UpdateSecurityGroupRuleDescriptionsIngressRequest 
+            var response = client.UpdateSecurityGroupRuleDescriptionsIngress(new UpdateSecurityGroupRuleDescriptionsIngressRequest
             {
                 GroupId = "sg-123abc12",
                 IpPermissions = new List<IpPermission> {
@@ -3468,13 +3343,10 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

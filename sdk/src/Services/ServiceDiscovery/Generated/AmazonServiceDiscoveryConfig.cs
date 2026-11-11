@@ -27,12 +27,12 @@ using Amazon.ServiceDiscovery.Internal;
 namespace Amazon.ServiceDiscovery
 {
     /// <summary>
-    /// Configuration for accessing Amazon ServiceDiscovery service
+    /// Configuration for accessing AWS Cloud Map
     /// </summary>
     public partial class AmazonServiceDiscoveryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ServiceDiscovery", "4.0.101.17");
+            InternalSDKUtils.BuildUserAgentString("ServiceDiscovery", "4.0.101.21");
 
         private static readonly AmazonServiceDiscoveryEndpointResolver EndpointResolver =
             new AmazonServiceDiscoveryEndpointResolver();

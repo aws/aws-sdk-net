@@ -27,7 +27,7 @@ using Amazon.NumericTypesCbor.Internal;
 namespace Amazon.NumericTypesCbor
 {
     /// <summary>
-    /// Configuration for accessing Amazon NumericTypesCbor service
+    /// Configuration for accessing Sample Numeric Types Cbor Service
     /// </summary>
     public partial class AmazonNumericTypesCborConfig : ClientConfig
     {

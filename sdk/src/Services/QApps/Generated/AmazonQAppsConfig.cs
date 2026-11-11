@@ -27,12 +27,12 @@ using Amazon.QApps.Internal;
 namespace Amazon.QApps
 {
     /// <summary>
-    /// Configuration for accessing Amazon QApps service
+    /// Configuration for accessing QApps
     /// </summary>
     public partial class AmazonQAppsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("QApps", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("QApps", "4.0.100.25");
 
         private static readonly AmazonQAppsEndpointResolver EndpointResolver =
             new AmazonQAppsEndpointResolver();

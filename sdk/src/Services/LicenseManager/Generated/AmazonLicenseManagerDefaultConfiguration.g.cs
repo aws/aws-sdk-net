@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.LicenseManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon LicenseManager service
+    /// Configuration for accessing AWS License Manager
     /// </summary>
     public static class AmazonLicenseManagerDefaultConfiguration
     {

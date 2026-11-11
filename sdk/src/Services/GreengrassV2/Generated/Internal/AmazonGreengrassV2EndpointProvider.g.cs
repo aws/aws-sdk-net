@@ -26,7 +26,7 @@ using Amazon.GreengrassV2.Endpoints;
 namespace Amazon.GreengrassV2.Internal
 {
     /// <summary>
-    /// Amazon GreengrassV2 endpoint provider.
+    /// AWS IoT Greengrass V2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="GreengrassV2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

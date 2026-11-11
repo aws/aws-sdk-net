@@ -31,7 +31,7 @@ using Amazon.DataSync.Endpoints;
 namespace Amazon.DataSync.Internal
 {
     /// <summary>
-    /// Amazon DataSync endpoint resolver.
+    /// AWS DataSync endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DataSync service requests.
     /// <para />

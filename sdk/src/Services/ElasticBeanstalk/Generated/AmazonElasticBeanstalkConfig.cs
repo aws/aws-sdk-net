@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,27 +27,23 @@ using Amazon.ElasticBeanstalk.Internal;
 namespace Amazon.ElasticBeanstalk
 {
     /// <summary>
-    /// Configuration for accessing Amazon ElasticBeanstalk service
+    /// Configuration for accessing AWS Elastic Beanstalk
     /// </summary>
     public partial class AmazonElasticBeanstalkConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Elastic Beanstalk", "4.0.101.7");
+            InternalSDKUtils.BuildUserAgentString("Elastic Beanstalk", "4.0.102.3");
 
         private static readonly AmazonElasticBeanstalkEndpointResolver EndpointResolver =
             new AmazonElasticBeanstalkEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "Elastic Beanstalk";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "Elastic Beanstalk";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "elasticbeanstalk";
-            }
-        }
+        public override string RegionEndpointServiceName => "elasticbeanstalk";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2010-12-01";
-            }
-        }
+        public override string ServiceVersion => "2010-12-01";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.ElasticBeanstalk
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

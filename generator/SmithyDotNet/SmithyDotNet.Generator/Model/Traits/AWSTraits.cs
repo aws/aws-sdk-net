@@ -9,6 +9,8 @@ namespace SmithyDotNet.Generator.Model.Traits;
 /// </summary>
 public static class AWSTraits
 {
+    private const string Ec2QueryNameTrait = "aws.protocols#ec2QueryName";
+
     #region Protocol annotation traits
 
     #endregion
@@ -30,9 +32,28 @@ public static class AWSTraits
     /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-restxml-protocol.html#aws-protocols-restxml-trait" /></remarks>
     public static ProtocolTrait? GetRestXml(this Shape shape) => DeserializeTrait<ProtocolTrait>(shape, "aws.protocols#restXml");
 
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsquery-trait" /></remarks>
+    public static ProtocolTrait? GetAwsQuery(this Shape shape) => DeserializeTrait<ProtocolTrait>(shape, "aws.protocols#awsQuery");
+
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-ec2-query-protocol.html#aws-protocols-ec2query-trait" /></remarks>
+    public static ProtocolTrait? GetEc2Query(this Shape shape) => DeserializeTrait<ProtocolTrait>(shape, "aws.protocols#ec2Query");
+
+    /// <summary>The member's <c>aws.protocols#ec2QueryName</c>: its ec2Query request parameter name, used verbatim.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-ec2-query-protocol.html#aws-protocols-ec2queryname-trait" /></remarks>
+    public static string? GetEc2QueryName(this Shape shape) => GetStringTrait(shape, Ec2QueryNameTrait);
+
+    public static void SetEc2QueryName(this Shape shape, string name) => SetStringTrait(shape, Ec2QueryNameTrait, name);
+
+    /// <summary>The error's <c>aws.protocols#awsQueryError</c> customization (the wire <c>Code</c> awsQuery dispatches on), or null.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsqueryerror-trait" /></remarks>
+    public static AwsQueryErrorTrait? GetAwsQueryError(this Shape shape) => DeserializeTrait<AwsQueryErrorTrait>(shape, "aws.protocols#awsQueryError");
+
     /// <summary>Whether the service carries <c>aws.protocols#awsQueryCompatible</c>: it moved off awsQuery and still reports its old error codes in the <c>x-amzn-query-error</c> header.</summary>
     /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsquerycompatible-trait" /></remarks>
     public static bool HasAwsQueryCompatible(this Shape shape) => shape.Traits.ContainsKey("aws.protocols#awsQueryCompatible");
+
+    /// <remarks><see href="https://smithy.io/2.0/aws/aws-core.html#aws-protocols-httpchecksum-trait" /></remarks>
+    public static HttpChecksumTrait? GetHttpChecksum(this Shape shape) => DeserializeTrait<HttpChecksumTrait>(shape, "aws.protocols#httpChecksum");
 
     /// <remarks><see href="https://smithy.io/2.0/aws/aws-core.html#aws-api-service-trait" /></remarks>
     public static AWSServiceTrait? GetAWSService(this Shape shape) => DeserializeTrait<AWSServiceTrait>(shape, "aws.api#service");

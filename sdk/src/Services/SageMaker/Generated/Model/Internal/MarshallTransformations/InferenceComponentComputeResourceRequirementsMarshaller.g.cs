@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAcceleratorPartitionType())
+            {
+                context.Writer.WritePropertyName("AcceleratorPartitionType");
+                context.Writer.WriteStringValue(requestObject.AcceleratorPartitionType);
+            }
+
             if (requestObject.IsSetMaxMemoryRequiredInMb())
             {
                 context.Writer.WritePropertyName("MaxMemoryRequiredInMb");

@@ -26,7 +26,7 @@ using Amazon.EC2InstanceConnect.Endpoints;
 namespace Amazon.EC2InstanceConnect.Internal
 {
     /// <summary>
-    /// Amazon EC2InstanceConnect endpoint provider.
+    /// AWS EC2 Instance Connect endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="EC2InstanceConnectEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

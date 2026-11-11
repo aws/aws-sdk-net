@@ -31,7 +31,7 @@ using Amazon.ApplicationInsights.Endpoints;
 namespace Amazon.ApplicationInsights.Internal
 {
     /// <summary>
-    /// Amazon ApplicationInsights endpoint resolver.
+    /// Amazon CloudWatch Application Insights endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ApplicationInsights service requests.
     /// <para />

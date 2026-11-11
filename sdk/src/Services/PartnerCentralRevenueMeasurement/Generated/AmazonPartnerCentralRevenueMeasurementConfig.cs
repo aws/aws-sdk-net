@@ -27,12 +27,12 @@ using Amazon.PartnerCentralRevenueMeasurement.Internal;
 namespace Amazon.PartnerCentralRevenueMeasurement
 {
     /// <summary>
-    /// Configuration for accessing Amazon PartnerCentralRevenueMeasurement service
+    /// Configuration for accessing Partner Central Revenue Measurement API
     /// </summary>
     public partial class AmazonPartnerCentralRevenueMeasurementConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PartnerCentral Revenue Measurement", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("PartnerCentral Revenue Measurement", "4.0.100.24");
 
         private static readonly AmazonPartnerCentralRevenueMeasurementEndpointResolver EndpointResolver =
             new AmazonPartnerCentralRevenueMeasurementEndpointResolver();

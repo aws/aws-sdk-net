@@ -27,12 +27,12 @@ using Amazon.FMS.Internal;
 namespace Amazon.FMS
 {
     /// <summary>
-    /// Configuration for accessing Amazon FMS service
+    /// Configuration for accessing Firewall Management Service
     /// </summary>
     public partial class AmazonFMSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("FMS", "4.0.101.5");
+            InternalSDKUtils.BuildUserAgentString("FMS", "4.0.101.9");
 
         private static readonly AmazonFMSEndpointResolver EndpointResolver =
             new AmazonFMSEndpointResolver();

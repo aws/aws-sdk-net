@@ -31,7 +31,7 @@ using Amazon.MarketplaceCatalog.Endpoints;
 namespace Amazon.MarketplaceCatalog.Internal
 {
     /// <summary>
-    /// Amazon MarketplaceCatalog endpoint resolver.
+    /// AWS Marketplace Catalog Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MarketplaceCatalog service requests.
     /// <para />

@@ -27,12 +27,12 @@ using Amazon.IoTWireless.Internal;
 namespace Amazon.IoTWireless
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTWireless service
+    /// Configuration for accessing AWS IoT Wireless
     /// </summary>
     public partial class AmazonIoTWirelessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoT Wireless", "4.0.103.2");
+            InternalSDKUtils.BuildUserAgentString("IoT Wireless", "4.0.103.6");
 
         private static readonly AmazonIoTWirelessEndpointResolver EndpointResolver =
             new AmazonIoTWirelessEndpointResolver();

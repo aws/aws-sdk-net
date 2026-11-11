@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon APIGateway service
+    /// Service metadata for Amazon API Gateway
     /// </summary>
     public partial class AmazonAPIGatewayMetadata : IServiceMetadata
     {

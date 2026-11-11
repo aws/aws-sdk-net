@@ -31,8 +31,8 @@ namespace Amazon.Route53Profiles.Model
 {
     /// <summary>
     /// Container for the parameters to the GetProfileAssociation operation. Retrieves a Route
-    /// 53 Profile association for a VPC. A VPC can have only one Profile association, but
-    /// a Profile can be associated with up to 5000 VPCs.
+    /// 53 Profile association for a VPC. A VPC can have up to two Profile associations, and
+    /// a Profile can be associated with up to 1,000 VPCs.
     /// </summary>
     public partial class GetProfileAssociationRequest : AmazonRoute53ProfilesRequest
     {

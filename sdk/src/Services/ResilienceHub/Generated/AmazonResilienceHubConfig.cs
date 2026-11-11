@@ -27,12 +27,12 @@ using Amazon.ResilienceHub.Internal;
 namespace Amazon.ResilienceHub
 {
     /// <summary>
-    /// Configuration for accessing Amazon ResilienceHub service
+    /// Configuration for accessing AWS Resilience Hub
     /// </summary>
     public partial class AmazonResilienceHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("resiliencehub", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("resiliencehub", "4.0.100.26");
 
         private static readonly AmazonResilienceHubEndpointResolver EndpointResolver =
             new AmazonResilienceHubEndpointResolver();

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ECS
 {
     /// <summary>
-    /// Configuration for accessing Amazon ECS service
+    /// Configuration for accessing Amazon EC2 Container Service
     /// </summary>
     public static class AmazonECSDefaultConfiguration
     {

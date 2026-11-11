@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PCS.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon PCS service
+    /// Service metadata for AWS Parallel Computing Service
     /// </summary>
     public partial class AmazonPCSMetadata : IServiceMetadata
     {

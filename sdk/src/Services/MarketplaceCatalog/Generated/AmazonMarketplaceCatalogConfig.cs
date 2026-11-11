@@ -27,12 +27,12 @@ using Amazon.MarketplaceCatalog.Internal;
 namespace Amazon.MarketplaceCatalog
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceCatalog service
+    /// Configuration for accessing AWS Marketplace Catalog Service
     /// </summary>
     public partial class AmazonMarketplaceCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Catalog", "4.0.106.0");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Catalog", "4.0.106.4");
 
         private static readonly AmazonMarketplaceCatalogEndpointResolver EndpointResolver =
             new AmazonMarketplaceCatalogEndpointResolver();

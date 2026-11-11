@@ -52,6 +52,36 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetAllowProfileCreation() => this.AllowProfileCreation.HasValue;
 
         /// <summary>
+        /// Gets and sets the property DefaultMaxProfileObjectCount. 
+        /// <para>
+        /// The default maximum number of objects of this object type that can be stored per profile.
+        /// This default applies when you don't set <c>MaxProfileObjectCount</c> on an object
+        /// type created from this template. If this value isn't present, no default limit applies.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0)]
+        public int? DefaultMaxProfileObjectCount { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DefaultMaxProfileObjectCount property is set.
+        /// </summary>
+        internal bool IsSetDefaultMaxProfileObjectCount() => this.DefaultMaxProfileObjectCount.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DefaultMaxProfileObjectCountEffectiveAfter. 
+        /// <para>
+        /// The timestamp after which <c>DefaultMaxProfileObjectCount</c> takes effect. The default
+        /// limit applies only to domains created after this time.
+        /// </para>
+        /// </summary>
+        public DateTime? DefaultMaxProfileObjectCountEffectiveAfter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DefaultMaxProfileObjectCountEffectiveAfter property is set.
+        /// </summary>
+        internal bool IsSetDefaultMaxProfileObjectCountEffectiveAfter() => this.DefaultMaxProfileObjectCountEffectiveAfter.HasValue;
+
+        /// <summary>
         /// Gets and sets the property Fields. 
         /// <para>
         /// A map of the name and ObjectType field.
@@ -132,6 +162,21 @@ namespace Amazon.CustomerProfiles.Model
         /// Checks to see if the SourceObject property is set.
         /// </summary>
         internal bool IsSetSourceObject() => this.SourceObject != null;
+
+        /// <summary>
+        /// Gets and sets the property StoreOnly. 
+        /// <para>
+        /// Indicates whether the template is store-only. Objects of an object type created from
+        /// a store-only template are ingested and stored, but the object type can't be used by
+        /// calculated attributes or event triggers.
+        /// </para>
+        /// </summary>
+        public bool? StoreOnly { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StoreOnly property is set.
+        /// </summary>
+        internal bool IsSetStoreOnly() => this.StoreOnly.HasValue;
 
         /// <summary>
         /// Gets and sets the property TemplateId. 

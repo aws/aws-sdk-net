@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AmplifyBackend
 {
     /// <summary>
-    /// Configuration for accessing Amazon AmplifyBackend service
+    /// Configuration for accessing AmplifyBackend
     /// </summary>
     public static class AmazonAmplifyBackendDefaultConfiguration
     {

@@ -45,6 +45,24 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetChallengeJavascriptSdkInjection())
+            {
+                context.Writer.WritePropertyName("ChallengeJavascriptSdkInjection");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectChallengeJavascriptSdkInjectionKvp in requestObject.ChallengeJavascriptSdkInjection)
+                {
+                    context.Writer.WritePropertyName(requestObjectChallengeJavascriptSdkInjectionKvp.Key);
+                    var requestObjectChallengeJavascriptSdkInjectionValue = requestObjectChallengeJavascriptSdkInjectionKvp.Value;
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ChallengeJavascriptSdkInjectionConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectChallengeJavascriptSdkInjectionValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetRequestBody())
             {
                 context.Writer.WritePropertyName("RequestBody");

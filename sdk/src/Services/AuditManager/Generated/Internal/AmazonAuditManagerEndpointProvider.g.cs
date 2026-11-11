@@ -26,7 +26,7 @@ using Amazon.AuditManager.Endpoints;
 namespace Amazon.AuditManager.Internal
 {
     /// <summary>
-    /// Amazon AuditManager endpoint provider.
+    /// AWS Audit Manager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AuditManagerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

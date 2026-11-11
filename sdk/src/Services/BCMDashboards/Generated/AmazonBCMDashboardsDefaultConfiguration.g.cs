@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.BCMDashboards
 {
     /// <summary>
-    /// Configuration for accessing Amazon BCMDashboards service
+    /// Configuration for accessing AWS Billing and Cost Management Dashboards
     /// </summary>
     public static class AmazonBCMDashboardsDefaultConfiguration
     {

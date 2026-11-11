@@ -60,15 +60,15 @@ namespace Amazon.Lambda
     ///  
     /// <para>
     /// Lambda Event Functions, previously known as Lambda functions, run your code in response
-    /// to events and API calls. Event Functions is a documentation name only. In this API,
-    /// the Amazon Web Services SDKs, and the CLI, Event Functions are still called <i>functions</i>,
-    /// for example in <c>CreateFunction</c> and <c>Invoke</c>. You don't need to change any
-    /// code.
+    /// to events and API calls. In the Lambda API, the Amazon Web Services SDKs, and the
+    /// CLI, Event Functions are still called <i>functions</i>, for example in <c>CreateFunction</c>
+    /// and <c>Invoke</c>. You don't need to change any existing code.
     /// </para>
     ///  
     /// <para>
-    /// The <i>Lambda API Reference</i> provides information about each of the API methods,
-    /// including details about the parameters in each API request and response. 
+    /// The <i>Lambda API Reference</i> provides information about each of the API methods
+    /// for Lambda Event Functions, including details about the parameters in each API request
+    /// and response.
     /// </para>
     ///   
     /// <para>
@@ -2278,7 +2278,7 @@ namespace Amazon.Lambda
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Removes a concurrent execution limit from a function.
+        /// Removes a concurrent execution limit from a Lambda Event Function.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionConcurrency service method.</param>
         /// <returns>The response from the DeleteFunctionConcurrency service method, as returned by Lambda.</returns>
@@ -2319,7 +2319,7 @@ namespace Amazon.Lambda
 #endif
 
         /// <summary>
-        /// Removes a concurrent execution limit from a function.
+        /// Removes a concurrent execution limit from a Lambda Event Function.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionConcurrency service method.</param>
         /// <param name="cancellationToken">
@@ -3460,9 +3460,9 @@ namespace Amazon.Lambda
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns information about the function or function version, with a link to download
-        /// the deployment package that's valid for 10 minutes. If you specify a function version,
-        /// only details that are specific to that version are returned.
+        /// Returns information about a Lambda Event Function or function version, with a link
+        /// to download the deployment package that's valid for 10 minutes. If you specify a function
+        /// version, only details that are specific to that version are returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
@@ -3500,9 +3500,9 @@ namespace Amazon.Lambda
 #endif
 
         /// <summary>
-        /// Returns information about the function or function version, with a link to download
-        /// the deployment package that's valid for 10 minutes. If you specify a function version,
-        /// only details that are specific to that version are returned.
+        /// Returns information about a Lambda Event Function or function version, with a link
+        /// to download the deployment package that's valid for 10 minutes. If you specify a function
+        /// version, only details that are specific to that version are returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
         /// <param name="cancellationToken">
@@ -3534,9 +3534,9 @@ namespace Amazon.Lambda
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns information about the function or function version, with a link to download
-        /// the deployment package that's valid for 10 minutes. If you specify a function version,
-        /// only details that are specific to that version are returned.
+        /// Returns information about a Lambda Event Function or function version, with a link
+        /// to download the deployment package that's valid for 10 minutes. If you specify a function
+        /// version, only details that are specific to that version are returned.
         /// </summary>
         /// <param name="functionName">The name or ARN of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:v1</c> (with alias). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
@@ -3563,9 +3563,9 @@ namespace Amazon.Lambda
 #endif
 
         /// <summary>
-        /// Returns information about the function or function version, with a link to download
-        /// the deployment package that's valid for 10 minutes. If you specify a function version,
-        /// only details that are specific to that version are returned.
+        /// Returns information about a Lambda Event Function or function version, with a link
+        /// to download the deployment package that's valid for 10 minutes. If you specify a function
+        /// version, only details that are specific to that version are returned.
         /// </summary>
         /// <param name="functionName">The name or ARN of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:v1</c> (with alias). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
@@ -5940,7 +5940,8 @@ namespace Amazon.Lambda
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Retrieves a list of configurations for asynchronous invocation for a function.
+        /// Retrieves a list of configurations for asynchronous invocation for a Lambda Event
+        /// Function. To retrieve more configurations, use the <c>Marker</c> parameter.
         /// 
         ///  
         /// <para>
@@ -5983,7 +5984,8 @@ namespace Amazon.Lambda
 #endif
 
         /// <summary>
-        /// Retrieves a list of configurations for asynchronous invocation for a function.
+        /// Retrieves a list of configurations for asynchronous invocation for a Lambda Event
+        /// Function. To retrieve more configurations, use the <c>Marker</c> parameter.
         /// 
         ///  
         /// <para>
@@ -6693,9 +6695,9 @@ namespace Amazon.Lambda
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
-        /// with the version-specific configuration of each. Lambda returns up to 50 versions
-        /// per call.
+        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>
+        /// of a Lambda Event Function, with the version-specific configuration of each. Lambda
+        /// returns up to 50 versions per call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVersionsByFunction service method.</param>
         /// <returns>The response from the ListVersionsByFunction service method, as returned by Lambda.</returns>
@@ -6733,9 +6735,9 @@ namespace Amazon.Lambda
 #endif
 
         /// <summary>
-        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
-        /// with the version-specific configuration of each. Lambda returns up to 50 versions
-        /// per call.
+        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>
+        /// of a Lambda Event Function, with the version-specific configuration of each. Lambda
+        /// returns up to 50 versions per call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVersionsByFunction service method.</param>
         /// <param name="cancellationToken">
@@ -6862,8 +6864,8 @@ namespace Amazon.Lambda
 #if NETFRAMEWORK
         /// <summary>
         /// Creates a <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a>
-        /// from the current code and configuration of a function. Use versions to create a snapshot
-        /// of your function code and configuration that doesn't change.
+        /// from the current code and configuration of a Lambda Event Function. Use versions to
+        /// create a snapshot of your function code and configuration that doesn't change.
         /// 
         ///  
         /// <para>
@@ -6942,8 +6944,8 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Creates a <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a>
-        /// from the current code and configuration of a function. Use versions to create a snapshot
-        /// of your function code and configuration that doesn't change.
+        /// from the current code and configuration of a Lambda Event Function. Use versions to
+        /// create a snapshot of your function code and configuration that doesn't change.
         /// 
         ///  
         /// <para>
@@ -7101,8 +7103,8 @@ namespace Amazon.Lambda
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Sets the maximum number of simultaneous executions for a function, and reserves capacity
-        /// for that concurrency level.
+        /// Sets the maximum number of simultaneous executions for a Lambda Event Function, and
+        /// reserves capacity for that concurrency level.
         /// 
         ///  
         /// <para>
@@ -7160,8 +7162,8 @@ namespace Amazon.Lambda
 #endif
 
         /// <summary>
-        /// Sets the maximum number of simultaneous executions for a function, and reserves capacity
-        /// for that concurrency level.
+        /// Sets the maximum number of simultaneous executions for a Lambda Event Function, and
+        /// reserves capacity for that concurrency level.
         /// 
         ///  
         /// <para>
@@ -7341,8 +7343,8 @@ namespace Amazon.Lambda
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Sets your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-recursion.html">recursive
-        /// loop detection</a> configuration.
+        /// Sets the <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-recursion.html">recursive
+        /// loop detection</a> configuration for a Lambda Event Function.
         /// 
         ///  
         /// <para>
@@ -7398,8 +7400,8 @@ namespace Amazon.Lambda
 #endif
 
         /// <summary>
-        /// Sets your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-recursion.html">recursive
-        /// loop detection</a> configuration.
+        /// Sets the <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-recursion.html">recursive
+        /// loop detection</a> configuration for a Lambda Event Function.
         /// 
         ///  
         /// <para>
@@ -9671,7 +9673,7 @@ namespace Amazon.Lambda
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates the configuration for a Lambda function URL.
+        /// Updates the configuration for a function URL of a Lambda Event Function.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionUrlConfig service method.</param>
         /// <returns>The response from the UpdateFunctionUrlConfig service method, as returned by Lambda.</returns>
@@ -9712,7 +9714,7 @@ namespace Amazon.Lambda
 #endif
 
         /// <summary>
-        /// Updates the configuration for a Lambda function URL.
+        /// Updates the configuration for a function URL of a Lambda Event Function.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionUrlConfig service method.</param>
         /// <param name="cancellationToken">

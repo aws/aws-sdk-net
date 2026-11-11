@@ -140,7 +140,7 @@ public sealed class XmlResponseUnmarshallerWriter(GenerationContext context, str
                     }
                     else
                     {
-                        XmlBodyMemberUnmarshaller.WriteMemberBlocks(writer, operation.Output, bodyMembers, "targetDepth");
+                        XmlBodyMemberUnmarshaller.WriteMemberBlocks(writer, operation.Output, bodyMembers, "targetDepth", context.Protocol);
                     }
                 });
                 writer.OpenBlock("else if (context.IsEndElement && context.CurrentDepth < originalDepth)", () =>

@@ -27,12 +27,12 @@ using Amazon.Artifact.Internal;
 namespace Amazon.Artifact
 {
     /// <summary>
-    /// Configuration for accessing Amazon Artifact service
+    /// Configuration for accessing AWS Artifact
     /// </summary>
     public partial class AmazonArtifactConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Artifact", "4.0.102.16");
+            InternalSDKUtils.BuildUserAgentString("Artifact", "4.0.103.4");
 
         private static readonly AmazonArtifactEndpointResolver EndpointResolver =
             new AmazonArtifactEndpointResolver();

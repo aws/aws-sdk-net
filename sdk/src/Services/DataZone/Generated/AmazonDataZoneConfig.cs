@@ -27,12 +27,12 @@ using Amazon.DataZone.Internal;
 namespace Amazon.DataZone
 {
     /// <summary>
-    /// Configuration for accessing Amazon DataZone service
+    /// Configuration for accessing Amazon DataZone
     /// </summary>
     public partial class AmazonDataZoneConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DataZone", "4.0.111.1");
+            InternalSDKUtils.BuildUserAgentString("DataZone", "4.0.113.1");
 
         private static readonly AmazonDataZoneEndpointResolver EndpointResolver =
             new AmazonDataZoneEndpointResolver();

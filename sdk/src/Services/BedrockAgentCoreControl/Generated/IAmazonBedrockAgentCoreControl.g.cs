@@ -2137,6 +2137,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
         /// This exception is thrown when a request is denied per access permissions
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
         /// This exception is thrown if there was an unexpected error during processing of request
         /// </exception>
@@ -2167,6 +2170,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <returns>The response from the CreateWorkloadIdentity service method, as returned by BedrockAgentCoreControl.</returns>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
         /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
         /// This exception is thrown if there was an unexpected error during processing of request
@@ -8043,6 +8049,109 @@ namespace Amazon.BedrockAgentCoreControl
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Resets the key material for a token vault whose customer managed KMS key has been
+        /// deleted, and re-encrypts the token vault with an Amazon Web Services managed key so
+        /// that you can use the token vault again.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This operation can't be undone. The reset permanently deletes the OAuth2 access tokens
+        /// and refresh tokens stored in the token vault, including tokens obtained through all
+        /// supported flows. After the reset, your agents must complete these flows again to get
+        /// new tokens, and for user-delegated flows your users must authorize access again. The
+        /// reset doesn't delete your credential providers or their configuration.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// You can reset a token vault only if its customer managed key has been deleted. If
+        /// the key still exists, including when it's disabled or scheduled for deletion, this
+        /// operation returns a <c>ValidationException</c>. To use the token vault again, enable
+        /// the key or cancel its scheduled deletion in KMS. To switch to a different key, use
+        /// <c>SetTokenVaultCMK</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetTokenVaultKeyMaterial service method.</param>
+        /// <returns>The response from the ResetTokenVaultKeyMaterial service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ResetTokenVaultKeyMaterial">REST API Reference for ResetTokenVaultKeyMaterial Operation</seealso>
+        ResetTokenVaultKeyMaterialResponse ResetTokenVaultKeyMaterial(ResetTokenVaultKeyMaterialRequest request);
+#endif
+
+        /// <summary>
+        /// Resets the key material for a token vault whose customer managed KMS key has been
+        /// deleted, and re-encrypts the token vault with an Amazon Web Services managed key so
+        /// that you can use the token vault again.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This operation can't be undone. The reset permanently deletes the OAuth2 access tokens
+        /// and refresh tokens stored in the token vault, including tokens obtained through all
+        /// supported flows. After the reset, your agents must complete these flows again to get
+        /// new tokens, and for user-delegated flows your users must authorize access again. The
+        /// reset doesn't delete your credential providers or their configuration.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// You can reset a token vault only if its customer managed key has been deleted. If
+        /// the key still exists, including when it's disabled or scheduled for deletion, this
+        /// operation returns a <c>ValidationException</c>. To use the token vault again, enable
+        /// the key or cancel its scheduled deletion in KMS. To switch to a different key, use
+        /// <c>SetTokenVaultCMK</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetTokenVaultKeyMaterial service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ResetTokenVaultKeyMaterial service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ResetTokenVaultKeyMaterial">REST API Reference for ResetTokenVaultKeyMaterial Operation</seealso>
+        Task<ResetTokenVaultKeyMaterialResponse> ResetTokenVaultKeyMaterialAsync(ResetTokenVaultKeyMaterialRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Replaces the service-managed credentials of a payment connector with newly issued
         /// credentials.
         /// 
@@ -8154,6 +8263,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConcurrentModificationException">
         /// Exception thrown when a resource is modified concurrently by multiple requests.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
         /// This exception is thrown if there was an unexpected error during processing of request
         /// </exception>
@@ -8187,6 +8299,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConcurrentModificationException">
         /// Exception thrown when a resource is modified concurrently by multiple requests.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
         /// This exception is thrown if there was an unexpected error during processing of request
@@ -10357,6 +10472,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
         /// This exception is thrown when a request is denied per access permissions
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
         /// This exception is thrown if there was an unexpected error during processing of request
         /// </exception>
@@ -10387,6 +10505,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <returns>The response from the UpdateWorkloadIdentity service method, as returned by BedrockAgentCoreControl.</returns>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
         /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
         /// This exception is thrown if there was an unexpected error during processing of request

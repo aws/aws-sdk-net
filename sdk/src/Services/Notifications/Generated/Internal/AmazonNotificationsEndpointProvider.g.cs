@@ -26,7 +26,7 @@ using Amazon.Notifications.Endpoints;
 namespace Amazon.Notifications.Internal
 {
     /// <summary>
-    /// Amazon Notifications endpoint provider.
+    /// AWS User Notifications endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="NotificationsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

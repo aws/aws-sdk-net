@@ -27,12 +27,12 @@ using Amazon.SSOOIDC.Internal;
 namespace Amazon.SSOOIDC
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSOOIDC service
+    /// Configuration for accessing AWS SSO OIDC
     /// </summary>
     public partial class AmazonSSOOIDCConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSO OIDC", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("SSO OIDC", "4.0.100.26");
 
         private static readonly AmazonSSOOIDCEndpointResolver EndpointResolver =
             new AmazonSSOOIDCEndpointResolver();

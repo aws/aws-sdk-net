@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2InstanceConnect
 {
     /// <summary>
-    /// Configuration for accessing Amazon EC2InstanceConnect service
+    /// Configuration for accessing AWS EC2 Instance Connect
     /// </summary>
     public static class AmazonEC2InstanceConnectDefaultConfiguration
     {

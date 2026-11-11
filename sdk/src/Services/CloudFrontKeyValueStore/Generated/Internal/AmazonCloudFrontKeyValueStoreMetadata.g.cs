@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFrontKeyValueStore.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CloudFrontKeyValueStore service
+    /// Service metadata for Amazon CloudFront KeyValueStore
     /// </summary>
     public partial class AmazonCloudFrontKeyValueStoreMetadata : IServiceMetadata
     {

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElementalInference.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ElementalInference service
+    /// Service metadata for AWS Elemental Inference
     /// </summary>
     public partial class AmazonElementalInferenceMetadata : IServiceMetadata
     {

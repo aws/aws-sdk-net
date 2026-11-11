@@ -31,7 +31,7 @@ using Amazon.AWSHealth.Endpoints;
 namespace Amazon.AWSHealth.Internal
 {
     /// <summary>
-    /// Amazon AWSHealth endpoint resolver.
+    /// AWS Health APIs and Notifications endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AWSHealth service requests.
     /// <para />

@@ -27,12 +27,12 @@ using Amazon.ConnectWisdomService.Internal;
 namespace Amazon.ConnectWisdomService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectWisdomService service
+    /// Configuration for accessing Amazon Connect Wisdom Service
     /// </summary>
     public partial class AmazonConnectWisdomServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Wisdom", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Wisdom", "4.0.100.25");
 
         private static readonly AmazonConnectWisdomServiceEndpointResolver EndpointResolver =
             new AmazonConnectWisdomServiceEndpointResolver();

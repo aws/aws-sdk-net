@@ -3780,6 +3780,107 @@ namespace Amazon.BedrockAgentCore
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Searches the web and returns a ranked list of results. Each result includes a text
+        /// extract from the page.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by domain and by publication date.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:InvokeWebSearch</c>
+        /// permission on the resource <c>arn:${Partition}:bedrock-agentcore:${Region}:aws:tool/web-search.v1</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeWebSearch service method.</param>
+        /// <returns>The response from the InvokeWebSearch service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceUnavailableException">
+        /// The service can't handle the request right now. Retry the request. If the response
+        /// includes <c>retryAfterSeconds</c>, wait that many seconds before you retry.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeWebSearch">REST API Reference for InvokeWebSearch Operation</seealso>
+        InvokeWebSearchResponse InvokeWebSearch(InvokeWebSearchRequest request);
+#endif
+
+        /// <summary>
+        /// Searches the web and returns a ranked list of results. Each result includes a text
+        /// extract from the page.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by domain and by publication date.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:InvokeWebSearch</c>
+        /// permission on the resource <c>arn:${Partition}:bedrock-agentcore:${Region}:aws:tool/web-search.v1</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeWebSearch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the InvokeWebSearch service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceUnavailableException">
+        /// The service can't handle the request right now. Retry the request. If the response
+        /// includes <c>retryAfterSeconds</c>, wait that many seconds before you retry.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeWebSearch">REST API Reference for InvokeWebSearch Operation</seealso>
+        Task<InvokeWebSearchResponse> InvokeWebSearchAsync(InvokeWebSearchRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists all A/B tests in the account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListABTests service method.</param>

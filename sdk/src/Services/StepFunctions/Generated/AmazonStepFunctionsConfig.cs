@@ -27,12 +27,12 @@ using Amazon.StepFunctions.Internal;
 namespace Amazon.StepFunctions
 {
     /// <summary>
-    /// Configuration for accessing Amazon StepFunctions service
+    /// Configuration for accessing AWS Step Functions
     /// </summary>
     public partial class AmazonStepFunctionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SFN", "4.0.101.1");
+            InternalSDKUtils.BuildUserAgentString("SFN", "4.0.101.5");
 
         private static readonly AmazonStepFunctionsEndpointResolver EndpointResolver =
             new AmazonStepFunctionsEndpointResolver();

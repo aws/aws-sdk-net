@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon NetworkFirewall service
+    /// Service metadata for AWS Network Firewall
     /// </summary>
     public partial class AmazonNetworkFirewallMetadata : IServiceMetadata
     {

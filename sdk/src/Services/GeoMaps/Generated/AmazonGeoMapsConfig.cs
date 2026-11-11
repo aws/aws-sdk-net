@@ -27,12 +27,12 @@ using Amazon.GeoMaps.Internal;
 namespace Amazon.GeoMaps
 {
     /// <summary>
-    /// Configuration for accessing Amazon GeoMaps service
+    /// Configuration for accessing Amazon Location Service Maps V2
     /// </summary>
     public partial class AmazonGeoMapsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Geo Maps", "4.0.101.14");
+            InternalSDKUtils.BuildUserAgentString("Geo Maps", "4.0.101.18");
 
         private static readonly AmazonGeoMapsEndpointResolver EndpointResolver =
             new AmazonGeoMapsEndpointResolver();

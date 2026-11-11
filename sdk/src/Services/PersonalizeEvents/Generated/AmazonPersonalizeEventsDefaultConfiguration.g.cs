@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.PersonalizeEvents
 {
     /// <summary>
-    /// Configuration for accessing Amazon PersonalizeEvents service
+    /// Configuration for accessing Amazon Personalize Events
     /// </summary>
     public static class AmazonPersonalizeEventsDefaultConfiguration
     {

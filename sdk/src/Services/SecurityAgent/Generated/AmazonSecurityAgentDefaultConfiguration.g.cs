@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SecurityAgent
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecurityAgent service
+    /// Configuration for accessing AWS Security Agent
     /// </summary>
     public static class AmazonSecurityAgentDefaultConfiguration
     {

@@ -77,6 +77,29 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetGrantStatus() => this.GrantStatus != null;
 
         /// <summary>
+        /// Gets and sets the property GrantType. 
+        /// <para>
+        /// The type of the grant. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>BuyerGrant</c> - Grants the entitlement to use the license.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DelegateGrant</c> - Gives the grantee read-only visibility into the licenses and
+        /// grants distributed to buyers, with no entitlement to use them.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public GrantType GrantType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GrantType property is set.
+        /// </summary>
+        internal bool IsSetGrantType() => this.GrantType != null;
+
+        /// <summary>
         /// Gets and sets the property GrantedOperations. 
         /// <para>
         /// Granted operations.

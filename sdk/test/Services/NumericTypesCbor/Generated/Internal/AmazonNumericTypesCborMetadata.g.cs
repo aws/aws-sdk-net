@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NumericTypesCbor.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon NumericTypesCbor service
+    /// Service metadata for Sample Numeric Types Cbor Service
     /// </summary>
     public partial class AmazonNumericTypesCborMetadata : IServiceMetadata
     {

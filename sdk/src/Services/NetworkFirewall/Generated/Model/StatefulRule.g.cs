@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model
     /// option to specify a simple Suricata rule with protocol, source and destination, ports,
     /// direction, and rule options. For information about the Suricata <c>Rules</c> format,
     /// see <a href="https://suricata.readthedocs.io/en/suricata-8.0.3/rules/intro.html">Rules
-    /// Format</a>.
+    /// Format</a> on the Suricata website.
     /// </summary>
     public partial class StatefulRule
     {

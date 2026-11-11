@@ -27,12 +27,12 @@ using Amazon.Athena.Internal;
 namespace Amazon.Athena
 {
     /// <summary>
-    /// Configuration for accessing Amazon Athena service
+    /// Configuration for accessing Amazon Athena
     /// </summary>
     public partial class AmazonAthenaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Athena", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Athena", "4.0.101.1");
 
         private static readonly AmazonAthenaEndpointResolver EndpointResolver =
             new AmazonAthenaEndpointResolver();

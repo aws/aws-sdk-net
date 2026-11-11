@@ -27,12 +27,12 @@ using Amazon.EMRServerless.Internal;
 namespace Amazon.EMRServerless
 {
     /// <summary>
-    /// Configuration for accessing Amazon EMRServerless service
+    /// Configuration for accessing EMR Serverless
     /// </summary>
     public partial class AmazonEMRServerlessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EMR Serverless", "4.0.101.5");
+            InternalSDKUtils.BuildUserAgentString("EMR Serverless", "4.0.101.9");
 
         private static readonly AmazonEMRServerlessEndpointResolver EndpointResolver =
             new AmazonEMRServerlessEndpointResolver();

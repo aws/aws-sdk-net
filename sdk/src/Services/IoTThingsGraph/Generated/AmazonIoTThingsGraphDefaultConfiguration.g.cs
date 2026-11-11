@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.IoTThingsGraph
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTThingsGraph service
+    /// Configuration for accessing AWS IoT Things Graph
     /// </summary>
     public static class AmazonIoTThingsGraphDefaultConfiguration
     {

@@ -27,12 +27,12 @@ using Amazon.Organizations.Internal;
 namespace Amazon.Organizations
 {
     /// <summary>
-    /// Configuration for accessing Amazon Organizations service
+    /// Configuration for accessing AWS Organizations
     /// </summary>
     public partial class AmazonOrganizationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Organizations", "4.0.103.3");
+            InternalSDKUtils.BuildUserAgentString("Organizations", "4.0.103.7");
 
         private static readonly AmazonOrganizationsEndpointResolver EndpointResolver =
             new AmazonOrganizationsEndpointResolver();

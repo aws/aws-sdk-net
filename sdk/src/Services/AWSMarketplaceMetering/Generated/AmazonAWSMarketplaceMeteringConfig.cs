@@ -27,12 +27,12 @@ using Amazon.AWSMarketplaceMetering.Internal;
 namespace Amazon.AWSMarketplaceMetering
 {
     /// <summary>
-    /// Configuration for accessing Amazon AWSMarketplaceMetering service
+    /// Configuration for accessing AWSMarketplace Metering
     /// </summary>
     public partial class AmazonAWSMarketplaceMeteringConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Metering", "4.0.101.5");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Metering", "4.0.101.9");
 
         private static readonly AmazonAWSMarketplaceMeteringEndpointResolver EndpointResolver =
             new AmazonAWSMarketplaceMeteringEndpointResolver();

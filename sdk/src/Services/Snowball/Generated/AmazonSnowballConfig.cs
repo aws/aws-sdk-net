@@ -27,12 +27,12 @@ using Amazon.Snowball.Internal;
 namespace Amazon.Snowball
 {
     /// <summary>
-    /// Configuration for accessing Amazon Snowball service
+    /// Configuration for accessing Amazon Import/Export Snowball
     /// </summary>
     public partial class AmazonSnowballConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Snowball", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Snowball", "4.0.100.26");
 
         private static readonly AmazonSnowballEndpointResolver EndpointResolver =
             new AmazonSnowballEndpointResolver();

@@ -1,0 +1,54 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.amazonaws.s3control#Service": {
+      "type": "service",
+      "version": "2018-08-20",
+      "operations": [
+        {
+          "target": "com.amazonaws.s3control#ListJobs"
+        }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "S3 Control",
+          "endpointPrefix": "s3-control"
+        },
+        "aws.protocols#restXml": {},
+        "smithy.api#title": "AWS S3 Control",
+        "aws.auth#sigv4": {
+          "name": "s3"
+        }
+      }
+    },
+    "com.amazonaws.s3control#ListJobs": {
+      "type": "operation",
+      "input": {
+        "target": "com.amazonaws.s3control#ListJobsRequest"
+      },
+      "output": {
+        "target": "com.amazonaws.s3control#ListJobsResult"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/v20180820/jobs",
+          "method": "GET"
+        }
+      }
+    },
+    "com.amazonaws.s3control#ListJobsRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.s3control#ListJobsResult": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#output": {}
+      }
+    }
+  }
+}

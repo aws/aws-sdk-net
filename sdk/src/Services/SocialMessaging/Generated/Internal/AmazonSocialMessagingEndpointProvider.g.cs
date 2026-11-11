@@ -26,7 +26,7 @@ using Amazon.SocialMessaging.Endpoints;
 namespace Amazon.SocialMessaging.Internal
 {
     /// <summary>
-    /// Amazon SocialMessaging endpoint provider.
+    /// AWS End User Messaging Social endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SocialMessagingEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

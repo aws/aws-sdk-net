@@ -31,7 +31,7 @@ using Amazon.SnowDeviceManagement.Endpoints;
 namespace Amazon.SnowDeviceManagement.Internal
 {
     /// <summary>
-    /// Amazon SnowDeviceManagement endpoint resolver.
+    /// AWS Snow Device Management endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SnowDeviceManagement service requests.
     /// <para />

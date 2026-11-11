@@ -27,12 +27,12 @@ using Amazon.IoTFleetWise.Internal;
 namespace Amazon.IoTFleetWise
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTFleetWise service
+    /// Configuration for accessing AWS IoT FleetWise
     /// </summary>
     public partial class AmazonIoTFleetWiseConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoTFleetWise", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("IoTFleetWise", "4.0.100.25");
 
         private static readonly AmazonIoTFleetWiseEndpointResolver EndpointResolver =
             new AmazonIoTFleetWiseEndpointResolver();

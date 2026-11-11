@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MPA.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MPA service
+    /// Service metadata for AWS Multi-party Approval
     /// </summary>
     public partial class AmazonMPAMetadata : IServiceMetadata
     {

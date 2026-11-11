@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OAM.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon OAM service
+    /// Service metadata for CloudWatch Observability Access Manager
     /// </summary>
     public partial class AmazonOAMMetadata : IServiceMetadata
     {

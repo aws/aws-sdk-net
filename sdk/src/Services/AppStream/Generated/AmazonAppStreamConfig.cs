@@ -27,12 +27,12 @@ using Amazon.AppStream.Internal;
 namespace Amazon.AppStream
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppStream service
+    /// Configuration for accessing Amazon AppStream
     /// </summary>
     public partial class AmazonAppStreamConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AppStream", "4.0.104.0");
+            InternalSDKUtils.BuildUserAgentString("AppStream", "4.0.104.4");
 
         private static readonly AmazonAppStreamEndpointResolver EndpointResolver =
             new AmazonAppStreamEndpointResolver();

@@ -26,7 +26,7 @@ using Amazon.Proton.Endpoints;
 namespace Amazon.Proton.Internal
 {
     /// <summary>
-    /// Amazon Proton endpoint provider.
+    /// AWS Proton endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ProtonEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

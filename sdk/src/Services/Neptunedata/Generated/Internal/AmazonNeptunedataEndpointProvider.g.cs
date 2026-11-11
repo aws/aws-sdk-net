@@ -26,7 +26,7 @@ using Amazon.Neptunedata.Endpoints;
 namespace Amazon.Neptunedata.Internal
 {
     /// <summary>
-    /// Amazon Neptunedata endpoint provider.
+    /// Amazon NeptuneData endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="NeptunedataEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

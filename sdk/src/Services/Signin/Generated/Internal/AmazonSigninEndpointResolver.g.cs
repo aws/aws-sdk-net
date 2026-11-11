@@ -31,7 +31,7 @@ using Amazon.Signin.Endpoints;
 namespace Amazon.Signin.Internal
 {
     /// <summary>
-    /// Amazon Signin endpoint resolver.
+    /// AWS Sign-In Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Signin service requests.
     /// <para />
@@ -85,6 +85,11 @@ namespace Amazon.Signin.Internal
             }
 
             // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "CreateBearerTokenRequest")
+            {
+                result.IsOAuthEndpoint = true;
+                return result;
+            }
             if (requestContext.RequestName == "CreateOAuth2TokenRequest")
             {
                 result.IsControlPlane = false;

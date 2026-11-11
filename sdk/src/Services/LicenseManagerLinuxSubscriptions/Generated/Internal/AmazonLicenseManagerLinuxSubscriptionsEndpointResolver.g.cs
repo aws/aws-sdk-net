@@ -31,7 +31,7 @@ using Amazon.LicenseManagerLinuxSubscriptions.Endpoints;
 namespace Amazon.LicenseManagerLinuxSubscriptions.Internal
 {
     /// <summary>
-    /// Amazon LicenseManagerLinuxSubscriptions endpoint resolver.
+    /// AWS License Manager Linux Subscriptions endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for LicenseManagerLinuxSubscriptions service requests.
     /// <para />

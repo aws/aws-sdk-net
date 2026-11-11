@@ -67,7 +67,12 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <para>
         /// Configuration for node modes in the DbCluster.
         /// </para>
+        ///  
+        /// <para>
+        /// Deprecated. Use deploymentConfiguration to view the cluster topology instead.
+        /// </para>
         /// </summary>
+        [Obsolete("Use deploymentConfiguration instead.")]
         public ClusterConfiguration ClusterConfiguration { get; set; }
 
         /// <summary>
@@ -133,6 +138,20 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Checks to see if the DbStorageType property is set.
         /// </summary>
         internal bool IsSetDbStorageType() => this.DbStorageType != null;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfiguration. 
+        /// <para>
+        /// The current compute topology of the cluster, as a set of node groups. The returned
+        /// topology reflects the cluster's actual provisioned nodes.
+        /// </para>
+        /// </summary>
+        public DeploymentConfiguration DeploymentConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeploymentConfiguration property is set.
+        /// </summary>
+        internal bool IsSetDeploymentConfiguration() => this.DeploymentConfiguration != null;
 
         /// <summary>
         /// Gets and sets the property DeploymentType. 

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MediaLive service
+    /// Service metadata for AWS Elemental MediaLive
     /// </summary>
     public partial class AmazonMediaLiveMetadata : IServiceMetadata
     {

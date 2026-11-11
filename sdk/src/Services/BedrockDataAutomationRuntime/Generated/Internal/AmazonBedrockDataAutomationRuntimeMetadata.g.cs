@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockDataAutomationRuntime.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon BedrockDataAutomationRuntime service
+    /// Service metadata for Runtime for Amazon Bedrock Data Automation
     /// </summary>
     public partial class AmazonBedrockDataAutomationRuntimeMetadata : IServiceMetadata
     {

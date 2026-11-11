@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RTBFabric.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon RTBFabric service
+    /// Service metadata for RTBFabric
     /// </summary>
     public partial class AmazonRTBFabricMetadata : IServiceMetadata
     {

@@ -58,7 +58,7 @@
     <property>Amazon.SageMaker.Model.AttachClusterNodeNetworkInterfaceRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AttachClusterNodeNetworkInterfaceRequest.NetworkInterfaceId</property>
@@ -147,25 +147,25 @@
     <property>Amazon.SageMaker.Model.BatchAddClusterNodesRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.BatchDeleteClusterNodesRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.BatchRebootClusterNodesRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.BatchReplaceClusterNodesRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateAIBenchmarkJobRequest.AIBenchmarkJobName</property>
@@ -380,6 +380,40 @@
     <min>0</min>
     <max>256</max>
     <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateClusterExtensionRequest.ClientToken</property>
+    <max>64</max>
+    <pattern>^[\x21-\x7E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateClusterExtensionRequest.ClusterArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateClusterExtensionRequest.ConfigurationValues</property>
+    <min>1</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateClusterExtensionRequest.ExtensionName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-z]([a-z0-9]|-[a-z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateClusterExtensionRequest.ExtensionVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9]+\.[0-9]+\.[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateClusterExtensionResponse.ExtensionArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:extension/(sagemaker|eks|pcs)-[a-z0-9-]+/[a-z0-9-]+/[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateClusterSchedulerConfigRequest.ClusterArn</property>
@@ -1367,7 +1401,7 @@
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.PlatformIdentifier</property>
     <min>0</min>
     <max>20</max>
-    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3|notebook-al2023-v1)$</pattern>
+    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3|notebook-al2023-v1|notebook-al2023-v2)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.RoleArn</property>
@@ -2011,13 +2045,31 @@
     <property>Amazon.SageMaker.Model.DeleteClusterRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteClusterResponse.ClusterArn</property>
     <min>0</min>
     <max>256</max>
     <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteClusterExtensionRequest.ClusterArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteClusterExtensionRequest.ExtensionArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:extension/(sagemaker|eks|pcs)-[a-z0-9-]+/[a-z0-9-]+/[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteClusterExtensionResponse.ExtensionArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:extension/(sagemaker|eks|pcs)-[a-z0-9-]+/[a-z0-9-]+/[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteClusterSchedulerConfigRequest.ClusterSchedulerConfigId</property>
@@ -2773,7 +2825,7 @@
     <property>Amazon.SageMaker.Model.DescribeClusterRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeClusterResponse.ClusterArn</property>
@@ -2797,17 +2849,29 @@
     <property>Amazon.SageMaker.Model.DescribeClusterEventRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeClusterEventRequest.EventId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeClusterExtensionRequest.ClusterArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeClusterExtensionRequest.ExtensionArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:extension/(sagemaker|eks|pcs)-[a-z0-9-]+/[a-z0-9-]+/[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeClusterNodeRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeClusterNodeRequest.NodeId</property>
@@ -4399,7 +4463,7 @@
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.PlatformIdentifier</property>
     <min>0</min>
     <max>20</max>
-    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3|notebook-al2023-v1)$</pattern>
+    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3|notebook-al2023-v1|notebook-al2023-v2)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.RoleArn</property>
@@ -4522,6 +4586,12 @@
     <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribePipelineRequest.PipelineVersionAlias</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9._\-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribePipelineRequest.PipelineVersionId</property>
     <min>1</min>
   </property-value-rule>
@@ -4624,6 +4694,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribePipelineExecutionResponse.PipelineVersionId</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribePipelineExecutionResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeProcessingJobRequest.ProcessingJobName</property>
@@ -5699,7 +5775,7 @@
     <property>Amazon.SageMaker.Model.ListClusterEventsRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListClusterEventsRequest.InstanceGroupName</property>
@@ -5731,10 +5807,33 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListClusterExtensionsRequest.ClusterArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListClusterExtensionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListClusterExtensionsRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListClusterExtensionsResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ListClusterNodesRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListClusterNodesRequest.InstanceGroupNameContains</property>
@@ -7153,6 +7252,12 @@
     <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListPipelineExecutionsRequest.PipelineVersionAlias</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9._\-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ListPipelineExecutionsResponse.NextToken</property>
     <min>0</min>
     <max>8192</max>
@@ -7847,7 +7952,7 @@
     <property>Amazon.SageMaker.Model.StartClusterHealthCheckRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.StartClusterHealthCheckResponse.ClusterArn</property>
@@ -7933,8 +8038,20 @@
     <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.StartPipelineExecutionRequest.PipelineVersionAlias</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9._\-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.StartPipelineExecutionRequest.PipelineVersionId</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.StartPipelineExecutionRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.StartPipelineExecutionResponse.PipelineExecutionArn</property>
@@ -8177,7 +8294,7 @@
     <property>Amazon.SageMaker.Model.UpdateClusterRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateClusterRequest.ClusterRole</property>
@@ -8190,6 +8307,40 @@
     <min>0</min>
     <max>256</max>
     <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateClusterExtensionRequest.ClientToken</property>
+    <max>64</max>
+    <pattern>^[\x21-\x7E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateClusterExtensionRequest.ClusterArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateClusterExtensionRequest.ConfigurationValues</property>
+    <min>1</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateClusterExtensionRequest.ExtensionArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:extension/(sagemaker|eks|pcs)-[a-z0-9-]+/[a-z0-9-]+/[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateClusterExtensionRequest.ExtensionVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9]+\.[0-9]+\.[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateClusterExtensionResponse.ExtensionArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:extension/(sagemaker|eks|pcs)-[a-z0-9-]+/[a-z0-9-]+/[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateClusterSchedulerConfigRequest.ClusterSchedulerConfigId</property>
@@ -8213,13 +8364,13 @@
     <property>Amazon.SageMaker.Model.UpdateClusterSoftwareRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+    <pattern>^((arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateClusterSoftwareRequest.ImageId</property>
     <min>7</min>
     <max>21</max>
-    <pattern>^ami-[0-9a-fA-F]{8,17}|default$</pattern>
+    <pattern>^(ami-[0-9a-fA-F]{8,17}|default)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateClusterSoftwareResponse.ClusterArn</property>
@@ -8780,7 +8931,7 @@
     <property>Amazon.SageMaker.Model.UpdateNotebookInstanceRequest.PlatformIdentifier</property>
     <min>0</min>
     <max>20</max>
-    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3|notebook-al2023-v1)$</pattern>
+    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3|notebook-al2023-v1|notebook-al2023-v2)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateNotebookInstanceRequest.RoleArn</property>
@@ -10316,7 +10467,7 @@
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.CurrentImageId</property>
     <min>7</min>
     <max>21</max>
-    <pattern>^ami-[0-9a-fA-F]{8,17}|default$</pattern>
+    <pattern>^(ami-[0-9a-fA-F]{8,17}|default)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.CurrentImageReleaseVersion</property>
@@ -10327,7 +10478,7 @@
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.DesiredImageId</property>
     <min>7</min>
     <max>21</max>
-    <pattern>^ami-[0-9a-fA-F]{8,17}|default$</pattern>
+    <pattern>^(ami-[0-9a-fA-F]{8,17}|default)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.DesiredImageReleaseVersion</property>
@@ -10387,7 +10538,7 @@
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupSpecification.ImageId</property>
     <min>7</min>
     <max>21</max>
-    <pattern>^ami-[0-9a-fA-F]{8,17}|default$</pattern>
+    <pattern>^(ami-[0-9a-fA-F]{8,17}|default)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupSpecification.ImageReleaseVersion</property>
@@ -10472,7 +10623,7 @@
     <property>Amazon.SageMaker.Model.ClusterNodeDetails.CurrentImageId</property>
     <min>7</min>
     <max>21</max>
-    <pattern>^ami-[0-9a-fA-F]{8,17}|default$</pattern>
+    <pattern>^(ami-[0-9a-fA-F]{8,17}|default)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterNodeDetails.CurrentImageReleaseVersion</property>
@@ -10483,7 +10634,7 @@
     <property>Amazon.SageMaker.Model.ClusterNodeDetails.DesiredImageId</property>
     <min>7</min>
     <max>21</max>
-    <pattern>^ami-[0-9a-fA-F]{8,17}|default$</pattern>
+    <pattern>^(ami-[0-9a-fA-F]{8,17}|default)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterNodeDetails.DesiredImageReleaseVersion</property>
@@ -11673,6 +11824,61 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,119}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ExtensionDetails.ClusterArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ExtensionDetails.ConfigurationValues</property>
+    <min>1</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ExtensionDetails.ExtensionArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:extension/(sagemaker|eks|pcs)-[a-z0-9-]+/[a-z0-9-]+/[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ExtensionDetails.ExtensionName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-z]([a-z0-9]|-[a-z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ExtensionDetails.ExtensionVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9]+\.[0-9]+\.[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ExtensionNodeSummary.ActiveCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ExtensionNodeSummary.TotalCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ExtensionSummary.ExtensionArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:extension/(sagemaker|eks|pcs)-[a-z0-9-]+/[a-z0-9-]+/[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ExtensionSummary.ExtensionName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-z]([a-z0-9]|-[a-z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ExtensionSummary.ExtensionVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9]+\.[0-9]+\.[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.FSxLustreConfig.PerUnitStorageThroughput</property>
     <min>125</min>
     <max>1000</max>
@@ -12070,6 +12276,16 @@
     <pattern>^arn:[a-z0-9-\.]{1,63}:sagemaker:\w+(?:-\w+)+:aws:hub-content\/[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}\/Model\/[a-zA-Z0-9](-*[a-zA-Z0-9]){0,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.HubContentStepMetadata.HubArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.HubContentStepMetadata.HubContentArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.HubInfo.HubArn</property>
     <min>0</min>
     <max>255</max>
@@ -12434,6 +12650,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.InferenceComponentComputeResourceRequirements.AcceleratorPartitionType</property>
+    <max>32</max>
+    <pattern>^mig-[0-9]+g\.[0-9]+gb([+-][a-z0-9.]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.InferenceComponentComputeResourceRequirements.MaxMemoryRequiredInMb</property>
     <min>128</min>
   </property-value-rule>
@@ -12709,7 +12930,7 @@
     <property>Amazon.SageMaker.Model.InstanceMetadataServiceConfiguration.MinimumInstanceMetadataServiceVersion</property>
     <min>0</min>
     <max>1</max>
-    <pattern>^1|2$</pattern>
+    <pattern>^(1|2)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.InstancePool.ModelNameOverride</property>
@@ -15719,7 +15940,7 @@
     <property>Amazon.SageMaker.Model.TimeSeriesForecastingJobConfig.ForecastFrequency</property>
     <min>1</min>
     <max>5</max>
-    <pattern>^1Y|Y|([1-9]|1[0-1])M|M|[1-4]W|W|[1-6]D|D|([1-9]|1[0-9]|2[0-3])H|H|([1-9]|[1-5][0-9])min$</pattern>
+    <pattern>^(1Y|Y|([1-9]|1[0-1])M|M|[1-4]W|W|[1-6]D|D|([1-9]|1[0-9]|2[0-3])H|H|([1-9]|[1-5][0-9])min)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TimeSeriesForecastingJobConfig.ForecastHorizon</property>

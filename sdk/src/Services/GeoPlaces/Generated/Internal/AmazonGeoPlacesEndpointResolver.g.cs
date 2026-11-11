@@ -31,7 +31,7 @@ using Amazon.GeoPlaces.Endpoints;
 namespace Amazon.GeoPlaces.Internal
 {
     /// <summary>
-    /// Amazon GeoPlaces endpoint resolver.
+    /// Amazon Location Service Places V2 endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for GeoPlaces service requests.
     /// <para />

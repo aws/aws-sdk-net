@@ -27,12 +27,12 @@ using Amazon.LambdaMicrovms.Internal;
 namespace Amazon.LambdaMicrovms
 {
     /// <summary>
-    /// Configuration for accessing Amazon LambdaMicrovms service
+    /// Configuration for accessing Lambda MicroVMs
     /// </summary>
     public partial class AmazonLambdaMicrovmsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Lambda Microvms", "4.0.101.11");
+            InternalSDKUtils.BuildUserAgentString("Lambda Microvms", "4.0.102.2");
 
         private static readonly AmazonLambdaMicrovmsEndpointResolver EndpointResolver =
             new AmazonLambdaMicrovmsEndpointResolver();

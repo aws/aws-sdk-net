@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon WorkMail service
+    /// Service metadata for Amazon WorkMail
     /// </summary>
     public partial class AmazonWorkMailMetadata : IServiceMetadata
     {

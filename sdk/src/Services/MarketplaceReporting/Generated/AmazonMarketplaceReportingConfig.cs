@@ -27,12 +27,12 @@ using Amazon.MarketplaceReporting.Internal;
 namespace Amazon.MarketplaceReporting
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceReporting service
+    /// Configuration for accessing AWS Marketplace Reporting Service
     /// </summary>
     public partial class AmazonMarketplaceReportingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Reporting", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Reporting", "4.0.100.26");
 
         private static readonly AmazonMarketplaceReportingEndpointResolver EndpointResolver =
             new AmazonMarketplaceReportingEndpointResolver();

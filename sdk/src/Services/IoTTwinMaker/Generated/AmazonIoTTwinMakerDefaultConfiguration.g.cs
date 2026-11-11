@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.IoTTwinMaker
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTTwinMaker service
+    /// Configuration for accessing AWS IoT TwinMaker
     /// </summary>
     public static class AmazonIoTTwinMakerDefaultConfiguration
     {

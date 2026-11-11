@@ -26,7 +26,7 @@ using Amazon.SsmSap.Endpoints;
 namespace Amazon.SsmSap.Internal
 {
     /// <summary>
-    /// Amazon SsmSap endpoint provider.
+    /// AWS Systems Manager for SAP endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SsmSapEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

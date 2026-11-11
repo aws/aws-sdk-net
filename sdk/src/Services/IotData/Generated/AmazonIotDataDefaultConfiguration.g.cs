@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.IotData
 {
     /// <summary>
-    /// Configuration for accessing Amazon IotData service
+    /// Configuration for accessing AWS IoT Data Plane
     /// </summary>
     public static class AmazonIotDataDefaultConfiguration
     {

@@ -26,7 +26,7 @@ using Amazon.AppRunner.Endpoints;
 namespace Amazon.AppRunner.Internal
 {
     /// <summary>
-    /// Amazon AppRunner endpoint provider.
+    /// AWS App Runner endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AppRunnerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

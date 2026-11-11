@@ -27,12 +27,12 @@ using Amazon.PricingPlanManager.Internal;
 namespace Amazon.PricingPlanManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon PricingPlanManager service
+    /// Configuration for accessing PricingPlanManager
     /// </summary>
     public partial class AmazonPricingPlanManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pricing Plan Manager", "4.0.100.15");
+            InternalSDKUtils.BuildUserAgentString("Pricing Plan Manager", "4.0.100.19");
 
         private static readonly AmazonPricingPlanManagerEndpointResolver EndpointResolver =
             new AmazonPricingPlanManagerEndpointResolver();

@@ -26,7 +26,7 @@ using Amazon.IAMRolesAnywhere.Endpoints;
 namespace Amazon.IAMRolesAnywhere.Internal
 {
     /// <summary>
-    /// Amazon IAMRolesAnywhere endpoint provider.
+    /// IAM Roles Anywhere endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IAMRolesAnywhereEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

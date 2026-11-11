@@ -27,12 +27,12 @@ using Amazon.MQ.Internal;
 namespace Amazon.MQ
 {
     /// <summary>
-    /// Configuration for accessing Amazon MQ service
+    /// Configuration for accessing AmazonMQ
     /// </summary>
     public partial class AmazonMQConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("mq", "4.0.101.17");
+            InternalSDKUtils.BuildUserAgentString("mq", "4.0.101.21");
 
         private static readonly AmazonMQEndpointResolver EndpointResolver =
             new AmazonMQEndpointResolver();

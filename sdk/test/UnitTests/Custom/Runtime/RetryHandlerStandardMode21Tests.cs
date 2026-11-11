@@ -14,26 +14,15 @@ using System.Reflection;
 namespace AWSSDK.UnitTests
 {
     /// <summary>
-    /// Tests for the SEP 2.1 retry behavior, gated behind UseNewRetries2026.
-    /// These test cases correspond to the standard mode test cases defined in the
-    /// Retry Behavior 2.1 SEP specification.
+    /// Tests for the SEP 2.1 retry behavior. These test cases correspond to the standard
+    /// mode test cases defined in the Retry Behavior 2.1 SEP specification.
     /// </summary>
     [TestClass]
     public class RetryHandlerStandardMode21Tests : RuntimePipelineTestBase<RetryHandler>
     {
-        private bool _originalUseNewRetries2026;
-
-        [TestInitialize]
-        public void TestSetup()
-        {
-            _originalUseNewRetries2026 = RetryPolicy.UseNewRetries2026;
-            RetryPolicy.UseNewRetries2026 = true;
-        }
-
         [TestCleanup]
         public void TestCleanup()
         {
-            RetryPolicy.UseNewRetries2026 = _originalUseNewRetries2026;
             Mock21StandardRetryPolicy.Restore();
         }
 
@@ -60,15 +49,15 @@ namespace AWSSDK.UnitTests
         /// </summary>
         private static CapacityManager CreateDefault21CapacityManager() =>
             new CapacityManager(initialRetryTokens: 500, retryCost: 14, noRetryIncrement: 1,
-                timeoutRetryCost: 10, throttlingRetryCost: 5);
+                timeoutRetryCost: 14, throttlingRetryCost: 5);
 
         private void RunRetryTest(Action<IExecutionContext, Mock21StandardRetryPolicy> doAction, 
             ClientConfig config, CapacityManager capacityManager = null)
         {
             try
             {
-                // Always set a 2.1 capacity manager because the static CapacityManagerInstance
-                // is initialized at class load time (before UseNewRetries2026 = true in TestSetup).
+                // Always set a capacity manager so each test starts from a known token balance
+                // rather than whatever the shared static instance has accumulated.
                 Mock21StandardRetryPolicy.SetCapacityManagerInstance(capacityManager ?? CreateDefault21CapacityManager());
 
                 var retryPolicy = new Mock21StandardRetryPolicy(config);
@@ -230,7 +219,7 @@ namespace AWSSDK.UnitTests
             var config = CreateS3Config();
             var capacityManager = new CapacityManager(
                 initialRetryTokens: 14, retryCost: 14, noRetryIncrement: 1, 
-                timeoutRetryCost: 10, throttlingRetryCost: 5);
+                timeoutRetryCost: 14, throttlingRetryCost: 5);
             RunRetryTest((executionContext, retryPolicy) =>
             {
                 Tester.Reset();
@@ -278,7 +267,7 @@ namespace AWSSDK.UnitTests
             var config = CreateS3Config();
             var capacityManager = new CapacityManager(
                 initialRetryTokens: 0, retryCost: 14, noRetryIncrement: 1, 
-                timeoutRetryCost: 10, throttlingRetryCost: 5);
+                timeoutRetryCost: 14, throttlingRetryCost: 5);
             RunRetryTest((executionContext, retryPolicy) =>
             {
                 Tester.Reset();
@@ -400,7 +389,7 @@ namespace AWSSDK.UnitTests
             config.MaxErrorRetry = 4;
             var capacityManager = new CapacityManager(
                 initialRetryTokens: 20, retryCost: 14, noRetryIncrement: 1,
-                timeoutRetryCost: 10, throttlingRetryCost: 5);
+                timeoutRetryCost: 14, throttlingRetryCost: 5);
             RunRetryTest((executionContext, retryPolicy) =>
             {
                 Tester.Reset();
@@ -441,7 +430,7 @@ namespace AWSSDK.UnitTests
             config.MaxErrorRetry = 4;
             var capacityManager = new CapacityManager(
                 initialRetryTokens: 30, retryCost: 14, noRetryIncrement: 1,
-                timeoutRetryCost: 10, throttlingRetryCost: 5);
+                timeoutRetryCost: 14, throttlingRetryCost: 5);
             RunRetryTest((executionContext, retryPolicy) =>
             {
                 Tester.Reset();
@@ -616,7 +605,7 @@ namespace AWSSDK.UnitTests
         {
             var capacityManager = new CapacityManager(
                 initialRetryTokens: 0, retryCost: 14, noRetryIncrement: 1,
-                timeoutRetryCost: 10, throttlingRetryCost: 5);
+                timeoutRetryCost: 14, throttlingRetryCost: 5);
             RunLongPollingRetryTest((executionContext, retryPolicy) =>
             {
                 Tester.Reset();
@@ -662,7 +651,7 @@ namespace AWSSDK.UnitTests
         {
             var capacityManager = new CapacityManager(
                 initialRetryTokens: 0, retryCost: 14, noRetryIncrement: 1,
-                timeoutRetryCost: 10, throttlingRetryCost: 5);
+                timeoutRetryCost: 14, throttlingRetryCost: 5);
             RunLongPollingRetryTest((executionContext, retryPolicy) =>
             {
                 Tester.Reset();
@@ -946,41 +935,6 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// Verify that when UseNewRetries2026 is false, legacy behavior is preserved
-        /// (1000ms base delay, jitter applied after MAX_BACKOFF).
-        /// </summary>
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void FeatureFlagOff_PreservesLegacyBehavior()
-        {
-            RetryPolicy.UseNewRetries2026 = false;
-            var config = CreateS3Config();
-            RunRetryTest((executionContext, retryPolicy) =>
-            {
-                Tester.Reset();
-                Tester.Action = (int callCount) =>
-                {
-                    switch (callCount)
-                    {
-                        case 1:
-                            throw new AmazonServiceException($"Mocked service error ({callCount})",
-                                new WebException(), HttpStatusCode.InternalServerError);
-                        case 2:
-                            break; // Success
-                        default:
-                            throw new Exception($"Invalid number of calls ({callCount})");
-                    }
-                };
-
-                RuntimePipeline.InvokeSync(executionContext);
-
-                // Legacy formula with jitter=1.0: Min(1 * 2^0 * 1000, 20000) = 1000ms
-                retryPolicy.AssertDelaysMatch(new int[] { 1000 });
-            }, config);
-        }
-
-        /// <summary>
         /// Verify NO_RETRY_INCREMENT: a successful request after a retry restores
         /// the retry cost, while a first-time success adds NO_RETRY_INCREMENT (1 token).
         /// </summary>
@@ -992,7 +946,7 @@ namespace AWSSDK.UnitTests
             var config = CreateS3Config();
             var capacityManager = new CapacityManager(
                 initialRetryTokens: 490, retryCost: 14, noRetryIncrement: 1,
-                timeoutRetryCost: 10, throttlingRetryCost: 5);
+                timeoutRetryCost: 14, throttlingRetryCost: 5);
             RunRetryTest((executionContext, retryPolicy) =>
             {
                 Tester.Reset();
@@ -1040,6 +994,175 @@ namespace AWSSDK.UnitTests
                 // Should be capped at 500 (INITIAL_RETRY_TOKENS), not 501
                 Assert.AreEqual(500, capacity.AvailableCapacity);
             }, config);
+        }
+
+        #endregion
+
+        #region Updated retry behavior as the default
+
+        private static AmazonServiceException Create429Exception(string errorCode)
+        {
+            return new AmazonServiceException("Mocked 429", new WebException(),
+                ErrorType.Receiver, errorCode, "TestRequestId", (HttpStatusCode)429);
+        }
+
+        private static CapacityManager GetLegacyCapacityManager()
+        {
+            var info = typeof(DefaultRetryPolicy).GetField("_capacityManagerInstance", BindingFlags.NonPublic | BindingFlags.Static);
+            return (CapacityManager)info.GetValue(null);
+        }
+
+        /// <summary>
+        /// An HTTP 429 with no error code, or an unknown one, is retried as a throttling error
+        /// with the 1000ms throttling base delay.
+        /// </summary>
+        [TestMethod]
+        [DataRow(null)]
+        [DataRow("SomethingUnknown")]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void Http429WithUnknownCodeIsRetriedAsThrottling(string errorCode)
+        {
+            var config = CreateS3Config();
+            RunRetryTest((executionContext, retryPolicy) =>
+            {
+                Tester.Reset();
+                Tester.Action = (int callCount) =>
+                {
+                    switch (callCount)
+                    {
+                        case 1:
+                            throw Create429Exception(errorCode);
+                        case 2:
+                            break; // Success
+                        default:
+                            throw new Exception($"Invalid number of calls ({callCount})");
+                    }
+                };
+
+                RuntimePipeline.InvokeSync(executionContext);
+
+                Assert.AreEqual(1, executionContext.RequestContext.Retries);
+                Assert.AreEqual(CapacityManager.CapacityType.Throttling, executionContext.RequestContext.LastCapacityType);
+                retryPolicy.AssertDelaysMatch(new int[] { 1000 });
+            }, config);
+        }
+
+        /// <summary>
+        /// Standard and Adaptive treat a 429 without a modeled retryable trait as throttling. A
+        /// modeled trait decides when present, and DefaultRetryPolicy is unchanged.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void Http429ThrottlingClassification()
+        {
+            var config = CreateS3Config();
+            var standard = new StandardRetryPolicy(config);
+
+            Assert.IsTrue(standard.IsThrottlingError(Create429Exception(null)));
+            Assert.IsTrue(new AdaptiveRetryPolicy(config).IsThrottlingError(Create429Exception("SomethingUnknown")));
+            Assert.IsFalse(standard.IsThrottlingError(new ModeledNonThrottling429Exception()));
+            Assert.IsFalse(standard.IsThrottlingError(new AmazonServiceException("Mocked 500",
+                new WebException(), HttpStatusCode.InternalServerError)));
+            Assert.IsFalse(new DefaultRetryPolicy(config).IsThrottlingError(Create429Exception("SomethingUnknown")));
+        }
+
+        /// <summary>
+        /// AWS_MAX_ATTEMPTS overrides the DynamoDB default of 3 retries.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void DynamoDBHonorsAwsMaxAttemptsEnvVar()
+        {
+            var original = Environment.GetEnvironmentVariable("AWS_MAX_ATTEMPTS");
+            try
+            {
+                Environment.SetEnvironmentVariable("AWS_MAX_ATTEMPTS", "2");
+                FallbackInternalConfigurationFactory.Reset();
+
+                var retryPolicy = new StandardRetryPolicy(CreateDynamoDBConfig());
+                Assert.AreEqual(1, retryPolicy.MaxRetries); // 2 attempts = 1 retry
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_MAX_ATTEMPTS", original);
+                FallbackInternalConfigurationFactory.Reset();
+            }
+        }
+
+        /// <summary>
+        /// DefaultRetryPolicy charges 5 tokens for a throttling retry, the same as its other retries.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void LegacyDefaultRetryPolicy_ThrottlingRetryCosts5()
+        {
+            var capacity = new RetryCapacity(500);
+            Assert.IsTrue(GetLegacyCapacityManager().TryAcquireCapacity(capacity, CapacityManager.CapacityType.Throttling));
+            Assert.AreEqual(495, capacity.AvailableCapacity);
+        }
+
+        /// <summary>
+        /// The long-polling back-off on an empty retry quota applies only to the Standard and
+        /// Adaptive retry policies. DefaultRetryPolicy throws without waiting.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void LongPollingDoesNotWaitForLegacyPolicy()
+        {
+            var config = new MockClientConfig
+            {
+                ServiceId = "SQS",
+                ServiceURL = $"https://sqs-legacy-{Guid.NewGuid()}.amazonaws.com"
+            };
+            var retryPolicy = new CountingLegacyRetryPolicy(config);
+            GetLegacyCapacityManager().GetRetryCapacity(config.ServiceURL).AvailableCapacity = 0;
+
+            var tester = new MockActionHandler();
+            var pipeline = new RuntimePipeline(tester);
+            pipeline.AddHandler(new RetryHandler(retryPolicy));
+            tester.Action = (int callCount) =>
+            {
+                throw new AmazonServiceException($"Mocked service error ({callCount})",
+                    new WebException(), HttpStatusCode.InternalServerError);
+            };
+
+            var executionContext = CreateSqsReceiveMessageContext(config);
+            Utils.AssertExceptionExpected<AmazonServiceException>(() =>
+            {
+                pipeline.InvokeSync(executionContext);
+            });
+
+            Assert.AreEqual(1, tester.CallCount);
+            Assert.IsTrue(executionContext.RequestContext.IsLastExceptionRetryable);
+            Assert.AreEqual(0, retryPolicy.WaitCount);
+        }
+
+        private class ModeledNonThrottling429Exception : AmazonServiceException
+        {
+            public ModeledNonThrottling429Exception()
+                : base("Mocked modeled 429", new WebException(), ErrorType.Receiver,
+                    "SomethingUnknown", "TestRequestId", (HttpStatusCode)429)
+            {
+            }
+
+            public override RetryableDetails Retryable => new RetryableDetails(false);
+        }
+
+        private class CountingLegacyRetryPolicy : DefaultRetryPolicy
+        {
+            public CountingLegacyRetryPolicy(IClientConfig config) : base(config) { }
+
+            public int WaitCount { get; private set; }
+
+            public override void WaitBeforeRetry(IExecutionContext executionContext)
+            {
+                WaitCount++;
+            }
         }
 
         #endregion

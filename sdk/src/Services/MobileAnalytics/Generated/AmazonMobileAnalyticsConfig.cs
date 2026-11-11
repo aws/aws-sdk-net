@@ -28,12 +28,12 @@ using Amazon.MobileAnalytics.Internal;
 namespace Amazon.MobileAnalytics
 {
     /// <summary>
-    /// Configuration for accessing Amazon MobileAnalytics service
+    /// Configuration for accessing Amazon Mobile Analytics
     /// </summary>
     public partial class AmazonMobileAnalyticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Mobile Analytics", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Mobile Analytics", "4.0.100.25");
 
         private static readonly AmazonMobileAnalyticsEndpointResolver EndpointResolver =
             new AmazonMobileAnalyticsEndpointResolver();

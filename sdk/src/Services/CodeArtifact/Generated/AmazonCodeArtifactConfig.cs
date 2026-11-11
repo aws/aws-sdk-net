@@ -27,12 +27,12 @@ using Amazon.CodeArtifact.Internal;
 namespace Amazon.CodeArtifact
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeArtifact service
+    /// Configuration for accessing CodeArtifact
     /// </summary>
     public partial class AmazonCodeArtifactConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("codeartifact", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("codeartifact", "4.0.100.26");
 
         private static readonly AmazonCodeArtifactEndpointResolver EndpointResolver =
             new AmazonCodeArtifactEndpointResolver();

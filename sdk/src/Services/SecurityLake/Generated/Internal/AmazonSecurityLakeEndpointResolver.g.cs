@@ -31,7 +31,7 @@ using Amazon.SecurityLake.Endpoints;
 namespace Amazon.SecurityLake.Internal
 {
     /// <summary>
-    /// Amazon SecurityLake endpoint resolver.
+    /// Amazon Security Lake endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SecurityLake service requests.
     /// <para />

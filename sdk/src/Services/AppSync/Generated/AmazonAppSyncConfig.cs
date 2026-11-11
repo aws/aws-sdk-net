@@ -27,12 +27,12 @@ using Amazon.AppSync.Internal;
 namespace Amazon.AppSync
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppSync service
+    /// Configuration for accessing AWS AppSync
     /// </summary>
     public partial class AmazonAppSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AppSync", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("AppSync", "4.0.100.26");
 
         private static readonly AmazonAppSyncEndpointResolver EndpointResolver =
             new AmazonAppSyncEndpointResolver();

@@ -26,7 +26,7 @@ using Amazon.BackupGateway.Endpoints;
 namespace Amazon.BackupGateway.Internal
 {
     /// <summary>
-    /// Amazon BackupGateway endpoint provider.
+    /// AWS Backup Gateway endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BackupGatewayEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

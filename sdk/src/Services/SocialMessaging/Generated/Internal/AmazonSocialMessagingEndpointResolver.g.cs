@@ -31,7 +31,7 @@ using Amazon.SocialMessaging.Endpoints;
 namespace Amazon.SocialMessaging.Internal
 {
     /// <summary>
-    /// Amazon SocialMessaging endpoint resolver.
+    /// AWS End User Messaging Social endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SocialMessaging service requests.
     /// <para />

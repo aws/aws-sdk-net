@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "An extremely simplified VM creation and management service.",
+  "base-name": "Lightsail",
   "legacy-service-id": "Lightsail"
 }

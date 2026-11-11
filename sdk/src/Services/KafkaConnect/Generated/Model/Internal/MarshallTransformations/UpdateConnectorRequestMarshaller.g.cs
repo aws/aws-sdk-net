@@ -106,10 +106,40 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetPlugins())
+            {
+                context.Writer.WritePropertyName("plugins");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestPluginsListValue in publicRequest.Plugins)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PluginUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPluginsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetSkipHealthValidation())
             {
                 context.Writer.WritePropertyName("skipHealthValidation");
                 context.Writer.WriteBooleanValue(publicRequest.SkipHealthValidation.Value);
+            }
+            if (publicRequest.IsSetUseDefaultWorkerConfiguration())
+            {
+                context.Writer.WritePropertyName("useDefaultWorkerConfiguration");
+                context.Writer.WriteBooleanValue(publicRequest.UseDefaultWorkerConfiguration.Value);
+            }
+            if (publicRequest.IsSetWorkerConfiguration())
+            {
+                context.Writer.WritePropertyName("workerConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WorkerConfigurationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WorkerConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();

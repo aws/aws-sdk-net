@@ -31,7 +31,7 @@ using Amazon.ConnectContactLens.Endpoints;
 namespace Amazon.ConnectContactLens.Internal
 {
     /// <summary>
-    /// Amazon ConnectContactLens endpoint resolver.
+    /// Amazon Connect Contact Lens endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ConnectContactLens service requests.
     /// <para />

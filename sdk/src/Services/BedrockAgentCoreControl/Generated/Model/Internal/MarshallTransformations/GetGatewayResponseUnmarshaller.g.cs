@@ -87,6 +87,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("domainOverride", targetDepth, ref reader))
+                {
+                    var unmarshaller = DomainOverrideUnmarshaller.Instance;
+                    unmarshalledObject.DomainOverride = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("exceptionLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

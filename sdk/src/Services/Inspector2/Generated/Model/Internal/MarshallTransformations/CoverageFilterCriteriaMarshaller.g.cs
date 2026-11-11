@@ -461,6 +461,22 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if (requestObject.IsSetMachineImageTags())
+            {
+                context.Writer.WritePropertyName("machineImageTags");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectMachineImageTagsListValue in requestObject.MachineImageTags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CoverageMapFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMachineImageTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if (requestObject.IsSetResourceId())
             {
                 context.Writer.WritePropertyName("resourceId");

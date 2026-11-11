@@ -31,7 +31,7 @@ using Amazon.CodeGuruReviewer.Endpoints;
 namespace Amazon.CodeGuruReviewer.Internal
 {
     /// <summary>
-    /// Amazon CodeGuruReviewer endpoint resolver.
+    /// Amazon CodeGuru Reviewer endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CodeGuruReviewer service requests.
     /// <para />

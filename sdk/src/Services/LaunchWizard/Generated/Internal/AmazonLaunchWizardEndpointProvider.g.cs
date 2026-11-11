@@ -26,7 +26,7 @@ using Amazon.LaunchWizard.Endpoints;
 namespace Amazon.LaunchWizard.Internal
 {
     /// <summary>
-    /// Amazon LaunchWizard endpoint provider.
+    /// AWS Launch Wizard endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="LaunchWizardEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

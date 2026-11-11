@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon GlobalAccelerator service
+    /// Service metadata for AWS Global Accelerator
     /// </summary>
     public partial class AmazonGlobalAcceleratorMetadata : IServiceMetadata
     {

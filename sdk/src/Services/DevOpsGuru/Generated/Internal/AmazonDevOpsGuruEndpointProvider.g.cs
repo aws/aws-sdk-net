@@ -26,7 +26,7 @@ using Amazon.DevOpsGuru.Endpoints;
 namespace Amazon.DevOpsGuru.Internal
 {
     /// <summary>
-    /// Amazon DevOpsGuru endpoint provider.
+    /// Amazon DevOps Guru endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DevOpsGuruEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

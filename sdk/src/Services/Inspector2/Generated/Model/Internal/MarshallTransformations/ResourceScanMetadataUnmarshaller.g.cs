@@ -109,6 +109,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("machineImage", targetDepth, ref reader))
+                {
+                    var unmarshaller = MachineImageMetadataUnmarshaller.Instance;
+                    unmarshalledObject.MachineImage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("serverlessFunction", targetDepth, ref reader))
                 {
                     var unmarshaller = ServerlessFunctionMetadataUnmarshaller.Instance;

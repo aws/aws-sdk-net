@@ -139,6 +139,20 @@ namespace Amazon.MWAAServerless.Model
         internal bool IsSetEngineVersion() => this.EngineVersion.HasValue;
 
         /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The environment variables to set for tasks in the workflow. If you don't specify this
+        /// parameter, the workflow has no environment variables.
+        /// </para>
+        /// </summary>
+        public Environment Environment { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Environment property is set.
+        /// </summary>
+        internal bool IsSetEnvironment() => this.Environment != null;
+
+        /// <summary>
         /// Gets and sets the property LoggingConfiguration. 
         /// <para>
         /// The configuration for workflow logging. Specifies the CloudWatch log group where workflow

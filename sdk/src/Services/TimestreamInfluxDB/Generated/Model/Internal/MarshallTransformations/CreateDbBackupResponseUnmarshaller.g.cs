@@ -108,6 +108,13 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("deploymentConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = DeploymentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("deploymentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

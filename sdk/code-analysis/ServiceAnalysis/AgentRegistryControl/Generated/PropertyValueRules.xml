@@ -444,7 +444,7 @@
     <property>Amazon.AgentRegistryControl.Model.CustomJWTAuthorizerConfiguration.DiscoveryUrl</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^.+/\.well-known/openid-configuration$</pattern>
+    <pattern>^[^\s?#]+/\.well-known/(openid-configuration|oauth-authorization-server)(/[^\s?#]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.CustomMetadataSchemaConfiguration.DefaultSchema</property>

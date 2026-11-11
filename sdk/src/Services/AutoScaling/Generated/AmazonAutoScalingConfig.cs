@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,27 +27,23 @@ using Amazon.AutoScaling.Internal;
 namespace Amazon.AutoScaling
 {
     /// <summary>
-    /// Configuration for accessing Amazon AutoScaling service
+    /// Configuration for accessing Auto Scaling
     /// </summary>
     public partial class AmazonAutoScalingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Auto Scaling", "4.0.105.1");
+            InternalSDKUtils.BuildUserAgentString("Auto Scaling", "4.0.106.1");
 
         private static readonly AmazonAutoScalingEndpointResolver EndpointResolver =
             new AmazonAutoScalingEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "Auto Scaling";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "Auto Scaling";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "autoscaling";
-            }
-        }
+        public override string RegionEndpointServiceName => "autoscaling";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2011-01-01";
-            }
-        }
+        public override string ServiceVersion => "2011-01-01";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.AutoScaling
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

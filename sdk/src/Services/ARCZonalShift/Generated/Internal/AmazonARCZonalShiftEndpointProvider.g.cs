@@ -26,7 +26,7 @@ using Amazon.ARCZonalShift.Endpoints;
 namespace Amazon.ARCZonalShift.Internal
 {
     /// <summary>
-    /// Amazon ARCZonalShift endpoint provider.
+    /// AWS ARC - Zonal Shift endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ARCZonalShiftEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

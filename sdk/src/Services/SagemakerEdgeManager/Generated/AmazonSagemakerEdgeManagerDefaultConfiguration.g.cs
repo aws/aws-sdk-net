@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SagemakerEdgeManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon SagemakerEdgeManager service
+    /// Configuration for accessing Amazon Sagemaker Edge Manager
     /// </summary>
     public static class AmazonSagemakerEdgeManagerDefaultConfiguration
     {

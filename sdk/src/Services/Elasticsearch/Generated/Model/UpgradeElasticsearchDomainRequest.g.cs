@@ -37,6 +37,20 @@ namespace Amazon.Elasticsearch.Model
     public partial class UpgradeElasticsearchDomainRequest : AmazonElasticsearchRequest
     {
         /// <summary>
+        /// Gets and sets the property DeploymentStrategyOptions. 
+        /// <para>
+        /// Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade,
+        /// set <c>DeploymentStrategy</c> to <c>ClonedBlueGreen</c>.
+        /// </para>
+        /// </summary>
+        public DeploymentStrategyOverrideOptions DeploymentStrategyOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeploymentStrategyOptions property is set.
+        /// </summary>
+        internal bool IsSetDeploymentStrategyOptions() => this.DeploymentStrategyOptions != null;
+
+        /// <summary>
         /// Gets and sets the property DomainName.
         /// </summary>
         [AWSProperty(Required = true, Min = 3, Max = 28)]

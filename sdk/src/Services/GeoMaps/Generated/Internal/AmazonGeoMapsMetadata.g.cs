@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoMaps.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon GeoMaps service
+    /// Service metadata for Amazon Location Service Maps V2
     /// </summary>
     public partial class AmazonGeoMapsMetadata : IServiceMetadata
     {

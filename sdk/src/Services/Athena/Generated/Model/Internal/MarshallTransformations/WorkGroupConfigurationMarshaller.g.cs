@@ -174,6 +174,22 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetSystemTableStatuses())
+            {
+                context.Writer.WritePropertyName("SystemTableStatuses");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectSystemTableStatusesListValue in requestObject.SystemTableStatuses)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SystemTableStatusMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSystemTableStatusesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
         }
 
         /// <summary>

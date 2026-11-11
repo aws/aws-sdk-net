@@ -136,6 +136,30 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineName() => this.PipelineName != null;
 
         /// <summary>
+        /// Gets and sets the property PipelineVersionAliases. 
+        /// <para>
+        /// The aliases to assign to the first version of the pipeline. You can use an alias instead
+        /// of a pipeline version ID to start an execution, describe the pipeline, or list its
+        /// executions. Each alias can contain 1-128 letters, numbers, periods (.), hyphens (-),
+        /// and underscores (_), and can't consist of numbers only. An alias must be unique within
+        /// the pipeline, and a version can have up to 10 aliases.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 10)]
+        public List<string> PipelineVersionAliases { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the PipelineVersionAliases property is set.
+        /// </summary>
+        internal bool IsSetPipelineVersionAliases() => this.PipelineVersionAliases != null && (this.PipelineVersionAliases.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the role used by the pipeline to access and create

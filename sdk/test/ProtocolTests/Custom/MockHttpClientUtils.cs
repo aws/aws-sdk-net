@@ -16,6 +16,7 @@
 using Amazon.Runtime;
 using Amazon.Runtime.EventStreams;
 using AWSSDK.UnitTests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -94,6 +95,24 @@ namespace AWSSDK.ProtocolTests.Utils
         }
 
         /// <summary>
+        /// Concatenates encoded event stream messages into an HTTP response body.
+        /// </summary>
+        public static byte[] EncodeEvents(params byte[][] encodedMessages)
+        {
+            return encodedMessages.SelectMany(message => message).ToArray();
+        }
+
+        /// <summary>
+        /// Encodes a message with exactly the given headers, including any protocol headers such as :message-type.
+        /// Header values are encoded according to their CLR type (see <see cref="CreateHeader"/>).
+        /// </summary>
+        public static byte[] EncodeEvent(byte[] payload, IDictionary<string, object> headers)
+        {
+            var eventHeaders = headers.Select(h => CreateHeader(h.Key, h.Value)).ToList();
+            return new EventStreamMessage(eventHeaders, payload).ToByteArray();
+        }
+
+        /// <summary>
         /// The SDK signs each input event by wrapping it in an outer message with :date and :chunk-signature
         /// headers. This returns the inner event messages, skipping the empty end-of-stream frame.
         /// </summary>
@@ -109,6 +128,69 @@ namespace AWSSDK.ProtocolTests.Utils
         public static string GetStringHeader(EventStreamMessage message, string name)
         {
             return message.Headers.TryGetValue(name, out var header) ? header.AsString() : null;
+        }
+
+        public static void AssertEventHeader(EventStreamMessage message, string name, bool expected)
+        {
+            var header = GetEventHeader(message, name);
+            Assert.IsTrue(header.HeaderType == EventStreamHeaderType.BoolTrue || header.HeaderType == EventStreamHeaderType.BoolFalse,
+                $"Event header {name} has type {header.HeaderType}, expected a boolean.");
+            Assert.AreEqual(expected, header.AsBool(), $"Event header {name} has an unexpected value.");
+        }
+
+        public static void AssertEventHeader(EventStreamMessage message, string name, string expected)
+        {
+            var header = GetEventHeader(message, name);
+            Assert.AreEqual(EventStreamHeaderType.String, header.HeaderType, $"Event header {name} has an unexpected type.");
+            Assert.AreEqual(expected, header.AsString(), $"Event header {name} has an unexpected value.");
+        }
+
+        public static void AssertEventHeader(EventStreamMessage message, string name, byte[] expected)
+        {
+            var header = GetEventHeader(message, name);
+            Assert.AreEqual(EventStreamHeaderType.ByteBuf, header.HeaderType, $"Event header {name} has an unexpected type.");
+            CollectionAssert.AreEqual(expected, header.AsByteBuf(), $"Event header {name} has an unexpected value.");
+        }
+
+        public static void AssertEventHeader(EventStreamMessage message, string name, DateTime expected)
+        {
+            var header = GetEventHeader(message, name);
+            Assert.AreEqual(EventStreamHeaderType.Timestamp, header.HeaderType, $"Event header {name} has an unexpected type.");
+            Assert.AreEqual(expected, header.AsTimestamp(), $"Event header {name} has an unexpected value.");
+        }
+
+        public static void AssertEventHeader(EventStreamMessage message, string name, sbyte expected)
+        {
+            var header = GetEventHeader(message, name);
+            Assert.AreEqual(EventStreamHeaderType.SByte, header.HeaderType, $"Event header {name} has an unexpected type.");
+            Assert.AreEqual(expected, header.AsSByte(), $"Event header {name} has an unexpected value.");
+        }
+
+        public static void AssertEventHeader(EventStreamMessage message, string name, short expected)
+        {
+            var header = GetEventHeader(message, name);
+            Assert.AreEqual(EventStreamHeaderType.Int16, header.HeaderType, $"Event header {name} has an unexpected type.");
+            Assert.AreEqual(expected, header.AsInt16(), $"Event header {name} has an unexpected value.");
+        }
+
+        public static void AssertEventHeader(EventStreamMessage message, string name, int expected)
+        {
+            var header = GetEventHeader(message, name);
+            Assert.AreEqual(EventStreamHeaderType.Int32, header.HeaderType, $"Event header {name} has an unexpected type.");
+            Assert.AreEqual(expected, header.AsInt32(), $"Event header {name} has an unexpected value.");
+        }
+
+        public static void AssertEventHeader(EventStreamMessage message, string name, long expected)
+        {
+            var header = GetEventHeader(message, name);
+            Assert.AreEqual(EventStreamHeaderType.Int64, header.HeaderType, $"Event header {name} has an unexpected type.");
+            Assert.AreEqual(expected, header.AsInt64(), $"Event header {name} has an unexpected value.");
+        }
+
+        private static IEventStreamHeader GetEventHeader(EventStreamMessage message, string name)
+        {
+            Assert.IsTrue(message.Headers.TryGetValue(name, out var header), $"Event header {name} is missing.");
+            return header;
         }
 
         private static IEventStreamHeader CreateStringHeader(string name, string value)

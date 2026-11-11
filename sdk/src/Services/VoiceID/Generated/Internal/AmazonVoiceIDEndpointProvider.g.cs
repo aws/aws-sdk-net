@@ -26,7 +26,7 @@ using Amazon.VoiceID.Endpoints;
 namespace Amazon.VoiceID.Internal
 {
     /// <summary>
-    /// Amazon VoiceID endpoint provider.
+    /// Amazon Voice ID endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="VoiceIDEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

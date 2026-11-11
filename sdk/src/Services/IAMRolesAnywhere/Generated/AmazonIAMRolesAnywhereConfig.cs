@@ -27,12 +27,12 @@ using Amazon.IAMRolesAnywhere.Internal;
 namespace Amazon.IAMRolesAnywhere
 {
     /// <summary>
-    /// Configuration for accessing Amazon IAMRolesAnywhere service
+    /// Configuration for accessing IAM Roles Anywhere
     /// </summary>
     public partial class AmazonIAMRolesAnywhereConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("RolesAnywhere", "4.0.101.15");
+            InternalSDKUtils.BuildUserAgentString("RolesAnywhere", "4.0.102.3");
 
         private static readonly AmazonIAMRolesAnywhereEndpointResolver EndpointResolver =
             new AmazonIAMRolesAnywhereEndpointResolver();

@@ -27,12 +27,12 @@ using Amazon.AutoScalingPlans.Internal;
 namespace Amazon.AutoScalingPlans
 {
     /// <summary>
-    /// Configuration for accessing Amazon AutoScalingPlans service
+    /// Configuration for accessing AWS Auto Scaling Plans
     /// </summary>
     public partial class AmazonAutoScalingPlansConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Auto Scaling Plans", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Auto Scaling Plans", "4.0.100.25");
 
         private static readonly AmazonAutoScalingPlansEndpointResolver EndpointResolver =
             new AmazonAutoScalingPlansEndpointResolver();

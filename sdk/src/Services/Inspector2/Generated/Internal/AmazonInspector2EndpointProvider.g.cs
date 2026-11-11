@@ -26,7 +26,7 @@ using Amazon.Inspector2.Endpoints;
 namespace Amazon.Inspector2.Internal
 {
     /// <summary>
-    /// Amazon Inspector2 endpoint provider.
+    /// Inspector2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="Inspector2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

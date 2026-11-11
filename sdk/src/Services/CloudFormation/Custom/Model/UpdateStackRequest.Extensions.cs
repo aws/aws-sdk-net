@@ -33,7 +33,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         public UpdateStackRequest()
         {
-            this._notificationARNs = AWSConfigs.InitializeCollections ? new AutoConstructedList<string>() : null;
+            this.NotificationARNs = AWSConfigs.InitializeCollections ? new AutoConstructedList<string>() : null;
         }
     }
 }

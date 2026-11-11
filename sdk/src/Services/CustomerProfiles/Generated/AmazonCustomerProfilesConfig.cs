@@ -27,12 +27,12 @@ using Amazon.CustomerProfiles.Internal;
 namespace Amazon.CustomerProfiles
 {
     /// <summary>
-    /// Configuration for accessing Amazon CustomerProfiles service
+    /// Configuration for accessing Amazon Connect Customer Profiles
     /// </summary>
     public partial class AmazonCustomerProfilesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Customer Profiles", "4.0.103.7");
+            InternalSDKUtils.BuildUserAgentString("Customer Profiles", "4.0.104.4");
 
         private static readonly AmazonCustomerProfilesEndpointResolver EndpointResolver =
             new AmazonCustomerProfilesEndpointResolver();

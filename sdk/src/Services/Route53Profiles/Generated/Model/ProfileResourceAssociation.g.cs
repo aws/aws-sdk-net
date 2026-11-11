@@ -148,7 +148,8 @@ namespace Amazon.Route53Profiles.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  Resource type, such as a private hosted zone, or DNS Firewall rule group. 
+        ///  Resource type, such as a private hosted zone, interface VPC endpoint, Resolver query
+        /// log configuration, or DNS Firewall rule group. 
         /// </para>
         /// </summary>
         public string ResourceType { get; set; }

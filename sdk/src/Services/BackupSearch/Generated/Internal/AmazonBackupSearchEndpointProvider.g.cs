@@ -26,7 +26,7 @@ using Amazon.BackupSearch.Endpoints;
 namespace Amazon.BackupSearch.Internal
 {
     /// <summary>
-    /// Amazon BackupSearch endpoint provider.
+    /// AWS Backup Search endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BackupSearchEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

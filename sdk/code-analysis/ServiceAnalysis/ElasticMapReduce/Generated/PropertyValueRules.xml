@@ -17,6 +17,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.AddInstanceFleetResponse.InstanceFleetId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -46,6 +47,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.AddTagsRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -190,6 +192,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.DescribeClusterRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -219,6 +222,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.DescribeStepRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -228,6 +232,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.GetAutoTerminationPolicyRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -242,6 +247,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.GetManagedScalingPolicyRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -286,6 +292,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.GetSessionRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -295,6 +302,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.GetSessionEndpointRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -324,26 +332,32 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ListBootstrapActionsRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ListInstanceFleetsRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ListInstanceGroupsRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ListInstancesRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ListInstancesRequest.InstanceFleetId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ListInstancesRequest.InstanceGroupId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -363,6 +377,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ListSessionsRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -372,6 +387,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ListStepsRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -381,18 +397,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ModifyInstanceFleetRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ModifyInstanceGroupsRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PutAutoScalingPolicyRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PutAutoScalingPolicyRequest.InstanceGroupId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -402,38 +422,47 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PutAutoScalingPolicyResponse.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PutAutoScalingPolicyResponse.InstanceGroupId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PutAutoTerminationPolicyRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PutManagedScalingPolicyRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.RemoveAutoScalingPolicyRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.RemoveAutoScalingPolicyRequest.InstanceGroupId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.RemoveAutoTerminationPolicyRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.RemoveManagedScalingPolicyRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.RemoveTagsRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -553,6 +582,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.StartSessionRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -578,6 +608,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.StartSessionResponse.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -592,6 +623,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.TerminateSessionRequest.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -601,6 +633,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.TerminateSessionResponse.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -699,6 +732,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.Cluster.Id</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -718,6 +752,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ClusterSummary.Id</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -758,6 +793,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.Instance.InstanceFleetId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -772,6 +808,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.InstanceFleet.Id</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -820,6 +857,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.InstanceFleetModifyConfig.InstanceFleetId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -837,6 +875,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.InstanceGroup.Id</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -1187,7 +1226,7 @@
     <property>Amazon.ElasticMapReduce.Model.NotebookS3LocationForOutput.Key</property>
     <min>1</min>
     <max>10280</max>
-    <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
+    <pattern>^[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.NotebookS3LocationFromInput.Bucket</property>
@@ -1198,7 +1237,7 @@
     <property>Amazon.ElasticMapReduce.Model.NotebookS3LocationFromInput.Key</property>
     <min>1</min>
     <max>10280</max>
-    <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
+    <pattern>^[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.OnDemandCapacityReservationOptions.CapacityReservationResourceGroupArn</property>
@@ -1218,7 +1257,7 @@
     <property>Amazon.ElasticMapReduce.Model.OutputNotebookS3LocationForOutput.Key</property>
     <min>1</min>
     <max>10280</max>
-    <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
+    <pattern>^[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.OutputNotebookS3LocationFromInput.Bucket</property>
@@ -1229,7 +1268,7 @@
     <property>Amazon.ElasticMapReduce.Model.OutputNotebookS3LocationFromInput.Key</property>
     <min>1</min>
     <max>10280</max>
-    <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
+    <pattern>^[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PersistentAppUI.AuthorId</property>
@@ -1298,6 +1337,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.Session.ClusterId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>

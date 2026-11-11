@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.QuickSight
 {
     /// <summary>
-    /// Configuration for accessing Amazon QuickSight service
+    /// Configuration for accessing Amazon QuickSight
     /// </summary>
     public static class AmazonQuickSightDefaultConfiguration
     {

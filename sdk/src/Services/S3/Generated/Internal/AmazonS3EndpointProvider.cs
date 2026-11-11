@@ -26,7 +26,7 @@ using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
 namespace Amazon.S3.Internal
 {
     /// <summary>
-    /// Amazon S3 endpoint provider.
+    /// Amazon Simple Storage Service endpoint provider.
     /// Resolves endpoint for given set of S3EndpointParameters.
     /// Can throw AmazonClientException if endpoint resolution is unsuccessful.
     /// </summary>

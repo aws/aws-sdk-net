@@ -27,12 +27,12 @@ using Amazon.NetworkSecurityManager.Internal;
 namespace Amazon.NetworkSecurityManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon NetworkSecurityManager service
+    /// Configuration for accessing AWS Network Security Manager Customer API
     /// </summary>
     public partial class AmazonNetworkSecurityManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Network Security Manager", "4.0.100.7");
+            InternalSDKUtils.BuildUserAgentString("Network Security Manager", "4.0.100.11");
 
         private static readonly AmazonNetworkSecurityManagerEndpointResolver EndpointResolver =
             new AmazonNetworkSecurityManagerEndpointResolver();

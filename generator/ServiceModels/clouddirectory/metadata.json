@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Cloud Directory (CD) is a multi-tenant, hierarchical data store for use by other AWS services to store directory data for AWS resources, including both metadata about resources and policy data governing resources.",
+  "base-name": "CloudDirectory",
   "legacy-service-id": "CloudDirectory"
 }

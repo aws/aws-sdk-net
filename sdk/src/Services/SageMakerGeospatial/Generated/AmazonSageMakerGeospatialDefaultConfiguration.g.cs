@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SageMakerGeospatial
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMakerGeospatial service
+    /// Configuration for accessing Amazon SageMaker geospatial capabilities
     /// </summary>
     public static class AmazonSageMakerGeospatialDefaultConfiguration
     {

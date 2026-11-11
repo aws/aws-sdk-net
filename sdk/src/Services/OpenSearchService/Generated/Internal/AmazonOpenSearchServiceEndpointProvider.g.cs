@@ -26,7 +26,7 @@ using Amazon.OpenSearchService.Endpoints;
 namespace Amazon.OpenSearchService.Internal
 {
     /// <summary>
-    /// Amazon OpenSearchService endpoint provider.
+    /// Amazon OpenSearch Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="OpenSearchServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -27,12 +27,12 @@ using Amazon.SageMakerRuntimeHTTP2.Internal;
 namespace Amazon.SageMakerRuntimeHTTP2
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMakerRuntimeHTTP2 service
+    /// Configuration for accessing Amazon SageMaker Runtime HTTP2
     /// </summary>
     public partial class AmazonSageMakerRuntimeHTTP2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMaker Runtime HTTP2", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("SageMaker Runtime HTTP2", "4.0.100.26");
 
         private static readonly AmazonSageMakerRuntimeHTTP2EndpointResolver EndpointResolver =
             new AmazonSageMakerRuntimeHTTP2EndpointResolver();

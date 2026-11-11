@@ -31,7 +31,7 @@ using Amazon.DatabaseMigrationService.Endpoints;
 namespace Amazon.DatabaseMigrationService.Internal
 {
     /// <summary>
-    /// Amazon DatabaseMigrationService endpoint resolver.
+    /// AWS Database Migration Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DatabaseMigrationService service requests.
     /// <para />

@@ -27,12 +27,12 @@ using Amazon.ControlCatalog.Internal;
 namespace Amazon.ControlCatalog
 {
     /// <summary>
-    /// Configuration for accessing Amazon ControlCatalog service
+    /// Configuration for accessing AWS Control Catalog
     /// </summary>
     public partial class AmazonControlCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ControlCatalog", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("ControlCatalog", "4.0.100.26");
 
         private static readonly AmazonControlCatalogEndpointResolver EndpointResolver =
             new AmazonControlCatalogEndpointResolver();

@@ -25,12 +25,24 @@ namespace Amazon.Runtime.Telemetry.Metrics
     internal static class MetricsUtilities
     {
         /// <summary>
+        /// Returns true when the configured meter provider is the SDK's no-op provider,
+        /// in which case recording metrics has no observable effect.
+        /// </summary>
+        internal static bool IsNoOp(IClientConfig config)
+        {
+            return config.TelemetryProvider.MeterProvider is NoOpMeterProvider;
+        }
+
+        /// <summary>
         /// Records an error using a MonotonicCounter.
         /// </summary>
         /// <param name="requestContext">The request context object.</param>
         /// <param name="exception">The exception that occurred.</param>
         public static void RecordError(IRequestContext requestContext, Exception exception)
         {
+            if (IsNoOp(requestContext.ClientConfig))
+                return;
+
             var attributes = new Attributes();
             attributes.Set(TelemetryConstants.ExceptionTypeAttributeKey, exception.GetType().Name);
 
@@ -47,7 +59,7 @@ namespace Amazon.Runtime.Telemetry.Metrics
         /// <param name="initialAttributes">The attributes associated with the metric.</param>
         public static void AddMonotonicCounterValue(IRequestContext requestContext, string metricName, string unit, long value = 1, Attributes initialAttributes = null)
         {
-            if (requestContext.ClientConfig.TelemetryProvider.MeterProvider is NoOpMeterProvider)
+            if (IsNoOp(requestContext.ClientConfig))
                 return;
 
             var serviceId = requestContext.ClientConfig.ServiceId;
@@ -78,7 +90,7 @@ namespace Amazon.Runtime.Telemetry.Metrics
         /// <returns>A disposable object that records the duration when disposed, or null when no meter provider is registered.</returns>
         public static IDisposable MeasureDuration(IRequestContext requestContext, string metricName, Attributes initialAttributes = null)
         {
-            if (requestContext.ClientConfig.TelemetryProvider.MeterProvider is NoOpMeterProvider)
+            if (IsNoOp(requestContext.ClientConfig))
                 return null;
 
             if (initialAttributes == null)
@@ -99,7 +111,7 @@ namespace Amazon.Runtime.Telemetry.Metrics
         /// <returns>A disposable object that records the duration when disposed, or null when no meter provider is registered.</returns>
         public static IDisposable MeasureDuration(IClientConfig config, string metricName, Attributes attributes = null)
         {
-            if (config.TelemetryProvider.MeterProvider is NoOpMeterProvider)
+            if (IsNoOp(config))
                 return null;
 
             var serviceId = config.ServiceId;

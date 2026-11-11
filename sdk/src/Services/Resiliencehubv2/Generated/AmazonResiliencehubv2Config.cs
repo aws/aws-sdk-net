@@ -27,12 +27,12 @@ using Amazon.Resiliencehubv2.Internal;
 namespace Amazon.Resiliencehubv2
 {
     /// <summary>
-    /// Configuration for accessing Amazon Resiliencehubv2 service
+    /// Configuration for accessing AWS Resilience Hub V2
     /// </summary>
     public partial class AmazonResiliencehubv2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("resiliencehubv2", "4.0.105.5");
+            InternalSDKUtils.BuildUserAgentString("resiliencehubv2", "4.0.105.9");
 
         private static readonly AmazonResiliencehubv2EndpointResolver EndpointResolver =
             new AmazonResiliencehubv2EndpointResolver();

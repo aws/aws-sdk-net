@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Imagebuilder service
+    /// Service metadata for EC2 Image Builder
     /// </summary>
     public partial class AmazonImagebuilderMetadata : IServiceMetadata
     {

@@ -59,6 +59,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive = true)]
         public string Ciphertext { get; set; }
 
         /// <summary>

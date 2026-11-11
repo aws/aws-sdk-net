@@ -103,6 +103,11 @@ namespace Amazon.LicenseManager
         public static readonly AllowedOperation ListPurchasedLicenses = new AllowedOperation("ListPurchasedLicenses");
 
         /// <summary>
+        /// Constant ListReceivedLicenses for AllowedOperation
+        /// </summary>
+        public static readonly AllowedOperation ListReceivedLicenses = new AllowedOperation("ListReceivedLicenses");
+
+        /// <summary>
         /// Constructs a custom AllowedOperation for a value not among the defined constants.
         /// </summary>
         public AllowedOperation(string value) : base(value) { }
@@ -608,6 +613,47 @@ namespace Amazon.LicenseManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GrantStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GrantType.
+    /// </summary>
+    public class GrantType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BuyerGrant for GrantType
+        /// </summary>
+        public static readonly GrantType BuyerGrant = new GrantType("BuyerGrant");
+
+        /// <summary>
+        /// Constant DelegateGrant for GrantType
+        /// </summary>
+        public static readonly GrantType DelegateGrant = new GrantType("DelegateGrant");
+
+        /// <summary>
+        /// Constructs a custom GrantType for a value not among the defined constants.
+        /// </summary>
+        public GrantType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GrantType FindValue(string value)
+        {
+            return FindValue<GrantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GrantType(string value)
         {
             return FindValue(value);
         }

@@ -35,6 +35,22 @@ namespace Amazon.Glue.Model
     public partial class ResourceUri
     {
         /// <summary>
+        /// Gets and sets the property LastModified. 
+        /// <para>
+        /// The time at which the resource was last modified in Amazon S3. Glue records this value
+        /// when you create or update a function whose <c>GovernanceMode</c> is <c>LAKE_FORMATION</c>.
+        /// Analytics engines use it to verify that the resource hasn't changed. This is an output-only
+        /// field.
+        /// </para>
+        /// </summary>
+        public DateTime? LastModified { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModified property is set.
+        /// </summary>
+        internal bool IsSetLastModified() => this.LastModified.HasValue;
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of the resource.

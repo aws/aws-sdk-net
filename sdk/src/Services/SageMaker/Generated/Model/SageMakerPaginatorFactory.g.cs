@@ -153,6 +153,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListClusterExtensions operation
+        /// </summary>
+        public IListClusterExtensionsPaginator ListClusterExtensions(ListClusterExtensionsRequest request)
+        {
+            return new ListClusterExtensionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListClusterNodes operation
         /// </summary>
         public IListClusterNodesPaginator ListClusterNodes(ListClusterNodesRequest request)

@@ -27,12 +27,12 @@ using Amazon.Shield.Internal;
 namespace Amazon.Shield
 {
     /// <summary>
-    /// Configuration for accessing Amazon Shield service
+    /// Configuration for accessing AWS Shield
     /// </summary>
     public partial class AmazonShieldConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Shield", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Shield", "4.0.100.26");
 
         private static readonly AmazonShieldEndpointResolver EndpointResolver =
             new AmazonShieldEndpointResolver();

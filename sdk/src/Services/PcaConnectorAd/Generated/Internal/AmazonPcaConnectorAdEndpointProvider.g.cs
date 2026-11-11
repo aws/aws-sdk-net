@@ -26,7 +26,7 @@ using Amazon.PcaConnectorAd.Endpoints;
 namespace Amazon.PcaConnectorAd.Internal
 {
     /// <summary>
-    /// Amazon PcaConnectorAd endpoint provider.
+    /// PcaConnectorAd endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PcaConnectorAdEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

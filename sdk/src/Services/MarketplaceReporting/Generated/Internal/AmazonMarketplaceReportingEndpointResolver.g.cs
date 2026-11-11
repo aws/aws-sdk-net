@@ -31,7 +31,7 @@ using Amazon.MarketplaceReporting.Endpoints;
 namespace Amazon.MarketplaceReporting.Internal
 {
     /// <summary>
-    /// Amazon MarketplaceReporting endpoint resolver.
+    /// AWS Marketplace Reporting Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MarketplaceReporting service requests.
     /// <para />

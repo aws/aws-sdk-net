@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System.Collections.Generic;
 using System.IO;
@@ -102,14 +102,14 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Constructors"), TestCategory("ElasticBeanstalk")]
-        public void DescribeApplicationsRequestConstructorTests()
+        public void DescribeApplicationVersionsRequestConstructorTests()
         {
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Constructors"), TestCategory("ElasticBeanstalk")]
-        public void DescribeApplicationVersionsRequestConstructorTests()
+        public void DescribeApplicationsRequestConstructorTests()
         {
         }
 

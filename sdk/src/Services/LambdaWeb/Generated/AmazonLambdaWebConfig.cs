@@ -27,12 +27,12 @@ using Amazon.LambdaWeb.Internal;
 namespace Amazon.LambdaWeb
 {
     /// <summary>
-    /// Configuration for accessing Amazon LambdaWeb service
+    /// Configuration for accessing Lambda Web
     /// </summary>
     public partial class AmazonLambdaWebConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Lambda Web", "4.0.102.5");
+            InternalSDKUtils.BuildUserAgentString("Lambda Web", "4.0.102.9");
 
         private static readonly AmazonLambdaWebEndpointResolver EndpointResolver =
             new AmazonLambdaWebEndpointResolver();

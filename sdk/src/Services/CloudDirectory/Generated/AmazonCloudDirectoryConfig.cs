@@ -27,12 +27,12 @@ using Amazon.CloudDirectory.Internal;
 namespace Amazon.CloudDirectory
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudDirectory service
+    /// Configuration for accessing Amazon CloudDirectory
     /// </summary>
     public partial class AmazonCloudDirectoryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudDirectory", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("CloudDirectory", "4.0.100.26");
 
         private static readonly AmazonCloudDirectoryEndpointResolver EndpointResolver =
             new AmazonCloudDirectoryEndpointResolver();

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MigrationHubRefactorSpaces.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MigrationHubRefactorSpaces service
+    /// Service metadata for AWS Migration Hub Refactor Spaces
     /// </summary>
     public partial class AmazonMigrationHubRefactorSpacesMetadata : IServiceMetadata
     {

@@ -28,7 +28,7 @@ public sealed class EndpointProviderWriter(GenerationContext context, string mod
         writer.OpenNamespace($"{context.Namespace}.Internal", () =>
         {
             writer.WriteLine("/// <summary>");
-            writer.WriteLine($"/// Amazon {context.BaseName} endpoint provider.");
+            writer.WriteLine($"/// {context.ServiceTitle} endpoint provider.");
             writer.WriteLine("/// <para />");
             writer.WriteLine($"/// Resolves endpoint for given set of <see cref=\"{parametersName}\"/>.");
             writer.WriteLine("/// Can throw <see cref=\"AmazonClientException\"/> if endpoint resolution is unsuccessful.");

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFrontKeyValueStore
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudFrontKeyValueStore service
+    /// Configuration for accessing Amazon CloudFront KeyValueStore
     /// </summary>
     public static class AmazonCloudFrontKeyValueStoreDefaultConfiguration
     {

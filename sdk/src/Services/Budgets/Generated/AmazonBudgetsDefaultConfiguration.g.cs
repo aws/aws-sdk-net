@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Budgets
 {
     /// <summary>
-    /// Configuration for accessing Amazon Budgets service
+    /// Configuration for accessing AWS Budgets
     /// </summary>
     public static class AmazonBudgetsDefaultConfiguration
     {

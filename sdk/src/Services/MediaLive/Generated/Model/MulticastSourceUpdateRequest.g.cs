@@ -35,6 +35,28 @@ namespace Amazon.MediaLive.Model
     public partial class MulticastSourceUpdateRequest
     {
         /// <summary>
+        /// Gets and sets the property SecondarySourceIp. This represents the ip address of the
+        /// device sending the secondary multicast stream.
+        /// </summary>
+        public string SecondarySourceIp { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SecondarySourceIp property is set.
+        /// </summary>
+        internal bool IsSetSecondarySourceIp() => this.SecondarySourceIp != null;
+
+        /// <summary>
+        /// Gets and sets the property SecondaryUrl. This represents the customer's secondary
+        /// source URL where the redundant multicast stream (SMPTE 2022-7) is pulled from.
+        /// </summary>
+        public string SecondaryUrl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SecondaryUrl property is set.
+        /// </summary>
+        internal bool IsSetSecondaryUrl() => this.SecondaryUrl != null;
+
+        /// <summary>
         /// Gets and sets the property SourceIp. This represents the ip address of the device
         /// sending the multicast stream.
         /// </summary>

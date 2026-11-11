@@ -27,12 +27,12 @@ using Amazon.RedshiftServerless.Internal;
 namespace Amazon.RedshiftServerless
 {
     /// <summary>
-    /// Configuration for accessing Amazon RedshiftServerless service
+    /// Configuration for accessing Redshift Serverless
     /// </summary>
     public partial class AmazonRedshiftServerlessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Redshift Serverless", "4.0.102.13");
+            InternalSDKUtils.BuildUserAgentString("Redshift Serverless", "4.0.102.17");
 
         private static readonly AmazonRedshiftServerlessEndpointResolver EndpointResolver =
             new AmazonRedshiftServerlessEndpointResolver();

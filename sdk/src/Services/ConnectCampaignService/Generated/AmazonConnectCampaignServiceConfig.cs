@@ -27,12 +27,12 @@ using Amazon.ConnectCampaignService.Internal;
 namespace Amazon.ConnectCampaignService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectCampaignService service
+    /// Configuration for accessing AmazonConnectCampaignService
     /// </summary>
     public partial class AmazonConnectCampaignServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ConnectCampaigns", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("ConnectCampaigns", "4.0.100.25");
 
         private static readonly AmazonConnectCampaignServiceEndpointResolver EndpointResolver =
             new AmazonConnectCampaignServiceEndpointResolver();

@@ -31,7 +31,7 @@ using Amazon.Billing.Endpoints;
 namespace Amazon.Billing.Internal
 {
     /// <summary>
-    /// Amazon Billing endpoint resolver.
+    /// AWS Billing endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Billing service requests.
     /// <para />

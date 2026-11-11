@@ -181,4 +181,20 @@ public class DocSamplesWriterTests
         var ex = Assert.Throws<GeneratorException>(() => operation.GetExamples());
         Assert.Contains("'com.example#Shape' has an invalid smithy.api#examples trait", ex.Message, StringComparison.Ordinal);
     }
+
+    // A list of emitFromMember wrappers is a list of their values, so its items are written as the value.
+    [Fact]
+    public void Write_UnwrappedListItemsAreValues()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeSubstitutions["AttributeValue"] = new ShapeSubstitution { EmitAsShape = "String", EmitFromMember = "Value" };
+        var context = TestModels.Context(TestModels.Load("Codegen/ec2-model.json"), customizations);
+
+        var samples = new DocSamplesWriter(context).Write(DocSamplesWriter.Collect(context));
+
+        Assert.Contains("""
+"10.0.0.1",
+""", samples);
+        Assert.DoesNotContain("<data>", samples);
+    }
 }

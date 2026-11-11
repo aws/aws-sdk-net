@@ -4,7 +4,7 @@
     <property>Amazon.IdentityManagement.Model.AcceptDelegationRequestRequest.DelegationRequestId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AcquireRoleRequest.TemplateArn</property>
@@ -25,37 +25,37 @@
     <property>Amazon.IdentityManagement.Model.AddRoleToInstanceProfileRequest.InstanceProfileName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AddRoleToInstanceProfileRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AddUserToGroupRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AddUserToGroupRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AssociateDelegationRequestRequest.DelegationRequestId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AttachGroupPolicyRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AttachGroupPolicyRequest.PolicyArn</property>
@@ -71,7 +71,7 @@
     <property>Amazon.IdentityManagement.Model.AttachRolePolicyRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AttachUserPolicyRequest.PolicyArn</property>
@@ -82,25 +82,25 @@
     <property>Amazon.IdentityManagement.Model.AttachUserPolicyRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ChangePasswordRequest.NewPassword</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ChangePasswordRequest.OldPassword</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateAccessKeyRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateAccountAliasRequest.AccountAlias</property>
@@ -110,8 +110,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateDelegationRequestRequest.Description</property>
+    <min>0</min>
     <max>1000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateDelegationRequestRequest.NotificationChannel</property>
@@ -121,7 +122,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateDelegationRequestRequest.OwnerAccountId</property>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateDelegationRequestRequest.RedirectUrl</property>
@@ -131,14 +132,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateDelegationRequestRequest.RequestMessage</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateDelegationRequestRequest.RequestorWorkflowId</property>
     <min>5</min>
     <max>400</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateDelegationRequestRequest.SessionDuration</property>
@@ -154,43 +156,43 @@
     <property>Amazon.IdentityManagement.Model.CreateDelegationRequestResponse.DelegationRequestId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateGroupRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateGroupRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateInstanceProfileRequest.InstanceProfileName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateInstanceProfileRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateLoginProfileRequest.Password</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateLoginProfileRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateOpenIDConnectProviderRequest.Url</property>
@@ -204,25 +206,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreatePolicyRequest.Description</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreatePolicyRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
+    <pattern>^((/[A-Za-z0-9\.,\+@=_-]+)*)/$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreatePolicyRequest.PolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreatePolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreatePolicyVersionRequest.PolicyArn</property>
@@ -233,18 +236,19 @@
     <property>Amazon.IdentityManagement.Model.CreatePolicyVersionRequest.PolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.AssumeRolePolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.Description</property>
+    <min>0</min>
     <max>1000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.MaxSessionDuration</property>
@@ -255,7 +259,7 @@
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.PermissionsBoundary</property>
@@ -266,19 +270,19 @@
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateSAMLProviderRequest.AddPrivateKey</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateSAMLProviderRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w._-]+</pattern>
+    <pattern>^[\w._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateSAMLProviderRequest.SAMLMetadataDocument</property>
@@ -294,18 +298,19 @@
     <property>Amazon.IdentityManagement.Model.CreateServiceLinkedRoleRequest.AWSServiceName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateServiceLinkedRoleRequest.CustomSuffix</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateServiceLinkedRoleRequest.Description</property>
+    <min>0</min>
     <max>1000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateServiceSpecificCredentialRequest.CredentialAgeDays</property>
@@ -316,13 +321,13 @@
     <property>Amazon.IdentityManagement.Model.CreateServiceSpecificCredentialRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateUserRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateUserRequest.PermissionsBoundary</property>
@@ -333,42 +338,42 @@
     <property>Amazon.IdentityManagement.Model.CreateUserRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateVirtualMFADeviceRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateVirtualMFADeviceRequest.VirtualMFADeviceName</property>
     <min>1</min>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeactivateMFADeviceRequest.SerialNumber</property>
     <min>9</min>
     <max>256</max>
-    <pattern>[\w+=/:,.@-]+</pattern>
+    <pattern>^[\w+=/:,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeactivateMFADeviceRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteAccessKeyRequest.AccessKeyId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteAccessKeyRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteAccountAliasRequest.AccountAlias</property>
@@ -380,31 +385,31 @@
     <property>Amazon.IdentityManagement.Model.DeleteGroupRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteGroupPolicyRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteGroupPolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteInstanceProfileRequest.InstanceProfileName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteLoginProfileRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteOpenIDConnectProviderRequest.OpenIDConnectProviderArn</property>
@@ -423,31 +428,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeletePolicyVersionRequest.VersionId</property>
-    <pattern>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?</pattern>
+    <pattern>^v[1-9][0-9]*(\.[A-Za-z0-9-]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteRoleRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteRolePermissionsBoundaryRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteRolePolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteRolePolicyRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteSAMLProviderRequest.SAMLProviderArn</property>
@@ -455,16 +460,28 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DeleteSSHPublicKeyRequest.SSHPublicKeyId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[\w]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DeleteSSHPublicKeyRequest.UserName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteServerCertificateRequest.ServerCertificateName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteServiceLinkedRoleRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteServiceLinkedRoleResponse.DeletionTaskId</property>
@@ -475,73 +492,61 @@
     <property>Amazon.IdentityManagement.Model.DeleteServiceSpecificCredentialRequest.ServiceSpecificCredentialId</property>
     <min>20</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteServiceSpecificCredentialRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteSigningCertificateRequest.CertificateId</property>
     <min>24</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteSigningCertificateRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.DeleteSSHPublicKeyRequest.SSHPublicKeyId</property>
-    <min>20</min>
-    <max>128</max>
-    <pattern>[\w]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.DeleteSSHPublicKeyRequest.UserName</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteUserRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteUserPermissionsBoundaryRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteUserPolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteUserPolicyRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteVirtualMFADeviceRequest.SerialNumber</property>
     <min>9</min>
     <max>256</max>
-    <pattern>[\w+=/:,.@-]+</pattern>
+    <pattern>^[\w+=/:,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DetachGroupPolicyRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DetachGroupPolicyRequest.PolicyArn</property>
@@ -557,7 +562,7 @@
     <property>Amazon.IdentityManagement.Model.DetachRolePolicyRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DetachUserPolicyRequest.PolicyArn</property>
@@ -568,15 +573,17 @@
     <property>Amazon.IdentityManagement.Model.DetachUserPolicyRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DisableOrganizationsRootCredentialsManagementResponse.OrganizationId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^o-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DisableOrganizationsRootSessionsResponse.OrganizationId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^o-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
@@ -584,33 +591,35 @@
     <property>Amazon.IdentityManagement.Model.EnableMFADeviceRequest.AuthenticationCode1</property>
     <min>6</min>
     <max>6</max>
-    <pattern>[\d]+</pattern>
+    <pattern>^[\d]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.EnableMFADeviceRequest.AuthenticationCode2</property>
     <min>6</min>
     <max>6</max>
-    <pattern>[\d]+</pattern>
+    <pattern>^[\d]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.EnableMFADeviceRequest.SerialNumber</property>
     <min>9</min>
     <max>256</max>
-    <pattern>[\w+=/:,.@-]+</pattern>
+    <pattern>^[\w+=/:,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.EnableMFADeviceRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.EnableOrganizationsRootCredentialsManagementResponse.OrganizationId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^o-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.EnableOrganizationsRootSessionsResponse.OrganizationId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^o-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
@@ -618,7 +627,7 @@
     <property>Amazon.IdentityManagement.Model.GenerateOrganizationsAccessReportRequest.EntityPath</property>
     <min>19</min>
     <max>427</max>
-    <pattern>^o-[0-9a-z]{10,32}\/r-[0-9a-z]{4,32}[0-9a-z-\/]*</pattern>
+    <pattern>^o-[0-9a-z]{10,32}\/r-[0-9a-z]{4,32}[0-9a-z-\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GenerateOrganizationsAccessReportRequest.OrganizationsPolicyId</property>
@@ -643,19 +652,19 @@
     <property>Amazon.IdentityManagement.Model.GetAccessKeyLastUsedRequest.AccessKeyId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetAccessKeyLastUsedResponse.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetAccountAuthorizationDetailsRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetAccountAuthorizationDetailsRequest.MaxItems</property>
@@ -671,19 +680,19 @@
     <property>Amazon.IdentityManagement.Model.GetDelegationRequestRequest.DelegationRequestId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetGroupRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetGroupRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetGroupRequest.MaxItems</property>
@@ -694,31 +703,31 @@
     <property>Amazon.IdentityManagement.Model.GetGroupPolicyRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetGroupPolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetGroupPolicyResponse.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetGroupPolicyResponse.PolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetGroupPolicyResponse.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetHumanReadableSummaryRequest.EntityArn</property>
@@ -744,37 +753,37 @@
     <property>Amazon.IdentityManagement.Model.GetInstanceProfileRequest.InstanceProfileName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetLoginProfileRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetMFADeviceRequest.SerialNumber</property>
     <min>9</min>
     <max>256</max>
-    <pattern>[\w+=/:,.@-]+</pattern>
+    <pattern>^[\w+=/:,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetMFADeviceRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetMFADeviceResponse.SerialNumber</property>
     <min>9</min>
     <max>256</max>
-    <pattern>[\w+=/:,.@-]+</pattern>
+    <pattern>^[\w+=/:,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetMFADeviceResponse.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetOpenIDConnectProviderRequest.OpenIDConnectProviderArn</property>
@@ -795,7 +804,7 @@
     <property>Amazon.IdentityManagement.Model.GetOrganizationsAccessReportRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetOrganizationsAccessReportRequest.MaxItems</property>
@@ -806,7 +815,7 @@
     <property>Amazon.IdentityManagement.Model.GetOrganizationsAccessReportResponse.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetPolicyRequest.PolicyArn</property>
@@ -820,43 +829,43 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetPolicyVersionRequest.VersionId</property>
-    <pattern>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?</pattern>
+    <pattern>^v[1-9][0-9]*(\.[A-Za-z0-9-]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetRoleRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetRolePolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetRolePolicyRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetRolePolicyResponse.PolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetRolePolicyResponse.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetRolePolicyResponse.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetRoleTemplateVersionRequest.TemplateArn</property>
@@ -877,13 +886,25 @@
     <property>Amazon.IdentityManagement.Model.GetSAMLProviderResponse.SAMLProviderUUID</property>
     <min>22</min>
     <max>64</max>
-    <pattern>[A-Z0-9]+</pattern>
+    <pattern>^[A-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetSSHPublicKeyRequest.SSHPublicKeyId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[\w]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetSSHPublicKeyRequest.UserName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetServerCertificateRequest.ServerCertificateName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsRequest.JobId</property>
@@ -894,7 +915,7 @@
     <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsRequest.MaxItems</property>
@@ -910,7 +931,7 @@
     <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsWithEntitiesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsWithEntitiesRequest.MaxItems</property>
@@ -921,7 +942,7 @@
     <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsWithEntitiesRequest.ServiceNamespace</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w-]*</pattern>
+    <pattern>^[\w-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetServiceLinkedRoleDeletionStatusRequest.DeletionTaskId</property>
@@ -929,58 +950,46 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.GetSSHPublicKeyRequest.SSHPublicKeyId</property>
-    <min>20</min>
-    <max>128</max>
-    <pattern>[\w]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.GetSSHPublicKeyRequest.UserName</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetUserRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetUserPolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetUserPolicyRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetUserPolicyResponse.PolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetUserPolicyResponse.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetUserPolicyResponse.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAccessKeysRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAccessKeysRequest.MaxItems</property>
@@ -991,13 +1000,13 @@
     <property>Amazon.IdentityManagement.Model.ListAccessKeysRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAccountAliasesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAccountAliasesRequest.MaxItems</property>
@@ -1008,13 +1017,13 @@
     <property>Amazon.IdentityManagement.Model.ListAttachedGroupPoliciesRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAttachedGroupPoliciesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAttachedGroupPoliciesRequest.MaxItems</property>
@@ -1025,13 +1034,13 @@
     <property>Amazon.IdentityManagement.Model.ListAttachedGroupPoliciesRequest.PathPrefix</property>
     <min>1</min>
     <max>512</max>
-    <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
+    <pattern>^((/[A-Za-z0-9\.,\+@=_-]+)*)/$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAttachedRolePoliciesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAttachedRolePoliciesRequest.MaxItems</property>
@@ -1042,19 +1051,19 @@
     <property>Amazon.IdentityManagement.Model.ListAttachedRolePoliciesRequest.PathPrefix</property>
     <min>1</min>
     <max>512</max>
-    <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
+    <pattern>^((/[A-Za-z0-9\.,\+@=_-]+)*)/$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAttachedRolePoliciesRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAttachedUserPoliciesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAttachedUserPoliciesRequest.MaxItems</property>
@@ -1065,19 +1074,19 @@
     <property>Amazon.IdentityManagement.Model.ListAttachedUserPoliciesRequest.PathPrefix</property>
     <min>1</min>
     <max>512</max>
-    <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
+    <pattern>^((/[A-Za-z0-9\.,\+@=_-]+)*)/$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAttachedUserPoliciesRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListDelegationRequestsRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListDelegationRequestsRequest.MaxItems</property>
@@ -1094,13 +1103,13 @@
     <property>Amazon.IdentityManagement.Model.ListDelegationRequestsResponse.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListEntitiesForPolicyRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListEntitiesForPolicyRequest.MaxItems</property>
@@ -1111,7 +1120,7 @@
     <property>Amazon.IdentityManagement.Model.ListEntitiesForPolicyRequest.PathPrefix</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListEntitiesForPolicyRequest.PolicyArn</property>
@@ -1122,13 +1131,13 @@
     <property>Amazon.IdentityManagement.Model.ListGroupPoliciesRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListGroupPoliciesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListGroupPoliciesRequest.MaxItems</property>
@@ -1139,7 +1148,7 @@
     <property>Amazon.IdentityManagement.Model.ListGroupsRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListGroupsRequest.MaxItems</property>
@@ -1150,13 +1159,13 @@
     <property>Amazon.IdentityManagement.Model.ListGroupsRequest.PathPrefix</property>
     <min>1</min>
     <max>512</max>
-    <pattern>\u002F[\u0021-\u007F]*</pattern>
+    <pattern>^\u002F[\u0021-\u007F]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListGroupsForUserRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListGroupsForUserRequest.MaxItems</property>
@@ -1167,13 +1176,30 @@
     <property>Amazon.IdentityManagement.Model.ListGroupsForUserRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListInstanceProfileTagsRequest.InstanceProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListInstanceProfileTagsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListInstanceProfileTagsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListInstanceProfilesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListInstanceProfilesRequest.MaxItems</property>
@@ -1184,13 +1210,13 @@
     <property>Amazon.IdentityManagement.Model.ListInstanceProfilesRequest.PathPrefix</property>
     <min>1</min>
     <max>512</max>
-    <pattern>\u002F[\u0021-\u007F]*</pattern>
+    <pattern>^\u002F[\u0021-\u007F]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListInstanceProfilesForRoleRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListInstanceProfilesForRoleRequest.MaxItems</property>
@@ -1201,47 +1227,13 @@
     <property>Amazon.IdentityManagement.Model.ListInstanceProfilesForRoleRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListInstanceProfileTagsRequest.InstanceProfileName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListInstanceProfileTagsRequest.Marker</property>
-    <min>1</min>
-    <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListInstanceProfileTagsRequest.MaxItems</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListMFADevicesRequest.Marker</property>
-    <min>1</min>
-    <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListMFADevicesRequest.MaxItems</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListMFADevicesRequest.UserName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListMFADeviceTagsRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListMFADeviceTagsRequest.MaxItems</property>
@@ -1252,13 +1244,30 @@
     <property>Amazon.IdentityManagement.Model.ListMFADeviceTagsRequest.SerialNumber</property>
     <min>9</min>
     <max>256</max>
-    <pattern>[\w+=/:,.@-]+</pattern>
+    <pattern>^[\w+=/:,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListMFADevicesRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListMFADevicesRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListMFADevicesRequest.UserName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListOpenIDConnectProviderTagsRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListOpenIDConnectProviderTagsRequest.MaxItems</property>
@@ -1272,6 +1281,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListOrganizationsFeaturesResponse.OrganizationId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^o-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
@@ -1279,7 +1289,7 @@
     <property>Amazon.IdentityManagement.Model.ListPoliciesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListPoliciesRequest.MaxItems</property>
@@ -1290,7 +1300,7 @@
     <property>Amazon.IdentityManagement.Model.ListPoliciesRequest.PathPrefix</property>
     <min>1</min>
     <max>512</max>
-    <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
+    <pattern>^((/[A-Za-z0-9\.,\+@=_-]+)*)/$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListPoliciesGrantingServiceAccessRequest.Arn</property>
@@ -1301,13 +1311,13 @@
     <property>Amazon.IdentityManagement.Model.ListPoliciesGrantingServiceAccessRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListPolicyTagsRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListPolicyTagsRequest.MaxItems</property>
@@ -1323,7 +1333,7 @@
     <property>Amazon.IdentityManagement.Model.ListPolicyVersionsRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListPolicyVersionsRequest.MaxItems</property>
@@ -1339,7 +1349,7 @@
     <property>Amazon.IdentityManagement.Model.ListRolePoliciesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListRolePoliciesRequest.MaxItems</property>
@@ -1350,30 +1360,13 @@
     <property>Amazon.IdentityManagement.Model.ListRolePoliciesRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListRolesRequest.Marker</property>
-    <min>1</min>
-    <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListRolesRequest.MaxItems</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListRolesRequest.PathPrefix</property>
-    <min>1</min>
-    <max>512</max>
-    <pattern>\u002F[\u0021-\u007F]*</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListRoleTagsRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListRoleTagsRequest.MaxItems</property>
@@ -1384,13 +1377,30 @@
     <property>Amazon.IdentityManagement.Model.ListRoleTagsRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListRolesRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListRolesRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListRolesRequest.PathPrefix</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^\u002F[\u0021-\u007F]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListSAMLProviderTagsRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListSAMLProviderTagsRequest.MaxItems</property>
@@ -1403,78 +1413,10 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListServerCertificatesRequest.Marker</property>
-    <min>1</min>
-    <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListServerCertificatesRequest.MaxItems</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListServerCertificatesRequest.PathPrefix</property>
-    <min>1</min>
-    <max>512</max>
-    <pattern>\u002F[\u0021-\u007F]*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListServerCertificateTagsRequest.Marker</property>
-    <min>1</min>
-    <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListServerCertificateTagsRequest.MaxItems</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListServerCertificateTagsRequest.ServerCertificateName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListServiceSpecificCredentialsRequest.Marker</property>
-    <min>1</min>
-    <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListServiceSpecificCredentialsRequest.MaxItems</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListServiceSpecificCredentialsRequest.UserName</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListSigningCertificatesRequest.Marker</property>
-    <min>1</min>
-    <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListSigningCertificatesRequest.MaxItems</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListSigningCertificatesRequest.UserName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListSSHPublicKeysRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListSSHPublicKeysRequest.MaxItems</property>
@@ -1485,13 +1427,81 @@
     <property>Amazon.IdentityManagement.Model.ListSSHPublicKeysRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServerCertificateTagsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServerCertificateTagsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServerCertificateTagsRequest.ServerCertificateName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServerCertificatesRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServerCertificatesRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServerCertificatesRequest.PathPrefix</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^\u002F[\u0021-\u007F]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServiceSpecificCredentialsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServiceSpecificCredentialsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServiceSpecificCredentialsRequest.UserName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListSigningCertificatesRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListSigningCertificatesRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListSigningCertificatesRequest.UserName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListUserPoliciesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListUserPoliciesRequest.MaxItems</property>
@@ -1502,30 +1512,13 @@
     <property>Amazon.IdentityManagement.Model.ListUserPoliciesRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListUsersRequest.Marker</property>
-    <min>1</min>
-    <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListUsersRequest.MaxItems</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ListUsersRequest.PathPrefix</property>
-    <min>1</min>
-    <max>512</max>
-    <pattern>\u002F[\u0021-\u007F]*</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListUserTagsRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListUserTagsRequest.MaxItems</property>
@@ -1536,13 +1529,30 @@
     <property>Amazon.IdentityManagement.Model.ListUserTagsRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListUsersRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListUsersRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListUsersRequest.PathPrefix</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^\u002F[\u0021-\u007F]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListVirtualMFADevicesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListVirtualMFADevicesRequest.MaxItems</property>
@@ -1553,19 +1563,19 @@
     <property>Amazon.IdentityManagement.Model.PutGroupPolicyRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PutGroupPolicyRequest.PolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PutGroupPolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PutRolePermissionsBoundaryRequest.PermissionsBoundary</property>
@@ -1576,25 +1586,25 @@
     <property>Amazon.IdentityManagement.Model.PutRolePermissionsBoundaryRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PutRolePolicyRequest.PolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PutRolePolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PutRolePolicyRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PutUserPermissionsBoundaryRequest.PermissionsBoundary</property>
@@ -1605,36 +1615,37 @@
     <property>Amazon.IdentityManagement.Model.PutUserPermissionsBoundaryRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PutUserPolicyRequest.PolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PutUserPolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PutUserPolicyRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RejectDelegationRequestRequest.DelegationRequestId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RejectDelegationRequestRequest.Notes</property>
+    <min>0</min>
     <max>500</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RemoveClientIDFromOpenIDConnectProviderRequest.ClientID</property>
@@ -1650,67 +1661,67 @@
     <property>Amazon.IdentityManagement.Model.RemoveRoleFromInstanceProfileRequest.InstanceProfileName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RemoveRoleFromInstanceProfileRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RemoveUserFromGroupRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RemoveUserFromGroupRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ResetServiceSpecificCredentialRequest.ServiceSpecificCredentialId</property>
     <min>20</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ResetServiceSpecificCredentialRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ResyncMFADeviceRequest.AuthenticationCode1</property>
     <min>6</min>
     <max>6</max>
-    <pattern>[\d]+</pattern>
+    <pattern>^[\d]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ResyncMFADeviceRequest.AuthenticationCode2</property>
     <min>6</min>
     <max>6</max>
-    <pattern>[\d]+</pattern>
+    <pattern>^[\d]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ResyncMFADeviceRequest.SerialNumber</property>
     <min>9</min>
     <max>256</max>
-    <pattern>[\w+=/:,.@-]+</pattern>
+    <pattern>^[\w+=/:,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ResyncMFADeviceRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SendDelegationTokenRequest.DelegationRequestId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SetDefaultPolicyVersionRequest.PolicyArn</property>
@@ -1719,7 +1730,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SetDefaultPolicyVersionRequest.VersionId</property>
-    <pattern>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?</pattern>
+    <pattern>^v[1-9][0-9]*(\.[A-Za-z0-9-]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SimulateCustomPolicyRequest.CallerArn</property>
@@ -1730,7 +1741,7 @@
     <property>Amazon.IdentityManagement.Model.SimulateCustomPolicyRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SimulateCustomPolicyRequest.MaxItems</property>
@@ -1751,7 +1762,7 @@
     <property>Amazon.IdentityManagement.Model.SimulateCustomPolicyRequest.ResourcePolicy</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SimulatePrincipalPolicyRequest.CallerArn</property>
@@ -1762,7 +1773,7 @@
     <property>Amazon.IdentityManagement.Model.SimulatePrincipalPolicyRequest.Marker</property>
     <min>1</min>
     <max>320</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SimulatePrincipalPolicyRequest.MaxItems</property>
@@ -1788,19 +1799,19 @@
     <property>Amazon.IdentityManagement.Model.SimulatePrincipalPolicyRequest.ResourcePolicy</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.TagInstanceProfileRequest.InstanceProfileName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.TagMFADeviceRequest.SerialNumber</property>
     <min>9</min>
     <max>256</max>
-    <pattern>[\w+=/:,.@-]+</pattern>
+    <pattern>^[\w+=/:,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.TagOpenIDConnectProviderRequest.OpenIDConnectProviderArn</property>
@@ -1816,7 +1827,7 @@
     <property>Amazon.IdentityManagement.Model.TagRoleRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.TagSAMLProviderRequest.SAMLProviderArn</property>
@@ -1827,25 +1838,25 @@
     <property>Amazon.IdentityManagement.Model.TagServerCertificateRequest.ServerCertificateName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.TagUserRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UntagInstanceProfileRequest.InstanceProfileName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UntagMFADeviceRequest.SerialNumber</property>
     <min>9</min>
     <max>256</max>
-    <pattern>[\w+=/:,.@-]+</pattern>
+    <pattern>^[\w+=/:,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UntagOpenIDConnectProviderRequest.OpenIDConnectProviderArn</property>
@@ -1861,7 +1872,7 @@
     <property>Amazon.IdentityManagement.Model.UntagRoleRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UntagSAMLProviderRequest.SAMLProviderArn</property>
@@ -1872,25 +1883,25 @@
     <property>Amazon.IdentityManagement.Model.UntagServerCertificateRequest.ServerCertificateName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UntagUserRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateAccessKeyRequest.AccessKeyId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateAccessKeyRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateAccountPasswordPolicyRequest.MaxPasswordAge</property>
@@ -1911,54 +1922,55 @@
     <property>Amazon.IdentityManagement.Model.UpdateAssumeRolePolicyRequest.PolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateAssumeRolePolicyRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateDelegationRequestRequest.DelegationRequestId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateDelegationRequestRequest.Notes</property>
+    <min>0</min>
     <max>500</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateGroupRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateGroupRequest.NewGroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateGroupRequest.NewPath</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateLoginProfileRequest.Password</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateLoginProfileRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateOpenIDConnectProviderThumbprintRequest.OpenIDConnectProviderArn</property>
@@ -1967,8 +1979,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateRoleRequest.Description</property>
+    <min>0</min>
     <max>1000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateRoleRequest.MaxSessionDuration</property>
@@ -1979,30 +1992,31 @@
     <property>Amazon.IdentityManagement.Model.UpdateRoleRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateRoleDescriptionRequest.Description</property>
+    <min>0</min>
     <max>1000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateRoleDescriptionRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateSAMLProviderRequest.AddPrivateKey</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateSAMLProviderRequest.RemovePrivateKey</property>
     <min>22</min>
     <max>64</max>
-    <pattern>[A-Z0-9]+</pattern>
+    <pattern>^[A-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateSAMLProviderRequest.SAMLMetadataDocument</property>
@@ -2020,166 +2034,166 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UpdateServerCertificateRequest.NewPath</property>
-    <min>1</min>
-    <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UpdateServerCertificateRequest.NewServerCertificateName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UpdateServerCertificateRequest.ServerCertificateName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UpdateServiceSpecificCredentialRequest.ServiceSpecificCredentialId</property>
-    <min>20</min>
-    <max>128</max>
-    <pattern>[\w]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UpdateServiceSpecificCredentialRequest.UserName</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UpdateSigningCertificateRequest.CertificateId</property>
-    <min>24</min>
-    <max>128</max>
-    <pattern>[\w]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UpdateSigningCertificateRequest.UserName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateSSHPublicKeyRequest.SSHPublicKeyId</property>
     <min>20</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateSSHPublicKeyRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateServerCertificateRequest.NewPath</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateServerCertificateRequest.NewServerCertificateName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateServerCertificateRequest.ServerCertificateName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateServiceSpecificCredentialRequest.ServiceSpecificCredentialId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[\w]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateServiceSpecificCredentialRequest.UserName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateSigningCertificateRequest.CertificateId</property>
+    <min>24</min>
+    <max>128</max>
+    <pattern>^[\w]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateSigningCertificateRequest.UserName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateUserRequest.NewPath</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateUserRequest.NewUserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateUserRequest.UserName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UploadServerCertificateRequest.CertificateBody</property>
-    <min>1</min>
-    <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UploadServerCertificateRequest.CertificateChain</property>
-    <min>1</min>
-    <max>2097152</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UploadServerCertificateRequest.Path</property>
-    <min>1</min>
-    <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UploadServerCertificateRequest.PrivateKey</property>
-    <min>1</min>
-    <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UploadServerCertificateRequest.ServerCertificateName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UploadSigningCertificateRequest.CertificateBody</property>
-    <min>1</min>
-    <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.UploadSigningCertificateRequest.UserName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UploadSSHPublicKeyRequest.SSHPublicKeyBody</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UploadSSHPublicKeyRequest.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UploadServerCertificateRequest.CertificateBody</property>
+    <min>1</min>
+    <max>16384</max>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UploadServerCertificateRequest.CertificateChain</property>
+    <min>1</min>
+    <max>2097152</max>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UploadServerCertificateRequest.Path</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UploadServerCertificateRequest.PrivateKey</property>
+    <min>1</min>
+    <max>16384</max>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UploadServerCertificateRequest.ServerCertificateName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UploadSigningCertificateRequest.CertificateBody</property>
+    <min>1</min>
+    <max>16384</max>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UploadSigningCertificateRequest.UserName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AccessDetail.EntityPath</property>
     <min>19</min>
     <max>427</max>
-    <pattern>^o-[0-9a-z]{10,32}\/r-[0-9a-z]{4,32}[0-9a-z-\/]*</pattern>
+    <pattern>^o-[0-9a-z]{10,32}\/r-[0-9a-z]{4,32}[0-9a-z-\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AccessDetail.ServiceNamespace</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w-]*</pattern>
+    <pattern>^[\w-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AccessKey.AccessKeyId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AccessKey.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AccessKeyMetadata.AccessKeyId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AccessKeyMetadata.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AttachedPermissionsBoundary.PermissionsBoundaryArn</property>
@@ -2195,7 +2209,7 @@
     <property>Amazon.IdentityManagement.Model.AttachedPolicyType.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ContextEntry.ContextKeyName</property>
@@ -2216,21 +2230,23 @@
     <property>Amazon.IdentityManagement.Model.DelegationRequest.DelegationRequestId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DelegationRequest.Description</property>
+    <min>0</min>
     <max>1000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DelegationRequest.Notes</property>
+    <min>0</min>
     <max>500</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DelegationRequest.OwnerAccountId</property>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DelegationRequest.OwnerId</property>
@@ -2246,22 +2262,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DelegationRequest.RejectionReason</property>
+    <min>0</min>
     <max>500</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DelegationRequest.RequestMessage</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DelegationRequest.RequestorId</property>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DelegationRequest.RequestorName</property>
+    <min>0</min>
     <max>30</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DelegationRequest.SessionDuration</property>
@@ -2270,6 +2289,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeletionTaskFailureReasonType.Reason</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -2281,19 +2301,19 @@
     <property>Amazon.IdentityManagement.Model.EntityInfo.Id</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.EntityInfo.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.EntityInfo.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.EvaluationResult.EvalActionName</property>
@@ -2314,19 +2334,19 @@
     <property>Amazon.IdentityManagement.Model.Group.GroupId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Group.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Group.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GroupDetail.Arn</property>
@@ -2337,43 +2357,43 @@
     <property>Amazon.IdentityManagement.Model.GroupDetail.GroupId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GroupDetail.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GroupDetail.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.InlinePolicy.PolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.InlinePolicy.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.InlinePolicyIdentifierType.AttachmentName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.InlinePolicyIdentifierType.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.InstanceProfile.Arn</property>
@@ -2384,62 +2404,43 @@
     <property>Amazon.IdentityManagement.Model.InstanceProfile.InstanceProfileId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.InstanceProfile.InstanceProfileName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.InstanceProfile.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListPoliciesGrantingServiceAccessEntry.ServiceNamespace</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w-]*</pattern>
+    <pattern>^[\w-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.LoginProfile.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ManagedPolicy.Arn</property>
-    <min>20</min>
-    <max>2048</max>
+    <property>Amazon.IdentityManagement.Model.MFADevice.SerialNumber</property>
+    <min>9</min>
+    <max>256</max>
+    <pattern>^[\w+=/:,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ManagedPolicy.DefaultVersionId</property>
-    <pattern>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ManagedPolicy.Description</property>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ManagedPolicy.Path</property>
+    <property>Amazon.IdentityManagement.Model.MFADevice.UserName</property>
     <min>1</min>
-    <max>512</max>
-    <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ManagedPolicy.PolicyId</property>
-    <min>16</min>
-    <max>128</max>
-    <pattern>[\w]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.ManagedPolicy.PolicyName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <max>64</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ManagedPolicyDetail.Arn</property>
@@ -2448,41 +2449,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ManagedPolicyDetail.DefaultVersionId</property>
-    <pattern>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?</pattern>
+    <pattern>^v[1-9][0-9]*(\.[A-Za-z0-9-]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ManagedPolicyDetail.Description</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ManagedPolicyDetail.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
+    <pattern>^((/[A-Za-z0-9\.,\+@=_-]+)*)/$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ManagedPolicyDetail.PolicyId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ManagedPolicyDetail.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.MFADevice.SerialNumber</property>
-    <min>9</min>
-    <max>256</max>
-    <pattern>[\w+=/:,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.MFADevice.UserName</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.OpenIDConnectProviderListEntry.Arn</property>
@@ -2491,10 +2481,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ParameterDefinition.DefaultValue</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ParameterDefinition.Description</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -2504,6 +2496,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ParameterDefinition.SubType</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -2522,22 +2515,54 @@
     <max>24</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ManagedPolicy.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ManagedPolicy.DefaultVersionId</property>
+    <pattern>^v[1-9][0-9]*(\.[A-Za-z0-9-]*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ManagedPolicy.Description</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ManagedPolicy.Path</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^((/[A-Za-z0-9\.,\+@=_-]+)*)/$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ManagedPolicy.PolicyId</property>
+    <min>16</min>
+    <max>128</max>
+    <pattern>^[\w]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ManagedPolicy.PolicyName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyDetail.PolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyDetail.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyGrantingServiceAccess.EntityName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyGrantingServiceAccess.PolicyArn</property>
@@ -2548,19 +2573,19 @@
     <property>Amazon.IdentityManagement.Model.PolicyGrantingServiceAccess.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyGroup.GroupId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyGroup.GroupName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyIdentifier.PolicyArn</property>
@@ -2571,41 +2596,41 @@
     <property>Amazon.IdentityManagement.Model.PolicyParameter.Name</property>
     <min>5</min>
     <max>256</max>
-    <pattern>[ -~]+</pattern>
+    <pattern>^[ -~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyRole.RoleId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyRole.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyUser.UserId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyUser.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyVersion.Document</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyVersion.VersionId</property>
-    <pattern>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?</pattern>
+    <pattern>^v[1-9][0-9]*(\.[A-Za-z0-9-]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ResourceSpecificResult.EvalResourceName</property>
@@ -2621,12 +2646,13 @@
     <property>Amazon.IdentityManagement.Model.Role.AssumeRolePolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Role.Description</property>
+    <min>0</min>
     <max>1000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Role.MaxSessionDuration</property>
@@ -2637,19 +2663,19 @@
     <property>Amazon.IdentityManagement.Model.Role.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Role.RoleId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Role.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RoleDetail.Arn</property>
@@ -2660,36 +2686,37 @@
     <property>Amazon.IdentityManagement.Model.RoleDetail.AssumeRolePolicyDocument</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RoleDetail.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RoleDetail.RoleId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RoleDetail.RoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RoleTemplateVersion.AssumeRolePolicyDocumentTemplate</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RoleTemplateVersion.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RoleTemplateVersion.ManagedByValue</property>
@@ -2720,7 +2747,7 @@
     <property>Amazon.IdentityManagement.Model.RoleTemplateVersion.RolePathPattern</property>
     <min>1</min>
     <max>256</max>
-    <pattern>/[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*/</pattern>
+    <pattern>^/[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*/$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RoleTemplateVersion.TemplateArn</property>
@@ -2731,13 +2758,13 @@
     <property>Amazon.IdentityManagement.Model.RoleTemplateVersion.TemplateName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.\-]+</pattern>
+    <pattern>^[\w+=,.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RoleTemplateVersion.TemplateVersionId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RoleUsageType.Region</property>
@@ -2748,7 +2775,7 @@
     <property>Amazon.IdentityManagement.Model.SAMLPrivateKey.KeyId</property>
     <min>22</min>
     <max>64</max>
-    <pattern>[A-Z0-9]+</pattern>
+    <pattern>^[A-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SAMLProviderListEntry.Arn</property>
@@ -2756,16 +2783,52 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.SSHPublicKey.Fingerprint</property>
+    <min>48</min>
+    <max>48</max>
+    <pattern>^[:\w]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.SSHPublicKey.SSHPublicKeyBody</property>
+    <min>1</min>
+    <max>16384</max>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.SSHPublicKey.SSHPublicKeyId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[\w]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.SSHPublicKey.UserName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.SSHPublicKeyMetadata.SSHPublicKeyId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[\w]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.SSHPublicKeyMetadata.UserName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServerCertificate.CertificateBody</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServerCertificate.CertificateChain</property>
     <min>1</min>
     <max>2097152</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServerCertificateMetadata.Arn</property>
@@ -2776,19 +2839,19 @@
     <property>Amazon.IdentityManagement.Model.ServerCertificateMetadata.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServerCertificateMetadata.ServerCertificateId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServerCertificateMetadata.ServerCertificateName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceLastAccessed.LastAuthenticatedEntity</property>
@@ -2799,73 +2862,73 @@
     <property>Amazon.IdentityManagement.Model.ServiceLastAccessed.ServiceNamespace</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w-]*</pattern>
+    <pattern>^[\w-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredential.ServiceCredentialAlias</property>
     <min>0</min>
     <max>200</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredential.ServiceSpecificCredentialId</property>
     <min>20</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredential.ServiceUserName</property>
     <min>0</min>
     <max>200</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredential.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredentialMetadata.ServiceCredentialAlias</property>
     <min>0</min>
     <max>200</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredentialMetadata.ServiceSpecificCredentialId</property>
     <min>20</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredentialMetadata.ServiceUserName</property>
     <min>0</min>
     <max>200</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredentialMetadata.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SigningCertificate.CertificateBody</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SigningCertificate.CertificateId</property>
     <min>24</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SigningCertificate.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SourceRoleTemplate.TemplateArn</property>
@@ -2873,64 +2936,28 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.SSHPublicKey.Fingerprint</property>
-    <min>48</min>
-    <max>48</max>
-    <pattern>[:\w]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.SSHPublicKey.SSHPublicKeyBody</property>
-    <min>1</min>
-    <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.SSHPublicKey.SSHPublicKeyId</property>
-    <min>20</min>
-    <max>128</max>
-    <pattern>[\w]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.SSHPublicKey.UserName</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.SSHPublicKeyMetadata.SSHPublicKeyId</property>
-    <min>20</min>
-    <max>128</max>
-    <pattern>[\w]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IdentityManagement.Model.SSHPublicKeyMetadata.UserName</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]+</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=+\-@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]*</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=+\-@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.TagTemplate.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@{}]+</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=+\-@{}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.TagTemplate.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@{}]*</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=+\-@{}]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.TrackedActionLastAccessed.LastAccessedEntity</property>
@@ -2946,19 +2973,19 @@
     <property>Amazon.IdentityManagement.Model.User.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.User.UserId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.User.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UserDetail.Arn</property>
@@ -2969,24 +2996,24 @@
     <property>Amazon.IdentityManagement.Model.UserDetail.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
+    <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UserDetail.UserId</property>
     <min>16</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UserDetail.UserName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.VirtualMFADevice.SerialNumber</property>
     <min>9</min>
     <max>256</max>
-    <pattern>[\w+=/:,.@-]+</pattern>
+    <pattern>^[\w+=/:,.@-]+$</pattern>
   </property-value-rule>
 </property-value-rules>

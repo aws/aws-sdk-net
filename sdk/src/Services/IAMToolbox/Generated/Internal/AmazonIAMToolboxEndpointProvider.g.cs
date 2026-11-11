@@ -26,7 +26,7 @@ using Amazon.IAMToolbox.Endpoints;
 namespace Amazon.IAMToolbox.Internal
 {
     /// <summary>
-    /// Amazon IAMToolbox endpoint provider.
+    /// IAM Toolbox (Preview) endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IAMToolboxEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

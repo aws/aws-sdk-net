@@ -27,12 +27,12 @@ using Amazon.Scheduler.Internal;
 namespace Amazon.Scheduler
 {
     /// <summary>
-    /// Configuration for accessing Amazon Scheduler service
+    /// Configuration for accessing Amazon EventBridge Scheduler
     /// </summary>
     public partial class AmazonSchedulerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Scheduler", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Scheduler", "4.0.100.26");
 
         private static readonly AmazonSchedulerEndpointResolver EndpointResolver =
             new AmazonSchedulerEndpointResolver();

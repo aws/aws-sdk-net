@@ -26,7 +26,7 @@ using Amazon.Lex.Endpoints;
 namespace Amazon.Lex.Internal
 {
     /// <summary>
-    /// Amazon Lex endpoint provider.
+    /// Amazon Lex Runtime Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="LexEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

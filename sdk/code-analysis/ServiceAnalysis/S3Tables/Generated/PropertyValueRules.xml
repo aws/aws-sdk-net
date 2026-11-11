@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.CompleteTableMigrationRequest.TableARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.CreateNamespaceRequest.TableBucketARN</property>
     <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})$</pattern>
   </property-value-rule>
@@ -237,6 +243,10 @@
     <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableBucketLoggingRequest.TableBucketARN</property>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.GetTableBucketMaintenanceConfigurationRequest.TableBucketARN</property>
     <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})$</pattern>
   </property-value-rule>
@@ -366,6 +376,52 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableMigrationRequest.MigrationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableMigrationRequest.TableARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableMigrationResponse.MigrationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableMigrationResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[0-9a-z_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableMigrationResponse.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[0-9a-z_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableMigrationResponse.RoleARN</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[-a-z0-9]*:iam::[0-9]{12}:role/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableMigrationResponse.TableARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableMigrationResponse.TableBucketARN</property>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.GetTablePolicyRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -477,6 +533,43 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.ListTableMigrationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.ListTableMigrationsRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[0-9a-z_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.ListTableMigrationsRequest.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[0-9a-z_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.ListTableMigrationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.ListTableMigrationsRequest.TableARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.ListTableMigrationsRequest.TableBucketARN</property>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.ListTableMigrationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.ListTablesRequest.ContinuationToken</property>
     <min>1</min>
     <max>2048</max>
@@ -514,6 +607,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Tables.Model.PutTableBucketEncryptionRequest.TableBucketARN</property>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.PutTableBucketLoggingRequest.TableBucketARN</property>
     <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -634,6 +731,36 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.StartTableMigrationRequest.RoleARN</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[-a-z0-9]*:iam::[0-9]{12}:role/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.StartTableMigrationResponse.MigrationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.SyncTableMigrationRequest.RoleARN</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[-a-z0-9]*:iam::[0-9]{12}:role/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.SyncTableMigrationRequest.TableARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.SyncTableMigrationResponse.MigrationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>2048</max>
@@ -694,10 +821,70 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.UpdateTableMigrationRequest.MigrationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.UpdateTableMigrationRequest.TableARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.UpdateTableMigrationRequest.UpdateDescription</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.UpdateTableMigrationResponse.MigrationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.UpdateTableMigrationResponse.TableARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.DestinationTable.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[0-9a-z_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.DestinationTable.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[0-9a-z_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.DestinationTable.TableBucketARN</property>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.EncryptionConfiguration.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
     <pattern>^(arn:aws[-a-z0-9]*:kms:[-a-z0-9]*:[0-9]{12}:key/.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GlueTableSource.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GlueTableSource.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GlueTableSource.TableName</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Tables.Model.IcebergCompactionSettings.TargetFileSizeMB</property>
@@ -730,6 +917,86 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.LoggingEnabled.TargetBucket</property>
+    <min>3</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.LoggingEnabled.TargetPrefix</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationCompactionSettings.TargetFileSizeMB</property>
+    <min>64</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationFailureReason.Detail</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationOutputConfiguration.Bucket</property>
+    <min>12</min>
+    <max>1024</max>
+    <pattern>^arn:aws[-a-z0-9]*:s3[a-z]*:[-a-z0-9]*:([0-9]{12})?:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationOutputOverview.Bucket</property>
+    <min>12</min>
+    <max>1024</max>
+    <pattern>^arn:aws[-a-z0-9]*:s3[a-z]*:[-a-z0-9]*:([0-9]{12})?:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationReportPrefixes.ObjectCompatibilityReport</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationReportPrefixes.ObjectMigrationReport</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationReportPrefixes.TableCompatibilityReport</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationSnapshotManagementSettings.MaxSnapshotAgeHours</property>
+    <min>1</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationSnapshotManagementSettings.MinSnapshotsToKeep</property>
+    <min>3</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationSummary.MigrationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationSummary.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[0-9a-z_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationSummary.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[0-9a-z_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationSummary.TableARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.MigrationSummary.TableBucketARN</property>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.NamespaceSummary.CreatedBy</property>
     <min>12</min>
     <max>12</max>
@@ -760,6 +1027,21 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.ReportOverview.ChecksumCRC64NVME</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[A-Za-z0-9+/]{11}=$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.ReportOverview.Key</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.ReportOverview.Prefix</property>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Tables.Model.TableBucketReplicationConfiguration.Role</property>

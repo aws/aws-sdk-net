@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Route53Profiles
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53Profiles service
+    /// Configuration for accessing Route 53 Profiles
     /// </summary>
     public static class AmazonRoute53ProfilesDefaultConfiguration
     {

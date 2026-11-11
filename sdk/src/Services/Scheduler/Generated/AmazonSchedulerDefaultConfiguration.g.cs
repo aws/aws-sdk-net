@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Scheduler
 {
     /// <summary>
-    /// Configuration for accessing Amazon Scheduler service
+    /// Configuration for accessing Amazon EventBridge Scheduler
     /// </summary>
     public static class AmazonSchedulerDefaultConfiguration
     {

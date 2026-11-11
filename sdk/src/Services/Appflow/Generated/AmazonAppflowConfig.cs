@@ -27,12 +27,12 @@ using Amazon.Appflow.Internal;
 namespace Amazon.Appflow
 {
     /// <summary>
-    /// Configuration for accessing Amazon Appflow service
+    /// Configuration for accessing Amazon Appflow
     /// </summary>
     public partial class AmazonAppflowConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Appflow", "4.0.101.10");
+            InternalSDKUtils.BuildUserAgentString("Appflow", "4.0.101.14");
 
         private static readonly AmazonAppflowEndpointResolver EndpointResolver =
             new AmazonAppflowEndpointResolver();

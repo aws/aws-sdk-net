@@ -27,12 +27,12 @@ using Amazon.BedrockAgentRuntime.Internal;
 namespace Amazon.BedrockAgentRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon BedrockAgentRuntime service
+    /// Configuration for accessing Agents for Amazon Bedrock Runtime
     /// </summary>
     public partial class AmazonBedrockAgentRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Bedrock Agent Runtime", "4.0.104.2");
+            InternalSDKUtils.BuildUserAgentString("Bedrock Agent Runtime", "4.0.106.2");
 
         private static readonly AmazonBedrockAgentRuntimeEndpointResolver EndpointResolver =
             new AmazonBedrockAgentRuntimeEndpointResolver();

@@ -26,7 +26,7 @@ using Amazon.Mgn.Endpoints;
 namespace Amazon.Mgn.Internal
 {
     /// <summary>
-    /// Amazon Mgn endpoint provider.
+    /// Application Migration Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MgnEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

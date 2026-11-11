@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ResourceGroupsTaggingAPI
 {
     /// <summary>
-    /// Configuration for accessing Amazon ResourceGroupsTaggingAPI service
+    /// Configuration for accessing AWS Resource Groups Tagging API
     /// </summary>
     public static class AmazonResourceGroupsTaggingAPIDefaultConfiguration
     {

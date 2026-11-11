@@ -27,12 +27,12 @@ using Amazon.Lex.Internal;
 namespace Amazon.Lex
 {
     /// <summary>
-    /// Configuration for accessing Amazon Lex service
+    /// Configuration for accessing Amazon Lex Runtime Service
     /// </summary>
     public partial class AmazonLexConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Lex Runtime Service", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Lex Runtime Service", "4.0.100.26");
 
         private static readonly AmazonLexEndpointResolver EndpointResolver =
             new AmazonLexEndpointResolver();

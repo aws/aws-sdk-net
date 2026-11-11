@@ -26,7 +26,7 @@ using Amazon.Resiliencehubv2.Endpoints;
 namespace Amazon.Resiliencehubv2.Internal
 {
     /// <summary>
-    /// Amazon Resiliencehubv2 endpoint provider.
+    /// AWS Resilience Hub V2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="Resiliencehubv2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

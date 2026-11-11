@@ -27,12 +27,12 @@ using Amazon.RAM.Internal;
 namespace Amazon.RAM
 {
     /// <summary>
-    /// Configuration for accessing Amazon RAM service
+    /// Configuration for accessing AWS Resource Access Manager
     /// </summary>
     public partial class AmazonRAMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("RAM", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("RAM", "4.0.101.1");
 
         private static readonly AmazonRAMEndpointResolver EndpointResolver =
             new AmazonRAMEndpointResolver();

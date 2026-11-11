@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.S3Tables
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Tables service
+    /// Configuration for accessing Amazon S3 Tables
     /// </summary>
     public static class AmazonS3TablesDefaultConfiguration
     {

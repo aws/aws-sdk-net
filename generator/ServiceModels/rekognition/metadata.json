@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.",
+  "base-name": "Rekognition",
   "legacy-service-id": "Rekognition"
 }

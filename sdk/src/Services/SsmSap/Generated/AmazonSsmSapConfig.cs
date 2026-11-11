@@ -27,12 +27,12 @@ using Amazon.SsmSap.Internal;
 namespace Amazon.SsmSap
 {
     /// <summary>
-    /// Configuration for accessing Amazon SsmSap service
+    /// Configuration for accessing AWS Systems Manager for SAP
     /// </summary>
     public partial class AmazonSsmSapConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Ssm Sap", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Ssm Sap", "4.0.100.26");
 
         private static readonly AmazonSsmSapEndpointResolver EndpointResolver =
             new AmazonSsmSapEndpointResolver();

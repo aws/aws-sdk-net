@@ -31,7 +31,7 @@ using Amazon.PcaConnectorScep.Endpoints;
 namespace Amazon.PcaConnectorScep.Internal
 {
     /// <summary>
-    /// Amazon PcaConnectorScep endpoint resolver.
+    /// Private CA Connector for SCEP endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for PcaConnectorScep service requests.
     /// <para />

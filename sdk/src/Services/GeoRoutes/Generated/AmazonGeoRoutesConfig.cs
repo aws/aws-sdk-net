@@ -27,12 +27,12 @@ using Amazon.GeoRoutes.Internal;
 namespace Amazon.GeoRoutes
 {
     /// <summary>
-    /// Configuration for accessing Amazon GeoRoutes service
+    /// Configuration for accessing Amazon Location Service Routes V2
     /// </summary>
     public partial class AmazonGeoRoutesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Geo Routes", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Geo Routes", "4.0.100.26");
 
         private static readonly AmazonGeoRoutesEndpointResolver EndpointResolver =
             new AmazonGeoRoutesEndpointResolver();

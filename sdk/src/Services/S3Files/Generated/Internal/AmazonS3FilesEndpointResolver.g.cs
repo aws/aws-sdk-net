@@ -31,7 +31,7 @@ using Amazon.S3Files.Endpoints;
 namespace Amazon.S3Files.Internal
 {
     /// <summary>
-    /// Amazon S3Files endpoint resolver.
+    /// Amazon S3 Files endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for S3Files service requests.
     /// <para />

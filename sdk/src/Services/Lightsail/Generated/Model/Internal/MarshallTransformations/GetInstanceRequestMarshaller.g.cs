@@ -70,6 +70,11 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetIncludeHealthStatus())
+            {
+                context.Writer.WritePropertyName("includeHealthStatus");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeHealthStatus.Value);
+            }
             if (publicRequest.IsSetInstanceName())
             {
                 context.Writer.WritePropertyName("instanceName");

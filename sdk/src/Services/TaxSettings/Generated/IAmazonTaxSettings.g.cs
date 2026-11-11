@@ -170,6 +170,15 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  
         /// <para>
+        ///  <b>Argentina</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RegistrationType</c> valid values are <c>CUIT</c> (Clave Única de Identificación
+        /// Tributaria) and <c>CDI</c> (Clave de Identificación).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Bangladesh</b> 
         /// </para>
         ///  <ul> <li> 
@@ -458,6 +467,15 @@ namespace Amazon.TaxSettings
         ///  <ul> <li> 
         /// <para>
         /// The sector valid values are <c>Business</c> and <c>Individual</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Uruguay</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RegistrationType</c> valid values are <c>RUT</c> (Registro Único Tributario),
+        /// <c>NIE</c> (Numero de Identificacion del Extranjero), and <c>CI</c> (Cedula Identidad).
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -565,6 +583,15 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  
         /// <para>
+        ///  <b>Argentina</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RegistrationType</c> valid values are <c>CUIT</c> (Clave Única de Identificación
+        /// Tributaria) and <c>CDI</c> (Clave de Identificación).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Bangladesh</b> 
         /// </para>
         ///  <ul> <li> 
@@ -853,6 +880,15 @@ namespace Amazon.TaxSettings
         ///  <ul> <li> 
         /// <para>
         /// The sector valid values are <c>Business</c> and <c>Individual</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Uruguay</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RegistrationType</c> valid values are <c>RUT</c> (Registro Único Tributario),
+        /// <c>NIE</c> (Numero de Identificacion del Extranjero), and <c>CI</c> (Cedula Identidad).
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1508,6 +1544,15 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  
         /// <para>
+        ///  <b>Argentina</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RegistrationType</c> valid values are <c>CUIT</c> (Clave Única de Identificación
+        /// Tributaria) and <c>CDI</c> (Clave de Identificación).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Bangladesh</b> 
         /// </para>
         ///  <ul> <li> 
@@ -1796,6 +1841,15 @@ namespace Amazon.TaxSettings
         ///  <ul> <li> 
         /// <para>
         /// The sector valid values are <c>Business</c> and <c>Individual</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Uruguay</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RegistrationType</c> valid values are <c>RUT</c> (Registro Único Tributario),
+        /// <c>NIE</c> (Numero de Identificacion del Extranjero), and <c>CI</c> (Cedula Identidad).
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1902,6 +1956,15 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  
         /// <para>
+        ///  <b>Argentina</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RegistrationType</c> valid values are <c>CUIT</c> (Clave Única de Identificación
+        /// Tributaria) and <c>CDI</c> (Clave de Identificación).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Bangladesh</b> 
         /// </para>
         ///  <ul> <li> 
@@ -2190,6 +2253,15 @@ namespace Amazon.TaxSettings
         ///  <ul> <li> 
         /// <para>
         /// The sector valid values are <c>Business</c> and <c>Individual</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Uruguay</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RegistrationType</c> valid values are <c>RUT</c> (Registro Único Tributario),
+        /// <c>NIE</c> (Numero de Identificacion del Extranjero), and <c>CI</c> (Cedula Identidad).
         /// </para>
         ///  </li> </ul> 
         /// <para>

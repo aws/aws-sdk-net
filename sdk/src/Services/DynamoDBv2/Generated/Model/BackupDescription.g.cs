@@ -1,0 +1,77 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.DynamoDBv2.Model
+{
+    /// <summary>
+    /// Contains the description of the backup created for the table.
+    /// </summary>
+    public partial class BackupDescription
+    {
+        /// <summary>
+        /// Gets and sets the property BackupDetails. 
+        /// <para>
+        /// Contains the details of the backup created for the table. 
+        /// </para>
+        /// </summary>
+        public BackupDetails BackupDetails { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BackupDetails property is set.
+        /// </summary>
+        internal bool IsSetBackupDetails() => this.BackupDetails != null;
+
+        /// <summary>
+        /// Gets and sets the property SourceTableDetails. 
+        /// <para>
+        /// Contains the details of the table when the backup was created. 
+        /// </para>
+        /// </summary>
+        public SourceTableDetails SourceTableDetails { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceTableDetails property is set.
+        /// </summary>
+        internal bool IsSetSourceTableDetails() => this.SourceTableDetails != null;
+
+        /// <summary>
+        /// Gets and sets the property SourceTableFeatureDetails. 
+        /// <para>
+        /// Contains the details of the features enabled on the table when the backup was created.
+        /// For example, LSIs, GSIs, streams, TTL.
+        /// </para>
+        /// </summary>
+        public SourceTableFeatureDetails SourceTableFeatureDetails { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceTableFeatureDetails property is set.
+        /// </summary>
+        internal bool IsSetSourceTableFeatureDetails() => this.SourceTableFeatureDetails != null;
+    }
+}

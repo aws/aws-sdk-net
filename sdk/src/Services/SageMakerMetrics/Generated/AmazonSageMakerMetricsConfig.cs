@@ -27,12 +27,12 @@ using Amazon.SageMakerMetrics.Internal;
 namespace Amazon.SageMakerMetrics
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMakerMetrics service
+    /// Configuration for accessing Amazon SageMaker Metrics Service
     /// </summary>
     public partial class AmazonSageMakerMetricsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMaker Metrics", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("SageMaker Metrics", "4.0.100.26");
 
         private static readonly AmazonSageMakerMetricsEndpointResolver EndpointResolver =
             new AmazonSageMakerMetricsEndpointResolver();

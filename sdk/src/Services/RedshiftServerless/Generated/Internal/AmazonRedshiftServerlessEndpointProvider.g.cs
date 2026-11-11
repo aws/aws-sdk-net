@@ -26,7 +26,7 @@ using Amazon.RedshiftServerless.Endpoints;
 namespace Amazon.RedshiftServerless.Internal
 {
     /// <summary>
-    /// Amazon RedshiftServerless endpoint provider.
+    /// Redshift Serverless endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="RedshiftServerlessEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

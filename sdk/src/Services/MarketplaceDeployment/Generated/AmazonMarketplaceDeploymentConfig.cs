@@ -27,12 +27,12 @@ using Amazon.MarketplaceDeployment.Internal;
 namespace Amazon.MarketplaceDeployment
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceDeployment service
+    /// Configuration for accessing AWS Marketplace Deployment Service
     /// </summary>
     public partial class AmazonMarketplaceDeploymentConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Deployment", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Deployment", "4.0.100.26");
 
         private static readonly AmazonMarketplaceDeploymentEndpointResolver EndpointResolver =
             new AmazonMarketplaceDeploymentEndpointResolver();

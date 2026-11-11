@@ -27,12 +27,12 @@ using Amazon.Signin.Internal;
 namespace Amazon.Signin
 {
     /// <summary>
-    /// Configuration for accessing Amazon Signin service
+    /// Configuration for accessing AWS Sign-In Service
     /// </summary>
     public partial class AmazonSigninConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Signin", "4.0.102.0");
+            InternalSDKUtils.BuildUserAgentString("Signin", "4.0.103.1");
 
         private static readonly AmazonSigninEndpointResolver EndpointResolver =
             new AmazonSigninEndpointResolver();

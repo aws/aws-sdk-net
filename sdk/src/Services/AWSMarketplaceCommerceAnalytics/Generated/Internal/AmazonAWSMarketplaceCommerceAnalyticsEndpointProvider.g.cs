@@ -26,7 +26,7 @@ using Amazon.AWSMarketplaceCommerceAnalytics.Endpoints;
 namespace Amazon.AWSMarketplaceCommerceAnalytics.Internal
 {
     /// <summary>
-    /// Amazon AWSMarketplaceCommerceAnalytics endpoint provider.
+    /// AWS Marketplace Commerce Analytics endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AWSMarketplaceCommerceAnalyticsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

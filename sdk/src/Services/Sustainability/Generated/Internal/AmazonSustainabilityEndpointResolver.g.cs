@@ -31,7 +31,7 @@ using Amazon.Sustainability.Endpoints;
 namespace Amazon.Sustainability.Internal
 {
     /// <summary>
-    /// Amazon Sustainability endpoint resolver.
+    /// AWS Sustainability endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Sustainability service requests.
     /// <para />

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ECRPublic
 {
     /// <summary>
-    /// Configuration for accessing Amazon ECRPublic service
+    /// Configuration for accessing Amazon Elastic Container Registry Public
     /// </summary>
     public static class AmazonECRPublicDefaultConfiguration
     {

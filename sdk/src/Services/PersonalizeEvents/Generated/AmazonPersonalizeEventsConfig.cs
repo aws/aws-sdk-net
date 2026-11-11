@@ -27,12 +27,12 @@ using Amazon.PersonalizeEvents.Internal;
 namespace Amazon.PersonalizeEvents
 {
     /// <summary>
-    /// Configuration for accessing Amazon PersonalizeEvents service
+    /// Configuration for accessing Amazon Personalize Events
     /// </summary>
     public partial class AmazonPersonalizeEventsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Personalize Events", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Personalize Events", "4.0.100.26");
 
         private static readonly AmazonPersonalizeEventsEndpointResolver EndpointResolver =
             new AmazonPersonalizeEventsEndpointResolver();

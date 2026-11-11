@@ -35,6 +35,19 @@ namespace Amazon.Inspector2.Model
     public partial class GetConfigurationResponse : AmazonWebServiceResponse
     {
         /// <summary>
+        /// Gets and sets the property AmiConfiguration. 
+        /// <para>
+        /// The current state of the Amazon Machine Image (AMI) scan configuration for the account.
+        /// </para>
+        /// </summary>
+        public AmiConfigurationState AmiConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AmiConfiguration property is set.
+        /// </summary>
+        internal bool IsSetAmiConfiguration() => this.AmiConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Ec2Configuration. 
         /// <para>
         /// Specifies how the Amazon EC2 automated scan mode is currently configured for your

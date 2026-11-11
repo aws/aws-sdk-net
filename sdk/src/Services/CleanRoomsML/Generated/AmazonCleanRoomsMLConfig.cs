@@ -27,12 +27,12 @@ using Amazon.CleanRoomsML.Internal;
 namespace Amazon.CleanRoomsML
 {
     /// <summary>
-    /// Configuration for accessing Amazon CleanRoomsML service
+    /// Configuration for accessing AWS Clean Rooms ML
     /// </summary>
     public partial class AmazonCleanRoomsMLConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CleanRoomsML", "4.0.101.15");
+            InternalSDKUtils.BuildUserAgentString("CleanRoomsML", "4.0.101.19");
 
         private static readonly AmazonCleanRoomsMLEndpointResolver EndpointResolver =
             new AmazonCleanRoomsMLEndpointResolver();

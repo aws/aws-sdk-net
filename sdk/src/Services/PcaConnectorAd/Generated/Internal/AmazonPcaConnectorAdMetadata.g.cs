@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PcaConnectorAd.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon PcaConnectorAd service
+    /// Service metadata for PcaConnectorAd
     /// </summary>
     public partial class AmazonPcaConnectorAdMetadata : IServiceMetadata
     {

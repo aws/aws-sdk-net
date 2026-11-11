@@ -182,6 +182,19 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetCloudRegion() => this.CloudRegion != null;
 
         /// <summary>
+        /// Gets and sets the property ScanSource. 
+        /// <para>
+        /// The source of the scan that generated the findings for the Amazon Machine Image (AMI).
+        /// </para>
+        /// </summary>
+        public ScanSource ScanSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ScanSource property is set.
+        /// </summary>
+        internal bool IsSetScanSource() => this.ScanSource != null;
+
+        /// <summary>
         /// Gets and sets the property SeverityCounts. 
         /// <para>
         /// An object that contains the count of matched findings per severity.

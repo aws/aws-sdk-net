@@ -26,7 +26,7 @@ using Amazon.MWAA.Endpoints;
 namespace Amazon.MWAA.Internal
 {
     /// <summary>
-    /// Amazon MWAA endpoint provider.
+    /// AmazonMWAA endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MWAAEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

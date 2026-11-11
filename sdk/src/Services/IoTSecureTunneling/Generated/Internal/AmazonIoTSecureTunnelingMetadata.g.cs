@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSecureTunneling.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IoTSecureTunneling service
+    /// Service metadata for AWS IoT Secure Tunneling
     /// </summary>
     public partial class AmazonIoTSecureTunnelingMetadata : IServiceMetadata
     {

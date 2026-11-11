@@ -102,6 +102,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("gpuDevices", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<GpuDevice, GpuDeviceUnmarshaller>(GpuDeviceUnmarshaller.Instance);
+                    unmarshalledObject.GpuDevices = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("healthStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerInstanceHealthStatusUnmarshaller.Instance;

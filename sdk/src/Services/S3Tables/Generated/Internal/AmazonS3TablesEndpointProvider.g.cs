@@ -26,7 +26,7 @@ using Amazon.S3Tables.Endpoints;
 namespace Amazon.S3Tables.Internal
 {
     /// <summary>
-    /// Amazon S3Tables endpoint provider.
+    /// Amazon S3 Tables endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="S3TablesEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

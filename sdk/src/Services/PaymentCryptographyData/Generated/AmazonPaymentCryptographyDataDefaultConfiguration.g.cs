@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.PaymentCryptographyData
 {
     /// <summary>
-    /// Configuration for accessing Amazon PaymentCryptographyData service
+    /// Configuration for accessing Payment Cryptography Data Plane
     /// </summary>
     public static class AmazonPaymentCryptographyDataDefaultConfiguration
     {

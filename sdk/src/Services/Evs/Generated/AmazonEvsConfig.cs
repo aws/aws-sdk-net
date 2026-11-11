@@ -27,12 +27,12 @@ using Amazon.Evs.Internal;
 namespace Amazon.Evs
 {
     /// <summary>
-    /// Configuration for accessing Amazon Evs service
+    /// Configuration for accessing Amazon Elastic VMware Service
     /// </summary>
     public partial class AmazonEvsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("evs", "4.0.102.10");
+            InternalSDKUtils.BuildUserAgentString("evs", "4.0.103.1");
 
         private static readonly AmazonEvsEndpointResolver EndpointResolver =
             new AmazonEvsEndpointResolver();

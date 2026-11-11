@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
     {
         public void ElasticLoadBalancingV2AddTags()
         {
-            #region elbv2-add-tags-1
+            #region AddTags-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.AddTags(new AddTagsRequest 
+            var response = client.AddTags(new AddTagsRequest
             {
                 ResourceArns = new List<string> {
                     "arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188"
@@ -39,10 +40,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2CreateListener()
         {
-            #region elbv2-create-listener-1
+            #region CreateListener-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.CreateListener(new CreateListenerRequest 
+            var response = client.CreateListener(new CreateListenerRequest
             {
                 DefaultActions = new List<Action> {
                     new Action {
@@ -62,10 +63,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2CreateListener()
         {
-            #region elbv2-create-listener-2
+            #region CreateListener-2
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.CreateListener(new CreateListenerRequest 
+            var response = client.CreateListener(new CreateListenerRequest
             {
                 Certificates = new List<Certificate> {
                     new Certificate { CertificateArn = "arn:aws:iam::123456789012:server-certificate/my-server-cert" }
@@ -89,10 +90,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2CreateLoadBalancer()
         {
-            #region elbv2-create-load-balancer-1
+            #region CreateLoadBalancer-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.CreateLoadBalancer(new CreateLoadBalancerRequest 
+            var response = client.CreateLoadBalancer(new CreateLoadBalancerRequest
             {
                 Name = "my-load-balancer",
                 Subnets = new List<string> {
@@ -108,15 +109,14 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2CreateLoadBalancer()
         {
-            #region elbv2-create-load-balancer-2
+            #region CreateLoadBalancer-2
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.CreateLoadBalancer(new CreateLoadBalancerRequest 
+            var response = client.CreateLoadBalancer(new CreateLoadBalancerRequest
             {
                 Name = "my-internal-load-balancer",
                 Scheme = "internal",
                 SecurityGroups = new List<string> {
-                    
                 },
                 Subnets = new List<string> {
                     "subnet-b7d581c0",
@@ -131,10 +131,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2CreateRule()
         {
-            #region elbv2-create-rule-1
+            #region CreateRule-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.CreateRule(new CreateRuleRequest 
+            var response = client.CreateRule(new CreateRuleRequest
             {
                 Actions = new List<Action> {
                     new Action {
@@ -161,10 +161,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2CreateRule()
         {
-            #region elbv2-create-rule-2
+            #region CreateRule-2
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.CreateRule(new CreateRuleRequest 
+            var response = client.CreateRule(new CreateRuleRequest
             {
                 Actions = new List<Action> {
                     new Action {
@@ -189,10 +189,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2CreateTargetGroup()
         {
-            #region elbv2-create-target-group-1
+            #region CreateTargetGroup-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.CreateTargetGroup(new CreateTargetGroupRequest 
+            var response = client.CreateTargetGroup(new CreateTargetGroupRequest
             {
                 Name = "my-targets",
                 Port = 80,
@@ -207,10 +207,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DeleteListener()
         {
-            #region elbv2-delete-listener-1
+            #region DeleteListener-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DeleteListener(new DeleteListenerRequest 
+            var response = client.DeleteListener(new DeleteListenerRequest
             {
                 ListenerArn = "arn:aws:elasticloadbalancing:ua-west-2:123456789012:listener/app/my-load-balancer/50dc6c495c0c9188/f2f7dc8efc522ab2"
             });
@@ -221,10 +221,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DeleteLoadBalancer()
         {
-            #region elbv2-delete-load-balancer-1
+            #region DeleteLoadBalancer-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DeleteLoadBalancer(new DeleteLoadBalancerRequest 
+            var response = client.DeleteLoadBalancer(new DeleteLoadBalancerRequest
             {
                 LoadBalancerArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188"
             });
@@ -235,10 +235,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DeleteRule()
         {
-            #region elbv2-delete-rule-1
+            #region DeleteRule-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DeleteRule(new DeleteRuleRequest 
+            var response = client.DeleteRule(new DeleteRuleRequest
             {
                 RuleArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:listener-rule/app/my-load-balancer/50dc6c495c0c9188/f2f7dc8efc522ab2/1291d13826f405c3"
             });
@@ -249,10 +249,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DeleteSharedTrustStoreAssociation()
         {
-            #region delete-a-shared-trust-store-association-1721684063527
+            #region DeleteSharedTrustStoreAssociation-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DeleteSharedTrustStoreAssociation(new DeleteSharedTrustStoreAssociationRequest 
+            var response = client.DeleteSharedTrustStoreAssociation(new DeleteSharedTrustStoreAssociationRequest
             {
                 ResourceArn = "arn:aws:elasticloadbalancing:us-east-1:123456789012:loadbalancer/app/my-load-balancer/80233fa81d678c2c",
                 TrustStoreArn = "arn:aws:elasticloadbalancing:us-east-1:123456789012:truststore/my-trust-store/73e2d6bc24d8a063"
@@ -264,10 +264,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DeleteTargetGroup()
         {
-            #region elbv2-delete-target-group-1
+            #region DeleteTargetGroup-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DeleteTargetGroup(new DeleteTargetGroupRequest 
+            var response = client.DeleteTargetGroup(new DeleteTargetGroupRequest
             {
                 TargetGroupArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067"
             });
@@ -278,10 +278,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DeregisterTargets()
         {
-            #region elbv2-deregister-targets-1
+            #region DeregisterTargets-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DeregisterTargets(new DeregisterTargetsRequest 
+            var response = client.DeregisterTargets(new DeregisterTargetsRequest
             {
                 TargetGroupArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067",
                 Targets = new List<TargetDescription> {
@@ -295,10 +295,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DescribeListenerAttributes()
         {
-            #region describe-listener-attributes-1724874395194
+            #region DescribeListenerAttributes-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DescribeListenerAttributes(new DescribeListenerAttributesRequest 
+            var response = client.DescribeListenerAttributes(new DescribeListenerAttributesRequest
             {
                 ListenerArn = "aws:elasticloadbalancing:us-east-1:123456789012:listener/net/my-listener/73e2d6bc24d8a067/d5dc06411fa5bcea"
             });
@@ -309,10 +309,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DescribeListeners()
         {
-            #region elbv2-describe-listeners-1
+            #region DescribeListeners-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DescribeListeners(new DescribeListenersRequest 
+            var response = client.DescribeListeners(new DescribeListenersRequest
             {
                 ListenerArns = new List<string> {
                     "arn:aws:elasticloadbalancing:us-west-2:123456789012:listener/app/my-load-balancer/50dc6c495c0c9188/f2f7dc8efc522ab2"
@@ -326,10 +326,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DescribeLoadBalancerAttributes()
         {
-            #region elbv2-describe-load-balancer-attributes-1
+            #region DescribeLoadBalancerAttributes-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DescribeLoadBalancerAttributes(new DescribeLoadBalancerAttributesRequest 
+            var response = client.DescribeLoadBalancerAttributes(new DescribeLoadBalancerAttributesRequest
             {
                 LoadBalancerArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188"
             });
@@ -341,10 +341,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DescribeLoadBalancers()
         {
-            #region elbv2-describe-load-balancers-1
+            #region DescribeLoadBalancers-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DescribeLoadBalancers(new DescribeLoadBalancersRequest 
+            var response = client.DescribeLoadBalancers(new DescribeLoadBalancersRequest
             {
                 LoadBalancerArns = new List<string> {
                     "arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188"
@@ -358,10 +358,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DescribeRules()
         {
-            #region elbv2-describe-rules-1
+            #region DescribeRules-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DescribeRules(new DescribeRulesRequest 
+            var response = client.DescribeRules(new DescribeRulesRequest
             {
                 RuleArns = new List<string> {
                     "arn:aws:elasticloadbalancing:us-west-2:123456789012:listener-rule/app/my-load-balancer/50dc6c495c0c9188/f2f7dc8efc522ab2/9683b2d02a6cabee"
@@ -375,10 +375,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DescribeRules()
         {
-            #region elbv2-describe-rules-2
+            #region DescribeRules-2
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DescribeRules(new DescribeRulesRequest 
+            var response = client.DescribeRules(new DescribeRulesRequest
             {
                 ListenerArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:listener/net/my-nlb/1234567890abcdef/1234567890abcdef"
             });
@@ -390,10 +390,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DescribeSSLPolicies()
         {
-            #region elbv2-describe-ssl-policies-1
+            #region DescribeSSLPolicies-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DescribeSSLPolicies(new DescribeSSLPoliciesRequest 
+            var response = client.DescribeSSLPolicies(new DescribeSSLPoliciesRequest
             {
                 Names = new List<string> {
                     "ELBSecurityPolicy-2015-05"
@@ -407,10 +407,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DescribeTags()
         {
-            #region elbv2-describe-tags-1
+            #region DescribeTags-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DescribeTags(new DescribeTagsRequest 
+            var response = client.DescribeTags(new DescribeTagsRequest
             {
                 ResourceArns = new List<string> {
                     "arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188"
@@ -424,10 +424,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DescribeTargetGroupAttributes()
         {
-            #region elbv2-describe-target-group-attributes-1
+            #region DescribeTargetGroupAttributes-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DescribeTargetGroupAttributes(new DescribeTargetGroupAttributesRequest 
+            var response = client.DescribeTargetGroupAttributes(new DescribeTargetGroupAttributesRequest
             {
                 TargetGroupArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067"
             });
@@ -439,10 +439,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DescribeTargetGroups()
         {
-            #region elbv2-describe-target-groups-1
+            #region DescribeTargetGroups-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DescribeTargetGroups(new DescribeTargetGroupsRequest 
+            var response = client.DescribeTargetGroups(new DescribeTargetGroupsRequest
             {
                 TargetGroupArns = new List<string> {
                     "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067"
@@ -456,10 +456,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DescribeTargetHealth()
         {
-            #region elbv2-describe-target-health-1
+            #region DescribeTargetHealth-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DescribeTargetHealth(new DescribeTargetHealthRequest 
+            var response = client.DescribeTargetHealth(new DescribeTargetHealthRequest
             {
                 TargetGroupArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067"
             });
@@ -471,10 +471,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2DescribeTargetHealth()
         {
-            #region elbv2-describe-target-health-2
+            #region DescribeTargetHealth-2
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.DescribeTargetHealth(new DescribeTargetHealthRequest 
+            var response = client.DescribeTargetHealth(new DescribeTargetHealthRequest
             {
                 TargetGroupArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067",
                 Targets = new List<TargetDescription> {
@@ -492,10 +492,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2GetResourcePolicy()
         {
-            #region retrieve-a-resource-policy-1721684356628
+            #region GetResourcePolicy-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.GetResourcePolicy(new GetResourcePolicyRequest 
+            var response = client.GetResourcePolicy(new GetResourcePolicyRequest
             {
                 ResourceArn = "arn:aws:elasticloadbalancing:us-east-1:123456789012:truststore/my-trust-store/73e2d6bc24d8a067"
             });
@@ -506,10 +506,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2ModifyListener()
         {
-            #region elbv2-modify-listener-1
+            #region ModifyListener-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.ModifyListener(new ModifyListenerRequest 
+            var response = client.ModifyListener(new ModifyListenerRequest
             {
                 DefaultActions = new List<Action> {
                     new Action {
@@ -527,10 +527,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2ModifyListener()
         {
-            #region elbv2-modify-listener-2
+            #region ModifyListener-2
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.ModifyListener(new ModifyListenerRequest 
+            var response = client.ModifyListener(new ModifyListenerRequest
             {
                 Certificates = new List<Certificate> {
                     new Certificate { CertificateArn = "arn:aws:iam::123456789012:server-certificate/my-new-server-cert" }
@@ -545,10 +545,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2ModifyLoadBalancerAttributes()
         {
-            #region elbv2-modify-load-balancer-attributes-1
+            #region ModifyLoadBalancerAttributes-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.ModifyLoadBalancerAttributes(new ModifyLoadBalancerAttributesRequest 
+            var response = client.ModifyLoadBalancerAttributes(new ModifyLoadBalancerAttributesRequest
             {
                 Attributes = new List<LoadBalancerAttribute> {
                     new LoadBalancerAttribute {
@@ -566,10 +566,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2ModifyLoadBalancerAttributes()
         {
-            #region elbv2-modify-load-balancer-attributes-2
+            #region ModifyLoadBalancerAttributes-2
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.ModifyLoadBalancerAttributes(new ModifyLoadBalancerAttributesRequest 
+            var response = client.ModifyLoadBalancerAttributes(new ModifyLoadBalancerAttributesRequest
             {
                 Attributes = new List<LoadBalancerAttribute> {
                     new LoadBalancerAttribute {
@@ -587,10 +587,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2ModifyLoadBalancerAttributes()
         {
-            #region elbv2-modify-load-balancer-attributes-3
+            #region ModifyLoadBalancerAttributes-3
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.ModifyLoadBalancerAttributes(new ModifyLoadBalancerAttributesRequest 
+            var response = client.ModifyLoadBalancerAttributes(new ModifyLoadBalancerAttributesRequest
             {
                 Attributes = new List<LoadBalancerAttribute> {
                     new LoadBalancerAttribute {
@@ -616,10 +616,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2ModifyRule()
         {
-            #region elbv2-modify-rule-1
+            #region ModifyRule-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.ModifyRule(new ModifyRuleRequest 
+            var response = client.ModifyRule(new ModifyRuleRequest
             {
                 Conditions = new List<RuleCondition> {
                     new RuleCondition {
@@ -639,10 +639,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2ModifyRule()
         {
-            #region elbv2-modify-rule-2
+            #region ModifyRule-2
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.ModifyRule(new ModifyRuleRequest 
+            var response = client.ModifyRule(new ModifyRuleRequest
             {
                 Actions = new List<Action> {
                     new Action {
@@ -660,10 +660,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2ModifyTargetGroup()
         {
-            #region elbv2-modify-target-group-1
+            #region ModifyTargetGroup-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.ModifyTargetGroup(new ModifyTargetGroupRequest 
+            var response = client.ModifyTargetGroup(new ModifyTargetGroupRequest
             {
                 HealthCheckPort = "443",
                 HealthCheckProtocol = "HTTPS",
@@ -677,10 +677,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2ModifyTargetGroupAttributes()
         {
-            #region elbv2-modify-target-group-attributes-1
+            #region ModifyTargetGroupAttributes-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.ModifyTargetGroupAttributes(new ModifyTargetGroupAttributesRequest 
+            var response = client.ModifyTargetGroupAttributes(new ModifyTargetGroupAttributesRequest
             {
                 Attributes = new List<TargetGroupAttribute> {
                     new TargetGroupAttribute {
@@ -698,10 +698,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2RegisterTargets()
         {
-            #region elbv2-register-targets-1
+            #region RegisterTargets-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.RegisterTargets(new RegisterTargetsRequest 
+            var response = client.RegisterTargets(new RegisterTargetsRequest
             {
                 TargetGroupArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067",
                 Targets = new List<TargetDescription> {
@@ -716,10 +716,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2RegisterTargets()
         {
-            #region elbv2-register-targets-2
+            #region RegisterTargets-2
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.RegisterTargets(new RegisterTargetsRequest 
+            var response = client.RegisterTargets(new RegisterTargetsRequest
             {
                 TargetGroupArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-new-targets/3bb63f11dfb0faf9",
                 Targets = new List<TargetDescription> {
@@ -740,10 +740,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2RemoveTags()
         {
-            #region elbv2-remove-tags-1
+            #region RemoveTags-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.RemoveTags(new RemoveTagsRequest 
+            var response = client.RemoveTags(new RemoveTagsRequest
             {
                 ResourceArns = new List<string> {
                     "arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188"
@@ -760,10 +760,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2SetRulePriorities()
         {
-            #region elbv2-set-rule-priorities-1
+            #region SetRulePriorities-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.SetRulePriorities(new SetRulePrioritiesRequest 
+            var response = client.SetRulePriorities(new SetRulePrioritiesRequest
             {
                 RulePriorities = new List<RulePriorityPair> {
                     new RulePriorityPair {
@@ -780,10 +780,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2SetSecurityGroups()
         {
-            #region elbv2-set-security-groups-1
+            #region SetSecurityGroups-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.SetSecurityGroups(new SetSecurityGroupsRequest 
+            var response = client.SetSecurityGroups(new SetSecurityGroupsRequest
             {
                 LoadBalancerArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188",
                 SecurityGroups = new List<string> {
@@ -798,10 +798,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
 
         public void ElasticLoadBalancingV2SetSubnets()
         {
-            #region elbv2-set-subnets-1
+            #region SetSubnets-1
 
             var client = new AmazonElasticLoadBalancingV2Client();
-            var response = client.SetSubnets(new SetSubnetsRequest 
+            var response = client.SetSubnets(new SetSubnetsRequest
             {
                 LoadBalancerArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188",
                 Subnets = new List<string> {
@@ -815,13 +815,10 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

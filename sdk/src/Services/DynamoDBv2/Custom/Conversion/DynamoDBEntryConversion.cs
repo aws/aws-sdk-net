@@ -24,7 +24,7 @@ using System.Diagnostics.CodeAnalysis;
 using ThirdParty.RuntimeBackports;
 
 
-#if NETSTANDARD
+#if !NETFRAMEWORK
 using Amazon.Runtime.Internal.Util;
 #endif
 

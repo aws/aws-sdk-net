@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Continuum.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Continuum service
+    /// Service metadata for AWS Continuum
     /// </summary>
     public partial class AmazonContinuumMetadata : IServiceMetadata
     {

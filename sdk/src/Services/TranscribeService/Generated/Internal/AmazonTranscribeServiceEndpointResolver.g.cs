@@ -31,7 +31,7 @@ using Amazon.TranscribeService.Endpoints;
 namespace Amazon.TranscribeService.Internal
 {
     /// <summary>
-    /// Amazon TranscribeService endpoint resolver.
+    /// Amazon Transcribe Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for TranscribeService service requests.
     /// <para />

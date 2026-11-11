@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "This release introduces support for Amazon Lookout for Equipment.",
   "generate-client-constructors": true,
+  "base-name": "LookoutEquipment",
   "legacy-service-id": "LookoutEquipment"
 }

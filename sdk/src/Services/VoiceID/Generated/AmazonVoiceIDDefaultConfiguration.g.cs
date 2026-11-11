@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.VoiceID
 {
     /// <summary>
-    /// Configuration for accessing Amazon VoiceID service
+    /// Configuration for accessing Amazon Voice ID
     /// </summary>
     public static class AmazonVoiceIDDefaultConfiguration
     {

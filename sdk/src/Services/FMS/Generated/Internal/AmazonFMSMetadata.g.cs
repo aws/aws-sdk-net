@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon FMS service
+    /// Service metadata for Firewall Management Service
     /// </summary>
     public partial class AmazonFMSMetadata : IServiceMetadata
     {

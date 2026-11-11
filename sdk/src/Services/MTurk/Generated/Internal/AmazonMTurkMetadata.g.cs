@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MTurk.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MTurk service
+    /// Service metadata for Amazon Mechanical Turk
     /// </summary>
     public partial class AmazonMTurkMetadata : IServiceMetadata
     {

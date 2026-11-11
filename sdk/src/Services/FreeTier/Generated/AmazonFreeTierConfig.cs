@@ -27,12 +27,12 @@ using Amazon.FreeTier.Internal;
 namespace Amazon.FreeTier
 {
     /// <summary>
-    /// Configuration for accessing Amazon FreeTier service
+    /// Configuration for accessing AWS Free Tier
     /// </summary>
     public partial class AmazonFreeTierConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("FreeTier", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("FreeTier", "4.0.100.25");
 
         private static readonly AmazonFreeTierEndpointResolver EndpointResolver =
             new AmazonFreeTierEndpointResolver();

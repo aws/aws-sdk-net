@@ -27,12 +27,12 @@ using Amazon.CodeCommit.Internal;
 namespace Amazon.CodeCommit
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeCommit service
+    /// Configuration for accessing AWS CodeCommit
     /// </summary>
     public partial class AmazonCodeCommitConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeCommit", "4.0.102.2");
+            InternalSDKUtils.BuildUserAgentString("CodeCommit", "4.0.102.6");
 
         private static readonly AmazonCodeCommitEndpointResolver EndpointResolver =
             new AmazonCodeCommitEndpointResolver();

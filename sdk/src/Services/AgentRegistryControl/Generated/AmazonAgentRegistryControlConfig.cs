@@ -27,12 +27,12 @@ using Amazon.AgentRegistryControl.Internal;
 namespace Amazon.AgentRegistryControl
 {
     /// <summary>
-    /// Configuration for accessing Amazon AgentRegistryControl service
+    /// Configuration for accessing Agent Registry Control
     /// </summary>
     public partial class AmazonAgentRegistryControlConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Agent Registry Control", "4.0.103.4");
+            InternalSDKUtils.BuildUserAgentString("Agent Registry Control", "4.0.104.2");
 
         private static readonly AmazonAgentRegistryControlEndpointResolver EndpointResolver =
             new AmazonAgentRegistryControlEndpointResolver();

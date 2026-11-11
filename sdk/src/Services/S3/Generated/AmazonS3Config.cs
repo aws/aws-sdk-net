@@ -28,12 +28,12 @@ using Amazon.S3.Internal;
 namespace Amazon.S3
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3 service
+    /// Configuration for accessing Amazon Simple Storage Service
     /// </summary>
     public partial class AmazonS3Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("S3", "4.0.104.7");
+            InternalSDKUtils.BuildUserAgentString("S3", "4.0.104.12");
 
         private static readonly AmazonS3EndpointResolver EndpointResolver =
             new AmazonS3EndpointResolver();

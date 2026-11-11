@@ -31,7 +31,7 @@ using Amazon.CostOptimizationHub.Endpoints;
 namespace Amazon.CostOptimizationHub.Internal
 {
     /// <summary>
-    /// Amazon CostOptimizationHub endpoint resolver.
+    /// Cost Optimization Hub endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CostOptimizationHub service requests.
     /// <para />

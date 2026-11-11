@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS CodeBuild is a fully-managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit tests, and produces artifacts that are ready to deploy.",
+  "base-name": "CodeBuild",
   "legacy-service-id": "CodeBuild"
 }

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Uxc.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Uxc service
+    /// Service metadata for AWS User Experience Customization
     /// </summary>
     public partial class AmazonUxcMetadata : IServiceMetadata
     {

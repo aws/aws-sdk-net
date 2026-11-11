@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.RTBFabric
 {
     /// <summary>
-    /// Configuration for accessing Amazon RTBFabric service
+    /// Configuration for accessing RTBFabric
     /// </summary>
     public static class AmazonRTBFabricDefaultConfiguration
     {

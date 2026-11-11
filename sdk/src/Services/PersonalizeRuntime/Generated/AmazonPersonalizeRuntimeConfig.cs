@@ -27,12 +27,12 @@ using Amazon.PersonalizeRuntime.Internal;
 namespace Amazon.PersonalizeRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon PersonalizeRuntime service
+    /// Configuration for accessing Amazon Personalize Runtime
     /// </summary>
     public partial class AmazonPersonalizeRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Personalize Runtime", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Personalize Runtime", "4.0.100.26");
 
         private static readonly AmazonPersonalizeRuntimeEndpointResolver EndpointResolver =
             new AmazonPersonalizeRuntimeEndpointResolver();

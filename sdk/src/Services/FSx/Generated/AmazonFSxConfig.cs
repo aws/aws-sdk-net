@@ -27,12 +27,12 @@ using Amazon.FSx.Internal;
 namespace Amazon.FSx
 {
     /// <summary>
-    /// Configuration for accessing Amazon FSx service
+    /// Configuration for accessing Amazon FSx
     /// </summary>
     public partial class AmazonFSxConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("FSx", "4.0.101.8");
+            InternalSDKUtils.BuildUserAgentString("FSx", "4.0.101.12");
 
         private static readonly AmazonFSxEndpointResolver EndpointResolver =
             new AmazonFSxEndpointResolver();

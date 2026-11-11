@@ -26,7 +26,7 @@ using Amazon.LambdaCore.Endpoints;
 namespace Amazon.LambdaCore.Internal
 {
     /// <summary>
-    /// Amazon LambdaCore endpoint provider.
+    /// AWS Lambda Core endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="LambdaCoreEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

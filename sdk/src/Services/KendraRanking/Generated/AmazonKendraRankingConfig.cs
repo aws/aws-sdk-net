@@ -27,12 +27,12 @@ using Amazon.KendraRanking.Internal;
 namespace Amazon.KendraRanking
 {
     /// <summary>
-    /// Configuration for accessing Amazon KendraRanking service
+    /// Configuration for accessing Amazon Kendra Intelligent Ranking
     /// </summary>
     public partial class AmazonKendraRankingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kendra Ranking", "4.0.101.15");
+            InternalSDKUtils.BuildUserAgentString("Kendra Ranking", "4.0.101.19");
 
         private static readonly AmazonKendraRankingEndpointResolver EndpointResolver =
             new AmazonKendraRankingEndpointResolver();

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2InstanceConnect.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon EC2InstanceConnect service
+    /// Service metadata for AWS EC2 Instance Connect
     /// </summary>
     public partial class AmazonEC2InstanceConnectMetadata : IServiceMetadata
     {

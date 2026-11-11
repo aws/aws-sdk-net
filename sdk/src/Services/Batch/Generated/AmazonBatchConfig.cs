@@ -27,12 +27,12 @@ using Amazon.Batch.Internal;
 namespace Amazon.Batch
 {
     /// <summary>
-    /// Configuration for accessing Amazon Batch service
+    /// Configuration for accessing AWS Batch
     /// </summary>
     public partial class AmazonBatchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Batch", "4.0.104.6");
+            InternalSDKUtils.BuildUserAgentString("Batch", "4.0.105.1");
 
         private static readonly AmazonBatchEndpointResolver EndpointResolver =
             new AmazonBatchEndpointResolver();

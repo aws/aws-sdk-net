@@ -27,12 +27,12 @@ using Amazon.Continuum.Internal;
 namespace Amazon.Continuum
 {
     /// <summary>
-    /// Configuration for accessing Amazon Continuum service
+    /// Configuration for accessing AWS Continuum
     /// </summary>
     public partial class AmazonContinuumConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Continuum", "4.0.100.1");
+            InternalSDKUtils.BuildUserAgentString("Continuum", "4.0.100.5");
 
         private static readonly AmazonContinuumEndpointResolver EndpointResolver =
             new AmazonContinuumEndpointResolver();

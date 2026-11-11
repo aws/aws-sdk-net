@@ -45,6 +45,18 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetPath())
+            {
+                context.Writer.WritePropertyName("path");
+                context.Writer.WriteStringValue(requestObject.Path);
+            }
+
+            if (requestObject.IsSetPort())
+            {
+                context.Writer.WritePropertyName("port");
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
+            }
+
             if (requestObject.IsSetServerProtocol())
             {
                 context.Writer.WritePropertyName("serverProtocol");

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MarketplaceEntitlementService
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceEntitlementService service
+    /// Configuration for accessing AWS Marketplace Entitlement Service
     /// </summary>
     public static class AmazonMarketplaceEntitlementServiceDefaultConfiguration
     {

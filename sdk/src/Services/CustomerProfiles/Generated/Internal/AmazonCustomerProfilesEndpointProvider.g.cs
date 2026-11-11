@@ -26,7 +26,7 @@ using Amazon.CustomerProfiles.Endpoints;
 namespace Amazon.CustomerProfiles.Internal
 {
     /// <summary>
-    /// Amazon CustomerProfiles endpoint provider.
+    /// Amazon Connect Customer Profiles endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CustomerProfilesEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

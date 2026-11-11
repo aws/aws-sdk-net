@@ -14,7 +14,7 @@
     <property>Amazon.LexRuntimeV2.Model.DeleteSessionRequest.SessionId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.DeleteSessionResponse.BotId</property>
@@ -30,7 +30,7 @@
     <property>Amazon.LexRuntimeV2.Model.DeleteSessionResponse.SessionId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.GetSessionRequest.BotId</property>
@@ -46,7 +46,7 @@
     <property>Amazon.LexRuntimeV2.Model.GetSessionRequest.SessionId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.GetSessionResponse.SessionId</property>
@@ -70,7 +70,7 @@
     <property>Amazon.LexRuntimeV2.Model.PutSessionRequest.SessionId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.PutSessionResponse.ContentType</property>
@@ -88,7 +88,7 @@
     <property>Amazon.LexRuntimeV2.Model.PutSessionResponse.SessionId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.PutSessionResponse.SessionStateValue</property>
@@ -108,7 +108,7 @@
     <property>Amazon.LexRuntimeV2.Model.RecognizeTextRequest.SessionId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.RecognizeTextRequest.Text</property>
@@ -119,7 +119,7 @@
     <property>Amazon.LexRuntimeV2.Model.RecognizeTextResponse.SessionId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.RecognizeUtteranceRequest.BotId</property>
@@ -143,7 +143,7 @@
     <property>Amazon.LexRuntimeV2.Model.RecognizeUtteranceRequest.SessionId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.RecognizeUtteranceResponse.ContentType</property>
@@ -177,7 +177,7 @@
     <property>Amazon.LexRuntimeV2.Model.RecognizeUtteranceResponse.SessionId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.RecognizeUtteranceResponse.SessionStateValue</property>
@@ -197,7 +197,7 @@
     <property>Amazon.LexRuntimeV2.Model.StartConversationRequest.SessionId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.ActiveContext.Name</property>
@@ -223,7 +223,7 @@
     <property>Amazon.LexRuntimeV2.Model.AudioInputEvent.EventId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.AudioResponseEvent.ContentType</property>
@@ -233,7 +233,7 @@
     <property>Amazon.LexRuntimeV2.Model.AudioResponseEvent.EventId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.Button.Text</property>
@@ -249,11 +249,23 @@
     <property>Amazon.LexRuntimeV2.Model.ConfigurationEvent.EventId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.ConfigurationEvent.ResponseContentType</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexRuntimeV2.Model.DTMFInputEvent.EventId</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexRuntimeV2.Model.DTMFInputEvent.InputCharacter</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>^[A-D0-9#*]{1}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.DialogAction.SlotToElicit</property>
@@ -263,19 +275,7 @@
     <property>Amazon.LexRuntimeV2.Model.DisconnectionEvent.EventId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LexRuntimeV2.Model.DTMFInputEvent.EventId</property>
-    <min>2</min>
-    <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LexRuntimeV2.Model.DTMFInputEvent.InputCharacter</property>
-    <min>1</min>
-    <max>1</max>
-    <pattern>^[A-D0-9#*]{1}$</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.ElicitSubSlot.Name</property>
@@ -285,7 +285,7 @@
     <property>Amazon.LexRuntimeV2.Model.HeartbeatEvent.EventId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.ImageResponseCard.ImageUrl</property>
@@ -310,13 +310,13 @@
     <property>Amazon.LexRuntimeV2.Model.IntentResultEvent.EventId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.IntentResultEvent.SessionId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.Message.Content</property>
@@ -327,19 +327,19 @@
     <property>Amazon.LexRuntimeV2.Model.PlaybackCompletionEvent.EventId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.PlaybackInterruptionEvent.CausedByEventId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.PlaybackInterruptionEvent.EventId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.RecognizedBotMember.BotId</property>
@@ -366,7 +366,7 @@
     <property>Amazon.LexRuntimeV2.Model.TextInputEvent.EventId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.TextInputEvent.Text</property>
@@ -377,13 +377,13 @@
     <property>Amazon.LexRuntimeV2.Model.TextResponseEvent.EventId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.TranscriptEvent.EventId</property>
     <min>2</min>
     <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.Value.InterpretedValue</property>

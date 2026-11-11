@@ -27,12 +27,12 @@ using Amazon.MigrationHubStrategyRecommendations.Internal;
 namespace Amazon.MigrationHubStrategyRecommendations
 {
     /// <summary>
-    /// Configuration for accessing Amazon MigrationHubStrategyRecommendations service
+    /// Configuration for accessing Migration Hub Strategy Recommendations
     /// </summary>
     public partial class AmazonMigrationHubStrategyRecommendationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MigrationHubStrategy", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("MigrationHubStrategy", "4.0.100.26");
 
         private static readonly AmazonMigrationHubStrategyRecommendationsEndpointResolver EndpointResolver =
             new AmazonMigrationHubStrategyRecommendationsEndpointResolver();

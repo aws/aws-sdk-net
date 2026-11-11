@@ -45,6 +45,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetLastModified())
+            {
+                context.Writer.WritePropertyName("LastModified");
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.LastModified.Value));
+            }
+
             if (requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("ResourceType");

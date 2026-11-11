@@ -27,12 +27,12 @@ using Amazon.NeptuneGraph.Internal;
 namespace Amazon.NeptuneGraph
 {
     /// <summary>
-    /// Configuration for accessing Amazon NeptuneGraph service
+    /// Configuration for accessing Amazon Neptune Graph
     /// </summary>
     public partial class AmazonNeptuneGraphConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Neptune Graph", "4.0.102.8");
+            InternalSDKUtils.BuildUserAgentString("Neptune Graph", "4.0.102.12");
 
         private static readonly AmazonNeptuneGraphEndpointResolver EndpointResolver =
             new AmazonNeptuneGraphEndpointResolver();

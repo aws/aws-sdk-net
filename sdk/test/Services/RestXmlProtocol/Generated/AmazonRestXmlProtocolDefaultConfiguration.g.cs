@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.RestXmlProtocol
 {
     /// <summary>
-    /// Configuration for accessing Amazon RestXmlProtocol service
+    /// Configuration for accessing Sample Rest Xml Protocol Service
     /// </summary>
     public static class AmazonRestXmlProtocolDefaultConfiguration
     {

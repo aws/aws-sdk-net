@@ -31,7 +31,7 @@ using Amazon.MainframeModernization.Endpoints;
 namespace Amazon.MainframeModernization.Internal
 {
     /// <summary>
-    /// Amazon MainframeModernization endpoint resolver.
+    /// AWSMainframeModernization endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MainframeModernization service requests.
     /// <para />

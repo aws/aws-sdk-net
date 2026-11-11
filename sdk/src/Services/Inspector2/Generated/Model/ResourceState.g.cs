@@ -35,6 +35,16 @@ namespace Amazon.Inspector2.Model
     public partial class ResourceState
     {
         /// <summary>
+        /// Gets and sets the property Ami.
+        /// </summary>
+        public State Ami { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ami property is set.
+        /// </summary>
+        internal bool IsSetAmi() => this.Ami != null;
+
+        /// <summary>
         /// Gets and sets the property CodeRepository.
         /// </summary>
         public State CodeRepository { get; set; }

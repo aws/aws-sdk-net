@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VPCLattice.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon VPCLattice service
+    /// Service metadata for Amazon VPC Lattice
     /// </summary>
     public partial class AmazonVPCLatticeMetadata : IServiceMetadata
     {

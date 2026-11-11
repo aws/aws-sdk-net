@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectWisdomService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ConnectWisdomService service
+    /// Service metadata for Amazon Connect Wisdom Service
     /// </summary>
     public partial class AmazonConnectWisdomServiceMetadata : IServiceMetadata
     {

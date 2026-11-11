@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).",
   "generate-client-constructors": true,
+  "base-name": "KafkaConnect",
   "legacy-service-id": "KafkaConnect"
 }

@@ -26,7 +26,7 @@ using Amazon.Macie2.Endpoints;
 namespace Amazon.Macie2.Internal
 {
     /// <summary>
-    /// Amazon Macie2 endpoint provider.
+    /// Amazon Macie 2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="Macie2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

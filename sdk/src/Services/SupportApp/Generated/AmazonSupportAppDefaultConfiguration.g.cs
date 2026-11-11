@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SupportApp
 {
     /// <summary>
-    /// Configuration for accessing Amazon SupportApp service
+    /// Configuration for accessing AWS Support App
     /// </summary>
     public static class AmazonSupportAppDefaultConfiguration
     {

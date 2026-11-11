@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// The options you can specify when you create a new version of a grant, such as activation
-    /// override behavior. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted
+    /// The options you can specify when you create a grant or a new version of a grant, such
+    /// as activation override behavior. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted
     /// licenses in License Manager</a> in the <i>License Manager User Guide</i>.
     /// </summary>
     public partial class Options
@@ -41,8 +41,10 @@ namespace Amazon.LicenseManager.Model
         /// <para>
         /// An activation option for your grant that determines the behavior of activating a grant.
         /// Activation options can only be used with granted licenses sourced from the Amazon
-        /// Web Services Marketplace. Additionally, the operation must specify the value of <c>ACTIVE</c>
-        /// for the <c>Status</c> parameter.
+        /// Web Services Marketplace. Additionally, the operation must activate the grant. For
+        /// the <c>CreateGrantVersion</c> operation, specify <c>ACTIVE</c> for the <c>Status</c>
+        /// parameter. For the <c>CreateGrant</c> operation, specify <c>ACTIVE</c> for the <c>DesiredStatus</c>
+        /// option.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -78,5 +80,26 @@ namespace Amazon.LicenseManager.Model
         /// Checks to see if the ActivationOverrideBehavior property is set.
         /// </summary>
         internal bool IsSetActivationOverrideBehavior() => this.ActivationOverrideBehavior != null;
+
+        /// <summary>
+        /// Gets and sets the property DesiredStatus. 
+        /// <para>
+        /// The status of the grant after License Manager creates it. The only supported value
+        /// is <c>ACTIVE</c>. Specify <c>ACTIVE</c> to create and activate the grant in one request.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify this option only for the <c>CreateGrant</c> operation, and only when
+        /// the grant principal is an organization or an organizational unit (OU). To change the
+        /// status of an existing grant, use the <c>Status</c> parameter of the <c>CreateGrantVersion</c>
+        /// operation.
+        /// </para>
+        /// </summary>
+        public GrantStatus DesiredStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DesiredStatus property is set.
+        /// </summary>
+        internal bool IsSetDesiredStatus() => this.DesiredStatus != null;
     }
 }

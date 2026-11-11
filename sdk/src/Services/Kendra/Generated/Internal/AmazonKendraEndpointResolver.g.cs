@@ -31,7 +31,7 @@ using Amazon.Kendra.Endpoints;
 namespace Amazon.Kendra.Internal
 {
     /// <summary>
-    /// Amazon Kendra endpoint resolver.
+    /// AWSKendraFrontendService endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Kendra service requests.
     /// <para />

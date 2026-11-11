@@ -60,6 +60,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("onBehalfOfAuthenticationConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = OnBehalfOfAuthenticationConfigUnmarshaller.Instance;
+                    unmarshalledObject.OnBehalfOfAuthenticationConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("tokenExchangeGrantTypeConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TokenExchangeGrantTypeConfigTypeUnmarshaller.Instance;

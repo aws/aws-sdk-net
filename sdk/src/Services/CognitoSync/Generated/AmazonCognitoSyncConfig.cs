@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,27 +27,23 @@ using Amazon.CognitoSync.Internal;
 namespace Amazon.CognitoSync
 {
     /// <summary>
-    /// Configuration for accessing Amazon CognitoSync service
+    /// Configuration for accessing Amazon Cognito Sync
     /// </summary>
     public partial class AmazonCognitoSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Cognito Sync", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Cognito Sync", "4.0.100.26");
 
         private static readonly AmazonCognitoSyncEndpointResolver EndpointResolver =
             new AmazonCognitoSyncEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "Cognito Sync";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "Cognito Sync";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.CognitoSync
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "cognito-sync";
-            }
-        }
+        public override string RegionEndpointServiceName => "cognito-sync";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2014-06-30";
-            }
-        }
+        public override string ServiceVersion => "2014-06-30";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.CognitoSync
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

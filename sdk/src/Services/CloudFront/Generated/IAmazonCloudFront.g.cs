@@ -1,0 +1,13313 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Amazon.Runtime;
+using Amazon.CloudFront.Model;
+
+#pragma warning disable CS1570
+
+namespace Amazon.CloudFront
+{
+    /// <summary>
+    /// <para>Interface for accessing CloudFront</para>
+    ///
+    /// Amazon CloudFront 
+    /// <para>
+    /// This is the <i>Amazon CloudFront API Reference</i>. This guide is for developers who
+    /// need detailed information about CloudFront API actions, data types, and errors. For
+    /// detailed information about CloudFront features, see the <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html">Amazon
+    /// CloudFront Developer Guide</a>.
+    /// </para>
+    /// </summary>
+    public partial interface IAmazonCloudFront : IAmazonService, IDisposable
+    {
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICloudFrontPaginatorFactory Paginators { get; }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The <c>AssociateAlias</c> API operation only supports standard distributions. To move
+        /// domains between distribution tenants and/or standard distributions, we recommend that
+        /// you use the <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDomainAssociation.html">UpdateDomainAssociation</a>
+        /// API operation instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Associates an alias with a CloudFront standard distribution. An alias is commonly
+        /// known as a custom domain or vanity domain. It can also be called a CNAME or alternate
+        /// domain name.
+        /// </para>
+        ///  
+        /// <para>
+        /// With this operation, you can move an alias that's already used for a standard distribution
+        /// to a different standard distribution. This prevents the downtime that could occur
+        /// if you first remove the alias from one standard distribution and then separately add
+        /// the alias to another standard distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, specify the alias and the ID of the target standard distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, including how to set up the target standard distribution, prerequisites
+        /// that you must complete, and other restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+        /// an alternate domain name to a different standard distribution or distribution tenant</a>
+        /// in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAlias service method.</param>
+        /// <returns>The response from the AssociateAlias service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateAlias">REST API Reference for AssociateAlias Operation</seealso>
+        AssociateAliasResponse AssociateAlias(AssociateAliasRequest request);
+#endif
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The <c>AssociateAlias</c> API operation only supports standard distributions. To move
+        /// domains between distribution tenants and/or standard distributions, we recommend that
+        /// you use the <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDomainAssociation.html">UpdateDomainAssociation</a>
+        /// API operation instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Associates an alias with a CloudFront standard distribution. An alias is commonly
+        /// known as a custom domain or vanity domain. It can also be called a CNAME or alternate
+        /// domain name.
+        /// </para>
+        ///  
+        /// <para>
+        /// With this operation, you can move an alias that's already used for a standard distribution
+        /// to a different standard distribution. This prevents the downtime that could occur
+        /// if you first remove the alias from one standard distribution and then separately add
+        /// the alias to another standard distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, specify the alias and the ID of the target standard distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, including how to set up the target standard distribution, prerequisites
+        /// that you must complete, and other restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+        /// an alternate domain name to a different standard distribution or distribution tenant</a>
+        /// in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociateAlias service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateAlias">REST API Reference for AssociateAlias Operation</seealso>
+        Task<AssociateAliasResponse> AssociateAliasAsync(AssociateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Associates the WAF web ACL with a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDistributionTenantWebACL service method.</param>
+        /// <returns>The response from the AssociateDistributionTenantWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionTenantWebACL">REST API Reference for AssociateDistributionTenantWebACL Operation</seealso>
+        AssociateDistributionTenantWebACLResponse AssociateDistributionTenantWebACL(AssociateDistributionTenantWebACLRequest request);
+#endif
+
+        /// <summary>
+        /// Associates the WAF web ACL with a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDistributionTenantWebACL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociateDistributionTenantWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionTenantWebACL">REST API Reference for AssociateDistributionTenantWebACL Operation</seealso>
+        Task<AssociateDistributionTenantWebACLResponse> AssociateDistributionTenantWebACLAsync(AssociateDistributionTenantWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Associates the WAF web ACL with a distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDistributionWebACL service method.</param>
+        /// <returns>The response from the AssociateDistributionWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionWebACL">REST API Reference for AssociateDistributionWebACL Operation</seealso>
+        AssociateDistributionWebACLResponse AssociateDistributionWebACL(AssociateDistributionWebACLRequest request);
+#endif
+
+        /// <summary>
+        /// Associates the WAF web ACL with a distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDistributionWebACL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociateDistributionWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionWebACL">REST API Reference for AssociateDistributionWebACL Operation</seealso>
+        Task<AssociateDistributionWebACLResponse> AssociateDistributionWebACLAsync(AssociateDistributionWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a staging distribution using the configuration of the provided primary distribution.
+        /// A staging distribution is a copy of an existing distribution (called the primary distribution)
+        /// that you can use in a continuous deployment workflow.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a staging distribution, you can use <c>UpdateDistribution</c> to
+        /// modify the staging distribution's configuration. Then you can use <c>CreateContinuousDeploymentPolicy</c>
+        /// to incrementally move traffic to the staging distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API operation requires the following IAM permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html">CopyDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyDistribution service method.</param>
+        /// <returns>The response from the CopyDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
+        /// The caller reference you attempted to create the distribution with is associated with
+        /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidProtocolSettingsException">
+        /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
+        /// only clients that support Server Name Indication (SNI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <c>Origin Id</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of distributions
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CopyDistribution">REST API Reference for CopyDistribution Operation</seealso>
+        CopyDistributionResponse CopyDistribution(CopyDistributionRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a staging distribution using the configuration of the provided primary distribution.
+        /// A staging distribution is a copy of an existing distribution (called the primary distribution)
+        /// that you can use in a continuous deployment workflow.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a staging distribution, you can use <c>UpdateDistribution</c> to
+        /// modify the staging distribution's configuration. Then you can use <c>CreateContinuousDeploymentPolicy</c>
+        /// to incrementally move traffic to the staging distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API operation requires the following IAM permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html">CopyDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyDistribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CopyDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
+        /// The caller reference you attempted to create the distribution with is associated with
+        /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidProtocolSettingsException">
+        /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
+        /// only clients that support Server Name Indication (SNI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <c>Origin Id</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of distributions
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CopyDistribution">REST API Reference for CopyDistribution Operation</seealso>
+        Task<CopyDistributionResponse> CopyDistributionAsync(CopyDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an Anycast static IP list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnycastIpList service method.</param>
+        /// <returns>The response from the CreateAnycastIpList service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateAnycastIpList">REST API Reference for CreateAnycastIpList Operation</seealso>
+        CreateAnycastIpListResponse CreateAnycastIpList(CreateAnycastIpListRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an Anycast static IP list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnycastIpList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateAnycastIpList service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateAnycastIpList">REST API Reference for CreateAnycastIpList Operation</seealso>
+        Task<CreateAnycastIpListResponse> CreateAnycastIpListAsync(CreateAnycastIpListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a cache policy.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a cache policy, you can attach it to one or more cache behaviors.
+        /// When it's attached to a cache behavior, the cache policy determines the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The values that CloudFront includes in the <i>cache key</i>. These values can include
+        /// HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find
+        /// an object in its cache that it can return to the viewer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The default, minimum, and maximum time to live (TTL) values that you want objects
+        /// to stay in the CloudFront cache.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If your minimum TTL is greater than 0, CloudFront will cache content for at least
+        /// the duration specified in the cache policy's minimum TTL, even if the <c>Cache-Control:
+        /// no-cache</c>, <c>no-store</c>, or <c>private</c> directives are present in the origin
+        /// headers.
+        /// </para>
+        ///  </important> </li> </ul> 
+        /// <para>
+        /// The headers, cookies, and query strings that are included in the cache key are also
+        /// included in requests that CloudFront sends to the origin. CloudFront sends a request
+        /// when it can't find an object in its cache that matches the request's cache key. If
+        /// you want to send values to the origin but <i>not</i> include them in the cache key,
+        /// use <c>OriginRequestPolicy</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about cache policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling
+        /// the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCachePolicy service method.</param>
+        /// <returns>The response from the CreateCachePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CachePolicyAlreadyExistsException">
+        /// A cache policy with this name already exists. You must provide a unique name. To modify
+        /// an existing cache policy, use <c>UpdateCachePolicy</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCachePoliciesException">
+        /// You have reached the maximum number of cache policies for this Amazon Web Services
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInCachePolicyException">
+        /// The number of cookies in the cache policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInCachePolicyException">
+        /// The number of headers in the cache policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringsInCachePolicyException">
+        /// The number of query strings in the cache policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCachePolicy">REST API Reference for CreateCachePolicy Operation</seealso>
+        CreateCachePolicyResponse CreateCachePolicy(CreateCachePolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a cache policy.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a cache policy, you can attach it to one or more cache behaviors.
+        /// When it's attached to a cache behavior, the cache policy determines the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The values that CloudFront includes in the <i>cache key</i>. These values can include
+        /// HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find
+        /// an object in its cache that it can return to the viewer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The default, minimum, and maximum time to live (TTL) values that you want objects
+        /// to stay in the CloudFront cache.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If your minimum TTL is greater than 0, CloudFront will cache content for at least
+        /// the duration specified in the cache policy's minimum TTL, even if the <c>Cache-Control:
+        /// no-cache</c>, <c>no-store</c>, or <c>private</c> directives are present in the origin
+        /// headers.
+        /// </para>
+        ///  </important> </li> </ul> 
+        /// <para>
+        /// The headers, cookies, and query strings that are included in the cache key are also
+        /// included in requests that CloudFront sends to the origin. CloudFront sends a request
+        /// when it can't find an object in its cache that matches the request's cache key. If
+        /// you want to send values to the origin but <i>not</i> include them in the cache key,
+        /// use <c>OriginRequestPolicy</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about cache policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling
+        /// the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCachePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateCachePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CachePolicyAlreadyExistsException">
+        /// A cache policy with this name already exists. You must provide a unique name. To modify
+        /// an existing cache policy, use <c>UpdateCachePolicy</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCachePoliciesException">
+        /// You have reached the maximum number of cache policies for this Amazon Web Services
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInCachePolicyException">
+        /// The number of cookies in the cache policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInCachePolicyException">
+        /// The number of headers in the cache policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringsInCachePolicyException">
+        /// The number of query strings in the cache policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCachePolicy">REST API Reference for CreateCachePolicy Operation</seealso>
+        Task<CreateCachePolicyResponse> CreateCachePolicyAsync(CreateCachePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a new origin access identity. If you're using Amazon S3 for your origin, you
+        /// can use an origin access identity to require users to access your content using a
+        /// CloudFront URL instead of the Amazon S3 URL. For more information about how to use
+        /// origin access identities, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudFrontOriginAccessIdentity service method.</param>
+        /// <returns>The response from the CreateCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityAlreadyExistsException">
+        /// If the <c>CallerReference</c> is a value you already sent in a previous request to
+        /// create an identity but the content of the <c>CloudFrontOriginAccessIdentityConfig</c>
+        /// is different from the original request, CloudFront returns a <c>CloudFrontOriginAccessIdentityAlreadyExists</c>
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCloudFrontOriginAccessIdentitiesException">
+        /// Processing your request would cause you to exceed the maximum number of origin access
+        /// identities allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
+        CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a new origin access identity. If you're using Amazon S3 for your origin, you
+        /// can use an origin access identity to require users to access your content using a
+        /// CloudFront URL instead of the Amazon S3 URL. For more information about how to use
+        /// origin access identities, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudFrontOriginAccessIdentity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityAlreadyExistsException">
+        /// If the <c>CallerReference</c> is a value you already sent in a previous request to
+        /// create an identity but the content of the <c>CloudFrontOriginAccessIdentityConfig</c>
+        /// is different from the original request, CloudFront returns a <c>CloudFrontOriginAccessIdentityAlreadyExists</c>
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCloudFrontOriginAccessIdentitiesException">
+        /// Processing your request would cause you to exceed the maximum number of origin access
+        /// identities allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
+        Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionFunction service method.</param>
+        /// <returns>The response from the CreateConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
+        /// The entity size limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionFunction">REST API Reference for CreateConnectionFunction Operation</seealso>
+        CreateConnectionFunctionResponse CreateConnectionFunction(CreateConnectionFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
+        /// The entity size limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionFunction">REST API Reference for CreateConnectionFunction Operation</seealso>
+        Task<CreateConnectionFunctionResponse> CreateConnectionFunctionAsync(CreateConnectionFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionGroup service method.</param>
+        /// <returns>The response from the CreateConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionGroup">REST API Reference for CreateConnectionGroup Operation</seealso>
+        CreateConnectionGroupResponse CreateConnectionGroup(CreateConnectionGroupRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionGroup">REST API Reference for CreateConnectionGroup Operation</seealso>
+        Task<CreateConnectionGroupResponse> CreateConnectionGroupAsync(CreateConnectionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a continuous deployment policy that distributes traffic for a custom domain
+        /// name to two different CloudFront distributions.
+        /// 
+        ///  
+        /// <para>
+        /// To use a continuous deployment policy, first use <c>CopyDistribution</c> to create
+        /// a staging distribution, then use <c>UpdateDistribution</c> to modify the staging distribution's
+        /// configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you create and update a staging distribution, you can use a continuous deployment
+        /// policy to incrementally move traffic to the staging distribution. This workflow enables
+        /// you to test changes to a distribution's configuration before moving all of your domain's
+        /// production traffic to the new configuration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContinuousDeploymentPolicy service method.</param>
+        /// <returns>The response from the CreateContinuousDeploymentPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyAlreadyExistsException">
+        /// A continuous deployment policy with this configuration already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StagingDistributionInUseException">
+        /// A continuous deployment policy for this staging distribution already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyContinuousDeploymentPoliciesException">
+        /// You have reached the maximum number of continuous deployment policies for this Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateContinuousDeploymentPolicy">REST API Reference for CreateContinuousDeploymentPolicy Operation</seealso>
+        CreateContinuousDeploymentPolicyResponse CreateContinuousDeploymentPolicy(CreateContinuousDeploymentPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a continuous deployment policy that distributes traffic for a custom domain
+        /// name to two different CloudFront distributions.
+        /// 
+        ///  
+        /// <para>
+        /// To use a continuous deployment policy, first use <c>CopyDistribution</c> to create
+        /// a staging distribution, then use <c>UpdateDistribution</c> to modify the staging distribution's
+        /// configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you create and update a staging distribution, you can use a continuous deployment
+        /// policy to incrementally move traffic to the staging distribution. This workflow enables
+        /// you to test changes to a distribution's configuration before moving all of your domain's
+        /// production traffic to the new configuration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContinuousDeploymentPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateContinuousDeploymentPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyAlreadyExistsException">
+        /// A continuous deployment policy with this configuration already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StagingDistributionInUseException">
+        /// A continuous deployment policy for this staging distribution already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyContinuousDeploymentPoliciesException">
+        /// You have reached the maximum number of continuous deployment policies for this Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateContinuousDeploymentPolicy">REST API Reference for CreateContinuousDeploymentPolicy Operation</seealso>
+        Task<CreateContinuousDeploymentPolicyResponse> CreateContinuousDeploymentPolicyAsync(CreateContinuousDeploymentPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDistribution service method.</param>
+        /// <returns>The response from the CreateDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
+        /// The caller reference you attempted to create the distribution with is associated with
+        /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalOriginAccessConfigurationException">
+        /// An origin cannot contain both an origin access control (OAC) and an origin access
+        /// identity (OAI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidProtocolSettingsException">
+        /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
+        /// only clients that support Server Name Indication (SNI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <c>Origin Id</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of distributions
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
+        CreateDistributionResponse CreateDistribution(CreateDistributionRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDistribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
+        /// The caller reference you attempted to create the distribution with is associated with
+        /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalOriginAccessConfigurationException">
+        /// An origin cannot contain both an origin access control (OAC) and an origin access
+        /// identity (OAI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidProtocolSettingsException">
+        /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
+        /// only clients that support Server Name Indication (SNI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <c>Origin Id</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of distributions
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
+        Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDistributionTenant service method.</param>
+        /// <returns>The response from the CreateDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidAssociationException">
+        /// The specified CloudFront resource can't be associated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionTenant">REST API Reference for CreateDistributionTenant Operation</seealso>
+        CreateDistributionTenantResponse CreateDistributionTenant(CreateDistributionTenantRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidAssociationException">
+        /// The specified CloudFront resource can't be associated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionTenant">REST API Reference for CreateDistributionTenant Operation</seealso>
+        Task<CreateDistributionTenantResponse> CreateDistributionTenantAsync(CreateDistributionTenantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Create a new distribution with tags. This API operation requires the following IAM
+        /// permissions:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDistributionWithTags service method.</param>
+        /// <returns>The response from the CreateDistributionWithTags service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
+        /// The caller reference you attempted to create the distribution with is associated with
+        /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalOriginAccessConfigurationException">
+        /// An origin cannot contain both an origin access control (OAC) and an origin access
+        /// identity (OAI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidProtocolSettingsException">
+        /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
+        /// only clients that support Server Name Indication (SNI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <c>Origin Id</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of distributions
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
+        CreateDistributionWithTagsResponse CreateDistributionWithTags(CreateDistributionWithTagsRequest request);
+#endif
+
+        /// <summary>
+        /// Create a new distribution with tags. This API operation requires the following IAM
+        /// permissions:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDistributionWithTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateDistributionWithTags service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
+        /// The caller reference you attempted to create the distribution with is associated with
+        /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalOriginAccessConfigurationException">
+        /// An origin cannot contain both an origin access control (OAC) and an origin access
+        /// identity (OAI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidProtocolSettingsException">
+        /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
+        /// only clients that support Server Name Indication (SNI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <c>Origin Id</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of distributions
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
+        Task<CreateDistributionWithTagsResponse> CreateDistributionWithTagsAsync(CreateDistributionWithTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Create a new field-level encryption configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionConfig service method.</param>
+        /// <returns>The response from the CreateFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionConfigAlreadyExistsException">
+        /// The specified configuration for field-level encryption already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.QueryArgProfileEmptyException">
+        /// No profile specified for the field-level encryption query argument.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionConfigsException">
+        /// The maximum number of configurations for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionContentTypeProfilesException">
+        /// The maximum number of content type profiles for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionQueryArgProfilesException">
+        /// The maximum number of query arg profiles for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionConfig">REST API Reference for CreateFieldLevelEncryptionConfig Operation</seealso>
+        CreateFieldLevelEncryptionConfigResponse CreateFieldLevelEncryptionConfig(CreateFieldLevelEncryptionConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Create a new field-level encryption configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionConfigAlreadyExistsException">
+        /// The specified configuration for field-level encryption already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.QueryArgProfileEmptyException">
+        /// No profile specified for the field-level encryption query argument.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionConfigsException">
+        /// The maximum number of configurations for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionContentTypeProfilesException">
+        /// The maximum number of content type profiles for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionQueryArgProfilesException">
+        /// The maximum number of query arg profiles for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionConfig">REST API Reference for CreateFieldLevelEncryptionConfig Operation</seealso>
+        Task<CreateFieldLevelEncryptionConfigResponse> CreateFieldLevelEncryptionConfigAsync(CreateFieldLevelEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Create a field-level encryption profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionProfile service method.</param>
+        /// <returns>The response from the CreateFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileAlreadyExistsException">
+        /// The specified profile for field-level encryption already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileSizeExceededException">
+        /// The maximum size of a profile for field-level encryption was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionEncryptionEntitiesException">
+        /// The maximum number of encryption entities for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionFieldPatternsException">
+        /// The maximum number of field patterns for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionProfilesException">
+        /// The maximum number of profiles for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionProfile">REST API Reference for CreateFieldLevelEncryptionProfile Operation</seealso>
+        CreateFieldLevelEncryptionProfileResponse CreateFieldLevelEncryptionProfile(CreateFieldLevelEncryptionProfileRequest request);
+#endif
+
+        /// <summary>
+        /// Create a field-level encryption profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileAlreadyExistsException">
+        /// The specified profile for field-level encryption already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileSizeExceededException">
+        /// The maximum size of a profile for field-level encryption was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionEncryptionEntitiesException">
+        /// The maximum number of encryption entities for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionFieldPatternsException">
+        /// The maximum number of field patterns for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionProfilesException">
+        /// The maximum number of profiles for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionProfile">REST API Reference for CreateFieldLevelEncryptionProfile Operation</seealso>
+        Task<CreateFieldLevelEncryptionProfileResponse> CreateFieldLevelEncryptionProfileAsync(CreateFieldLevelEncryptionProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a CloudFront function.
+        /// 
+        ///  
+        /// <para>
+        /// To create a function, you provide the function code and some configuration information
+        /// about the function. The response contains an Amazon Resource Name (ARN) that uniquely
+        /// identifies the function.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create a function, it's in the <c>DEVELOPMENT</c> stage. In this stage, you
+        /// can test the function with <c>TestFunction</c>, and update it with <c>UpdateFunction</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you're ready to use your function with a CloudFront distribution, use <c>PublishFunction</c>
+        /// to copy the function from the <c>DEVELOPMENT</c> stage to <c>LIVE</c>. When it's live,
+        /// you can attach the function to a distribution's cache behavior, using the function's
+        /// ARN.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
+        /// <returns>The response from the CreateFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FunctionAlreadyExistsException">
+        /// A function with the same name already exists in this Amazon Web Services account.
+        /// To create a function, you must provide a unique name. To update an existing function,
+        /// use <c>UpdateFunction</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FunctionSizeLimitExceededException">
+        /// The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionsException">
+        /// You have reached the maximum number of CloudFront functions for this Amazon Web Services
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
+        CreateFunctionResponse CreateFunction(CreateFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a CloudFront function.
+        /// 
+        ///  
+        /// <para>
+        /// To create a function, you provide the function code and some configuration information
+        /// about the function. The response contains an Amazon Resource Name (ARN) that uniquely
+        /// identifies the function.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create a function, it's in the <c>DEVELOPMENT</c> stage. In this stage, you
+        /// can test the function with <c>TestFunction</c>, and update it with <c>UpdateFunction</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you're ready to use your function with a CloudFront distribution, use <c>PublishFunction</c>
+        /// to copy the function from the <c>DEVELOPMENT</c> stage to <c>LIVE</c>. When it's live,
+        /// you can attach the function to a distribution's cache behavior, using the function's
+        /// ARN.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FunctionAlreadyExistsException">
+        /// A function with the same name already exists in this Amazon Web Services account.
+        /// To create a function, you must provide a unique name. To update an existing function,
+        /// use <c>UpdateFunction</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FunctionSizeLimitExceededException">
+        /// The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionsException">
+        /// You have reached the maximum number of CloudFront functions for this Amazon Web Services
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
+        Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Create a new invalidation. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating
+        /// files</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInvalidation service method.</param>
+        /// <returns>The response from the CreateInvalidation service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.BatchTooLargeException">
+        /// Invalidation batch specified is too large.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyInvalidationsInProgressException">
+        /// You have exceeded the maximum number of allowable InProgress invalidation batch requests,
+        /// or invalidation objects.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
+        CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request);
+#endif
+
+        /// <summary>
+        /// Create a new invalidation. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating
+        /// files</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInvalidation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateInvalidation service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.BatchTooLargeException">
+        /// Invalidation batch specified is too large.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyInvalidationsInProgressException">
+        /// You have exceeded the maximum number of allowable InProgress invalidation batch requests,
+        /// or invalidation objects.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
+        Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an invalidation for a distribution tenant. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating
+        /// files</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInvalidationForDistributionTenant service method.</param>
+        /// <returns>The response from the CreateInvalidationForDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.BatchTooLargeException">
+        /// Invalidation batch specified is too large.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyInvalidationsInProgressException">
+        /// You have exceeded the maximum number of allowable InProgress invalidation batch requests,
+        /// or invalidation objects.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidationForDistributionTenant">REST API Reference for CreateInvalidationForDistributionTenant Operation</seealso>
+        CreateInvalidationForDistributionTenantResponse CreateInvalidationForDistributionTenant(CreateInvalidationForDistributionTenantRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an invalidation for a distribution tenant. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating
+        /// files</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInvalidationForDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateInvalidationForDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.BatchTooLargeException">
+        /// Invalidation batch specified is too large.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyInvalidationsInProgressException">
+        /// You have exceeded the maximum number of allowable InProgress invalidation batch requests,
+        /// or invalidation objects.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidationForDistributionTenant">REST API Reference for CreateInvalidationForDistributionTenant Operation</seealso>
+        Task<CreateInvalidationForDistributionTenantResponse> CreateInvalidationForDistributionTenantAsync(CreateInvalidationForDistributionTenantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a key group that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront
+        /// signed URLs and signed cookies</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To create a key group, you must specify at least one public key for the key group.
+        /// After you create a key group, you can reference it from one or more cache behaviors.
+        /// When you reference a key group in a cache behavior, CloudFront requires signed URLs
+        /// or signed cookies for all requests that match the cache behavior. The URLs or cookies
+        /// must be signed with a private key whose corresponding public key is in the key group.
+        /// The signed URL or cookie contains information about which public key CloudFront should
+        /// use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateKeyGroup service method.</param>
+        /// <returns>The response from the CreateKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.KeyGroupAlreadyExistsException">
+        /// A key group with this name already exists. You must provide a unique name. To modify
+        /// an existing key group, use <c>UpdateKeyGroup</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsException">
+        /// You have reached the maximum number of key groups for this Amazon Web Services account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
+        /// The number of public keys in this key group is more than the maximum allowed. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyGroup">REST API Reference for CreateKeyGroup Operation</seealso>
+        CreateKeyGroupResponse CreateKeyGroup(CreateKeyGroupRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a key group that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront
+        /// signed URLs and signed cookies</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To create a key group, you must specify at least one public key for the key group.
+        /// After you create a key group, you can reference it from one or more cache behaviors.
+        /// When you reference a key group in a cache behavior, CloudFront requires signed URLs
+        /// or signed cookies for all requests that match the cache behavior. The URLs or cookies
+        /// must be signed with a private key whose corresponding public key is in the key group.
+        /// The signed URL or cookie contains information about which public key CloudFront should
+        /// use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateKeyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.KeyGroupAlreadyExistsException">
+        /// A key group with this name already exists. You must provide a unique name. To modify
+        /// an existing key group, use <c>UpdateKeyGroup</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsException">
+        /// You have reached the maximum number of key groups for this Amazon Web Services account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
+        /// The number of public keys in this key group is more than the maximum allowed. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyGroup">REST API Reference for CreateKeyGroup Operation</seealso>
+        Task<CreateKeyGroupResponse> CreateKeyGroupAsync(CreateKeyGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Specifies the key value store resource to add to your account. In your account, the
+        /// key value store names must be unique. You can also import key value store data in
+        /// JSON format from an S3 bucket by providing a valid <c>ImportSource</c> that you own.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateKeyValueStore service method.</param>
+        /// <returns>The response from the CreateKeyValueStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
+        /// The entity size limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyValueStore">REST API Reference for CreateKeyValueStore Operation</seealso>
+        CreateKeyValueStoreResponse CreateKeyValueStore(CreateKeyValueStoreRequest request);
+#endif
+
+        /// <summary>
+        /// Specifies the key value store resource to add to your account. In your account, the
+        /// key value store names must be unique. You can also import key value store data in
+        /// JSON format from an S3 bucket by providing a valid <c>ImportSource</c> that you own.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateKeyValueStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateKeyValueStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
+        /// The entity size limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyValueStore">REST API Reference for CreateKeyValueStore Operation</seealso>
+        Task<CreateKeyValueStoreResponse> CreateKeyValueStoreAsync(CreateKeyValueStoreRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Enables or disables additional Amazon CloudWatch metrics for the specified CloudFront
+        /// distribution. The additional metrics incur an additional cost.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional">Viewing
+        /// additional CloudFront distribution metrics</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMonitoringSubscription service method.</param>
+        /// <returns>The response from the CreateMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MonitoringSubscriptionAlreadyExistsException">
+        /// A monitoring subscription already exists for the specified distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription">REST API Reference for CreateMonitoringSubscription Operation</seealso>
+        CreateMonitoringSubscriptionResponse CreateMonitoringSubscription(CreateMonitoringSubscriptionRequest request);
+#endif
+
+        /// <summary>
+        /// Enables or disables additional Amazon CloudWatch metrics for the specified CloudFront
+        /// distribution. The additional metrics incur an additional cost.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional">Viewing
+        /// additional CloudFront distribution metrics</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMonitoringSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MonitoringSubscriptionAlreadyExistsException">
+        /// A monitoring subscription already exists for the specified distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription">REST API Reference for CreateMonitoringSubscription Operation</seealso>
+        Task<CreateMonitoringSubscriptionResponse> CreateMonitoringSubscriptionAsync(CreateMonitoringSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a new origin access control in CloudFront. After you create an origin access
+        /// control, you can add it to an origin in a CloudFront distribution so that CloudFront
+        /// sends authenticated (signed) requests to the origin.
+        /// 
+        ///  
+        /// <para>
+        /// This makes it possible to block public access to the origin, allowing viewers (users)
+        /// to access the origin's content only through CloudFront.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using a CloudFront origin access control, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html">Restricting
+        /// access to an Amazon Web Services origin</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOriginAccessControl service method.</param>
+        /// <returns>The response from the CreateOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlAlreadyExistsException">
+        /// An origin access control with the specified parameters already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginAccessControlsException">
+        /// The number of origin access controls in your Amazon Web Services account exceeds the
+        /// maximum allowed.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginAccessControl">REST API Reference for CreateOriginAccessControl Operation</seealso>
+        CreateOriginAccessControlResponse CreateOriginAccessControl(CreateOriginAccessControlRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a new origin access control in CloudFront. After you create an origin access
+        /// control, you can add it to an origin in a CloudFront distribution so that CloudFront
+        /// sends authenticated (signed) requests to the origin.
+        /// 
+        ///  
+        /// <para>
+        /// This makes it possible to block public access to the origin, allowing viewers (users)
+        /// to access the origin's content only through CloudFront.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using a CloudFront origin access control, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html">Restricting
+        /// access to an Amazon Web Services origin</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOriginAccessControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlAlreadyExistsException">
+        /// An origin access control with the specified parameters already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginAccessControlsException">
+        /// The number of origin access controls in your Amazon Web Services account exceeds the
+        /// maximum allowed.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginAccessControl">REST API Reference for CreateOriginAccessControl Operation</seealso>
+        Task<CreateOriginAccessControlResponse> CreateOriginAccessControlAsync(CreateOriginAccessControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an origin request policy.
+        /// 
+        ///  
+        /// <para>
+        /// After you create an origin request policy, you can attach it to one or more cache
+        /// behaviors. When it's attached to a cache behavior, the origin request policy determines
+        /// the values that CloudFront includes in requests that it sends to the origin. Each
+        /// request that CloudFront sends to the origin includes the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The request body and the URL path (without the domain name) from the viewer request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The headers that CloudFront automatically includes in every origin request, including
+        /// <c>Host</c>, <c>User-Agent</c>, and <c>X-Amz-Cf-Id</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// All HTTP headers, cookies, and URL query strings that are specified in the cache policy
+        /// or the origin request policy. These can include items from the viewer request and,
+        /// in the case of headers, additional ones that are added by CloudFront.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// CloudFront sends a request when it can't find a valid object in its cache that matches
+        /// the request. If you want to send values to the origin and also include them in the
+        /// cache key, use <c>CachePolicy</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about origin request policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling
+        /// origin requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOriginRequestPolicy service method.</param>
+        /// <returns>The response from the CreateOriginRequestPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginRequestPolicyAlreadyExistsException">
+        /// An origin request policy with this name already exists. You must provide a unique
+        /// name. To modify an existing origin request policy, use <c>UpdateOriginRequestPolicy</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInOriginRequestPolicyException">
+        /// The number of cookies in the origin request policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInOriginRequestPolicyException">
+        /// The number of headers in the origin request policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginRequestPoliciesException">
+        /// You have reached the maximum number of origin request policies for this Amazon Web
+        /// Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringsInOriginRequestPolicyException">
+        /// The number of query strings in the origin request policy exceeds the maximum. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginRequestPolicy">REST API Reference for CreateOriginRequestPolicy Operation</seealso>
+        CreateOriginRequestPolicyResponse CreateOriginRequestPolicy(CreateOriginRequestPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an origin request policy.
+        /// 
+        ///  
+        /// <para>
+        /// After you create an origin request policy, you can attach it to one or more cache
+        /// behaviors. When it's attached to a cache behavior, the origin request policy determines
+        /// the values that CloudFront includes in requests that it sends to the origin. Each
+        /// request that CloudFront sends to the origin includes the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The request body and the URL path (without the domain name) from the viewer request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The headers that CloudFront automatically includes in every origin request, including
+        /// <c>Host</c>, <c>User-Agent</c>, and <c>X-Amz-Cf-Id</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// All HTTP headers, cookies, and URL query strings that are specified in the cache policy
+        /// or the origin request policy. These can include items from the viewer request and,
+        /// in the case of headers, additional ones that are added by CloudFront.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// CloudFront sends a request when it can't find a valid object in its cache that matches
+        /// the request. If you want to send values to the origin and also include them in the
+        /// cache key, use <c>CachePolicy</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about origin request policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling
+        /// origin requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOriginRequestPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateOriginRequestPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginRequestPolicyAlreadyExistsException">
+        /// An origin request policy with this name already exists. You must provide a unique
+        /// name. To modify an existing origin request policy, use <c>UpdateOriginRequestPolicy</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInOriginRequestPolicyException">
+        /// The number of cookies in the origin request policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInOriginRequestPolicyException">
+        /// The number of headers in the origin request policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginRequestPoliciesException">
+        /// You have reached the maximum number of origin request policies for this Amazon Web
+        /// Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringsInOriginRequestPolicyException">
+        /// The number of query strings in the origin request policy exceeds the maximum. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginRequestPolicy">REST API Reference for CreateOriginRequestPolicy Operation</seealso>
+        Task<CreateOriginRequestPolicyResponse> CreateOriginRequestPolicyAsync(CreateOriginRequestPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Uploads a public key to CloudFront that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed
+        /// URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+        /// encryption</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublicKey service method.</param>
+        /// <returns>The response from the CreatePublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PublicKeyAlreadyExistsException">
+        /// The specified public key already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysException">
+        /// The maximum number of public keys for field-level encryption have been created. To
+        /// create a new public key, delete one of the existing keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreatePublicKey">REST API Reference for CreatePublicKey Operation</seealso>
+        CreatePublicKeyResponse CreatePublicKey(CreatePublicKeyRequest request);
+#endif
+
+        /// <summary>
+        /// Uploads a public key to CloudFront that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed
+        /// URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+        /// encryption</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublicKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreatePublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PublicKeyAlreadyExistsException">
+        /// The specified public key already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysException">
+        /// The maximum number of public keys for field-level encryption have been created. To
+        /// create a new public key, delete one of the existing keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreatePublicKey">REST API Reference for CreatePublicKey Operation</seealso>
+        Task<CreatePublicKeyResponse> CreatePublicKeyAsync(CreatePublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a real-time log configuration, you can attach it to one or more cache
+        /// behaviors to send real-time log data to the specified Amazon Kinesis data stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about real-time log configurations, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+        /// logs</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRealtimeLogConfig service method.</param>
+        /// <returns>The response from the CreateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigAlreadyExistsException">
+        /// A real-time log configuration with this name already exists. You must provide a unique
+        /// name. To modify an existing real-time log configuration, use <c>UpdateRealtimeLogConfig</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRealtimeLogConfigsException">
+        /// You have reached the maximum number of real-time log configurations for this Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig">REST API Reference for CreateRealtimeLogConfig Operation</seealso>
+        CreateRealtimeLogConfigResponse CreateRealtimeLogConfig(CreateRealtimeLogConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a real-time log configuration, you can attach it to one or more cache
+        /// behaviors to send real-time log data to the specified Amazon Kinesis data stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about real-time log configurations, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+        /// logs</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRealtimeLogConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigAlreadyExistsException">
+        /// A real-time log configuration with this name already exists. You must provide a unique
+        /// name. To modify an existing real-time log configuration, use <c>UpdateRealtimeLogConfig</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRealtimeLogConfigsException">
+        /// You have reached the maximum number of real-time log configurations for this Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig">REST API Reference for CreateRealtimeLogConfig Operation</seealso>
+        Task<CreateRealtimeLogConfigResponse> CreateRealtimeLogConfigAsync(CreateRealtimeLogConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// A response headers policy contains information about a set of HTTP headers. To create
+        /// a response headers policy, you provide some metadata about the policy and a set of
+        /// configurations that specify the headers.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you create a response headers policy, you can use its ID to attach it to one
+        /// or more cache behaviors in a CloudFront distribution. When it's attached to a cache
+        /// behavior, the response headers policy affects the HTTP headers that CloudFront includes
+        /// in HTTP responses to requests that match the cache behavior. CloudFront adds or removes
+        /// response headers according to the configuration of the response headers policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html">Adding
+        /// or removing HTTP headers in CloudFront responses</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResponseHeadersPolicy service method.</param>
+        /// <returns>The response from the CreateResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
+        /// A response headers policy with this name already exists. You must provide a unique
+        /// name. To modify an existing response headers policy, use <c>UpdateResponseHeadersPolicy</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooLongCSPInResponseHeadersPolicyException">
+        /// The length of the <c>Content-Security-Policy</c> header value in the response headers
+        /// policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
+        /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
+        /// The number of headers in <c>RemoveHeadersConfig</c> in the response headers policy
+        /// exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyResponseHeadersPoliciesException">
+        /// You have reached the maximum number of response headers policies for this Amazon Web
+        /// Services account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateResponseHeadersPolicy">REST API Reference for CreateResponseHeadersPolicy Operation</seealso>
+        CreateResponseHeadersPolicyResponse CreateResponseHeadersPolicy(CreateResponseHeadersPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// A response headers policy contains information about a set of HTTP headers. To create
+        /// a response headers policy, you provide some metadata about the policy and a set of
+        /// configurations that specify the headers.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you create a response headers policy, you can use its ID to attach it to one
+        /// or more cache behaviors in a CloudFront distribution. When it's attached to a cache
+        /// behavior, the response headers policy affects the HTTP headers that CloudFront includes
+        /// in HTTP responses to requests that match the cache behavior. CloudFront adds or removes
+        /// response headers according to the configuration of the response headers policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html">Adding
+        /// or removing HTTP headers in CloudFront responses</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResponseHeadersPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
+        /// A response headers policy with this name already exists. You must provide a unique
+        /// name. To modify an existing response headers policy, use <c>UpdateResponseHeadersPolicy</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooLongCSPInResponseHeadersPolicyException">
+        /// The length of the <c>Content-Security-Policy</c> header value in the response headers
+        /// policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
+        /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
+        /// The number of headers in <c>RemoveHeadersConfig</c> in the response headers policy
+        /// exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyResponseHeadersPoliciesException">
+        /// You have reached the maximum number of response headers policies for this Amazon Web
+        /// Services account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateResponseHeadersPolicy">REST API Reference for CreateResponseHeadersPolicy Operation</seealso>
+        Task<CreateResponseHeadersPolicyResponse> CreateResponseHeadersPolicyAsync(CreateResponseHeadersPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol
+        /// (RTMP) distributions on December 31, 2020. For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read
+        /// the announcement</a> on the Amazon CloudFront discussion forum.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStreamingDistribution service method.</param>
+        /// <returns>The response from the CreateStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException">
+        /// The caller reference you attempted to create the streaming distribution with is associated
+        /// with another distribution
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of streaming
+        /// distributions allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
+        CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request);
+#endif
+
+        /// <summary>
+        /// This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol
+        /// (RTMP) distributions on December 31, 2020. For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read
+        /// the announcement</a> on the Amazon CloudFront discussion forum.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStreamingDistribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException">
+        /// The caller reference you attempted to create the streaming distribution with is associated
+        /// with another distribution
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of streaming
+        /// distributions allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
+        Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol
+        /// (RTMP) distributions on December 31, 2020. For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read
+        /// the announcement</a> on the Amazon CloudFront discussion forum.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStreamingDistributionWithTags service method.</param>
+        /// <returns>The response from the CreateStreamingDistributionWithTags service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException">
+        /// The caller reference you attempted to create the streaming distribution with is associated
+        /// with another distribution
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of streaming
+        /// distributions allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
+        CreateStreamingDistributionWithTagsResponse CreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request);
+#endif
+
+        /// <summary>
+        /// This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol
+        /// (RTMP) distributions on December 31, 2020. For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read
+        /// the announcement</a> on the Amazon CloudFront discussion forum.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStreamingDistributionWithTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateStreamingDistributionWithTags service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException">
+        /// The caller reference you attempted to create the streaming distribution with is associated
+        /// with another distribution
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of streaming
+        /// distributions allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
+        Task<CreateStreamingDistributionWithTagsResponse> CreateStreamingDistributionWithTagsAsync(CreateStreamingDistributionWithTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustStore service method.</param>
+        /// <returns>The response from the CreateTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        CreateTrustStoreResponse CreateTrustStore(CreateTrustStoreRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        Task<CreateTrustStoreResponse> CreateTrustStoreAsync(CreateTrustStoreRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Create an Amazon CloudFront VPC origin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcOrigin service method.</param>
+        /// <returns>The response from the CreateVpcOrigin service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateVpcOrigin">REST API Reference for CreateVpcOrigin Operation</seealso>
+        CreateVpcOriginResponse CreateVpcOrigin(CreateVpcOriginRequest request);
+#endif
+
+        /// <summary>
+        /// Create an Amazon CloudFront VPC origin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcOrigin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateVpcOrigin service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateVpcOrigin">REST API Reference for CreateVpcOrigin Operation</seealso>
+        Task<CreateVpcOriginResponse> CreateVpcOriginAsync(CreateVpcOriginRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes an Anycast static IP list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnycastIpList service method.</param>
+        /// <returns>The response from the DeleteAnycastIpList service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteAnycastIpList">REST API Reference for DeleteAnycastIpList Operation</seealso>
+        DeleteAnycastIpListResponse DeleteAnycastIpList(DeleteAnycastIpListRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an Anycast static IP list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnycastIpList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteAnycastIpList service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteAnycastIpList">REST API Reference for DeleteAnycastIpList Operation</seealso>
+        Task<DeleteAnycastIpListResponse> DeleteAnycastIpListAsync(DeleteAnycastIpListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a cache policy.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a cache policy if it's attached to a cache behavior. First update
+        /// your distributions to remove the cache policy from all cache behaviors, then delete
+        /// the cache policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a cache policy, you must provide the policy's identifier and version. To
+        /// get these values, you can use <c>ListCachePolicies</c> or <c>GetCachePolicy</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCachePolicy service method.</param>
+        /// <returns>The response from the DeleteCachePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CachePolicyInUseException">
+        /// Cannot delete the cache policy because it is attached to one or more cache behaviors.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCachePolicy">REST API Reference for DeleteCachePolicy Operation</seealso>
+        DeleteCachePolicyResponse DeleteCachePolicy(DeleteCachePolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a cache policy.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a cache policy if it's attached to a cache behavior. First update
+        /// your distributions to remove the cache policy from all cache behaviors, then delete
+        /// the cache policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a cache policy, you must provide the policy's identifier and version. To
+        /// get these values, you can use <c>ListCachePolicies</c> or <c>GetCachePolicy</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCachePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteCachePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CachePolicyInUseException">
+        /// Cannot delete the cache policy because it is attached to one or more cache behaviors.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCachePolicy">REST API Reference for DeleteCachePolicy Operation</seealso>
+        Task<DeleteCachePolicyResponse> DeleteCachePolicyAsync(DeleteCachePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Delete an origin access identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudFrontOriginAccessIdentity service method.</param>
+        /// <returns>The response from the DeleteCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityInUseException">
+        /// The Origin Access Identity specified is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request);
+#endif
+
+        /// <summary>
+        /// Delete an origin access identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudFrontOriginAccessIdentity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityInUseException">
+        /// The Origin Access Identity specified is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Delete an origin access identity.
+        /// </summary>
+        /// <returns>The response from the DeleteCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityInUseException">
+        /// The Origin Access Identity specified is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity();
+#endif
+
+        /// <summary>
+        /// Delete an origin access identity.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityInUseException">
+        /// The Origin Access Identity specified is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionFunction service method.</param>
+        /// <returns>The response from the DeleteConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionFunction">REST API Reference for DeleteConnectionFunction Operation</seealso>
+        DeleteConnectionFunctionResponse DeleteConnectionFunction(DeleteConnectionFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionFunction">REST API Reference for DeleteConnectionFunction Operation</seealso>
+        Task<DeleteConnectionFunctionResponse> DeleteConnectionFunctionAsync(DeleteConnectionFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionGroup service method.</param>
+        /// <returns>The response from the DeleteConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceNotDisabledException">
+        /// The specified CloudFront resource hasn't been disabled yet.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionGroup">REST API Reference for DeleteConnectionGroup Operation</seealso>
+        DeleteConnectionGroupResponse DeleteConnectionGroup(DeleteConnectionGroupRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceNotDisabledException">
+        /// The specified CloudFront resource hasn't been disabled yet.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionGroup">REST API Reference for DeleteConnectionGroup Operation</seealso>
+        Task<DeleteConnectionGroupResponse> DeleteConnectionGroupAsync(DeleteConnectionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a continuous deployment policy.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a continuous deployment policy that's attached to a primary distribution.
+        /// First update your distribution to remove the continuous deployment policy, then you
+        /// can delete the policy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContinuousDeploymentPolicy service method.</param>
+        /// <returns>The response from the DeleteContinuousDeploymentPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteContinuousDeploymentPolicy">REST API Reference for DeleteContinuousDeploymentPolicy Operation</seealso>
+        DeleteContinuousDeploymentPolicyResponse DeleteContinuousDeploymentPolicy(DeleteContinuousDeploymentPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a continuous deployment policy.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a continuous deployment policy that's attached to a primary distribution.
+        /// First update your distribution to remove the continuous deployment policy, then you
+        /// can delete the policy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContinuousDeploymentPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteContinuousDeploymentPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteContinuousDeploymentPolicy">REST API Reference for DeleteContinuousDeploymentPolicy Operation</seealso>
+        Task<DeleteContinuousDeploymentPolicyResponse> DeleteContinuousDeploymentPolicyAsync(DeleteContinuousDeploymentPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Delete a distribution.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Before you can delete a distribution, you must disable it, which requires permission
+        /// to update the distribution. Once deleted, a distribution cannot be recovered.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDistribution service method.</param>
+        /// <returns>The response from the DeleteDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.DistributionNotDisabledException">
+        /// The specified CloudFront distribution is not disabled. You must disable the distribution
+        /// before you can delete it.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request);
+#endif
+
+        /// <summary>
+        /// Delete a distribution.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Before you can delete a distribution, you must disable it, which requires permission
+        /// to update the distribution. Once deleted, a distribution cannot be recovered.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDistribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.DistributionNotDisabledException">
+        /// The specified CloudFront distribution is not disabled. You must disable the distribution
+        /// before you can delete it.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Delete a distribution.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Before you can delete a distribution, you must disable it, which requires permission
+        /// to update the distribution. Once deleted, a distribution cannot be recovered.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <returns>The response from the DeleteDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.DistributionNotDisabledException">
+        /// The specified CloudFront distribution is not disabled. You must disable the distribution
+        /// before you can delete it.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        DeleteDistributionResponse DeleteDistribution();
+#endif
+
+        /// <summary>
+        /// Delete a distribution.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Before you can delete a distribution, you must disable it, which requires permission
+        /// to update the distribution. Once deleted, a distribution cannot be recovered.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.DistributionNotDisabledException">
+        /// The specified CloudFront distribution is not disabled. You must disable the distribution
+        /// before you can delete it.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        Task<DeleteDistributionResponse> DeleteDistributionAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a distribution tenant. If you use this API operation to delete a distribution
+        /// tenant that is currently enabled, the request will fail.
+        /// 
+        ///  
+        /// <para>
+        /// To delete a distribution tenant, you must first disable the distribution tenant by
+        /// using the <c>UpdateDistributionTenant</c> API operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDistributionTenant service method.</param>
+        /// <returns>The response from the DeleteDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceNotDisabledException">
+        /// The specified CloudFront resource hasn't been disabled yet.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistributionTenant">REST API Reference for DeleteDistributionTenant Operation</seealso>
+        DeleteDistributionTenantResponse DeleteDistributionTenant(DeleteDistributionTenantRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a distribution tenant. If you use this API operation to delete a distribution
+        /// tenant that is currently enabled, the request will fail.
+        /// 
+        ///  
+        /// <para>
+        /// To delete a distribution tenant, you must first disable the distribution tenant by
+        /// using the <c>UpdateDistributionTenant</c> API operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceNotDisabledException">
+        /// The specified CloudFront resource hasn't been disabled yet.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistributionTenant">REST API Reference for DeleteDistributionTenant Operation</seealso>
+        Task<DeleteDistributionTenantResponse> DeleteDistributionTenantAsync(DeleteDistributionTenantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Remove a field-level encryption configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionConfig service method.</param>
+        /// <returns>The response from the DeleteFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionConfigInUseException">
+        /// The specified configuration for field-level encryption is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
+        DeleteFieldLevelEncryptionConfigResponse DeleteFieldLevelEncryptionConfig(DeleteFieldLevelEncryptionConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Remove a field-level encryption configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionConfigInUseException">
+        /// The specified configuration for field-level encryption is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
+        Task<DeleteFieldLevelEncryptionConfigResponse> DeleteFieldLevelEncryptionConfigAsync(DeleteFieldLevelEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Remove a field-level encryption profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionProfile service method.</param>
+        /// <returns>The response from the DeleteFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileInUseException">
+        /// The specified profile for field-level encryption is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
+        DeleteFieldLevelEncryptionProfileResponse DeleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request);
+#endif
+
+        /// <summary>
+        /// Remove a field-level encryption profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileInUseException">
+        /// The specified profile for field-level encryption is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
+        Task<DeleteFieldLevelEncryptionProfileResponse> DeleteFieldLevelEncryptionProfileAsync(DeleteFieldLevelEncryptionProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a CloudFront function.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a function if it's associated with a cache behavior. First, update
+        /// your distributions to remove the function association from all cache behaviors, then
+        /// delete the function.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a function, you must provide the function's name and version (<c>ETag</c>
+        /// value). To get these values, you can use <c>ListFunctions</c> and <c>DescribeFunction</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
+        /// <returns>The response from the DeleteFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FunctionInUseException">
+        /// Cannot delete the function because it's attached to one or more cache behaviors.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
+        DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a CloudFront function.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a function if it's associated with a cache behavior. First, update
+        /// your distributions to remove the function association from all cache behaviors, then
+        /// delete the function.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a function, you must provide the function's name and version (<c>ETag</c>
+        /// value). To get these values, you can use <c>ListFunctions</c> and <c>DescribeFunction</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FunctionInUseException">
+        /// Cannot delete the function because it's attached to one or more cache behaviors.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
+        Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a key group.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a key group that is referenced in a cache behavior. First update
+        /// your distributions to remove the key group from all cache behaviors, then delete the
+        /// key group.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a key group, you must provide the key group's identifier and version. To
+        /// get these values, use <c>ListKeyGroups</c> followed by <c>GetKeyGroup</c> or <c>GetKeyGroupConfig</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKeyGroup service method.</param>
+        /// <returns>The response from the DeleteKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyGroup">REST API Reference for DeleteKeyGroup Operation</seealso>
+        DeleteKeyGroupResponse DeleteKeyGroup(DeleteKeyGroupRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a key group.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a key group that is referenced in a cache behavior. First update
+        /// your distributions to remove the key group from all cache behaviors, then delete the
+        /// key group.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a key group, you must provide the key group's identifier and version. To
+        /// get these values, use <c>ListKeyGroups</c> followed by <c>GetKeyGroup</c> or <c>GetKeyGroupConfig</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKeyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyGroup">REST API Reference for DeleteKeyGroup Operation</seealso>
+        Task<DeleteKeyGroupResponse> DeleteKeyGroupAsync(DeleteKeyGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Specifies the key value store to delete.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKeyValueStore service method.</param>
+        /// <returns>The response from the DeleteKeyValueStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyValueStore">REST API Reference for DeleteKeyValueStore Operation</seealso>
+        DeleteKeyValueStoreResponse DeleteKeyValueStore(DeleteKeyValueStoreRequest request);
+#endif
+
+        /// <summary>
+        /// Specifies the key value store to delete.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKeyValueStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteKeyValueStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyValueStore">REST API Reference for DeleteKeyValueStore Operation</seealso>
+        Task<DeleteKeyValueStoreResponse> DeleteKeyValueStoreAsync(DeleteKeyValueStoreRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Disables additional CloudWatch metrics for the specified CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMonitoringSubscription service method.</param>
+        /// <returns>The response from the DeleteMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchMonitoringSubscriptionException">
+        /// A monitoring subscription does not exist for the specified distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription">REST API Reference for DeleteMonitoringSubscription Operation</seealso>
+        DeleteMonitoringSubscriptionResponse DeleteMonitoringSubscription(DeleteMonitoringSubscriptionRequest request);
+#endif
+
+        /// <summary>
+        /// Disables additional CloudWatch metrics for the specified CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMonitoringSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchMonitoringSubscriptionException">
+        /// A monitoring subscription does not exist for the specified distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription">REST API Reference for DeleteMonitoringSubscription Operation</seealso>
+        Task<DeleteMonitoringSubscriptionResponse> DeleteMonitoringSubscriptionAsync(DeleteMonitoringSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a CloudFront origin access control.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an origin access control if it's in use. First, update all distributions
+        /// to remove the origin access control from all origins, then delete the origin access
+        /// control.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOriginAccessControl service method.</param>
+        /// <returns>The response from the DeleteOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlInUseException">
+        /// Cannot delete the origin access control because it's in use by one or more distributions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl">REST API Reference for DeleteOriginAccessControl Operation</seealso>
+        DeleteOriginAccessControlResponse DeleteOriginAccessControl(DeleteOriginAccessControlRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a CloudFront origin access control.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an origin access control if it's in use. First, update all distributions
+        /// to remove the origin access control from all origins, then delete the origin access
+        /// control.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOriginAccessControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlInUseException">
+        /// Cannot delete the origin access control because it's in use by one or more distributions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl">REST API Reference for DeleteOriginAccessControl Operation</seealso>
+        Task<DeleteOriginAccessControlResponse> DeleteOriginAccessControlAsync(DeleteOriginAccessControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes an origin request policy.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an origin request policy if it's attached to any cache behaviors.
+        /// First update your distributions to remove the origin request policy from all cache
+        /// behaviors, then delete the origin request policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete an origin request policy, you must provide the policy's identifier and version.
+        /// To get the identifier, you can use <c>ListOriginRequestPolicies</c> or <c>GetOriginRequestPolicy</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOriginRequestPolicy service method.</param>
+        /// <returns>The response from the DeleteOriginRequestPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginRequestPolicyInUseException">
+        /// Cannot delete the origin request policy because it is attached to one or more cache
+        /// behaviors.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginRequestPolicy">REST API Reference for DeleteOriginRequestPolicy Operation</seealso>
+        DeleteOriginRequestPolicyResponse DeleteOriginRequestPolicy(DeleteOriginRequestPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an origin request policy.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an origin request policy if it's attached to any cache behaviors.
+        /// First update your distributions to remove the origin request policy from all cache
+        /// behaviors, then delete the origin request policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete an origin request policy, you must provide the policy's identifier and version.
+        /// To get the identifier, you can use <c>ListOriginRequestPolicies</c> or <c>GetOriginRequestPolicy</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOriginRequestPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteOriginRequestPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginRequestPolicyInUseException">
+        /// Cannot delete the origin request policy because it is attached to one or more cache
+        /// behaviors.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginRequestPolicy">REST API Reference for DeleteOriginRequestPolicy Operation</seealso>
+        Task<DeleteOriginRequestPolicyResponse> DeleteOriginRequestPolicyAsync(DeleteOriginRequestPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Remove a public key you previously added to CloudFront.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicKey service method.</param>
+        /// <returns>The response from the DeletePublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PublicKeyInUseException">
+        /// The specified public key is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
+        DeletePublicKeyResponse DeletePublicKey(DeletePublicKeyRequest request);
+#endif
+
+        /// <summary>
+        /// Remove a public key you previously added to CloudFront.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeletePublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PublicKeyInUseException">
+        /// The specified public key is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
+        Task<DeletePublicKeyResponse> DeletePublicKeyAsync(DeletePublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a real-time log configuration if it's attached to a cache behavior.
+        /// First update your distributions to remove the real-time log configuration from all
+        /// cache behaviors, then delete the real-time log configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a real-time log configuration, you can provide the configuration's name
+        /// or its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
+        /// CloudFront uses the name to identify the real-time log configuration to delete.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRealtimeLogConfig service method.</param>
+        /// <returns>The response from the DeleteRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigInUseException">
+        /// Cannot delete the real-time log configuration because it is attached to one or more
+        /// cache behaviors.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig">REST API Reference for DeleteRealtimeLogConfig Operation</seealso>
+        DeleteRealtimeLogConfigResponse DeleteRealtimeLogConfig(DeleteRealtimeLogConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a real-time log configuration if it's attached to a cache behavior.
+        /// First update your distributions to remove the real-time log configuration from all
+        /// cache behaviors, then delete the real-time log configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a real-time log configuration, you can provide the configuration's name
+        /// or its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
+        /// CloudFront uses the name to identify the real-time log configuration to delete.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRealtimeLogConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigInUseException">
+        /// Cannot delete the real-time log configuration because it is attached to one or more
+        /// cache behaviors.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig">REST API Reference for DeleteRealtimeLogConfig Operation</seealso>
+        Task<DeleteRealtimeLogConfigResponse> DeleteRealtimeLogConfigAsync(DeleteRealtimeLogConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes the resource policy attached to the CloudFront resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes the resource policy attached to the CloudFront resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a response headers policy if it's attached to a cache behavior.
+        /// First update your distributions to remove the response headers policy from all cache
+        /// behaviors, then delete the response headers policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a response headers policy, you must provide the policy's identifier and
+        /// version. To get these values, you can use <c>ListResponseHeadersPolicies</c> or <c>GetResponseHeadersPolicy</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResponseHeadersPolicy service method.</param>
+        /// <returns>The response from the DeleteResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyInUseException">
+        /// Cannot delete the response headers policy because it is attached to one or more cache
+        /// behaviors in a CloudFront distribution.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteResponseHeadersPolicy">REST API Reference for DeleteResponseHeadersPolicy Operation</seealso>
+        DeleteResponseHeadersPolicyResponse DeleteResponseHeadersPolicy(DeleteResponseHeadersPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a response headers policy if it's attached to a cache behavior.
+        /// First update your distributions to remove the response headers policy from all cache
+        /// behaviors, then delete the response headers policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a response headers policy, you must provide the policy's identifier and
+        /// version. To get these values, you can use <c>ListResponseHeadersPolicies</c> or <c>GetResponseHeadersPolicy</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResponseHeadersPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyInUseException">
+        /// Cannot delete the response headers policy because it is attached to one or more cache
+        /// behaviors in a CloudFront distribution.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteResponseHeadersPolicy">REST API Reference for DeleteResponseHeadersPolicy Operation</seealso>
+        Task<DeleteResponseHeadersPolicyResponse> DeleteResponseHeadersPolicyAsync(DeleteResponseHeadersPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Delete a streaming distribution. To delete an RTMP distribution using the CloudFront
+        /// API, perform the following steps.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>To delete an RTMP distribution using the CloudFront API</b>:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Disable the RTMP distribution.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>GET Streaming Distribution Config</c> request to get the current configuration
+        /// and the <c>Etag</c> header for the distribution. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the XML document that was returned in the response to your <c>GET Streaming
+        /// Distribution Config</c> request to change the value of <c>Enabled</c> to <c>false</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>PUT Streaming Distribution Config</c> request to update the configuration
+        /// for your distribution. In the request body, include the XML document that you updated
+        /// in Step 3. Then set the value of the HTTP <c>If-Match</c> header to the value of the
+        /// <c>ETag</c> header that CloudFront returned when you submitted the <c>GET Streaming
+        /// Distribution Config</c> request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to the <c>PUT Streaming Distribution Config</c> request to confirm
+        /// that the distribution was successfully disabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>GET Streaming Distribution Config</c> request to confirm that your changes
+        /// have propagated. When propagation is complete, the value of <c>Status</c> is <c>Deployed</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>DELETE Streaming Distribution</c> request. Set the value of the HTTP <c>If-Match</c>
+        /// header to the value of the <c>ETag</c> header that CloudFront returned when you submitted
+        /// the <c>GET Streaming Distribution Config</c> request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to your <c>DELETE Streaming Distribution</c> request to confirm
+        /// that the distribution was successfully deleted.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For information about deleting a distribution using the CloudFront console, see <a
+        /// href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting
+        /// a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStreamingDistribution service method.</param>
+        /// <returns>The response from the DeleteStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
+        /// The specified CloudFront distribution is not disabled. You must disable the distribution
+        /// before you can delete it.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request);
+#endif
+
+        /// <summary>
+        /// Delete a streaming distribution. To delete an RTMP distribution using the CloudFront
+        /// API, perform the following steps.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>To delete an RTMP distribution using the CloudFront API</b>:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Disable the RTMP distribution.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>GET Streaming Distribution Config</c> request to get the current configuration
+        /// and the <c>Etag</c> header for the distribution. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the XML document that was returned in the response to your <c>GET Streaming
+        /// Distribution Config</c> request to change the value of <c>Enabled</c> to <c>false</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>PUT Streaming Distribution Config</c> request to update the configuration
+        /// for your distribution. In the request body, include the XML document that you updated
+        /// in Step 3. Then set the value of the HTTP <c>If-Match</c> header to the value of the
+        /// <c>ETag</c> header that CloudFront returned when you submitted the <c>GET Streaming
+        /// Distribution Config</c> request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to the <c>PUT Streaming Distribution Config</c> request to confirm
+        /// that the distribution was successfully disabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>GET Streaming Distribution Config</c> request to confirm that your changes
+        /// have propagated. When propagation is complete, the value of <c>Status</c> is <c>Deployed</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>DELETE Streaming Distribution</c> request. Set the value of the HTTP <c>If-Match</c>
+        /// header to the value of the <c>ETag</c> header that CloudFront returned when you submitted
+        /// the <c>GET Streaming Distribution Config</c> request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to your <c>DELETE Streaming Distribution</c> request to confirm
+        /// that the distribution was successfully deleted.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For information about deleting a distribution using the CloudFront console, see <a
+        /// href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting
+        /// a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStreamingDistribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
+        /// The specified CloudFront distribution is not disabled. You must disable the distribution
+        /// before you can delete it.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Delete a streaming distribution. To delete an RTMP distribution using the CloudFront
+        /// API, perform the following steps.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>To delete an RTMP distribution using the CloudFront API</b>:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Disable the RTMP distribution.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>GET Streaming Distribution Config</c> request to get the current configuration
+        /// and the <c>Etag</c> header for the distribution. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the XML document that was returned in the response to your <c>GET Streaming
+        /// Distribution Config</c> request to change the value of <c>Enabled</c> to <c>false</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>PUT Streaming Distribution Config</c> request to update the configuration
+        /// for your distribution. In the request body, include the XML document that you updated
+        /// in Step 3. Then set the value of the HTTP <c>If-Match</c> header to the value of the
+        /// <c>ETag</c> header that CloudFront returned when you submitted the <c>GET Streaming
+        /// Distribution Config</c> request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to the <c>PUT Streaming Distribution Config</c> request to confirm
+        /// that the distribution was successfully disabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>GET Streaming Distribution Config</c> request to confirm that your changes
+        /// have propagated. When propagation is complete, the value of <c>Status</c> is <c>Deployed</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>DELETE Streaming Distribution</c> request. Set the value of the HTTP <c>If-Match</c>
+        /// header to the value of the <c>ETag</c> header that CloudFront returned when you submitted
+        /// the <c>GET Streaming Distribution Config</c> request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to your <c>DELETE Streaming Distribution</c> request to confirm
+        /// that the distribution was successfully deleted.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For information about deleting a distribution using the CloudFront console, see <a
+        /// href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting
+        /// a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <returns>The response from the DeleteStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
+        /// The specified CloudFront distribution is not disabled. You must disable the distribution
+        /// before you can delete it.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        DeleteStreamingDistributionResponse DeleteStreamingDistribution();
+#endif
+
+        /// <summary>
+        /// Delete a streaming distribution. To delete an RTMP distribution using the CloudFront
+        /// API, perform the following steps.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>To delete an RTMP distribution using the CloudFront API</b>:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Disable the RTMP distribution.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>GET Streaming Distribution Config</c> request to get the current configuration
+        /// and the <c>Etag</c> header for the distribution. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the XML document that was returned in the response to your <c>GET Streaming
+        /// Distribution Config</c> request to change the value of <c>Enabled</c> to <c>false</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>PUT Streaming Distribution Config</c> request to update the configuration
+        /// for your distribution. In the request body, include the XML document that you updated
+        /// in Step 3. Then set the value of the HTTP <c>If-Match</c> header to the value of the
+        /// <c>ETag</c> header that CloudFront returned when you submitted the <c>GET Streaming
+        /// Distribution Config</c> request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to the <c>PUT Streaming Distribution Config</c> request to confirm
+        /// that the distribution was successfully disabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>GET Streaming Distribution Config</c> request to confirm that your changes
+        /// have propagated. When propagation is complete, the value of <c>Status</c> is <c>Deployed</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <c>DELETE Streaming Distribution</c> request. Set the value of the HTTP <c>If-Match</c>
+        /// header to the value of the <c>ETag</c> header that CloudFront returned when you submitted
+        /// the <c>GET Streaming Distribution Config</c> request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to your <c>DELETE Streaming Distribution</c> request to confirm
+        /// that the distribution was successfully deleted.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For information about deleting a distribution using the CloudFront console, see <a
+        /// href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting
+        /// a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
+        /// The specified CloudFront distribution is not disabled. You must disable the distribution
+        /// before you can delete it.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustStore service method.</param>
+        /// <returns>The response from the DeleteTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        DeleteTrustStoreResponse DeleteTrustStore(DeleteTrustStoreRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        Task<DeleteTrustStoreResponse> DeleteTrustStoreAsync(DeleteTrustStoreRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Delete an Amazon CloudFront VPC origin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcOrigin service method.</param>
+        /// <returns>The response from the DeleteVpcOrigin service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteVpcOrigin">REST API Reference for DeleteVpcOrigin Operation</seealso>
+        DeleteVpcOriginResponse DeleteVpcOrigin(DeleteVpcOriginRequest request);
+#endif
+
+        /// <summary>
+        /// Delete an Amazon CloudFront VPC origin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcOrigin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteVpcOrigin service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteVpcOrigin">REST API Reference for DeleteVpcOrigin Operation</seealso>
+        Task<DeleteVpcOriginResponse> DeleteVpcOriginAsync(DeleteVpcOriginRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionFunction service method.</param>
+        /// <returns>The response from the DescribeConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeConnectionFunction">REST API Reference for DescribeConnectionFunction Operation</seealso>
+        DescribeConnectionFunctionResponse DescribeConnectionFunction(DescribeConnectionFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Describes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeConnectionFunction">REST API Reference for DescribeConnectionFunction Operation</seealso>
+        Task<DescribeConnectionFunctionResponse> DescribeConnectionFunctionAsync(DescribeConnectionFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets configuration information and metadata about a CloudFront function, but not the
+        /// function's code. To get a function's code, use <c>GetFunction</c>.
+        /// 
+        ///  
+        /// <para>
+        /// To get configuration information and metadata about a function, you must provide the
+        /// function's name and stage. To get these values, you can use <c>ListFunctions</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFunction service method.</param>
+        /// <returns>The response from the DescribeFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeFunction">REST API Reference for DescribeFunction Operation</seealso>
+        DescribeFunctionResponse DescribeFunction(DescribeFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Gets configuration information and metadata about a CloudFront function, but not the
+        /// function's code. To get a function's code, use <c>GetFunction</c>.
+        /// 
+        ///  
+        /// <para>
+        /// To get configuration information and metadata about a function, you must provide the
+        /// function's name and stage. To get these values, you can use <c>ListFunctions</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeFunction">REST API Reference for DescribeFunction Operation</seealso>
+        Task<DescribeFunctionResponse> DescribeFunctionAsync(DescribeFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Specifies the key value store and its configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKeyValueStore service method.</param>
+        /// <returns>The response from the DescribeKeyValueStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeKeyValueStore">REST API Reference for DescribeKeyValueStore Operation</seealso>
+        DescribeKeyValueStoreResponse DescribeKeyValueStore(DescribeKeyValueStoreRequest request);
+#endif
+
+        /// <summary>
+        /// Specifies the key value store and its configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKeyValueStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeKeyValueStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeKeyValueStore">REST API Reference for DescribeKeyValueStore Operation</seealso>
+        Task<DescribeKeyValueStoreResponse> DescribeKeyValueStoreAsync(DescribeKeyValueStoreRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Disassociates a distribution tenant from the WAF web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDistributionTenantWebACL service method.</param>
+        /// <returns>The response from the DisassociateDistributionTenantWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionTenantWebACL">REST API Reference for DisassociateDistributionTenantWebACL Operation</seealso>
+        DisassociateDistributionTenantWebACLResponse DisassociateDistributionTenantWebACL(DisassociateDistributionTenantWebACLRequest request);
+#endif
+
+        /// <summary>
+        /// Disassociates a distribution tenant from the WAF web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDistributionTenantWebACL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociateDistributionTenantWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionTenantWebACL">REST API Reference for DisassociateDistributionTenantWebACL Operation</seealso>
+        Task<DisassociateDistributionTenantWebACLResponse> DisassociateDistributionTenantWebACLAsync(DisassociateDistributionTenantWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Disassociates a distribution from the WAF web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDistributionWebACL service method.</param>
+        /// <returns>The response from the DisassociateDistributionWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionWebACL">REST API Reference for DisassociateDistributionWebACL Operation</seealso>
+        DisassociateDistributionWebACLResponse DisassociateDistributionWebACL(DisassociateDistributionWebACLRequest request);
+#endif
+
+        /// <summary>
+        /// Disassociates a distribution from the WAF web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDistributionWebACL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociateDistributionWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionWebACL">REST API Reference for DisassociateDistributionWebACL Operation</seealso>
+        Task<DisassociateDistributionWebACLResponse> DisassociateDistributionWebACLAsync(DisassociateDistributionWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets an Anycast static IP list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnycastIpList service method.</param>
+        /// <returns>The response from the GetAnycastIpList service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetAnycastIpList">REST API Reference for GetAnycastIpList Operation</seealso>
+        GetAnycastIpListResponse GetAnycastIpList(GetAnycastIpListRequest request);
+#endif
+
+        /// <summary>
+        /// Gets an Anycast static IP list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnycastIpList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAnycastIpList service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetAnycastIpList">REST API Reference for GetAnycastIpList Operation</seealso>
+        Task<GetAnycastIpListResponse> GetAnycastIpListAsync(GetAnycastIpListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a cache policy, including the following metadata:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The policy's identifier.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The date and time when the policy was last modified.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get a cache policy, you must provide the policy's identifier. If the cache policy
+        /// is attached to a distribution's cache behavior, you can get the policy's identifier
+        /// using <c>ListDistributions</c> or <c>GetDistribution</c>. If the cache policy is not
+        /// attached to a cache behavior, you can get the identifier using <c>ListCachePolicies</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCachePolicy service method.</param>
+        /// <returns>The response from the GetCachePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicy">REST API Reference for GetCachePolicy Operation</seealso>
+        GetCachePolicyResponse GetCachePolicy(GetCachePolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a cache policy, including the following metadata:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The policy's identifier.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The date and time when the policy was last modified.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get a cache policy, you must provide the policy's identifier. If the cache policy
+        /// is attached to a distribution's cache behavior, you can get the policy's identifier
+        /// using <c>ListDistributions</c> or <c>GetDistribution</c>. If the cache policy is not
+        /// attached to a cache behavior, you can get the identifier using <c>ListCachePolicies</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCachePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetCachePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicy">REST API Reference for GetCachePolicy Operation</seealso>
+        Task<GetCachePolicyResponse> GetCachePolicyAsync(GetCachePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a cache policy configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a cache policy configuration, you must provide the policy's identifier. If
+        /// the cache policy is attached to a distribution's cache behavior, you can get the policy's
+        /// identifier using <c>ListDistributions</c> or <c>GetDistribution</c>. If the cache
+        /// policy is not attached to a cache behavior, you can get the identifier using <c>ListCachePolicies</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCachePolicyConfig service method.</param>
+        /// <returns>The response from the GetCachePolicyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicyConfig">REST API Reference for GetCachePolicyConfig Operation</seealso>
+        GetCachePolicyConfigResponse GetCachePolicyConfig(GetCachePolicyConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a cache policy configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a cache policy configuration, you must provide the policy's identifier. If
+        /// the cache policy is attached to a distribution's cache behavior, you can get the policy's
+        /// identifier using <c>ListDistributions</c> or <c>GetDistribution</c>. If the cache
+        /// policy is not attached to a cache behavior, you can get the identifier using <c>ListCachePolicies</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCachePolicyConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetCachePolicyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicyConfig">REST API Reference for GetCachePolicyConfig Operation</seealso>
+        Task<GetCachePolicyConfigResponse> GetCachePolicyConfigAsync(GetCachePolicyConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the information about an origin access identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentity service method.</param>
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request);
+#endif
+
+        /// <summary>
+        /// Get the information about an origin access identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the information about an origin access identity.
+        /// </summary>
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity();
+#endif
+
+        /// <summary>
+        /// Get the information about an origin access identity.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the configuration information about an origin access identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentityConfig service method.</param>
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Get the configuration information about an origin access identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentityConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the configuration information about an origin access identity.
+        /// </summary>
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig();
+#endif
+
+        /// <summary>
+        /// Get the configuration information about an origin access identity.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionFunction service method.</param>
+        /// <returns>The response from the GetConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionFunction">REST API Reference for GetConnectionFunction Operation</seealso>
+        GetConnectionFunctionResponse GetConnectionFunction(GetConnectionFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionFunction">REST API Reference for GetConnectionFunction Operation</seealso>
+        Task<GetConnectionFunctionResponse> GetConnectionFunctionAsync(GetConnectionFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets information about a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionGroup service method.</param>
+        /// <returns>The response from the GetConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroup">REST API Reference for GetConnectionGroup Operation</seealso>
+        GetConnectionGroupResponse GetConnectionGroup(GetConnectionGroupRequest request);
+#endif
+
+        /// <summary>
+        /// Gets information about a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroup">REST API Reference for GetConnectionGroup Operation</seealso>
+        Task<GetConnectionGroupResponse> GetConnectionGroupAsync(GetConnectionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets information about a connection group by using the endpoint that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionGroupByRoutingEndpoint service method.</param>
+        /// <returns>The response from the GetConnectionGroupByRoutingEndpoint service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroupByRoutingEndpoint">REST API Reference for GetConnectionGroupByRoutingEndpoint Operation</seealso>
+        GetConnectionGroupByRoutingEndpointResponse GetConnectionGroupByRoutingEndpoint(GetConnectionGroupByRoutingEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Gets information about a connection group by using the endpoint that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionGroupByRoutingEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetConnectionGroupByRoutingEndpoint service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroupByRoutingEndpoint">REST API Reference for GetConnectionGroupByRoutingEndpoint Operation</seealso>
+        Task<GetConnectionGroupByRoutingEndpointResponse> GetConnectionGroupByRoutingEndpointAsync(GetConnectionGroupByRoutingEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a continuous deployment policy, including metadata (the policy's identifier and
+        /// the date and time when the policy was last modified).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContinuousDeploymentPolicy service method.</param>
+        /// <returns>The response from the GetContinuousDeploymentPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicy">REST API Reference for GetContinuousDeploymentPolicy Operation</seealso>
+        GetContinuousDeploymentPolicyResponse GetContinuousDeploymentPolicy(GetContinuousDeploymentPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a continuous deployment policy, including metadata (the policy's identifier and
+        /// the date and time when the policy was last modified).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContinuousDeploymentPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetContinuousDeploymentPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicy">REST API Reference for GetContinuousDeploymentPolicy Operation</seealso>
+        Task<GetContinuousDeploymentPolicyResponse> GetContinuousDeploymentPolicyAsync(GetContinuousDeploymentPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets configuration information about a continuous deployment policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContinuousDeploymentPolicyConfig service method.</param>
+        /// <returns>The response from the GetContinuousDeploymentPolicyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicyConfig">REST API Reference for GetContinuousDeploymentPolicyConfig Operation</seealso>
+        GetContinuousDeploymentPolicyConfigResponse GetContinuousDeploymentPolicyConfig(GetContinuousDeploymentPolicyConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Gets configuration information about a continuous deployment policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContinuousDeploymentPolicyConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetContinuousDeploymentPolicyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicyConfig">REST API Reference for GetContinuousDeploymentPolicyConfig Operation</seealso>
+        Task<GetContinuousDeploymentPolicyConfigResponse> GetContinuousDeploymentPolicyConfigAsync(GetContinuousDeploymentPolicyConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the information about a distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistribution service method.</param>
+        /// <returns>The response from the GetDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        GetDistributionResponse GetDistribution(GetDistributionRequest request);
+#endif
+
+        /// <summary>
+        /// Get the information about a distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the information about a distribution.
+        /// </summary>
+        /// <returns>The response from the GetDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        GetDistributionResponse GetDistribution();
+#endif
+
+        /// <summary>
+        /// Get the information about a distribution.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        Task<GetDistributionResponse> GetDistributionAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the configuration information about a distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionConfig service method.</param>
+        /// <returns>The response from the GetDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Get the configuration information about a distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the configuration information about a distribution.
+        /// </summary>
+        /// <returns>The response from the GetDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        GetDistributionConfigResponse GetDistributionConfig();
+#endif
+
+        /// <summary>
+        /// Get the configuration information about a distribution.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        Task<GetDistributionConfigResponse> GetDistributionConfigAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets information about a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionTenant service method.</param>
+        /// <returns>The response from the GetDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenant">REST API Reference for GetDistributionTenant Operation</seealso>
+        GetDistributionTenantResponse GetDistributionTenant(GetDistributionTenantRequest request);
+#endif
+
+        /// <summary>
+        /// Gets information about a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenant">REST API Reference for GetDistributionTenant Operation</seealso>
+        Task<GetDistributionTenantResponse> GetDistributionTenantAsync(GetDistributionTenantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets information about a distribution tenant by the associated domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionTenantByDomain service method.</param>
+        /// <returns>The response from the GetDistributionTenantByDomain service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenantByDomain">REST API Reference for GetDistributionTenantByDomain Operation</seealso>
+        GetDistributionTenantByDomainResponse GetDistributionTenantByDomain(GetDistributionTenantByDomainRequest request);
+#endif
+
+        /// <summary>
+        /// Gets information about a distribution tenant by the associated domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionTenantByDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDistributionTenantByDomain service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenantByDomain">REST API Reference for GetDistributionTenantByDomain Operation</seealso>
+        Task<GetDistributionTenantByDomainResponse> GetDistributionTenantByDomainAsync(GetDistributionTenantByDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the field-level encryption configuration information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryption service method.</param>
+        /// <returns>The response from the GetFieldLevelEncryption service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryption">REST API Reference for GetFieldLevelEncryption Operation</seealso>
+        GetFieldLevelEncryptionResponse GetFieldLevelEncryption(GetFieldLevelEncryptionRequest request);
+#endif
+
+        /// <summary>
+        /// Get the field-level encryption configuration information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryption service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetFieldLevelEncryption service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryption">REST API Reference for GetFieldLevelEncryption Operation</seealso>
+        Task<GetFieldLevelEncryptionResponse> GetFieldLevelEncryptionAsync(GetFieldLevelEncryptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the field-level encryption configuration information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionConfig service method.</param>
+        /// <returns>The response from the GetFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionConfig">REST API Reference for GetFieldLevelEncryptionConfig Operation</seealso>
+        GetFieldLevelEncryptionConfigResponse GetFieldLevelEncryptionConfig(GetFieldLevelEncryptionConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Get the field-level encryption configuration information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionConfig">REST API Reference for GetFieldLevelEncryptionConfig Operation</seealso>
+        Task<GetFieldLevelEncryptionConfigResponse> GetFieldLevelEncryptionConfigAsync(GetFieldLevelEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the field-level encryption profile information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfile service method.</param>
+        /// <returns>The response from the GetFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfile">REST API Reference for GetFieldLevelEncryptionProfile Operation</seealso>
+        GetFieldLevelEncryptionProfileResponse GetFieldLevelEncryptionProfile(GetFieldLevelEncryptionProfileRequest request);
+#endif
+
+        /// <summary>
+        /// Get the field-level encryption profile information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfile">REST API Reference for GetFieldLevelEncryptionProfile Operation</seealso>
+        Task<GetFieldLevelEncryptionProfileResponse> GetFieldLevelEncryptionProfileAsync(GetFieldLevelEncryptionProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the field-level encryption profile configuration information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfileConfig service method.</param>
+        /// <returns>The response from the GetFieldLevelEncryptionProfileConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfileConfig">REST API Reference for GetFieldLevelEncryptionProfileConfig Operation</seealso>
+        GetFieldLevelEncryptionProfileConfigResponse GetFieldLevelEncryptionProfileConfig(GetFieldLevelEncryptionProfileConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Get the field-level encryption profile configuration information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfileConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetFieldLevelEncryptionProfileConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfileConfig">REST API Reference for GetFieldLevelEncryptionProfileConfig Operation</seealso>
+        Task<GetFieldLevelEncryptionProfileConfigResponse> GetFieldLevelEncryptionProfileConfigAsync(GetFieldLevelEncryptionProfileConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets the code of a CloudFront function. To get configuration information and metadata
+        /// about a function, use <c>DescribeFunction</c>.
+        /// 
+        ///  
+        /// <para>
+        /// To get a function's code, you must provide the function's name and stage. To get these
+        /// values, you can use <c>ListFunctions</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
+        /// <returns>The response from the GetFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
+        GetFunctionResponse GetFunction(GetFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Gets the code of a CloudFront function. To get configuration information and metadata
+        /// about a function, use <c>DescribeFunction</c>.
+        /// 
+        ///  
+        /// <para>
+        /// To get a function's code, you must provide the function's name and stage. To get these
+        /// values, you can use <c>ListFunctions</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
+        Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the information about an invalidation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvalidation service method.</param>
+        /// <returns>The response from the GetInvalidation service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchInvalidationException">
+        /// The specified invalidation does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
+        GetInvalidationResponse GetInvalidation(GetInvalidationRequest request);
+#endif
+
+        /// <summary>
+        /// Get the information about an invalidation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvalidation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetInvalidation service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchInvalidationException">
+        /// The specified invalidation does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
+        Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets information about a specific invalidation for a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvalidationForDistributionTenant service method.</param>
+        /// <returns>The response from the GetInvalidationForDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchInvalidationException">
+        /// The specified invalidation does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidationForDistributionTenant">REST API Reference for GetInvalidationForDistributionTenant Operation</seealso>
+        GetInvalidationForDistributionTenantResponse GetInvalidationForDistributionTenant(GetInvalidationForDistributionTenantRequest request);
+#endif
+
+        /// <summary>
+        /// Gets information about a specific invalidation for a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvalidationForDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetInvalidationForDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchInvalidationException">
+        /// The specified invalidation does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidationForDistributionTenant">REST API Reference for GetInvalidationForDistributionTenant Operation</seealso>
+        Task<GetInvalidationForDistributionTenantResponse> GetInvalidationForDistributionTenantAsync(GetInvalidationForDistributionTenantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a key group, including the date and time when the key group was last modified.
+        /// 
+        ///  
+        /// <para>
+        /// To get a key group, you must provide the key group's identifier. If the key group
+        /// is referenced in a distribution's cache behavior, you can get the key group's identifier
+        /// using <c>ListDistributions</c> or <c>GetDistribution</c>. If the key group is not
+        /// referenced in a cache behavior, you can get the identifier using <c>ListKeyGroups</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKeyGroup service method.</param>
+        /// <returns>The response from the GetKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroup">REST API Reference for GetKeyGroup Operation</seealso>
+        GetKeyGroupResponse GetKeyGroup(GetKeyGroupRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a key group, including the date and time when the key group was last modified.
+        /// 
+        ///  
+        /// <para>
+        /// To get a key group, you must provide the key group's identifier. If the key group
+        /// is referenced in a distribution's cache behavior, you can get the key group's identifier
+        /// using <c>ListDistributions</c> or <c>GetDistribution</c>. If the key group is not
+        /// referenced in a cache behavior, you can get the identifier using <c>ListKeyGroups</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKeyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroup">REST API Reference for GetKeyGroup Operation</seealso>
+        Task<GetKeyGroupResponse> GetKeyGroupAsync(GetKeyGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a key group configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a key group configuration, you must provide the key group's identifier. If
+        /// the key group is referenced in a distribution's cache behavior, you can get the key
+        /// group's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>. If the
+        /// key group is not referenced in a cache behavior, you can get the identifier using
+        /// <c>ListKeyGroups</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKeyGroupConfig service method.</param>
+        /// <returns>The response from the GetKeyGroupConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroupConfig">REST API Reference for GetKeyGroupConfig Operation</seealso>
+        GetKeyGroupConfigResponse GetKeyGroupConfig(GetKeyGroupConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a key group configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a key group configuration, you must provide the key group's identifier. If
+        /// the key group is referenced in a distribution's cache behavior, you can get the key
+        /// group's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>. If the
+        /// key group is not referenced in a cache behavior, you can get the identifier using
+        /// <c>ListKeyGroups</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKeyGroupConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetKeyGroupConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroupConfig">REST API Reference for GetKeyGroupConfig Operation</seealso>
+        Task<GetKeyGroupConfigResponse> GetKeyGroupConfigAsync(GetKeyGroupConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets details about the CloudFront managed ACM certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedCertificateDetails service method.</param>
+        /// <returns>The response from the GetManagedCertificateDetails service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetManagedCertificateDetails">REST API Reference for GetManagedCertificateDetails Operation</seealso>
+        GetManagedCertificateDetailsResponse GetManagedCertificateDetails(GetManagedCertificateDetailsRequest request);
+#endif
+
+        /// <summary>
+        /// Gets details about the CloudFront managed ACM certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedCertificateDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetManagedCertificateDetails service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetManagedCertificateDetails">REST API Reference for GetManagedCertificateDetails Operation</seealso>
+        Task<GetManagedCertificateDetailsResponse> GetManagedCertificateDetailsAsync(GetManagedCertificateDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets information about whether additional CloudWatch metrics are enabled for the specified
+        /// CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMonitoringSubscription service method.</param>
+        /// <returns>The response from the GetMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchMonitoringSubscriptionException">
+        /// A monitoring subscription does not exist for the specified distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription">REST API Reference for GetMonitoringSubscription Operation</seealso>
+        GetMonitoringSubscriptionResponse GetMonitoringSubscription(GetMonitoringSubscriptionRequest request);
+#endif
+
+        /// <summary>
+        /// Gets information about whether additional CloudWatch metrics are enabled for the specified
+        /// CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMonitoringSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchMonitoringSubscriptionException">
+        /// A monitoring subscription does not exist for the specified distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription">REST API Reference for GetMonitoringSubscription Operation</seealso>
+        Task<GetMonitoringSubscriptionResponse> GetMonitoringSubscriptionAsync(GetMonitoringSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a CloudFront origin access control, including its unique identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControl service method.</param>
+        /// <returns>The response from the GetOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControl">REST API Reference for GetOriginAccessControl Operation</seealso>
+        GetOriginAccessControlResponse GetOriginAccessControl(GetOriginAccessControlRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a CloudFront origin access control, including its unique identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControl">REST API Reference for GetOriginAccessControl Operation</seealso>
+        Task<GetOriginAccessControlResponse> GetOriginAccessControlAsync(GetOriginAccessControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a CloudFront origin access control configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControlConfig service method.</param>
+        /// <returns>The response from the GetOriginAccessControlConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControlConfig">REST API Reference for GetOriginAccessControlConfig Operation</seealso>
+        GetOriginAccessControlConfigResponse GetOriginAccessControlConfig(GetOriginAccessControlConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a CloudFront origin access control configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControlConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetOriginAccessControlConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControlConfig">REST API Reference for GetOriginAccessControlConfig Operation</seealso>
+        Task<GetOriginAccessControlConfigResponse> GetOriginAccessControlConfigAsync(GetOriginAccessControlConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets an origin request policy, including the following metadata:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The policy's identifier.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The date and time when the policy was last modified.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get an origin request policy, you must provide the policy's identifier. If the
+        /// origin request policy is attached to a distribution's cache behavior, you can get
+        /// the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
+        /// If the origin request policy is not attached to a cache behavior, you can get the
+        /// identifier using <c>ListOriginRequestPolicies</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginRequestPolicy service method.</param>
+        /// <returns>The response from the GetOriginRequestPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicy">REST API Reference for GetOriginRequestPolicy Operation</seealso>
+        GetOriginRequestPolicyResponse GetOriginRequestPolicy(GetOriginRequestPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Gets an origin request policy, including the following metadata:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The policy's identifier.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The date and time when the policy was last modified.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get an origin request policy, you must provide the policy's identifier. If the
+        /// origin request policy is attached to a distribution's cache behavior, you can get
+        /// the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
+        /// If the origin request policy is not attached to a cache behavior, you can get the
+        /// identifier using <c>ListOriginRequestPolicies</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginRequestPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetOriginRequestPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicy">REST API Reference for GetOriginRequestPolicy Operation</seealso>
+        Task<GetOriginRequestPolicyResponse> GetOriginRequestPolicyAsync(GetOriginRequestPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets an origin request policy configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get an origin request policy configuration, you must provide the policy's identifier.
+        /// If the origin request policy is attached to a distribution's cache behavior, you can
+        /// get the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
+        /// If the origin request policy is not attached to a cache behavior, you can get the
+        /// identifier using <c>ListOriginRequestPolicies</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginRequestPolicyConfig service method.</param>
+        /// <returns>The response from the GetOriginRequestPolicyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicyConfig">REST API Reference for GetOriginRequestPolicyConfig Operation</seealso>
+        GetOriginRequestPolicyConfigResponse GetOriginRequestPolicyConfig(GetOriginRequestPolicyConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Gets an origin request policy configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get an origin request policy configuration, you must provide the policy's identifier.
+        /// If the origin request policy is attached to a distribution's cache behavior, you can
+        /// get the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
+        /// If the origin request policy is not attached to a cache behavior, you can get the
+        /// identifier using <c>ListOriginRequestPolicies</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginRequestPolicyConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetOriginRequestPolicyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicyConfig">REST API Reference for GetOriginRequestPolicyConfig Operation</seealso>
+        Task<GetOriginRequestPolicyConfigResponse> GetOriginRequestPolicyConfigAsync(GetOriginRequestPolicyConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a public key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKey service method.</param>
+        /// <returns>The response from the GetPublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
+        GetPublicKeyResponse GetPublicKey(GetPublicKeyRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a public key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetPublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
+        Task<GetPublicKeyResponse> GetPublicKeyAsync(GetPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a public key configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKeyConfig service method.</param>
+        /// <returns>The response from the GetPublicKeyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKeyConfig">REST API Reference for GetPublicKeyConfig Operation</seealso>
+        GetPublicKeyConfigResponse GetPublicKeyConfig(GetPublicKeyConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a public key configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKeyConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetPublicKeyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKeyConfig">REST API Reference for GetPublicKeyConfig Operation</seealso>
+        Task<GetPublicKeyConfigResponse> GetPublicKeyConfigAsync(GetPublicKeyConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a real-time log configuration, you can provide the configuration's name or
+        /// its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
+        /// CloudFront uses the name to identify the real-time log configuration to get.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRealtimeLogConfig service method.</param>
+        /// <returns>The response from the GetRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig">REST API Reference for GetRealtimeLogConfig Operation</seealso>
+        GetRealtimeLogConfigResponse GetRealtimeLogConfig(GetRealtimeLogConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a real-time log configuration, you can provide the configuration's name or
+        /// its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
+        /// CloudFront uses the name to identify the real-time log configuration to get.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRealtimeLogConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig">REST API Reference for GetRealtimeLogConfig Operation</seealso>
+        Task<GetRealtimeLogConfigResponse> GetRealtimeLogConfigAsync(GetRealtimeLogConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the resource policy for the specified CloudFront resource that you own and
+        /// have shared.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <returns>The response from the GetResourcePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the resource policy for the specified CloudFront resource that you own and
+        /// have shared.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetResourcePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a response headers policy, including metadata (the policy's identifier and the
+        /// date and time when the policy was last modified).
+        /// 
+        ///  
+        /// <para>
+        /// To get a response headers policy, you must provide the policy's identifier. If the
+        /// response headers policy is attached to a distribution's cache behavior, you can get
+        /// the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
+        /// If the response headers policy is not attached to a cache behavior, you can get the
+        /// identifier using <c>ListResponseHeadersPolicies</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicy service method.</param>
+        /// <returns>The response from the GetResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicy">REST API Reference for GetResponseHeadersPolicy Operation</seealso>
+        GetResponseHeadersPolicyResponse GetResponseHeadersPolicy(GetResponseHeadersPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a response headers policy, including metadata (the policy's identifier and the
+        /// date and time when the policy was last modified).
+        /// 
+        ///  
+        /// <para>
+        /// To get a response headers policy, you must provide the policy's identifier. If the
+        /// response headers policy is attached to a distribution's cache behavior, you can get
+        /// the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
+        /// If the response headers policy is not attached to a cache behavior, you can get the
+        /// identifier using <c>ListResponseHeadersPolicies</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicy">REST API Reference for GetResponseHeadersPolicy Operation</seealso>
+        Task<GetResponseHeadersPolicyResponse> GetResponseHeadersPolicyAsync(GetResponseHeadersPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a response headers policy configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a response headers policy configuration, you must provide the policy's identifier.
+        /// If the response headers policy is attached to a distribution's cache behavior, you
+        /// can get the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
+        /// If the response headers policy is not attached to a cache behavior, you can get the
+        /// identifier using <c>ListResponseHeadersPolicies</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicyConfig service method.</param>
+        /// <returns>The response from the GetResponseHeadersPolicyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicyConfig">REST API Reference for GetResponseHeadersPolicyConfig Operation</seealso>
+        GetResponseHeadersPolicyConfigResponse GetResponseHeadersPolicyConfig(GetResponseHeadersPolicyConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a response headers policy configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a response headers policy configuration, you must provide the policy's identifier.
+        /// If the response headers policy is attached to a distribution's cache behavior, you
+        /// can get the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
+        /// If the response headers policy is not attached to a cache behavior, you can get the
+        /// identifier using <c>ListResponseHeadersPolicies</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicyConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetResponseHeadersPolicyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicyConfig">REST API Reference for GetResponseHeadersPolicyConfig Operation</seealso>
+        Task<GetResponseHeadersPolicyConfigResponse> GetResponseHeadersPolicyConfigAsync(GetResponseHeadersPolicyConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets information about a specified RTMP distribution, including the distribution configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistribution service method.</param>
+        /// <returns>The response from the GetStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request);
+#endif
+
+        /// <summary>
+        /// Gets information about a specified RTMP distribution, including the distribution configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets information about a specified RTMP distribution, including the distribution configuration.
+        /// </summary>
+        /// <returns>The response from the GetStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        GetStreamingDistributionResponse GetStreamingDistribution();
+#endif
+
+        /// <summary>
+        /// Gets information about a specified RTMP distribution, including the distribution configuration.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the configuration information about a streaming distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistributionConfig service method.</param>
+        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Get the configuration information about a streaming distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistributionConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the configuration information about a streaming distribution.
+        /// </summary>
+        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        GetStreamingDistributionConfigResponse GetStreamingDistributionConfig();
+#endif
+
+        /// <summary>
+        /// Get the configuration information about a streaming distribution.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStore service method.</param>
+        /// <returns>The response from the GetTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetTrustStore">REST API Reference for GetTrustStore Operation</seealso>
+        GetTrustStoreResponse GetTrustStore(GetTrustStoreRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetTrustStore">REST API Reference for GetTrustStore Operation</seealso>
+        Task<GetTrustStoreResponse> GetTrustStoreAsync(GetTrustStoreRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get the details of an Amazon CloudFront VPC origin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcOrigin service method.</param>
+        /// <returns>The response from the GetVpcOrigin service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetVpcOrigin">REST API Reference for GetVpcOrigin Operation</seealso>
+        GetVpcOriginResponse GetVpcOrigin(GetVpcOriginRequest request);
+#endif
+
+        /// <summary>
+        /// Get the details of an Amazon CloudFront VPC origin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcOrigin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetVpcOrigin service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetVpcOrigin">REST API Reference for GetVpcOrigin Operation</seealso>
+        Task<GetVpcOriginResponse> GetVpcOriginAsync(GetVpcOriginRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists your Anycast static IP lists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnycastIpLists service method.</param>
+        /// <returns>The response from the ListAnycastIpLists service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListAnycastIpLists">REST API Reference for ListAnycastIpLists Operation</seealso>
+        ListAnycastIpListsResponse ListAnycastIpLists(ListAnycastIpListsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists your Anycast static IP lists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnycastIpLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAnycastIpLists service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListAnycastIpLists">REST API Reference for ListAnycastIpLists Operation</seealso>
+        Task<ListAnycastIpListsResponse> ListAnycastIpListsAsync(ListAnycastIpListsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a list of cache policies.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally apply a filter to return only the managed policies created by Amazon
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCachePolicies service method.</param>
+        /// <returns>The response from the ListCachePolicies service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCachePolicies">REST API Reference for ListCachePolicies Operation</seealso>
+        ListCachePoliciesResponse ListCachePolicies(ListCachePoliciesRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a list of cache policies.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally apply a filter to return only the managed policies created by Amazon
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCachePolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListCachePolicies service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCachePolicies">REST API Reference for ListCachePolicies Operation</seealso>
+        Task<ListCachePoliciesResponse> ListCachePoliciesAsync(ListCachePoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists origin access identities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudFrontOriginAccessIdentities service method.</param>
+        /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request);
+#endif
+
+        /// <summary>
+        /// Lists origin access identities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudFrontOriginAccessIdentities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists origin access identities.
+        /// </summary>
+        /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities();
+#endif
+
+        /// <summary>
+        /// Lists origin access identities.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The <c>ListConflictingAliases</c> API operation only supports standard distributions.
+        /// To list domain conflicts for both standard distributions and distribution tenants,
+        /// we recommend that you use the <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDomainConflicts.html">ListDomainConflicts</a>
+        /// API operation instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Gets a list of aliases that conflict or overlap with the provided alias, and the associated
+        /// CloudFront standard distribution and Amazon Web Services accounts for each conflicting
+        /// alias. An alias is commonly known as a custom domain or vanity domain. It can also
+        /// be called a CNAME or alternate domain name.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the returned list, the standard distribution and account IDs are partially hidden,
+        /// which allows you to identify the standard distribution and accounts that you own,
+        /// and helps to protect the information of ones that you don't own.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this operation to find aliases that are in use in CloudFront that conflict or
+        /// overlap with the provided alias. For example, if you provide <c>www.example.com</c>
+        /// as input, the returned list can include <c>www.example.com</c> and the overlapping
+        /// wildcard alternate domain name (<c>*.example.com</c>), if they exist. If you provide
+        /// <c>*.example.com</c> as input, the returned list can include <c>*.example.com</c>
+        /// and any alternate domain names covered by that wildcard (for example, <c>www.example.com</c>,
+        /// <c>test.example.com</c>, <c>dev.example.com</c>, and so on), if they exist.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list conflicting aliases, specify the alias to search and the ID of a standard
+        /// distribution in your account that has an attached TLS certificate that includes the
+        /// provided alias. For more information, including how to set up the standard distribution
+        /// and certificate, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+        /// an alternate domain name to a different standard distribution or distribution tenant</a>
+        /// in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConflictingAliases service method.</param>
+        /// <returns>The response from the ListConflictingAliases service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConflictingAliases">REST API Reference for ListConflictingAliases Operation</seealso>
+        ListConflictingAliasesResponse ListConflictingAliases(ListConflictingAliasesRequest request);
+#endif
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The <c>ListConflictingAliases</c> API operation only supports standard distributions.
+        /// To list domain conflicts for both standard distributions and distribution tenants,
+        /// we recommend that you use the <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDomainConflicts.html">ListDomainConflicts</a>
+        /// API operation instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Gets a list of aliases that conflict or overlap with the provided alias, and the associated
+        /// CloudFront standard distribution and Amazon Web Services accounts for each conflicting
+        /// alias. An alias is commonly known as a custom domain or vanity domain. It can also
+        /// be called a CNAME or alternate domain name.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the returned list, the standard distribution and account IDs are partially hidden,
+        /// which allows you to identify the standard distribution and accounts that you own,
+        /// and helps to protect the information of ones that you don't own.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this operation to find aliases that are in use in CloudFront that conflict or
+        /// overlap with the provided alias. For example, if you provide <c>www.example.com</c>
+        /// as input, the returned list can include <c>www.example.com</c> and the overlapping
+        /// wildcard alternate domain name (<c>*.example.com</c>), if they exist. If you provide
+        /// <c>*.example.com</c> as input, the returned list can include <c>*.example.com</c>
+        /// and any alternate domain names covered by that wildcard (for example, <c>www.example.com</c>,
+        /// <c>test.example.com</c>, <c>dev.example.com</c>, and so on), if they exist.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list conflicting aliases, specify the alias to search and the ID of a standard
+        /// distribution in your account that has an attached TLS certificate that includes the
+        /// provided alias. For more information, including how to set up the standard distribution
+        /// and certificate, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+        /// an alternate domain name to a different standard distribution or distribution tenant</a>
+        /// in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConflictingAliases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListConflictingAliases service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConflictingAliases">REST API Reference for ListConflictingAliases Operation</seealso>
+        Task<ListConflictingAliasesResponse> ListConflictingAliasesAsync(ListConflictingAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists connection functions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectionFunctions service method.</param>
+        /// <returns>The response from the ListConnectionFunctions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionFunctions">REST API Reference for ListConnectionFunctions Operation</seealso>
+        ListConnectionFunctionsResponse ListConnectionFunctions(ListConnectionFunctionsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists connection functions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectionFunctions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListConnectionFunctions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionFunctions">REST API Reference for ListConnectionFunctions Operation</seealso>
+        Task<ListConnectionFunctionsResponse> ListConnectionFunctionsAsync(ListConnectionFunctionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the connection groups in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectionGroups service method.</param>
+        /// <returns>The response from the ListConnectionGroups service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionGroups">REST API Reference for ListConnectionGroups Operation</seealso>
+        ListConnectionGroupsResponse ListConnectionGroups(ListConnectionGroupsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the connection groups in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectionGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListConnectionGroups service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionGroups">REST API Reference for ListConnectionGroups Operation</seealso>
+        Task<ListConnectionGroupsResponse> ListConnectionGroupsAsync(ListConnectionGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a list of the continuous deployment policies in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContinuousDeploymentPolicies service method.</param>
+        /// <returns>The response from the ListContinuousDeploymentPolicies service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListContinuousDeploymentPolicies">REST API Reference for ListContinuousDeploymentPolicies Operation</seealso>
+        ListContinuousDeploymentPoliciesResponse ListContinuousDeploymentPolicies(ListContinuousDeploymentPoliciesRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a list of the continuous deployment policies in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContinuousDeploymentPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContinuousDeploymentPolicies service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListContinuousDeploymentPolicies">REST API Reference for ListContinuousDeploymentPolicies Operation</seealso>
+        Task<ListContinuousDeploymentPoliciesResponse> ListContinuousDeploymentPoliciesAsync(ListContinuousDeploymentPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the distribution tenants in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionTenants service method.</param>
+        /// <returns>The response from the ListDistributionTenants service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenants">REST API Reference for ListDistributionTenants Operation</seealso>
+        ListDistributionTenantsResponse ListDistributionTenants(ListDistributionTenantsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the distribution tenants in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionTenants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionTenants service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenants">REST API Reference for ListDistributionTenants Operation</seealso>
+        Task<ListDistributionTenantsResponse> ListDistributionTenantsAsync(ListDistributionTenantsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists distribution tenants by the customization that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify either the <c>CertificateArn</c> parameter or <c>WebACLArn</c> parameter,
+        /// but not both in the same request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionTenantsByCustomization service method.</param>
+        /// <returns>The response from the ListDistributionTenantsByCustomization service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenantsByCustomization">REST API Reference for ListDistributionTenantsByCustomization Operation</seealso>
+        ListDistributionTenantsByCustomizationResponse ListDistributionTenantsByCustomization(ListDistributionTenantsByCustomizationRequest request);
+#endif
+
+        /// <summary>
+        /// Lists distribution tenants by the customization that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify either the <c>CertificateArn</c> parameter or <c>WebACLArn</c> parameter,
+        /// but not both in the same request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionTenantsByCustomization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionTenantsByCustomization service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenantsByCustomization">REST API Reference for ListDistributionTenantsByCustomization Operation</seealso>
+        Task<ListDistributionTenantsByCustomizationResponse> ListDistributionTenantsByCustomizationAsync(ListDistributionTenantsByCustomizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List CloudFront distributions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributions service method.</param>
+        /// <returns>The response from the ListDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        ListDistributionsResponse ListDistributions(ListDistributionsRequest request);
+#endif
+
+        /// <summary>
+        /// List CloudFront distributions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List CloudFront distributions.
+        /// </summary>
+        /// <returns>The response from the ListDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        ListDistributionsResponse ListDistributions();
+#endif
+
+        /// <summary>
+        /// List CloudFront distributions.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        Task<ListDistributionsResponse> ListDistributionsAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the distributions in your account that are associated with the specified <c>AnycastIpListId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByAnycastIpListId service method.</param>
+        /// <returns>The response from the ListDistributionsByAnycastIpListId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByAnycastIpListId">REST API Reference for ListDistributionsByAnycastIpListId Operation</seealso>
+        ListDistributionsByAnycastIpListIdResponse ListDistributionsByAnycastIpListId(ListDistributionsByAnycastIpListIdRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the distributions in your account that are associated with the specified <c>AnycastIpListId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByAnycastIpListId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionsByAnycastIpListId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByAnycastIpListId">REST API Reference for ListDistributionsByAnycastIpListId Operation</seealso>
+        Task<ListDistributionsByAnycastIpListIdResponse> ListDistributionsByAnycastIpListIdAsync(ListDistributionsByAnycastIpListIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that's
+        /// associated with the specified cache policy.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByCachePolicyId service method.</param>
+        /// <returns>The response from the ListDistributionsByCachePolicyId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByCachePolicyId">REST API Reference for ListDistributionsByCachePolicyId Operation</seealso>
+        ListDistributionsByCachePolicyIdResponse ListDistributionsByCachePolicyId(ListDistributionsByCachePolicyIdRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that's
+        /// associated with the specified cache policy.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByCachePolicyId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionsByCachePolicyId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByCachePolicyId">REST API Reference for ListDistributionsByCachePolicyId Operation</seealso>
+        Task<ListDistributionsByCachePolicyIdResponse> ListDistributionsByCachePolicyIdAsync(ListDistributionsByCachePolicyIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists distributions by connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByConnectionFunction service method.</param>
+        /// <returns>The response from the ListDistributionsByConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionFunction">REST API Reference for ListDistributionsByConnectionFunction Operation</seealso>
+        ListDistributionsByConnectionFunctionResponse ListDistributionsByConnectionFunction(ListDistributionsByConnectionFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Lists distributions by connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionsByConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionFunction">REST API Reference for ListDistributionsByConnectionFunction Operation</seealso>
+        Task<ListDistributionsByConnectionFunctionResponse> ListDistributionsByConnectionFunctionAsync(ListDistributionsByConnectionFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the distributions by the connection mode that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByConnectionMode service method.</param>
+        /// <returns>The response from the ListDistributionsByConnectionMode service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionMode">REST API Reference for ListDistributionsByConnectionMode Operation</seealso>
+        ListDistributionsByConnectionModeResponse ListDistributionsByConnectionMode(ListDistributionsByConnectionModeRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the distributions by the connection mode that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByConnectionMode service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionsByConnectionMode service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionMode">REST API Reference for ListDistributionsByConnectionMode Operation</seealso>
+        Task<ListDistributionsByConnectionModeResponse> ListDistributionsByConnectionModeAsync(ListDistributionsByConnectionModeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that
+        /// references the specified key group.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByKeyGroup service method.</param>
+        /// <returns>The response from the ListDistributionsByKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByKeyGroup">REST API Reference for ListDistributionsByKeyGroup Operation</seealso>
+        ListDistributionsByKeyGroupResponse ListDistributionsByKeyGroup(ListDistributionsByKeyGroupRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that
+        /// references the specified key group.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByKeyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionsByKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByKeyGroup">REST API Reference for ListDistributionsByKeyGroup Operation</seealso>
+        Task<ListDistributionsByKeyGroupResponse> ListDistributionsByKeyGroupAsync(ListDistributionsByKeyGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that's
+        /// associated with the specified origin request policy.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByOriginRequestPolicyId service method.</param>
+        /// <returns>The response from the ListDistributionsByOriginRequestPolicyId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByOriginRequestPolicyId">REST API Reference for ListDistributionsByOriginRequestPolicyId Operation</seealso>
+        ListDistributionsByOriginRequestPolicyIdResponse ListDistributionsByOriginRequestPolicyId(ListDistributionsByOriginRequestPolicyIdRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that's
+        /// associated with the specified origin request policy.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByOriginRequestPolicyId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionsByOriginRequestPolicyId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByOriginRequestPolicyId">REST API Reference for ListDistributionsByOriginRequestPolicyId Operation</seealso>
+        Task<ListDistributionsByOriginRequestPolicyIdResponse> ListDistributionsByOriginRequestPolicyIdAsync(ListDistributionsByOriginRequestPolicyIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the CloudFront distributions that are associated with the specified resource
+        /// that you own.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByOwnedResource service method.</param>
+        /// <returns>The response from the ListDistributionsByOwnedResource service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByOwnedResource">REST API Reference for ListDistributionsByOwnedResource Operation</seealso>
+        ListDistributionsByOwnedResourceResponse ListDistributionsByOwnedResource(ListDistributionsByOwnedResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the CloudFront distributions that are associated with the specified resource
+        /// that you own.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByOwnedResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionsByOwnedResource service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByOwnedResource">REST API Reference for ListDistributionsByOwnedResource Operation</seealso>
+        Task<ListDistributionsByOwnedResourceResponse> ListDistributionsByOwnedResourceAsync(ListDistributionsByOwnedResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a list of distributions that have a cache behavior that's associated with the
+        /// specified real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify the real-time log configuration by its name or its Amazon Resource
+        /// Name (ARN). You must provide at least one. If you provide both, CloudFront uses the
+        /// name to identify the real-time log configuration to list distributions for.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByRealtimeLogConfig service method.</param>
+        /// <returns>The response from the ListDistributionsByRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig">REST API Reference for ListDistributionsByRealtimeLogConfig Operation</seealso>
+        ListDistributionsByRealtimeLogConfigResponse ListDistributionsByRealtimeLogConfig(ListDistributionsByRealtimeLogConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a list of distributions that have a cache behavior that's associated with the
+        /// specified real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify the real-time log configuration by its name or its Amazon Resource
+        /// Name (ARN). You must provide at least one. If you provide both, CloudFront uses the
+        /// name to identify the real-time log configuration to list distributions for.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByRealtimeLogConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionsByRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig">REST API Reference for ListDistributionsByRealtimeLogConfig Operation</seealso>
+        Task<ListDistributionsByRealtimeLogConfigResponse> ListDistributionsByRealtimeLogConfigAsync(ListDistributionsByRealtimeLogConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that's
+        /// associated with the specified response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByResponseHeadersPolicyId service method.</param>
+        /// <returns>The response from the ListDistributionsByResponseHeadersPolicyId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByResponseHeadersPolicyId">REST API Reference for ListDistributionsByResponseHeadersPolicyId Operation</seealso>
+        ListDistributionsByResponseHeadersPolicyIdResponse ListDistributionsByResponseHeadersPolicyId(ListDistributionsByResponseHeadersPolicyIdRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that's
+        /// associated with the specified response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByResponseHeadersPolicyId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionsByResponseHeadersPolicyId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByResponseHeadersPolicyId">REST API Reference for ListDistributionsByResponseHeadersPolicyId Operation</seealso>
+        Task<ListDistributionsByResponseHeadersPolicyIdResponse> ListDistributionsByResponseHeadersPolicyIdAsync(ListDistributionsByResponseHeadersPolicyIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists distributions by trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByTrustStore service method.</param>
+        /// <returns>The response from the ListDistributionsByTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByTrustStore">REST API Reference for ListDistributionsByTrustStore Operation</seealso>
+        ListDistributionsByTrustStoreResponse ListDistributionsByTrustStore(ListDistributionsByTrustStoreRequest request);
+#endif
+
+        /// <summary>
+        /// Lists distributions by trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByTrustStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionsByTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByTrustStore">REST API Reference for ListDistributionsByTrustStore Operation</seealso>
+        Task<ListDistributionsByTrustStoreResponse> ListDistributionsByTrustStoreAsync(ListDistributionsByTrustStoreRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List CloudFront distributions by their VPC origin ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByVpcOriginId service method.</param>
+        /// <returns>The response from the ListDistributionsByVpcOriginId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByVpcOriginId">REST API Reference for ListDistributionsByVpcOriginId Operation</seealso>
+        ListDistributionsByVpcOriginIdResponse ListDistributionsByVpcOriginId(ListDistributionsByVpcOriginIdRequest request);
+#endif
+
+        /// <summary>
+        /// List CloudFront distributions by their VPC origin ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByVpcOriginId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionsByVpcOriginId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByVpcOriginId">REST API Reference for ListDistributionsByVpcOriginId Operation</seealso>
+        Task<ListDistributionsByVpcOriginIdResponse> ListDistributionsByVpcOriginIdAsync(ListDistributionsByVpcOriginIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List the distributions that are associated with a specified WAF web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByWebACLId service method.</param>
+        /// <returns>The response from the ListDistributionsByWebACLId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
+        ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request);
+#endif
+
+        /// <summary>
+        /// List the distributions that are associated with a specified WAF web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByWebACLId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDistributionsByWebACLId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
+        Task<ListDistributionsByWebACLIdResponse> ListDistributionsByWebACLIdAsync(ListDistributionsByWebACLIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// We recommend that you use the <c>ListDomainConflicts</c> API operation to check for
+        /// domain conflicts, as it supports both standard distributions and distribution tenants.
+        /// <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListConflictingAliases.html">ListConflictingAliases</a>
+        /// performs similar checks but only supports standard distributions.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Lists existing domain associations that conflict with the domain that you specify.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this API operation to identify potential domain conflicts when moving
+        /// domains between standard distributions and/or distribution tenants. Domain conflicts
+        /// must be resolved first before they can be moved. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you provide <c>www.example.com</c> as input, the returned list can
+        /// include <c>www.example.com</c> and the overlapping wildcard alternate domain name
+        /// (<c>*.example.com</c>), if they exist. If you provide <c>*.example.com</c> as input,
+        /// the returned list can include <c>*.example.com</c> and any alternate domain names
+        /// covered by that wildcard (for example, <c>www.example.com</c>, <c>test.example.com</c>,
+        /// <c>dev.example.com</c>, and so on), if they exist.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list conflicting domains, specify the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The domain to search for
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ID of a standard distribution or distribution tenant in your account that has
+        /// an attached TLS certificate, which covers the specified domain
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, including how to set up the standard distribution or distribution
+        /// tenant, and the certificate, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+        /// an alternate domain name to a different standard distribution or distribution tenant</a>
+        /// in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainConflicts service method.</param>
+        /// <returns>The response from the ListDomainConflicts service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDomainConflicts">REST API Reference for ListDomainConflicts Operation</seealso>
+        ListDomainConflictsResponse ListDomainConflicts(ListDomainConflictsRequest request);
+#endif
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// We recommend that you use the <c>ListDomainConflicts</c> API operation to check for
+        /// domain conflicts, as it supports both standard distributions and distribution tenants.
+        /// <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListConflictingAliases.html">ListConflictingAliases</a>
+        /// performs similar checks but only supports standard distributions.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Lists existing domain associations that conflict with the domain that you specify.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this API operation to identify potential domain conflicts when moving
+        /// domains between standard distributions and/or distribution tenants. Domain conflicts
+        /// must be resolved first before they can be moved. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you provide <c>www.example.com</c> as input, the returned list can
+        /// include <c>www.example.com</c> and the overlapping wildcard alternate domain name
+        /// (<c>*.example.com</c>), if they exist. If you provide <c>*.example.com</c> as input,
+        /// the returned list can include <c>*.example.com</c> and any alternate domain names
+        /// covered by that wildcard (for example, <c>www.example.com</c>, <c>test.example.com</c>,
+        /// <c>dev.example.com</c>, and so on), if they exist.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list conflicting domains, specify the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The domain to search for
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ID of a standard distribution or distribution tenant in your account that has
+        /// an attached TLS certificate, which covers the specified domain
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, including how to set up the standard distribution or distribution
+        /// tenant, and the certificate, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+        /// an alternate domain name to a different standard distribution or distribution tenant</a>
+        /// in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainConflicts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDomainConflicts service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDomainConflicts">REST API Reference for ListDomainConflicts Operation</seealso>
+        Task<ListDomainConflictsResponse> ListDomainConflictsAsync(ListDomainConflictsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List all field-level encryption configurations that have been created in CloudFront
+        /// for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionConfigs service method.</param>
+        /// <returns>The response from the ListFieldLevelEncryptionConfigs service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionConfigs">REST API Reference for ListFieldLevelEncryptionConfigs Operation</seealso>
+        ListFieldLevelEncryptionConfigsResponse ListFieldLevelEncryptionConfigs(ListFieldLevelEncryptionConfigsRequest request);
+#endif
+
+        /// <summary>
+        /// List all field-level encryption configurations that have been created in CloudFront
+        /// for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListFieldLevelEncryptionConfigs service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionConfigs">REST API Reference for ListFieldLevelEncryptionConfigs Operation</seealso>
+        Task<ListFieldLevelEncryptionConfigsResponse> ListFieldLevelEncryptionConfigsAsync(ListFieldLevelEncryptionConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Request a list of field-level encryption profiles that have been created in CloudFront
+        /// for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionProfiles service method.</param>
+        /// <returns>The response from the ListFieldLevelEncryptionProfiles service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionProfiles">REST API Reference for ListFieldLevelEncryptionProfiles Operation</seealso>
+        ListFieldLevelEncryptionProfilesResponse ListFieldLevelEncryptionProfiles(ListFieldLevelEncryptionProfilesRequest request);
+#endif
+
+        /// <summary>
+        /// Request a list of field-level encryption profiles that have been created in CloudFront
+        /// for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListFieldLevelEncryptionProfiles service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionProfiles">REST API Reference for ListFieldLevelEncryptionProfiles Operation</seealso>
+        Task<ListFieldLevelEncryptionProfilesResponse> ListFieldLevelEncryptionProfilesAsync(ListFieldLevelEncryptionProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a list of all CloudFront functions in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally apply a filter to return only the functions that are in the specified
+        /// stage, either <c>DEVELOPMENT</c> or <c>LIVE</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
+        /// <returns>The response from the ListFunctions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
+        ListFunctionsResponse ListFunctions(ListFunctionsRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a list of all CloudFront functions in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally apply a filter to return only the functions that are in the specified
+        /// stage, either <c>DEVELOPMENT</c> or <c>LIVE</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListFunctions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
+        Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists invalidation batches.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvalidations service method.</param>
+        /// <returns>The response from the ListInvalidations service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
+        ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists invalidation batches.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvalidations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListInvalidations service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
+        Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the invalidations for a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvalidationsForDistributionTenant service method.</param>
+        /// <returns>The response from the ListInvalidationsForDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidationsForDistributionTenant">REST API Reference for ListInvalidationsForDistributionTenant Operation</seealso>
+        ListInvalidationsForDistributionTenantResponse ListInvalidationsForDistributionTenant(ListInvalidationsForDistributionTenantRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the invalidations for a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvalidationsForDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListInvalidationsForDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidationsForDistributionTenant">REST API Reference for ListInvalidationsForDistributionTenant Operation</seealso>
+        Task<ListInvalidationsForDistributionTenantResponse> ListInvalidationsForDistributionTenantAsync(ListInvalidationsForDistributionTenantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a list of key groups.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKeyGroups service method.</param>
+        /// <returns>The response from the ListKeyGroups service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyGroups">REST API Reference for ListKeyGroups Operation</seealso>
+        ListKeyGroupsResponse ListKeyGroups(ListKeyGroupsRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a list of key groups.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKeyGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListKeyGroups service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyGroups">REST API Reference for ListKeyGroups Operation</seealso>
+        Task<ListKeyGroupsResponse> ListKeyGroupsAsync(ListKeyGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Specifies the key value stores to list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKeyValueStores service method.</param>
+        /// <returns>The response from the ListKeyValueStores service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyValueStores">REST API Reference for ListKeyValueStores Operation</seealso>
+        ListKeyValueStoresResponse ListKeyValueStores(ListKeyValueStoresRequest request);
+#endif
+
+        /// <summary>
+        /// Specifies the key value stores to list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKeyValueStores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListKeyValueStores service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyValueStores">REST API Reference for ListKeyValueStores Operation</seealso>
+        Task<ListKeyValueStoresResponse> ListKeyValueStoresAsync(ListKeyValueStoresRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets the list of CloudFront origin access controls (OACs) in this Amazon Web Services
+        /// account.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// another request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the next request.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you're not using origin access controls for your Amazon Web Services account, the
+        /// <c>ListOriginAccessControls</c> operation doesn't return the <c>Items</c> element
+        /// in the response.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOriginAccessControls service method.</param>
+        /// <returns>The response from the ListOriginAccessControls service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginAccessControls">REST API Reference for ListOriginAccessControls Operation</seealso>
+        ListOriginAccessControlsResponse ListOriginAccessControls(ListOriginAccessControlsRequest request);
+#endif
+
+        /// <summary>
+        /// Gets the list of CloudFront origin access controls (OACs) in this Amazon Web Services
+        /// account.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// another request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the next request.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you're not using origin access controls for your Amazon Web Services account, the
+        /// <c>ListOriginAccessControls</c> operation doesn't return the <c>Items</c> element
+        /// in the response.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOriginAccessControls service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListOriginAccessControls service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginAccessControls">REST API Reference for ListOriginAccessControls Operation</seealso>
+        Task<ListOriginAccessControlsResponse> ListOriginAccessControlsAsync(ListOriginAccessControlsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a list of origin request policies.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally apply a filter to return only the managed policies created by Amazon
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOriginRequestPolicies service method.</param>
+        /// <returns>The response from the ListOriginRequestPolicies service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginRequestPolicies">REST API Reference for ListOriginRequestPolicies Operation</seealso>
+        ListOriginRequestPoliciesResponse ListOriginRequestPolicies(ListOriginRequestPoliciesRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a list of origin request policies.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally apply a filter to return only the managed policies created by Amazon
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOriginRequestPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListOriginRequestPolicies service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginRequestPolicies">REST API Reference for ListOriginRequestPolicies Operation</seealso>
+        Task<ListOriginRequestPoliciesResponse> ListOriginRequestPoliciesAsync(ListOriginRequestPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List all public keys that have been added to CloudFront for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPublicKeys service method.</param>
+        /// <returns>The response from the ListPublicKeys service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
+        ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request);
+#endif
+
+        /// <summary>
+        /// List all public keys that have been added to CloudFront for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPublicKeys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListPublicKeys service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
+        Task<ListPublicKeysResponse> ListPublicKeysAsync(ListPublicKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a list of real-time log configurations.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRealtimeLogConfigs service method.</param>
+        /// <returns>The response from the ListRealtimeLogConfigs service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs">REST API Reference for ListRealtimeLogConfigs Operation</seealso>
+        ListRealtimeLogConfigsResponse ListRealtimeLogConfigs(ListRealtimeLogConfigsRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a list of real-time log configurations.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRealtimeLogConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRealtimeLogConfigs service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs">REST API Reference for ListRealtimeLogConfigs Operation</seealso>
+        Task<ListRealtimeLogConfigsResponse> ListRealtimeLogConfigsAsync(ListRealtimeLogConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a list of response headers policies.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally apply a filter to get only the managed policies created by Amazon
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResponseHeadersPolicies service method.</param>
+        /// <returns>The response from the ListResponseHeadersPolicies service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListResponseHeadersPolicies">REST API Reference for ListResponseHeadersPolicies Operation</seealso>
+        ListResponseHeadersPoliciesResponse ListResponseHeadersPolicies(ListResponseHeadersPoliciesRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a list of response headers policies.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally apply a filter to get only the managed policies created by Amazon
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResponseHeadersPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListResponseHeadersPolicies service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListResponseHeadersPolicies">REST API Reference for ListResponseHeadersPolicies Operation</seealso>
+        Task<ListResponseHeadersPoliciesResponse> ListResponseHeadersPoliciesAsync(ListResponseHeadersPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List streaming distributions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamingDistributions service method.</param>
+        /// <returns>The response from the ListStreamingDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request);
+#endif
+
+        /// <summary>
+        /// List streaming distributions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamingDistributions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListStreamingDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List streaming distributions.
+        /// </summary>
+        /// <returns>The response from the ListStreamingDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        ListStreamingDistributionsResponse ListStreamingDistributions();
+#endif
+
+        /// <summary>
+        /// List streaming distributions.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListStreamingDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List tags for a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <returns>The response from the ListTagsForResource service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+#endif
+
+        /// <summary>
+        /// List tags for a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListTagsForResource service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists trust stores.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustStores service method.</param>
+        /// <returns>The response from the ListTrustStores service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTrustStores">REST API Reference for ListTrustStores Operation</seealso>
+        ListTrustStoresResponse ListTrustStores(ListTrustStoresRequest request);
+#endif
+
+        /// <summary>
+        /// Lists trust stores.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustStores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListTrustStores service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTrustStores">REST API Reference for ListTrustStores Operation</seealso>
+        Task<ListTrustStoresResponse> ListTrustStoresAsync(ListTrustStoresRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List the CloudFront VPC origins in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcOrigins service method.</param>
+        /// <returns>The response from the ListVpcOrigins service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListVpcOrigins">REST API Reference for ListVpcOrigins Operation</seealso>
+        ListVpcOriginsResponse ListVpcOrigins(ListVpcOriginsRequest request);
+#endif
+
+        /// <summary>
+        /// List the CloudFront VPC origins in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcOrigins service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListVpcOrigins service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListVpcOrigins">REST API Reference for ListVpcOrigins Operation</seealso>
+        Task<ListVpcOriginsResponse> ListVpcOriginsAsync(ListVpcOriginsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Publishes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishConnectionFunction service method.</param>
+        /// <returns>The response from the PublishConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishConnectionFunction">REST API Reference for PublishConnectionFunction Operation</seealso>
+        PublishConnectionFunctionResponse PublishConnectionFunction(PublishConnectionFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Publishes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PublishConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishConnectionFunction">REST API Reference for PublishConnectionFunction Operation</seealso>
+        Task<PublishConnectionFunctionResponse> PublishConnectionFunctionAsync(PublishConnectionFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Publishes a CloudFront function by copying the function code from the <c>DEVELOPMENT</c>
+        /// stage to <c>LIVE</c>. This automatically updates all cache behaviors that are using
+        /// this function to use the newly published copy in the <c>LIVE</c> stage.
+        /// 
+        ///  
+        /// <para>
+        /// When a function is published to the <c>LIVE</c> stage, you can attach the function
+        /// to a distribution's cache behavior, using the function's Amazon Resource Name (ARN).
+        /// </para>
+        ///  
+        /// <para>
+        /// To publish a function, you must provide the function's name and version (<c>ETag</c>
+        /// value). To get these values, you can use <c>ListFunctions</c> and <c>DescribeFunction</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishFunction service method.</param>
+        /// <returns>The response from the PublishFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishFunction">REST API Reference for PublishFunction Operation</seealso>
+        PublishFunctionResponse PublishFunction(PublishFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Publishes a CloudFront function by copying the function code from the <c>DEVELOPMENT</c>
+        /// stage to <c>LIVE</c>. This automatically updates all cache behaviors that are using
+        /// this function to use the newly published copy in the <c>LIVE</c> stage.
+        /// 
+        ///  
+        /// <para>
+        /// When a function is published to the <c>LIVE</c> stage, you can attach the function
+        /// to a distribution's cache behavior, using the function's Amazon Resource Name (ARN).
+        /// </para>
+        ///  
+        /// <para>
+        /// To publish a function, you must provide the function's name and version (<c>ETag</c>
+        /// value). To get these values, you can use <c>ListFunctions</c> and <c>DescribeFunction</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PublishFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishFunction">REST API Reference for PublishFunction Operation</seealso>
+        Task<PublishFunctionResponse> PublishFunctionAsync(PublishFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a resource control policy for a given CloudFront resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <returns>The response from the PutResourcePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a resource control policy for a given CloudFront resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutResourcePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Add tags to a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <returns>The response from the TagResource service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Add tags to a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the TagResource service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Tests a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestConnectionFunction service method.</param>
+        /// <returns>The response from the TestConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TestFunctionFailedException">
+        /// The CloudFront function failed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestConnectionFunction">REST API Reference for TestConnectionFunction Operation</seealso>
+        TestConnectionFunctionResponse TestConnectionFunction(TestConnectionFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Tests a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the TestConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TestFunctionFailedException">
+        /// The CloudFront function failed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestConnectionFunction">REST API Reference for TestConnectionFunction Operation</seealso>
+        Task<TestConnectionFunctionResponse> TestConnectionFunctionAsync(TestConnectionFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Tests a CloudFront function.
+        /// 
+        ///  
+        /// <para>
+        /// To test a function, you provide an <i>event object</i> that represents an HTTP request
+        /// or response that your CloudFront distribution could receive in production. CloudFront
+        /// runs the function, passing it the event object that you provided, and returns the
+        /// function's result (the modified event object) in the response. The response also contains
+        /// function logs and error messages, if any exist. For more information about testing
+        /// functions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing
+        /// functions</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To test a function, you provide the function's name and version (<c>ETag</c> value)
+        /// along with the event object. To get the function's name and version, you can use <c>ListFunctions</c>
+        /// and <c>DescribeFunction</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestFunction service method.</param>
+        /// <returns>The response from the TestFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TestFunctionFailedException">
+        /// The CloudFront function failed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestFunction">REST API Reference for TestFunction Operation</seealso>
+        TestFunctionResponse TestFunction(TestFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Tests a CloudFront function.
+        /// 
+        ///  
+        /// <para>
+        /// To test a function, you provide an <i>event object</i> that represents an HTTP request
+        /// or response that your CloudFront distribution could receive in production. CloudFront
+        /// runs the function, passing it the event object that you provided, and returns the
+        /// function's result (the modified event object) in the response. The response also contains
+        /// function logs and error messages, if any exist. For more information about testing
+        /// functions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing
+        /// functions</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To test a function, you provide the function's name and version (<c>ETag</c> value)
+        /// along with the event object. To get the function's name and version, you can use <c>ListFunctions</c>
+        /// and <c>DescribeFunction</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the TestFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TestFunctionFailedException">
+        /// The CloudFront function failed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestFunction">REST API Reference for TestFunction Operation</seealso>
+        Task<TestFunctionResponse> TestFunctionAsync(TestFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Remove tags from a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <returns>The response from the UntagResource service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Remove tags from a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UntagResource service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an Anycast static IP list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnycastIpList service method.</param>
+        /// <returns>The response from the UpdateAnycastIpList service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateAnycastIpList">REST API Reference for UpdateAnycastIpList Operation</seealso>
+        UpdateAnycastIpListResponse UpdateAnycastIpList(UpdateAnycastIpListRequest request);
+#endif
+
+        /// <summary>
+        /// Updates an Anycast static IP list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnycastIpList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateAnycastIpList service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateAnycastIpList">REST API Reference for UpdateAnycastIpList Operation</seealso>
+        Task<UpdateAnycastIpListResponse> UpdateAnycastIpListAsync(UpdateAnycastIpListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a cache policy configuration.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a cache policy configuration, all the fields are updated with the
+        /// values provided in the request. You cannot update some fields independent of others.
+        /// To update a cache policy configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <c>GetCachePolicyConfig</c> to get the current configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the fields in the cache policy configuration that you want to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <c>UpdateCachePolicy</c> by providing the entire cache policy configuration,
+        /// including the fields that you modified and those that you didn't.
+        /// </para>
+        ///  </li> </ol> <important> 
+        /// <para>
+        /// If your minimum TTL is greater than 0, CloudFront will cache content for at least
+        /// the duration specified in the cache policy's minimum TTL, even if the <c>Cache-Control:
+        /// no-cache</c>, <c>no-store</c>, or <c>private</c> directives are present in the origin
+        /// headers.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCachePolicy service method.</param>
+        /// <returns>The response from the UpdateCachePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CachePolicyAlreadyExistsException">
+        /// A cache policy with this name already exists. You must provide a unique name. To modify
+        /// an existing cache policy, use <c>UpdateCachePolicy</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInCachePolicyException">
+        /// The number of cookies in the cache policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInCachePolicyException">
+        /// The number of headers in the cache policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringsInCachePolicyException">
+        /// The number of query strings in the cache policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCachePolicy">REST API Reference for UpdateCachePolicy Operation</seealso>
+        UpdateCachePolicyResponse UpdateCachePolicy(UpdateCachePolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a cache policy configuration.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a cache policy configuration, all the fields are updated with the
+        /// values provided in the request. You cannot update some fields independent of others.
+        /// To update a cache policy configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <c>GetCachePolicyConfig</c> to get the current configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the fields in the cache policy configuration that you want to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <c>UpdateCachePolicy</c> by providing the entire cache policy configuration,
+        /// including the fields that you modified and those that you didn't.
+        /// </para>
+        ///  </li> </ol> <important> 
+        /// <para>
+        /// If your minimum TTL is greater than 0, CloudFront will cache content for at least
+        /// the duration specified in the cache policy's minimum TTL, even if the <c>Cache-Control:
+        /// no-cache</c>, <c>no-store</c>, or <c>private</c> directives are present in the origin
+        /// headers.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCachePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateCachePolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CachePolicyAlreadyExistsException">
+        /// A cache policy with this name already exists. You must provide a unique name. To modify
+        /// an existing cache policy, use <c>UpdateCachePolicy</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInCachePolicyException">
+        /// The number of cookies in the cache policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInCachePolicyException">
+        /// The number of headers in the cache policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringsInCachePolicyException">
+        /// The number of query strings in the cache policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCachePolicy">REST API Reference for UpdateCachePolicy Operation</seealso>
+        Task<UpdateCachePolicyResponse> UpdateCachePolicyAsync(UpdateCachePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Update an origin access identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudFrontOriginAccessIdentity service method.</param>
+        /// <returns>The response from the UpdateCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
+        UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request);
+#endif
+
+        /// <summary>
+        /// Update an origin access identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudFrontOriginAccessIdentity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
+        Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionFunction service method.</param>
+        /// <returns>The response from the UpdateConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
+        /// The entity size limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionFunction">REST API Reference for UpdateConnectionFunction Operation</seealso>
+        UpdateConnectionFunctionResponse UpdateConnectionFunction(UpdateConnectionFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
+        /// The entity size limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionFunction">REST API Reference for UpdateConnectionFunction Operation</seealso>
+        Task<UpdateConnectionFunctionResponse> UpdateConnectionFunctionAsync(UpdateConnectionFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionGroup service method.</param>
+        /// <returns>The response from the UpdateConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionGroup">REST API Reference for UpdateConnectionGroup Operation</seealso>
+        UpdateConnectionGroupResponse UpdateConnectionGroup(UpdateConnectionGroupRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionGroup">REST API Reference for UpdateConnectionGroup Operation</seealso>
+        Task<UpdateConnectionGroupResponse> UpdateConnectionGroupAsync(UpdateConnectionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a continuous deployment policy. You can update a continuous deployment policy
+        /// to enable or disable it, to change the percentage of traffic that it sends to the
+        /// staging distribution, or to change the staging distribution that it sends traffic
+        /// to.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a continuous deployment policy configuration, all the fields are updated
+        /// with the values that are provided in the request. You cannot update some fields independent
+        /// of others. To update a continuous deployment policy configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <c>GetContinuousDeploymentPolicyConfig</c> to get the current configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the fields in the continuous deployment policy configuration that you
+        /// want to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>UpdateContinuousDeploymentPolicy</c>, providing the entire continuous deployment
+        /// policy configuration, including the fields that you modified and those that you didn't.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousDeploymentPolicy service method.</param>
+        /// <returns>The response from the UpdateContinuousDeploymentPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StagingDistributionInUseException">
+        /// A continuous deployment policy for this staging distribution already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateContinuousDeploymentPolicy">REST API Reference for UpdateContinuousDeploymentPolicy Operation</seealso>
+        UpdateContinuousDeploymentPolicyResponse UpdateContinuousDeploymentPolicy(UpdateContinuousDeploymentPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a continuous deployment policy. You can update a continuous deployment policy
+        /// to enable or disable it, to change the percentage of traffic that it sends to the
+        /// staging distribution, or to change the staging distribution that it sends traffic
+        /// to.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a continuous deployment policy configuration, all the fields are updated
+        /// with the values that are provided in the request. You cannot update some fields independent
+        /// of others. To update a continuous deployment policy configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <c>GetContinuousDeploymentPolicyConfig</c> to get the current configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the fields in the continuous deployment policy configuration that you
+        /// want to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>UpdateContinuousDeploymentPolicy</c>, providing the entire continuous deployment
+        /// policy configuration, including the fields that you modified and those that you didn't.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousDeploymentPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateContinuousDeploymentPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StagingDistributionInUseException">
+        /// A continuous deployment policy for this staging distribution already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateContinuousDeploymentPolicy">REST API Reference for UpdateContinuousDeploymentPolicy Operation</seealso>
+        Task<UpdateContinuousDeploymentPolicyResponse> UpdateContinuousDeploymentPolicyAsync(UpdateContinuousDeploymentPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the configuration for a CloudFront distribution.
+        /// 
+        ///  
+        /// <para>
+        /// The update process includes getting the current distribution configuration, updating
+        /// it to make your changes, and then submitting an <c>UpdateDistribution</c> request
+        /// to make the updates.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>To update a web distribution using the CloudFront API</b> 
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <c>GetDistributionConfig</c> to get the current configuration, including the version
+        /// identifier (<c>ETag</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the distribution configuration that was returned in the response. Note the
+        /// following important requirements and restrictions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must copy the <c>ETag</c> field value from the response. (You'll use it for the
+        /// <c>IfMatch</c> parameter in your request.) Then, remove the <c>ETag</c> field from
+        /// the distribution configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't change the value of <c>CallerReference</c>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Submit an <c>UpdateDistribution</c> request, providing the updated distribution configuration.
+        /// The new configuration replaces the existing configuration. The values that you specify
+        /// in an <c>UpdateDistribution</c> request are not merged into your existing configuration.
+        /// Make sure to include all fields: the ones that you modified and also the ones that
+        /// you didn't.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistribution service method.</param>
+        /// <returns>The response from the UpdateDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalOriginAccessConfigurationException">
+        /// An origin cannot contain both an origin access control (OAC) and an origin access
+        /// identity (OAI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <c>Origin Id</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StagingDistributionInUseException">
+        /// A continuous deployment policy for this staging distribution already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the configuration for a CloudFront distribution.
+        /// 
+        ///  
+        /// <para>
+        /// The update process includes getting the current distribution configuration, updating
+        /// it to make your changes, and then submitting an <c>UpdateDistribution</c> request
+        /// to make the updates.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>To update a web distribution using the CloudFront API</b> 
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <c>GetDistributionConfig</c> to get the current configuration, including the version
+        /// identifier (<c>ETag</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the distribution configuration that was returned in the response. Note the
+        /// following important requirements and restrictions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must copy the <c>ETag</c> field value from the response. (You'll use it for the
+        /// <c>IfMatch</c> parameter in your request.) Then, remove the <c>ETag</c> field from
+        /// the distribution configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't change the value of <c>CallerReference</c>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Submit an <c>UpdateDistribution</c> request, providing the updated distribution configuration.
+        /// The new configuration replaces the existing configuration. The values that you specify
+        /// in an <c>UpdateDistribution</c> request are not merged into your existing configuration.
+        /// Make sure to include all fields: the ones that you modified and also the ones that
+        /// you didn't.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalOriginAccessConfigurationException">
+        /// An origin cannot contain both an origin access control (OAC) and an origin access
+        /// identity (OAI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <c>Origin Id</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StagingDistributionInUseException">
+        /// A continuous deployment policy for this staging distribution already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionTenant service method.</param>
+        /// <returns>The response from the UpdateDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidAssociationException">
+        /// The specified CloudFront resource can't be associated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionTenant">REST API Reference for UpdateDistributionTenant Operation</seealso>
+        UpdateDistributionTenantResponse UpdateDistributionTenant(UpdateDistributionTenantRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidAssociationException">
+        /// The specified CloudFront resource can't be associated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionTenant">REST API Reference for UpdateDistributionTenant Operation</seealso>
+        Task<UpdateDistributionTenantResponse> UpdateDistributionTenantAsync(UpdateDistributionTenantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Copies the staging distribution's configuration to its corresponding primary distribution.
+        /// The primary distribution retains its <c>Aliases</c> (also known as alternate domain
+        /// names or CNAMEs) and <c>ContinuousDeploymentPolicyId</c> value, but otherwise its
+        /// configuration is overwritten to match the staging distribution.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation in a continuous deployment workflow after you have tested
+        /// configuration changes on the staging distribution. After using a continuous deployment
+        /// policy to move a portion of your domain name's traffic to the staging distribution
+        /// and verifying that it works as intended, you can use this operation to copy the staging
+        /// distribution's configuration to the primary distribution. This action will disable
+        /// the continuous deployment policy and move your domain's traffic back to the primary
+        /// distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API operation requires the following IAM permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionWithStagingConfig service method.</param>
+        /// <returns>The response from the UpdateDistributionWithStagingConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <c>Origin Id</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionWithStagingConfig">REST API Reference for UpdateDistributionWithStagingConfig Operation</seealso>
+        UpdateDistributionWithStagingConfigResponse UpdateDistributionWithStagingConfig(UpdateDistributionWithStagingConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Copies the staging distribution's configuration to its corresponding primary distribution.
+        /// The primary distribution retains its <c>Aliases</c> (also known as alternate domain
+        /// names or CNAMEs) and <c>ContinuousDeploymentPolicyId</c> value, but otherwise its
+        /// configuration is overwritten to match the staging distribution.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation in a continuous deployment workflow after you have tested
+        /// configuration changes on the staging distribution. After using a continuous deployment
+        /// policy to move a portion of your domain name's traffic to the staging distribution
+        /// and verifying that it works as intended, you can use this operation to copy the staging
+        /// distribution's configuration to the primary distribution. This action will disable
+        /// the continuous deployment policy and move your domain's traffic back to the primary
+        /// distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API operation requires the following IAM permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionWithStagingConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateDistributionWithStagingConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <c>Origin Id</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionWithStagingConfig">REST API Reference for UpdateDistributionWithStagingConfig Operation</seealso>
+        Task<UpdateDistributionWithStagingConfigResponse> UpdateDistributionWithStagingConfigAsync(UpdateDistributionWithStagingConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// We recommend that you use the <c>UpdateDomainAssociation</c> API operation to move
+        /// a domain association, as it supports both standard distributions and distribution
+        /// tenants. <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AssociateAlias.html">AssociateAlias</a>
+        /// performs similar checks but only supports standard distributions.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Moves a domain from its current standard distribution or distribution tenant to another
+        /// one.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must first disable the source distribution (standard distribution or distribution
+        /// tenant) and then separately call this operation to move the domain to another target
+        /// distribution (standard distribution or distribution tenant).
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, specify the domain and the ID of the target resource (standard
+        /// distribution or distribution tenant). For more information, including how to set up
+        /// the target resource, prerequisites that you must complete, and other restrictions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+        /// an alternate domain name to a different standard distribution or distribution tenant</a>
+        /// in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainAssociation service method.</param>
+        /// <returns>The response from the UpdateDomainAssociation service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDomainAssociation">REST API Reference for UpdateDomainAssociation Operation</seealso>
+        UpdateDomainAssociationResponse UpdateDomainAssociation(UpdateDomainAssociationRequest request);
+#endif
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// We recommend that you use the <c>UpdateDomainAssociation</c> API operation to move
+        /// a domain association, as it supports both standard distributions and distribution
+        /// tenants. <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AssociateAlias.html">AssociateAlias</a>
+        /// performs similar checks but only supports standard distributions.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Moves a domain from its current standard distribution or distribution tenant to another
+        /// one.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must first disable the source distribution (standard distribution or distribution
+        /// tenant) and then separately call this operation to move the domain to another target
+        /// distribution (standard distribution or distribution tenant).
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, specify the domain and the ID of the target resource (standard
+        /// distribution or distribution tenant). For more information, including how to set up
+        /// the target resource, prerequisites that you must complete, and other restrictions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+        /// an alternate domain name to a different standard distribution or distribution tenant</a>
+        /// in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateDomainAssociation service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDomainAssociation">REST API Reference for UpdateDomainAssociation Operation</seealso>
+        Task<UpdateDomainAssociationResponse> UpdateDomainAssociationAsync(UpdateDomainAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Update a field-level encryption configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionConfig service method.</param>
+        /// <returns>The response from the UpdateFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.QueryArgProfileEmptyException">
+        /// No profile specified for the field-level encryption query argument.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionContentTypeProfilesException">
+        /// The maximum number of content type profiles for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionQueryArgProfilesException">
+        /// The maximum number of query arg profiles for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionConfig">REST API Reference for UpdateFieldLevelEncryptionConfig Operation</seealso>
+        UpdateFieldLevelEncryptionConfigResponse UpdateFieldLevelEncryptionConfig(UpdateFieldLevelEncryptionConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Update a field-level encryption configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.QueryArgProfileEmptyException">
+        /// No profile specified for the field-level encryption query argument.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionContentTypeProfilesException">
+        /// The maximum number of content type profiles for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionQueryArgProfilesException">
+        /// The maximum number of query arg profiles for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionConfig">REST API Reference for UpdateFieldLevelEncryptionConfig Operation</seealso>
+        Task<UpdateFieldLevelEncryptionConfigResponse> UpdateFieldLevelEncryptionConfigAsync(UpdateFieldLevelEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Update a field-level encryption profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionProfile service method.</param>
+        /// <returns>The response from the UpdateFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileAlreadyExistsException">
+        /// The specified profile for field-level encryption already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileSizeExceededException">
+        /// The maximum size of a profile for field-level encryption was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionEncryptionEntitiesException">
+        /// The maximum number of encryption entities for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionFieldPatternsException">
+        /// The maximum number of field patterns for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionProfile">REST API Reference for UpdateFieldLevelEncryptionProfile Operation</seealso>
+        UpdateFieldLevelEncryptionProfileResponse UpdateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest request);
+#endif
+
+        /// <summary>
+        /// Update a field-level encryption profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileAlreadyExistsException">
+        /// The specified profile for field-level encryption already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileSizeExceededException">
+        /// The maximum size of a profile for field-level encryption was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionEncryptionEntitiesException">
+        /// The maximum number of encryption entities for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionFieldPatternsException">
+        /// The maximum number of field patterns for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionProfile">REST API Reference for UpdateFieldLevelEncryptionProfile Operation</seealso>
+        Task<UpdateFieldLevelEncryptionProfileResponse> UpdateFieldLevelEncryptionProfileAsync(UpdateFieldLevelEncryptionProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a CloudFront function.
+        /// 
+        ///  
+        /// <para>
+        /// You can update a function's code or the comment that describes the function. You cannot
+        /// update a function's name.
+        /// </para>
+        ///  
+        /// <para>
+        /// To update a function, you provide the function's name and version (<c>ETag</c> value)
+        /// along with the updated function code. To get the name and version, you can use <c>ListFunctions</c>
+        /// and <c>DescribeFunction</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunction service method.</param>
+        /// <returns>The response from the UpdateFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FunctionSizeLimitExceededException">
+        /// The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
+        UpdateFunctionResponse UpdateFunction(UpdateFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a CloudFront function.
+        /// 
+        ///  
+        /// <para>
+        /// You can update a function's code or the comment that describes the function. You cannot
+        /// update a function's name.
+        /// </para>
+        ///  
+        /// <para>
+        /// To update a function, you provide the function's name and version (<c>ETag</c> value)
+        /// along with the updated function code. To get the name and version, you can use <c>ListFunctions</c>
+        /// and <c>DescribeFunction</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FunctionSizeLimitExceededException">
+        /// The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
+        Task<UpdateFunctionResponse> UpdateFunctionAsync(UpdateFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a key group.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a key group, all the fields are updated with the values provided in
+        /// the request. You cannot update some fields independent of others. To update a key
+        /// group:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Get the current key group with <c>GetKeyGroup</c> or <c>GetKeyGroupConfig</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the fields in the key group that you want to update. For example, add
+        /// or remove public key IDs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <c>UpdateKeyGroup</c> with the entire key group object, including the fields
+        /// that you modified and those that you didn't.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKeyGroup service method.</param>
+        /// <returns>The response from the UpdateKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.KeyGroupAlreadyExistsException">
+        /// A key group with this name already exists. You must provide a unique name. To modify
+        /// an existing key group, use <c>UpdateKeyGroup</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
+        /// The number of public keys in this key group is more than the maximum allowed. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyGroup">REST API Reference for UpdateKeyGroup Operation</seealso>
+        UpdateKeyGroupResponse UpdateKeyGroup(UpdateKeyGroupRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a key group.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a key group, all the fields are updated with the values provided in
+        /// the request. You cannot update some fields independent of others. To update a key
+        /// group:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Get the current key group with <c>GetKeyGroup</c> or <c>GetKeyGroupConfig</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the fields in the key group that you want to update. For example, add
+        /// or remove public key IDs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <c>UpdateKeyGroup</c> with the entire key group object, including the fields
+        /// that you modified and those that you didn't.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKeyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.KeyGroupAlreadyExistsException">
+        /// A key group with this name already exists. You must provide a unique name. To modify
+        /// an existing key group, use <c>UpdateKeyGroup</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
+        /// The number of public keys in this key group is more than the maximum allowed. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyGroup">REST API Reference for UpdateKeyGroup Operation</seealso>
+        Task<UpdateKeyGroupResponse> UpdateKeyGroupAsync(UpdateKeyGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Specifies the key value store to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKeyValueStore service method.</param>
+        /// <returns>The response from the UpdateKeyValueStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyValueStore">REST API Reference for UpdateKeyValueStore Operation</seealso>
+        UpdateKeyValueStoreResponse UpdateKeyValueStore(UpdateKeyValueStoreRequest request);
+#endif
+
+        /// <summary>
+        /// Specifies the key value store to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKeyValueStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateKeyValueStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyValueStore">REST API Reference for UpdateKeyValueStore Operation</seealso>
+        Task<UpdateKeyValueStoreResponse> UpdateKeyValueStoreAsync(UpdateKeyValueStoreRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a CloudFront origin access control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOriginAccessControl service method.</param>
+        /// <returns>The response from the UpdateOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlAlreadyExistsException">
+        /// An origin access control with the specified parameters already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl">REST API Reference for UpdateOriginAccessControl Operation</seealso>
+        UpdateOriginAccessControlResponse UpdateOriginAccessControl(UpdateOriginAccessControlRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a CloudFront origin access control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOriginAccessControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlAlreadyExistsException">
+        /// An origin access control with the specified parameters already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl">REST API Reference for UpdateOriginAccessControl Operation</seealso>
+        Task<UpdateOriginAccessControlResponse> UpdateOriginAccessControlAsync(UpdateOriginAccessControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an origin request policy configuration.
+        /// 
+        ///  
+        /// <para>
+        /// When you update an origin request policy configuration, all the fields are updated
+        /// with the values provided in the request. You cannot update some fields independent
+        /// of others. To update an origin request policy configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <c>GetOriginRequestPolicyConfig</c> to get the current configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the fields in the origin request policy configuration that you want
+        /// to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <c>UpdateOriginRequestPolicy</c> by providing the entire origin request policy
+        /// configuration, including the fields that you modified and those that you didn't.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOriginRequestPolicy service method.</param>
+        /// <returns>The response from the UpdateOriginRequestPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginRequestPolicyAlreadyExistsException">
+        /// An origin request policy with this name already exists. You must provide a unique
+        /// name. To modify an existing origin request policy, use <c>UpdateOriginRequestPolicy</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInOriginRequestPolicyException">
+        /// The number of cookies in the origin request policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInOriginRequestPolicyException">
+        /// The number of headers in the origin request policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringsInOriginRequestPolicyException">
+        /// The number of query strings in the origin request policy exceeds the maximum. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginRequestPolicy">REST API Reference for UpdateOriginRequestPolicy Operation</seealso>
+        UpdateOriginRequestPolicyResponse UpdateOriginRequestPolicy(UpdateOriginRequestPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Updates an origin request policy configuration.
+        /// 
+        ///  
+        /// <para>
+        /// When you update an origin request policy configuration, all the fields are updated
+        /// with the values provided in the request. You cannot update some fields independent
+        /// of others. To update an origin request policy configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <c>GetOriginRequestPolicyConfig</c> to get the current configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the fields in the origin request policy configuration that you want
+        /// to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <c>UpdateOriginRequestPolicy</c> by providing the entire origin request policy
+        /// configuration, including the fields that you modified and those that you didn't.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOriginRequestPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateOriginRequestPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginRequestPolicyAlreadyExistsException">
+        /// An origin request policy with this name already exists. You must provide a unique
+        /// name. To modify an existing origin request policy, use <c>UpdateOriginRequestPolicy</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInOriginRequestPolicyException">
+        /// The number of cookies in the origin request policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInOriginRequestPolicyException">
+        /// The number of headers in the origin request policy exceeds the maximum. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringsInOriginRequestPolicyException">
+        /// The number of query strings in the origin request policy exceeds the maximum. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginRequestPolicy">REST API Reference for UpdateOriginRequestPolicy Operation</seealso>
+        Task<UpdateOriginRequestPolicyResponse> UpdateOriginRequestPolicyAsync(UpdateOriginRequestPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Update public key information. Note that the only value you can change is the comment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublicKey service method.</param>
+        /// <returns>The response from the UpdatePublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotChangeImmutablePublicKeyFieldsException">
+        /// You can't change the value of a public key.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
+        UpdatePublicKeyResponse UpdatePublicKey(UpdatePublicKeyRequest request);
+#endif
+
+        /// <summary>
+        /// Update public key information. Note that the only value you can change is the comment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublicKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdatePublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotChangeImmutablePublicKeyFieldsException">
+        /// You can't change the value of a public key.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
+        Task<UpdatePublicKeyResponse> UpdatePublicKeyAsync(UpdatePublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a real-time log configuration, all the parameters are updated with
+        /// the values provided in the request. You cannot update some parameters independent
+        /// of others. To update a real-time log configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Call <c>GetRealtimeLogConfig</c> to get the current real-time log configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the parameters in the real-time log configuration that you want to
+        /// update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call this API (<c>UpdateRealtimeLogConfig</c>) by providing the entire real-time log
+        /// configuration, including the parameters that you modified and those that you didn't.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// You cannot update a real-time log configuration's <c>Name</c> or <c>ARN</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRealtimeLogConfig service method.</param>
+        /// <returns>The response from the UpdateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig">REST API Reference for UpdateRealtimeLogConfig Operation</seealso>
+        UpdateRealtimeLogConfigResponse UpdateRealtimeLogConfig(UpdateRealtimeLogConfigRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a real-time log configuration, all the parameters are updated with
+        /// the values provided in the request. You cannot update some parameters independent
+        /// of others. To update a real-time log configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Call <c>GetRealtimeLogConfig</c> to get the current real-time log configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the parameters in the real-time log configuration that you want to
+        /// update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call this API (<c>UpdateRealtimeLogConfig</c>) by providing the entire real-time log
+        /// configuration, including the parameters that you modified and those that you didn't.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// You cannot update a real-time log configuration's <c>Name</c> or <c>ARN</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRealtimeLogConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig">REST API Reference for UpdateRealtimeLogConfig Operation</seealso>
+        Task<UpdateRealtimeLogConfigResponse> UpdateRealtimeLogConfigAsync(UpdateRealtimeLogConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a response headers policy, the entire policy is replaced. You cannot
+        /// update some policy fields independent of others. To update a response headers policy
+        /// configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <c>GetResponseHeadersPolicyConfig</c> to get the current policy's configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modify the fields in the response headers policy configuration that you want to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <c>UpdateResponseHeadersPolicy</c>, providing the entire response headers policy
+        /// configuration, including the fields that you modified and those that you didn't.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResponseHeadersPolicy service method.</param>
+        /// <returns>The response from the UpdateResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
+        /// A response headers policy with this name already exists. You must provide a unique
+        /// name. To modify an existing response headers policy, use <c>UpdateResponseHeadersPolicy</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooLongCSPInResponseHeadersPolicyException">
+        /// The length of the <c>Content-Security-Policy</c> header value in the response headers
+        /// policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
+        /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
+        /// The number of headers in <c>RemoveHeadersConfig</c> in the response headers policy
+        /// exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateResponseHeadersPolicy">REST API Reference for UpdateResponseHeadersPolicy Operation</seealso>
+        UpdateResponseHeadersPolicyResponse UpdateResponseHeadersPolicy(UpdateResponseHeadersPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a response headers policy, the entire policy is replaced. You cannot
+        /// update some policy fields independent of others. To update a response headers policy
+        /// configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <c>GetResponseHeadersPolicyConfig</c> to get the current policy's configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modify the fields in the response headers policy configuration that you want to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <c>UpdateResponseHeadersPolicy</c>, providing the entire response headers policy
+        /// configuration, including the fields that you modified and those that you didn't.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResponseHeadersPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
+        /// A response headers policy with this name already exists. You must provide a unique
+        /// name. To modify an existing response headers policy, use <c>UpdateResponseHeadersPolicy</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooLongCSPInResponseHeadersPolicyException">
+        /// The length of the <c>Content-Security-Policy</c> header value in the response headers
+        /// policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
+        /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
+        /// The number of headers in <c>RemoveHeadersConfig</c> in the response headers policy
+        /// exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateResponseHeadersPolicy">REST API Reference for UpdateResponseHeadersPolicy Operation</seealso>
+        Task<UpdateResponseHeadersPolicyResponse> UpdateResponseHeadersPolicyAsync(UpdateResponseHeadersPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Update a streaming distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamingDistribution service method.</param>
+        /// <returns>The response from the UpdateStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
+        UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request);
+#endif
+
+        /// <summary>
+        /// Update a streaming distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamingDistribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
+        Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustStore service method.</param>
+        /// <returns>The response from the UpdateTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateTrustStore">REST API Reference for UpdateTrustStore Operation</seealso>
+        UpdateTrustStoreResponse UpdateTrustStore(UpdateTrustStoreRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateTrustStore">REST API Reference for UpdateTrustStore Operation</seealso>
+        Task<UpdateTrustStoreResponse> UpdateTrustStoreAsync(UpdateTrustStoreRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Update an Amazon CloudFront VPC origin in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcOrigin service method.</param>
+        /// <returns>The response from the UpdateVpcOrigin service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotUpdateEntityWhileInUseException">
+        /// The entity cannot be updated while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateVpcOrigin">REST API Reference for UpdateVpcOrigin Operation</seealso>
+        UpdateVpcOriginResponse UpdateVpcOrigin(UpdateVpcOriginRequest request);
+#endif
+
+        /// <summary>
+        /// Update an Amazon CloudFront VPC origin in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcOrigin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateVpcOrigin service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotUpdateEntityWhileInUseException">
+        /// The entity cannot be updated while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateVpcOrigin">REST API Reference for UpdateVpcOrigin Operation</seealso>
+        Task<UpdateVpcOriginResponse> UpdateVpcOriginAsync(UpdateVpcOriginRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Verify the DNS configuration for your domain names. This API operation checks whether
+        /// your domain name points to the correct routing endpoint of the connection group, such
+        /// as d111111abcdef8.cloudfront.net. You can use this API operation to troubleshoot and
+        /// resolve DNS configuration issues.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDnsConfiguration service method.</param>
+        /// <returns>The response from the VerifyDnsConfiguration service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/VerifyDnsConfiguration">REST API Reference for VerifyDnsConfiguration Operation</seealso>
+        VerifyDnsConfigurationResponse VerifyDnsConfiguration(VerifyDnsConfigurationRequest request);
+#endif
+
+        /// <summary>
+        /// Verify the DNS configuration for your domain names. This API operation checks whether
+        /// your domain name points to the correct routing endpoint of the connection group, such
+        /// as d111111abcdef8.cloudfront.net. You can use this API operation to troubleshoot and
+        /// resolve DNS configuration issues.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDnsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the VerifyDnsConfiguration service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/VerifyDnsConfiguration">REST API Reference for VerifyDnsConfiguration Operation</seealso>
+        Task<VerifyDnsConfigurationResponse> VerifyDnsConfigurationAsync(VerifyDnsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
+
+#if NET8_0_OR_GREATER
+        // Warning CA1033 is issued when the child types can not call the method defined in parent types.
+        // In this use case the intended caller is only meant to be the interface as a factory
+        // method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonCloudFrontConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonCloudFrontConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+            Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonCloudFrontConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonCloudFrontConfig to create AmazonCloudFrontClient");
+            }
+
+            return awsCredentials == null ?
+                    new AmazonCloudFrontClient(serviceClientConfig) :
+                    new AmazonCloudFrontClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+    }
+}

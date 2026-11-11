@@ -31,7 +31,7 @@ using Amazon.IoTFleetWise.Endpoints;
 namespace Amazon.IoTFleetWise.Internal
 {
     /// <summary>
-    /// Amazon IoTFleetWise endpoint resolver.
+    /// AWS IoT FleetWise endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IoTFleetWise service requests.
     /// <para />

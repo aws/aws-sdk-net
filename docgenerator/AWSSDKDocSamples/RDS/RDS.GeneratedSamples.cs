@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
     {
         public void RDSAddRoleToDBCluster()
         {
-            #region example-1
+            #region AddRoleToDBCluster-1
 
             var client = new AmazonRDSClient();
-            var response = client.AddRoleToDBCluster(new AddRoleToDBClusterRequest 
+            var response = client.AddRoleToDBCluster(new AddRoleToDBClusterRequest
             {
                 DBClusterIdentifier = "mydbcluster",
                 RoleArn = "arn:aws:iam::123456789012:role/RDSLoadFromS3"
@@ -28,10 +29,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSAddRoleToDBInstance()
         {
-            #region example-1
+            #region AddRoleToDBInstance-1
 
             var client = new AmazonRDSClient();
-            var response = client.AddRoleToDBInstance(new AddRoleToDBInstanceRequest 
+            var response = client.AddRoleToDBInstance(new AddRoleToDBInstanceRequest
             {
                 DBInstanceIdentifier = "test-instance",
                 FeatureName = "S3_INTEGRATION",
@@ -44,10 +45,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSAddSourceIdentifierToSubscription()
         {
-            #region example-1
+            #region AddSourceIdentifierToSubscription-1
 
             var client = new AmazonRDSClient();
-            var response = client.AddSourceIdentifierToSubscription(new AddSourceIdentifierToSubscriptionRequest 
+            var response = client.AddSourceIdentifierToSubscription(new AddSourceIdentifierToSubscriptionRequest
             {
                 SourceIdentifier = "test-instance-repl",
                 SubscriptionName = "my-instance-events"
@@ -60,10 +61,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSAddTagsToResource()
         {
-            #region example-1
+            #region AddTagsToResource-1
 
             var client = new AmazonRDSClient();
-            var response = client.AddTagsToResource(new AddTagsToResourceRequest 
+            var response = client.AddTagsToResource(new AddTagsToResourceRequest
             {
                 ResourceName = "arn:aws:rds:us-east-1:992648334831:og:mymysqloptiongroup",
                 Tags = new List<Tag> {
@@ -80,10 +81,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSApplyPendingMaintenanceAction()
         {
-            #region example-1
+            #region ApplyPendingMaintenanceAction-1
 
             var client = new AmazonRDSClient();
-            var response = client.ApplyPendingMaintenanceAction(new ApplyPendingMaintenanceActionRequest 
+            var response = client.ApplyPendingMaintenanceAction(new ApplyPendingMaintenanceActionRequest
             {
                 ApplyAction = "system-update",
                 OptInType = "immediate",
@@ -97,10 +98,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSAuthorizeDBSecurityGroupIngress()
         {
-            #region example-1
+            #region AuthorizeDBSecurityGroupIngress-1
 
             var client = new AmazonRDSClient();
-            var response = client.AuthorizeDBSecurityGroupIngress(new AuthorizeDBSecurityGroupIngressRequest 
+            var response = client.AuthorizeDBSecurityGroupIngress(new AuthorizeDBSecurityGroupIngressRequest
             {
                 CIDRIP = "203.0.113.5/32",
                 DBSecurityGroupName = "mydbsecuritygroup"
@@ -113,10 +114,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCancelDBCapacityReservation()
         {
-            #region example-1
+            #region CancelDBCapacityReservation-1
 
             var client = new AmazonRDSClient();
-            var response = client.CancelDBCapacityReservation(new CancelDBCapacityReservationRequest 
+            var response = client.CancelDBCapacityReservation(new CancelDBCapacityReservationRequest
             {
                 DBCapacityReservationIdentifier = "dbcr-7hqk2m9xv4t1bn6cz3ws8dj5fp0gyr2a"
             });
@@ -128,10 +129,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCancelExportTask()
         {
-            #region example-1
+            #region CancelExportTask-1
 
             var client = new AmazonRDSClient();
-            var response = client.CancelExportTask(new CancelExportTaskRequest 
+            var response = client.CancelExportTask(new CancelExportTaskRequest
             {
                 ExportTaskIdentifier = "my-s3-export-1"
             });
@@ -139,23 +140,23 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             string exportTaskIdentifier = response.ExportTaskIdentifier;
             string iamRoleArn = response.IamRoleArn;
             string kmsKeyId = response.KmsKeyId;
-            int percentProgress = response.PercentProgress;
+            int? percentProgress = response.PercentProgress;
             string s3Bucket = response.S3Bucket;
             string s3Prefix = response.S3Prefix;
-            DateTime snapshotTime = response.SnapshotTime;
+            DateTime? snapshotTime = response.SnapshotTime;
             string sourceArn = response.SourceArn;
             string status = response.Status;
-            int totalExtractedDataInGB = response.TotalExtractedDataInGB;
+            int? totalExtractedDataInGB = response.TotalExtractedDataInGB;
 
             #endregion
         }
 
         public void RDSCopyDBClusterParameterGroup()
         {
-            #region example-1
+            #region CopyDBClusterParameterGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.CopyDBClusterParameterGroup(new CopyDBClusterParameterGroupRequest 
+            var response = client.CopyDBClusterParameterGroup(new CopyDBClusterParameterGroupRequest
             {
                 SourceDBClusterParameterGroupIdentifier = "mydbclusterparametergroup",
                 TargetDBClusterParameterGroupDescription = "My DB cluster parameter group copy",
@@ -169,10 +170,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCopyDBClusterSnapshot()
         {
-            #region example-1
+            #region CopyDBClusterSnapshot-1
 
             var client = new AmazonRDSClient();
-            var response = client.CopyDBClusterSnapshot(new CopyDBClusterSnapshotRequest 
+            var response = client.CopyDBClusterSnapshot(new CopyDBClusterSnapshotRequest
             {
                 CopyTags = true,
                 SourceDBClusterSnapshotIdentifier = "arn:aws:rds:us-east-1:123456789012:cluster-snapshot:rds:myaurora-2019-06-04-09-16",
@@ -186,10 +187,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCopyDBParameterGroup()
         {
-            #region example-1
+            #region CopyDBParameterGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.CopyDBParameterGroup(new CopyDBParameterGroupRequest 
+            var response = client.CopyDBParameterGroup(new CopyDBParameterGroupRequest
             {
                 SourceDBParameterGroupIdentifier = "mydbpg",
                 TargetDBParameterGroupDescription = "Copy of mydbpg parameter group",
@@ -203,10 +204,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCopyDBSnapshot()
         {
-            #region example-1
+            #region CopyDBSnapshot-1
 
             var client = new AmazonRDSClient();
-            var response = client.CopyDBSnapshot(new CopyDBSnapshotRequest 
+            var response = client.CopyDBSnapshot(new CopyDBSnapshotRequest
             {
                 SourceDBSnapshotIdentifier = "rds:database-mysql-2019-06-06-08-38",
                 TargetDBSnapshotIdentifier = "mydbsnapshotcopy"
@@ -219,10 +220,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCopyOptionGroup()
         {
-            #region example-1
+            #region CopyOptionGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.CopyOptionGroup(new CopyOptionGroupRequest 
+            var response = client.CopyOptionGroup(new CopyOptionGroupRequest
             {
                 SourceOptionGroupIdentifier = "myoptiongroup",
                 TargetOptionGroupDescription = "My option group copy",
@@ -236,10 +237,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateBlueGreenDeployment()
         {
-            #region example-1
+            #region CreateBlueGreenDeployment-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateBlueGreenDeployment(new CreateBlueGreenDeploymentRequest 
+            var response = client.CreateBlueGreenDeployment(new CreateBlueGreenDeploymentRequest
             {
                 BlueGreenDeploymentName = "bgd-test-instance",
                 Source = "arn:aws:rds:us-east-1:123456789012:db:my-db-instance",
@@ -254,10 +255,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateBlueGreenDeployment()
         {
-            #region example-2
+            #region CreateBlueGreenDeployment-2
 
             var client = new AmazonRDSClient();
-            var response = client.CreateBlueGreenDeployment(new CreateBlueGreenDeploymentRequest 
+            var response = client.CreateBlueGreenDeployment(new CreateBlueGreenDeploymentRequest
             {
                 BlueGreenDeploymentName = "my-blue-green-deployment",
                 Source = "arn:aws:rds:us-east-1:123456789012:cluster:my-aurora-mysql-cluster",
@@ -273,10 +274,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBCapacityReservation()
         {
-            #region example-1
+            #region CreateDBCapacityReservation-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBCapacityReservation(new CreateDBCapacityReservationRequest 
+            var response = client.CreateDBCapacityReservation(new CreateDBCapacityReservationRequest
             {
                 AvailabilityZones = new List<string> {
                     "us-east-1a",
@@ -295,10 +296,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBCluster()
         {
-            #region example-1
+            #region CreateDBCluster-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBCluster(new CreateDBClusterRequest 
+            var response = client.CreateDBCluster(new CreateDBClusterRequest
             {
                 DBClusterIdentifier = "sample-cluster",
                 DBSubnetGroupName = "default",
@@ -318,10 +319,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBCluster()
         {
-            #region example-2
+            #region CreateDBCluster-2
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBCluster(new CreateDBClusterRequest 
+            var response = client.CreateDBCluster(new CreateDBClusterRequest
             {
                 DBClusterIdentifier = "sample-pg-cluster",
                 DBSubnetGroupName = "default",
@@ -340,10 +341,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBCluster()
         {
-            #region example-3
+            #region CreateDBCluster-3
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBCluster(new CreateDBClusterRequest 
+            var response = client.CreateDBCluster(new CreateDBClusterRequest
             {
                 DBClusterIdentifier = "sample-cluster",
                 Engine = "aurora-postgresql",
@@ -357,10 +358,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBCluster()
         {
-            #region example-4
+            #region CreateDBCluster-4
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBCluster(new CreateDBClusterRequest 
+            var response = client.CreateDBCluster(new CreateDBClusterRequest
             {
                 AssociatedRoles = new List<DBClusterAssociatedRole> {
                     new DBClusterAssociatedRole {
@@ -381,10 +382,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBClusterEndpoint()
         {
-            #region example-1
+            #region CreateDBClusterEndpoint-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBClusterEndpoint(new CreateDBClusterEndpointRequest 
+            var response = client.CreateDBClusterEndpoint(new CreateDBClusterEndpointRequest
             {
                 DBClusterEndpointIdentifier = "mycustomendpoint",
                 DBClusterIdentifier = "mydbcluster",
@@ -411,10 +412,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBClusterParameterGroup()
         {
-            #region example-1
+            #region CreateDBClusterParameterGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBClusterParameterGroup(new CreateDBClusterParameterGroupRequest 
+            var response = client.CreateDBClusterParameterGroup(new CreateDBClusterParameterGroupRequest
             {
                 DBClusterParameterGroupName = "mydbclusterparametergroup",
                 DBParameterGroupFamily = "aurora5.6",
@@ -428,10 +429,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBClusterSnapshot()
         {
-            #region example-1
+            #region CreateDBClusterSnapshot-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBClusterSnapshot(new CreateDBClusterSnapshotRequest 
+            var response = client.CreateDBClusterSnapshot(new CreateDBClusterSnapshotRequest
             {
                 DBClusterIdentifier = "mydbclustersnapshot",
                 DBClusterSnapshotIdentifier = "mydbcluster"
@@ -444,10 +445,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBInstance()
         {
-            #region example-1
+            #region CreateDBInstance-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBInstance(new CreateDBInstanceRequest 
+            var response = client.CreateDBInstance(new CreateDBInstanceRequest
             {
                 AllocatedStorage = 20,
                 DBInstanceClass = "db.t3.micro",
@@ -464,10 +465,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBInstanceReadReplica()
         {
-            #region example-1
+            #region CreateDBInstanceReadReplica-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBInstanceReadReplica(new CreateDBInstanceReadReplicaRequest 
+            var response = client.CreateDBInstanceReadReplica(new CreateDBInstanceReadReplicaRequest
             {
                 DBInstanceIdentifier = "test-instance-repl",
                 SourceDBInstanceIdentifier = "test-instance"
@@ -480,10 +481,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBParameterGroup()
         {
-            #region example-1
+            #region CreateDBParameterGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBParameterGroup(new CreateDBParameterGroupRequest 
+            var response = client.CreateDBParameterGroup(new CreateDBParameterGroupRequest
             {
                 DBParameterGroupFamily = "MySQL8.0",
                 DBParameterGroupName = "mydbparametergroup",
@@ -497,10 +498,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBSecurityGroup()
         {
-            #region example-1
+            #region CreateDBSecurityGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBSecurityGroup(new CreateDBSecurityGroupRequest 
+            var response = client.CreateDBSecurityGroup(new CreateDBSecurityGroupRequest
             {
                 DBSecurityGroupDescription = "My DB security group",
                 DBSecurityGroupName = "mydbsecuritygroup"
@@ -513,10 +514,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBSnapshot()
         {
-            #region example-1
+            #region CreateDBSnapshot-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBSnapshot(new CreateDBSnapshotRequest 
+            var response = client.CreateDBSnapshot(new CreateDBSnapshotRequest
             {
                 DBInstanceIdentifier = "mydbsnapshot",
                 DBSnapshotIdentifier = "database-mysql"
@@ -529,10 +530,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateDBSubnetGroup()
         {
-            #region example-1
+            #region CreateDBSubnetGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateDBSubnetGroup(new CreateDBSubnetGroupRequest 
+            var response = client.CreateDBSubnetGroup(new CreateDBSubnetGroupRequest
             {
                 DBSubnetGroupDescription = "test DB subnet group",
                 DBSubnetGroupName = "mysubnetgroup",
@@ -550,10 +551,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateEventSubscription()
         {
-            #region example-1
+            #region CreateEventSubscription-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateEventSubscription(new CreateEventSubscriptionRequest 
+            var response = client.CreateEventSubscription(new CreateEventSubscriptionRequest
             {
                 EventCategories = new List<string> {
                     "backup",
@@ -571,10 +572,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateGlobalCluster()
         {
-            #region example-1
+            #region CreateGlobalCluster-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateGlobalCluster(new CreateGlobalClusterRequest 
+            var response = client.CreateGlobalCluster(new CreateGlobalClusterRequest
             {
                 Engine = "aurora-mysql",
                 GlobalClusterIdentifier = "myglobalcluster"
@@ -587,22 +588,22 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateIntegration()
         {
-            #region example-1
+            #region CreateIntegration-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateIntegration(new CreateIntegrationRequest 
+            var response = client.CreateIntegration(new CreateIntegrationRequest
             {
                 IntegrationName = "my-integration",
                 SourceArn = "arn:aws:rds:us-east-1:123456789012:cluster:my-cluster",
                 TargetArn = "arn:aws:redshift-serverless:us-east-1:123456789012:namespace/62c70612-0302-4db7-8414-b5e3e049f0d8"
             });
 
-            DateTime createTime = response.CreateTime;
+            DateTime? createTime = response.CreateTime;
             string integrationArn = response.IntegrationArn;
             string integrationName = response.IntegrationName;
             string kmsKeyId = response.KMSKeyId;
             string sourceArn = response.SourceArn;
-            string status = response.Status;
+            IntegrationStatus status = response.Status;
             List<Tag> tags = response.Tags;
             string targetArn = response.TargetArn;
 
@@ -611,10 +612,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSCreateOptionGroup()
         {
-            #region example-1
+            #region CreateOptionGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.CreateOptionGroup(new CreateOptionGroupRequest 
+            var response = client.CreateOptionGroup(new CreateOptionGroupRequest
             {
                 EngineName = "mysql",
                 MajorEngineVersion = "8.0",
@@ -629,10 +630,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteBlueGreenDeployment()
         {
-            #region example-1
+            #region DeleteBlueGreenDeployment-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteBlueGreenDeployment(new DeleteBlueGreenDeploymentRequest 
+            var response = client.DeleteBlueGreenDeployment(new DeleteBlueGreenDeploymentRequest
             {
                 BlueGreenDeploymentIdentifier = "bgd-v53303651eexfake",
                 DeleteTarget = true
@@ -645,10 +646,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteBlueGreenDeployment()
         {
-            #region example-2
+            #region DeleteBlueGreenDeployment-2
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteBlueGreenDeployment(new DeleteBlueGreenDeploymentRequest 
+            var response = client.DeleteBlueGreenDeployment(new DeleteBlueGreenDeploymentRequest
             {
                 BlueGreenDeploymentIdentifier = "bgd-wi89nwzglccsfake",
                 DeleteTarget = true
@@ -661,10 +662,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteDBCluster()
         {
-            #region example-1
+            #region DeleteDBCluster-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteDBCluster(new DeleteDBClusterRequest 
+            var response = client.DeleteDBCluster(new DeleteDBClusterRequest
             {
                 DBClusterIdentifier = "mycluster",
                 FinalDBSnapshotIdentifier = "mycluster-final-snapshot",
@@ -678,10 +679,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteDBClusterEndpoint()
         {
-            #region example-1
+            #region DeleteDBClusterEndpoint-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteDBClusterEndpoint(new DeleteDBClusterEndpointRequest 
+            var response = client.DeleteDBClusterEndpoint(new DeleteDBClusterEndpointRequest
             {
                 DBClusterEndpointIdentifier = "mycustomendpoint"
             });
@@ -702,10 +703,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteDBClusterParameterGroup()
         {
-            #region example-1
+            #region DeleteDBClusterParameterGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteDBClusterParameterGroup(new DeleteDBClusterParameterGroupRequest 
+            var response = client.DeleteDBClusterParameterGroup(new DeleteDBClusterParameterGroupRequest
             {
                 DBClusterParameterGroupName = "mydbclusterparametergroup"
             });
@@ -716,10 +717,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteDBClusterSnapshot()
         {
-            #region example-1
+            #region DeleteDBClusterSnapshot-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteDBClusterSnapshot(new DeleteDBClusterSnapshotRequest 
+            var response = client.DeleteDBClusterSnapshot(new DeleteDBClusterSnapshotRequest
             {
                 DBClusterSnapshotIdentifier = "mydbclustersnapshot"
             });
@@ -731,10 +732,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteDBInstance()
         {
-            #region example-1
+            #region DeleteDBInstance-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteDBInstance(new DeleteDBInstanceRequest 
+            var response = client.DeleteDBInstance(new DeleteDBInstanceRequest
             {
                 DBInstanceIdentifier = "test-instance",
                 FinalDBSnapshotIdentifier = "test-instance-final-snap",
@@ -748,10 +749,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteDBInstanceAutomatedBackup()
         {
-            #region example-1
+            #region DeleteDBInstanceAutomatedBackup-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteDBInstanceAutomatedBackup(new DeleteDBInstanceAutomatedBackupRequest 
+            var response = client.DeleteDBInstanceAutomatedBackup(new DeleteDBInstanceAutomatedBackupRequest
             {
                 DBInstanceAutomatedBackupsArn = "arn:aws:rds:us-west-2:123456789012:auto-backup:ab-jkib2gfq5rv7replzadausbrktni2bn4example"
             });
@@ -763,10 +764,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteDBParameterGroup()
         {
-            #region example-1
+            #region DeleteDBParameterGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteDBParameterGroup(new DeleteDBParameterGroupRequest 
+            var response = client.DeleteDBParameterGroup(new DeleteDBParameterGroupRequest
             {
                 DBParameterGroupName = "mydbparametergroup"
             });
@@ -777,10 +778,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteDBSecurityGroup()
         {
-            #region example-1
+            #region DeleteDBSecurityGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteDBSecurityGroup(new DeleteDBSecurityGroupRequest 
+            var response = client.DeleteDBSecurityGroup(new DeleteDBSecurityGroupRequest
             {
                 DBSecurityGroupName = "mysecgroup"
             });
@@ -791,10 +792,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteDBSnapshot()
         {
-            #region example-1
+            #region DeleteDBSnapshot-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteDBSnapshot(new DeleteDBSnapshotRequest 
+            var response = client.DeleteDBSnapshot(new DeleteDBSnapshotRequest
             {
                 DBSnapshotIdentifier = "mydbsnapshot"
             });
@@ -806,10 +807,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteDBSubnetGroup()
         {
-            #region example-1
+            #region DeleteDBSubnetGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteDBSubnetGroup(new DeleteDBSubnetGroupRequest 
+            var response = client.DeleteDBSubnetGroup(new DeleteDBSubnetGroupRequest
             {
                 DBSubnetGroupName = "mysubnetgroup"
             });
@@ -820,10 +821,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteEventSubscription()
         {
-            #region example-1
+            #region DeleteEventSubscription-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteEventSubscription(new DeleteEventSubscriptionRequest 
+            var response = client.DeleteEventSubscription(new DeleteEventSubscriptionRequest
             {
                 SubscriptionName = "my-instance-events"
             });
@@ -835,10 +836,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteGlobalCluster()
         {
-            #region example-1
+            #region DeleteGlobalCluster-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteGlobalCluster(new DeleteGlobalClusterRequest 
+            var response = client.DeleteGlobalCluster(new DeleteGlobalClusterRequest
             {
                 GlobalClusterIdentifier = "myglobalcluster"
             });
@@ -850,20 +851,20 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteIntegration()
         {
-            #region example-1
+            #region DeleteIntegration-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteIntegration(new DeleteIntegrationRequest 
+            var response = client.DeleteIntegration(new DeleteIntegrationRequest
             {
                 IntegrationIdentifier = "5b9f3d79-7392-4a3e-896c-58eaa1b53231"
             });
 
-            DateTime createTime = response.CreateTime;
+            DateTime? createTime = response.CreateTime;
             string integrationArn = response.IntegrationArn;
             string integrationName = response.IntegrationName;
             string kmsKeyId = response.KMSKeyId;
             string sourceArn = response.SourceArn;
-            string status = response.Status;
+            IntegrationStatus status = response.Status;
             List<Tag> tags = response.Tags;
             string targetArn = response.TargetArn;
 
@@ -872,10 +873,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDeleteOptionGroup()
         {
-            #region example-1
+            #region DeleteOptionGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.DeleteOptionGroup(new DeleteOptionGroupRequest 
+            var response = client.DeleteOptionGroup(new DeleteOptionGroupRequest
             {
                 OptionGroupName = "myoptiongroup"
             });
@@ -886,10 +887,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeAccountAttributes()
         {
-            #region example-1
+            #region DescribeAccountAttributes-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeAccountAttributes(new DescribeAccountAttributesRequest 
+            var response = client.DescribeAccountAttributes(new DescribeAccountAttributesRequest
             {
             });
 
@@ -900,10 +901,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeBlueGreenDeployments()
         {
-            #region example-1
+            #region DescribeBlueGreenDeployments-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeBlueGreenDeployments(new DescribeBlueGreenDeploymentsRequest 
+            var response = client.DescribeBlueGreenDeployments(new DescribeBlueGreenDeploymentsRequest
             {
                 BlueGreenDeploymentIdentifier = "bgd-v53303651eexfake"
             });
@@ -915,10 +916,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeBlueGreenDeployments()
         {
-            #region example-2
+            #region DescribeBlueGreenDeployments-2
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeBlueGreenDeployments(new DescribeBlueGreenDeploymentsRequest 
+            var response = client.DescribeBlueGreenDeployments(new DescribeBlueGreenDeploymentsRequest
             {
                 BlueGreenDeploymentIdentifier = "bgd-wi89nwzglccsfake"
             });
@@ -930,10 +931,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeBlueGreenDeployments()
         {
-            #region example-3
+            #region DescribeBlueGreenDeployments-3
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeBlueGreenDeployments(new DescribeBlueGreenDeploymentsRequest 
+            var response = client.DescribeBlueGreenDeployments(new DescribeBlueGreenDeploymentsRequest
             {
                 BlueGreenDeploymentIdentifier = "bgd-wi89nwzglccsfake"
             });
@@ -945,10 +946,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeCertificates()
         {
-            #region example-1
+            #region DescribeCertificates-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeCertificates(new DescribeCertificatesRequest 
+            var response = client.DescribeCertificates(new DescribeCertificatesRequest
             {
             });
 
@@ -959,10 +960,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBCapacityReservations()
         {
-            #region example-1
+            #region DescribeDBCapacityReservations-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBCapacityReservations(new DescribeDBCapacityReservationsRequest 
+            var response = client.DescribeDBCapacityReservations(new DescribeDBCapacityReservationsRequest
             {
                 DBCapacityReservationIdentifier = "dbcr-7hqk2m9xv4t1bn6cz3ws8dj5fp0gyr2a"
             });
@@ -974,10 +975,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBCapacityReservations()
         {
-            #region example-2
+            #region DescribeDBCapacityReservations-2
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBCapacityReservations(new DescribeDBCapacityReservationsRequest 
+            var response = client.DescribeDBCapacityReservations(new DescribeDBCapacityReservationsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -999,10 +1000,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBClusterBacktracks()
         {
-            #region example-1
+            #region DescribeDBClusterBacktracks-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBClusterBacktracks(new DescribeDBClusterBacktracksRequest 
+            var response = client.DescribeDBClusterBacktracks(new DescribeDBClusterBacktracksRequest
             {
                 DBClusterIdentifier = "mydbcluster"
             });
@@ -1014,10 +1015,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBClusterEndpoints()
         {
-            #region example-1
+            #region DescribeDBClusterEndpoints-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBClusterEndpoints(new DescribeDBClusterEndpointsRequest 
+            var response = client.DescribeDBClusterEndpoints(new DescribeDBClusterEndpointsRequest
             {
             });
 
@@ -1028,10 +1029,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBClusterEndpoints()
         {
-            #region example-2
+            #region DescribeDBClusterEndpoints-2
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBClusterEndpoints(new DescribeDBClusterEndpointsRequest 
+            var response = client.DescribeDBClusterEndpoints(new DescribeDBClusterEndpointsRequest
             {
                 DBClusterIdentifier = "serverless-cluster"
             });
@@ -1043,10 +1044,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBClusterParameterGroups()
         {
-            #region example-1
+            #region DescribeDBClusterParameterGroups-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBClusterParameterGroups(new DescribeDBClusterParameterGroupsRequest 
+            var response = client.DescribeDBClusterParameterGroups(new DescribeDBClusterParameterGroupsRequest
             {
             });
 
@@ -1057,10 +1058,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBClusterParameters()
         {
-            #region example-1
+            #region DescribeDBClusterParameters-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBClusterParameters(new DescribeDBClusterParametersRequest 
+            var response = client.DescribeDBClusterParameters(new DescribeDBClusterParametersRequest
             {
                 DBClusterParameterGroupName = "mydbclusterpg"
             });
@@ -1072,10 +1073,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBClusters()
         {
-            #region example-1
+            #region DescribeDBClusters-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBClusters(new DescribeDBClustersRequest 
+            var response = client.DescribeDBClusters(new DescribeDBClustersRequest
             {
                 DBClusterIdentifier = "mydbcluster"
             });
@@ -1087,10 +1088,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBClusters()
         {
-            #region example-2
+            #region DescribeDBClusters-2
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBClusters(new DescribeDBClustersRequest 
+            var response = client.DescribeDBClusters(new DescribeDBClustersRequest
             {
                 DBClusterIdentifier = "my-vpcless-cluster"
             });
@@ -1102,10 +1103,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBClusterSnapshotAttributes()
         {
-            #region example-1
+            #region DescribeDBClusterSnapshotAttributes-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBClusterSnapshotAttributes(new DescribeDBClusterSnapshotAttributesRequest 
+            var response = client.DescribeDBClusterSnapshotAttributes(new DescribeDBClusterSnapshotAttributesRequest
             {
                 DBClusterSnapshotIdentifier = "myclustersnapshot"
             });
@@ -1117,10 +1118,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBClusterSnapshots()
         {
-            #region example-1
+            #region DescribeDBClusterSnapshots-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBClusterSnapshots(new DescribeDBClusterSnapshotsRequest 
+            var response = client.DescribeDBClusterSnapshots(new DescribeDBClusterSnapshotsRequest
             {
                 DBClusterIdentifier = "mydbcluster"
             });
@@ -1132,10 +1133,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBEngineVersions()
         {
-            #region example-1
+            #region DescribeDBEngineVersions-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBEngineVersions(new DescribeDBEngineVersionsRequest 
+            var response = client.DescribeDBEngineVersions(new DescribeDBEngineVersionsRequest
             {
                 Engine = "mysql"
             });
@@ -1147,10 +1148,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBInstanceAutomatedBackups()
         {
-            #region example-1
+            #region DescribeDBInstanceAutomatedBackups-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBInstanceAutomatedBackups(new DescribeDBInstanceAutomatedBackupsRequest 
+            var response = client.DescribeDBInstanceAutomatedBackups(new DescribeDBInstanceAutomatedBackupsRequest
             {
                 DBInstanceIdentifier = "new-orcl-db"
             });
@@ -1162,10 +1163,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBInstances()
         {
-            #region example-1
+            #region DescribeDBInstances-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBInstances(new DescribeDBInstancesRequest 
+            var response = client.DescribeDBInstances(new DescribeDBInstancesRequest
             {
                 DBInstanceIdentifier = "mydbinstancecf"
             });
@@ -1177,10 +1178,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBLogFiles()
         {
-            #region example-1
+            #region DescribeDBLogFiles-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBLogFiles(new DescribeDBLogFilesRequest 
+            var response = client.DescribeDBLogFiles(new DescribeDBLogFilesRequest
             {
                 DBInstanceIdentifier = "test-instance"
             });
@@ -1192,10 +1193,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBParameterGroups()
         {
-            #region example-1
+            #region DescribeDBParameterGroups-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBParameterGroups(new DescribeDBParameterGroupsRequest 
+            var response = client.DescribeDBParameterGroups(new DescribeDBParameterGroupsRequest
             {
             });
 
@@ -1206,10 +1207,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBParameters()
         {
-            #region example-1
+            #region DescribeDBParameters-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBParameters(new DescribeDBParametersRequest 
+            var response = client.DescribeDBParameters(new DescribeDBParametersRequest
             {
                 DBParameterGroupName = "mydbpg"
             });
@@ -1221,10 +1222,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBSecurityGroups()
         {
-            #region example-1
+            #region DescribeDBSecurityGroups-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBSecurityGroups(new DescribeDBSecurityGroupsRequest 
+            var response = client.DescribeDBSecurityGroups(new DescribeDBSecurityGroupsRequest
             {
                 DBSecurityGroupName = "mydbsecuritygroup"
             });
@@ -1235,10 +1236,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBSnapshotAttributes()
         {
-            #region example-1
+            #region DescribeDBSnapshotAttributes-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBSnapshotAttributes(new DescribeDBSnapshotAttributesRequest 
+            var response = client.DescribeDBSnapshotAttributes(new DescribeDBSnapshotAttributesRequest
             {
                 DBSnapshotIdentifier = "mydbsnapshot"
             });
@@ -1250,10 +1251,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBSnapshots()
         {
-            #region example-1
+            #region DescribeDBSnapshots-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBSnapshots(new DescribeDBSnapshotsRequest 
+            var response = client.DescribeDBSnapshots(new DescribeDBSnapshotsRequest
             {
                 DBSnapshotIdentifier = "mydbsnapshot"
             });
@@ -1265,10 +1266,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeDBSubnetGroups()
         {
-            #region example-1
+            #region DescribeDBSubnetGroups-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeDBSubnetGroups(new DescribeDBSubnetGroupsRequest 
+            var response = client.DescribeDBSubnetGroups(new DescribeDBSubnetGroupsRequest
             {
             });
 
@@ -1279,10 +1280,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeEngineDefaultClusterParameters()
         {
-            #region example-1
+            #region DescribeEngineDefaultClusterParameters-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeEngineDefaultClusterParameters(new DescribeEngineDefaultClusterParametersRequest 
+            var response = client.DescribeEngineDefaultClusterParameters(new DescribeEngineDefaultClusterParametersRequest
             {
                 DBParameterGroupFamily = "aurora-mysql5.7"
             });
@@ -1294,10 +1295,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeEngineDefaultParameters()
         {
-            #region example-1
+            #region DescribeEngineDefaultParameters-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeEngineDefaultParameters(new DescribeEngineDefaultParametersRequest 
+            var response = client.DescribeEngineDefaultParameters(new DescribeEngineDefaultParametersRequest
             {
                 DBParameterGroupFamily = "mysql5.7"
             });
@@ -1309,13 +1310,12 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeEventCategories()
         {
-            #region example-1
+            #region DescribeEventCategories-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeEventCategories(new DescribeEventCategoriesRequest 
+            var response = client.DescribeEventCategories(new DescribeEventCategoriesRequest
             {
                 Filters = new List<Filter> {
-                    
                 },
                 SourceType = ""
             });
@@ -1327,10 +1327,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeEvents()
         {
-            #region example-1
+            #region DescribeEvents-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeEvents(new DescribeEventsRequest 
+            var response = client.DescribeEvents(new DescribeEventsRequest
             {
                 SourceIdentifier = "test-instance",
                 SourceType = "db-instance"
@@ -1343,10 +1343,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeEventSubscriptions()
         {
-            #region example-1
+            #region DescribeEventSubscriptions-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeEventSubscriptions(new DescribeEventSubscriptionsRequest 
+            var response = client.DescribeEventSubscriptions(new DescribeEventSubscriptionsRequest
             {
             });
 
@@ -1357,10 +1357,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeExportTasks()
         {
-            #region example-1
+            #region DescribeExportTasks-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeExportTasks(new DescribeExportTasksRequest 
+            var response = client.DescribeExportTasks(new DescribeExportTasksRequest
             {
             });
 
@@ -1371,10 +1371,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeGlobalClusters()
         {
-            #region example-1
+            #region DescribeGlobalClusters-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeGlobalClusters(new DescribeGlobalClustersRequest 
+            var response = client.DescribeGlobalClusters(new DescribeGlobalClustersRequest
             {
             });
 
@@ -1385,10 +1385,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeIntegrations()
         {
-            #region example-1
+            #region DescribeIntegrations-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeIntegrations(new DescribeIntegrationsRequest 
+            var response = client.DescribeIntegrations(new DescribeIntegrationsRequest
             {
                 IntegrationIdentifier = "5b9f3d79-7392-4a3e-896c-58eaa1b53231"
             });
@@ -1400,10 +1400,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeOptionGroupOptions()
         {
-            #region example-1
+            #region DescribeOptionGroupOptions-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeOptionGroupOptions(new DescribeOptionGroupOptionsRequest 
+            var response = client.DescribeOptionGroupOptions(new DescribeOptionGroupOptionsRequest
             {
                 EngineName = "mysql",
                 MajorEngineVersion = "8.0"
@@ -1416,10 +1416,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeOptionGroups()
         {
-            #region example-1
+            #region DescribeOptionGroups-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeOptionGroups(new DescribeOptionGroupsRequest 
+            var response = client.DescribeOptionGroups(new DescribeOptionGroupsRequest
             {
                 EngineName = "oracle-ee",
                 MajorEngineVersion = "19"
@@ -1432,10 +1432,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeOrderableDBInstanceOptions()
         {
-            #region example-1
+            #region DescribeOrderableDBInstanceOptions-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeOrderableDBInstanceOptions(new DescribeOrderableDBInstanceOptionsRequest 
+            var response = client.DescribeOrderableDBInstanceOptions(new DescribeOrderableDBInstanceOptionsRequest
             {
                 Engine = "mysql"
             });
@@ -1447,10 +1447,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribePendingMaintenanceActions()
         {
-            #region example-1
+            #region DescribePendingMaintenanceActions-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribePendingMaintenanceActions(new DescribePendingMaintenanceActionsRequest 
+            var response = client.DescribePendingMaintenanceActions(new DescribePendingMaintenanceActionsRequest
             {
             });
 
@@ -1461,10 +1461,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeReservedDBInstances()
         {
-            #region example-1
+            #region DescribeReservedDBInstances-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeReservedDBInstances(new DescribeReservedDBInstancesRequest 
+            var response = client.DescribeReservedDBInstances(new DescribeReservedDBInstancesRequest
             {
             });
 
@@ -1475,10 +1475,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeReservedDBInstancesOfferings()
         {
-            #region example-1
+            #region DescribeReservedDBInstancesOfferings-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeReservedDBInstancesOfferings(new DescribeReservedDBInstancesOfferingsRequest 
+            var response = client.DescribeReservedDBInstancesOfferings(new DescribeReservedDBInstancesOfferingsRequest
             {
                 ProductDescription = "oracle"
             });
@@ -1490,10 +1490,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeServerlessV2PlatformVersions()
         {
-            #region example-1
+            #region DescribeServerlessV2PlatformVersions-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeServerlessV2PlatformVersions(new DescribeServerlessV2PlatformVersionsRequest 
+            var response = client.DescribeServerlessV2PlatformVersions(new DescribeServerlessV2PlatformVersionsRequest
             {
                 Engine = "aurora-mysql"
             });
@@ -1505,10 +1505,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeSourceRegions()
         {
-            #region example-1
+            #region DescribeSourceRegions-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeSourceRegions(new DescribeSourceRegionsRequest 
+            var response = client.DescribeSourceRegions(new DescribeSourceRegionsRequest
             {
                 RegionName = "us-east-1"
             });
@@ -1520,10 +1520,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDescribeValidDBInstanceModifications()
         {
-            #region example-1
+            #region DescribeValidDBInstanceModifications-1
 
             var client = new AmazonRDSClient();
-            var response = client.DescribeValidDBInstanceModifications(new DescribeValidDBInstanceModificationsRequest 
+            var response = client.DescribeValidDBInstanceModifications(new DescribeValidDBInstanceModificationsRequest
             {
                 DBInstanceIdentifier = "database-test1"
             });
@@ -1535,10 +1535,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSDownloadDBLogFilePortion()
         {
-            #region example-1
+            #region DownloadDBLogFilePortion-1
 
             var client = new AmazonRDSClient();
-            var response = client.DownloadDBLogFilePortion(new DownloadDBLogFilePortionRequest 
+            var response = client.DownloadDBLogFilePortion(new DownloadDBLogFilePortionRequest
             {
                 DBInstanceIdentifier = "test-instance",
                 LogFileName = "log.txt"
@@ -1550,10 +1550,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSFailoverDBCluster()
         {
-            #region example-1
+            #region FailoverDBCluster-1
 
             var client = new AmazonRDSClient();
-            var response = client.FailoverDBCluster(new FailoverDBClusterRequest 
+            var response = client.FailoverDBCluster(new FailoverDBClusterRequest
             {
                 DBClusterIdentifier = "myaurorainstance-cluster",
                 TargetDBInstanceIdentifier = "myaurorareplica"
@@ -1566,10 +1566,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonRDSClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceName = "arn:aws:rds:us-east-1:123456789012:db:orcl1"
             });
@@ -1581,10 +1581,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyCertificates()
         {
-            #region example-1
+            #region ModifyCertificates-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyCertificates(new ModifyCertificatesRequest 
+            var response = client.ModifyCertificates(new ModifyCertificatesRequest
             {
                 CertificateIdentifier = "rds-ca-2019"
             });
@@ -1596,19 +1596,19 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyCurrentDBClusterCapacity()
         {
-            #region example-1
+            #region ModifyCurrentDBClusterCapacity-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyCurrentDBClusterCapacity(new ModifyCurrentDBClusterCapacityRequest 
+            var response = client.ModifyCurrentDBClusterCapacity(new ModifyCurrentDBClusterCapacityRequest
             {
                 Capacity = 8,
                 DBClusterIdentifier = "mydbcluster"
             });
 
-            int currentCapacity = response.CurrentCapacity;
+            int? currentCapacity = response.CurrentCapacity;
             string dbClusterIdentifier = response.DBClusterIdentifier;
-            int pendingCapacity = response.PendingCapacity;
-            int secondsBeforeTimeout = response.SecondsBeforeTimeout;
+            int? pendingCapacity = response.PendingCapacity;
+            int? secondsBeforeTimeout = response.SecondsBeforeTimeout;
             string timeoutAction = response.TimeoutAction;
 
             #endregion
@@ -1616,14 +1616,14 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyDBCapacityReservation()
         {
-            #region example-1
+            #region ModifyDBCapacityReservation-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyDBCapacityReservation(new ModifyDBCapacityReservationRequest 
+            var response = client.ModifyDBCapacityReservation(new ModifyDBCapacityReservationRequest
             {
                 CapacityPerAvailabilityZone = 3,
                 DBCapacityReservationIdentifier = "dbcr-7hqk2m9xv4t1bn6cz3ws8dj5fp0gyr2a",
-                EndDate = new DateTime(2026, 12, 31, 11, 59, 59, DateTimeKind.Utc),
+                EndDate = new DateTime(2026, 12, 31, 23, 59, 59, DateTimeKind.Utc),
                 EndDateType = "limited"
             });
 
@@ -1633,10 +1633,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyDBCluster()
         {
-            #region example-1
+            #region ModifyDBCluster-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyDBCluster(new ModifyDBClusterRequest 
+            var response = client.ModifyDBCluster(new ModifyDBClusterRequest
             {
                 ApplyImmediately = true,
                 BackupRetentionPeriod = 14,
@@ -1651,10 +1651,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyDBClusterEndpoint()
         {
-            #region example-1
+            #region ModifyDBClusterEndpoint-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyDBClusterEndpoint(new ModifyDBClusterEndpointRequest 
+            var response = client.ModifyDBClusterEndpoint(new ModifyDBClusterEndpointRequest
             {
                 DBClusterEndpointIdentifier = "mycustomendpoint",
                 StaticMembers = new List<string> {
@@ -1680,10 +1680,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyDBClusterParameterGroup()
         {
-            #region example-1
+            #region ModifyDBClusterParameterGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyDBClusterParameterGroup(new ModifyDBClusterParameterGroupRequest 
+            var response = client.ModifyDBClusterParameterGroup(new ModifyDBClusterParameterGroupRequest
             {
                 DBClusterParameterGroupName = "mydbclusterpg",
                 Parameters = new List<Parameter> {
@@ -1707,10 +1707,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyDBClusterSnapshotAttribute()
         {
-            #region example-1
+            #region ModifyDBClusterSnapshotAttribute-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyDBClusterSnapshotAttribute(new ModifyDBClusterSnapshotAttributeRequest 
+            var response = client.ModifyDBClusterSnapshotAttribute(new ModifyDBClusterSnapshotAttributeRequest
             {
                 AttributeName = "restore",
                 DBClusterSnapshotIdentifier = "myclustersnapshot",
@@ -1726,10 +1726,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyDBInstance()
         {
-            #region example-1
+            #region ModifyDBInstance-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyDBInstance(new ModifyDBInstanceRequest 
+            var response = client.ModifyDBInstance(new ModifyDBInstanceRequest
             {
                 ApplyImmediately = true,
                 DBInstanceIdentifier = "database-2",
@@ -1744,10 +1744,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyDBParameterGroup()
         {
-            #region example-1
+            #region ModifyDBParameterGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyDBParameterGroup(new ModifyDBParameterGroupRequest 
+            var response = client.ModifyDBParameterGroup(new ModifyDBParameterGroupRequest
             {
                 DBParameterGroupName = "test-sqlserver-se-2017",
                 Parameters = new List<Parameter> {
@@ -1766,10 +1766,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyDBSnapshot()
         {
-            #region example-1
+            #region ModifyDBSnapshot-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyDBSnapshot(new ModifyDBSnapshotRequest 
+            var response = client.ModifyDBSnapshot(new ModifyDBSnapshotRequest
             {
                 DBSnapshotIdentifier = "db5-snapshot-upg-test",
                 EngineVersion = "11.7"
@@ -1782,10 +1782,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyDBSnapshotAttribute()
         {
-            #region example-1
+            #region ModifyDBSnapshotAttribute-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyDBSnapshotAttribute(new ModifyDBSnapshotAttributeRequest 
+            var response = client.ModifyDBSnapshotAttribute(new ModifyDBSnapshotAttributeRequest
             {
                 AttributeName = "restore",
                 DBSnapshotIdentifier = "mydbsnapshot",
@@ -1802,10 +1802,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyDBSnapshotAttribute()
         {
-            #region example-2
+            #region ModifyDBSnapshotAttribute-2
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyDBSnapshotAttribute(new ModifyDBSnapshotAttributeRequest 
+            var response = client.ModifyDBSnapshotAttribute(new ModifyDBSnapshotAttributeRequest
             {
                 AttributeName = "restore",
                 DBSnapshotIdentifier = "mydbsnapshot",
@@ -1821,10 +1821,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyDBSubnetGroup()
         {
-            #region example-1
+            #region ModifyDBSubnetGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyDBSubnetGroup(new ModifyDBSubnetGroupRequest 
+            var response = client.ModifyDBSubnetGroup(new ModifyDBSubnetGroupRequest
             {
                 DBSubnetGroupDescription = "",
                 DBSubnetGroupName = "mysubnetgroup",
@@ -1843,10 +1843,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyEventSubscription()
         {
-            #region example-1
+            #region ModifyEventSubscription-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyEventSubscription(new ModifyEventSubscriptionRequest 
+            var response = client.ModifyEventSubscription(new ModifyEventSubscriptionRequest
             {
                 Enabled = false,
                 SubscriptionName = "my-instance-events"
@@ -1859,10 +1859,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyGlobalCluster()
         {
-            #region example-1
+            #region ModifyGlobalCluster-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyGlobalCluster(new ModifyGlobalClusterRequest 
+            var response = client.ModifyGlobalCluster(new ModifyGlobalClusterRequest
             {
                 DeletionProtection = true,
                 GlobalClusterIdentifier = "myglobalcluster"
@@ -1875,22 +1875,22 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyIntegration()
         {
-            #region example-1
+            #region ModifyIntegration-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyIntegration(new ModifyIntegrationRequest 
+            var response = client.ModifyIntegration(new ModifyIntegrationRequest
             {
                 IntegrationIdentifier = "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
                 IntegrationName = "my-renamed-integration"
             });
 
-            DateTime createTime = response.CreateTime;
+            DateTime? createTime = response.CreateTime;
             string dataFilter = response.DataFilter;
             string integrationArn = response.IntegrationArn;
             string integrationName = response.IntegrationName;
             string kmsKeyId = response.KMSKeyId;
             string sourceArn = response.SourceArn;
-            string status = response.Status;
+            IntegrationStatus status = response.Status;
             List<Tag> tags = response.Tags;
             string targetArn = response.TargetArn;
 
@@ -1899,10 +1899,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSModifyOptionGroup()
         {
-            #region example-1
+            #region ModifyOptionGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.ModifyOptionGroup(new ModifyOptionGroupRequest 
+            var response = client.ModifyOptionGroup(new ModifyOptionGroupRequest
             {
                 ApplyImmediately = true,
                 OptionGroupName = "myawsuser-og02",
@@ -1923,10 +1923,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSPromoteReadReplica()
         {
-            #region example-1
+            #region PromoteReadReplica-1
 
             var client = new AmazonRDSClient();
-            var response = client.PromoteReadReplica(new PromoteReadReplicaRequest 
+            var response = client.PromoteReadReplica(new PromoteReadReplicaRequest
             {
                 DBInstanceIdentifier = "test-instance-repl"
             });
@@ -1938,10 +1938,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSPurchaseReservedDBInstancesOffering()
         {
-            #region example-1
+            #region PurchaseReservedDBInstancesOffering-1
 
             var client = new AmazonRDSClient();
-            var response = client.PurchaseReservedDBInstancesOffering(new PurchaseReservedDBInstancesOfferingRequest 
+            var response = client.PurchaseReservedDBInstancesOffering(new PurchaseReservedDBInstancesOfferingRequest
             {
                 ReservedDBInstanceId = "8ba30be1-b9ec-447f-8f23-6114e3f4c7b4",
                 ReservedDBInstancesOfferingId = ""
@@ -1954,10 +1954,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRebootDBInstance()
         {
-            #region example-1
+            #region RebootDBInstance-1
 
             var client = new AmazonRDSClient();
-            var response = client.RebootDBInstance(new RebootDBInstanceRequest 
+            var response = client.RebootDBInstance(new RebootDBInstanceRequest
             {
                 DBInstanceIdentifier = "test-mysql-instance"
             });
@@ -1969,10 +1969,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRemoveFromGlobalCluster()
         {
-            #region example-1
+            #region RemoveFromGlobalCluster-1
 
             var client = new AmazonRDSClient();
-            var response = client.RemoveFromGlobalCluster(new RemoveFromGlobalClusterRequest 
+            var response = client.RemoveFromGlobalCluster(new RemoveFromGlobalClusterRequest
             {
                 DbClusterIdentifier = "arn:aws:rds:us-west-2:123456789012:cluster:DB-1",
                 GlobalClusterIdentifier = "myglobalcluster"
@@ -1985,10 +1985,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRemoveRoleFromDBCluster()
         {
-            #region example-1
+            #region RemoveRoleFromDBCluster-1
 
             var client = new AmazonRDSClient();
-            var response = client.RemoveRoleFromDBCluster(new RemoveRoleFromDBClusterRequest 
+            var response = client.RemoveRoleFromDBCluster(new RemoveRoleFromDBClusterRequest
             {
                 DBClusterIdentifier = "mydbcluster",
                 RoleArn = "arn:aws:iam::123456789012:role/RDSLoadFromS3"
@@ -2000,10 +2000,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRemoveSourceIdentifierFromSubscription()
         {
-            #region example-1
+            #region RemoveSourceIdentifierFromSubscription-1
 
             var client = new AmazonRDSClient();
-            var response = client.RemoveSourceIdentifierFromSubscription(new RemoveSourceIdentifierFromSubscriptionRequest 
+            var response = client.RemoveSourceIdentifierFromSubscription(new RemoveSourceIdentifierFromSubscriptionRequest
             {
                 SourceIdentifier = "test-instance-repl",
                 SubscriptionName = "my-instance-events"
@@ -2016,10 +2016,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRemoveTagsFromResource()
         {
-            #region example-1
+            #region RemoveTagsFromResource-1
 
             var client = new AmazonRDSClient();
-            var response = client.RemoveTagsFromResource(new RemoveTagsFromResourceRequest 
+            var response = client.RemoveTagsFromResource(new RemoveTagsFromResourceRequest
             {
                 ResourceName = "arn:aws:rds:us-east-1:123456789012:db:mydbinstance",
                 TagKeys = new List<string> {
@@ -2034,10 +2034,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSResetDBClusterParameterGroup()
         {
-            #region example-1
+            #region ResetDBClusterParameterGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.ResetDBClusterParameterGroup(new ResetDBClusterParameterGroupRequest 
+            var response = client.ResetDBClusterParameterGroup(new ResetDBClusterParameterGroupRequest
             {
                 DBClusterParameterGroupName = "mydbclpg",
                 ResetAllParameters = true
@@ -2050,10 +2050,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSResetDBParameterGroup()
         {
-            #region example-1
+            #region ResetDBParameterGroup-1
 
             var client = new AmazonRDSClient();
-            var response = client.ResetDBParameterGroup(new ResetDBParameterGroupRequest 
+            var response = client.ResetDBParameterGroup(new ResetDBParameterGroupRequest
             {
                 DBParameterGroupName = "mypg",
                 ResetAllParameters = true
@@ -2066,10 +2066,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRestoreDBClusterFromS3()
         {
-            #region example-1
+            #region RestoreDBClusterFromS3-1
 
             var client = new AmazonRDSClient();
-            var response = client.RestoreDBClusterFromS3(new RestoreDBClusterFromS3Request 
+            var response = client.RestoreDBClusterFromS3(new RestoreDBClusterFromS3Request
             {
                 DBClusterIdentifier = "cluster-s3-restore",
                 Engine = "aurora-mysql",
@@ -2089,10 +2089,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRestoreDBClusterFromSnapshot()
         {
-            #region example-1
+            #region RestoreDBClusterFromSnapshot-1
 
             var client = new AmazonRDSClient();
-            var response = client.RestoreDBClusterFromSnapshot(new RestoreDBClusterFromSnapshotRequest 
+            var response = client.RestoreDBClusterFromSnapshot(new RestoreDBClusterFromSnapshotRequest
             {
                 DBClusterIdentifier = "newdbcluster",
                 Engine = "aurora-postgresql",
@@ -2107,10 +2107,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRestoreDBClusterFromSnapshot()
         {
-            #region example-2
+            #region RestoreDBClusterFromSnapshot-2
 
             var client = new AmazonRDSClient();
-            var response = client.RestoreDBClusterFromSnapshot(new RestoreDBClusterFromSnapshotRequest 
+            var response = client.RestoreDBClusterFromSnapshot(new RestoreDBClusterFromSnapshotRequest
             {
                 DBClusterIdentifier = "restored-cluster",
                 EnableIAMDatabaseAuthentication = true,
@@ -2127,10 +2127,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRestoreDBClusterFromSnapshot()
         {
-            #region example-3
+            #region RestoreDBClusterFromSnapshot-3
 
             var client = new AmazonRDSClient();
-            var response = client.RestoreDBClusterFromSnapshot(new RestoreDBClusterFromSnapshotRequest 
+            var response = client.RestoreDBClusterFromSnapshot(new RestoreDBClusterFromSnapshotRequest
             {
                 AssociatedRoles = new List<DBClusterAssociatedRole> {
                     new DBClusterAssociatedRole {
@@ -2150,10 +2150,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRestoreDBClusterToPointInTime()
         {
-            #region example-1
+            #region RestoreDBClusterToPointInTime-1
 
             var client = new AmazonRDSClient();
-            var response = client.RestoreDBClusterToPointInTime(new RestoreDBClusterToPointInTimeRequest 
+            var response = client.RestoreDBClusterToPointInTime(new RestoreDBClusterToPointInTimeRequest
             {
                 DBClusterIdentifier = "sample-cluster-clone",
                 RestoreType = "copy-on-write",
@@ -2168,10 +2168,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRestoreDBClusterToPointInTime()
         {
-            #region example-2
+            #region RestoreDBClusterToPointInTime-2
 
             var client = new AmazonRDSClient();
-            var response = client.RestoreDBClusterToPointInTime(new RestoreDBClusterToPointInTimeRequest 
+            var response = client.RestoreDBClusterToPointInTime(new RestoreDBClusterToPointInTimeRequest
             {
                 DBClusterIdentifier = "sample-cluster-restored",
                 EnableIAMDatabaseAuthentication = true,
@@ -2189,10 +2189,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRestoreDBInstanceFromDBSnapshot()
         {
-            #region example-1
+            #region RestoreDBInstanceFromDBSnapshot-1
 
             var client = new AmazonRDSClient();
-            var response = client.RestoreDBInstanceFromDBSnapshot(new RestoreDBInstanceFromDBSnapshotRequest 
+            var response = client.RestoreDBInstanceFromDBSnapshot(new RestoreDBInstanceFromDBSnapshotRequest
             {
                 DBInstanceClass = "db.t3.small",
                 DBInstanceIdentifier = "db7-new-instance",
@@ -2206,12 +2206,12 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRestoreDBInstanceToPointInTime()
         {
-            #region example-1
+            #region RestoreDBInstanceToPointInTime-1
 
             var client = new AmazonRDSClient();
-            var response = client.RestoreDBInstanceToPointInTime(new RestoreDBInstanceToPointInTimeRequest 
+            var response = client.RestoreDBInstanceToPointInTime(new RestoreDBInstanceToPointInTimeRequest
             {
-                RestoreTime = new DateTime(2018, 7, 30, 11, 45, 0, DateTimeKind.Utc),
+                RestoreTime = new DateTime(2018, 7, 30, 23, 45, 0, DateTimeKind.Utc),
                 SourceDBInstanceIdentifier = "test-instance",
                 TargetDBInstanceIdentifier = "restored-test-instance"
             });
@@ -2223,10 +2223,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSRevokeDBSecurityGroupIngress()
         {
-            #region example-1
+            #region RevokeDBSecurityGroupIngress-1
 
             var client = new AmazonRDSClient();
-            var response = client.RevokeDBSecurityGroupIngress(new RevokeDBSecurityGroupIngressRequest 
+            var response = client.RevokeDBSecurityGroupIngress(new RevokeDBSecurityGroupIngressRequest
             {
                 CIDRIP = "203.0.113.5/32",
                 DBSecurityGroupName = "mydbsecuritygroup"
@@ -2239,10 +2239,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSStartActivityStream()
         {
-            #region example-1
+            #region StartActivityStream-1
 
             var client = new AmazonRDSClient();
-            var response = client.StartActivityStream(new StartActivityStreamRequest 
+            var response = client.StartActivityStream(new StartActivityStreamRequest
             {
                 ApplyImmediately = true,
                 KmsKeyId = "arn:aws:kms:us-east-1:1234567890123:key/a12c345d-6ef7-890g-h123-456i789jk0l1",
@@ -2250,21 +2250,21 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
                 ResourceArn = "arn:aws:rds:us-east-1:1234567890123:cluster:my-pg-cluster"
             });
 
-            bool applyImmediately = response.ApplyImmediately;
+            bool? applyImmediately = response.ApplyImmediately;
             string kinesisStreamName = response.KinesisStreamName;
             string kmsKeyId = response.KmsKeyId;
-            string mode = response.Mode;
-            string status = response.Status;
+            ActivityStreamMode mode = response.Mode;
+            ActivityStreamStatus status = response.Status;
 
             #endregion
         }
 
         public void RDSStartDBCluster()
         {
-            #region example-1
+            #region StartDBCluster-1
 
             var client = new AmazonRDSClient();
-            var response = client.StartDBCluster(new StartDBClusterRequest 
+            var response = client.StartDBCluster(new StartDBClusterRequest
             {
                 DBClusterIdentifier = "mydbcluster"
             });
@@ -2276,10 +2276,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSStartDBInstance()
         {
-            #region example-1
+            #region StartDBInstance-1
 
             var client = new AmazonRDSClient();
-            var response = client.StartDBInstance(new StartDBInstanceRequest 
+            var response = client.StartDBInstance(new StartDBInstanceRequest
             {
                 DBInstanceIdentifier = "test-instance"
             });
@@ -2291,10 +2291,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSStartDBInstanceAutomatedBackupsReplication()
         {
-            #region example-1
+            #region StartDBInstanceAutomatedBackupsReplication-1
 
             var client = new AmazonRDSClient();
-            var response = client.StartDBInstanceAutomatedBackupsReplication(new StartDBInstanceAutomatedBackupsReplicationRequest 
+            var response = client.StartDBInstanceAutomatedBackupsReplication(new StartDBInstanceAutomatedBackupsReplicationRequest
             {
                 BackupRetentionPeriod = 14,
                 SourceDBInstanceArn = "arn:aws:rds:us-east-1:123456789012:db:new-orcl-db"
@@ -2307,10 +2307,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSStartExportTask()
         {
-            #region example-1
+            #region StartExportTask-1
 
             var client = new AmazonRDSClient();
-            var response = client.StartExportTask(new StartExportTaskRequest 
+            var response = client.StartExportTask(new StartExportTaskRequest
             {
                 ExportTaskIdentifier = "my-s3-export",
                 IamRoleArn = "arn:aws:iam::123456789012:role/service-role/ExportRole",
@@ -2322,22 +2322,22 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             string exportTaskIdentifier = response.ExportTaskIdentifier;
             string iamRoleArn = response.IamRoleArn;
             string kmsKeyId = response.KmsKeyId;
-            int percentProgress = response.PercentProgress;
+            int? percentProgress = response.PercentProgress;
             string s3Bucket = response.S3Bucket;
-            DateTime snapshotTime = response.SnapshotTime;
+            DateTime? snapshotTime = response.SnapshotTime;
             string sourceArn = response.SourceArn;
             string status = response.Status;
-            int totalExtractedDataInGB = response.TotalExtractedDataInGB;
+            int? totalExtractedDataInGB = response.TotalExtractedDataInGB;
 
             #endregion
         }
 
         public void RDSStopActivityStream()
         {
-            #region example-1
+            #region StopActivityStream-1
 
             var client = new AmazonRDSClient();
-            var response = client.StopActivityStream(new StopActivityStreamRequest 
+            var response = client.StopActivityStream(new StopActivityStreamRequest
             {
                 ApplyImmediately = true,
                 ResourceArn = "arn:aws:rds:us-east-1:1234567890123:cluster:my-pg-cluster"
@@ -2345,17 +2345,17 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
             string kinesisStreamName = response.KinesisStreamName;
             string kmsKeyId = response.KmsKeyId;
-            string status = response.Status;
+            ActivityStreamStatus status = response.Status;
 
             #endregion
         }
 
         public void RDSStopDBCluster()
         {
-            #region example-1
+            #region StopDBCluster-1
 
             var client = new AmazonRDSClient();
-            var response = client.StopDBCluster(new StopDBClusterRequest 
+            var response = client.StopDBCluster(new StopDBClusterRequest
             {
                 DBClusterIdentifier = "mydbcluster"
             });
@@ -2367,10 +2367,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSStopDBInstance()
         {
-            #region example-1
+            #region StopDBInstance-1
 
             var client = new AmazonRDSClient();
-            var response = client.StopDBInstance(new StopDBInstanceRequest 
+            var response = client.StopDBInstance(new StopDBInstanceRequest
             {
                 DBInstanceIdentifier = "test-instance"
             });
@@ -2382,10 +2382,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSStopDBInstanceAutomatedBackupsReplication()
         {
-            #region example-1
+            #region StopDBInstanceAutomatedBackupsReplication-1
 
             var client = new AmazonRDSClient();
-            var response = client.StopDBInstanceAutomatedBackupsReplication(new StopDBInstanceAutomatedBackupsReplicationRequest 
+            var response = client.StopDBInstanceAutomatedBackupsReplication(new StopDBInstanceAutomatedBackupsReplicationRequest
             {
                 SourceDBInstanceArn = "arn:aws:rds:us-east-1:123456789012:db:new-orcl-db"
             });
@@ -2397,10 +2397,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSSwitchoverBlueGreenDeployment()
         {
-            #region example-1
+            #region SwitchoverBlueGreenDeployment-1
 
             var client = new AmazonRDSClient();
-            var response = client.SwitchoverBlueGreenDeployment(new SwitchoverBlueGreenDeploymentRequest 
+            var response = client.SwitchoverBlueGreenDeployment(new SwitchoverBlueGreenDeploymentRequest
             {
                 BlueGreenDeploymentIdentifier = "bgd-wi89nwzglccsfake",
                 SwitchoverTimeout = 300
@@ -2413,10 +2413,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
 
         public void RDSSwitchoverBlueGreenDeployment()
         {
-            #region example-2
+            #region SwitchoverBlueGreenDeployment-2
 
             var client = new AmazonRDSClient();
-            var response = client.SwitchoverBlueGreenDeployment(new SwitchoverBlueGreenDeploymentRequest 
+            var response = client.SwitchoverBlueGreenDeployment(new SwitchoverBlueGreenDeploymentRequest
             {
                 BlueGreenDeploymentIdentifier = "bgd-wi89nwzglccsfake",
                 SwitchoverTimeout = 300
@@ -2427,13 +2427,10 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

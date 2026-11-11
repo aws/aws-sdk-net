@@ -109,6 +109,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("elementalInferenceSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = ElementalInferenceSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ElementalInferenceSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("errorCode", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

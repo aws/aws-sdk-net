@@ -27,12 +27,12 @@ using Amazon.ConnectCampaignsV2.Internal;
 namespace Amazon.ConnectCampaignsV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectCampaignsV2 service
+    /// Configuration for accessing AmazonConnectCampaignServiceV2
     /// </summary>
     public partial class AmazonConnectCampaignsV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ConnectCampaignsV2", "4.0.101.14");
+            InternalSDKUtils.BuildUserAgentString("ConnectCampaignsV2", "4.0.101.18");
 
         private static readonly AmazonConnectCampaignsV2EndpointResolver EndpointResolver =
             new AmazonConnectCampaignsV2EndpointResolver();

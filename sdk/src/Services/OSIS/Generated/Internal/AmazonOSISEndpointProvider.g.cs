@@ -26,7 +26,7 @@ using Amazon.OSIS.Endpoints;
 namespace Amazon.OSIS.Internal
 {
     /// <summary>
-    /// Amazon OSIS endpoint provider.
+    /// Amazon OpenSearch Ingestion endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="OSISEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

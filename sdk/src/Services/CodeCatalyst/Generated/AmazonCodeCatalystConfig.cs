@@ -27,12 +27,12 @@ using Amazon.CodeCatalyst.Internal;
 namespace Amazon.CodeCatalyst
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeCatalyst service
+    /// Configuration for accessing Amazon CodeCatalyst
     /// </summary>
     public partial class AmazonCodeCatalystConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeCatalyst", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("CodeCatalyst", "4.0.100.26");
 
         private static readonly AmazonCodeCatalystEndpointResolver EndpointResolver =
             new AmazonCodeCatalystEndpointResolver();

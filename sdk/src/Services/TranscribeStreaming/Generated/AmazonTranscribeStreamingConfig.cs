@@ -27,12 +27,12 @@ using Amazon.TranscribeStreaming.Internal;
 namespace Amazon.TranscribeStreaming
 {
     /// <summary>
-    /// Configuration for accessing Amazon TranscribeStreaming service
+    /// Configuration for accessing Amazon Transcribe Streaming Service
     /// </summary>
     public partial class AmazonTranscribeStreamingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Transcribe Streaming", "4.0.101.15");
+            InternalSDKUtils.BuildUserAgentString("Transcribe Streaming", "4.0.101.19");
 
         private static readonly AmazonTranscribeStreamingEndpointResolver EndpointResolver =
             new AmazonTranscribeStreamingEndpointResolver();

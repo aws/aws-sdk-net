@@ -51,6 +51,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.GrantType);
             }
 
+            if (requestObject.IsSetOnBehalfOfAuthenticationConfig())
+            {
+                context.Writer.WritePropertyName("onBehalfOfAuthenticationConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OnBehalfOfAuthenticationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnBehalfOfAuthenticationConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetTokenExchangeGrantTypeConfig())
             {
                 context.Writer.WritePropertyName("tokenExchangeGrantTypeConfig");

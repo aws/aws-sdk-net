@@ -405,11 +405,6 @@ namespace Amazon.Artifact
         public static readonly InquirySupportMode AI_ONLY = new InquirySupportMode("AI_ONLY");
 
         /// <summary>
-        /// Constant FULL_SUPPORT for InquirySupportMode
-        /// </summary>
-        public static readonly InquirySupportMode FULL_SUPPORT = new InquirySupportMode("FULL_SUPPORT");
-
-        /// <summary>
         /// Constructs a custom InquirySupportMode for a value not among the defined constants.
         /// </summary>
         public InquirySupportMode(string value) : base(value) { }

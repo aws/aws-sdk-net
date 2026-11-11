@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Interconnect.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Interconnect service
+    /// Service metadata for Interconnect
     /// </summary>
     public partial class AmazonInterconnectMetadata : IServiceMetadata
     {

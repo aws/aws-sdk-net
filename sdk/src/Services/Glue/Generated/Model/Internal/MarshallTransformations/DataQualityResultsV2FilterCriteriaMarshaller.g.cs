@@ -45,6 +45,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetDataQualityEvaluationConfig())
+            {
+                context.Writer.WritePropertyName("DataQualityEvaluationConfig");
+                context.Writer.WriteStringValue(requestObject.DataQualityEvaluationConfig);
+            }
+
             if (requestObject.IsSetDataSource())
             {
                 context.Writer.WritePropertyName("DataSource");
@@ -73,6 +79,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("EvaluationContext");
                 context.Writer.WriteStringValue(requestObject.EvaluationContext);
+            }
+
+            if (requestObject.IsSetEvaluationRunMode())
+            {
+                context.Writer.WritePropertyName("EvaluationRunMode");
+                context.Writer.WriteStringValue(requestObject.EvaluationRunMode);
             }
 
             if (requestObject.IsSetPublishedAfter())

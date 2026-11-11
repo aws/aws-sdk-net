@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.NumericTypesRestXml
 {
     /// <summary>
-    /// Configuration for accessing Amazon NumericTypesRestXml service
+    /// Configuration for accessing Sample Numeric Types Rest Xml Service
     /// </summary>
     public static class AmazonNumericTypesRestXmlDefaultConfiguration
     {

@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,27 +27,23 @@ using Amazon.Route53Domains.Internal;
 namespace Amazon.Route53Domains
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53Domains service
+    /// Configuration for accessing Amazon Route 53 Domains
     /// </summary>
     public partial class AmazonRoute53DomainsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Route 53 Domains", "4.0.101.4");
+            InternalSDKUtils.BuildUserAgentString("Route 53 Domains", "4.0.102.2");
 
         private static readonly AmazonRoute53DomainsEndpointResolver EndpointResolver =
             new AmazonRoute53DomainsEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "Route 53 Domains";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "Route 53 Domains";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.Route53Domains
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "route53domains";
-            }
-        }
+        public override string RegionEndpointServiceName => "route53domains";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2014-05-15";
-            }
-        }
+        public override string ServiceVersion => "2014-05-15";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.Route53Domains
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Chime
 {
     /// <summary>
-    /// Configuration for accessing Amazon Chime service
+    /// Configuration for accessing Amazon Chime
     /// </summary>
     public static class AmazonChimeDefaultConfiguration
     {

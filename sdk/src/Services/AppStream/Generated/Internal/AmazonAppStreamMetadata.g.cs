@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AppStream service
+    /// Service metadata for Amazon AppStream
     /// </summary>
     public partial class AmazonAppStreamMetadata : IServiceMetadata
     {

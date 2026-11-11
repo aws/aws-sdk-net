@@ -27,12 +27,12 @@ using Amazon.S3Files.Internal;
 namespace Amazon.S3Files
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Files service
+    /// Configuration for accessing Amazon S3 Files
     /// </summary>
     public partial class AmazonS3FilesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("S3Files", "4.0.101.2");
+            InternalSDKUtils.BuildUserAgentString("S3Files", "4.0.101.6");
 
         private static readonly AmazonS3FilesEndpointResolver EndpointResolver =
             new AmazonS3FilesEndpointResolver();

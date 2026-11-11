@@ -31,7 +31,7 @@ using Amazon.CodeStarNotifications.Endpoints;
 namespace Amazon.CodeStarNotifications.Internal
 {
     /// <summary>
-    /// Amazon CodeStarNotifications endpoint resolver.
+    /// AWS CodeStar Notifications endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CodeStarNotifications service requests.
     /// <para />

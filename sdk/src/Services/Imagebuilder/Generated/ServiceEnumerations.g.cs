@@ -502,6 +502,47 @@ namespace Amazon.Imagebuilder
     }
 
     /// <summary>
+    /// Constants used for properties of type ImageScanningType.
+    /// </summary>
+    public class ImageScanningType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ON_DEMAND_AMI_CVE for ImageScanningType
+        /// </summary>
+        public static readonly ImageScanningType ON_DEMAND_AMI_CVE = new ImageScanningType("ON_DEMAND_AMI_CVE");
+
+        /// <summary>
+        /// Constant TEST_INSTANCE_CVE for ImageScanningType
+        /// </summary>
+        public static readonly ImageScanningType TEST_INSTANCE_CVE = new ImageScanningType("TEST_INSTANCE_CVE");
+
+        /// <summary>
+        /// Constructs a custom ImageScanningType for a value not among the defined constants.
+        /// </summary>
+        public ImageScanningType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageScanningType FindValue(string value)
+        {
+            return FindValue<ImageScanningType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageScanningType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ImageSource.
     /// </summary>
     public class ImageSource : ConstantClass
@@ -1103,6 +1144,57 @@ namespace Amazon.Imagebuilder
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MarketplaceResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MaximumSeverityLabel.
+    /// </summary>
+    public class MaximumSeverityLabel : ConstantClass
+    {
+        /// <summary>
+        /// Constant HIGH for MaximumSeverityLabel
+        /// </summary>
+        public static readonly MaximumSeverityLabel HIGH = new MaximumSeverityLabel("HIGH");
+
+        /// <summary>
+        /// Constant INFORMATIONAL for MaximumSeverityLabel
+        /// </summary>
+        public static readonly MaximumSeverityLabel INFORMATIONAL = new MaximumSeverityLabel("INFORMATIONAL");
+
+        /// <summary>
+        /// Constant LOW for MaximumSeverityLabel
+        /// </summary>
+        public static readonly MaximumSeverityLabel LOW = new MaximumSeverityLabel("LOW");
+
+        /// <summary>
+        /// Constant MEDIUM for MaximumSeverityLabel
+        /// </summary>
+        public static readonly MaximumSeverityLabel MEDIUM = new MaximumSeverityLabel("MEDIUM");
+
+        /// <summary>
+        /// Constructs a custom MaximumSeverityLabel for a value not among the defined constants.
+        /// </summary>
+        public MaximumSeverityLabel(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaximumSeverityLabel FindValue(string value)
+        {
+            return FindValue<MaximumSeverityLabel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaximumSeverityLabel(string value)
         {
             return FindValue(value);
         }

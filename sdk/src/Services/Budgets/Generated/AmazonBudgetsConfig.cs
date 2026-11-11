@@ -27,12 +27,12 @@ using Amazon.Budgets.Internal;
 namespace Amazon.Budgets
 {
     /// <summary>
-    /// Configuration for accessing Amazon Budgets service
+    /// Configuration for accessing AWS Budgets
     /// </summary>
     public partial class AmazonBudgetsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Budgets", "4.0.101.5");
+            InternalSDKUtils.BuildUserAgentString("Budgets", "4.0.101.9");
 
         private static readonly AmazonBudgetsEndpointResolver EndpointResolver =
             new AmazonBudgetsEndpointResolver();

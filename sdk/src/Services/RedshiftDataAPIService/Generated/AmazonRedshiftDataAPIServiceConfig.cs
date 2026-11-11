@@ -27,12 +27,12 @@ using Amazon.RedshiftDataAPIService.Internal;
 namespace Amazon.RedshiftDataAPIService
 {
     /// <summary>
-    /// Configuration for accessing Amazon RedshiftDataAPIService service
+    /// Configuration for accessing Redshift Data API Service
     /// </summary>
     public partial class AmazonRedshiftDataAPIServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Redshift Data", "4.0.104.1");
+            InternalSDKUtils.BuildUserAgentString("Redshift Data", "4.0.104.5");
 
         private static readonly AmazonRedshiftDataAPIServiceEndpointResolver EndpointResolver =
             new AmazonRedshiftDataAPIServiceEndpointResolver();

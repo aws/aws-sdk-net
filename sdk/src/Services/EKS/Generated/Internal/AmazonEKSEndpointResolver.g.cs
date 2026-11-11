@@ -31,7 +31,7 @@ using Amazon.EKS.Endpoints;
 namespace Amazon.EKS.Internal
 {
     /// <summary>
-    /// Amazon EKS endpoint resolver.
+    /// Amazon Elastic Kubernetes Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for EKS service requests.
     /// <para />

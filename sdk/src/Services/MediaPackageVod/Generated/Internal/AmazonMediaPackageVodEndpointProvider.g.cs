@@ -26,7 +26,7 @@ using Amazon.MediaPackageVod.Endpoints;
 namespace Amazon.MediaPackageVod.Internal
 {
     /// <summary>
-    /// Amazon MediaPackageVod endpoint provider.
+    /// AWS Elemental MediaPackage VOD endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MediaPackageVodEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

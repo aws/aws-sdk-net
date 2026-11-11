@@ -27,12 +27,12 @@ using Amazon.SecretsManager.Internal;
 namespace Amazon.SecretsManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecretsManager service
+    /// Configuration for accessing AWS Secrets Manager
     /// </summary>
     public partial class AmazonSecretsManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Secrets Manager", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Secrets Manager", "4.0.100.26");
 
         private static readonly AmazonSecretsManagerEndpointResolver EndpointResolver =
             new AmazonSecretsManagerEndpointResolver();

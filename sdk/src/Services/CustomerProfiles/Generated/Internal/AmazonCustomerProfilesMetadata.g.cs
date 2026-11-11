@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CustomerProfiles service
+    /// Service metadata for Amazon Connect Customer Profiles
     /// </summary>
     public partial class AmazonCustomerProfilesMetadata : IServiceMetadata
     {

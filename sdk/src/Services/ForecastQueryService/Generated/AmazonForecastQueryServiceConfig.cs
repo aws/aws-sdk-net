@@ -27,12 +27,12 @@ using Amazon.ForecastQueryService.Internal;
 namespace Amazon.ForecastQueryService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ForecastQueryService service
+    /// Configuration for accessing Amazon Forecast Query Service
     /// </summary>
     public partial class AmazonForecastQueryServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("forecastquery", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("forecastquery", "4.0.100.26");
 
         private static readonly AmazonForecastQueryServiceEndpointResolver EndpointResolver =
             new AmazonForecastQueryServiceEndpointResolver();

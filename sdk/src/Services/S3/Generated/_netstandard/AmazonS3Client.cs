@@ -285,7 +285,7 @@ namespace Amazon.S3
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.S3.Internal.AmazonS3ResponseHandler());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.ErrorCallbackHandler>(new Amazon.S3.Internal.AmazonS3ExceptionHandler());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.S3.Internal.AmazonS3RedirectHandler());
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Signer>(new Amazon.S3.Internal.S3Express.S3ExpressPreSigner());
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Signer>(new Amazon.S3.Internal.S3Express.S3ExpressPreSigner(this));
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.EndpointResolver>(new Amazon.S3.Internal.AmazonS3PostMarshallHandler());
             if(this.Config.RetryMode == RequestRetryMode.Standard)
             {
@@ -320,10 +320,9 @@ namespace Amazon.S3
         /// </summary>
         protected override void Dispose(bool disposing)
         {
-            var clientConfig = this.Config as AmazonS3Config;
-            if (clientConfig != null && clientConfig.S3ExpressCredentialProvider != null)
+            if (disposing)
             {
-                clientConfig.S3ExpressCredentialProvider.Dispose();
+                DisposeS3ExpressCredentialProvider();
             }
             base.Dispose(disposing);
         }

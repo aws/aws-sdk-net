@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon OpenSearchServerless service
+    /// Service metadata for OpenSearch Service Serverless
     /// </summary>
     public partial class AmazonOpenSearchServerlessMetadata : IServiceMetadata
     {

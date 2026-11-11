@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ResourceGroups
 {
     /// <summary>
-    /// Configuration for accessing Amazon ResourceGroups service
+    /// Configuration for accessing AWS Resource Groups
     /// </summary>
     public static class AmazonResourceGroupsDefaultConfiguration
     {

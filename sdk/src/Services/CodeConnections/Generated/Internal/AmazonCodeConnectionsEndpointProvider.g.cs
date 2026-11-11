@@ -26,7 +26,7 @@ using Amazon.CodeConnections.Endpoints;
 namespace Amazon.CodeConnections.Internal
 {
     /// <summary>
-    /// Amazon CodeConnections endpoint provider.
+    /// AWS CodeConnections endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CodeConnectionsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

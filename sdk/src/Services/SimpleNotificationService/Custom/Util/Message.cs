@@ -381,7 +381,7 @@ namespace Amazon.SimpleNotificationService.Util
             var bytesToSign = GetMessageBytesToSign();
             var certificate = GetX509Certificate();
 
-#if BCL
+#if NETFRAMEWORK
             string cryptoConfig;
             if (this.SignatureVersion.Equals(SHA1_SIGNATURE_VERSION))
                 cryptoConfig = CryptoConfig.MapNameToOID("SHA1");
@@ -513,7 +513,7 @@ namespace Amazon.SimpleNotificationService.Util
 #pragma warning disable SYSLIB0014 // Need to use HttpWebRequest while the SDK targets .NET Framework 3.5
                             HttpWebRequest request = HttpWebRequest.Create(this.SigningCertURL) as HttpWebRequest;
 #pragma warning restore SYSLIB0014
-#if BCL
+#if NETFRAMEWORK
                             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 #else
                             // It's illegal to await an async method within a lock statement block.
@@ -551,7 +551,7 @@ namespace Amazon.SimpleNotificationService.Util
         }
         #endregion
 
-#if BCL
+#if NETFRAMEWORK
         #region Subscribe/Unsubscribe Actions
         /// <summary>
         /// Uses the SubscribeURL property to subscribe to the topic

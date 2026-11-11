@@ -26,7 +26,7 @@ using Amazon.SSMQuickSetup.Endpoints;
 namespace Amazon.SSMQuickSetup.Internal
 {
     /// <summary>
-    /// Amazon SSMQuickSetup endpoint provider.
+    /// AWS Systems Manager QuickSetup endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SSMQuickSetupEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

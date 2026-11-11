@@ -26,7 +26,7 @@ using Amazon.AppSync.Endpoints;
 namespace Amazon.AppSync.Internal
 {
     /// <summary>
-    /// Amazon AppSync endpoint provider.
+    /// AWS AppSync endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AppSyncEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

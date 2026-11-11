@@ -27,12 +27,12 @@ using Amazon.PCS.Internal;
 namespace Amazon.PCS
 {
     /// <summary>
-    /// Configuration for accessing Amazon PCS service
+    /// Configuration for accessing AWS Parallel Computing Service
     /// </summary>
     public partial class AmazonPCSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PCS", "4.0.103.4");
+            InternalSDKUtils.BuildUserAgentString("PCS", "4.0.104.0");
 
         private static readonly AmazonPCSEndpointResolver EndpointResolver =
             new AmazonPCSEndpointResolver();

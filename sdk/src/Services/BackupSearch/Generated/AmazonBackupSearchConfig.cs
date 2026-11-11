@@ -27,12 +27,12 @@ using Amazon.BackupSearch.Internal;
 namespace Amazon.BackupSearch
 {
     /// <summary>
-    /// Configuration for accessing Amazon BackupSearch service
+    /// Configuration for accessing AWS Backup Search
     /// </summary>
     public partial class AmazonBackupSearchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("BackupSearch", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("BackupSearch", "4.0.100.26");
 
         private static readonly AmazonBackupSearchEndpointResolver EndpointResolver =
             new AmazonBackupSearchEndpointResolver();

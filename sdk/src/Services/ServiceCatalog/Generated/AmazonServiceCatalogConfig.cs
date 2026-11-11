@@ -27,12 +27,12 @@ using Amazon.ServiceCatalog.Internal;
 namespace Amazon.ServiceCatalog
 {
     /// <summary>
-    /// Configuration for accessing Amazon ServiceCatalog service
+    /// Configuration for accessing AWS Service Catalog
     /// </summary>
     public partial class AmazonServiceCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Service Catalog", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Service Catalog", "4.0.100.25");
 
         private static readonly AmazonServiceCatalogEndpointResolver EndpointResolver =
             new AmazonServiceCatalogEndpointResolver();

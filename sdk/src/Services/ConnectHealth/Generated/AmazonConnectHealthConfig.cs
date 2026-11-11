@@ -27,12 +27,12 @@ using Amazon.ConnectHealth.Internal;
 namespace Amazon.ConnectHealth
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectHealth service
+    /// Configuration for accessing Connect Health
     /// </summary>
     public partial class AmazonConnectHealthConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ConnectHealth", "4.0.101.8");
+            InternalSDKUtils.BuildUserAgentString("ConnectHealth", "4.0.101.12");
 
         private static readonly AmazonConnectHealthEndpointResolver EndpointResolver =
             new AmazonConnectHealthEndpointResolver();

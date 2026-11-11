@@ -279,7 +279,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             var structureUnmarshallerCode = context.Protocol switch
             {
                 AWSProtocol.RpcV2Cbor => new CborStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
-                AWSProtocol.RestXml => new XmlStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                AWSProtocol.RestXml or AWSProtocol.AwsQuery or AWSProtocol.Ec2Query => new XmlStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
                 _ => new JsonStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
             };
 
@@ -306,6 +306,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             {
                 AWSProtocol.RpcV2Cbor => new CborRequestMarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
                 AWSProtocol.RestXml => new XmlRequestMarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
+                AWSProtocol.AwsQuery or AWSProtocol.Ec2Query => new QueryRequestMarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
                 _ => new JsonRequestMarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
             };
 
@@ -315,6 +316,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             {
                 AWSProtocol.RpcV2Cbor => new CborResponseUnmarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
                 AWSProtocol.RestXml => new XmlResponseUnmarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
+                AWSProtocol.AwsQuery or AWSProtocol.Ec2Query => new QueryResponseUnmarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
                 _ => new JsonResponseUnmarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
             };
 
@@ -325,18 +327,23 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 Emit(Path.Combine(marshalling, $"{operation.Name}EndpointDiscoveryMarshaller.g.cs"), endpointDiscoveryMarshallerWriter.Write(operation, discoveryRequired, cancellationToken));
             }
 
-            foreach (var structure in ReferencedStructures(operation.Input))
+            // awsQuery and ec2Query serialize the whole request inline into request.Parameters (QueryRequestMarshaller
+            // recurses through nested structures), so there is no per-structure request marshaller class.
+            if (context.Protocol is not (AWSProtocol.AwsQuery or AWSProtocol.Ec2Query))
             {
-                if (marshalledStructures.Add(structure.Id))
+                foreach (var structure in ReferencedStructures(operation.Input))
                 {
-                    var structureMarshallerCode = context.Protocol switch
+                    if (marshalledStructures.Add(structure.Id))
                     {
-                        AWSProtocol.RpcV2Cbor => new CborStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
-                        AWSProtocol.RestXml => new XmlStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
-                        _ => new JsonStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
-                    };
+                        var structureMarshallerCode = context.Protocol switch
+                        {
+                            AWSProtocol.RpcV2Cbor => new CborStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                            AWSProtocol.RestXml => new XmlStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                            _ => new JsonStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                        };
 
-                    Emit(Path.Combine(marshalling, $"{context.StructureMarshallerName(structure.Id)}.g.cs"), structureMarshallerCode);
+                        Emit(Path.Combine(marshalling, $"{context.StructureMarshallerName(structure.Id)}.g.cs"), structureMarshallerCode);
+                    }
                 }
             }
 
@@ -364,7 +371,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             var exceptionUnmarshallerCode = context.Protocol switch
             {
                 AWSProtocol.RpcV2Cbor => new CborExceptionUnmarshallerWriter(context, modelFileName).Write(errorShape, cancellationToken),
-                AWSProtocol.RestXml => new XmlExceptionUnmarshallerWriter(context, modelFileName).Write(errorShape, cancellationToken),
+                AWSProtocol.RestXml or AWSProtocol.AwsQuery or AWSProtocol.Ec2Query => new XmlExceptionUnmarshallerWriter(context, modelFileName).Write(errorShape, cancellationToken),
                 _ => new JsonExceptionUnmarshallerWriter(context, modelFileName).Write(errorShape, cancellationToken),
             };
 
@@ -536,7 +543,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
             if (context.Resolve(structureId) is StructureShape structure)
             {
-                if (structure.IsError())
+                if (structure.IsError() || context.Customizations.EmittedValueMember(structureId.Name) is not null)
                 {
                     continue;
                 }

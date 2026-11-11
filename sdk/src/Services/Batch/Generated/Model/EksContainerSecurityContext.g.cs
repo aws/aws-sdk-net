@@ -50,6 +50,20 @@ namespace Amazon.Batch.Model
         internal bool IsSetAllowPrivilegeEscalation() => this.AllowPrivilegeEscalation.HasValue;
 
         /// <summary>
+        /// Gets and sets the property Capabilities. 
+        /// <para>
+        /// Adds or removes Linux capabilities from the container's default capability set. With
+        /// Linux capabilities, you can grant specific privileges without granting full root permissions.
+        /// </para>
+        /// </summary>
+        public EksContainerLinuxCapabilities Capabilities { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Capabilities property is set.
+        /// </summary>
+        internal bool IsSetCapabilities() => this.Capabilities != null;
+
+        /// <summary>
         /// Gets and sets the property Privileged. 
         /// <para>
         /// When this parameter is <c>true</c>, the container is given elevated permissions on
@@ -87,8 +101,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// When this parameter is specified, the container is run as the specified group ID (<c>gid</c>).
         /// If this parameter isn't specified, the default is the group that's specified in the
-        /// image metadata. This parameter maps to <c>RunAsGroup</c> and <c>MustRunAs</c> policy
-        /// in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users
+        /// image metadata. The supported value range is <c>0</c> through <c>2147483647</c>. This
+        /// parameter maps to <c>RunAsGroup</c> and <c>MustRunAs</c> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users
         /// and groups pod security policies</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
@@ -120,8 +134,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// When this parameter is specified, the container is run as the specified user ID (<c>uid</c>).
         /// If this parameter isn't specified, the default is the user that's specified in the
-        /// image metadata. This parameter maps to <c>RunAsUser</c> and <c>MustRanAs</c> policy
-        /// in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users
+        /// image metadata. The supported value range is <c>0</c> through <c>2147483647</c>. This
+        /// parameter maps to <c>RunAsUser</c> and <c>MustRunAs</c> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users
         /// and groups pod security policies</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
@@ -131,5 +145,22 @@ namespace Amazon.Batch.Model
         /// Checks to see if the RunAsUser property is set.
         /// </summary>
         internal bool IsSetRunAsUser() => this.RunAsUser.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property SeccompProfile. 
+        /// <para>
+        /// The seccomp profile for the container. A container-level seccomp profile overrides
+        /// the profile in the pod security context, which defines security settings that apply
+        /// to all containers in the pod unless a container overrides them. If this parameter
+        /// isn't specified, the container uses the pod security context's seccomp profile when
+        /// one is specified.
+        /// </para>
+        /// </summary>
+        public EksSeccompProfile SeccompProfile { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SeccompProfile property is set.
+        /// </summary>
+        internal bool IsSetSeccompProfile() => this.SeccompProfile != null;
     }
 }

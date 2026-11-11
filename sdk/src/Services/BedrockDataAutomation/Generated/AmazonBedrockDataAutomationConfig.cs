@@ -27,12 +27,12 @@ using Amazon.BedrockDataAutomation.Internal;
 namespace Amazon.BedrockDataAutomation
 {
     /// <summary>
-    /// Configuration for accessing Amazon BedrockDataAutomation service
+    /// Configuration for accessing Data Automation for Amazon Bedrock
     /// </summary>
     public partial class AmazonBedrockDataAutomationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Bedrock Data Automation", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Bedrock Data Automation", "4.0.100.26");
 
         private static readonly AmazonBedrockDataAutomationEndpointResolver EndpointResolver =
             new AmazonBedrockDataAutomationEndpointResolver();

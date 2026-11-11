@@ -226,6 +226,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetGlueFunctionSessionContextRequest.DurationSeconds</property>
+    <min>60</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.GetLFTagRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -626,6 +631,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.AnyResource.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.AuditContext.AdditionalAuditContext</property>
     <min>0</min>
     <max>2048</max>
@@ -937,6 +947,21 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[\p{L}\p{N}\p{P}]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UserDefinedFunctionResource.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UserDefinedFunctionResource.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UserDefinedFunctionResource.Name</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.VirtualObject.ETag</property>

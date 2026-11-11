@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MigrationHubStrategyRecommendations
 {
     /// <summary>
-    /// Configuration for accessing Amazon MigrationHubStrategyRecommendations service
+    /// Configuration for accessing Migration Hub Strategy Recommendations
     /// </summary>
     public static class AmazonMigrationHubStrategyRecommendationsDefaultConfiguration
     {

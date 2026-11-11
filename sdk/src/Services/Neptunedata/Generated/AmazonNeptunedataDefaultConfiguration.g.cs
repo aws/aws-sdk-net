@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Neptunedata
 {
     /// <summary>
-    /// Configuration for accessing Amazon Neptunedata service
+    /// Configuration for accessing Amazon NeptuneData
     /// </summary>
     public static class AmazonNeptunedataDefaultConfiguration
     {

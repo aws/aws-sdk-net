@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon FraudDetector service
+    /// Service metadata for Amazon Fraud Detector
     /// </summary>
     public partial class AmazonFraudDetectorMetadata : IServiceMetadata
     {

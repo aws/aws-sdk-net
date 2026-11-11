@@ -27,12 +27,12 @@ using Amazon.AppFabric.Internal;
 namespace Amazon.AppFabric
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppFabric service
+    /// Configuration for accessing AppFabric
     /// </summary>
     public partial class AmazonAppFabricConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AppFabric", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("AppFabric", "4.0.100.26");
 
         private static readonly AmazonAppFabricEndpointResolver EndpointResolver =
             new AmazonAppFabricEndpointResolver();

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ResilienceHub service
+    /// Service metadata for AWS Resilience Hub
     /// </summary>
     public partial class AmazonResilienceHubMetadata : IServiceMetadata
     {

@@ -979,6 +979,78 @@ namespace Amazon.Athena
     }
 
     /// <summary>
+    /// Constants used for properties of type SystemTableName.
+    /// </summary>
+    public class SystemTableName : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL for SystemTableName
+        /// </summary>
+        public static readonly SystemTableName ALL = new SystemTableName("ALL");
+
+        /// <summary>
+        /// Constructs a custom SystemTableName for a value not among the defined constants.
+        /// </summary>
+        public SystemTableName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SystemTableName FindValue(string value)
+        {
+            return FindValue<SystemTableName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SystemTableName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SystemTableType.
+    /// </summary>
+    public class SystemTableType : ConstantClass
+    {
+        /// <summary>
+        /// Constant QUERY_EXECUTIONS for SystemTableType
+        /// </summary>
+        public static readonly SystemTableType QUERY_EXECUTIONS = new SystemTableType("QUERY_EXECUTIONS");
+
+        /// <summary>
+        /// Constructs a custom SystemTableType for a value not among the defined constants.
+        /// </summary>
+        public SystemTableType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SystemTableType FindValue(string value)
+        {
+            return FindValue<SystemTableType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SystemTableType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ThrottleReason.
     /// </summary>
     public class ThrottleReason : ConstantClass

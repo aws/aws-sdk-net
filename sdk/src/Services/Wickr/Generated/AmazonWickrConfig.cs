@@ -27,12 +27,12 @@ using Amazon.Wickr.Internal;
 namespace Amazon.Wickr
 {
     /// <summary>
-    /// Configuration for accessing Amazon Wickr service
+    /// Configuration for accessing AWS Wickr Admin API
     /// </summary>
     public partial class AmazonWickrConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Wickr", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Wickr", "4.0.100.25");
 
         private static readonly AmazonWickrEndpointResolver EndpointResolver =
             new AmazonWickrEndpointResolver();

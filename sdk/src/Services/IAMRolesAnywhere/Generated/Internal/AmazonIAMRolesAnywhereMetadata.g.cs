@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IAMRolesAnywhere.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IAMRolesAnywhere service
+    /// Service metadata for IAM Roles Anywhere
     /// </summary>
     public partial class AmazonIAMRolesAnywhereMetadata : IServiceMetadata
     {

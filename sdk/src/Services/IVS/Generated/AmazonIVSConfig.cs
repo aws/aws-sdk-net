@@ -27,12 +27,12 @@ using Amazon.IVS.Internal;
 namespace Amazon.IVS
 {
     /// <summary>
-    /// Configuration for accessing Amazon IVS service
+    /// Configuration for accessing Amazon Interactive Video Service
     /// </summary>
     public partial class AmazonIVSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ivs", "4.0.102.0");
+            InternalSDKUtils.BuildUserAgentString("ivs", "4.0.103.4");
 
         private static readonly AmazonIVSEndpointResolver EndpointResolver =
             new AmazonIVSEndpointResolver();

@@ -27,12 +27,12 @@ using Amazon.MediaTailor.Internal;
 namespace Amazon.MediaTailor
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaTailor service
+    /// Configuration for accessing AWS MediaTailor
     /// </summary>
     public partial class AmazonMediaTailorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MediaTailor", "4.0.108.5");
+            InternalSDKUtils.BuildUserAgentString("MediaTailor", "4.0.108.9");
 
         private static readonly AmazonMediaTailorEndpointResolver EndpointResolver =
             new AmazonMediaTailorEndpointResolver();

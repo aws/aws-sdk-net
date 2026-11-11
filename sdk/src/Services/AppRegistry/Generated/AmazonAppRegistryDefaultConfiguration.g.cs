@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AppRegistry
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppRegistry service
+    /// Configuration for accessing AWS Service Catalog App Registry
     /// </summary>
     public static class AmazonAppRegistryDefaultConfiguration
     {

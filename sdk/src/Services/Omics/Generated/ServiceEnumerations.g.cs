@@ -1643,6 +1643,47 @@ namespace Amazon.Omics
     }
 
     /// <summary>
+    /// Constants used for properties of type RunOutputUriPrefixMode.
+    /// </summary>
+    public class RunOutputUriPrefixMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant NONE_WITH_OVERWRITE for RunOutputUriPrefixMode
+        /// </summary>
+        public static readonly RunOutputUriPrefixMode NONE_WITH_OVERWRITE = new RunOutputUriPrefixMode("NONE_WITH_OVERWRITE");
+
+        /// <summary>
+        /// Constant SERVICE_DEFINED for RunOutputUriPrefixMode
+        /// </summary>
+        public static readonly RunOutputUriPrefixMode SERVICE_DEFINED = new RunOutputUriPrefixMode("SERVICE_DEFINED");
+
+        /// <summary>
+        /// Constructs a custom RunOutputUriPrefixMode for a value not among the defined constants.
+        /// </summary>
+        public RunOutputUriPrefixMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RunOutputUriPrefixMode FindValue(string value)
+        {
+            return FindValue<RunOutputUriPrefixMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RunOutputUriPrefixMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RunRetentionMode.
     /// </summary>
     public class RunRetentionMode : ConstantClass

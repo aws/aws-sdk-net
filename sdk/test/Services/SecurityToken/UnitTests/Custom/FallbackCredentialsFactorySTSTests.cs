@@ -23,9 +23,7 @@ using Amazon.SecurityToken;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Amazon.SecurityToken.Model;
-#if ASYNC_AWAIT
 using System.Threading.Tasks;
-#endif
 
 namespace AWSSDK.UnitTests
 {
@@ -100,7 +98,6 @@ namespace AWSSDK.UnitTests
             TestRetriesOnException(new IDPCommunicationErrorException("IDPCommunicationError"));
         }
 
-#if ASYNC_AWAIT
         public async Task TestRetriesOnExceptionAsync<T>(T excpetion) where T : AmazonServiceException
         {
             var webIdentityToken = "Dummy.OIDC.Token";
@@ -146,7 +143,7 @@ namespace AWSSDK.UnitTests
             using (new FallbackFactoryTestFixture(envVariables))
             {
                 // Act and Assert
-                await Assert.ThrowsExceptionAsync<AmazonClientException>(async () => await webIdentityCredentials.GetCredentialsAsync());
+                await Assert.ThrowsExactlyAsync<AmazonClientException>(async () => await webIdentityCredentials.GetCredentialsAsync());
             }
 
             Assert.AreEqual(defaultRetryPolicy.MaxRetries, retries);
@@ -165,7 +162,6 @@ namespace AWSSDK.UnitTests
         {
             await TestRetriesOnExceptionAsync(new IDPCommunicationErrorException("IDPCommunicationError"));
         }
-#endif
     }
 
     public class RetryEventArgs
@@ -195,13 +191,11 @@ namespace AWSSDK.UnitTests
             return base.RetryForException(executionContext, exception);
         }
 
-#if ASYNC_AWAIT
         public override Task<bool> RetryForExceptionAsync(IExecutionContext executionContext, Exception exception)
         {
             EventHandler?.Invoke(this, new RetryEventArgs(executionContext));
             return base.RetryForExceptionAsync(executionContext, exception);
         }
-#endif
     }
 
     public class NotifyingRetryHandler : RetryHandler

@@ -26,7 +26,7 @@ using Amazon.S3Vectors.Endpoints;
 namespace Amazon.S3Vectors.Internal
 {
     /// <summary>
-    /// Amazon S3Vectors endpoint provider.
+    /// Amazon S3 Vectors endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="S3VectorsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

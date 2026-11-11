@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Macie2
 {
     /// <summary>
-    /// Configuration for accessing Amazon Macie2 service
+    /// Configuration for accessing Amazon Macie 2
     /// </summary>
     public static class AmazonMacie2DefaultConfiguration
     {

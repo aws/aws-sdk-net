@@ -27,12 +27,12 @@ using Amazon.Rekognition.Internal;
 namespace Amazon.Rekognition
 {
     /// <summary>
-    /// Configuration for accessing Amazon Rekognition service
+    /// Configuration for accessing Amazon Rekognition
     /// </summary>
     public partial class AmazonRekognitionConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Rekognition", "4.0.101.8");
+            InternalSDKUtils.BuildUserAgentString("Rekognition", "4.0.101.12");
 
         private static readonly AmazonRekognitionEndpointResolver EndpointResolver =
             new AmazonRekognitionEndpointResolver();

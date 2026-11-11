@@ -248,6 +248,14 @@
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TaxSettings.Model.ColombiaAdditionalInfo.IssueDate</property>
+    <pattern>^(\d{4}-(0[0-9]|1[0-2])-([0-2][0-9]|3[0-1]))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.ColombiaAdditionalInfo.TaxpayerTypeCode</property>
+    <pattern>^\d{1}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TaxSettings.Model.ConflictException.ErrorCode</property>
     <min>0</min>
     <max>50</max>
@@ -529,6 +537,14 @@
     <min>1</min>
     <max>200</max>
     <pattern>^(?!\s*$)[\s\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.TaxRegistrationStatusReason.Code</property>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.TaxRegistrationStatusReason.Message</property>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.TaxRegistrationWithJurisdiction.CertifiedEmailId</property>

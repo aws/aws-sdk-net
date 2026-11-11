@@ -59,7 +59,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("</version> \r\n    <authors>Amazon Web Services</authors>\r\n    <description>");
             
             #line 14 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyDescription"]));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetPackageDescription"]));
             
             #line default
             #line hidden

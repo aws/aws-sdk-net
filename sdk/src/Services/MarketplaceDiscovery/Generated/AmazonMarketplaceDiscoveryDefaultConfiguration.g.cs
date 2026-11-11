@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MarketplaceDiscovery
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceDiscovery service
+    /// Configuration for accessing AWS Marketplace Discovery
     /// </summary>
     public static class AmazonMarketplaceDiscoveryDefaultConfiguration
     {

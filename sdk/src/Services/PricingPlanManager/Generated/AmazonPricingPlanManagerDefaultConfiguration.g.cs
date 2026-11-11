@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.PricingPlanManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon PricingPlanManager service
+    /// Configuration for accessing PricingPlanManager
     /// </summary>
     public static class AmazonPricingPlanManagerDefaultConfiguration
     {

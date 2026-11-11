@@ -1,0 +1,86 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Route53Domains.Model
+{
+    /// <summary>
+    /// Information about a delegation signer (DS) record that was created in the registry
+    /// by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>.
+    /// </summary>
+    public partial class DnssecSigningAttributes
+    {
+        /// <summary>
+        /// Gets and sets the property Algorithm. 
+        /// <para>
+        ///  Algorithm which was used to generate the digest from the public key. 
+        /// </para>
+        /// </summary>
+        public int? Algorithm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Algorithm property is set.
+        /// </summary>
+        internal bool IsSetAlgorithm() => this.Algorithm.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Flags. 
+        /// <para>
+        /// Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK
+        /// (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your
+        /// DNS provider isn't Route 53 and you don’t have KSK available.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record.
+        /// If you have ZSK keys only – use ZSK to create a DS record.
+        /// </para>
+        /// </summary>
+        public int? Flags { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Flags property is set.
+        /// </summary>
+        internal bool IsSetFlags() => this.Flags.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property PublicKey. 
+        /// <para>
+        ///  The base64-encoded public key part of the key pair that is passed to the registry.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 32768)]
+        public string PublicKey { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PublicKey property is set.
+        /// </summary>
+        internal bool IsSetPublicKey() => this.PublicKey != null;
+    }
+}

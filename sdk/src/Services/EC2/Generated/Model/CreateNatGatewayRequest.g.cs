@@ -1,0 +1,298 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.EC2.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateNatGateway operation. Creates a NAT gateway
+    /// in the specified subnet. This action creates a network interface in the specified
+    /// subnet with a private IP address from the IP address range of the subnet. You can
+    /// create either a public NAT gateway or a private NAT gateway. <para> With a public
+    /// NAT gateway, internet-bound traffic from a private subnet can be routed to the NAT
+    /// gateway, so that instances in a private subnet can connect to the internet. </para>
+    /// <para> With a private NAT gateway, private communication is routed across VPCs and
+    /// on-premises networks through a transit gateway or virtual private gateway. Common
+    /// use cases include running large workloads behind a small pool of allowlisted IPv4
+    /// addresses, preserving private IPv4 addresses, and communicating between overlapping
+    /// networks. </para> <para> For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
+    /// gateways</a> in the <i>Amazon VPC User Guide</i>. </para> <important> <para> When
+    /// you create a public NAT gateway and assign it an EIP or secondary EIPs, the network
+    /// border group of the EIPs must match the network border group of the Availability Zone
+    /// (AZ) that the public NAT gateway is in. If it's not the same, the NAT gateway will
+    /// fail to launch. You can see the network border group for the subnet's AZ by viewing
+    /// the details of the subnet. Similarly, you can view the network border group of an
+    /// EIP by viewing the details of the EIP address. For more information about network
+    /// border groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithEIPs.html">Allocate
+    /// an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. </para> </important>
+    /// </summary>
+    public partial class CreateNatGatewayRequest : AmazonEC2Request
+    {
+        /// <summary>
+        /// Gets and sets the property AllocationId. 
+        /// <para>
+        /// [Public NAT gateways only] The allocation ID of an Elastic IP address to associate
+        /// with the NAT gateway. You cannot specify an Elastic IP address with a private NAT
+        /// gateway. If the Elastic IP address is associated with another resource, you must first
+        /// disassociate it.
+        /// </para>
+        /// </summary>
+        public string AllocationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AllocationId property is set.
+        /// </summary>
+        internal bool IsSetAllocationId() => this.AllocationId != null;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityMode. 
+        /// <para>
+        /// Specifies whether to create a zonal (single-AZ) or regional (multi-AZ) NAT gateway.
+        /// Defaults to <c>zonal</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within
+        /// a single availability zone. A regional NAT gateway is a single NAT Gateway that works
+        /// across multiple availability zones (AZs) in your VPC, providing redundancy, scalability
+        /// and availability across all the AZs in a Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional
+        /// NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        public AvailabilityMode AvailabilityMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AvailabilityMode property is set.
+        /// </summary>
+        internal bool IsSetAvailabilityMode() => this.AvailabilityMode != null;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneAddresses. 
+        /// <para>
+        /// For regional NAT gateways only: Specifies which Availability Zones you want the NAT
+        /// gateway to support and the Elastic IP addresses (EIPs) to use in each AZ. The regional
+        /// NAT gateway uses these EIPs to handle outbound NAT traffic from their respective AZs.
+        /// If not specified, the NAT gateway will automatically expand to new AZs and associate
+        /// EIPs upon detection of an elastic network interface. If you specify this parameter,
+        /// auto-expansion is disabled and you must manually manage AZ coverage.
+        /// </para>
+        ///  
+        /// <para>
+        /// A regional NAT gateway is a single NAT Gateway that works across multiple availability
+        /// zones (AZs) in your VPC, providing redundancy, scalability and availability across
+        /// all the AZs in a Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional
+        /// NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AvailabilityZoneAddress> AvailabilityZoneAddresses { get; set; } = AWSConfigs.InitializeCollections ? new List<AvailabilityZoneAddress>() : null;
+
+        /// <summary>
+        /// Checks to see if the AvailabilityZoneAddresses property is set.
+        /// </summary>
+        internal bool IsSetAvailabilityZoneAddresses() => this.AvailabilityZoneAddresses != null && (this.AvailabilityZoneAddresses.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
+        /// idempotency</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraint: Maximum 64 ASCII characters.
+        /// </para>
+        /// </summary>
+        public string ClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientToken property is set.
+        /// </summary>
+        internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
+        /// Gets and sets the property ConnectivityType. 
+        /// <para>
+        /// Indicates whether the NAT gateway supports public or private connectivity. The default
+        /// is public connectivity.
+        /// </para>
+        /// </summary>
+        public ConnectivityType ConnectivityType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ConnectivityType property is set.
+        /// </summary>
+        internal bool IsSetConnectivityType() => this.ConnectivityType != null;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required permissions,
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
+        /// </para>
+        /// </summary>
+        public bool? DryRun { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DryRun property is set.
+        /// </summary>
+        internal bool IsSetDryRun() => this.DryRun.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property PrivateIpAddress. 
+        /// <para>
+        /// The private IPv4 address to assign to the NAT gateway. If you don't provide an address,
+        /// a private IPv4 address will be automatically assigned.
+        /// </para>
+        /// </summary>
+        public string PrivateIpAddress { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PrivateIpAddress property is set.
+        /// </summary>
+        internal bool IsSetPrivateIpAddress() => this.PrivateIpAddress != null;
+
+        /// <summary>
+        /// Gets and sets the property SecondaryAllocationIds. 
+        /// <para>
+        /// Secondary EIP allocation IDs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Create
+        /// a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> SecondaryAllocationIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the SecondaryAllocationIds property is set.
+        /// </summary>
+        internal bool IsSetSecondaryAllocationIds() => this.SecondaryAllocationIds != null && (this.SecondaryAllocationIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property SecondaryPrivateIpAddressCount. 
+        /// <para>
+        /// [Private NAT gateway only] The number of secondary private IPv4 addresses you want
+        /// to assign to the NAT gateway. For more information about secondary addresses, see
+        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Create
+        /// a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 31)]
+        public int? SecondaryPrivateIpAddressCount { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SecondaryPrivateIpAddressCount property is set.
+        /// </summary>
+        internal bool IsSetSecondaryPrivateIpAddressCount() => this.SecondaryPrivateIpAddressCount.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property SecondaryPrivateIpAddresses. 
+        /// <para>
+        /// Secondary private IPv4 addresses. For more information about secondary addresses,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Create
+        /// a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> SecondaryPrivateIpAddresses { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the SecondaryPrivateIpAddresses property is set.
+        /// </summary>
+        internal bool IsSetSecondaryPrivateIpAddresses() => this.SecondaryPrivateIpAddresses != null && (this.SecondaryPrivateIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        /// The ID of the subnet in which to create the NAT gateway.
+        /// </para>
+        /// </summary>
+        public string SubnetId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SubnetId property is set.
+        /// </summary>
+        internal bool IsSetSubnetId() => this.SubnetId != null;
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to assign to the NAT gateway.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications { get; set; } = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+
+        /// <summary>
+        /// Checks to see if the TagSpecifications property is set.
+        /// </summary>
+        internal bool IsSetTagSpecifications() => this.TagSpecifications != null && (this.TagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC where you want to create a regional NAT gateway.
+        /// </para>
+        /// </summary>
+        public string VpcId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VpcId property is set.
+        /// </summary>
+        internal bool IsSetVpcId() => this.VpcId != null;
+    }
+}

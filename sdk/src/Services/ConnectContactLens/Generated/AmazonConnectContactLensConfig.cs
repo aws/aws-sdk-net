@@ -27,12 +27,12 @@ using Amazon.ConnectContactLens.Internal;
 namespace Amazon.ConnectContactLens
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectContactLens service
+    /// Configuration for accessing Amazon Connect Contact Lens
     /// </summary>
     public partial class AmazonConnectContactLensConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Connect Contact Lens", "4.0.101.11");
+            InternalSDKUtils.BuildUserAgentString("Connect Contact Lens", "4.0.102.3");
 
         private static readonly AmazonConnectContactLensEndpointResolver EndpointResolver =
             new AmazonConnectContactLensEndpointResolver();

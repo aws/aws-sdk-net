@@ -27,12 +27,12 @@ using Amazon.DataExchange.Internal;
 namespace Amazon.DataExchange
 {
     /// <summary>
-    /// Configuration for accessing Amazon DataExchange service
+    /// Configuration for accessing AWS Data Exchange
     /// </summary>
     public partial class AmazonDataExchangeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DataExchange", "4.0.100.23");
+            InternalSDKUtils.BuildUserAgentString("DataExchange", "4.0.100.27");
 
         private static readonly AmazonDataExchangeEndpointResolver EndpointResolver =
             new AmazonDataExchangeEndpointResolver();

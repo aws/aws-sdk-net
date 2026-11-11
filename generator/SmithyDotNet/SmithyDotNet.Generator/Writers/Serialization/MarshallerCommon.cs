@@ -1,3 +1,4 @@
+using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model.Shapes;
@@ -33,6 +34,49 @@ public static class MarshallerCommon
             throw new GeneratorException($"Operation '{operation.Name}' requests compression encodings '{string.Join(", ", compression.Encodings)}'; only 'gzip' is supported.");
         }
         return compressionEncoding;
+    }
+
+    // The checksum covers the body, so the protocol writers call this once the content is set, and only when there is
+    // content: the runtime would otherwise checksum a null body. Same gate and calls as C2J.
+    internal static void WriteRequestChecksum(CodeWriter writer, GenerationContext context, Operation operation)
+    {
+        if (context.Customizations.SkipsChecksumDuringMarshalling(operation.Name))
+        {
+            return;
+        }
+
+        var checksum = operation.Shape.GetHttpChecksum();
+        if (checksum?.RequestAlgorithmMember is { } memberName)
+        {
+            if (!operation.Input.Members.TryGetValue(memberName, out var member))
+            {
+                throw new GeneratorException($"Operation '{operation.Name}' names httpChecksum requestAlgorithmMember '{memberName}', which is not a member of its input.");
+            }
+
+            // A header-bound member also sends the algorithm name next to the x-amz-checksum-* header; a body-bound one sends nothing extra.
+            var headerName = member.GetHttpHeader() ?? string.Empty;
+            writer.WriteLine();
+            writer.WriteLine("ChecksumUtils.SetChecksumData(");
+            writer.Indent(() =>
+            {
+                writer.WriteLine("request,");
+                writer.WriteLine($"publicRequest.{context.Customizations.PropertyName(operation.Input.Id.Name, memberName)},");
+                writer.WriteLine("fallbackToMD5: false,");
+                writer.WriteLine($"isRequestChecksumRequired: {(checksum.RequestChecksumRequired ? "true" : "false")},");
+                writer.WriteLine($"headerName: {CodeWriter.Literal(headerName)}");
+            });
+            writer.WriteLine(");");
+        }
+        else if (checksum is { RequestChecksumRequired: true })
+        {
+            writer.WriteLine();
+            writer.WriteLine("ChecksumUtils.SetChecksumData(request, checksumAlgorithm: null, fallbackToMD5: false, isRequestChecksumRequired: true);");
+        }
+        else if (operation.Shape.RequiresHttpChecksum())
+        {
+            writer.WriteLine();
+            writer.WriteLine("ChecksumUtils.SetChecksumData(request);");
+        }
     }
 
     internal static void WriteBaseMarshallMethod(CodeWriter writer, string className)

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Deadline
 {
     /// <summary>
-    /// Configuration for accessing Amazon Deadline service
+    /// Configuration for accessing AWSDeadlineCloud
     /// </summary>
     public static class AmazonDeadlineDefaultConfiguration
     {

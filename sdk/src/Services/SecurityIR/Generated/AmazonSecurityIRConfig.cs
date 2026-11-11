@@ -27,12 +27,12 @@ using Amazon.SecurityIR.Internal;
 namespace Amazon.SecurityIR
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecurityIR service
+    /// Configuration for accessing Security Incident Response
     /// </summary>
     public partial class AmazonSecurityIRConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Security IR", "4.0.101.5");
+            InternalSDKUtils.BuildUserAgentString("Security IR", "4.0.101.9");
 
         private static readonly AmazonSecurityIREndpointResolver EndpointResolver =
             new AmazonSecurityIREndpointResolver();

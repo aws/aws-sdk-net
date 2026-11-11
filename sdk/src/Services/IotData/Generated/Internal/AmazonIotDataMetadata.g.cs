@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IotData.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IotData service
+    /// Service metadata for AWS IoT Data Plane
     /// </summary>
     public partial class AmazonIotDataMetadata : IServiceMetadata
     {

@@ -27,12 +27,12 @@ using Amazon.Imagebuilder.Internal;
 namespace Amazon.Imagebuilder
 {
     /// <summary>
-    /// Configuration for accessing Amazon Imagebuilder service
+    /// Configuration for accessing EC2 Image Builder
     /// </summary>
     public partial class AmazonImagebuilderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("imagebuilder", "4.0.103.3");
+            InternalSDKUtils.BuildUserAgentString("imagebuilder", "4.0.104.4");
 
         private static readonly AmazonImagebuilderEndpointResolver EndpointResolver =
             new AmazonImagebuilderEndpointResolver();

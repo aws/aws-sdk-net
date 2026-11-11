@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ApplicationSignals
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApplicationSignals service
+    /// Configuration for accessing Amazon CloudWatch Application Signals
     /// </summary>
     public static class AmazonApplicationSignalsDefaultConfiguration
     {

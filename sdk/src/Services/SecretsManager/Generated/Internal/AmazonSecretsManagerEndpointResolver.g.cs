@@ -31,7 +31,7 @@ using Amazon.SecretsManager.Endpoints;
 namespace Amazon.SecretsManager.Internal
 {
     /// <summary>
-    /// Amazon SecretsManager endpoint resolver.
+    /// AWS Secrets Manager endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SecretsManager service requests.
     /// <para />

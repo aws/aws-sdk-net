@@ -31,7 +31,7 @@ using Amazon.SecurityIR.Endpoints;
 namespace Amazon.SecurityIR.Internal
 {
     /// <summary>
-    /// Amazon SecurityIR endpoint resolver.
+    /// Security Incident Response endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SecurityIR service requests.
     /// <para />

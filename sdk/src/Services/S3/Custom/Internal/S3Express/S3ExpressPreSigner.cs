@@ -28,6 +28,28 @@ namespace Amazon.S3.Internal.S3Express
     {
         private const string S3ExpressSessionHeader = "x-amz-s3session-token";
 
+        private readonly AmazonS3Client _client;
+
+        // The SDK does not call this constructor; AmazonS3Client uses the internal one below. It is
+        // kept, along with the protected static PreInvoke methods, because this type is public and
+        // code outside the SDK (for example a custom pipeline customizer) may construct it. Removing
+        // it would be a breaking change.
+
+        /// <summary>
+        /// Creates a pre-signer that resolves sessions through the provider set on the client config.
+        /// </summary>
+        public S3ExpressPreSigner()
+        {
+        }
+
+        /// <summary>
+        /// Creates a pre-signer that resolves sessions for the client that owns the pipeline.
+        /// </summary>
+        internal S3ExpressPreSigner(AmazonS3Client client)
+        {
+            _client = client;
+        }
+
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -36,7 +58,7 @@ namespace Amazon.S3.Internal.S3Express
         /// requests and response context.</param>
         public override void InvokeSync(IExecutionContext executionContext)
         {
-            PreInvoke(executionContext);
+            PreInvoke(executionContext, _client);
             base.InvokeSync(executionContext);
         }
 
@@ -48,10 +70,15 @@ namespace Amazon.S3.Internal.S3Express
         /// </param>
         protected static void PreInvoke(IExecutionContext executionContext)
         {
+            PreInvoke(executionContext, null);
+        }
+
+        private static void PreInvoke(IExecutionContext executionContext, AmazonS3Client client)
+        {
             var config = (AmazonS3Config)executionContext.RequestContext.ClientConfig;
             if (ShouldSign(executionContext.RequestContext, config))
             {
-                PreSignRequest(executionContext.RequestContext, config);
+                PreSignRequest(executionContext.RequestContext, config, client);
             }
         }
 
@@ -72,9 +99,13 @@ namespace Amazon.S3.Internal.S3Express
         /// </summary>
         /// <param name="requestContext">The request context.</param>
         /// <param name="config">S3 Configuration Object</param>
-        private static void PreSignRequest(IRequestContext requestContext, AmazonS3Config config)
+        /// <param name="client">The client that owns the pipeline, or null to use the provider set on the config.</param>
+        private static void PreSignRequest(IRequestContext requestContext, AmazonS3Config config, AmazonS3Client client)
         {
-            var sessionCredentials = config.S3ExpressCredentialProvider.ResolveSessionCredentials(GetRequestBucketName(requestContext.Request));
+            var bucketName = GetRequestBucketName(requestContext.Request);
+            var sessionCredentials = client != null
+                ? client.ResolveS3ExpressSessionCredentials(bucketName, requestContext.Identity as AWSCredentials)
+                : config.S3ExpressCredentialProvider?.ResolveSessionCredentials(bucketName);
             if (sessionCredentials == null) 
             {
                 // Couldn't resolve session credentials, fallback to regular authentication
@@ -95,7 +126,7 @@ namespace Amazon.S3.Internal.S3Express
         /// <returns>A task that represents the asynchronous operation.</returns>
         public override async Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
-            await PreInvokeAsync(executionContext).ConfigureAwait(false);
+            await PreInvokeAsync(executionContext, _client).ConfigureAwait(false);
             return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
         }
         
@@ -105,12 +136,17 @@ namespace Amazon.S3.Internal.S3Express
         /// <param name="executionContext">
         /// The execution context, it contains the request and response context.
         /// </param>
-        protected static async System.Threading.Tasks.Task PreInvokeAsync(IExecutionContext executionContext)
+        protected static System.Threading.Tasks.Task PreInvokeAsync(IExecutionContext executionContext)
+        {
+            return PreInvokeAsync(executionContext, null);
+        }
+
+        private static async Task PreInvokeAsync(IExecutionContext executionContext, AmazonS3Client client)
         {
             var config = (AmazonS3Config)executionContext.RequestContext.ClientConfig;
             if (ShouldSign(executionContext.RequestContext, config))
             {
-                await PreSignRequestAsync(executionContext.RequestContext, config).ConfigureAwait(false);
+                await PreSignRequestAsync(executionContext.RequestContext, config, client).ConfigureAwait(false);
             }
         }
 
@@ -119,11 +155,15 @@ namespace Amazon.S3.Internal.S3Express
         /// </summary>
         /// <param name="requestContext">The request context.</param>
         /// <param name="config">S3 Configuration Object</param>
-        private static async Task PreSignRequestAsync(IRequestContext requestContext, AmazonS3Config config)
+        /// <param name="client">The client that owns the pipeline, or null to use the provider set on the config.</param>
+        private static async Task PreSignRequestAsync(IRequestContext requestContext, AmazonS3Config config, AmazonS3Client client)
         {
-            var sessionCredentials = await config.S3ExpressCredentialProvider
-                    .ResolveSessionCredentialsAsync(GetRequestBucketName(requestContext.Request))
-                    .ConfigureAwait(false);
+            var bucketName = GetRequestBucketName(requestContext.Request);
+            var sessionCredentials = client != null
+                ? await client.ResolveS3ExpressSessionCredentialsAsync(bucketName, requestContext.Identity as AWSCredentials).ConfigureAwait(false)
+                : config.S3ExpressCredentialProvider == null
+                    ? null
+                    : await config.S3ExpressCredentialProvider.ResolveSessionCredentialsAsync(bucketName).ConfigureAwait(false);
             if (sessionCredentials == null)
             {
                 // Couldn't resolve session credentials, fallback to regular authentication

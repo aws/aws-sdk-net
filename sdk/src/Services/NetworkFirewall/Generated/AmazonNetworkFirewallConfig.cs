@@ -27,12 +27,12 @@ using Amazon.NetworkFirewall.Internal;
 namespace Amazon.NetworkFirewall
 {
     /// <summary>
-    /// Configuration for accessing Amazon NetworkFirewall service
+    /// Configuration for accessing AWS Network Firewall
     /// </summary>
     public partial class AmazonNetworkFirewallConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Network Firewall", "4.0.106.1");
+            InternalSDKUtils.BuildUserAgentString("Network Firewall", "4.0.107.0");
 
         private static readonly AmazonNetworkFirewallEndpointResolver EndpointResolver =
             new AmazonNetworkFirewallEndpointResolver();

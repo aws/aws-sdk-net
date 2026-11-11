@@ -27,12 +27,12 @@ using Amazon.EventBridge.Internal;
 namespace Amazon.EventBridge
 {
     /// <summary>
-    /// Configuration for accessing Amazon EventBridge service
+    /// Configuration for accessing Amazon EventBridge
     /// </summary>
     public partial class AmazonEventBridgeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EventBridge", "4.0.101.8");
+            InternalSDKUtils.BuildUserAgentString("EventBridge", "4.0.101.12");
 
         private static readonly AmazonEventBridgeEndpointResolver EndpointResolver =
             new AmazonEventBridgeEndpointResolver();

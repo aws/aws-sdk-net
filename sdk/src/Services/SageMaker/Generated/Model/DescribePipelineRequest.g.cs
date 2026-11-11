@@ -50,9 +50,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineName() => this.PipelineName != null;
 
         /// <summary>
+        /// Gets and sets the property PipelineVersionAlias. 
+        /// <para>
+        /// The alias of the pipeline version to describe. You can't specify this with <c>PipelineVersionId</c>.
+        /// If no version of the pipeline has this alias, the request fails with a <c>ResourceNotFound</c>
+        /// error. If you specify neither, SageMaker describes the latest version of the pipeline.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string PipelineVersionAlias { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PipelineVersionAlias property is set.
+        /// </summary>
+        internal bool IsSetPipelineVersionAlias() => this.PipelineVersionAlias != null;
+
+        /// <summary>
         /// Gets and sets the property PipelineVersionId. 
         /// <para>
-        /// The ID of the pipeline version to describe.
+        /// The ID of the pipeline version to describe. You can't specify this with <c>PipelineVersionAlias</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1)]

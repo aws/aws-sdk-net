@@ -31,7 +31,7 @@ using Amazon.Lex.Endpoints;
 namespace Amazon.Lex.Internal
 {
     /// <summary>
-    /// Amazon Lex endpoint resolver.
+    /// Amazon Lex Runtime Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Lex service requests.
     /// <para />

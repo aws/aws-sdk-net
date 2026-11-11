@@ -26,7 +26,7 @@ using Amazon.KinesisVideoMedia.Endpoints;
 namespace Amazon.KinesisVideoMedia.Internal
 {
     /// <summary>
-    /// Amazon KinesisVideoMedia endpoint provider.
+    /// Amazon Kinesis Video Streams Media endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="KinesisVideoMediaEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

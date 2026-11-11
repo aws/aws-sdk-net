@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDBElastic.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon DocDBElastic service
+    /// Service metadata for Amazon DocumentDB Elastic Clusters
     /// </summary>
     public partial class AmazonDocDBElasticMetadata : IServiceMetadata
     {

@@ -102,6 +102,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("instanceStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = InstanceHealthStatusUnmarshaller.Instance;
+                    unmarshalledObject.InstanceStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ipAddressType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -190,6 +197,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SupportCode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("systemStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = InstanceHealthStatusUnmarshaller.Instance;
+                    unmarshalledObject.SystemStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

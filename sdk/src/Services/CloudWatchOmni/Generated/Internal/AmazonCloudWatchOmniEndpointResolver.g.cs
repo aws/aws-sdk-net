@@ -31,7 +31,7 @@ using Amazon.CloudWatchOmni.Endpoints;
 namespace Amazon.CloudWatchOmni.Internal
 {
     /// <summary>
-    /// Amazon CloudWatchOmni endpoint resolver.
+    /// CloudWatch Omni endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CloudWatchOmni service requests.
     /// <para />

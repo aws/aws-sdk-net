@@ -94,6 +94,16 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("description");
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
+            if (publicRequest.IsSetElementalInferenceSettings())
+            {
+                context.Writer.WritePropertyName("elementalInferenceSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ElementalInferenceSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ElementalInferenceSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetHopDestinations())
             {
                 context.Writer.WritePropertyName("hopDestinations");

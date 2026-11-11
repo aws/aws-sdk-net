@@ -2861,6 +2861,94 @@ namespace Amazon.CloudWatchOmni
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns temporary credentials for working with data in a space, limited to the actions
+        /// you request. The credentials allow only the requested actions that can be granted
+        /// in the space and that your access grants allow. Requested actions that cannot be conferred
+        /// are ignored rather than rejected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSpaceDataAccess service method.</param>
+        /// <returns>The response from the GetSpaceDataAccess service method, as returned by CloudWatchOmni.</returns>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.AccessDeniedException">
+        /// The caller is not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.PolicyTooLargeException">
+        /// The requested actions produce a credential that exceeds the maximum size. Request
+        /// fewer actions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.ThrottlingException">
+        /// The request was throttled due to exceeding the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.ValidationException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudwatchomni-2025-01-01/GetSpaceDataAccess">REST API Reference for GetSpaceDataAccess Operation</seealso>
+        public virtual GetSpaceDataAccessResponse GetSpaceDataAccess(GetSpaceDataAccessRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSpaceDataAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSpaceDataAccessResponseUnmarshaller.Instance;
+
+            return Invoke<GetSpaceDataAccessResponse>(request, options);
+        }
+#else
+        internal virtual GetSpaceDataAccessResponse GetSpaceDataAccess(GetSpaceDataAccessRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSpaceDataAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSpaceDataAccessResponseUnmarshaller.Instance;
+
+            return Invoke<GetSpaceDataAccessResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns temporary credentials for working with data in a space, limited to the actions
+        /// you request. The credentials allow only the requested actions that can be granted
+        /// in the space and that your access grants allow. Requested actions that cannot be conferred
+        /// are ignored rather than rejected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSpaceDataAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetSpaceDataAccess service method, as returned by CloudWatchOmni.</returns>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.AccessDeniedException">
+        /// The caller is not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.PolicyTooLargeException">
+        /// The requested actions produce a credential that exceeds the maximum size. Request
+        /// fewer actions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.ThrottlingException">
+        /// The request was throttled due to exceeding the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.ValidationException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudwatchomni-2025-01-01/GetSpaceDataAccess">REST API Reference for GetSpaceDataAccess Operation</seealso>
+        public virtual Task<GetSpaceDataAccessResponse> GetSpaceDataAccessAsync(GetSpaceDataAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSpaceDataAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSpaceDataAccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSpaceDataAccessResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns the results for the specified query.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTelemetryQueryResults service method.</param>

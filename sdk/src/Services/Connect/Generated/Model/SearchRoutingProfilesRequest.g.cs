@@ -1,0 +1,118 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Connect.Model
+{
+    /// <summary>
+    /// Container for the parameters to the SearchRoutingProfiles operation. Searches routing
+    /// profiles in an Connect Customer instance, with optional filtering. <note> <para> <c>SearchRoutingProfiles</c>
+    /// does not populate LastModifiedRegion, LastModifiedTime, MediaConcurrencies.CrossChannelBehavior,
+    /// and AgentAvailabilityTimer in its response, but <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html">DescribeRoutingProfile</a>
+    /// does. </para> </note>
+    /// </summary>
+    public partial class SearchRoutingProfilesRequest : AmazonConnectRequest
+    {
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 100)]
+        public string InstanceId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceId property is set.
+        /// </summary>
+        internal bool IsSetInstanceId() => this.InstanceId != null;
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return per page.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 500)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of results. Use the value returned in the previous response
+        /// in the next request to retrieve the next set of results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2500)]
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
+        /// Gets and sets the property SearchCriteria. 
+        /// <para>
+        /// The search criteria to be used to return routing profiles.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>name</c> and <c>description</c> fields support "contains" queries with a minimum
+        /// of 2 characters and a maximum of 25 characters. Any queries with character lengths
+        /// outside of this range will throw invalid results. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public RoutingProfileSearchCriteria SearchCriteria { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SearchCriteria property is set.
+        /// </summary>
+        internal bool IsSetSearchCriteria() => this.SearchCriteria != null;
+
+        /// <summary>
+        /// Gets and sets the property SearchFilter. 
+        /// <para>
+        /// Filters to be applied to search results.
+        /// </para>
+        /// </summary>
+        public RoutingProfileSearchFilter SearchFilter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SearchFilter property is set.
+        /// </summary>
+        internal bool IsSetSearchFilter() => this.SearchFilter != null;
+    }
+}

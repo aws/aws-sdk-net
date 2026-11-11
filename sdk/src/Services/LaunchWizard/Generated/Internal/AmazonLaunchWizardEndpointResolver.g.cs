@@ -31,7 +31,7 @@ using Amazon.LaunchWizard.Endpoints;
 namespace Amazon.LaunchWizard.Internal
 {
     /// <summary>
-    /// Amazon LaunchWizard endpoint resolver.
+    /// AWS Launch Wizard endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for LaunchWizard service requests.
     /// <para />

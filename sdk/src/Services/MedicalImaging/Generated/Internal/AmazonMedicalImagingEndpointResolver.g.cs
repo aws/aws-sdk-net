@@ -31,7 +31,7 @@ using Amazon.MedicalImaging.Endpoints;
 namespace Amazon.MedicalImaging.Internal
 {
     /// <summary>
-    /// Amazon MedicalImaging endpoint resolver.
+    /// AWS Health Imaging endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MedicalImaging service requests.
     /// <para />

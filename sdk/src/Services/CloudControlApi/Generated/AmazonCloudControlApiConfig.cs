@@ -27,12 +27,12 @@ using Amazon.CloudControlApi.Internal;
 namespace Amazon.CloudControlApi
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudControlApi service
+    /// Configuration for accessing AWS Cloud Control API
     /// </summary>
     public partial class AmazonCloudControlApiConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudControl", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("CloudControl", "4.0.100.25");
 
         private static readonly AmazonCloudControlApiEndpointResolver EndpointResolver =
             new AmazonCloudControlApiEndpointResolver();

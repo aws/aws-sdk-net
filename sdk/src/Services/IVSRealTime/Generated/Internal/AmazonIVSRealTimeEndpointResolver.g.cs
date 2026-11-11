@@ -31,7 +31,7 @@ using Amazon.IVSRealTime.Endpoints;
 namespace Amazon.IVSRealTime.Internal
 {
     /// <summary>
-    /// Amazon IVSRealTime endpoint resolver.
+    /// Amazon Interactive Video Service RealTime endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for IVSRealTime service requests.
     /// <para />

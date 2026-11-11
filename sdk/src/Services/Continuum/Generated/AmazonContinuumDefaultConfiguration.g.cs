@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Continuum
 {
     /// <summary>
-    /// Configuration for accessing Amazon Continuum service
+    /// Configuration for accessing AWS Continuum
     /// </summary>
     public static class AmazonContinuumDefaultConfiguration
     {

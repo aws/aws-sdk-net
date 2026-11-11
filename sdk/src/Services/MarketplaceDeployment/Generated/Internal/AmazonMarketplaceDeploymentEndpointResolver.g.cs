@@ -31,7 +31,7 @@ using Amazon.MarketplaceDeployment.Endpoints;
 namespace Amazon.MarketplaceDeployment.Internal
 {
     /// <summary>
-    /// Amazon MarketplaceDeployment endpoint resolver.
+    /// AWS Marketplace Deployment Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MarketplaceDeployment service requests.
     /// <para />

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
     {
         public void CloudFrontCreateFunction()
         {
-            #region example-1
+            #region CreateFunction-1
 
             var client = new AmazonCloudFrontClient();
-            var response = client.CreateFunction(new CreateFunctionRequest 
+            var response = client.CreateFunction(new CreateFunctionRequest
             {
                 FunctionCode = new MemoryStream(function-code.js),
                 FunctionConfig = new FunctionConfig {
@@ -41,10 +42,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontCreateKeyValueStore()
         {
-            #region example-1
+            #region CreateKeyValueStore-1
 
             var client = new AmazonCloudFrontClient();
-            var response = client.CreateKeyValueStore(new CreateKeyValueStoreRequest 
+            var response = client.CreateKeyValueStore(new CreateKeyValueStoreRequest
             {
                 Comment = "my-key-valuestore-comment",
                 ImportSource = new ImportSource {
@@ -63,10 +64,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontCreateVpcOrigin()
         {
-            #region example-1
+            #region CreateVpcOrigin-1
 
             var client = new AmazonCloudFrontClient();
-            var response = client.CreateVpcOrigin(new CreateVpcOriginRequest 
+            var response = client.CreateVpcOrigin(new CreateVpcOriginRequest
             {
                 VpcOriginEndpointConfig = new VpcOriginEndpointConfig {
                     Arn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-alb-us-west-2/e6aa5c7d26415c6d",
@@ -93,10 +94,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontDeleteKeyValueStore()
         {
-            #region example-1
+            #region DeleteKeyValueStore-1
 
             var client = new AmazonCloudFrontClient();
-            var response = client.DeleteKeyValueStore(new DeleteKeyValueStoreRequest 
+            var response = client.DeleteKeyValueStore(new DeleteKeyValueStoreRequest
             {
                 IfMatch = "ETVPDKIKX0DER",
                 Name = "my-keyvaluestore-name"
@@ -108,10 +109,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontDeleteVpcOrigin()
         {
-            #region example-1
+            #region DeleteVpcOrigin-1
 
             var client = new AmazonCloudFrontClient();
-            var response = client.DeleteVpcOrigin(new DeleteVpcOriginRequest 
+            var response = client.DeleteVpcOrigin(new DeleteVpcOriginRequest
             {
                 Id = "vo_BQwjxxQxjCaBcQLzJUFkDM",
                 IfMatch = "E1F83G8C2ARO7P"
@@ -125,10 +126,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontDescribeKeyValueStore()
         {
-            #region example-1
+            #region DescribeKeyValueStore-1
 
             var client = new AmazonCloudFrontClient();
-            var response = client.DescribeKeyValueStore(new DescribeKeyValueStoreRequest 
+            var response = client.DescribeKeyValueStore(new DescribeKeyValueStoreRequest
             {
                 Name = "my-keyvaluestore-name"
             });
@@ -141,10 +142,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontGetVpcOrigin()
         {
-            #region example-1
+            #region GetVpcOrigin-1
 
             var client = new AmazonCloudFrontClient();
-            var response = client.GetVpcOrigin(new GetVpcOriginRequest 
+            var response = client.GetVpcOrigin(new GetVpcOriginRequest
             {
                 Id = "vo_BQwjxxQxjCaBcQLzJUFkDM"
             });
@@ -157,10 +158,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontListDistributionsByVpcOriginId()
         {
-            #region example-1
+            #region ListDistributionsByVpcOriginId-1
 
             var client = new AmazonCloudFrontClient();
-            var response = client.ListDistributionsByVpcOriginId(new ListDistributionsByVpcOriginIdRequest 
+            var response = client.ListDistributionsByVpcOriginId(new ListDistributionsByVpcOriginIdRequest
             {
                 VpcOriginId = "vo_BQwjxxQxjCaBcQLzJUFkDM"
             });
@@ -172,10 +173,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontListKeyValueStores()
         {
-            #region example-1
+            #region ListKeyValueStores-1
 
             var client = new AmazonCloudFrontClient();
-            var response = client.ListKeyValueStores(new ListKeyValueStoresRequest 
+            var response = client.ListKeyValueStores(new ListKeyValueStoresRequest
             {
                 Status = "READY"
             });
@@ -187,10 +188,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontListVpcOrigins()
         {
-            #region example-1
+            #region ListVpcOrigins-1
 
             var client = new AmazonCloudFrontClient();
-            var response = client.ListVpcOrigins(new ListVpcOriginsRequest 
+            var response = client.ListVpcOrigins(new ListVpcOriginsRequest
             {
             });
 
@@ -201,10 +202,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontUpdateFunction()
         {
-            #region example-1
+            #region UpdateFunction-1
 
             var client = new AmazonCloudFrontClient();
-            var response = client.UpdateFunction(new UpdateFunctionRequest 
+            var response = client.UpdateFunction(new UpdateFunctionRequest
             {
                 FunctionCode = new MemoryStream(function-code-changed.js),
                 FunctionConfig = new FunctionConfig {
@@ -229,10 +230,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontUpdateKeyValueStore()
         {
-            #region example-1
+            #region UpdateKeyValueStore-1
 
             var client = new AmazonCloudFrontClient();
-            var response = client.UpdateKeyValueStore(new UpdateKeyValueStoreRequest 
+            var response = client.UpdateKeyValueStore(new UpdateKeyValueStoreRequest
             {
                 Comment = "my-changed-comment",
                 IfMatch = "ETVPDKIKX0DER",
@@ -247,10 +248,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontUpdateVpcOrigin()
         {
-            #region example-1
+            #region UpdateVpcOrigin-1
 
             var client = new AmazonCloudFrontClient();
-            var response = client.UpdateVpcOrigin(new UpdateVpcOriginRequest 
+            var response = client.UpdateVpcOrigin(new UpdateVpcOriginRequest
             {
                 Id = "vo_BQwjxxQxjCaBcQLzJUFkDM",
                 IfMatch = "ETVPDKIKX0DER",
@@ -276,13 +277,10 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

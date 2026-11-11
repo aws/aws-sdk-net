@@ -27,12 +27,12 @@ using Amazon.ResourceExplorer2.Internal;
 namespace Amazon.ResourceExplorer2
 {
     /// <summary>
-    /// Configuration for accessing Amazon ResourceExplorer2 service
+    /// Configuration for accessing AWS Resource Explorer
     /// </summary>
     public partial class AmazonResourceExplorer2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Resource Explorer 2", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Resource Explorer 2", "4.0.100.26");
 
         private static readonly AmazonResourceExplorer2EndpointResolver EndpointResolver =
             new AmazonResourceExplorer2EndpointResolver();

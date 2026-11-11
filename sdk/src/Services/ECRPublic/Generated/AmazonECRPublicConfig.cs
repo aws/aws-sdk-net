@@ -27,12 +27,12 @@ using Amazon.ECRPublic.Internal;
 namespace Amazon.ECRPublic
 {
     /// <summary>
-    /// Configuration for accessing Amazon ECRPublic service
+    /// Configuration for accessing Amazon Elastic Container Registry Public
     /// </summary>
     public partial class AmazonECRPublicConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ECR PUBLIC", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("ECR PUBLIC", "4.0.100.26");
 
         private static readonly AmazonECRPublicEndpointResolver EndpointResolver =
             new AmazonECRPublicEndpointResolver();

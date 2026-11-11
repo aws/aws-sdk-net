@@ -27,12 +27,12 @@ using Amazon.MediaLive.Internal;
 namespace Amazon.MediaLive
 {
     /// <summary>
-    /// Configuration for accessing Amazon MediaLive service
+    /// Configuration for accessing AWS Elemental MediaLive
     /// </summary>
     public partial class AmazonMediaLiveConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MediaLive", "4.0.107.0");
+            InternalSDKUtils.BuildUserAgentString("MediaLive", "4.0.108.4");
 
         private static readonly AmazonMediaLiveEndpointResolver EndpointResolver =
             new AmazonMediaLiveEndpointResolver();

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Ivschat.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Ivschat service
+    /// Service metadata for Amazon Interactive Video Service Chat
     /// </summary>
     public partial class AmazonIvschatMetadata : IServiceMetadata
     {

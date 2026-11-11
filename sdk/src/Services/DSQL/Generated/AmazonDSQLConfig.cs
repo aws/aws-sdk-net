@@ -27,12 +27,12 @@ using Amazon.DSQL.Internal;
 namespace Amazon.DSQL
 {
     /// <summary>
-    /// Configuration for accessing Amazon DSQL service
+    /// Configuration for accessing Amazon Aurora DSQL
     /// </summary>
     public partial class AmazonDSQLConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DSQL", "4.0.103.10");
+            InternalSDKUtils.BuildUserAgentString("DSQL", "4.0.103.14");
 
         private static readonly AmazonDSQLEndpointResolver EndpointResolver =
             new AmazonDSQLEndpointResolver();

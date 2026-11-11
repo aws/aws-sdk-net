@@ -85,6 +85,11 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("RuleGroupName");
                 context.Writer.WriteStringValue(publicRequest.RuleGroupName);
             }
+            if (publicRequest.IsSetRuleOutputFormat())
+            {
+                context.Writer.WritePropertyName("RuleOutputFormat");
+                context.Writer.WriteStringValue(publicRequest.RuleOutputFormat);
+            }
             if (publicRequest.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");

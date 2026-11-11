@@ -27,12 +27,12 @@ using Amazon.EMRContainers.Internal;
 namespace Amazon.EMRContainers
 {
     /// <summary>
-    /// Configuration for accessing Amazon EMRContainers service
+    /// Configuration for accessing Amazon EMR Containers
     /// </summary>
     public partial class AmazonEMRContainersConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EMR containers", "4.0.104.2");
+            InternalSDKUtils.BuildUserAgentString("EMR containers", "4.0.104.6");
 
         private static readonly AmazonEMRContainersEndpointResolver EndpointResolver =
             new AmazonEMRContainersEndpointResolver();

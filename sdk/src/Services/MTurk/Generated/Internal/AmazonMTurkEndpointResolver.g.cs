@@ -31,7 +31,7 @@ using Amazon.MTurk.Endpoints;
 namespace Amazon.MTurk.Internal
 {
     /// <summary>
-    /// Amazon MTurk endpoint resolver.
+    /// Amazon Mechanical Turk endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MTurk service requests.
     /// <para />

@@ -27,12 +27,12 @@ using Amazon.Pricing.Internal;
 namespace Amazon.Pricing
 {
     /// <summary>
-    /// Configuration for accessing Amazon Pricing service
+    /// Configuration for accessing AWS Price List Service
     /// </summary>
     public partial class AmazonPricingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pricing", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Pricing", "4.0.100.26");
 
         private static readonly AmazonPricingEndpointResolver EndpointResolver =
             new AmazonPricingEndpointResolver();

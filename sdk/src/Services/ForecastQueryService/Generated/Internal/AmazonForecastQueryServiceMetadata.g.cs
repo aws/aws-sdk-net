@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastQueryService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ForecastQueryService service
+    /// Service metadata for Amazon Forecast Query Service
     /// </summary>
     public partial class AmazonForecastQueryServiceMetadata : IServiceMetadata
     {

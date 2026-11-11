@@ -27,12 +27,12 @@ using Amazon.ElementalInference.Internal;
 namespace Amazon.ElementalInference
 {
     /// <summary>
-    /// Configuration for accessing Amazon ElementalInference service
+    /// Configuration for accessing AWS Elemental Inference
     /// </summary>
     public partial class AmazonElementalInferenceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ElementalInference", "4.0.107.1");
+            InternalSDKUtils.BuildUserAgentString("ElementalInference", "4.0.107.5");
 
         private static readonly AmazonElementalInferenceEndpointResolver EndpointResolver =
             new AmazonElementalInferenceEndpointResolver();

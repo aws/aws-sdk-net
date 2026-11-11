@@ -26,7 +26,7 @@ using Amazon.SageMakerTrainingSessionRuntime.Endpoints;
 namespace Amazon.SageMakerTrainingSessionRuntime.Internal
 {
     /// <summary>
-    /// Amazon SageMakerTrainingSessionRuntime endpoint provider.
+    /// SageMaker Training Session Runtime endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SageMakerTrainingSessionRuntimeEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

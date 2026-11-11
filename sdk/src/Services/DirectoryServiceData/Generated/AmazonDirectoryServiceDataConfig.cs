@@ -27,12 +27,12 @@ using Amazon.DirectoryServiceData.Internal;
 namespace Amazon.DirectoryServiceData
 {
     /// <summary>
-    /// Configuration for accessing Amazon DirectoryServiceData service
+    /// Configuration for accessing AWS Directory Service Data
     /// </summary>
     public partial class AmazonDirectoryServiceDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Directory Service Data", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Directory Service Data", "4.0.100.26");
 
         private static readonly AmazonDirectoryServiceDataEndpointResolver EndpointResolver =
             new AmazonDirectoryServiceDataEndpointResolver();

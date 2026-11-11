@@ -31,7 +31,7 @@ using Amazon.ServerlessApplicationRepository.Endpoints;
 namespace Amazon.ServerlessApplicationRepository.Internal
 {
     /// <summary>
-    /// Amazon ServerlessApplicationRepository endpoint resolver.
+    /// AWSServerlessApplicationRepository endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ServerlessApplicationRepository service requests.
     /// <para />

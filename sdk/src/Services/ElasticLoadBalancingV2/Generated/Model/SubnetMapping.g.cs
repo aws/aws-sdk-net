@@ -1,0 +1,105 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ElasticLoadBalancingV2.Model
+{
+    /// <summary>
+    /// Information about a subnet mapping.
+    /// </summary>
+    public partial class SubnetMapping
+    {
+        /// <summary>
+        /// Gets and sets the property AllocationId. 
+        /// <para>
+        /// [Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing
+        /// load balancer.
+        /// </para>
+        /// </summary>
+        public string AllocationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AllocationId property is set.
+        /// </summary>
+        internal bool IsSetAllocationId() => this.AllocationId != null;
+
+        /// <summary>
+        /// Gets and sets the property IPv6Address. 
+        /// <para>
+        /// [Network Load Balancers] The IPv6 address.
+        /// </para>
+        /// </summary>
+        public string IPv6Address { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IPv6Address property is set.
+        /// </summary>
+        internal bool IsSetIPv6Address() => this.IPv6Address != null;
+
+        /// <summary>
+        /// Gets and sets the property PrivateIPv4Address. 
+        /// <para>
+        /// [Network Load Balancers] The private IPv4 address for an internal load balancer.
+        /// </para>
+        /// </summary>
+        public string PrivateIPv4Address { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PrivateIPv4Address property is set.
+        /// </summary>
+        internal bool IsSetPrivateIPv4Address() => this.PrivateIPv4Address != null;
+
+        /// <summary>
+        /// Gets and sets the property SourceNatIpv6Prefix. 
+        /// <para>
+        /// [Network Load Balancers with UDP listeners] The IPv6 prefix to use for source NAT.
+        /// Specify an IPv6 prefix (/80 netmask) from the subnet CIDR block or <c>auto_assigned</c>
+        /// to use an IPv6 prefix selected at random from the subnet CIDR block.
+        /// </para>
+        /// </summary>
+        public string SourceNatIpv6Prefix { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceNatIpv6Prefix property is set.
+        /// </summary>
+        internal bool IsSetSourceNatIpv6Prefix() => this.SourceNatIpv6Prefix != null;
+
+        /// <summary>
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        /// The ID of the subnet.
+        /// </para>
+        /// </summary>
+        public string SubnetId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SubnetId property is set.
+        /// </summary>
+        internal bool IsSetSubnetId() => this.SubnetId != null;
+    }
+}

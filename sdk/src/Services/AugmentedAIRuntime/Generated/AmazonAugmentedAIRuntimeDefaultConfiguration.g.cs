@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AugmentedAIRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon AugmentedAIRuntime service
+    /// Configuration for accessing Amazon Augmented AI Runtime
     /// </summary>
     public static class AmazonAugmentedAIRuntimeDefaultConfiguration
     {

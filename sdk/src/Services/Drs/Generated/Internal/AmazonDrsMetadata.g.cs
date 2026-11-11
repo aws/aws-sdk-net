@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Drs.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Drs service
+    /// Service metadata for Elastic Disaster Recovery Service
     /// </summary>
     public partial class AmazonDrsMetadata : IServiceMetadata
     {

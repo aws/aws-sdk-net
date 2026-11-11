@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KendraRanking.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon KendraRanking service
+    /// Service metadata for Amazon Kendra Intelligent Ranking
     /// </summary>
     public partial class AmazonKendraRankingMetadata : IServiceMetadata
     {

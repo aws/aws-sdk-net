@@ -31,13 +31,17 @@ namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDesignation operation. Updates an existing
-    /// designation. Managed designations cannot be modified.
+    /// user-created designation. Managed designations cannot be modified. Omit a field to
+    /// leave its current value unchanged.
     /// </summary>
     public partial class UpdateDesignationRequest : AmazonDataZoneRequest
     {
         /// <summary>
-        /// Gets and sets the property DeletionProtection. Whether deletion protection is enabled
-        /// for this designation. Omit to keep the existing value.
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Specifies whether deletion protection is enabled for this designation. Omit to keep
+        /// the existing value.
+        /// </para>
         /// </summary>
         public bool? DeletionProtection { get; set; }
 
@@ -103,7 +107,10 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Policy. The updated Cedar permit policy.
+        /// Gets and sets the property Policy. 
+        /// <para>
+        /// The updated Cedar permit policy. Omit to keep the existing policy.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 10000)]
         public string Policy { get; set; }

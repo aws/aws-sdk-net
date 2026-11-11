@@ -26,7 +26,7 @@ using Amazon.ConnectParticipant.Endpoints;
 namespace Amazon.ConnectParticipant.Internal
 {
     /// <summary>
-    /// Amazon ConnectParticipant endpoint provider.
+    /// Amazon Connect Participant Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ConnectParticipantEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

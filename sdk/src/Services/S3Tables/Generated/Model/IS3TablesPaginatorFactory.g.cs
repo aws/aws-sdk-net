@@ -45,6 +45,12 @@ namespace Amazon.S3Tables.Model
         IListTableBucketsPaginator ListTableBuckets(ListTableBucketsRequest request);
 
         /// <summary>
+        /// Paginator for ListTableMigrations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListTableMigrationsPaginator ListTableMigrations(ListTableMigrationsRequest request);
+
+        /// <summary>
         /// Paginator for ListTables operation
         /// </summary>
         [AWSPaginator(InputToken = ["ContinuationToken"], LimitKey = "MaxTables", OutputToken = ["ContinuationToken"])]

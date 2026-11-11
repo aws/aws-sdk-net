@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.TimestreamInfluxDB
 {
     /// <summary>
-    /// Configuration for accessing Amazon TimestreamInfluxDB service
+    /// Configuration for accessing Timestream InfluxDB
     /// </summary>
     public static class AmazonTimestreamInfluxDBDefaultConfiguration
     {

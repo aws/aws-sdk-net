@@ -13,7 +13,7 @@ namespace Amazon.CloudSearchDomain.Internal
     /// </summary>
     public class ProcessExceptionHandler : PipelineHandler
     {
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Override to do extra exception handling if thrown in the pipeline.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Amazon.CloudSearchDomain.Internal
         }
 #endif
 
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Override to do extra exception handling if thrown in the pipeline.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Amazon.CloudSearchDomain.Internal
         }
 #endif
 
-#if BCL
+#if NETFRAMEWORK
 
         /// <summary>
         /// Make sure stream is closed in case of exceptions in the pipeline.

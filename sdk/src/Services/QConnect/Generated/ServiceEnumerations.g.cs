@@ -353,6 +353,47 @@ namespace Amazon.QConnect
     }
 
     /// <summary>
+    /// Constants used for properties of type AssistantGlobalResiliencyStatus.
+    /// </summary>
+    public class AssistantGlobalResiliencyStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for AssistantGlobalResiliencyStatus
+        /// </summary>
+        public static readonly AssistantGlobalResiliencyStatus DISABLED = new AssistantGlobalResiliencyStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for AssistantGlobalResiliencyStatus
+        /// </summary>
+        public static readonly AssistantGlobalResiliencyStatus ENABLED = new AssistantGlobalResiliencyStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom AssistantGlobalResiliencyStatus for a value not among the defined constants.
+        /// </summary>
+        public AssistantGlobalResiliencyStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssistantGlobalResiliencyStatus FindValue(string value)
+        {
+            return FindValue<AssistantGlobalResiliencyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssistantGlobalResiliencyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AssistantStatus.
     /// </summary>
     public class AssistantStatus : ConstantClass
@@ -971,6 +1012,47 @@ namespace Amazon.QConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GlobalResiliencyStatus.
+    /// </summary>
+    public class GlobalResiliencyStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant SUPPORTED for GlobalResiliencyStatus
+        /// </summary>
+        public static readonly GlobalResiliencyStatus SUPPORTED = new GlobalResiliencyStatus("SUPPORTED");
+
+        /// <summary>
+        /// Constant UNSUPPORTED for GlobalResiliencyStatus
+        /// </summary>
+        public static readonly GlobalResiliencyStatus UNSUPPORTED = new GlobalResiliencyStatus("UNSUPPORTED");
+
+        /// <summary>
+        /// Constructs a custom GlobalResiliencyStatus for a value not among the defined constants.
+        /// </summary>
+        public GlobalResiliencyStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlobalResiliencyStatus FindValue(string value)
+        {
+            return FindValue<GlobalResiliencyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlobalResiliencyStatus(string value)
         {
             return FindValue(value);
         }
@@ -3612,6 +3694,47 @@ namespace Amazon.QConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ToolType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UnprocessableContentReason.
+    /// </summary>
+    public class UnprocessableContentReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant AI_INFERENCE_MODEL_UNAVAILABLE for UnprocessableContentReason
+        /// </summary>
+        public static readonly UnprocessableContentReason AI_INFERENCE_MODEL_UNAVAILABLE = new UnprocessableContentReason("AI_INFERENCE_MODEL_UNAVAILABLE");
+
+        /// <summary>
+        /// Constant ORCHESTRATION_ERROR for UnprocessableContentReason
+        /// </summary>
+        public static readonly UnprocessableContentReason ORCHESTRATION_ERROR = new UnprocessableContentReason("ORCHESTRATION_ERROR");
+
+        /// <summary>
+        /// Constructs a custom UnprocessableContentReason for a value not among the defined constants.
+        /// </summary>
+        public UnprocessableContentReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnprocessableContentReason FindValue(string value)
+        {
+            return FindValue<UnprocessableContentReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnprocessableContentReason(string value)
         {
             return FindValue(value);
         }

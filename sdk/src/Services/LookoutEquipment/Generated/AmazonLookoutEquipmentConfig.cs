@@ -27,12 +27,12 @@ using Amazon.LookoutEquipment.Internal;
 namespace Amazon.LookoutEquipment
 {
     /// <summary>
-    /// Configuration for accessing Amazon LookoutEquipment service
+    /// Configuration for accessing Amazon Lookout for Equipment
     /// </summary>
     public partial class AmazonLookoutEquipmentConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("LookoutEquipment", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("LookoutEquipment", "4.0.101.3");
 
         private static readonly AmazonLookoutEquipmentEndpointResolver EndpointResolver =
             new AmazonLookoutEquipmentEndpointResolver();

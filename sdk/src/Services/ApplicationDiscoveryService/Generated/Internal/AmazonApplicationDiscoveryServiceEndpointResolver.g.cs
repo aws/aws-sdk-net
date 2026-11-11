@@ -31,7 +31,7 @@ using Amazon.ApplicationDiscoveryService.Endpoints;
 namespace Amazon.ApplicationDiscoveryService.Internal
 {
     /// <summary>
-    /// Amazon ApplicationDiscoveryService endpoint resolver.
+    /// AWS Application Discovery Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ApplicationDiscoveryService service requests.
     /// <para />

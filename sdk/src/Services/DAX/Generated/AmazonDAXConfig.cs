@@ -27,12 +27,12 @@ using Amazon.DAX.Internal;
 namespace Amazon.DAX
 {
     /// <summary>
-    /// Configuration for accessing Amazon DAX service
+    /// Configuration for accessing Amazon DynamoDB Accelerator (DAX)
     /// </summary>
     public partial class AmazonDAXConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DAX", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("DAX", "4.0.100.26");
 
         private static readonly AmazonDAXEndpointResolver EndpointResolver =
             new AmazonDAXEndpointResolver();

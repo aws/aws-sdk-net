@@ -34,7 +34,11 @@ namespace Amazon.Polly.Model
     /// in an Amazon Web Services Region. If a lexicon with the same name already exists in
     /// the region, it is overwritten by the new lexicon. Lexicon operations have eventual
     /// consistency, therefore, it might take some time before the lexicon is available to
-    /// the SynthesizeSpeech operation. <para> For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+    /// the SynthesizeSpeech operation. <para> Overwriting a lexicon keeps its existing tags.
+    /// You can specify tags only when you create a lexicon. If you specify tags for a lexicon
+    /// that already exists, the request fails with a <c>ValidationException</c>. To change
+    /// the tags of an existing lexicon, use <c>TagResource</c> and <c>UntagResource</c>.
+    /// </para> <para> For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
     /// Lexicons</a>. </para>
     /// </summary>
     public partial class PutLexiconRequest : AmazonPollyRequest
@@ -56,7 +60,7 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}.
+        /// Name of the lexicon. The name must follow the regular expression format [0-9A-Za-z]{1,20}.
         /// That is, the name is a case-sensitive alphanumeric string up to 20 characters long.
         /// 
         /// </para>
@@ -68,5 +72,29 @@ namespace Amazon.Polly.Model
         /// Checks to see if the Name property is set.
         /// </summary>
         internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The metadata that you apply to the lexicon to help you categorize and organize it.
+        /// Each tag consists of a key and an optional value, both of which you define. Tag keys
+        /// can have a maximum character length of 128 characters, and tag values can have a maximum
+        /// length of 256 characters. You can't replace the tags of an existing lexicon by overwriting
+        /// it with PutLexicon.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 200)]
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
     }
 }

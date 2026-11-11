@@ -27,12 +27,12 @@ using Amazon.ConnectParticipant.Internal;
 namespace Amazon.ConnectParticipant
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectParticipant service
+    /// Configuration for accessing Amazon Connect Participant Service
     /// </summary>
     public partial class AmazonConnectParticipantConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ConnectParticipant", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("ConnectParticipant", "4.0.101.4");
 
         private static readonly AmazonConnectParticipantEndpointResolver EndpointResolver =
             new AmazonConnectParticipantEndpointResolver();

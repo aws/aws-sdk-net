@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SocialMessaging.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SocialMessaging service
+    /// Service metadata for AWS End User Messaging Social
     /// </summary>
     public partial class AmazonSocialMessagingMetadata : IServiceMetadata
     {

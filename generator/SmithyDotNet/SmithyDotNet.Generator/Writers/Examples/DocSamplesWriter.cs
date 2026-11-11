@@ -142,7 +142,7 @@ public sealed class DocSamplesWriter(GenerationContext context)
         {
             case ListShape list when data.ValueKind == JsonValueKind.Array:
                 WriteBlock(writer, $"{prefix}new {TypeName(list)} ", suffix, data.EnumerateArray().ToList(),
-                    (item, itemSuffix) => WriteValue(writer, "", context.Resolve(list.Member.Target), item, itemSuffix));
+                    (item, itemSuffix) => WriteValue(writer, "", TypeMapper.Unwrap(context.Resolve(list.Member.Target), context), item, itemSuffix));
                 break;
 
             case MapShape map when data.ValueKind == JsonValueKind.Object:

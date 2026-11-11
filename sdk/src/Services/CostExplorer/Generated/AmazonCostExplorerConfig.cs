@@ -27,12 +27,12 @@ using Amazon.CostExplorer.Internal;
 namespace Amazon.CostExplorer
 {
     /// <summary>
-    /// Configuration for accessing Amazon CostExplorer service
+    /// Configuration for accessing AWS Cost Explorer Service
     /// </summary>
     public partial class AmazonCostExplorerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Cost Explorer", "4.0.101.6");
+            InternalSDKUtils.BuildUserAgentString("Cost Explorer", "4.0.101.10");
 
         private static readonly AmazonCostExplorerEndpointResolver EndpointResolver =
             new AmazonCostExplorerEndpointResolver();

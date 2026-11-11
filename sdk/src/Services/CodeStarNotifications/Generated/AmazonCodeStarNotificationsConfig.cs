@@ -27,12 +27,12 @@ using Amazon.CodeStarNotifications.Internal;
 namespace Amazon.CodeStarNotifications
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeStarNotifications service
+    /// Configuration for accessing AWS CodeStar Notifications
     /// </summary>
     public partial class AmazonCodeStarNotificationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("codestar notifications", "4.0.101.2");
+            InternalSDKUtils.BuildUserAgentString("codestar notifications", "4.0.101.6");
 
         private static readonly AmazonCodeStarNotificationsEndpointResolver EndpointResolver =
             new AmazonCodeStarNotificationsEndpointResolver();

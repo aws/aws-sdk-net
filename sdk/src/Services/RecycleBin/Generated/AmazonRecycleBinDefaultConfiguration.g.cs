@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.RecycleBin
 {
     /// <summary>
-    /// Configuration for accessing Amazon RecycleBin service
+    /// Configuration for accessing Amazon Recycle Bin
     /// </summary>
     public static class AmazonRecycleBinDefaultConfiguration
     {

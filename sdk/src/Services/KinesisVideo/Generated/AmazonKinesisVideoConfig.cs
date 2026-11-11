@@ -27,12 +27,12 @@ using Amazon.KinesisVideo.Internal;
 namespace Amazon.KinesisVideo
 {
     /// <summary>
-    /// Configuration for accessing Amazon KinesisVideo service
+    /// Configuration for accessing Amazon Kinesis Video Streams
     /// </summary>
     public partial class AmazonKinesisVideoConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kinesis Video", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Kinesis Video", "4.0.100.26");
 
         private static readonly AmazonKinesisVideoEndpointResolver EndpointResolver =
             new AmazonKinesisVideoEndpointResolver();

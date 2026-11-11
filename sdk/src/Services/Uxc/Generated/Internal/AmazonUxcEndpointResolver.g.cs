@@ -31,7 +31,7 @@ using Amazon.Uxc.Endpoints;
 namespace Amazon.Uxc.Internal
 {
     /// <summary>
-    /// Amazon Uxc endpoint resolver.
+    /// AWS User Experience Customization endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Uxc service requests.
     /// <para />

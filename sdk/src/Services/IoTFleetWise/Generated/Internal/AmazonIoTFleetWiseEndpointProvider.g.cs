@@ -26,7 +26,7 @@ using Amazon.IoTFleetWise.Endpoints;
 namespace Amazon.IoTFleetWise.Internal
 {
     /// <summary>
-    /// Amazon IoTFleetWise endpoint provider.
+    /// AWS IoT FleetWise endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IoTFleetWiseEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

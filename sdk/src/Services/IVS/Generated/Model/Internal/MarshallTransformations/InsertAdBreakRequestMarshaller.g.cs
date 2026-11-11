@@ -68,6 +68,11 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAdBreakId())
+            {
+                context.Writer.WritePropertyName("adBreakId");
+                context.Writer.WriteStringValue(publicRequest.AdBreakId);
+            }
             if (publicRequest.IsSetChannelArn())
             {
                 context.Writer.WritePropertyName("channelArn");
@@ -77,6 +82,11 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("durationSeconds");
                 context.Writer.WriteNumberValue(publicRequest.DurationSeconds.Value);
+            }
+            if (publicRequest.IsSetTargetStartAt())
+            {
+                context.Writer.WritePropertyName("targetStartAt");
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.TargetStartAt));
             }
 
             writer.WriteEndObject();

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.OpenSearchServerless
 {
     /// <summary>
-    /// Configuration for accessing Amazon OpenSearchServerless service
+    /// Configuration for accessing OpenSearch Service Serverless
     /// </summary>
     public static class AmazonOpenSearchServerlessDefaultConfiguration
     {

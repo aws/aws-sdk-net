@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QApps.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon QApps service
+    /// Service metadata for QApps
     /// </summary>
     public partial class AmazonQAppsMetadata : IServiceMetadata
     {

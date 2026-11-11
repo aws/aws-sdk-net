@@ -62,9 +62,11 @@ namespace Amazon.DataZone.Model
         internal bool IsSetCreatedBy() => this.CreatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property DeletionProtection. Whether deletion protection is enabled
-        /// for this designation. When true, DeleteDesignation is rejected until protection is
-        /// disabled via UpdateDesignation.
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Specifies whether deletion protection is enabled for this designation. When <c>true</c>,
+        /// <c>DeleteDesignation</c> is rejected until protection is disabled through <c>UpdateDesignation</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public bool? DeletionProtection { get; set; }
@@ -89,8 +91,19 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDescription() => this.Description != null;
 
         /// <summary>
-        /// Gets and sets the property DesignationType. The classification of this designation.
-        /// MANAGED designations are system-defined and cannot be modified or deleted.
+        /// Gets and sets the property DesignationType. 
+        /// <para>
+        /// The classification of this designation. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MANAGED</c> — System-defined designations that cannot be modified or deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>USER_CREATED</c> — Designations created through <c>CreateDesignation</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]
         public DesignationType DesignationType { get; set; }
@@ -156,8 +169,11 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Policy. The Cedar permit policy that governs what actions
-        /// holders of this designation are allowed to perform.
+        /// Gets and sets the property Policy. 
+        /// <para>
+        /// The Cedar permit policy that governs the actions holders of this designation are allowed
+        /// to perform.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 10000)]
         public string Policy { get; set; }

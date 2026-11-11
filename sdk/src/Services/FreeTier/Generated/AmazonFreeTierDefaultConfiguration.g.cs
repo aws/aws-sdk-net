@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.FreeTier
 {
     /// <summary>
-    /// Configuration for accessing Amazon FreeTier service
+    /// Configuration for accessing AWS Free Tier
     /// </summary>
     public static class AmazonFreeTierDefaultConfiguration
     {

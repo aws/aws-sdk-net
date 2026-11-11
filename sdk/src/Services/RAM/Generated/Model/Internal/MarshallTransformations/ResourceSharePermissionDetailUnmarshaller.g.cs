@@ -109,10 +109,24 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("permissionTemplateParameters", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<PermissionTemplateParameterDeclaration, PermissionTemplateParameterDeclarationUnmarshaller>(PermissionTemplateParameterDeclarationUnmarshaller.Instance);
+                    unmarshalledObject.PermissionTemplateParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("permissionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PermissionType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("resourceOwner", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceOwner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

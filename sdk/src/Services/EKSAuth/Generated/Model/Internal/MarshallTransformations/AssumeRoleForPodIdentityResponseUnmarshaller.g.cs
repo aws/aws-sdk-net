@@ -86,6 +86,13 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
                     unmarshalledObject.Subject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("workloadIdentityProviderArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkloadIdentityProviderArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return unmarshalledObject;

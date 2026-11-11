@@ -31,7 +31,7 @@ using Amazon.Continuum.Endpoints;
 namespace Amazon.Continuum.Internal
 {
     /// <summary>
-    /// Amazon Continuum endpoint resolver.
+    /// AWS Continuum endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Continuum service requests.
     /// <para />

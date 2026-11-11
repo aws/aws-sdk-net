@@ -27,12 +27,12 @@ using Amazon.Pinpoint.Internal;
 namespace Amazon.Pinpoint
 {
     /// <summary>
-    /// Configuration for accessing Amazon Pinpoint service
+    /// Configuration for accessing Amazon Pinpoint
     /// </summary>
     public partial class AmazonPinpointConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pinpoint", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Pinpoint", "4.0.100.25");
 
         private static readonly AmazonPinpointEndpointResolver EndpointResolver =
             new AmazonPinpointEndpointResolver();

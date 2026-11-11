@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MedicalImaging
 {
     /// <summary>
-    /// Configuration for accessing Amazon MedicalImaging service
+    /// Configuration for accessing AWS Health Imaging
     /// </summary>
     public static class AmazonMedicalImagingDefaultConfiguration
     {

@@ -132,6 +132,7 @@ public class ServiceProjectFileWriterTests
 
         Assert.Contains("<PackageId>AWSSDK.CloudTrailData</PackageId>", _unified);
         Assert.Contains("<Version>", _unified);
+        Assert.Contains("<Description>The Amazon Web Services SDK for .NET - AWS CloudTrail Data Service</Description>", _unified);
         Assert.Contains("<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>", _unified);
         Assert.Contains("<PackageReadmeFile>nuget-readme.md</PackageReadmeFile>", _unified);
     }

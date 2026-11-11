@@ -27,12 +27,12 @@ using Amazon.Proton.Internal;
 namespace Amazon.Proton
 {
     /// <summary>
-    /// Configuration for accessing Amazon Proton service
+    /// Configuration for accessing AWS Proton
     /// </summary>
     public partial class AmazonProtonConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Proton", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Proton", "4.0.100.25");
 
         private static readonly AmazonProtonEndpointResolver EndpointResolver =
             new AmazonProtonEndpointResolver();

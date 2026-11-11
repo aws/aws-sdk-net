@@ -26,7 +26,7 @@ using Amazon.MarketplaceReporting.Endpoints;
 namespace Amazon.MarketplaceReporting.Internal
 {
     /// <summary>
-    /// Amazon MarketplaceReporting endpoint provider.
+    /// AWS Marketplace Reporting Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MarketplaceReportingEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

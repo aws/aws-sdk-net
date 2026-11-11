@@ -27,12 +27,12 @@ using Amazon.PaymentCryptography.Internal;
 namespace Amazon.PaymentCryptography
 {
     /// <summary>
-    /// Configuration for accessing Amazon PaymentCryptography service
+    /// Configuration for accessing Payment Cryptography Control Plane
     /// </summary>
     public partial class AmazonPaymentCryptographyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Payment Cryptography", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Payment Cryptography", "4.0.100.25");
 
         private static readonly AmazonPaymentCryptographyEndpointResolver EndpointResolver =
             new AmazonPaymentCryptographyEndpointResolver();

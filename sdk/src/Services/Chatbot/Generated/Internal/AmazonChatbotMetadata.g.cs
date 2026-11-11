@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chatbot.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Chatbot service
+    /// Service metadata for AWS Chatbot
     /// </summary>
     public partial class AmazonChatbotMetadata : IServiceMetadata
     {

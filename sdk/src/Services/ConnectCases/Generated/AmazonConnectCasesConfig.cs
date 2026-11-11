@@ -27,12 +27,12 @@ using Amazon.ConnectCases.Internal;
 namespace Amazon.ConnectCases
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectCases service
+    /// Configuration for accessing Amazon Connect Cases
     /// </summary>
     public partial class AmazonConnectCasesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ConnectCases", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("ConnectCases", "4.0.101.1");
 
         private static readonly AmazonConnectCasesEndpointResolver EndpointResolver =
             new AmazonConnectCasesEndpointResolver();

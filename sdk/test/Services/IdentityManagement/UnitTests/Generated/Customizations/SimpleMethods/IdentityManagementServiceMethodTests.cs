@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -41,7 +41,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), "GetContextKeysForPrincipalPolicy", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), "GetContextKeysForPrincipalPolicy", new Type[] { typeof(string), typeof(List<string>), });
         }
-        
+
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
         {
             Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);

@@ -132,6 +132,25 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetHardware() => this.Hardware != null;
 
         /// <summary>
+        /// Gets and sets the property InstanceStatus. 
+        /// <para>
+        /// Reports impaired functionality that stems from issues internal to the instance, such
+        /// as impaired reachability.
+        /// </para>
+        ///  
+        /// <para>
+        /// This value is returned only when you set <c>includeHealthStatus</c> to <c>true</c>
+        /// in your request.
+        /// </para>
+        /// </summary>
+        public InstanceHealthStatus InstanceStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceStatus property is set.
+        /// </summary>
+        internal bool IsSetInstanceStatus() => this.InstanceStatus != null;
+
+        /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
         /// The IP address type of the instance.
@@ -312,6 +331,25 @@ namespace Amazon.Lightsail.Model
         /// Checks to see if the SupportCode property is set.
         /// </summary>
         internal bool IsSetSupportCode() => this.SupportCode != null;
+
+        /// <summary>
+        /// Gets and sets the property SystemStatus. 
+        /// <para>
+        /// Reports impaired functionality that stems from issues related to the systems that
+        /// support an instance, such as hardware failures and network connectivity problems.
+        /// </para>
+        ///  
+        /// <para>
+        /// This value is returned only when you set <c>includeHealthStatus</c> to <c>true</c>
+        /// in your request.
+        /// </para>
+        /// </summary>
+        public InstanceHealthStatus SystemStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SystemStatus property is set.
+        /// </summary>
+        internal bool IsSetSystemStatus() => this.SystemStatus != null;
 
         /// <summary>
         /// Gets and sets the property Tags. 

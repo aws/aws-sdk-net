@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfigData.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AppConfigData service
+    /// Service metadata for AWS AppConfig Data
     /// </summary>
     public partial class AmazonAppConfigDataMetadata : IServiceMetadata
     {

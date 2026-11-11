@@ -1,0 +1,130 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.IoT.Model
+{
+    /// <summary>
+    /// This is the response object from the GetPolicy operation.
+    /// </summary>
+    public partial class GetPolicyResponse : AmazonWebServiceResponse
+    {
+        /// <summary>
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date the policy was created.
+        /// </para>
+        /// </summary>
+        public DateTime? CreationDate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreationDate property is set.
+        /// </summary>
+        internal bool IsSetCreationDate() => this.CreationDate.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DefaultVersionId. 
+        /// <para>
+        /// The default policy version ID.
+        /// </para>
+        /// </summary>
+        public string DefaultVersionId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DefaultVersionId property is set.
+        /// </summary>
+        internal bool IsSetDefaultVersionId() => this.DefaultVersionId != null;
+
+        /// <summary>
+        /// Gets and sets the property GenerationId. 
+        /// <para>
+        /// The generation ID of the policy.
+        /// </para>
+        /// </summary>
+        public string GenerationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GenerationId property is set.
+        /// </summary>
+        internal bool IsSetGenerationId() => this.GenerationId != null;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedDate. 
+        /// <para>
+        /// The date the policy was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime? LastModifiedDate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedDate property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedDate() => this.LastModifiedDate.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property PolicyArn. 
+        /// <para>
+        /// The policy ARN.
+        /// </para>
+        /// </summary>
+        public string PolicyArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyArn property is set.
+        /// </summary>
+        internal bool IsSetPolicyArn() => this.PolicyArn != null;
+
+        /// <summary>
+        /// Gets and sets the property PolicyDocument. 
+        /// <para>
+        /// The JSON document that describes the policy.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 404600)]
+        public string PolicyDocument { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyDocument property is set.
+        /// </summary>
+        internal bool IsSetPolicyDocument() => this.PolicyDocument != null;
+
+        /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// The policy name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string PolicyName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyName property is set.
+        /// </summary>
+        internal bool IsSetPolicyName() => this.PolicyName != null;
+    }
+}

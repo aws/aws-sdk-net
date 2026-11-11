@@ -6,12 +6,12 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AutoScaling.Model.AttachLoadBalancersRequest.AutoScalingGroupName</property>
+    <property>Amazon.AutoScaling.Model.AttachLoadBalancerTargetGroupsRequest.AutoScalingGroupName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AutoScaling.Model.AttachLoadBalancerTargetGroupsRequest.AutoScalingGroupName</property>
+    <property>Amazon.AutoScaling.Model.AttachLoadBalancersRequest.AutoScalingGroupName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -59,7 +59,7 @@
     <property>Amazon.AutoScaling.Model.CompleteLifecycleActionRequest.LifecycleHookName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest.AutoScalingGroupName</property>
@@ -158,6 +158,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest.UserData</property>
+    <min>0</min>
     <max>21847</max>
   </property-value-rule>
   <property-value-rule>
@@ -179,7 +180,7 @@
     <property>Amazon.AutoScaling.Model.DeleteLifecycleHookRequest.LifecycleHookName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DeleteNotificationConfigurationRequest.AutoScalingGroupName</property>
@@ -220,7 +221,7 @@
     <property>Amazon.AutoScaling.Model.DescribeAccountSettingsRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeAccountSettingsRequest.NextToken</property>
@@ -263,17 +264,6 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AutoScaling.Model.DescribeLoadBalancersRequest.AutoScalingGroupName</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AutoScaling.Model.DescribeLoadBalancersRequest.NextToken</property>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AutoScaling.Model.DescribeLoadBalancersResponse.NextToken</property>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeLoadBalancerTargetGroupsRequest.AutoScalingGroupName</property>
     <min>1</min>
     <max>255</max>
@@ -283,6 +273,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeLoadBalancerTargetGroupsResponse.NextToken</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.DescribeLoadBalancersRequest.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.DescribeLoadBalancersRequest.NextToken</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.DescribeLoadBalancersResponse.NextToken</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeNotificationConfigurationsRequest.NextToken</property>
@@ -362,12 +363,12 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AutoScaling.Model.DetachLoadBalancersRequest.AutoScalingGroupName</property>
+    <property>Amazon.AutoScaling.Model.DetachLoadBalancerTargetGroupsRequest.AutoScalingGroupName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AutoScaling.Model.DetachLoadBalancerTargetGroupsRequest.AutoScalingGroupName</property>
+    <property>Amazon.AutoScaling.Model.DetachLoadBalancersRequest.AutoScalingGroupName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -430,7 +431,7 @@
     <property>Amazon.AutoScaling.Model.LaunchInstancesRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LaunchInstancesRequest.RequestedCapacity</property>
@@ -445,19 +446,19 @@
     <property>Amazon.AutoScaling.Model.LaunchInstancesResponse.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutAccountSettingRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutAccountSettingRequest.Value</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutLifecycleHookRequest.AutoScalingGroupName</property>
@@ -468,13 +469,13 @@
     <property>Amazon.AutoScaling.Model.PutLifecycleHookRequest.LifecycleHookName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutLifecycleHookRequest.NotificationMetadata</property>
     <min>1</min>
     <max>4000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007e]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007e]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutLifecycleHookRequest.NotificationTargetARN</property>
@@ -578,7 +579,7 @@
     <property>Amazon.AutoScaling.Model.RecordLifecycleActionHeartbeatRequest.LifecycleHookName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.ResumeProcessesRequest.AutoScalingGroupName</property>
@@ -695,31 +696,31 @@
     <property>Amazon.AutoScaling.Model.AccountSetting.DefaultValue</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AccountSetting.EnforcedValue</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AccountSetting.EnforcementType</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AccountSetting.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AccountSetting.Value</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.Activity.ActivityId</property>
@@ -1140,6 +1141,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LaunchConfiguration.UserData</property>
+    <min>0</min>
     <max>21847</max>
   </property-value-rule>
   <property-value-rule>
@@ -1200,7 +1202,7 @@
     <property>Amazon.AutoScaling.Model.LaunchTemplateSpecification.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
+    <pattern>^[a-zA-Z0-9\(\)\.\-/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LaunchTemplateSpecification.Version</property>
@@ -1216,13 +1218,13 @@
     <property>Amazon.AutoScaling.Model.LifecycleHook.LifecycleHookName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHook.NotificationMetadata</property>
     <min>1</min>
     <max>4000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007e]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007e]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHook.NotificationTargetARN</property>
@@ -1238,13 +1240,13 @@
     <property>Amazon.AutoScaling.Model.LifecycleHookSpecification.LifecycleHookName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+    <pattern>^[A-Za-z0-9\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHookSpecification.NotificationMetadata</property>
     <min>1</min>
     <max>4000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007e]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007e]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHookSpecification.NotificationTargetARN</property>
@@ -1309,6 +1311,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.MetricDataQuery.Label</property>
+    <min>0</min>
     <max>2047</max>
   </property-value-rule>
   <property-value-rule>
@@ -1553,6 +1556,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.TargetTrackingMetricDataQuery.Label</property>
+    <min>0</min>
     <max>2047</max>
   </property-value-rule>
   <property-value-rule>

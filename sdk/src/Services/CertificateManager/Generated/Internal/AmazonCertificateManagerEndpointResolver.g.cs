@@ -31,7 +31,7 @@ using Amazon.CertificateManager.Endpoints;
 namespace Amazon.CertificateManager.Internal
 {
     /// <summary>
-    /// Amazon CertificateManager endpoint resolver.
+    /// AWS Certificate Manager endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CertificateManager service requests.
     /// <para />

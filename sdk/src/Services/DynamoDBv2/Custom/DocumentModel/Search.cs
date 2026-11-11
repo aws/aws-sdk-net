@@ -318,7 +318,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             List<Document> ret = new List<Document>();
 
-#if NETSTANDARD
+#if !NETFRAMEWORK
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var internalClient = SourceTable.DDBClient as AmazonDynamoDBClient;
             if (internalClient == null)
@@ -749,7 +749,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
                 else
                 {
-#if NETSTANDARD
+#if !NETFRAMEWORK
                     // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
                     var internalClient = SourceTable.DDBClient as AmazonDynamoDBClient;
                     if (internalClient == null)

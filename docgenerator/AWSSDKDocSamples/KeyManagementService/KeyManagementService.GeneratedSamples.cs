@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,27 +14,27 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
     {
         public void KeyManagementServiceCancelKeyDeletion()
         {
-            #region to-cancel-deletion-of-a-cmk-1477428535102
+            #region CancelKeyDeletion-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.CancelKeyDeletion(new CancelKeyDeletionRequest 
+            var response = client.CancelKeyDeletion(new CancelKeyDeletionRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose deletion you are canceling. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
-            string keyId = response.KeyId; // The ARN of the KMS key whose deletion you canceled.
+            string keyId = response.KeyId;
 
             #endregion
         }
 
         public void KeyManagementServiceConnectCustomKeyStore()
         {
-            #region to-connect-a-custom-key-store-1628626947750
+            #region ConnectCustomKeyStore-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.ConnectCustomKeyStore(new ConnectCustomKeyStoreRequest 
+            var response = client.ConnectCustomKeyStore(new ConnectCustomKeyStoreRequest
             {
-                CustomKeyStoreId = "cks-1234567890abcdef0" // The ID of the AWS KMS custom key store.
+                CustomKeyStoreId = "cks-1234567890abcdef0"
             });
 
 
@@ -42,13 +43,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceCreateAlias()
         {
-            #region to-create-an-alias-1477505685119
+            #region CreateAlias-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateAlias(new CreateAliasRequest 
+            var response = client.CreateAlias(new CreateAliasRequest
             {
-                AliasName = "alias/ExampleAlias", // The alias to create. Aliases must begin with 'alias/'. Do not use aliases that begin with 'alias/aws' because they are reserved for use by AWS.
-                TargetKeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose alias you are creating. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                AliasName = "alias/ExampleAlias",
+                TargetKeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
 
@@ -57,343 +58,133 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceCreateCustomKeyStore()
         {
-            #region to-create-an-aws-cloudhsm-custom-key-store-1
+            #region CreateCustomKeyStore-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateCustomKeyStore(new CreateCustomKeyStoreRequest 
+            var response = client.CreateCustomKeyStore(new CreateCustomKeyStoreRequest
             {
-                CloudHsmClusterId = "cluster-234abcdefABC", // The ID of the CloudHSM cluster.
-                CustomKeyStoreName = "ExampleKeyStore", // A friendly name for the custom key store.
-                KeyStorePassword = "kmsPswd", // The password for the kmsuser CU account in the specified cluster.
-                TrustAnchorCertificate = "<certificate-goes-here>" // The content of the customerCA.crt file that you created when you initialized the cluster.
+                CloudHsmClusterId = "cluster-234abcdefABC",
+                CustomKeyStoreName = "ExampleKeyStore",
+                KeyStorePassword = "kmsPswd",
+                TrustAnchorCertificate = "<certificate-goes-here>"
             });
 
-            string customKeyStoreId = response.CustomKeyStoreId; // The ID of the new custom key store.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceCreateCustomKeyStore()
-        {
-            #region to-create-an-external-custom-key-store-with-vpc-connectivity-2
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateCustomKeyStore(new CreateCustomKeyStoreRequest 
-            {
-                CustomKeyStoreName = "ExampleVPCEndpointKeyStore", // A friendly name for the custom key store
-                CustomKeyStoreType = "EXTERNAL_KEY_STORE", // For external key stores, the value must be EXTERNAL_KEY_STORE
-                XksProxyAuthenticationCredential = new XksProxyAuthenticationCredentialType {
-                    AccessKeyId = "ABCDE12345670EXAMPLE",
-                    RawSecretAccessKey = "DXjSUawnel2fr6SKC7G25CNxTyWKE5PF9XX6H/u9pSo="
-                }, // The access key ID and secret access key that KMS uses to authenticate to your external key store proxy
-                XksProxyConnectivity = "VPC_ENDPOINT_SERVICE", // Indicates how AWS KMS communicates with the external key store proxy
-                XksProxyUriEndpoint = "https://myproxy-private.xks.example.com", // The URI that AWS KMS uses to connect to the external key store proxy
-                XksProxyUriPath = "/example-prefix/kms/xks/v1", // The URI path to the external key store proxy APIs
-                XksProxyVpcEndpointServiceName = "com.amazonaws.vpce.us-east-1.vpce-svc-example1" // The VPC endpoint service that KMS uses to communicate with the external key store proxy
-            });
-
-            string customKeyStoreId = response.CustomKeyStoreId; // The ID of the new custom key store.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceCreateCustomKeyStore()
-        {
-            #region to-create-an-external-custom-key-store-with-a-public-endpoint-3
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateCustomKeyStore(new CreateCustomKeyStoreRequest 
-            {
-                CustomKeyStoreName = "ExamplePublicEndpointKeyStore", // A friendly name for the custom key store
-                CustomKeyStoreType = "EXTERNAL_KEY_STORE", // For external key stores, the value must be EXTERNAL_KEY_STORE
-                XksProxyAuthenticationCredential = new XksProxyAuthenticationCredentialType {
-                    AccessKeyId = "ABCDE12345670EXAMPLE",
-                    RawSecretAccessKey = "DXjSUawnel2fr6SKC7G25CNxTyWKE5PF9XX6H/u9pSo="
-                }, // The access key ID and secret access key that KMS uses to authenticate to your external key store proxy
-                XksProxyConnectivity = "PUBLIC_ENDPOINT", // Indicates how AWS KMS communicates with the external key store proxy
-                XksProxyUriEndpoint = "https://myproxy.xks.example.com", // The URI that AWS KMS uses to connect to the external key store proxy
-                XksProxyUriPath = "/kms/xks/v1" // The URI path to your external key store proxy API
-            });
-
-            string customKeyStoreId = response.CustomKeyStoreId; // The ID of the new custom key store.
+            string customKeyStoreId = response.CustomKeyStoreId;
 
             #endregion
         }
 
         public void KeyManagementServiceCreateGrant()
         {
-            #region to-create-a-grant-1477972226782
+            #region CreateGrant-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateGrant(new CreateGrantRequest 
+            var response = client.CreateGrant(new CreateGrantRequest
             {
-                GranteePrincipal = "arn:aws:iam::111122223333:role/ExampleRole", // The identity that is given permission to perform the operations specified in the grant.
-                KeyId = "arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key to which the grant applies. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                GranteePrincipal = "arn:aws:iam::111122223333:role/ExampleRole",
+                KeyId = "arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab",
                 Operations = new List<string> {
                     "Encrypt",
                     "Decrypt"
-                } // A list of operations that the grant allows.
+                }
             });
 
-            string grantId = response.GrantId; // The unique identifier of the grant.
-            string grantToken = response.GrantToken; // The grant token.
+            string grantId = response.GrantId;
+            string grantToken = response.GrantToken;
 
             #endregion
         }
 
         public void KeyManagementServiceCreateGrant()
         {
-            #region to-create-a-grant-for-a-service-principal-1477972226783
+            #region CreateGrant-2
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateGrant(new CreateGrantRequest 
+            var response = client.CreateGrant(new CreateGrantRequest
             {
-                Constraints = new GrantConstraints { SourceArn = "arn:aws:dynamodb:us-east-2:444455556666:table/ExampleTable" }, // The SourceArn grant constraint restricts the grant permissions to requests associated with the specified AWS resource.
-                GranteeServicePrincipal = "service-name.amazonaws.com", // The AWS service principal that is given permission to perform the operations specified in the grant.
-                KeyId = "arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key to which the grant applies. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                Constraints = new GrantConstraints { SourceArn = "arn:aws:dynamodb:us-east-2:444455556666:table/ExampleTable" },
+                GranteeServicePrincipal = "service-name.amazonaws.com",
+                KeyId = "arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab",
                 Operations = new List<string> {
                     "Encrypt",
                     "Decrypt",
                     "GenerateDataKey",
                     "DescribeKey"
-                }, // A list of operations that the grant allows.
-                RetiringServicePrincipal = "service-name.amazonaws.com" // The AWS service principal that can retire the grant.
+                },
+                RetiringServicePrincipal = "service-name.amazonaws.com"
             });
 
-            string grantId = response.GrantId; // The unique identifier of the grant.
-            string grantToken = response.GrantToken; // The grant token.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceCreateKey()
-        {
-            #region to-create-a-cmk-1
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateKey(new CreateKeyRequest 
-            {
-            });
-
-            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceCreateKey()
-        {
-            #region to-create-an-asymmetric-rsa-kms-key-for-encryption-and-decryption-2
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateKey(new CreateKeyRequest 
-            {
-                KeySpec = "RSA_4096", // Describes the type of key material in the KMS key.
-                KeyUsage = "ENCRYPT_DECRYPT" // The cryptographic operations for which you can use the KMS key.
-            });
-
-            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceCreateKey()
-        {
-            #region to-create-an-asymmetric-elliptic-curve-kms-key-for-signing-and-verification-3
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateKey(new CreateKeyRequest 
-            {
-                KeySpec = "ECC_NIST_P521", // Describes the type of key material in the KMS key.
-                KeyUsage = "SIGN_VERIFY" // The cryptographic operations for which you can use the KMS key.
-            });
-
-            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceCreateKey()
-        {
-            #region to-create-an-hmac-kms-key-1630628752841
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateKey(new CreateKeyRequest 
-            {
-                KeySpec = "HMAC_384", // Describes the type of key material in the KMS key.
-                KeyUsage = "GENERATE_VERIFY_MAC" // The cryptographic operations for which you can use the KMS key.
-            });
-
-            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceCreateKey()
-        {
-            #region to-create-an-asymmetric-mldsa-kms-key-for-signing-and-verfication
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateKey(new CreateKeyRequest 
-            {
-                KeySpec = "ML_DSA_65", // Describes the type of key material in the KMS key.
-                KeyUsage = "SIGN_VERIFY" // The cryptographic operations for which you can use the KMS key.
-            });
-
-            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceCreateKey()
-        {
-            #region to-create-a-multi-region-primary-kms-key-4
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateKey(new CreateKeyRequest 
-            {
-                MultiRegion = true // Indicates whether the KMS key is a multi-Region (True) or regional (False) key.
-            });
-
-            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceCreateKey()
-        {
-            #region to-create-a-kms-key-for-imported-key-material-5
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateKey(new CreateKeyRequest 
-            {
-                Origin = "EXTERNAL" // The source of the key material for the KMS key.
-            });
-
-            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceCreateKey()
-        {
-            #region to-create-a-kms-key-in-an-aws-cloudhsm-custom-key-store-6
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateKey(new CreateKeyRequest 
-            {
-                CustomKeyStoreId = "cks-1234567890abcdef0", // Identifies the custom key store that hosts the KMS key.
-                Origin = "AWS_CLOUDHSM" // Indicates the source of the key material for the KMS key.
-            });
-
-            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceCreateKey()
-        {
-            #region to-create-a-kms-key-in-an-external-custom-key-store-7
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.CreateKey(new CreateKeyRequest 
-            {
-                CustomKeyStoreId = "cks-9876543210fedcba9", // Identifies the custom key store that hosts the KMS key.
-                Origin = "EXTERNAL_KEY_STORE", // Indicates the source of the key material for the KMS key.
-                XksKeyId = "bb8562717f809024" // Identifies the encryption key in your external key manager that is associated with the KMS key
-            });
-
-            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
+            string grantId = response.GrantId;
+            string grantToken = response.GrantToken;
 
             #endregion
         }
 
         public void KeyManagementServiceDecapsulate()
         {
-            #region to-recover-a-shared-secret-1
+            #region Decapsulate-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.Decapsulate(new DecapsulateRequest 
+            var response = client.Decapsulate(new DecapsulateRequest
             {
-                EncapsulationAlgorithm = "ML_KEM", // The requested key encapsulation algorithm. The only valid value is ML_KEM.
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The asymmetric ML-KEM KMS key that recovers the shared secret.
-                SharedSecretCiphertextBlob = new MemoryStream(<binary data>) // The encapsulated shared secret that you received from your peer.
+                EncapsulationAlgorithm = "ML_KEM",
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab",
+                SharedSecretCiphertextBlob = new MemoryStream(<binary data>)
             });
 
-            string encapsulationAlgorithm = response.EncapsulationAlgorithm; // The key encapsulation algorithm used to recover the shared secret.
-            string keyId = response.KeyId; // The key ARN of the asymmetric ML-KEM KMS key that recovered the shared secret.
-            MemoryStream sharedSecret = response.SharedSecret; // The raw shared secret. It matches the shared secret that Encapsulate returned to your peer.
+            EncapsulationAlgorithmSpec encapsulationAlgorithm = response.EncapsulationAlgorithm;
+            string keyId = response.KeyId;
+            MemoryStream sharedSecret = response.SharedSecret;
 
             #endregion
         }
 
         public void KeyManagementServiceDecrypt()
         {
-            #region to-decrypt-data-1
+            #region Decrypt-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.Decrypt(new DecryptRequest 
+            var response = client.Decrypt(new DecryptRequest
             {
-                CiphertextBlob = new MemoryStream(<binary data>), // The encrypted data (ciphertext).
-                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab" // A key identifier for the KMS key to use to decrypt the data.
+                CiphertextBlob = new MemoryStream(<binary data>),
+                EncryptionAlgorithm = "RSAES_OAEP_SHA_256",
+                KeyId = "0987dcba-09fe-87dc-65ba-ab0987654321"
             });
 
-            string encryptionAlgorithm = response.EncryptionAlgorithm; // The encryption algorithm that was used to decrypt the ciphertext. SYMMETRIC_DEFAULT is the only valid value for symmetric encryption in AWS KMS.
-            string keyId = response.KeyId; // The Amazon Resource Name (ARN) of the KMS key that was used to decrypt the data.
-            string keyMaterialId = response.KeyMaterialId; // The identifier of the key material used to decrypt the ciphertext.
-            MemoryStream plaintext = response.Plaintext; // The decrypted (plaintext) data.
+            EncryptionAlgorithmSpec encryptionAlgorithm = response.EncryptionAlgorithm;
+            string keyId = response.KeyId;
+            MemoryStream plaintext = response.Plaintext;
 
             #endregion
         }
 
         public void KeyManagementServiceDecrypt()
         {
-            #region to-decrypt-data-2
+            #region Decrypt-2
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.Decrypt(new DecryptRequest 
+            var response = client.Decrypt(new DecryptRequest
             {
-                CiphertextBlob = new MemoryStream(<binary data>), // The encrypted data (ciphertext).
-                EncryptionAlgorithm = "RSAES_OAEP_SHA_256", // The encryption algorithm that was used to encrypt the data. This parameter is required to decrypt with an asymmetric KMS key.
-                KeyId = "0987dcba-09fe-87dc-65ba-ab0987654321" // A key identifier for the KMS key to use to decrypt the data. This parameter is required to decrypt with an asymmetric KMS key.
+                CiphertextBlob = new MemoryStream(<binary data>),
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
-            string encryptionAlgorithm = response.EncryptionAlgorithm; // The encryption algorithm that was used to decrypt the ciphertext.
-            string keyId = response.KeyId; // The Amazon Resource Name (ARN) of the KMS key that was used to decrypt the data.
-            MemoryStream plaintext = response.Plaintext; // The decrypted (plaintext) data.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceDecrypt()
-        {
-            #region to-decrypt-data-for-attestation-2
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.Decrypt(new DecryptRequest 
-            {
-                CiphertextBlob = new MemoryStream(<binary data>), // The encrypted data. This ciphertext was encrypted with the KMS key
-                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The KMS key to use to decrypt the ciphertext
-                Recipient = new RecipientInfo {
-                    AttestationDocument = new MemoryStream(<attestation document>),
-                    KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
-                } // Specifies the attestation document from the Nitro enclave or NitroTPM and the encryption algorithm to use with the public key from the attestation document
-            });
-
-            MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The decrypted CiphertextBlob encrypted with the public key from the attestation document
-            string keyId = response.KeyId; // The KMS key that was used to decrypt the encrypted data (CiphertextBlob)
-            MemoryStream plaintext = response.Plaintext; // This field is null or empty
+            EncryptionAlgorithmSpec encryptionAlgorithm = response.EncryptionAlgorithm;
+            string keyId = response.KeyId;
+            string keyMaterialId = response.KeyMaterialId;
+            MemoryStream plaintext = response.Plaintext;
 
             #endregion
         }
 
         public void KeyManagementServiceDeleteAlias()
         {
-            #region to-delete-an-alias-1478285209338
+            #region DeleteAlias-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.DeleteAlias(new DeleteAliasRequest 
+            var response = client.DeleteAlias(new DeleteAliasRequest
             {
-                AliasName = "alias/ExampleAlias" // The alias to delete.
+                AliasName = "alias/ExampleAlias"
             });
 
 
@@ -402,12 +193,12 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceDeleteCustomKeyStore()
         {
-            #region to-delete-a-custom-key-store-from-aws-kms-1628630837145
+            #region DeleteCustomKeyStore-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.DeleteCustomKeyStore(new DeleteCustomKeyStoreRequest 
+            var response = client.DeleteCustomKeyStore(new DeleteCustomKeyStoreRequest
             {
-                CustomKeyStoreId = "cks-1234567890abcdef0" // The ID of the custom key store to be deleted.
+                CustomKeyStoreId = "cks-1234567890abcdef0"
             });
 
 
@@ -416,13 +207,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceDeleteImportedKeyMaterial()
         {
-            #region to-delete-imported-key-material-1478561674507
+            #region DeleteImportedKeyMaterial-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.DeleteImportedKeyMaterial(new DeleteImportedKeyMaterialRequest 
+            var response = client.DeleteImportedKeyMaterial(new DeleteImportedKeyMaterialRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key whose imported key material you are deleting. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-                KeyMaterialId = "0b7fd7ddbac6eef27907413567cad8c810e2883dc8a7534067a82ee1142fc1e6" // Identifies the deleted key material.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab",
+                KeyMaterialId = "0b7fd7ddbac6eef27907413567cad8c810e2883dc8a7534067a82ee1142fc1e6"
             });
 
 
@@ -431,206 +222,121 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceDeriveSharedSecret()
         {
-            #region to-derive-a-shared-secret-1718381818754
+            #region DeriveSharedSecret-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.DeriveSharedSecret(new DeriveSharedSecretRequest 
+            var response = client.DeriveSharedSecret(new DeriveSharedSecretRequest
             {
-                KeyAgreementAlgorithm = "ECDH", // The key agreement algorithm used to derive the shared secret. The only valid value is ECDH.
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The key identifier for an asymmetric KMS key pair. The private key in the specified key pair is used to derive the shared secret.
-                PublicKey = new MemoryStream(MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvH3Yj0wbkLEpUl95Cv1cJVjsVNSjwGq3tCLnzXfhVwVvmzGN8pYj3U8nKwgouaHbBWNJYjP5VutbbkKS4Kv4GojwZBJyHN17kmxo8yTjRmjR15SKIQ8cqRA2uaERMLnpztIXdZp232PQPbWGxDyXYJ0aJ5EFSag) // The public key in your peer's asymmetric key pair.
+                KeyAgreementAlgorithm = "ECDH",
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab",
+                PublicKey = new MemoryStream(MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvH3Yj0wbkLEpUl95Cv1cJVjsVNSjwGq3tCLnzXfhVwVvmzGN8pYj3U8nKwgouaHbBWNJYjP5VutbbkKS4Kv4GojwZBJyHN17kmxo8yTjRmjR15SKIQ8cqRA2uaERMLnpztIXdZp232PQPbWGxDyXYJ0aJ5EFSag)
             });
 
-            string keyAgreementAlgorithm = response.KeyAgreementAlgorithm; // The key agreement algorithm used to derive the shared secret.
-            string keyId = response.KeyId; // The asymmetric KMS key pair used to derive the shared secret.
-            string keyOrigin = response.KeyOrigin; // The source of the key material for the specified KMS key.
-            MemoryStream sharedSecret = response.SharedSecret; // The raw secret derived from the specified key agreement algorithm, private key in the asymmetric KMS key, and your peer's public key.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceDeriveSharedSecret()
-        {
-            #region to-derive-a-shared-secret-for-attestation-2
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.DeriveSharedSecret(new DeriveSharedSecretRequest 
-            {
-                KeyAgreementAlgorithm = "ECDH", // The key agreement algorithm used to derive the shared secret. The only valid value is ECDH.
-                KeyId = "arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The key identifier for an asymmetric KMS key pair. The private key in the specified key pair is used to derive the shared secret.
-                PublicKey = new MemoryStream(MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvH3Yj0wbkLEpUl95Cv1cJVjsVNSjwGq3tCLnzXfhVwVvmzGN8pYj3U8nKwgouaHbBWNJYjP5VutbbkKS4Kv4GojwZBJyHN17kmxo8yTjRmjR15SKIQ8cqRA2uaERMLnpztIXdZp232PQPbWGxDyXYJ0aJ5EFSag), // The public key in your peer's asymmetric key pair.
-                Recipient = new RecipientInfo {
-                    AttestationDocument = new MemoryStream(<attestation document>),
-                    KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
-                } // Specifies the attestation document from the Nitro enclave or NitroTPM and the encryption algorithm to use with the public key from the attestation document
-            });
-
-            MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The shared secret encrypted by the public key from the attestation document
-            string keyAgreementAlgorithm = response.KeyAgreementAlgorithm; // The key agreement algorithm used to derive the shared secret.
-            string keyId = response.KeyId; // The asymmetric KMS key pair used to derive the shared secret.
-            string keyOrigin = response.KeyOrigin; // The source of the key material for the specified KMS key.
-            MemoryStream sharedSecret = response.SharedSecret; // This field is null or empty
+            KeyAgreementAlgorithmSpec keyAgreementAlgorithm = response.KeyAgreementAlgorithm;
+            string keyId = response.KeyId;
+            OriginType keyOrigin = response.KeyOrigin;
+            MemoryStream sharedSecret = response.SharedSecret;
 
             #endregion
         }
 
         public void KeyManagementServiceDescribeCustomKeyStores()
         {
-            #region to-get-detailed-information-about-custom-key-stores-in-the-account-and-region-1
+            #region DescribeCustomKeyStores-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.DescribeCustomKeyStores(new DescribeCustomKeyStoresRequest 
+            var response = client.DescribeCustomKeyStores(new DescribeCustomKeyStoresRequest
             {
             });
 
-            List<CustomKeyStoresListEntry> customKeyStores = response.CustomKeyStores; // Details about each custom key store in the account and Region.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceDescribeCustomKeyStores()
-        {
-            #region to-get-detailed-information-about-a-cloudhsm-custom-key-store-by-name-2
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.DescribeCustomKeyStores(new DescribeCustomKeyStoresRequest 
-            {
-                CustomKeyStoreName = "ExampleKeyStore" // The friendly name of the custom key store.
-            });
-
-            List<CustomKeyStoresListEntry> customKeyStores = response.CustomKeyStores; // Detailed information about the specified custom key store.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceDescribeCustomKeyStores()
-        {
-            #region to-get-detailed-information-about-an-external-key-store--3
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.DescribeCustomKeyStores(new DescribeCustomKeyStoresRequest 
-            {
-                CustomKeyStoreId = "cks-9876543210fedcba9" // The ID of the custom key store.
-            });
-
-            List<CustomKeyStoresListEntry> customKeyStores = response.CustomKeyStores; // Detailed information about the specified custom key store.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceDescribeCustomKeyStores()
-        {
-            #region to-get-detailed-information-about-an-external-custom-key-store-by-name-4
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.DescribeCustomKeyStores(new DescribeCustomKeyStoresRequest 
-            {
-                CustomKeyStoreName = "VPCExternalKeystore"
-            });
-
-            List<CustomKeyStoresListEntry> customKeyStores = response.CustomKeyStores; // Detailed information about the specified custom key store.
+            List<CustomKeyStoresListEntry> customKeyStores = response.CustomKeyStores;
 
             #endregion
         }
 
         public void KeyManagementServiceDescribeKey()
         {
-            #region get-key-details-1
+            #region DescribeKey-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.DescribeKey(new DescribeKeyRequest 
+            var response = client.DescribeKey(new DescribeKeyRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // An identifier for the KMS key. You can use the key ID, key ARN, alias name, alias ARN of the KMS key.
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
-            KeyMetadata keyMetadata = response.KeyMetadata; // An object that contains information about the specified KMS key.
+            KeyMetadata keyMetadata = response.KeyMetadata;
 
             #endregion
         }
 
         public void KeyManagementServiceDescribeKey()
         {
-            #region to-get-details-about-an-rsa-asymmetric-kms-key-2
+            #region DescribeKey-2
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.DescribeKey(new DescribeKeyRequest 
+            var response = client.DescribeKey(new DescribeKeyRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // An identifier for the KMS key. You can use the key ID, key ARN, alias name, alias ARN of the KMS key.
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
-            KeyMetadata keyMetadata = response.KeyMetadata; // An object that contains information about the specified KMS key.
+            KeyMetadata keyMetadata = response.KeyMetadata;
 
             #endregion
         }
 
         public void KeyManagementServiceDescribeKey()
         {
-            #region to-get-details-about-a-multi-region-key-3
+            #region DescribeKey-3
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.DescribeKey(new DescribeKeyRequest 
+            var response = client.DescribeKey(new DescribeKeyRequest
             {
-                KeyId = "arn:aws:kms:ap-northeast-1:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab" // An identifier for the KMS key. You can use the key ID, key ARN, alias name, alias ARN of the KMS key.
+                KeyId = "arn:aws:kms:ap-northeast-1:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab"
             });
 
-            KeyMetadata keyMetadata = response.KeyMetadata; // An object that contains information about the specified KMS key.
+            KeyMetadata keyMetadata = response.KeyMetadata;
 
             #endregion
         }
 
         public void KeyManagementServiceDescribeKey()
         {
-            #region to-get-details-about-an-hmac-kms-key-4
+            #region DescribeKey-4
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.DescribeKey(new DescribeKeyRequest 
+            var response = client.DescribeKey(new DescribeKeyRequest
             {
-                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab" // An identifier for the KMS key. You can use the key ID, key ARN, alias name, alias ARN of the KMS key.
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
-            KeyMetadata keyMetadata = response.KeyMetadata; // An object that contains information about the specified KMS key.
+            KeyMetadata keyMetadata = response.KeyMetadata;
 
             #endregion
         }
 
         public void KeyManagementServiceDescribeKey()
         {
-            #region to-get-details-about-a-kms-key-in-an-AWS-CloudHSM-key-store-5
+            #region DescribeKey-5
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.DescribeKey(new DescribeKeyRequest 
+            var response = client.DescribeKey(new DescribeKeyRequest
             {
-                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab" // An identifier for the KMS key. You can use the key ID, key ARN, alias name, alias ARN of the KMS key.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
-            KeyMetadata keyMetadata = response.KeyMetadata; // An object that contains information about the specified KMS key.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceDescribeKey()
-        {
-            #region to-get-details-about-a-kms-key-in-an-external-key-store-6
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.DescribeKey(new DescribeKeyRequest 
-            {
-                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab" // An identifier for the KMS key. You can use the key ID, key ARN, alias name, alias ARN of the KMS key.
-            });
-
-            KeyMetadata keyMetadata = response.KeyMetadata; // An object that contains information about the specified KMS key.
+            KeyMetadata keyMetadata = response.KeyMetadata;
 
             #endregion
         }
 
         public void KeyManagementServiceDisableKey()
         {
-            #region to-disable-a-cmk-1478566583659
+            #region DisableKey-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.DisableKey(new DisableKeyRequest 
+            var response = client.DisableKey(new DisableKeyRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key to disable. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
 
@@ -639,12 +345,12 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceDisableKeyRotation()
         {
-            #region to-disable-automatic-rotation-of-key-material-1478624396092
+            #region DisableKeyRotation-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.DisableKeyRotation(new DisableKeyRotationRequest 
+            var response = client.DisableKeyRotation(new DisableKeyRotationRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose key material will no longer be rotated. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
 
@@ -653,12 +359,12 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceDisconnectCustomKeyStore()
         {
-            #region to-disconnect-a-custom-key-store-from-its-cloudhsm-cluster-234abcdefABC
+            #region DisconnectCustomKeyStore-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.DisconnectCustomKeyStore(new DisconnectCustomKeyStoreRequest 
+            var response = client.DisconnectCustomKeyStore(new DisconnectCustomKeyStoreRequest
             {
-                CustomKeyStoreId = "cks-1234567890abcdef0" // The ID of the custom key store.
+                CustomKeyStoreId = "cks-1234567890abcdef0"
             });
 
 
@@ -667,12 +373,12 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceEnableKey()
         {
-            #region to-enable-a-cmk-1478627501129
+            #region EnableKey-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.EnableKey(new EnableKeyRequest 
+            var response = client.EnableKey(new EnableKeyRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key to enable. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
 
@@ -681,13 +387,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceEnableKeyRotation()
         {
-            #region to-enable-automatic-rotation-of-key-material-1712499675853
+            #region EnableKeyRotation-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.EnableKeyRotation(new EnableKeyRotationRequest 
+            var response = client.EnableKeyRotation(new EnableKeyRotationRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key whose key material will be automatically rotated. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-                RotationPeriodInDays = 365 // The number of days between each rotation date. Specify a value between 9 and 2560. If no value is specified, the default value is 365 days.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab",
+                RotationPeriodInDays = 365
             });
 
 
@@ -696,658 +402,316 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceEncapsulate()
         {
-            #region to-generate-a-shared-secret-1
+            #region Encapsulate-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.Encapsulate(new EncapsulateRequest 
+            var response = client.Encapsulate(new EncapsulateRequest
             {
-                EncapsulationAlgorithm = "ML_KEM", // The requested key encapsulation algorithm. The only valid value is ML_KEM.
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The asymmetric ML-KEM KMS key that generates the shared secret.
+                EncapsulationAlgorithm = "ML_KEM",
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
-            string encapsulationAlgorithm = response.EncapsulationAlgorithm; // The key encapsulation algorithm used to generate the shared secret.
-            string keyId = response.KeyId; // The key ARN of the asymmetric ML-KEM KMS key that generated the shared secret.
-            MemoryStream sharedSecret = response.SharedSecret; // The raw shared secret.
-            MemoryStream sharedSecretCiphertextBlob = response.SharedSecretCiphertextBlob; // The encapsulated shared secret. Send this ciphertext to your peer, who calls Decapsulate with the same KMS key to recover the same shared secret.
+            EncapsulationAlgorithmSpec encapsulationAlgorithm = response.EncapsulationAlgorithm;
+            string keyId = response.KeyId;
+            MemoryStream sharedSecret = response.SharedSecret;
+            MemoryStream sharedSecretCiphertextBlob = response.SharedSecretCiphertextBlob;
 
             #endregion
         }
 
         public void KeyManagementServiceEncrypt()
         {
-            #region to-encrypt-data-1
+            #region Encrypt-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.Encrypt(new EncryptRequest 
+            var response = client.Encrypt(new EncryptRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key to use for encryption. You can use the key ID or Amazon Resource Name (ARN) of the KMS key, or the name or ARN of an alias that refers to the KMS key.
-                Plaintext = new MemoryStream(<binary data>) // The data to encrypt.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab",
+                Plaintext = new MemoryStream(<binary data>)
             });
 
-            MemoryStream ciphertextBlob = response.CiphertextBlob; // The encrypted data (ciphertext).
-            string encryptionAlgorithm = response.EncryptionAlgorithm; // The encryption algorithm that was used in the operation. For symmetric encryption keys, the encryption algorithm is always SYMMETRIC_DEFAULT.
-            string keyId = response.KeyId; // The ARN of the KMS key that was used to encrypt the data.
+            MemoryStream ciphertextBlob = response.CiphertextBlob;
+            EncryptionAlgorithmSpec encryptionAlgorithm = response.EncryptionAlgorithm;
+            string keyId = response.KeyId;
 
             #endregion
         }
 
         public void KeyManagementServiceEncrypt()
         {
-            #region to-encrypt-data-2
+            #region Encrypt-2
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.Encrypt(new EncryptRequest 
+            var response = client.Encrypt(new EncryptRequest
             {
-                EncryptionAlgorithm = "RSAES_OAEP_SHA_256", // The encryption algorithm to use in the operation.
-                KeyId = "0987dcba-09fe-87dc-65ba-ab0987654321", // The identifier of the KMS key to use for encryption. You can use the key ID or Amazon Resource Name (ARN) of the KMS key, or the name or ARN of an alias that refers to the KMS key.
-                Plaintext = new MemoryStream(<binary data>) // The data to encrypt.
+                EncryptionAlgorithm = "RSAES_OAEP_SHA_256",
+                KeyId = "0987dcba-09fe-87dc-65ba-ab0987654321",
+                Plaintext = new MemoryStream(<binary data>)
             });
 
-            MemoryStream ciphertextBlob = response.CiphertextBlob; // The encrypted data (ciphertext).
-            string encryptionAlgorithm = response.EncryptionAlgorithm; // The encryption algorithm that was used in the operation.
-            string keyId = response.KeyId; // The ARN of the KMS key that was used to encrypt the data.
+            MemoryStream ciphertextBlob = response.CiphertextBlob;
+            EncryptionAlgorithmSpec encryptionAlgorithm = response.EncryptionAlgorithm;
+            string keyId = response.KeyId;
 
             #endregion
         }
 
         public void KeyManagementServiceGenerateDataKey()
         {
-            #region to-generate-a-data-key-1
+            #region GenerateDataKey-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.GenerateDataKey(new GenerateDataKeyRequest 
+            var response = client.GenerateDataKey(new GenerateDataKeyRequest
             {
-                KeyId = "alias/ExampleAlias", // The identifier of the KMS key to use to encrypt the data key. You can use the key ID or Amazon Resource Name (ARN) of the KMS key, or the name or ARN of an alias that refers to the KMS key.
-                KeySpec = "AES_256" // Specifies the type of data key to return.
+                KeyId = "alias/ExampleAlias",
+                KeySpec = "AES_256"
             });
 
-            MemoryStream ciphertextBlob = response.CiphertextBlob; // The encrypted data key.
-            string keyId = response.KeyId; // The ARN of the KMS key that was used to encrypt the data key.
-            string keyMaterialId = response.KeyMaterialId; // The identifier of the key material used to encrypt the data key.
-            MemoryStream plaintext = response.Plaintext; // The unencrypted (plaintext) data key.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceGenerateDataKey()
-        {
-            #region to-generate-a-data-key-for-attestation-2
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.GenerateDataKey(new GenerateDataKeyRequest 
-            {
-                KeyId = "arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // Identifies the KMS key used to encrypt the encrypted data key (CiphertextBlob)
-                KeySpec = "AES_256", // Specifies the type of data key to return
-                Recipient = new RecipientInfo {
-                    AttestationDocument = new MemoryStream(<attestation document>),
-                    KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
-                } // Specifies the attestation document from the Nitro enclave or NitroTPM and the encryption algorithm to use with the public key from the attestation document
-            });
-
-            MemoryStream ciphertextBlob = response.CiphertextBlob; // The data key encrypted by the specified KMS key
-            MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The plaintext data key encrypted by the public key from the attestation document
-            string keyId = response.KeyId; // The KMS key used to encrypt the CiphertextBlob (encrypted data key)
-            MemoryStream plaintext = response.Plaintext; // This field is null or empty
+            MemoryStream ciphertextBlob = response.CiphertextBlob;
+            string keyId = response.KeyId;
+            string keyMaterialId = response.KeyMaterialId;
+            MemoryStream plaintext = response.Plaintext;
 
             #endregion
         }
 
         public void KeyManagementServiceGenerateDataKeyPair()
         {
-            #region to-generate-an-rsa-key-pair-for-encryption-and-decryption-1
+            #region GenerateDataKeyPair-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.GenerateDataKeyPair(new GenerateDataKeyPairRequest 
+            var response = client.GenerateDataKeyPair(new GenerateDataKeyPairRequest
             {
-                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The key ID of the symmetric encryption KMS key that encrypts the private RSA key in the data key pair.
-                KeyPairSpec = "RSA_3072" // The requested key spec of the RSA data key pair.
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab",
+                KeyPairSpec = "RSA_3072"
             });
 
-            string keyId = response.KeyId; // The key ARN of the symmetric encryption KMS key that was used to encrypt the private key.
-            string keyMaterialId = response.KeyMaterialId; // The identifier of the key material used to encrypt the private key.
-            string keyPairSpec = response.KeyPairSpec; // The actual key spec of the RSA data key pair.
-            MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob; // The encrypted private key of the RSA data key pair.
-            MemoryStream privateKeyPlaintext = response.PrivateKeyPlaintext; // The plaintext private key of the RSA data key pair.
-            MemoryStream publicKey = response.PublicKey; // The public key (plaintext) of the RSA data key pair.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceGenerateDataKeyPair()
-        {
-            #region to-generate-a-data-key-pair-for-attestation-2
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.GenerateDataKeyPair(new GenerateDataKeyPairRequest 
-            {
-                KeyId = "arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The key ID of the symmetric encryption KMS key that encrypts the private RSA key in the data key pair.
-                KeyPairSpec = "RSA_3072", // The requested key spec of the RSA data key pair.
-                Recipient = new RecipientInfo {
-                    AttestationDocument = new MemoryStream(<attestation document>),
-                    KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
-                } // Specifies the attestation document from the Nitro enclave or NitroTPM and the encryption algorithm to use with the public key from the attestation document.
-            });
-
-            MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The private key of the RSA data key pair encrypted by the public key from the attestation document
-            string keyId = response.KeyId; // The key ARN of the symmetric encryption KMS key that was used to encrypt the PrivateKeyCiphertextBlob.
-            string keyMaterialId = response.KeyMaterialId; // The identifier of the key material used to encrypt the private key.
-            string keyPairSpec = response.KeyPairSpec; // The actual key spec of the RSA data key pair.
-            MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob; // The private key of the RSA data key pair encrypted by the KMS key.
-            MemoryStream privateKeyPlaintext = response.PrivateKeyPlaintext; // This field is null or empty
-            MemoryStream publicKey = response.PublicKey; // The public key (plaintext) of the RSA data key pair.
+            string keyId = response.KeyId;
+            string keyMaterialId = response.KeyMaterialId;
+            DataKeyPairSpec keyPairSpec = response.KeyPairSpec;
+            MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob;
+            MemoryStream privateKeyPlaintext = response.PrivateKeyPlaintext;
+            MemoryStream publicKey = response.PublicKey;
 
             #endregion
         }
 
         public void KeyManagementServiceGenerateDataKeyPairWithoutPlaintext()
         {
-            #region to-generate-an-asymmetric-data-key-pair-without-a-plaintext-key-1628620971564
+            #region GenerateDataKeyPairWithoutPlaintext-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.GenerateDataKeyPairWithoutPlaintext(new GenerateDataKeyPairWithoutPlaintextRequest 
+            var response = client.GenerateDataKeyPairWithoutPlaintext(new GenerateDataKeyPairWithoutPlaintextRequest
             {
-                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The symmetric encryption KMS key that encrypts the private key of the ECC data key pair.
-                KeyPairSpec = "ECC_NIST_P521" // The requested key spec of the ECC asymmetric data key pair.
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab",
+                KeyPairSpec = "ECC_NIST_P521"
             });
 
-            string keyId = response.KeyId; // The key ARN of the symmetric encryption KMS key that encrypted the private key in the ECC asymmetric data key pair.
-            string keyMaterialId = response.KeyMaterialId; // The identifier of the key material used to encrypt the private key.
-            string keyPairSpec = response.KeyPairSpec; // The actual key spec of the ECC asymmetric data key pair.
-            MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob; // The encrypted private key of the asymmetric ECC data key pair.
-            MemoryStream publicKey = response.PublicKey; // The public key (plaintext).
+            string keyId = response.KeyId;
+            string keyMaterialId = response.KeyMaterialId;
+            DataKeyPairSpec keyPairSpec = response.KeyPairSpec;
+            MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob;
+            MemoryStream publicKey = response.PublicKey;
 
             #endregion
         }
 
         public void KeyManagementServiceGenerateDataKeyWithoutPlaintext()
         {
-            #region to-generate-an-encrypted-data-key-1478914121134
+            #region GenerateDataKeyWithoutPlaintext-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.GenerateDataKeyWithoutPlaintext(new GenerateDataKeyWithoutPlaintextRequest 
+            var response = client.GenerateDataKeyWithoutPlaintext(new GenerateDataKeyWithoutPlaintextRequest
             {
-                KeyId = "alias/ExampleAlias", // The identifier of the KMS key to use to encrypt the data key. You can use the key ID or Amazon Resource Name (ARN) of the KMS key, or the name or ARN of an alias that refers to the KMS key.
-                KeySpec = "AES_256" // Specifies the type of data key to return.
+                KeyId = "alias/ExampleAlias",
+                KeySpec = "AES_256"
             });
 
-            MemoryStream ciphertextBlob = response.CiphertextBlob; // The encrypted data key.
-            string keyId = response.KeyId; // The ARN of the KMS key that was used to encrypt the data key.
-            string keyMaterialId = response.KeyMaterialId; // The identifier of the key material used to encrypt the data key.
+            MemoryStream ciphertextBlob = response.CiphertextBlob;
+            string keyId = response.KeyId;
+            string keyMaterialId = response.KeyMaterialId;
 
             #endregion
         }
 
         public void KeyManagementServiceGenerateMac()
         {
-            #region to-generate-an-hmac-for-a-message-1631570135665
+            #region GenerateMac-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.GenerateMac(new GenerateMacRequest 
+            var response = client.GenerateMac(new GenerateMacRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The HMAC KMS key input to the HMAC algorithm.
-                MacAlgorithm = "HMAC_SHA_384", // The HMAC algorithm requested for the operation.
-                Message = new MemoryStream(Hello World) // The message input to the HMAC algorithm.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab",
+                MacAlgorithm = "HMAC_SHA_384",
+                Message = new MemoryStream(Hello World)
             });
 
-            string keyId = response.KeyId; // The key ARN of the HMAC KMS key used in the operation.
-            MemoryStream mac = response.Mac; // The HMAC tag that results from this operation.
-            string macAlgorithm = response.MacAlgorithm; // The HMAC algorithm used in the operation.
+            string keyId = response.KeyId;
+            MemoryStream mac = response.Mac;
+            MacAlgorithmSpec macAlgorithm = response.MacAlgorithm;
 
             #endregion
         }
 
         public void KeyManagementServiceGenerateRandom()
         {
-            #region to-generate-random-data-1
+            #region GenerateRandom-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.GenerateRandom(new GenerateRandomRequest 
+            var response = client.GenerateRandom(new GenerateRandomRequest
             {
-                NumberOfBytes = 32 // The length of the random data, specified in number of bytes.
+                NumberOfBytes = 32
             });
 
-            MemoryStream plaintext = response.Plaintext; // The random data.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceGenerateRandom()
-        {
-            #region to-generate-random-data-for-attestation-2
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.GenerateRandom(new GenerateRandomRequest 
-            {
-                NumberOfBytes = 1024, // The length of the random byte string
-                Recipient = new RecipientInfo {
-                    AttestationDocument = new MemoryStream(<attestation document>),
-                    KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
-                } // Specifies the attestation document from the Nitro enclave or NitroTPM and the encryption algorithm to use with the public key from the attestation document
-            });
-
-            MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The random data encrypted under the public key from the attestation document
-            MemoryStream plaintext = response.Plaintext; // This field is null or empty
+            MemoryStream plaintext = response.Plaintext;
 
             #endregion
         }
 
         public void KeyManagementServiceGetKeyLastUsage()
         {
-            #region to-retrieve-the-last-usage-for-a-kms-key-1773253500001
+            #region GetKeyLastUsage-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.GetKeyLastUsage(new GetKeyLastUsageRequest 
+            var response = client.GetKeyLastUsage(new GetKeyLastUsageRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key to get usage information for. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key. Alias names are not supported.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
-            DateTime keyCreationDate = response.KeyCreationDate; // The date and time when the KMS key was created.
-            string keyId = response.KeyId; // The globally unique identifier for the KMS key.
-            KeyLastUsageData keyLastUsage = response.KeyLastUsage; // Contains usage information about the last time the KMS key was used for a successful cryptographic operation.
-            DateTime trackingStartDate = response.TrackingStartDate; // The date from which AWS KMS began recording cryptographic activity for this key, or the date the KMS key was created, whichever is later.
+            DateTime? keyCreationDate = response.KeyCreationDate;
+            string keyId = response.KeyId;
+            KeyLastUsageData keyLastUsage = response.KeyLastUsage;
+            DateTime? trackingStartDate = response.TrackingStartDate;
 
             #endregion
         }
 
         public void KeyManagementServiceGetKeyPolicy()
         {
-            #region to-retrieve-a-key-policy-1479170128325
+            #region GetKeyPolicy-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.GetKeyPolicy(new GetKeyPolicyRequest 
+            var response = client.GetKeyPolicy(new GetKeyPolicyRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key whose key policy you want to retrieve. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-                PolicyName = "default" // The name of the key policy to retrieve.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab",
+                PolicyName = "default"
             });
 
-            string policy = response.Policy; // The key policy document.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceGetKeyRotationStatus()
-        {
-            #region to-retrieve-the-rotation-status-for-a-kms-key-1712500357701
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.GetKeyRotationStatus(new GetKeyRotationStatusRequest 
-            {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose key material rotation status you want to retrieve. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-            });
-
-            string keyId = response.KeyId; // Identifies the specified symmetric encryption KMS key.
-            bool keyRotationEnabled = response.KeyRotationEnabled; // A boolean that indicates the key material rotation status. Returns true when automatic rotation of the key material is enabled, or false when it is not.
-            DateTime nextRotationDate = response.NextRotationDate; // The next date that the key material will be automatically rotated.
-            DateTime onDemandRotationStartDate = response.OnDemandRotationStartDate; // Identifies the date and time that an in progress on-demand rotation was initiated.
-            int rotationPeriodInDays = response.RotationPeriodInDays; // The number of days between each automatic rotation. The default value is 365 days.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceGetParametersForImport()
-        {
-            #region to-download-the-public-key-and-import-token-1
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.GetParametersForImport(new GetParametersForImportRequest 
-            {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key that will be associated with the imported key material. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-                WrappingAlgorithm = "RSAES_OAEP_SHA_1", // The algorithm that you will use to encrypt the key material before importing it.
-                WrappingKeySpec = "RSA_2048" // The type of wrapping key (public key) to return in the response.
-            });
-
-            MemoryStream importToken = response.ImportToken; // The import token to send with a subsequent ImportKeyMaterial request.
-            string keyId = response.KeyId; // The ARN of the KMS key that will be associated with the imported key material.
-            DateTime parametersValidTo = response.ParametersValidTo; // The date and time when the import token and public key expire. After this time, call GetParametersForImport again.
-            MemoryStream publicKey = response.PublicKey; // The public key to use to encrypt the key material before importing it.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceGetParametersForImport()
-        {
-            #region to-download-the-public-key-and-import-token-2
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.GetParametersForImport(new GetParametersForImportRequest 
-            {
-                KeyId = "arn:aws:kms:us-east-2:111122223333:key/8888abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key that will be associated with the imported key material. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-                WrappingAlgorithm = "RSA_AES_KEY_WRAP_SHA_256", // The algorithm that you will use to encrypt the key material before importing it.
-                WrappingKeySpec = "RSA_4096" // The type of wrapping key (public key) to return in the response.
-            });
-
-            MemoryStream importToken = response.ImportToken; // The import token to send with a subsequent ImportKeyMaterial request.
-            string keyId = response.KeyId; // The ARN of the KMS key that will be associated with the imported key material.
-            DateTime parametersValidTo = response.ParametersValidTo; // The date and time when the import token and public key expire. After this time, call GetParametersForImport again.
-            MemoryStream publicKey = response.PublicKey; // The public key to use to encrypt the key material before importing it.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceGetParametersForImport()
-        {
-            #region to-download-the-public-key-and-import-token-3
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.GetParametersForImport(new GetParametersForImportRequest 
-            {
-                KeyId = "arn:aws:kms:us-east-2:111122223333:key/9876abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key that will be associated with the imported key material. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-                WrappingAlgorithm = "RSAES_OAEP_SHA_256", // The algorithm that you will use to encrypt the key material before importing it.
-                WrappingKeySpec = "RSA_3072" // The type of wrapping key (public key) to return in the response.
-            });
-
-            MemoryStream importToken = response.ImportToken; // The import token to send with a subsequent ImportKeyMaterial request.
-            string keyId = response.KeyId; // The ARN of the KMS key that will be associated with the imported key material.
-            DateTime parametersValidTo = response.ParametersValidTo; // The date and time when the import token and public key expire. After this time, call GetParametersForImport again.
-            MemoryStream publicKey = response.PublicKey; // The public key to use to encrypt the key material before importing it.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceGetParametersForImport()
-        {
-            #region to-download-the-public-key-and-import-token-4
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.GetParametersForImport(new GetParametersForImportRequest 
-            {
-                KeyId = "2468abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key that will be associated with the imported key material. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-                WrappingAlgorithm = "RSAES_OAEP_SHA_256", // The algorithm that you will use to encrypt the key material before importing it.
-                WrappingKeySpec = "RSA_4096" // The type of wrapping key (public key) to return in the response.
-            });
-
-            MemoryStream importToken = response.ImportToken; // The import token to send with a subsequent ImportKeyMaterial request.
-            string keyId = response.KeyId; // The ARN of the KMS key that will be associated with the imported key material.
-            DateTime parametersValidTo = response.ParametersValidTo; // The date and time when the import token and public key expire. After this time, call GetParametersForImport again.
-            MemoryStream publicKey = response.PublicKey; // The public key to use to encrypt the key material before importing it.
+            string policy = response.Policy;
 
             #endregion
         }
 
         public void KeyManagementServiceGetPublicKey()
         {
-            #region to-download-the-public-key-of-an-asymmetric-kms-key-1628621691873
+            #region GetPublicKey-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.GetPublicKey(new GetPublicKeyRequest 
+            var response = client.GetPublicKey(new GetPublicKeyRequest
             {
-                KeyId = "arn:aws:kms:us-west-2:111122223333:key/0987dcba-09fe-87dc-65ba-ab0987654321" // The key ARN of the asymmetric KMS key.
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/0987dcba-09fe-87dc-65ba-ab0987654321"
             });
 
-            string customerMasterKeySpec = response.CustomerMasterKeySpec; // The key spec of the asymmetric KMS key from which the public key was downloaded.
-            List<string> encryptionAlgorithms = response.EncryptionAlgorithms; // The encryption algorithms supported by the asymmetric KMS key that was downloaded.
-            string keyId = response.KeyId; // The key ARN of the asymmetric KMS key from which the public key was downloaded.
-            string keyUsage = response.KeyUsage; // The key usage of the asymmetric KMS key from which the public key was downloaded.
-            MemoryStream publicKey = response.PublicKey; // The public key (plaintext) of the asymmetric KMS key.
+            CustomerMasterKeySpec customerMasterKeySpec = response.CustomerMasterKeySpec;
+            List<string> encryptionAlgorithms = response.EncryptionAlgorithms;
+            string keyId = response.KeyId;
+            KeyUsageType keyUsage = response.KeyUsage;
+            MemoryStream publicKey = response.PublicKey;
 
             #endregion
         }
 
         public void KeyManagementServiceImportKeyMaterial()
         {
-            #region to-import-key-material-into-a-kms-key-1
+            #region ImportKeyMaterial-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.ImportKeyMaterial(new ImportKeyMaterialRequest 
+            var response = client.ImportKeyMaterial(new ImportKeyMaterialRequest
             {
-                EncryptedKeyMaterial = new MemoryStream(<binary data>), // The encrypted key material to import.
-                ExpirationModel = "KEY_MATERIAL_DOES_NOT_EXPIRE", // A value that specifies whether the key material expires.
-                ImportToken = new MemoryStream(<binary data>), // The import token that you received in the response to a previous GetParametersForImport request.
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key to import the key material into. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                EncryptedKeyMaterial = new MemoryStream(<binary data>),
+                ExpirationModel = "KEY_MATERIAL_DOES_NOT_EXPIRE",
+                ImportToken = new MemoryStream(<binary data>),
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
-            string keyId = response.KeyId; // The Amazon Resource Name (ARN) of the KMS key into which key material was imported.
-            string keyMaterialId = response.KeyMaterialId; // Identifies the imported key material.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceImportKeyMaterial()
-        {
-            #region to-import-key-material-into-a-kms-key-2
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.ImportKeyMaterial(new ImportKeyMaterialRequest 
-            {
-                EncryptedKeyMaterial = new MemoryStream(<binary data>), // The encrypted key material to import.
-                ExpirationModel = "KEY_MATERIAL_EXPIRES", // A value that specifies whether the key material expires.
-                ImportToken = new MemoryStream(<binary data>), // The import token that you received in the response to a previous GetParametersForImport request.
-                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key to import the key material into. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-                ValidTo = new DateTime(2023, 9, 30, 12, 0, 0, DateTimeKind.Utc) // Specifies the date and time when the imported key material expires.
-            });
-
-            string keyId = response.KeyId; // The Amazon Resource Name (ARN) of the KMS key into which key material was imported.
-            string keyMaterialId = response.KeyMaterialId; // Identifies the imported key material.
+            string keyId = response.KeyId;
+            string keyMaterialId = response.KeyMaterialId;
 
             #endregion
         }
 
         public void KeyManagementServiceListAliases()
         {
-            #region to-list-aliases-1480729693349
+            #region ListAliases-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.ListAliases(new ListAliasesRequest 
+            var response = client.ListAliases(new ListAliasesRequest
             {
             });
 
-            List<AliasListEntry> aliases = response.Aliases; // A list of aliases, including the key ID of the KMS key that each alias refers to.
-            bool truncated = response.Truncated; // A boolean that indicates whether there are more items in the list. Returns true when there are more items, or false when there are not.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceListGrants()
-        {
-            #region to-list-grants-for-a-cmk-1481067365389
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.ListGrants(new ListGrantsRequest 
-            {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose grants you want to list. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-            });
-
-            List<GrantListEntry> grants = response.Grants; // A list of grants.
-            bool truncated = response.Truncated; // A boolean that indicates whether there are more items in the list. Returns true when there are more items, or false when there are not.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceListGrants()
-        {
-            #region to-list-grants-by-grantee-service-principal-1481067365390
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.ListGrants(new ListGrantsRequest 
-            {
-                GranteeServicePrincipal = "service-name.amazonaws.com", // Returns only grants where the specified AWS service principal is the grantee service principal.
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose grants you want to list. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-            });
-
-            List<GrantListEntry> grants = response.Grants; // A list of grants.
-            bool truncated = response.Truncated; // A boolean that indicates whether there are more items in the list. Returns true when there are more items, or false when there are not.
+            List<AliasListEntry> aliases = response.Aliases;
+            bool? truncated = response.Truncated;
 
             #endregion
         }
 
         public void KeyManagementServiceListKeyPolicies()
         {
-            #region to-list-key-policies-for-a-cmk-1481069780998
+            #region ListKeyPolicies-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.ListKeyPolicies(new ListKeyPoliciesRequest 
-            {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose key policies you want to list. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-            });
-
-            List<string> policyNames = response.PolicyNames; // A list of key policy names.
-            bool truncated = response.Truncated; // A boolean that indicates whether there are more items in the list. Returns true when there are more items, or false when there are not.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceListKeyRotations()
-        {
-            #region to-retrieve-information-about-all-completed-key-material-rotations-1712585167775
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.ListKeyRotations(new ListKeyRotationsRequest 
+            var response = client.ListKeyPolicies(new ListKeyPoliciesRequest
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
-            List<RotationsListEntry> rotations = response.Rotations; // A list of key rotations.
-            bool truncated = response.Truncated; // A flag that indicates whether there are more items in the list. When the value is true, the list in this response is truncated. To get more items, pass the value of the NextMarker element in this response to the Marker parameter in a subsequent request.
+            List<string> policyNames = response.PolicyNames;
+            bool? truncated = response.Truncated;
 
             #endregion
         }
 
         public void KeyManagementServiceListKeys()
         {
-            #region to-list-cmks-1481071643069
+            #region ListKeys-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.ListKeys(new ListKeysRequest 
+            var response = client.ListKeys(new ListKeysRequest
             {
             });
 
-            List<KeyListEntry> keys = response.Keys; // A list of KMS keys, including the key ID and Amazon Resource Name (ARN) of each one.
-            bool truncated = response.Truncated; // A boolean that indicates whether there are more items in the list. Returns true when there are more items, or false when there are not.
+            List<KeyListEntry> keys = response.Keys;
+            bool? truncated = response.Truncated;
 
             #endregion
         }
 
         public void KeyManagementServiceListResourceTags()
         {
-            #region to-list-tags-for-a-cmk-1483996855796
+            #region ListResourceTags-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.ListResourceTags(new ListResourceTagsRequest 
+            var response = client.ListResourceTags(new ListResourceTagsRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose tags you are listing. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
-            List<Tag> tags = response.Tags; // A list of tags.
-            bool truncated = response.Truncated; // A boolean that indicates whether there are more items in the list. Returns true when there are more items, or false when there are not.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceListRetirableGrants()
-        {
-            #region to-list-grants-that-the-specified-principal-can-retire-1481140499620
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.ListRetirableGrants(new ListRetirableGrantsRequest 
-            {
-                RetiringPrincipal = "arn:aws:iam::111122223333:role/ExampleRole" // The retiring principal whose grants you want to list. Use the Amazon Resource Name (ARN) of a principal such as an AWS account (root), IAM user, federated user, or assumed role user.
-            });
-
-            List<GrantListEntry> grants = response.Grants; // A list of grants that the specified principal can retire.
-            bool truncated = response.Truncated; // A boolean that indicates whether there are more items in the list. Returns true when there are more items, or false when there are not.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceListRetirableGrants()
-        {
-            #region to-list-grants-by-retiring-service-principal-1481140499621
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.ListRetirableGrants(new ListRetirableGrantsRequest 
-            {
-                RetiringServicePrincipal = "service-name.amazonaws.com" // The retiring service principal whose grants you want to list. Use the AWS service principal name of the service (for example, service-name.amazonaws.com).
-            });
-
-            List<GrantListEntry> grants = response.Grants; // A list of grants that the specified service principal can retire.
-            bool truncated = response.Truncated; // A boolean that indicates whether there are more items in the list. Returns true when there are more items, or false when there are not.
+            List<Tag> tags = response.Tags;
+            bool? truncated = response.Truncated;
 
             #endregion
         }
 
         public void KeyManagementServicePutKeyPolicy()
         {
-            #region to-attach-a-key-policy-to-a-cmk-1481147345018
+            #region PutKeyPolicy-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.PutKeyPolicy(new PutKeyPolicyRequest 
+            var response = client.PutKeyPolicy(new PutKeyPolicyRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key to attach the key policy to. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-                Policy = "{
-    \"Version\": \"2012-10-17\",
-    \"Id\": \"custom-policy-2016-12-07\",
-    \"Statement\": [
-        {
-            \"Sid\": \"Enable IAM User Permissions\",
-            \"Effect\": \"Allow\",
-            \"Principal\": {
-                \"AWS\": \"arn:aws:iam::111122223333:root\"
-            },
-            \"Action\": \"kms:*\",
-            \"Resource\": \"*\"
-        },
-        {
-            \"Sid\": \"Allow access for Key Administrators\",
-            \"Effect\": \"Allow\",
-            \"Principal\": {
-                \"AWS\": [
-                    \"arn:aws:iam::111122223333:user/ExampleAdminUser\",
-                    \"arn:aws:iam::111122223333:role/ExampleAdminRole\"
-                ]
-            },
-            \"Action\": [
-                \"kms:Create*\",
-                \"kms:Describe*\",
-                \"kms:Enable*\",
-                \"kms:List*\",
-                \"kms:Put*\",
-                \"kms:Update*\",
-                \"kms:Revoke*\",
-                \"kms:Disable*\",
-                \"kms:Get*\",
-                \"kms:Delete*\",
-                \"kms:ScheduleKeyDeletion\",
-                \"kms:CancelKeyDeletion\"
-            ],
-            \"Resource\": \"*\"
-        },
-        {
-            \"Sid\": \"Allow use of the key\",
-            \"Effect\": \"Allow\",
-            \"Principal\": {
-                \"AWS\": \"arn:aws:iam::111122223333:role/ExamplePowerUserRole\"
-            },
-            \"Action\": [
-                \"kms:Encrypt\",
-                \"kms:Decrypt\",
-                \"kms:ReEncrypt*\",
-                \"kms:GenerateDataKey*\",
-                \"kms:DescribeKey\"
-            ],
-            \"Resource\": \"*\"
-        },
-        {
-            \"Sid\": \"Allow attachment of persistent resources\",
-            \"Effect\": \"Allow\",
-            \"Principal\": {
-                \"AWS\": \"arn:aws:iam::111122223333:role/ExamplePowerUserRole\"
-            },
-            \"Action\": [
-                \"kms:CreateGrant\",
-                \"kms:ListGrants\",
-                \"kms:RevokeGrant\"
-            ],
-            \"Resource\": \"*\",
-            \"Condition\": {
-                \"Bool\": {
-                    \"kms:GrantIsForAWSResource\": \"true\"
-                }
-            }
-        }
-    ]
-}
-", // The key policy document.
-                PolicyName = "default" // The name of the key policy.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab",
+                Policy = "{\n    \"Version\": \"2012-10-17\",\n    \"Id\": \"custom-policy-2016-12-07\",\n    \"Statement\": [\n        {\n            \"Sid\": \"Enable IAM User Permissions\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"AWS\": \"arn:aws:iam::111122223333:root\"\n            },\n            \"Action\": \"kms:*\",\n            \"Resource\": \"*\"\n        },\n        {\n            \"Sid\": \"Allow access for Key Administrators\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"AWS\": [\n                    \"arn:aws:iam::111122223333:user/ExampleAdminUser\",\n                    \"arn:aws:iam::111122223333:role/ExampleAdminRole\"\n                ]\n            },\n            \"Action\": [\n                \"kms:Create*\",\n                \"kms:Describe*\",\n                \"kms:Enable*\",\n                \"kms:List*\",\n                \"kms:Put*\",\n                \"kms:Update*\",\n                \"kms:Revoke*\",\n                \"kms:Disable*\",\n                \"kms:Get*\",\n                \"kms:Delete*\",\n                \"kms:ScheduleKeyDeletion\",\n                \"kms:CancelKeyDeletion\"\n            ],\n            \"Resource\": \"*\"\n        },\n        {\n            \"Sid\": \"Allow use of the key\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"AWS\": \"arn:aws:iam::111122223333:role/ExamplePowerUserRole\"\n            },\n            \"Action\": [\n                \"kms:Encrypt\",\n                \"kms:Decrypt\",\n                \"kms:ReEncrypt*\",\n                \"kms:GenerateDataKey*\",\n                \"kms:DescribeKey\"\n            ],\n            \"Resource\": \"*\"\n        },\n        {\n            \"Sid\": \"Allow attachment of persistent resources\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"AWS\": \"arn:aws:iam::111122223333:role/ExamplePowerUserRole\"\n            },\n            \"Action\": [\n                \"kms:CreateGrant\",\n                \"kms:ListGrants\",\n                \"kms:RevokeGrant\"\n            ],\n            \"Resource\": \"*\",\n            \"Condition\": {\n                \"Bool\": {\n                    \"kms:GrantIsForAWSResource\": \"true\"\n                }\n            }\n        }\n    ]\n}\n",
+                PolicyName = "default"
             });
 
 
@@ -1356,53 +720,53 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceReEncrypt()
         {
-            #region to-reencrypt-data-1481230358001
+            #region ReEncrypt-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.ReEncrypt(new ReEncryptRequest 
+            var response = client.ReEncrypt(new ReEncryptRequest
             {
-                CiphertextBlob = new MemoryStream(<binary data>), // The data to reencrypt.
-                DestinationKeyId = "0987dcba-09fe-87dc-65ba-ab0987654321" // The identifier of the KMS key to use to reencrypt the data. You can use any valid key identifier.
+                CiphertextBlob = new MemoryStream(<binary data>),
+                DestinationKeyId = "0987dcba-09fe-87dc-65ba-ab0987654321"
             });
 
-            MemoryStream ciphertextBlob = response.CiphertextBlob; // The reencrypted data.
-            string destinationEncryptionAlgorithm = response.DestinationEncryptionAlgorithm; // The encryption algorithm that was used to reencrypt the data.
-            string destinationKeyMaterialId = response.DestinationKeyMaterialId; // The identifier of the key material used to reencrypt the data.
-            string keyId = response.KeyId; // The ARN of the KMS key that was used to reencrypt the data.
-            string sourceEncryptionAlgorithm = response.SourceEncryptionAlgorithm; // The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.
-            string sourceKeyId = response.SourceKeyId; // The ARN of the KMS key that was originally used to encrypt the data.
-            string sourceKeyMaterialId = response.SourceKeyMaterialId; // The identifier of the key material used to originally encrypt the data.
+            MemoryStream ciphertextBlob = response.CiphertextBlob;
+            EncryptionAlgorithmSpec destinationEncryptionAlgorithm = response.DestinationEncryptionAlgorithm;
+            string destinationKeyMaterialId = response.DestinationKeyMaterialId;
+            string keyId = response.KeyId;
+            EncryptionAlgorithmSpec sourceEncryptionAlgorithm = response.SourceEncryptionAlgorithm;
+            string sourceKeyId = response.SourceKeyId;
+            string sourceKeyMaterialId = response.SourceKeyMaterialId;
 
             #endregion
         }
 
         public void KeyManagementServiceReplicateKey()
         {
-            #region to-replicate-a-multi-region-key-in-a-different-aws-region-1628622402887
+            #region ReplicateKey-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.ReplicateKey(new ReplicateKeyRequest 
+            var response = client.ReplicateKey(new ReplicateKeyRequest
             {
-                KeyId = "arn:aws:kms:us-east-1:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab", // The key ID or key ARN of the multi-Region primary key
-                ReplicaRegion = "us-west-2" // The Region of the new replica.
+                KeyId = "arn:aws:kms:us-east-1:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab",
+                ReplicaRegion = "us-west-2"
             });
 
-            KeyMetadata replicaKeyMetadata = response.ReplicaKeyMetadata; // An object that displays detailed information about the replica key.
-            string replicaPolicy = response.ReplicaPolicy; // The key policy of the replica key. If you don't specify a key policy, the replica key gets the default key policy for a KMS key.
-            List<Tag> replicaTags = response.ReplicaTags; // The tags on the replica key, if any.
+            KeyMetadata replicaKeyMetadata = response.ReplicaKeyMetadata;
+            string replicaPolicy = response.ReplicaPolicy;
+            List<Tag> replicaTags = response.ReplicaTags;
 
             #endregion
         }
 
         public void KeyManagementServiceRetireGrant()
         {
-            #region to-retire-a-grant-1481327028297
+            #region RetireGrant-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.RetireGrant(new RetireGrantRequest 
+            var response = client.RetireGrant(new RetireGrantRequest
             {
-                GrantId = "0c237476b39f8bc44e45212e08498fbe3151305030726c0590dd8d3e9f3d6a60", // The identifier of the grant to retire.
-                KeyId = "arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab" // The Amazon Resource Name (ARN) of the KMS key associated with the grant.
+                GrantId = "0c237476b39f8bc44e45212e08498fbe3151305030726c0590dd8d3e9f3d6a60",
+                KeyId = "arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
 
@@ -1411,13 +775,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceRevokeGrant()
         {
-            #region to-revoke-a-grant-1481329549302
+            #region RevokeGrant-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.RevokeGrant(new RevokeGrantRequest 
+            var response = client.RevokeGrant(new RevokeGrantRequest
             {
-                GrantId = "0c237476b39f8bc44e45212e08498fbe3151305030726c0590dd8d3e9f3d6a60", // The identifier of the grant to revoke.
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key associated with the grant. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                GrantId = "0c237476b39f8bc44e45212e08498fbe3151305030726c0590dd8d3e9f3d6a60",
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
 
@@ -1426,90 +790,73 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceRotateKeyOnDemand()
         {
-            #region to-perform-on-demand-rotation-of-key-material-1712499025700
+            #region RotateKeyOnDemand-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.RotateKeyOnDemand(new RotateKeyOnDemandRequest 
+            var response = client.RotateKeyOnDemand(new RotateKeyOnDemandRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose key material you want to initiate on-demand rotation on. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
-            string keyId = response.KeyId; // The KMS key that you initiated on-demand rotation on.
-
-            #endregion
-        }
-
-        public void KeyManagementServiceScheduleKeyDeletion()
-        {
-            #region to-schedule-a-cmk-for-deletion-1481331111094
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.ScheduleKeyDeletion(new ScheduleKeyDeletionRequest 
-            {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key to schedule for deletion. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-                PendingWindowInDays = 7 // The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key.
-            });
-
-            DateTime deletionDate = response.DeletionDate; // The date and time after which KMS deletes the KMS key.
-            string keyId = response.KeyId; // The ARN of the KMS key that is scheduled for deletion.
+            string keyId = response.KeyId;
 
             #endregion
         }
 
         public void KeyManagementServiceSign()
         {
-            #region to-digitally-sign-a-message-with-an-asymmetric-kms-key-1
+            #region Sign-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.Sign(new SignRequest 
+            var response = client.Sign(new SignRequest
             {
-                KeyId = "alias/ECC_signing_key", // The asymmetric KMS key to be used to generate the digital signature. This example uses an alias of the KMS key.
-                Message = new MemoryStream(<message to be signed>), // Message to be signed. Use Base-64 for the CLI.
-                MessageType = "RAW", // Indicates whether the message is RAW or a DIGEST.
-                SigningAlgorithm = "ECDSA_SHA_384" // The requested signing algorithm. This must be an algorithm that the KMS key supports.
+                KeyId = "alias/RSA_signing_key",
+                Message = new MemoryStream(<message digest to be signed>),
+                MessageType = "DIGEST",
+                SigningAlgorithm = "RSASSA_PKCS1_V1_5_SHA_256"
             });
 
-            string keyId = response.KeyId; // The key ARN of the asymmetric KMS key that was used to sign the message.
-            MemoryStream signature = response.Signature; // The digital signature of the message.
-            string signingAlgorithm = response.SigningAlgorithm; // The actual signing algorithm that was used to generate the signature.
+            string keyId = response.KeyId;
+            MemoryStream signature = response.Signature;
+            SigningAlgorithmSpec signingAlgorithm = response.SigningAlgorithm;
 
             #endregion
         }
 
         public void KeyManagementServiceSign()
         {
-            #region to-digitally-sign-a-message-digest-with-an-asymmetric-kms-key-2
+            #region Sign-2
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.Sign(new SignRequest 
+            var response = client.Sign(new SignRequest
             {
-                KeyId = "alias/RSA_signing_key", // The asymmetric KMS key to be used to generate the digital signature. This example uses an alias of the KMS key.
-                Message = new MemoryStream(<message digest to be signed>), // Message to be signed. Use Base-64 for the CLI.
-                MessageType = "DIGEST", // Indicates whether the message is RAW or a DIGEST. When it is RAW, KMS hashes the message before signing. When it is DIGEST, KMS skips the hashing step and signs the Message value.
-                SigningAlgorithm = "RSASSA_PKCS1_V1_5_SHA_256" // The requested signing algorithm. This must be an algorithm that the KMS key supports.
+                KeyId = "alias/ECC_signing_key",
+                Message = new MemoryStream(<message to be signed>),
+                MessageType = "RAW",
+                SigningAlgorithm = "ECDSA_SHA_384"
             });
 
-            string keyId = response.KeyId; // The key ARN of the asymmetric KMS key that was used to sign the message.
-            MemoryStream signature = response.Signature; // The digital signature of the message.
-            string signingAlgorithm = response.SigningAlgorithm; // The actual signing algorithm that was used to generate the signature.
+            string keyId = response.KeyId;
+            MemoryStream signature = response.Signature;
+            SigningAlgorithmSpec signingAlgorithm = response.SigningAlgorithm;
 
             #endregion
         }
 
         public void KeyManagementServiceTagResource()
         {
-            #region to-tag-a-cmk-1483997246518
+            #region TagResource-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key you are tagging. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab",
                 Tags = new List<Tag> {
                     new Tag {
                         TagKey = "Purpose",
                         TagValue = "Test"
                     }
-                } // A list of tags.
+                }
             });
 
 
@@ -1518,16 +865,16 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceUntagResource()
         {
-            #region to-remove-tags-from-a-cmk-1483997590962
+            #region UntagResource-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key whose tags you are removing.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab",
                 TagKeys = new List<string> {
                     "Purpose",
                     "CostCenter"
-                } // A list of tag keys. Provide only the tag keys, not the tag values.
+                }
             });
 
 
@@ -1536,13 +883,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceUpdateAlias()
         {
-            #region to-update-an-alias-1481572726920
+            #region UpdateAlias-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.UpdateAlias(new UpdateAliasRequest 
+            var response = client.UpdateAlias(new UpdateAliasRequest
             {
-                AliasName = "alias/ExampleAlias", // The alias to update.
-                TargetKeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key that the alias will refer to after this operation succeeds. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                AliasName = "alias/ExampleAlias",
+                TargetKeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
 
@@ -1551,13 +898,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceUpdateCustomKeyStore()
         {
-            #region to-edit-the-friendly-name-of-a-custom-key-store-1
+            #region UpdateCustomKeyStore-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
+            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest
             {
-                CustomKeyStoreId = "cks-1234567890abcdef0", // The ID of the custom key store that you are updating.
-                NewCustomKeyStoreName = "DevelopmentKeys" // A new friendly name for the custom key store.
+                CustomKeyStoreId = "cks-1234567890abcdef0",
+                NewCustomKeyStoreName = "DevelopmentKeys"
             });
 
 
@@ -1566,13 +913,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceUpdateCustomKeyStore()
         {
-            #region to-edit-the-properties-of-an-aws-cloudhsm-key-store-2
+            #region UpdateCustomKeyStore-2
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
+            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest
             {
-                CustomKeyStoreId = "cks-1234567890abcdef0", // The ID of the custom key store that you are updating.
-                KeyStorePassword = "ExamplePassword" // The password for the kmsuser crypto user in the CloudHSM cluster.
+                CustomKeyStoreId = "cks-1234567890abcdef0",
+                KeyStorePassword = "ExamplePassword"
             });
 
 
@@ -1581,13 +928,15 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceUpdateCustomKeyStore()
         {
-            #region to-associate-the-custom-key-store-with-a-different-but-related-aws-cloudhsm-cluster-3
+            #region UpdateCustomKeyStore-3
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
+            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest
             {
-                CloudHsmClusterId = "cluster-234abcdefABC", // The ID of the AWS CloudHSM cluster that you want to associate with the custom key store. This cluster must be related to the original CloudHSM cluster for this key store.
-                CustomKeyStoreId = "cks-1234567890abcdef0" // The ID of the custom key store that you are updating.
+                CustomKeyStoreId = "cks-1234567890abcdef0",
+                XksProxyConnectivity = "VPC_ENDPOINT_SERVICE",
+                XksProxyUriEndpoint = "https://myproxy-private.xks.example.com",
+                XksProxyVpcEndpointServiceName = "com.amazonaws.vpce.us-east-1.vpce-svc-example"
             });
 
 
@@ -1596,16 +945,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceUpdateCustomKeyStore()
         {
-            #region to-update-the-proxy-authentication-credential-of-an-external-key-store-4
+            #region UpdateCustomKeyStore-4
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
+            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest
             {
-                CustomKeyStoreId = "cks-1234567890abcdef0", // Identifies the custom key store
-                XksProxyAuthenticationCredential = new XksProxyAuthenticationCredentialType {
-                    AccessKeyId = "ABCDE12345670EXAMPLE",
-                    RawSecretAccessKey = "DXjSUawnel2fr6SKC7G25CNxTyWKE5PF9XX6H/u9pSo="
-                } // Specifies the values in the proxy authentication credential
+                CustomKeyStoreId = "cks-1234567890abcdef0",
+                XksProxyUriPath = "/new-path/kms/xks/v1"
             });
 
 
@@ -1614,30 +960,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceUpdateCustomKeyStore()
         {
-            #region to-update-the-xks-proxy-api-path-of-an-external-key-store-5
+            #region UpdateCustomKeyStore-5
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
+            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest
             {
-                CustomKeyStoreId = "cks-1234567890abcdef0", // The ID of the custom key store that you are updating
-                XksProxyUriPath = "/new-path/kms/xks/v1" // The URI path to the external key store proxy APIs
-            });
-
-
-            #endregion
-        }
-
-        public void KeyManagementServiceUpdateCustomKeyStore()
-        {
-            #region to-update-the-proxy-connectivity-of-an-external-key-store-to-vpc_endpoint_service-6
-
-            var client = new AmazonKeyManagementServiceClient();
-            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
-            {
-                CustomKeyStoreId = "cks-1234567890abcdef0", // Identifies the custom key store
-                XksProxyConnectivity = "VPC_ENDPOINT_SERVICE", // Specifies the connectivity option
-                XksProxyUriEndpoint = "https://myproxy-private.xks.example.com", // Specifies the URI endpoint that AWS KMS uses when communicating with the external key store proxy
-                XksProxyVpcEndpointServiceName = "com.amazonaws.vpce.us-east-1.vpce-svc-example" // Specifies the name of the VPC endpoint service that the proxy uses for communication
+                CloudHsmClusterId = "cluster-234abcdefABC",
+                CustomKeyStoreId = "cks-1234567890abcdef0"
             });
 
 
@@ -1646,13 +975,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceUpdateKeyDescription()
         {
-            #region to-update-the-description-of-a-cmk-1481574808619
+            #region UpdateKeyDescription-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.UpdateKeyDescription(new UpdateKeyDescriptionRequest 
+            var response = client.UpdateKeyDescription(new UpdateKeyDescriptionRequest
             {
-                Description = "Example description that indicates the intended use of this KMS key.", // The updated description.
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose description you are updating. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                Description = "Example description that indicates the intended use of this KMS key.",
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
             });
 
 
@@ -1661,13 +990,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceUpdatePrimaryRegion()
         {
-            #region to-update-the-primary-region-of-a-multi-region-kms-key-1660249555577
+            #region UpdatePrimaryRegion-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.UpdatePrimaryRegion(new UpdatePrimaryRegionRequest 
+            var response = client.UpdatePrimaryRegion(new UpdatePrimaryRegionRequest
             {
-                KeyId = "arn:aws:kms:us-west-1:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab", // The current primary key.
-                PrimaryRegion = "eu-central-1" // The Region of the replica key that will become the primary key.
+                KeyId = "arn:aws:kms:us-west-1:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab",
+                PrimaryRegion = "eu-central-1"
             });
 
 
@@ -1676,73 +1005,70 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceVerify()
         {
-            #region to-use-an-asymmetric-kms-key-to-verify-a-digital-signature-1
+            #region Verify-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.Verify(new VerifyRequest 
+            var response = client.Verify(new VerifyRequest
             {
-                KeyId = "alias/ECC_signing_key", // The asymmetric KMS key to be used to verify the digital signature. This example uses an alias to identify the KMS key.
-                Message = new MemoryStream(<message to be verified>), // The message that was signed.
-                MessageType = "RAW", // Indicates whether the message is RAW or a DIGEST.
-                Signature = new MemoryStream(<binary data>), // The signature to be verified.
-                SigningAlgorithm = "ECDSA_SHA_384" // The signing algorithm to be used to verify the signature.
+                KeyId = "alias/ECC_signing_key",
+                Message = new MemoryStream(<message to be verified>),
+                MessageType = "RAW",
+                Signature = new MemoryStream(<binary data>),
+                SigningAlgorithm = "ECDSA_SHA_384"
             });
 
-            string keyId = response.KeyId; // The key ARN of the asymmetric KMS key that was used to verify the digital signature.
-            bool signatureValid = response.SignatureValid; // A value of 'true' Indicates that the signature was verified. If verification fails, the call to Verify fails.
-            string signingAlgorithm = response.SigningAlgorithm; // The signing algorithm that was used to verify the signature.
+            string keyId = response.KeyId;
+            bool? signatureValid = response.SignatureValid;
+            SigningAlgorithmSpec signingAlgorithm = response.SigningAlgorithm;
 
             #endregion
         }
 
         public void KeyManagementServiceVerify()
         {
-            #region to-use-an-asymmetric-kms-key-to-verify-a-digital-signature-on-a-message-digest-2
+            #region Verify-2
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.Verify(new VerifyRequest 
+            var response = client.Verify(new VerifyRequest
             {
-                KeyId = "arn:aws:kms:us-east-2:111122223333:key/0987dcba-09fe-87dc-65ba-ab0987654321", // The asymmetric KMS key to be used to verify the digital signature. This example uses an alias to identify the KMS key.
-                Message = new MemoryStream(<message digest to be verified>), // The message that was signed.
-                MessageType = "DIGEST", // Indicates whether the message is RAW or a DIGEST. When it is RAW, KMS hashes the message before signing. When it is DIGEST, KMS skips the hashing step and signs the Message value.
-                Signature = new MemoryStream(<binary data>), // The signature to be verified.
-                SigningAlgorithm = "RSASSA_PSS_SHA_512" // The signing algorithm to be used to verify the signature.
+                KeyId = "arn:aws:kms:us-east-2:111122223333:key/0987dcba-09fe-87dc-65ba-ab0987654321",
+                Message = new MemoryStream(<message digest to be verified>),
+                MessageType = "DIGEST",
+                Signature = new MemoryStream(<binary data>),
+                SigningAlgorithm = "RSASSA_PSS_SHA_512"
             });
 
-            string keyId = response.KeyId; // The key ARN of the asymmetric KMS key that was used to verify the digital signature.
-            bool signatureValid = response.SignatureValid; // A value of 'true' Indicates that the signature was verified. If verification fails, the call to Verify fails.
-            string signingAlgorithm = response.SigningAlgorithm; // The signing algorithm that was used to verify the signature.
+            string keyId = response.KeyId;
+            bool? signatureValid = response.SignatureValid;
+            SigningAlgorithmSpec signingAlgorithm = response.SigningAlgorithm;
 
             #endregion
         }
 
         public void KeyManagementServiceVerifyMac()
         {
-            #region to-verify-an-hmac-1631570863401
+            #region VerifyMac-1
 
             var client = new AmazonKeyManagementServiceClient();
-            var response = client.VerifyMac(new VerifyMacRequest 
+            var response = client.VerifyMac(new VerifyMacRequest
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The HMAC KMS key input to the HMAC algorithm.
-                Mac = new MemoryStream(<HMAC_TAG>), // The HMAC to be verified.
-                MacAlgorithm = "HMAC_SHA_384", // The HMAC algorithm requested for the operation.
-                Message = new MemoryStream(Hello World) // The message input to the HMAC algorithm.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab",
+                Mac = new MemoryStream(<HMAC_TAG>),
+                MacAlgorithm = "HMAC_SHA_384",
+                Message = new MemoryStream(Hello World)
             });
 
-            string keyId = response.KeyId; // The key ARN of the HMAC key used in the operation.
-            string macAlgorithm = response.MacAlgorithm; // The HMAC algorithm used in the operation.
-            bool macValid = response.MacValid; // A value of 'true' indicates that verification succeeded. If verification fails, the call to VerifyMac fails.
+            string keyId = response.KeyId;
+            MacAlgorithmSpec macAlgorithm = response.MacAlgorithm;
+            bool? macValid = response.MacValid;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

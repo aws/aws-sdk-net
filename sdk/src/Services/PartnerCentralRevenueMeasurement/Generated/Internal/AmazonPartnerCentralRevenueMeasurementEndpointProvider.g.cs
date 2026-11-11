@@ -26,7 +26,7 @@ using Amazon.PartnerCentralRevenueMeasurement.Endpoints;
 namespace Amazon.PartnerCentralRevenueMeasurement.Internal
 {
     /// <summary>
-    /// Amazon PartnerCentralRevenueMeasurement endpoint provider.
+    /// Partner Central Revenue Measurement API endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PartnerCentralRevenueMeasurementEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

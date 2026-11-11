@@ -27,12 +27,12 @@ using Amazon.CloudWatchRUM.Internal;
 namespace Amazon.CloudWatchRUM
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudWatchRUM service
+    /// Configuration for accessing CloudWatch RUM
     /// </summary>
     public partial class AmazonCloudWatchRUMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("RUM", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("RUM", "4.0.100.26");
 
         private static readonly AmazonCloudWatchRUMEndpointResolver EndpointResolver =
             new AmazonCloudWatchRUMEndpointResolver();

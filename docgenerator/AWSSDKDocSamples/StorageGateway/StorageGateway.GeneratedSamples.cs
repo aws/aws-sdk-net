@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
     {
         public void StorageGatewayActivateGateway()
         {
-            #region to-activate-the-gateway-1471281611207
+            #region ActivateGateway-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.ActivateGateway(new ActivateGatewayRequest 
+            var response = client.ActivateGateway(new ActivateGatewayRequest
             {
                 ActivationKey = "29AV1-3OFV9-VVIUB-NKT0I-LRO6V",
                 GatewayName = "My_Gateway",
@@ -34,10 +35,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayAddCache()
         {
-            #region to-add-a-cache-1471043606854
+            #region AddCache-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.AddCache(new AddCacheRequest 
+            var response = client.AddCache(new AddCacheRequest
             {
                 DiskIds = new List<string> {
                     "pci-0000:03:00.0-scsi-0:0:0:0",
@@ -53,10 +54,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayAddTagsToResource()
         {
-            #region to-add-tags-to-resource-1471283689460
+            #region AddTagsToResource-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.AddTagsToResource(new AddTagsToResourceRequest 
+            var response = client.AddTagsToResource(new AddTagsToResourceRequest
             {
                 ResourceARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-11A2222B",
                 Tags = new List<Tag> {
@@ -74,10 +75,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayAddUploadBuffer()
         {
-            #region to-add-upload-buffer-on-local-disk-1471293902847
+            #region AddUploadBuffer-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.AddUploadBuffer(new AddUploadBufferRequest 
+            var response = client.AddUploadBuffer(new AddUploadBufferRequest
             {
                 DiskIds = new List<string> {
                     "pci-0000:03:00.0-scsi-0:0:0:0",
@@ -93,10 +94,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayAddWorkingStorage()
         {
-            #region to-add-storage-on-local-disk-1471294305401
+            #region AddWorkingStorage-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.AddWorkingStorage(new AddWorkingStorageRequest 
+            var response = client.AddWorkingStorage(new AddWorkingStorageRequest
             {
                 DiskIds = new List<string> {
                     "pci-0000:03:00.0-scsi-0:0:0:0",
@@ -112,10 +113,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayCancelArchival()
         {
-            #region to-cancel-virtual-tape-archiving-1471294865203
+            #region CancelArchival-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.CancelArchival(new CancelArchivalRequest 
+            var response = client.CancelArchival(new CancelArchivalRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B",
                 TapeARN = "arn:aws:storagegateway:us-east-1:999999999999:tape/AMZN01A2A4"
@@ -128,10 +129,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayCancelRetrieval()
         {
-            #region to-cancel-virtual-tape-retrieval-1471295704491
+            #region CancelRetrieval-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.CancelRetrieval(new CancelRetrievalRequest 
+            var response = client.CancelRetrieval(new CancelRetrievalRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B",
                 TapeARN = "arn:aws:storagegateway:us-east-1:999999999999:tape/AMZN01A2A4"
@@ -144,10 +145,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayCreateCachediSCSIVolume()
         {
-            #region to-create-a-cached-iscsi-volume-1471296661787
+            #region CreateCachediSCSIVolume-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.CreateCachediSCSIVolume(new CreateCachediSCSIVolumeRequest 
+            var response = client.CreateCachediSCSIVolume(new CreateCachediSCSIVolumeRequest
             {
                 ClientToken = "cachedvol112233",
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B",
@@ -165,10 +166,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayCreateSnapshot()
         {
-            #region to-create-a-snapshot-of-a-gateway-volume-1471301469561
+            #region CreateSnapshot-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.CreateSnapshot(new CreateSnapshotRequest 
+            var response = client.CreateSnapshot(new CreateSnapshotRequest
             {
                 SnapshotDescription = "My root volume snapshot as of 10/03/2017",
                 VolumeARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB"
@@ -182,10 +183,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayCreateSnapshotFromVolumeRecoveryPoint()
         {
-            #region to-create-a-snapshot-of-a-gateway-volume-1471301469561
+            #region CreateSnapshotFromVolumeRecoveryPoint-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.CreateSnapshotFromVolumeRecoveryPoint(new CreateSnapshotFromVolumeRecoveryPointRequest 
+            var response = client.CreateSnapshotFromVolumeRecoveryPoint(new CreateSnapshotFromVolumeRecoveryPointRequest
             {
                 SnapshotDescription = "My root volume snapshot as of 2017-06-30T10:10:10.000Z",
                 VolumeARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB"
@@ -200,10 +201,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayCreateStorediSCSIVolume()
         {
-            #region to-create-a-stored-iscsi-volume-1471367662813
+            #region CreateStorediSCSIVolume-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.CreateStorediSCSIVolume(new CreateStorediSCSIVolumeRequest 
+            var response = client.CreateStorediSCSIVolume(new CreateStorediSCSIVolumeRequest
             {
                 DiskId = "pci-0000:03:00.0-scsi-0:0:0:0",
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B",
@@ -215,17 +216,17 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
             string targetARN = response.TargetARN;
             string volumeARN = response.VolumeARN;
-            long volumeSizeInBytes = response.VolumeSizeInBytes;
+            long? volumeSizeInBytes = response.VolumeSizeInBytes;
 
             #endregion
         }
 
         public void StorageGatewayCreateTapes()
         {
-            #region to-create-a-virtual-tape-1471372061659
+            #region CreateTapes-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.CreateTapes(new CreateTapesRequest 
+            var response = client.CreateTapes(new CreateTapesRequest
             {
                 ClientToken = "77777",
                 GatewayARN = "arn:aws:storagegateway:us-east-1:999999999999:gateway/sgw-12A3456B",
@@ -241,10 +242,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayCreateTapeWithBarcode()
         {
-            #region to-create-a-virtual-tape-using-a-barcode-1471371842452
+            #region CreateTapeWithBarcode-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.CreateTapeWithBarcode(new CreateTapeWithBarcodeRequest 
+            var response = client.CreateTapeWithBarcode(new CreateTapeWithBarcodeRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:999999999999:gateway/sgw-12A3456B",
                 TapeBarcode = "TEST12345",
@@ -258,10 +259,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDeleteBandwidthRateLimit()
         {
-            #region to-delete-bandwidth-rate-limits-of-gateway-1471373225520
+            #region DeleteBandwidthRateLimit-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DeleteBandwidthRateLimit(new DeleteBandwidthRateLimitRequest 
+            var response = client.DeleteBandwidthRateLimit(new DeleteBandwidthRateLimitRequest
             {
                 BandwidthType = "All",
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
@@ -274,10 +275,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDeleteChapCredentials()
         {
-            #region to-delete-chap-credentials-1471375025612
+            #region DeleteChapCredentials-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DeleteChapCredentials(new DeleteChapCredentialsRequest 
+            var response = client.DeleteChapCredentials(new DeleteChapCredentialsRequest
             {
                 InitiatorName = "iqn.1991-05.com.microsoft:computername.domain.example.com",
                 TargetARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume"
@@ -291,10 +292,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDeleteGateway()
         {
-            #region to-delete-a-gatgeway-1471381697333
+            #region DeleteGateway-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DeleteGateway(new DeleteGatewayRequest 
+            var response = client.DeleteGateway(new DeleteGatewayRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
             });
@@ -306,10 +307,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDeleteSnapshotSchedule()
         {
-            #region to-delete-a-snapshot-of-a-volume-1471382234377
+            #region DeleteSnapshotSchedule-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DeleteSnapshotSchedule(new DeleteSnapshotScheduleRequest 
+            var response = client.DeleteSnapshotSchedule(new DeleteSnapshotScheduleRequest
             {
                 VolumeARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB"
             });
@@ -321,10 +322,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDeleteTape()
         {
-            #region to-delete-a-virtual-tape-1471382444157
+            #region DeleteTape-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DeleteTape(new DeleteTapeRequest 
+            var response = client.DeleteTape(new DeleteTapeRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:204469490176:gateway/sgw-12A3456B",
                 TapeARN = "arn:aws:storagegateway:us-east-1:204469490176:tape/TEST05A2A0"
@@ -337,10 +338,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDeleteTapeArchive()
         {
-            #region to-delete-a-virtual-tape-from-the-shelf-vts-1471383964329
+            #region DeleteTapeArchive-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DeleteTapeArchive(new DeleteTapeArchiveRequest 
+            var response = client.DeleteTapeArchive(new DeleteTapeArchiveRequest
             {
                 TapeARN = "arn:aws:storagegateway:us-east-1:204469490176:tape/TEST05A2A0"
             });
@@ -352,10 +353,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDeleteVolume()
         {
-            #region to-delete-a-gateway-volume-1471384418416
+            #region DeleteVolume-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DeleteVolume(new DeleteVolumeRequest 
+            var response = client.DeleteVolume(new DeleteVolumeRequest
             {
                 VolumeARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB"
             });
@@ -367,16 +368,16 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDescribeBandwidthRateLimit()
         {
-            #region to-describe-the-bandwidth-rate-limits-of-a-gateway-1471384826404
+            #region DescribeBandwidthRateLimit-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeBandwidthRateLimit(new DescribeBandwidthRateLimitRequest 
+            var response = client.DescribeBandwidthRateLimit(new DescribeBandwidthRateLimitRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
             });
 
-            long averageDownloadRateLimitInBitsPerSec = response.AverageDownloadRateLimitInBitsPerSec;
-            long averageUploadRateLimitInBitsPerSec = response.AverageUploadRateLimitInBitsPerSec;
+            long? averageDownloadRateLimitInBitsPerSec = response.AverageDownloadRateLimitInBitsPerSec;
+            long? averageUploadRateLimitInBitsPerSec = response.AverageUploadRateLimitInBitsPerSec;
             string gatewayARN = response.GatewayARN;
 
             #endregion
@@ -384,19 +385,19 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDescribeCache()
         {
-            #region to-describe-cache-information-1471385756036
+            #region DescribeCache-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeCache(new DescribeCacheRequest 
+            var response = client.DescribeCache(new DescribeCacheRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
             });
 
-            long cacheAllocatedInBytes = response.CacheAllocatedInBytes;
-            double cacheDirtyPercentage = response.CacheDirtyPercentage;
-            double cacheHitPercentage = response.CacheHitPercentage;
-            double cacheMissPercentage = response.CacheMissPercentage;
-            double cacheUsedPercentage = response.CacheUsedPercentage;
+            long? cacheAllocatedInBytes = response.CacheAllocatedInBytes;
+            double? cacheDirtyPercentage = response.CacheDirtyPercentage;
+            double? cacheHitPercentage = response.CacheHitPercentage;
+            double? cacheMissPercentage = response.CacheMissPercentage;
+            double? cacheUsedPercentage = response.CacheUsedPercentage;
             List<string> diskIds = response.DiskIds;
             string gatewayARN = response.GatewayARN;
 
@@ -405,10 +406,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDescribeCachediSCSIVolumes()
         {
-            #region to-describe-gateway-cached-iscsi-volumes-1471458094649
+            #region DescribeCachediSCSIVolumes-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeCachediSCSIVolumes(new DescribeCachediSCSIVolumesRequest 
+            var response = client.DescribeCachediSCSIVolumes(new DescribeCachediSCSIVolumesRequest
             {
                 VolumeARNs = new List<string> {
                     "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB"
@@ -422,10 +423,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDescribeChapCredentials()
         {
-            #region to-describe-chap-credetnitals-for-an-iscsi-1471467462967
+            #region DescribeChapCredentials-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeChapCredentials(new DescribeChapCredentialsRequest 
+            var response = client.DescribeChapCredentials(new DescribeChapCredentialsRequest
             {
                 TargetARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume"
             });
@@ -437,10 +438,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDescribeGatewayInformation()
         {
-            #region to-describe-metadata-about-the-gateway-1471467849079
+            #region DescribeGatewayInformation-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeGatewayInformation(new DescribeGatewayInformationRequest 
+            var response = client.DescribeGatewayInformation(new DescribeGatewayInformationRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
             });
@@ -460,18 +461,18 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDescribeMaintenanceStartTime()
         {
-            #region to-describe-gateways-maintenance-start-time-1471470727387
+            #region DescribeMaintenanceStartTime-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeMaintenanceStartTime(new DescribeMaintenanceStartTimeRequest 
+            var response = client.DescribeMaintenanceStartTime(new DescribeMaintenanceStartTimeRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
             });
 
-            int dayOfWeek = response.DayOfWeek;
+            int? dayOfWeek = response.DayOfWeek;
             string gatewayARN = response.GatewayARN;
-            int hourOfDay = response.HourOfDay;
-            int minuteOfHour = response.MinuteOfHour;
+            int? hourOfDay = response.HourOfDay;
+            int? minuteOfHour = response.MinuteOfHour;
             string timezone = response.Timezone;
 
             #endregion
@@ -479,17 +480,17 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDescribeSnapshotSchedule()
         {
-            #region to-describe-snapshot-schedule-for-gateway-volume-1471471139538
+            #region DescribeSnapshotSchedule-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeSnapshotSchedule(new DescribeSnapshotScheduleRequest 
+            var response = client.DescribeSnapshotSchedule(new DescribeSnapshotScheduleRequest
             {
                 VolumeARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB"
             });
 
             string description = response.Description;
-            int recurrenceInHours = response.RecurrenceInHours;
-            int startAt = response.StartAt;
+            int? recurrenceInHours = response.RecurrenceInHours;
+            int? startAt = response.StartAt;
             string timezone = response.Timezone;
             string volumeARN = response.VolumeARN;
 
@@ -498,10 +499,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDescribeStorediSCSIVolumes()
         {
-            #region to-describe-the-volumes-of-a-gateway-1471472640660
+            #region DescribeStorediSCSIVolumes-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeStorediSCSIVolumes(new DescribeStorediSCSIVolumesRequest 
+            var response = client.DescribeStorediSCSIVolumes(new DescribeStorediSCSIVolumesRequest
             {
                 VolumeARNs = new List<string> {
                     "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB"
@@ -513,52 +514,12 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
             #endregion
         }
 
-        public void StorageGatewayDescribeTapeArchives()
-        {
-            #region to-describe-virtual-tapes-in-the-vts-1471473188198
-
-            var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeTapeArchives(new DescribeTapeArchivesRequest 
-            {
-                Limit = 123,
-                Marker = "1",
-                TapeARNs = new List<string> {
-                    "arn:aws:storagegateway:us-east-1:999999999999:tape/AM08A1AD",
-                    "arn:aws:storagegateway:us-east-1:999999999999:tape/AMZN01A2A4"
-                }
-            });
-
-            string marker = response.Marker;
-            List<TapeArchive> tapeArchives = response.TapeArchives;
-
-            #endregion
-        }
-
-        public void StorageGatewayDescribeTapeRecoveryPoints()
-        {
-            #region to-describe-virtual-tape-recovery-points-1471542042026
-
-            var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeTapeRecoveryPoints(new DescribeTapeRecoveryPointsRequest 
-            {
-                GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B",
-                Limit = 1,
-                Marker = "1"
-            });
-
-            string gatewayARN = response.GatewayARN;
-            string marker = response.Marker;
-            List<TapeRecoveryPointInfo> tapeRecoveryPointInfos = response.TapeRecoveryPointInfos;
-
-            #endregion
-        }
-
         public void StorageGatewayDescribeTapes()
         {
-            #region to-describe-virtual-tapes-associated-with-gateway-1471629287727
+            #region DescribeTapes-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeTapes(new DescribeTapesRequest 
+            var response = client.DescribeTapes(new DescribeTapesRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:999999999999:gateway/sgw-12A3456B",
                 Limit = 2,
@@ -577,52 +538,51 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDescribeUploadBuffer()
         {
-            #region to-describe-upload-buffer-of-gateway-1471631099003
+            #region DescribeUploadBuffer-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeUploadBuffer(new DescribeUploadBufferRequest 
+            var response = client.DescribeUploadBuffer(new DescribeUploadBufferRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
             });
 
             List<string> diskIds = response.DiskIds;
             string gatewayARN = response.GatewayARN;
-            long uploadBufferAllocatedInBytes = response.UploadBufferAllocatedInBytes;
-            long uploadBufferUsedInBytes = response.UploadBufferUsedInBytes;
+            long? uploadBufferAllocatedInBytes = response.UploadBufferAllocatedInBytes;
+            long? uploadBufferUsedInBytes = response.UploadBufferUsedInBytes;
 
             #endregion
         }
 
         public void StorageGatewayDescribeUploadBuffer()
         {
-            #region to-describe-upload-buffer-of-a-gateway--1471904566370
+            #region DescribeUploadBuffer-2
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeUploadBuffer(new DescribeUploadBufferRequest 
+            var response = client.DescribeUploadBuffer(new DescribeUploadBufferRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
             });
 
             List<string> diskIds = response.DiskIds;
             string gatewayARN = response.GatewayARN;
-            long uploadBufferAllocatedInBytes = response.UploadBufferAllocatedInBytes;
-            long uploadBufferUsedInBytes = response.UploadBufferUsedInBytes;
+            long? uploadBufferAllocatedInBytes = response.UploadBufferAllocatedInBytes;
+            long? uploadBufferUsedInBytes = response.UploadBufferUsedInBytes;
 
             #endregion
         }
 
         public void StorageGatewayDescribeVTLDevices()
         {
-            #region to-describe-virtual-tape-library-vtl-devices-of-a-single-gateway-1471906071410
+            #region DescribeVTLDevices-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeVTLDevices(new DescribeVTLDevicesRequest 
+            var response = client.DescribeVTLDevices(new DescribeVTLDevicesRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:999999999999:gateway/sgw-12A3456B",
                 Limit = 123,
                 Marker = "1",
                 VTLDeviceARNs = new List<string> {
-                    
                 }
             });
 
@@ -635,28 +595,28 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayDescribeWorkingStorage()
         {
-            #region to-describe-the-working-storage-of-a-gateway-depreciated-1472070842332
+            #region DescribeWorkingStorage-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DescribeWorkingStorage(new DescribeWorkingStorageRequest 
+            var response = client.DescribeWorkingStorage(new DescribeWorkingStorageRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
             });
 
             List<string> diskIds = response.DiskIds;
             string gatewayARN = response.GatewayARN;
-            long workingStorageAllocatedInBytes = response.WorkingStorageAllocatedInBytes;
-            long workingStorageUsedInBytes = response.WorkingStorageUsedInBytes;
+            long? workingStorageAllocatedInBytes = response.WorkingStorageAllocatedInBytes;
+            long? workingStorageUsedInBytes = response.WorkingStorageUsedInBytes;
 
             #endregion
         }
 
         public void StorageGatewayDisableGateway()
         {
-            #region to-disable-a-gateway-when-it-is-no-longer-functioning-1472076046936
+            #region DisableGateway-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.DisableGateway(new DisableGatewayRequest 
+            var response = client.DisableGateway(new DisableGatewayRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
             });
@@ -668,10 +628,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayListGateways()
         {
-            #region to-lists-region-specific-gateways-per-aws-account-1472077860657
+            #region ListGateways-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.ListGateways(new ListGatewaysRequest 
+            var response = client.ListGateways(new ListGatewaysRequest
             {
                 Limit = 2,
                 Marker = "1"
@@ -685,10 +645,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayListLocalDisks()
         {
-            #region to-list-the-gateways-local-disks-1472079564618
+            #region ListLocalDisks-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.ListLocalDisks(new ListLocalDisksRequest 
+            var response = client.ListLocalDisks(new ListLocalDisksRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
             });
@@ -701,10 +661,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayListTagsForResource()
         {
-            #region to-list-tags-that-have-been-added-to-a-resource-1472080268972
+            #region ListTagsForResource-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 Limit = 1,
                 Marker = "1",
@@ -720,10 +680,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayListVolumeRecoveryPoints()
         {
-            #region to-list-recovery-points-for-a-gateway-1472143015088
+            #region ListVolumeRecoveryPoints-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.ListVolumeRecoveryPoints(new ListVolumeRecoveryPointsRequest 
+            var response = client.ListVolumeRecoveryPoints(new ListVolumeRecoveryPointsRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
             });
@@ -736,10 +696,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayListVolumes()
         {
-            #region to-list-the-iscsi-stored-volumes-of-a-gateway-1472145723653
+            #region ListVolumes-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.ListVolumes(new ListVolumesRequest 
+            var response = client.ListVolumes(new ListVolumesRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B",
                 Limit = 2,
@@ -755,10 +715,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayRemoveTagsFromResource()
         {
-            #region to-remove-tags-from-a-resource-1472147210553
+            #region RemoveTagsFromResource-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.RemoveTagsFromResource(new RemoveTagsFromResourceRequest 
+            var response = client.RemoveTagsFromResource(new RemoveTagsFromResourceRequest
             {
                 ResourceARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-11A2222B",
                 TagKeys = new List<string> {
@@ -774,10 +734,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayResetCache()
         {
-            #region to-reset-cache-disks-in-error-status-1472148909807
+            #region ResetCache-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.ResetCache(new ResetCacheRequest 
+            var response = client.ResetCache(new ResetCacheRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-13B4567C"
             });
@@ -789,10 +749,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayRetrieveTapeArchive()
         {
-            #region to-retrieve-an-archived-tape-from-the-vts-1472149812358
+            #region RetrieveTapeArchive-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.RetrieveTapeArchive(new RetrieveTapeArchiveRequest 
+            var response = client.RetrieveTapeArchive(new RetrieveTapeArchiveRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:999999999999:gateway/sgw-12A3456B",
                 TapeARN = "arn:aws:storagegateway:us-east-1:999999999999:tape/TEST0AA2AF"
@@ -805,10 +765,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayRetrieveTapeRecoveryPoint()
         {
-            #region to-retrieve-the-recovery-point-of-a-virtual-tape-1472150014805
+            #region RetrieveTapeRecoveryPoint-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.RetrieveTapeRecoveryPoint(new RetrieveTapeRecoveryPointRequest 
+            var response = client.RetrieveTapeRecoveryPoint(new RetrieveTapeRecoveryPointRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:999999999999:gateway/sgw-12A3456B",
                 TapeARN = "arn:aws:storagegateway:us-east-1:999999999999:tape/TEST0AA2AF"
@@ -821,10 +781,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewaySetLocalConsolePassword()
         {
-            #region to-set-a-password-for-your-vm-1472150202632
+            #region SetLocalConsolePassword-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.SetLocalConsolePassword(new SetLocalConsolePasswordRequest 
+            var response = client.SetLocalConsolePassword(new SetLocalConsolePasswordRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:999999999999:gateway/sgw-12A3456B",
                 LocalConsolePassword = "PassWordMustBeAtLeast6Chars."
@@ -837,10 +797,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayShutdownGateway()
         {
-            #region to-shut-down-a-gateway-service-1472150508835
+            #region ShutdownGateway-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.ShutdownGateway(new ShutdownGatewayRequest 
+            var response = client.ShutdownGateway(new ShutdownGatewayRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:999999999999:gateway/sgw-12A3456B"
             });
@@ -852,10 +812,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayStartGateway()
         {
-            #region to-start-a-gateway-service-1472150722315
+            #region StartGateway-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.StartGateway(new StartGatewayRequest 
+            var response = client.StartGateway(new StartGatewayRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:999999999999:gateway/sgw-12A3456B"
             });
@@ -867,10 +827,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayUpdateBandwidthRateLimit()
         {
-            #region to-update-the-bandwidth-rate-limits-of-a-gateway-1472151016202
+            #region UpdateBandwidthRateLimit-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.UpdateBandwidthRateLimit(new UpdateBandwidthRateLimitRequest 
+            var response = client.UpdateBandwidthRateLimit(new UpdateBandwidthRateLimitRequest
             {
                 AverageDownloadRateLimitInBitsPerSec = 102400,
                 AverageUploadRateLimitInBitsPerSec = 51200,
@@ -884,10 +844,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayUpdateChapCredentials()
         {
-            #region to-update-chap-credentials-for-an-iscsi-target-1472151325795
+            #region UpdateChapCredentials-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.UpdateChapCredentials(new UpdateChapCredentialsRequest 
+            var response = client.UpdateChapCredentials(new UpdateChapCredentialsRequest
             {
                 InitiatorName = "iqn.1991-05.com.microsoft:computername.domain.example.com",
                 SecretToAuthenticateInitiator = "111111111111",
@@ -903,10 +863,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayUpdateGatewayInformation()
         {
-            #region to-update-a-gateways-metadata-1472151688693
+            #region UpdateGatewayInformation-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.UpdateGatewayInformation(new UpdateGatewayInformationRequest 
+            var response = client.UpdateGatewayInformation(new UpdateGatewayInformationRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B",
                 GatewayName = "MyGateway2",
@@ -921,10 +881,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayUpdateGatewaySoftwareNow()
         {
-            #region to-update-a-gateways-vm-software-1472152020929
+            #region UpdateGatewaySoftwareNow-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.UpdateGatewaySoftwareNow(new UpdateGatewaySoftwareNowRequest 
+            var response = client.UpdateGatewaySoftwareNow(new UpdateGatewaySoftwareNowRequest
             {
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
             });
@@ -936,10 +896,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayUpdateMaintenanceStartTime()
         {
-            #region to-update-a-gateways-maintenance-start-time-1472152552031
+            #region UpdateMaintenanceStartTime-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.UpdateMaintenanceStartTime(new UpdateMaintenanceStartTimeRequest 
+            var response = client.UpdateMaintenanceStartTime(new UpdateMaintenanceStartTimeRequest
             {
                 DayOfWeek = 2,
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B",
@@ -954,10 +914,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayUpdateSnapshotSchedule()
         {
-            #region to-update-a-volume-snapshot-schedule-1472152757068
+            #region UpdateSnapshotSchedule-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.UpdateSnapshotSchedule(new UpdateSnapshotScheduleRequest 
+            var response = client.UpdateSnapshotSchedule(new UpdateSnapshotScheduleRequest
             {
                 Description = "Hourly snapshot",
                 RecurrenceInHours = 1,
@@ -972,10 +932,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
 
         public void StorageGatewayUpdateVTLDeviceType()
         {
-            #region to-update-a-vtl-device-type-1472153012967
+            #region UpdateVTLDeviceType-1
 
             var client = new AmazonStorageGatewayClient();
-            var response = client.UpdateVTLDeviceType(new UpdateVTLDeviceTypeRequest 
+            var response = client.UpdateVTLDeviceType(new UpdateVTLDeviceTypeRequest
             {
                 DeviceType = "Medium Changer",
                 VTLDeviceARN = "arn:aws:storagegateway:us-east-1:999999999999:gateway/sgw-12A3456B/device/AMZN_SGW-1FAD4876_MEDIACHANGER_00001"
@@ -986,13 +946,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

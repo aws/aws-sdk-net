@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpacesWeb.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon WorkSpacesWeb service
+    /// Service metadata for Amazon WorkSpaces Web
     /// </summary>
     public partial class AmazonWorkSpacesWebMetadata : IServiceMetadata
     {

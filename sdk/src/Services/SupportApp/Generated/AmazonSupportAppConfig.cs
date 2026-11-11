@@ -27,12 +27,12 @@ using Amazon.SupportApp.Internal;
 namespace Amazon.SupportApp
 {
     /// <summary>
-    /// Configuration for accessing Amazon SupportApp service
+    /// Configuration for accessing AWS Support App
     /// </summary>
     public partial class AmazonSupportAppConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Support App", "4.0.100.23");
+            InternalSDKUtils.BuildUserAgentString("Support App", "4.0.100.27");
 
         private static readonly AmazonSupportAppEndpointResolver EndpointResolver =
             new AmazonSupportAppEndpointResolver();

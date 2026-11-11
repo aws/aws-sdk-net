@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTManagedIntegrations.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IoTManagedIntegrations service
+    /// Service metadata for Managed integrations for AWS IoT Device Management
     /// </summary>
     public partial class AmazonIoTManagedIntegrationsMetadata : IServiceMetadata
     {

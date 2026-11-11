@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon CloudWatchEvents service
+    /// Service metadata for Amazon CloudWatch Events
     /// </summary>
     public partial class AmazonCloudWatchEventsMetadata : IServiceMetadata
     {

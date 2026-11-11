@@ -875,6 +875,11 @@ namespace Amazon.SecurityAgent
     public class MembershipType : ConstantClass
     {
         /// <summary>
+        /// Constant GROUP for MembershipType
+        /// </summary>
+        public static readonly MembershipType GROUP = new MembershipType("GROUP");
+
+        /// <summary>
         /// Constant USER for MembershipType
         /// </summary>
         public static readonly MembershipType USER = new MembershipType("USER");
@@ -914,6 +919,11 @@ namespace Amazon.SecurityAgent
         /// Constant ALL for MembershipTypeFilter
         /// </summary>
         public static readonly MembershipTypeFilter ALL = new MembershipTypeFilter("ALL");
+
+        /// <summary>
+        /// Constant GROUP for MembershipTypeFilter
+        /// </summary>
+        public static readonly MembershipTypeFilter GROUP = new MembershipTypeFilter("GROUP");
 
         /// <summary>
         /// Constant USER for MembershipTypeFilter

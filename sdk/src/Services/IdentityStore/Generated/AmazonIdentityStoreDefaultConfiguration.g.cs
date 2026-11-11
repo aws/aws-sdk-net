@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.IdentityStore
 {
     /// <summary>
-    /// Configuration for accessing Amazon IdentityStore service
+    /// Configuration for accessing AWS SSO Identity Store
     /// </summary>
     public static class AmazonIdentityStoreDefaultConfiguration
     {

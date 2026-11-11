@@ -27,12 +27,12 @@ using Amazon.Route53RecoveryControlConfig.Internal;
 namespace Amazon.Route53RecoveryControlConfig
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53RecoveryControlConfig service
+    /// Configuration for accessing AWS Route53 Recovery Control Config
     /// </summary>
     public partial class AmazonRoute53RecoveryControlConfigConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Route53 Recovery Control Config", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Route53 Recovery Control Config", "4.0.100.26");
 
         private static readonly AmazonRoute53RecoveryControlConfigEndpointResolver EndpointResolver =
             new AmazonRoute53RecoveryControlConfigEndpointResolver();

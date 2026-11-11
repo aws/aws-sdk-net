@@ -1,0 +1,118 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.RDS.Model
+{
+    /// <summary>
+    /// Contains the state of scheduled or in-process operations on a global cluster (Aurora
+    /// global database). This data type is empty unless a switchover or failover operation
+    /// is scheduled or is in progress on the Aurora global database.
+    /// </summary>
+    public partial class FailoverState
+    {
+        /// <summary>
+        /// Gets and sets the property FromDbClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted,
+        /// and which is associated with this state.
+        /// </para>
+        /// </summary>
+        public string FromDbClusterArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FromDbClusterArn property is set.
+        /// </summary>
+        internal bool IsSetFromDbClusterArn() => this.FromDbClusterArn != null;
+
+        /// <summary>
+        /// Gets and sets the property IsDataLossAllowed. 
+        /// <para>
+        /// Indicates whether the operation is a global switchover or a global failover. If data
+        /// loss is allowed, then the operation is a global failover. Otherwise, it's a switchover.
+        /// </para>
+        /// </summary>
+        public bool? IsDataLossAllowed { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IsDataLossAllowed property is set.
+        /// </summary>
+        internal bool IsSetIsDataLossAllowed() => this.IsDataLossAllowed.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the global cluster. Possible values are as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// pending &#150; The service received a request to switch over or fail over the global
+        /// cluster. The global cluster's primary DB cluster and the specified secondary DB cluster
+        /// are being verified before the operation starts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// failing-over &#150; Aurora is promoting the chosen secondary Aurora DB cluster to
+        /// become the new primary DB cluster to fail over the global cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// cancelling &#150; The request to switch over or fail over the global cluster was cancelled
+        /// and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are
+        /// returning to their previous states.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// switching-over &#150; This status covers the range of Aurora internal operations that
+        /// take place during the switchover process, such as demoting the primary Aurora DB cluster,
+        /// promoting the secondary Aurora DB cluster, and synchronizing replicas.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public FailoverStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property ToDbClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being promoted,
+        /// and which is associated with this state.
+        /// </para>
+        /// </summary>
+        public string ToDbClusterArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ToDbClusterArn property is set.
+        /// </summary>
+        internal bool IsSetToDbClusterArn() => this.ToDbClusterArn != null;
+    }
+}

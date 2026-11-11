@@ -27,12 +27,12 @@ using Amazon.LakeFormation.Internal;
 namespace Amazon.LakeFormation
 {
     /// <summary>
-    /// Configuration for accessing Amazon LakeFormation service
+    /// Configuration for accessing AWS Lake Formation
     /// </summary>
     public partial class AmazonLakeFormationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("LakeFormation", "4.0.101.4");
+            InternalSDKUtils.BuildUserAgentString("LakeFormation", "4.0.102.0");
 
         private static readonly AmazonLakeFormationEndpointResolver EndpointResolver =
             new AmazonLakeFormationEndpointResolver();

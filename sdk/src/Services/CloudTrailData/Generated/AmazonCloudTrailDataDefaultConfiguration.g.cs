@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudTrailData
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudTrailData service
+    /// Configuration for accessing AWS CloudTrail Data Service
     /// </summary>
     public static class AmazonCloudTrailDataDefaultConfiguration
     {

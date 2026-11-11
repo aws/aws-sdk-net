@@ -27,12 +27,12 @@ using Amazon.Synthetics.Internal;
 namespace Amazon.Synthetics
 {
     /// <summary>
-    /// Configuration for accessing Amazon Synthetics service
+    /// Configuration for accessing Synthetics
     /// </summary>
     public partial class AmazonSyntheticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("synthetics", "4.0.101.18");
+            InternalSDKUtils.BuildUserAgentString("synthetics", "4.0.101.22");
 
         private static readonly AmazonSyntheticsEndpointResolver EndpointResolver =
             new AmazonSyntheticsEndpointResolver();

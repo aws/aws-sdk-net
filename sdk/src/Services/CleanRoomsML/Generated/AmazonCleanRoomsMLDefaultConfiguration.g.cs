@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.CleanRoomsML
 {
     /// <summary>
-    /// Configuration for accessing Amazon CleanRoomsML service
+    /// Configuration for accessing AWS Clean Rooms ML
     /// </summary>
     public static class AmazonCleanRoomsMLDefaultConfiguration
     {

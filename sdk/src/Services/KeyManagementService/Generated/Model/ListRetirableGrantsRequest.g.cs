@@ -1,0 +1,151 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.KeyManagementService.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ListRetirableGrants operation. Returns information
+    /// about all grants in the Amazon Web Services account and Region that have the specified
+    /// retiring principal or retiring service principal. <para> You can specify any principal
+    /// in your Amazon Web Services account. The grants that are returned include grants for
+    /// KMS keys in your Amazon Web Services account and other Amazon Web Services accounts.
+    /// You might use this operation to determine which grants you may retire. To retire a
+    /// grant, use the <a>RetireGrant</a> operation. </para> <para> For detailed information
+    /// about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
+    /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
+    /// of creating grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/example_kms_CreateGrant_section.html">Use
+    /// CreateGrant with an Amazon Web Services SDK or CLI</a>. </para> <para> <b>Cross-account
+    /// use</b>: You must specify a principal in your Amazon Web Services account. This operation
+    /// returns a list of grants where the retiring principal specified in the <c>ListRetirableGrants</c>
+    /// request is the same retiring principal on the grant. This can include grants on KMS
+    /// keys owned by other Amazon Web Services accounts, but you do not need <c>kms:ListRetirableGrants</c>
+    /// permission (or any other additional permission) in any Amazon Web Services account
+    /// other than your own. </para> <para> <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListRetirableGrants</a>
+    /// (IAM policy) in your Amazon Web Services account. </para> <note> <para> When listing
+    /// retirable grants by <c>RetiringPrincipal</c>, KMS authorizes <c>ListRetirableGrants</c>
+    /// requests by evaluating the caller account's kms:ListRetirableGrants permissions. The
+    /// authorized resource in <c>ListRetirableGrants</c> calls is the retiring principal
+    /// specified in the request. KMS does not evaluate the caller's permissions to verify
+    /// their access to any KMS keys or grants that might be returned by the <c>ListRetirableGrants</c>
+    /// call. </para> <para> The <c>RetiringServicePrincipal</c> filter is only usable by
+    /// callers in a service principal. </para> </note> <para> <b>Related operations:</b>
+    /// </para> <ul> <li> <para> <a>CreateGrant</a> </para> </li> <li> <para> <a>ListGrants</a>
+    /// </para> </li> <li> <para> <a>RetireGrant</a> </para> </li> <li> <para> <a>RevokeGrant</a>
+    /// </para> </li> </ul> <para> <b>Eventual consistency</b>: The KMS API follows an eventual
+    /// consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
+    /// eventual consistency</a>. </para>
+    /// </summary>
+    public partial class ListRetirableGrantsRequest : AmazonKeyManagementServiceRequest
+    {
+        /// <summary>
+        /// Gets and sets the property Limit. 
+        /// <para>
+        /// Use this parameter to specify the maximum number of items to return. When this value
+        /// is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.
+        /// </para>
+        ///  
+        /// <para>
+        /// This value is optional. If you include a value, it must be between 1 and 100, inclusive.
+        /// If you do not include a value, it defaults to 50.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1000)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Limit property is set.
+        /// </summary>
+        internal bool IsSetLimit() => this.Limit.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Use this parameter in a subsequent request after you receive a response with truncated
+        /// results. Set it to the value of <c>NextMarker</c> from the truncated response you
+        /// just received.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1024)]
+        public string Marker { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Marker property is set.
+        /// </summary>
+        internal bool IsSetMarker() => this.Marker != null;
+
+        /// <summary>
+        /// Gets and sets the property RetiringPrincipal. 
+        /// <para>
+        /// The retiring principal for which to list grants. Enter a principal in your Amazon
+        /// Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include
+        /// Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role
+        /// users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+        /// ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either <c>RetiringPrincipal</c> or <c>RetiringServicePrincipal</c>,
+        /// but not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string RetiringPrincipal { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RetiringPrincipal property is set.
+        /// </summary>
+        internal bool IsSetRetiringPrincipal() => this.RetiringPrincipal != null;
+
+        /// <summary>
+        /// Gets and sets the property RetiringServicePrincipal. 
+        /// <para>
+        /// The retiring service principal for which to list grants. This filter is only usable
+        /// by callers in a service principal.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either <c>RetiringPrincipal</c> or <c>RetiringServicePrincipal</c>,
+        /// but not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string RetiringServicePrincipal { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RetiringServicePrincipal property is set.
+        /// </summary>
+        internal bool IsSetRetiringServicePrincipal() => this.RetiringServicePrincipal != null;
+    }
+}

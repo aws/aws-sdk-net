@@ -27,12 +27,12 @@ using Amazon.EBS.Internal;
 namespace Amazon.EBS
 {
     /// <summary>
-    /// Configuration for accessing Amazon EBS service
+    /// Configuration for accessing Amazon Elastic Block Store
     /// </summary>
     public partial class AmazonEBSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EBS", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("EBS", "4.0.100.26");
 
         private static readonly AmazonEBSEndpointResolver EndpointResolver =
             new AmazonEBSEndpointResolver();

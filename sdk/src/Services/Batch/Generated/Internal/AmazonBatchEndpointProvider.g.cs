@@ -26,7 +26,7 @@ using Amazon.Batch.Endpoints;
 namespace Amazon.Batch.Internal
 {
     /// <summary>
-    /// Amazon Batch endpoint provider.
+    /// AWS Batch endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BatchEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

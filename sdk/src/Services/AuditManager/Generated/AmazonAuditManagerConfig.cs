@@ -27,12 +27,12 @@ using Amazon.AuditManager.Internal;
 namespace Amazon.AuditManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon AuditManager service
+    /// Configuration for accessing AWS Audit Manager
     /// </summary>
     public partial class AmazonAuditManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AuditManager", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("AuditManager", "4.0.100.26");
 
         private static readonly AmazonAuditManagerEndpointResolver EndpointResolver =
             new AmazonAuditManagerEndpointResolver();

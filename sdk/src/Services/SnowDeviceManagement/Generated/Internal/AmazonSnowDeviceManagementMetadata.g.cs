@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SnowDeviceManagement.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SnowDeviceManagement service
+    /// Service metadata for AWS Snow Device Management
     /// </summary>
     public partial class AmazonSnowDeviceManagementMetadata : IServiceMetadata
     {

@@ -26,7 +26,7 @@ using Amazon.ECS.Endpoints;
 namespace Amazon.ECS.Internal
 {
     /// <summary>
-    /// Amazon ECS endpoint provider.
+    /// Amazon EC2 Container Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ECSEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

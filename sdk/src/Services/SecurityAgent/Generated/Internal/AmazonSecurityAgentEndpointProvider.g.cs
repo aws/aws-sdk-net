@@ -26,7 +26,7 @@ using Amazon.SecurityAgent.Endpoints;
 namespace Amazon.SecurityAgent.Internal
 {
     /// <summary>
-    /// Amazon SecurityAgent endpoint provider.
+    /// AWS Security Agent endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SecurityAgentEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

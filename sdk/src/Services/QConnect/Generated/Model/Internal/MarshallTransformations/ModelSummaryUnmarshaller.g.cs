@@ -74,6 +74,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("globalResiliencyStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GlobalResiliencyStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("legacyTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

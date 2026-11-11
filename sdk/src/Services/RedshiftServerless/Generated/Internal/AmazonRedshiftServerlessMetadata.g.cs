@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RedshiftServerless.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon RedshiftServerless service
+    /// Service metadata for Redshift Serverless
     /// </summary>
     public partial class AmazonRedshiftServerlessMetadata : IServiceMetadata
     {

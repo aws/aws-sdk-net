@@ -27,12 +27,12 @@ using Amazon.LocationService.Internal;
 namespace Amazon.LocationService
 {
     /// <summary>
-    /// Configuration for accessing Amazon LocationService service
+    /// Configuration for accessing Amazon Location Service
     /// </summary>
     public partial class AmazonLocationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Location", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Location", "4.0.100.26");
 
         private static readonly AmazonLocationServiceEndpointResolver EndpointResolver =
             new AmazonLocationServiceEndpointResolver();

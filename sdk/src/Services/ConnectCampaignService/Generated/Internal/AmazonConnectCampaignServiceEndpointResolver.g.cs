@@ -31,7 +31,7 @@ using Amazon.ConnectCampaignService.Endpoints;
 namespace Amazon.ConnectCampaignService.Internal
 {
     /// <summary>
-    /// Amazon ConnectCampaignService endpoint resolver.
+    /// AmazonConnectCampaignService endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ConnectCampaignService service requests.
     /// <para />

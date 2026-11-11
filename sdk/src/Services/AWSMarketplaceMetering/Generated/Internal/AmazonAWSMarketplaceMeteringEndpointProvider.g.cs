@@ -26,7 +26,7 @@ using Amazon.AWSMarketplaceMetering.Endpoints;
 namespace Amazon.AWSMarketplaceMetering.Internal
 {
     /// <summary>
-    /// Amazon AWSMarketplaceMetering endpoint provider.
+    /// AWSMarketplace Metering endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AWSMarketplaceMeteringEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

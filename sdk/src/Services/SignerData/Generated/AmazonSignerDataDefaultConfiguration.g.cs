@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SignerData
 {
     /// <summary>
-    /// Configuration for accessing Amazon SignerData service
+    /// Configuration for accessing AWS Signer Data Plane
     /// </summary>
     public static class AmazonSignerDataDefaultConfiguration
     {

@@ -103,16 +103,14 @@ public class GenerationContextTests
         Assert.Equal(AWSProtocol.RestJson1, _context.Protocol);
     }
 
-    [Theory]
-    [InlineData("Codegen/codegen-model.json")]
-    [InlineData("Codegen/rpcv2cbor-model.json")]
-    public void UseWrappingResult_OutsideAwsJson_Throws(string modelPath)
+    [Fact]
+    public void UseWrappingResult_OutsideAwsJsonRpcV2CborAndEc2Query_Throws()
     {
         var customizations = new CustomizationsModel();
         customizations.OperationModifiers["GetThing"] = new OperationModifier { UseWrappingResult = true };
 
-        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load(modelPath)), TestManifests.Example(), customizations: customizations));
-        Assert.Contains("operationModifiers['GetThing'] wraps the output, which is only supported for awsJson.", ex.Message);
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/codegen-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("operationModifiers['GetThing'] wraps the output, which is only supported for awsJson, rpcv2Cbor and ec2Query.", ex.Message);
     }
 
     [Theory]
@@ -264,5 +262,17 @@ public class GenerationContextTests
         Assert.Equal(
             ["AccessDeniedException", "ResourceNotFoundException", "ThrottlingException", "ValidationException"],
             operation.Errors.Select(e => e.Id.Name));
+    }
+
+    // Each pair maps to one class; the shape already named like the class is kept, whichever sorts first.
+    [Fact]
+    public void Errors_SharingAClassWithAnErrorNamedLikeIt_AreDropped()
+    {
+        var context = TestModels.Context("Codegen/service-errors-model.json");
+
+        Assert.Contains(ShapeId.Parse("com.example#LimitExceededException"), context.Errors.Keys);
+        Assert.DoesNotContain(ShapeId.Parse("com.example#LimitExceededFault"), context.Errors.Keys);
+        Assert.Contains(ShapeId.Parse("com.example#MissingException"), context.Errors.Keys);
+        Assert.DoesNotContain(ShapeId.Parse("com.example#Missing"), context.Errors.Keys);
     }
 }

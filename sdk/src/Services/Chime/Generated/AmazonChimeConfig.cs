@@ -27,12 +27,12 @@ using Amazon.Chime.Internal;
 namespace Amazon.Chime
 {
     /// <summary>
-    /// Configuration for accessing Amazon Chime service
+    /// Configuration for accessing Amazon Chime
     /// </summary>
     public partial class AmazonChimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Chime", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Chime", "4.0.100.26");
 
         private static readonly AmazonChimeEndpointResolver EndpointResolver =
             new AmazonChimeEndpointResolver();

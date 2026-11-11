@@ -27,12 +27,12 @@ using Amazon.DevOpsGuru.Internal;
 namespace Amazon.DevOpsGuru
 {
     /// <summary>
-    /// Configuration for accessing Amazon DevOpsGuru service
+    /// Configuration for accessing Amazon DevOps Guru
     /// </summary>
     public partial class AmazonDevOpsGuruConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DevOps Guru", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("DevOps Guru", "4.0.100.26");
 
         private static readonly AmazonDevOpsGuruEndpointResolver EndpointResolver =
             new AmazonDevOpsGuruEndpointResolver();

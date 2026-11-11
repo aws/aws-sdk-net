@@ -562,6 +562,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetSpaceDataAccess(Amazon.CloudWatchOmni.Model.GetSpaceDataAccessRequest)" />
+      <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetSpaceDataAccess(Amazon.CloudWatchOmni.Model.GetSpaceDataAccessRequest)" />
+      <member name="T:Amazon.CloudWatchOmni.Model.GetSpaceDataAccessRequest" />
+      <member name="T:Amazon.CloudWatchOmni.Model.GetSpaceDataAccessResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example requests credentials that allow running log queries and reading metric data in a space. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+        </para>
+        <code title="Get data credentials for log queries" source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs" region="GetSpaceDataAccess-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetTelemetryQueryResults(Amazon.CloudWatchOmni.Model.GetTelemetryQueryResultsRequest)" />
       <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetTelemetryQueryResults(Amazon.CloudWatchOmni.Model.GetTelemetryQueryResultsRequest)" />
       <member name="T:Amazon.CloudWatchOmni.Model.GetTelemetryQueryResultsRequest" />

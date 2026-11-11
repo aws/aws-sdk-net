@@ -65,6 +65,14 @@ namespace Amazon.NetworkFirewall.Model
         }
 
         /// <summary>
+        /// Paginator for ListFirewallPoliciesV2 operation
+        /// </summary>
+        public IListFirewallPoliciesV2Paginator ListFirewallPoliciesV2(ListFirewallPoliciesV2Request request)
+        {
+            return new ListFirewallPoliciesV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFirewalls operation
         /// </summary>
         public IListFirewallsPaginator ListFirewalls(ListFirewallsRequest request)

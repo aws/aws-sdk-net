@@ -174,7 +174,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         protected override PutItemResponse InvokeSync(PutItemRequest lowLevel)
         {
-#if NETSTANDARD
+#if !NETFRAMEWORK
 
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = Table.DDBClient as AmazonDynamoDBClient;
@@ -266,7 +266,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         protected override GetItemResponse InvokeSync(GetItemRequest lowLevel)
         {
-#if NETSTANDARD
+#if !NETFRAMEWORK
         // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = Table.DDBClient as AmazonDynamoDBClient;
             if (client == null)
@@ -394,7 +394,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         protected override UpdateItemResponse InvokeSync(UpdateItemRequest lowLevel)
         {
-#if NETSTANDARD
+#if !NETFRAMEWORK
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = Table.DDBClient as AmazonDynamoDBClient;
             if (client == null)
@@ -481,7 +481,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         protected override DeleteItemResponse InvokeSync(DeleteItemRequest lowLevel)
         {
-#if NETSTANDARD
+#if !NETFRAMEWORK
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = Table.DDBClient as AmazonDynamoDBClient;
             if (client == null)

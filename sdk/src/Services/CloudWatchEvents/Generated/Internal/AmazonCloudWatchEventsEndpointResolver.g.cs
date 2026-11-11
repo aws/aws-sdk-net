@@ -31,7 +31,7 @@ using Amazon.CloudWatchEvents.Endpoints;
 namespace Amazon.CloudWatchEvents.Internal
 {
     /// <summary>
-    /// Amazon CloudWatchEvents endpoint resolver.
+    /// Amazon CloudWatch Events endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CloudWatchEvents service requests.
     /// <para />

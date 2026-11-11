@@ -72,7 +72,6 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
         string? compressionEncoding)
     {
         var unsignedPayload = operation.Shape.HasUnsignedPayload();
-        var requiresChecksum = operation.Shape.RequiresHttpChecksum();
 
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Marshall the request object to the HTTP request.");
@@ -110,14 +109,21 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
 
             if (partitioned.PayloadMember is { Type.IsStructure: true } structurePayload)
             {
-                // The payload structure's own marshaller writes its members into the root element. An unset
-                // structure/union payload sends an empty body (as C2J and the JSON writer do), not <Root />.
+                // An unset payload sends an empty body, not <Root />. A checksum needs a stream to hash, so with
+                // one only the root element is guarded (C2J); otherwise the whole body is.
                 var marshaller = structurePayload.Type.MarshallerName ?? throw new GeneratorException($"Payload structure '{structurePayload.Type.DotNetType}' has no marshaller name.");
-                writer.OpenBlock($"if (publicRequest.IsSet{structurePayload.PropertyName}())", () =>
+                var root = StructurePayloadRoot(operation, structurePayload);
+                var marshall = $"{marshaller}.Instance.Marshall(publicRequest.{structurePayload.PropertyName}, context);";
+                var guard = $"if (publicRequest.IsSet{structurePayload.PropertyName}())";
+
+                if (operation.Shape.GetHttpChecksum() is not null || operation.Shape.RequiresHttpChecksum())
                 {
-                    WriteXmlBody(writer, requiresChecksum, StructurePayloadRoot(operation, structurePayload),
-                        () => writer.WriteLine($"{marshaller}.Instance.Marshall(publicRequest.{structurePayload.PropertyName}, context);"));
-                });
+                    WriteXmlBody(writer, root, () => writer.WriteLine(marshall), guard);
+                }
+                else
+                {
+                    writer.OpenBlock(guard, () => WriteXmlBody(writer, root, () => writer.WriteLine(marshall)));
+                }
             }
             else if (partitioned.PayloadMember is { } payload)
             {
@@ -125,7 +131,7 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
             }
             else if (partitioned.BodyMembers.Count > 0)
             {
-                WriteXmlBody(writer, requiresChecksum, InputRoot(operation),
+                WriteXmlBody(writer, InputRoot(operation),
                     () => XmlBodyMemberMarshaller.WriteStructureBody(writer, operation.Input, partitioned.BodyMembers, "publicRequest"));
             }
 
@@ -135,6 +141,13 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
             }
             writer.WriteLine("");
             writer.WriteLine("PostMarshallCustomization(request, publicRequest);");
+
+            // After the hook, as C2J: S3's hand-written hooks set an MD5 checksum, and the modeled one has to win.
+            if (partitioned.PayloadMember is not null || partitioned.BodyMembers.Count > 0)
+            {
+                MarshallerCommon.WriteRequestChecksum(writer, context, operation);
+            }
+
             if (partitioned.QueryMembers.Count > 0 || partitioned.QueryParamsMember is not null)
             {
                 writer.WriteLine("request.UseQueryString = true;");
@@ -153,9 +166,10 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
 
     // The XmlWriter body: a PooledContentStream (or MemoryStream on .NET Framework), a root element with
     // the service @xmlNamespace, the body written by <paramref name="writeBody"/> (the input's members
-    // inline, or the payload structure's marshaller), then Content-Type/checksum/api-version set in a try
-    // that maps an XML encoder failure to an AmazonServiceException (C2J restXml).
-    private void WriteXmlBody(CodeWriter writer, bool requiresChecksum, (string Name, XmlNamespaceTrait? Namespace) root, Action writeBody)
+    // inline, or the payload structure's marshaller), then Content-Type/api-version set in a try
+    // that maps an XML encoder failure to an AmazonServiceException (C2J restXml). <paramref name="guard"/>
+    // wraps the root element only.
+    private void WriteXmlBody(CodeWriter writer, (string Name, XmlNamespaceTrait? Namespace) root, Action writeBody, string? guard = null)
     {
         writer.WriteLine("#if !NETFRAMEWORK");
         writer.WriteLine("request.ContentStream = new PooledContentStream();");
@@ -170,9 +184,21 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
         writer.Indent(() =>
         {
             writer.WriteLine("var context = new XmlMarshallerContext(request, xmlWriter);");
-            XmlBodyMemberMarshaller.OpenElement(writer, root.Name, root.Namespace);
-            writeBody();
-            writer.WriteLine("context.Writer.WriteEndElement();");
+            if (guard is null)
+            {
+                XmlBodyMemberMarshaller.OpenElement(writer, root.Name, root.Namespace);
+                writeBody();
+                writer.WriteLine("context.Writer.WriteEndElement();");
+            }
+            else
+            {
+                writer.OpenBlock(guard, () =>
+                {
+                    XmlBodyMemberMarshaller.OpenElement(writer, root.Name, root.Namespace);
+                    writeBody();
+                    writer.WriteLine("context.Writer.WriteEndElement();");
+                });
+            }
         });
         writer.WriteLine("}");
 
@@ -183,10 +209,6 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
             writer.WriteLine("request.Content = System.Text.Encoding.UTF8.GetBytes(content);");
             writer.WriteLine("#endif");
             writer.WriteLine("""request.Headers["Content-Type"] = "application/xml";""");
-            if (requiresChecksum)
-            {
-                writer.WriteLine("ChecksumUtils.SetChecksumData(request);");
-            }
             writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "{context.ApiVersion}";""");
         });
         writer.OpenBlock("catch (EncoderFallbackException e)", () =>

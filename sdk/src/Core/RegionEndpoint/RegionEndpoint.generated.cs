@@ -168,6 +168,11 @@ namespace Amazon
         public static readonly RegionEndpoint MESouth1 = GetRegionEndpoint("me-south-1", "Middle East (Bahrain)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
+        /// The Middle East (Saudi Arabia) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint MEWest1 = GetRegionEndpoint("me-west-1", "Middle East (Saudi Arabia)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+
+        /// <summary>
         /// The Mexico (Central) endpoint.
         /// </summary>
         public static readonly RegionEndpoint MXCentral1 = GetRegionEndpoint("mx-central-1", "Mexico (Central)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
@@ -176,6 +181,11 @@ namespace Amazon
         /// The South America (Sao Paulo) endpoint.
         /// </summary>
         public static readonly RegionEndpoint SAEast1 = GetRegionEndpoint("sa-east-1", "South America (Sao Paulo)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+
+        /// <summary>
+        /// The South America (Chile) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint SAWest1 = GetRegionEndpoint("sa-west-1", "South America (Chile)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
         /// The US East (Virginia) regional endpoint.

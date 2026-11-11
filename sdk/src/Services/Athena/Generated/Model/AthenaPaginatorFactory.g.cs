@@ -129,6 +129,14 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
+        /// Paginator for ListSystemTableStatuses operation
+        /// </summary>
+        public IListSystemTableStatusesPaginator ListSystemTableStatuses(ListSystemTableStatusesRequest request)
+        {
+            return new ListSystemTableStatusesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTableMetadata operation
         /// </summary>
         public IListTableMetadataPaginator ListTableMetadata(ListTableMetadataRequest request)

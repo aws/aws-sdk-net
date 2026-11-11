@@ -27,12 +27,12 @@ using Amazon.IoTManagedIntegrations.Internal;
 namespace Amazon.IoTManagedIntegrations
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTManagedIntegrations service
+    /// Configuration for accessing Managed integrations for AWS IoT Device Management
     /// </summary>
     public partial class AmazonIoTManagedIntegrationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoT Managed Integrations", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("IoT Managed Integrations", "4.0.100.26");
 
         private static readonly AmazonIoTManagedIntegrationsEndpointResolver EndpointResolver =
             new AmazonIoTManagedIntegrationsEndpointResolver();

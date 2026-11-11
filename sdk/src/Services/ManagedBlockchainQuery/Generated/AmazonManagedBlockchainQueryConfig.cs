@@ -27,12 +27,12 @@ using Amazon.ManagedBlockchainQuery.Internal;
 namespace Amazon.ManagedBlockchainQuery
 {
     /// <summary>
-    /// Configuration for accessing Amazon ManagedBlockchainQuery service
+    /// Configuration for accessing Amazon Managed Blockchain Query
     /// </summary>
     public partial class AmazonManagedBlockchainQueryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ManagedBlockchain Query", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("ManagedBlockchain Query", "4.0.100.26");
 
         private static readonly AmazonManagedBlockchainQueryEndpointResolver EndpointResolver =
             new AmazonManagedBlockchainQueryEndpointResolver();

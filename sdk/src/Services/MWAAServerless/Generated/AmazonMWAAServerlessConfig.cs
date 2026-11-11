@@ -27,12 +27,12 @@ using Amazon.MWAAServerless.Internal;
 namespace Amazon.MWAAServerless
 {
     /// <summary>
-    /// Configuration for accessing Amazon MWAAServerless service
+    /// Configuration for accessing AmazonMWAAServerless
     /// </summary>
     public partial class AmazonMWAAServerlessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MWAA Serverless", "4.0.101.13");
+            InternalSDKUtils.BuildUserAgentString("MWAA Serverless", "4.0.102.3");
 
         private static readonly AmazonMWAAServerlessEndpointResolver EndpointResolver =
             new AmazonMWAAServerlessEndpointResolver();

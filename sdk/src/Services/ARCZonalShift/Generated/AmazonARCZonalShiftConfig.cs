@@ -27,12 +27,12 @@ using Amazon.ARCZonalShift.Internal;
 namespace Amazon.ARCZonalShift
 {
     /// <summary>
-    /// Configuration for accessing Amazon ARCZonalShift service
+    /// Configuration for accessing AWS ARC - Zonal Shift
     /// </summary>
     public partial class AmazonARCZonalShiftConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ARC Zonal Shift", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("ARC Zonal Shift", "4.0.100.25");
 
         private static readonly AmazonARCZonalShiftEndpointResolver EndpointResolver =
             new AmazonARCZonalShiftEndpointResolver();

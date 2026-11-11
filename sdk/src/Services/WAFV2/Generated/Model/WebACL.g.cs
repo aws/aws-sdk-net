@@ -94,6 +94,12 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
         /// </para>
+        ///  
+        /// <para>
+        /// You can also use this to have your CloudFront distributions insert the WAF challenge
+        /// JavaScript SDK into the HTML responses that they return. For more information, see
+        /// the <c>ChallengeJavascriptSdkInjection</c> setting. 
+        /// </para>
         /// </summary>
         public AssociationConfig AssociationConfig { get; set; }
 
@@ -313,8 +319,8 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property MonetizationConfig. 
         /// <para>
         /// The monetization configuration for the web ACL. Required when any rule in the web
-        /// ACL uses the <c>Monetize</c> action. Specifies the cryptocurrency payment networks
-        /// and currency mode for AI bot monetization.
+        /// ACL uses the <c>Monetize</c> action. Specifies the payment settlement options and
+        /// currency mode for AI bot monetization.
         /// </para>
         /// </summary>
         public MonetizationConfig MonetizationConfig { get; set; }

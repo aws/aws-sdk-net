@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTTwinMaker.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IoTTwinMaker service
+    /// Service metadata for AWS IoT TwinMaker
     /// </summary>
     public partial class AmazonIoTTwinMakerMetadata : IServiceMetadata
     {

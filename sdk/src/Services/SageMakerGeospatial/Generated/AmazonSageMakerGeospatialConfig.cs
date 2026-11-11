@@ -27,12 +27,12 @@ using Amazon.SageMakerGeospatial.Internal;
 namespace Amazon.SageMakerGeospatial
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMakerGeospatial service
+    /// Configuration for accessing Amazon SageMaker geospatial capabilities
     /// </summary>
     public partial class AmazonSageMakerGeospatialConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMaker Geospatial", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("SageMaker Geospatial", "4.0.100.26");
 
         private static readonly AmazonSageMakerGeospatialEndpointResolver EndpointResolver =
             new AmazonSageMakerGeospatialEndpointResolver();

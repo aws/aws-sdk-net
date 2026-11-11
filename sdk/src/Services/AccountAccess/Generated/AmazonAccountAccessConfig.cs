@@ -27,12 +27,12 @@ using Amazon.AccountAccess.Internal;
 namespace Amazon.AccountAccess
 {
     /// <summary>
-    /// Configuration for accessing Amazon AccountAccess service
+    /// Configuration for accessing Account Access
     /// </summary>
     public partial class AmazonAccountAccessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Account Access", "4.0.101.13");
+            InternalSDKUtils.BuildUserAgentString("Account Access", "4.0.101.17");
 
         private static readonly AmazonAccountAccessEndpointResolver EndpointResolver =
             new AmazonAccountAccessEndpointResolver();

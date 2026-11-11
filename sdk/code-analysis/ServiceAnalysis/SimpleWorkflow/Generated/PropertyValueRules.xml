@@ -6,17 +6,9 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.CountClosedWorkflowExecutionsResponse.Count</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.CountOpenWorkflowExecutionsRequest.Domain</property>
     <min>1</min>
     <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.CountOpenWorkflowExecutionsResponse.Count</property>
-    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.CountPendingActivityTasksRequest.Domain</property>
@@ -24,17 +16,9 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.CountPendingActivityTasksResponse.Count</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.CountPendingDecisionTasksRequest.Domain</property>
     <min>1</min>
     <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.CountPendingDecisionTasksResponse.Count</property>
-    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.DeleteActivityTypeRequest.Domain</property>
@@ -77,10 +61,6 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.DescribeWorkflowExecutionResponse.LatestExecutionContext</property>
-    <max>32768</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.DescribeWorkflowTypeRequest.Domain</property>
     <min>1</min>
     <max>256</max>
@@ -97,10 +77,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.GetWorkflowExecutionHistoryRequest.NextPageToken</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.GetWorkflowExecutionHistoryResponse.NextPageToken</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -120,10 +97,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ListActivityTypesRequest.NextPageToken</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.ListActivityTypesResponse.NextPageToken</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -138,10 +112,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ListClosedWorkflowExecutionsRequest.NextPageToken</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.ListClosedWorkflowExecutionsResponse.NextPageToken</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -151,10 +122,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ListDomainsRequest.NextPageToken</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.ListDomainsResponse.NextPageToken</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -169,10 +137,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ListOpenWorkflowExecutionsRequest.NextPageToken</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.ListOpenWorkflowExecutionsResponse.NextPageToken</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -197,10 +162,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ListWorkflowTypesRequest.NextPageToken</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.ListWorkflowTypesResponse.NextPageToken</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -210,21 +172,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.PollForActivityTaskRequest.Identity</property>
+    <min>0</min>
     <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.PollForActivityTaskResponse.ActivityId</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.PollForActivityTaskResponse.Input</property>
-    <max>32768</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.PollForActivityTaskResponse.TaskToken</property>
-    <min>1</min>
-    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.PollForDecisionTaskRequest.Domain</property>
@@ -233,6 +182,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.PollForDecisionTaskRequest.Identity</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -242,19 +192,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.PollForDecisionTaskRequest.NextPageToken</property>
+    <min>0</min>
     <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.PollForDecisionTaskResponse.NextPageToken</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.PollForDecisionTaskResponse.TaskToken</property>
-    <min>1</min>
-    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RecordActivityTaskHeartbeatRequest.Details</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -264,22 +207,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RegisterActivityTypeRequest.DefaultTaskHeartbeatTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RegisterActivityTypeRequest.DefaultTaskScheduleToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RegisterActivityTypeRequest.DefaultTaskScheduleToStartTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RegisterActivityTypeRequest.DefaultTaskStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RegisterActivityTypeRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -299,6 +247,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RegisterDomainRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -313,6 +262,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RegisterWorkflowTypeRequest.DefaultExecutionStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
@@ -322,10 +272,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RegisterWorkflowTypeRequest.DefaultTaskStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RegisterWorkflowTypeRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -350,6 +302,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RequestCancelWorkflowExecutionRequest.RunId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -359,6 +312,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RespondActivityTaskCanceledRequest.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -368,6 +322,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RespondActivityTaskCompletedRequest.Result</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -377,10 +332,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RespondActivityTaskFailedRequest.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RespondActivityTaskFailedRequest.Reason</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -390,10 +347,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RespondDecisionTaskCompletedRequest.ExecutionContext</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RespondDecisionTaskCompletedRequest.TaskListScheduleToStartTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
@@ -408,10 +367,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.SignalWorkflowExecutionRequest.Input</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.SignalWorkflowExecutionRequest.RunId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -431,10 +392,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartWorkflowExecutionRequest.ExecutionStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartWorkflowExecutionRequest.Input</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -444,6 +407,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartWorkflowExecutionRequest.TaskStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
@@ -452,17 +416,13 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.StartWorkflowExecutionResponse.RunId</property>
-    <min>1</min>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.TerminateWorkflowExecutionRequest.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -472,10 +432,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.TerminateWorkflowExecutionRequest.Reason</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.TerminateWorkflowExecutionRequest.RunId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -504,8 +466,19 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.ActivityTaskCanceledEventAttributes.Details</property>
+    <property>Amazon.SimpleWorkflow.Model.ActivityTask.ActivityId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.ActivityTask.Input</property>
+    <min>0</min>
     <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.ActivityTask.TaskToken</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskCancelRequestedEventAttributes.ActivityId</property>
@@ -513,15 +486,23 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.ActivityTaskCanceledEventAttributes.Details</property>
+    <min>0</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskCompletedEventAttributes.Result</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskFailedEventAttributes.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskFailedEventAttributes.Reason</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -531,34 +512,42 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskScheduledEventAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskScheduledEventAttributes.HeartbeatTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskScheduledEventAttributes.Input</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskScheduledEventAttributes.ScheduleToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskScheduledEventAttributes.ScheduleToStartTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskScheduledEventAttributes.StartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskStartedEventAttributes.Identity</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskTimedOutEventAttributes.Details</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -573,23 +562,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTypeConfiguration.DefaultTaskHeartbeatTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTypeConfiguration.DefaultTaskScheduleToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTypeConfiguration.DefaultTaskScheduleToStartTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTypeConfiguration.DefaultTaskStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTypeInfo.Description</property>
+    <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.ActivityTypeInfos.NextPageToken</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.CancelTimerDecisionAttributes.TimerId</property>
@@ -603,34 +602,42 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.CancelWorkflowExecutionDecisionAttributes.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ChildWorkflowExecutionCanceledEventAttributes.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ChildWorkflowExecutionCompletedEventAttributes.Result</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ChildWorkflowExecutionFailedEventAttributes.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ChildWorkflowExecutionFailedEventAttributes.Reason</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.CompleteWorkflowExecutionDecisionAttributes.Result</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ContinueAsNewWorkflowExecutionDecisionAttributes.ExecutionStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ContinueAsNewWorkflowExecutionDecisionAttributes.Input</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -640,6 +647,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ContinueAsNewWorkflowExecutionDecisionAttributes.TaskStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
@@ -648,23 +656,38 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.DecisionTask.NextPageToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.DecisionTask.TaskToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.DecisionTaskCompletedEventAttributes.ExecutionContext</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.DecisionTaskCompletedEventAttributes.TaskListScheduleToStartTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.DecisionTaskScheduledEventAttributes.ScheduleToStartTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.DecisionTaskScheduledEventAttributes.StartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.DecisionTaskStartedEventAttributes.Identity</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -679,6 +702,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.DomainInfo.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -687,27 +711,43 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.DomainInfos.NextPageToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.FailWorkflowExecutionDecisionAttributes.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.FailWorkflowExecutionDecisionAttributes.Reason</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.History.NextPageToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.LambdaFunctionCompletedEventAttributes.Result</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.LambdaFunctionFailedEventAttributes.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.LambdaFunctionFailedEventAttributes.Reason</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.LambdaFunctionScheduledEventAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -727,10 +767,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.LambdaFunctionScheduledEventAttributes.StartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.MarkerRecordedEventAttributes.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -739,7 +781,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.PendingTaskCount.Count</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RecordMarkerDecisionAttributes.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -764,10 +811,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RequestCancelExternalWorkflowExecutionDecisionAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RequestCancelExternalWorkflowExecutionDecisionAttributes.RunId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -777,10 +826,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RequestCancelExternalWorkflowExecutionFailedEventAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RequestCancelExternalWorkflowExecutionFailedEventAttributes.RunId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -790,10 +841,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RequestCancelExternalWorkflowExecutionInitiatedEventAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RequestCancelExternalWorkflowExecutionInitiatedEventAttributes.RunId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -808,7 +861,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ResourceTag.Value</property>
+    <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.Run.RunId</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ScheduleActivityTaskDecisionAttributes.ActivityId</property>
@@ -817,26 +876,32 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ScheduleActivityTaskDecisionAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ScheduleActivityTaskDecisionAttributes.HeartbeatTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ScheduleActivityTaskDecisionAttributes.Input</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ScheduleActivityTaskDecisionAttributes.ScheduleToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ScheduleActivityTaskDecisionAttributes.ScheduleToStartTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ScheduleActivityTaskDecisionAttributes.StartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
@@ -846,6 +911,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ScheduleLambdaFunctionDecisionAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -865,6 +931,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ScheduleLambdaFunctionDecisionAttributes.StartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
@@ -879,14 +946,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.SignalExternalWorkflowExecutionDecisionAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.SignalExternalWorkflowExecutionDecisionAttributes.Input</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.SignalExternalWorkflowExecutionDecisionAttributes.RunId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -901,10 +971,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.SignalExternalWorkflowExecutionFailedEventAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.SignalExternalWorkflowExecutionFailedEventAttributes.RunId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -914,14 +986,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.SignalExternalWorkflowExecutionInitiatedEventAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.SignalExternalWorkflowExecutionInitiatedEventAttributes.Input</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.SignalExternalWorkflowExecutionInitiatedEventAttributes.RunId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -936,14 +1011,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionDecisionAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionDecisionAttributes.ExecutionStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionDecisionAttributes.Input</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -953,6 +1031,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionDecisionAttributes.TaskStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
@@ -962,6 +1041,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionFailedEventAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -971,14 +1051,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionInitiatedEventAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionInitiatedEventAttributes.ExecutionStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionInitiatedEventAttributes.Input</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -988,6 +1071,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionInitiatedEventAttributes.TaskStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
@@ -997,10 +1081,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartLambdaFunctionFailedEventAttributes.Message</property>
+    <min>0</min>
     <max>1728</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartTimerDecisionAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -1040,6 +1126,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.TimerStartedEventAttributes.Control</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -1064,10 +1151,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionCanceledEventAttributes.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionCompletedEventAttributes.Result</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -1087,10 +1176,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionContinuedAsNewEventAttributes.ExecutionStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionContinuedAsNewEventAttributes.Input</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -1105,20 +1196,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionContinuedAsNewEventAttributes.TaskStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionCount.Count</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionDetail.LatestExecutionContext</property>
+    <min>0</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionFailedEventAttributes.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionFailedEventAttributes.Reason</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionFilter.WorkflowId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionInfos.NextPageToken</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionOpenCounts.OpenActivityTasks</property>
@@ -1143,6 +1251,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionSignaledEventAttributes.Input</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -1152,14 +1261,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionStartedEventAttributes.ContinuedExecutionRunId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionStartedEventAttributes.ExecutionStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionStartedEventAttributes.Input</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -1169,14 +1281,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionStartedEventAttributes.TaskStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionTerminatedEventAttributes.Details</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionTerminatedEventAttributes.Reason</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -1191,6 +1306,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowTypeConfiguration.DefaultExecutionStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
@@ -1200,6 +1316,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowTypeConfiguration.DefaultTaskStartToCloseTimeout</property>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
@@ -1209,10 +1326,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowTypeFilter.Version</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowTypeInfo.Description</property>
+    <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.WorkflowTypeInfos.NextPageToken</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
 </property-value-rules>

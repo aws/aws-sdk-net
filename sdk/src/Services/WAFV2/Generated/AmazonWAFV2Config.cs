@@ -27,12 +27,12 @@ using Amazon.WAFV2.Internal;
 namespace Amazon.WAFV2
 {
     /// <summary>
-    /// Configuration for accessing Amazon WAFV2 service
+    /// Configuration for accessing AWS WAFV2
     /// </summary>
     public partial class AmazonWAFV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WAFV2", "4.0.101.16");
+            InternalSDKUtils.BuildUserAgentString("WAFV2", "4.0.103.2");
 
         private static readonly AmazonWAFV2EndpointResolver EndpointResolver =
             new AmazonWAFV2EndpointResolver();

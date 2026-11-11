@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NovaAct.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon NovaAct service
+    /// Service metadata for Nova Act Service
     /// </summary>
     public partial class AmazonNovaActMetadata : IServiceMetadata
     {

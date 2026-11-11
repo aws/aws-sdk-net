@@ -189,6 +189,12 @@
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.InsertAdBreakRequest.AdBreakId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.InsertAdBreakRequest.ChannelArn</property>
     <min>1</min>
     <max>128</max>

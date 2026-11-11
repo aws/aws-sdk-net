@@ -27,12 +27,12 @@ using Amazon.Comprehend.Internal;
 namespace Amazon.Comprehend
 {
     /// <summary>
-    /// Configuration for accessing Amazon Comprehend service
+    /// Configuration for accessing Amazon Comprehend
     /// </summary>
     public partial class AmazonComprehendConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Comprehend", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Comprehend", "4.0.100.25");
 
         private static readonly AmazonComprehendEndpointResolver EndpointResolver =
             new AmazonComprehendEndpointResolver();

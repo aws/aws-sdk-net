@@ -87,8 +87,9 @@ namespace Amazon.Runtime.Internal
 
         /// <summary>
         /// Unconditionally records <c>ClientSkew</c> from a response (success or error),
-        /// applying the specification midpoint formula and discard guards. No-op when
-        /// correction is disabled, or when there is no send time / response.
+        /// computing the candidate as serverTime minus the time the response headers were
+        /// received and applying the specification discard guards. No-op when correction is
+        /// disabled, or when there is no send time / response.
         /// </summary>
         internal static void RecordFromResponse(IExecutionContext executionContext, DateTime? sentAtUtc, IWebResponseData response)
         {

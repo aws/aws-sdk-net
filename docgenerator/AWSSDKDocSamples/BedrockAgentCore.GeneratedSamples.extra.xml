@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.BedrockAgentCore.IAmazonBedrockAgentCore.InvokeWebSearch(Amazon.BedrockAgentCore.Model.InvokeWebSearchRequest)" />
+      <member name="M:Amazon.BedrockAgentCore.AmazonBedrockAgentCoreClient.InvokeWebSearch(Amazon.BedrockAgentCore.Model.InvokeWebSearchRequest)" />
+      <member name="T:Amazon.BedrockAgentCore.Model.InvokeWebSearchRequest" />
+      <member name="T:Amazon.BedrockAgentCore.Model.InvokeWebSearchResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Search the web for recent pages from one domain" source=".\AWSSDKDocSamples\BedrockAgentCore\BedrockAgentCore.GeneratedSamples.cs" region="InvokeWebSearch-1" />
+      </example>
+    </value>
+  </doc>
+</docs>

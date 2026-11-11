@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ResourceExplorer2
 {
     /// <summary>
-    /// Configuration for accessing Amazon ResourceExplorer2 service
+    /// Configuration for accessing AWS Resource Explorer
     /// </summary>
     public static class AmazonResourceExplorer2DefaultConfiguration
     {

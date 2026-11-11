@@ -27,12 +27,12 @@ using Amazon.MailManager.Internal;
 namespace Amazon.MailManager
 {
     /// <summary>
-    /// Configuration for accessing Amazon MailManager service
+    /// Configuration for accessing MailManager
     /// </summary>
     public partial class AmazonMailManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MailManager", "4.0.101.19");
+            InternalSDKUtils.BuildUserAgentString("MailManager", "4.0.101.23");
 
         private static readonly AmazonMailManagerEndpointResolver EndpointResolver =
             new AmazonMailManagerEndpointResolver();

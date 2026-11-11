@@ -32,7 +32,7 @@ using Amazon.ACMPCA.Endpoints;
 namespace Amazon.ACMPCA.Internal
 {
     /// <summary>
-    /// Amazon ACMPCA endpoint resolver.
+    /// AWS Certificate Manager Private Certificate Authority endpoint resolver.
     /// Custom PipelineHandler responsible for resolving endpoint and setting authentication parameters for ACMPCA service requests.
     /// Collects values for ACMPCAEndpointParameters and then tries to resolve endpoint by calling 
     /// ResolveEndpoint method on GlobalEndpoints.Provider if present, otherwise uses ACMPCAEndpointProvider.

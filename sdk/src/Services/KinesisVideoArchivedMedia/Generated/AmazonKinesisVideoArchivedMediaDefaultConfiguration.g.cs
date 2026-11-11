@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.KinesisVideoArchivedMedia
 {
     /// <summary>
-    /// Configuration for accessing Amazon KinesisVideoArchivedMedia service
+    /// Configuration for accessing Amazon Kinesis Video Streams Archived Media
     /// </summary>
     public static class AmazonKinesisVideoArchivedMediaDefaultConfiguration
     {

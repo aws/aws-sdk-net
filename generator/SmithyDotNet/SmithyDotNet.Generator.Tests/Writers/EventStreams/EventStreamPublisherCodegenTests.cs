@@ -120,8 +120,8 @@ public sealed class EventStreamPublisherCodegenTests : IDisposable
         Assert.DoesNotContain("EventStreamPublisherMarshaller", source);
     }
 
-    // A member named "equals" sets HidesBaseMember (it shadows object.Equals). After the "Publisher" rename
-    // it no longer shadows anything, so the flag must be cleared — otherwise MemberWriter emits `new` (CS0109).
+    // A member named "equals" gets the `new` modifier (it shadows object.Equals). After the "Publisher" rename
+    // it no longer shadows anything, so the modifier must be cleared — otherwise MemberWriter emits `new` (CS0109).
     [Fact]
     public void PublisherProperty_FromEqualsMember_DropsTheNewModifier()
     {

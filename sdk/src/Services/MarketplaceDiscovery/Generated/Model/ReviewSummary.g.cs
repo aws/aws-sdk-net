@@ -37,7 +37,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property ReviewSourceSummaries. 
         /// <para>
-        /// Review summaries from different sources, such as AWS Marketplace.
+        /// Review summaries from different sources, such as AWS Marketplace, G2, and PeerSpot.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

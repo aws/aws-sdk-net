@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceCommerceAnalytics.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AWSMarketplaceCommerceAnalytics service
+    /// Service metadata for AWS Marketplace Commerce Analytics
     /// </summary>
     public partial class AmazonAWSMarketplaceCommerceAnalyticsMetadata : IServiceMetadata
     {

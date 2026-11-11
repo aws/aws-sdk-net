@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKSAuth.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon EKSAuth service
+    /// Service metadata for Amazon EKS Auth
     /// </summary>
     public partial class AmazonEKSAuthMetadata : IServiceMetadata
     {

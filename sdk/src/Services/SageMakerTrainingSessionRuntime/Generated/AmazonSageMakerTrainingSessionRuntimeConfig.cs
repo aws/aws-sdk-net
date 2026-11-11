@@ -27,12 +27,12 @@ using Amazon.SageMakerTrainingSessionRuntime.Internal;
 namespace Amazon.SageMakerTrainingSessionRuntime
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMakerTrainingSessionRuntime service
+    /// Configuration for accessing SageMaker Training Session Runtime
     /// </summary>
     public partial class AmazonSageMakerTrainingSessionRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMakerTrainingSessionRuntime", "4.0.100.4");
+            InternalSDKUtils.BuildUserAgentString("SageMakerTrainingSessionRuntime", "4.0.100.8");
 
         private static readonly AmazonSageMakerTrainingSessionRuntimeEndpointResolver EndpointResolver =
             new AmazonSageMakerTrainingSessionRuntimeEndpointResolver();

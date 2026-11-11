@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Transfer
 {
     /// <summary>
-    /// Configuration for accessing Amazon Transfer service
+    /// Configuration for accessing AWS Transfer Family
     /// </summary>
     public static class AmazonTransferDefaultConfiguration
     {

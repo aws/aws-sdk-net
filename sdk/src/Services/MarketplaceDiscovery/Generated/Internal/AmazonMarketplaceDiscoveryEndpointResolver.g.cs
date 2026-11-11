@@ -31,7 +31,7 @@ using Amazon.MarketplaceDiscovery.Endpoints;
 namespace Amazon.MarketplaceDiscovery.Internal
 {
     /// <summary>
-    /// Amazon MarketplaceDiscovery endpoint resolver.
+    /// AWS Marketplace Discovery endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MarketplaceDiscovery service requests.
     /// <para />

@@ -27,12 +27,12 @@ using Amazon.BCMPricingCalculator.Internal;
 namespace Amazon.BCMPricingCalculator
 {
     /// <summary>
-    /// Configuration for accessing Amazon BCMPricingCalculator service
+    /// Configuration for accessing AWS Billing and Cost Management Pricing Calculator
     /// </summary>
     public partial class AmazonBCMPricingCalculatorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("BCM Pricing Calculator", "4.0.102.14");
+            InternalSDKUtils.BuildUserAgentString("BCM Pricing Calculator", "4.0.102.18");
 
         private static readonly AmazonBCMPricingCalculatorEndpointResolver EndpointResolver =
             new AmazonBCMPricingCalculatorEndpointResolver();

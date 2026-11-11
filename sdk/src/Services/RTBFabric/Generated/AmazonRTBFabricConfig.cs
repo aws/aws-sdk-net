@@ -27,12 +27,12 @@ using Amazon.RTBFabric.Internal;
 namespace Amazon.RTBFabric
 {
     /// <summary>
-    /// Configuration for accessing Amazon RTBFabric service
+    /// Configuration for accessing RTBFabric
     /// </summary>
     public partial class AmazonRTBFabricConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("RTBFabric", "4.0.102.9");
+            InternalSDKUtils.BuildUserAgentString("RTBFabric", "4.0.102.13");
 
         private static readonly AmazonRTBFabricEndpointResolver EndpointResolver =
             new AmazonRTBFabricEndpointResolver();

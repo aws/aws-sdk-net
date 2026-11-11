@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.",
+  "base-name": "GameLift",
   "legacy-service-id": "GameLift"
 }

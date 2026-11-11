@@ -26,7 +26,7 @@ using Amazon.ApiGatewayV2.Endpoints;
 namespace Amazon.ApiGatewayV2.Internal
 {
     /// <summary>
-    /// Amazon ApiGatewayV2 endpoint provider.
+    /// AmazonApiGatewayV2 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ApiGatewayV2EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

@@ -26,7 +26,7 @@ using Amazon.IoTTwinMaker.Endpoints;
 namespace Amazon.IoTTwinMaker.Internal
 {
     /// <summary>
-    /// Amazon IoTTwinMaker endpoint provider.
+    /// AWS IoT TwinMaker endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IoTTwinMakerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

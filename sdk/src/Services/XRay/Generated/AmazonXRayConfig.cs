@@ -27,12 +27,12 @@ using Amazon.XRay.Internal;
 namespace Amazon.XRay
 {
     /// <summary>
-    /// Configuration for accessing Amazon XRay service
+    /// Configuration for accessing AWS X-Ray
     /// </summary>
     public partial class AmazonXRayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("XRay", "4.0.101.2");
+            InternalSDKUtils.BuildUserAgentString("XRay", "4.0.101.6");
 
         private static readonly AmazonXRayEndpointResolver EndpointResolver =
             new AmazonXRayEndpointResolver();

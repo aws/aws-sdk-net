@@ -27,12 +27,12 @@ using Amazon.LexModelBuildingService.Internal;
 namespace Amazon.LexModelBuildingService
 {
     /// <summary>
-    /// Configuration for accessing Amazon LexModelBuildingService service
+    /// Configuration for accessing Amazon Lex Model Building Service
     /// </summary>
     public partial class AmazonLexModelBuildingServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Lex Model Building Service", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Lex Model Building Service", "4.0.100.26");
 
         private static readonly AmazonLexModelBuildingServiceEndpointResolver EndpointResolver =
             new AmazonLexModelBuildingServiceEndpointResolver();

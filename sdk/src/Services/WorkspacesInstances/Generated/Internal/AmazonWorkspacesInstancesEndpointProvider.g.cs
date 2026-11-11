@@ -26,7 +26,7 @@ using Amazon.WorkspacesInstances.Endpoints;
 namespace Amazon.WorkspacesInstances.Internal
 {
     /// <summary>
-    /// Amazon WorkspacesInstances endpoint provider.
+    /// Amazon Workspaces Instances endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="WorkspacesInstancesEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

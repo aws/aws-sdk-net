@@ -51,7 +51,11 @@ namespace Amazon.RAM.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property Permission.
+        /// Gets and sets the property Permission. 
+        /// <para>
+        /// The details of the new permission version, including its <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a>, version number, status, and policy document.
+        /// </para>
         /// </summary>
         public ResourceSharePermissionDetail Permission { get; set; }
 

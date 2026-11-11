@@ -27,12 +27,12 @@ using Amazon.AmplifyUIBuilder.Internal;
 namespace Amazon.AmplifyUIBuilder
 {
     /// <summary>
-    /// Configuration for accessing Amazon AmplifyUIBuilder service
+    /// Configuration for accessing AWS Amplify UI Builder
     /// </summary>
     public partial class AmazonAmplifyUIBuilderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AmplifyUIBuilder", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("AmplifyUIBuilder", "4.0.100.26");
 
         private static readonly AmazonAmplifyUIBuilderEndpointResolver EndpointResolver =
             new AmazonAmplifyUIBuilderEndpointResolver();

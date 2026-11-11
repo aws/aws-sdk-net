@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Textract service
+    /// Service metadata for Amazon Textract
     /// </summary>
     public partial class AmazonTextractMetadata : IServiceMetadata
     {

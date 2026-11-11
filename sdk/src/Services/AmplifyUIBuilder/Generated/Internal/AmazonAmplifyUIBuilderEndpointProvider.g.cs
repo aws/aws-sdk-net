@@ -26,7 +26,7 @@ using Amazon.AmplifyUIBuilder.Endpoints;
 namespace Amazon.AmplifyUIBuilder.Internal
 {
     /// <summary>
-    /// Amazon AmplifyUIBuilder endpoint provider.
+    /// AWS Amplify UI Builder endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AmplifyUIBuilderEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

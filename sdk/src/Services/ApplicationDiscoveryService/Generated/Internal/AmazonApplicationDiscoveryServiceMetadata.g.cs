@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon ApplicationDiscoveryService service
+    /// Service metadata for AWS Application Discovery Service
     /// </summary>
     public partial class AmazonApplicationDiscoveryServiceMetadata : IServiceMetadata
     {

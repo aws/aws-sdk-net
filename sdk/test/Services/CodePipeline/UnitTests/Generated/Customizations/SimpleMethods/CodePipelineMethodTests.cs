@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the codepipeline-2015-07-09.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,7 +54,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.CodePipeline.AmazonCodePipelineClient), "StartPipelineExecution", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.CodePipeline.AmazonCodePipelineClient), "UpdatePipeline", new Type[] { typeof(PipelineDeclaration), });
         }
-        
+
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
         {
             Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);

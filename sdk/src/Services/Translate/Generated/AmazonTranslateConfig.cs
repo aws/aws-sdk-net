@@ -27,12 +27,12 @@ using Amazon.Translate.Internal;
 namespace Amazon.Translate
 {
     /// <summary>
-    /// Configuration for accessing Amazon Translate service
+    /// Configuration for accessing Amazon Translate
     /// </summary>
     public partial class AmazonTranslateConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Translate", "4.0.101.5");
+            InternalSDKUtils.BuildUserAgentString("Translate", "4.0.101.9");
 
         private static readonly AmazonTranslateEndpointResolver EndpointResolver =
             new AmazonTranslateEndpointResolver();

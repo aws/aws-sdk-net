@@ -26,7 +26,7 @@ using Amazon.Amplify.Endpoints;
 namespace Amazon.Amplify.Internal
 {
     /// <summary>
-    /// Amazon Amplify endpoint provider.
+    /// AWS Amplify endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AmplifyEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

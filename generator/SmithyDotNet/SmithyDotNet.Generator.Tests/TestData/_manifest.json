@@ -1,0 +1,63 @@
+{
+  "unittestprojects": [
+    {
+      "defineConstants": [],
+      "excludeFolders": [
+        "obj"
+      ],
+      "visualStudioServices": [
+        "{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"
+      ],
+      "embeddedResources": [
+        "Custom\\Runtime\\TestResponses\\*.txt",
+        "Custom\\Runtime\\EventStreams\\test_vectors\\*",
+        "Custom\\Runtime\\TestEndpoints\\*.json",
+        "Custom\\TestTools\\ComparerTest.json",
+        "Custom\\Runtime\\Signing\\reference\\sigv4_test_cases.json",
+        "..\\Services\\S3\\UnitTests\\Custom\\EmbeddedResource\\*"
+      ],
+      "packageReferences": [
+        {
+          "include": "Moq",
+          "version": "9.9.9"
+        },
+        {
+          "include": "MSTest.TestAdapter",
+          "version": "3.11.1"
+        },
+        {
+          "include": "Microsoft.NET.Test.Sdk",
+          "version": "17.13.0"
+        },
+        {
+          "include": "MSTest.TestFramework",
+          "version": "3.11.1"
+        },
+        {
+          "include": "AutoFixture",
+          "version": "4.18.1"
+        },
+        {
+          "include": "AutoFixture.AutoMoq",
+          "version": "4.18.1"
+        }
+      ],
+      "frameworkReferences": [
+        {
+          "name": "System.Configuration",
+          "targets": [
+            "net472"
+          ]
+        },
+        {
+          "name": "System.Net.Http",
+          "targets": [
+            "net8.0",
+            "net472"
+          ]
+        }
+      ],
+      "noWarn": "CS1591,CS0612,CS0618,CS9999"
+    }
+  ]
+}

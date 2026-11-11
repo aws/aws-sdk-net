@@ -116,7 +116,7 @@ namespace Amazon.CertificateManager.Model
         /// The private key that matches the public key in the certificate.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 5120)]
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 8192)]
         public MemoryStream PrivateKey { get; set; }
 
         /// <summary>

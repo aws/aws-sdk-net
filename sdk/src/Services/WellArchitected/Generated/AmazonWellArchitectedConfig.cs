@@ -27,12 +27,12 @@ using Amazon.WellArchitected.Internal;
 namespace Amazon.WellArchitected
 {
     /// <summary>
-    /// Configuration for accessing Amazon WellArchitected service
+    /// Configuration for accessing AWS Well-Architected Tool
     /// </summary>
     public partial class AmazonWellArchitectedConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WellArchitected", "4.0.102.7");
+            InternalSDKUtils.BuildUserAgentString("WellArchitected", "4.0.102.11");
 
         private static readonly AmazonWellArchitectedEndpointResolver EndpointResolver =
             new AmazonWellArchitectedEndpointResolver();

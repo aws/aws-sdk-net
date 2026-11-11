@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.DAX
 {
     /// <summary>
-    /// Configuration for accessing Amazon DAX service
+    /// Configuration for accessing Amazon DynamoDB Accelerator (DAX)
     /// </summary>
     public static class AmazonDAXDefaultConfiguration
     {

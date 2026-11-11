@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ApplicationDiscoveryService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApplicationDiscoveryService service
+    /// Configuration for accessing AWS Application Discovery Service
     /// </summary>
     public static class AmazonApplicationDiscoveryServiceDefaultConfiguration
     {

@@ -206,6 +206,25 @@ namespace Amazon.MarketplaceAgreement.Model
         internal bool IsSetEntitlements() => this.Entitlements != null && (this.Entitlements.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property FreeTrialEndTime. 
+        /// <para>
+        /// The date and time when the free trial of the agreement ends. This field is present
+        /// only when the agreement includes a free trial.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an agreement that includes both a free trial and usage-based pricing, the agreement
+        /// converts to paid usage at this time.
+        /// </para>
+        /// </summary>
+        public DateTime? FreeTrialEndTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FreeTrialEndTime property is set.
+        /// </summary>
+        internal bool IsSetFreeTrialEndTime() => this.FreeTrialEndTime.HasValue;
+
+        /// <summary>
         /// Gets and sets the property InitialAgreementId. 
         /// <para>
         /// The unique identifier of the very first agreement in a chain of related agreements,

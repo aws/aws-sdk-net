@@ -92,6 +92,23 @@ namespace Amazon.LambdaMicrovms.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
+        /// Gets and sets the property SupportedCpuConfigurations. CPU configurations supported
+        /// by this managed base image version.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<CpuConfiguration> SupportedCpuConfigurations { get; set; } = AWSConfigs.InitializeCollections ? new List<CpuConfiguration>() : null;
+
+        /// <summary>
+        /// Checks to see if the SupportedCpuConfigurations property is set.
+        /// </summary>
+        internal bool IsSetSupportedCpuConfigurations() => this.SupportedCpuConfigurations != null && (this.SupportedCpuConfigurations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
         /// The timestamp when the version was last updated.

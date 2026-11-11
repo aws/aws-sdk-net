@@ -27,12 +27,12 @@ using Amazon.SecurityAgent.Internal;
 namespace Amazon.SecurityAgent
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecurityAgent service
+    /// Configuration for accessing AWS Security Agent
     /// </summary>
     public partial class AmazonSecurityAgentConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SecurityAgent", "4.0.113.4");
+            InternalSDKUtils.BuildUserAgentString("SecurityAgent", "4.0.115.2");
 
         private static readonly AmazonSecurityAgentEndpointResolver EndpointResolver =
             new AmazonSecurityAgentEndpointResolver();

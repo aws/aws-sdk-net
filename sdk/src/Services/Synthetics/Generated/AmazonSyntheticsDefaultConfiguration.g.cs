@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Synthetics
 {
     /// <summary>
-    /// Configuration for accessing Amazon Synthetics service
+    /// Configuration for accessing Synthetics
     /// </summary>
     public static class AmazonSyntheticsDefaultConfiguration
     {

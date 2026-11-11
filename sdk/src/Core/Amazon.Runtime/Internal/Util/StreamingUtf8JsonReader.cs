@@ -144,12 +144,14 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// The type of the current JSON token.
+        /// The type of the current JSON token. Once the document has been read to its end and the pooled buffer
+        /// released, this is still the type of the last token read.
         /// </summary>
-        public JsonTokenType TokenType => _reader.TokenType;
+        public JsonTokenType TokenType => _bufferReturned ? _lastTokenType : _reader.TokenType;
 
         /// <summary>
-        /// The raw UTF-8 bytes of the current JSON token value.
+        /// The raw UTF-8 bytes of the current JSON token value. Empty once the document has been read to its end
+        /// and the pooled buffer released, as the token's bytes are no longer available.
         /// </summary>
         public ReadOnlySpan<byte> ValueSpan => _reader.ValueSpan;
 
@@ -172,6 +174,8 @@ namespace Amazon.Runtime.Internal.Util
         private Stream _stream;
         private byte[] _buffer;
         private bool _hasReadFromStream;
+        private bool _bufferReturned;
+        private JsonTokenType _lastTokenType;
 
         /// <summary>
         /// Initializes a new instance of the StreamingUtf8JsonReader. The stream is not read until the first call to <see cref="Read"/>, which fills the buffer.
@@ -229,6 +233,13 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>true if there is more data, false otherwise.</returns>
         public bool Read()
         {
+            if (_bufferReturned)
+            {
+                // The document has been fully read and the buffer handed back to the pool; there
+                // is nothing left to read and the pooled array must not be touched again.
+                return false;
+            }
+
             if (!_hasReadFromStream)
             {
                 ReadFirstBuffer();
@@ -241,7 +252,7 @@ namespace Amazon.Runtime.Internal.Util
             {
                 if (_reader.IsFinalBlock)
                 {
-                    ArrayPool<byte>.Shared.Return(_buffer);
+                    ReturnBuffer();
                     break;
                 }
 
@@ -250,7 +261,34 @@ namespace Amazon.Runtime.Internal.Util
                 hasMoreData = _reader.Read();
             }
 
+            // Generated unmarshallers stop reading at the closing token of the root value and never read past the end of
+            // the document, so the buffer would otherwise only be returned to the pool when a caller reads to end-of-stream.
+            // A JSON document has a single root value, so once its closing token has been read the buffer can be released.
+            if (hasMoreData && _reader.CurrentDepth == 0 &&
+                (_reader.TokenType == JsonTokenType.EndObject || _reader.TokenType == JsonTokenType.EndArray))
+            {
+                ReturnBuffer();
+            }
+
             return hasMoreData;
+        }
+
+        private void ReturnBuffer()
+        {
+            if (!_bufferReturned)
+            {
+                _bufferReturned = true;
+                var buffer = _buffer;
+                // Drop the reference: Read already short-circuits once the buffer is gone, and GetMoreBytesFromStream
+                // rejects a null buffer, so nothing can refill an array the pool may have handed to someone else.
+                // The Utf8JsonReader is also reset, as it still points into the array that is going back to the pool:
+                // value accessors such as ValueSpan and GetString would otherwise read whatever the pool's next renter
+                // writes there. The context reads TokenType right after Read returns, so that is kept separately.
+                _lastTokenType = _reader.TokenType;
+                _reader = default;
+                _buffer = null;
+                ArrayPool<byte>.Shared.Return(buffer);
+            }
         }
 
         private void ReadFirstBuffer()
@@ -270,6 +308,9 @@ namespace Amazon.Runtime.Internal.Util
 
         private static void GetMoreBytesFromStream(Stream stream, ref byte[] buffer, ref Utf8JsonReader reader)
         {
+            if (buffer == null)
+                throw new InvalidOperationException("The JSON document has already been read to its end and the reader's buffer has been released.");
+
             int bytesRead = 0;
             ReadOnlySpan<byte> leftover = buffer.AsSpan().Slice((int)reader.BytesConsumed);
             if (reader.BytesConsumed < buffer.Length)

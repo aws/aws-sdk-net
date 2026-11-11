@@ -28,12 +28,12 @@ using Amazon.ImportExport.Internal;
 namespace Amazon.ImportExport
 {
     /// <summary>
-    /// Configuration for accessing Amazon ImportExport service
+    /// Configuration for accessing AWS Import/Export
     /// </summary>
     public partial class AmazonImportExportConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ImportExport", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("ImportExport", "4.0.100.25");
 
         private static readonly AmazonImportExportEndpointResolver EndpointResolver =
             new AmazonImportExportEndpointResolver();

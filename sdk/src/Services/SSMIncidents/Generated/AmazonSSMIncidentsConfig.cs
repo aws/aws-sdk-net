@@ -27,12 +27,12 @@ using Amazon.SSMIncidents.Internal;
 namespace Amazon.SSMIncidents
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSMIncidents service
+    /// Configuration for accessing AWS Systems Manager Incident Manager
     /// </summary>
     public partial class AmazonSSMIncidentsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSM Incidents", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("SSM Incidents", "4.0.100.26");
 
         private static readonly AmazonSSMIncidentsEndpointResolver EndpointResolver =
             new AmazonSSMIncidentsEndpointResolver();

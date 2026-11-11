@@ -27,12 +27,12 @@ using Amazon.PartnerCentralSelling.Internal;
 namespace Amazon.PartnerCentralSelling
 {
     /// <summary>
-    /// Configuration for accessing Amazon PartnerCentralSelling service
+    /// Configuration for accessing Partner Central Selling API
     /// </summary>
     public partial class AmazonPartnerCentralSellingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PartnerCentral Selling", "4.0.103.10");
+            InternalSDKUtils.BuildUserAgentString("PartnerCentral Selling", "4.0.103.14");
 
         private static readonly AmazonPartnerCentralSellingEndpointResolver EndpointResolver =
             new AmazonPartnerCentralSellingEndpointResolver();

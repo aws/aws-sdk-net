@@ -26,7 +26,7 @@ using Amazon.MarketplaceDiscovery.Endpoints;
 namespace Amazon.MarketplaceDiscovery.Internal
 {
     /// <summary>
-    /// Amazon MarketplaceDiscovery endpoint provider.
+    /// AWS Marketplace Discovery endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MarketplaceDiscoveryEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

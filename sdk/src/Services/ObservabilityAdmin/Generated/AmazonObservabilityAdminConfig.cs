@@ -27,12 +27,12 @@ using Amazon.ObservabilityAdmin.Internal;
 namespace Amazon.ObservabilityAdmin
 {
     /// <summary>
-    /// Configuration for accessing Amazon ObservabilityAdmin service
+    /// Configuration for accessing CloudWatch Observability Admin Service
     /// </summary>
     public partial class AmazonObservabilityAdminConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ObservabilityAdmin", "4.0.108.2");
+            InternalSDKUtils.BuildUserAgentString("ObservabilityAdmin", "4.0.108.6");
 
         private static readonly AmazonObservabilityAdminEndpointResolver EndpointResolver =
             new AmazonObservabilityAdminEndpointResolver();

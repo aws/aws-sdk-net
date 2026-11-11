@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace <#= base.Config.Namespace#>
 {
     /// <summary>
-    /// Configuration for accessing Amazon <#= base.Config.ClassName#> service
+    /// Configuration for accessing <#= base.Config.ServiceModel.ServiceFullName#>
     /// </summary>
     public static class Amazon<#= base.Config.ClassName#>DefaultConfiguration
     {

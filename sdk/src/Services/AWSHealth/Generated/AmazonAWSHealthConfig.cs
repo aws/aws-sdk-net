@@ -27,12 +27,12 @@ using Amazon.AWSHealth.Internal;
 namespace Amazon.AWSHealth
 {
     /// <summary>
-    /// Configuration for accessing Amazon AWSHealth service
+    /// Configuration for accessing AWS Health APIs and Notifications
     /// </summary>
     public partial class AmazonAWSHealthConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Health", "4.0.102.6");
+            InternalSDKUtils.BuildUserAgentString("Health", "4.0.102.10");
 
         private static readonly AmazonAWSHealthEndpointResolver EndpointResolver =
             new AmazonAWSHealthEndpointResolver();

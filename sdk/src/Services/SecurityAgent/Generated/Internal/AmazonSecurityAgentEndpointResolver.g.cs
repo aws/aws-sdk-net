@@ -31,7 +31,7 @@ using Amazon.SecurityAgent.Endpoints;
 namespace Amazon.SecurityAgent.Internal
 {
     /// <summary>
-    /// Amazon SecurityAgent endpoint resolver.
+    /// AWS Security Agent endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for SecurityAgent service requests.
     /// <para />

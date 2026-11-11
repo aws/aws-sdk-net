@@ -90,6 +90,11 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("GrantName");
                 context.Writer.WriteStringValue(publicRequest.GrantName);
             }
+            if (publicRequest.IsSetGrantType())
+            {
+                context.Writer.WritePropertyName("GrantType");
+                context.Writer.WriteStringValue(publicRequest.GrantType);
+            }
             if (publicRequest.IsSetHomeRegion())
             {
                 context.Writer.WritePropertyName("HomeRegion");
@@ -99,6 +104,16 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("LicenseArn");
                 context.Writer.WriteStringValue(publicRequest.LicenseArn);
+            }
+            if (publicRequest.IsSetOptions())
+            {
+                context.Writer.WritePropertyName("Options");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Options, context);
+
+                context.Writer.WriteEndObject();
             }
             if (publicRequest.IsSetPrincipals())
             {

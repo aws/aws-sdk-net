@@ -3004,7 +3004,7 @@
       "type":"structure",
       "members":{
         "accessKeyId":{"shape":"IAMAccessKeyId"},
-        "secretAccessKey":{"shape":"NonEmptyString"},
+        "secretAccessKey":{"shape":"SensitiveNonEmptyString"},
         "status":{"shape":"StatusType"},
         "createdAt":{"shape":"IsoDate"},
         "lastUsed":{"shape":"AccessKeyLastUsed"}
@@ -3921,7 +3921,7 @@
       "type":"structure",
       "members":{
         "username":{"shape":"string"},
-        "password":{"shape":"string"},
+        "password":{"shape":"SensitiveString"},
         "expiresAt":{"shape":"IsoDate"},
         "registry":{"shape":"string"}
       }
@@ -4375,7 +4375,7 @@
       "members":{
         "keyPair":{"shape":"KeyPair"},
         "publicKeyBase64":{"shape":"Base64"},
-        "privateKeyBase64":{"shape":"Base64"},
+        "privateKeyBase64":{"shape":"SensitiveBase64"},
         "operation":{"shape":"Operation"}
       }
     },
@@ -5105,7 +5105,7 @@
       "type":"structure",
       "members":{
         "publicKeyBase64":{"shape":"Base64"},
-        "privateKeyBase64":{"shape":"Base64"},
+        "privateKeyBase64":{"shape":"SensitiveBase64"},
         "createdAt":{"shape":"IsoDate"}
       }
     },
@@ -5741,7 +5741,8 @@
       "type":"structure",
       "required":["instanceName"],
       "members":{
-        "instanceName":{"shape":"ResourceName"}
+        "instanceName":{"shape":"ResourceName"},
+        "includeHealthStatus":{"shape":"boolean"}
       }
     },
     "GetInstanceResult":{
@@ -5792,7 +5793,8 @@
     "GetInstancesRequest":{
       "type":"structure",
       "members":{
-        "pageToken":{"shape":"string"}
+        "pageToken":{"shape":"string"},
+        "includeHealthStatus":{"shape":"boolean"}
       }
     },
     "GetInstancesResult":{
@@ -6337,7 +6339,9 @@
         "state":{"shape":"InstanceState"},
         "username":{"shape":"NonEmptyString"},
         "sshKeyName":{"shape":"ResourceName"},
-        "metadataOptions":{"shape":"InstanceMetadataOptions"}
+        "metadataOptions":{"shape":"InstanceMetadataOptions"},
+        "instanceStatus":{"shape":"InstanceHealthStatus"},
+        "systemStatus":{"shape":"InstanceHealthStatus"}
       }
     },
     "InstanceAccessDetails":{
@@ -6347,9 +6351,9 @@
         "expiresAt":{"shape":"IsoDate"},
         "ipAddress":{"shape":"IpAddress"},
         "ipv6Addresses":{"shape":"Ipv6AddressList"},
-        "password":{"shape":"string"},
+        "password":{"shape":"SensitiveString"},
         "passwordData":{"shape":"PasswordData"},
-        "privateKey":{"shape":"string"},
+        "privateKey":{"shape":"SensitiveString"},
         "protocol":{"shape":"InstanceAccessProtocol"},
         "instanceName":{"shape":"ResourceName"},
         "username":{"shape":"string"},
@@ -6362,6 +6366,12 @@
         "ssh",
         "rdp"
       ]
+    },
+    "InstanceAttributeUpdates":{
+      "type":"structure",
+      "members":{
+        "bundleId":{"shape":"NonEmptyString"}
+      }
     },
     "InstanceEntry":{
       "type":"structure",
@@ -6416,6 +6426,48 @@
         "unused",
         "draining",
         "unavailable"
+      ]
+    },
+    "InstanceHealthStatus":{
+      "type":"structure",
+      "members":{
+        "status":{"shape":"InstanceHealthStatusValue"},
+        "details":{"shape":"InstanceHealthStatusDetailList"}
+      }
+    },
+    "InstanceHealthStatusDetail":{
+      "type":"structure",
+      "members":{
+        "name":{"shape":"InstanceHealthStatusDetailName"},
+        "status":{"shape":"InstanceHealthStatusDetailValue"},
+        "impairedSince":{"shape":"IsoDate"}
+      }
+    },
+    "InstanceHealthStatusDetailList":{
+      "type":"list",
+      "member":{"shape":"InstanceHealthStatusDetail"}
+    },
+    "InstanceHealthStatusDetailName":{
+      "type":"string",
+      "enum":["reachability"]
+    },
+    "InstanceHealthStatusDetailValue":{
+      "type":"string",
+      "enum":[
+        "passed",
+        "failed",
+        "insufficient-data",
+        "initializing"
+      ]
+    },
+    "InstanceHealthStatusValue":{
+      "type":"string",
+      "enum":[
+        "ok",
+        "impaired",
+        "initializing",
+        "insufficient-data",
+        "not-applicable"
       ]
     },
     "InstanceHealthSummary":{
@@ -7277,7 +7329,7 @@
     "PasswordData":{
       "type":"structure",
       "members":{
-        "ciphertext":{"shape":"string"},
+        "ciphertext":{"shape":"SensitiveString"},
         "keyPairName":{"shape":"ResourceName"}
       }
     },
@@ -7306,7 +7358,7 @@
     "PendingModifiedRelationalDatabaseValues":{
       "type":"structure",
       "members":{
-        "masterUserPassword":{"shape":"string"},
+        "masterUserPassword":{"shape":"SensitiveString"},
         "engineVersion":{"shape":"string"},
         "backupRetentionEnabled":{"shape":"boolean"}
       }
@@ -7876,6 +7928,10 @@
         "operations":{"shape":"OperationList"}
       }
     },
+    "SensitiveBase64":{
+      "type":"string",
+      "sensitive":true
+    },
     "SensitiveNonEmptyString":{
       "type":"string",
       "pattern":".*\\S.*",
@@ -8056,7 +8112,8 @@
       "type":"structure",
       "required":["instanceName"],
       "members":{
-        "instanceName":{"shape":"ResourceName"}
+        "instanceName":{"shape":"ResourceName"},
+        "attributeUpdates":{"shape":"InstanceAttributeUpdates"}
       }
     },
     "StartInstanceResult":{

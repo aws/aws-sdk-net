@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Shield
 {
     /// <summary>
-    /// Configuration for accessing Amazon Shield service
+    /// Configuration for accessing AWS Shield
     /// </summary>
     public static class AmazonShieldDefaultConfiguration
     {

@@ -27,12 +27,12 @@ using Amazon.AppConfig.Internal;
 namespace Amazon.AppConfig
 {
     /// <summary>
-    /// Configuration for accessing Amazon AppConfig service
+    /// Configuration for accessing Amazon AppConfig
     /// </summary>
     public partial class AmazonAppConfigConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AppConfig", "4.0.101.19");
+            InternalSDKUtils.BuildUserAgentString("AppConfig", "4.0.101.23");
 
         private static readonly AmazonAppConfigEndpointResolver EndpointResolver =
             new AmazonAppConfigEndpointResolver();

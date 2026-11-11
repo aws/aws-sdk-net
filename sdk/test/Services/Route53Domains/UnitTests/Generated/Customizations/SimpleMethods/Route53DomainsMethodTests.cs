@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -41,7 +41,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.Route53Domains.AmazonRoute53DomainsClient), "ListTagsForDomain", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.Route53Domains.AmazonRoute53DomainsClient), "UpdateTagsForDomain", new Type[] { typeof(string), typeof(List<Tag>), });
         }
-        
+
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
         {
             Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);

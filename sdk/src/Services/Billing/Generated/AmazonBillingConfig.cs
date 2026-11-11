@@ -27,12 +27,12 @@ using Amazon.Billing.Internal;
 namespace Amazon.Billing
 {
     /// <summary>
-    /// Configuration for accessing Amazon Billing service
+    /// Configuration for accessing AWS Billing
     /// </summary>
     public partial class AmazonBillingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Billing", "4.0.106.0");
+            InternalSDKUtils.BuildUserAgentString("Billing", "4.0.106.4");
 
         private static readonly AmazonBillingEndpointResolver EndpointResolver =
             new AmazonBillingEndpointResolver();

@@ -27,12 +27,12 @@ using Amazon.PI.Internal;
 namespace Amazon.PI
 {
     /// <summary>
-    /// Configuration for accessing Amazon PI service
+    /// Configuration for accessing AWS Performance Insights
     /// </summary>
     public partial class AmazonPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PI", "4.0.101.5");
+            InternalSDKUtils.BuildUserAgentString("PI", "4.0.101.9");
 
         private static readonly AmazonPIEndpointResolver EndpointResolver =
             new AmazonPIEndpointResolver();

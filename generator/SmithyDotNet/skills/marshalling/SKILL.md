@@ -49,7 +49,7 @@ Every request marshaller emits, in this order:
 4. `@httpQuery` members, then `@httpQueryParams`; `@httpPrefixHeaders`, then `@httpHeader` members.
 5. `@httpLabel` members as `AddPathResource` calls, then `request.ResourcePath` set to the `@http` uri
    template (labels left as `{name}` for the runtime to substitute).
-6. The body (below), `@httpChecksumRequired`, `@unsignedPayload`, `UseQueryString`, `@endpoint` host
+6. The body (below), the request checksum (below), `@unsignedPayload`, `UseQueryString`, `@endpoint` host
    prefix, `return request`.
 
 An operation that requires HTTP/2 pins `request.HttpProtocolVersion = System.Net.HttpVersion.Version20`
@@ -179,7 +179,7 @@ A `@httpPayload` member IS the entire body: no wrapping object/property name, no
 
 List and map payloads fail loud.
 
-### `@requestCompression` and `@httpChecksumRequired` (request)
+### `@requestCompression` and request checksums (request)
 
 Both are one emitted call to a runtime helper in `Amazon.Runtime.Internal.Util`, at opposite ends of the body.
 
@@ -190,10 +190,10 @@ Both are one emitted call to a runtime helper in `Amazon.Runtime.Internal.Util`,
   throw, where C2J warns and emits no call: silently dropping compression changes wire behavior with no
   signal. A `@streaming` `@requiresLength` payload is rejected (Smithy forbids it; the compressed length
   isn't known until the stream has been read).
-- `@httpChecksumRequired` → `ChecksumUtils.SetChecksumData(request);` **after** body serialization (the
-  checksum covers the body), before the `DisablePayloadSigning` line. This is the legacy MD5-only trait.
-  C2J also treats the flexible `aws.protocols#httpChecksum` as MD5-required; we deliberately don't (that
-  trait is rejected as unsupported), so flexible-checksum operations stay off the MD5 path.
+- `aws.protocols#httpChecksum` / `@httpChecksumRequired` → one `ChecksumUtils.SetChecksumData(...)` call, the same
+  arguments C2J emits, **after** body serialization and only for an operation with a body (S3Control has the legacy
+  trait on GETs). restXml emits it after `PostMarshallCustomization`, as C2J does, so the modeled checksum wins over a
+  hand-written hook. `skipChecksumDuringMarshalling` suppresses it; a response-only `httpChecksum` emits nothing.
 
 ### `@endpoint` host prefix (request)
 
@@ -474,7 +474,8 @@ Writers and their output are pinned by `RestXmlCodegenTests` and the restXml pro
   is marshalled by that structure's own marshaller into the root. `Content-Type: application/xml` and
   `x-amz-api-version` are set only when there is an XML body, inside a `try`/`catch` that maps an
   `EncoderFallbackException` to an `AmazonServiceException`. A structure/union `@httpPayload` is `IsSet`-guarded
-  so an unset payload sends an empty body, not `<Root />` (as C2J and the JSON writer do). A non-structure
+  so an unset payload sends an empty body, not `<Root />`. With a request checksum only the root element is
+  guarded and the stream is always created (C2J), so the checksum covers the empty body instead of nothing. A non-structure
   `@httpPayload` (string/blob) takes the raw-content path with `text/plain`/`application/octet-stream` (or
   `@mediaType`). The `@endpoint` host prefix is skipped when a `@hostLabel` member is also a `@contextParam`
   (the endpoint ruleset already consumes it into the host; only S3 Control matches today) — derived from the
@@ -495,11 +496,78 @@ Service trait for awsJson1.0 and rpcv2Cbor services that moved off awsQuery
 ([spec](https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsquerycompatible-trait)): the
 request announces query mode and errors still dispatch on the shape name, not the rewritten query error code.
 
-## Other Protocols (not yet implemented)
+## awsQuery
 
-awsQuery and ec2Query: the target output is defined by the C2J templates
-(`generator/ServiceClientGeneratorLib/Generators/Marshallers/*.tt`). Both route via an
-`Action={Operation}` param with URL-encoded bodies. Wire names: awsQuery the member name verbatim,
-ec2Query `@ec2QueryName` or the member name with its first letter upper-cased.
+Spec: [aws.protocols#awsQuery](https://smithy.io/2.0/aws/protocols/aws-query-protocol.html). Every
+operation is a `POST /` whose body is a URL-encoded form; the response is XML wrapped in
+`{Operation}Response`/`{Operation}Result`. There are no HTTP binding traits (every member is body-bound),
+no per-operation Content-Type (the runtime sets `application/x-www-form-urlencoded`), and no XML request
+body. Wire names reuse the XML naming traits via `XmlNames` (member `@xmlName` else member name;
+`@xmlFlattened`; list item = list value `@xmlName` else `member`; map key/value `@xmlName` else `key`/
+`value`). Pinned by `QueryCodegenTests`.
 
-When implementing one, replace this note with the real patterns and pin the emitted code in codegen tests.
+- **Request body** — `QueryRequestMarshallerWriter` sets `request.HttpMethod = "POST"`, adds
+  `Action={Operation}` and `Version={apiVersion}`, then `QueryBodyMemberMarshaller` writes every input
+  member inline into `request.Parameters` (awsQuery has **no** per-structure marshaller class — nested
+  structures/lists/maps are expanded recursively here, so `ServiceGenerator` skips structure-marshaller
+  emission for this protocol). Parameter names: a nested structure dot-joins (`Outer.Inner`); a list is
+  `{name}.member.{i}` (or `{name}.{i}` flattened), an empty set-list emitting the bare `{name}` with an
+  empty value (C2J); a map is `{name}.entry.{i}.key`/`.value` (or `{name}.{i}.*` flattened), a map-of-list
+  value expanding under `.value.member.{j}`. Indices are 1-based. Scalars go through the same
+  `StringUtils.From*` conversions as restXml (value types unwrap `.Value`; body timestamps default to
+  `date-time`; blobs are base64; enums are `FromString`); an idempotency token fills a GUID when unset.
+  Nested list-of-collection and map-of-map/map-of-struct-list fail loud (C2J has no path for them). The
+  body is cached up front via `AWSSDKUtils.WriteParametersToPooledStream` / `GetRequestPayloadBytes`, except
+  under metadata.json `signature-version: "v2"` (sdb), whose `QueryStringSigner` appends `SecurityToken` to
+  the parameters after marshalling and so would miss a cached body. An
+  `@endpoint` host prefix is emitted like restJson1; streaming (blobs and event streams) and documents are
+  rejected.
+- **Response body** — `QueryResponseUnmarshallerWriter` (base `XmlResponseUnmarshaller`) descends the
+  outer loop into `{Operation}Result` (depth 2) and reads the output members through the shared
+  `XmlBodyMemberUnmarshaller` (same element loop as restXml), and hands `ResponseMetadata` to
+  `ResponseMetadataUnmarshaller`. An output with no members still emits `UnmarshallResult` and its dispatch
+  (C2J parity), with the unused-parameter analyzer suppressed. Nested structures reuse
+  `XmlStructureUnmarshallerWriter`.
+- **Errors** — the runtime `XmlErrorResponseUnmarshaller` parses the `ErrorResponse/Error/Code` envelope;
+  dispatch is on `errorResponse.Code` against the error's `@awsQueryError` `code` when present, else the
+  Smithy shape name, handing off to the per-error unmarshaller from `XmlExceptionUnmarshallerWriter`
+  (shared with restXml).
+
+## ec2Query
+
+Spec: [aws.protocols#ec2Query](https://smithy.io/2.0/aws/protocols/aws-ec2-query-protocol.html). The
+awsQuery writers with EC2's differences; only EC2 and the EC2Protocol test client use it. Pinned by
+`Ec2QueryCodegenTests` and the EC2Protocol protocol tests.
+
+- **Request body** — as awsQuery, except a parameter name is the member's `@ec2QueryName` verbatim, else
+  its `@xmlName` or member name with an upper-case first letter (`XmlNames.Ec2QueryName`), and every list
+  is flattened (`{name}.{i}`, no `member` segment).
+- **Response body** — `QueryResponseUnmarshallerWriter` with base `EC2ResponseUnmarshaller` (which reads
+  the request id). The output members sit directly under `{Operation}Response`, read at depth 2 with no
+  `Result` element and no `ResponseMetadata`. Element names are the `@xmlName` or member name with a
+  lower-case first letter (`XmlNames.Ec2ResponseName`, used by every XML unmarshaller for this protocol):
+  C2J emits them that way and the runtime matches case-insensitively. A `useWrappingResult` output reads its
+  single member from the whole body (`TestExpression(".", targetDepth)`), as C2J's EC2 output does.
+- **Errors** — `UnmarshallException` builds each modeled error straight from the envelope
+  (`new {Error}Exception(errorResponse.Message, …)`), with no body copy or per-error unmarshaller call,
+  matching C2J's `AWSQueryEC2ResponseUnmarshaller.tt`. The exception unmarshallers themselves are the awsQuery
+  ones.
+- **EC2 customizations** — `CustomizationTransform` folds most into the model (only EC2 uses them), so the
+  writers above only add:
+  - `emitAsShape` + `emitFromMember` (`AttributeValue` → `string`): `TypeMapper` types the member as the wrapper's
+    value and sets `TypeDescriptor.Unwrapped`; the wire keeps the wrapper (`InstanceType.Value`, `instanceType/value`;
+    a list item `Name.{i}.Value`, `name/item/value`). `listMemberSuffixExclusions` drops the item suffix for the
+    listed operations' requests.
+  - `emitAsShape` alone retargets members to another modeled shape. The old name's `shapeModifiers` are merged
+    into the new shape's, since C2J applies them only while marshalling the substituted member; this fails when
+    a request already sends the new shape, when a key would change the emitted class, or when the new shape has
+    an `inject`, `locationName` or `customMarshall` the old name does not set with the same values or skip with
+    `customMarshall`.
+  - `inject` adds a real member; its `locationName` becomes `@xmlName`, so the request name upper-cases it and
+    the response name lower-cases it, as C2J. An injected name a renamed member already has moves that member
+    to its emitted name, keeping its wire name.
+  - `modify.locationName` becomes `@ec2QueryName` (upper-cased): request only, ranked above the model's name.
+  - `marshallNameOverrides` names a member for one operation's request, above every other rule (upper-cased).
+  - `customMarshall` keeps the member on the class but out of the request; hand-written code sends it.
+  - `suppressResultGeneration` makes the output Unit: an empty response class whose unmarshaller reads no
+    members.

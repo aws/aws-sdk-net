@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,27 +27,23 @@ using Amazon.SimpleDB.Internal;
 namespace Amazon.SimpleDB
 {
     /// <summary>
-    /// Configuration for accessing Amazon SimpleDB service
+    /// Configuration for accessing Amazon SimpleDB
     /// </summary>
     public partial class AmazonSimpleDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SimpleDB", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("SimpleDB", "4.0.100.25");
 
         private static readonly AmazonSimpleDBEndpointResolver EndpointResolver =
             new AmazonSimpleDBEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "SimpleDB";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "SimpleDB";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.SimpleDB
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "sdb";
-            }
-        }
+        public override string RegionEndpointServiceName => "sdb";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2009-04-15";
-            }
-        }
+        public override string ServiceVersion => "2009-04-15";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.SimpleDB
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

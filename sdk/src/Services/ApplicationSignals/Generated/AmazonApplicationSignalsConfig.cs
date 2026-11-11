@@ -27,12 +27,12 @@ using Amazon.ApplicationSignals.Internal;
 namespace Amazon.ApplicationSignals
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApplicationSignals service
+    /// Configuration for accessing Amazon CloudWatch Application Signals
     /// </summary>
     public partial class AmazonApplicationSignalsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Application Signals", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Application Signals", "4.0.100.26");
 
         private static readonly AmazonApplicationSignalsEndpointResolver EndpointResolver =
             new AmazonApplicationSignalsEndpointResolver();

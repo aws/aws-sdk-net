@@ -141,9 +141,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineParameters() => this.PipelineParameters != null && (this.PipelineParameters.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property PipelineVersionAlias. 
+        /// <para>
+        /// The alias of the pipeline version to start the execution from. You can't specify this
+        /// with <c>PipelineVersionId</c>. If no version of the pipeline has this alias, the request
+        /// fails with a <c>ResourceNotFound</c> error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string PipelineVersionAlias { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PipelineVersionAlias property is set.
+        /// </summary>
+        internal bool IsSetPipelineVersionAlias() => this.PipelineVersionAlias != null;
+
+        /// <summary>
         /// Gets and sets the property PipelineVersionId. 
         /// <para>
-        /// The ID of the pipeline version to start execution from.
+        /// The ID of the pipeline version to start execution from. You can't specify this with
+        /// <c>PipelineVersionAlias</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1)]
@@ -153,6 +170,23 @@ namespace Amazon.SageMaker.Model
         /// Checks to see if the PipelineVersionId property is set.
         /// </summary>
         internal bool IsSetPipelineVersionId() => this.PipelineVersionId.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that the execution uses. You must specify
+        /// this parameter when you start an execution of a pipeline that AWS manages. You can't
+        /// specify it for a pipeline that you create, because its executions use the pipeline's
+        /// role.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 2048)]
+        public string RoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RoleArn property is set.
+        /// </summary>
+        internal bool IsSetRoleArn() => this.RoleArn != null;
 
         /// <summary>
         /// Gets and sets the property SelectiveExecutionConfig. 

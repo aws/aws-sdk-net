@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.",
+  "base-name": "AppStream",
   "legacy-service-id": "AppStream"
 }

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.B2bi
 {
     /// <summary>
-    /// Configuration for accessing Amazon B2bi service
+    /// Configuration for accessing AWS B2B Data Interchange
     /// </summary>
     public static class AmazonB2biDefaultConfiguration
     {

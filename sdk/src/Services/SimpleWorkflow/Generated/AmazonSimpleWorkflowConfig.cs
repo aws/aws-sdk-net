@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,27 +27,23 @@ using Amazon.SimpleWorkflow.Internal;
 namespace Amazon.SimpleWorkflow
 {
     /// <summary>
-    /// Configuration for accessing Amazon SimpleWorkflow service
+    /// Configuration for accessing Amazon Simple Workflow Service
     /// </summary>
     public partial class AmazonSimpleWorkflowConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SWF", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("SWF", "4.0.100.25");
 
         private static readonly AmazonSimpleWorkflowEndpointResolver EndpointResolver =
             new AmazonSimpleWorkflowEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "SWF";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "SWF";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "swf";
-            }
-        }
+        public override string RegionEndpointServiceName => "swf";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2012-01-25";
-            }
-        }
+        public override string ServiceVersion => "2012-01-25";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.SimpleWorkflow
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

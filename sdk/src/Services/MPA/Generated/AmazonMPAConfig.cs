@@ -27,12 +27,12 @@ using Amazon.MPA.Internal;
 namespace Amazon.MPA
 {
     /// <summary>
-    /// Configuration for accessing Amazon MPA service
+    /// Configuration for accessing AWS Multi-party Approval
     /// </summary>
     public partial class AmazonMPAConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MPA", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("MPA", "4.0.100.25");
 
         private static readonly AmazonMPAEndpointResolver EndpointResolver =
             new AmazonMPAEndpointResolver();

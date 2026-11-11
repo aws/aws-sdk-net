@@ -35,6 +35,19 @@ namespace Amazon.Inspector2.Model
     public partial class ResourceStatus
     {
         /// <summary>
+        /// Gets and sets the property Ami. 
+        /// <para>
+        /// The status of Amazon Machine Image (AMI) scanning for the account.
+        /// </para>
+        /// </summary>
+        public Status Ami { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ami property is set.
+        /// </summary>
+        internal bool IsSetAmi() => this.Ami != null;
+
+        /// <summary>
         /// Gets and sets the property CodeRepository. 
         /// <para>
         /// The status of Amazon Inspector scanning for code repositories.

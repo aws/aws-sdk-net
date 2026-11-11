@@ -27,7 +27,7 @@ using Amazon.RpcV2Protocol.Internal;
 namespace Amazon.RpcV2Protocol
 {
     /// <summary>
-    /// Configuration for accessing Amazon RpcV2Protocol service
+    /// Configuration for accessing RpcV2 Protocol Service
     /// </summary>
     public partial class AmazonRpcV2ProtocolConfig : ClientConfig
     {

@@ -27,12 +27,12 @@ using Amazon.ComputeOptimizer.Internal;
 namespace Amazon.ComputeOptimizer
 {
     /// <summary>
-    /// Configuration for accessing Amazon ComputeOptimizer service
+    /// Configuration for accessing AWS Compute Optimizer
     /// </summary>
     public partial class AmazonComputeOptimizerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Compute Optimizer", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Compute Optimizer", "4.0.100.26");
 
         private static readonly AmazonComputeOptimizerEndpointResolver EndpointResolver =
             new AmazonComputeOptimizerEndpointResolver();

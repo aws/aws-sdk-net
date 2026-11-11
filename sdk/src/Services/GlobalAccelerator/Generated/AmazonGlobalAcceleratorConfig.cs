@@ -27,12 +27,12 @@ using Amazon.GlobalAccelerator.Internal;
 namespace Amazon.GlobalAccelerator
 {
     /// <summary>
-    /// Configuration for accessing Amazon GlobalAccelerator service
+    /// Configuration for accessing AWS Global Accelerator
     /// </summary>
     public partial class AmazonGlobalAcceleratorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Global Accelerator", "4.0.101.7");
+            InternalSDKUtils.BuildUserAgentString("Global Accelerator", "4.0.101.11");
 
         private static readonly AmazonGlobalAcceleratorEndpointResolver EndpointResolver =
             new AmazonGlobalAcceleratorEndpointResolver();

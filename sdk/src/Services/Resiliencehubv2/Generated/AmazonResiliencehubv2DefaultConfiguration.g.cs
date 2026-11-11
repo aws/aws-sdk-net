@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Resiliencehubv2
 {
     /// <summary>
-    /// Configuration for accessing Amazon Resiliencehubv2 service
+    /// Configuration for accessing AWS Resilience Hub V2
     /// </summary>
     public static class AmazonResiliencehubv2DefaultConfiguration
     {

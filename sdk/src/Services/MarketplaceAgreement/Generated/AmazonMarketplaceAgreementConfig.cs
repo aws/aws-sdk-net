@@ -27,12 +27,12 @@ using Amazon.MarketplaceAgreement.Internal;
 namespace Amazon.MarketplaceAgreement
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceAgreement service
+    /// Configuration for accessing AWS Marketplace Agreement Service
     /// </summary>
     public partial class AmazonMarketplaceAgreementConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Agreement", "4.0.103.5");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Agreement", "4.0.104.0");
 
         private static readonly AmazonMarketplaceAgreementEndpointResolver EndpointResolver =
             new AmazonMarketplaceAgreementEndpointResolver();

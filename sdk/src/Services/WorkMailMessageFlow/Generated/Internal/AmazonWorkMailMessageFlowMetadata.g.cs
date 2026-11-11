@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMailMessageFlow.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon WorkMailMessageFlow service
+    /// Service metadata for Amazon WorkMail Message Flow
     /// </summary>
     public partial class AmazonWorkMailMessageFlowMetadata : IServiceMetadata
     {

@@ -31,7 +31,7 @@ using Amazon.BedrockAgentCoreControl.Endpoints;
 namespace Amazon.BedrockAgentCoreControl.Internal
 {
     /// <summary>
-    /// Amazon BedrockAgentCoreControl endpoint resolver.
+    /// Amazon Bedrock AgentCore Control endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for BedrockAgentCoreControl service requests.
     /// <para />

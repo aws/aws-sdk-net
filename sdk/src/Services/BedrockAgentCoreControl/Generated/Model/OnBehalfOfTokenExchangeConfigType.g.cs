@@ -49,6 +49,22 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetGrantType() => this.GrantType != null;
 
         /// <summary>
+        /// Gets and sets the property OnBehalfOfAuthenticationConfig. 
+        /// <para>
+        /// Specify the client authentication configuration to use for the on-behalf-of token
+        /// exchange. With this configuration, you override the provider level client authentication
+        /// method for the on-behalf-of exchange with the identity provider. If you don't specify
+        /// this configuration, we use the provider level client authentication method.
+        /// </para>
+        /// </summary>
+        public OnBehalfOfAuthenticationConfig OnBehalfOfAuthenticationConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OnBehalfOfAuthenticationConfig property is set.
+        /// </summary>
+        internal bool IsSetOnBehalfOfAuthenticationConfig() => this.OnBehalfOfAuthenticationConfig != null;
+
+        /// <summary>
         /// Gets and sets the property TokenExchangeGrantTypeConfig. 
         /// <para>
         /// Configuration specific to the TOKEN_EXCHANGE grant type (RFC 8693).

@@ -27,12 +27,12 @@ using Amazon.ServiceQuotas.Internal;
 namespace Amazon.ServiceQuotas
 {
     /// <summary>
-    /// Configuration for accessing Amazon ServiceQuotas service
+    /// Configuration for accessing Service Quotas
     /// </summary>
     public partial class AmazonServiceQuotasConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Service Quotas", "4.0.101.10");
+            InternalSDKUtils.BuildUserAgentString("Service Quotas", "4.0.101.14");
 
         private static readonly AmazonServiceQuotasEndpointResolver EndpointResolver =
             new AmazonServiceQuotasEndpointResolver();

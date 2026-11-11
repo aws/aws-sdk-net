@@ -27,12 +27,12 @@ using Amazon.AIOps.Internal;
 namespace Amazon.AIOps
 {
     /// <summary>
-    /// Configuration for accessing Amazon AIOps service
+    /// Configuration for accessing AWS AI Ops
     /// </summary>
     public partial class AmazonAIOpsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AIOps", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("AIOps", "4.0.100.26");
 
         private static readonly AmazonAIOpsEndpointResolver EndpointResolver =
             new AmazonAIOpsEndpointResolver();

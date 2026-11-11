@@ -31,7 +31,7 @@ using Amazon.Signer.Endpoints;
 namespace Amazon.Signer.Internal
 {
     /// <summary>
-    /// Amazon Signer endpoint resolver.
+    /// AWS Signer endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Signer service requests.
     /// <para />

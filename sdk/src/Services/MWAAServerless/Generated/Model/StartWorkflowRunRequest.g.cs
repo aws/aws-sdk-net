@@ -96,8 +96,8 @@ namespace Amazon.MWAAServerless.Model
         /// <summary>
         /// Gets and sets the property WorkflowVersion. 
         /// <para>
-        /// Optional. The specific version of the workflow to execute. If not specified, the latest
-        /// version is used.
+        /// Optional. The specific version of the workflow to execute. If you don't specify a
+        /// version, we use the latest version.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 2048)]

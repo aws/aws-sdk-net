@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.AutoScalingPlans
 {
     /// <summary>
-    /// Configuration for accessing Amazon AutoScalingPlans service
+    /// Configuration for accessing AWS Auto Scaling Plans
     /// </summary>
     public static class AmazonAutoScalingPlansDefaultConfiguration
     {

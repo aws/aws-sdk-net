@@ -31,7 +31,7 @@ using Amazon.AppConfigData.Endpoints;
 namespace Amazon.AppConfigData.Internal
 {
     /// <summary>
-    /// Amazon AppConfigData endpoint resolver.
+    /// AWS AppConfig Data endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for AppConfigData service requests.
     /// <para />

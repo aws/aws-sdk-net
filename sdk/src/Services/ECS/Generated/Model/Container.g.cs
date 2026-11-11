@@ -94,6 +94,20 @@ namespace Amazon.ECS.Model
         internal bool IsSetGpuIds() => this.GpuIds != null && (this.GpuIds.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property GpuSharingStrategy. 
+        /// <para>
+        /// The GPU sharing strategy that the task definition specifies for the container. This
+        /// field is present only for containers whose resource requirements include <c>sharingStrategy</c>.
+        /// </para>
+        /// </summary>
+        public SharingStrategy GpuSharingStrategy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GpuSharingStrategy property is set.
+        /// </summary>
+        internal bool IsSetGpuSharingStrategy() => this.GpuSharingStrategy != null;
+
+        /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
         /// The health status of the container. If health checks aren't configured for this container

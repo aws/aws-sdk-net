@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Backup
 {
     /// <summary>
-    /// Configuration for accessing Amazon Backup service
+    /// Configuration for accessing AWS Backup
     /// </summary>
     public static class AmazonBackupDefaultConfiguration
     {

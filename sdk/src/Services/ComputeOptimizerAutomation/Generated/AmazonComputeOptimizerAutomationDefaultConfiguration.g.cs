@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ComputeOptimizerAutomation
 {
     /// <summary>
-    /// Configuration for accessing Amazon ComputeOptimizerAutomation service
+    /// Configuration for accessing Compute Optimizer Automation
     /// </summary>
     public static class AmazonComputeOptimizerAutomationDefaultConfiguration
     {

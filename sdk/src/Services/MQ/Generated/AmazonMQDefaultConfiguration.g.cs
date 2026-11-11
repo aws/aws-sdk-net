@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.MQ
 {
     /// <summary>
-    /// Configuration for accessing Amazon MQ service
+    /// Configuration for accessing AmazonMQ
     /// </summary>
     public static class AmazonMQDefaultConfiguration
     {

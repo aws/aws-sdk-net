@@ -38,7 +38,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property ContactArn. 
         /// <para>
-        /// A unique identifier of a contact in Amazon Connect.
+        /// A unique identifier of a contact in Connect Customer.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 500)]

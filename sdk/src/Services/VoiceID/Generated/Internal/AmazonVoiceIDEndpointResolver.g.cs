@@ -31,7 +31,7 @@ using Amazon.VoiceID.Endpoints;
 namespace Amazon.VoiceID.Internal
 {
     /// <summary>
-    /// Amazon VoiceID endpoint resolver.
+    /// Amazon Voice ID endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for VoiceID service requests.
     /// <para />

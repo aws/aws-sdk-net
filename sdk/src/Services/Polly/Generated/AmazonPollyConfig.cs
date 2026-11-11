@@ -27,12 +27,12 @@ using Amazon.Polly.Internal;
 namespace Amazon.Polly
 {
     /// <summary>
-    /// Configuration for accessing Amazon Polly service
+    /// Configuration for accessing Amazon Polly
     /// </summary>
     public partial class AmazonPollyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Polly", "4.0.101.1");
+            InternalSDKUtils.BuildUserAgentString("Polly", "4.0.102.3");
 
         private static readonly AmazonPollyEndpointResolver EndpointResolver =
             new AmazonPollyEndpointResolver();

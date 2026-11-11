@@ -26,7 +26,7 @@ using Amazon.GlobalAccelerator.Endpoints;
 namespace Amazon.GlobalAccelerator.Internal
 {
     /// <summary>
-    /// Amazon GlobalAccelerator endpoint provider.
+    /// AWS Global Accelerator endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="GlobalAcceleratorEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

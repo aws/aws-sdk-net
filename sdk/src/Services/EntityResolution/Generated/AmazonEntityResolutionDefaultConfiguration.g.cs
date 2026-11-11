@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.EntityResolution
 {
     /// <summary>
-    /// Configuration for accessing Amazon EntityResolution service
+    /// Configuration for accessing AWS EntityResolution
     /// </summary>
     public static class AmazonEntityResolutionDefaultConfiguration
     {

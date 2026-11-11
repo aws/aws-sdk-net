@@ -31,7 +31,7 @@ using Amazon.Shield.Endpoints;
 namespace Amazon.Shield.Internal
 {
     /// <summary>
-    /// Amazon Shield endpoint resolver.
+    /// AWS Shield endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Shield service requests.
     /// <para />

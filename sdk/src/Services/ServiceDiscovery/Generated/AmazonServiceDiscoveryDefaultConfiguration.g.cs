@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ServiceDiscovery
 {
     /// <summary>
-    /// Configuration for accessing Amazon ServiceDiscovery service
+    /// Configuration for accessing AWS Cloud Map
     /// </summary>
     public static class AmazonServiceDiscoveryDefaultConfiguration
     {

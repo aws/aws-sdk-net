@@ -58,8 +58,11 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the job runs on Fargate resources, then you must not specify <c>nodeProperties</c>;
-        /// use only <c>containerProperties</c>.
+        /// If the job runs on Fargate resources, then you must not specify <c>nodeProperties</c>.
+        /// We recommend <c>ecsProperties</c>, which supports both single-container and multi-container
+        /// jobs. <c>containerProperties</c> is also supported for single-container jobs. For
+        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-container-jobs.html">Multi-container
+        /// jobs</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -123,8 +126,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the job runs on Fargate resources, then you must not specify <c>nodeProperties</c>;
-        /// use <c>containerProperties</c> instead.
+        /// If the job runs on Fargate resources, then you must not specify <c>nodeProperties</c>.
+        /// We recommend <c>ecsProperties</c>, which supports both single-container and multi-container
+        /// jobs. <c>containerProperties</c> is also supported for single-container jobs.
         /// </para>
         ///  </note> <note> 
         /// <para>

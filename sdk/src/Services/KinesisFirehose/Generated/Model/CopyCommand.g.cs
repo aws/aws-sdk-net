@@ -1,0 +1,111 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.KinesisFirehose.Model
+{
+    /// <summary>
+    /// Describes a <c>COPY</c> command for Amazon Redshift.
+    /// </summary>
+    public partial class CopyCommand
+    {
+        /// <summary>
+        /// Gets and sets the property CopyOptions. 
+        /// <para>
+        /// Optional parameters to use with the Amazon Redshift <c>COPY</c> command. For more
+        /// information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+        /// Redshift COPY command</a>. Some possible examples that would apply to Firehose are
+        /// as follows:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>delimiter '\t' lzop;</c> - fields are delimited with "\t" (TAB character) and
+        /// compressed using lzop.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>delimiter '|'</c> - fields are delimited with "|" (this is the default delimiter).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>delimiter '|' escape</c> - the delimiter should be escaped.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>fixedwidth 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</c>
+        /// - fields are fixed width in the source, with each width specified after every column
+        /// in the table.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>JSON 's3://mybucket/jsonpaths.txt'</c> - data is in JSON format, and the path
+        /// specified is the format of the data.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more examples, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
+        /// Redshift COPY command examples</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 10240)]
+        public string CopyOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CopyOptions property is set.
+        /// </summary>
+        internal bool IsSetCopyOptions() => this.CopyOptions != null;
+
+        /// <summary>
+        /// Gets and sets the property DataTableColumns. 
+        /// <para>
+        /// A comma-separated list of column names.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 10240)]
+        public string DataTableColumns { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataTableColumns property is set.
+        /// </summary>
+        internal bool IsSetDataTableColumns() => this.DataTableColumns != null;
+
+        /// <summary>
+        /// Gets and sets the property DataTableName. 
+        /// <para>
+        /// The name of the target table. The table must already exist in the database.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 512)]
+        public string DataTableName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataTableName property is set.
+        /// </summary>
+        internal bool IsSetDataTableName() => this.DataTableName != null;
+    }
+}

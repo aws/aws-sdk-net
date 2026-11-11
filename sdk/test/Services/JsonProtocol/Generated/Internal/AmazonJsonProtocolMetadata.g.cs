@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.JsonProtocol.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon JsonProtocol service
+    /// Service metadata for Sample Json 1.1 Protocol Service
     /// </summary>
     public partial class AmazonJsonProtocolMetadata : IServiceMetadata
     {

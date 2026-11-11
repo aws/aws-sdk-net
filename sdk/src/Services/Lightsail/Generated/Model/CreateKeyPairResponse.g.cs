@@ -68,6 +68,7 @@ namespace Amazon.Lightsail.Model
         /// A base64-encoded RSA private key.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive = true)]
         public string PrivateKeyBase64 { get; set; }
 
         /// <summary>

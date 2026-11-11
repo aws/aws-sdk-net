@@ -32,12 +32,12 @@ namespace Amazon.NetworkFirewall.Model
     /// <summary>
     /// Defines the mapping between an Availability Zone and a firewall endpoint for a transit
     /// gateway-attached firewall. Each mapping represents where the firewall can process
-    /// traffic. You use these mappings when calling <a>CreateFirewall</a>, <a>AssociateAvailabilityZones</a>,
-    /// and <a>DisassociateAvailabilityZones</a>.
+    /// traffic. You use these mappings when calling <c>CreateFirewall</c>, <c>AssociateAvailabilityZones</c>,
+    /// and <c>DisassociateAvailabilityZones</c>.
     /// 
     ///  
     /// <para>
-    /// To retrieve the current Availability Zone mappings for a firewall, use <a>DescribeFirewall</a>.
+    /// To retrieve the current Availability Zone mappings for a firewall, use <c>DescribeFirewall</c>.
     /// </para>
     /// </summary>
     public partial class AvailabilityZoneMapping

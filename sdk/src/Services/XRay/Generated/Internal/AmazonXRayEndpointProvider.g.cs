@@ -26,7 +26,7 @@ using Amazon.XRay.Endpoints;
 namespace Amazon.XRay.Internal
 {
     /// <summary>
-    /// Amazon XRay endpoint provider.
+    /// AWS X-Ray endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="XRayEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

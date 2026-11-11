@@ -27,12 +27,12 @@ using Amazon.BedrockAgentCoreControl.Internal;
 namespace Amazon.BedrockAgentCoreControl
 {
     /// <summary>
-    /// Configuration for accessing Amazon BedrockAgentCoreControl service
+    /// Configuration for accessing Amazon Bedrock AgentCore Control
     /// </summary>
     public partial class AmazonBedrockAgentCoreControlConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Bedrock AgentCore Control", "4.0.123.1");
+            InternalSDKUtils.BuildUserAgentString("Bedrock AgentCore Control", "4.0.127.0");
 
         private static readonly AmazonBedrockAgentCoreControlEndpointResolver EndpointResolver =
             new AmazonBedrockAgentCoreControlEndpointResolver();

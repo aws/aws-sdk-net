@@ -27,12 +27,12 @@ using Amazon.Lightsail.Internal;
 namespace Amazon.Lightsail
 {
     /// <summary>
-    /// Configuration for accessing Amazon Lightsail service
+    /// Configuration for accessing Amazon Lightsail
     /// </summary>
     public partial class AmazonLightsailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Lightsail", "4.0.104.0");
+            InternalSDKUtils.BuildUserAgentString("Lightsail", "4.0.107.1");
 
         private static readonly AmazonLightsailEndpointResolver EndpointResolver =
             new AmazonLightsailEndpointResolver();

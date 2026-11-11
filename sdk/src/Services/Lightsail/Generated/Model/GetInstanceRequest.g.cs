@@ -36,6 +36,26 @@ namespace Amazon.Lightsail.Model
     public partial class GetInstanceRequest : AmazonLightsailRequest
     {
         /// <summary>
+        /// Gets and sets the property IncludeHealthStatus. 
+        /// <para>
+        /// Specifies whether to include the instance health status checks in the response of
+        /// your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// When set to <c>true</c>, the response includes the <c>instanceStatus</c> and <c>systemStatus</c>
+        /// of the instance. When omitted or set to <c>false</c>, the response doesn't include
+        /// them.
+        /// </para>
+        /// </summary>
+        public bool? IncludeHealthStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IncludeHealthStatus property is set.
+        /// </summary>
+        internal bool IsSetIncludeHealthStatus() => this.IncludeHealthStatus.HasValue;
+
+        /// <summary>
         /// Gets and sets the property InstanceName. 
         /// <para>
         /// The name of the instance.

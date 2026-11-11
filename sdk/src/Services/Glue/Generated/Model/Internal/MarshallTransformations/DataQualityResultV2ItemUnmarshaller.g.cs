@@ -67,6 +67,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("DataQualityEvaluationConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataQualityEvaluationConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("DataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSourceUnmarshaller.Instance;
@@ -92,6 +99,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EvaluationContext = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("EvaluationRunMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EvaluationRunMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

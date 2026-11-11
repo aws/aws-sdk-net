@@ -26,7 +26,7 @@ using Amazon.KendraRanking.Endpoints;
 namespace Amazon.KendraRanking.Internal
 {
     /// <summary>
-    /// Amazon KendraRanking endpoint provider.
+    /// Amazon Kendra Intelligent Ranking endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="KendraRankingEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

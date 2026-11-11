@@ -26,7 +26,7 @@ using Amazon.DevOpsAgent.Endpoints;
 namespace Amazon.DevOpsAgent.Internal
 {
     /// <summary>
-    /// Amazon DevOpsAgent endpoint provider.
+    /// AWS DevOps Agent Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DevOpsAgentEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

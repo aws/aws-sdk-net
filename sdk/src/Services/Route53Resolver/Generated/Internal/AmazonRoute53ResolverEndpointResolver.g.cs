@@ -31,7 +31,7 @@ using Amazon.Route53Resolver.Endpoints;
 namespace Amazon.Route53Resolver.Internal
 {
     /// <summary>
-    /// Amazon Route53Resolver endpoint resolver.
+    /// Amazon Route 53 Resolver endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for Route53Resolver service requests.
     /// <para />

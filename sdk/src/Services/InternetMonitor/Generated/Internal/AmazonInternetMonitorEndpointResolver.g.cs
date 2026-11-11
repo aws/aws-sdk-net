@@ -31,7 +31,7 @@ using Amazon.InternetMonitor.Endpoints;
 namespace Amazon.InternetMonitor.Internal
 {
     /// <summary>
-    /// Amazon InternetMonitor endpoint resolver.
+    /// Amazon CloudWatch Internet Monitor endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for InternetMonitor service requests.
     /// <para />

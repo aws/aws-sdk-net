@@ -89,6 +89,21 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetMetadataConfigurations())
+            {
+                context.Writer.WritePropertyName("metadataConfigurations");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestMetadataConfigurationsListValue in publicRequest.MetadataConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MetadataConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMetadataConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

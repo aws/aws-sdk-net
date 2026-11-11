@@ -41,6 +41,12 @@ namespace Amazon.SageMaker.Model
         /// </summary>
         public IPaginatedEnumerable<ListProjectsResponse> Responses => new PaginatedResponse<ListProjectsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the ProjectSummaryList
+        /// </summary>
+        public IPaginatedEnumerable<ProjectSummary> ProjectSummaryList =>
+            new PaginatedResultKeyResponse<ListProjectsResponse, ProjectSummary>(this, (i) => i.ProjectSummaryList ?? new List<ProjectSummary>());
+
         internal ListProjectsPaginator(IAmazonSageMaker client, ListProjectsRequest request)
         {
             this._client = client;

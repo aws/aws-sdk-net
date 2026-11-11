@@ -2630,6 +2630,11 @@ namespace Amazon.Mgn
         public static readonly SourceEnvironment LOGICAL_MODEL = new SourceEnvironment("LOGICAL_MODEL");
 
         /// <summary>
+        /// Constant MIGRATION_PLANNING_ARTIFACTS for SourceEnvironment
+        /// </summary>
+        public static readonly SourceEnvironment MIGRATION_PLANNING_ARTIFACTS = new SourceEnvironment("MIGRATION_PLANNING_ARTIFACTS");
+
+        /// <summary>
         /// Constant MODELIZE_IT for SourceEnvironment
         /// </summary>
         public static readonly SourceEnvironment MODELIZE_IT = new SourceEnvironment("MODELIZE_IT");

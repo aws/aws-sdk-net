@@ -66,9 +66,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property XAmznTraceId. 
         /// <para>
-        /// The optional X-Ray trace header to use when starting the chained invocation. If you
-        /// omit this value, the child invocation inherits the parent durable execution's trace
-        /// header.
+        /// The X-Ray trace header to use when starting the chained invocation. This parameter
+        /// is optional. If you omit this value, the child invocation inherits the parent durable
+        /// execution's trace header.
         /// </para>
         ///  
         /// <para>

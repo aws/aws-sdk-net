@@ -26,7 +26,7 @@ using Amazon.Continuum.Endpoints;
 namespace Amazon.Continuum.Internal
 {
     /// <summary>
-    /// Amazon Continuum endpoint provider.
+    /// AWS Continuum endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ContinuumEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

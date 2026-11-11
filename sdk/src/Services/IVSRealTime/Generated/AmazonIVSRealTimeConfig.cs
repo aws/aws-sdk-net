@@ -27,12 +27,12 @@ using Amazon.IVSRealTime.Internal;
 namespace Amazon.IVSRealTime
 {
     /// <summary>
-    /// Configuration for accessing Amazon IVSRealTime service
+    /// Configuration for accessing Amazon Interactive Video Service RealTime
     /// </summary>
     public partial class AmazonIVSRealTimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IVS RealTime", "4.0.102.1");
+            InternalSDKUtils.BuildUserAgentString("IVS RealTime", "4.0.102.5");
 
         private static readonly AmazonIVSRealTimeEndpointResolver EndpointResolver =
             new AmazonIVSRealTimeEndpointResolver();

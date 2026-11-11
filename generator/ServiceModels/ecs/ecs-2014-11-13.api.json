@@ -1606,7 +1606,9 @@
         "v100",
         "a10g",
         "h100",
-        "t4g"
+        "t4g",
+        "l40s",
+        "l4"
       ]
     },
     "AcceleratorNameSet":{
@@ -1749,6 +1751,10 @@
     "Attachments":{
       "type":"list",
       "member":{"shape":"Attachment"}
+    },
+    "AttestationPolicyStatus":{
+      "type":"string",
+      "enum":["CONFIGURED"]
     },
     "Attribute":{
       "type":"structure",
@@ -2150,7 +2156,8 @@
         "memory":{"shape":"String"},
         "memoryReservation":{"shape":"String"},
         "gpuIds":{"shape":"GpuIds"},
-        "neuronDeviceIds":{"shape":"NeuronDeviceIds"}
+        "neuronDeviceIds":{"shape":"NeuronDeviceIds"},
+        "gpuSharingStrategy":{"shape":"SharingStrategy"}
       }
     },
     "ContainerCondition":{
@@ -2260,7 +2267,8 @@
         "registeredAt":{"shape":"Timestamp"},
         "attachments":{"shape":"Attachments"},
         "tags":{"shape":"Tags"},
-        "healthStatus":{"shape":"ContainerInstanceHealthStatus"}
+        "healthStatus":{"shape":"ContainerInstanceHealthStatus"},
+        "gpuDevices":{"shape":"GpuDevices"}
       }
     },
     "ContainerInstanceField":{
@@ -2950,7 +2958,8 @@
       "type":"structure",
       "members":{
         "name":{"shape":"String"},
-        "host":{"shape":"HostVolumeProperties"}
+        "host":{"shape":"HostVolumeProperties"},
+        "logDriverVolumeConfiguration":{"shape":"LogDriverVolumeConfiguration"}
       }
     },
     "DaemonVolumeList":{
@@ -4453,9 +4462,31 @@
         "failures":{"shape":"Failures"}
       }
     },
+    "GpuDevice":{
+      "type":"structure",
+      "members":{
+        "gpuId":{"shape":"String"},
+        "sharingMode":{"shape":"GpuSharingMode"},
+        "totalMemoryInMiB":{"shape":"BoxedInteger"},
+        "remainingMemoryInMiB":{"shape":"BoxedInteger"},
+        "containerCount":{"shape":"BoxedInteger"}
+      }
+    },
+    "GpuDevices":{
+      "type":"list",
+      "member":{"shape":"GpuDevice"}
+    },
     "GpuIds":{
       "type":"list",
       "member":{"shape":"String"}
+    },
+    "GpuSharingMode":{
+      "type":"string",
+      "enum":[
+        "IDLE",
+        "NVIDIA_MPS",
+        "DEDICATED"
+      ]
     },
     "HealthCheck":{
       "type":"structure",
@@ -4641,7 +4672,8 @@
         "instanceMetadataTagsPropagation":{"shape":"BoxedBoolean"},
         "instanceRequirements":{"shape":"InstanceRequirementsRequest"},
         "fipsEnabled":{"shape":"BoxedBoolean"},
-        "capacityReservations":{"shape":"CapacityReservationRequest"}
+        "capacityReservations":{"shape":"CapacityReservationRequest"},
+        "nitroEnclavesEnabled":{"shape":"BoxedBoolean"}
       }
     },
     "InstanceLaunchTemplateUpdate":{
@@ -4708,6 +4740,14 @@
         "host",
         "task",
         "none"
+      ]
+    },
+    "IsolationMode":{
+      "type":"string",
+      "enum":[
+        "SHARED",
+        "ISOLATED_SANDBOX",
+        "CONFIDENTIAL_SANDBOX"
       ]
     },
     "KernelCapabilities":{
@@ -5118,6 +5158,13 @@
         "splunk",
         "awsfirelens"
       ]
+    },
+    "LogDriverVolumeConfiguration":{
+      "type":"structure",
+      "required":["driver"],
+      "members":{
+        "driver":{"shape":"LogDriver"}
+      }
     },
     "Long":{"type":"long"},
     "ManagedAgent":{
@@ -5607,6 +5654,25 @@
       },
       "exception":true
     },
+    "NvidiaMpsAllocation":{
+      "type":"structure",
+      "required":["memory"],
+      "members":{
+        "memory":{"shape":"NvidiaMpsAllocationMemoryInteger"},
+        "maxComputePercent":{"shape":"NvidiaMpsAllocationMaxComputePercentInteger"}
+      }
+    },
+    "NvidiaMpsAllocationMaxComputePercentInteger":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "NvidiaMpsAllocationMemoryInteger":{
+      "type":"integer",
+      "box":true,
+      "min":1
+    },
     "OSFamily":{
       "type":"string",
       "enum":[
@@ -5916,7 +5982,8 @@
         },
         "ephemeralStorage":{"shape":"EphemeralStorage"},
         "runtimePlatform":{"shape":"RuntimePlatform"},
-        "enableFaultInjection":{"shape":"BoxedBoolean"}
+        "enableFaultInjection":{"shape":"BoxedBoolean"},
+        "trustedExecutionConfiguration":{"shape":"TrustedExecutionConfiguration"}
       }
     },
     "RegisterTaskDefinitionResponse":{
@@ -5983,13 +6050,11 @@
     },
     "ResourceRequirement":{
       "type":"structure",
-      "required":[
-        "value",
-        "type"
-      ],
+      "required":["type"],
       "members":{
         "value":{"shape":"String"},
-        "type":{"shape":"ResourceType"}
+        "type":{"shape":"ResourceType"},
+        "sharingStrategy":{"shape":"SharingStrategy"}
       }
     },
     "ResourceRequirements":{
@@ -6632,6 +6697,13 @@
       "type":"list",
       "member":{"shape":"Setting"}
     },
+    "SharingStrategy":{
+      "type":"structure",
+      "members":{
+        "nvidiaMps":{"shape":"NvidiaMpsAllocation"}
+      },
+      "union":true
+    },
     "SortOrder":{
       "type":"string",
       "enum":[
@@ -6891,7 +6963,8 @@
         "taskDefinitionArn":{"shape":"String"},
         "version":{"shape":"Long"},
         "ephemeralStorage":{"shape":"EphemeralStorage"},
-        "fargateEphemeralStorage":{"shape":"TaskEphemeralStorage"}
+        "fargateEphemeralStorage":{"shape":"TaskEphemeralStorage"},
+        "trustedExecutionSummary":{"shape":"TrustedExecutionSummary"}
       }
     },
     "TaskDefinition":{
@@ -6922,7 +6995,8 @@
         "deleteRequestedAt":{"shape":"Timestamp"},
         "registeredBy":{"shape":"String"},
         "ephemeralStorage":{"shape":"EphemeralStorage"},
-        "enableFaultInjection":{"shape":"BoxedBoolean"}
+        "enableFaultInjection":{"shape":"BoxedBoolean"},
+        "trustedExecutionConfiguration":{"shape":"TrustedExecutionConfiguration"}
       }
     },
     "TaskDefinitionFamilyStatus":{
@@ -7167,6 +7241,22 @@
         "tcp",
         "udp"
       ]
+    },
+    "TrustedExecutionConfiguration":{
+      "type":"structure",
+      "required":["isolationMode"],
+      "members":{
+        "isolationMode":{"shape":"IsolationMode"},
+        "attestationPolicy":{"shape":"String"}
+      }
+    },
+    "TrustedExecutionSummary":{
+      "type":"structure",
+      "required":["isolationMode"],
+      "members":{
+        "isolationMode":{"shape":"IsolationMode"},
+        "attestationPolicyStatus":{"shape":"AttestationPolicyStatus"}
+      }
     },
     "Ulimit":{
       "type":"structure",

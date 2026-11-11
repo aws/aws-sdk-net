@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,27 +27,23 @@ using Amazon.Redshift.Internal;
 namespace Amazon.Redshift
 {
     /// <summary>
-    /// Configuration for accessing Amazon Redshift service
+    /// Configuration for accessing Amazon Redshift
     /// </summary>
     public partial class AmazonRedshiftConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Redshift", "4.0.102.12");
+            InternalSDKUtils.BuildUserAgentString("Redshift", "4.0.102.16");
 
         private static readonly AmazonRedshiftEndpointResolver EndpointResolver =
             new AmazonRedshiftEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "Redshift";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "Redshift";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.Redshift
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "redshift";
-            }
-        }
+        public override string RegionEndpointServiceName => "redshift";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2012-12-01";
-            }
-        }
+        public override string ServiceVersion => "2012-12-01";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.Redshift
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

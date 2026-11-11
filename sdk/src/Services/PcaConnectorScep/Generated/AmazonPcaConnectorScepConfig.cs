@@ -27,12 +27,12 @@ using Amazon.PcaConnectorScep.Internal;
 namespace Amazon.PcaConnectorScep
 {
     /// <summary>
-    /// Configuration for accessing Amazon PcaConnectorScep service
+    /// Configuration for accessing Private CA Connector for SCEP
     /// </summary>
     public partial class AmazonPcaConnectorScepConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pca Connector Scep", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Pca Connector Scep", "4.0.100.25");
 
         private static readonly AmazonPcaConnectorScepEndpointResolver EndpointResolver =
             new AmazonPcaConnectorScepEndpointResolver();

@@ -105,6 +105,16 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetFederatedIdentity())
+            {
+                context.Writer.WritePropertyName("FederatedIdentity");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ObjectStorageFederatedIdentityConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FederatedIdentity, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetLocationArn())
             {
                 context.Writer.WritePropertyName("LocationArn");

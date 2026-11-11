@@ -27,12 +27,12 @@ using Amazon.IdentityStore.Internal;
 namespace Amazon.IdentityStore
 {
     /// <summary>
-    /// Configuration for accessing Amazon IdentityStore service
+    /// Configuration for accessing AWS SSO Identity Store
     /// </summary>
     public partial class AmazonIdentityStoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("identitystore", "4.0.101.8");
+            InternalSDKUtils.BuildUserAgentString("identitystore", "4.0.101.12");
 
         private static readonly AmazonIdentityStoreEndpointResolver EndpointResolver =
             new AmazonIdentityStoreEndpointResolver();

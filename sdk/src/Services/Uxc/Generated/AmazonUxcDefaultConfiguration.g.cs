@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Uxc
 {
     /// <summary>
-    /// Configuration for accessing Amazon Uxc service
+    /// Configuration for accessing AWS User Experience Customization
     /// </summary>
     public static class AmazonUxcDefaultConfiguration
     {

@@ -27,12 +27,12 @@ using Amazon.IoTJobsDataPlane.Internal;
 namespace Amazon.IoTJobsDataPlane
 {
     /// <summary>
-    /// Configuration for accessing Amazon IoTJobsDataPlane service
+    /// Configuration for accessing AWS IoT Jobs Data Plane
     /// </summary>
     public partial class AmazonIoTJobsDataPlaneConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoT Jobs Data Plane", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("IoT Jobs Data Plane", "4.0.100.26");
 
         private static readonly AmazonIoTJobsDataPlaneEndpointResolver EndpointResolver =
             new AmazonIoTJobsDataPlaneEndpointResolver();

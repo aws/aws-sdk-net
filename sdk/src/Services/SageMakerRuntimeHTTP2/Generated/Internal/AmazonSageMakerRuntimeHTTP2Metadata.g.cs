@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerRuntimeHTTP2.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon SageMakerRuntimeHTTP2 service
+    /// Service metadata for Amazon SageMaker Runtime HTTP2
     /// </summary>
     public partial class AmazonSageMakerRuntimeHTTP2Metadata : IServiceMetadata
     {

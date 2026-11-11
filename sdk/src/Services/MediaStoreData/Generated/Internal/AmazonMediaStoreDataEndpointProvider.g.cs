@@ -26,7 +26,7 @@ using Amazon.MediaStoreData.Endpoints;
 namespace Amazon.MediaStoreData.Internal
 {
     /// <summary>
-    /// Amazon MediaStoreData endpoint provider.
+    /// AWS Elemental MediaStore Data Plane endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="MediaStoreDataEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

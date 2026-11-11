@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon AppIntegrationsService service
+    /// Service metadata for Amazon AppIntegrations Service
     /// </summary>
     public partial class AmazonAppIntegrationsServiceMetadata : IServiceMetadata
     {

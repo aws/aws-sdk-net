@@ -26,7 +26,7 @@ using Amazon.Route53RecoveryCluster.Endpoints;
 namespace Amazon.Route53RecoveryCluster.Internal
 {
     /// <summary>
-    /// Amazon Route53RecoveryCluster endpoint provider.
+    /// Route53 Recovery Cluster endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="Route53RecoveryClusterEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

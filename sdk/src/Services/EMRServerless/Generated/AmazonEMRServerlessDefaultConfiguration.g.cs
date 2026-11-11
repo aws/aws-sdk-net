@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.EMRServerless
 {
     /// <summary>
-    /// Configuration for accessing Amazon EMRServerless service
+    /// Configuration for accessing EMR Serverless
     /// </summary>
     public static class AmazonEMRServerlessDefaultConfiguration
     {

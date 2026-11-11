@@ -27,12 +27,12 @@ using Amazon.Schemas.Internal;
 namespace Amazon.Schemas
 {
     /// <summary>
-    /// Configuration for accessing Amazon Schemas service
+    /// Configuration for accessing Schemas
     /// </summary>
     public partial class AmazonSchemasConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("schemas", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("schemas", "4.0.100.25");
 
         private static readonly AmazonSchemasEndpointResolver EndpointResolver =
             new AmazonSchemasEndpointResolver();

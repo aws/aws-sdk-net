@@ -153,6 +153,22 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Paginator for GetSoftwareResourcesV2 operation
+        /// </summary>
+        public IGetSoftwareResourcesV2Paginator GetSoftwareResourcesV2(GetSoftwareResourcesV2Request request)
+        {
+            return new GetSoftwareResourcesV2Paginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetSoftwareV2 operation
+        /// </summary>
+        public IGetSoftwareV2Paginator GetSoftwareV2(GetSoftwareV2Request request)
+        {
+            return new GetSoftwareV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAggregatorsV2 operation
         /// </summary>
         public IListAggregatorsV2Paginator ListAggregatorsV2(ListAggregatorsV2Request request)

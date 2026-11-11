@@ -27,12 +27,12 @@ using Amazon.CodeBuild.Internal;
 namespace Amazon.CodeBuild
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeBuild service
+    /// Configuration for accessing AWS CodeBuild
     /// </summary>
     public partial class AmazonCodeBuildConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeBuild", "4.0.101.21");
+            InternalSDKUtils.BuildUserAgentString("CodeBuild", "4.0.101.25");
 
         private static readonly AmazonCodeBuildEndpointResolver EndpointResolver =
             new AmazonCodeBuildEndpointResolver();

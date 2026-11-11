@@ -204,6 +204,18 @@ public class ServiceIndex
         return reachable;
     }
 
+    /// <summary>The shapes reachable from <paramref name="roots"/>, walked as for the service's own shapes.</summary>
+    internal static Dictionary<ShapeId, Shape> ReachableFrom(SmithyModel model, IEnumerable<ShapeId> roots)
+    {
+        var reachable = new Dictionary<ShapeId, Shape>();
+        var visited = new HashSet<string>();
+        foreach (var root in roots)
+        {
+            WalkShapeId(model, root, reachable, visited);
+        }
+        return reachable;
+    }
+
     private static void WalkShapeId(SmithyModel model, ShapeId shapeId, Dictionary<ShapeId, Shape> reachable, HashSet<string> visited)
     {
         if (shapeId.IsPrelude)

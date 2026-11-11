@@ -41,7 +41,7 @@ The C2J-generated code is the source of truth, because it is what ships today. I
 - You MUST list every public type, member and property from the C2J files and confirm each still exists in the Smithy output with the same name and the same .NET type, because a member that changes type or disappears breaks callers.
 - You MUST compare signatures only, normalising away a constructor's `: base(...)` initialiser, an expression body (`=> x` versus `{ get { return x; } }`), and whitespace, because none of those change the compiled public surface and treating them as findings buries the real ones.
 - You MUST treat a property whose type narrowed or widened as `FAIL`, for example `List<string>` becoming `string`, since existing code stops compiling.
-- You MUST compare the full `[AWSProperty]` and `[AWS*]` named-argument sets side by side for every member, because AssemblyComparer does not compare attribute argument values and step 7 will not catch a missing one — with one exception: `Min`/`Max` on a `List<T>`-typed member is inert on both sides (`PropertyValueRulesWriter` only emits rules for scalar members, and the consuming analyzer only validates compile-time-constant string/int literals), so a difference there is not a finding. A second exception: `Min=0` dropped from a string member whose smithy.json `@length` trait declares only `max` — the C2J translation materializes the omitted min as `0`, the Smithy trait is authoritative, and the analyzer's min check (`value.Length < min`) can never fire for a min of 0 — an empty-string warning requires `min >= 1`, and those members keep their `Min` (verify the trait in smithy.json before accepting). Every other attribute, including `[AWSPaginator]`, has no such exception — its arguments are consumed outside this repo (AWS Tools for PowerShell reflects on it), so treat any drift there as a `FAIL`.
+- You MUST compare the full `[AWSProperty]` and `[AWS*]` named-argument sets side by side for every member, because AssemblyComparer does not compare attribute argument values and step 8 will not catch a missing one — with one exception: `Min`/`Max` on a `List<T>`- or `Dictionary<TKey, TValue>`-typed member is inert on both sides (`PropertyValueRulesWriter` only emits rules for scalar members, and the consuming analyzer only validates compile-time-constant string/int literals), so a difference there is not a finding. A second exception: `Min=0` dropped from a string member whose smithy.json `@length` trait declares only `max` — the C2J translation materializes the omitted min as `0`, the Smithy trait is authoritative, and the analyzer's min check (`value.Length < min`) can never fire for a min of 0 — an empty-string warning requires `min >= 1`, and those members keep their `Min` (verify the trait in smithy.json before accepting). Every other attribute, including `[AWSPaginator]`, has no such exception — its arguments are consumed outside this repo (AWS Tools for PowerShell reflects on it), so treat any drift there as a `FAIL`.
 - To verify model traits, use the Smithy CLI instead of hand-parsing smithy.json. `--allow-unknown-traits` is required because the models reference `aws.api#` traits without shipping their definitions. Examples:
   - Length trait values for every string shape: `smithy select --allow-unknown-traits --selector "string [trait|smithy.api#length]" --show-traits length <models>/<dir>/smithy.json`
   - Members bound to response headers: `smithy select --allow-unknown-traits --selector "member [trait|smithy.api#httpHeader]" <models>/<dir>/smithy.json`
@@ -71,19 +71,27 @@ These are the only accepted `EXPECTED` differences. Anything else is `UNEXPLAINE
 - **Scalar `Min=0` dropped** — a string member loses `Min=0` from `[AWSProperty]` (and its `<min>0</min>` in `PropertyValueRules.xml`) when the Smithy `@length` trait declares only `max`. The C2J translation materializes an omitted string-length min as `min:0`; the Smithy trait is authoritative, and the analyzer's min check (`value.Length < min`) can never fire for a min of 0 — an empty-string warning requires `min >= 1`, and those members keep their `Min`. This applies ONLY when the smithy.json trait has no `min` — a dropped non-zero `Min`, a dropped `Max`, or a drop on a member whose trait declares `min` stays `UNEXPLAINED`. Numeric members are unaffected (`@range` min is never synthesized).
 - **Dead `PropertyValueRules.xml` rule dropped** — the C2J rule names a class no C2J file defines (`git ls-tree HEAD`).
 - **`.sln` to `.slnx`** — per-service solution file format change.
+- **`{Client}EndpointDiscoveryMarshallingTests.cs` dropped** — C2J emits this test file for every endpoint-discovery service; the Smithy generator does not (decided in b7bc6e42, see `generator/SmithyDotNet/skills/sdk-conventions/SKILL.md`): with no discovery ids it only checks the `required` flag against the C2J model, which the `@clientDiscoveredEndpoint` trait replaces. Confirm the service has no `@clientEndpointDiscoveryId` members; if it has, the drop is `UNEXPLAINED`.
 - **awsJson `X-Amz-Target` and rpcv2Cbor resource path use the service shape name** — `{ServiceShapeName}.{Operation}` and `service/{ServiceShapeName}/operation/{Operation}`, as the protocol specs define them. A C2J `targetPrefix` that carries a namespace (`com.amazonaws.codestar.connections.CodeStar_connections_20191201`) is legacy C2J plugin metadata with no Smithy representation; Smithy-based SDKs have always sent the shape name and the services accept it. Accepted by dspin 2026-10-08 for CodeStarconnections; the service gets a changelog line because the header value changes.
-- **Whitespace, indentation and doc-comment reflow** — but only after you have shown both sides. This covers reflow of *existing* content only. A doc comment that goes from present to absent on a public type or member is NOT reflow: a public type/member with no XML doc comment fails the build under `GenerateDocumentationFile` (CS1591), so a removed or emptied `<summary>` stays `UNEXPLAINED` until step 4 proves it compiles. Excludes any URL/href value inside a doc comment (e.g. `<seealso href="...">`); those must match exactly or be individually justified, never waved through as reflow.
+- **Whitespace, indentation and doc-comment reflow** — but only after you have shown both sides. This covers reflow of *existing* content only. A doc comment that goes from present to absent on a public type or member is NOT reflow: a public type/member with no XML doc comment fails the build under `GenerateDocumentationFile` (CS1591), so a removed or emptied `<summary>` stays `UNEXPLAINED` until step 5 proves it compiles. Excludes any URL/href value inside a doc comment (e.g. `<seealso href="...">`); those must match exactly or be individually justified, never waved through as reflow.
 
 **Constraints:**
 - You MUST enumerate every path and assign each a classification, because sampling the diff is how a dropped attribute argument survives review.
 - You MUST classify a path `UNEXPLAINED` when it does not match one of the accepted differences above, because the list is the whole set of things already reviewed.
 - You MUST diff the file *lists* against the previous state as well as the contents, because a file the C2J generator emitted and the Smithy generator does not is invisible to a content diff.
 - You MUST open every changed file whose name you do not recognise, including `AssemblyInfo.cs`, `PropertyValueRules.xml`, `*.nuspec`, `*.csproj`, and anything under `sdk/code-analysis/`, since deletions there are public-surface or build-behaviour changes rather than noise.
-- For every `[AWS*]` attribute in the diff you MUST list the full named-argument set on both sides side by side, because AssemblyComparer does not compare attribute argument values and step 7 will not catch a missing one.
+- For every `[AWS*]` attribute in the diff you MUST list the full named-argument set on both sides side by side, because AssemblyComparer does not compare attribute argument values and step 8 will not catch a missing one.
 - You MUST NOT close this step with any path left `UNEXPLAINED`, because an unexplained change is an unassessed API change.
 - You MUST NOT describe a difference as formatting or syntax without showing both sides, since that characterisation is what lets a real removal through.
 
-### 4. Build
+### 4. Fold the hand-written variant code
+
+Hand-written code under `sdk/src/Services/<service_name>/Custom/` and `sdk/test/Services/<service_name>/` drops the C2J per-target layout in the migration PR:
+
+- `_async/X.cs` → `X.Async.cs`; `_bcl/X.cs` → `X.Sync.cs` under `#if NETFRAMEWORK`; `_netstandard/X.cs` merges into the file it mirrors under `#if !NETFRAMEWORK`, never a new sibling file. Legacy `X.bcl.cs` / `X.async.cs` names become `X.Sync.cs` / `X.Async.cs`.
+- `#if BCL` → `#if NETFRAMEWORK`; `#if NETSTANDARD` → `#if !NETFRAMEWORK`; `#if ASYNC_AWAIT` is removed, nothing defines it.
+
+### 5. Build
 
 Build all three, `-c Release`:
 - `<sdk_repo>/sdk/src/Services/<service_name>/AWSSDK.<service_name>.NetStandard.csproj` (netstandard2.0, netcoreapp3.1, net8.0)
@@ -94,16 +102,16 @@ Build all three, `-c Release`:
 - You MUST paste the warning and error counts for each.
 - You MUST NOT proceed past a build failure, because the later steps operate on build output that would not exist.
 
-### 5. Package
+### 6. Package
 
 `create-nuget-packages.ps1 -PackageList <service_name>`
 
 **Constraints:**
 - You MUST run it from `<sdk_repo>/buildtools/`, because it resolves paths relative to its own directory.
-- You MUST run it after step 4, because it assumes build output already exists.
+- You MUST run it after step 5, because it assumes build output already exists.
 - You MUST paste the resulting package path.
 
-### 6. AssemblyComparer
+### 7. AssemblyComparer
 
 ```
 dotnet run -c Release --project <comparer_repo>/AssemblyComparer/AssemblyComparer/AssemblyComparer.csproj -- package-comparer --package-name AWSSDK.<service_name> --download-folder "<nuget_download_folder>" --nuspec "<sdk_repo>/sdk/src/Services/<service_name>/AWSSDK.<service_name>.nuspec" -cf BinaryIncompatibility,SourceIncompatibility,Warning -p net472 -p netstandard2.0 -p netcoreapp3.1 -p net8.0
@@ -114,7 +122,7 @@ dotnet run -c Release --project <comparer_repo>/AssemblyComparer/AssemblyCompare
 - You MUST treat every reported finding as a break until it is individually explained in the report.
 - You MUST NOT report this step as covering custom-attribute argument values, because AssemblyComparer does not compare them and a dropped attribute argument passes it while still breaking the public API.
 
-### 7. Unit tests
+### 8. Unit tests
 
 Run the service's unit tests.
 
@@ -122,16 +130,20 @@ Run the service's unit tests.
 - You MUST paste the pass, fail, and skip counts verbatim.
 - You MUST NOT call a failure pre-existing without a stash plus rerun proving it, since the main branch is kept green.
 
-### 8. Verdict
+### 9. Verdict
 
 Report each step as `PASS` with its pasted evidence, `FAIL` with the output, or `UNVERIFIED` with the blocker.
 
 **Constraints:**
-- The verdict MUST default to `NOT VERIFIED` and MAY become `VERIFIED` only when steps 1-7 are all `PASS` with pasted evidence.
+- The verdict MUST default to `NOT VERIFIED` and MAY become `VERIFIED` only when steps 1-8 are all `PASS` with pasted evidence.
 - Any step you could not run MUST be `UNVERIFIED` and MUST block `VERIFIED`, because an unrun check reported as passing is indistinguishable from a failed one.
 - You MUST NOT write "cosmetic", "equivalent", "should be fine", "pre-existing", or "likely" without pasted output in the same sentence, because each asserts a result without showing one.
 
 ## Troubleshooting
+
+**The service has no `smithy.json`** — add it from [aws/api-models-aws](https://github.com/aws/api-models-aws) (`models/<sdk-id>/service/<api-version>/<sdk-id>-<api-version>.json`, e.g. `models/route-53/service/2013-04-01/route-53-2013-04-01.json`) as `generator/ServiceModels/<dir>/smithy.json`, re-indented to match the existing files (`jq --indent 4 .`, no trailing newline). Confirm its operation set matches the C2J `.api.json` before regenerating, because a model from a different release shows up as API diffs that are not migration bugs.
+
+**`create-nuget-packages.ps1` produces no packages on Linux** — it globs with `\` separators and shells out to `NuGet.exe`, which needs mono. Step 5 can only be run on Windows; on Linux report it `UNVERIFIED` (a `dotnet pack` with the nuspec is a useful smoke test but not the same step).
 
 **Step 1 shows changes to other services** — a generator change leaked in. Stop and report which services changed.
 

@@ -1561,8 +1561,11 @@ namespace Amazon.KafkaConnect
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates the specified connector. For request body, specify only one parameter: either
-        /// <c>capacity</c> or <c>connectorConfiguration</c>.
+        /// Updates the specified connector. In the request body, you can update either the connector's
+        /// worker setting or its connector configuration, but not both in the same request. To
+        /// update the worker setting, specify one or more of <c>capacity</c>, <c>plugins</c>,
+        /// <c>workerConfiguration</c>, or <c>useDefaultWorkerConfiguration</c>. To update the
+        /// connector configuration, specify only <c>connectorConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConnector service method.</param>
         /// <returns>The response from the UpdateConnector service method, as returned by KafkaConnect.</returns>
@@ -1597,8 +1600,11 @@ namespace Amazon.KafkaConnect
 #endif
 
         /// <summary>
-        /// Updates the specified connector. For request body, specify only one parameter: either
-        /// <c>capacity</c> or <c>connectorConfiguration</c>.
+        /// Updates the specified connector. In the request body, you can update either the connector's
+        /// worker setting or its connector configuration, but not both in the same request. To
+        /// update the worker setting, specify one or more of <c>capacity</c>, <c>plugins</c>,
+        /// <c>workerConfiguration</c>, or <c>useDefaultWorkerConfiguration</c>. To update the
+        /// connector configuration, specify only <c>connectorConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConnector service method.</param>
         /// <param name="cancellationToken">

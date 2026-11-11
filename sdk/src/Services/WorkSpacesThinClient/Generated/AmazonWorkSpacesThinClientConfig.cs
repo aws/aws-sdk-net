@@ -27,12 +27,12 @@ using Amazon.WorkSpacesThinClient.Internal;
 namespace Amazon.WorkSpacesThinClient
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkSpacesThinClient service
+    /// Configuration for accessing Amazon WorkSpaces Thin Client
     /// </summary>
     public partial class AmazonWorkSpacesThinClientConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WorkSpaces Thin Client", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("WorkSpaces Thin Client", "4.0.100.26");
 
         private static readonly AmazonWorkSpacesThinClientEndpointResolver EndpointResolver =
             new AmazonWorkSpacesThinClientEndpointResolver();

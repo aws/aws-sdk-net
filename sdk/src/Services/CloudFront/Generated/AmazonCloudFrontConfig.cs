@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,27 +27,23 @@ using Amazon.CloudFront.Internal;
 namespace Amazon.CloudFront
 {
     /// <summary>
-    /// Configuration for accessing Amazon CloudFront service
+    /// Configuration for accessing Amazon CloudFront
     /// </summary>
     public partial class AmazonCloudFrontConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudFront", "4.0.103.3");
+            InternalSDKUtils.BuildUserAgentString("CloudFront", "4.0.103.7");
 
         private static readonly AmazonCloudFrontEndpointResolver EndpointResolver =
             new AmazonCloudFrontEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "CloudFront";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "CloudFront";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.CloudFront
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "cloudfront";
-            }
-        }
+        public override string RegionEndpointServiceName => "cloudfront";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2020-05-31";
-            }
-        }
+        public override string ServiceVersion => "2020-05-31";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.CloudFront
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

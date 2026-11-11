@@ -27,20 +27,38 @@ public class UnsupportedTraitValidatorTests
         Assert.Contains("clientEndpointDiscoveryId", ex.Message);
     }
 
-    [Fact]
-    public void Validate_DocumentOnRpcV2CborService_Throws()
+    [Theory]
+    [InlineData("rpcv2cbor-model.json", AWSProtocol.RpcV2Cbor, "document (rpcv2Cbor)")]
+    [InlineData("document-model.json", AWSProtocol.RestXml, "document (restXml)")]
+    [InlineData("document-model.json", AWSProtocol.AwsQuery, "document (awsQuery)")]
+    [InlineData("document-model.json", AWSProtocol.Ec2Query, "document (ec2Query)")]
+    public void Validate_Document_Throws(string model, AWSProtocol protocol, string expected)
     {
-        var index = new ServiceIndex(TestModels.Load("Codegen/rpcv2cbor-model.json"));
-        var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index, AWSProtocol.RpcV2Cbor));
-        Assert.Contains("document (rpcv2Cbor)", ex.Message);
+        var index = new ServiceIndex(TestModels.Load("Codegen/" + model));
+        var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index, protocol));
+        Assert.Contains(expected, ex.Message);
+    }
+
+    // awsQuery and ec2Query have no streaming of any kind, so an event stream (a @streaming union) is rejected too.
+    [Theory]
+    [InlineData("payload-model.json", AWSProtocol.RpcV2Cbor, "@streaming (blob, rpcv2Cbor)")]
+    [InlineData("payload-model.json", AWSProtocol.AwsQuery, "@streaming (blob, awsQuery)")]
+    [InlineData("event-stream-restjson1-model.json", AWSProtocol.AwsQuery, "@streaming (event stream, awsQuery)")]
+    [InlineData("payload-model.json", AWSProtocol.Ec2Query, "@streaming (blob, ec2Query)")]
+    [InlineData("event-stream-restjson1-model.json", AWSProtocol.Ec2Query, "@streaming (event stream, ec2Query)")]
+    public void Validate_Streaming_Throws(string model, AWSProtocol protocol, string expected)
+    {
+        var index = new ServiceIndex(TestModels.Load("Codegen/" + model));
+        var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index, protocol));
+        Assert.Contains(expected, ex.Message);
     }
 
     [Fact]
-    public void Validate_StreamingBlobOnRpcV2CborService_Throws()
+    public void Validate_HttpChecksum_DoesNotThrow()
     {
-        var index = new ServiceIndex(TestModels.Load("Codegen/payload-model.json"));
-        var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index, AWSProtocol.RpcV2Cbor));
-        Assert.Contains("@streaming (blob, rpcv2Cbor)", ex.Message);
+        var index = new ServiceIndex(TestModels.Load("Codegen/compression-checksum-model.json"));
+
+        UnsupportedTraitValidator.Validate(index, AWSProtocol.RestJson1);
     }
 
     [Fact]

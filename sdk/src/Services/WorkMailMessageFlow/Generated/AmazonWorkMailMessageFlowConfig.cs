@@ -27,12 +27,12 @@ using Amazon.WorkMailMessageFlow.Internal;
 namespace Amazon.WorkMailMessageFlow
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkMailMessageFlow service
+    /// Configuration for accessing Amazon WorkMail Message Flow
     /// </summary>
     public partial class AmazonWorkMailMessageFlowConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WorkMailMessageFlow", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("WorkMailMessageFlow", "4.0.100.26");
 
         private static readonly AmazonWorkMailMessageFlowEndpointResolver EndpointResolver =
             new AmazonWorkMailMessageFlowEndpointResolver();

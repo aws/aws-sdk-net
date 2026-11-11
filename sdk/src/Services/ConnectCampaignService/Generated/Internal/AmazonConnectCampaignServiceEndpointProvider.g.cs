@@ -26,7 +26,7 @@ using Amazon.ConnectCampaignService.Endpoints;
 namespace Amazon.ConnectCampaignService.Internal
 {
     /// <summary>
-    /// Amazon ConnectCampaignService endpoint provider.
+    /// AmazonConnectCampaignService endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ConnectCampaignServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

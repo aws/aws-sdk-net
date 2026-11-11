@@ -27,12 +27,12 @@ using Amazon.S3Vectors.Internal;
 namespace Amazon.S3Vectors
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Vectors service
+    /// Configuration for accessing Amazon S3 Vectors
     /// </summary>
     public partial class AmazonS3VectorsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("S3Vectors", "4.0.101.6");
+            InternalSDKUtils.BuildUserAgentString("S3Vectors", "4.0.101.10");
 
         private static readonly AmazonS3VectorsEndpointResolver EndpointResolver =
             new AmazonS3VectorsEndpointResolver();

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.LexModelBuildingService
 {
     /// <summary>
-    /// Configuration for accessing Amazon LexModelBuildingService service
+    /// Configuration for accessing Amazon Lex Model Building Service
     /// </summary>
     public static class AmazonLexModelBuildingServiceDefaultConfiguration
     {

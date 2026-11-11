@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Schemas
 {
     /// <summary>
-    /// Configuration for accessing Amazon Schemas service
+    /// Configuration for accessing Schemas
     /// </summary>
     public static class AmazonSchemasDefaultConfiguration
     {

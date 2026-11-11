@@ -123,6 +123,18 @@ namespace Amazon.SecurityHub.Model
         IGetResourcesV2Paginator GetResourcesV2(GetResourcesV2Request request);
 
         /// <summary>
+        /// Paginator for GetSoftwareResourcesV2 operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IGetSoftwareResourcesV2Paginator GetSoftwareResourcesV2(GetSoftwareResourcesV2Request request);
+
+        /// <summary>
+        /// Paginator for GetSoftwareV2 operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IGetSoftwareV2Paginator GetSoftwareV2(GetSoftwareV2Request request);
+
+        /// <summary>
         /// Paginator for ListAggregatorsV2 operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

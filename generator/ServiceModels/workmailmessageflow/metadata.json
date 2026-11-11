@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "This release allows customers to access email messages as they flow to and from Amazon WorkMail.",
   "generate-client-constructors": true,
+  "base-name": "WorkMailMessageFlow",
   "legacy-service-id": "WorkMailMessageFlow"
 }

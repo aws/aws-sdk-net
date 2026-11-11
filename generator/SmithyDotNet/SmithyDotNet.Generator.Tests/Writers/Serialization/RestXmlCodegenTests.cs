@@ -53,6 +53,24 @@ public class RestXmlCodegenTests
     }
 
     [Fact]
+    public void Request_HttpChecksum_EmitsCallAfterPostMarshallCustomization()
+    {
+        var source = RequestMarshaller(Context, "PutChecksummedThing");
+
+        Assert.Contains("publicRequest.ChecksumAlgorithm,", source);
+        // With a checksum the stream exists even when the structure payload is unset (C2J PutBucketAcl).
+        Assert.True(source.IndexOf("request.ContentStream = new PooledContentStream();", StringComparison.Ordinal) < source.IndexOf("if (publicRequest.IsSetDetails())", StringComparison.Ordinal));
+        Assert.True(source.IndexOf("PostMarshallCustomization(request, publicRequest);", StringComparison.Ordinal) < source.IndexOf("ChecksumUtils.SetChecksumData(", StringComparison.Ordinal));
+        Assert.True(source.IndexOf("ChecksumUtils.SetChecksumData(", StringComparison.Ordinal) < source.IndexOf("return request;", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public void Request_HttpChecksum_NoBody_EmitsNoCall()
+    {
+        Assert.DoesNotContain("ChecksumUtils", RequestMarshaller(Context, "GetChecksummedThing"));
+    }
+
+    [Fact]
     public void Request_XmlBodyScaffoldAndRoot()
     {
         var source = RequestMarshaller(Context, "PutThing");
@@ -290,7 +308,11 @@ public class RestXmlCodegenTests
         Assert.Contains("throw new NotImplementedException();", source);
         Assert.Contains("public ThingConflictException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)", source);
         Assert.Contains("ThingConflictException unmarshalledObject = new ThingConflictException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);", source);
+        // restXml keeps its template's depth-less suffix match and unbounded read loop
+        // (RestXmlExceptionUnmarshaller.tt); only awsQuery depth-qualifies them.
+        Assert.Contains("while (context.Read())", source);
         Assert.Contains("""if (context.TestExpression("reason"))""", source);
+        Assert.DoesNotContain("context.ReadAtDepth(originalDepth)", source);
         Assert.Contains("unmarshalledObject.Reason = unmarshaller.Unmarshall(context);", source);
     }
 

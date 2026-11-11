@@ -27,12 +27,12 @@ using Amazon.PartnerCentralChannel.Internal;
 namespace Amazon.PartnerCentralChannel
 {
     /// <summary>
-    /// Configuration for accessing Amazon PartnerCentralChannel service
+    /// Configuration for accessing Partner Central Channel API
     /// </summary>
     public partial class AmazonPartnerCentralChannelConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PartnerCentral Channel", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("PartnerCentral Channel", "4.0.100.25");
 
         private static readonly AmazonPartnerCentralChannelEndpointResolver EndpointResolver =
             new AmazonPartnerCentralChannelEndpointResolver();

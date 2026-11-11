@@ -136,10 +136,6 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Linux platform version <c>1.4.0</c> or later.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Windows platform version <c>1.0.0</c> or later.
-        /// </para>
         ///  </li> </ul> </note>
         /// </summary>
         public EphemeralStorage EphemeralStorage { get; set; }
@@ -581,6 +577,25 @@ namespace Amazon.ECS.Model
         /// Checks to see if the TaskRoleArn property is set.
         /// </summary>
         internal bool IsSetTaskRoleArn() => this.TaskRoleArn != null;
+
+        /// <summary>
+        /// Gets and sets the property TrustedExecutionConfiguration. 
+        /// <para>
+        /// The trusted execution configuration for tasks that use this task definition, including
+        /// the isolation mode and, if configured, an attestation policy.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Trusted execution is supported only for Amazon ECS Managed Instances.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public TrustedExecutionConfiguration TrustedExecutionConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TrustedExecutionConfiguration property is set.
+        /// </summary>
+        internal bool IsSetTrustedExecutionConfiguration() => this.TrustedExecutionConfiguration != null;
 
         /// <summary>
         /// Gets and sets the property Volumes. 

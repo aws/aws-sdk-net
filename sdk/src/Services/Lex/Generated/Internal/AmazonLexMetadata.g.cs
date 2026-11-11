@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lex.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Lex service
+    /// Service metadata for Amazon Lex Runtime Service
     /// </summary>
     public partial class AmazonLexMetadata : IServiceMetadata
     {

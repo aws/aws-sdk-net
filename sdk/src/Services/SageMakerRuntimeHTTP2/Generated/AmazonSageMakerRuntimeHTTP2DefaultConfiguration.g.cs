@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.SageMakerRuntimeHTTP2
 {
     /// <summary>
-    /// Configuration for accessing Amazon SageMakerRuntimeHTTP2 service
+    /// Configuration for accessing Amazon SageMaker Runtime HTTP2
     /// </summary>
     public static class AmazonSageMakerRuntimeHTTP2DefaultConfiguration
     {

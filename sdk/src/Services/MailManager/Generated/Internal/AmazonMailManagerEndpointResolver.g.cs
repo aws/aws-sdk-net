@@ -31,7 +31,7 @@ using Amazon.MailManager.Endpoints;
 namespace Amazon.MailManager.Internal
 {
     /// <summary>
-    /// Amazon MailManager endpoint resolver.
+    /// MailManager endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MailManager service requests.
     /// <para />

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,7 +40,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.Kinesis.AmazonKinesisClient), "DecreaseStreamRetentionPeriod", new Type[] { typeof(string), typeof(int?), });
             EnsureSimpleMethodExists(typeof(Amazon.Kinesis.AmazonKinesisClient), "IncreaseStreamRetentionPeriod", new Type[] { typeof(string), typeof(int?), });
         }
-        
+
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
         {
             Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);

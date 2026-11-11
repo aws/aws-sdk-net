@@ -27,12 +27,12 @@ using Amazon.DataSync.Internal;
 namespace Amazon.DataSync
 {
     /// <summary>
-    /// Configuration for accessing Amazon DataSync service
+    /// Configuration for accessing AWS DataSync
     /// </summary>
     public partial class AmazonDataSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DataSync", "4.0.101.4");
+            InternalSDKUtils.BuildUserAgentString("DataSync", "4.0.102.2");
 
         private static readonly AmazonDataSyncEndpointResolver EndpointResolver =
             new AmazonDataSyncEndpointResolver();

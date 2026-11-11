@@ -60,6 +60,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ConsumptionMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConsumptionMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("SchemaRegistryConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = KafkaSchemaRegistryConfigUnmarshaller.Instance;

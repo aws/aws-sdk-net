@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RestXmlProtocol.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon RestXmlProtocol service
+    /// Service metadata for Sample Rest Xml Protocol Service
     /// </summary>
     public partial class AmazonRestXmlProtocolMetadata : IServiceMetadata
     {

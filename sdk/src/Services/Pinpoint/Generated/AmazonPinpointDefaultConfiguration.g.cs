@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Pinpoint
 {
     /// <summary>
-    /// Configuration for accessing Amazon Pinpoint service
+    /// Configuration for accessing Amazon Pinpoint
     /// </summary>
     public static class AmazonPinpointDefaultConfiguration
     {

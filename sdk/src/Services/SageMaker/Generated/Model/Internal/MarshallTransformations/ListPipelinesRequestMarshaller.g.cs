@@ -80,6 +80,11 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("CreatedBefore");
                 context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.CreatedBefore.Value));
             }
+            if (publicRequest.IsSetManagedBy())
+            {
+                context.Writer.WritePropertyName("ManagedBy");
+                context.Writer.WriteStringValue(publicRequest.ManagedBy);
+            }
             if (publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");

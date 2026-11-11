@@ -31,7 +31,7 @@ using Amazon.DLM.Endpoints;
 namespace Amazon.DLM.Internal
 {
     /// <summary>
-    /// Amazon DLM endpoint resolver.
+    /// Amazon Data Lifecycle Manager endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for DLM service requests.
     /// <para />

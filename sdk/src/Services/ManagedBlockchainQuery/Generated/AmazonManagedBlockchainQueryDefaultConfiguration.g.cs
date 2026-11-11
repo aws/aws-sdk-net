@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ManagedBlockchainQuery
 {
     /// <summary>
-    /// Configuration for accessing Amazon ManagedBlockchainQuery service
+    /// Configuration for accessing Amazon Managed Blockchain Query
     /// </summary>
     public static class AmazonManagedBlockchainQueryDefaultConfiguration
     {

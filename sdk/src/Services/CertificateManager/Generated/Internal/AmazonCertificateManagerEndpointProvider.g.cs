@@ -26,7 +26,7 @@ using Amazon.CertificateManager.Endpoints;
 namespace Amazon.CertificateManager.Internal
 {
     /// <summary>
-    /// Amazon CertificateManager endpoint provider.
+    /// AWS Certificate Manager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CertificateManagerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
@@ -87,7 +87,15 @@ namespace Amazon.CertificateManager.Internal
                         }
                         return new Endpoint(Interpolate(@"https://acm-acme.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
-                    throw new AmazonClientException("ACME operations are only available in commercial AWS partitions");
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
+                    {
+                        if (Equals(refs["UseFIPS"], true))
+                        {
+                            throw new AmazonClientException("FIPS endpoints are not available for ACME operations");
+                        }
+                        return new Endpoint(Interpolate(@"https://acm-acme.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    throw new AmazonClientException("ACME operations are only available in the aws and aws-us-gov partitions");
                 }
                 if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                 {

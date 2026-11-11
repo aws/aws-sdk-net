@@ -969,9 +969,9 @@ namespace Amazon.Runtime.Internal.Transform
         public DateTime Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetDouble(out double seconds))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetDecimal(out decimal seconds))
             {
-                return AWSSDKUtils.EPOCH_START.AddSeconds(seconds);
+                return AWSSDKUtils.ConvertFromUnixDecimalEpochSeconds(seconds);
             }
 
             string text = context.ReadText(ref reader);
@@ -988,10 +988,10 @@ namespace Amazon.Runtime.Internal.Transform
         /// <returns></returns>
         internal static DateTime? UnmarshallInternal(string text, bool treatAsNullable)
         {
-            Double seconds;
-            if (Double.TryParse(text, NumberStyles.Any, CultureInfo.InvariantCulture, out seconds))
+            decimal seconds;
+            if (decimal.TryParse(text, NumberStyles.Any, CultureInfo.InvariantCulture, out seconds))
             {
-                return AWSSDKUtils.EPOCH_START.AddSeconds(seconds);
+                return AWSSDKUtils.ConvertFromUnixDecimalEpochSeconds(seconds);
             }
             else
             {
@@ -1040,9 +1040,9 @@ namespace Amazon.Runtime.Internal.Transform
         public DateTime? Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetDouble(out double seconds))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetDecimal(out decimal seconds))
             {
-                return AWSSDKUtils.EPOCH_START.AddSeconds(seconds);
+                return AWSSDKUtils.ConvertFromUnixDecimalEpochSeconds(seconds);
             }
 
             string text = context.ReadText(ref reader);

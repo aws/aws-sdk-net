@@ -27,12 +27,12 @@ using Amazon.IotData.Internal;
 namespace Amazon.IotData
 {
     /// <summary>
-    /// Configuration for accessing Amazon IotData service
+    /// Configuration for accessing AWS IoT Data Plane
     /// </summary>
     public partial class AmazonIotDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoT Data Plane", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("IoT Data Plane", "4.0.100.26");
 
         private static readonly AmazonIotDataEndpointResolver EndpointResolver =
             new AmazonIotDataEndpointResolver();

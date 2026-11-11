@@ -11,6 +11,7 @@ using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
+using SmithyDotNet.Generator.Writers.Shapes;
 
 namespace SmithyDotNet.Generator.Generation;
 
@@ -126,6 +127,9 @@ public class GenerationContext
     /// <summary>The service's <c>smithy.api#title</c> (e.g. "AWS CloudTrail Data Service"). C2J equivalent: <c>service.FullName</c>. Used in the assembly description.</summary>
     public string? ServiceTitle { get; }
 
+    /// <summary>The NuGet package description, in the Core package's form; the nuspec and the packable csproj both emit it. Not the metadata.json synopsis: that is the launch-time blurb and goes stale. C2J: <c>NuGetPackageDescription</c>.</summary>
+    public string NuGetPackageDescription => $"The Amazon Web Services SDK for .NET - {ServiceTitle}";
+
     /// <summary>The wire protocol detected from the service shape's protocol trait.</summary>
     public AWSProtocol Protocol { get; }
 
@@ -217,6 +221,9 @@ public class GenerationContext
     /// </summary>
     public SdkVersionManifest Manifest { get; }
 
+    /// <summary>The unit-test project settings from <c>_manifest.json</c>; set by the batch run, which writes the unit-test projects.</summary>
+    public UnitTestProjectManifest? UnitTestProject { get; init; }
+
     /// <summary>
     /// The service's customizations, for hooks applied at generation time (enum constant names, member
     /// renames, runtime pipeline overrides, and later code injection). Hooks with a Smithy trait equivalent never
@@ -279,12 +286,15 @@ public class GenerationContext
         XmlNamespace = index.Service.GetXmlNamespace();
         Protocol = ProtocolResolver.Resolve(index.Service, SdkId);
         UsesHttpBindings = Protocol is AWSProtocol.RestJson1 or AWSProtocol.RestXml;
-        // The wrapped output is read as the whole response body, which only awsJson's response is.
-        // TODO: ec2 wraps outputs too; support it in the XML response unmarshaller when ec2Query lands.
-        if (Protocol is not (AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1)
-            && Customizations.OperationModifiers.FirstOrDefault(entry => entry.Value.UseWrappingResult).Key is { } wrapped)
+
+        // The wrapped output is read as the whole response body, which only awsJson's, rpcv2Cbor's and ec2Query's responses are.
+        var supportsWrappedOutput = Protocol is AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1 or AWSProtocol.RpcV2Cbor or AWSProtocol.Ec2Query;
+        foreach (var (operationName, modifier) in Customizations.OperationModifiers)
         {
-            throw new GeneratorException($"operationModifiers['{wrapped}'] wraps the output, which is only supported for awsJson.");
+            if (modifier.UseWrappingResult && !supportsWrappedOutput)
+            {
+                throw new GeneratorException($"operationModifiers['{operationName}'] wraps the output, which is only supported for awsJson, rpcv2Cbor and ec2Query.");
+            }
         }
         // allowEmptyResult only drives the restXml response unmarshaller's empty-body early-return; on any
         // other protocol it would generate silently without the guard, where C2J throws.
@@ -298,7 +308,8 @@ public class GenerationContext
         Operations = OperationResolver.Resolve(index, Protocol);
         EndpointDiscoveryOperation = EndpointDiscoveryResolver.ResolveDiscoveryOperation(Operations, index);
         DiscoveredOperations = EndpointDiscoveryResolver.ResolveDiscoveredOperations(Operations, EndpointDiscoveryOperation);
-        ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
+        // A SigV2 service (sdb) models no auth trait; C2J still resolved it to SigV4 so the handler resolves AWS credentials.
+        ServiceAuthSchemes = Metadata?.SignatureVersion == SignatureVersion.V2 ? [AuthSchemeIds.SigV4] : ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
         PaginatedOperations = PaginationResolver.Resolve(Operations, index, Customizations);
@@ -320,9 +331,23 @@ public class GenerationContext
             {
                 errors[shapeId] = structure;
             }
-            else if (!structure.IsInput() && !structure.IsOutput())
+            // An emitFromMember wrapper is never emitted: members typed as it expose its value (TypeMapper.ResolveType).
+            else if (!structure.IsInput() && !structure.IsOutput() && Customizations.EmittedValueMember(shapeId.Name) is null)
             {
                 structures[shapeId] = structure;
+            }
+        }
+
+        // monitoring models LimitExceededFault next to LimitExceededException, and ResourceNotFound next to
+        // ResourceNotFoundException. Each pair maps to one class; C2J ships the one already named like the class, and
+        // the other's wire code still dispatches to it.
+        var errorNames = errors.Keys.Select(errorId => errorId.Name).ToHashSet();
+        foreach (var errorId in errors.Keys.ToList())
+        {
+            var exceptionName = ExceptionWriter.ToExceptionName(ToDotNetName(errorId));
+            if (exceptionName != errorId.Name && errorNames.Contains(exceptionName))
+            {
+                errors.Remove(errorId);
             }
         }
 
@@ -399,7 +424,6 @@ public class GenerationContext
 
     /// <inheritdoc cref="ServiceIndex.ToDotNetName"/>
     /// <remarks>
-    /// TODO: EC2 query name (aws.protocols#ec2QueryName) is not applied yet.
     /// Customization renames don't belong here — <see cref="CustomizationTransform"/> merges them
     /// into the model.
     /// </remarks>

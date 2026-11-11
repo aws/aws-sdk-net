@@ -88,6 +88,13 @@ namespace Amazon.Route53Profiles.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("Priority", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ProfileId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

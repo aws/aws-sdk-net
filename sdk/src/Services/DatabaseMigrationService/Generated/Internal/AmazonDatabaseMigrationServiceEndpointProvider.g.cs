@@ -26,7 +26,7 @@ using Amazon.DatabaseMigrationService.Endpoints;
 namespace Amazon.DatabaseMigrationService.Internal
 {
     /// <summary>
-    /// Amazon DatabaseMigrationService endpoint provider.
+    /// AWS Database Migration Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DatabaseMigrationServiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

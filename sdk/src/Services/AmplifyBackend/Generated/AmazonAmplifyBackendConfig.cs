@@ -27,12 +27,12 @@ using Amazon.AmplifyBackend.Internal;
 namespace Amazon.AmplifyBackend
 {
     /// <summary>
-    /// Configuration for accessing Amazon AmplifyBackend service
+    /// Configuration for accessing AmplifyBackend
     /// </summary>
     public partial class AmazonAmplifyBackendConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AmplifyBackend", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("AmplifyBackend", "4.0.100.25");
 
         private static readonly AmazonAmplifyBackendEndpointResolver EndpointResolver =
             new AmazonAmplifyBackendEndpointResolver();

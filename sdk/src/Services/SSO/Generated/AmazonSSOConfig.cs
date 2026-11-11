@@ -27,12 +27,12 @@ using Amazon.SSO.Internal;
 namespace Amazon.SSO
 {
     /// <summary>
-    /// Configuration for accessing Amazon SSO service
+    /// Configuration for accessing AWS Single Sign-On
     /// </summary>
     public partial class AmazonSSOConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSO", "4.0.100.23");
+            InternalSDKUtils.BuildUserAgentString("SSO", "4.0.100.27");
 
         private static readonly AmazonSSOEndpointResolver EndpointResolver =
             new AmazonSSOEndpointResolver();

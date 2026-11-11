@@ -27,12 +27,12 @@ using Amazon.Route53GlobalResolver.Internal;
 namespace Amazon.Route53GlobalResolver
 {
     /// <summary>
-    /// Configuration for accessing Amazon Route53GlobalResolver service
+    /// Configuration for accessing Amazon Route 53 Global Resolver
     /// </summary>
     public partial class AmazonRoute53GlobalResolverConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Route53GlobalResolver", "4.0.101.20");
+            InternalSDKUtils.BuildUserAgentString("Route53GlobalResolver", "4.0.101.24");
 
         private static readonly AmazonRoute53GlobalResolverEndpointResolver EndpointResolver =
             new AmazonRoute53GlobalResolverEndpointResolver();

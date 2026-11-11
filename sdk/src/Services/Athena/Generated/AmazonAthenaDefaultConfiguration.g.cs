@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Athena
 {
     /// <summary>
-    /// Configuration for accessing Amazon Athena service
+    /// Configuration for accessing Amazon Athena
     /// </summary>
     public static class AmazonAthenaDefaultConfiguration
     {

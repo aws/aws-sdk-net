@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.FMS
 {
     /// <summary>
-    /// Configuration for accessing Amazon FMS service
+    /// Configuration for accessing Firewall Management Service
     /// </summary>
     public static class AmazonFMSDefaultConfiguration
     {

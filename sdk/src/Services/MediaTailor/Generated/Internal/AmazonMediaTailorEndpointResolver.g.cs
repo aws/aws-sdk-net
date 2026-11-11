@@ -31,7 +31,7 @@ using Amazon.MediaTailor.Endpoints;
 namespace Amazon.MediaTailor.Internal
 {
     /// <summary>
-    /// Amazon MediaTailor endpoint resolver.
+    /// AWS MediaTailor endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MediaTailor service requests.
     /// <para />

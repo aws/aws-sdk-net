@@ -27,12 +27,12 @@ using Amazon.AWSMarketplaceCommerceAnalytics.Internal;
 namespace Amazon.AWSMarketplaceCommerceAnalytics
 {
     /// <summary>
-    /// Configuration for accessing Amazon AWSMarketplaceCommerceAnalytics service
+    /// Configuration for accessing AWS Marketplace Commerce Analytics
     /// </summary>
     public partial class AmazonAWSMarketplaceCommerceAnalyticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Commerce Analytics", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Commerce Analytics", "4.0.100.26");
 
         private static readonly AmazonAWSMarketplaceCommerceAnalyticsEndpointResolver EndpointResolver =
             new AmazonAWSMarketplaceCommerceAnalyticsEndpointResolver();

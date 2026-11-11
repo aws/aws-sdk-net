@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RpcV2Protocol.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon RpcV2Protocol service
+    /// Service metadata for RpcV2 Protocol Service
     /// </summary>
     public partial class AmazonRpcV2ProtocolMetadata : IServiceMetadata
     {

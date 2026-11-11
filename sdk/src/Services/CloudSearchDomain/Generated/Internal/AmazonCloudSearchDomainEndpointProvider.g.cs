@@ -26,7 +26,7 @@ using Amazon.CloudSearchDomain.Endpoints;
 namespace Amazon.CloudSearchDomain.Internal
 {
     /// <summary>
-    /// Amazon CloudSearchDomain endpoint provider.
+    /// Amazon CloudSearch Domain endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CloudSearchDomainEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

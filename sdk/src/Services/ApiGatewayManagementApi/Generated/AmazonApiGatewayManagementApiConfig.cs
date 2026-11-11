@@ -27,12 +27,12 @@ using Amazon.ApiGatewayManagementApi.Internal;
 namespace Amazon.ApiGatewayManagementApi
 {
     /// <summary>
-    /// Configuration for accessing Amazon ApiGatewayManagementApi service
+    /// Configuration for accessing AmazonApiGatewayManagementApi
     /// </summary>
     public partial class AmazonApiGatewayManagementApiConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ApiGatewayManagementApi", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("ApiGatewayManagementApi", "4.0.100.26");
 
         private static readonly AmazonApiGatewayManagementApiEndpointResolver EndpointResolver =
             new AmazonApiGatewayManagementApiEndpointResolver();

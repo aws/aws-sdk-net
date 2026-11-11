@@ -67,6 +67,10 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             {
                 unmarshalledObject.RuntimeSessionId = context.ResponseData.GetHeaderValue("X-Amzn-Bedrock-AgentCore-Runtime-Session-Id");
             }
+            if (context.ResponseData.IsHeaderPresent("X-Amzn-Bedrock-AgentCore-Runtime-Session-Endpoint-Url"))
+            {
+                unmarshalledObject.SessionEndpointUrl = context.ResponseData.GetHeaderValue("X-Amzn-Bedrock-AgentCore-Runtime-Session-Endpoint-Url");
+            }
             if (context.ResponseData.IsHeaderPresent("X-Amzn-Trace-Id"))
             {
                 unmarshalledObject.TraceId = context.ResponseData.GetHeaderValue("X-Amzn-Trace-Id");

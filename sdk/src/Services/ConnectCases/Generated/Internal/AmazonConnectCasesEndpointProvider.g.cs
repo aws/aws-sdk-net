@@ -26,7 +26,7 @@ using Amazon.ConnectCases.Endpoints;
 namespace Amazon.ConnectCases.Internal
 {
     /// <summary>
-    /// Amazon ConnectCases endpoint provider.
+    /// Amazon Connect Cases endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ConnectCasesEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

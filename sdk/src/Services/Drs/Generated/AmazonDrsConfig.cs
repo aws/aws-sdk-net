@@ -27,12 +27,12 @@ using Amazon.Drs.Internal;
 namespace Amazon.Drs
 {
     /// <summary>
-    /// Configuration for accessing Amazon Drs service
+    /// Configuration for accessing Elastic Disaster Recovery Service
     /// </summary>
     public partial class AmazonDrsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("drs", "4.0.104.3");
+            InternalSDKUtils.BuildUserAgentString("drs", "4.0.104.7");
 
         private static readonly AmazonDrsEndpointResolver EndpointResolver =
             new AmazonDrsEndpointResolver();

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon IoTDeviceAdvisor service
+    /// Service metadata for AWS IoT Core Device Advisor
     /// </summary>
     public partial class AmazonIoTDeviceAdvisorMetadata : IServiceMetadata
     {

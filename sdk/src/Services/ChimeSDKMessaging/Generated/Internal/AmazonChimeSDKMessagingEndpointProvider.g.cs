@@ -26,7 +26,7 @@ using Amazon.ChimeSDKMessaging.Endpoints;
 namespace Amazon.ChimeSDKMessaging.Internal
 {
     /// <summary>
-    /// Amazon ChimeSDKMessaging endpoint provider.
+    /// Amazon Chime SDK Messaging endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="ChimeSDKMessagingEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

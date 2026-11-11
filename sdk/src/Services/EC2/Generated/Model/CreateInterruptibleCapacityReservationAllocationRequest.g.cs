@@ -1,0 +1,137 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.EC2.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateInterruptibleCapacityReservationAllocation
+    /// operation. Creates an interruptible Capacity Reservation by specifying the number
+    /// of unused instances you want to allocate from your source reservation. This helps
+    /// you make unused capacity available for other workloads within your account while maintaining
+    /// control to reclaim it.
+    /// </summary>
+    public partial class CreateInterruptibleCapacityReservationAllocationRequest : AmazonEC2Request
+    {
+        /// <summary>
+        /// Gets and sets the property CapacityReservationId. 
+        /// <para>
+        ///  The ID of the source Capacity Reservation from which to create the interruptible
+        /// Capacity Reservation. Your Capacity Reservation must be in active state with no end
+        /// date set and have available capacity for allocation. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string CapacityReservationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CapacityReservationId property is set.
+        /// </summary>
+        internal bool IsSetCapacityReservationId() => this.CapacityReservationId != null;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        ///  Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. 
+        /// </para>
+        /// </summary>
+        public string ClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientToken property is set.
+        /// </summary>
+        internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        ///  Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. 
+        /// </para>
+        /// </summary>
+        public bool? DryRun { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DryRun property is set.
+        /// </summary>
+        internal bool IsSetDryRun() => this.DryRun.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property InstanceCount. 
+        /// <para>
+        ///  The number of instances to allocate from your source reservation. You can only allocate
+        /// available instances (also called unused capacity). 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public int? InstanceCount { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceCount property is set.
+        /// </summary>
+        internal bool IsSetInstanceCount() => this.InstanceCount.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        ///  The tags to apply to the interruptible Capacity Reservation during creation. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications { get; set; } = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+
+        /// <summary>
+        /// Checks to see if the TagSpecifications property is set.
+        /// </summary>
+        internal bool IsSetTagSpecifications() => this.TagSpecifications != null && (this.TagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ZeroSizePreference. 
+        /// <para>
+        ///  Specifies the behavior for the interruptible Capacity Reservation when you reduce
+        /// its allocation to zero instances. Specify <c>retain</c> to keep the interruptible
+        /// Capacity Reservation active at zero capacity so that you can allocate instances to
+        /// it again later. Specify <c>default</c> to cancel the interruptible Capacity Reservation
+        /// and return the capacity to your source Capacity Reservation. The default value is
+        /// <c>default</c>. 
+        /// </para>
+        /// </summary>
+        public ZeroSizePreference ZeroSizePreference { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ZeroSizePreference property is set.
+        /// </summary>
+        internal bool IsSetZeroSizePreference() => this.ZeroSizePreference != null;
+    }
+}

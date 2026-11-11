@@ -108,6 +108,11 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("outputUri");
                 context.Writer.WriteStringValue(publicRequest.OutputUri);
             }
+            if (publicRequest.IsSetOutputUriPrefixMode())
+            {
+                context.Writer.WritePropertyName("outputUriPrefixMode");
+                context.Writer.WriteStringValue(publicRequest.OutputUriPrefixMode);
+            }
             if (publicRequest.IsSetParameters())
             {
                 context.Writer.WritePropertyName("parameters");

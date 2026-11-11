@@ -26,7 +26,7 @@ using Amazon.PinpointSMSVoice.Endpoints;
 namespace Amazon.PinpointSMSVoice.Internal
 {
     /// <summary>
-    /// Amazon PinpointSMSVoice endpoint provider.
+    /// Amazon Pinpoint SMS and Voice Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PinpointSMSVoiceEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

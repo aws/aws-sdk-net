@@ -27,12 +27,12 @@ using Amazon.Repostspace.Internal;
 namespace Amazon.Repostspace
 {
     /// <summary>
-    /// Configuration for accessing Amazon Repostspace service
+    /// Configuration for accessing AWS re:Post Private
     /// </summary>
     public partial class AmazonRepostspaceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("repostspace", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("repostspace", "4.0.100.26");
 
         private static readonly AmazonRepostspaceEndpointResolver EndpointResolver =
             new AmazonRepostspaceEndpointResolver();

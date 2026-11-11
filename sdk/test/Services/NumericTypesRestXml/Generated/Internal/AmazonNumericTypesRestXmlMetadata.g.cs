@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NumericTypesRestXml.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon NumericTypesRestXml service
+    /// Service metadata for Sample Numeric Types Rest Xml Service
     /// </summary>
     public partial class AmazonNumericTypesRestXmlMetadata : IServiceMetadata
     {

@@ -27,12 +27,12 @@ using Amazon.LaunchWizard.Internal;
 namespace Amazon.LaunchWizard
 {
     /// <summary>
-    /// Configuration for accessing Amazon LaunchWizard service
+    /// Configuration for accessing AWS Launch Wizard
     /// </summary>
     public partial class AmazonLaunchWizardConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Launch Wizard", "4.0.101.10");
+            InternalSDKUtils.BuildUserAgentString("Launch Wizard", "4.0.101.14");
 
         private static readonly AmazonLaunchWizardEndpointResolver EndpointResolver =
             new AmazonLaunchWizardEndpointResolver();

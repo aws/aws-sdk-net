@@ -27,12 +27,12 @@ using Amazon.NetworkFlowMonitor.Internal;
 namespace Amazon.NetworkFlowMonitor
 {
     /// <summary>
-    /// Configuration for accessing Amazon NetworkFlowMonitor service
+    /// Configuration for accessing Network Flow Monitor
     /// </summary>
     public partial class AmazonNetworkFlowMonitorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("NetworkFlowMonitor", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("NetworkFlowMonitor", "4.0.100.26");
 
         private static readonly AmazonNetworkFlowMonitorEndpointResolver EndpointResolver =
             new AmazonNetworkFlowMonitorEndpointResolver();

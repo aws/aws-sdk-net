@@ -27,12 +27,12 @@ using Amazon.Personalize.Internal;
 namespace Amazon.Personalize
 {
     /// <summary>
-    /// Configuration for accessing Amazon Personalize service
+    /// Configuration for accessing Amazon Personalize
     /// </summary>
     public partial class AmazonPersonalizeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Personalize", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("Personalize", "4.0.100.26");
 
         private static readonly AmazonPersonalizeEndpointResolver EndpointResolver =
             new AmazonPersonalizeEndpointResolver();

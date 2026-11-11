@@ -27,12 +27,12 @@ using Amazon.Mgn.Internal;
 namespace Amazon.Mgn
 {
     /// <summary>
-    /// Configuration for accessing Amazon Mgn service
+    /// Configuration for accessing Application Migration Service
     /// </summary>
     public partial class AmazonMgnConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("mgn", "4.0.102.10");
+            InternalSDKUtils.BuildUserAgentString("mgn", "4.0.103.3");
 
         private static readonly AmazonMgnEndpointResolver EndpointResolver =
             new AmazonMgnEndpointResolver();

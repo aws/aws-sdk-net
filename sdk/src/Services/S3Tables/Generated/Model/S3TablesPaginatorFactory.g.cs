@@ -49,6 +49,14 @@ namespace Amazon.S3Tables.Model
         }
 
         /// <summary>
+        /// Paginator for ListTableMigrations operation
+        /// </summary>
+        public IListTableMigrationsPaginator ListTableMigrations(ListTableMigrationsRequest request)
+        {
+            return new ListTableMigrationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTables operation
         /// </summary>
         public IListTablesPaginator ListTables(ListTablesRequest request)

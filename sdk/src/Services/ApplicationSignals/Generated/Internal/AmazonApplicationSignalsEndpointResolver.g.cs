@@ -31,7 +31,7 @@ using Amazon.ApplicationSignals.Endpoints;
 namespace Amazon.ApplicationSignals.Internal
 {
     /// <summary>
-    /// Amazon ApplicationSignals endpoint resolver.
+    /// Amazon CloudWatch Application Signals endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for ApplicationSignals service requests.
     /// <para />

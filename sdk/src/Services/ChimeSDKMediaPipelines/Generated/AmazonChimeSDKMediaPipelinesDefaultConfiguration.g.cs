@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ChimeSDKMediaPipelines
 {
     /// <summary>
-    /// Configuration for accessing Amazon ChimeSDKMediaPipelines service
+    /// Configuration for accessing Amazon Chime SDK Media Pipelines
     /// </summary>
     public static class AmazonChimeSDKMediaPipelinesDefaultConfiguration
     {

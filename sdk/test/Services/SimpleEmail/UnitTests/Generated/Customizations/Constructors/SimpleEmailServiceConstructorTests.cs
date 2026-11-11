@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System.Collections.Generic;
 using System.IO;

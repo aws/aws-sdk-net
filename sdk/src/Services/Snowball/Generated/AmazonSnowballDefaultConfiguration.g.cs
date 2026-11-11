@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Snowball
 {
     /// <summary>
-    /// Configuration for accessing Amazon Snowball service
+    /// Configuration for accessing Amazon Import/Export Snowball
     /// </summary>
     public static class AmazonSnowballDefaultConfiguration
     {

@@ -306,10 +306,9 @@ namespace <#=this.Config.Namespace#>
         if(this.Config.ServiceId == "S3")
         {
 #>
-            var clientConfig = this.Config as AmazonS3Config;
-            if (clientConfig != null && clientConfig.S3ExpressCredentialProvider != null)
+            if (disposing)
             {
-                clientConfig.S3ExpressCredentialProvider.Dispose();
+                DisposeS3ExpressCredentialProvider();
             }
 <#
         }

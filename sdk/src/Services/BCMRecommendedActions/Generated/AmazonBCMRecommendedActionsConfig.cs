@@ -27,12 +27,12 @@ using Amazon.BCMRecommendedActions.Internal;
 namespace Amazon.BCMRecommendedActions
 {
     /// <summary>
-    /// Configuration for accessing Amazon BCMRecommendedActions service
+    /// Configuration for accessing AWS Billing and Cost Management Recommended Actions
     /// </summary>
     public partial class AmazonBCMRecommendedActionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("BCM Recommended Actions", "4.0.102.14");
+            InternalSDKUtils.BuildUserAgentString("BCM Recommended Actions", "4.0.102.18");
 
         private static readonly AmazonBCMRecommendedActionsEndpointResolver EndpointResolver =
             new AmazonBCMRecommendedActionsEndpointResolver();

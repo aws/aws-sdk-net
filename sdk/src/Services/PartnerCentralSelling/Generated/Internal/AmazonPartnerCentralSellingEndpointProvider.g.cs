@@ -26,7 +26,7 @@ using Amazon.PartnerCentralSelling.Endpoints;
 namespace Amazon.PartnerCentralSelling.Internal
 {
     /// <summary>
-    /// Amazon PartnerCentralSelling endpoint provider.
+    /// Partner Central Selling API endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PartnerCentralSellingEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

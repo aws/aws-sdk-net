@@ -45,6 +45,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAmi())
+            {
+                context.Writer.WritePropertyName("ami");
+                context.Writer.WriteBooleanValue(requestObject.Ami.Value);
+            }
+
             if (requestObject.IsSetCodeRepository())
             {
                 context.Writer.WritePropertyName("codeRepository");

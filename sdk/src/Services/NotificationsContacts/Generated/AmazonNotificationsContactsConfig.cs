@@ -27,12 +27,12 @@ using Amazon.NotificationsContacts.Internal;
 namespace Amazon.NotificationsContacts
 {
     /// <summary>
-    /// Configuration for accessing Amazon NotificationsContacts service
+    /// Configuration for accessing AWS User Notifications Contacts
     /// </summary>
     public partial class AmazonNotificationsContactsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("NotificationsContacts", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("NotificationsContacts", "4.0.100.26");
 
         private static readonly AmazonNotificationsContactsEndpointResolver EndpointResolver =
             new AmazonNotificationsContactsEndpointResolver();

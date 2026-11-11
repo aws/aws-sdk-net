@@ -27,12 +27,12 @@ using Amazon.ARCRegionswitch.Internal;
 namespace Amazon.ARCRegionswitch
 {
     /// <summary>
-    /// Configuration for accessing Amazon ARCRegionswitch service
+    /// Configuration for accessing ARC - Region switch
     /// </summary>
     public partial class AmazonARCRegionswitchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ARC Region switch", "4.0.105.3");
+            InternalSDKUtils.BuildUserAgentString("ARC Region switch", "4.0.106.0");
 
         private static readonly AmazonARCRegionswitchEndpointResolver EndpointResolver =
             new AmazonARCRegionswitchEndpointResolver();

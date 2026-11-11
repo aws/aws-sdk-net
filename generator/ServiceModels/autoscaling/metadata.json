@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.",
+  "base-name": "AutoScaling",
   "legacy-service-id": "Auto Scaling"
 }

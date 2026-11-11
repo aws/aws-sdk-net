@@ -81,6 +81,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("gpuSharingStrategy", targetDepth, ref reader))
+                {
+                    var unmarshaller = SharingStrategyUnmarshaller.Instance;
+                    unmarshalledObject.GpuSharingStrategy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("healthStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

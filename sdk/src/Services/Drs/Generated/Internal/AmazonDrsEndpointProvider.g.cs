@@ -26,7 +26,7 @@ using Amazon.Drs.Endpoints;
 namespace Amazon.Drs.Internal
 {
     /// <summary>
-    /// Amazon Drs endpoint provider.
+    /// Elastic Disaster Recovery Service endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="DrsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

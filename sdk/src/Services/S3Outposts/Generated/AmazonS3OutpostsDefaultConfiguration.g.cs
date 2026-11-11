@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.S3Outposts
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Outposts service
+    /// Configuration for accessing Amazon S3 on Outposts
     /// </summary>
     public static class AmazonS3OutpostsDefaultConfiguration
     {

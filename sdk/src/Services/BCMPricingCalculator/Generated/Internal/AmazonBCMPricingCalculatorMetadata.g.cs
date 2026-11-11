@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BCMPricingCalculator.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon BCMPricingCalculator service
+    /// Service metadata for AWS Billing and Cost Management Pricing Calculator
     /// </summary>
     public partial class AmazonBCMPricingCalculatorMetadata : IServiceMetadata
     {

@@ -73,6 +73,16 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("accountId");
                 context.Writer.WriteStringValue(publicRequest.AccountId);
             }
+            if (publicRequest.IsSetAmiConfiguration())
+            {
+                context.Writer.WritePropertyName("amiConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AmiConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AmiConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetEc2Configuration())
             {
                 context.Writer.WritePropertyName("ec2Configuration");

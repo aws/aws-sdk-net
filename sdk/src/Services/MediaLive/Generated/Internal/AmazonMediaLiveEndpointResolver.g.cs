@@ -31,7 +31,7 @@ using Amazon.MediaLive.Endpoints;
 namespace Amazon.MediaLive.Internal
 {
     /// <summary>
-    /// Amazon MediaLive endpoint resolver.
+    /// AWS Elemental MediaLive endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for MediaLive service requests.
     /// <para />

@@ -44,7 +44,7 @@ namespace Amazon.Runtime.Internal
             Timeout,
             /// <summary>
             /// The throttling capacity type uses the throttling retry cost amount.
-            /// Used when the new retry behavior (SEP 2.1) is enabled.
+            /// Used for retries of throttling errors.
             /// </summary>
             Throttling
         }
@@ -76,7 +76,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="throttleCost">The capacity to add on a successful non-retry request.</param>
         [Obsolete("Use the constructor with explicit parameter names (initialRetryTokens, retryCost, noRetryIncrement, timeoutRetryCost, throttlingRetryCost) instead.")]
         public CapacityManager(int throttleRetryCount, int throttleRetryCost, int throttleCost)
-            : this(throttleRetryCount, throttleRetryCost, throttleCost, throttleRetryCost, 0)
+            : this(throttleRetryCount, throttleRetryCost, throttleCost, throttleRetryCost, throttleRetryCost)
         {
         }
 
@@ -89,7 +89,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="timeoutRetryCost">The cost of a timeout retry.</param>
         [Obsolete("Use the constructor with explicit parameter names (initialRetryTokens, retryCost, noRetryIncrement, timeoutRetryCost, throttlingRetryCost) instead.")]
         public CapacityManager(int throttleRetryCount, int throttleRetryCost, int throttleCost, int timeoutRetryCost)
-            : this(throttleRetryCount, throttleRetryCost, throttleCost, timeoutRetryCost, 0)
+            : this(throttleRetryCount, throttleRetryCost, throttleCost, timeoutRetryCost, throttleRetryCost)
         {
         }
 
@@ -205,15 +205,16 @@ namespace Amazon.Runtime.Internal
         //Read write slim lock for performing said operations on CapacityManager._serviceUrlToCapacityMap.
         private static ReaderWriterLockSlim _rwlock = new ReaderWriterLockSlim();
 
-        // This parameter sets the cost of making a retry call on a request.The default value is set at 5.
+        // This parameter sets the cost of making a retry call on a request. The default value is 14 for
+        // StandardRetryPolicy and AdaptiveRetryPolicy, and 5 for DefaultRetryPolicy.
         private readonly int retryCost;
 
-        // This parameter sets the cost of making a retry call when the request was a timeout. The default value is 5 for 
-        // legacy retry modes and 10 for all other retry modes.
+        // This parameter sets the cost of making a retry call when the request was a timeout. The default value is 14 for
+        // StandardRetryPolicy and AdaptiveRetryPolicy, and 5 for DefaultRetryPolicy.
         private readonly int timeoutRetryCost;
 
         // This parameter sets the cost of making a retry call when the error is a throttling error.
-        // Used when the new retry behavior (SEP 2.1) is enabled. The default value is 5.
+        // The default value is 5.
         private readonly int throttlingRetryCost;
 
         // Maximum capacity in a bucket set to 100 for legacy retry mode and 500 for all other retry modes.

@@ -26,7 +26,7 @@ using Amazon.WorkSpacesThinClient.Endpoints;
 namespace Amazon.WorkSpacesThinClient.Internal
 {
     /// <summary>
-    /// Amazon WorkSpacesThinClient endpoint provider.
+    /// Amazon WorkSpaces Thin Client endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="WorkSpacesThinClientEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

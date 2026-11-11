@@ -27,12 +27,12 @@ using Amazon.MarketplaceDiscovery.Internal;
 namespace Amazon.MarketplaceDiscovery
 {
     /// <summary>
-    /// Configuration for accessing Amazon MarketplaceDiscovery service
+    /// Configuration for accessing AWS Marketplace Discovery
     /// </summary>
     public partial class AmazonMarketplaceDiscoveryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Discovery", "4.0.103.7");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Discovery", "4.0.104.3");
 
         private static readonly AmazonMarketplaceDiscoveryEndpointResolver EndpointResolver =
             new AmazonMarketplaceDiscoveryEndpointResolver();

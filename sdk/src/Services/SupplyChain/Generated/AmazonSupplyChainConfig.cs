@@ -27,12 +27,12 @@ using Amazon.SupplyChain.Internal;
 namespace Amazon.SupplyChain
 {
     /// <summary>
-    /// Configuration for accessing Amazon SupplyChain service
+    /// Configuration for accessing AWS Supply Chain
     /// </summary>
     public partial class AmazonSupplyChainConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SupplyChain", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("SupplyChain", "4.0.100.26");
 
         private static readonly AmazonSupplyChainEndpointResolver EndpointResolver =
             new AmazonSupplyChainEndpointResolver();

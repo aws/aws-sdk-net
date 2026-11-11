@@ -32,6 +32,10 @@ A **removed** line in generated output is a red flag — investigate it, do not 
   reach internals; an entry without its own `PublicKey=` gets the SDK's)
 - The config constructor's region fallback, from metadata.json `default-region` (iam only: a partition-global
   service still needs a region to sign and resolve an endpoint when the environment supplies none)
+- The auth resolver's `GetSigner` override, from metadata.json `signature-version` (C2J's non-SigV4
+  `signatureVersion`: `"v2"` sdb → `QueryStringSigner`, `"S3"` S3 → `Amazon.S3.Internal.S3Signer`, `"S3V4"`
+  S3Control → Core's `S3Signer`; values are case-insensitive). `v2` also keeps the SigV4 default and `Region`
+  although the model carries no auth trait, Smithy having no SigV2 trait
 
 ## What Can Differ
 
@@ -182,6 +186,25 @@ Each extension under `extensions/src` with a nuspec gets its `ExtensionVersions`
 `Properties/AssemblyInfo.cs` (`ExtensionVersionUpdater`). Those files are hand-written, so they're edited in place;
 C2J's `GeneratorExtensionsDriver` still makes the same edits.
 
+## SDK Solutions and Legacy Unit-Test Projects
+
+After the services, each batch run writes the files that span every project, matching C2J's apart from line endings.
+C2J still writes them too:
+
+- `sdk/test/UnitTests/AWSSDK.UnitTests.{NetFramework,NetStandard}.csproj` (`LegacyUnitTestProjectFileWriter`), from
+  `_manifest.json`'s `unittestprojects` entry (`UnitTestProjectManifest`). The per-service test projects take only
+  its package references and `noWarn`: its other settings name TFMs (`targets`), which their framework-identifier
+  conditions avoid, or paths relative to `sdk/test/UnitTests`; the `obj` exclude is fixed. Written first, since the
+  solutions list them.
+- `sdk/AWSSDK.{NetFramework,NetStandard}.sln` (`SdkSolutionFileWriter`). Project and folder GUIDs are read back from
+  the existing solution by name, so only a new project gets a new GUID, and C2J then reuses it. Folders and files sort
+  by the invariant culture (`AccessAnalyzer` before `ACMPCA`), which matches C2J's current-culture `OrderBy` under
+  en-US.
+- `sdk/AWSSDK.CodeAnalysis.sln` (`CodeAnalysisSolutionFileWriter`), taking each project's GUID from its
+  `<ProjectGuid>`. C2J writes it untrimmed, so it keeps a leading and a final newline.
+
+Core's two csproj files are hand-maintained: their `_manifest.json` template, `VS2017ProjectFile`, makes C2J skip them.
+
 ## Event Streams
 
 Protocol-independent; only the per-event payload (un)marshalling and the response unmarshaller's body
@@ -309,6 +332,9 @@ nothing targets it.
 name on every protocol. `CustomizationsModel.PropertyName` is used wherever a member's C# name is derived.
 As in C2J, the name's first letter is upper-cased (iot's `marker` is `Marker`) and
 `emitIsSetProperties`/`dataTypeSwap` list a renamed member under its new name.
+The Smithy-only `overridesBaseMember` emits a member with `override` when a hand-written partial gives its structure a
+base class declaring the same member: CognitoIdentity's and SecurityToken's `Credentials` derive from `AWSCredentials`,
+whose `BaseIdentity.Expiration` is virtual. C2J hard-codes that case instead.
 `paginators.{Operation}` supplies what `@paginated` lacks but the shipped paginator has: `pageSize` (PowerShell reads
 `LimitKey`); `inputToken`/`outputToken` arrays, which make a trait-less operation paginated — map tokens loop while entries
 remain (DynamoDB `BatchGetItem`), several tokens page together (Route 53 `ListResourceRecordSets`); `items` (dotted paths)
@@ -316,6 +342,7 @@ added to the modeled one. A field the trait already has fails generation.
 `operationModifiers.{Operation}.stopPaginationOnSameToken` stops on a repeated token (CloudWatch Logs `GetLogEvents`).
 Unlike the C2J-inherited hooks above, `paginators` names members as the model does (like `@paginated`), not by their
 emitted name.
+`operationModifiers.{Operation}.skipChecksumDuringMarshalling` drops the marshaller's checksum call (S3 `PutObject`, `UploadPart`).
 
 Three convenience hooks add hand-picked public members, read from `GenerationContext.Customizations` (not folded into the
 model). A form names members by C# property name (case-insensitive); a stale operation/class/member reference fails
@@ -331,7 +358,7 @@ for a form member). All three carry the member `@documentation` onto the paramet
 `operationModifiers.{Operation}.exclude` unbinds the operation from its service or resource and `shapeModifiers.{Shape}.exclude`
 removes members, so whatever is no longer reachable is not emitted. `useWrappingResult` moves the output under one member,
 `wrappedResultMember`, of a new output structure: the response has a single property of the output's type, paginator paths go
-through it, and the JSON response unmarshaller reads it from the whole body.
+through it, and the JSON, CBOR and ec2Query response unmarshallers read it from the whole body.
 
 - What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` parses;
   each hook's per-level behavior lives on that record, its `Apply`/`Validate` step, and its lookup.
@@ -438,6 +465,11 @@ Must expose:
 - `CustomizeRuntimePipeline` override: first the `runtimePipelineOverride` customization's handlers, in file order (each
   under its `condition`, if any), then the endpoint-resolver swap and auth scheme handler. The handler classes are hand-written under the service's `Custom/`.
 - `ServiceMetadata` property override
+
+The auth scheme handler (`AuthResolverWriter`) overrides `GetSigner` when metadata.json sets
+`signature-version` (e.g. S3Control's `"S3V4"` → `S3Signer`). C2J derives the signer from
+`metadata.signatureVersion`, which Smithy does not model, so each such service carries the key in its
+metadata.json rather than the generator keeping a list by name.
 
 Use `#if NETFRAMEWORK` directives to include sync methods only for .NET Framework targets. Both sync and async methods are `public virtual` on the client class.
 

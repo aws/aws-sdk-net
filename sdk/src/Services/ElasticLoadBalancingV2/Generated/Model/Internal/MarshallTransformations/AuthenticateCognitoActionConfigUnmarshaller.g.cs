@@ -1,0 +1,135 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.ElasticLoadBalancingV2.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for AuthenticateCognitoActionConfig Object
+    /// </summary>
+    public partial class AuthenticateCognitoActionConfigUnmarshaller : IXmlUnmarshaller<AuthenticateCognitoActionConfig, XmlUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public AuthenticateCognitoActionConfig Unmarshall(XmlUnmarshallerContext context)
+        {
+            AuthenticateCognitoActionConfig unmarshalledObject = new AuthenticateCognitoActionConfig();
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument)
+            {
+                targetDepth += 2;
+            }
+
+            while (context.Read())
+            {
+                if (context.IsStartElement || context.IsAttribute)
+                {
+                    if (context.TestExpression("AuthenticationRequestExtraParams/entry", targetDepth))
+                    {
+                        if (unmarshalledObject.AuthenticationRequestExtraParams == null)
+                        {
+                            unmarshalledObject.AuthenticationRequestExtraParams = new Dictionary<string, string>();
+                        }
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "key", "value");
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AuthenticationRequestExtraParams.Add(item.Key, item.Value);
+                        continue;
+                    }
+
+                    if (context.TestExpression("OnUnauthenticatedRequest", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OnUnauthenticatedRequest = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("Scope", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Scope = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("SessionCookieName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SessionCookieName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("SessionTimeout", targetDepth))
+                    {
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
+                        unmarshalledObject.SessionTimeout = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("UserPoolArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UserPoolArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("UserPoolClientId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UserPoolClientId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("UserPoolDomain", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UserPoolDomain = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
+            }
+
+            return unmarshalledObject;
+        }
+
+        private static AuthenticateCognitoActionConfigUnmarshaller _instance = new AuthenticateCognitoActionConfigUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static AuthenticateCognitoActionConfigUnmarshaller Instance => _instance;
+    }
+}

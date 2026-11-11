@@ -26,7 +26,7 @@ using Amazon.Cloud9.Endpoints;
 namespace Amazon.Cloud9.Internal
 {
     /// <summary>
-    /// Amazon Cloud9 endpoint provider.
+    /// AWS Cloud9 endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="Cloud9EndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

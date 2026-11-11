@@ -26,7 +26,7 @@ using Amazon.SagemakerEdgeManager.Endpoints;
 namespace Amazon.SagemakerEdgeManager.Internal
 {
     /// <summary>
-    /// Amazon SagemakerEdgeManager endpoint provider.
+    /// Amazon Sagemaker Edge Manager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SagemakerEdgeManagerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

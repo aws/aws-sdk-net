@@ -115,6 +115,27 @@ namespace Amazon.RAM.Model
         internal bool IsSetLastUpdatedTime() => this.LastUpdatedTime.HasValue;
 
         /// <summary>
+        /// Gets and sets the property PermissionTemplateParameters. 
+        /// <para>
+        /// The template parameter values provided when the permission was associated with this
+        /// resource share. If the permission has no declared template parameters, this member
+        /// doesn't appear in the response.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<PermissionTemplateParameter> PermissionTemplateParameters { get; set; } = AWSConfigs.InitializeCollections ? new List<PermissionTemplateParameter>() : null;
+
+        /// <summary>
+        /// Checks to see if the PermissionTemplateParameters property is set.
+        /// </summary>
+        internal bool IsSetPermissionTemplateParameters() => this.PermissionTemplateParameters != null && (this.PermissionTemplateParameters.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property PermissionVersion. 
         /// <para>
         /// The version of the permission currently associated with the resource share.
@@ -176,6 +197,11 @@ namespace Amazon.RAM.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>DELETED</c> – This permission or version is deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DEPRECATED</c> – The permission owner deprecated this permission. It can't be
+        /// associated with new resource shares, but existing associations continue to function.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.ConnectCampaignService
 {
     /// <summary>
-    /// Configuration for accessing Amazon ConnectCampaignService service
+    /// Configuration for accessing AmazonConnectCampaignService
     /// </summary>
     public static class AmazonConnectCampaignServiceDefaultConfiguration
     {

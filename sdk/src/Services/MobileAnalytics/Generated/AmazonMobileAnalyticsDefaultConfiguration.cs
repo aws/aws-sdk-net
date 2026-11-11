@@ -27,7 +27,7 @@ using Amazon.Runtime;
 namespace Amazon.MobileAnalytics
 {
     /// <summary>
-    /// Configuration for accessing Amazon MobileAnalytics service
+    /// Configuration for accessing Amazon Mobile Analytics
     /// </summary>
     public static class AmazonMobileAnalyticsDefaultConfiguration
     {

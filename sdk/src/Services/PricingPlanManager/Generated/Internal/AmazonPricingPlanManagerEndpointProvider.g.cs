@@ -26,7 +26,7 @@ using Amazon.PricingPlanManager.Endpoints;
 namespace Amazon.PricingPlanManager.Internal
 {
     /// <summary>
-    /// Amazon PricingPlanManager endpoint provider.
+    /// PricingPlanManager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="PricingPlanManagerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

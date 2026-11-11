@@ -31,7 +31,7 @@ using Amazon.CostExplorer.Endpoints;
 namespace Amazon.CostExplorer.Internal
 {
     /// <summary>
-    /// Amazon CostExplorer endpoint resolver.
+    /// AWS Cost Explorer Service endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CostExplorer service requests.
     /// <para />

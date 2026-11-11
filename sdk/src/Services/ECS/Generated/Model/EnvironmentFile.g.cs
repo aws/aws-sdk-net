@@ -58,10 +58,6 @@ namespace Amazon.ECS.Model
     /// <para>
     /// Linux platform version <c>1.4.0</c> or later.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Windows platform version <c>1.0.0</c> or later.
-    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// Consider the following when using the Fargate launch type:

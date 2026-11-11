@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Artifact.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Artifact service
+    /// Service metadata for AWS Artifact
     /// </summary>
     public partial class AmazonArtifactMetadata : IServiceMetadata
     {

@@ -27,12 +27,12 @@ using Amazon.S3Outposts.Internal;
 namespace Amazon.S3Outposts
 {
     /// <summary>
-    /// Configuration for accessing Amazon S3Outposts service
+    /// Configuration for accessing Amazon S3 on Outposts
     /// </summary>
     public partial class AmazonS3OutpostsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("S3Outposts", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("S3Outposts", "4.0.100.25");
 
         private static readonly AmazonS3OutpostsEndpointResolver EndpointResolver =
             new AmazonS3OutpostsEndpointResolver();

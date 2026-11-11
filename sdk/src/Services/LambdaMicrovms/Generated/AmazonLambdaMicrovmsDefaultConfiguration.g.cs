@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.LambdaMicrovms
 {
     /// <summary>
-    /// Configuration for accessing Amazon LambdaMicrovms service
+    /// Configuration for accessing Lambda MicroVMs
     /// </summary>
     public static class AmazonLambdaMicrovmsDefaultConfiguration
     {

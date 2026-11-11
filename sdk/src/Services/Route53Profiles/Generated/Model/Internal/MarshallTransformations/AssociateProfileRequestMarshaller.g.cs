@@ -73,6 +73,11 @@ namespace Amazon.Route53Profiles.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Name");
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
+            if (publicRequest.IsSetPriority())
+            {
+                context.Writer.WritePropertyName("Priority");
+                context.Writer.WriteNumberValue(publicRequest.Priority.Value);
+            }
             if (publicRequest.IsSetProfileId())
             {
                 context.Writer.WritePropertyName("ProfileId");

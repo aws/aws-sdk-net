@@ -26,7 +26,7 @@ using Amazon.IVSRealTime.Endpoints;
 namespace Amazon.IVSRealTime.Internal
 {
     /// <summary>
-    /// Amazon IVSRealTime endpoint provider.
+    /// Amazon Interactive Video Service RealTime endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="IVSRealTimeEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

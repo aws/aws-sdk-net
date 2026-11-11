@@ -739,6 +739,34 @@ namespace AWSSDKDocSamples.Amazon.CloudWatchOmni.Generated
             #endregion
         }
 
+        public void CloudWatchOmniGetSpaceDataAccess()
+        {
+            #region GetSpaceDataAccess-1
+
+            var client = new AmazonCloudWatchOmniClient();
+            var response = client.GetSpaceDataAccess(new GetSpaceDataAccessRequest
+            {
+                AuditContext = new Dictionary<string, string> {
+                    { "source", "logs-console" }
+                },
+                DurationSeconds = 3600,
+                SpaceId = "a1b2c3d4-5e6f-4a3b-8c9d-0e1f2a3b4c5d",
+                TargetScopes = new List<DataAccessTarget> {
+                    new DataAccessTarget { Actions = new List<string> {
+                        "logs:StartQuery",
+                        "logs:GetQueryResults"
+                    } },
+                    new DataAccessTarget { Actions = new List<string> {
+                        "cloudwatch:GetMetricData"
+                    } }
+                }
+            });
+
+            AwsCredentials credentials = response.Credentials;
+
+            #endregion
+        }
+
         public void CloudWatchOmniGetTelemetryQueryResults()
         {
             #region GetTelemetryQueryResults-1

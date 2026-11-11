@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Omics service
+    /// Service metadata for Amazon Omics
     /// </summary>
     public partial class AmazonOmicsMetadata : IServiceMetadata
     {

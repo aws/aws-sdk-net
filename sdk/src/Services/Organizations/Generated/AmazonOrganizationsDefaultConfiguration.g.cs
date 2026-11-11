@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.Organizations
 {
     /// <summary>
-    /// Configuration for accessing Amazon Organizations service
+    /// Configuration for accessing AWS Organizations
     /// </summary>
     public static class AmazonOrganizationsDefaultConfiguration
     {

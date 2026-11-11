@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon Deadline service
+    /// Service metadata for AWSDeadlineCloud
     /// </summary>
     public partial class AmazonDeadlineMetadata : IServiceMetadata
     {

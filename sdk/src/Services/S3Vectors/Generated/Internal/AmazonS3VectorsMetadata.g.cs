@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Vectors.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon S3Vectors service
+    /// Service metadata for Amazon S3 Vectors
     /// </summary>
     public partial class AmazonS3VectorsMetadata : IServiceMetadata
     {

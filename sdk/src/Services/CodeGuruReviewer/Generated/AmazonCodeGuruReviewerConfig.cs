@@ -27,12 +27,12 @@ using Amazon.CodeGuruReviewer.Internal;
 namespace Amazon.CodeGuruReviewer
 {
     /// <summary>
-    /// Configuration for accessing Amazon CodeGuruReviewer service
+    /// Configuration for accessing Amazon CodeGuru Reviewer
     /// </summary>
     public partial class AmazonCodeGuruReviewerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeGuru Reviewer", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("CodeGuru Reviewer", "4.0.100.26");
 
         private static readonly AmazonCodeGuruReviewerEndpointResolver EndpointResolver =
             new AmazonCodeGuruReviewerEndpointResolver();

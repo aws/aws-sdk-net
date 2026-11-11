@@ -27,12 +27,12 @@ using Amazon.SecurityLake.Internal;
 namespace Amazon.SecurityLake
 {
     /// <summary>
-    /// Configuration for accessing Amazon SecurityLake service
+    /// Configuration for accessing Amazon Security Lake
     /// </summary>
     public partial class AmazonSecurityLakeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SecurityLake", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("SecurityLake", "4.0.100.25");
 
         private static readonly AmazonSecurityLakeEndpointResolver EndpointResolver =
             new AmazonSecurityLakeEndpointResolver();

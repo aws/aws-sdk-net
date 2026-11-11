@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "Amplify is a fully managed continuous deployment and hosting service for modern web apps.",
   "generate-client-constructors": true,
+  "base-name": "Amplify",
   "legacy-service-id": "Amplify"
 }

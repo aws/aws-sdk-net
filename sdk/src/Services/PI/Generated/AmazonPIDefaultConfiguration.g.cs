@@ -24,7 +24,7 @@ using Amazon.Runtime;
 namespace Amazon.PI
 {
     /// <summary>
-    /// Configuration for accessing Amazon PI service
+    /// Configuration for accessing AWS Performance Insights
     /// </summary>
     public static class AmazonPIDefaultConfiguration
     {

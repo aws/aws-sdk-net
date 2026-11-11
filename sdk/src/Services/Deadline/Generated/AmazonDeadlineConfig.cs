@@ -27,12 +27,12 @@ using Amazon.Deadline.Internal;
 namespace Amazon.Deadline
 {
     /// <summary>
-    /// Configuration for accessing Amazon Deadline service
+    /// Configuration for accessing AWSDeadlineCloud
     /// </summary>
     public partial class AmazonDeadlineConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("deadline", "4.0.103.6");
+            InternalSDKUtils.BuildUserAgentString("deadline", "4.0.103.10");
 
         private static readonly AmazonDeadlineEndpointResolver EndpointResolver =
             new AmazonDeadlineEndpointResolver();

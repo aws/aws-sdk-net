@@ -27,12 +27,12 @@ using Amazon.Notifications.Internal;
 namespace Amazon.Notifications
 {
     /// <summary>
-    /// Configuration for accessing Amazon Notifications service
+    /// Configuration for accessing AWS User Notifications
     /// </summary>
     public partial class AmazonNotificationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Notifications", "4.0.101.7");
+            InternalSDKUtils.BuildUserAgentString("Notifications", "4.0.101.11");
 
         private static readonly AmazonNotificationsEndpointResolver EndpointResolver =
             new AmazonNotificationsEndpointResolver();

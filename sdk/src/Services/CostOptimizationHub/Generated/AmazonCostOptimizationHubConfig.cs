@@ -27,12 +27,12 @@ using Amazon.CostOptimizationHub.Internal;
 namespace Amazon.CostOptimizationHub
 {
     /// <summary>
-    /// Configuration for accessing Amazon CostOptimizationHub service
+    /// Configuration for accessing Cost Optimization Hub
     /// </summary>
     public partial class AmazonCostOptimizationHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Cost Optimization Hub", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Cost Optimization Hub", "4.0.100.25");
 
         private static readonly AmazonCostOptimizationHubEndpointResolver EndpointResolver =
             new AmazonCostOptimizationHubEndpointResolver();

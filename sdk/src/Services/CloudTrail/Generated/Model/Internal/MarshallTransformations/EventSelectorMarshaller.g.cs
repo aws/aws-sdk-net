@@ -1,0 +1,93 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.CloudTrail.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// EventSelector Marshaller
+    /// </summary>
+    public partial class EventSelectorMarshaller : IRequestMarshaller<EventSelector, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(EventSelector requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetDataResources())
+            {
+                context.Writer.WritePropertyName("DataResources");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectDataResourcesListValue in requestObject.DataResources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DataResourceMarshaller.Instance;
+                    marshaller.Marshall(requestObjectDataResourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetExcludeManagementEventSources())
+            {
+                context.Writer.WritePropertyName("ExcludeManagementEventSources");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectExcludeManagementEventSourcesListValue in requestObject.ExcludeManagementEventSources)
+                {
+                    context.Writer.WriteStringValue(requestObjectExcludeManagementEventSourcesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetIncludeManagementEvents())
+            {
+                context.Writer.WritePropertyName("IncludeManagementEvents");
+                context.Writer.WriteBooleanValue(requestObject.IncludeManagementEvents.Value);
+            }
+
+            if (requestObject.IsSetReadWriteType())
+            {
+                context.Writer.WritePropertyName("ReadWriteType");
+                context.Writer.WriteStringValue(requestObject.ReadWriteType);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static EventSelectorMarshaller Instance = new EventSelectorMarshaller();
+    }
+}

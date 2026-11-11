@@ -2,6 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Route53.Model.ActivateKeySigningKeyRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -11,15 +12,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.AssociateVPCWithHostedZoneRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ChangeCidrCollectionRequest.Id</property>
-    <pattern>[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ChangeCidrCollectionRequest.CollectionVersion</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ChangeCidrCollectionRequest.Id</property>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ChangeCidrCollectionResponse.Id</property>
@@ -28,17 +30,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ChangeResourceRecordSetsRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ChangeTagsForResourceRequest.ResourceId</property>
+    <min>0</min>
     <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.CreateCidrCollectionRequest.Name</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[0-9A-Za-z_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateCidrCollectionRequest.CallerReference</property>
@@ -46,7 +44,14 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.CreateCidrCollectionRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9A-Za-z_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.CreateCidrCollectionResponse.Location</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -56,10 +61,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateHealthCheckResponse.Location</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.CreateHostedZoneRequest.Name</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -69,10 +71,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateHostedZoneRequest.DelegationSetId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.CreateHostedZoneRequest.Name</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.CreateHostedZoneResponse.Location</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -82,6 +91,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateKeySigningKeyRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -96,14 +106,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateKeySigningKeyResponse.Location</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateQueryLoggingConfigRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateQueryLoggingConfigResponse.Location</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -113,34 +126,42 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateReusableDelegationSetRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateReusableDelegationSetResponse.Location</property>
+    <min>0</min>
     <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.CreateTrafficPolicyRequest.Name</property>
-    <max>512</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.CreateTrafficPolicyRequest.Document</property>
-    <max>102400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateTrafficPolicyRequest.Comment</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyRequest.Document</property>
+    <min>0</min>
+    <max>102400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyRequest.Name</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.CreateTrafficPolicyResponse.Location</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateTrafficPolicyInstanceRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateTrafficPolicyInstanceRequest.Name</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -160,7 +181,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateTrafficPolicyInstanceResponse.Location</property>
+    <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyVersionRequest.Comment</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyVersionRequest.Document</property>
+    <min>0</min>
+    <max>102400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateTrafficPolicyVersionRequest.Id</property>
@@ -168,27 +200,23 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.CreateTrafficPolicyVersionRequest.Document</property>
-    <max>102400</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.CreateTrafficPolicyVersionRequest.Comment</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Route53.Model.CreateTrafficPolicyVersionResponse.Location</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateVPCAssociationAuthorizationRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateVPCAssociationAuthorizationResponse.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DeactivateKeySigningKeyRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -198,18 +226,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DeleteCidrCollectionRequest.Id</property>
-    <pattern>[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DeleteHealthCheckRequest.HealthCheckId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DeleteHostedZoneRequest.Id</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DeleteKeySigningKeyRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -224,6 +255,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DeleteReusableDelegationSetRequest.Id</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -243,18 +275,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DeleteVPCAssociationAuthorizationRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DisableHostedZoneDNSSECRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DisassociateVPCFromHostedZoneRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.EnableHostedZoneDNSSECRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -268,6 +304,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetDNSSECRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -287,22 +324,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetHealthCheckRequest.HealthCheckId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetHealthCheckLastFailureReasonRequest.HealthCheckId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetHealthCheckStatusRequest.HealthCheckId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetHostedZoneRequest.Id</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetHostedZoneLimitRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -316,10 +358,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetReusableDelegationSetRequest.Id</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetReusableDelegationSetLimitRequest.DelegationSetId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -343,40 +387,46 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListCidrBlocksRequest.CollectionId</property>
-    <pattern>[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListCidrBlocksRequest.LocationName</property>
     <min>1</min>
     <max>16</max>
-    <pattern>[0-9A-Za-z_\-]+</pattern>
+    <pattern>^[0-9A-Za-z_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListCidrBlocksRequest.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListCidrBlocksResponse.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListCidrCollectionsRequest.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListCidrCollectionsResponse.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListCidrLocationsRequest.CollectionId</property>
-    <pattern>[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListCidrLocationsRequest.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListCidrLocationsResponse.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -411,58 +461,77 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListHealthChecksRequest.Marker</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListHealthChecksResponse.Marker</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListHealthChecksResponse.NextMarker</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListHostedZonesRequest.Marker</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListHostedZonesRequest.DelegationSetId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.ListHostedZonesRequest.Marker</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.ListHostedZonesResponse.Marker</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListHostedZonesResponse.NextMarker</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListHostedZonesByNameRequest.DNSName</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListHostedZonesByNameRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListHostedZonesByNameResponse.DNSName</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListHostedZonesByNameResponse.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListHostedZonesByNameResponse.NextDNSName</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListHostedZonesByNameResponse.NextHostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.ListHostedZonesByVPCRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.ListHostedZonesByVPCRequest.VPCId</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -471,32 +540,29 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.ListHostedZonesByVPCRequest.NextToken</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Route53.Model.ListHostedZonesByVPCResponse.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListQueryLoggingConfigsRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListQueryLoggingConfigsRequest.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListQueryLoggingConfigsResponse.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListResourceRecordSetsRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListResourceRecordSetsRequest.StartRecordName</property>
-    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListResourceRecordSetsRequest.StartRecordIdentifier</property>
@@ -504,7 +570,8 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.ListResourceRecordSetsResponse.NextRecordName</property>
+    <property>Amazon.Route53.Model.ListResourceRecordSetsRequest.StartRecordName</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -513,19 +580,28 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.ListResourceRecordSetsResponse.NextRecordName</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.ListReusableDelegationSetsRequest.Marker</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListReusableDelegationSetsResponse.Marker</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListReusableDelegationSetsResponse.NextMarker</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTagsForResourceRequest.ResourceId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -540,31 +616,43 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyInstancesRequest.HostedZoneIdMarker</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyInstancesRequest.TrafficPolicyInstanceNameMarker</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyInstancesResponse.HostedZoneIdMarker</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyInstancesResponse.TrafficPolicyInstanceNameMarker</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByHostedZoneRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByHostedZoneRequest.TrafficPolicyInstanceNameMarker</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByHostedZoneResponse.TrafficPolicyInstanceNameMarker</property>
+    <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyRequest.HostedZoneIdMarker</property>
+    <min>0</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyRequest.TrafficPolicyId</property>
@@ -572,24 +660,23 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyRequest.TrafficPolicyInstanceNameMarker</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyRequest.TrafficPolicyVersion</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyRequest.HostedZoneIdMarker</property>
-    <max>32</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyRequest.TrafficPolicyInstanceNameMarker</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyResponse.HostedZoneIdMarker</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyResponse.TrafficPolicyInstanceNameMarker</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -599,50 +686,60 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyVersionsRequest.TrafficPolicyVersionMarker</property>
+    <min>0</min>
     <max>4</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyVersionsResponse.TrafficPolicyVersionMarker</property>
+    <min>0</min>
     <max>4</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListVPCAssociationAuthorizationsRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListVPCAssociationAuthorizationsRequest.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListVPCAssociationAuthorizationsResponse.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListVPCAssociationAuthorizationsResponse.NextToken</property>
+    <min>0</min>
     <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.TestDNSAnswerRequest.HostedZoneId</property>
-    <max>32</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.TestDNSAnswerRequest.RecordName</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.TestDNSAnswerRequest.ResolverIP</property>
-    <max>45</max>
-    <pattern>(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TestDNSAnswerRequest.EDNS0ClientSubnetIP</property>
+    <min>0</min>
     <max>45</max>
-    <pattern>(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)</pattern>
+    <pattern>^(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TestDNSAnswerRequest.EDNS0ClientSubnetMask</property>
     <min>0</min>
     <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TestDNSAnswerRequest.HostedZoneId</property>
+    <min>0</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TestDNSAnswerRequest.RecordName</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TestDNSAnswerRequest.ResolverIP</property>
+    <min>0</min>
+    <max>45</max>
+    <pattern>^(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TestDNSAnswerResponse.Nameserver</property>
@@ -651,10 +748,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TestDNSAnswerResponse.RecordName</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateHealthCheckRequest.FailureThreshold</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateHealthCheckRequest.FullyQualifiedDomainName</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.UpdateHealthCheckRequest.HealthCheckId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -662,9 +771,15 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateHealthCheckRequest.HealthThreshold</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.UpdateHealthCheckRequest.IPAddress</property>
+    <min>0</min>
     <max>45</max>
-    <pattern>(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)</pattern>
+    <pattern>^(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.UpdateHealthCheckRequest.Port</property>
@@ -673,37 +788,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.UpdateHealthCheckRequest.ResourcePath</property>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.UpdateHealthCheckRequest.FullyQualifiedDomainName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.UpdateHealthCheckRequest.SearchString</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.UpdateHealthCheckRequest.FailureThreshold</property>
-    <min>1</min>
-    <max>10</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.UpdateHealthCheckRequest.HealthThreshold</property>
+    <property>Amazon.Route53.Model.UpdateHostedZoneCommentRequest.Comment</property>
     <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.UpdateHostedZoneCommentRequest.Id</property>
+    <min>0</min>
     <max>32</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.UpdateHostedZoneCommentRequest.Comment</property>
-    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.UpdateHostedZoneFeaturesRequest.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateTrafficPolicyCommentRequest.Comment</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.UpdateTrafficPolicyCommentRequest.Id</property>
@@ -714,10 +825,6 @@
     <property>Amazon.Route53.Model.UpdateTrafficPolicyCommentRequest.Version</property>
     <min>1</min>
     <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.UpdateTrafficPolicyCommentRequest.Comment</property>
-    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.UpdateTrafficPolicyInstanceRequest.Id</property>
@@ -744,34 +851,39 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.AlarmIdentifier.Region</property>
-    <min>1</min>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Route53.Model.AlarmIdentifier.Name</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.AliasTarget.HostedZoneId</property>
-    <max>32</max>
+    <property>Amazon.Route53.Model.AlarmIdentifier.Region</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.AliasTarget.DNSName</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.AliasTarget.HostedZoneId</property>
+    <min>0</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.ChangeBatch.Comment</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ChangeInfo.Comment</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ChangeInfo.Id</property>
+    <min>0</min>
     <max>32</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ChangeInfo.Comment</property>
-    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CidrBlockSummary.CidrBlock</property>
@@ -783,7 +895,7 @@
     <property>Amazon.Route53.Model.CidrBlockSummary.LocationName</property>
     <min>1</min>
     <max>16</max>
-    <pattern>[0-9A-Za-z_\-]+</pattern>
+    <pattern>^[0-9A-Za-z_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CidrCollection.Arn</property>
@@ -793,13 +905,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CidrCollection.Id</property>
-    <pattern>[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CidrCollection.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z_\-]+</pattern>
+    <pattern>^[0-9A-Za-z_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CidrCollection.Version</property>
@@ -809,25 +921,21 @@
     <property>Amazon.Route53.Model.CidrCollectionChange.LocationName</property>
     <min>1</min>
     <max>16</max>
-    <pattern>[0-9A-Za-z_\-]+</pattern>
+    <pattern>^[0-9A-Za-z_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CidrRoutingConfig.CollectionId</property>
-    <pattern>[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CidrRoutingConfig.LocationName</property>
     <min>1</min>
     <max>16</max>
-    <pattern>[0-9A-Za-z_\-\*]+</pattern>
+    <pattern>^[0-9A-Za-z_\-\*]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CloudWatchAlarmConfiguration.EvaluationPeriods</property>
     <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.CloudWatchAlarmConfiguration.Period</property>
-    <min>60</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CloudWatchAlarmConfiguration.MetricName</property>
@@ -840,6 +948,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.CloudWatchAlarmConfiguration.Period</property>
+    <min>60</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.CollectionSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
@@ -847,13 +959,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CollectionSummary.Id</property>
-    <pattern>[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CollectionSummary.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z_\-]+</pattern>
+    <pattern>^[0-9A-Za-z_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CollectionSummary.Version</property>
@@ -863,32 +975,13 @@
     <property>Amazon.Route53.Model.Coordinates.Latitude</property>
     <min>1</min>
     <max>6</max>
-    <pattern>[-+]?[0-9]{1,2}(\.[0-9]{0,2})?</pattern>
+    <pattern>^[-+]?[0-9]{1,2}(\.[0-9]{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.Coordinates.Longitude</property>
     <min>1</min>
     <max>7</max>
-    <pattern>[-+]?[0-9]{1,3}(\.[0-9]{0,2})?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.DelegationSet.Id</property>
-    <max>32</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.DelegationSet.CallerReference</property>
-    <min>1</min>
-    <max>128</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.Dimension.Name</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.Dimension.Value</property>
-    <min>1</min>
-    <max>255</max>
+    <pattern>^[-+]?[0-9]{1,3}(\.[0-9]{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DNSSECStatus.ServeSignature</property>
@@ -899,6 +992,26 @@
     <property>Amazon.Route53.Model.DNSSECStatus.StatusMessage</property>
     <min>0</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.DelegationSet.CallerReference</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.DelegationSet.Id</property>
+    <min>0</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.Dimension.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.Dimension.Value</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GeoLocation.ContinentCode</property>
@@ -951,17 +1064,13 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.GeoProximityLocation.LocalZoneGroup</property>
-    <min>1</min>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Route53.Model.GeoProximityLocation.Bias</property>
     <min>-99</min>
     <max>99</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.HealthCheck.Id</property>
+    <property>Amazon.Route53.Model.GeoProximityLocation.LocalZoneGroup</property>
+    <min>1</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -974,31 +1083,9 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.HealthCheckConfig.IPAddress</property>
-    <max>45</max>
-    <pattern>(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.HealthCheckConfig.Port</property>
-    <min>1</min>
-    <max>65535</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.HealthCheckConfig.ResourcePath</property>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.HealthCheckConfig.FullyQualifiedDomainName</property>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.HealthCheckConfig.SearchString</property>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.HealthCheckConfig.RequestInterval</property>
-    <min>10</min>
-    <max>30</max>
+    <property>Amazon.Route53.Model.HealthCheck.Id</property>
+    <min>0</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.HealthCheckConfig.FailureThreshold</property>
@@ -1006,9 +1093,35 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.HealthCheckConfig.FullyQualifiedDomainName</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.HealthCheckConfig.HealthThreshold</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.HealthCheckConfig.IPAddress</property>
+    <min>0</min>
+    <max>45</max>
+    <pattern>^(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.HealthCheckConfig.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.HealthCheckConfig.RequestInterval</property>
+    <min>10</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.HealthCheckConfig.ResourcePath</property>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.HealthCheckConfig.RoutingControlArn</property>
@@ -1016,22 +1129,20 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.HealthCheckObservation.Region</property>
-    <min>1</min>
-    <max>64</max>
+    <property>Amazon.Route53.Model.HealthCheckConfig.SearchString</property>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.HealthCheckObservation.IPAddress</property>
+    <min>0</min>
     <max>45</max>
-    <pattern>(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)</pattern>
+    <pattern>^(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.HostedZone.Id</property>
-    <max>32</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.HostedZone.Name</property>
-    <max>1024</max>
+    <property>Amazon.Route53.Model.HealthCheckObservation.Region</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.HostedZone.CallerReference</property>
@@ -1039,7 +1150,18 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.HostedZone.Id</property>
+    <min>0</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.HostedZone.Name</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.HostedZoneConfig.Comment</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -1048,25 +1170,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.HostedZoneOwner.OwningService</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.HostedZoneSummary.HostedZoneId</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.HostedZoneSummary.Name</property>
+    <min>0</min>
     <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.KeySigningKey.Name</property>
-    <min>3</min>
-    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.KeySigningKey.KeyTag</property>
     <min>0</min>
     <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.KeySigningKey.Name</property>
+    <min>3</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.KeySigningKey.Status</property>
@@ -1079,18 +1204,25 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.LinkedService.ServicePrincipal</property>
-    <max>128</max>
+    <property>Amazon.Route53.Model.LinkedService.Description</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.LinkedService.Description</property>
-    <max>256</max>
+    <property>Amazon.Route53.Model.LinkedService.ServicePrincipal</property>
+    <min>0</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.LocationSummary.LocationName</property>
     <min>1</min>
     <max>16</max>
-    <pattern>[0-9A-Za-z_\-\*]+</pattern>
+    <pattern>^[0-9A-Za-z_\-\*]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.QueryLoggingConfig.HostedZoneId</property>
+    <min>0</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.QueryLoggingConfig.Id</property>
@@ -1098,26 +1230,19 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.QueryLoggingConfig.HostedZoneId</property>
-    <max>32</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Route53.Model.ResourceRecord.Value</property>
+    <min>0</min>
     <max>4000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.ResourceRecordSet.Name</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ResourceRecordSet.SetIdentifier</property>
-    <min>1</min>
-    <max>128</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ResourceRecordSet.Weight</property>
+    <property>Amazon.Route53.Model.ResourceRecordSet.HealthCheckId</property>
     <min>0</min>
-    <max>255</max>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ResourceRecordSet.Name</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ResourceRecordSet.Region</property>
@@ -1125,13 +1250,14 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.ResourceRecordSet.SetIdentifier</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.ResourceRecordSet.TTL</property>
     <min>0</min>
     <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ResourceRecordSet.HealthCheckId</property>
-    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ResourceRecordSet.TrafficPolicyInstanceId</property>
@@ -1139,7 +1265,13 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.ResourceRecordSet.Weight</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.ResourceTagSet.ResourceId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -1148,11 +1280,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.Tag.Key</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.Tag.Value</property>
+    <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicy.Comment</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicy.Document</property>
+    <min>0</min>
+    <max>102400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TrafficPolicy.Id</property>
@@ -1160,21 +1304,19 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicy.Name</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.TrafficPolicy.Version</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.TrafficPolicy.Name</property>
-    <max>512</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.TrafficPolicy.Document</property>
-    <max>102400</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.TrafficPolicy.Comment</property>
-    <max>1024</max>
+    <property>Amazon.Route53.Model.TrafficPolicyInstance.HostedZoneId</property>
+    <min>0</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TrafficPolicyInstance.Id</property>
@@ -1182,21 +1324,19 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.TrafficPolicyInstance.HostedZoneId</property>
-    <max>32</max>
+    <property>Amazon.Route53.Model.TrafficPolicyInstance.Message</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TrafficPolicyInstance.Name</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TrafficPolicyInstance.TTL</property>
     <min>0</min>
     <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.TrafficPolicyInstance.Message</property>
-    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TrafficPolicyInstance.TrafficPolicyId</property>
@@ -1214,13 +1354,14 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Route53.Model.TrafficPolicySummary.Name</property>
-    <max>512</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Route53.Model.TrafficPolicySummary.LatestVersion</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicySummary.Name</property>
+    <min>0</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TrafficPolicySummary.TrafficPolicyCount</property>
@@ -1228,12 +1369,13 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.VPC.VPCId</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.VPC.VPCRegion</property>
     <min>1</min>
     <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.VPC.VPCId</property>
-    <max>1024</max>
   </property-value-rule>
 </property-value-rules>

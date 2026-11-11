@@ -1,0 +1,3277 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Amazon.Runtime;
+using Amazon.ElasticBeanstalk.Model;
+
+#pragma warning disable CS1570
+
+namespace Amazon.ElasticBeanstalk
+{
+    /// <summary>
+    /// <para>Interface for accessing ElasticBeanstalk</para>
+    ///
+    /// Elastic Beanstalk 
+    /// <para>
+    /// Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable, fault-tolerant
+    /// applications running on the Amazon Web Services Cloud.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">Elastic
+    /// Beanstalk</a> details page. The location of the latest Elastic Beanstalk WSDL is <a
+    /// href="https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
+    /// To install the Software Development Kits (SDKs), Integrated Development Environment
+    /// (IDE) Toolkits, and command line tools that enable you to access the API, go to <a
+    /// href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Endpoints</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// For a list of region-specific endpoints that Elastic Beanstalk supports, go to <a
+    /// href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions
+    /// and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
+    /// </para>
+    /// </summary>
+    public partial interface IAmazonElasticBeanstalk : IAmazonService, IDisposable
+    {
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElasticBeanstalkPaginatorFactory Paginators { get; }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Cancels in-progress environment configuration update or application version deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AbortEnvironmentUpdate service method.</param>
+        /// <returns>The response from the AbortEnvironmentUpdate service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">REST API Reference for AbortEnvironmentUpdate Operation</seealso>
+        AbortEnvironmentUpdateResponse AbortEnvironmentUpdate(AbortEnvironmentUpdateRequest request);
+#endif
+
+        /// <summary>
+        /// Cancels in-progress environment configuration update or application version deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AbortEnvironmentUpdate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AbortEnvironmentUpdate service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">REST API Reference for AbortEnvironmentUpdate Operation</seealso>
+        Task<AbortEnvironmentUpdateResponse> AbortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Applies a scheduled managed action immediately. A managed action can be applied only
+        /// if its status is <c>Scheduled</c>. Get the status and action ID of a managed action
+        /// with <a>DescribeEnvironmentManagedActions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplyEnvironmentManagedAction service method.</param>
+        /// <returns>The response from the ApplyEnvironmentManagedAction service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ManagedActionInvalidStateException">
+        /// Cannot modify the managed action in its current state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction">REST API Reference for ApplyEnvironmentManagedAction Operation</seealso>
+        ApplyEnvironmentManagedActionResponse ApplyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest request);
+#endif
+
+        /// <summary>
+        /// Applies a scheduled managed action immediately. A managed action can be applied only
+        /// if its status is <c>Scheduled</c>. Get the status and action ID of a managed action
+        /// with <a>DescribeEnvironmentManagedActions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplyEnvironmentManagedAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ApplyEnvironmentManagedAction service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ManagedActionInvalidStateException">
+        /// Cannot modify the managed action in its current state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction">REST API Reference for ApplyEnvironmentManagedAction Operation</seealso>
+        Task<ApplyEnvironmentManagedActionResponse> ApplyEnvironmentManagedActionAsync(ApplyEnvironmentManagedActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// <important> 
+        /// <para>
+        /// The operations role feature of Elastic Beanstalk is in beta release and is subject
+        /// to change.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Add or change the operations role used by an environment. After this call is made,
+        /// Elastic Beanstalk uses the associated operations role for permissions to downstream
+        /// services during subsequent calls acting on this environment.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnvironmentOperationsRole service method.</param>
+        /// <returns>The response from the AssociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">REST API Reference for AssociateEnvironmentOperationsRole Operation</seealso>
+        AssociateEnvironmentOperationsRoleResponse AssociateEnvironmentOperationsRole(AssociateEnvironmentOperationsRoleRequest request);
+#endif
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        /// The operations role feature of Elastic Beanstalk is in beta release and is subject
+        /// to change.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Add or change the operations role used by an environment. After this call is made,
+        /// Elastic Beanstalk uses the associated operations role for permissions to downstream
+        /// services during subsequent calls acting on this environment.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnvironmentOperationsRole service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">REST API Reference for AssociateEnvironmentOperationsRole Operation</seealso>
+        Task<AssociateEnvironmentOperationsRoleResponse> AssociateEnvironmentOperationsRoleAsync(AssociateEnvironmentOperationsRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Checks if the specified CNAME is available.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckDNSAvailability service method.</param>
+        /// <returns>The response from the CheckDNSAvailability service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability">REST API Reference for CheckDNSAvailability Operation</seealso>
+        CheckDNSAvailabilityResponse CheckDNSAvailability(CheckDNSAvailabilityRequest request);
+#endif
+
+        /// <summary>
+        /// Checks if the specified CNAME is available.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckDNSAvailability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CheckDNSAvailability service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability">REST API Reference for CheckDNSAvailability Operation</seealso>
+        Task<CheckDNSAvailabilityResponse> CheckDNSAvailabilityAsync(CheckDNSAvailabilityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Create or update a group of environments that each run a separate component of a single
+        /// application. Takes a list of version labels that specify application source bundles
+        /// for each of the environments to create or update. The name of each environment and
+        /// other required information must be included in the source bundles in an environment
+        /// manifest named <c>env.yaml</c>. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+        /// Environments</a> for details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ComposeEnvironments service method.</param>
+        /// <returns>The response from the ComposeEnvironments service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyEnvironmentsException">
+        /// The specified account has reached its limit of environments.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments">REST API Reference for ComposeEnvironments Operation</seealso>
+        ComposeEnvironmentsResponse ComposeEnvironments(ComposeEnvironmentsRequest request);
+#endif
+
+        /// <summary>
+        /// Create or update a group of environments that each run a separate component of a single
+        /// application. Takes a list of version labels that specify application source bundles
+        /// for each of the environments to create or update. The name of each environment and
+        /// other required information must be included in the source bundles in an environment
+        /// manifest named <c>env.yaml</c>. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+        /// Environments</a> for details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ComposeEnvironments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ComposeEnvironments service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyEnvironmentsException">
+        /// The specified account has reached its limit of environments.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments">REST API Reference for ComposeEnvironments Operation</seealso>
+        Task<ComposeEnvironmentsResponse> ComposeEnvironmentsAsync(ComposeEnvironmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an application that has one configuration template named <c>default</c> and
+        /// no application versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
+        /// <returns>The response from the CreateApplication service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyApplicationsException">
+        /// The specified account has reached its limit of applications.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        CreateApplicationResponse CreateApplication(CreateApplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an application that has one configuration template named <c>default</c> and
+        /// no application versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateApplication service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyApplicationsException">
+        /// The specified account has reached its limit of applications.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an application version for the specified application. You can create an application
+        /// version from a source bundle in Amazon S3, a commit in CodeCommit, or the output of
+        /// an CodeBuild build as follows:
+        /// 
+        ///  
+        /// <para>
+        /// Specify a commit in an CodeCommit repository with <c>SourceBuildInformation</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a build in an CodeBuild with <c>SourceBuildInformation</c> and <c>BuildConfiguration</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a source bundle in Amazon S3 with <c>SourceBundle</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Omit both <c>SourceBuildInformation</c> and <c>SourceBundle</c> to use the default
+        /// sample application.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// After you create an application version with a specified Amazon S3 bucket and key
+        /// location, you can't change that Amazon S3 location. If you change the Amazon S3 location,
+        /// you receive an exception when you attempt to launch an environment from the application
+        /// version.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationVersion service method.</param>
+        /// <returns>The response from the CreateApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.CodeBuildNotInServiceRegionException">
+        /// CodeBuild is not available in the specified region.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
+        /// The specified S3 bucket does not belong to the S3 region in which the service is running.
+        /// The following regions are supported:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// IAD/us-east-1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PDX/us-west-2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DUB/eu-west-1
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyApplicationVersionsException">
+        /// The specified account has reached its limit of application versions.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyApplicationsException">
+        /// The specified account has reached its limit of applications.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">REST API Reference for CreateApplicationVersion Operation</seealso>
+        CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an application version for the specified application. You can create an application
+        /// version from a source bundle in Amazon S3, a commit in CodeCommit, or the output of
+        /// an CodeBuild build as follows:
+        /// 
+        ///  
+        /// <para>
+        /// Specify a commit in an CodeCommit repository with <c>SourceBuildInformation</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a build in an CodeBuild with <c>SourceBuildInformation</c> and <c>BuildConfiguration</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a source bundle in Amazon S3 with <c>SourceBundle</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Omit both <c>SourceBuildInformation</c> and <c>SourceBundle</c> to use the default
+        /// sample application.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// After you create an application version with a specified Amazon S3 bucket and key
+        /// location, you can't change that Amazon S3 location. If you change the Amazon S3 location,
+        /// you receive an exception when you attempt to launch an environment from the application
+        /// version.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.CodeBuildNotInServiceRegionException">
+        /// CodeBuild is not available in the specified region.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
+        /// The specified S3 bucket does not belong to the S3 region in which the service is running.
+        /// The following regions are supported:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// IAD/us-east-1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PDX/us-west-2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DUB/eu-west-1
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyApplicationVersionsException">
+        /// The specified account has reached its limit of application versions.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyApplicationsException">
+        /// The specified account has reached its limit of applications.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">REST API Reference for CreateApplicationVersion Operation</seealso>
+        Task<CreateApplicationVersionResponse> CreateApplicationVersionAsync(CreateApplicationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an Elastic Beanstalk configuration template, associated with a specific Elastic
+        /// Beanstalk application. You define application configuration settings in a configuration
+        /// template. You can then use the configuration template to deploy different versions
+        /// of the application with the same configuration settings.
+        /// 
+        ///  
+        /// <para>
+        /// Templates aren't associated with any environment. The <c>EnvironmentName</c> response
+        /// element is always <c>null</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeConfigurationOptions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeConfigurationSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAvailableSolutionStacks</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationTemplate service method.</param>
+        /// <returns>The response from the CreateConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyConfigurationTemplatesException">
+        /// The specified account has reached its limit of configuration templates.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate">REST API Reference for CreateConfigurationTemplate Operation</seealso>
+        CreateConfigurationTemplateResponse CreateConfigurationTemplate(CreateConfigurationTemplateRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an Elastic Beanstalk configuration template, associated with a specific Elastic
+        /// Beanstalk application. You define application configuration settings in a configuration
+        /// template. You can then use the configuration template to deploy different versions
+        /// of the application with the same configuration settings.
+        /// 
+        ///  
+        /// <para>
+        /// Templates aren't associated with any environment. The <c>EnvironmentName</c> response
+        /// element is always <c>null</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeConfigurationOptions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeConfigurationSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAvailableSolutionStacks</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyConfigurationTemplatesException">
+        /// The specified account has reached its limit of configuration templates.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate">REST API Reference for CreateConfigurationTemplate Operation</seealso>
+        Task<CreateConfigurationTemplateResponse> CreateConfigurationTemplateAsync(CreateConfigurationTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Launches an Elastic Beanstalk environment for the specified application using the
+        /// specified configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
+        /// <returns>The response from the CreateEnvironment service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyEnvironmentsException">
+        /// The specified account has reached its limit of environments.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
+        CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request);
+#endif
+
+        /// <summary>
+        /// Launches an Elastic Beanstalk environment for the specified application using the
+        /// specified configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateEnvironment service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyEnvironmentsException">
+        /// The specified account has reached its limit of environments.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
+        Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Create a new version of your custom platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlatformVersion service method.</param>
+        /// <returns>The response from the CreatePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyPlatformsException">
+        /// You have exceeded the maximum number of allowed platforms associated with the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
+        CreatePlatformVersionResponse CreatePlatformVersion(CreatePlatformVersionRequest request);
+#endif
+
+        /// <summary>
+        /// Create a new version of your custom platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlatformVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreatePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyPlatformsException">
+        /// You have exceeded the maximum number of allowed platforms associated with the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
+        Task<CreatePlatformVersionResponse> CreatePlatformVersionAsync(CreatePlatformVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
+        /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
+        /// this API the first time you create an environment in a region. If the storage location
+        /// already exists, <c>CreateStorageLocation</c> still returns the bucket name but does
+        /// not create a new bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageLocation service method.</param>
+        /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
+        /// The specified account does not have a subscription to Amazon S3.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">REST API Reference for CreateStorageLocation Operation</seealso>
+        CreateStorageLocationResponse CreateStorageLocation(CreateStorageLocationRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
+        /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
+        /// this API the first time you create an environment in a region. If the storage location
+        /// already exists, <c>CreateStorageLocation</c> still returns the bucket name but does
+        /// not create a new bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageLocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
+        /// The specified account does not have a subscription to Amazon S3.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">REST API Reference for CreateStorageLocation Operation</seealso>
+        Task<CreateStorageLocationResponse> CreateStorageLocationAsync(CreateStorageLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
+        /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
+        /// this API the first time you create an environment in a region. If the storage location
+        /// already exists, <c>CreateStorageLocation</c> still returns the bucket name but does
+        /// not create a new bucket.
+        /// </summary>
+        /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
+        /// The specified account does not have a subscription to Amazon S3.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">REST API Reference for CreateStorageLocation Operation</seealso>
+        CreateStorageLocationResponse CreateStorageLocation();
+#endif
+
+        /// <summary>
+        /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
+        /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
+        /// this API the first time you create an environment in a region. If the storage location
+        /// already exists, <c>CreateStorageLocation</c> still returns the bucket name but does
+        /// not create a new bucket.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
+        /// The specified account does not have a subscription to Amazon S3.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">REST API Reference for CreateStorageLocation Operation</seealso>
+        Task<CreateStorageLocationResponse> CreateStorageLocationAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes the specified application along with all associated versions and configurations.
+        /// The application versions will not be deleted from your Amazon S3 bucket.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an application that has a running environment.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
+        /// <returns>The response from the DeleteApplication service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes the specified application along with all associated versions and configurations.
+        /// The application versions will not be deleted from your Amazon S3 bucket.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an application that has a running environment.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteApplication service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes the specified version from the specified application.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an application version that is associated with a running environment.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationVersion service method.</param>
+        /// <returns>The response from the DeleteApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
+        /// The specified S3 bucket does not belong to the S3 region in which the service is running.
+        /// The following regions are supported:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// IAD/us-east-1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PDX/us-west-2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DUB/eu-west-1
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.SourceBundleDeletionException">
+        /// Unable to delete the Amazon S3 source bundle associated with the application version.
+        /// The application version was deleted successfully.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">REST API Reference for DeleteApplicationVersion Operation</seealso>
+        DeleteApplicationVersionResponse DeleteApplicationVersion(DeleteApplicationVersionRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes the specified version from the specified application.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an application version that is associated with a running environment.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
+        /// The specified S3 bucket does not belong to the S3 region in which the service is running.
+        /// The following regions are supported:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// IAD/us-east-1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PDX/us-west-2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DUB/eu-west-1
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.SourceBundleDeletionException">
+        /// Unable to delete the Amazon S3 source bundle associated with the application version.
+        /// The application version was deleted successfully.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">REST API Reference for DeleteApplicationVersion Operation</seealso>
+        Task<DeleteApplicationVersionResponse> DeleteApplicationVersionAsync(DeleteApplicationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes the specified configuration template.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you launch an environment using a configuration template, the environment gets
+        /// a copy of the template. You can delete or modify the environment's copy of the template
+        /// without affecting the running environment.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationTemplate service method.</param>
+        /// <returns>The response from the DeleteConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">REST API Reference for DeleteConfigurationTemplate Operation</seealso>
+        DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes the specified configuration template.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you launch an environment using a configuration template, the environment gets
+        /// a copy of the template. You can delete or modify the environment's copy of the template
+        /// without affecting the running environment.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">REST API Reference for DeleteConfigurationTemplate Operation</seealso>
+        Task<DeleteConfigurationTemplateResponse> DeleteConfigurationTemplateAsync(DeleteConfigurationTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes the draft configuration associated with the running environment.
+        /// 
+        ///  
+        /// <para>
+        /// Updating a running environment with any configuration changes creates a draft configuration
+        /// set. You can get the draft configuration using <a>DescribeConfigurationSettings</a>
+        /// while the update is in progress or if the update fails. The <c>DeploymentStatus</c>
+        /// for the draft configuration indicates whether the deployment is in process or has
+        /// failed. The draft configuration remains in existence until it is deleted with this
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentConfiguration service method.</param>
+        /// <returns>The response from the DeleteEnvironmentConfiguration service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration">REST API Reference for DeleteEnvironmentConfiguration Operation</seealso>
+        DeleteEnvironmentConfigurationResponse DeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes the draft configuration associated with the running environment.
+        /// 
+        ///  
+        /// <para>
+        /// Updating a running environment with any configuration changes creates a draft configuration
+        /// set. You can get the draft configuration using <a>DescribeConfigurationSettings</a>
+        /// while the update is in progress or if the update fails. The <c>DeploymentStatus</c>
+        /// for the draft configuration indicates whether the deployment is in process or has
+        /// failed. The draft configuration remains in existence until it is deleted with this
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteEnvironmentConfiguration service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration">REST API Reference for DeleteEnvironmentConfiguration Operation</seealso>
+        Task<DeleteEnvironmentConfigurationResponse> DeleteEnvironmentConfigurationAsync(DeleteEnvironmentConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes the specified version of a custom platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlatformVersion service method.</param>
+        /// <returns>The response from the DeletePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.PlatformVersionStillReferencedException">
+        /// You cannot delete the platform version because there are still environments running
+        /// on it.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
+        DeletePlatformVersionResponse DeletePlatformVersion(DeletePlatformVersionRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes the specified version of a custom platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlatformVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeletePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.PlatformVersionStillReferencedException">
+        /// You cannot delete the platform version because there are still environments running
+        /// on it.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
+        Task<DeletePlatformVersionResponse> DeletePlatformVersionAsync(DeletePlatformVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns attributes related to Elastic Beanstalk that are associated with the calling
+        /// Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// The result currently has one set of attributes—resource quotas.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
+        /// <returns>The response from the DescribeAccountAttributes service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
+        DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request);
+#endif
+
+        /// <summary>
+        /// Returns attributes related to Elastic Beanstalk that are associated with the calling
+        /// Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// The result currently has one set of attributes—resource quotas.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeAccountAttributes service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
+        Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieve a list of application versions.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationVersions service method.</param>
+        /// <returns>The response from the DescribeApplicationVersions service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">REST API Reference for DescribeApplicationVersions Operation</seealso>
+        DescribeApplicationVersionsResponse DescribeApplicationVersions(DescribeApplicationVersionsRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieve a list of application versions.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeApplicationVersions service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">REST API Reference for DescribeApplicationVersions Operation</seealso>
+        Task<DescribeApplicationVersionsResponse> DescribeApplicationVersionsAsync(DescribeApplicationVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieve a list of application versions.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <returns>The response from the DescribeApplicationVersions service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">REST API Reference for DescribeApplicationVersions Operation</seealso>
+        DescribeApplicationVersionsResponse DescribeApplicationVersions();
+#endif
+
+        /// <summary>
+        /// Retrieve a list of application versions.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeApplicationVersions service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">REST API Reference for DescribeApplicationVersions Operation</seealso>
+        Task<DescribeApplicationVersionsResponse> DescribeApplicationVersionsAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the descriptions of existing applications.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about applications that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access two of three applications. When the user calls the <i>DescribeApplications</i>
+        /// action, the response will only include the two applications that the user has permission
+        /// to access instead of all three applications. If the user doesn’t have access to any
+        /// of the applications an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators to view information
+        /// about resources related to Elastic Beanstalk environments. For more information, see
+        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplications service method.</param>
+        /// <returns>The response from the DescribeApplications service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
+        DescribeApplicationsResponse DescribeApplications(DescribeApplicationsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the descriptions of existing applications.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about applications that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access two of three applications. When the user calls the <i>DescribeApplications</i>
+        /// action, the response will only include the two applications that the user has permission
+        /// to access instead of all three applications. If the user doesn’t have access to any
+        /// of the applications an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators to view information
+        /// about resources related to Elastic Beanstalk environments. For more information, see
+        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeApplications service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
+        Task<DescribeApplicationsResponse> DescribeApplicationsAsync(DescribeApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the descriptions of existing applications.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about applications that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access two of three applications. When the user calls the <i>DescribeApplications</i>
+        /// action, the response will only include the two applications that the user has permission
+        /// to access instead of all three applications. If the user doesn’t have access to any
+        /// of the applications an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators to view information
+        /// about resources related to Elastic Beanstalk environments. For more information, see
+        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <returns>The response from the DescribeApplications service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
+        DescribeApplicationsResponse DescribeApplications();
+#endif
+
+        /// <summary>
+        /// Returns the descriptions of existing applications.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about applications that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access two of three applications. When the user calls the <i>DescribeApplications</i>
+        /// action, the response will only include the two applications that the user has permission
+        /// to access instead of all three applications. If the user doesn’t have access to any
+        /// of the applications an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators to view information
+        /// about resources related to Elastic Beanstalk environments. For more information, see
+        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeApplications service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
+        Task<DescribeApplicationsResponse> DescribeApplicationsAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes the configuration options that are used in a particular configuration template
+        /// or environment, or that a specified solution stack defines. The description includes
+        /// the values the options, their default values, and an indication of the required action
+        /// on a running environment if an option value is changed.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationOptions service method.</param>
+        /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">REST API Reference for DescribeConfigurationOptions Operation</seealso>
+        DescribeConfigurationOptionsResponse DescribeConfigurationOptions(DescribeConfigurationOptionsRequest request);
+#endif
+
+        /// <summary>
+        /// Describes the configuration options that are used in a particular configuration template
+        /// or environment, or that a specified solution stack defines. The description includes
+        /// the values the options, their default values, and an indication of the required action
+        /// on a running environment if an option value is changed.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">REST API Reference for DescribeConfigurationOptions Operation</seealso>
+        Task<DescribeConfigurationOptionsResponse> DescribeConfigurationOptionsAsync(DescribeConfigurationOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes the configuration options that are used in a particular configuration template
+        /// or environment, or that a specified solution stack defines. The description includes
+        /// the values the options, their default values, and an indication of the required action
+        /// on a running environment if an option value is changed.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">REST API Reference for DescribeConfigurationOptions Operation</seealso>
+        DescribeConfigurationOptionsResponse DescribeConfigurationOptions();
+#endif
+
+        /// <summary>
+        /// Describes the configuration options that are used in a particular configuration template
+        /// or environment, or that a specified solution stack defines. The description includes
+        /// the values the options, their default values, and an indication of the required action
+        /// on a running environment if an option value is changed.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">REST API Reference for DescribeConfigurationOptions Operation</seealso>
+        Task<DescribeConfigurationOptionsResponse> DescribeConfigurationOptionsAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a description of the settings for the specified configuration set, that is,
+        /// either a configuration template or the configuration set associated with a running
+        /// environment.
+        /// 
+        ///  
+        /// <para>
+        /// When describing the settings for the configuration set associated with a running environment,
+        /// it is possible to receive two sets of setting descriptions. One is the deployed configuration
+        /// set, and the other is a draft configuration of an environment that is either in the
+        /// process of deployment or that failed to deploy.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DeleteEnvironmentConfiguration</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSettings service method.</param>
+        /// <returns>The response from the DescribeConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings">REST API Reference for DescribeConfigurationSettings Operation</seealso>
+        DescribeConfigurationSettingsResponse DescribeConfigurationSettings(DescribeConfigurationSettingsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns a description of the settings for the specified configuration set, that is,
+        /// either a configuration template or the configuration set associated with a running
+        /// environment.
+        /// 
+        ///  
+        /// <para>
+        /// When describing the settings for the configuration set associated with a running environment,
+        /// it is possible to receive two sets of setting descriptions. One is the deployed configuration
+        /// set, and the other is a draft configuration of an environment that is either in the
+        /// process of deployment or that failed to deploy.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DeleteEnvironmentConfiguration</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings">REST API Reference for DescribeConfigurationSettings Operation</seealso>
+        Task<DescribeConfigurationSettingsResponse> DescribeConfigurationSettingsAsync(DescribeConfigurationSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b>
+        /// operation is only available with Elastic Beanstalk Enhanced Health.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls this action, the
+        /// response will only include the one environment that the user has permission to access
+        /// instead of all three environments. If the user doesn’t have access to any of the environments
+        /// an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentHealth service method.</param>
+        /// <returns>The response from the DescribeEnvironmentHealth service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InvalidRequestException">
+        /// One or more input parameters is not valid. Please correct the input parameters and
+        /// try the operation again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth">REST API Reference for DescribeEnvironmentHealth Operation</seealso>
+        DescribeEnvironmentHealthResponse DescribeEnvironmentHealth(DescribeEnvironmentHealthRequest request);
+#endif
+
+        /// <summary>
+        /// Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b>
+        /// operation is only available with Elastic Beanstalk Enhanced Health.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls this action, the
+        /// response will only include the one environment that the user has permission to access
+        /// instead of all three environments. If the user doesn’t have access to any of the environments
+        /// an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentHealth service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeEnvironmentHealth service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InvalidRequestException">
+        /// One or more input parameters is not valid. Please correct the input parameters and
+        /// try the operation again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth">REST API Reference for DescribeEnvironmentHealth Operation</seealso>
+        Task<DescribeEnvironmentHealthResponse> DescribeEnvironmentHealthAsync(DescribeEnvironmentHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists an environment's completed and failed managed actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActionHistory service method.</param>
+        /// <returns>The response from the DescribeEnvironmentManagedActionHistory service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory">REST API Reference for DescribeEnvironmentManagedActionHistory Operation</seealso>
+        DescribeEnvironmentManagedActionHistoryResponse DescribeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request);
+#endif
+
+        /// <summary>
+        /// Lists an environment's completed and failed managed actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActionHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeEnvironmentManagedActionHistory service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory">REST API Reference for DescribeEnvironmentManagedActionHistory Operation</seealso>
+        Task<DescribeEnvironmentManagedActionHistoryResponse> DescribeEnvironmentManagedActionHistoryAsync(DescribeEnvironmentManagedActionHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists an environment's upcoming and in-progress managed actions.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls this action, the
+        /// response will only include the one environment that the user has permission to access
+        /// instead of all three environments. If the user doesn’t have access to any of the environments
+        /// an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActions service method.</param>
+        /// <returns>The response from the DescribeEnvironmentManagedActions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions">REST API Reference for DescribeEnvironmentManagedActions Operation</seealso>
+        DescribeEnvironmentManagedActionsResponse DescribeEnvironmentManagedActions(DescribeEnvironmentManagedActionsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists an environment's upcoming and in-progress managed actions.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls this action, the
+        /// response will only include the one environment that the user has permission to access
+        /// instead of all three environments. If the user doesn’t have access to any of the environments
+        /// an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeEnvironmentManagedActions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions">REST API Reference for DescribeEnvironmentManagedActions Operation</seealso>
+        Task<DescribeEnvironmentManagedActionsResponse> DescribeEnvironmentManagedActionsAsync(DescribeEnvironmentManagedActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns Amazon Web Services resources for this environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentResources service method.</param>
+        /// <returns>The response from the DescribeEnvironmentResources service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">REST API Reference for DescribeEnvironmentResources Operation</seealso>
+        DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request);
+#endif
+
+        /// <summary>
+        /// Returns Amazon Web Services resources for this environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeEnvironmentResources service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">REST API Reference for DescribeEnvironmentResources Operation</seealso>
+        Task<DescribeEnvironmentResourcesResponse> DescribeEnvironmentResourcesAsync(DescribeEnvironmentResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns descriptions for existing environments.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls the <i>DescribeEnvironments</i>
+        /// action, the response will only include the one environment that the user has permission
+        /// to access instead of all three environments. If the user doesn’t have access to any
+        /// of the environments an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironments service method.</param>
+        /// <returns>The response from the DescribeEnvironments service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">REST API Reference for DescribeEnvironments Operation</seealso>
+        DescribeEnvironmentsResponse DescribeEnvironments(DescribeEnvironmentsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns descriptions for existing environments.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls the <i>DescribeEnvironments</i>
+        /// action, the response will only include the one environment that the user has permission
+        /// to access instead of all three environments. If the user doesn’t have access to any
+        /// of the environments an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeEnvironments service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">REST API Reference for DescribeEnvironments Operation</seealso>
+        Task<DescribeEnvironmentsResponse> DescribeEnvironmentsAsync(DescribeEnvironmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns descriptions for existing environments.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls the <i>DescribeEnvironments</i>
+        /// action, the response will only include the one environment that the user has permission
+        /// to access instead of all three environments. If the user doesn’t have access to any
+        /// of the environments an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <returns>The response from the DescribeEnvironments service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">REST API Reference for DescribeEnvironments Operation</seealso>
+        DescribeEnvironmentsResponse DescribeEnvironments();
+#endif
+
+        /// <summary>
+        /// Returns descriptions for existing environments.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls the <i>DescribeEnvironments</i>
+        /// action, the response will only include the one environment that the user has permission
+        /// to access instead of all three environments. If the user doesn’t have access to any
+        /// of the environments an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeEnvironments service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">REST API Reference for DescribeEnvironments Operation</seealso>
+        Task<DescribeEnvironmentsResponse> DescribeEnvironmentsAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns list of event descriptions matching criteria up to the last 6 weeks.
+        /// 
+        ///  
+        /// <para>
+        /// This action returns the most recent 1,000 events from the specified <c>NextToken</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
+        /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        DescribeEventsResponse DescribeEvents(DescribeEventsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns list of event descriptions matching criteria up to the last 6 weeks.
+        /// 
+        ///  
+        /// <para>
+        /// This action returns the most recent 1,000 events from the specified <c>NextToken</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns list of event descriptions matching criteria up to the last 6 weeks.
+        /// 
+        ///  
+        /// <para>
+        /// This action returns the most recent 1,000 events from the specified <c>NextToken</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        DescribeEventsResponse DescribeEvents();
+#endif
+
+        /// <summary>
+        /// Returns list of event descriptions matching criteria up to the last 6 weeks.
+        /// 
+        ///  
+        /// <para>
+        /// This action returns the most recent 1,000 events from the specified <c>NextToken</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        Task<DescribeEventsResponse> DescribeEventsAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves detailed information about the health of instances in your Elastic Beanstalk
+        /// environments. This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+        /// health reporting</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls this action, the
+        /// response will only include the one environment that the user has permission to access
+        /// instead of all three environments. If the user doesn’t have access to any of the environments
+        /// an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancesHealth service method.</param>
+        /// <returns>The response from the DescribeInstancesHealth service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InvalidRequestException">
+        /// One or more input parameters is not valid. Please correct the input parameters and
+        /// try the operation again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth">REST API Reference for DescribeInstancesHealth Operation</seealso>
+        DescribeInstancesHealthResponse DescribeInstancesHealth(DescribeInstancesHealthRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves detailed information about the health of instances in your Elastic Beanstalk
+        /// environments. This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+        /// health reporting</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls this action, the
+        /// response will only include the one environment that the user has permission to access
+        /// instead of all three environments. If the user doesn’t have access to any of the environments
+        /// an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancesHealth service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeInstancesHealth service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InvalidRequestException">
+        /// One or more input parameters is not valid. Please correct the input parameters and
+        /// try the operation again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth">REST API Reference for DescribeInstancesHealth Operation</seealso>
+        Task<DescribeInstancesHealthResponse> DescribeInstancesHealthAsync(DescribeInstancesHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes a platform version. Provides full details. Compare to <a>ListPlatformVersions</a>,
+        /// which provides summary information about a list of platform versions.
+        /// 
+        ///  
+        /// <para>
+        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+        /// Beanstalk Platforms Glossary</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePlatformVersion service method.</param>
+        /// <returns>The response from the DescribePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
+        DescribePlatformVersionResponse DescribePlatformVersion(DescribePlatformVersionRequest request);
+#endif
+
+        /// <summary>
+        /// Describes a platform version. Provides full details. Compare to <a>ListPlatformVersions</a>,
+        /// which provides summary information about a list of platform versions.
+        /// 
+        ///  
+        /// <para>
+        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+        /// Beanstalk Platforms Glossary</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePlatformVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
+        Task<DescribePlatformVersionResponse> DescribePlatformVersionAsync(DescribePlatformVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// <important> 
+        /// <para>
+        /// The operations role feature of Elastic Beanstalk is in beta release and is subject
+        /// to change.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Disassociate the operations role from an environment. After this call is made, Elastic
+        /// Beanstalk uses the caller's permissions for permissions to downstream services during
+        /// subsequent calls acting on this environment.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnvironmentOperationsRole service method.</param>
+        /// <returns>The response from the DisassociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">REST API Reference for DisassociateEnvironmentOperationsRole Operation</seealso>
+        DisassociateEnvironmentOperationsRoleResponse DisassociateEnvironmentOperationsRole(DisassociateEnvironmentOperationsRoleRequest request);
+#endif
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        /// The operations role feature of Elastic Beanstalk is in beta release and is subject
+        /// to change.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Disassociate the operations role from an environment. After this call is made, Elastic
+        /// Beanstalk uses the caller's permissions for permissions to downstream services during
+        /// subsequent calls acting on this environment.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnvironmentOperationsRole service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">REST API Reference for DisassociateEnvironmentOperationsRole Operation</seealso>
+        Task<DisassociateEnvironmentOperationsRoleResponse> DisassociateEnvironmentOperationsRoleAsync(DisassociateEnvironmentOperationsRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a list of the available solution stack names, with the public version first
+        /// and then in reverse chronological order.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableSolutionStacks service method.</param>
+        /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">REST API Reference for ListAvailableSolutionStacks Operation</seealso>
+        ListAvailableSolutionStacksResponse ListAvailableSolutionStacks(ListAvailableSolutionStacksRequest request);
+#endif
+
+        /// <summary>
+        /// Returns a list of the available solution stack names, with the public version first
+        /// and then in reverse chronological order.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableSolutionStacks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">REST API Reference for ListAvailableSolutionStacks Operation</seealso>
+        Task<ListAvailableSolutionStacksResponse> ListAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a list of the available solution stack names, with the public version first
+        /// and then in reverse chronological order.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">REST API Reference for ListAvailableSolutionStacks Operation</seealso>
+        ListAvailableSolutionStacksResponse ListAvailableSolutionStacks();
+#endif
+
+        /// <summary>
+        /// Returns a list of the available solution stack names, with the public version first
+        /// and then in reverse chronological order.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">REST API Reference for ListAvailableSolutionStacks Operation</seealso>
+        Task<ListAvailableSolutionStacksResponse> ListAvailableSolutionStacksAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the platform branches available for your account in an Amazon Web Services Region.
+        /// Provides summary information about each platform branch.
+        /// 
+        ///  
+        /// <para>
+        /// For definitions of platform branch and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+        /// Beanstalk Platforms Glossary</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformBranches service method.</param>
+        /// <returns>The response from the ListPlatformBranches service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches">REST API Reference for ListPlatformBranches Operation</seealso>
+        ListPlatformBranchesResponse ListPlatformBranches(ListPlatformBranchesRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the platform branches available for your account in an Amazon Web Services Region.
+        /// Provides summary information about each platform branch.
+        /// 
+        ///  
+        /// <para>
+        /// For definitions of platform branch and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+        /// Beanstalk Platforms Glossary</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformBranches service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListPlatformBranches service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches">REST API Reference for ListPlatformBranches Operation</seealso>
+        Task<ListPlatformBranchesResponse> ListPlatformBranchesAsync(ListPlatformBranchesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the platform versions available for your account in an Amazon Web Services Region.
+        /// Provides summary information about each platform version. Compare to <a>DescribePlatformVersion</a>,
+        /// which provides full details about a single platform version.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about platform versions that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of ten platform versions. When the user calls the <i>ListPlatformVersions</i>
+        /// action, the response will only include the one platform version that the user has
+        /// permission to access instead of all ten platform versions. If the user doesn’t have
+        /// access to any of the platform versions an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators to view information
+        /// about resources related to Elastic Beanstalk environments. For more information, see
+        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+        /// Beanstalk Platforms Glossary</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformVersions service method.</param>
+        /// <returns>The response from the ListPlatformVersions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
+        ListPlatformVersionsResponse ListPlatformVersions(ListPlatformVersionsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the platform versions available for your account in an Amazon Web Services Region.
+        /// Provides summary information about each platform version. Compare to <a>DescribePlatformVersion</a>,
+        /// which provides full details about a single platform version.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about platform versions that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of ten platform versions. When the user calls the <i>ListPlatformVersions</i>
+        /// action, the response will only include the one platform version that the user has
+        /// permission to access instead of all ten platform versions. If the user doesn’t have
+        /// access to any of the platform versions an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators to view information
+        /// about resources related to Elastic Beanstalk environments. For more information, see
+        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+        /// Beanstalk Platforms Glossary</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListPlatformVersions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
+        Task<ListPlatformVersionsResponse> ListPlatformVersionsAsync(ListPlatformVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Return the tags applied to an Elastic Beanstalk resource. The response contains a
+        /// list of tag key-value pairs.
+        /// 
+        ///  
+        /// <para>
+        /// Elastic Beanstalk supports tagging of all of its resources. For details about resource
+        /// tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+        /// Application Resources</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <returns>The response from the ListTagsForResource service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceTypeNotSupportedException">
+        /// The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Return the tags applied to an Elastic Beanstalk resource. The response contains a
+        /// list of tag key-value pairs.
+        /// 
+        ///  
+        /// <para>
+        /// Elastic Beanstalk supports tagging of all of its resources. For details about resource
+        /// tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+        /// Application Resources</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListTagsForResource service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceTypeNotSupportedException">
+        /// The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes and recreates all of the Amazon Web Services resources (for example: the Auto
+        /// Scaling group, load balancer, etc.) for a specified environment and forces a restart.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebuildEnvironment service method.</param>
+        /// <returns>The response from the RebuildEnvironment service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">REST API Reference for RebuildEnvironment Operation</seealso>
+        RebuildEnvironmentResponse RebuildEnvironment(RebuildEnvironmentRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes and recreates all of the Amazon Web Services resources (for example: the Auto
+        /// Scaling group, load balancer, etc.) for a specified environment and forces a restart.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebuildEnvironment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RebuildEnvironment service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">REST API Reference for RebuildEnvironment Operation</seealso>
+        Task<RebuildEnvironmentResponse> RebuildEnvironmentAsync(RebuildEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Initiates a request to compile the specified type of information of the deployed environment.
+        /// 
+        ///  
+        /// <para>
+        ///  Setting the <c>InfoType</c> to <c>tail</c> compiles the last lines from the application
+        /// server log files of every Amazon EC2 instance in your environment. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Setting the <c>InfoType</c> to <c>bundle</c> compresses the application server log
+        /// files for every Amazon EC2 instance into a <c>.zip</c> file. Legacy and .NET containers
+        /// do not support bundle logs. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Setting the <c>InfoType</c> to <c>analyze</c> collects recent events, instance health,
+        /// and logs from your environment and sends them to Amazon Bedrock in your account to
+        /// generate diagnostic insights and recommended next steps. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>RetrieveEnvironmentInfo</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RequestEnvironmentInfo service method.</param>
+        /// <returns>The response from the RequestEnvironmentInfo service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo">REST API Reference for RequestEnvironmentInfo Operation</seealso>
+        RequestEnvironmentInfoResponse RequestEnvironmentInfo(RequestEnvironmentInfoRequest request);
+#endif
+
+        /// <summary>
+        /// Initiates a request to compile the specified type of information of the deployed environment.
+        /// 
+        ///  
+        /// <para>
+        ///  Setting the <c>InfoType</c> to <c>tail</c> compiles the last lines from the application
+        /// server log files of every Amazon EC2 instance in your environment. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Setting the <c>InfoType</c> to <c>bundle</c> compresses the application server log
+        /// files for every Amazon EC2 instance into a <c>.zip</c> file. Legacy and .NET containers
+        /// do not support bundle logs. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Setting the <c>InfoType</c> to <c>analyze</c> collects recent events, instance health,
+        /// and logs from your environment and sends them to Amazon Bedrock in your account to
+        /// generate diagnostic insights and recommended next steps. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>RetrieveEnvironmentInfo</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RequestEnvironmentInfo service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RequestEnvironmentInfo service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo">REST API Reference for RequestEnvironmentInfo Operation</seealso>
+        Task<RequestEnvironmentInfoResponse> RequestEnvironmentInfoAsync(RequestEnvironmentInfoRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Causes the environment to restart the application container server running on each
+        /// Amazon EC2 instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestartAppServer service method.</param>
+        /// <returns>The response from the RestartAppServer service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer">REST API Reference for RestartAppServer Operation</seealso>
+        RestartAppServerResponse RestartAppServer(RestartAppServerRequest request);
+#endif
+
+        /// <summary>
+        /// Causes the environment to restart the application container server running on each
+        /// Amazon EC2 instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestartAppServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RestartAppServer service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer">REST API Reference for RestartAppServer Operation</seealso>
+        Task<RestartAppServerResponse> RestartAppServerAsync(RestartAppServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.
+        /// 
+        ///  
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>RequestEnvironmentInfo</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RetrieveEnvironmentInfo service method.</param>
+        /// <returns>The response from the RetrieveEnvironmentInfo service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo">REST API Reference for RetrieveEnvironmentInfo Operation</seealso>
+        RetrieveEnvironmentInfoResponse RetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.
+        /// 
+        ///  
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>RequestEnvironmentInfo</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RetrieveEnvironmentInfo service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RetrieveEnvironmentInfo service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo">REST API Reference for RetrieveEnvironmentInfo Operation</seealso>
+        Task<RetrieveEnvironmentInfoResponse> RetrieveEnvironmentInfoAsync(RetrieveEnvironmentInfoRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Swaps the CNAMEs of two environments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwapEnvironmentCNAMEs service method.</param>
+        /// <returns>The response from the SwapEnvironmentCNAMEs service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs">REST API Reference for SwapEnvironmentCNAMEs Operation</seealso>
+        SwapEnvironmentCNAMEsResponse SwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request);
+#endif
+
+        /// <summary>
+        /// Swaps the CNAMEs of two environments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwapEnvironmentCNAMEs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the SwapEnvironmentCNAMEs service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs">REST API Reference for SwapEnvironmentCNAMEs Operation</seealso>
+        Task<SwapEnvironmentCNAMEsResponse> SwapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Terminates the specified environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateEnvironment service method.</param>
+        /// <returns>The response from the TerminateEnvironment service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">REST API Reference for TerminateEnvironment Operation</seealso>
+        TerminateEnvironmentResponse TerminateEnvironment(TerminateEnvironmentRequest request);
+#endif
+
+        /// <summary>
+        /// Terminates the specified environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateEnvironment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the TerminateEnvironment service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">REST API Reference for TerminateEnvironment Operation</seealso>
+        Task<TerminateEnvironmentResponse> TerminateEnvironmentAsync(TerminateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the specified application to have the specified properties.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If a property (for example, <c>description</c>) is not provided, the value remains
+        /// unchanged. To clear these properties, specify an empty string.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
+        /// <returns>The response from the UpdateApplication service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the specified application to have the specified properties.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If a property (for example, <c>description</c>) is not provided, the value remains
+        /// unchanged. To clear these properties, specify an empty string.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateApplication service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Modifies lifecycle settings for an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationResourceLifecycle service method.</param>
+        /// <returns>The response from the UpdateApplicationResourceLifecycle service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">REST API Reference for UpdateApplicationResourceLifecycle Operation</seealso>
+        UpdateApplicationResourceLifecycleResponse UpdateApplicationResourceLifecycle(UpdateApplicationResourceLifecycleRequest request);
+#endif
+
+        /// <summary>
+        /// Modifies lifecycle settings for an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationResourceLifecycle service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateApplicationResourceLifecycle service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">REST API Reference for UpdateApplicationResourceLifecycle Operation</seealso>
+        Task<UpdateApplicationResourceLifecycleResponse> UpdateApplicationResourceLifecycleAsync(UpdateApplicationResourceLifecycleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the specified application version to have the specified properties.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If a property (for example, <c>description</c>) is not provided, the value remains
+        /// unchanged. To clear properties, specify an empty string.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationVersion service method.</param>
+        /// <returns>The response from the UpdateApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">REST API Reference for UpdateApplicationVersion Operation</seealso>
+        UpdateApplicationVersionResponse UpdateApplicationVersion(UpdateApplicationVersionRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the specified application version to have the specified properties.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If a property (for example, <c>description</c>) is not provided, the value remains
+        /// unchanged. To clear properties, specify an empty string.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">REST API Reference for UpdateApplicationVersion Operation</seealso>
+        Task<UpdateApplicationVersionResponse> UpdateApplicationVersionAsync(UpdateApplicationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the specified configuration template to have the specified properties or configuration
+        /// option values.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If a property (for example, <c>ApplicationName</c>) is not provided, its value remains
+        /// unchanged. To clear such properties, specify an empty string.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeConfigurationOptions</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationTemplate service method.</param>
+        /// <returns>The response from the UpdateConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">REST API Reference for UpdateConfigurationTemplate Operation</seealso>
+        UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the specified configuration template to have the specified properties or configuration
+        /// option values.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If a property (for example, <c>ApplicationName</c>) is not provided, its value remains
+        /// unchanged. To clear such properties, specify an empty string.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeConfigurationOptions</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">REST API Reference for UpdateConfigurationTemplate Operation</seealso>
+        Task<UpdateConfigurationTemplateResponse> UpdateConfigurationTemplateAsync(UpdateConfigurationTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the environment description, deploys a new application version, updates the
+        /// configuration settings to an entirely new configuration template, or updates select
+        /// configuration option values in the running environment.
+        /// 
+        ///  
+        /// <para>
+        ///  Attempting to update both the release and configuration is not allowed and Elastic
+        /// Beanstalk returns an <c>InvalidParameterCombination</c> error. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  When updating the configuration settings to a new template or individual settings,
+        /// a draft configuration is created and <a>DescribeConfigurationSettings</a> for this
+        /// environment returns two setting descriptions with different <c>DeploymentStatus</c>
+        /// values. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironment service method.</param>
+        /// <returns>The response from the UpdateEnvironment service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
+        UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the environment description, deploys a new application version, updates the
+        /// configuration settings to an entirely new configuration template, or updates select
+        /// configuration option values in the running environment.
+        /// 
+        ///  
+        /// <para>
+        ///  Attempting to update both the release and configuration is not allowed and Elastic
+        /// Beanstalk returns an <c>InvalidParameterCombination</c> error. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  When updating the configuration settings to a new template or individual settings,
+        /// a draft configuration is created and <a>DescribeConfigurationSettings</a> for this
+        /// environment returns two setting descriptions with different <c>DeploymentStatus</c>
+        /// values. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateEnvironment service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
+        Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Update the list of tags applied to an Elastic Beanstalk resource. Two lists can be
+        /// passed: <c>TagsToAdd</c> for tags to add or update, and <c>TagsToRemove</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Elastic Beanstalk supports tagging of all of its resources. For details about resource
+        /// tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+        /// Application Resources</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you create a custom policy to control permission to this operation, specify one
+        /// of the following two virtual actions (or both) instead of the API operation name:
+        /// </para>
+        ///  <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> 
+        /// <para>
+        /// Controls permission to call <c>UpdateTagsForResource</c> and pass a list of tags to
+        /// add in the <c>TagsToAdd</c> parameter.
+        /// </para>
+        ///  </dd> <dt>elasticbeanstalk:RemoveTags</dt> <dd> 
+        /// <para>
+        /// Controls permission to call <c>UpdateTagsForResource</c> and pass a list of tag keys
+        /// to remove in the <c>TagsToRemove</c> parameter.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// For details about creating a custom user policy, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#AWSHowTo.iam.policies">Creating
+        /// a Custom User Policy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTagsForResource service method.</param>
+        /// <returns>The response from the UpdateTagsForResource service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceTypeNotSupportedException">
+        /// The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyTagsException">
+        /// The number of tags in the resource would exceed the number of tags that each resource
+        /// can have.
+        /// 
+        ///  
+        /// <para>
+        /// To calculate this, the operation considers both the number of tags the resource already
+        /// has and the tags this operation would add if it succeeded.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource">REST API Reference for UpdateTagsForResource Operation</seealso>
+        UpdateTagsForResourceResponse UpdateTagsForResource(UpdateTagsForResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Update the list of tags applied to an Elastic Beanstalk resource. Two lists can be
+        /// passed: <c>TagsToAdd</c> for tags to add or update, and <c>TagsToRemove</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Elastic Beanstalk supports tagging of all of its resources. For details about resource
+        /// tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+        /// Application Resources</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you create a custom policy to control permission to this operation, specify one
+        /// of the following two virtual actions (or both) instead of the API operation name:
+        /// </para>
+        ///  <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> 
+        /// <para>
+        /// Controls permission to call <c>UpdateTagsForResource</c> and pass a list of tags to
+        /// add in the <c>TagsToAdd</c> parameter.
+        /// </para>
+        ///  </dd> <dt>elasticbeanstalk:RemoveTags</dt> <dd> 
+        /// <para>
+        /// Controls permission to call <c>UpdateTagsForResource</c> and pass a list of tag keys
+        /// to remove in the <c>TagsToRemove</c> parameter.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// For details about creating a custom user policy, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#AWSHowTo.iam.policies">Creating
+        /// a Custom User Policy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateTagsForResource service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceTypeNotSupportedException">
+        /// The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyTagsException">
+        /// The number of tags in the resource would exceed the number of tags that each resource
+        /// can have.
+        /// 
+        ///  
+        /// <para>
+        /// To calculate this, the operation considers both the number of tags the resource already
+        /// has and the tags this operation would add if it succeeded.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource">REST API Reference for UpdateTagsForResource Operation</seealso>
+        Task<UpdateTagsForResourceResponse> UpdateTagsForResourceAsync(UpdateTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Takes a set of configuration settings and either a configuration template or environment,
+        /// and determines whether those values are valid.
+        /// 
+        ///  
+        /// <para>
+        /// This action returns a list of messages indicating any errors or warnings associated
+        /// with the selection of option values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateConfigurationSettings service method.</param>
+        /// <returns>The response from the ValidateConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings">REST API Reference for ValidateConfigurationSettings Operation</seealso>
+        ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest request);
+#endif
+
+        /// <summary>
+        /// Takes a set of configuration settings and either a configuration template or environment,
+        /// and determines whether those values are valid.
+        /// 
+        ///  
+        /// <para>
+        /// This action returns a list of messages indicating any errors or warnings associated
+        /// with the selection of option values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateConfigurationSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ValidateConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings">REST API Reference for ValidateConfigurationSettings Operation</seealso>
+        Task<ValidateConfigurationSettingsResponse> ValidateConfigurationSettingsAsync(ValidateConfigurationSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
+
+#if NET8_0_OR_GREATER
+        // Warning CA1033 is issued when the child types can not call the method defined in parent types.
+        // In this use case the intended caller is only meant to be the interface as a factory
+        // method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonElasticBeanstalkConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonElasticBeanstalkConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+            Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonElasticBeanstalkConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonElasticBeanstalkConfig to create AmazonElasticBeanstalkClient");
+            }
+
+            return awsCredentials == null ?
+                    new AmazonElasticBeanstalkClient(serviceClientConfig) :
+                    new AmazonElasticBeanstalkClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+    }
+}

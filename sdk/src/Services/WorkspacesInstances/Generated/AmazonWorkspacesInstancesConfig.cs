@@ -27,12 +27,12 @@ using Amazon.WorkspacesInstances.Internal;
 namespace Amazon.WorkspacesInstances
 {
     /// <summary>
-    /// Configuration for accessing Amazon WorkspacesInstances service
+    /// Configuration for accessing Amazon Workspaces Instances
     /// </summary>
     public partial class AmazonWorkspacesInstancesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Workspaces Instances", "4.0.104.2");
+            InternalSDKUtils.BuildUserAgentString("Workspaces Instances", "4.0.104.6");
 
         private static readonly AmazonWorkspacesInstancesEndpointResolver EndpointResolver =
             new AmazonWorkspacesInstancesEndpointResolver();

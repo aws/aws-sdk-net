@@ -1,0 +1,639 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CloudWatchLogs.Model
+{
+    /// <summary>
+    /// Container for the parameters to the PutAccountPolicy operation. Creates an account-level
+    /// data protection policy, subscription filter policy, field index policy, transformer
+    /// policy, metric extraction policy, or retention policy that applies to all log groups,
+    /// a subset of log groups, or a data source name and type combination in the account.
+    /// Account-level policies are Region-specific: a policy applies only to log groups in
+    /// the Region where you create it. To apply a policy across multiple Regions, create
+    /// the policy separately in each Region. <important> <para> <c>PutAccountPolicy</c> is
+    /// an account-wide administrative operation intended for CloudWatch Logs administrators.
+    /// Because it affects all log groups (or a broad subset) in the account, you should grant
+    /// <c>logs:PutAccountPolicy</c> permissions only to administrators who manage logging
+    /// configuration across the account, not to application teams or individual log group
+    /// owners. </para> </important> <para> <b>Conflict resolution between account-level and
+    /// log-group-level policies</b> </para> <para> When both an account-level policy and
+    /// a log-group-level policy of the same type apply to a log group, the resolution depends
+    /// on the policy type: </para> <ul> <li> <para> <i>Data protection</i> — The two policies
+    /// are cumulative. Any sensitive term specified in either the account-level or the log-group-level
+    /// policy is masked. </para> </li> <li> <para> <i>Subscription filters</i> — Account-level
+    /// and log-group-level subscription filters are additive. A log group can have up to
+    /// 1 account-level and up to 2 log-group-level subscription filters. </para> </li> <li>
+    /// <para> <i>Transformers</i> — A log-group-level transformer overrides the account-level
+    /// transformer. If a log group has its own transformer, it ignores the account-level
+    /// transformer policy. </para> </li> <li> <para> <i>Field index policies</i> — If a log
+    /// group has its own field index policy (created with <c>PutIndexPolicy</c>), any account-level
+    /// policy that uses <c>LogGroupNamePrefix</c> selection criteria or has no selection
+    /// criteria is ignored for that log group. However, account-level policies that use <c>DataSourceName</c>
+    /// and <c>DataSourceType</c> selection criteria still apply alongside the log-group-level
+    /// policy. </para> </li> <li> <para> <i>Metric extraction policies</i> — Metric extraction
+    /// policies are account-level only and have no log-group-level equivalent, so no conflict
+    /// resolution applies. </para> </li> <li> <para> <i>Retention policies</i> — An account-level
+    /// retention policy overrides the retention setting of the log group. </para> </li> </ul>
+    /// <para> For field index policies, you can configure indexed fields as <i>facets</i>
+    /// to enable interactive exploration of your logs. Facets provide value distributions
+    /// and counts for indexed fields in the CloudWatch Logs Insights console without requiring
+    /// query execution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html">Use
+    /// facets to group and explore logs</a>. </para> <para> To use this operation, you must
+    /// be signed on with the correct permissions depending on the type of policy that you
+    /// are creating. </para> <ul> <li> <para> To create a data protection policy, you must
+    /// have the <c>logs:PutDataProtectionPolicy</c> and <c>logs:PutAccountPolicy</c> permissions.
+    /// </para> </li> <li> <para> To create a subscription filter policy, you must have the
+    /// <c>logs:PutSubscriptionFilter</c> and <c>logs:PutAccountPolicy</c> permissions. </para>
+    /// </li> <li> <para> To create a transformer policy, you must have the <c>logs:PutTransformer</c>
+    /// and <c>logs:PutAccountPolicy</c> permissions. </para> </li> <li> <para> To create
+    /// a field index policy, you must have the <c>logs:PutIndexPolicy</c> and <c>logs:PutAccountPolicy</c>
+    /// permissions. </para> </li> <li> <para> To configure facets for field index policies,
+    /// you must have the <c>logs:PutIndexPolicy</c> and <c>logs:PutAccountPolicy</c> permissions.
+    /// </para> </li> <li> <para> To create a metric extraction policy, you must have the
+    /// <c>logs:PutMetricExtractionPolicy</c> and <c>logs:PutAccountPolicy</c> permissions.
+    /// </para> </li> <li> <para> To create a retention policy, you must have the <c>logs:PutRetentionPolicy</c>
+    /// and <c>logs:PutAccountPolicy</c> permissions. A dry run requires the same permissions
+    /// as the operation that it previews, and no additional permissions. </para> </li> </ul>
+    /// <para> <b>Data protection policy</b> </para> <para> A data protection policy can help
+    /// safeguard sensitive data that's ingested by your log groups by auditing and masking
+    /// the sensitive log data. Each account can have only one account-level data protection
+    /// policy. </para> <important> <para> Sensitive data is detected and masked when it is
+    /// ingested into a log group. When you set a data protection policy, log events ingested
+    /// into the log groups before that time are not masked. </para> </important> <para> If
+    /// you use <c>PutAccountPolicy</c> to create a data protection policy for your whole
+    /// account, it applies to both existing log groups and all log groups that are created
+    /// later in this account. The account-level policy is applied to existing log groups
+    /// with eventual consistency. It might take up to 5 minutes before sensitive data in
+    /// existing log groups begins to be masked. </para> <para> By default, when a user views
+    /// a log event that includes masked data, the sensitive data is replaced by asterisks.
+    /// A user who has the <c>logs:Unmask</c> permission can use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
+    /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a>
+    /// operation with the <c>unmask</c> parameter set to <c>true</c> to view the unmasked
+    /// log events. Users with the <c>logs:Unmask</c> can also view unmasked data in the CloudWatch
+    /// Logs console by running a CloudWatch Logs Insights query with the <c>unmask</c> query
+    /// command. </para> <para> For more information, including a list of types of data that
+    /// can be audited and masked, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect
+    /// sensitive log data with masking</a>. </para> <para> To use the <c>PutAccountPolicy</c>
+    /// operation for a data protection policy, you must be signed on with the <c>logs:PutDataProtectionPolicy</c>
+    /// and <c>logs:PutAccountPolicy</c> permissions. </para> <para> The <c>PutAccountPolicy</c>
+    /// operation applies to all log groups in the account. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>
+    /// to create a data protection policy that applies to just one log group. If a log group
+    /// has its own data protection policy and the account also has an account-level data
+    /// protection policy, then the two policies are cumulative. Any sensitive term specified
+    /// in either policy is masked. </para> <para> <b>Subscription filter policy</b> </para>
+    /// <para> A subscription filter policy sets up a real-time feed of log events from CloudWatch
+    /// Logs to other Amazon Web Services services. Account-level subscription filter policies
+    /// apply to both existing log groups and log groups that are created later in this account.
+    /// Supported destinations are Kinesis Data Streams, Firehose, and Lambda. When log events
+    /// are sent to the receiving service, they are Base64 encoded and compressed with the
+    /// GZIP format. </para> <para> The following destinations are supported for subscription
+    /// filters: </para> <ul> <li> <para> An Kinesis Data Streams data stream in the same
+    /// account as the subscription policy, for same-account delivery. </para> </li> <li>
+    /// <para> An Firehose data stream in the same account as the subscription policy, for
+    /// same-account delivery. </para> </li> <li> <para> A Lambda function in the same account
+    /// as the subscription policy, for same-account delivery. </para> </li> <li> <para> A
+    /// logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
+    /// for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical
+    /// destinations. </para> </li> </ul> <para> Each account can have one account-level subscription
+    /// filter policy per Region. If you are updating an existing filter, you must specify
+    /// the correct name in <c>PolicyName</c>. To perform a <c>PutAccountPolicy</c> subscription
+    /// filter operation for any destination except a Lambda function, you must also have
+    /// the <c>iam:PassRole</c> permission. </para> <para> <b>Transformer policy</b> </para>
+    /// <para> Creates or updates a <i>log transformer policy</i> for your account. You use
+    /// log transformers to transform log events into a different format, making them easier
+    /// for you to process and analyze. You can also transform logs from different sources
+    /// into standardized formats that contain relevant, source-specific information. After
+    /// you have created a transformer, CloudWatch Logs performs this transformation at the
+    /// time of log ingestion. You can then refer to the transformed versions of the logs
+    /// during operations such as querying with CloudWatch Logs Insights or creating metric
+    /// filters or subscription filters. </para> <para> You can also use a transformer to
+    /// copy metadata from metadata keys into the log events themselves. This metadata can
+    /// include log group name, log stream name, account ID and Region. </para> <para> A transformer
+    /// for a log group is a series of processors, where each processor applies one type of
+    /// transformation to the log events ingested into this log group. For more information
+    /// about the available processors to use in a transformer, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors">
+    /// Processors that you can use</a>. </para> <para> Having log events in standardized
+    /// format enables visibility across your applications for your log analysis, reporting,
+    /// and alarming needs. CloudWatch Logs provides transformation for common log types with
+    /// out-of-the-box transformation templates for major Amazon Web Services log sources
+    /// such as VPC flow logs, Lambda, and Amazon RDS. You can use pre-built transformation
+    /// templates or create custom transformation policies. </para> <para> You can create
+    /// transformers only for the log groups in the Standard log class. </para> <para> You
+    /// can have one account-level transformer policy that applies to all log groups in the
+    /// account. Or you can create as many as 20 account-level transformer policies that are
+    /// each scoped to a subset of log groups with the <c>selectionCriteria</c> parameter.
+    /// If you have multiple account-level transformer policies with selection criteria, no
+    /// two of them can use the same or overlapping log group name prefixes. For example,
+    /// if you have one policy filtered to log groups that start with <c>my-log</c>, you can't
+    /// have another transformer policy filtered to <c>my-logpprod</c> or <c>my-logging</c>.
+    /// </para> <para> You can also set up a transformer at the log-group level. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.
+    /// If there is both a log-group level transformer created with <c>PutTransformer</c>
+    /// and an account-level transformer that could apply to the same log group, the log group
+    /// uses only the log-group level transformer. It ignores the account-level transformer.
+    /// </para> <para> <b>Field index policy</b> </para> <para> You can use field index policies
+    /// to create indexes on fields found in log events for a log group or data source name
+    /// and type combination. Creating field indexes can help lower the scan volume for CloudWatch
+    /// Logs Insights queries that reference those fields, because these queries attempt to
+    /// skip the processing of log events that are known to not match the indexed field. Good
+    /// fields to index are fields that you often need to query for and fields or values that
+    /// match only a small fraction of the total log events. Common examples of indexes include
+    /// request ID, session ID, user IDs, or instance IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html">Create
+    /// field indexes to improve query performance and reduce costs</a> </para> <para> To
+    /// find the fields that are in your log group events, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html">GetLogGroupFields</a>
+    /// operation. To find the fields for a data source use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogFields.html">GetLogFields</a>
+    /// operation. </para> <para> For example, suppose you have created a field index for
+    /// <c>requestId</c>. Then, any CloudWatch Logs Insights query on that log group that
+    /// includes <c>requestId = <i>value</i> </c> or <c>requestId in [<i>value</i>, <i>value</i>,
+    /// ...]</c> will attempt to process only the log events where the indexed field matches
+    /// the specified value. </para> <para> Matches of log events to the names of indexed
+    /// fields are case-sensitive. For example, an indexed field of <c>RequestId</c> won't
+    /// match a log event containing <c>requestId</c>. </para> <para> You can have one account-level
+    /// field index policy that applies to all log groups in the account. Or you can create
+    /// as many as 20 account-level field index policies that are each scoped to a subset
+    /// of log groups using <c>LogGroupNamePrefix</c> with the <c>selectionCriteria</c> parameter.
+    /// You can have another 20 account-level field index policies using <c>DataSourceName</c>
+    /// and <c>DataSourceType</c> for the <c>selectionCriteria</c> parameter. If you have
+    /// multiple account-level index policies with <c>LogGroupNamePrefix</c> selection criteria,
+    /// no two of them can use the same or overlapping log group name prefixes. For example,
+    /// if you have one policy filtered to log groups that start with <i>my-log</i>, you can't
+    /// have another field index policy filtered to <i>my-logpprod</i> or <i>my-logging</i>.
+    /// Similarly, if you have multiple account-level index policies with <c>DataSourceName</c>
+    /// and <c>DataSourceType</c> selection criteria, no two of them can use the same data
+    /// source name and type combination. For example, if you have one policy filtered to
+    /// the data source name <c>amazon_vpc</c> and data source type <c>flow</c> you cannot
+    /// create another policy with this combination. </para> <para> If you create an account-level
+    /// field index policy in a monitoring account in cross-account observability, the policy
+    /// is applied only to the monitoring account and not to any source accounts. </para>
+    /// <para> CloudWatch Logs provides default field indexes for all log groups in the Standard
+    /// log class. Default field indexes are automatically available for the following fields:
+    /// </para> <ul> <li> <para> <c>@logStream</c> </para> </li> <li> <para> <c>@aws.region</c>
+    /// </para> </li> <li> <para> <c>@aws.account</c> </para> </li> <li> <para> <c>@source.log</c>
+    /// </para> </li> <li> <para> <c>@data_source_name</c> </para> </li> <li> <para> <c>@data_source_type</c>
+    /// </para> </li> <li> <para> <c>@data_format</c> </para> </li> <li> <para> <c>traceId</c>
+    /// </para> </li> <li> <para> <c>severityText</c> </para> </li> <li> <para> <c>attributes.session.id</c>
+    /// </para> </li> </ul> <para> CloudWatch Logs provides default field indexes for certain
+    /// data source name and type combinations as well. Default field indexes are automatically
+    /// available for the following data source name and type combinations as identified in
+    /// the following list: </para> <para> <c>amazon_vpc.flow</c> </para> <ul> <li> <para>
+    /// <c>action</c> </para> </li> <li> <para> <c>logStatus</c> </para> </li> <li> <para>
+    /// <c>region</c> </para> </li> <li> <para> <c>flowDirection</c> </para> </li> <li> <para>
+    /// <c>type</c> </para> </li> </ul> <para> <c>amazon_route53.resolver_query</c> </para>
+    /// <ul> <li> <para> <c>transport</c> </para> </li> <li> <para> <c>rcode</c> </para> </li>
+    /// </ul> <para> <c>aws_waf.access</c> </para> <ul> <li> <para> <c>action</c> </para>
+    /// </li> <li> <para> <c>httpRequest.country</c> </para> </li> </ul> <para> <c>aws_cloudtrail.data</c>,
+    /// <c>aws_cloudtrail.management</c> </para> <ul> <li> <para> <c>eventSource</c> </para>
+    /// </li> <li> <para> <c>eventName</c> </para> </li> <li> <para> <c>awsRegion</c> </para>
+    /// </li> <li> <para> <c>userAgent</c> </para> </li> <li> <para> <c>errorCode</c> </para>
+    /// </li> <li> <para> <c>eventType</c> </para> </li> <li> <para> <c>managementEvent</c>
+    /// </para> </li> <li> <para> <c>readOnly</c> </para> </li> <li> <para> <c>eventCategory</c>
+    /// </para> </li> <li> <para> <c>requestId</c> </para> </li> </ul> <para> Default field
+    /// indexes are in addition to any custom field indexes you define within your policy.
+    /// Default field indexes are not counted towards your <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax">field
+    /// index quota</a>. </para> <para> If you want to create a field index policy for a single
+    /// log group, you can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>
+    /// instead of <c>PutAccountPolicy</c>. If you do so, that log group will use that log-group
+    /// level policy and any account-level policies that match at the data source level; any
+    /// account-level policy that matches at the log group level (for example, no selection
+    /// criteria or log group name prefix selection criteria) will be ignored. </para> <para>
+    /// <b>Metric extraction policy</b> </para> <para> A metric extraction policy controls
+    /// whether CloudWatch Metrics can be created through the Embedded Metrics Format (EMF)
+    /// for log groups in your account. By default, EMF metric creation is enabled for all
+    /// log groups. You can use metric extraction policies to disable EMF metric creation
+    /// for your entire account or specific log groups. </para> <para> When a policy disables
+    /// EMF metric creation for a log group, log events in the EMF format are still ingested,
+    /// but no CloudWatch Metrics are created from them. </para> <important> <para> Creating
+    /// a policy disables metrics for Amazon Web Services features that use EMF to create
+    /// metrics, such as CloudWatch Container Insights and CloudWatch Application Signals.
+    /// To prevent turning off those features by accident, we recommend that you exclude the
+    /// underlying log-groups through a selection-criteria such as <c>LogGroupNamePrefix NOT
+    /// IN ["/aws/containerinsights", "/aws/ecs/containerinsights", "/aws/application-signals/data"]</c>.
+    /// </para> </important> <para> Each account can have either one account-level metric
+    /// extraction policy that applies to all log groups, or up to 5 policies that are each
+    /// scoped to a subset of log groups with the <c>selectionCriteria</c> parameter. The
+    /// selection criteria supports filtering by <c>LogGroupName</c> and <c>LogGroupNamePrefix</c>
+    /// using the operators <c>IN</c> and <c>NOT IN</c>. You can specify up to 50 values in
+    /// each <c>IN</c> or <c>NOT IN</c> list. </para> <para> The selection criteria can be
+    /// specified in these formats: </para> <para> <c>LogGroupName IN ["log-group-1", "log-group-2"]</c>
+    /// </para> <para> <c>LogGroupNamePrefix NOT IN ["/aws/prefix1", "/aws/prefix2"]</c> </para>
+    /// <para> If you have multiple account-level metric extraction policies with selection
+    /// criteria, no two of them can have overlapping criteria. For example, if you have one
+    /// policy with selection criteria <c>LogGroupNamePrefix IN ["my-log"]</c>, you can't
+    /// have another metric extraction policy with selection criteria <c>LogGroupNamePrefix
+    /// IN ["/my-log-prod"]</c> or <c>LogGroupNamePrefix IN ["/my-logging"]</c>, as the set
+    /// of log groups matching these prefixes would be a subset of the log groups matching
+    /// the first policy's prefix, creating an overlap. </para> <para> When using <c>NOT IN</c>,
+    /// only one policy with this operator is allowed per account. </para> <para> When combining
+    /// policies with <c>IN</c> and <c>NOT IN</c> operators, the overlap check ensures that
+    /// policies don't have conflicting effects. Two policies with <c>IN</c> and <c>NOT IN</c>
+    /// operators do not overlap if and only if every value in the <c>IN </c>policy is completely
+    /// contained within some value in the <c>NOT IN</c> policy. For example: </para> <ul>
+    /// <li> <para> If you have a <c>NOT IN</c> policy for prefix <c>"/aws/lambda"</c>, you
+    /// can create an <c>IN</c> policy for the exact log group name <c>"/aws/lambda/function1"</c>
+    /// because the set of log groups matching <c>"/aws/lambda/function1"</c> is a subset
+    /// of the log groups matching <c>"/aws/lambda"</c>. </para> </li> <li> <para> If you
+    /// have a <c>NOT IN</c> policy for prefix <c>"/aws/lambda"</c>, you cannot create an
+    /// <c>IN</c> policy for prefix <c>"/aws"</c> because the set of log groups matching <c>"/aws"</c>
+    /// is not a subset of the log groups matching <c>"/aws/lambda"</c>. </para> </li> </ul>
+    /// <para> <b>Retention policy</b> </para> <para> A retention policy sets the retention
+    /// period for log groups in your account. You can use an account-level retention policy
+    /// to set a default retention period for all log groups in the account, or for a subset
+    /// of log groups that you specify with the <c>selectionCriteria</c> parameter. CloudWatch
+    /// Logs automatically deletes log events that are older than the retention period. </para>
+    /// <para> Each account can have up to 20 account-level retention policies in each Region.
+    /// To scope a retention policy to a subset of log groups, use <c>LogGroupNamePrefix</c>
+    /// in <c>selectionCriteria</c>. Retention policies support log group name prefixes only.
+    /// If you omit <c>selectionCriteria</c>, the policy applies to all log groups in the
+    /// account. </para> <para> Unlike other account-level policy types, retention policies
+    /// can have overlapping selection criteria. When more than one retention policy applies
+    /// to a log group, the policy with the longest retention period is used. A policy that
+    /// specifies <c>NEVER_EXPIRE</c> is treated as the longest retention period. This lets
+    /// you set a baseline retention period for the account, apply longer retention periods
+    /// to specific log groups, and exempt specific log groups from expiring at all. If two
+    /// policies that apply to the same log group specify the same retention period, the policy
+    /// that was created first is the one reported in <c>retentionPolicyName</c>. </para>
+    /// <note> <para> Account-level retention policies require a minimum retention period
+    /// of 30 days. </para> </note> <note> <para> A retention policy takes effect 24 hours
+    /// after you create it. If you update a policy, the new retention period takes effect
+    /// 24 hours after the update, and the previous retention period stays in effect until
+    /// then. During this period, <c>DescribeLogGroups</c> and log event expiration use the
+    /// retention period that is currently in effect, but a dry run reports the impact as
+    /// if the policy were already in effect. </para> </note> <para> Before you create, update,
+    /// or delete a retention policy, you can specify <c>true</c> for <c>dryRun</c> to preview
+    /// how many log groups would have a longer, shorter, or unchanged retention period. For
+    /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DryRunResult.html">DryRunResult</a>.
+    /// </para> <important> <para> An account-level retention policy replaces the retention
+    /// period set on a log group, including when the log group's own retention period is
+    /// longer. For example, if a log group is set to retain log events for 10 years and you
+    /// create a retention policy that sets a 90-day retention period for that log group,
+    /// CloudWatch Logs deletes the log events in that log group that are older than 90 days.
+    /// Specify <c>true</c> for <c>dryRun</c> to see which log groups would have a shorter
+    /// retention period before you create or update the policy. </para> </important>
+    /// </summary>
+    public partial class PutAccountPolicyRequest : AmazonCloudWatchLogsRequest
+    {
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Specifies whether to preview the impact of the policy without creating or updating
+        /// it. If you specify <c>true</c>, CloudWatch Logs validates the request, does not save
+        /// the policy, and returns the estimated impact in <c>dryRunResult</c> instead of <c>accountPolicy</c>.
+        /// The default is <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifying <c>dryRun</c> is valid only when you specify <c>RETENTION_POLICY</c> for
+        /// <c>policyType</c>. Only one dry run can be in progress for an account at a time.
+        /// </para>
+        /// </summary>
+        public bool? DryRun { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DryRun property is set.
+        /// </summary>
+        internal bool IsSetDryRun() => this.DryRun.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property PolicyDocument. 
+        /// <para>
+        /// Specify the policy, in JSON.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Data protection policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A data protection policy must include two JSON blocks:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The first block must include both a <c>DataIdentifer</c> array and an <c>Operation</c>
+        /// property with an <c>Audit</c> action. The <c>DataIdentifer</c> array lists the types
+        /// of sensitive data that you want to mask. For more information about the available
+        /// options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types
+        /// of data that you can mask</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>Operation</c> property with an <c>Audit</c> action is required to find the
+        /// sensitive data terms. This <c>Audit</c> action must contain a <c>FindingsDestination</c>
+        /// object. You can optionally use that <c>FindingsDestination</c> object to list one
+        /// or more destinations to send audit findings to. If you specify destinations such as
+        /// log groups, Firehose streams, and S3 buckets, they must already exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The second block must include both a <c>DataIdentifer</c> array and an <c>Operation</c>
+        /// property with an <c>Deidentify</c> action. The <c>DataIdentifer</c> array must exactly
+        /// match the <c>DataIdentifer</c> array in the first block of the policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>Operation</c> property with the <c>Deidentify</c> action is what actually masks
+        /// the data, and it must contain the <c> "MaskConfig": {}</c> object. The <c> "MaskConfig":
+        /// {}</c> object must be empty.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For an example data protection policy, see the <b>Examples</b> section on this page.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The contents of the two <c>DataIdentifer</c> arrays must match exactly.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// In addition to the two JSON blocks, the <c>policyDocument</c> can also include <c>Name</c>,
+        /// <c>Description</c>, and <c>Version</c> fields. The <c>Name</c> is different than the
+        /// operation's <c>policyName</c> parameter, and is used as a dimension when CloudWatch
+        /// Logs reports audit findings metrics to CloudWatch.
+        /// </para>
+        ///  
+        /// <para>
+        /// The JSON specified in <c>policyDocument</c> can be up to 30,720 characters long.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Subscription filter policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A subscription filter policy can include the following attributes in a JSON block:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>DestinationArn</b> The ARN of the destination to deliver log events to. Supported
+        /// destinations are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Kinesis Data Streams data stream in the same account as the subscription policy,
+        /// for same-account delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Firehose data stream in the same account as the subscription policy, for same-account
+        /// delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A Lambda function in the same account as the subscription policy, for same-account
+        /// delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
+        /// for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical
+        /// destinations.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b>RoleArn</b> The ARN of an IAM role that grants CloudWatch Logs permissions to
+        /// deliver ingested log events to the destination stream. You don't need to provide the
+        /// ARN when you are working with a logical destination for cross-account delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FilterPattern</b> A filter pattern for subscribing to a filtered stream of log
+        /// events.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Distribution</b> The method used to distribute log data to the destination. By
+        /// default, log data is grouped by log stream, but the grouping can be set to <c>Random</c>
+        /// for a more even distribution. This property is only applicable when the destination
+        /// is an Kinesis Data Streams data stream.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Transformer policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A transformer policy must include one JSON block with the array of processors and
+        /// their configurations. For more information about available processors, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors">
+        /// Processors that you can use</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Field index policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A field index filter policy can include the following attribute in a JSON block:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Fields</b> The array of field indexes to create.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FieldsV2</b> The object of field indexes to create along with it's type.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// It must contain at least one field index.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is an example of an index policy document that creates indexes with
+        /// different types.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>"policyDocument": "{ \"Fields\": [ \"TransactionId\" ], \"FieldsV2\": {\"RequestId\":
+        /// {\"type\": \"FIELD_INDEX\"}, \"APIName\": {\"type\": \"FACET\"}, \"StatusCode\": {\"type\":
+        /// \"FACET\"}}}"</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use <c>FieldsV2</c> to specify the type for each field. Supported types are
+        /// <c>FIELD_INDEX</c> and <c>FACET</c>. Field names within <c>Fields</c> and <c>FieldsV2</c>
+        /// must be mutually exclusive.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Retention policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A retention policy must include the following attributes in a JSON block:
+        /// </para>
+        ///  <dl> <dt>retentionInDays</dt> <dd> 
+        /// <para>
+        /// The number of days to retain log events. Valid values are 30, 60, 90, 120, 150, 180,
+        /// 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653. To retain log events
+        /// indefinitely, specify the string <c>NEVER_EXPIRE</c>.
+        /// </para>
+        ///  </dd> <dt>enforcementMode</dt> <dd> 
+        /// <para>
+        /// Specifies which log groups the policy applies to. Valid values are <c>NEW_ONLY</c>
+        /// and <c>RETROACTIVE</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>RETROACTIVE</c> applies the policy to every log group that matches the selection
+        /// criteria, including log groups that existed before you created the policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>NEW_ONLY</c> applies the policy only to log groups that are created after you
+        /// create the policy. Log groups that already existed when you created the policy keep
+        /// their own retention period.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// The following is an example of a retention policy document.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>"policyDocument": "{\"retentionInDays\": 90, \"enforcementMode\": \"RETROACTIVE\"}"</c>
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string PolicyDocument { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyDocument property is set.
+        /// </summary>
+        internal bool IsSetPolicyDocument() => this.PolicyDocument != null;
+
+        /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// A name for the policy. This must be unique within the account and cannot start with
+        /// <c>aws/</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string PolicyName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyName property is set.
+        /// </summary>
+        internal bool IsSetPolicyName() => this.PolicyName != null;
+
+        /// <summary>
+        /// Gets and sets the property PolicyType. 
+        /// <para>
+        /// The type of policy that you're creating or updating.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public PolicyType PolicyType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyType property is set.
+        /// </summary>
+        internal bool IsSetPolicyType() => this.PolicyType != null;
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// Currently the only valid value for this parameter is <c>ALL</c>, which specifies that
+        /// the data protection policy applies to all log groups in the account. If you omit this
+        /// parameter, the default of <c>ALL</c> is used.
+        /// </para>
+        /// </summary>
+        public Scope Scope { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Scope property is set.
+        /// </summary>
+        internal bool IsSetScope() => this.Scope != null;
+
+        /// <summary>
+        /// Gets and sets the property SelectionCriteria. 
+        /// <para>
+        /// Use this parameter to apply the new policy to a subset of log groups in the account
+        /// or a data source name and type combination. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifying <c>selectionCriteria</c> is valid only when you specify <c>SUBSCRIPTION_FILTER_POLICY</c>,
+        /// <c>FIELD_INDEX_POLICY</c>, <c>TRANSFORMER_POLICY</c>, or <c>RETENTION_POLICY</c> for
+        /// <c>policyType</c>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <c>policyType</c> is <c>SUBSCRIPTION_FILTER_POLICY</c>, the only supported <c>selectionCriteria</c>
+        /// filter is <c>LogGroupName NOT IN []</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>policyType</c> is <c>TRANSFORMER_POLICY</c>, the only supported <c>selectionCriteria</c>
+        /// filter is <c>LogGroupNamePrefix</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>policyType</c> is <c>FIELD_INDEX_POLICY</c>, the supported <c>selectionCriteria</c>
+        /// filters are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>LogGroupNamePrefix</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DataSourceName</c> AND <c>DataSourceType</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When you specify <c>selectionCriteria</c> for a field index policy you can use either
+        /// <c>LogGroupNamePrefix</c> by itself or <c>DataSourceName</c> and <c>DataSourceType</c>
+        /// together.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>policyType</c> is <c>RETENTION_POLICY</c>, the only supported <c>selectionCriteria</c>
+        /// filter is <c>LogGroupNamePrefix</c>. If you omit <c>selectionCriteria</c>, the retention
+        /// policy applies to all log groups in the account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The <c>selectionCriteria</c> string can be up to 25KB in length. The length is determined
+        /// by using its UTF-8 bytes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Using the <c>selectionCriteria</c> parameter with <c>SUBSCRIPTION_FILTER_POLICY</c>
+        /// is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log
+        /// recursion prevention</a>.
+        /// </para>
+        /// </summary>
+        public string SelectionCriteria { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SelectionCriteria property is set.
+        /// </summary>
+        internal bool IsSetSelectionCriteria() => this.SelectionCriteria != null;
+    }
+}

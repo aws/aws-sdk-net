@@ -14,7 +14,7 @@ namespace Amazon.CloudSearchDomain.Internal
     public class ValidationResponseHandler : PipelineHandler
     {
 
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Calls the post invoke logic after calling the next handler 
         /// in the pipeline.
@@ -28,7 +28,7 @@ namespace Amazon.CloudSearchDomain.Internal
         }
 #endif
 
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Calls the and post invoke logic after calling the next handler 
         /// in the pipeline.
@@ -45,7 +45,7 @@ namespace Amazon.CloudSearchDomain.Internal
         }
 #endif
 
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Custom pipeline handler to make sure streams.
         /// </summary>

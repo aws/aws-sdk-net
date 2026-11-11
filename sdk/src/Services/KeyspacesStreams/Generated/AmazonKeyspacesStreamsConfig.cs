@@ -27,12 +27,12 @@ using Amazon.KeyspacesStreams.Internal;
 namespace Amazon.KeyspacesStreams
 {
     /// <summary>
-    /// Configuration for accessing Amazon KeyspacesStreams service
+    /// Configuration for accessing Amazon Keyspaces Streams
     /// </summary>
     public partial class AmazonKeyspacesStreamsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("KeyspacesStreams", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("KeyspacesStreams", "4.0.100.25");
 
         private static readonly AmazonKeyspacesStreamsEndpointResolver EndpointResolver =
             new AmazonKeyspacesStreamsEndpointResolver();

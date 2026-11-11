@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkManager.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon NetworkManager service
+    /// Service metadata for AWS Network Manager
     /// </summary>
     public partial class AmazonNetworkManagerMetadata : IServiceMetadata
     {

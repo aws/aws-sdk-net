@@ -31,7 +31,7 @@ using Amazon.CustomerProfiles.Endpoints;
 namespace Amazon.CustomerProfiles.Internal
 {
     /// <summary>
-    /// Amazon CustomerProfiles endpoint resolver.
+    /// Amazon Connect Customer Profiles endpoint resolver.
     /// <para />
     /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CustomerProfiles service requests.
     /// <para />

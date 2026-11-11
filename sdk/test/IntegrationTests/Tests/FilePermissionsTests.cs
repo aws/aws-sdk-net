@@ -127,6 +127,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.Equal(0x180, finalMode); // 0600
         }
 
+#if NET8_0_OR_GREATER
+        [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Skipped on Windows via SkipWhen")]
+        [Fact(Skip = "Requires Unix file permission APIs", SkipWhen = nameof(IsWindows))]
+        public void OpenFile_OnUnix_CreatesFileWith0600()
+        {
+            var testFilePath = Path.Combine(_testDirectory, "credentials");
+            using (FilePermissionHelper.OpenFile(testFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None))
+            {
+                // Checked while the handle is still open: the mode was applied by the create call, not afterwards
+                Assert.Equal(UnixFileMode.UserRead | UnixFileMode.UserWrite, File.GetUnixFileMode(testFilePath));
+            }
+        }
+
+        [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Skipped on Windows via SkipWhen")]
+        [Fact(Skip = "Requires Unix file permission APIs", SkipWhen = nameof(IsWindows))]
+        public void CreateDirectory_OnUnix_CreatesDirectoryWith0700()
+        {
+            var testDirectoryPath = Path.Combine(_testDirectory, "sso", "cache");
+            FilePermissionHelper.CreateDirectory(testDirectoryPath);
+            Assert.Equal(UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.UserExecute, File.GetUnixFileMode(testDirectoryPath));
+        }
+#endif
+
         /// <summary>
         /// Gets the Unix file permission bits for the given path using NativeMethods.Chmod
         /// for setting and stat P/Invoke for reading.

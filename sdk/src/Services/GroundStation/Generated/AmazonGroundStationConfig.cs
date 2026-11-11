@@ -27,12 +27,12 @@ using Amazon.GroundStation.Internal;
 namespace Amazon.GroundStation
 {
     /// <summary>
-    /// Configuration for accessing Amazon GroundStation service
+    /// Configuration for accessing AWS Ground Station
     /// </summary>
     public partial class AmazonGroundStationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("GroundStation", "4.0.100.22");
+            InternalSDKUtils.BuildUserAgentString("GroundStation", "4.0.100.26");
 
         private static readonly AmazonGroundStationEndpointResolver EndpointResolver =
             new AmazonGroundStationEndpointResolver();

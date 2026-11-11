@@ -64,6 +64,29 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAgentRuntimeName() => this.AgentRuntimeName != null;
 
         /// <summary>
+        /// Gets and sets the property AllowedPorts. 
+        /// <para>
+        /// The additional ports on the AgentCore Runtime that are reachable through the runtime's
+        /// session URL. Specify one to five non-overlapping entries, each containing either a
+        /// single port or an inclusive port range. Ports must be between <c>8000</c> and <c>12000</c>,
+        /// excluding the reserved port <c>8443</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 5)]
+        public List<AllowedPort> AllowedPorts { get; set; } = AWSConfigs.InitializeCollections ? new List<AllowedPort>() : null;
+
+        /// <summary>
+        /// Checks to see if the AllowedPorts property is set.
+        /// </summary>
+        internal bool IsSetAllowedPorts() => this.AllowedPorts != null && (this.AllowedPorts.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property AuthorizerConfiguration. 
         /// <para>
         /// The authorizer configuration for the AgentCore Runtime.
@@ -161,6 +184,21 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetFilesystemConfigurations() => this.FilesystemConfigurations != null && (this.FilesystemConfigurations.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property HooksConfiguration. 
+        /// <para>
+        /// The lifecycle hooks configuration for the AgentCore Runtime. Use lifecycle hooks to
+        /// run actions in the agent's container at fixed points in the runtime's lifecycle, such
+        /// as warming up the agent before sessions are created.
+        /// </para>
+        /// </summary>
+        public RuntimeHooksConfiguration HooksConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HooksConfiguration property is set.
+        /// </summary>
+        internal bool IsSetHooksConfiguration() => this.HooksConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property LifecycleConfiguration. 
         /// <para>
         /// The life cycle configuration for the AgentCore Runtime.
@@ -201,7 +239,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetPlatformVersion() => this.PlatformVersion != null;
 
         /// <summary>
-        /// Gets and sets the property ProtocolConfiguration.
+        /// Gets and sets the property ProtocolConfiguration. 
+        /// <para>
+        /// The protocol configuration for the AgentCore Runtime, including the protocol, port,
+        /// and path on which the agent server is available.
+        /// </para>
         /// </summary>
         public ProtocolConfiguration ProtocolConfiguration { get; set; }
 
@@ -222,6 +264,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Checks to see if the RequestHeaderConfiguration property is set.
         /// </summary>
         internal bool IsSetRequestHeaderConfiguration() => this.RequestHeaderConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceConfigurations. 
+        /// <para>
+        /// The resource configurations for the AgentCore Runtime, such as the minimum amount
+        /// of memory to allocate to the runtime. You can specify at most one resource configuration.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 1)]
+        public List<ResourceConfiguration> ResourceConfigurations { get; set; } = AWSConfigs.InitializeCollections ? new List<ResourceConfiguration>() : null;
+
+        /// <summary>
+        /// Checks to see if the ResourceConfigurations property is set.
+        /// </summary>
+        internal bool IsSetResourceConfigurations() => this.ResourceConfigurations != null && (this.ResourceConfigurations.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property RoleArn. 

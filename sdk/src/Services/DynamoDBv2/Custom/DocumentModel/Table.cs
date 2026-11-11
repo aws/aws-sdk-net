@@ -624,7 +624,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             };
             this.UpdateRequestUserAgentDetails(req, isAsync: false);
 
-#if NETSTANDARD
+#if !NETFRAMEWORK
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = DDBClient as AmazonDynamoDBClient;
             if (client == null)
@@ -1273,7 +1273,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 currentConfig.ConditionalExpression.ApplyExpression(req, this);
             }
 
-#if NETSTANDARD
+#if !NETFRAMEWORK
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = DDBClient as AmazonDynamoDBClient;
             if (client == null)
@@ -1370,7 +1370,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             this.UpdateRequestUserAgentDetails(request, isAsync: false);
 
-#if NETSTANDARD
+#if !NETFRAMEWORK
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = DDBClient as AmazonDynamoDBClient;
             if (client == null)
@@ -1622,7 +1622,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     }
                 }
             }
-#if NETSTANDARD
+#if !NETFRAMEWORK
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = DDBClient as AmazonDynamoDBClient;
             if (client == null)
@@ -1801,7 +1801,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 currentConfig.ConditionalExpression.ApplyExpression(req, this);
             }
 
-#if NETSTANDARD
+#if !NETFRAMEWORK
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = DDBClient as AmazonDynamoDBClient;
             if (client == null)

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceReporting.Internal
 {
     /// <summary>
-    /// Service metadata for Amazon MarketplaceReporting service
+    /// Service metadata for AWS Marketplace Reporting Service
     /// </summary>
     public partial class AmazonMarketplaceReportingMetadata : IServiceMetadata
     {

@@ -36,6 +36,20 @@ namespace Amazon.Inspector2.Model
     public partial class AutoEnable
     {
         /// <summary>
+        /// Gets and sets the property Ami. 
+        /// <para>
+        /// Represents whether Amazon Machine Image (AMI) scans are automatically enabled for
+        /// new members of your Amazon Inspector organization.
+        /// </para>
+        /// </summary>
+        public bool? Ami { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ami property is set.
+        /// </summary>
+        internal bool IsSetAmi() => this.Ami.HasValue;
+
+        /// <summary>
         /// Gets and sets the property CodeRepository. 
         /// <para>
         /// Represents whether code repository scans are automatically enabled for new members
