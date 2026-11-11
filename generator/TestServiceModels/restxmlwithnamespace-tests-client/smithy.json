@@ -377,10 +377,10 @@
                     "target": "smithy.api#Boolean"
                 },
                 "byteValue": {
-                    "target": "smithy.api#Integer"
+                    "target": "smithy.api#Byte"
                 },
                 "shortValue": {
-                    "target": "smithy.api#Integer"
+                    "target": "smithy.api#Short"
                 },
                 "integerValue": {
                     "target": "smithy.api#Integer"

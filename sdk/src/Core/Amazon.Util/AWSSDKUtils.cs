@@ -758,14 +758,34 @@ namespace Amazon.Util
         /// Utility method for converting Unix epoch seconds to DateTime structure.
         /// <para />
         /// Digits past the millisecond are truncated (1762594202.1239 is .123), as the Smithy epoch-seconds timestamp format specifies.
-        /// Casting to decimal rounds to 15 significant digits, which removes the floating-point error of the double
+        /// The value is rounded to 15 significant digits before truncation, which removes the floating-point error of the double
         /// (1762594202.123 is stored as 1762594202.12299990...). Sub-millisecond digits can round up before truncation.
         /// </summary>
         /// <param name="seconds">The number of seconds since January 1, 1970.</param>
         /// <returns>Converted DateTime structure</returns>
         public static DateTime ConvertFromUnixDoubleEpochSeconds(double seconds)
         {
-            return ConvertFromUnixDecimalEpochSeconds((decimal)seconds);
+            // Before .NET 11, casting double to decimal rounded to 15 significant digits. Starting with .NET 11 the
+            // cast keeps the exact binary value, so 1762594202.123 would truncate to .122. Rounding the decimal to
+            // 15 significant digits explicitly gives the same result on every target framework without allocating.
+            decimal value = (decimal)seconds;
+            if (seconds != 0)
+            {
+                // Number of digits before the decimal point, minus one. Math.Log10 can return the next whole
+                // number for values just below a power of ten (Log10(999.9999999999994) is exactly 3), so the
+                // exponent is corrected downward to keep 15 significant digits instead of 14.
+                double abs = Math.Abs(seconds);
+                int exponent = (int)Math.Floor(Math.Log10(abs));
+                if (abs < Math.Pow(10, exponent))
+                {
+                    exponent--;
+                }
+
+                // decimal supports between 0 and 28 digits after the decimal point.
+                int decimals = Math.Max(0, Math.Min(28, 14 - exponent));
+                value = Math.Round(value, decimals, MidpointRounding.ToEven);
+            }
+            return ConvertFromUnixDecimalEpochSeconds(value);
         }
 
         /// <summary>
@@ -1921,20 +1941,9 @@ namespace Amazon.Util
         /// Utility method that accepts a string and replaces white spaces with a space.
         /// </summary>
         /// <param name="data">The input string to process.</param>
-        /// <returns>The processed string with compressed spaces.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static string CompressSpaces(string data)
-        {
-            return CompressSpaces(data, false);
-        }
-
-        /// <summary>
-        /// Utility method that accepts a string and replaces white spaces with a space.
-        /// </summary>
-        /// <param name="data">The input string to process.</param>
         /// <param name="trim">When <see langword="true"/>, leading and trailing whitespace is also removed.</param>
         /// <returns>The processed string with compressed spaces.</returns>
-        public static string CompressSpaces(string data, bool trim)
+        public static string CompressSpaces(string data, bool trim = false)
         {
             const char SPACE = ' ';
             if (data == null)

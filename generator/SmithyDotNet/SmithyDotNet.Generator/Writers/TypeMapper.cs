@@ -105,6 +105,14 @@ public sealed record TypeDescriptor(
     /// converts implicitly to/from <c>string</c>, matching C2J).
     /// </summary>
     public bool MarshalsAsString => IsString || IsEnum;
+
+    /// <summary>
+    /// True for the byte, short, bigInteger and bigDecimal types from the Full Numeric Type Support specification. Header
+    /// lists of these pass an explicit invariant-culture converter: the untyped <c>StringUtils.FromValueTypeList</c> formats
+    /// with the current culture, and the untyped <c>MultiValueHeaderParser.ToValueTypeList</c> uses
+    /// <c>Convert.ChangeType</c>, which also uses the current culture and fails for BigInteger and BigDecimal (not IConvertible).
+    /// </summary>
+    public bool NeedsTypedHeaderConverter => Target is ByteShape or ShortShape or BigIntegerShape or BigDecimalShape;
 }
 
 /// <summary>The modifier a member needs because a base class declares a member of the same name.</summary>
@@ -384,9 +392,7 @@ public static class TypeMapper
         }
 
         // Scalars are checked last so the aggregate branches above return without a MapScalar call.
-        // Value-type scalars follow the V4 nullable convention; the rest (byte/short/bigInteger/
-        // bigDecimal) have no settled mapping yet and fall through to the
-        // throw — the wider-numeric types are earmarked for a dedicated numerics extension.
+        // Value-type scalars follow the V4 nullable convention.
         return MapPrimitive(target) ?? throw new GeneratorException($"Unsupported member type '{target.Type}'.");
     }
 
@@ -486,6 +492,12 @@ public static class TypeMapper
         FloatShape => "float",
         DoubleShape => "double",
         TimestampShape => "DateTime",
+        // Full Numeric Type Support specification: Smithy's byte is signed, so it is sbyte, not System.Byte. BigDecimal
+        // comes from AWSSDK.Extensions.Numerics, which AWSSDK.Core depends on.
+        ByteShape => "sbyte",
+        ShortShape => "short",
+        BigIntegerShape => "System.Numerics.BigInteger",
+        BigDecimalShape => "Amazon.Extensions.Numerics.BigDecimal",
         _ => null,
     };
 

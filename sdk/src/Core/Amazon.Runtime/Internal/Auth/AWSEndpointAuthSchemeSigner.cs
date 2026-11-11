@@ -34,7 +34,7 @@ namespace Amazon.Runtime.Internal.Auth
         {
             var useSigV4 = request.SignatureVersion == SignatureVersion.SigV4;
             var signer = SelectSigner(this, useSigV4, request, clientConfig);
-            var aws4aSigner = signer as AWS4aSignerCRTWrapper;
+            var aws4aSigner = signer as AWS4aSigner;
             var aws4Signer = signer as AWS4Signer;
             var useV4a = aws4aSigner != null;
             var useV4 = aws4Signer != null;

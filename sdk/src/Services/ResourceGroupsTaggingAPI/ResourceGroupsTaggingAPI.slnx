@@ -2,6 +2,7 @@
   <Folder Name="/Core/">
     <Project Path="../../Core/AWSSDK.Core.NetFramework.csproj" />
     <Project Path="../../Core/AWSSDK.Core.NetStandard.csproj" />
+    <Project Path="../../../../extensions/src/AWSSDK.Extensions.Numerics/AWSSDK.Extensions.Numerics.csproj" />
     <Project Path="../../../../extensions/src/AWSSDK.Extensions.CborProtocol/AWSSDK.Extensions.CborProtocol.NetFramework.csproj" />
     <Project Path="../../../../extensions/src/AWSSDK.Extensions.CborProtocol/AWSSDK.Extensions.CborProtocol.NetStandard.csproj" />
   </Folder>

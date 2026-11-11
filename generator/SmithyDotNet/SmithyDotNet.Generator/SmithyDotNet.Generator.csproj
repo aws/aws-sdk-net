@@ -7,6 +7,7 @@
     <RootNamespace>SmithyDotNet.Generator</RootNamespace>
     <AssemblyName>SmithyDotNet.Generator</AssemblyName>
     <LangVersion>latest</LangVersion>
+	<RollForward>Major</RollForward>
   </PropertyGroup>
 
   <!-- The default output dir for `dotnet run` / the launch profile. Its generated .cs files would

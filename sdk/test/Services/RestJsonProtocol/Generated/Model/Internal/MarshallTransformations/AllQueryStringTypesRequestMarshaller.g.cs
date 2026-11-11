@@ -69,7 +69,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 
             if (publicRequest.IsSetQueryByte())
             {
-                request.Parameters.Add("Byte", StringUtils.FromInt(publicRequest.QueryByte.Value));
+                request.Parameters.Add("Byte", StringUtils.FromSByte(publicRequest.QueryByte.Value));
             }
 
             if (publicRequest.IsSetQueryDouble())
@@ -129,7 +129,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 
             if (publicRequest.IsSetQueryShort())
             {
-                request.Parameters.Add("Short", StringUtils.FromInt(publicRequest.QueryShort.Value));
+                request.Parameters.Add("Short", StringUtils.FromShort(publicRequest.QueryShort.Value));
             }
 
             if (publicRequest.IsSetQueryString())

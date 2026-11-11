@@ -97,6 +97,21 @@ namespace Amazon.Runtime.Internal.Auth
 
         public abstract string Signature { get; }
 
+        /// <summary>
+        /// Returns the signature in a form usable as an 'Authorization' header value.
+        /// </summary>
         public abstract string ForAuthorizationHeader { get; }
+
+        /// <summary>
+        /// Returns the signature in a form usable as a set of query string parameters.
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations", Justification = "All first-party subclasses override this subsequently added property, and the class is not typically inherited by third-party code.")]
+        public virtual string ForQueryParameters
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

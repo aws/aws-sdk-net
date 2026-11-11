@@ -75,6 +75,16 @@ namespace Amazon.Util.Internal
             {
                 var desc = _runtimeInformationWrapper.FrameworkDescription.Trim();
                 var version = GetValidSubstringOrUnknown(desc, desc.LastIndexOf(' ') + 1, desc.Length);
+
+                // Preview/RC runtimes report a version with a prerelease suffix (e.g. "11.0.0-rc.2.26504.105")
+                // that System.Version cannot parse. Strip the suffix at the first hyphen so the numeric core
+                // ("11.0.0") is what we validate and report.
+                var hyphenIndex = version.IndexOf('-');
+                if (hyphenIndex != -1)
+                {
+                    version = version.Substring(0, hyphenIndex);
+                }
+
                 if (!Version.TryParse(version, out var _))
                 {
                     return "Unknown" + $" md/framework-raw-version#{desc.Replace(' ', '_')}";

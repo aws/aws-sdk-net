@@ -489,13 +489,13 @@
                     }
                 },
                 "queryByte": {
-                    "target": "smithy.api#Integer",
+                    "target": "smithy.api#Byte",
                     "traits": {
                         "smithy.api#httpQuery": "Byte"
                     }
                 },
                 "queryShort": {
-                    "target": "smithy.api#Integer",
+                    "target": "smithy.api#Short",
                     "traits": {
                         "smithy.api#httpQuery": "Short"
                     }
@@ -1408,7 +1408,7 @@
                             "Content-Type": "application/xml"
                         },
                         "params": {
-                            "datetime": 9.46845296123E8
+                            "datetime": 946845296.123
                         }
                     }
                 ]
@@ -2603,7 +2603,7 @@
                     }
                 },
                 "short": {
-                    "target": "smithy.api#Integer",
+                    "target": "smithy.api#Short",
                     "traits": {
                         "smithy.api#httpLabel": {},
                         "smithy.api#required": {}
@@ -3137,13 +3137,13 @@
                     }
                 },
                 "headerByte": {
-                    "target": "smithy.api#Integer",
+                    "target": "smithy.api#Byte",
                     "traits": {
                         "smithy.api#httpHeader": "X-Byte"
                     }
                 },
                 "headerShort": {
-                    "target": "smithy.api#Integer",
+                    "target": "smithy.api#Short",
                     "traits": {
                         "smithy.api#httpHeader": "X-Short"
                     }
@@ -4769,10 +4769,10 @@
                     "target": "smithy.api#Boolean"
                 },
                 "byteValue": {
-                    "target": "smithy.api#Integer"
+                    "target": "smithy.api#Byte"
                 },
                 "shortValue": {
-                    "target": "smithy.api#Integer"
+                    "target": "smithy.api#Short"
                 },
                 "integerValue": {
                     "target": "smithy.api#Integer"
@@ -6955,10 +6955,10 @@
                     "target": "smithy.api#Boolean"
                 },
                 "byteValue": {
-                    "target": "smithy.api#Integer"
+                    "target": "smithy.api#Byte"
                 },
                 "shortValue": {
-                    "target": "smithy.api#Integer"
+                    "target": "smithy.api#Short"
                 },
                 "integerValue": {
                     "target": "smithy.api#Integer"
@@ -7283,10 +7283,10 @@
                     "target": "smithy.api#Boolean"
                 },
                 "byteValue": {
-                    "target": "smithy.api#Integer"
+                    "target": "smithy.api#Byte"
                 },
                 "shortValue": {
-                    "target": "smithy.api#Integer"
+                    "target": "smithy.api#Short"
                 },
                 "integerValue": {
                     "target": "smithy.api#Integer"

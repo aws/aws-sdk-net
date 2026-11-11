@@ -62,7 +62,7 @@ namespace ThirdParty.MD5
                 totalArrayLength -= 64;
                 while (totalArrayLength >= 64)
                 {
-                    Array.Copy(array, startIndex, _data, 0, 64);
+                    // Full blocks are hashed in place; _data only holds the trailing partial block (copied below).
                     MD5Core.GetHashBlock(array, ref _abcd, startIndex);
                     totalArrayLength -= 64;
                     startIndex += 64;

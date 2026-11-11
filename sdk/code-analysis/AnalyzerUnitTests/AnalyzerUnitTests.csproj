@@ -36,5 +36,6 @@
 
 	<ItemGroup>
     <ProjectReference Include="../MockAnalyzer/MockAnalyzer.csproj" />
+    <ProjectReference Include="../CoreAnalysis/AWSSDK.Core.CodeAnalysis.csproj" />
   </ItemGroup>
 </Project>

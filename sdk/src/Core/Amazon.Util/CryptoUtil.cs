@@ -62,10 +62,10 @@ namespace Amazon.Util
                     return new Crc32Managed();
 
                 case CoreChecksumAlgorithm.CRC32C:
-                    return new CrtCrc32c();
+                    return new Crc32cManaged();
 
                 case CoreChecksumAlgorithm.CRC64NVME:
-                    return new CrtCrc64NVME();
+                    return new Crc64NVMEManaged();
 
                 case CoreChecksumAlgorithm.SHA512:
                     return CryptoUtil.CreateSHA512Instance();
@@ -304,7 +304,8 @@ namespace Amazon.Util
             /// <returns>CRC32C hash as a base64-encoded string</returns>
             public string ComputeCRC32CHash(byte[] data)
             {
-                return ChecksumCRTWrapper.Crc32C(data);
+                var hashed = new Crc32cManaged().ComputeHash(data);
+                return Convert.ToBase64String(hashed);
             }
 
             /// <summary>
@@ -314,7 +315,8 @@ namespace Amazon.Util
             /// <returns>CRC64NVME hash as a base64-encoded string</returns>
             public string ComputeCRC64NVMEHash(byte[] data)
             {
-                return ChecksumCRTWrapper.Crc64NVME(data);
+                var hashed = new Crc64NVMEManaged().ComputeHash(data);
+                return Convert.ToBase64String(hashed);
             }
 
             public string HMACSign(byte[] data, string key, SigningAlgorithm algorithmName)

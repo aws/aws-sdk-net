@@ -138,7 +138,14 @@ namespace ThirdParty.MD5
         */
         internal static void GetHashBlock(byte[] input, ref ABCDStruct ABCDValue, int ibStart)
         {
-            uint[] temp = Converter(input, ibStart);
+            // The 16 little-endian words of the block live on the stack: allocating them per 64-byte block
+            // (88 bytes of garbage per 64 bytes hashed) dominated allocations when validating downloads.
+            if (null == input)
+                throw new System.ArgumentNullException("input", "Unable convert null array to array of uInts");
+            Span<uint> temp = stackalloc uint[16];
+            var block = new ReadOnlySpan<byte>(input, ibStart, 64);
+            for (int i = 0; i < 16; i++)
+                temp[i] = System.Buffers.Binary.BinaryPrimitives.ReadUInt32LittleEndian(block.Slice(i * 4, 4));
             uint a = ABCDValue.A;
             uint b = ABCDValue.B;
             uint c = ABCDValue.C;
@@ -254,25 +261,6 @@ namespace ThirdParty.MD5
         private static uint LSR(uint i, int s)
         {
             return ((i << s) | (i >> (32 - s)));
-        }
-
-        //Convert input array into array of UInts
-        private static uint[] Converter(byte[] input, int ibStart)
-        {
-            if (null == input)
-                throw new System.ArgumentNullException("input", "Unable convert null array to array of uInts");
-
-            uint[] result = new uint[16];
-
-            for (int i = 0; i < 16; i++)
-            {
-                result[i] = (uint)input[ibStart + i * 4];
-                result[i] += (uint)input[ibStart + i * 4 + 1] << 8;
-                result[i] += (uint)input[ibStart + i * 4 + 2] << 16;
-                result[i] += (uint)input[ibStart + i * 4 + 3] << 24;
-            }
-
-            return result;
         }
     }
 }

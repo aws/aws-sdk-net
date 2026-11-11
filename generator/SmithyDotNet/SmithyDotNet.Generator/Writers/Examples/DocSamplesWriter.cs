@@ -243,7 +243,9 @@ public sealed class DocSamplesWriter(GenerationContext context)
         BooleanShape when data.ValueKind is JsonValueKind.True or JsonValueKind.False => data.GetRawText(),
         // C2J prints a string-typed boolean or number unquoted, which is only valid C# when the string parses.
         BooleanShape when data.ValueKind == JsonValueKind.String && bool.TryParse(data.GetString(), out var flag) => flag ? "true" : "false",
-        IntegerShape or IntEnumShape or LongShape or DoubleShape => NumberLiteral(data) ?? "<data>",
+        IntegerShape or IntEnumShape or LongShape or DoubleShape or ByteShape or ShortShape => NumberLiteral(data) ?? "<data>",
+        // Parsed from text so the sample keeps every digit; a C# numeric literal could not hold the value.
+        BigIntegerShape or BigDecimalShape when ValueText(data) is { } text => $"{TypeMapper.MapNonNullableScalar(shape)}.Parse({CodeWriter.Literal(text)}, System.Globalization.CultureInfo.InvariantCulture)",
         // A fractional literal is a double in C#, which doesn't convert to float implicitly.
         FloatShape => NumberLiteral(data) is { } number ? (long.TryParse(number, out _) ? number : number + "f") : "<data>",
         TimestampShape => TimestampLiteral(data),
@@ -256,12 +258,7 @@ public sealed class DocSamplesWriter(GenerationContext context)
     // round-trip ("1.0" becomes "1").
     private static string? NumberLiteral(JsonElement data)
     {
-        var text = data.ValueKind switch
-        {
-            JsonValueKind.Number => data.GetRawText(),
-            JsonValueKind.String => data.GetString(),
-            _ => null,
-        };
+        var text = ValueText(data);
 
         if (long.TryParse(text, NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out var integer))
         {
@@ -270,6 +267,15 @@ public sealed class DocSamplesWriter(GenerationContext context)
 
         return double.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out var real) ? real.ToString(CultureInfo.InvariantCulture) : null;
     }
+
+    // The example value's text, as written: a number's raw JSON text or a string's contents (models write
+    // numbers both ways). Null for any other kind.
+    private static string? ValueText(JsonElement data) => data.ValueKind switch
+    {
+        JsonValueKind.Number => data.GetRawText(),
+        JsonValueKind.String => data.GetString(),
+        _ => null,
+    };
 
     // A date-time string, parsed as UTC so the value doesn't depend on the machine's zone, or a number of epoch
     // seconds (Smithy's two forms for a timestamp in example data), to millisecond precision. Some models put

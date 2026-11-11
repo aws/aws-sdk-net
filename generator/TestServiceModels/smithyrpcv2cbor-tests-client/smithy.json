@@ -560,7 +560,7 @@
                             "Content-Type": "application/cbor"
                         },
                         "params": {
-                            "value": 4.76837158203125E-6
+                            "value": 4.76837158203125e-06
                         },
                         "bodyMediaType": "application/cbor",
                         "appliesTo": "client"
@@ -600,7 +600,7 @@
                             "Content-Type": "application/cbor"
                         },
                         "params": {
-                            "datetime": 9.46845296123E8
+                            "datetime": 946845296.123
                         },
                         "bodyMediaType": "application/cbor",
                         "appliesTo": "client"
@@ -2431,7 +2431,7 @@
                     "target": "smithy.api#Boolean"
                 },
                 "byteValue": {
-                    "target": "smithy.api#Integer"
+                    "target": "smithy.api#Byte"
                 },
                 "doubleValue": {
                     "target": "smithy.api#Double"
@@ -2446,7 +2446,7 @@
                     "target": "smithy.api#Long"
                 },
                 "shortValue": {
-                    "target": "smithy.api#Integer"
+                    "target": "smithy.api#Short"
                 },
                 "stringValue": {
                     "target": "smithy.api#String"

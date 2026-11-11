@@ -415,7 +415,7 @@ namespace AWSSDK.UnitTests
 
                 // Read all data
                 byte[] readBuffer = new byte[100];
-                stream.Read(readBuffer, 0, 100);
+                _ = stream.Read(readBuffer, 0, 100);
 
                 // Act - Try to read more
                 int bytesRead = stream.Read(readBuffer, 0, 100);
@@ -604,7 +604,7 @@ namespace AWSSDK.UnitTests
 
                 // Read some data
                 byte[] readBuffer = new byte[300];
-                stream.Read(readBuffer, 0, 300);
+                _ = stream.Read(readBuffer, 0, 300);
 
                 // Assert - Position updated after read
                 Assert.AreEqual(300, stream.Position);

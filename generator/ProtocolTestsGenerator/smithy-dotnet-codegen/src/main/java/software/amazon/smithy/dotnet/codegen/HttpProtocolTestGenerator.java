@@ -1019,6 +1019,10 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 }
             } else if (inputShape.isFloatShape()) {
                 writer.writeInline("$LF", node.getValue());
+            } else if (inputShape.isBigIntegerShape() || inputShape.isBigDecimalShape()) {
+                // A C# numeric literal can't hold every value, so parse the exact text.
+                writer.writeInline("$L.Parse(\"$L\", System.Globalization.CultureInfo.InvariantCulture)",
+                        context.symbolProvider().toSymbol(inputShape), node.getValue());
             } else {
                 writer.writeInline("$L", node.getValue());
             }

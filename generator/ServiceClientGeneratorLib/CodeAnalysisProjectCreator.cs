@@ -18,6 +18,7 @@ namespace ServiceClientGenerator
             GeneratePropertyValueRules(codeAnalysisRoot, serviceConfiguration);
             GeneratePropertyValueAnalyzer(codeAnalysisRoot, serviceConfiguration);
             GenerateNullCollectionInitializerAnalyzer(codeAnalysisRoot, serviceConfiguration);
+            GenerateDeprecatedTargetFrameworkAnalyzer(codeAnalysisRoot, serviceConfiguration);
         }
 
         void SetupProjectFile(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
@@ -155,6 +156,13 @@ namespace ServiceClientGenerator
             var generator = new NullCollectionInitializerAnalyzer { Config = serviceConfiguration };
             var text = generator.TransformText();
             GeneratorDriver.WriteFile(codeAnalysisRoot, "Generated", "NullCollectionInitializerAnalyzer.cs", text);
+        }
+
+        private void GenerateDeprecatedTargetFrameworkAnalyzer(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
+        {
+            var generator = new DeprecatedTargetFrameworkAnalyzer { Config = serviceConfiguration };
+            var text = generator.TransformText();
+            GeneratorDriver.WriteFile(codeAnalysisRoot, "Generated", "DeprecatedTargetFrameworkAnalyzer.cs", text);
         }
 
         private IList<string> GetEmbeddedResources(string codeAnalysisRoot)

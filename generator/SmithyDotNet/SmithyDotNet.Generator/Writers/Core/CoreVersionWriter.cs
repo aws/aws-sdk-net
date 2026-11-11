@@ -80,10 +80,15 @@ public sealed class CoreVersionWriter(SdkVersionManifest manifest)
                 writer.WriteLine("""<icon>images\AWSLogo.png</icon>""");
                 writer.OpenXmlBlock("dependencies", () =>
                 {
+                    var extensions = SdkExtension.CoreDependencies.Select(extension => (extension.PackageId, Range: manifest.GetExtensionRange(extension.Name))).ToList();
                     foreach (var platform in TargetPlatforms.Platforms)
                     {
                         writer.WriteXmlBlock($"""<group targetFramework="{platform.Tfm}">""", "group", () =>
                         {
+                            foreach (var (packageId, range) in extensions)
+                            {
+                                writer.WriteLine($"""<dependency id="{packageId}" version="{range}" />""");
+                            }
                             foreach (var dependency in CoreNuspecDependencies.For(platform.Tfm))
                             {
                                 writer.WriteLine($"""<dependency id="{dependency.Id}" version="{dependency.Version}" />""");

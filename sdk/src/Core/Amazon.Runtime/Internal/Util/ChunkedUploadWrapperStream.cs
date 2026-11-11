@@ -40,14 +40,19 @@ namespace Amazon.Runtime.Internal.Util
         private const int NEWLINE_LENGTH = 2;
         private const int HEADER_ROW_PADDING_LENGTH = 3; // additional length for each row of a trailing header, 1 for ':' between the key and value, plus 2 for CRLF
 
-        private const string CHUNK_STRING_TO_SIGN_PREFIX = "AWS4-HMAC-SHA256-PAYLOAD";
+        private const string V4_CHUNK_STRING_TO_SIGN_PREFIX = "AWS4-HMAC-SHA256-PAYLOAD";
+        private const string V4A_CHUNK_STRING_TO_SIGN_PREFIX = "AWS4-ECDSA-P256-SHA256-PAYLOAD";
         private const string CHUNK_SIGNATURE_HEADER = ";chunk-signature=";
         public const int V4_SIGNATURE_LENGTH = 64;
         public const int V4A_SIGNATURE_LENGTH = 144;
         private const string TRAILING_HEADER_SIGNATURE_KEY = "x-amz-trailer-signature";
-        private const string TRAILING_HEADER_STRING_TO_SIGN_PREFIX = "AWS4-HMAC-SHA256-TRAILER";
+        private const string V4_TRAILING_HEADER_STRING_TO_SIGN_PREFIX = "AWS4-HMAC-SHA256-TRAILER";
+        private const string V4A_TRAILING_HEADER_STRING_TO_SIGN_PREFIX = "AWS4-ECDSA-P256-SHA256-TRAILER";
 
-        private byte[] _inputBuffer;
+        private readonly byte[] _inputBuffer;
+
+        // SigV4 signing key, captured once since AWS4SigningResult.GetSigningKey() returns a copy.
+        private readonly byte[] _signingKey;
 
         private readonly byte[] _outputBuffer;
         private int _outputBufferPos = -1;
@@ -55,6 +60,9 @@ namespace Amazon.Runtime.Internal.Util
 
         private readonly int _wrappedStreamBufferSize;
         private bool _wrappedStreamConsumed;
+
+        // Interim buffer for the ReadAndCopy strategy, reused across chunks.
+        private readonly byte[] _readAndCopyBuffer;
 
         private CoreChecksumAlgorithm _trailingChecksum;
         private HashAlgorithm _hashAlgorithm;
@@ -93,17 +101,15 @@ namespace Amazon.Runtime.Internal.Util
             {
                 throw new AmazonClientException($"{nameof(ChunkedUploadWrapperStream)} was initialized without a SigV4 or SigV4a signing result.");
             }
-            else if (headerSigningResult is AWS4aSigningResult)
-            {
-                Sigv4aSigner = new AWS4aSignerCRTWrapper();
-            }
 
             HeaderSigningResult = headerSigningResult;
             PreviousChunkSignature = headerSigningResult?.Signature;
+            if (headerSigningResult is AWS4SigningResult v4SigningResult)
+            {
+                _signingKey = v4SigningResult.GetSigningKey();
+            }
 
             _wrappedStreamBufferSize = wrappedStreamBufferSize;
-            _inputBuffer = new byte[DefaultChunkSize];
-            _outputBuffer = new byte[CalculateChunkHeaderLength(DefaultChunkSize, HeaderSigningResult is AWS4aSigningResult ? V4A_SIGNATURE_LENGTH : V4_SIGNATURE_LENGTH)]; // header+data
 
             // if the wrapped stream implements encryption, switch to a read-and-copy
             // strategy for filling the chunk buffer
@@ -119,6 +125,37 @@ namespace Amazon.Runtime.Internal.Util
 
             if (encryptionStream != null)
                 _readStrategy = ReadStrategy.ReadAndCopy;
+
+            // A payload smaller than one chunk is sent as a single chunk either way, so the chunk buffers only need
+            // to hold that payload. This avoids ~160KB of per-request allocations for small uploads. The chunk
+            // boundaries, and therefore the signatures and the precomputed Content-Length, are unchanged.
+            int chunkBufferSize = GetChunkBufferSize(stream, _readStrategy);
+            _inputBuffer = new byte[chunkBufferSize];
+            _outputBuffer = new byte[CalculateChunkHeaderLength(chunkBufferSize, HeaderSigningResult is AWS4aSigningResult ? V4A_SIGNATURE_LENGTH : V4_SIGNATURE_LENGTH)]; // header+data
+
+            if (_readStrategy == ReadStrategy.ReadAndCopy)
+            {
+                // reads are clamped to the chunk buffer, so the interim buffer never needs to be larger than it
+                _readAndCopyBuffer = new byte[Math.Min(wrappedStreamBufferSize, DefaultChunkSize)];
+            }
+        }
+
+        private static int GetChunkBufferSize(Stream stream, ReadStrategy readStrategy)
+        {
+            // Encryption streams may change the payload length, so only plain streams of known length are sized down.
+            if (readStrategy != ReadStrategy.ReadDirect || stream == null)
+                return DefaultChunkSize;
+            try
+            {
+                long length = stream.Length;
+                if (length >= 0 && length < DefaultChunkSize)
+                    return (int)Math.Max(length, 1);
+            }
+            catch (NotSupportedException)
+            {
+                // Unknown length: use full-size chunks.
+            }
+            return DefaultChunkSize;
         }
 
         /// <summary>
@@ -312,10 +349,12 @@ namespace Amazon.Runtime.Internal.Util
             }
             else
             {
-                var readBuffer = new byte[_wrappedStreamBufferSize];
+                var readBuffer = _readAndCopyBuffer;
                 while (inputBufferPos < _inputBuffer.Length && !_wrappedStreamConsumed)
                 {
-                    var bytesRead = await BaseStream.ReadAsync(readBuffer, 0, _wrappedStreamBufferSize, cancellationToken).ConfigureAwait(false);
+                    // never read more than the chunk buffer can still hold
+                    var bytesToRead = Math.Min(_wrappedStreamBufferSize, _inputBuffer.Length - inputBufferPos);
+                    var bytesRead = await BaseStream.ReadAsync(readBuffer, 0, bytesToRead, cancellationToken).ConfigureAwait(false);
                     if (bytesRead == 0)
                         _wrappedStreamConsumed = true;
                     else
@@ -335,11 +374,6 @@ namespace Amazon.Runtime.Internal.Util
         private AWSSigningResultBase HeaderSigningResult { get; set; }
 
         /// <summary>
-        /// SigV4a signer
-        /// </summary>
-        private AWS4aSignerCRTWrapper Sigv4aSigner { get; set; }
-
-        /// <summary>
         /// Computed signature of the chunk prior to the one in-flight in hex,
         /// for either SigV4 or SigV4a
         /// </summary>
@@ -353,84 +387,55 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="dataLen"></param>
         private void ConstructOutputBufferChunk(int dataLen)
         {
-            // if the input wasn't sufficient to fill the buffer, size it
-            // down to make the subseqent hashing/computations easier since
-            // they don't take any length arguments
-            if (dataLen > 0 && dataLen < _inputBuffer.Length)
-            {
-                var temp = new byte[dataLen];
-                Buffer.BlockCopy(_inputBuffer, 0, temp, 0, dataLen);
-                _inputBuffer = temp;
-            }
-
             var isFinalDataChunk = dataLen == 0;
-            var chunkHeader = new StringBuilder();
 
-            // variable-length size of the embedded chunk data in hex
-            chunkHeader.Append(dataLen.ToString("X", CultureInfo.InvariantCulture));
+            var prefix = HeaderSigningResult is AWS4aSigningResult ? V4A_CHUNK_STRING_TO_SIGN_PREFIX : V4_CHUNK_STRING_TO_SIGN_PREFIX;
+            var chunkStringToSign = BuildChunkedStringToSign(prefix, HeaderSigningResult.ISO8601DateTime,
+                                                                HeaderSigningResult.Scope, PreviousChunkSignature, _inputBuffer, 0, dataLen);
 
             string chunkSignature = "";
             if (HeaderSigningResult is AWS4aSigningResult v4aHeaderSigningResult)
             {
-                if (isFinalDataChunk)  // _inputBuffer still contains previous chunk, but this is the final 0 content chunk so sign null
-                {
-                    chunkSignature = Sigv4aSigner.SignChunk(null, PreviousChunkSignature, v4aHeaderSigningResult);
-                }
-                else
-                {
-                    chunkSignature = Sigv4aSigner.SignChunk(new MemoryStream(_inputBuffer), PreviousChunkSignature, v4aHeaderSigningResult);
-                }
+                chunkSignature = AWSSDKUtils.ToHex(AWS4aSigner.SignBlob(v4aHeaderSigningResult.Credentials, chunkStringToSign), true);
             }
-            else if (HeaderSigningResult is AWS4SigningResult v4HeaderSingingResult) // SigV4
+            else if (HeaderSigningResult is AWS4SigningResult) // SigV4
             {
-                var chunkStringToSign = BuildChunkedStringToSign(CHUNK_STRING_TO_SIGN_PREFIX, v4HeaderSingingResult.ISO8601DateTime,
-                                                                    v4HeaderSingingResult.Scope, PreviousChunkSignature, dataLen, _inputBuffer);
-
-                chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(v4HeaderSingingResult.GetSigningKey(), chunkStringToSign), true);
+                chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(_signingKey, chunkStringToSign), true);
             }
 
             // For Sigv4a the chunk signature must be padded when being appended to the chunk metadata,
             // but not when being used as the input for the next chunk
             PreviousChunkSignature = chunkSignature;
-            if (HeaderSigningResult is AWS4aSigningResult)
-            {
-                chunkHeader.Append(CHUNK_SIGNATURE_HEADER + chunkSignature.PadRight(V4A_SIGNATURE_LENGTH, '*'));
-            }
-            else // SigV4
-            {
-                chunkHeader.Append(CHUNK_SIGNATURE_HEADER + chunkSignature);
-            }
+            var paddedChunkSignature = HeaderSigningResult is AWS4aSigningResult
+                ? chunkSignature.PadRight(V4A_SIGNATURE_LENGTH, '*')
+                : chunkSignature;
             // If we're sending a trailing checksum, update the rolling checksum with this chunk's raw data
             if (_hashAlgorithm != null)
             {
                 _hashAlgorithm.TransformBlock(_inputBuffer, 0, dataLen, _inputBuffer, 0);
             }
 
-            chunkHeader.Append(STREAM_NEWLINE);
+            // "<hex size>;chunk-signature=<signature>\r\n": all ASCII, so it is encoded straight into the output buffer
+            var chunkHeader = dataLen.ToString("X", CultureInfo.InvariantCulture) + CHUNK_SIGNATURE_HEADER + paddedChunkSignature + STREAM_NEWLINE;
 
             try
             {
-                var header = Encoding.UTF8.GetBytes(chunkHeader.ToString());
-                var trailer = ArrayEx.Empty<byte>();
-
-                // Append a trailing CRLF unless this is the final data chunk and there are trailing headers 
-                if (!(isFinalDataChunk && _trailingHeaders?.Count > 0))
-                {
-                    trailer = Encoding.UTF8.GetBytes(STREAM_NEWLINE);
-                }
-
-                var writePos = 0;
-                Buffer.BlockCopy(header, 0, _outputBuffer, writePos, header.Length);
-                writePos += header.Length;
+                var writePos = Encoding.UTF8.GetBytes(chunkHeader, 0, chunkHeader.Length, _outputBuffer, 0);
                 if (dataLen > 0)
                 {
                     Buffer.BlockCopy(_inputBuffer, 0, _outputBuffer, writePos, dataLen);
                     writePos += dataLen;
                 }
-                Buffer.BlockCopy(trailer, 0, _outputBuffer, writePos, trailer.Length);
+
+                // Append a trailing CRLF unless this is the final data chunk and there are trailing headers
+                if (!(isFinalDataChunk && _trailingHeaders?.Count > 0))
+                {
+                    _outputBuffer[writePos++] = (byte)'\r';
+                    _outputBuffer[writePos++] = (byte)'\n';
+                }
 
                 _outputBufferPos = 0;
-                _outputBufferDataLen = header.Length + dataLen + trailer.Length;
+                _outputBufferDataLen = writePos;
             }
             catch (Exception e)
             {
@@ -462,24 +467,26 @@ namespace Amazon.Runtime.Internal.Util
                 _trailingHeaders[ChecksumUtils.GetChecksumHeaderKey(_trailingChecksum)] = _cachedChecksum.Value;
             }
 
+            var sortedTrailingHeaders = AWS4Signer.SortAndPruneHeaders(_trailingHeaders);
+            var canonicalizedTrailingHeaders = AWS4Signer.CanonicalizeHeaders(sortedTrailingHeaders);
+
+            var prefix = HeaderSigningResult is AWS4aSigningResult ? V4A_TRAILING_HEADER_STRING_TO_SIGN_PREFIX : V4_TRAILING_HEADER_STRING_TO_SIGN_PREFIX;
+            var chunkStringToSign =
+                prefix + "\n" +
+                HeaderSigningResult.ISO8601DateTime + "\n" +
+                HeaderSigningResult.Scope + "\n" +
+                PreviousChunkSignature + "\n" +
+                AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(canonicalizedTrailingHeaders), true);
+
             string chunkSignature;
             if (HeaderSigningResult is AWS4SigningResult)
             {
-                var sortedTrailingHeaders = AWS4Signer.SortAndPruneHeaders(_trailingHeaders);
-                var canonicalizedTrailingHeaders = AWS4Signer.CanonicalizeHeaders(sortedTrailingHeaders);
-
-                var chunkStringToSign =
-                    TRAILING_HEADER_STRING_TO_SIGN_PREFIX + "\n" +
-                    HeaderSigningResult.ISO8601DateTime + "\n" +
-                    HeaderSigningResult.Scope + "\n" +
-                    PreviousChunkSignature + "\n" +
-                    AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(canonicalizedTrailingHeaders), true);
-
-                chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(((AWS4SigningResult)HeaderSigningResult).GetSigningKey(), chunkStringToSign), true);
+                chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(_signingKey, chunkStringToSign), true);
             }
             else // SigV4a
             {
-                chunkSignature = Sigv4aSigner.SignTrailingHeaderChunk(_trailingHeaders, PreviousChunkSignature, (AWS4aSigningResult)HeaderSigningResult).PadRight(V4A_SIGNATURE_LENGTH, '*');
+                var aws4aResult = (AWS4aSigningResult)HeaderSigningResult;
+                chunkSignature = AWSSDKUtils.ToHex(AWS4aSigner.SignBlob(aws4aResult.Credentials, chunkStringToSign), true).PadRight(V4A_SIGNATURE_LENGTH, '*');
             }
 
             var chunk = new StringBuilder();
@@ -636,13 +643,24 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>The string to sign for this chunk</returns>
         public static string BuildChunkedStringToSign(string prefix, string dateTime, string scope, string previousSignature, int dataLength, byte[] inputBuffer)
         {
+            // The whole buffer is hashed when there is data, matching the historical behavior of this overload.
+            return BuildChunkedStringToSign(prefix, dateTime, scope, previousSignature, inputBuffer, 0, dataLength > 0 ? inputBuffer.Length : 0);
+        }
+
+        /// <summary>
+        /// Same as <see cref="BuildChunkedStringToSign(string, string, string, string, int, byte[])"/> but hashes only the
+        /// <paramref name="count"/> bytes of chunk data starting at <paramref name="offset"/>, so a partially filled
+        /// chunk buffer can be signed without copying it.
+        /// </summary>
+        internal static string BuildChunkedStringToSign(string prefix, string dateTime, string scope, string previousSignature, byte[] inputBuffer, int offset, int count)
+        {
             return prefix + "\n" +
                    dateTime + "\n" +
                    scope + "\n" +
                    previousSignature + "\n" +
-                   AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(""), true) + "\n" +
-                   (dataLength > 0
-                       ? AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(inputBuffer), true)
+                   AWS4Signer.EmptyBodySha256 + "\n" +
+                   (count > 0
+                       ? AWSSDKUtils.ToHex(CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(inputBuffer, offset, count), true)
                        : AWS4Signer.EmptyBodySha256);
         }
 
@@ -691,10 +709,12 @@ namespace Amazon.Runtime.Internal.Util
             }
             else
             {
-                var readBuffer = new byte[_wrappedStreamBufferSize];
+                var readBuffer = _readAndCopyBuffer;
                 while (inputBufferPos < _inputBuffer.Length && !_wrappedStreamConsumed)
                 {
-                    var bytesRead = BaseStream.Read(readBuffer, 0, _wrappedStreamBufferSize);
+                    // never read more than the chunk buffer can still hold
+                    var bytesToRead = Math.Min(_wrappedStreamBufferSize, _inputBuffer.Length - inputBufferPos);
+                    var bytesRead = BaseStream.Read(readBuffer, 0, bytesToRead);
                     if (bytesRead == 0)
                         _wrappedStreamConsumed = true;
                     else

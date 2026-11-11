@@ -31,23 +31,15 @@ namespace Amazon.Runtime.Internal.Util
     {
         private const string _checksumHeaderPrefix = "x-amz-checksum-";
         private readonly static List<CoreChecksumAlgorithm> _responseChecksumsInPriorityOrder =
-            // TODO: Disabling CRT algorithms since we're still seeing issues with native dependencies in customer environments.
-            //ChecksumCRTWrapper.IsCrtAvailable() ?
-            //new List<CoreChecksumAlgorithm>
-            //{
-            //    CoreChecksumAlgorithm.CRC64NVME,
-            //    CoreChecksumAlgorithm.CRC32C,
-            //    CoreChecksumAlgorithm.CRC32,
-            //    CoreChecksumAlgorithm.SHA1,
-            //    CoreChecksumAlgorithm.SHA256,
-            //} :
             new List<CoreChecksumAlgorithm>
             {
+                CoreChecksumAlgorithm.CRC64NVME,
+                CoreChecksumAlgorithm.CRC32C,
                 CoreChecksumAlgorithm.CRC32,
                 CoreChecksumAlgorithm.SHA1,
                 CoreChecksumAlgorithm.SHA256,
-                CoreChecksumAlgorithm.SHA512
             };
+
         private static HashSet<CoreChecksumAlgorithm> _unsupportedChecksumAlgorithms;
         public static HashSet<CoreChecksumAlgorithm> UnsupportedChecksumAlgorithms
         {

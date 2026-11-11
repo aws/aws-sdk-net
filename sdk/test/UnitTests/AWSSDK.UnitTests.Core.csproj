@@ -34,9 +34,6 @@
          sdk/Directory.Build.props (the latter conditioned on the .NETFramework target identifier). -->
     <NoWarn>CS1591,CS0612,CS0618</NoWarn>
   </PropertyGroup>
-  <PropertyGroup>
-    <LangVersion>11.0</LangVersion>
-  </PropertyGroup>
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>

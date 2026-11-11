@@ -17,8 +17,6 @@ internal static class TraitHelpers
             ? value.GetString()
             : null;
 
-    internal static void SetStringTrait(Shape shape, string traitId, string value) => shape.Traits[traitId] = JsonSerializer.SerializeToElement(value);
-
     /// <summary>
     /// Looks up a trait by ID on a shape and deserializes its value into <typeparamref name="T"/>,
     /// or returns <c>null</c> if the trait is absent.
@@ -27,4 +25,8 @@ internal static class TraitHelpers
         shape.Traits.TryGetValue(traitId, out var value)
             ? value.Deserialize<T>()
             : null;
+
+    /// <summary>Sets a string-valued trait, replacing any existing value.</summary>
+    internal static void SetStringTrait(Shape shape, string traitId, string value) =>
+        shape.Traits[traitId] = JsonSerializer.SerializeToElement(value);
 }

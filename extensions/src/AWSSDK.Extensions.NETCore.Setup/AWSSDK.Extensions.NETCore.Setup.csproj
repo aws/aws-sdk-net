@@ -33,18 +33,24 @@
     </Otherwise>
   </Choose>
 
-  <ItemGroup>
+  <!-- Microsoft.Extensions.*.Abstractions are part of the shared framework on .NET 11+ and are
+       pruned automatically (NU1510). Only reference them explicitly on frameworks below .NET 11
+       (net472, netstandard2.0, net8.0, net10.0), where they are not auto-provided. -->
+  <ItemGroup Condition="!($([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETCoreApp' And $([MSBuild]::VersionGreaterThanOrEquals($([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')), '11.0')))">
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.0.0" />
   </ItemGroup>
   
-  <!-- Once we drop .NET Core 3.1 we can remove this hardcoding of the moniker. But the VersionGreaterThanOrEquals doesn't work for the older netcoreapp monikers.-->
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' Or '$(TargetFramework)' == 'netcoreapp3.1'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.0.0" />
   </ItemGroup>
 
-  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETCoreApp' And $([MSBuild]::VersionGreaterThanOrEquals($([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')), '8.0'))">
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+  <!-- DependencyInjection.Abstractions is auto-provided (pruned) on .NET 11+ (NU1510), so it is
+       referenced explicitly only on .NET 8.0 through .NET 10.x. The package version is derived
+       from the target framework's major version (net8.0 -> 8.0.0, net10.0 -> 10.0.0) so no new
+       hardcoded version is needed when the SDK adds another .NET target in this range. -->
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETCoreApp' And $([MSBuild]::VersionGreaterThanOrEquals($([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')), '8.0')) And !$([MSBuild]::VersionGreaterThanOrEquals($([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')), '11.0'))">
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$([System.Version]::Parse($([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)'))).Major).0.0" />
   </ItemGroup>
 
   <ItemGroup>
