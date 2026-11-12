@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "ACMPCA",
+            "type": "patch",
+            "changeLogMessages": [
+                "ACMPCA is now generated from its Smithy model. There are no changes to the public API."
+            ]
+        }
+    ]
+}

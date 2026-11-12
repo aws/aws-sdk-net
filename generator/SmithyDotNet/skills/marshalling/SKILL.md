@@ -26,8 +26,7 @@ An operation output already named `{Operation}Response` that a member also targe
 No C2J service has this shape, so there is no parity target.
 
 A structure named in the `generateUnmarshaller` customization also gets a `{Shape}Unmarshaller`,
-though only requests use it (mobileanalytics `Event`, `Session`). Its nested structures need their own
-entries.
+though only requests use it. No current service sets it. Its nested structures need their own entries.
 
 Structure (un)marshaller class names come only from `GenerationContext.StructureMarshallerName` /
 `StructureUnmarshallerName`. `TypeDescriptor.MarshallerName` / `UnmarshallerName` carry them for a

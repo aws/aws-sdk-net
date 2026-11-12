@@ -650,11 +650,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_IMAGEBUILDER"
   },
   {
-    "service_id": "ImportExport",
-    "services_section_name": "importexport",
-    "service_envvar_name": "AWS_ENDPOINT_URL_IMPORTEXPORT"
-  },
-  {
     "service_id": "Inspector",
     "services_section_name": "inspector",
     "service_envvar_name": "AWS_ENDPOINT_URL_INSPECTOR"
