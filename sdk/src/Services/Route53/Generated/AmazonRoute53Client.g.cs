@@ -802,6 +802,20 @@ namespace Amazon.Route53
         /// </para>
         ///  </note> 
         /// <para>
+        ///  <b>Protected Resource Record Sets</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If a resource record set protection exists for a name and type, Route 53 rejects any
+        /// change in the change batch that creates, updates, or deletes a resource record set
+        /// with that name and type. Because change batches are transactional, Route 53 rejects
+        /// the entire request and returns an <c>InvalidChangeBatch</c> error. Route 53 identifies
+        /// each protected resource record set in the error message and includes the protection's
+        /// comment, if any. To make the change, first delete the protection by using <c>DeleteResourceRecordSetProtections</c>.
+        /// To see which resource record sets are protected, use <c>ListResourceRecordSetProtections</c>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Traffic Flow</b> 
         /// </para>
         ///  
@@ -885,6 +899,13 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidChangeBatchException">
         /// This exception contains a list of messages that might contain one or more error messages.
         /// Each error message indicates one error in the change batch.
+        /// 
+        ///  
+        /// <para>
+        /// Route 53 also returns this error when the change batch creates, updates, or deletes
+        /// a resource record set whose name and type have a resource record set protection. To
+        /// make the change, first delete the protection by using <c>DeleteResourceRecordSetProtections</c>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -965,6 +986,20 @@ namespace Amazon.Route53
         /// batch, Route 53 returns an <c>InvalidChangeBatch</c> error.
         /// </para>
         ///  </note> 
+        /// <para>
+        ///  <b>Protected Resource Record Sets</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If a resource record set protection exists for a name and type, Route 53 rejects any
+        /// change in the change batch that creates, updates, or deletes a resource record set
+        /// with that name and type. Because change batches are transactional, Route 53 rejects
+        /// the entire request and returns an <c>InvalidChangeBatch</c> error. Route 53 identifies
+        /// each protected resource record set in the error message and includes the protection's
+        /// comment, if any. To make the change, first delete the protection by using <c>DeleteResourceRecordSetProtections</c>.
+        /// To see which resource record sets are protected, use <c>ListResourceRecordSetProtections</c>.
+        /// </para>
+        ///  
         /// <para>
         ///  <b>Traffic Flow</b> 
         /// </para>
@@ -1052,6 +1087,13 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidChangeBatchException">
         /// This exception contains a list of messages that might contain one or more error messages.
         /// Each error message indicates one error in the change batch.
+        /// 
+        ///  
+        /// <para>
+        /// Route 53 also returns this error when the change batch creates, updates, or deletes
+        /// a resource record set whose name and type have a resource record set protection. To
+        /// make the change, first delete the protection by using <c>DeleteResourceRecordSetProtections</c>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -2423,6 +2465,194 @@ namespace Amazon.Route53
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates one or more resource record set protections in a hosted zone. A protection
+        /// applies to every resource record set in the hosted zone that has the specified name
+        /// and type. While a protection exists, Route 53 rejects any <c>ChangeResourceRecordSets</c>
+        /// request that creates, updates, or deletes a resource record set with that name and
+        /// type, and returns an <c>InvalidChangeBatch</c> error. To change a protected resource
+        /// record set, first delete its protection by using <c>DeleteResourceRecordSetProtections</c>.
+        /// 
+        ///  
+        /// <para>
+        /// You can create a protection for a name and type that doesn't have a resource record
+        /// set yet. In that case, Route 53 also rejects requests to create that resource record
+        /// set.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't delete a hosted zone that has protections. To delete the hosted zone, first
+        /// delete all of its protections by using <c>DeleteResourceRecordSetProtections</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The request is atomic. Route 53 either creates all of the protections in the request
+        /// or none of them. If one or more entries fail, the response is an error that lists
+        /// the failing entries and the reason that each one failed. Route 53 checks for invalid
+        /// entries before it checks for existing protections, so if any entry is invalid, the
+        /// error lists only the invalid entries.
+        /// </para>
+        ///  
+        /// <para>
+        /// The error that Route 53 returns depends on the failures:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If every entry already has a protection, Route 53 returns a <c>ProtectionAlreadyExists</c>
+        /// error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For any other combination of failures, Route 53 returns an <c>InvalidResourceRecordSetProtectionBatch</c>
+        /// error.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can specify up to 100 protections in one request. The number of protections that
+        /// you can have in a hosted zone is limited by a quota. If the request would exceed that
+        /// quota, Route 53 returns a <c>LimitsExceeded</c> error.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceRecordSetProtections service method.</param>
+        /// <returns>The response from the CreateResourceRecordSetProtections service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidResourceRecordSetProtectionBatchException">
+        /// One or more entries in the request couldn't be processed, so Route 53 didn't create
+        /// or delete any of the protections in the request. The <c>Errors</c> element lists the
+        /// failing entries and the reason that each one failed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.ProtectionAlreadyExistsException">
+        /// A protection already exists for every name and type in the request, so Route 53 didn't
+        /// create any protections. The <c>Errors</c> element lists each entry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateResourceRecordSetProtections">REST API Reference for CreateResourceRecordSetProtections Operation</seealso>
+        public virtual CreateResourceRecordSetProtectionsResponse CreateResourceRecordSetProtections(CreateResourceRecordSetProtectionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateResourceRecordSetProtectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceRecordSetProtectionsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResourceRecordSetProtectionsResponse>(request, options);
+        }
+#else
+        internal virtual CreateResourceRecordSetProtectionsResponse CreateResourceRecordSetProtections(CreateResourceRecordSetProtectionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateResourceRecordSetProtectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceRecordSetProtectionsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResourceRecordSetProtectionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates one or more resource record set protections in a hosted zone. A protection
+        /// applies to every resource record set in the hosted zone that has the specified name
+        /// and type. While a protection exists, Route 53 rejects any <c>ChangeResourceRecordSets</c>
+        /// request that creates, updates, or deletes a resource record set with that name and
+        /// type, and returns an <c>InvalidChangeBatch</c> error. To change a protected resource
+        /// record set, first delete its protection by using <c>DeleteResourceRecordSetProtections</c>.
+        /// 
+        ///  
+        /// <para>
+        /// You can create a protection for a name and type that doesn't have a resource record
+        /// set yet. In that case, Route 53 also rejects requests to create that resource record
+        /// set.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't delete a hosted zone that has protections. To delete the hosted zone, first
+        /// delete all of its protections by using <c>DeleteResourceRecordSetProtections</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The request is atomic. Route 53 either creates all of the protections in the request
+        /// or none of them. If one or more entries fail, the response is an error that lists
+        /// the failing entries and the reason that each one failed. Route 53 checks for invalid
+        /// entries before it checks for existing protections, so if any entry is invalid, the
+        /// error lists only the invalid entries.
+        /// </para>
+        ///  
+        /// <para>
+        /// The error that Route 53 returns depends on the failures:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If every entry already has a protection, Route 53 returns a <c>ProtectionAlreadyExists</c>
+        /// error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For any other combination of failures, Route 53 returns an <c>InvalidResourceRecordSetProtectionBatch</c>
+        /// error.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can specify up to 100 protections in one request. The number of protections that
+        /// you can have in a hosted zone is limited by a quota. If the request would exceed that
+        /// quota, Route 53 returns a <c>LimitsExceeded</c> error.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceRecordSetProtections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateResourceRecordSetProtections service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidResourceRecordSetProtectionBatchException">
+        /// One or more entries in the request couldn't be processed, so Route 53 didn't create
+        /// or delete any of the protections in the request. The <c>Errors</c> element lists the
+        /// failing entries and the reason that each one failed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.ProtectionAlreadyExistsException">
+        /// A protection already exists for every name and type in the request, so Route 53 didn't
+        /// create any protections. The <c>Errors</c> element lists each entry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateResourceRecordSetProtections">REST API Reference for CreateResourceRecordSetProtections Operation</seealso>
+        public virtual Task<CreateResourceRecordSetProtectionsResponse> CreateResourceRecordSetProtectionsAsync(CreateResourceRecordSetProtectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateResourceRecordSetProtectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceRecordSetProtectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateResourceRecordSetProtectionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a delegation set (a group of four name servers) that can be reused by multiple
         /// hosted zones that were created by the same Amazon Web Services account. 
         /// 
@@ -3441,6 +3671,12 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
+        /// You also can't delete a hosted zone that has resource record set protections. To see
+        /// the protections in a hosted zone, use <c>ListResourceRecordSetProtections</c>. To
+        /// delete them, use <c>DeleteResourceRecordSetProtections</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// To verify that the hosted zone has been deleted, do one of the following:
         /// </para>
         ///  <ul> <li> 
@@ -3539,6 +3775,12 @@ namespace Amazon.Route53
         /// to delete a hosted zone with additional records or DNSSEC enabled returns a <c>HostedZoneNotEmpty</c>
         /// error. For information about deleting records, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You also can't delete a hosted zone that has resource record set protections. To see
+        /// the protections in a hosted zone, use <c>ListResourceRecordSetProtections</c>. To
+        /// delete them, use <c>DeleteResourceRecordSetProtections</c>.
         /// </para>
         ///  
         /// <para>
@@ -3775,6 +4017,114 @@ namespace Amazon.Route53
             options.ResponseUnmarshaller = DeleteQueryLoggingConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteQueryLoggingConfigResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes one or more resource record set protections from a hosted zone. After a protection
+        /// is deleted, you can change the resource record sets that have that name and type by
+        /// using <c>ChangeResourceRecordSets</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The request is atomic. Route 53 either deletes all of the protections in the request
+        /// or none of them. If one or more entries fail, for example because no protection exists
+        /// for the specified name and type, Route 53 returns an <c>InvalidResourceRecordSetProtectionBatch</c>
+        /// error that lists the failing entries and the reason that each one failed.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify up to 100 protections in one request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceRecordSetProtections service method.</param>
+        /// <returns>The response from the DeleteResourceRecordSetProtections service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidResourceRecordSetProtectionBatchException">
+        /// One or more entries in the request couldn't be processed, so Route 53 didn't create
+        /// or delete any of the protections in the request. The <c>Errors</c> element lists the
+        /// failing entries and the reason that each one failed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteResourceRecordSetProtections">REST API Reference for DeleteResourceRecordSetProtections Operation</seealso>
+        public virtual DeleteResourceRecordSetProtectionsResponse DeleteResourceRecordSetProtections(DeleteResourceRecordSetProtectionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResourceRecordSetProtectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceRecordSetProtectionsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceRecordSetProtectionsResponse>(request, options);
+        }
+#else
+        internal virtual DeleteResourceRecordSetProtectionsResponse DeleteResourceRecordSetProtections(DeleteResourceRecordSetProtectionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResourceRecordSetProtectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceRecordSetProtectionsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceRecordSetProtectionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes one or more resource record set protections from a hosted zone. After a protection
+        /// is deleted, you can change the resource record sets that have that name and type by
+        /// using <c>ChangeResourceRecordSets</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The request is atomic. Route 53 either deletes all of the protections in the request
+        /// or none of them. If one or more entries fail, for example because no protection exists
+        /// for the specified name and type, Route 53 returns an <c>InvalidResourceRecordSetProtectionBatch</c>
+        /// error that lists the failing entries and the reason that each one failed.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify up to 100 protections in one request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceRecordSetProtections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteResourceRecordSetProtections service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidResourceRecordSetProtectionBatchException">
+        /// One or more entries in the request couldn't be processed, so Route 53 didn't create
+        /// or delete any of the protections in the request. The <c>Errors</c> element lists the
+        /// failing entries and the reason that each one failed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteResourceRecordSetProtections">REST API Reference for DeleteResourceRecordSetProtections Operation</seealso>
+        public virtual Task<DeleteResourceRecordSetProtectionsResponse> DeleteResourceRecordSetProtectionsAsync(DeleteResourceRecordSetProtectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResourceRecordSetProtectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceRecordSetProtectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourceRecordSetProtectionsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -6889,6 +7239,84 @@ namespace Amazon.Route53
             options.ResponseUnmarshaller = ListQueryLoggingConfigsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListQueryLoggingConfigsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the resource record set protections in a hosted zone. We recommend using pagination
+        /// to ensure that the operation returns quickly and successfully.
+        /// 
+        ///  
+        /// <para>
+        /// If the response includes a <c>NextToken</c> element, there are more protections to
+        /// list. To get the next page of results, submit another request and specify the value
+        /// of <c>NextToken</c> in the <c>NextToken</c> parameter.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceRecordSetProtections service method.</param>
+        /// <returns>The response from the ListResourceRecordSetProtections service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidPaginationTokenException">
+        /// The value that you specified to get the second or subsequent page of results is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSetProtections">REST API Reference for ListResourceRecordSetProtections Operation</seealso>
+        public virtual ListResourceRecordSetProtectionsResponse ListResourceRecordSetProtections(ListResourceRecordSetProtectionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListResourceRecordSetProtectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceRecordSetProtectionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceRecordSetProtectionsResponse>(request, options);
+        }
+#else
+        internal virtual ListResourceRecordSetProtectionsResponse ListResourceRecordSetProtections(ListResourceRecordSetProtectionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListResourceRecordSetProtectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceRecordSetProtectionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceRecordSetProtectionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the resource record set protections in a hosted zone. We recommend using pagination
+        /// to ensure that the operation returns quickly and successfully.
+        /// 
+        ///  
+        /// <para>
+        /// If the response includes a <c>NextToken</c> element, there are more protections to
+        /// list. To get the next page of results, submit another request and specify the value
+        /// of <c>NextToken</c> in the <c>NextToken</c> parameter.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceRecordSetProtections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListResourceRecordSetProtections service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidPaginationTokenException">
+        /// The value that you specified to get the second or subsequent page of results is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSetProtections">REST API Reference for ListResourceRecordSetProtections Operation</seealso>
+        public virtual Task<ListResourceRecordSetProtectionsResponse> ListResourceRecordSetProtectionsAsync(ListResourceRecordSetProtectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListResourceRecordSetProtectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceRecordSetProtectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceRecordSetProtectionsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

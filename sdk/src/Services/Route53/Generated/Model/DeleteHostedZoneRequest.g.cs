@@ -58,11 +58,14 @@ namespace Amazon.Route53.Model
     /// DNSSEC enabled, you must delete the records and disable DNSSEC before deletion. Attempting
     /// to delete a hosted zone with additional records or DNSSEC enabled returns a <c>HostedZoneNotEmpty</c>
     /// error. For information about deleting records, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
-    /// </para> <para> To verify that the hosted zone has been deleted, do one of the following:
-    /// </para> <ul> <li> <para> Use the <c>GetHostedZone</c> action to request information
-    /// about the hosted zone. </para> </li> <li> <para> Use the <c>ListHostedZones</c> action
-    /// to get a list of the hosted zones associated with the current Amazon Web Services
-    /// account. </para> </li> </ul>
+    /// </para> <para> You also can't delete a hosted zone that has resource record set protections.
+    /// To see the protections in a hosted zone, use <c>ListResourceRecordSetProtections</c>.
+    /// To delete them, use <c>DeleteResourceRecordSetProtections</c>. </para> <para> To verify
+    /// that the hosted zone has been deleted, do one of the following: </para> <ul> <li>
+    /// <para> Use the <c>GetHostedZone</c> action to request information about the hosted
+    /// zone. </para> </li> <li> <para> Use the <c>ListHostedZones</c> action to get a list
+    /// of the hosted zones associated with the current Amazon Web Services account. </para>
+    /// </li> </ul>
     /// </summary>
     public partial class DeleteHostedZoneRequest : AmazonRoute53Request
     {

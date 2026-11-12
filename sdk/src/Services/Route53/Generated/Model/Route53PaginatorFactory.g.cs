@@ -81,6 +81,14 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
+        /// Paginator for ListResourceRecordSetProtections operation
+        /// </summary>
+        public IListResourceRecordSetProtectionsPaginator ListResourceRecordSetProtections(ListResourceRecordSetProtectionsRequest request)
+        {
+            return new ListResourceRecordSetProtectionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListResourceRecordSets operation
         /// </summary>
         public IListResourceRecordSetsPaginator ListResourceRecordSets(ListResourceRecordSetsRequest request)

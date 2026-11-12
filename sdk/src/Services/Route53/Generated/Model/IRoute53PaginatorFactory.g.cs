@@ -69,6 +69,12 @@ namespace Amazon.Route53.Model
         IListQueryLoggingConfigsPaginator ListQueryLoggingConfigs(ListQueryLoggingConfigsRequest request);
 
         /// <summary>
+        /// Paginator for ListResourceRecordSetProtections operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListResourceRecordSetProtectionsPaginator ListResourceRecordSetProtections(ListResourceRecordSetProtectionsRequest request);
+
+        /// <summary>
         /// Paginator for ListResourceRecordSets operation
         /// </summary>
         [AWSPaginator(InputToken = ["StartRecordName", "StartRecordType", "StartRecordIdentifier"], LimitKey = "MaxItems", OutputToken = ["NextRecordName", "NextRecordType", "NextRecordIdentifier"])]
