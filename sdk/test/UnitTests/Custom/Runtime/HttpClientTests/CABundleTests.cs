@@ -68,7 +68,7 @@ namespace AWSSDK.UnitTests.HttpClientTests
             using (var root1 = CreateCertificate("CN=Root 1", isCertificateAuthority: true))
             using (var root2 = CreateCertificate("CN=Root 2", isCertificateAuthority: true))
             {
-                var path = WriteFile("bundle.pem", ToPem(root1) + "-----BEGIN PRIVATE KEY-----\nAAAA\n-----END PRIVATE KEY-----\n" + ToPem(root2));
+                var path = WriteFile("bundle.pem", ToPem(root1) + "-----BEGIN PUBLIC KEY-----\nAAAA\n-----END PUBLIC KEY-----\n" + ToPem(root2));
 
                 var bundle = CABundle.Load(path);
 
