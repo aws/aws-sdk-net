@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+// CertificateRequest, SubjectAlternativeNameBuilder and RSA.Create(int) aren't in .NET Standard 2.0. The netstandard2.0
+// test target is only compiled, never run, so these tests are limited to the targets that run them.
+#if NETFRAMEWORK || NET8_0_OR_GREATER
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.S3;
@@ -386,3 +389,4 @@ namespace AWSSDK.UnitTests.HttpClientTests
         }
     }
 }
+#endif
