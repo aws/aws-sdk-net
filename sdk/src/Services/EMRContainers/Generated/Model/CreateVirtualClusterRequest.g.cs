@@ -85,7 +85,8 @@ namespace Amazon.EMRContainers.Model
         /// Gets and sets the property SchedulerConfiguration. 
         /// <para>
         /// The scheduler configuration (concurrency and queue limits) to apply to the virtual
-        /// cluster at creation time. When omitted, no limits are applied.
+        /// cluster at creation time. If you omit this field, the service applies a default limit
+        /// of 1,000 concurrent job runs and does not limit queue depth.
         /// </para>
         /// </summary>
         public SchedulerConfiguration SchedulerConfiguration { get; set; }

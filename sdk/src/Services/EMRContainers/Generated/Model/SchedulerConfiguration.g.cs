@@ -31,8 +31,9 @@ namespace Amazon.EMRContainers.Model
 {
     /// <summary>
     /// The scheduler configuration for a virtual cluster on Amazon EMR on EKS. It controls
-    /// how many job runs can run concurrently and how many can wait in the queue. When not
-    /// set, no concurrency or queue limits are applied.
+    /// how many job runs can run concurrently and how many can wait in the queue. If you
+    /// omit this configuration, the service applies a default limit of 1,000 concurrent job
+    /// runs and does not limit queue depth.
     /// </summary>
     public partial class SchedulerConfiguration
     {
@@ -41,10 +42,11 @@ namespace Amazon.EMRContainers.Model
         /// <para>
         /// The maximum number of job runs that can be in the <c>RUNNING</c> state at any time
         /// for the virtual cluster. As running slots free up, queued job runs start automatically.
-        /// If you omit this field, the service applies no concurrency limit.
+        /// If you omit this field, the service applies a default limit of 1,000 concurrent job
+        /// runs to the virtual cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 10000)]
+        [AWSProperty(Min = 1, Max = 1000)]
         public int? MaxConcurrentJobRuns { get; set; }
 
         /// <summary>
@@ -61,7 +63,7 @@ namespace Amazon.EMRContainers.Model
         /// the service applies no queue-depth limit.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 100, Max = 10000)]
+        [AWSProperty(Min = 1, Max = 1000)]
         public int? MaxInQueueJobRuns { get; set; }
 
         /// <summary>
