@@ -36,6 +36,21 @@ namespace Amazon.MediaConnect.Model
     public partial class RouterInputMetadata
     {
         /// <summary>
+        /// Gets and sets the property RtmpInfo. 
+        /// <para>
+        /// The RTMP (Real-Time Messaging Protocol) specific information about the router input's
+        /// source. This includes the application name, the stream name, and the associated audio
+        /// and video streams.
+        /// </para>
+        /// </summary>
+        public RtmpSourceMetadataInfo RtmpInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RtmpInfo property is set.
+        /// </summary>
+        internal bool IsSetRtmpInfo() => this.RtmpInfo != null;
+
+        /// <summary>
         /// Gets and sets the property TransportStreamMediaInfo.
         /// </summary>
         public TransportMediaInfo TransportStreamMediaInfo { get; set; }

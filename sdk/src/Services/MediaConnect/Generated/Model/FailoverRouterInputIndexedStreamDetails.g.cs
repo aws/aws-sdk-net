@@ -35,6 +35,20 @@ namespace Amazon.MediaConnect.Model
     public partial class FailoverRouterInputIndexedStreamDetails
     {
         /// <summary>
+        /// Gets and sets the property RtmpPush. 
+        /// <para>
+        /// The RTMP stream details for this indexed stream, including the application and stream
+        /// names.
+        /// </para>
+        /// </summary>
+        public RtmpPushStreamDetails RtmpPush { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RtmpPush property is set.
+        /// </summary>
+        internal bool IsSetRtmpPush() => this.RtmpPush != null;
+
+        /// <summary>
         /// Gets and sets the property SourceIndex. 
         /// <para>
         /// The index number (0 or 1) assigned to this source in the failover configuration.

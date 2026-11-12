@@ -53,5 +53,25 @@ namespace Amazon.MediaConnect.Model
         /// Checks to see if the Rtp property is set.
         /// </summary>
         internal bool IsSetRtp() => this.Rtp != null;
+
+        /// <summary>
+        /// Gets and sets the property SrtCaller.
+        /// </summary>
+        public SrtCallerRouterInputConfiguration SrtCaller { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SrtCaller property is set.
+        /// </summary>
+        internal bool IsSetSrtCaller() => this.SrtCaller != null;
+
+        /// <summary>
+        /// Gets and sets the property SrtListener.
+        /// </summary>
+        public SrtListenerRouterInputConfiguration SrtListener { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SrtListener property is set.
+        /// </summary>
+        internal bool IsSetSrtListener() => this.SrtListener != null;
     }
 }

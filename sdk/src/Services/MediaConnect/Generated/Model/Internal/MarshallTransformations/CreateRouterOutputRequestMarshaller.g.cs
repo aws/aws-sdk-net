@@ -123,6 +123,16 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
+            if (publicRequest.IsSetProcessors())
+            {
+                context.Writer.WritePropertyName("processors");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RouterOutputProcessorsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Processors, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetRegionName())
             {
                 context.Writer.WritePropertyName("regionName");

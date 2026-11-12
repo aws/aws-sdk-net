@@ -229,6 +229,33 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetRemoteId() => this.RemoteId != null;
 
         /// <summary>
+        /// Gets and sets the property RtmpPushOutputSettings. 
+        /// <para>
+        /// The settings for an output that pushes a stream to a destination using the RTMP (Real-Time
+        /// Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.
+        /// </para>
+        /// </summary>
+        public RtmpPushOutputSettings RtmpPushOutputSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RtmpPushOutputSettings property is set.
+        /// </summary>
+        internal bool IsSetRtmpPushOutputSettings() => this.RtmpPushOutputSettings != null;
+
+        /// <summary>
+        /// Gets and sets the property RtmpPushSourceSettings. 
+        /// <para>
+        /// The settings for the RTMP (Real-Time Messaging Protocol) source.
+        /// </para>
+        /// </summary>
+        public RtmpPushSourceSettings RtmpPushSourceSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RtmpPushSourceSettings property is set.
+        /// </summary>
+        internal bool IsSetRtmpPushSourceSettings() => this.RtmpPushSourceSettings != null;
+
+        /// <summary>
         /// Gets and sets the property SenderControlPort. 
         /// <para>
         ///  The port that the flow uses to send outbound requests to initiate connection with

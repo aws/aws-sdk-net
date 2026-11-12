@@ -1079,6 +1079,47 @@ namespace Amazon.MediaConnect
     }
 
     /// <summary>
+    /// Constants used for properties of type FabricSwitchingMode.
+    /// </summary>
+    public class FabricSwitchingMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant IMMEDIATE for FabricSwitchingMode
+        /// </summary>
+        public static readonly FabricSwitchingMode IMMEDIATE = new FabricSwitchingMode("IMMEDIATE");
+
+        /// <summary>
+        /// Constant KEY_FRAME for FabricSwitchingMode
+        /// </summary>
+        public static readonly FabricSwitchingMode KEY_FRAME = new FabricSwitchingMode("KEY_FRAME");
+
+        /// <summary>
+        /// Constructs a custom FabricSwitchingMode for a value not among the defined constants.
+        /// </summary>
+        public FabricSwitchingMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FabricSwitchingMode FindValue(string value)
+        {
+            return FindValue<FabricSwitchingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FabricSwitchingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FailoverInputSourcePriorityMode.
     /// </summary>
     public class FailoverInputSourcePriorityMode : ConstantClass
@@ -1994,6 +2035,11 @@ namespace Amazon.MediaConnect
         public static readonly Protocol Rist = new Protocol("rist");
 
         /// <summary>
+        /// Constant RtmpPush for Protocol
+        /// </summary>
+        public static readonly Protocol RtmpPush = new Protocol("rtmp-push");
+
+        /// <summary>
         /// Constant Rtp for Protocol
         /// </summary>
         public static readonly Protocol Rtp = new Protocol("rtp");
@@ -2319,6 +2365,11 @@ namespace Amazon.MediaConnect
         /// Constant RIST for RouterInputProtocol
         /// </summary>
         public static readonly RouterInputProtocol RIST = new RouterInputProtocol("RIST");
+
+        /// <summary>
+        /// Constant RTMP_PUSH for RouterInputProtocol
+        /// </summary>
+        public static readonly RouterInputProtocol RTMP_PUSH = new RouterInputProtocol("RTMP_PUSH");
 
         /// <summary>
         /// Constant RTP for RouterInputProtocol
@@ -3034,6 +3085,47 @@ namespace Amazon.MediaConnect
     }
 
     /// <summary>
+    /// Constants used for properties of type RtmpPushNamingType.
+    /// </summary>
+    public class RtmpPushNamingType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUTOMATIC for RtmpPushNamingType
+        /// </summary>
+        public static readonly RtmpPushNamingType AUTOMATIC = new RtmpPushNamingType("AUTOMATIC");
+
+        /// <summary>
+        /// Constant MANUAL for RtmpPushNamingType
+        /// </summary>
+        public static readonly RtmpPushNamingType MANUAL = new RtmpPushNamingType("MANUAL");
+
+        /// <summary>
+        /// Constructs a custom RtmpPushNamingType for a value not among the defined constants.
+        /// </summary>
+        public RtmpPushNamingType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RtmpPushNamingType FindValue(string value)
+        {
+            return FindValue<RtmpPushNamingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RtmpPushNamingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ScanMode.
     /// </summary>
     public class ScanMode : ConstantClass
@@ -3309,6 +3401,57 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SourceEndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SourceMediaStreamType.
+    /// </summary>
+    public class SourceMediaStreamType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUDIO for SourceMediaStreamType
+        /// </summary>
+        public static readonly SourceMediaStreamType AUDIO = new SourceMediaStreamType("AUDIO");
+
+        /// <summary>
+        /// Constant DATA for SourceMediaStreamType
+        /// </summary>
+        public static readonly SourceMediaStreamType DATA = new SourceMediaStreamType("DATA");
+
+        /// <summary>
+        /// Constant UNKNOWN for SourceMediaStreamType
+        /// </summary>
+        public static readonly SourceMediaStreamType UNKNOWN = new SourceMediaStreamType("UNKNOWN");
+
+        /// <summary>
+        /// Constant VIDEO for SourceMediaStreamType
+        /// </summary>
+        public static readonly SourceMediaStreamType VIDEO = new SourceMediaStreamType("VIDEO");
+
+        /// <summary>
+        /// Constructs a custom SourceMediaStreamType for a value not among the defined constants.
+        /// </summary>
+        public SourceMediaStreamType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceMediaStreamType FindValue(string value)
+        {
+            return FindValue<SourceMediaStreamType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceMediaStreamType(string value)
         {
             return FindValue(value);
         }

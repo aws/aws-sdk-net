@@ -266,6 +266,19 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetRouterIntegrationTransitDecryption() => this.RouterIntegrationTransitDecryption != null;
 
         /// <summary>
+        /// Gets and sets the property RtmpPushSettings. 
+        /// <para>
+        /// The settings for the RTMP (Real-Time Messaging Protocol) source.
+        /// </para>
+        /// </summary>
+        public SetRtmpPushSourceSettings RtmpPushSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RtmpPushSettings property is set.
+        /// </summary>
+        internal bool IsSetRtmpPushSettings() => this.RtmpPushSettings != null;
+
+        /// <summary>
         /// Gets and sets the property SenderControlPort. 
         /// <para>
         /// The port that the flow uses to send outbound requests to initiate connection with

@@ -298,9 +298,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RegisterDestinationEndpointRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
-    <pattern>^[ a-zA-Z_0-9\-.',@:;\(\)\[\]*]+$</pattern>
+    <pattern>^[ a-zA-Z_0-9\-.',@:;\(\)]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RegisterSourceEndpointRequest.ClientToken</property>
@@ -309,9 +309,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RegisterSourceEndpointRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
-    <pattern>^[ a-zA-Z_0-9\-.',@:;\(\)\[\]*]+$</pattern>
+    <pattern>^[ a-zA-Z_0-9\-.',@:;\(\)]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RemoveBridgeOutputRequest.BridgeArn</property>
@@ -449,9 +449,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateDestinationEndpointRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
-    <pattern>^[ a-zA-Z_0-9\-.',@:;\(\)\[\]*]+$</pattern>
+    <pattern>^[ a-zA-Z_0-9\-.',@:;\(\)]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateFlowRequest.FlowArn</property>
@@ -534,9 +534,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateSourceEndpointRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
-    <pattern>^[ a-zA-Z_0-9\-.',@:;\(\)\[\]*]+$</pattern>
+    <pattern>^[ a-zA-Z_0-9\-.',@:;\(\)]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.AddBridgeFlowSourceRequest.FlowArn</property>
@@ -546,6 +546,16 @@
     <property>Amazon.MediaConnect.Model.AddOutputRequest.NdiAudioReferenceLevel</property>
     <min>-40</min>
     <max>0</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.AutoPidMapConfiguration.PidsPerProgram</property>
+    <min>1</min>
+    <max>8158</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.AutoPidMapConfiguration.StartPid</property>
+    <min>32</min>
+    <max>8190</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.BatchGetDestinationEndpointError.Arn</property>
@@ -605,6 +615,11 @@
     <property>Amazon.MediaConnect.Model.FrozenFramesConfiguration.ThresholdSeconds</property>
     <min>10</min>
     <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.KeyFrameFabricSwitchingConfiguration.KeyFrameWaitMilliseconds</property>
+    <min>0</min>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.ListedDestinationEndpoint.Arn</property>
@@ -682,6 +697,31 @@
     <max>0</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.PidMapRule.Action</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.PidMapRule.MatchExpression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ProgramClockReferencePidConfiguration.Set</property>
+    <min>32</min>
+    <max>8190</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ProgramMapTablePidConfiguration.Set</property>
+    <min>32</min>
+    <max>8190</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ProgramNumberConfiguration.Set</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.PublicDestinationEndpointNetworkingConfigurationAllowRule.Cidr</property>
     <pattern>^(?:[0-9]{1,3}\.){3}[0-9]{1,3}/([0-9]|[12][0-9]|3[0-2])$</pattern>
   </property-value-rule>
@@ -748,6 +788,11 @@
     <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.RtmpPushRouterInputConfiguration.Port</property>
+    <min>1935</min>
+    <max>1935</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.RtmpPushRouterOutputConfiguration.DestinationPort</property>
     <min>443</min>
     <max>65535</max>
@@ -792,6 +837,11 @@
     <property>Amazon.MediaConnect.Model.SilentAudioConfiguration.ThresholdSeconds</property>
     <min>10</min>
     <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.SingleProgramTransportStreamPidMapConfiguration.DefaultAction</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.SourceEndpoint.Arn</property>
@@ -903,6 +953,11 @@
     <property>Amazon.MediaConnect.Model.Transport.NdiAudioReferenceLevel</property>
     <min>-40</min>
     <max>0</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.TransportStreamIdConfiguration.Set</property>
+    <min>0</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateBridgeFlowSourceRequest.FlowArn</property>

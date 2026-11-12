@@ -88,6 +88,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("language", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Language = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("pid", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -106,6 +113,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SampleSize = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("scanMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScanMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

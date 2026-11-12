@@ -35,6 +35,20 @@ namespace Amazon.MediaConnect.Model
     public partial class StandardRouterInputStreamDetails
     {
         /// <summary>
+        /// Gets and sets the property RtmpPush. 
+        /// <para>
+        /// The RTMP stream details for the standard router input stream, including the application
+        /// and stream names.
+        /// </para>
+        /// </summary>
+        public RtmpPushStreamDetails RtmpPush { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RtmpPush property is set.
+        /// </summary>
+        internal bool IsSetRtmpPush() => this.RtmpPush != null;
+
+        /// <summary>
         /// Gets and sets the property SourceIpAddress. 
         /// <para>
         /// The source IP address for the standard router input stream.

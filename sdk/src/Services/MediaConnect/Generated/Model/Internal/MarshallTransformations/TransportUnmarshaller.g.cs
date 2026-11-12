@@ -137,6 +137,20 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("rtmpPushOutputSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = RtmpPushOutputSettingsUnmarshaller.Instance;
+                    unmarshalledObject.RtmpPushOutputSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("rtmpPushSourceSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = RtmpPushSourceSettingsUnmarshaller.Instance;
+                    unmarshalledObject.RtmpPushSourceSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("senderControlPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

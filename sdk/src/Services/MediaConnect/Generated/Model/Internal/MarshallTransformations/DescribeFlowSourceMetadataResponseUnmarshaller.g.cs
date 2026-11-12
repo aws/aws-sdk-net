@@ -73,6 +73,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("rtmpInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = RtmpSourceMetadataInfoUnmarshaller.Instance;
+                    unmarshalledObject.RtmpInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
