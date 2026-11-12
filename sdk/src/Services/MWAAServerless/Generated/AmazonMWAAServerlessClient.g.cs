@@ -255,6 +255,142 @@ namespace Amazon.MWAAServerless
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a launch URL that opens the Apache Airflow UI for your workflows in Amazon
+        /// Managed Workflows for Apache Airflow Serverless. The UI shows the workflows in your
+        /// account in the current AWS Region. To start a UI session, open the URL in a browser
+        /// before it expires.
+        /// 
+        ///  
+        /// <para>
+        /// The UI runs with the permissions of the IAM identity that you use to call this operation.
+        /// You see only the workflows, workflow runs, and logs that the identity can read, and
+        /// you can start a workflow run only if the identity has permission to start one.
+        /// </para>
+        ///  
+        /// <para>
+        /// The UI session uses the caller's permissions. The session works only from the network
+        /// address that opened the URL. It ends at <c>SessionExpiresAt</c> or when you sign out
+        /// from the UI.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAirflowUiUrl service method.</param>
+        /// <returns>The response from the CreateAirflowUiUrl service method, as returned by MWAAServerless.</returns>
+        /// <exception cref="Amazon.MWAAServerless.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MWAAServerless.Model.ConflictException">
+        /// You cannot create a resource that already exists, or the resource is in a state that
+        /// prevents the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.MWAAServerless.Model.InternalServerException">
+        /// An unexpected server-side error occurred during request processing.
+        /// </exception>
+        /// <exception cref="Amazon.MWAAServerless.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.MWAAServerless.Model.ThrottlingException">
+        /// The request was denied because too many requests were made in a short period, exceeding
+        /// the service rate limits. Amazon Managed Workflows for Apache Airflow Serverless implements
+        /// throttling controls to ensure fair resource allocation across all customers in the
+        /// multi-tenant environment. This helps maintain service stability and performance. If
+        /// you encounter throttling, implement exponential backoff and retry logic in your applications,
+        /// or consider distributing your API calls over a longer time period.
+        /// </exception>
+        /// <exception cref="Amazon.MWAAServerless.Model.ValidationException">
+        /// The specified request parameters are invalid, missing, or inconsistent with Amazon
+        /// Managed Workflows for Apache Airflow Serverless service requirements. This can occur
+        /// when workflow definitions contain unsupported operators, when required IAM permissions
+        /// are missing, when S3 locations are inaccessible, or when network configurations are
+        /// invalid. The service validates workflow definitions, execution roles, and resource
+        /// configurations to ensure compatibility with the managed Airflow environment and security
+        /// requirements.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-serverless-2024-07-26/CreateAirflowUiUrl">REST API Reference for CreateAirflowUiUrl Operation</seealso>
+        public virtual CreateAirflowUiUrlResponse CreateAirflowUiUrl(CreateAirflowUiUrlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAirflowUiUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAirflowUiUrlResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAirflowUiUrlResponse>(request, options);
+        }
+#else
+        internal virtual CreateAirflowUiUrlResponse CreateAirflowUiUrl(CreateAirflowUiUrlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAirflowUiUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAirflowUiUrlResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAirflowUiUrlResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a launch URL that opens the Apache Airflow UI for your workflows in Amazon
+        /// Managed Workflows for Apache Airflow Serverless. The UI shows the workflows in your
+        /// account in the current AWS Region. To start a UI session, open the URL in a browser
+        /// before it expires.
+        /// 
+        ///  
+        /// <para>
+        /// The UI runs with the permissions of the IAM identity that you use to call this operation.
+        /// You see only the workflows, workflow runs, and logs that the identity can read, and
+        /// you can start a workflow run only if the identity has permission to start one.
+        /// </para>
+        ///  
+        /// <para>
+        /// The UI session uses the caller's permissions. The session works only from the network
+        /// address that opened the URL. It ends at <c>SessionExpiresAt</c> or when you sign out
+        /// from the UI.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAirflowUiUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateAirflowUiUrl service method, as returned by MWAAServerless.</returns>
+        /// <exception cref="Amazon.MWAAServerless.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MWAAServerless.Model.ConflictException">
+        /// You cannot create a resource that already exists, or the resource is in a state that
+        /// prevents the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.MWAAServerless.Model.InternalServerException">
+        /// An unexpected server-side error occurred during request processing.
+        /// </exception>
+        /// <exception cref="Amazon.MWAAServerless.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.MWAAServerless.Model.ThrottlingException">
+        /// The request was denied because too many requests were made in a short period, exceeding
+        /// the service rate limits. Amazon Managed Workflows for Apache Airflow Serverless implements
+        /// throttling controls to ensure fair resource allocation across all customers in the
+        /// multi-tenant environment. This helps maintain service stability and performance. If
+        /// you encounter throttling, implement exponential backoff and retry logic in your applications,
+        /// or consider distributing your API calls over a longer time period.
+        /// </exception>
+        /// <exception cref="Amazon.MWAAServerless.Model.ValidationException">
+        /// The specified request parameters are invalid, missing, or inconsistent with Amazon
+        /// Managed Workflows for Apache Airflow Serverless service requirements. This can occur
+        /// when workflow definitions contain unsupported operators, when required IAM permissions
+        /// are missing, when S3 locations are inaccessible, or when network configurations are
+        /// invalid. The service validates workflow definitions, execution roles, and resource
+        /// configurations to ensure compatibility with the managed Airflow environment and security
+        /// requirements.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-serverless-2024-07-26/CreateAirflowUiUrl">REST API Reference for CreateAirflowUiUrl Operation</seealso>
+        public virtual Task<CreateAirflowUiUrlResponse> CreateAirflowUiUrlAsync(CreateAirflowUiUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAirflowUiUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAirflowUiUrlResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAirflowUiUrlResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a new workflow in Amazon Managed Workflows for Apache Airflow Serverless.
         /// This operation initializes a workflow with the specified configuration including the
         /// workflow definition, execution role, and optional settings for encryption, logging,
