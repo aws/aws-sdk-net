@@ -348,6 +348,10 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>ASGAverageCPUUtilizationHighResolution</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>ASGAverageNetworkIn</c> 
         /// </para>
         ///  </li> <li> 

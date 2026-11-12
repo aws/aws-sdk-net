@@ -1055,6 +1055,11 @@ namespace Amazon.AutoScaling
         public static readonly MetricType ASGAverageCPUUtilization = new MetricType("ASGAverageCPUUtilization");
 
         /// <summary>
+        /// Constant ASGAverageCPUUtilizationHighResolution for MetricType
+        /// </summary>
+        public static readonly MetricType ASGAverageCPUUtilizationHighResolution = new MetricType("ASGAverageCPUUtilizationHighResolution");
+
+        /// <summary>
         /// Constant ASGAverageNetworkIn for MetricType
         /// </summary>
         public static readonly MetricType ASGAverageNetworkIn = new MetricType("ASGAverageNetworkIn");
