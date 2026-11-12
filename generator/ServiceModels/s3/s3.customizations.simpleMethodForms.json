@@ -104,13 +104,6 @@
                     ]
                 ]
             },
-            "GetACL": {
-                "methodForms": [
-                    [
-                        "BucketName"
-                    ]
-                ]
-            },
             "GetBucketAccelerateConfiguration": {
                 "methodForms": [
                     [
@@ -147,13 +140,6 @@
                 ]
             },
             "GetBucketRequestPayment": {
-                "methodForms": [
-                    [
-                        "BucketName"
-                    ]
-                ]
-            },
-            "GetBucketRequestTagging": {
                 "methodForms": [
                     [
                         "BucketName"
