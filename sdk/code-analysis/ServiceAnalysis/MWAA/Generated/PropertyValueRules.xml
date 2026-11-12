@@ -421,6 +421,18 @@
     <pattern>.*(MON|TUE|WED|THU|FRI|SAT|SUN):([01]\d|2[0-3]):(00|30).*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MWAA.Model.IdentityCenterConfiguration.IdentityStoreId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>.*d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MWAA.Model.IdentityCenterConfiguration.StartUrl</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^https://.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MWAA.Model.LastUpdate.Source</property>
     <min>1</min>
     <max>256</max>
@@ -431,6 +443,18 @@
     <min>1</min>
     <max>1224</max>
     <pattern>^arn:aws(-[a-z]+)?:logs:[a-z0-9\-]+:\d{12}:log-group:\w+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MWAA.Model.TeamConfig.DagS3Path</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MWAA.Model.TeamConfig.SourceBucketArn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>^arn:aws(-[a-z]+)?:s3:::[a-z0-9.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateError.ErrorMessage</property>

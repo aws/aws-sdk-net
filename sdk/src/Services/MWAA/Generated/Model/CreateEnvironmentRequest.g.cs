@@ -152,6 +152,20 @@ namespace Amazon.MWAA.Model
         internal bool IsSetExecutionRoleArn() => this.ExecutionRoleArn != null;
 
         /// <summary>
+        /// Gets and sets the property IdentityCenterConfiguration. 
+        /// <para>
+        /// The Amazon Web Services IAM Identity Center configuration used to authenticate users
+        /// to the Apache Airflow web UI for your environment.
+        /// </para>
+        /// </summary>
+        public IdentityCenterConfiguration IdentityCenterConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdentityCenterConfiguration property is set.
+        /// </summary>
+        internal bool IsSetIdentityCenterConfiguration() => this.IdentityCenterConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property KmsKey. 
         /// <para>
         /// The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your
@@ -483,6 +497,33 @@ namespace Amazon.MWAA.Model
         /// Checks to see if the Tags property is set.
         /// </summary>
         internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Teams. 
+        /// <para>
+        /// A map of teams to configure for Apache Airflow multi-team support on your Amazon MWAA
+        /// environment. Each entry maps a team name to a object that defines the Amazon S3 location
+        /// of that team's DAG code. The team name must match the display name of an Amazon Web
+        /// Services IAM Identity Center group that you associate with your environment, so you
+        /// must configure IAM Identity Center for the environment before you add teams. You can
+        /// configure between <c>1</c> and <c>20</c> teams. For more information, refer to <a
+        /// href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache
+        /// Airflow multi-team environments</a>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 20)]
+        public Dictionary<string, TeamConfig> Teams { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, TeamConfig>() : null;
+
+        /// <summary>
+        /// Checks to see if the Teams property is set.
+        /// </summary>
+        internal bool IsSetTeams() => this.Teams != null && (this.Teams.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property WebserverAccessMode. 

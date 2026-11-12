@@ -136,6 +136,20 @@ namespace Amazon.MWAA.Model
         internal bool IsSetExecutionRoleArn() => this.ExecutionRoleArn != null;
 
         /// <summary>
+        /// Gets and sets the property IdentityCenterConfiguration. 
+        /// <para>
+        /// The Amazon Web Services IAM Identity Center configuration used to authenticate users
+        /// to the Apache Airflow web UI for your environment.
+        /// </para>
+        /// </summary>
+        public IdentityCenterConfiguration IdentityCenterConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdentityCenterConfiguration property is set.
+        /// </summary>
+        internal bool IsSetIdentityCenterConfiguration() => this.IdentityCenterConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property LoggingConfiguration. 
         /// <para>
         /// The Apache Airflow log types to send to CloudWatch Logs.
@@ -417,6 +431,23 @@ namespace Amazon.MWAA.Model
         /// Checks to see if the StartupScriptS3Path property is set.
         /// </summary>
         internal bool IsSetStartupScriptS3Path() => this.StartupScriptS3Path != null;
+
+        /// <summary>
+        /// Gets and sets the property Teams. 
+        /// <para>
+        /// Updates the teams configured for Apache Airflow multi-team support on your Amazon
+        /// MWAA environment. Use <c>AddOrUpdate</c> to add new teams or change the configuration
+        /// of existing teams, and <c>Remove</c> to remove teams by name. For more information,
+        /// refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache
+        /// Airflow multi-team environments</a>.
+        /// </para>
+        /// </summary>
+        public UpdateTeamsInput Teams { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Teams property is set.
+        /// </summary>
+        internal bool IsSetTeams() => this.Teams != null;
 
         /// <summary>
         /// Gets and sets the property WebserverAccessMode. 
