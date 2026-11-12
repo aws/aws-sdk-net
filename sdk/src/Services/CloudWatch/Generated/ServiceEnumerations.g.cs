@@ -594,6 +594,52 @@ namespace Amazon.CloudWatch
     }
 
     /// <summary>
+    /// Constants used for properties of type QueryType.
+    /// </summary>
+    public class QueryType : ConstantClass
+    {
+        /// <summary>
+        /// Constant METRIC_MATH for QueryType
+        /// </summary>
+        public static readonly QueryType METRIC_MATH = new QueryType("METRIC_MATH");
+
+        /// <summary>
+        /// Constant PROMQL for QueryType
+        /// </summary>
+        public static readonly QueryType PROMQL = new QueryType("PROMQL");
+
+        /// <summary>
+        /// Constant SQL for QueryType
+        /// </summary>
+        public static readonly QueryType SQL = new QueryType("SQL");
+
+        /// <summary>
+        /// Constructs a custom QueryType for a value not among the defined constants.
+        /// </summary>
+        public QueryType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryType FindValue(string value)
+        {
+            return FindValue<QueryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RecentlyActive.
     /// </summary>
     public class RecentlyActive : ConstantClass

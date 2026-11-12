@@ -735,6 +735,59 @@ namespace Amazon.CloudWatch
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes a metric data query definition.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is idempotent. If the definition doesn't exist, the operation succeeds
+        /// without returning an error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a definition, you need the <c>cloudwatch:DeleteMetricDataQueryDefinition</c>
+        /// permission on the metric data query definition resource. You can use the <c>aws:ResourceTag/${TagKey}</c>
+        /// condition key to control access based on the tags of the definition.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricDataQueryDefinition service method.</param>
+        /// <returns>The response from the DeleteMetricDataQueryDefinition service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricDataQueryDefinition">REST API Reference for DeleteMetricDataQueryDefinition Operation</seealso>
+        DeleteMetricDataQueryDefinitionResponse DeleteMetricDataQueryDefinition(DeleteMetricDataQueryDefinitionRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a metric data query definition.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is idempotent. If the definition doesn't exist, the operation succeeds
+        /// without returning an error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a definition, you need the <c>cloudwatch:DeleteMetricDataQueryDefinition</c>
+        /// permission on the metric data query definition resource. You can use the <c>aws:ResourceTag/${TagKey}</c>
+        /// condition key to control access based on the tags of the definition.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricDataQueryDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteMetricDataQueryDefinition service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricDataQueryDefinition">REST API Reference for DeleteMetricDataQueryDefinition Operation</seealso>
+        Task<DeleteMetricDataQueryDefinitionResponse> DeleteMetricDataQueryDefinitionAsync(DeleteMetricDataQueryDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Permanently deletes the metric stream that you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMetricStream service method.</param>
@@ -1983,6 +2036,55 @@ namespace Amazon.CloudWatch
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns a metric data query definition, including its expression.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To get a definition, you need the <c>cloudwatch:GetMetricDataQueryDefinition</c> permission
+        /// on the metric data query definition resource. You can use the <c>aws:ResourceTag/${TagKey}</c>
+        /// condition key to control access based on the tags of the definition.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricDataQueryDefinition service method.</param>
+        /// <returns>The response from the GetMetricDataQueryDefinition service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricDataQueryDefinition">REST API Reference for GetMetricDataQueryDefinition Operation</seealso>
+        GetMetricDataQueryDefinitionResponse GetMetricDataQueryDefinition(GetMetricDataQueryDefinitionRequest request);
+#endif
+
+        /// <summary>
+        /// Returns a metric data query definition, including its expression.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To get a definition, you need the <c>cloudwatch:GetMetricDataQueryDefinition</c> permission
+        /// on the metric data query definition resource. You can use the <c>aws:ResourceTag/${TagKey}</c>
+        /// condition key to control access based on the tags of the definition.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricDataQueryDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetMetricDataQueryDefinition service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricDataQueryDefinition">REST API Reference for GetMetricDataQueryDefinition Operation</seealso>
+        Task<GetMetricDataQueryDefinitionResponse> GetMetricDataQueryDefinitionAsync(GetMetricDataQueryDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Gets statistics for the specified metric.
         /// 
         ///  
@@ -2586,6 +2688,69 @@ namespace Amazon.CloudWatch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListManagedInsightRules">REST API Reference for ListManagedInsightRules Operation</seealso>
         Task<ListManagedInsightRulesResponse> ListManagedInsightRulesAsync(ListManagedInsightRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the metric data query definitions in your account and Region.
+        /// 
+        ///  
+        /// <para>
+        /// The results are summaries that don't include the expression. To get the full definition,
+        /// call <c>GetMetricDataQueryDefinition</c> with its ID.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination. Use the <c>MaxResults</c> and <c>NextToken</c>
+        /// parameters to retrieve results in multiple calls.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list definitions, you need the <c>cloudwatch:ListMetricDataQueryDefinitions</c>
+        /// permission. This permission applies to all definitions in the account and Region.
+        /// The results aren't filtered by tags.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricDataQueryDefinitions service method.</param>
+        /// <returns>The response from the ListMetricDataQueryDefinitions service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricDataQueryDefinitions">REST API Reference for ListMetricDataQueryDefinitions Operation</seealso>
+        ListMetricDataQueryDefinitionsResponse ListMetricDataQueryDefinitions(ListMetricDataQueryDefinitionsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the metric data query definitions in your account and Region.
+        /// 
+        ///  
+        /// <para>
+        /// The results are summaries that don't include the expression. To get the full definition,
+        /// call <c>GetMetricDataQueryDefinition</c> with its ID.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination. Use the <c>MaxResults</c> and <c>NextToken</c>
+        /// parameters to retrieve results in multiple calls.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list definitions, you need the <c>cloudwatch:ListMetricDataQueryDefinitions</c>
+        /// permission. This permission applies to all definitions in the account and Region.
+        /// The results aren't filtered by tags.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricDataQueryDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListMetricDataQueryDefinitions service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricDataQueryDefinitions">REST API Reference for ListMetricDataQueryDefinitions Operation</seealso>
+        Task<ListMetricDataQueryDefinitionsResponse> ListMetricDataQueryDefinitionsAsync(ListMetricDataQueryDefinitionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -3893,6 +4058,125 @@ namespace Amazon.CloudWatch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">REST API Reference for PutMetricData Operation</seealso>
         Task<PutMetricDataResponse> PutMetricDataAsync(PutMetricDataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates or updates a metric data query definition.
+        /// 
+        ///  
+        /// <para>
+        /// A metric data query definition saves a metric query so that you can reuse it later.
+        /// It includes the query expression, the query language, and a path that names the definition
+        /// and can organize it into folders. When you save a definition, CloudWatch doesn't validate
+        /// or run its expression.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a definition, omit <c>Id</c>. CloudWatch generates the ID and returns it.
+        /// To update a definition, specify its <c>Id</c>. An update replaces the path, expression,
+        /// and type, and keeps the creation time.
+        /// </para>
+        ///  
+        /// <para>
+        /// The path must be unique in your account and Region. If another definition already
+        /// uses the path, the request fails with a <c>ConflictException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have up to 1,000 metric data query definitions in each Region of your account.
+        /// A request that would create more fails with a <c>LimitExceededException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create or update a definition, you need the <c>cloudwatch:PutMetricDataQueryDefinition</c>
+        /// permission on the metric data query definition resource. The resource ARN has the
+        /// format <c>arn:aws:cloudwatch:Region:account-id:metric-query-definition/Id</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To add tags when you create a definition, you also need the <c>cloudwatch:TagResource</c>
+        /// permission. You can use the <c>aws:RequestTag/${TagKey}</c> and <c>aws:TagKeys</c>
+        /// condition keys to control which tags can be added.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMetricDataQueryDefinition service method.</param>
+        /// <returns>The response from the PutMetricDataQueryDefinition service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The operation exceeded one or more limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricDataQueryDefinition">REST API Reference for PutMetricDataQueryDefinition Operation</seealso>
+        PutMetricDataQueryDefinitionResponse PutMetricDataQueryDefinition(PutMetricDataQueryDefinitionRequest request);
+#endif
+
+        /// <summary>
+        /// Creates or updates a metric data query definition.
+        /// 
+        ///  
+        /// <para>
+        /// A metric data query definition saves a metric query so that you can reuse it later.
+        /// It includes the query expression, the query language, and a path that names the definition
+        /// and can organize it into folders. When you save a definition, CloudWatch doesn't validate
+        /// or run its expression.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a definition, omit <c>Id</c>. CloudWatch generates the ID and returns it.
+        /// To update a definition, specify its <c>Id</c>. An update replaces the path, expression,
+        /// and type, and keeps the creation time.
+        /// </para>
+        ///  
+        /// <para>
+        /// The path must be unique in your account and Region. If another definition already
+        /// uses the path, the request fails with a <c>ConflictException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have up to 1,000 metric data query definitions in each Region of your account.
+        /// A request that would create more fails with a <c>LimitExceededException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create or update a definition, you need the <c>cloudwatch:PutMetricDataQueryDefinition</c>
+        /// permission on the metric data query definition resource. The resource ARN has the
+        /// format <c>arn:aws:cloudwatch:Region:account-id:metric-query-definition/Id</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To add tags when you create a definition, you also need the <c>cloudwatch:TagResource</c>
+        /// permission. You can use the <c>aws:RequestTag/${TagKey}</c> and <c>aws:TagKeys</c>
+        /// condition keys to control which tags can be added.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMetricDataQueryDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutMetricDataQueryDefinition service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The operation exceeded one or more limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricDataQueryDefinition">REST API Reference for PutMetricDataQueryDefinition Operation</seealso>
+        Task<PutMetricDataQueryDefinitionResponse> PutMetricDataQueryDefinitionAsync(PutMetricDataQueryDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
