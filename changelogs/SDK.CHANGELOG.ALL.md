@@ -1,3 +1,55 @@
+### 4.1.1.0 (2026-11-12 19:48 UTC)
+* ACMPCA (4.1.0.1)
+	* ACMPCA is now generated from its Smithy model. There are no changes to the public API.
+* AutoScaling (4.1.1.0)
+	* Amazon EC2 Auto Scaling now supports ASGAverageCPUUtilizationHighResolution as a predefined metric type for target tracking scaling policies.
+* Backup (4.1.1.0)
+	* Adding new notification types for SNS notifications
+* CleanRooms (4.1.1.0)
+	* Adds a retry signal to protected query and protected job errors that indicates whether running the same request again might succeed, and defines error codes that identify the category of the failure.
+* CloudWatch (4.1.1.0)
+	* Adds support for saving, retrieving, listing, and deleting CloudWatch metric data query definitions.
+* CloudWatchOmni (4.1.1.0)
+	* Add aggregationTemporality and monotonicity to GetContextGraph MetricMetadata
+* Connect (4.1.1.0)
+	* This release adds a LastModifiedTime and LastModifiedRegion field to ListIntegrationAssociations so customers can see at what time and in which Region an IntegrationAssociation was last modified in.
+* EC2 (4.1.1.0)
+	* This release adds support for multiple features, including EC2 Image Builder image recipes and container recipes in AMI usage reports, Amazon EC2 Detailed Monitoring adds opt-in metrics, and Global Accelerator and API Gateway V2 as resource exclusions for VPC Encryption Control.
+* EMRContainers (4.1.1.0)
+	* This release updates range of maxInQueueDepth and maxConcurrency limit from 10000 to 1000.
+* GameLiftStreams (4.1.1.0)
+	* Adds support for ApplicationStartedAt on stream sessions, a timestamp that indicates when the application launched for the stream session, returned by GetStreamSession and StartStreamSession. Also added streamingStartedAt and streamingEndedAt.
+* GuardDuty (4.1.1.0)
+	* Adds the ListInvestigationRecords API, which returns the step-by-step records of a completed investigation. Adds investigation scope details and an optional structured summary to GetInvestigation. Adds filter criteria and investigation type to ListInvestigations.
+* ImportExport (Removed)
+	* AWS Import/Export has been removed from the SDK because it has been discontinued.
+* Lightsail (4.1.1.0)
+	* Amazon Lightsail now offers web addresses, so you can quickly make a website or application reachable at a name like mysite.amazonlightsail.com. A web address is free while attached to a Lightsail CDN, with no domain to register and no SSL TLS certificate to create or renew.
+* MediaConnect (4.1.1.0)
+	* MediaConnect adds four features. (1) RTMP Push on Router Input and Flows (RTMP, RTMPS, eRTMP). (2) PID Remapping on Router rewrites PIDs inline without transcoding. (3) Key Frame Switching transitions router inputs on video boundaries. (4) SRT Merge Input bonds redundant SRT streams.
+* MediaLive (4.1.1.0)
+	* AWS Elemental MediaLive now adds a caption language setting for MediaPackage V2 output groups that signals a stream carries no closed captions.
+* MediaTailor (4.1.1.0)
+	* Add post origin manifest hook, add HLS tag processor
+* MobileAnalytics (Removed)
+	* Amazon Mobile Analytics has been removed from the SDK because it has been discontinued.
+* MWAA (4.1.1.0)
+	* Amazon MWAA now supports Airflow environments with IAM Identity Center (IDC) integration and exposes OSS Airflow Multi-Team feature. Users can configure individual IDC-backed identities and fine-grained authorization, and define Dags on per-team basis.
+* MWAAServerless (4.1.1.0)
+	* Adds support for Airflow UI in MWAA Serverless
+* Odb (4.1.1.0)
+	* ODB now supports scaling for Exadata Dedicated offerings. Customers can scale database and storage servers on Exadata infrastructure, resize VM clusters and Autonomous VM clusters, and add or remove virtual machines in a VM cluster.
+* Route53 (4.1.1.0)
+	* Amazon Route 53 now supports Record Set Protection, which blocks changes to protected records in a hosted zone.
+* SageMaker (4.1.1.0)
+	* Adds CreatedBy and LastModifiedBy to the DescribeHub and DescribeHubContent responses and to HubContent records returned by the Search API, identifying the IAM identity or SageMaker Studio user profile that created or last modified a hub or hub content.
+* SecretsManager (4.1.1.0)
+	* Adds support for cross-account replication with the new AssociateCrossAccountReplica, DisassociateCrossAccountReplica, and ListResourcePolicies APIs, CrossAccountPrimaryARN in CreateSecret, cross-account replication status in DescribeSecret, and PolicyName in the resource policy APIs.
+* SecurityAgent (4.1.1.0)
+	* Adds support for cleanup strategy in CreatePentestInput and UpdatePentestInput.
+* SSOAdmin (4.1.1.0)
+	* Adds support for Network Controls on IAM Identity Center instances. You can now require that access to your instance and AWS managed applications originate from VPC endpoints in your organization, and optionally narrow that perimeter to specific VPCs, IP ranges, or application exceptions.
+
 ### 4.1.0.0 (2026-11-11 23:14 UTC)
 * S3 (4.1.0.0)
 	* Fixed a bug where TransferUtility.Download/DownloadAsync (the non-multipart path) always waited 100ms after a successful download. The backoff delay now only applies before an actual retry, and the async path uses a non-blocking await instead of a blocking Thread.Sleep.
