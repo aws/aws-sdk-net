@@ -35,6 +35,14 @@ namespace Amazon.GameLiftStreams.Model
     /// at least one of the two capacity types. To update the capacity for an existing stream
     /// group, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.
     /// To add a new location and specify its capacity, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AddStreamGroupLocations.html">AddStreamGroupLocations</a>.
+    /// 
+    ///  
+    /// <para>
+    /// When you modify capacity for an existing location, always specify <c>AlwaysOnCapacity</c>,
+    /// <c>MaximumCapacity</c>, and <c>TargetIdleCapacity</c> in the same request. If you
+    /// omit one or more of these values, the service applies internal defaults for the missing
+    /// values. These defaults might not match what you intend.
+    /// </para>
     /// </summary>
     public partial class LocationConfiguration
     {

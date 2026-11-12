@@ -73,6 +73,13 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ApplicationStartedAt", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ApplicationStartedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -196,6 +203,20 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamGroupId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("StreamingEndedAt", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StreamingEndedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("StreamingStartedAt", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StreamingStartedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
