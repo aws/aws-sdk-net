@@ -12040,6 +12040,47 @@ namespace Amazon.MediaLive
     }
 
     /// <summary>
+    /// Constants used for properties of type MediaPackageV2CaptionLanguageSetting.
+    /// </summary>
+    public class MediaPackageV2CaptionLanguageSetting : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUTO for MediaPackageV2CaptionLanguageSetting
+        /// </summary>
+        public static readonly MediaPackageV2CaptionLanguageSetting AUTO = new MediaPackageV2CaptionLanguageSetting("AUTO");
+
+        /// <summary>
+        /// Constant NONE for MediaPackageV2CaptionLanguageSetting
+        /// </summary>
+        public static readonly MediaPackageV2CaptionLanguageSetting NONE = new MediaPackageV2CaptionLanguageSetting("NONE");
+
+        /// <summary>
+        /// Constructs a custom MediaPackageV2CaptionLanguageSetting for a value not among the defined constants.
+        /// </summary>
+        public MediaPackageV2CaptionLanguageSetting(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaPackageV2CaptionLanguageSetting FindValue(string value)
+        {
+            return FindValue<MediaPackageV2CaptionLanguageSetting>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaPackageV2CaptionLanguageSetting(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type MotionGraphicsInsertion.
     /// </summary>
     public class MotionGraphicsInsertion : ConstantClass

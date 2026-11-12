@@ -77,6 +77,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if (requestObject.IsSetCaptionLanguageSetting())
+            {
+                context.Writer.WritePropertyName("captionLanguageSetting");
+                context.Writer.WriteStringValue(requestObject.CaptionLanguageSetting);
+            }
+
             if (requestObject.IsSetId3Behavior())
             {
                 context.Writer.WritePropertyName("id3Behavior");
