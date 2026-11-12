@@ -64,8 +64,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ManagedBy. 
         /// <para>
         /// Filters the pipelines by who manages them. Specify <c>AWS</c> to return pipelines
-        /// that AWS manages, or <c>CUSTOMER</c> to return pipelines that you created. If you
-        /// don't specify a value, the response includes both.
+        /// that Amazon Web Services manages, or <c>CUSTOMER</c> to return pipelines that you
+        /// created. If you don't specify a value, the response includes both.
         /// </para>
         /// </summary>
         public PipelineManagedBy ManagedBy { get; set; }

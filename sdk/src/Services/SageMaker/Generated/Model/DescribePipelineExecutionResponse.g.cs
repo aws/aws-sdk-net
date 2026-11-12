@@ -237,7 +237,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that the execution uses. SageMaker
-        /// returns this value only for executions of pipelines that AWS manages.
+        /// returns this value only for executions of pipelines that Amazon Web Services manages.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 20, Max = 2048)]

@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property IamIdentity. 
         /// <para>
         /// The IAM Identity details associated with the user. These details are associated with
-        /// model package groups, model packages, and project entities only.
+        /// model package groups, model packages, project entities, hubs, and hub content only.
         /// </para>
         /// </summary>
         public IamIdentity IamIdentity { get; set; }
