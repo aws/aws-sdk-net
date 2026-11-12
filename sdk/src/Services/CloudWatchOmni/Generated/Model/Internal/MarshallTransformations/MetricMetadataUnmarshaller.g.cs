@@ -62,6 +62,12 @@ namespace Amazon.CloudWatchOmni.Model.Internal.MarshallTransformations
                 var propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "aggregationTemporality":
+                        context.AddPathSegment("AggregationTemporality");
+                        unmarshalledObject.AggregationTemporality = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "attributes":
                         context.AddPathSegment("Attributes");
                         unmarshalledObject.Attributes = new CborDictionaryUnmarshaller<string, string, CborStringUnmarshaller, CborStringUnmarshaller>(CborStringUnmarshaller.Instance, CborStringUnmarshaller.Instance).Unmarshall(context);
@@ -71,6 +77,12 @@ namespace Amazon.CloudWatchOmni.Model.Internal.MarshallTransformations
                     case "metricType":
                         context.AddPathSegment("MetricType");
                         unmarshalledObject.MetricType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "monotonicity":
+                        context.AddPathSegment("Monotonicity");
+                        unmarshalledObject.Monotonicity = CborStringUnmarshaller.Instance.Unmarshall(context);
                         context.PopPathSegment();
                         break;
 
