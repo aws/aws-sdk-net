@@ -2450,6 +2450,57 @@ namespace Amazon.Lightsail
     }
 
     /// <summary>
+    /// Constants used for properties of type LightsailDistributionSubdomainStateEnum.
+    /// </summary>
+    public class LightsailDistributionSubdomainStateEnum : ConstantClass
+    {
+        /// <summary>
+        /// Constant Attached for LightsailDistributionSubdomainStateEnum
+        /// </summary>
+        public static readonly LightsailDistributionSubdomainStateEnum Attached = new LightsailDistributionSubdomainStateEnum("Attached");
+
+        /// <summary>
+        /// Constant Attaching for LightsailDistributionSubdomainStateEnum
+        /// </summary>
+        public static readonly LightsailDistributionSubdomainStateEnum Attaching = new LightsailDistributionSubdomainStateEnum("Attaching");
+
+        /// <summary>
+        /// Constant Creating for LightsailDistributionSubdomainStateEnum
+        /// </summary>
+        public static readonly LightsailDistributionSubdomainStateEnum Creating = new LightsailDistributionSubdomainStateEnum("Creating");
+
+        /// <summary>
+        /// Constant Error for LightsailDistributionSubdomainStateEnum
+        /// </summary>
+        public static readonly LightsailDistributionSubdomainStateEnum Error = new LightsailDistributionSubdomainStateEnum("Error");
+
+        /// <summary>
+        /// Constructs a custom LightsailDistributionSubdomainStateEnum for a value not among the defined constants.
+        /// </summary>
+        public LightsailDistributionSubdomainStateEnum(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LightsailDistributionSubdomainStateEnum FindValue(string value)
+        {
+            return FindValue<LightsailDistributionSubdomainStateEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LightsailDistributionSubdomainStateEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type LoadBalancerAttributeName.
     /// </summary>
     public class LoadBalancerAttributeName : ConstantClass
@@ -3771,6 +3822,11 @@ namespace Amazon.Lightsail
         public static readonly OperationType CreateRelationalDatabaseSnapshot = new OperationType("CreateRelationalDatabaseSnapshot");
 
         /// <summary>
+        /// Constant CreateSubdomain for OperationType
+        /// </summary>
+        public static readonly OperationType CreateSubdomain = new OperationType("CreateSubdomain");
+
+        /// <summary>
         /// Constant DeleteAlarm for OperationType
         /// </summary>
         public static readonly OperationType DeleteAlarm = new OperationType("DeleteAlarm");
@@ -3864,6 +3920,11 @@ namespace Amazon.Lightsail
         /// Constant DeleteRelationalDatabaseSnapshot for OperationType
         /// </summary>
         public static readonly OperationType DeleteRelationalDatabaseSnapshot = new OperationType("DeleteRelationalDatabaseSnapshot");
+
+        /// <summary>
+        /// Constant DeleteSubdomain for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteSubdomain = new OperationType("DeleteSubdomain");
 
         /// <summary>
         /// Constant DetachCertificateFromDistribution for OperationType
@@ -4054,6 +4115,11 @@ namespace Amazon.Lightsail
         /// Constant UpdateRelationalDatabaseParameters for OperationType
         /// </summary>
         public static readonly OperationType UpdateRelationalDatabaseParameters = new OperationType("UpdateRelationalDatabaseParameters");
+
+        /// <summary>
+        /// Constant UpdateSubdomainAssociation for OperationType
+        /// </summary>
+        public static readonly OperationType UpdateSubdomainAssociation = new OperationType("UpdateSubdomainAssociation");
 
         /// <summary>
         /// Constructs a custom OperationType for a value not among the defined constants.
@@ -5018,6 +5084,11 @@ namespace Amazon.Lightsail
         public static readonly ResourceType StaticIp = new ResourceType("StaticIp");
 
         /// <summary>
+        /// Constant Subdomain for ResourceType
+        /// </summary>
+        public static readonly ResourceType Subdomain = new ResourceType("Subdomain");
+
+        /// <summary>
         /// Constructs a custom ResourceType for a value not among the defined constants.
         /// </summary>
         public ResourceType(string value) : base(value) { }
@@ -5206,6 +5277,123 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SubdomainAssociationAction.
+    /// </summary>
+    public class SubdomainAssociationAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant ASSOCIATE for SubdomainAssociationAction
+        /// </summary>
+        public static readonly SubdomainAssociationAction ASSOCIATE = new SubdomainAssociationAction("ASSOCIATE");
+
+        /// <summary>
+        /// Constant DISASSOCIATE for SubdomainAssociationAction
+        /// </summary>
+        public static readonly SubdomainAssociationAction DISASSOCIATE = new SubdomainAssociationAction("DISASSOCIATE");
+
+        /// <summary>
+        /// Constant TRANSFER for SubdomainAssociationAction
+        /// </summary>
+        public static readonly SubdomainAssociationAction TRANSFER = new SubdomainAssociationAction("TRANSFER");
+
+        /// <summary>
+        /// Constructs a custom SubdomainAssociationAction for a value not among the defined constants.
+        /// </summary>
+        public SubdomainAssociationAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubdomainAssociationAction FindValue(string value)
+        {
+            return FindValue<SubdomainAssociationAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubdomainAssociationAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SubdomainState.
+    /// </summary>
+    public class SubdomainState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ATTACHED for SubdomainState
+        /// </summary>
+        public static readonly SubdomainState ATTACHED = new SubdomainState("ATTACHED");
+
+        /// <summary>
+        /// Constant ATTACHING for SubdomainState
+        /// </summary>
+        public static readonly SubdomainState ATTACHING = new SubdomainState("ATTACHING");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for SubdomainState
+        /// </summary>
+        public static readonly SubdomainState CREATE_FAILED = new SubdomainState("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATING for SubdomainState
+        /// </summary>
+        public static readonly SubdomainState CREATING = new SubdomainState("CREATING");
+
+        /// <summary>
+        /// Constant DETACHING for SubdomainState
+        /// </summary>
+        public static readonly SubdomainState DETACHING = new SubdomainState("DETACHING");
+
+        /// <summary>
+        /// Constant IMPLICIT for SubdomainState
+        /// </summary>
+        public static readonly SubdomainState IMPLICIT = new SubdomainState("IMPLICIT");
+
+        /// <summary>
+        /// Constant TRANSFERRING for SubdomainState
+        /// </summary>
+        public static readonly SubdomainState TRANSFERRING = new SubdomainState("TRANSFERRING");
+
+        /// <summary>
+        /// Constant UNATTACHED for SubdomainState
+        /// </summary>
+        public static readonly SubdomainState UNATTACHED = new SubdomainState("UNATTACHED");
+
+        /// <summary>
+        /// Constructs a custom SubdomainState for a value not among the defined constants.
+        /// </summary>
+        public SubdomainState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubdomainState FindValue(string value)
+        {
+            return FindValue<SubdomainState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubdomainState(string value)
         {
             return FindValue(value);
         }

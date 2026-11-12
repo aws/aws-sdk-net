@@ -160,6 +160,11 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// An array of objects that describe the custom error responses configured for the distribution.
         /// </para>
+        ///  
+        /// <para>
+        /// This value is returned only when you specify <c>distributionName</c> in your <c>GetDistributions</c>
+        /// request. It isn't included in the response when you list all of your distributions.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -192,6 +197,11 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// The object (for example, <c>index.html</c>) that the distribution returns when a viewer
         /// requests the root URL of the distribution (<c>/</c>) instead of a specific object.
+        /// </para>
+        ///  
+        /// <para>
+        /// This value is returned only when you specify <c>distributionName</c> in your <c>GetDistributions</c>
+        /// request. It isn't included in the response when you list all of your distributions.
         /// </para>
         /// </summary>
         public string DefaultRootObject { get; set; }
@@ -335,6 +345,20 @@ namespace Amazon.Lightsail.Model
         /// Checks to see if the Status property is set.
         /// </summary>
         internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property Subdomain. 
+        /// <para>
+        /// An object that describes the Lightsail subdomain that's associated with the distribution,
+        /// or is being associated with it.
+        /// </para>
+        /// </summary>
+        public LightsailDistributionSubdomain Subdomain { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Subdomain property is set.
+        /// </summary>
+        internal bool IsSetSubdomain() => this.Subdomain != null;
 
         /// <summary>
         /// Gets and sets the property SupportCode. 

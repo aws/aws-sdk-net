@@ -273,6 +273,28 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetOrigin() => this.Origin != null;
 
         /// <summary>
+        /// Gets and sets the property SubdomainName. 
+        /// <para>
+        /// The Lightsail subdomain to create and associate with the distribution (for example,
+        /// <c>mysite</c>, for the web address <c>mysite.amazonlightsail.com</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// After the distribution is deployed, Lightsail creates the subdomain and associates
+        /// it with the distribution. If Lightsail can't create or associate the subdomain, it
+        /// still creates the distribution, but the <c>CreateDistribution</c> operation fails
+        /// and the <c>state</c> of the distribution's <c>subdomain</c> is <c>Error</c>. To check
+        /// the status, use the <c>subdomain</c> parameter of the distribution.
+        /// </para>
+        /// </summary>
+        public string SubdomainName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SubdomainName property is set.
+        /// </summary>
+        internal bool IsSetSubdomainName() => this.SubdomainName != null;
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tag keys and optional values to add to the distribution during create.

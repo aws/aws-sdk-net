@@ -1050,6 +1050,112 @@ namespace Amazon.Lightsail
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Checks whether a Lightsail subdomain is available to create. Optionally, reserves
+        /// the subdomain for your account for 15 minutes.
+        /// 
+        ///  
+        /// <para>
+        /// If you don't reserve the subdomain, another account can create it before you do.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckSubdomainAvailability service method.</param>
+        /// <returns>The response from the CheckSubdomainAvailability service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<c>us-east-1</c>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <c>us-east-1</c> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CheckSubdomainAvailability">REST API Reference for CheckSubdomainAvailability Operation</seealso>
+        public virtual CheckSubdomainAvailabilityResponse CheckSubdomainAvailability(CheckSubdomainAvailabilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CheckSubdomainAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckSubdomainAvailabilityResponseUnmarshaller.Instance;
+
+            return Invoke<CheckSubdomainAvailabilityResponse>(request, options);
+        }
+#else
+        internal virtual CheckSubdomainAvailabilityResponse CheckSubdomainAvailability(CheckSubdomainAvailabilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CheckSubdomainAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckSubdomainAvailabilityResponseUnmarshaller.Instance;
+
+            return Invoke<CheckSubdomainAvailabilityResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Checks whether a Lightsail subdomain is available to create. Optionally, reserves
+        /// the subdomain for your account for 15 minutes.
+        /// 
+        ///  
+        /// <para>
+        /// If you don't reserve the subdomain, another account can create it before you do.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckSubdomainAvailability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CheckSubdomainAvailability service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<c>us-east-1</c>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <c>us-east-1</c> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CheckSubdomainAvailability">REST API Reference for CheckSubdomainAvailability Operation</seealso>
+        public virtual Task<CheckSubdomainAvailabilityResponse> CheckSubdomainAvailabilityAsync(CheckSubdomainAvailabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CheckSubdomainAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckSubdomainAvailabilityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CheckSubdomainAvailabilityResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Closes ports for a specific Amazon Lightsail instance.
         /// 
         ///  
@@ -4576,6 +4682,138 @@ namespace Amazon.Lightsail
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a Lightsail subdomain, such as <c>mysite</c>, with the web address <c>mysite.amazonlightsail.com</c>.
+        /// After the subdomain is created, use the <c>UpdateSubdomainAssociation</c> action to
+        /// associate it with a Lightsail resource.
+        /// 
+        ///  
+        /// <para>
+        /// When you create a nested subdomain, such as <c>blog.mysite</c>, and you don't already
+        /// have the top-level subdomain (<c>mysite</c>), Lightsail adds the top-level subdomain
+        /// to your account in the <c>IMPLICIT</c> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have up to 30 subdomains in your account. Nested subdomains, subdomains in
+        /// the <c>CREATE_FAILED</c> state, and deleted subdomains that other accounts can't create
+        /// yet count toward this quota. Subdomains in the <c>IMPLICIT</c> state don't count toward
+        /// this quota.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSubdomain service method.</param>
+        /// <returns>The response from the CreateSubdomain service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<c>us-east-1</c>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <c>us-east-1</c> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateSubdomain">REST API Reference for CreateSubdomain Operation</seealso>
+        public virtual CreateSubdomainResponse CreateSubdomain(CreateSubdomainRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateSubdomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSubdomainResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSubdomainResponse>(request, options);
+        }
+#else
+        internal virtual CreateSubdomainResponse CreateSubdomain(CreateSubdomainRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateSubdomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSubdomainResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSubdomainResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a Lightsail subdomain, such as <c>mysite</c>, with the web address <c>mysite.amazonlightsail.com</c>.
+        /// After the subdomain is created, use the <c>UpdateSubdomainAssociation</c> action to
+        /// associate it with a Lightsail resource.
+        /// 
+        ///  
+        /// <para>
+        /// When you create a nested subdomain, such as <c>blog.mysite</c>, and you don't already
+        /// have the top-level subdomain (<c>mysite</c>), Lightsail adds the top-level subdomain
+        /// to your account in the <c>IMPLICIT</c> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have up to 30 subdomains in your account. Nested subdomains, subdomains in
+        /// the <c>CREATE_FAILED</c> state, and deleted subdomains that other accounts can't create
+        /// yet count toward this quota. Subdomains in the <c>IMPLICIT</c> state don't count toward
+        /// this quota.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSubdomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateSubdomain service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<c>us-east-1</c>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <c>us-east-1</c> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateSubdomain">REST API Reference for CreateSubdomain Operation</seealso>
+        public virtual Task<CreateSubdomainResponse> CreateSubdomainAsync(CreateSubdomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateSubdomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSubdomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSubdomainResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes an alarm.
         /// 
         ///  
@@ -7236,6 +7474,142 @@ namespace Amazon.Lightsail
             options.ResponseUnmarshaller = DeleteRelationalDatabaseSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRelationalDatabaseSnapshotResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a Lightsail subdomain.
+        /// 
+        ///  
+        /// <para>
+        /// The subdomain must be in the <c>UNATTACHED</c> or <c>CREATE_FAILED</c> state. To delete
+        /// a subdomain that's associated with a resource, first disassociate it by using the
+        /// <c>UpdateSubdomainAssociation</c> action.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete a top-level subdomain that has nested subdomains, the nested subdomains
+        /// continue to work, and the top-level subdomain changes to the <c>IMPLICIT</c> state.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// After you delete a subdomain that was associated with a resource, the subdomain isn't
+        /// available to other accounts for at least 30 days.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubdomain service method.</param>
+        /// <returns>The response from the DeleteSubdomain service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<c>us-east-1</c>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <c>us-east-1</c> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteSubdomain">REST API Reference for DeleteSubdomain Operation</seealso>
+        public virtual DeleteSubdomainResponse DeleteSubdomain(DeleteSubdomainRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSubdomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSubdomainResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSubdomainResponse>(request, options);
+        }
+#else
+        internal virtual DeleteSubdomainResponse DeleteSubdomain(DeleteSubdomainRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSubdomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSubdomainResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSubdomainResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes a Lightsail subdomain.
+        /// 
+        ///  
+        /// <para>
+        /// The subdomain must be in the <c>UNATTACHED</c> or <c>CREATE_FAILED</c> state. To delete
+        /// a subdomain that's associated with a resource, first disassociate it by using the
+        /// <c>UpdateSubdomainAssociation</c> action.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete a top-level subdomain that has nested subdomains, the nested subdomains
+        /// continue to work, and the top-level subdomain changes to the <c>IMPLICIT</c> state.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// After you delete a subdomain that was associated with a resource, the subdomain isn't
+        /// available to other accounts for at least 30 days.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubdomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteSubdomain service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<c>us-east-1</c>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <c>us-east-1</c> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteSubdomain">REST API Reference for DeleteSubdomain Operation</seealso>
+        public virtual Task<DeleteSubdomainResponse> DeleteSubdomainAsync(DeleteSubdomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSubdomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSubdomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSubdomainResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -11458,6 +11832,15 @@ namespace Amazon.Lightsail
         /// <summary>
         /// Returns information about one or more of your Amazon Lightsail content delivery network
         /// (CDN) distributions.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>defaultRootObject</c> and <c>customErrorResponses</c> values are returned only
+        /// when you specify <c>distributionName</c> to retrieve a single distribution. When you
+        /// call <c>GetDistributions</c> without a distribution name to list all distributions,
+        /// these two fields aren't included in the response.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDistributions service method.</param>
         /// <returns>The response from the GetDistributions service method, as returned by Lightsail.</returns>
@@ -11512,6 +11895,15 @@ namespace Amazon.Lightsail
         /// <summary>
         /// Returns information about one or more of your Amazon Lightsail content delivery network
         /// (CDN) distributions.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>defaultRootObject</c> and <c>customErrorResponses</c> values are returned only
+        /// when you specify <c>distributionName</c> to retrieve a single distribution. When you
+        /// call <c>GetDistributions</c> without a distribution name to list all distributions,
+        /// these two fields aren't included in the response.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDistributions service method.</param>
         /// <param name="cancellationToken">
@@ -16118,6 +16510,122 @@ namespace Amazon.Lightsail
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns information about one or more of your Lightsail subdomains.
+        /// 
+        ///  
+        /// <para>
+        /// When you don't specify a subdomain, the response lists your top-level subdomains,
+        /// and each top-level subdomain includes its nested subdomains.
+        /// </para>
+        ///  
+        /// <para>
+        /// The results are paginated. To get the next page of results, use the <c>pageToken</c>
+        /// parameter.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSubdomains service method.</param>
+        /// <returns>The response from the GetSubdomains service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<c>us-east-1</c>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <c>us-east-1</c> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetSubdomains">REST API Reference for GetSubdomains Operation</seealso>
+        public virtual GetSubdomainsResponse GetSubdomains(GetSubdomainsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSubdomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSubdomainsResponseUnmarshaller.Instance;
+
+            return Invoke<GetSubdomainsResponse>(request, options);
+        }
+#else
+        internal virtual GetSubdomainsResponse GetSubdomains(GetSubdomainsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSubdomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSubdomainsResponseUnmarshaller.Instance;
+
+            return Invoke<GetSubdomainsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns information about one or more of your Lightsail subdomains.
+        /// 
+        ///  
+        /// <para>
+        /// When you don't specify a subdomain, the response lists your top-level subdomains,
+        /// and each top-level subdomain includes its nested subdomains.
+        /// </para>
+        ///  
+        /// <para>
+        /// The results are paginated. To get the next page of results, use the <c>pageToken</c>
+        /// parameter.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSubdomains service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetSubdomains service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<c>us-east-1</c>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <c>us-east-1</c> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetSubdomains">REST API Reference for GetSubdomains Operation</seealso>
+        public virtual Task<GetSubdomainsResponse> GetSubdomainsAsync(GetSubdomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSubdomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSubdomainsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSubdomainsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Imports a public SSH key from a specific key pair.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportKeyPair service method.</param>
@@ -20628,6 +21136,154 @@ namespace Amazon.Lightsail
             options.ResponseUnmarshaller = UpdateRelationalDatabaseParametersResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRelationalDatabaseParametersResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Associates a Lightsail subdomain with a resource, disassociates it from a resource,
+        /// or moves it from one resource to another resource.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, you can associate a subdomain only with a Lightsail content delivery network
+        /// (CDN) distribution. A resource can be associated with only one subdomain at a time.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you associate a subdomain with a distribution, Lightsail attaches the subdomain's
+        /// certificate to the distribution. You can't associate a subdomain with a distribution
+        /// that uses a custom domain, which is a distribution that has a Lightsail certificate
+        /// attached.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can transfer each subdomain to another resource only once in a 24-hour period.
+        /// </para>
+        ///  
+        /// <para>
+        /// The update is asynchronous. The response returns the subdomain in the <c>ATTACHING</c>,
+        /// <c>DETACHING</c>, or <c>TRANSFERRING</c> state, and an operation. To check when the
+        /// update is complete, use the <c>GetSubdomains</c> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSubdomainAssociation service method.</param>
+        /// <returns>The response from the UpdateSubdomainAssociation service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<c>us-east-1</c>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <c>us-east-1</c> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateSubdomainAssociation">REST API Reference for UpdateSubdomainAssociation Operation</seealso>
+        public virtual UpdateSubdomainAssociationResponse UpdateSubdomainAssociation(UpdateSubdomainAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateSubdomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSubdomainAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSubdomainAssociationResponse>(request, options);
+        }
+#else
+        internal virtual UpdateSubdomainAssociationResponse UpdateSubdomainAssociation(UpdateSubdomainAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateSubdomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSubdomainAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSubdomainAssociationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Associates a Lightsail subdomain with a resource, disassociates it from a resource,
+        /// or moves it from one resource to another resource.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, you can associate a subdomain only with a Lightsail content delivery network
+        /// (CDN) distribution. A resource can be associated with only one subdomain at a time.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you associate a subdomain with a distribution, Lightsail attaches the subdomain's
+        /// certificate to the distribution. You can't associate a subdomain with a distribution
+        /// that uses a custom domain, which is a distribution that has a Lightsail certificate
+        /// attached.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can transfer each subdomain to another resource only once in a 24-hour period.
+        /// </para>
+        ///  
+        /// <para>
+        /// The update is asynchronous. The response returns the subdomain in the <c>ATTACHING</c>,
+        /// <c>DETACHING</c>, or <c>TRANSFERRING</c> state, and an operation. To check when the
+        /// update is complete, use the <c>GetSubdomains</c> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSubdomainAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateSubdomainAssociation service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<c>us-east-1</c>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <c>us-east-1</c> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateSubdomainAssociation">REST API Reference for UpdateSubdomainAssociation Operation</seealso>
+        public virtual Task<UpdateSubdomainAssociationResponse> UpdateSubdomainAssociationAsync(UpdateSubdomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateSubdomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSubdomainAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSubdomainAssociationResponse>(request, options, cancellationToken);
         }
 
         /// <summary>
