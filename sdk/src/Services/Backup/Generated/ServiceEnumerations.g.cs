@@ -391,6 +391,16 @@ namespace Amazon.Backup
         public static readonly BackupVaultEvent EKS_BACKUP_OBJECT_FAILED = new BackupVaultEvent("EKS_BACKUP_OBJECT_FAILED");
 
         /// <summary>
+        /// Constant EKS_RESTORE_MODIFICATION_FAILED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent EKS_RESTORE_MODIFICATION_FAILED = new BackupVaultEvent("EKS_RESTORE_MODIFICATION_FAILED");
+
+        /// <summary>
+        /// Constant EKS_RESTORE_MODIFICATION_SUCCESS for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent EKS_RESTORE_MODIFICATION_SUCCESS = new BackupVaultEvent("EKS_RESTORE_MODIFICATION_SUCCESS");
+
+        /// <summary>
         /// Constant EKS_RESTORE_OBJECT_FAILED for BackupVaultEvent
         /// </summary>
         public static readonly BackupVaultEvent EKS_RESTORE_OBJECT_FAILED = new BackupVaultEvent("EKS_RESTORE_OBJECT_FAILED");
