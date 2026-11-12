@@ -61,5 +61,20 @@ namespace Amazon.SecretsManager.Model
         /// Checks to see if the Name property is set.
         /// </summary>
         internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// The name of the resource policy. If you didn't specify <c>PolicyName</c> in the request,
+        /// this is <c>default</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string PolicyName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyName property is set.
+        /// </summary>
+        internal bool IsSetPolicyName() => this.PolicyName != null;
     }
 }

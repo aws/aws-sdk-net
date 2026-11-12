@@ -39,6 +39,12 @@ namespace Amazon.SecretsManager.Model
         IBatchGetSecretValuePaginator BatchGetSecretValue(BatchGetSecretValueRequest request);
 
         /// <summary>
+        /// Paginator for ListResourcePolicies operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListResourcePoliciesPaginator ListResourcePolicies(ListResourcePoliciesRequest request);
+
+        /// <summary>
         /// Paginator for ListSecretVersionIds operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

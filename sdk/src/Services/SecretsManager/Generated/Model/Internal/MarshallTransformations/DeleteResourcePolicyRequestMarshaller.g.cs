@@ -70,6 +70,11 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetPolicyName())
+            {
+                context.Writer.WritePropertyName("PolicyName");
+                context.Writer.WriteStringValue(publicRequest.PolicyName);
+            }
             if (publicRequest.IsSetSecretId())
             {
                 context.Writer.WritePropertyName("SecretId");

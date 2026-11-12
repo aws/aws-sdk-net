@@ -43,6 +43,22 @@ namespace Amazon.SecretsManager.Model
     public partial class DeleteResourcePolicyRequest : AmazonSecretsManagerRequest
     {
         /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// The name of the resource policy to delete. If you don't specify this field, Secrets
+        /// Manager uses <c>default</c>. You can only delete the <c>default</c> policy; if you
+        /// specify any other name, the operation returns an <c>InvalidParameterException</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string PolicyName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyName property is set.
+        /// </summary>
+        internal bool IsSetPolicyName() => this.PolicyName != null;
+
+        /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
         /// The ARN or name of the secret to delete the attached resource-based policy for.

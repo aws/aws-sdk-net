@@ -75,6 +75,11 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("BlockPublicPolicy");
                 context.Writer.WriteBooleanValue(publicRequest.BlockPublicPolicy.Value);
             }
+            if (publicRequest.IsSetPolicyName())
+            {
+                context.Writer.WritePropertyName("PolicyName");
+                context.Writer.WriteStringValue(publicRequest.PolicyName);
+            }
             if (publicRequest.IsSetResourcePolicy())
             {
                 context.Writer.WritePropertyName("ResourcePolicy");

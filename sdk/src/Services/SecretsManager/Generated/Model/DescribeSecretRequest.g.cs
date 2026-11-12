@@ -32,9 +32,14 @@ namespace Amazon.SecretsManager.Model
     /// <summary>
     /// Container for the parameters to the DescribeSecret operation. Retrieves the details
     /// of a secret. It does not include the encrypted secret value. Secrets Manager only
-    /// returns fields that have a value in the response. <para> Secrets Manager generates
-    /// a CloudTrail log entry when you call this action. Do not include sensitive information
-    /// in request parameters because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// returns fields that have a value in the response. <note> <para> The <c>VersionIdsToStages</c>
+    /// field in the response includes every version ID that has a staging label attached,
+    /// even if that version doesn't contain a secret value. In contrast, <c>ListSecretVersionIds</c>
+    /// only returns versions that contain a secret value. To check whether a secret version
+    /// contains a value, call <a>GetSecretValue</a>. </para> </note> <para> Secrets Manager
+    /// generates a CloudTrail log entry when you call this action. Do not include sensitive
+    /// information in request parameters because it might be logged. For more information,
+    /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
     /// Secrets Manager events with CloudTrail</a>. </para> <para> <b>Required permissions:
     /// </b> <c>secretsmanager:DescribeSecret</c>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
     /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication

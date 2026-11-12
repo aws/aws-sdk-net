@@ -41,6 +41,14 @@ namespace Amazon.SecretsManager.Model
         }
 
         /// <summary>
+        /// Paginator for ListResourcePolicies operation
+        /// </summary>
+        public IListResourcePoliciesPaginator ListResourcePolicies(ListResourcePoliciesRequest request)
+        {
+            return new ListResourcePoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecretVersionIds operation
         /// </summary>
         public IListSecretVersionIdsPaginator ListSecretVersionIds(ListSecretVersionIdsRequest request)

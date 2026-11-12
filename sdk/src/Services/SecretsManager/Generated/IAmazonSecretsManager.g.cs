@@ -95,6 +95,167 @@ namespace Amazon.SecretsManager
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Links a primary secret in your account to a replica secret in a different Amazon Web
+        /// Services account and starts replication to this replica. The replica secret must already
+        /// exist in the other Amazon Web Services account. Create the replica with <a>CreateSecret</a>
+        /// and set its <c>CrossAccountPrimaryARN</c> field set to this primary secret's ARN.
+        /// When you call AssociateCrossAccountReplica, Secrets Manager calls AcceptCrossAccountReplication
+        /// on the replica secret on your behalf.
+        /// 
+        ///  
+        /// <para>
+        /// The primary and replica secrets must be in the same Amazon Web Services Region and
+        /// partition, and you must call this operation from the account that owns the primary
+        /// secret. A primary secret can have at most one cross-account replica. This operation
+        /// is idempotent, so you can call it again for the same replica to repair replication.
+        /// If the association fails, Secrets Manager does not modify either the primary or replica
+        /// secret.
+        /// </para>
+        ///  
+        /// <para>
+        /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+        /// include sensitive information in request parameters because it might be logged. For
+        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+        /// Secrets Manager events with CloudTrail</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <c>secretsmanager:AssociateCrossAccountReplica</c>,
+        /// <c>secretsmanager:GetSecretValue</c> on the primary secret, and <c>secretsmanager:AcceptCrossAccountReplication</c>
+        /// on the replica secret. You must also have <c>kms:Decrypt</c> permission for the Key
+        /// Management Service (KMS) key that encrypts the primary secret, and <c>kms:Encrypt</c>
+        /// permission for the Amazon Web Services KMS key that encrypts the replica secret. If
+        /// you supply <c>ReplicationRoleARN</c>, you also need <c>iam:PassRole</c> for that role.
+        /// For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateCrossAccountReplica service method.</param>
+        /// <returns>The response from the AssociateCrossAccountReplica service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
+        /// The parameter name or value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// A parameter value is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The secret is scheduled for deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
+        /// The request failed because it would exceed one of the Secrets Manager quotas.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// Secrets Manager can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/AssociateCrossAccountReplica">REST API Reference for AssociateCrossAccountReplica Operation</seealso>
+        AssociateCrossAccountReplicaResponse AssociateCrossAccountReplica(AssociateCrossAccountReplicaRequest request);
+#endif
+
+        /// <summary>
+        /// Links a primary secret in your account to a replica secret in a different Amazon Web
+        /// Services account and starts replication to this replica. The replica secret must already
+        /// exist in the other Amazon Web Services account. Create the replica with <a>CreateSecret</a>
+        /// and set its <c>CrossAccountPrimaryARN</c> field set to this primary secret's ARN.
+        /// When you call AssociateCrossAccountReplica, Secrets Manager calls AcceptCrossAccountReplication
+        /// on the replica secret on your behalf.
+        /// 
+        ///  
+        /// <para>
+        /// The primary and replica secrets must be in the same Amazon Web Services Region and
+        /// partition, and you must call this operation from the account that owns the primary
+        /// secret. A primary secret can have at most one cross-account replica. This operation
+        /// is idempotent, so you can call it again for the same replica to repair replication.
+        /// If the association fails, Secrets Manager does not modify either the primary or replica
+        /// secret.
+        /// </para>
+        ///  
+        /// <para>
+        /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+        /// include sensitive information in request parameters because it might be logged. For
+        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+        /// Secrets Manager events with CloudTrail</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <c>secretsmanager:AssociateCrossAccountReplica</c>,
+        /// <c>secretsmanager:GetSecretValue</c> on the primary secret, and <c>secretsmanager:AcceptCrossAccountReplication</c>
+        /// on the replica secret. You must also have <c>kms:Decrypt</c> permission for the Key
+        /// Management Service (KMS) key that encrypts the primary secret, and <c>kms:Encrypt</c>
+        /// permission for the Amazon Web Services KMS key that encrypts the replica secret. If
+        /// you supply <c>ReplicationRoleARN</c>, you also need <c>iam:PassRole</c> for that role.
+        /// For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateCrossAccountReplica service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociateCrossAccountReplica service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
+        /// The parameter name or value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// A parameter value is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The secret is scheduled for deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
+        /// The request failed because it would exceed one of the Secrets Manager quotas.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// Secrets Manager can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/AssociateCrossAccountReplica">REST API Reference for AssociateCrossAccountReplica Operation</seealso>
+        Task<AssociateCrossAccountReplicaResponse> AssociateCrossAccountReplicaAsync(AssociateCrossAccountReplicaRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves the contents of the encrypted fields <c>SecretString</c> or <c>SecretBinary</c>
         /// for up to 20 secrets. To retrieve a single secret, call <a>GetSecretValue</a>. 
         /// 
@@ -258,7 +419,7 @@ namespace Amazon.SecretsManager
         /// from the partially created version. You also need to determine whether to roll back
         /// to the previous version of the secret by moving the staging label <c>AWSCURRENT</c>
         /// to the version that has <c>AWSPENDING</c>. To determine which version has a specific
-        /// staging label, call <a>ListSecretVersionIds</a>. Then use <a>UpdateSecretVersionStage</a>
+        /// staging label, call <a>DescribeSecret</a>. Then use <a>UpdateSecretVersionStage</a>
         /// to change staging labels. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How
         /// rotation works</a>.
         /// </para>
@@ -331,7 +492,7 @@ namespace Amazon.SecretsManager
         /// from the partially created version. You also need to determine whether to roll back
         /// to the previous version of the secret by moving the staging label <c>AWSCURRENT</c>
         /// to the version that has <c>AWSPENDING</c>. To determine which version has a specific
-        /// staging label, call <a>ListSecretVersionIds</a>. Then use <a>UpdateSecretVersionStage</a>
+        /// staging label, call <a>DescribeSecret</a>. Then use <a>UpdateSecretVersionStage</a>
         /// to change staging labels. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How
         /// rotation works</a>.
         /// </para>
@@ -400,9 +561,9 @@ namespace Amazon.SecretsManager
         /// Creates a new secret. A <i>secret</i> can be a password, a set of credentials such
         /// as a user name and password, an OAuth token, or other secret information that you
         /// store in an encrypted form in Secrets Manager. The secret also includes the connection
-        /// information to access a database or other service, which Secrets Manager doesn't encrypt.
-        /// A secret in Secrets Manager consists of both the protected secret data and the important
-        /// information needed to manage the secret.
+        /// information to access a database or other service. Secrets Manager does not encrypt
+        /// this connection information. A secret in Secrets Manager consists of both the encrypted
+        /// secret versions and the metadata that Secrets Manager uses to manage the secret.
         /// 
         ///  
         /// <para>
@@ -419,7 +580,7 @@ namespace Amazon.SecretsManager
         /// <para>
         /// To create a secret, you can provide the secret value to be encrypted in either the
         /// <c>SecretString</c> parameter or the <c>SecretBinary</c> parameter, but not both.
-        /// If you include <c>SecretString</c> or <c>SecretBinary</c> then Secrets Manager creates
+        /// If you include <c>SecretString</c> or <c>SecretBinary</c>, then Secrets Manager creates
         /// an initial secret version and automatically attaches the staging label <c>AWSCURRENT</c>
         /// to it.
         /// </para>
@@ -436,14 +597,20 @@ namespace Amazon.SecretsManager
         /// managed key <c>aws/secretsmanager</c>. If this key doesn't already exist in your account,
         /// then Secrets Manager creates it for you automatically. All users and roles in the
         /// Amazon Web Services account automatically have access to use <c>aws/secretsmanager</c>.
-        /// Creating <c>aws/secretsmanager</c> can result in a one-time significant delay in returning
-        /// the result.
+        /// Creating <c>aws/secretsmanager</c> can result in a one-time delay to complete the
+        /// secret creation.
         /// </para>
         ///  
         /// <para>
         /// If the secret is in a different Amazon Web Services account from the credentials calling
         /// the API, then you can't use <c>aws/secretsmanager</c> to encrypt the secret, and you
         /// must create and use a customer managed KMS key. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a cross-account replica secret, include <c>CrossAccountPrimaryARN</c>. The
+        /// replica must use a customer managed KMS key, and can't include <c>AddReplicaRegions</c>,
+        /// <c>Description</c>, <c>SecretBinary</c>, <c>SecretString</c>, or <c>Type</c>.
         /// </para>
         ///  
         /// <para>
@@ -456,8 +623,9 @@ namespace Amazon.SecretsManager
         /// <para>
         ///  <b>Required permissions: </b> <c>secretsmanager:CreateSecret</c>. If you include
         /// tags in the secret, you also need <c>secretsmanager:TagResource</c>. To add replica
-        /// Regions, you must also have <c>secretsmanager:ReplicateSecretToRegions</c>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// Regions, you must also have <c>secretsmanager:ReplicateSecretToRegions</c>. To create
+        /// a cross-account replica secret, you must also have <c>secretsmanager:PutResourcePolicy</c>
+        /// permissions. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -539,9 +707,9 @@ namespace Amazon.SecretsManager
         /// Creates a new secret. A <i>secret</i> can be a password, a set of credentials such
         /// as a user name and password, an OAuth token, or other secret information that you
         /// store in an encrypted form in Secrets Manager. The secret also includes the connection
-        /// information to access a database or other service, which Secrets Manager doesn't encrypt.
-        /// A secret in Secrets Manager consists of both the protected secret data and the important
-        /// information needed to manage the secret.
+        /// information to access a database or other service. Secrets Manager does not encrypt
+        /// this connection information. A secret in Secrets Manager consists of both the encrypted
+        /// secret versions and the metadata that Secrets Manager uses to manage the secret.
         /// 
         ///  
         /// <para>
@@ -558,7 +726,7 @@ namespace Amazon.SecretsManager
         /// <para>
         /// To create a secret, you can provide the secret value to be encrypted in either the
         /// <c>SecretString</c> parameter or the <c>SecretBinary</c> parameter, but not both.
-        /// If you include <c>SecretString</c> or <c>SecretBinary</c> then Secrets Manager creates
+        /// If you include <c>SecretString</c> or <c>SecretBinary</c>, then Secrets Manager creates
         /// an initial secret version and automatically attaches the staging label <c>AWSCURRENT</c>
         /// to it.
         /// </para>
@@ -575,14 +743,20 @@ namespace Amazon.SecretsManager
         /// managed key <c>aws/secretsmanager</c>. If this key doesn't already exist in your account,
         /// then Secrets Manager creates it for you automatically. All users and roles in the
         /// Amazon Web Services account automatically have access to use <c>aws/secretsmanager</c>.
-        /// Creating <c>aws/secretsmanager</c> can result in a one-time significant delay in returning
-        /// the result.
+        /// Creating <c>aws/secretsmanager</c> can result in a one-time delay to complete the
+        /// secret creation.
         /// </para>
         ///  
         /// <para>
         /// If the secret is in a different Amazon Web Services account from the credentials calling
         /// the API, then you can't use <c>aws/secretsmanager</c> to encrypt the secret, and you
         /// must create and use a customer managed KMS key. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a cross-account replica secret, include <c>CrossAccountPrimaryARN</c>. The
+        /// replica must use a customer managed KMS key, and can't include <c>AddReplicaRegions</c>,
+        /// <c>Description</c>, <c>SecretBinary</c>, <c>SecretString</c>, or <c>Type</c>.
         /// </para>
         ///  
         /// <para>
@@ -595,8 +769,9 @@ namespace Amazon.SecretsManager
         /// <para>
         ///  <b>Required permissions: </b> <c>secretsmanager:CreateSecret</c>. If you include
         /// tags in the secret, you also need <c>secretsmanager:TagResource</c>. To add replica
-        /// Regions, you must also have <c>secretsmanager:ReplicateSecretToRegions</c>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// Regions, you must also have <c>secretsmanager:ReplicateSecretToRegions</c>. To create
+        /// a cross-account replica secret, you must also have <c>secretsmanager:PutResourcePolicy</c>
+        /// permissions. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -811,6 +986,14 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
+        /// You can't delete a cross-account primary secret that is associated with a cross-account
+        /// replica secret. You must first disassociate each of the replicas using <a>DisassociateCrossAccountReplica</a>,
+        /// before deleting the primary secret. Similarly, you can't delete a cross-account replica
+        /// secret without first stopping replication. Call <a>StopReplicationToReplica</a> to
+        /// stop replication, and then you can delete the secret.
+        /// </para>
+        ///  
+        /// <para>
         /// You can't directly delete a version of a secret. Instead, you remove all staging labels
         /// from the version using <a>UpdateSecretVersionStage</a>. This marks the version as
         /// deprecated, and then Secrets Manager can automatically delete the version in the background.
@@ -908,6 +1091,14 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
+        /// You can't delete a cross-account primary secret that is associated with a cross-account
+        /// replica secret. You must first disassociate each of the replicas using <a>DisassociateCrossAccountReplica</a>,
+        /// before deleting the primary secret. Similarly, you can't delete a cross-account replica
+        /// secret without first stopping replication. Call <a>StopReplicationToReplica</a> to
+        /// stop replication, and then you can delete the secret.
+        /// </para>
+        ///  
+        /// <para>
         /// You can't directly delete a version of a secret. Instead, you remove all staging labels
         /// from the version using <a>UpdateSecretVersionStage</a>. This marks the version as
         /// deprecated, and then Secrets Manager can automatically delete the version in the background.
@@ -997,7 +1188,14 @@ namespace Amazon.SecretsManager
         /// Retrieves the details of a secret. It does not include the encrypted secret value.
         /// Secrets Manager only returns fields that have a value in the response. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The <c>VersionIdsToStages</c> field in the response includes every version ID that
+        /// has a staging label attached, even if that version doesn't contain a secret value.
+        /// In contrast, <c>ListSecretVersionIds</c> only returns versions that contain a secret
+        /// value. To check whether a secret version contains a value, call <a>GetSecretValue</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
         /// include sensitive information in request parameters because it might be logged. For
@@ -1031,7 +1229,14 @@ namespace Amazon.SecretsManager
         /// Retrieves the details of a secret. It does not include the encrypted secret value.
         /// Secrets Manager only returns fields that have a value in the response. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The <c>VersionIdsToStages</c> field in the response includes every version ID that
+        /// has a staging label attached, even if that version doesn't contain a secret value.
+        /// In contrast, <c>ListSecretVersionIds</c> only returns versions that contain a secret
+        /// value. To check whether a secret version contains a value, call <a>GetSecretValue</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
         /// include sensitive information in request parameters because it might be logged. For
@@ -1062,6 +1267,157 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DescribeSecret">REST API Reference for DescribeSecret Operation</seealso>
         Task<DescribeSecretResponse> DescribeSecretAsync(DescribeSecretRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes the link between a primary secret in your account and a cross-account replica
+        /// secret, and stops replication to the replica secret. Call this operation on the primary
+        /// secret. This action removes the replica association created by <a>AssociateCrossAccountReplica</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Disassociating the replica from the primary does not delete the replica secret or
+        /// convert the replica secret to a standalone secret. The replica secret remains in the
+        /// other account and its replication status changes to <c>Detached</c>. Secrets Manager
+        /// no longer sends updates from the primary secret to the replica secret after disassociation.
+        /// To convert a detached replica into a standalone secret, call <a>StopReplicationToReplica</a>
+        /// on the replica secret.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must disassociate a cross-account replica before you call <a>DeleteSecret</a>
+        /// for the primary secret. The <a>DeleteSecret</a> call fails if any replicas are still
+        /// associated with the primary secret.
+        /// </para>
+        ///  
+        /// <para>
+        /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+        /// include sensitive information in request parameters because it might be logged. For
+        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+        /// Secrets Manager events with CloudTrail</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <c>secretsmanager:DisassociateCrossAccountReplica</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateCrossAccountReplica service method.</param>
+        /// <returns>The response from the DisassociateCrossAccountReplica service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
+        /// The parameter name or value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// A parameter value is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The secret is scheduled for deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// Secrets Manager can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DisassociateCrossAccountReplica">REST API Reference for DisassociateCrossAccountReplica Operation</seealso>
+        DisassociateCrossAccountReplicaResponse DisassociateCrossAccountReplica(DisassociateCrossAccountReplicaRequest request);
+#endif
+
+        /// <summary>
+        /// Removes the link between a primary secret in your account and a cross-account replica
+        /// secret, and stops replication to the replica secret. Call this operation on the primary
+        /// secret. This action removes the replica association created by <a>AssociateCrossAccountReplica</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Disassociating the replica from the primary does not delete the replica secret or
+        /// convert the replica secret to a standalone secret. The replica secret remains in the
+        /// other account and its replication status changes to <c>Detached</c>. Secrets Manager
+        /// no longer sends updates from the primary secret to the replica secret after disassociation.
+        /// To convert a detached replica into a standalone secret, call <a>StopReplicationToReplica</a>
+        /// on the replica secret.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must disassociate a cross-account replica before you call <a>DeleteSecret</a>
+        /// for the primary secret. The <a>DeleteSecret</a> call fails if any replicas are still
+        /// associated with the primary secret.
+        /// </para>
+        ///  
+        /// <para>
+        /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+        /// include sensitive information in request parameters because it might be logged. For
+        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+        /// Secrets Manager events with CloudTrail</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <c>secretsmanager:DisassociateCrossAccountReplica</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateCrossAccountReplica service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociateCrossAccountReplica service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
+        /// The parameter name or value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// A parameter value is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The secret is scheduled for deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// Secrets Manager can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DisassociateCrossAccountReplica">REST API Reference for DisassociateCrossAccountReplica Operation</seealso>
+        Task<DisassociateCrossAccountReplicaResponse> DisassociateCrossAccountReplicaAsync(DisassociateCrossAccountReplicaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1458,6 +1814,135 @@ namespace Amazon.SecretsManager
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the resource-based policies attached to a secret. The response contains only
+        /// the names of the policies, not their contents. Secrets Manager lists <c>default</c>
+        /// first, followed by any other policies in alphabetical order. To get the contents of
+        /// a policy, use <a>GetResourcePolicy</a>. You can modify only the <c>default</c> policy.
+        /// 
+        ///  
+        /// <para>
+        /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+        /// include sensitive information in request parameters because it might be logged. For
+        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+        /// Secrets Manager events with CloudTrail</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <c>secretsmanager:ListResourcePolicies</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourcePolicies service method.</param>
+        /// <returns>The response from the ListResourcePolicies service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
+        /// The parameter name or value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// A parameter value is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The secret is scheduled for deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// Secrets Manager can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListResourcePolicies">REST API Reference for ListResourcePolicies Operation</seealso>
+        ListResourcePoliciesResponse ListResourcePolicies(ListResourcePoliciesRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the resource-based policies attached to a secret. The response contains only
+        /// the names of the policies, not their contents. Secrets Manager lists <c>default</c>
+        /// first, followed by any other policies in alphabetical order. To get the contents of
+        /// a policy, use <a>GetResourcePolicy</a>. You can modify only the <c>default</c> policy.
+        /// 
+        ///  
+        /// <para>
+        /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+        /// include sensitive information in request parameters because it might be logged. For
+        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+        /// Secrets Manager events with CloudTrail</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <c>secretsmanager:ListResourcePolicies</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourcePolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListResourcePolicies service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
+        /// The parameter name or value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// A parameter value is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The secret is scheduled for deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// Secrets Manager can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListResourcePolicies">REST API Reference for ListResourcePolicies Operation</seealso>
+        Task<ListResourcePoliciesResponse> ListResourcePoliciesAsync(ListResourcePoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists the versions of a secret. Secrets Manager uses staging labels to indicate the
         /// different versions of a secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">
         /// Secrets Manager concepts: Versions</a>.
@@ -1466,7 +1951,13 @@ namespace Amazon.SecretsManager
         /// <para>
         /// To list the secrets in the account, use <a>ListSecrets</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <c>ListSecretVersionIds</c> only returns versions that contain a secret value. To
+        /// see all version IDs that have staging labels attached, including ones without a secret
+        /// value, call <c>DescribeSecret</c> and check <c>VersionIdsToStages</c>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
         /// include sensitive information in request parameters because it might be logged. For
@@ -1508,7 +1999,13 @@ namespace Amazon.SecretsManager
         /// <para>
         /// To list the secrets in the account, use <a>ListSecrets</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <c>ListSecretVersionIds</c> only returns versions that contain a secret value. To
+        /// see all version IDs that have staging labels attached, including ones without a secret
+        /// value, call <c>DescribeSecret</c> and check <c>VersionIdsToStages</c>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
         /// include sensitive information in request parameters because it might be logged. For
@@ -2588,13 +3085,25 @@ namespace Amazon.SecretsManager
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Removes the link between the replica secret and the primary secret and promotes the
-        /// replica to a primary secret in the replica Region.
+        /// Removes the link between a replica secret and its primary secret, and stops replication
+        /// to the replica. You call this operation from the replica account or Region. Depending
+        /// on the type of replica, the behavior is:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You must call this operation from the Region in which you want to promote the replica
-        /// to a primary secret.
+        ///  <b>Cross-Region replica</b>: promotes the replica to a standalone primary secret
+        /// in the replica Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Cross-account replica</b>: promotes the replica in your account to a standalone
+        /// secret and stops replication from its primary secret in the other account. Secrets
+        /// Manager updates the primary secret's replication status to <c>Detached</c> for this
+        /// replica.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To stop cross-account replication from the primary account instead, use <a>DisassociateCrossAccountReplica</a>.
         /// </para>
         ///  
         /// <para>
@@ -2606,7 +3115,8 @@ namespace Amazon.SecretsManager
         ///  
         /// <para>
         ///  <b>Required permissions: </b> <c>secretsmanager:StopReplicationToReplica</c>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// cross-account replica secrets, you must also have <c>secretsmanager:DeleteResourcePolicy</c>
+        /// permissions. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -2651,13 +3161,25 @@ namespace Amazon.SecretsManager
 #endif
 
         /// <summary>
-        /// Removes the link between the replica secret and the primary secret and promotes the
-        /// replica to a primary secret in the replica Region.
+        /// Removes the link between a replica secret and its primary secret, and stops replication
+        /// to the replica. You call this operation from the replica account or Region. Depending
+        /// on the type of replica, the behavior is:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You must call this operation from the Region in which you want to promote the replica
-        /// to a primary secret.
+        ///  <b>Cross-Region replica</b>: promotes the replica to a standalone primary secret
+        /// in the replica Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Cross-account replica</b>: promotes the replica in your account to a standalone
+        /// secret and stops replication from its primary secret in the other account. Secrets
+        /// Manager updates the primary secret's replication status to <c>Detached</c> for this
+        /// replica.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To stop cross-account replication from the primary account instead, use <a>DisassociateCrossAccountReplica</a>.
         /// </para>
         ///  
         /// <para>
@@ -2669,7 +3191,8 @@ namespace Amazon.SecretsManager
         ///  
         /// <para>
         ///  <b>Required permissions: </b> <c>secretsmanager:StopReplicationToReplica</c>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// cross-account replica secrets, you must also have <c>secretsmanager:DeleteResourcePolicy</c>
+        /// permissions. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>

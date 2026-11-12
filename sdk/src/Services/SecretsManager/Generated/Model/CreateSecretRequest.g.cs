@@ -34,15 +34,16 @@ namespace Amazon.SecretsManager.Model
     /// A <i>secret</i> can be a password, a set of credentials such as a user name and password,
     /// an OAuth token, or other secret information that you store in an encrypted form in
     /// Secrets Manager. The secret also includes the connection information to access a database
-    /// or other service, which Secrets Manager doesn't encrypt. A secret in Secrets Manager
-    /// consists of both the protected secret data and the important information needed to
-    /// manage the secret. <para> For secrets that use <i>managed rotation</i>, you need to
-    /// create the secret through the managing service. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+    /// or other service. Secrets Manager does not encrypt this connection information. A
+    /// secret in Secrets Manager consists of both the encrypted secret versions and the metadata
+    /// that Secrets Manager uses to manage the secret. <para> For secrets that use <i>managed
+    /// rotation</i>, you need to create the secret through the managing service. For more
+    /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
     /// Manager secrets managed by other Amazon Web Services services</a>. </para> <para>
     /// For information about creating a secret in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html">Create
     /// a secret</a>. </para> <para> To create a secret, you can provide the secret value
     /// to be encrypted in either the <c>SecretString</c> parameter or the <c>SecretBinary</c>
-    /// parameter, but not both. If you include <c>SecretString</c> or <c>SecretBinary</c>
+    /// parameter, but not both. If you include <c>SecretString</c> or <c>SecretBinary</c>,
     /// then Secrets Manager creates an initial secret version and automatically attaches
     /// the staging label <c>AWSCURRENT</c> to it. </para> <para> For database credentials
     /// you want to rotate, for Secrets Manager to be able to rotate the secret, you must
@@ -52,17 +53,22 @@ namespace Amazon.SecretsManager.Model
     /// If this key doesn't already exist in your account, then Secrets Manager creates it
     /// for you automatically. All users and roles in the Amazon Web Services account automatically
     /// have access to use <c>aws/secretsmanager</c>. Creating <c>aws/secretsmanager</c> can
-    /// result in a one-time significant delay in returning the result. </para> <para> If
-    /// the secret is in a different Amazon Web Services account from the credentials calling
+    /// result in a one-time delay to complete the secret creation. </para> <para> If the
+    /// secret is in a different Amazon Web Services account from the credentials calling
     /// the API, then you can't use <c>aws/secretsmanager</c> to encrypt the secret, and you
-    /// must create and use a customer managed KMS key. </para> <para> Secrets Manager generates
-    /// a CloudTrail log entry when you call this action. Do not include sensitive information
-    /// in request parameters except <c>SecretBinary</c> or <c>SecretString</c> because it
-    /// might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// must create and use a customer managed KMS key. </para> <para> To create a cross-account
+    /// replica secret, include <c>CrossAccountPrimaryARN</c>. The replica must use a customer
+    /// managed KMS key, and can't include <c>AddReplicaRegions</c>, <c>Description</c>, <c>SecretBinary</c>,
+    /// <c>SecretString</c>, or <c>Type</c>. </para> <para> Secrets Manager generates a CloudTrail
+    /// log entry when you call this action. Do not include sensitive information in request
+    /// parameters except <c>SecretBinary</c> or <c>SecretString</c> because it might be logged.
+    /// For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
     /// Secrets Manager events with CloudTrail</a>. </para> <para> <b>Required permissions:
     /// </b> <c>secretsmanager:CreateSecret</c>. If you include tags in the secret, you also
     /// need <c>secretsmanager:TagResource</c>. To add replica Regions, you must also have
-    /// <c>secretsmanager:ReplicateSecretToRegions</c>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+    /// <c>secretsmanager:ReplicateSecretToRegions</c>. To create a cross-account replica
+    /// secret, you must also have <c>secretsmanager:PutResourcePolicy</c> permissions. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
     /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
     /// and access control in Secrets Manager</a>. </para> <para> To encrypt the secret with
     /// a KMS key other than <c>aws/secretsmanager</c>, you need <c>kms:GenerateDataKey</c>
@@ -151,6 +157,25 @@ namespace Amazon.SecretsManager.Model
         /// Checks to see if the ClientRequestToken property is set.
         /// </summary>
         internal bool IsSetClientRequestToken() => this.ClientRequestToken != null;
+
+        /// <summary>
+        /// Gets and sets the property CrossAccountPrimaryARN. 
+        /// <para>
+        /// The ARN of a primary secret in another Amazon Web Services account. Include this field
+        /// to create a cross-account replica secret that receives replicated data from that primary
+        /// secret. The primary secret must be in the same Amazon Web Services Region and partition
+        /// as the replica, and you must specify a customer managed KMS key in <c>KmsKeyId</c>.
+        /// You can't include <c>SecretString</c>, <c>SecretBinary</c>, <c>Description</c>, <c>AddReplicaRegions</c>,
+        /// or <c>Type</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 2048)]
+        public string CrossAccountPrimaryARN { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CrossAccountPrimaryARN property is set.
+        /// </summary>
+        internal bool IsSetCrossAccountPrimaryARN() => this.CrossAccountPrimaryARN != null;
 
         /// <summary>
         /// Gets and sets the property Description. 
