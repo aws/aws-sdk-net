@@ -1,0 +1,102 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.GuardDuty.Model
+{
+    /// <summary>
+    /// Contains information about the identity that performed an activity.
+    /// </summary>
+    public partial class InvestigationActor
+    {
+        /// <summary>
+        /// Gets and sets the property AccessKeyId. 
+        /// <para>
+        /// The access key ID that the identity used.
+        /// </para>
+        /// </summary>
+        public string AccessKeyId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AccessKeyId property is set.
+        /// </summary>
+        internal bool IsSetAccessKeyId() => this.AccessKeyId != null;
+
+        /// <summary>
+        /// Gets and sets the property PrincipalId. 
+        /// <para>
+        /// The ID of the principal.
+        /// </para>
+        /// </summary>
+        public string PrincipalId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PrincipalId property is set.
+        /// </summary>
+        internal bool IsSetPrincipalId() => this.PrincipalId != null;
+
+        /// <summary>
+        /// Gets and sets the property UserAgent. 
+        /// <para>
+        /// The user agent that the identity used.
+        /// </para>
+        /// </summary>
+        public string UserAgent { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UserAgent property is set.
+        /// </summary>
+        internal bool IsSetUserAgent() => this.UserAgent != null;
+
+        /// <summary>
+        /// Gets and sets the property UserName. 
+        /// <para>
+        /// The name of the user.
+        /// </para>
+        /// </summary>
+        public string UserName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UserName property is set.
+        /// </summary>
+        internal bool IsSetUserName() => this.UserName != null;
+
+        /// <summary>
+        /// Gets and sets the property UserType. 
+        /// <para>
+        /// The type of the identity, such as <c>IAMUser</c>, <c>AssumedRole</c>, or <c>Root</c>.
+        /// </para>
+        /// </summary>
+        public string UserType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UserType property is set.
+        /// </summary>
+        internal bool IsSetUserType() => this.UserType != null;
+    }
+}

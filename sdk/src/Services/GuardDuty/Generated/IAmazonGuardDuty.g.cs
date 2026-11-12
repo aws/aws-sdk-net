@@ -2347,6 +2347,13 @@ namespace Amazon.GuardDuty
         /// </para>
         ///  
         /// <para>
+        /// GuardDuty returns the results, including the summary and the scope of the investigation,
+        /// only when the investigation status is <c>COMPLETED</c>. By default, GuardDuty returns
+        /// the summary as text in <c>Summary</c>. To return a typed summary in <c>SummaryData</c>
+        /// instead, set <c>SummaryFormat</c> to <c>STRUCTURED</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// An administrator account can retrieve any investigation within the organization. Member
         /// accounts can only retrieve investigations that belong to them.
         /// </para>
@@ -2378,6 +2385,13 @@ namespace Amazon.GuardDuty
         ///  
         /// <para>
         /// Retrieves the results and status of a specific GuardDuty investigation.
+        /// </para>
+        ///  
+        /// <para>
+        /// GuardDuty returns the results, including the summary and the scope of the investigation,
+        /// only when the investigation status is <c>COMPLETED</c>. By default, GuardDuty returns
+        /// the summary as text in <c>Summary</c>. To return a typed summary in <c>SummaryData</c>
+        /// instead, set <c>SummaryFormat</c> to <c>STRUCTURED</c>.
         /// </para>
         ///  
         /// <para>
@@ -3386,7 +3400,83 @@ namespace Amazon.GuardDuty
         /// 
         ///  
         /// <para>
+        /// Returns the records for a specific GuardDuty investigation. Each record is one step
+        /// in the reasoning that GuardDuty followed to reach the results of the investigation.
+        /// </para>
+        ///  
+        /// <para>
+        /// An administrator account can list the records of any investigation within the organization.
+        /// Member accounts can only list the records of investigations that belong to them.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvestigationRecords service method.</param>
+        /// <returns>The response from the ListInvestigationRecords service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvestigationRecords">REST API Reference for ListInvestigationRecords Operation</seealso>
+        ListInvestigationRecordsResponse ListInvestigationRecords(ListInvestigationRecordsRequest request);
+#endif
+
+        /// <summary>
+        /// This API is currently available as a preview. This feature is available in the following
+        /// Amazon Web Services Regions: US East (N. Virginia), US East (Ohio), US West (Oregon),
+        /// Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris),
+        /// Europe (Stockholm), and Asia Pacific (Tokyo).
+        /// 
+        ///  
+        /// <para>
+        /// Returns the records for a specific GuardDuty investigation. Each record is one step
+        /// in the reasoning that GuardDuty followed to reach the results of the investigation.
+        /// </para>
+        ///  
+        /// <para>
+        /// An administrator account can list the records of any investigation within the organization.
+        /// Member accounts can only list the records of investigations that belong to them.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvestigationRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListInvestigationRecords service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvestigationRecords">REST API Reference for ListInvestigationRecords Operation</seealso>
+        Task<ListInvestigationRecordsResponse> ListInvestigationRecordsAsync(ListInvestigationRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// This API is currently available as a preview. This feature is available in the following
+        /// Amazon Web Services Regions: US East (N. Virginia), US East (Ohio), US West (Oregon),
+        /// Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris),
+        /// Europe (Stockholm), and Asia Pacific (Tokyo).
+        /// 
+        ///  
+        /// <para>
         /// Returns a list of investigations associated with the specified GuardDuty detector.
+        /// You can filter the investigations by status, risk level, confidence, finding ID, and
+        /// investigation type, and sort them by start time, end time, status, risk level, or
+        /// confidence.
         /// </para>
         ///  
         /// <para>
@@ -3418,6 +3508,9 @@ namespace Amazon.GuardDuty
         ///  
         /// <para>
         /// Returns a list of investigations associated with the specified GuardDuty detector.
+        /// You can filter the investigations by status, risk level, confidence, finding ID, and
+        /// investigation type, and sort them by start time, end time, status, risk level, or
+        /// confidence.
         /// </para>
         ///  
         /// <para>

@@ -74,6 +74,16 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetFilterCriteria())
+            {
+                context.Writer.WritePropertyName("filterCriteria");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InvestigationFilterCriteriaMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FilterCriteria, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("maxResults");

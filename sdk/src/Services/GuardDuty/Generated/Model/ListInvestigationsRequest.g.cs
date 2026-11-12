@@ -35,8 +35,10 @@ namespace Amazon.GuardDuty.Model
     /// Regions: US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central),
     /// Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris), Europe (Stockholm),
     /// and Asia Pacific (Tokyo). <para> Returns a list of investigations associated with
-    /// the specified GuardDuty detector. </para> <para> An administrator account sees all
-    /// investigations across the organization. Member accounts see only the investigations
+    /// the specified GuardDuty detector. You can filter the investigations by status, risk
+    /// level, confidence, finding ID, and investigation type, and sort them by start time,
+    /// end time, status, risk level, or confidence. </para> <para> An administrator account
+    /// sees all investigations across the organization. Member accounts see only the investigations
     /// that belong to them. </para>
     /// </summary>
     public partial class ListInvestigationsRequest : AmazonGuardDutyRequest
@@ -60,6 +62,20 @@ namespace Amazon.GuardDuty.Model
         /// Checks to see if the DetectorId property is set.
         /// </summary>
         internal bool IsSetDetectorId() => this.DetectorId != null;
+
+        /// <summary>
+        /// Gets and sets the property FilterCriteria. 
+        /// <para>
+        /// The criteria used to filter investigations. GuardDuty returns only the investigations
+        /// that match all of the specified criteria.
+        /// </para>
+        /// </summary>
+        public InvestigationFilterCriteria FilterCriteria { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FilterCriteria property is set.
+        /// </summary>
+        internal bool IsSetFilterCriteria() => this.FilterCriteria != null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

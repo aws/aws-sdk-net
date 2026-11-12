@@ -22,6 +22,52 @@ using Amazon.Runtime;
 namespace Amazon.GuardDuty
 {
     /// <summary>
+    /// Constants used for properties of type ActionPriority.
+    /// </summary>
+    public class ActionPriority : ConstantClass
+    {
+        /// <summary>
+        /// Constant IMMEDIATE for ActionPriority
+        /// </summary>
+        public static readonly ActionPriority IMMEDIATE = new ActionPriority("IMMEDIATE");
+
+        /// <summary>
+        /// Constant SHORT_TERM for ActionPriority
+        /// </summary>
+        public static readonly ActionPriority SHORT_TERM = new ActionPriority("SHORT_TERM");
+
+        /// <summary>
+        /// Constant STRATEGIC for ActionPriority
+        /// </summary>
+        public static readonly ActionPriority STRATEGIC = new ActionPriority("STRATEGIC");
+
+        /// <summary>
+        /// Constructs a custom ActionPriority for a value not among the defined constants.
+        /// </summary>
+        public ActionPriority(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionPriority FindValue(string value)
+        {
+            return FindValue<ActionPriority>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionPriority(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ActivityType.
     /// </summary>
     public class ActivityType : ConstantClass
@@ -99,6 +145,87 @@ namespace Amazon.GuardDuty
     }
 
     /// <summary>
+    /// Constants used for properties of type AnalysisType.
+    /// </summary>
+    public class AnalysisType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BASELINE for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType BASELINE = new AnalysisType("BASELINE");
+
+        /// <summary>
+        /// Constant KUBERNETES_POLICY_VIOLATION for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType KUBERNETES_POLICY_VIOLATION = new AnalysisType("KUBERNETES_POLICY_VIOLATION");
+
+        /// <summary>
+        /// Constant PROCESS_LINEAGE for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType PROCESS_LINEAGE = new AnalysisType("PROCESS_LINEAGE");
+
+        /// <summary>
+        /// Constant RDS_THREAT_ASSESSMENT for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType RDS_THREAT_ASSESSMENT = new AnalysisType("RDS_THREAT_ASSESSMENT");
+
+        /// <summary>
+        /// Constant REPUTATION for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType REPUTATION = new AnalysisType("REPUTATION");
+
+        /// <summary>
+        /// Constant S3_ACTOR_CONTEXT for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType S3_ACTOR_CONTEXT = new AnalysisType("S3_ACTOR_CONTEXT");
+
+        /// <summary>
+        /// Constant S3_EXPOSURE for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType S3_EXPOSURE = new AnalysisType("S3_EXPOSURE");
+
+        /// <summary>
+        /// Constant S3_PEN_TEST for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType S3_PEN_TEST = new AnalysisType("S3_PEN_TEST");
+
+        /// <summary>
+        /// Constant THREAT_ASSESSMENT for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType THREAT_ASSESSMENT = new AnalysisType("THREAT_ASSESSMENT");
+
+        /// <summary>
+        /// Constant TREND for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType TREND = new AnalysisType("TREND");
+
+        /// <summary>
+        /// Constructs a custom AnalysisType for a value not among the defined constants.
+        /// </summary>
+        public AnalysisType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisType FindValue(string value)
+        {
+            return FindValue<AnalysisType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AssociationMode.
     /// </summary>
     public class AssociationMode : ConstantClass
@@ -134,6 +261,107 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AssociationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AttackPhaseName.
+    /// </summary>
+    public class AttackPhaseName : ConstantClass
+    {
+        /// <summary>
+        /// Constant Collection for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName Collection = new AttackPhaseName("Collection");
+
+        /// <summary>
+        /// Constant CommandAndControl for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName CommandAndControl = new AttackPhaseName("Command and Control");
+
+        /// <summary>
+        /// Constant CredentialAccess for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName CredentialAccess = new AttackPhaseName("Credential Access");
+
+        /// <summary>
+        /// Constant DefenseEvasion for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName DefenseEvasion = new AttackPhaseName("Defense Evasion");
+
+        /// <summary>
+        /// Constant Discovery for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName Discovery = new AttackPhaseName("Discovery");
+
+        /// <summary>
+        /// Constant Execution for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName Execution = new AttackPhaseName("Execution");
+
+        /// <summary>
+        /// Constant Exfiltration for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName Exfiltration = new AttackPhaseName("Exfiltration");
+
+        /// <summary>
+        /// Constant Impact for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName Impact = new AttackPhaseName("Impact");
+
+        /// <summary>
+        /// Constant InitialAccess for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName InitialAccess = new AttackPhaseName("Initial Access");
+
+        /// <summary>
+        /// Constant LateralMovement for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName LateralMovement = new AttackPhaseName("Lateral Movement");
+
+        /// <summary>
+        /// Constant Persistence for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName Persistence = new AttackPhaseName("Persistence");
+
+        /// <summary>
+        /// Constant PrivilegeEscalation for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName PrivilegeEscalation = new AttackPhaseName("Privilege Escalation");
+
+        /// <summary>
+        /// Constant Reconnaissance for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName Reconnaissance = new AttackPhaseName("Reconnaissance");
+
+        /// <summary>
+        /// Constant ResourceDevelopment for AttackPhaseName
+        /// </summary>
+        public static readonly AttackPhaseName ResourceDevelopment = new AttackPhaseName("Resource Development");
+
+        /// <summary>
+        /// Constructs a custom AttackPhaseName for a value not among the defined constants.
+        /// </summary>
+        public AttackPhaseName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttackPhaseName FindValue(string value)
+        {
+            return FindValue<AttackPhaseName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttackPhaseName(string value)
         {
             return FindValue(value);
         }
@@ -486,6 +714,52 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContentPolicyFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CorrelationReason.
+    /// </summary>
+    public class CorrelationReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant HIGH_SEVERITY for CorrelationReason
+        /// </summary>
+        public static readonly CorrelationReason HIGH_SEVERITY = new CorrelationReason("HIGH_SEVERITY");
+
+        /// <summary>
+        /// Constant SAME_BEHAVIOR for CorrelationReason
+        /// </summary>
+        public static readonly CorrelationReason SAME_BEHAVIOR = new CorrelationReason("SAME_BEHAVIOR");
+
+        /// <summary>
+        /// Constant SAME_RESOURCE for CorrelationReason
+        /// </summary>
+        public static readonly CorrelationReason SAME_RESOURCE = new CorrelationReason("SAME_RESOURCE");
+
+        /// <summary>
+        /// Constructs a custom CorrelationReason for a value not among the defined constants.
+        /// </summary>
+        public CorrelationReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CorrelationReason FindValue(string value)
+        {
+            return FindValue<CorrelationReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CorrelationReason(string value)
         {
             return FindValue(value);
         }
@@ -898,6 +1172,62 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataSourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DefenseTactic.
+    /// </summary>
+    public class DefenseTactic : ConstantClass
+    {
+        /// <summary>
+        /// Constant Detect for DefenseTactic
+        /// </summary>
+        public static readonly DefenseTactic Detect = new DefenseTactic("Detect");
+
+        /// <summary>
+        /// Constant Evict for DefenseTactic
+        /// </summary>
+        public static readonly DefenseTactic Evict = new DefenseTactic("Evict");
+
+        /// <summary>
+        /// Constant Harden for DefenseTactic
+        /// </summary>
+        public static readonly DefenseTactic Harden = new DefenseTactic("Harden");
+
+        /// <summary>
+        /// Constant Isolate for DefenseTactic
+        /// </summary>
+        public static readonly DefenseTactic Isolate = new DefenseTactic("Isolate");
+
+        /// <summary>
+        /// Constant Restore for DefenseTactic
+        /// </summary>
+        public static readonly DefenseTactic Restore = new DefenseTactic("Restore");
+
+        /// <summary>
+        /// Constructs a custom DefenseTactic for a value not among the defined constants.
+        /// </summary>
+        public DefenseTactic(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefenseTactic FindValue(string value)
+        {
+            return FindValue<DefenseTactic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefenseTactic(string value)
         {
             return FindValue(value);
         }
@@ -1368,6 +1698,118 @@ namespace Amazon.GuardDuty
     }
 
     /// <summary>
+    /// Constants used for properties of type Disposition.
+    /// </summary>
+    public class Disposition : ConstantClass
+    {
+        /// <summary>
+        /// Constant AccessRevoked for Disposition
+        /// </summary>
+        public static readonly Disposition AccessRevoked = new Disposition("Access Revoked");
+
+        /// <summary>
+        /// Constant Blocked for Disposition
+        /// </summary>
+        public static readonly Disposition Blocked = new Disposition("Blocked");
+
+        /// <summary>
+        /// Constant Deleted for Disposition
+        /// </summary>
+        public static readonly Disposition Deleted = new Disposition("Deleted");
+
+        /// <summary>
+        /// Constant Isolated for Disposition
+        /// </summary>
+        public static readonly Disposition Isolated = new Disposition("Isolated");
+
+        /// <summary>
+        /// Constant Logged for Disposition
+        /// </summary>
+        public static readonly Disposition Logged = new Disposition("Logged");
+
+        /// <summary>
+        /// Constructs a custom Disposition for a value not among the defined constants.
+        /// </summary>
+        public Disposition(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Disposition FindValue(string value)
+        {
+            return FindValue<Disposition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Disposition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DistributionDimension.
+    /// </summary>
+    public class DistributionDimension : ConstantClass
+    {
+        /// <summary>
+        /// Constant ARCHIVE for DistributionDimension
+        /// </summary>
+        public static readonly DistributionDimension ARCHIVE = new DistributionDimension("ARCHIVE");
+
+        /// <summary>
+        /// Constant ATTACK_VECTOR for DistributionDimension
+        /// </summary>
+        public static readonly DistributionDimension ATTACK_VECTOR = new DistributionDimension("ATTACK_VECTOR");
+
+        /// <summary>
+        /// Constant RESOURCE for DistributionDimension
+        /// </summary>
+        public static readonly DistributionDimension RESOURCE = new DistributionDimension("RESOURCE");
+
+        /// <summary>
+        /// Constant SEVERITY for DistributionDimension
+        /// </summary>
+        public static readonly DistributionDimension SEVERITY = new DistributionDimension("SEVERITY");
+
+        /// <summary>
+        /// Constant TYPE for DistributionDimension
+        /// </summary>
+        public static readonly DistributionDimension TYPE = new DistributionDimension("TYPE");
+
+        /// <summary>
+        /// Constructs a custom DistributionDimension for a value not among the defined constants.
+        /// </summary>
+        public DistributionDimension(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DistributionDimension FindValue(string value)
+        {
+            return FindValue<DistributionDimension>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DistributionDimension(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EbsSnapshotPreservation.
     /// </summary>
     public class EbsSnapshotPreservation : ConstantClass
@@ -1633,6 +2075,179 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Feedback(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FetchCriterionCondition.
+    /// </summary>
+    public class FetchCriterionCondition : ConstantClass
+    {
+        /// <summary>
+        /// Constant EQUALS for FetchCriterionCondition
+        /// </summary>
+        public static readonly FetchCriterionCondition EQUALS = new FetchCriterionCondition("EQUALS");
+
+        /// <summary>
+        /// Constant GREATER_THAN for FetchCriterionCondition
+        /// </summary>
+        public static readonly FetchCriterionCondition GREATER_THAN = new FetchCriterionCondition("GREATER_THAN");
+
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL for FetchCriterionCondition
+        /// </summary>
+        public static readonly FetchCriterionCondition GREATER_THAN_OR_EQUAL = new FetchCriterionCondition("GREATER_THAN_OR_EQUAL");
+
+        /// <summary>
+        /// Constant LESS_THAN for FetchCriterionCondition
+        /// </summary>
+        public static readonly FetchCriterionCondition LESS_THAN = new FetchCriterionCondition("LESS_THAN");
+
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUAL for FetchCriterionCondition
+        /// </summary>
+        public static readonly FetchCriterionCondition LESS_THAN_OR_EQUAL = new FetchCriterionCondition("LESS_THAN_OR_EQUAL");
+
+        /// <summary>
+        /// Constant NOT_EQUALS for FetchCriterionCondition
+        /// </summary>
+        public static readonly FetchCriterionCondition NOT_EQUALS = new FetchCriterionCondition("NOT_EQUALS");
+
+        /// <summary>
+        /// Constructs a custom FetchCriterionCondition for a value not among the defined constants.
+        /// </summary>
+        public FetchCriterionCondition(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FetchCriterionCondition FindValue(string value)
+        {
+            return FindValue<FetchCriterionCondition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FetchCriterionCondition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FetchType.
+    /// </summary>
+    public class FetchType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLOUD_TRAIL_RAW_EVENTS for FetchType
+        /// </summary>
+        public static readonly FetchType CLOUD_TRAIL_RAW_EVENTS = new FetchType("CLOUD_TRAIL_RAW_EVENTS");
+
+        /// <summary>
+        /// Constant DETECTOR for FetchType
+        /// </summary>
+        public static readonly FetchType DETECTOR = new FetchType("DETECTOR");
+
+        /// <summary>
+        /// Constant FINDINGS for FetchType
+        /// </summary>
+        public static readonly FetchType FINDINGS = new FetchType("FINDINGS");
+
+        /// <summary>
+        /// Constant FINDING_TYPE_DOCUMENTATION for FetchType
+        /// </summary>
+        public static readonly FetchType FINDING_TYPE_DOCUMENTATION = new FetchType("FINDING_TYPE_DOCUMENTATION");
+
+        /// <summary>
+        /// Constant MEMBER_ACCOUNTS for FetchType
+        /// </summary>
+        public static readonly FetchType MEMBER_ACCOUNTS = new FetchType("MEMBER_ACCOUNTS");
+
+        /// <summary>
+        /// Constant REPUTATION for FetchType
+        /// </summary>
+        public static readonly FetchType REPUTATION = new FetchType("REPUTATION");
+
+        /// <summary>
+        /// Constant RUNTIME_SIGNALS for FetchType
+        /// </summary>
+        public static readonly FetchType RUNTIME_SIGNALS = new FetchType("RUNTIME_SIGNALS");
+
+        /// <summary>
+        /// Constructs a custom FetchType for a value not among the defined constants.
+        /// </summary>
+        public FetchType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FetchType FindValue(string value)
+        {
+            return FindValue<FetchType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FetchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FetchVerdict.
+    /// </summary>
+    public class FetchVerdict : ConstantClass
+    {
+        /// <summary>
+        /// Constant BENIGN for FetchVerdict
+        /// </summary>
+        public static readonly FetchVerdict BENIGN = new FetchVerdict("BENIGN");
+
+        /// <summary>
+        /// Constant NEUTRAL for FetchVerdict
+        /// </summary>
+        public static readonly FetchVerdict NEUTRAL = new FetchVerdict("NEUTRAL");
+
+        /// <summary>
+        /// Constant THREAT for FetchVerdict
+        /// </summary>
+        public static readonly FetchVerdict THREAT = new FetchVerdict("THREAT");
+
+        /// <summary>
+        /// Constructs a custom FetchVerdict for a value not among the defined constants.
+        /// </summary>
+        public FetchVerdict(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FetchVerdict FindValue(string value)
+        {
+            return FindValue<FetchVerdict>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FetchVerdict(string value)
         {
             return FindValue(value);
         }
@@ -2359,6 +2974,300 @@ namespace Amazon.GuardDuty
     }
 
     /// <summary>
+    /// Constants used for properties of type InvestigationDetectorFeature.
+    /// </summary>
+    public class InvestigationDetectorFeature : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLOUD_TRAIL for InvestigationDetectorFeature
+        /// </summary>
+        public static readonly InvestigationDetectorFeature CLOUD_TRAIL = new InvestigationDetectorFeature("CLOUD_TRAIL");
+
+        /// <summary>
+        /// Constant DNS_LOGS for InvestigationDetectorFeature
+        /// </summary>
+        public static readonly InvestigationDetectorFeature DNS_LOGS = new InvestigationDetectorFeature("DNS_LOGS");
+
+        /// <summary>
+        /// Constant EBS_MALWARE_PROTECTION for InvestigationDetectorFeature
+        /// </summary>
+        public static readonly InvestigationDetectorFeature EBS_MALWARE_PROTECTION = new InvestigationDetectorFeature("EBS_MALWARE_PROTECTION");
+
+        /// <summary>
+        /// Constant EC2_AGENT_MANAGEMENT for InvestigationDetectorFeature
+        /// </summary>
+        public static readonly InvestigationDetectorFeature EC2_AGENT_MANAGEMENT = new InvestigationDetectorFeature("EC2_AGENT_MANAGEMENT");
+
+        /// <summary>
+        /// Constant ECS_FARGATE_AGENT_MANAGEMENT for InvestigationDetectorFeature
+        /// </summary>
+        public static readonly InvestigationDetectorFeature ECS_FARGATE_AGENT_MANAGEMENT = new InvestigationDetectorFeature("ECS_FARGATE_AGENT_MANAGEMENT");
+
+        /// <summary>
+        /// Constant EKS_ADDON_MANAGEMENT for InvestigationDetectorFeature
+        /// </summary>
+        public static readonly InvestigationDetectorFeature EKS_ADDON_MANAGEMENT = new InvestigationDetectorFeature("EKS_ADDON_MANAGEMENT");
+
+        /// <summary>
+        /// Constant EKS_AUDIT_LOGS for InvestigationDetectorFeature
+        /// </summary>
+        public static readonly InvestigationDetectorFeature EKS_AUDIT_LOGS = new InvestigationDetectorFeature("EKS_AUDIT_LOGS");
+
+        /// <summary>
+        /// Constant EKS_RUNTIME_MONITORING for InvestigationDetectorFeature
+        /// </summary>
+        public static readonly InvestigationDetectorFeature EKS_RUNTIME_MONITORING = new InvestigationDetectorFeature("EKS_RUNTIME_MONITORING");
+
+        /// <summary>
+        /// Constant FLOW_LOGS for InvestigationDetectorFeature
+        /// </summary>
+        public static readonly InvestigationDetectorFeature FLOW_LOGS = new InvestigationDetectorFeature("FLOW_LOGS");
+
+        /// <summary>
+        /// Constant LAMBDA_NETWORK_LOGS for InvestigationDetectorFeature
+        /// </summary>
+        public static readonly InvestigationDetectorFeature LAMBDA_NETWORK_LOGS = new InvestigationDetectorFeature("LAMBDA_NETWORK_LOGS");
+
+        /// <summary>
+        /// Constant RDS_LOGIN_EVENTS for InvestigationDetectorFeature
+        /// </summary>
+        public static readonly InvestigationDetectorFeature RDS_LOGIN_EVENTS = new InvestigationDetectorFeature("RDS_LOGIN_EVENTS");
+
+        /// <summary>
+        /// Constant RUNTIME_MONITORING for InvestigationDetectorFeature
+        /// </summary>
+        public static readonly InvestigationDetectorFeature RUNTIME_MONITORING = new InvestigationDetectorFeature("RUNTIME_MONITORING");
+
+        /// <summary>
+        /// Constant S3_DATA_EVENTS for InvestigationDetectorFeature
+        /// </summary>
+        public static readonly InvestigationDetectorFeature S3_DATA_EVENTS = new InvestigationDetectorFeature("S3_DATA_EVENTS");
+
+        /// <summary>
+        /// Constructs a custom InvestigationDetectorFeature for a value not among the defined constants.
+        /// </summary>
+        public InvestigationDetectorFeature(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvestigationDetectorFeature FindValue(string value)
+        {
+            return FindValue<InvestigationDetectorFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvestigationDetectorFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InvestigationFilterCriterionKey.
+    /// </summary>
+    public class InvestigationFilterCriterionKey : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONFIDENCE for InvestigationFilterCriterionKey
+        /// </summary>
+        public static readonly InvestigationFilterCriterionKey CONFIDENCE = new InvestigationFilterCriterionKey("CONFIDENCE");
+
+        /// <summary>
+        /// Constant FINDING_ID for InvestigationFilterCriterionKey
+        /// </summary>
+        public static readonly InvestigationFilterCriterionKey FINDING_ID = new InvestigationFilterCriterionKey("FINDING_ID");
+
+        /// <summary>
+        /// Constant INVESTIGATION_TYPE for InvestigationFilterCriterionKey
+        /// </summary>
+        public static readonly InvestigationFilterCriterionKey INVESTIGATION_TYPE = new InvestigationFilterCriterionKey("INVESTIGATION_TYPE");
+
+        /// <summary>
+        /// Constant RISK_LEVEL for InvestigationFilterCriterionKey
+        /// </summary>
+        public static readonly InvestigationFilterCriterionKey RISK_LEVEL = new InvestigationFilterCriterionKey("RISK_LEVEL");
+
+        /// <summary>
+        /// Constant STATUS for InvestigationFilterCriterionKey
+        /// </summary>
+        public static readonly InvestigationFilterCriterionKey STATUS = new InvestigationFilterCriterionKey("STATUS");
+
+        /// <summary>
+        /// Constructs a custom InvestigationFilterCriterionKey for a value not among the defined constants.
+        /// </summary>
+        public InvestigationFilterCriterionKey(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvestigationFilterCriterionKey FindValue(string value)
+        {
+            return FindValue<InvestigationFilterCriterionKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvestigationFilterCriterionKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InvestigationIndicatorType.
+    /// </summary>
+    public class InvestigationIndicatorType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DOMAIN for InvestigationIndicatorType
+        /// </summary>
+        public static readonly InvestigationIndicatorType DOMAIN = new InvestigationIndicatorType("DOMAIN");
+
+        /// <summary>
+        /// Constant FILE for InvestigationIndicatorType
+        /// </summary>
+        public static readonly InvestigationIndicatorType FILE = new InvestigationIndicatorType("FILE");
+
+        /// <summary>
+        /// Constant IP for InvestigationIndicatorType
+        /// </summary>
+        public static readonly InvestigationIndicatorType IP = new InvestigationIndicatorType("IP");
+
+        /// <summary>
+        /// Constructs a custom InvestigationIndicatorType for a value not among the defined constants.
+        /// </summary>
+        public InvestigationIndicatorType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvestigationIndicatorType FindValue(string value)
+        {
+            return FindValue<InvestigationIndicatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvestigationIndicatorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InvestigationResourceType.
+    /// </summary>
+    public class InvestigationResourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EBS_VOLUME for InvestigationResourceType
+        /// </summary>
+        public static readonly InvestigationResourceType EBS_VOLUME = new InvestigationResourceType("EBS_VOLUME");
+
+        /// <summary>
+        /// Constant EC2_INSTANCE for InvestigationResourceType
+        /// </summary>
+        public static readonly InvestigationResourceType EC2_INSTANCE = new InvestigationResourceType("EC2_INSTANCE");
+
+        /// <summary>
+        /// Constant EC2_SECURITY_GROUP for InvestigationResourceType
+        /// </summary>
+        public static readonly InvestigationResourceType EC2_SECURITY_GROUP = new InvestigationResourceType("EC2_SECURITY_GROUP");
+
+        /// <summary>
+        /// Constant ECS_CLUSTER for InvestigationResourceType
+        /// </summary>
+        public static readonly InvestigationResourceType ECS_CLUSTER = new InvestigationResourceType("ECS_CLUSTER");
+
+        /// <summary>
+        /// Constant EKS_CLUSTER for InvestigationResourceType
+        /// </summary>
+        public static readonly InvestigationResourceType EKS_CLUSTER = new InvestigationResourceType("EKS_CLUSTER");
+
+        /// <summary>
+        /// Constant IAM_ACCESS_KEY for InvestigationResourceType
+        /// </summary>
+        public static readonly InvestigationResourceType IAM_ACCESS_KEY = new InvestigationResourceType("IAM_ACCESS_KEY");
+
+        /// <summary>
+        /// Constant IAM_ROLE for InvestigationResourceType
+        /// </summary>
+        public static readonly InvestigationResourceType IAM_ROLE = new InvestigationResourceType("IAM_ROLE");
+
+        /// <summary>
+        /// Constant IAM_USER for InvestigationResourceType
+        /// </summary>
+        public static readonly InvestigationResourceType IAM_USER = new InvestigationResourceType("IAM_USER");
+
+        /// <summary>
+        /// Constant KUBERNETES_WORKLOAD for InvestigationResourceType
+        /// </summary>
+        public static readonly InvestigationResourceType KUBERNETES_WORKLOAD = new InvestigationResourceType("KUBERNETES_WORKLOAD");
+
+        /// <summary>
+        /// Constant LAMBDA_FUNCTION for InvestigationResourceType
+        /// </summary>
+        public static readonly InvestigationResourceType LAMBDA_FUNCTION = new InvestigationResourceType("LAMBDA_FUNCTION");
+
+        /// <summary>
+        /// Constant RDS_DB_USER for InvestigationResourceType
+        /// </summary>
+        public static readonly InvestigationResourceType RDS_DB_USER = new InvestigationResourceType("RDS_DB_USER");
+
+        /// <summary>
+        /// Constant RDS_INSTANCE for InvestigationResourceType
+        /// </summary>
+        public static readonly InvestigationResourceType RDS_INSTANCE = new InvestigationResourceType("RDS_INSTANCE");
+
+        /// <summary>
+        /// Constant S3_BUCKET for InvestigationResourceType
+        /// </summary>
+        public static readonly InvestigationResourceType S3_BUCKET = new InvestigationResourceType("S3_BUCKET");
+
+        /// <summary>
+        /// Constructs a custom InvestigationResourceType for a value not among the defined constants.
+        /// </summary>
+        public InvestigationResourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvestigationResourceType FindValue(string value)
+        {
+            return FindValue<InvestigationResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvestigationResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type InvestigationSortField.
     /// </summary>
     public class InvestigationSortField : ConstantClass
@@ -2455,6 +3364,52 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InvestigationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InvestigationType.
+    /// </summary>
+    public class InvestigationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCOUNT for InvestigationType
+        /// </summary>
+        public static readonly InvestigationType ACCOUNT = new InvestigationType("ACCOUNT");
+
+        /// <summary>
+        /// Constant FINDING for InvestigationType
+        /// </summary>
+        public static readonly InvestigationType FINDING = new InvestigationType("FINDING");
+
+        /// <summary>
+        /// Constant ORGANIZATION for InvestigationType
+        /// </summary>
+        public static readonly InvestigationType ORGANIZATION = new InvestigationType("ORGANIZATION");
+
+        /// <summary>
+        /// Constructs a custom InvestigationType for a value not among the defined constants.
+        /// </summary>
+        public InvestigationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvestigationType FindValue(string value)
+        {
+            return FindValue<InvestigationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvestigationType(string value)
         {
             return FindValue(value);
         }
@@ -3159,6 +4114,107 @@ namespace Amazon.GuardDuty
     }
 
     /// <summary>
+    /// Constants used for properties of type ObservationType.
+    /// </summary>
+    public class ObservationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCOUNT_OVERVIEW for ObservationType
+        /// </summary>
+        public static readonly ObservationType ACCOUNT_OVERVIEW = new ObservationType("ACCOUNT_OVERVIEW");
+
+        /// <summary>
+        /// Constant DETECTION_COVERAGE for ObservationType
+        /// </summary>
+        public static readonly ObservationType DETECTION_COVERAGE = new ObservationType("DETECTION_COVERAGE");
+
+        /// <summary>
+        /// Constant DISTRIBUTION for ObservationType
+        /// </summary>
+        public static readonly ObservationType DISTRIBUTION = new ObservationType("DISTRIBUTION");
+
+        /// <summary>
+        /// Constant FINDING_DETAIL for ObservationType
+        /// </summary>
+        public static readonly ObservationType FINDING_DETAIL = new ObservationType("FINDING_DETAIL");
+
+        /// <summary>
+        /// Constant KUBERNETES_ACTIVITY for ObservationType
+        /// </summary>
+        public static readonly ObservationType KUBERNETES_ACTIVITY = new ObservationType("KUBERNETES_ACTIVITY");
+
+        /// <summary>
+        /// Constant MALWARE_SCAN for ObservationType
+        /// </summary>
+        public static readonly ObservationType MALWARE_SCAN = new ObservationType("MALWARE_SCAN");
+
+        /// <summary>
+        /// Constant NETWORK_ACTIVITY for ObservationType
+        /// </summary>
+        public static readonly ObservationType NETWORK_ACTIVITY = new ObservationType("NETWORK_ACTIVITY");
+
+        /// <summary>
+        /// Constant RDS_LOGIN_ACTIVITY for ObservationType
+        /// </summary>
+        public static readonly ObservationType RDS_LOGIN_ACTIVITY = new ObservationType("RDS_LOGIN_ACTIVITY");
+
+        /// <summary>
+        /// Constant RECOMMENDATION for ObservationType
+        /// </summary>
+        public static readonly ObservationType RECOMMENDATION = new ObservationType("RECOMMENDATION");
+
+        /// <summary>
+        /// Constant RELATED_FINDINGS for ObservationType
+        /// </summary>
+        public static readonly ObservationType RELATED_FINDINGS = new ObservationType("RELATED_FINDINGS");
+
+        /// <summary>
+        /// Constant REPRESENTATIVE_RESOURCE for ObservationType
+        /// </summary>
+        public static readonly ObservationType REPRESENTATIVE_RESOURCE = new ObservationType("REPRESENTATIVE_RESOURCE");
+
+        /// <summary>
+        /// Constant RESOURCE for ObservationType
+        /// </summary>
+        public static readonly ObservationType RESOURCE = new ObservationType("RESOURCE");
+
+        /// <summary>
+        /// Constant RUNTIME_SIGNALS for ObservationType
+        /// </summary>
+        public static readonly ObservationType RUNTIME_SIGNALS = new ObservationType("RUNTIME_SIGNALS");
+
+        /// <summary>
+        /// Constant S3_ACTIVITY for ObservationType
+        /// </summary>
+        public static readonly ObservationType S3_ACTIVITY = new ObservationType("S3_ACTIVITY");
+
+        /// <summary>
+        /// Constructs a custom ObservationType for a value not among the defined constants.
+        /// </summary>
+        public ObservationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObservationType FindValue(string value)
+        {
+            return FindValue<ObservationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObservationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type OrderBy.
     /// </summary>
     public class OrderBy : ConstantClass
@@ -3638,6 +4694,118 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PublishingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RecommendationCategory.
+    /// </summary>
+    public class RecommendationCategory : ConstantClass
+    {
+        /// <summary>
+        /// Constant ENABLE_PROTECTION for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory ENABLE_PROTECTION = new RecommendationCategory("ENABLE_PROTECTION");
+
+        /// <summary>
+        /// Constant FURTHER_INVESTIGATION for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory FURTHER_INVESTIGATION = new RecommendationCategory("FURTHER_INVESTIGATION");
+
+        /// <summary>
+        /// Constant HARDENING for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory HARDENING = new RecommendationCategory("HARDENING");
+
+        /// <summary>
+        /// Constant MONITORING for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory MONITORING = new RecommendationCategory("MONITORING");
+
+        /// <summary>
+        /// Constant SUPPRESSION_RULE for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory SUPPRESSION_RULE = new RecommendationCategory("SUPPRESSION_RULE");
+
+        /// <summary>
+        /// Constructs a custom RecommendationCategory for a value not among the defined constants.
+        /// </summary>
+        public RecommendationCategory(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationCategory FindValue(string value)
+        {
+            return FindValue<RecommendationCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RecordType.
+    /// </summary>
+    public class RecordType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ANALYSIS for RecordType
+        /// </summary>
+        public static readonly RecordType ANALYSIS = new RecordType("ANALYSIS");
+
+        /// <summary>
+        /// Constant FETCH for RecordType
+        /// </summary>
+        public static readonly RecordType FETCH = new RecordType("FETCH");
+
+        /// <summary>
+        /// Constant METADATA for RecordType
+        /// </summary>
+        public static readonly RecordType METADATA = new RecordType("METADATA");
+
+        /// <summary>
+        /// Constant OBSERVATION for RecordType
+        /// </summary>
+        public static readonly RecordType OBSERVATION = new RecordType("OBSERVATION");
+
+        /// <summary>
+        /// Constant UPDATE for RecordType
+        /// </summary>
+        public static readonly RecordType UPDATE = new RecordType("UPDATE");
+
+        /// <summary>
+        /// Constructs a custom RecordType for a value not among the defined constants.
+        /// </summary>
+        public RecordType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordType FindValue(string value)
+        {
+            return FindValue<RecordType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordType(string value)
         {
             return FindValue(value);
         }
@@ -4251,6 +5419,98 @@ namespace Amazon.GuardDuty
     }
 
     /// <summary>
+    /// Constants used for properties of type SummaryFormat.
+    /// </summary>
+    public class SummaryFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant STRING for SummaryFormat
+        /// </summary>
+        public static readonly SummaryFormat STRING = new SummaryFormat("STRING");
+
+        /// <summary>
+        /// Constant STRUCTURED for SummaryFormat
+        /// </summary>
+        public static readonly SummaryFormat STRUCTURED = new SummaryFormat("STRUCTURED");
+
+        /// <summary>
+        /// Constructs a custom SummaryFormat for a value not among the defined constants.
+        /// </summary>
+        public SummaryFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SummaryFormat FindValue(string value)
+        {
+            return FindValue<SummaryFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SummaryFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ThreatConfidence.
+    /// </summary>
+    public class ThreatConfidence : ConstantClass
+    {
+        /// <summary>
+        /// Constant HIGH for ThreatConfidence
+        /// </summary>
+        public static readonly ThreatConfidence HIGH = new ThreatConfidence("HIGH");
+
+        /// <summary>
+        /// Constant LOW for ThreatConfidence
+        /// </summary>
+        public static readonly ThreatConfidence LOW = new ThreatConfidence("LOW");
+
+        /// <summary>
+        /// Constant MEDIUM for ThreatConfidence
+        /// </summary>
+        public static readonly ThreatConfidence MEDIUM = new ThreatConfidence("MEDIUM");
+
+        /// <summary>
+        /// Constant VERY_HIGH for ThreatConfidence
+        /// </summary>
+        public static readonly ThreatConfidence VERY_HIGH = new ThreatConfidence("VERY_HIGH");
+
+        /// <summary>
+        /// Constructs a custom ThreatConfidence for a value not among the defined constants.
+        /// </summary>
+        public ThreatConfidence(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThreatConfidence FindValue(string value)
+        {
+            return FindValue<ThreatConfidence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThreatConfidence(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ThreatEntitySetFormat.
     /// </summary>
     public class ThreatEntitySetFormat : ConstantClass
@@ -4499,6 +5759,52 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ThreatIntelSetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TimeGranularity.
+    /// </summary>
+    public class TimeGranularity : ConstantClass
+    {
+        /// <summary>
+        /// Constant DAY for TimeGranularity
+        /// </summary>
+        public static readonly TimeGranularity DAY = new TimeGranularity("DAY");
+
+        /// <summary>
+        /// Constant MONTH for TimeGranularity
+        /// </summary>
+        public static readonly TimeGranularity MONTH = new TimeGranularity("MONTH");
+
+        /// <summary>
+        /// Constant WEEK for TimeGranularity
+        /// </summary>
+        public static readonly TimeGranularity WEEK = new TimeGranularity("WEEK");
+
+        /// <summary>
+        /// Constructs a custom TimeGranularity for a value not among the defined constants.
+        /// </summary>
+        public TimeGranularity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimeGranularity FindValue(string value)
+        {
+            return FindValue<TimeGranularity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimeGranularity(string value)
         {
             return FindValue(value);
         }

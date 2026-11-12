@@ -99,6 +99,12 @@ namespace Amazon.GuardDuty.Model
         IListIPSetsPaginator ListIPSets(ListIPSetsRequest request);
 
         /// <summary>
+        /// Paginator for ListInvestigationRecords operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListInvestigationRecordsPaginator ListInvestigationRecords(ListInvestigationRecordsRequest request);
+
+        /// <summary>
         /// Paginator for ListInvestigations operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

@@ -147,6 +147,22 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetRiskLevel() => this.RiskLevel != null;
 
         /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// Information about what the investigation analyzed, including the investigation type,
+        /// the finding, account, or organization that was analyzed, and, for <c>ACCOUNT</c> and
+        /// <c>ORGANIZATION</c> investigations, the time window over which the investigation queried
+        /// data. Returned only when the investigation status is <c>COMPLETED</c>.
+        /// </para>
+        /// </summary>
+        public InvestigationScope Scope { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Scope property is set.
+        /// </summary>
+        internal bool IsSetScope() => this.Scope != null;
+
+        /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The timestamp at which the investigation started.
@@ -177,16 +193,35 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Summary. 
         /// <para>
-        /// A structured summary of the investigation findings, including affected resources,
-        /// threat assessment, and recommended remediation steps.
+        /// A summary of the investigation results as text, up to 262,144 characters. Returned
+        /// only when the investigation status is <c>COMPLETED</c>. When you set <c>SummaryFormat</c>
+        /// to <c>STRUCTURED</c>, the summary is returned in <c>SummaryData</c> instead, unless
+        /// it isn't available in a structured form, in which case it's returned in this field.
         /// </para>
         /// </summary>
+        [AWSProperty(Min = 0, Max = 262144)]
         public string Summary { get; set; }
 
         /// <summary>
         /// Checks to see if the Summary property is set.
         /// </summary>
         internal bool IsSetSummary() => this.Summary != null;
+
+        /// <summary>
+        /// Gets and sets the property SummaryData. 
+        /// <para>
+        /// A structured summary of the investigation results. GuardDuty returns this field only
+        /// when you set <c>SummaryFormat</c> to <c>STRUCTURED</c>, the investigation status is
+        /// <c>COMPLETED</c>, and the summary is available in a structured form. When this field
+        /// is returned, <c>Summary</c> isn't returned.
+        /// </para>
+        /// </summary>
+        public InvestigationSummaryData SummaryData { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SummaryData property is set.
+        /// </summary>
+        internal bool IsSetSummaryData() => this.SummaryData != null;
 
         /// <summary>
         /// Gets and sets the property TriggerPrompt. 
