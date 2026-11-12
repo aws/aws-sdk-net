@@ -652,6 +652,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("LaunchTemplateData" + ".Monitoring" + ".Enabled", StringUtils.FromBool(publicRequest.LaunchTemplateData.Monitoring.Enabled.Value));
                     }
+                    if (publicRequest.LaunchTemplateData.Monitoring.IsSetMetricCategoryIds())
+                    {
+                        if (publicRequest.LaunchTemplateData.Monitoring.MetricCategoryIds.Count == 0)
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + ".Monitoring" + ".MetricCategoryId", "");
+                        }
+                        else
+                        {
+                            int index2 = 1;
+                            foreach (var item2 in publicRequest.LaunchTemplateData.Monitoring.MetricCategoryIds)
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + ".Monitoring" + ".MetricCategoryId" + "." + index2, StringUtils.FromString(item2));
+                                index2++;
+                            }
+                        }
+                    }
                 }
                 if (publicRequest.LaunchTemplateData.IsSetNetworkInterfaces())
                 {

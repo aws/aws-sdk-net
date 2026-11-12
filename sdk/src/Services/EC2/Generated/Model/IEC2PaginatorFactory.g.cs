@@ -453,6 +453,12 @@ namespace Amazon.EC2.Model
         IDescribeManagedPrefixListsPaginator DescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeMetricCategories operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IDescribeMetricCategoriesPaginator DescribeMetricCategories(DescribeMetricCategoriesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeMovingAddresses operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

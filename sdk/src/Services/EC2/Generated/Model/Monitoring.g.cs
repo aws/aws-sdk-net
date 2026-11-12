@@ -35,6 +35,25 @@ namespace Amazon.EC2.Model
     public partial class Monitoring
     {
         /// <summary>
+        /// Gets and sets the property MetricCategoryIds. 
+        /// <para>
+        /// The IDs of the metric categories that are associated with the instance.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> MetricCategoryIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the MetricCategoryIds property is set.
+        /// </summary>
+        internal bool IsSetMetricCategoryIds() => this.MetricCategoryIds != null && (this.MetricCategoryIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property State. 
         /// <para>
         /// Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.

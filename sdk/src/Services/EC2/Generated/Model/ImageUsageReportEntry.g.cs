@@ -90,7 +90,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource (<c>ec2:Instance</c> or <c>ec2:LaunchTemplate</c>).
+        /// The type of resource (<c>ec2:Instance</c> | <c>ec2:LaunchTemplate</c> | <c>imagebuilder:ImageRecipe</c>
+        /// | <c>imagebuilder:ContainerRecipe</c>).
         /// </para>
         /// </summary>
         public string ResourceType { get; set; }

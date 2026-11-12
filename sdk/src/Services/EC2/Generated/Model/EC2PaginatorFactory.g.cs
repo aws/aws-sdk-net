@@ -593,6 +593,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeMetricCategories operation
+        /// </summary>
+        public IDescribeMetricCategoriesPaginator DescribeMetricCategories(DescribeMetricCategoriesRequest request)
+        {
+            return new DescribeMetricCategoriesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeMovingAddresses operation
         /// </summary>
         public IDescribeMovingAddressesPaginator DescribeMovingAddresses(DescribeMovingAddressesRequest request)

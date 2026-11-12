@@ -55,6 +55,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("metricCategoryIdSet/item", targetDepth))
+                    {
+                        if (unmarshalledObject.MetricCategoryIds == null)
+                        {
+                            unmarshalledObject.MetricCategoryIds = new List<string>();
+                        }
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MetricCategoryIds.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
                     if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

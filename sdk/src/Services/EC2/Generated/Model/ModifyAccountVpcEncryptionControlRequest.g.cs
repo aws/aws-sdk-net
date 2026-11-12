@@ -40,6 +40,19 @@ namespace Amazon.EC2.Model
     public partial class ModifyAccountVpcEncryptionControlRequest : AmazonEC2Request
     {
         /// <summary>
+        /// Gets and sets the property ApiGatewayV2. 
+        /// <para>
+        /// Specifies whether to exclude Amazon API Gateway V2 from account-level encryption enforcement.
+        /// </para>
+        /// </summary>
+        public VpcEncryptionControlExclusionStateInput ApiGatewayV2 { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApiGatewayV2 property is set.
+        /// </summary>
+        internal bool IsSetApiGatewayV2() => this.ApiGatewayV2 != null;
+
+        /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
         /// Checks whether you have the required permissions for the action, without actually
@@ -81,6 +94,20 @@ namespace Amazon.EC2.Model
         /// Checks to see if the ElasticFileSystem property is set.
         /// </summary>
         internal bool IsSetElasticFileSystem() => this.ElasticFileSystem != null;
+
+        /// <summary>
+        /// Gets and sets the property GlobalAccelerator. 
+        /// <para>
+        /// Specifies whether to exclude AWS Global Accelerator from account-level encryption
+        /// enforcement.
+        /// </para>
+        /// </summary>
+        public VpcEncryptionControlExclusionStateInput GlobalAccelerator { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GlobalAccelerator property is set.
+        /// </summary>
+        internal bool IsSetGlobalAccelerator() => this.GlobalAccelerator != null;
 
         /// <summary>
         /// Gets and sets the property InternetGateway. 

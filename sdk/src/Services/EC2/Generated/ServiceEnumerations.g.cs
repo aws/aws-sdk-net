@@ -24782,6 +24782,11 @@ namespace Amazon.EC2
         public static readonly ResourceType MacModificationTask = new ResourceType("mac-modification-task");
 
         /// <summary>
+        /// Constant MetricCategory for ResourceType
+        /// </summary>
+        public static readonly ResourceType MetricCategory = new ResourceType("metric-category");
+
+        /// <summary>
         /// Constant Natgateway for ResourceType
         /// </summary>
         public static readonly ResourceType Natgateway = new ResourceType("natgateway");

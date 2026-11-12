@@ -41,6 +41,19 @@ namespace Amazon.EC2.Model
     public partial class VpcEncryptionControlConfiguration
     {
         /// <summary>
+        /// Gets and sets the property ApiGatewayV2Exclusion. 
+        /// <para>
+        /// Specifies whether to exclude Amazon API Gateway V2 traffic from encryption enforcement.
+        /// </para>
+        /// </summary>
+        public VpcEncryptionControlExclusionStateInput ApiGatewayV2Exclusion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApiGatewayV2Exclusion property is set.
+        /// </summary>
+        internal bool IsSetApiGatewayV2Exclusion() => this.ApiGatewayV2Exclusion != null;
+
+        /// <summary>
         /// Gets and sets the property EgressOnlyInternetGatewayExclusion. 
         /// <para>
         /// Specifies whether to exclude egress-only internet gateway traffic from encryption
@@ -66,6 +79,19 @@ namespace Amazon.EC2.Model
         /// Checks to see if the ElasticFileSystemExclusion property is set.
         /// </summary>
         internal bool IsSetElasticFileSystemExclusion() => this.ElasticFileSystemExclusion != null;
+
+        /// <summary>
+        /// Gets and sets the property GlobalAcceleratorExclusion. 
+        /// <para>
+        /// Specifies whether to exclude AWS Global Accelerator traffic from encryption enforcement.
+        /// </para>
+        /// </summary>
+        public VpcEncryptionControlExclusionStateInput GlobalAcceleratorExclusion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GlobalAcceleratorExclusion property is set.
+        /// </summary>
+        internal bool IsSetGlobalAcceleratorExclusion() => this.GlobalAcceleratorExclusion != null;
 
         /// <summary>
         /// Gets and sets the property InternetGatewayExclusion. 

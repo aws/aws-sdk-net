@@ -55,6 +55,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("apiGatewayV2", targetDepth))
+                    {
+                        var unmarshaller = VpcEncryptionControlExclusionUnmarshaller.Instance;
+                        unmarshalledObject.ApiGatewayV2 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("egressOnlyInternetGateway", targetDepth))
                     {
                         var unmarshaller = VpcEncryptionControlExclusionUnmarshaller.Instance;
@@ -66,6 +73,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = VpcEncryptionControlExclusionUnmarshaller.Instance;
                         unmarshalledObject.ElasticFileSystem = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("globalAccelerator", targetDepth))
+                    {
+                        var unmarshaller = VpcEncryptionControlExclusionUnmarshaller.Instance;
+                        unmarshalledObject.GlobalAccelerator = unmarshaller.Unmarshall(context);
                         continue;
                     }
 

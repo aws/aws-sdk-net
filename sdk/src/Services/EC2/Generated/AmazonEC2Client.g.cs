@@ -6524,8 +6524,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a report that shows how your image is used across other Amazon Web Services
         /// accounts. The report provides visibility into which accounts are using the specified
-        /// image, and how many resources (EC2 instances or launch templates) are referencing
-        /// it.
+        /// image, and how many resources (EC2 instances, EC2 launch templates, Image Builder
+        /// image recipes, or Image Builder container recipes) are referencing it.
         /// 
         ///  
         /// <para>
@@ -6558,8 +6558,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a report that shows how your image is used across other Amazon Web Services
         /// accounts. The report provides visibility into which accounts are using the specified
-        /// image, and how many resources (EC2 instances or launch templates) are referencing
-        /// it.
+        /// image, and how many resources (EC2 instances, EC2 launch templates, Image Builder
+        /// image recipes, or Image Builder container recipes) are referencing it.
         /// 
         ///  
         /// <para>
@@ -8310,6 +8310,64 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreateManagedPrefixListResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateManagedPrefixListResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a metric category. A metric category is a set of additional metrics that you
+        /// can associate with an instance that has detailed monitoring enabled.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-detailed-monitoring.html#detailed-monitoring-metric-categories">Use
+        /// metric categories for additional metrics</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMetricCategory service method.</param>
+        /// <returns>The response from the CreateMetricCategory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateMetricCategory">REST API Reference for CreateMetricCategory Operation</seealso>
+        public virtual CreateMetricCategoryResponse CreateMetricCategory(CreateMetricCategoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateMetricCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMetricCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMetricCategoryResponse>(request, options);
+        }
+#else
+        internal virtual CreateMetricCategoryResponse CreateMetricCategory(CreateMetricCategoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateMetricCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMetricCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMetricCategoryResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a metric category. A metric category is a set of additional metrics that you
+        /// can associate with an instance that has detailed monitoring enabled.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-detailed-monitoring.html#detailed-monitoring-metric-categories">Use
+        /// metric categories for additional metrics</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMetricCategory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateMetricCategory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateMetricCategory">REST API Reference for CreateMetricCategory Operation</seealso>
+        public virtual Task<CreateMetricCategoryResponse> CreateMetricCategoryAsync(CreateMetricCategoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateMetricCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMetricCategoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMetricCategoryResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -14594,6 +14652,64 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteManagedPrefixListResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteManagedPrefixListResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes the specified metric category. Associations between the metric category and
+        /// your instances are removed asynchronously.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-detailed-monitoring.html#detailed-monitoring-metric-categories">Use
+        /// metric categories for additional metrics</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricCategory service method.</param>
+        /// <returns>The response from the DeleteMetricCategory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteMetricCategory">REST API Reference for DeleteMetricCategory Operation</seealso>
+        public virtual DeleteMetricCategoryResponse DeleteMetricCategory(DeleteMetricCategoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteMetricCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMetricCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMetricCategoryResponse>(request, options);
+        }
+#else
+        internal virtual DeleteMetricCategoryResponse DeleteMetricCategory(DeleteMetricCategoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteMetricCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMetricCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMetricCategoryResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes the specified metric category. Associations between the metric category and
+        /// your instances are removed asynchronously.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-detailed-monitoring.html#detailed-monitoring-metric-categories">Use
+        /// metric categories for additional metrics</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricCategory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteMetricCategory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteMetricCategory">REST API Reference for DeleteMetricCategory Operation</seealso>
+        public virtual Task<DeleteMetricCategoryResponse> DeleteMetricCategoryAsync(DeleteMetricCategoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteMetricCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMetricCategoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteMetricCategoryResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -24932,6 +25048,62 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeManagedPrefixListsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeManagedPrefixListsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes the specified metric categories, or all of your metric categories.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-detailed-monitoring.html#detailed-monitoring-metric-categories">Use
+        /// metric categories for additional metrics</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetricCategories service method.</param>
+        /// <returns>The response from the DescribeMetricCategories service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMetricCategories">REST API Reference for DescribeMetricCategories Operation</seealso>
+        public virtual DescribeMetricCategoriesResponse DescribeMetricCategories(DescribeMetricCategoriesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMetricCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetricCategoriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetricCategoriesResponse>(request, options);
+        }
+#else
+        internal virtual DescribeMetricCategoriesResponse DescribeMetricCategories(DescribeMetricCategoriesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMetricCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetricCategoriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetricCategoriesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Describes the specified metric categories, or all of your metric categories.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-detailed-monitoring.html#detailed-monitoring-metric-categories">Use
+        /// metric categories for additional metrics</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetricCategories service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeMetricCategories service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMetricCategories">REST API Reference for DescribeMetricCategories Operation</seealso>
+        public virtual Task<DescribeMetricCategoriesResponse> DescribeMetricCategoriesAsync(DescribeMetricCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMetricCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetricCategoriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMetricCategoriesResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -37477,8 +37649,7 @@ namespace Amazon.EC2
         ///  </li> </ul> <note> 
         /// <para>
         ///  <c>GetFlowLogsIntegrationTemplate</c> does not support integration between Amazon
-        /// Web Services Transit Gateway Flow Logs or Amazon Web Services Cloud WAN Flow Logs
-        /// and Amazon Athena.
+        /// Web Services Transit Gateway Flow Logs and Amazon Athena.
         /// </para>
         ///  </note>
         /// </summary>
@@ -37530,8 +37701,7 @@ namespace Amazon.EC2
         ///  </li> </ul> <note> 
         /// <para>
         ///  <c>GetFlowLogsIntegrationTemplate</c> does not support integration between Amazon
-        /// Web Services Transit Gateway Flow Logs or Amazon Web Services Cloud WAN Flow Logs
-        /// and Amazon Athena.
+        /// Web Services Transit Gateway Flow Logs and Amazon Athena.
         /// </para>
         ///  </note>
         /// </summary>
@@ -44274,6 +44444,72 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyManagedResourceVisibilityResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyManagedResourceVisibilityResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Modifies the metrics in the specified metric category. The metrics that you specify
+        /// replace the existing metrics.
+        /// 
+        ///  
+        /// <para>
+        /// Instances that are associated with the metric category are updated asynchronously.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-detailed-monitoring.html#detailed-monitoring-metric-categories">Use
+        /// metric categories for additional metrics</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyMetricCategory service method.</param>
+        /// <returns>The response from the ModifyMetricCategory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyMetricCategory">REST API Reference for ModifyMetricCategory Operation</seealso>
+        public virtual ModifyMetricCategoryResponse ModifyMetricCategory(ModifyMetricCategoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyMetricCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyMetricCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyMetricCategoryResponse>(request, options);
+        }
+#else
+        internal virtual ModifyMetricCategoryResponse ModifyMetricCategory(ModifyMetricCategoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyMetricCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyMetricCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyMetricCategoryResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Modifies the metrics in the specified metric category. The metrics that you specify
+        /// replace the existing metrics.
+        /// 
+        ///  
+        /// <para>
+        /// Instances that are associated with the metric category are updated asynchronously.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-detailed-monitoring.html#detailed-monitoring-metric-categories">Use
+        /// metric categories for additional metrics</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyMetricCategory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ModifyMetricCategory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyMetricCategory">REST API Reference for ModifyMetricCategory Operation</seealso>
+        public virtual Task<ModifyMetricCategoryResponse> ModifyMetricCategoryAsync(ModifyMetricCategoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyMetricCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyMetricCategoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyMetricCategoryResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

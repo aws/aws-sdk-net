@@ -33,8 +33,9 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CreateImageUsageReport operation. Creates a report
     /// that shows how your image is used across other Amazon Web Services accounts. The report
     /// provides visibility into which accounts are using the specified image, and how many
-    /// resources (EC2 instances or launch templates) are referencing it. <para> For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
+    /// resources (EC2 instances, EC2 launch templates, Image Builder image recipes, or Image
+    /// Builder container recipes) are referencing it. <para> For more information, see <a
+    /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
     /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>. </para>
     /// </summary>
     public partial class CreateImageUsageReportRequest : AmazonEC2Request

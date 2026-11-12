@@ -53,6 +53,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             request.Parameters.Add("Action", "ModifyAccountVpcEncryptionControl");
             request.Parameters.Add("Version", "2016-11-15");
 
+            if (publicRequest.IsSetApiGatewayV2())
+            {
+                request.Parameters.Add("ApiGatewayV2", StringUtils.FromString(publicRequest.ApiGatewayV2));
+            }
             if (publicRequest.IsSetDryRun())
             {
                 request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun.Value));
@@ -64,6 +68,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetElasticFileSystem())
             {
                 request.Parameters.Add("ElasticFileSystem", StringUtils.FromString(publicRequest.ElasticFileSystem));
+            }
+            if (publicRequest.IsSetGlobalAccelerator())
+            {
+                request.Parameters.Add("GlobalAccelerator", StringUtils.FromString(publicRequest.GlobalAccelerator));
             }
             if (publicRequest.IsSetInternetGateway())
             {

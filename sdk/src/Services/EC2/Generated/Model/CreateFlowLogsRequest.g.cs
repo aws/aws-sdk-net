@@ -193,10 +193,8 @@ namespace Amazon.EC2.Model
         /// they should appear. If you omit this parameter, the flow log is created using the
         /// default format. If you specify this parameter, you must include at least one field.
         /// For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow
-        /// log records</a> in the <i>Amazon VPC User Guide</i>, <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
-        /// Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>,
-        /// or <a href="https://docs.aws.amazon.com/network-manager/latest/cloudwan/cwan-flow-logs.html">Cloud
-        /// WAN Flow Log records</a> in the <i>Amazon Web Services Cloud WAN User Guide</i>.
+        /// log records</a> in the <i>Amazon VPC User Guide</i> or <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
+        /// Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -233,8 +231,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum interval of time during which a flow of packets is captured and aggregated
         /// into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds
-        /// (10 minutes). This parameter must be 60 seconds for transit gateway and Cloud WAN
-        /// resource types.
+        /// (10 minutes). This parameter must be 60 seconds for transit gateway resource types.
         /// </para>
         ///  
         /// <para>
@@ -338,8 +335,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property TrafficType. 
         /// <para>
         /// The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
-        /// This parameter is not supported for transit gateway or Cloud WAN resource types. It
-        /// is required for the other resource types.
+        /// This parameter is not supported for transit gateway resource types. It is required
+        /// for the other resource types.
         /// </para>
         /// </summary>
         public TrafficType TrafficType { get; set; }

@@ -70,7 +70,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>resource-type</c> - The resource type (<c>ec2:Instance</c> | <c>ec2:LaunchTemplate</c>).
+        ///  <c>resource-type</c> - The resource type (<c>ec2:Instance</c> | <c>ec2:LaunchTemplate</c>
+        /// | <c>imagebuilder:ImageRecipe</c> | <c>imagebuilder:ContainerRecipe</c>).
         /// </para>
         ///  </li> </ul>
         /// <para />

@@ -61,6 +61,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    if (context.TestExpression("metricCategoryIdSet/item", targetDepth))
+                    {
+                        if (unmarshalledObject.MetricCategoryIds == null)
+                        {
+                            unmarshalledObject.MetricCategoryIds = new List<string>();
+                        }
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MetricCategoryIds.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

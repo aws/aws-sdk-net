@@ -42,7 +42,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <c>ec2:Instance</c> | <c>ec2:LaunchTemplate</c> 
+        /// Valid values: <c>ec2:Instance</c> | <c>ec2:LaunchTemplate</c> | <c>imagebuilder:ImageRecipe</c>
+        /// | <c>imagebuilder:ContainerRecipe</c> 
         /// </para>
         /// </summary>
         public string ResourceType { get; set; }

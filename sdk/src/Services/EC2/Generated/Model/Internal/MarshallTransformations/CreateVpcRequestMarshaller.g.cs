@@ -141,6 +141,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             if (publicRequest.IsSetVpcEncryptionControl())
             {
+                if (publicRequest.VpcEncryptionControl.IsSetApiGatewayV2Exclusion())
+                {
+                    request.Parameters.Add("VpcEncryptionControl" + ".ApiGatewayV2Exclusion", StringUtils.FromString(publicRequest.VpcEncryptionControl.ApiGatewayV2Exclusion));
+                }
                 if (publicRequest.VpcEncryptionControl.IsSetEgressOnlyInternetGatewayExclusion())
                 {
                     request.Parameters.Add("VpcEncryptionControl" + ".EgressOnlyInternetGatewayExclusion", StringUtils.FromString(publicRequest.VpcEncryptionControl.EgressOnlyInternetGatewayExclusion));
@@ -148,6 +152,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (publicRequest.VpcEncryptionControl.IsSetElasticFileSystemExclusion())
                 {
                     request.Parameters.Add("VpcEncryptionControl" + ".ElasticFileSystemExclusion", StringUtils.FromString(publicRequest.VpcEncryptionControl.ElasticFileSystemExclusion));
+                }
+                if (publicRequest.VpcEncryptionControl.IsSetGlobalAcceleratorExclusion())
+                {
+                    request.Parameters.Add("VpcEncryptionControl" + ".GlobalAcceleratorExclusion", StringUtils.FromString(publicRequest.VpcEncryptionControl.GlobalAcceleratorExclusion));
                 }
                 if (publicRequest.VpcEncryptionControl.IsSetInternetGatewayExclusion())
                 {

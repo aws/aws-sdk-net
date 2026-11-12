@@ -73,6 +73,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+            if (publicRequest.IsSetMetricCategoryIds())
+            {
+                if (publicRequest.MetricCategoryIds.Count == 0)
+                {
+                    request.Parameters.Add("MetricCategoryId", "");
+                }
+                else
+                {
+                    int index0 = 1;
+                    foreach (var item0 in publicRequest.MetricCategoryIds)
+                    {
+                        request.Parameters.Add("MetricCategoryId" + "." + index0, StringUtils.FromString(item0));
+                        index0++;
+                    }
+                }
+            }
 
 #if !NETFRAMEWORK
             request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
