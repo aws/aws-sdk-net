@@ -298,6 +298,13 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ocpusLowestScaledValue", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.OcpusLowestScaledValue = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("odbNetworkArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
