@@ -192,6 +192,31 @@ namespace AWSSDK.UnitTests.HttpClientTests
         }
 
         [TestMethod]
+        public void ValidateServerCertificate_LeafNotValidForServerAuthentication_Rejected()
+        {
+            using (var root = CreateCertificateAuthority("CN=Test Root"))
+            using (var leaf = CreateServerCertificate(root, ClientAuthenticationOid))
+            {
+                var bundle = LoadBundle(root);
+
+                Assert.IsFalse(bundle.ValidateServerCertificate(null, leaf, null, SslPolicyErrors.RemoteCertificateChainErrors));
+            }
+        }
+
+        [TestMethod]
+        public async Task ServiceClient_LeafNotValidForServerAuthentication_RejectsServer()
+        {
+            using (var root = CreateCertificateAuthority("CN=Emulator Root"))
+            using (var leaf = CreateServerCertificate(root, ClientAuthenticationOid))
+            using (var server = new LoopbackTlsServer(leaf))
+            {
+                Environment.SetEnvironmentVariable(CABundle.EnvironmentVariableName, WriteFile("emulator.pem", ToPem(root)));
+
+                await AssertTlsTrustFailureAsync(server.Port);
+            }
+        }
+
+        [TestMethod]
         public async Task ServiceClient_CABundleWithOtherCA_RejectsServer()
         {
             using (var serverRoot = CreateCertificateAuthority("CN=Emulator Root"))
@@ -335,12 +360,16 @@ namespace AWSSDK.UnitTests.HttpClientTests
             }
         }
 
-        private static X509Certificate2 CreateServerCertificate(X509Certificate2 issuer)
+        private const string ServerAuthenticationOid = "1.3.6.1.5.5.7.3.1";
+        private const string ClientAuthenticationOid = "1.3.6.1.5.5.7.3.2";
+
+        private static X509Certificate2 CreateServerCertificate(X509Certificate2 issuer, string extendedKeyUsageOid = ServerAuthenticationOid)
         {
-            return CreateServerCertificate(issuer, DateTimeOffset.UtcNow.AddDays(-1), DateTimeOffset.UtcNow.AddDays(7));
+            return CreateServerCertificate(issuer, DateTimeOffset.UtcNow.AddDays(-1), DateTimeOffset.UtcNow.AddDays(7), extendedKeyUsageOid);
         }
 
-        private static X509Certificate2 CreateServerCertificate(X509Certificate2 issuer, DateTimeOffset notBefore, DateTimeOffset notAfter)
+        private static X509Certificate2 CreateServerCertificate(X509Certificate2 issuer, DateTimeOffset notBefore, DateTimeOffset notAfter,
+            string extendedKeyUsageOid = ServerAuthenticationOid)
         {
             using (var key = RSA.Create(2048))
             {
@@ -348,7 +377,7 @@ namespace AWSSDK.UnitTests.HttpClientTests
                 request.CertificateExtensions.Add(new X509BasicConstraintsExtension(false, false, 0, false));
                 request.CertificateExtensions.Add(new X509KeyUsageExtension(X509KeyUsageFlags.DigitalSignature | X509KeyUsageFlags.KeyEncipherment, true));
                 request.CertificateExtensions.Add(new X509EnhancedKeyUsageExtension(
-                    new OidCollection { new Oid("1.3.6.1.5.5.7.3.1") }, false)); // TLS server authentication
+                    new OidCollection { new Oid(extendedKeyUsageOid) }, false));
                 var san = new SubjectAlternativeNameBuilder();
                 san.AddDnsName("localhost");
                 san.AddIpAddress(IPAddress.Loopback);

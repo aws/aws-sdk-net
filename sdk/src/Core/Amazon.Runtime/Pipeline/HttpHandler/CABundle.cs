@@ -38,6 +38,9 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         public const string EnvironmentVariableName = "AWS_CA_BUNDLE";
 
+        // id-kp-serverAuth extended key usage (RFC 5280).
+        private const string ServerAuthenticationOid = "1.3.6.1.5.5.7.3.1";
+
 #if !NET8_0_OR_GREATER
         private const string PemCertificateBegin = "-----BEGIN CERTIFICATE-----";
         private const string PemCertificateEnd = "-----END CERTIFICATE-----";
@@ -196,6 +199,9 @@ namespace Amazon.Runtime.Internal
                 // The bundle's roots usually aren't in the OS trust store. Allow the chain to end at an unknown root,
                 // then require below that the root is one of the bundle's certificates.
                 bundleChain.ChainPolicy.VerificationFlags = X509VerificationFlags.AllowUnknownCertificateAuthority;
+                // Require the certificate to be valid for TLS server authentication, as SslStream's own validation does.
+                // A certificate that isn't, for example one issued only for client authentication, is reported as NotValidForUsage.
+                bundleChain.ChainPolicy.ApplicationPolicy.Add(new Oid(ServerAuthenticationOid));
                 bundleChain.ChainPolicy.ExtraStore.AddRange(Certificates);
 
                 // Intermediates sent by the server are in the chain the platform built.
@@ -216,25 +222,36 @@ namespace Amazon.Runtime.Internal
                 }
 
                 // Allowing an unknown CA also suppresses errors such as an expired certificate from Build's return value,
-                // so check every element's status. UntrustedRoot is expected only on the root, which was matched above.
+                // so check every element's status and the chain's overall status. UntrustedRoot is expected only on the root,
+                // which was matched above. Platforms may report some errors only in the overall status, so it is checked too.
                 for (int i = 0; i < elements.Count; i++)
                 {
                     var isRoot = i == elements.Count - 1;
-                    foreach (var status in elements[i].ChainElementStatus)
+                    if (!IsAcceptableStatus(elements[i].ChainElementStatus, allowUntrustedRoot: isRoot))
                     {
-                        if (status.Status == X509ChainStatusFlags.NoError ||
-                            (isRoot && status.Status == X509ChainStatusFlags.UntrustedRoot))
-                        {
-                            continue;
-                        }
-
-                        Logger.GetLogger(typeof(CABundle)).DebugFormat("Server certificate rejected by the CA bundle {0}: {1}", FilePath, status.Status);
                         return false;
                     }
                 }
 
-                return true;
+                return IsAcceptableStatus(bundleChain.ChainStatus, allowUntrustedRoot: true);
             }
+        }
+
+        private bool IsAcceptableStatus(X509ChainStatus[] statuses, bool allowUntrustedRoot)
+        {
+            foreach (var status in statuses)
+            {
+                if (status.Status == X509ChainStatusFlags.NoError ||
+                    (allowUntrustedRoot && status.Status == X509ChainStatusFlags.UntrustedRoot))
+                {
+                    continue;
+                }
+
+                Logger.GetLogger(typeof(CABundle)).DebugFormat("Server certificate rejected by the CA bundle {0}: {1}", FilePath, status.Status);
+                return false;
+            }
+
+            return true;
         }
 
         private bool ContainsCertificate(X509Certificate2 certificate)
