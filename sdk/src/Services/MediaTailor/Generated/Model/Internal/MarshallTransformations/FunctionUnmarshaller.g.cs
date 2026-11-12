@@ -102,6 +102,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("HlsTagProcessorConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = HlsTagProcessorConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.HlsTagProcessorConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("HttpRequestConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpRequestConfigurationUnmarshaller.Instance;

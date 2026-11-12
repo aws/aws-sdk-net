@@ -788,6 +788,11 @@ namespace Amazon.MediaTailor
         public static readonly EventName POST_ADS_RESPONSE = new EventName("POST_ADS_RESPONSE");
 
         /// <summary>
+        /// Constant POST_ORIGIN_RESPONSE for EventName
+        /// </summary>
+        public static readonly EventName POST_ORIGIN_RESPONSE = new EventName("POST_ORIGIN_RESPONSE");
+
+        /// <summary>
         /// Constant PRE_ADS_REQUEST for EventName
         /// </summary>
         public static readonly EventName PRE_ADS_REQUEST = new EventName("PRE_ADS_REQUEST");
@@ -890,6 +895,11 @@ namespace Amazon.MediaTailor
         public static readonly FunctionType CUSTOM_OUTPUT = new FunctionType("CUSTOM_OUTPUT");
 
         /// <summary>
+        /// Constant HLS_TAG_PROCESSOR for FunctionType
+        /// </summary>
+        public static readonly FunctionType HLS_TAG_PROCESSOR = new FunctionType("HLS_TAG_PROCESSOR");
+
+        /// <summary>
         /// Constant HTTP_REQUEST for FunctionType
         /// </summary>
         public static readonly FunctionType HTTP_REQUEST = new FunctionType("HTTP_REQUEST");
@@ -925,6 +935,42 @@ namespace Amazon.MediaTailor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FunctionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type HlsTagName.
+    /// </summary>
+    public class HlsTagName : ConstantClass
+    {
+        /// <summary>
+        /// Constant EXTXDATERANGE for HlsTagName
+        /// </summary>
+        public static readonly HlsTagName EXTXDATERANGE = new HlsTagName("EXT-X-DATERANGE");
+
+        /// <summary>
+        /// Constructs a custom HlsTagName for a value not among the defined constants.
+        /// </summary>
+        public HlsTagName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsTagName FindValue(string value)
+        {
+            return FindValue<HlsTagName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsTagName(string value)
         {
             return FindValue(value);
         }
@@ -1225,6 +1271,16 @@ namespace Amazon.MediaTailor
         public static readonly ManifestServiceExcludeEventType PARSING_ERROR = new ManifestServiceExcludeEventType("PARSING_ERROR");
 
         /// <summary>
+        /// Constant POST_ORIGIN_RESPONSE_FUNCTION_ERROR for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType POST_ORIGIN_RESPONSE_FUNCTION_ERROR = new ManifestServiceExcludeEventType("POST_ORIGIN_RESPONSE_FUNCTION_ERROR");
+
+        /// <summary>
+        /// Constant POST_ORIGIN_RESPONSE_HOOK_ERROR for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType POST_ORIGIN_RESPONSE_HOOK_ERROR = new ManifestServiceExcludeEventType("POST_ORIGIN_RESPONSE_HOOK_ERROR");
+
+        /// <summary>
         /// Constant PRE_SESSION_INIT_FUNCTION_ERROR for ManifestServiceExcludeEventType
         /// </summary>
         public static readonly ManifestServiceExcludeEventType PRE_SESSION_INIT_FUNCTION_ERROR = new ManifestServiceExcludeEventType("PRE_SESSION_INIT_FUNCTION_ERROR");
@@ -1300,6 +1356,16 @@ namespace Amazon.MediaTailor
     /// </summary>
     public class ManifestServicePublishOptInEventType : ConstantClass
     {
+        /// <summary>
+        /// Constant POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED for ManifestServicePublishOptInEventType
+        /// </summary>
+        public static readonly ManifestServicePublishOptInEventType POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED = new ManifestServicePublishOptInEventType("POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED");
+
+        /// <summary>
+        /// Constant POST_ORIGIN_RESPONSE_HOOK_SUMMARY for ManifestServicePublishOptInEventType
+        /// </summary>
+        public static readonly ManifestServicePublishOptInEventType POST_ORIGIN_RESPONSE_HOOK_SUMMARY = new ManifestServicePublishOptInEventType("POST_ORIGIN_RESPONSE_HOOK_SUMMARY");
+
         /// <summary>
         /// Constant PRE_SESSION_INIT_FUNCTION_COMPLETED for ManifestServicePublishOptInEventType
         /// </summary>

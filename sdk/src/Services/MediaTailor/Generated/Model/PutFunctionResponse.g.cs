@@ -129,6 +129,19 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetFunctionType() => this.FunctionType != null;
 
         /// <summary>
+        /// Gets and sets the property HlsTagProcessorConfiguration. 
+        /// <para>
+        /// The configuration for an <c>HLS_TAG_PROCESSOR</c> function.
+        /// </para>
+        /// </summary>
+        public HlsTagProcessorConfiguration HlsTagProcessorConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HlsTagProcessorConfiguration property is set.
+        /// </summary>
+        internal bool IsSetHlsTagProcessorConfiguration() => this.HlsTagProcessorConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property HttpRequestConfiguration. 
         /// <para>
         /// The configuration for an <c>HTTP_REQUEST</c> function.
