@@ -615,6 +615,26 @@ namespace AWSSDKDocSamples.Amazon.CloudWatchOmni.Generated
             #endregion
         }
 
+        public void CloudWatchOmniGetContextGraph()
+        {
+            #region GetContextGraph-2
+
+            var client = new AmazonCloudWatchOmniClient();
+            var response = client.GetContextGraph(new GetContextGraphRequest
+            {
+                Depth = 0,
+                EndTime = new DateTime(2026, 9, 16, 1, 0, 0, DateTimeKind.Utc),
+                IncludeMetadata = true,
+                MaxResults = 1,
+                NodeFilters = new NodeFilters { NodeId = "svc:checkout-service" },
+                StartTime = new DateTime(2026, 9, 16, 0, 0, 0, DateTimeKind.Utc)
+            });
+
+            List<Node> nodes = response.Nodes;
+
+            #endregion
+        }
+
         public void CloudWatchOmniGetDomain()
         {
             #region GetDomain-1

@@ -434,6 +434,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetContextGraph(Amazon.CloudWatchOmni.Model.GetContextGraphRequest)" />
+      <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetContextGraph(Amazon.CloudWatchOmni.Model.GetContextGraphRequest)" />
+      <member name="T:Amazon.CloudWatchOmni.Model.GetContextGraphRequest" />
+      <member name="T:Amazon.CloudWatchOmni.Model.GetContextGraphResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example returns aggregation metadata for a metric stream observed on a service over a one-hour window. The metric attributes identify its producing service and instrumentation scope; additional data point dimensions can identify multiple time series. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+        </para>
+        <code title="Return metric aggregation metadata" source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs" region="GetContextGraph-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetDomain(Amazon.CloudWatchOmni.Model.GetDomainRequest)" />
       <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetDomain(Amazon.CloudWatchOmni.Model.GetDomainRequest)" />
       <member name="T:Amazon.CloudWatchOmni.Model.GetDomainRequest" />
