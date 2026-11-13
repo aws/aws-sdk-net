@@ -55,6 +55,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AliasName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AliasName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("Capabilities/member", targetDepth))
                     {
                         if (unmarshalledObject.Capabilities == null)

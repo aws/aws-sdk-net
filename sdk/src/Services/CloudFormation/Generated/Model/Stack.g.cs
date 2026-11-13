@@ -35,6 +35,22 @@ namespace Amazon.CloudFormation.Model
     public partial class Stack
     {
         /// <summary>
+        /// Gets and sets the property AliasName. 
+        /// <para>
+        /// The alias assigned to the stack, if one has been set. An alias is an alternative name
+        /// that can be used in place of the stack name in any CloudFormation API call that accepts
+        /// the <c>StackName</c> parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string AliasName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AliasName property is set.
+        /// </summary>
+        internal bool IsSetAliasName() => this.AliasName != null;
+
+        /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
         /// The capabilities allowed in the stack.
