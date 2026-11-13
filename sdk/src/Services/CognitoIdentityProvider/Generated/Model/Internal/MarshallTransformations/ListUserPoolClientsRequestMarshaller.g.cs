@@ -70,6 +70,11 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetClientType())
+            {
+                context.Writer.WritePropertyName("ClientType");
+                context.Writer.WriteStringValue(publicRequest.ClientType);
+            }
             if (publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");

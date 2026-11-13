@@ -304,6 +304,31 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetClientSecret() => this.ClientSecret != null;
 
         /// <summary>
+        /// Gets and sets the property ClientType. 
+        /// <para>
+        /// How the app client was created.
+        /// </para>
+        ///  <dl> <dt>REGULAR</dt> <dd> 
+        /// <para>
+        /// The app client wasn't created through dynamic client registration. For example, you
+        /// created it with <c>CreateUserPoolClient</c>.
+        /// </para>
+        ///  </dd> <dt>DCR</dt> <dd> 
+        /// <para>
+        /// An application registered the app client through dynamic client registration. These
+        /// app clients don't support client secret operations such as <c>AddUserPoolClientSecret</c>,
+        /// and they can't hold the <c>aws.cognito/dcr/register</c> scope.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public ClientTypeType ClientType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientType property is set.
+        /// </summary>
+        internal bool IsSetClientType() => this.ClientType != null;
+
+        /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The date and time when the item was created. Amazon Cognito returns this timestamp

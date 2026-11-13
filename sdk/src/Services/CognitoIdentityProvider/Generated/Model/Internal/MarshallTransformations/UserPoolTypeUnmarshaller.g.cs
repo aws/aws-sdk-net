@@ -109,6 +109,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("DcrConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = DcrConfigurationTypeUnmarshaller.Instance;
+                    unmarshalledObject.DcrConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("DeletionProtection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

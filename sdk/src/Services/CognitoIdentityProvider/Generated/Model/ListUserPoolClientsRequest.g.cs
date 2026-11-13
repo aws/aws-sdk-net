@@ -45,6 +45,36 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class ListUserPoolClientsRequest : AmazonCognitoIdentityProviderRequest
     {
         /// <summary>
+        /// Gets and sets the property ClientType. 
+        /// <para>
+        /// Returns only app clients of this type. For dynamic client registration (<c>DCR</c>)
+        /// and other app clients, the following values are valid.
+        /// </para>
+        ///  <dl> <dt>REGULAR</dt> <dd> 
+        /// <para>
+        /// An app client not created through dynamic client registration.
+        /// </para>
+        ///  </dd> <dt>DCR</dt> <dd> 
+        /// <para>
+        /// An app client created through dynamic client registration.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// If you omit <c>ClientType</c>, the response includes app clients of all types. When
+        /// you set this filter, a page of results can contain fewer app clients than <c>MaxResults</c>,
+        /// or none, while the response still includes a <c>NextToken</c>. Continue to request
+        /// pages until the response has no <c>NextToken</c>. The app clients in the response
+        /// don't include their type. To get the type of an app client, call <c>DescribeUserPoolClient</c>.
+        /// </para>
+        /// </summary>
+        public ClientTypeType ClientType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientType property is set.
+        /// </summary>
+        internal bool IsSetClientType() => this.ClientType != null;
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of app clients that you want Amazon Cognito to return in the response.

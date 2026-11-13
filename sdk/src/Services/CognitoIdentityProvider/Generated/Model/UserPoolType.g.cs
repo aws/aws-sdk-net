@@ -184,6 +184,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetCustomDomain() => this.CustomDomain != null;
 
         /// <summary>
+        /// Gets and sets the property DcrConfiguration. 
+        /// <para>
+        /// The dynamic client registration configuration for the user pool. With dynamic client
+        /// registration, applications can register their own app clients at runtime through the
+        /// registration endpoint of your user pool domain. To activate this setting, your user
+        /// pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+        /// Essentials tier</a> or higher.
+        /// </para>
+        /// </summary>
+        public DcrConfigurationType DcrConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DcrConfiguration property is set.
+        /// </summary>
+        internal bool IsSetDcrConfiguration() => this.DcrConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
         /// When active, <c>DeletionProtection</c> prevents accidental deletion of your user pool.

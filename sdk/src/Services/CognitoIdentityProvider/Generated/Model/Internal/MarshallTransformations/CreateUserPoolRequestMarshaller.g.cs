@@ -127,6 +127,16 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetDcrConfiguration())
+            {
+                context.Writer.WritePropertyName("DcrConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DcrConfigurationTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DcrConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetDeletionProtection())
             {
                 context.Writer.WritePropertyName("DeletionProtection");

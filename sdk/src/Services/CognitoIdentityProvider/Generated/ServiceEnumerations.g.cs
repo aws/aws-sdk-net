@@ -739,6 +739,47 @@ namespace Amazon.CognitoIdentityProvider
     }
 
     /// <summary>
+    /// Constants used for properties of type ClientTypeType.
+    /// </summary>
+    public class ClientTypeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DCR for ClientTypeType
+        /// </summary>
+        public static readonly ClientTypeType DCR = new ClientTypeType("DCR");
+
+        /// <summary>
+        /// Constant REGULAR for ClientTypeType
+        /// </summary>
+        public static readonly ClientTypeType REGULAR = new ClientTypeType("REGULAR");
+
+        /// <summary>
+        /// Constructs a custom ClientTypeType for a value not among the defined constants.
+        /// </summary>
+        public ClientTypeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientTypeType FindValue(string value)
+        {
+            return FindValue<ClientTypeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientTypeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ColorSchemeModeType.
     /// </summary>
     public class ColorSchemeModeType : ConstantClass
@@ -2119,6 +2160,42 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReplicaStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourceServerManagedByType.
+    /// </summary>
+    public class ResourceServerManagedByType : ConstantClass
+    {
+        /// <summary>
+        /// Constant COGNITO for ResourceServerManagedByType
+        /// </summary>
+        public static readonly ResourceServerManagedByType COGNITO = new ResourceServerManagedByType("COGNITO");
+
+        /// <summary>
+        /// Constructs a custom ResourceServerManagedByType for a value not among the defined constants.
+        /// </summary>
+        public ResourceServerManagedByType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceServerManagedByType FindValue(string value)
+        {
+            return FindValue<ResourceServerManagedByType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceServerManagedByType(string value)
         {
             return FindValue(value);
         }
