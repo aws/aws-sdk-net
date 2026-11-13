@@ -42,7 +42,8 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <c>system-update</c>, <c>db-upgrade</c> 
+        /// Valid values: <c>system-update</c>, <c>db-upgrade</c>, <c>serverless-platform-version-update</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
