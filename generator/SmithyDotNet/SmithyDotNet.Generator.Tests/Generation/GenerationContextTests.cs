@@ -126,6 +126,26 @@ public class GenerationContextTests
     }
 
     [Fact]
+    public void Name_WithoutHttpBindings_Throws()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["GetThing"] = new OperationModifier { Name = "FetchThing" };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/rpcv2cbor-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("operationModifiers['GetThing'] renames the operation, which is only supported for restXml and restJson1.", ex.Message);
+    }
+
+    [Fact]
+    public void Name_OnRestJson1_RenamesOperation()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["DoLists"] = new OperationModifier { Name = "ListThings" };
+
+        var context = new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/codegen-model.json")), TestManifests.Example(), customizations: customizations);
+        Assert.Contains(context.Operations, operation => operation.Name == "ListThings" && operation.Shape.Id.Name == "DoLists");
+    }
+
+    [Fact]
     public void ApiVersion_DerivedFromServiceShape()
     {
         Assert.Equal("2021-08-11", _context.ApiVersion);

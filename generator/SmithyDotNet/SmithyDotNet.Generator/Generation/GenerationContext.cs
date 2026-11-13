@@ -295,17 +295,24 @@ public class GenerationContext
             {
                 throw new GeneratorException($"operationModifiers['{operationName}'] wraps the output, which is only supported for awsJson, rpcv2Cbor and ec2Query.");
             }
-        }
-        // allowEmptyResult only drives the restXml response unmarshaller's empty-body early-return; on any
-        // other protocol it would generate silently without the guard, where C2J throws.
-        if (Protocol is not AWSProtocol.RestXml
-            && Customizations.OperationModifiers.FirstOrDefault(entry => entry.Value.AllowEmptyResult).Key is { } emptyResult)
-        {
-            throw new GeneratorException($"operationModifiers['{emptyResult}'] allows an empty result, which is only supported for restXml.");
+
+            // allowEmptyResult only drives the restXml response unmarshaller's empty-body early-return; on any
+            // other protocol it would generate silently without the guard, where C2J throws.
+            if (modifier.AllowEmptyResult && Protocol is not AWSProtocol.RestXml)
+            {
+                throw new GeneratorException($"operationModifiers['{operationName}'] allows an empty result, which is only supported for restXml.");
+            }
+
+            // A rename only changes the C# name; protocols that put the operation name on the wire (X-Amz-Target,
+            // Action, the rpcv2Cbor path) would also need the marshaller to keep the modeled name, which no writer does.
+            if (modifier.Name is not null && !UsesHttpBindings)
+            {
+                throw new GeneratorException($"operationModifiers['{operationName}'] renames the operation, which is only supported for restXml and restJson1.");
+            }
         }
         IsAwsQueryCompatible = index.Service.HasAwsQueryCompatible();
         ServiceShapeName = index.ServiceId.Name;
-        Operations = OperationResolver.Resolve(index, Protocol);
+        Operations = OperationResolver.Resolve(index, Protocol, Customizations);
         EndpointDiscoveryOperation = EndpointDiscoveryResolver.ResolveDiscoveryOperation(Operations, index);
         DiscoveredOperations = EndpointDiscoveryResolver.ResolveDiscoveredOperations(Operations, EndpointDiscoveryOperation);
         // A SigV2 service (sdb) models no auth trait; C2J still resolved it to SigV4 so the handler resolves AWS credentials.

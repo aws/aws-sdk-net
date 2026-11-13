@@ -80,20 +80,14 @@ public static class CustomizationTransform
         // above — the stale entry must be removed from the customizations file.
         foreach (var operationName in customizations.NoArgOverloads)
         {
-            if (FindSingleShape(model, operationName, $"noArgOverloads['{operationName}']") is not OperationShape)
-            {
-                throw new GeneratorException($"noArgOverloads['{operationName}'] targets a shape that is not an operation.");
-            }
+            ValidateOperationKey(model, customizations, operationName, $"noArgOverloads['{operationName}']");
         }
 
         if (customizations.SimpleMethods is { } simpleMethods)
         {
             foreach (var operationName in simpleMethods.Operations.Keys)
             {
-                if (FindSingleShape(model, operationName, $"simpleMethods['{operationName}']") is not OperationShape)
-                {
-                    throw new GeneratorException($"simpleMethods['{operationName}'] targets a shape that is not an operation.");
-                }
+                ValidateOperationKey(model, customizations, operationName, $"simpleMethods['{operationName}']");
             }
         }
 
@@ -104,7 +98,7 @@ public static class CustomizationTransform
                 // A request class is always emitted as {Op}Request; its Smithy input shape is often named
                 // differently (e.g. PutItemInput), so accept the key when the operation exists.
                 if (className.EndsWith("Request", StringComparison.Ordinal)
-                    && ModelHasShape<OperationShape>(model, className[..^"Request".Length]))
+                    && ModelHasShape<OperationShape>(model, ModeledOperationName(customizations, className[..^"Request".Length])))
                 {
                     continue;
                 }
@@ -146,6 +140,23 @@ public static class CustomizationTransform
             }
         }
     }
+
+    // These hooks name an operation by its C# name, as C2J does, unlike operationModifiers; a modeled name would never match.
+    private static void ValidateOperationKey(SmithyModel model, CustomizationsModel customizations, string operationName, string context)
+    {
+        if (customizations.OperationName(operationName) is var csharpName && csharpName != operationName)
+        {
+            throw new GeneratorException($"{context} names a renamed operation by its modeled name; use '{csharpName}'.");
+        }
+
+        if (FindSingleShape(model, ModeledOperationName(customizations, operationName), context) is not OperationShape)
+        {
+            throw new GeneratorException($"{context} targets a shape that is not an operation.");
+        }
+    }
+
+    private static string ModeledOperationName(CustomizationsModel customizations, string csharpName) =>
+        customizations.OperationModifiers.FirstOrDefault(entry => entry.Value.Name == csharpName).Key ?? csharpName;
 
     private static bool ModelHasShape<T>(SmithyModel model, string bareName) where T : Shape =>
         model.Shapes.Any(entry => ShapeId.Parse(entry.Key).Name == bareName && entry.Value is T);

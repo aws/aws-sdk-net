@@ -344,6 +344,20 @@ public class RestXmlCodegenTests
         Assert.Contains("if (context.ResponseData.IsSuccessStatusCode && context.ResponseData.ContentLength == 0)", source);
     }
 
+    // Writers look hooks up by the C# name; the modifier stays keyed by the modeled one.
+    [Fact]
+    public void RenamedOperation_KeepsModeledKeyHooks()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["PutThing"] = new OperationModifier { Name = "StoreThing", AllowEmptyResult = true };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+        var source = new XmlResponseUnmarshallerWriter(context, ModelFileName)
+            .Write(context.Operations.Single(o => o.Name == "StoreThing"), TestContext.Current.CancellationToken);
+
+        Assert.Contains("public partial class StoreThingResponseUnmarshaller : XmlResponseUnmarshaller", source);
+        Assert.Contains("if (context.ResponseData.IsSuccessStatusCode && context.ResponseData.ContentLength == 0)", source);
+    }
+
     [Fact]
     public void RetainOriginalMemberOrdering_KeepsDeclarationOrder()
     {

@@ -293,6 +293,19 @@ public class CustomizationTransformTests
         Assert.Contains(expectedInMessage, ex.Message);
     }
 
+    [Theory]
+    [InlineData("ListBuckets", " ", "name must be a new, non-empty name")]
+    [InlineData("ListBuckets", "ListBuckets", "name must be a new, non-empty name")]
+    [InlineData("TagBucket", "ListBuckets", "renames the operation to 'ListBuckets', which is also the name of 'com.example#ListBuckets'")]
+    public void OperationModifiers_InvalidName_Throws(string operation, string name, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers[operation] = new OperationModifier { Name = name };
+
+        var ex = Assert.Throws<GeneratorException>(() => Apply(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
     [Fact]
     public void Paginators_OnNonOperation_Throws()
     {
@@ -357,6 +370,23 @@ public class CustomizationTransformTests
 
         var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
         Assert.Contains("noArgOverloads['Bucket'] targets a shape that is not an operation", ex.Message);
+    }
+
+    // C2J keys these by the operation's C# name, so S3's simpleMethods list PutBucket, not CreateBucket.
+    [Fact]
+    public void ConvenienceHooks_OnRenamedOperation_KeyByCSharpName()
+    {
+        var simpleMethods = new SimpleMethodsCustomization();
+        simpleMethods.Operations["ListAllBuckets"] = new SimpleMethodForms();
+        var simpleConstructors = new SimpleConstructorsCustomization();
+        simpleConstructors.Constructors["ListAllBucketsRequest"] = new SimpleConstructorForms();
+        var customizations = new CustomizationsModel { NoArgOverloads = ["ListAllBuckets"], SimpleMethods = simpleMethods, SimpleConstructors = simpleConstructors };
+        customizations.OperationModifiers["ListBuckets"] = new OperationModifier { Name = "ListAllBuckets" };
+        ApplyAndValidate(customizations);
+
+        simpleMethods.Operations["ListBuckets"] = new SimpleMethodForms();
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains("simpleMethods['ListBuckets'] names a renamed operation by its modeled name; use 'ListAllBuckets'", ex.Message);
     }
 
     [Fact]

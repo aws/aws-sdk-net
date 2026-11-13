@@ -26,7 +26,14 @@ public sealed record CustomizationsModel
     public Dictionary<string, OperationModifier> OperationModifiers { get; init; } = [];
 
     /// <summary>True when <c>useWrappingResult</c> wraps <paramref name="operationName"/>'s output.</summary>
-    public bool WrapsOutput(string operationName) => OperationModifiers.TryGetValue(operationName, out var modifier) && modifier.UseWrappingResult;
+    public bool WrapsOutput(string operationName) => ModifierFor(operationName) is { UseWrappingResult: true };
+
+    /// <summary>The C# name of modeled operation <paramref name="operationName"/>: its <c>name</c> modifier, otherwise the modeled name.</summary>
+    public string OperationName(string operationName) => OperationModifiers.GetValueOrDefault(operationName)?.Name ?? operationName;
+
+    // Writers look a hook up by Operation.Name, which a name modifier changes, so a C# name finds its modeled entry.
+    private OperationModifier? ModifierFor(string operationName) =>
+        OperationModifiers.Values.FirstOrDefault(modifier => modifier.Name == operationName) ?? OperationModifiers.GetValueOrDefault(operationName);
 
     /// <summary>Handlers the client adds to its runtime pipeline in <c>CustomizeRuntimePipeline</c>.</summary>
     [JsonPropertyName("runtimePipelineOverride")]
@@ -46,10 +53,10 @@ public sealed record CustomizationsModel
     public bool RetainOriginalMemberOrdering { get; init; }
 
     /// <summary>True when <c>operationModifiers.{op}.allowEmptyResult</c> is set for <paramref name="operationName"/>.</summary>
-    public bool AllowsEmptyResult(string operationName) => OperationModifiers.TryGetValue(operationName, out var modifier) && modifier.AllowEmptyResult;
+    public bool AllowsEmptyResult(string operationName) => ModifierFor(operationName) is { AllowEmptyResult: true };
 
     /// <summary>True when <c>operationModifiers.{op}.skipChecksumDuringMarshalling</c> is set for <paramref name="operationName"/>.</summary>
-    public bool SkipsChecksumDuringMarshalling(string operationName) => OperationModifiers.TryGetValue(operationName, out var modifier) && modifier.SkipChecksumDuringMarshalling;
+    public bool SkipsChecksumDuringMarshalling(string operationName) => ModifierFor(operationName) is { SkipChecksumDuringMarshalling: true };
 
     /// <summary>
     /// Usage:
@@ -478,6 +485,14 @@ public sealed record PropertyInjector
 /// <summary>An <c>operationModifiers</c> entry, keyed by operation name.</summary>
 public sealed record OperationModifier
 {
+    /// <summary>
+    /// The operation's C# name: client methods, request/response classes and marshallers. restXml and restJson1 only, as
+    /// their wire carries no operation name. <c>simpleMethods</c>, <c>noArgOverloads</c> and <c>simpleConstructors</c> key the
+    /// operation by this name, as C2J does; every other hook keys the modeled one.
+    /// </summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; init; }
+
     /// <summary>The <c>[Obsolete]</c> message for the operation's client methods; applied only when the operation is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
     public string? DeprecatedMessage { get; init; }

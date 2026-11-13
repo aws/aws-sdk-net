@@ -332,6 +332,7 @@ public class PaginationResolverTests
 
         var opShape = new OperationShape
         {
+            Id = new ShapeId("com.amazonaws.testpaginated", "TestOp"),
             Traits = new Dictionary<string, JsonElement>
             {
                 ["smithy.api#paginated"] = JsonDocument.Parse(paginatedTraitJson).RootElement,

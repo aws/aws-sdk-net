@@ -46,6 +46,23 @@ public class ClientClassWriterTests
         Assert.DoesNotContain("This operation is deprecated.", output);
     }
 
+    // The doc link points at the API reference page, which keeps the modeled name.
+    [Fact]
+    public void RenamedOperation_RenamesMethodsClassesAndMarshallers()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["GetThing"] = new OperationModifier { Name = "FetchThing" };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        var output = new ClientClassWriter(context, "example-2023-01-01.normal.json").Write(TestContext.Current.CancellationToken);
+        Assert.Contains("public virtual FetchThingResponse FetchThing(FetchThingRequest request)", output);
+        Assert.Contains("public virtual Task<FetchThingResponse> FetchThingAsync(FetchThingRequest request", output);
+        Assert.Contains("options.RequestMarshaller = FetchThingRequestMarshaller.Instance;", output);
+        Assert.Contains("options.ResponseUnmarshaller = FetchThingResponseUnmarshaller.Instance;", output);
+        Assert.Contains("""/GetThing">REST API Reference for FetchThing Operation</seealso>""", output);
+        Assert.DoesNotContain("GetThingRequest", output);
+    }
+
     [Fact]
     public void EmitsClassDeclarationInServiceNamespace()
     {

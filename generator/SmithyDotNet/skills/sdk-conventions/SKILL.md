@@ -347,6 +347,11 @@ nothing targets it.
   entries remain (DynamoDB `BatchGetItem`), several tokens page together (Route 53 `ListResourceRecordSets`); `items`
   (dotted paths) added to the modeled one. A field the trait already has fails generation. Unlike the C2J-inherited
   hooks above, `paginators` names members as the model does (like `@paginated`), not by their emitted name.
+- `operationModifiers.{Operation}.name` is the operation's C# name (S3 `CreateBucket` is `PutBucket`): client methods,
+  request/response classes, marshallers, paginators and the metadata `OperationNameMapping` (C# name to modeled name).
+  restXml and restJson1 only, as other protocols put the operation name on the wire. The API reference link and the other
+  operation-keyed hooks keep the modeled name (the lookup helpers accept the C# name the writers pass);
+  `simpleMethods`, `noArgOverloads` and `simpleConstructors` take the C# name, as C2J does.
 - `operationModifiers.{Operation}.stopPaginationOnSameToken` stops on a repeated token (CloudWatch Logs `GetLogEvents`).
 - `operationModifiers.{Operation}.skipChecksumDuringMarshalling` drops the marshaller's checksum call (S3 `PutObject`,
   `UploadPart`).

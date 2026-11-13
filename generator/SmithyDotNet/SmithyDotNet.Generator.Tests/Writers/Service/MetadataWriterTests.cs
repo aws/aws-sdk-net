@@ -1,3 +1,4 @@
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Writers.Service;
 using Xunit;
 
@@ -59,5 +60,18 @@ public class MetadataWriterTests
         // Phase 1 has no rename map, so the mapping is empty. Emitted as an expression-bodied member
         // using the short type name (System.Collections.Generic is in the file's usings).
         Assert.Contains("public IDictionary<string, string> OperationNameMapping => new Dictionary<string, string>(0);", _output);
+    }
+
+    [Fact]
+    public void RenamedOperations_MapCSharpNameToModeledName()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["PutThing"] = new OperationModifier { Name = "StoreThing" };
+        customizations.OperationModifiers["GetThing"] = new OperationModifier { Name = "FetchThing" };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        var output = new MetadataWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken);
+        Assert.Contains("public IDictionary<string, string> OperationNameMapping => new Dictionary<string, string>(2)", output);
+        Assert.Matches("""\{"FetchThing", "GetThing"\},\s+\{"StoreThing", "PutThing"\},\s+\};""", output);
     }
 }

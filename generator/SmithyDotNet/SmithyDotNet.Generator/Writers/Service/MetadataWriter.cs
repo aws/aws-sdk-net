@@ -5,7 +5,7 @@ namespace SmithyDotNet.Generator.Writers.Service;
 /// <summary>
 /// Emits the C# source for the internal service metadata class (e.g.
 /// <c>AmazonCloudTrailDataMetadata</c>), which implements <c>IServiceMetadata</c> and exposes the
-/// service's ServiceId and its renamed-operation mapping. Written under the service's
+/// service's ServiceId and its renamed-operation mapping (C# name to modeled name). Written under the service's
 /// <c>.Internal</c> namespace.
 /// </summary>
 public sealed class MetadataWriter(GenerationContext context, string modelFileName)
@@ -49,12 +49,27 @@ public sealed class MetadataWriter(GenerationContext context, string modelFileNa
         writer.WriteLine($"public string ServiceId => {serviceId};");
     }
 
-    private static void WriteOperationNameMapping(CodeWriter writer)
+    private void WriteOperationNameMapping(CodeWriter writer)
     {
-        // No operation renames are modeled yet, so the mapping is empty.
+        var renamed = context.Operations
+            .Where(operation => operation.Name != operation.Shape.Id.Name)
+            .OrderBy(operation => operation.Shape.Id.Name, StringComparer.Ordinal)
+            .ToList();
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Gets the dictionary that gives mapping of renamed operations");
         writer.WriteLine("/// </summary>");
-        writer.WriteLine("public IDictionary<string, string> OperationNameMapping => new Dictionary<string, string>(0);");
+        if (renamed.Count == 0)
+        {
+            writer.WriteLine("public IDictionary<string, string> OperationNameMapping => new Dictionary<string, string>(0);");
+            return;
+        }
+
+        writer.OpenBlock($"public IDictionary<string, string> OperationNameMapping => new Dictionary<string, string>({renamed.Count})", "};", () =>
+        {
+            foreach (var operation in renamed)
+            {
+                writer.WriteLine($"{{{CodeWriter.Literal(operation.Name)}, {CodeWriter.Literal(operation.Shape.Id.Name)}}},");
+            }
+        });
     }
 }

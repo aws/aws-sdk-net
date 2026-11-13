@@ -6,7 +6,7 @@ using static SmithyDotNet.Generator.Generation.Customizations.CustomizationTrans
 namespace SmithyDotNet.Generator.Generation.Customizations;
 
 /// <summary>
-/// The <c>operationModifiers</c> hooks (<c>deprecatedMessage</c>, <c>exclude</c>, <c>useWrappingResult</c>,
+/// The <c>operationModifiers</c> hooks (<c>name</c>, <c>deprecatedMessage</c>, <c>exclude</c>, <c>useWrappingResult</c>,
 /// <c>marshallNameOverrides</c>) and <c>suppressResultGeneration</c>.
 /// </summary>
 internal static class OperationModifiers
@@ -19,6 +19,19 @@ internal static class OperationModifiers
             if (shape is not OperationShape operation)
             {
                 throw new GeneratorException($"operationModifiers['{operationName}'] targets a '{shape.Type}' shape, not an operation.");
+            }
+
+            // The C# name stays out of the model (Operation.Name applies it), so this only checks it.
+            if (modifier.Name is { } name)
+            {
+                if (string.IsNullOrWhiteSpace(name) || name == operationName)
+                {
+                    throw new GeneratorException($"operationModifiers['{operationName}'] name must be a new, non-empty name.");
+                }
+                if (model.Shapes.Values.OfType<OperationShape>().FirstOrDefault(other => other.Id != operation.Id && customizations.OperationName(other.Id.Name) == name) is { } clash)
+                {
+                    throw new GeneratorException($"operationModifiers['{operationName}'] renames the operation to '{name}', which is also the name of '{clash.Id}'.");
+                }
             }
 
             if (modifier.DeprecatedMessage is { } message)
