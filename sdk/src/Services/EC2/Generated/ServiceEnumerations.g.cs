@@ -7420,6 +7420,246 @@ namespace Amazon.EC2
     }
 
     /// <summary>
+    /// Constants used for properties of type FlexCostAllocationAssociationMode.
+    /// </summary>
+    public class FlexCostAllocationAssociationMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant Direct for FlexCostAllocationAssociationMode
+        /// </summary>
+        public static readonly FlexCostAllocationAssociationMode Direct = new FlexCostAllocationAssociationMode("direct");
+
+        /// <summary>
+        /// Constant Scope for FlexCostAllocationAssociationMode
+        /// </summary>
+        public static readonly FlexCostAllocationAssociationMode Scope = new FlexCostAllocationAssociationMode("scope");
+
+        /// <summary>
+        /// Constructs a custom FlexCostAllocationAssociationMode for a value not among the defined constants.
+        /// </summary>
+        public FlexCostAllocationAssociationMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlexCostAllocationAssociationMode FindValue(string value)
+        {
+            return FindValue<FlexCostAllocationAssociationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlexCostAllocationAssociationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FlexCostAllocationCostDimension.
+    /// </summary>
+    public class FlexCostAllocationCostDimension : ConstantClass
+    {
+        /// <summary>
+        /// Constant DataProcessing for FlexCostAllocationCostDimension
+        /// </summary>
+        public static readonly FlexCostAllocationCostDimension DataProcessing = new FlexCostAllocationCostDimension("data-processing");
+
+        /// <summary>
+        /// Constant DataTransfer for FlexCostAllocationCostDimension
+        /// </summary>
+        public static readonly FlexCostAllocationCostDimension DataTransfer = new FlexCostAllocationCostDimension("data-transfer");
+
+        /// <summary>
+        /// Constructs a custom FlexCostAllocationCostDimension for a value not among the defined constants.
+        /// </summary>
+        public FlexCostAllocationCostDimension(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlexCostAllocationCostDimension FindValue(string value)
+        {
+            return FindValue<FlexCostAllocationCostDimension>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlexCostAllocationCostDimension(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FlexCostAllocationNetworkResourceScopeType.
+    /// </summary>
+    public class FlexCostAllocationNetworkResourceScopeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Account for FlexCostAllocationNetworkResourceScopeType
+        /// </summary>
+        public static readonly FlexCostAllocationNetworkResourceScopeType Account = new FlexCostAllocationNetworkResourceScopeType("account");
+
+        /// <summary>
+        /// Constant Subnet for FlexCostAllocationNetworkResourceScopeType
+        /// </summary>
+        public static readonly FlexCostAllocationNetworkResourceScopeType Subnet = new FlexCostAllocationNetworkResourceScopeType("subnet");
+
+        /// <summary>
+        /// Constant Vpc for FlexCostAllocationNetworkResourceScopeType
+        /// </summary>
+        public static readonly FlexCostAllocationNetworkResourceScopeType Vpc = new FlexCostAllocationNetworkResourceScopeType("vpc");
+
+        /// <summary>
+        /// Constructs a custom FlexCostAllocationNetworkResourceScopeType for a value not among the defined constants.
+        /// </summary>
+        public FlexCostAllocationNetworkResourceScopeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlexCostAllocationNetworkResourceScopeType FindValue(string value)
+        {
+            return FindValue<FlexCostAllocationNetworkResourceScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlexCostAllocationNetworkResourceScopeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FlexCostAllocationNetworkResourceType.
+    /// </summary>
+    public class FlexCostAllocationNetworkResourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Ec2 for FlexCostAllocationNetworkResourceType
+        /// </summary>
+        public static readonly FlexCostAllocationNetworkResourceType Ec2 = new FlexCostAllocationNetworkResourceType("ec2");
+
+        /// <summary>
+        /// Constant Natgw for FlexCostAllocationNetworkResourceType
+        /// </summary>
+        public static readonly FlexCostAllocationNetworkResourceType Natgw = new FlexCostAllocationNetworkResourceType("natgw");
+
+        /// <summary>
+        /// Constant Pcx for FlexCostAllocationNetworkResourceType
+        /// </summary>
+        public static readonly FlexCostAllocationNetworkResourceType Pcx = new FlexCostAllocationNetworkResourceType("pcx");
+
+        /// <summary>
+        /// Constructs a custom FlexCostAllocationNetworkResourceType for a value not among the defined constants.
+        /// </summary>
+        public FlexCostAllocationNetworkResourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlexCostAllocationNetworkResourceType FindValue(string value)
+        {
+            return FindValue<FlexCostAllocationNetworkResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlexCostAllocationNetworkResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FlexCostAllocationReportingGranularity.
+    /// </summary>
+    public class FlexCostAllocationReportingGranularity : ConstantClass
+    {
+        /// <summary>
+        /// Constant Account for FlexCostAllocationReportingGranularity
+        /// </summary>
+        public static readonly FlexCostAllocationReportingGranularity Account = new FlexCostAllocationReportingGranularity("account");
+
+        /// <summary>
+        /// Constant Cidr for FlexCostAllocationReportingGranularity
+        /// </summary>
+        public static readonly FlexCostAllocationReportingGranularity Cidr = new FlexCostAllocationReportingGranularity("cidr");
+
+        /// <summary>
+        /// Constant Ec2 for FlexCostAllocationReportingGranularity
+        /// </summary>
+        public static readonly FlexCostAllocationReportingGranularity Ec2 = new FlexCostAllocationReportingGranularity("ec2");
+
+        /// <summary>
+        /// Constant Eni for FlexCostAllocationReportingGranularity
+        /// </summary>
+        public static readonly FlexCostAllocationReportingGranularity Eni = new FlexCostAllocationReportingGranularity("eni");
+
+        /// <summary>
+        /// Constant PeeringId for FlexCostAllocationReportingGranularity
+        /// </summary>
+        public static readonly FlexCostAllocationReportingGranularity PeeringId = new FlexCostAllocationReportingGranularity("peering-id");
+
+        /// <summary>
+        /// Constant Subnet for FlexCostAllocationReportingGranularity
+        /// </summary>
+        public static readonly FlexCostAllocationReportingGranularity Subnet = new FlexCostAllocationReportingGranularity("subnet");
+
+        /// <summary>
+        /// Constant Vpc for FlexCostAllocationReportingGranularity
+        /// </summary>
+        public static readonly FlexCostAllocationReportingGranularity Vpc = new FlexCostAllocationReportingGranularity("vpc");
+
+        /// <summary>
+        /// Constructs a custom FlexCostAllocationReportingGranularity for a value not among the defined constants.
+        /// </summary>
+        public FlexCostAllocationReportingGranularity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlexCostAllocationReportingGranularity FindValue(string value)
+        {
+            return FindValue<FlexCostAllocationReportingGranularity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlexCostAllocationReportingGranularity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FlexibleEnaQueuesSupport.
     /// </summary>
     public class FlexibleEnaQueuesSupport : ConstantClass
@@ -24615,6 +24855,11 @@ namespace Amazon.EC2
         /// Constant ExportInstanceTask for ResourceType
         /// </summary>
         public static readonly ResourceType ExportInstanceTask = new ResourceType("export-instance-task");
+
+        /// <summary>
+        /// Constant FcaPolicy for ResourceType
+        /// </summary>
+        public static readonly ResourceType FcaPolicy = new ResourceType("fca-policy");
 
         /// <summary>
         /// Constant Fleet for ResourceType

@@ -99,6 +99,16 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>attachment-status.instance-id</c> - The ID of the instance that the volume is
+        /// attached to.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>attachment-status.io-performance</c> - The I/O performance status of the volume's
+        /// attachment to the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>availability-zone</c> - The Availability Zone of the instance.
         /// </para>
         ///  </li> <li> 

@@ -2286,6 +2286,94 @@ namespace Amazon.EC2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Associates a flex cost allocation policy with one or more network resources. You can
+        /// associate the policy directly with specific resources by resource ID, or you can associate
+        /// it with a scope of resources in an account, Amazon VPC, or subnet.
+        /// 
+        ///  
+        /// <para>
+        /// The following limits apply:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A request can associate up to 20 resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A policy can have up to 100 active associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A network resource can have only one active association, across all policies. If a
+        /// resource is already associated, the response includes it in the failures with the
+        /// code <c>ResourceAlreadyAssociated</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateNetworkingFlexCostAllocationPolicy service method.</param>
+        /// <returns>The response from the AssociateNetworkingFlexCostAllocationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNetworkingFlexCostAllocationPolicy">REST API Reference for AssociateNetworkingFlexCostAllocationPolicy Operation</seealso>
+        public virtual AssociateNetworkingFlexCostAllocationPolicyResponse AssociateNetworkingFlexCostAllocationPolicy(AssociateNetworkingFlexCostAllocationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateNetworkingFlexCostAllocationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateNetworkingFlexCostAllocationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateNetworkingFlexCostAllocationPolicyResponse>(request, options);
+        }
+#else
+        internal virtual AssociateNetworkingFlexCostAllocationPolicyResponse AssociateNetworkingFlexCostAllocationPolicy(AssociateNetworkingFlexCostAllocationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateNetworkingFlexCostAllocationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateNetworkingFlexCostAllocationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateNetworkingFlexCostAllocationPolicyResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Associates a flex cost allocation policy with one or more network resources. You can
+        /// associate the policy directly with specific resources by resource ID, or you can associate
+        /// it with a scope of resources in an account, Amazon VPC, or subnet.
+        /// 
+        ///  
+        /// <para>
+        /// The following limits apply:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A request can associate up to 20 resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A policy can have up to 100 active associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A network resource can have only one active association, across all policies. If a
+        /// resource is already associated, the response includes it in the failures with the
+        /// code <c>ResourceAlreadyAssociated</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateNetworkingFlexCostAllocationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociateNetworkingFlexCostAllocationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNetworkingFlexCostAllocationPolicy">REST API Reference for AssociateNetworkingFlexCostAllocationPolicy Operation</seealso>
+        public virtual Task<AssociateNetworkingFlexCostAllocationPolicyResponse> AssociateNetworkingFlexCostAllocationPolicyAsync(AssociateNetworkingFlexCostAllocationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateNetworkingFlexCostAllocationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateNetworkingFlexCostAllocationPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateNetworkingFlexCostAllocationPolicyResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Associates a route server with a VPC to enable dynamic route updates.
         /// 
         ///  
@@ -8872,6 +8960,74 @@ namespace Amazon.EC2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a flex cost allocation policy for Networking Flexible Cost Allocation (FCA),
+        /// a feature of Amazon Virtual Private Cloud (Amazon VPC). The policy allocates the charges
+        /// of a shared networking resource at the reporting granularity that you specify. You
+        /// can create a policy for one of the following resource types: NAT gateways, Amazon
+        /// VPC peering connections, or EC2 instances. Policies can allocate data transfer charges
+        /// for all three types, and data processing charges for NAT gateways.
+        /// 
+        ///  
+        /// <para>
+        /// You can have up to 100 policies per account in each Amazon Web Services Region, plus
+        /// one additional policy per network resource type created by a declarative policy, for
+        /// a maximum of 103 policies in an Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkingFlexCostAllocationPolicy service method.</param>
+        /// <returns>The response from the CreateNetworkingFlexCostAllocationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkingFlexCostAllocationPolicy">REST API Reference for CreateNetworkingFlexCostAllocationPolicy Operation</seealso>
+        public virtual CreateNetworkingFlexCostAllocationPolicyResponse CreateNetworkingFlexCostAllocationPolicy(CreateNetworkingFlexCostAllocationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNetworkingFlexCostAllocationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkingFlexCostAllocationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNetworkingFlexCostAllocationPolicyResponse>(request, options);
+        }
+#else
+        internal virtual CreateNetworkingFlexCostAllocationPolicyResponse CreateNetworkingFlexCostAllocationPolicy(CreateNetworkingFlexCostAllocationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNetworkingFlexCostAllocationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkingFlexCostAllocationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNetworkingFlexCostAllocationPolicyResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a flex cost allocation policy for Networking Flexible Cost Allocation (FCA),
+        /// a feature of Amazon Virtual Private Cloud (Amazon VPC). The policy allocates the charges
+        /// of a shared networking resource at the reporting granularity that you specify. You
+        /// can create a policy for one of the following resource types: NAT gateways, Amazon
+        /// VPC peering connections, or EC2 instances. Policies can allocate data transfer charges
+        /// for all three types, and data processing charges for NAT gateways.
+        /// 
+        ///  
+        /// <para>
+        /// You can have up to 100 policies per account in each Amazon Web Services Region, plus
+        /// one additional policy per network resource type created by a declarative policy, for
+        /// a maximum of 103 policies in an Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkingFlexCostAllocationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateNetworkingFlexCostAllocationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkingFlexCostAllocationPolicy">REST API Reference for CreateNetworkingFlexCostAllocationPolicy Operation</seealso>
+        public virtual Task<CreateNetworkingFlexCostAllocationPolicyResponse> CreateNetworkingFlexCostAllocationPolicyAsync(CreateNetworkingFlexCostAllocationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNetworkingFlexCostAllocationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkingFlexCostAllocationPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateNetworkingFlexCostAllocationPolicyResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a placement group in which to launch instances. The strategy of the placement
         /// group determines how the instances are organized within the group. 
         /// 
@@ -15118,6 +15274,50 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteNetworkInterfacePermissionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteNetworkInterfacePermissionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes one or more flex cost allocation policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkingFlexCostAllocationPolicies service method.</param>
+        /// <returns>The response from the DeleteNetworkingFlexCostAllocationPolicies service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkingFlexCostAllocationPolicies">REST API Reference for DeleteNetworkingFlexCostAllocationPolicies Operation</seealso>
+        public virtual DeleteNetworkingFlexCostAllocationPoliciesResponse DeleteNetworkingFlexCostAllocationPolicies(DeleteNetworkingFlexCostAllocationPoliciesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkingFlexCostAllocationPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkingFlexCostAllocationPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNetworkingFlexCostAllocationPoliciesResponse>(request, options);
+        }
+#else
+        internal virtual DeleteNetworkingFlexCostAllocationPoliciesResponse DeleteNetworkingFlexCostAllocationPolicies(DeleteNetworkingFlexCostAllocationPoliciesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkingFlexCostAllocationPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkingFlexCostAllocationPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNetworkingFlexCostAllocationPoliciesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes one or more flex cost allocation policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkingFlexCostAllocationPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteNetworkingFlexCostAllocationPolicies service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkingFlexCostAllocationPolicies">REST API Reference for DeleteNetworkingFlexCostAllocationPolicies Operation</seealso>
+        public virtual Task<DeleteNetworkingFlexCostAllocationPoliciesResponse> DeleteNetworkingFlexCostAllocationPoliciesAsync(DeleteNetworkingFlexCostAllocationPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkingFlexCostAllocationPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkingFlexCostAllocationPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteNetworkingFlexCostAllocationPoliciesResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -25593,8 +25793,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you have a large number of network interfaces, the operation fails unless you use
-        /// pagination or one of the following filters: <c>group-id</c>, <c>mac-address</c>, <c>private-dns-name</c>,
-        /// <c>private-ip-address</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
+        /// pagination or one of the following filters: <c>attachment.instance-id</c>, <c>group-id</c>,
+        /// <c>mac-address</c>, <c>private-dns-name</c>, <c>private-ip-address</c>, <c>subnet-id</c>,
+        /// or <c>vpc-id</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -25631,8 +25832,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you have a large number of network interfaces, the operation fails unless you use
-        /// pagination or one of the following filters: <c>group-id</c>, <c>mac-address</c>, <c>private-dns-name</c>,
-        /// <c>private-ip-address</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
+        /// pagination or one of the following filters: <c>attachment.instance-id</c>, <c>group-id</c>,
+        /// <c>mac-address</c>, <c>private-dns-name</c>, <c>private-ip-address</c>, <c>subnet-id</c>,
+        /// or <c>vpc-id</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -25663,8 +25865,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you have a large number of network interfaces, the operation fails unless you use
-        /// pagination or one of the following filters: <c>group-id</c>, <c>mac-address</c>, <c>private-dns-name</c>,
-        /// <c>private-ip-address</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
+        /// pagination or one of the following filters: <c>attachment.instance-id</c>, <c>group-id</c>,
+        /// <c>mac-address</c>, <c>private-dns-name</c>, <c>private-ip-address</c>, <c>subnet-id</c>,
+        /// or <c>vpc-id</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -25692,8 +25895,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you have a large number of network interfaces, the operation fails unless you use
-        /// pagination or one of the following filters: <c>group-id</c>, <c>mac-address</c>, <c>private-dns-name</c>,
-        /// <c>private-ip-address</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
+        /// pagination or one of the following filters: <c>attachment.instance-id</c>, <c>group-id</c>,
+        /// <c>mac-address</c>, <c>private-dns-name</c>, <c>private-ip-address</c>, <c>subnet-id</c>,
+        /// or <c>vpc-id</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -25710,6 +25914,100 @@ namespace Amazon.EC2
         public virtual Task<DescribeNetworkInterfacesResponse> DescribeNetworkInterfacesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeNetworkInterfacesAsync(new DescribeNetworkInterfacesRequest(), cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes one or more of your flex cost allocation policies. We recommend using pagination
+        /// to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkingFlexCostAllocationPolicies service method.</param>
+        /// <returns>The response from the DescribeNetworkingFlexCostAllocationPolicies service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkingFlexCostAllocationPolicies">REST API Reference for DescribeNetworkingFlexCostAllocationPolicies Operation</seealso>
+        public virtual DescribeNetworkingFlexCostAllocationPoliciesResponse DescribeNetworkingFlexCostAllocationPolicies(DescribeNetworkingFlexCostAllocationPoliciesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkingFlexCostAllocationPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkingFlexCostAllocationPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNetworkingFlexCostAllocationPoliciesResponse>(request, options);
+        }
+#else
+        internal virtual DescribeNetworkingFlexCostAllocationPoliciesResponse DescribeNetworkingFlexCostAllocationPolicies(DescribeNetworkingFlexCostAllocationPoliciesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkingFlexCostAllocationPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkingFlexCostAllocationPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNetworkingFlexCostAllocationPoliciesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Describes one or more of your flex cost allocation policies. We recommend using pagination
+        /// to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkingFlexCostAllocationPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeNetworkingFlexCostAllocationPolicies service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkingFlexCostAllocationPolicies">REST API Reference for DescribeNetworkingFlexCostAllocationPolicies Operation</seealso>
+        public virtual Task<DescribeNetworkingFlexCostAllocationPoliciesResponse> DescribeNetworkingFlexCostAllocationPoliciesAsync(DescribeNetworkingFlexCostAllocationPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkingFlexCostAllocationPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkingFlexCostAllocationPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNetworkingFlexCostAllocationPoliciesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes the associations between your flex cost allocation policies and network
+        /// resources. We recommend using pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkingFlexCostAllocationPolicyAssociations service method.</param>
+        /// <returns>The response from the DescribeNetworkingFlexCostAllocationPolicyAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkingFlexCostAllocationPolicyAssociations">REST API Reference for DescribeNetworkingFlexCostAllocationPolicyAssociations Operation</seealso>
+        public virtual DescribeNetworkingFlexCostAllocationPolicyAssociationsResponse DescribeNetworkingFlexCostAllocationPolicyAssociations(DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkingFlexCostAllocationPolicyAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkingFlexCostAllocationPolicyAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNetworkingFlexCostAllocationPolicyAssociationsResponse>(request, options);
+        }
+#else
+        internal virtual DescribeNetworkingFlexCostAllocationPolicyAssociationsResponse DescribeNetworkingFlexCostAllocationPolicyAssociations(DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkingFlexCostAllocationPolicyAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkingFlexCostAllocationPolicyAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNetworkingFlexCostAllocationPolicyAssociationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Describes the associations between your flex cost allocation policies and network
+        /// resources. We recommend using pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkingFlexCostAllocationPolicyAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeNetworkingFlexCostAllocationPolicyAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkingFlexCostAllocationPolicyAssociations">REST API Reference for DescribeNetworkingFlexCostAllocationPolicyAssociations Operation</seealso>
+        public virtual Task<DescribeNetworkingFlexCostAllocationPolicyAssociationsResponse> DescribeNetworkingFlexCostAllocationPolicyAssociationsAsync(DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkingFlexCostAllocationPolicyAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkingFlexCostAllocationPolicyAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNetworkingFlexCostAllocationPolicyAssociationsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -34198,6 +34496,50 @@ namespace Amazon.EC2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Disassociates a flex cost allocation policy from one or more network resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateNetworkingFlexCostAllocationPolicy service method.</param>
+        /// <returns>The response from the DisassociateNetworkingFlexCostAllocationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNetworkingFlexCostAllocationPolicy">REST API Reference for DisassociateNetworkingFlexCostAllocationPolicy Operation</seealso>
+        public virtual DisassociateNetworkingFlexCostAllocationPolicyResponse DisassociateNetworkingFlexCostAllocationPolicy(DisassociateNetworkingFlexCostAllocationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateNetworkingFlexCostAllocationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateNetworkingFlexCostAllocationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateNetworkingFlexCostAllocationPolicyResponse>(request, options);
+        }
+#else
+        internal virtual DisassociateNetworkingFlexCostAllocationPolicyResponse DisassociateNetworkingFlexCostAllocationPolicy(DisassociateNetworkingFlexCostAllocationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateNetworkingFlexCostAllocationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateNetworkingFlexCostAllocationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateNetworkingFlexCostAllocationPolicyResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Disassociates a flex cost allocation policy from one or more network resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateNetworkingFlexCostAllocationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociateNetworkingFlexCostAllocationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNetworkingFlexCostAllocationPolicy">REST API Reference for DisassociateNetworkingFlexCostAllocationPolicy Operation</seealso>
+        public virtual Task<DisassociateNetworkingFlexCostAllocationPolicyResponse> DisassociateNetworkingFlexCostAllocationPolicyAsync(DisassociateNetworkingFlexCostAllocationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateNetworkingFlexCostAllocationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateNetworkingFlexCostAllocationPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateNetworkingFlexCostAllocationPolicyResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Disassociates a route server from a VPC.
         /// 
         ///  
@@ -37649,7 +37991,8 @@ namespace Amazon.EC2
         ///  </li> </ul> <note> 
         /// <para>
         ///  <c>GetFlowLogsIntegrationTemplate</c> does not support integration between Amazon
-        /// Web Services Transit Gateway Flow Logs and Amazon Athena.
+        /// Web Services Transit Gateway Flow Logs or Amazon Web Services Cloud WAN Flow Logs
+        /// and Amazon Athena.
         /// </para>
         ///  </note>
         /// </summary>
@@ -37701,7 +38044,8 @@ namespace Amazon.EC2
         ///  </li> </ul> <note> 
         /// <para>
         ///  <c>GetFlowLogsIntegrationTemplate</c> does not support integration between Amazon
-        /// Web Services Transit Gateway Flow Logs and Amazon Athena.
+        /// Web Services Transit Gateway Flow Logs or Amazon Web Services Cloud WAN Flow Logs
+        /// and Amazon Athena.
         /// </para>
         ///  </note>
         /// </summary>
@@ -39632,6 +39976,50 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = GetNetworkInsightsAccessScopeContentResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetNetworkInsightsAccessScopeContentResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the versions of a flex cost allocation policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkingFlexCostAllocationPolicyVersions service method.</param>
+        /// <returns>The response from the GetNetworkingFlexCostAllocationPolicyVersions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkingFlexCostAllocationPolicyVersions">REST API Reference for GetNetworkingFlexCostAllocationPolicyVersions Operation</seealso>
+        public virtual GetNetworkingFlexCostAllocationPolicyVersionsResponse GetNetworkingFlexCostAllocationPolicyVersions(GetNetworkingFlexCostAllocationPolicyVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNetworkingFlexCostAllocationPolicyVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkingFlexCostAllocationPolicyVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkingFlexCostAllocationPolicyVersionsResponse>(request, options);
+        }
+#else
+        internal virtual GetNetworkingFlexCostAllocationPolicyVersionsResponse GetNetworkingFlexCostAllocationPolicyVersions(GetNetworkingFlexCostAllocationPolicyVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNetworkingFlexCostAllocationPolicyVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkingFlexCostAllocationPolicyVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkingFlexCostAllocationPolicyVersionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves the versions of a flex cost allocation policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkingFlexCostAllocationPolicyVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetNetworkingFlexCostAllocationPolicyVersions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkingFlexCostAllocationPolicyVersions">REST API Reference for GetNetworkingFlexCostAllocationPolicyVersions Operation</seealso>
+        public virtual Task<GetNetworkingFlexCostAllocationPolicyVersionsResponse> GetNetworkingFlexCostAllocationPolicyVersionsAsync(GetNetworkingFlexCostAllocationPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNetworkingFlexCostAllocationPolicyVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkingFlexCostAllocationPolicyVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetNetworkingFlexCostAllocationPolicyVersionsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -44558,6 +44946,68 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyNetworkInterfaceAttributeResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Modifies a flex cost allocation policy. Changing a policy document or <c>ShowBackEnabled</c>
+        /// creates a new version of the policy. Changing only the description doesn't create
+        /// a new version.
+        /// 
+        ///  
+        /// <para>
+        /// A policy can have up to 100 versions. Versions are never removed, so after a policy
+        /// reaches 100 versions, you can't change its policy document or <c>ShowBackEnabled</c>.
+        /// Policies that are managed by a declarative policy aren't subject to this limit.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyNetworkingFlexCostAllocationPolicy service method.</param>
+        /// <returns>The response from the ModifyNetworkingFlexCostAllocationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkingFlexCostAllocationPolicy">REST API Reference for ModifyNetworkingFlexCostAllocationPolicy Operation</seealso>
+        public virtual ModifyNetworkingFlexCostAllocationPolicyResponse ModifyNetworkingFlexCostAllocationPolicy(ModifyNetworkingFlexCostAllocationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyNetworkingFlexCostAllocationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyNetworkingFlexCostAllocationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyNetworkingFlexCostAllocationPolicyResponse>(request, options);
+        }
+#else
+        internal virtual ModifyNetworkingFlexCostAllocationPolicyResponse ModifyNetworkingFlexCostAllocationPolicy(ModifyNetworkingFlexCostAllocationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyNetworkingFlexCostAllocationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyNetworkingFlexCostAllocationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyNetworkingFlexCostAllocationPolicyResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Modifies a flex cost allocation policy. Changing a policy document or <c>ShowBackEnabled</c>
+        /// creates a new version of the policy. Changing only the description doesn't create
+        /// a new version.
+        /// 
+        ///  
+        /// <para>
+        /// A policy can have up to 100 versions. Versions are never removed, so after a policy
+        /// reaches 100 versions, you can't change its policy document or <c>ShowBackEnabled</c>.
+        /// Policies that are managed by a declarative policy aren't subject to this limit.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyNetworkingFlexCostAllocationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ModifyNetworkingFlexCostAllocationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkingFlexCostAllocationPolicy">REST API Reference for ModifyNetworkingFlexCostAllocationPolicy Operation</seealso>
+        public virtual Task<ModifyNetworkingFlexCostAllocationPolicyResponse> ModifyNetworkingFlexCostAllocationPolicyAsync(ModifyNetworkingFlexCostAllocationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyNetworkingFlexCostAllocationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyNetworkingFlexCostAllocationPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyNetworkingFlexCostAllocationPolicyResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

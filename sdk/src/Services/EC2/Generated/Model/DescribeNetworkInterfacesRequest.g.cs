@@ -33,10 +33,10 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeNetworkInterfaces operation. Describes
     /// the specified network interfaces or all your network interfaces. <para> If you have
     /// a large number of network interfaces, the operation fails unless you use pagination
-    /// or one of the following filters: <c>group-id</c>, <c>mac-address</c>, <c>private-dns-name</c>,
-    /// <c>private-ip-address</c>, <c>subnet-id</c>, or <c>vpc-id</c>. </para> <important>
-    /// <para> We strongly recommend using only paginated requests. Unpaginated requests are
-    /// susceptible to throttling and timeouts. </para> </important>
+    /// or one of the following filters: <c>attachment.instance-id</c>, <c>group-id</c>, <c>mac-address</c>,
+    /// <c>private-dns-name</c>, <c>private-ip-address</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
+    /// </para> <important> <para> We strongly recommend using only paginated requests. Unpaginated
+    /// requests are susceptible to throttling and timeouts. </para> </important>
     /// </summary>
     public partial class DescribeNetworkInterfacesRequest : AmazonEC2Request
     {

@@ -144,7 +144,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Rir. 
         /// <para>
-        /// The Regional Internet Registry. Possible values:
+        /// The internet registry. Possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -162,6 +162,10 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <c>lacnic</c> - LACNIC (Latin America and the Caribbean).
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>nicbr</c> - NIC.br (Brazil).
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public Rir Rir { get; set; }
@@ -174,10 +178,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the internet registry association. Valid values: <c>pending-activation</c>
-        /// | <c>pending-enable</c> | <c>create-in-progress</c> | <c>create-failed</c> | <c>enable-in-progress</c>
-        /// | <c>enable-complete</c> | <c>enable-failed</c> | <c>delete-in-progress</c> | <c>delete-complete</c>
-        /// | <c>delete-failed</c>.
+        /// The state of the internet registry association. Valid values: <c>pending-enable</c>
+        /// | <c>create-in-progress</c> | <c>create-failed</c> | <c>enable-in-progress</c> | <c>enable-complete</c>
+        /// | <c>enable-failed</c> | <c>disable-in-progress</c> | <c>disable-complete</c> | <c>disable-failed</c>
+        /// | <c>delete-in-progress</c> | <c>delete-complete</c> | <c>delete-failed</c>.
         /// </para>
         /// </summary>
         public IpamInternetRegistryAssociationState State { get; set; }

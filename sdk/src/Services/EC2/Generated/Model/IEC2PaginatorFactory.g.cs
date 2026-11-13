@@ -513,6 +513,18 @@ namespace Amazon.EC2.Model
         IDescribeNetworkInterfacesPaginator DescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeNetworkingFlexCostAllocationPolicies operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IDescribeNetworkingFlexCostAllocationPoliciesPaginator DescribeNetworkingFlexCostAllocationPolicies(DescribeNetworkingFlexCostAllocationPoliciesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeNetworkingFlexCostAllocationPolicyAssociations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IDescribeNetworkingFlexCostAllocationPolicyAssociationsPaginator DescribeNetworkingFlexCostAllocationPolicyAssociations(DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribePrefixLists operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

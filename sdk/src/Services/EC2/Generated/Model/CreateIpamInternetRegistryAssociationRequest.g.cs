@@ -113,7 +113,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Rir. 
         /// <para>
-        /// The Regional Internet Registry to associate with. Possible values:
+        /// The internet registry to associate with. Possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -130,6 +130,10 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>lacnic</c> - LACNIC (Latin America and the Caribbean).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>nicbr</c> - NIC.br (Brazil).
         /// </para>
         ///  </li> </ul>
         /// </summary>

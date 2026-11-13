@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The state of the routing policy registration. Valid values: <c>pending-activate</c>
         /// | <c>activate-failed</c> | <c>create-in-progress</c> | <c>create-complete</c> | <c>update-in-progress</c>
-        /// | <c>update-complete</c> | <c>delete-in-progress</c> | <c>delete-complete</c>.
+        /// | <c>update-complete</c> | <c>delete-in-progress</c> | <c>delete-complete</c> | <c>disable-complete</c>.
         /// </para>
         /// </summary>
         public IpamRoutingPolicyRegistrationState State { get; set; }

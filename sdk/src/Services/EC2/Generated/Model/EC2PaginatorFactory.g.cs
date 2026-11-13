@@ -673,6 +673,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeNetworkingFlexCostAllocationPolicies operation
+        /// </summary>
+        public IDescribeNetworkingFlexCostAllocationPoliciesPaginator DescribeNetworkingFlexCostAllocationPolicies(DescribeNetworkingFlexCostAllocationPoliciesRequest request)
+        {
+            return new DescribeNetworkingFlexCostAllocationPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeNetworkingFlexCostAllocationPolicyAssociations operation
+        /// </summary>
+        public IDescribeNetworkingFlexCostAllocationPolicyAssociationsPaginator DescribeNetworkingFlexCostAllocationPolicyAssociations(DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest request)
+        {
+            return new DescribeNetworkingFlexCostAllocationPolicyAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribePrefixLists operation
         /// </summary>
         public IDescribePrefixListsPaginator DescribePrefixLists(DescribePrefixListsRequest request)
