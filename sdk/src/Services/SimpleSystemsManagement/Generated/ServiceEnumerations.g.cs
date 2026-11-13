@@ -903,6 +903,16 @@ namespace Amazon.SimpleSystemsManagement
     public class CloudConnectorFilterKey : ConstantClass
     {
         /// <summary>
+        /// Constant OrganizationId for CloudConnectorFilterKey
+        /// </summary>
+        public static readonly CloudConnectorFilterKey OrganizationId = new CloudConnectorFilterKey("OrganizationId");
+
+        /// <summary>
+        /// Constant ProjectId for CloudConnectorFilterKey
+        /// </summary>
+        public static readonly CloudConnectorFilterKey ProjectId = new CloudConnectorFilterKey("ProjectId");
+
+        /// <summary>
         /// Constant SubscriptionId for CloudConnectorFilterKey
         /// </summary>
         public static readonly CloudConnectorFilterKey SubscriptionId = new CloudConnectorFilterKey("SubscriptionId");
@@ -4976,6 +4986,47 @@ namespace Amazon.SimpleSystemsManagement
     }
 
     /// <summary>
+    /// Constants used for properties of type Provider.
+    /// </summary>
+    public class Provider : ConstantClass
+    {
+        /// <summary>
+        /// Constant Azure for Provider
+        /// </summary>
+        public static readonly Provider Azure = new Provider("Azure");
+
+        /// <summary>
+        /// Constant GCP for Provider
+        /// </summary>
+        public static readonly Provider GCP = new Provider("GCP");
+
+        /// <summary>
+        /// Constructs a custom Provider for a value not among the defined constants.
+        /// </summary>
+        public Provider(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Provider FindValue(string value)
+        {
+            return FindValue<Provider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Provider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RebootOption.
     /// </summary>
     public class RebootOption : ConstantClass
@@ -5475,6 +5526,11 @@ namespace Amazon.SimpleSystemsManagement
         public static readonly SourceType AWSSSMManagedInstance = new SourceType("AWS::SSM::ManagedInstance");
 
         /// <summary>
+        /// Constant ComputeGoogleapisComInstance for SourceType
+        /// </summary>
+        public static readonly SourceType ComputeGoogleapisComInstance = new SourceType("compute.googleapis.com/Instance");
+
+        /// <summary>
         /// Constant MicrosoftComputeVirtualMachines for SourceType
         /// </summary>
         public static readonly SourceType MicrosoftComputeVirtualMachines = new SourceType("Microsoft.Compute/virtualMachines");
@@ -5648,9 +5704,19 @@ namespace Amazon.SimpleSystemsManagement
         public static readonly ValidationFindingCode SubscriptionAccessible = new ValidationFindingCode("SubscriptionAccessible");
 
         /// <summary>
+        /// Constant TargetApiDisabled for ValidationFindingCode
+        /// </summary>
+        public static readonly ValidationFindingCode TargetApiDisabled = new ValidationFindingCode("TargetApiDisabled");
+
+        /// <summary>
         /// Constant TargetInaccessible for ValidationFindingCode
         /// </summary>
         public static readonly ValidationFindingCode TargetInaccessible = new ValidationFindingCode("TargetInaccessible");
+
+        /// <summary>
+        /// Constant TargetMissingPermissions for ValidationFindingCode
+        /// </summary>
+        public static readonly ValidationFindingCode TargetMissingPermissions = new ValidationFindingCode("TargetMissingPermissions");
 
         /// <summary>
         /// Constant TargetStateWarning for ValidationFindingCode
@@ -5712,6 +5778,16 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant AzureTenant for ValidationFindingScopeType
         /// </summary>
         public static readonly ValidationFindingScopeType AzureTenant = new ValidationFindingScopeType("azure:tenant");
+
+        /// <summary>
+        /// Constant GcpOrganization for ValidationFindingScopeType
+        /// </summary>
+        public static readonly ValidationFindingScopeType GcpOrganization = new ValidationFindingScopeType("gcp:organization");
+
+        /// <summary>
+        /// Constant GcpProject for ValidationFindingScopeType
+        /// </summary>
+        public static readonly ValidationFindingScopeType GcpProject = new ValidationFindingScopeType("gcp:project");
 
         /// <summary>
         /// Constructs a custom ValidationFindingScopeType for a value not among the defined constants.

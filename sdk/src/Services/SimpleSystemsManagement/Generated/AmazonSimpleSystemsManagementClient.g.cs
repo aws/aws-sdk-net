@@ -15046,6 +15046,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
         /// The specified parameter to be shared could not be found.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota. Service quotas, also referred to as limits,
+        /// are the maximum number of service resources or operations for your Amazon Web Services
+        /// account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateCloudConnector">REST API Reference for UpdateCloudConnector Operation</seealso>
         public virtual UpdateCloudConnectorResponse UpdateCloudConnector(UpdateCloudConnectorRequest request)
         {
@@ -15083,6 +15088,11 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
         /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota. Service quotas, also referred to as limits,
+        /// are the maximum number of service resources or operations for your Amazon Web Services
+        /// account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateCloudConnector">REST API Reference for UpdateCloudConnector Operation</seealso>
         public virtual Task<UpdateCloudConnectorResponse> UpdateCloudConnectorAsync(UpdateCloudConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

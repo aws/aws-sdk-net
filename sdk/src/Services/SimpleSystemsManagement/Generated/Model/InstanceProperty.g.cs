@@ -406,7 +406,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property SourceType. 
         /// <para>
         /// The type of the source resource. Valid values: <c>AWS::EC2::Instance</c> | <c>AWS::SSM::ManagedInstance</c>
-        /// | <c>AWS::IoT::Thing</c> | <c>Microsoft.Compute/virtualMachines</c>.
+        /// | <c>AWS::IoT::Thing</c> | <c>Microsoft.Compute/virtualMachines</c> | <c>compute.googleapis.com/Instance</c>.
         /// </para>
         /// </summary>
         public SourceType SourceType { get; set; }

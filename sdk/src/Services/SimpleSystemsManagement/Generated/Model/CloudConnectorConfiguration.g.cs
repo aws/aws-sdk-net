@@ -47,5 +47,18 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Checks to see if the AzureConfiguration property is set.
         /// </summary>
         internal bool IsSetAzureConfiguration() => this.AzureConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property GcpConfiguration. 
+        /// <para>
+        /// The access details and targets for connecting to a Google Cloud Platform (GCP) environment.
+        /// </para>
+        /// </summary>
+        public GcpConfiguration GcpConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GcpConfiguration property is set.
+        /// </summary>
+        internal bool IsSetGcpConfiguration() => this.GcpConfiguration != null;
     }
 }

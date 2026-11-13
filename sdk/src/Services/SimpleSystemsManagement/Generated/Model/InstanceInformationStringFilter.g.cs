@@ -65,7 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         /// Valid values for the <c>SourceType</c> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance
-        /// | AWS::IoT::Thing | Microsoft.Compute/virtualMachines
+        /// | AWS::IoT::Thing | Microsoft.Compute/virtualMachines | compute.googleapis.com/Instance
         /// </para>
         ///  </li> <li> 
         /// <para>

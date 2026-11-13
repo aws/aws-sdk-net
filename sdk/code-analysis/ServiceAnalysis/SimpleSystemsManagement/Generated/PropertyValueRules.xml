@@ -2807,6 +2807,12 @@
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CloudConnectorSummary.ConfigConnectorArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws(-cn|-us-gov)?:config:([^:]+):\d{12}:connector/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CloudConnectorSummary.Description</property>
     <min>0</min>
     <max>1024</max>
@@ -3199,6 +3205,36 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentVersionInfo.VersionName</property>
     <pattern>^[a-zA-Z0-9_\-.]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GcpConfiguration.OrganizationId</property>
+    <min>1</min>
+    <max>19</max>
+    <pattern>^[1-9][0-9]{0,18}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GcpConfiguration.ServiceAccountEmail</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-z][a-z0-9\-]*[a-z0-9]@[a-z][a-z0-9\-]*[a-z0-9]\.iam\.gserviceaccount\.com$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GcpConfiguration.WorkloadIdentityPoolProvider</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^projects/[1-9][0-9]{0,18}/locations/global/workloadIdentityPools\/[a-z0-9-]{4,32}/providers/[a-z0-9-]{4,32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GcpProject.ProjectDisplayName</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}\p{P}\p{M}]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GcpProject.ProjectId</property>
+    <min>6</min>
+    <max>30</max>
+    <pattern>^[a-z][a-z0-9-]{4,28}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetResourcePoliciesResponseEntry.Policy</property>
@@ -4107,7 +4143,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ParentStepDetails.Action</property>
-    <pattern>^aws:[a-zA-Z]{3,25}$</pattern>
+    <pattern>^aws:[a-zA-Z]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Patch.Id</property>
@@ -4393,7 +4429,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.StepExecution.Action</property>
-    <pattern>^aws:[a-zA-Z]{3,25}$</pattern>
+    <pattern>^aws:[a-zA-Z]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Tag.Key</property>

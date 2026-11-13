@@ -284,6 +284,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("TargetsSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = TargetsSummaryUnmarshaller.Instance;
+                    unmarshalledObject.TargetsSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("TriggeredAlarms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AlarmStateInformation, AlarmStateInformationUnmarshaller>(AlarmStateInformationUnmarshaller.Instance);
