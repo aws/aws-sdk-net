@@ -1,3 +1,52 @@
+### 4.1.2.0 (2026-11-13 19:12 UTC)
+* AppStream (4.1.1.0)
+	* Amazon WorkSpaces Agent Access now supports image builders, so AI agents can install, configure, and test applications before you create an image. New Replay Session delivers a video of screenshots, a transcript, and a report for each agent session, optionally encrypted with your own KMS key.
+* CloudFormation (4.1.1.0)
+	* AWS CloudFormation introduces stack aliases, which let you refer to an existing stack by a new name without deleting and recreating it. Manage aliases with SetAlias and RemoveAlias, and use an alias in place of the stack name in operations such as UpdateStack.
+* CognitoIdentityProvider (4.1.1.0)
+	* Adding support for dynamic client registration.
+* ConnectCampaignsV2 (4.1.1.0)
+	* Adds LastModifiedTime to DescribeCampaign and ListCampaigns responses.
+* Deadline (4.1.1.0)
+	* AWS Deadline Cloud now supports the NVIDIA RTX PRO 4500 GPU accelerator (rtx-pro-4500) for service-managed fleets running Amazon EC2 G7 instances.
+* DevOpsAgent (4.1.1.0)
+	* AWS DevOps Agent adds bidirectional communication for Microsoft Teams associations. Set msteams.bidirectional with an IAM role so the agent answers mentions in your Teams channels.
+* DocDB (4.1.0.1)
+	* Update the documentation for the --engine-version flag for cluster creation
+* EC2 (4.1.2.0)
+	* Adds support for Networking Flexible Cost Allocation APIs, enabling Network Admin, Architect, and Engineers to break down shared networking costs by the resources that generated the traffic.
+* Glue (4.1.1.0)
+	* Field description update for auto upgrade summaries
+* IAMRolesAnywhere (4.1.1.0)
+	* This release adds resource aliases for IAM Roles Anywhere trust anchors, profiles, and certificate revocation lists (CRLs). Assign an optional, unique alias name to a resource and use its alias ARN wherever an identifier is accepted, including CreateSession.
+* IdentityManagement (4.1.1.0)
+	* Minor documentation updates only
+* Imagebuilder (4.1.1.0)
+	* Add documentation clarification around List API behavior, and add image available waiter
+* Lambda (4.1.1.0)
+	* Adds support for customer-managed runtimes in the CreateFunction and UpdateFunctionConfiguration APIs. Functions can now use a customer-managed runtime and receive its updates automatically, or pin to a specific runtime version using the existing runtime controls.
+* LambdaCore (4.1.1.0)
+	* Initial release of the customer-managed runtime APIs. Runtime publishers can now create, version, and manage custom runtimes, and use aliases to roll out new runtime versions to the functions that use them.
+* NetworkFirewall (4.1.1.0)
+	* Releasing Firewall Proxy API and deprecating Egress Proxy API.
+* Organizations (4.1.1.0)
+	* Add support for policy operations on the SECURITYHUB CSPM POLICY policy type.
+* QConnect (4.1.1.0)
+	* Amazon Q in Connect now supports additional message template attributes. You can personalize message templates using case fields, Amazon Connect Customer Profiles calculated attributes, and product recommendations.
+* SageMaker (4.1.2.0)
+	* New feature for Sagemaker Hyperpod Slurm clusters to install Extensions and view cluster operations.
+* Scheduler (4.1.1.0)
+	* Adds EventBridgePutEventsV2Parameters and EventBridgePutRawEventsParameters to Target so schedules can publish to Amazon EventBridge event bus v2 with PutEvents or PutRawEvents.
+* SecurityHub (4.1.1.0)
+	* New DISABLED status for Security Hub CSPM Central Configuration.
+* SimpleSystemsManagement (4.1.1.0)
+	* Adding Google Cloud Platform (GCP) support to SSM Cloud Connector to enable onboarding of GCP Compute Engine instances to AWS Systems Manager. Customers can now optionally create an SSM Cloud Connector without an AWS Config connector.
+* VPCLattice (4.1.1.0)
+	* Amazon VPC Lattice now supports modification of resource configuration DNS resolution on Resource Gateways
+* Core 4.1.0.1
+	* Reduce per-request overhead in the HttpClient adapter: cheaper response header copy, reuse of the generated User-Agent string, request Uri and standard HttpMethod instances, and skipped attribute building for no-op telemetry providers.
+	* Reduce SigV4 signing CPU and allocations: reuse keyed HMAC instances on .NET 8, build the scope, string to sign and Authorization header with interpolated strings, and use the known hash for empty payloads. Signatures and headers are unchanged.
+
 ### 4.1.1.0 (2026-11-12 19:48 UTC)
 * ACMPCA (4.1.0.1)
 	* ACMPCA is now generated from its Smithy model. There are no changes to the public API.

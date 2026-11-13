@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Reduce SigV4 signing CPU and allocations: reuse keyed HMAC instances on .NET 8, build the scope, string to sign and Authorization header with interpolated strings, and use the known hash for empty payloads. Signatures and headers are unchanged."
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}
