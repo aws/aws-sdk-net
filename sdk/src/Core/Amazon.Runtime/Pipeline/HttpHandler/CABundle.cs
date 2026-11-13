@@ -16,6 +16,7 @@
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.IO;
+using System.Net.Http;
 using System.Net.Security;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -27,7 +28,8 @@ namespace Amazon.Runtime.Internal
     /// when the SDK validates a server's TLS certificate. The file is located with the AWS_CA_BUNDLE
     /// environment variable, matching the behavior of the AWS CLI and other AWS SDKs.
     /// <para>
-    /// The bundle only applies to HTTP clients the SDK creates itself. When a custom
+    /// The bundle applies to the HTTP clients the SDK creates itself: service clients, container credentials
+    /// (AWS_CONTAINER_CREDENTIALS_FULL_URI over HTTPS) and SSO start URL resolution. When a custom
     /// HttpClientFactory is configured on the client config, that factory owns certificate validation.
     /// </para>
     /// </summary>
@@ -75,6 +77,34 @@ namespace Amazon.Runtime.Internal
         /// connections shared across requests.
         /// </summary>
         public RemoteCertificateValidationCallback RemoteCertificateValidationCallback { get; }
+
+        /// <summary>
+        /// Configures a handler to trust only the bundle's certificates, using the validation callback.
+        /// </summary>
+        /// <exception cref="AmazonClientException">The current runtime doesn't support a custom validation callback.</exception>
+        public void ApplyTo(HttpClientHandler handler)
+        {
+            try
+            {
+                handler.ServerCertificateCustomValidationCallback =
+                    (request, certificate, chain, sslPolicyErrors) => ValidateServerCertificate(request, certificate, chain, sslPolicyErrors);
+            }
+            catch (PlatformNotSupportedException pns)
+            {
+                // Fail closed: silently using the OS trust store would ignore the trust configuration the user asked for.
+                throw new AmazonClientException(
+                    $"The {EnvironmentVariableName} environment variable is set, but the current runtime does not support custom server certificate validation.", pns);
+            }
+        }
+
+        /// <summary>
+        /// Applies the bundle from the AWS_CA_BUNDLE environment variable, if set, to a handler the SDK creates
+        /// outside the service client pipeline.
+        /// </summary>
+        public static void ApplyFromEnvironment(HttpClientHandler handler)
+        {
+            FromEnvironment()?.ApplyTo(handler);
+        }
 
         /// <summary>
         /// Returns the CA bundle configured by the AWS_CA_BUNDLE environment variable, or null when the variable is not set.

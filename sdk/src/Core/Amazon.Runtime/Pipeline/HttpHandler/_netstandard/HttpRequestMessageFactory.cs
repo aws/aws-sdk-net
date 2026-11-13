@@ -364,23 +364,7 @@ namespace Amazon.Runtime
         /// </summary>
         private static void ApplyCABundle(HttpClientHandler httpMessageHandler)
         {
-            var caBundle = CABundle.FromEnvironment();
-            if (caBundle == null)
-            {
-                return;
-            }
-
-            try
-            {
-                httpMessageHandler.ServerCertificateCustomValidationCallback =
-                    (request, certificate, chain, sslPolicyErrors) => caBundle.ValidateServerCertificate(request, certificate, chain, sslPolicyErrors);
-            }
-            catch (PlatformNotSupportedException pns)
-            {
-                // Fail closed: silently using the OS trust store would ignore the trust configuration the user asked for.
-                throw new AmazonClientException(
-                    $"The {CABundle.EnvironmentVariableName} environment variable is set, but the current runtime does not support custom server certificate validation.", pns);
-            }
+            CABundle.ApplyFromEnvironment(httpMessageHandler);
         }
 #endif
 

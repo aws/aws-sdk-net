@@ -17,8 +17,10 @@
 // test target is only compiled, never run, so these tests are limited to the targets that run them.
 #if NETFRAMEWORK || NET8_0_OR_GREATER
 using Amazon.Runtime;
+using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
 using Amazon.S3;
+using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
@@ -211,6 +213,69 @@ namespace AWSSDK.UnitTests.HttpClientTests
             }
         }
 
+        /// <summary>
+        /// Container credentials (an HTTPS AWS_CONTAINER_CREDENTIALS_FULL_URI) are fetched with AWSSDKUtils.ExecuteHttpRequestAsync,
+        /// which uses its own cached handlers rather than the service client pipeline.
+        /// </summary>
+        [TestMethod]
+        public async Task ExecuteHttpRequest_UsesCABundleFromEnvironment()
+        {
+            using (var root = CreateCertificate("CN=Credentials Root", isCertificateAuthority: true))
+            using (var leaf = CreateCertificate("CN=localhost", root))
+            using (var server = new LoopbackTlsServer(leaf))
+            {
+                var uri = new Uri($"https://localhost:{server.Port}/credentials");
+                Func<Task> request = () => AWSSDKUtils.ExecuteHttpRequestAsync(uri, "GET", null, TimeSpan.Zero, null, null);
+
+                // Without the bundle the server's certificate isn't trusted.
+                var exception = await CaptureExceptionAsync(request);
+                Assert.IsNotNull(FindInChain<AuthenticationException>(exception), "Expected a TLS trust failure, got: " + exception);
+
+                // An invalid bundle fails the request...
+                Environment.SetEnvironmentVariable(CABundle.EnvironmentVariableName, Path.Combine(_tempDirectory, "missing.pem"));
+                exception = await CaptureExceptionAsync(request);
+                Assert.IsNotNull(FindInChain<AmazonClientException>(exception), "Expected an AmazonClientException, got: " + exception);
+
+                // ...without breaking later requests once the bundle is fixed, because the cached handlers don't hold the failure.
+                Environment.SetEnvironmentVariable(CABundle.EnvironmentVariableName, WriteFile("credentials.pem", ToPem(root)));
+                await request();
+            }
+        }
+
+        [TestMethod]
+        public async Task SSOEndpointResolver_UsesCABundleFromEnvironment()
+        {
+            const string awsStartUrl = "https://d-testdirectoryid.awsapps.com/start";
+            using (var root = CreateCertificate("CN=Vanity Root", isCertificateAuthority: true))
+            using (var leaf = CreateCertificate("CN=localhost", root))
+            using (var server = new LoopbackTlsServer(leaf, "302 Found\r\nLocation: " + awsStartUrl))
+            {
+                var vanityUrl = $"https://localhost:{server.Port}/start";
+
+                // Without the bundle the redirect lookup fails TLS, so the vanity URL can't be resolved.
+                await Assert.ThrowsExactlyAsync<ArgumentException>(() => SSOEndpointResolver.ResolveAsync(vanityUrl, "us-east-1"));
+
+                Environment.SetEnvironmentVariable(CABundle.EnvironmentVariableName, WriteFile("vanity.pem", ToPem(root)));
+                var resolved = await SSOEndpointResolver.ResolveAsync(vanityUrl, "us-east-1");
+                Assert.AreEqual(awsStartUrl, resolved.ResolvedUrl);
+            }
+        }
+
+        private static async Task<Exception> CaptureExceptionAsync(Func<Task> action)
+        {
+            try
+            {
+                await action();
+            }
+            catch (Exception e)
+            {
+                return e;
+            }
+
+            Assert.Fail("Expected the request to fail.");
+            return null;
+        }
+
         private bool Validate(X509Certificate2 bundleCertificate, X509Certificate2 serverCertificate, X509Chain platformChain = null,
             SslPolicyErrors sslPolicyErrors = SslPolicyErrors.RemoteCertificateChainErrors)
         {
@@ -316,15 +381,19 @@ namespace AWSSDK.UnitTests.HttpClientTests
         }
 
         /// <summary>
-        /// A minimal HTTPS server on loopback that answers every request with an empty 200 response.
+        /// A minimal HTTPS server on loopback that answers every request with the same response headers and no body
+        /// (an empty 200 by default).
         /// </summary>
         private sealed class LoopbackTlsServer : IDisposable
         {
             private readonly TcpListener _listener = new TcpListener(IPAddress.Loopback, 0);
             private readonly X509Certificate2 _certificate;
+            private readonly byte[] _response;
 
-            public LoopbackTlsServer(X509Certificate2 certificate)
+            public LoopbackTlsServer(X509Certificate2 certificate, string statusAndHeaders = "200 OK")
             {
+                _response = Encoding.ASCII.GetBytes($"HTTP/1.1 {statusAndHeaders}\r\nContent-Length: 0\r\nConnection: close\r\n\r\n");
+
                 // Round trip through PFX because Windows SslStream can't use the ephemeral key CertificateRequest creates.
                 var pfx = certificate.Export(X509ContentType.Pfx);
 #if NET9_0_OR_GREATER
@@ -371,8 +440,7 @@ namespace AWSSDK.UnitTests.HttpClientTests
                         {
                         }
 
-                        var response = Encoding.ASCII.GetBytes("HTTP/1.1 200 OK\r\nContent-Length: 0\r\nConnection: close\r\n\r\n");
-                        await sslStream.WriteAsync(response, 0, response.Length);
+                        await sslStream.WriteAsync(_response, 0, _response.Length);
                     }
                     catch (Exception)
                     {

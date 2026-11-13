@@ -1848,20 +1848,48 @@ namespace Amazon.Util
 
 #if NETSTANDARD
         // A handler owns a connection pool, and from .NET 11 also two System.Net.Http metric instruments that are never released.
-        // Requests therefore share one handler per proxy, and each still gets its own HttpClient for its timeout and headers.
+        // Requests therefore share one handler per proxy and CA bundle, and each still gets its own HttpClient for its timeout and headers.
         // The .NET 11 leak is tracked in https://github.com/dotnet/runtime/issues/136418.
-        private static readonly Lazy<HttpClientHandler> _defaultProxyHandler = new Lazy<HttpClientHandler>(() => CreateHandler(null));
-        private static readonly ConditionalWeakTable<IWebProxy, HttpClientHandler> _proxyHandlers = new ConditionalWeakTable<IWebProxy, HttpClientHandler>();
+        private static readonly HandlerCache _handlersWithoutCABundle = new HandlerCache(null);
+        // Keyed on the bundle instance, which CABundle.FromEnvironment caches by path, so a changed AWS_CA_BUNDLE gets new handlers.
+        private static readonly ConditionalWeakTable<CABundle, HandlerCache> _handlersByCABundle = new ConditionalWeakTable<CABundle, HandlerCache>();
 
-        private static HttpClientHandler CreateHandler(IWebProxy proxy)
+        /// <summary>
+        /// The shared handlers for one CA bundle (or none): one for the default proxy and one per explicit proxy.
+        /// </summary>
+        private sealed class HandlerCache
         {
-            // Without this, a shared handler would send cookies from one response with every later request.
-            return new HttpClientHandler { Proxy = proxy, UseCookies = false };
+            private readonly CABundle _caBundle;
+            private readonly Lazy<HttpClientHandler> _defaultProxyHandler;
+            private readonly ConditionalWeakTable<IWebProxy, HttpClientHandler> _proxyHandlers = new ConditionalWeakTable<IWebProxy, HttpClientHandler>();
+
+            public HandlerCache(CABundle caBundle)
+            {
+                _caBundle = caBundle;
+                _defaultProxyHandler = new Lazy<HttpClientHandler>(() => CreateHandler(null));
+            }
+
+            public HttpClientHandler GetHandler(IWebProxy proxy)
+            {
+                return proxy == null ? _defaultProxyHandler.Value : _proxyHandlers.GetValue(proxy, CreateHandler);
+            }
+
+            private HttpClientHandler CreateHandler(IWebProxy proxy)
+            {
+                // Without this, a shared handler would send cookies from one response with every later request.
+                var handler = new HttpClientHandler { Proxy = proxy, UseCookies = false };
+                _caBundle?.ApplyTo(handler);
+                return handler;
+            }
         }
 
         private static HttpClient CreateClient(Uri uri, TimeSpan timeout, IWebProxy proxy, IDictionary<string, string> headers)
         {
-            var handler = proxy == null ? _defaultProxyHandler.Value : _proxyHandlers.GetValue(proxy, CreateHandler);
+            // Resolved per request, outside the cached Lazy, so an invalid bundle fails this request instead of being cached
+            // for the life of the process.
+            var caBundle = CABundle.FromEnvironment();
+            var handlers = caBundle == null ? _handlersWithoutCABundle : _handlersByCABundle.GetValue(caBundle, b => new HandlerCache(b));
+            var handler = handlers.GetHandler(proxy);
             var client = new HttpClient(handler, disposeHandler: false);
             
             if (timeout > TimeSpan.Zero)
@@ -1887,7 +1915,12 @@ namespace Amazon.Util
             HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
             request.Proxy = proxy ?? WebRequest.DefaultWebProxy;
 
-            if (timeout > TimeSpan.Zero)
+            // Scoped to this request, as in HttpWebRequestFactory, so the process-wide ServicePointManager callback is untouched.
+            var caBundle = CABundle.FromEnvironment();
+            if (caBundle != null)
+            {
+                request.ServerCertificateValidationCallback = caBundle.RemoteCertificateValidationCallback;
+            }
             {
                 request.Timeout = (int)timeout.TotalMilliseconds;
             }

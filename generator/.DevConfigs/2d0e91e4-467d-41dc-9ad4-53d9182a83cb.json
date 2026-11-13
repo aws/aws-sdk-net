@@ -3,7 +3,7 @@
     "updateMinimum": true,
     "type": "minor",
     "changeLogMessages": [
-      "Added support for the AWS_CA_BUNDLE environment variable. When set to the path of a PEM file, HTTP clients created by the SDK trust only the CA certificates in that file when validating server certificates. A custom HttpClientFactory is not affected."
+      "Added support for the AWS_CA_BUNDLE environment variable. When set to the path of a PEM file, HTTP clients created by the SDK, including container credentials and SSO start URL resolution, trust only the CA certificates in that file when validating server certificates. A custom HttpClientFactory is not affected."
     ]
   }
 }
