@@ -119,6 +119,11 @@ namespace Amazon.Organizations.Model
         ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_guardduty.html">GUARDDUTY_POLICY</a>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub_cspm.html">SECURITYHUB_CSPM_POLICY</a>
+        /// 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]
