@@ -3644,6 +3644,14 @@ namespace Amazon.Lambda
         /// The function is inactive and its VPC connection is no longer available. Wait for the
         /// VPC connection to reestablish and try again.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RuntimeAliasDeletedException">
+        /// The runtime alias for your function is no longer available. Update your function to
+        /// use an available runtime alias.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RuntimeVersionDeletedException">
+        /// The runtime version used by your function is no longer available. Update your function
+        /// to use an available runtime version or runtime alias.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.S3FilesMountConnectivityException">
         /// The Lambda function couldn't make a network connection to the configured S3 Files
         /// access point.
@@ -3890,6 +3898,14 @@ namespace Amazon.Lambda
         /// The function is inactive and its VPC connection is no longer available. Wait for the
         /// VPC connection to reestablish and try again.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RuntimeAliasDeletedException">
+        /// The runtime alias for your function is no longer available. Update your function to
+        /// use an available runtime alias.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RuntimeVersionDeletedException">
+        /// The runtime version used by your function is no longer available. Update your function
+        /// to use an available runtime version or runtime alias.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.S3FilesMountConnectivityException">
         /// The Lambda function couldn't make a network connection to the configured S3 Files
         /// access point.
@@ -4064,6 +4080,14 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ResourceNotReadyException">
         /// The function is inactive and its VPC connection is no longer available. Wait for the
         /// VPC connection to reestablish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RuntimeAliasDeletedException">
+        /// The runtime alias for your function is no longer available. Update your function to
+        /// use an available runtime alias.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RuntimeVersionDeletedException">
+        /// The runtime version used by your function is no longer available. Update your function
+        /// to use an available runtime version or runtime alias.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.S3FilesMountConnectivityException">
         /// The Lambda function couldn't make a network connection to the configured S3 Files
@@ -4242,6 +4266,14 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ResourceNotReadyException">
         /// The function is inactive and its VPC connection is no longer available. Wait for the
         /// VPC connection to reestablish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RuntimeAliasDeletedException">
+        /// The runtime alias for your function is no longer available. Update your function to
+        /// use an available runtime alias.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RuntimeVersionDeletedException">
+        /// The runtime version used by your function is no longer available. Update your function
+        /// to use an available runtime version or runtime alias.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.S3FilesMountConnectivityException">
         /// The Lambda function couldn't make a network connection to the configured S3 Files
@@ -5989,6 +6021,9 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
         /// </exception>
@@ -6030,6 +6065,9 @@ namespace Amazon.Lambda
         /// retrieve the latest RevisionId for your resource.
         /// </para>
         ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.

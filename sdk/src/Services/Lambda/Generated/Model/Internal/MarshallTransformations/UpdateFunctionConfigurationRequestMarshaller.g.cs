@@ -204,6 +204,16 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Runtime");
                 context.Writer.WriteStringValue(publicRequest.Runtime);
             }
+            if (publicRequest.IsSetRuntimeConfig())
+            {
+                context.Writer.WritePropertyName("RuntimeConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FunctionRuntimeConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RuntimeConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetSnapStart())
             {
                 context.Writer.WritePropertyName("SnapStart");

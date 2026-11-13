@@ -44,7 +44,7 @@ namespace Amazon.Lambda.Model
         /// and the operation does not accept wildcard characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 0, Max = 256)]
+        [AWSProperty(Required = true, Min = 0, Max = 512)]
         public string ResourceArn { get; set; }
 
         /// <summary>

@@ -1872,6 +1872,11 @@ namespace Amazon.Lambda
     public class Runtime : ConstantClass
     {
         /// <summary>
+        /// Constant Custom for Runtime
+        /// </summary>
+        public static readonly Runtime Custom = new Runtime("custom");
+
+        /// <summary>
         /// Constant Dotnet10 for Runtime
         /// </summary>
         public static readonly Runtime Dotnet10 = new Runtime("dotnet10");

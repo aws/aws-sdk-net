@@ -248,6 +248,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("RuntimeConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = FunctionRuntimeConfigUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("RuntimeVersionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RuntimeVersionConfigUnmarshaller.Instance;

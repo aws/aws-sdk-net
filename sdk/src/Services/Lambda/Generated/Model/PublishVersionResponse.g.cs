@@ -485,6 +485,20 @@ namespace Amazon.Lambda.Model
         internal bool IsSetRuntime() => this.Runtime != null;
 
         /// <summary>
+        /// Gets and sets the property RuntimeConfig. 
+        /// <para>
+        /// The customer-managed runtime configuration for your function. Specifies the customer-managed
+        /// runtime and the runtime alias that your function uses.
+        /// </para>
+        /// </summary>
+        public FunctionRuntimeConfig RuntimeConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RuntimeConfig property is set.
+        /// </summary>
+        internal bool IsSetRuntimeConfig() => this.RuntimeConfig != null;
+
+        /// <summary>
         /// Gets and sets the property RuntimeVersionConfig. 
         /// <para>
         /// The ARN of the runtime and any errors that occured.
