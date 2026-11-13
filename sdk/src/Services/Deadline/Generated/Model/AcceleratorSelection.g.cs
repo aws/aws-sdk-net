@@ -64,6 +64,10 @@ namespace Amazon.Deadline.Model
         /// <para>
         ///  <c>rtx-pro-server-6000</c> - NVIDIA RTX PRO Server 6000 GPU (96 GiB memory)
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>rtx-pro-4500</c> - NVIDIA RTX PRO 4500 GPU (32 GiB memory)
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -91,6 +95,11 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>grid:r595</c> - <a href="https://docs.nvidia.com/vgpu/20.0/index.html">NVIDIA
+        /// vGPU software 20</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>grid:r580</c> - <a href="https://docs.nvidia.com/vgpu/19.0/index.html">NVIDIA
         /// vGPU software 19</a> 
         /// </para>
@@ -102,7 +111,7 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// All accelerator types support <c>grid:r580</c>.
+        /// All accelerator types support <c>grid:r595</c> and <c>grid:r580</c>.
         /// </para>
         ///  
         /// <para>
@@ -111,7 +120,7 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// When you specify <c>latest</c>, it resolves to <c>grid:r580</c> for all currently
+        /// When you specify <c>latest</c>, it resolves to <c>grid:r595</c> for all currently
         /// supported accelerators.
         /// </para>
         ///  </note>

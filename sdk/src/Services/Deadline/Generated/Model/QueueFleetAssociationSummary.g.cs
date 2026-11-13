@@ -85,21 +85,21 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ACTIVE</c>–Association is active.
+        ///  <c>ACTIVE</c> - Association is active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>STOP_SCHEDULING_AND_COMPLETE_TASKS</c>–Association has stopped scheduling new
+        ///  <c>STOP_SCHEDULING_AND_COMPLETE_TASKS</c> - Association has stopped scheduling new
         /// tasks and is completing current tasks.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>STOP_SCHEDULING_AND_CANCEL_TASKS</c>–Association has stopped scheduling new tasks
-        /// and is canceling current tasks.
+        ///  <c>STOP_SCHEDULING_AND_CANCEL_TASKS</c> - Association has stopped scheduling new
+        /// tasks and is canceling current tasks.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>STOPPED</c>–Association has been stopped.
+        ///  <c>STOPPED</c> - Association has been stopped.
         /// </para>
         ///  </li> </ul>
         /// </summary>

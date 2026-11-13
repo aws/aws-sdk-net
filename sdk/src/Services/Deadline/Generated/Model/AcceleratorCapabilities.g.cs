@@ -51,7 +51,7 @@ namespace Amazon.Deadline.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>l4</c>: Uses G6 and Gr6 instance families
+    ///  <c>l4</c>: Uses G6, G6f, Gr6, and Gr6f instance families
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -60,6 +60,10 @@ namespace Amazon.Deadline.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>rtx-pro-server-6000</c>: Uses G7e instance family
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>rtx-pro-4500</c>: Uses G7 instance family
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>

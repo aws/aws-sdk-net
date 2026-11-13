@@ -31,7 +31,7 @@ namespace Amazon.Deadline.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateWorker operation. Creates a worker. A worker
-    /// tells your instance how much processing power (vCPU), and memory (GiB) you’ll need
+    /// tells your instance how much processing power (vCPU), and memory (GiB) you'll need
     /// to assemble the digital assets held within a particular instance. You can specify
     /// certain instance types to use, or let the worker know which instances types to exclude.
     /// <para> Deadline Cloud limits the number of workers to less than or equal to the fleet's

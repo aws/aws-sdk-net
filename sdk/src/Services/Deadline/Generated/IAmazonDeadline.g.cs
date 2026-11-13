@@ -1915,7 +1915,7 @@ namespace Amazon.Deadline
 #if NETFRAMEWORK
         /// <summary>
         /// Creates a worker. A worker tells your instance how much processing power (vCPU), and
-        /// memory (GiB) you’ll need to assemble the digital assets held within a particular instance.
+        /// memory (GiB) you'll need to assemble the digital assets held within a particular instance.
         /// You can specify certain instance types to use, or let the worker know which instances
         /// types to exclude.
         /// 
@@ -1957,7 +1957,7 @@ namespace Amazon.Deadline
 
         /// <summary>
         /// Creates a worker. A worker tells your instance how much processing power (vCPU), and
-        /// memory (GiB) you’ll need to assemble the digital assets held within a particular instance.
+        /// memory (GiB) you'll need to assemble the digital assets held within a particular instance.
         /// You can specify certain instance types to use, or let the worker know which instances
         /// types to exclude.
         /// 

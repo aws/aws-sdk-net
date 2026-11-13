@@ -58,6 +58,7 @@ namespace Amazon.Deadline.Model
 
         /// <summary>
         /// Gets and sets the property Operator. The type of comparison to use to filter the results.
+        /// `NOT_EQUAL`, `ANY_EQUALS`, and `ALL_NOT_EQUALS` aren't supported.
         /// </summary>
         [AWSProperty(Required = true)]
         public ComparisonOperator Operator { get; set; }

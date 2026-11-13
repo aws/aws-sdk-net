@@ -233,43 +233,43 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>PENDING</c>–pending and waiting for resources.
+        ///  <c>PENDING</c> - pending and waiting for resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>READY</c>–ready to be processed.
+        ///  <c>READY</c> - ready to be processed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ASSIGNED</c>–assigned and will run next on a worker.
+        ///  <c>ASSIGNED</c> - assigned and will run next on a worker.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SCHEDULED</c>–scheduled to be run on a worker.
+        ///  <c>SCHEDULED</c> - scheduled to be run on a worker.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>INTERRUPTING</c>–being interrupted.
+        ///  <c>INTERRUPTING</c> - being interrupted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>RUNNING</c>–running on a worker.
+        ///  <c>RUNNING</c> - running on a worker.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SUSPENDED</c>–the task is suspended.
+        ///  <c>SUSPENDED</c> - the task is suspended.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CANCELED</c>–the task has been canceled.
+        ///  <c>CANCELED</c> - the task has been canceled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FAILED</c>–the task has failed.
+        ///  <c>FAILED</c> - the task has failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SUCCEEDED</c>–the task has succeeded.
+        ///  <c>SUCCEEDED</c> - the task has succeeded.
         /// </para>
         ///  </li> </ul>
         /// </summary>
