@@ -367,6 +367,7 @@
     "Route53RecoveryControlConfig",
     "Route53RecoveryReadiness",
     "Route53Resolver",
+    "RpcV2CBORCorpusProtocolTests",
     "RpcV2Protocol",
     "S3Control",
     "S3Files",

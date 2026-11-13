@@ -64,7 +64,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
             ShapeId.from("aws.protocoltests.query#AwsQuery"),
             ShapeId.from("aws.protocoltests.ec2#AwsEc2"),
             ShapeId.from("aws.protocoltests.restxml#RestXml"),
-            ShapeId.from("aws.protocoltests.restxml.xmlns#RestXmlWithNamespace")
+            ShapeId.from("aws.protocoltests.restxml.xmlns#RestXmlWithNamespace"),
+            ShapeId.from("smithy.protocoltests.corpus#RpcV2CborCorpusTests")
     );
     private final boolean useMockedClient;
     private final List<String> tagsToSkip = List.of("defaults" , "skip-legacy-conversion");
@@ -258,6 +259,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
             for (EventStreamTestCase eventStreamTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
                 if (ProtocolTestCustomizations.TestsToSkip.contains(eventStreamTestCase.getId()) || !Collections.disjoint(eventStreamTestCase.getTags(), tagsToSkip))
                     continue;
+                // Operations shared by several services carry the cases of every protocol; only the service's own apply.
+                if (service.findTrait(eventStreamTestCase.getProtocol()).isEmpty())
+                    continue;
                 generateEventStreamTest(operation, eventStreamTestCase);
             }
         });
@@ -321,9 +325,14 @@ public final class HttpProtocolTestGenerator implements Runnable {
 
         writer.writeSingleLineComment("Arrange");
         inputStreamInfo.ifPresent(info -> {
-            writer.openBlock("var inputEvents = new Queue<IEventStreamEvent>(new IEventStreamEvent[]\n{", "});", () -> {
+            // The SDK's publishable-event marker interface is named after the input stream union (I{Union}Event).
+            var eventInterface = "I" + info.getEventStreamTarget().getId().getName() + "Event";
+            writer.openBlock("var inputEvents = new Queue<$1L>(new $1L[]\n{", "});", eventInterface, () -> {
                 for (var event : requestEvents) {
-                    writer.write("$C,", (Runnable) () -> writeModeledEvent(info, event));
+                    // Frames without params (the initial-request event) are written by the SDK from the request's
+                    // non-stream members, so they are not queued for the publisher but still asserted on the wire.
+                    if (event.getParams().isPresent())
+                        writer.write("$C,", (Runnable) () -> writeModeledEvent(info, event));
                 }
             });
         });
@@ -342,6 +351,17 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.write("\n");
 
         writer.writeSingleLineComment("Act");
+        // A failure with no error id, a single request event and nothing else sent or read back is an event the
+        // client must refuse to serialize. Events are written in the background after the response is returned, so
+        // the call itself succeeds and the failure surfaces when the input stream ends.
+        var failsWithoutErrorId = expectation.getFailure().map(failure -> failure.getErrorId().isEmpty()).orElse(false);
+        var onlyOneRequestEvent = requestEvents.size() == 1 && initialRequest.isEmpty() && responseEvents.isEmpty() && initialResponse.isEmpty();
+        if (failsWithoutErrorId && onlyOneRequestEvent) {
+            writer.write("using var actualResponse = await client.$LAsync(request).ConfigureAwait(false);", operationName);
+            writer.write("var actualRequest = mockHttp.LastCreatedRequest;");
+            writer.write("await Assert.ThrowsAsync<Exception>(async () => await actualRequest.InputStreamCompleted.ConfigureAwait(false)).ConfigureAwait(false);");
+            return;
+        }
         // Disposing the response stops the input stream, so it is kept alive until the end of the test.
         if (expectation.isFailure()) {
             var errorId = expectation.getFailure().flatMap(TestFailureExpectation::getErrorId);
@@ -388,6 +408,11 @@ public final class HttpProtocolTestGenerator implements Runnable {
             writer.write("Assert.AreEqual($L, actualEvents.Count);", responseEvents.size());
             for (int i = 0; i < responseEvents.size(); i++) {
                 var event = responseEvents.get(i);
+                if (event.getParams().isEmpty()) {
+                    // A frame without params is the initial-response event, which the SDK surfaces raw.
+                    writer.write("Assert.IsInstanceOfType(actualEvents[$L], typeof(Amazon.Runtime.EventStreams.Internal.InitialResponseEvent));", i);
+                    continue;
+                }
                 var eventName = event.getParams().get().getMembers().keySet().iterator().next().getValue();
                 var eventSymbol = context.symbolProvider().toSymbol(info.getEvents().get(eventName));
                 writer.write("Assert.IsInstanceOfType(actualEvents[$L], typeof($L));", i, eventSymbol);
@@ -452,8 +477,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
             return;
         }
         // Without bytes, the event is built from its headers and body.
-        writer.openBlock("MockHttpClientUtils.EncodeEvent(Encoding.UTF8.GetBytes($S), new Dictionary<string, object>\n{", "})",
-                event.getBody().orElse(""), () -> {
+        var isCbor = event.getBodyMediaType().map("application/cbor"::equals).orElse(false);
+        writer.openBlock("MockHttpClientUtils.EncodeEvent($L($S), new Dictionary<string, object>\n{", "})",
+                isCbor ? "Convert.FromBase64String" : "Encoding.UTF8.GetBytes", event.getBody().orElse(""), () -> {
             for (var header : event.getHeaders().entrySet()) {
                 writer.write("{ $S, $C },", header.getKey(), (Runnable) () -> writeEventHeaderValue(header.getValue()));
             }
@@ -542,6 +568,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
         event.getBody().ifPresent(body -> {
             if (event.getBodyMediaType().map("application/json"::equals).orElse(false)) {
                 writer.write("JsonProtocolUtils.AssertBody($L.Payload, $S);", actualEvent, body);
+            } else if (event.getBodyMediaType().map("application/cbor"::equals).orElse(false)) {
+                writer.write("CborProtocolUtils.AssertBody($L.Payload, $S);", actualEvent, body);
             } else {
                 // Bodies with a media type that isn't understood must match exactly.
                 writer.write("CollectionAssert.AreEqual(Encoding.UTF8.GetBytes($S), $L.Payload);", body, actualEvent);
@@ -1145,10 +1173,25 @@ public final class HttpProtocolTestGenerator implements Runnable {
             } else if (inputShape.isBlobShape()) {
                 var symbol = context.symbolProvider().toSymbol(inputShape);
                 writer.write("new $L(Encoding.UTF8.GetBytes($S))", symbol, node.getValue());
+            } else if (isLongRunOfOneCharacter(node.getValue())) {
+                // Size-limit tests send tens of kilobytes of one character; a repeat expression keeps that out of the generated file.
+                var value = node.getValue();
+                var characterLength = value.offsetByCodePoints(0, 1);
+                var character = value.substring(0, characterLength);
+                var count = value.length() / characterLength;
+                writer.writeInline("string.Concat(Enumerable.Repeat($S, $L))", character, count);
             } else {
                 writer.writeInline("$S", node.getValue());
             }
             return null;
+        }
+
+        private boolean isLongRunOfOneCharacter(String value) {
+            if (value.length() < 1024) {
+                return false;
+            }
+            var first = value.codePointAt(0);
+            return value.codePoints().allMatch(codePoint -> codePoint == first);
         }
 
         private boolean isDateTime(String value) {

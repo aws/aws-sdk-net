@@ -248,11 +248,12 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
     // The member's .NET type is the union class name, so it names the {Stream}PublisherMarshaller; the
     // request property carries the "Publisher" suffix (see OperationWriter.ApplyEventStreamPublisher).
-    // On awsJson the stream's siblings are serialized as the initial-request payload.
-    private static void WriteEventStreamPublisher(CodeWriter writer, Member payload, List<Member> initialRequestMembers)
+    // On awsJson the stream's siblings are serialized as the initial-request payload, an empty object when
+    // there are none. restJson1 binds them to the HTTP request and sends no initial-request.
+    private void WriteEventStreamPublisher(CodeWriter writer, Member payload, List<Member> initialRequestMembers)
     {
         writer.WriteLine("""request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";""");
-        if (initialRequestMembers.Count == 0)
+        if (context.UsesHttpBindings)
         {
             writer.WriteLine($"request.EventStreamPublisher = new {payload.Type.DotNetType}PublisherMarshaller(publicRequest.{payload.PropertyName}Publisher);");
             return;

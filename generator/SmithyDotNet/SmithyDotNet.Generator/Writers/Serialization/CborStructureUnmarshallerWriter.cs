@@ -6,7 +6,7 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// <summary>
 /// rpcv2Cbor structure unmarshaller: a null check, then the map read loop. An event (a member of a
 /// <c>@streaming</c> union) partitions its members as the JSON writer does: an explicit <c>@eventPayload</c> is
-/// the raw message payload and the remaining members are the CBOR body.
+/// the raw message payload, <c>@eventHeader</c> members come from the message headers and the rest is the CBOR body.
 /// </summary>
 public sealed class CborStructureUnmarshallerWriter(GenerationContext context, string modelFileName)
 {
@@ -16,12 +16,10 @@ public sealed class CborStructureUnmarshallerWriter(GenerationContext context, s
         var unmarshallerClassName = context.StructureUnmarshallerName(structure.Id);
         var members = TypeMapper.ResolveMembers(structure, context);
 
-        // A CBOR event is decoded without its message headers, so an @eventHeader has nothing to read from.
-        if (members.Any(member => member.IsEventHeader))
-        {
-            throw new GeneratorException($"@eventHeader on '{className}' is not supported on rpcv2Cbor.");
-        }
+        var isEvent = context.ResponseEventStreams.Any(stream => stream.Events.Contains(structure.Id));
         var payloadMember = members.SingleOrDefault(member => member.IsEventPayload);
+        var headerMembers = members.Where(member => member.IsEventHeader).ToList();
+        var bodyMembers = members.Where(member => !member.IsEventPayload && !member.IsEventHeader).ToList();
 
         var writer = new CodeWriter();
 
@@ -48,11 +46,24 @@ public sealed class CborStructureUnmarshallerWriter(GenerationContext context, s
 
                     if (payloadMember is not null)
                     {
-                        MarshallerCommon.WriteEventPayloadMember(writer, payloadMember, "context");
+                        MarshallerCommon.WriteEventPayloadMember(writer, payloadMember, "context", "context.Reader.PeekState() != CborReaderState.Finished");
                     }
-                    else
+
+                    foreach (var member in headerMembers)
+                    {
+                        MarshallerCommon.WriteEventHeaderUnmarshall(writer, member);
+                    }
+
+                    // Only an event skips the map read (explicit payload, or headers alone). A member-less ordinary
+                    // structure still reads its map so the value is consumed for the enclosing loop.
+                    if (payloadMember is null && (!isEvent || headerMembers.Count == 0 || bodyMembers.Count > 0))
                     {
                         writer.WriteLine("var reader = context.Reader;");
+                        // An event with no body members may arrive with an empty payload; it is the empty structure.
+                        if (isEvent && bodyMembers.Count == 0)
+                        {
+                            writer.WriteLine("if (reader.PeekState() == CborReaderState.Finished) return unmarshalledObject;");
+                        }
                         writer.OpenBlock("if (reader.PeekState() == CborReaderState.Null)", () =>
                         {
                             writer.WriteLine("reader.ReadNull();");
@@ -60,8 +71,7 @@ public sealed class CborStructureUnmarshallerWriter(GenerationContext context, s
                         });
                         writer.WriteLine("");
 
-                        // Always read the map, even with no members, so the value is consumed for the enclosing loop.
-                        CborBodyMemberUnmarshaller.WriteMapReadLoop(writer, members);
+                        CborBodyMemberUnmarshaller.WriteMapReadLoop(writer, bodyMembers);
                     }
                     writer.WriteLine("return unmarshalledObject;");
                 });

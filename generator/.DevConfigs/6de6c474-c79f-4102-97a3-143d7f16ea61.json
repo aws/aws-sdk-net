@@ -1,0 +1,42 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Added EventStreamUtils.ConvertMessageToResponseData so an event unmarshaller context built over a message payload can read the event's headers; used by rpcv2Cbor event streams whose events carry eventHeader members.",
+      "Stopped adding a Content-Length: 0 entry to the internal request headers of event stream requests. The header was never sent on the wire (the streamed body has no length), so only code that inspects the request headers sees the difference.",
+      "Event stream events with no payload (every member is an event header, or the event has no members) no longer carry a :content-type header, per the event stream specification.",
+      "Enumerating an event stream now returns the events that were decoded before a message that fails to convert, and then throws. Previously, events decoded in the same network read as the failing message were discarded."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  },
+  "services": [
+    {
+      "serviceName": "Polly",
+      "type": "patch",
+      "changeLogMessages": [
+        "The CloseStreamEvent sent on the StartSpeechSynthesisStream input stream now has an empty payload and no :content-type header instead of an empty JSON object, per the event stream specification for events with no members."
+      ]
+    },
+    {
+      "serviceName": "QBusiness",
+      "type": "patch",
+      "changeLogMessages": [
+        "The EndOfInputEvent sent on the Chat input stream now has an empty payload and no :content-type header instead of an empty JSON object, per the event stream specification for events with no members."
+      ]
+    },
+    {
+      "serviceName": "HealthLake",
+      "type": "patch",
+      "changeLogMessages": [
+        "A HeartbeatEvent that arrives with an empty payload is now returned as an event instead of failing the event stream."
+      ]
+    },
+    {
+      "serviceName": "DevOpsAgent",
+      "type": "patch",
+      "changeLogMessages": [
+        "A SendMessageHeartbeatEvent that arrives with an empty payload is now returned as an event instead of failing the event stream."
+      ]
+    }
+  ]
+}

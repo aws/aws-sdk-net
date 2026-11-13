@@ -76,6 +76,7 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
             // (Smithy forbids both), so the partitions are disjoint. An event can carry @eventHeader members
             // without an @eventPayload member; those are still read from headers, not the JSON body — the
             // absence of @eventPayload does not mean the absence of headers.
+            var isEvent = context.ResponseEventStreams.Any(stream => stream.Events.Contains(structure.Id));
             var payloadMember = members.SingleOrDefault(m => m.IsEventPayload);
             var headerMembers = members.Where(m => m.IsEventHeader).ToList();
             var bodyMembers = members.Where(m => !m.IsEventPayload && !m.IsEventHeader).ToList();
@@ -84,17 +85,22 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
             // body loop (which the SEP guarantees is empty when a payload exists) and the header reads.
             if (payloadMember is not null)
             {
-                MarshallerCommon.WriteEventPayloadMember(writer, payloadMember, "context, ref reader");
+                MarshallerCommon.WriteEventPayloadMember(writer, payloadMember, "context, ref reader", "!(context.Stream is MemoryStream { Length: 0 })");
             }
             foreach (var member in headerMembers)
             {
-                WriteHeaderMember(writer, structure, member);
+                MarshallerCommon.WriteEventHeaderUnmarshall(writer, member);
             }
 
             // Only an event skips the body loop (explicit payload, or headers alone). A member-less ordinary
             // structure still runs it to consume its {} tokens so the reader lands after the object.
-            if (payloadMember is null && (headerMembers.Count == 0 || bodyMembers.Count > 0))
+            if (payloadMember is null && (!isEvent || headerMembers.Count == 0 || bodyMembers.Count > 0))
             {
+                // An event with no body members may arrive with an empty payload; it is the empty structure.
+                if (isEvent && bodyMembers.Count == 0)
+                {
+                    writer.WriteLine("if (context.Stream is MemoryStream { Length: 0 }) return unmarshalledObject;");
+                }
                 WriteBodyUnmarshall(writer, bodyMembers);
             }
 
@@ -111,32 +117,6 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
         writer.OpenBlock("while (context.ReadAtDepth(targetDepth, ref reader))", () =>
         {
             JsonBodyMemberUnmarshaller.WriteMemberUnmarshallers(writer, members);
-        });
-    }
-
-    // A @eventHeader member is read from the event-message header via context.ResponseData. The accessor is
-    // chosen by the target shape, symmetric with JsonStructureMarshallerWriter.WriteEventHeader (an enum
-    // rides AsString via its implicit conversion).
-    private void WriteHeaderMember(CodeWriter writer, StructureShape structure, Member member)
-    {
-        var target = context.Resolve(structure.Members[member.ModeledName].Target);
-        var header = $"""context.ResponseData.GetEventStreamHeader("{member.ModeledName}")""";
-        var value = target switch
-        {
-            StringShape or EnumShape => $"{header}.AsString()",
-            BooleanShape => $"{header}.AsBool()",
-            IntegerShape or IntEnumShape => $"{header}.AsInt32()",
-            LongShape => $"{header}.AsInt64()",
-            TimestampShape => $"{header}.AsTimestamp()",
-            BlobShape => $"new MemoryStream({header}.AsByteBuf())",
-            ShortShape => $"{header}.AsInt16()",
-            ByteShape => $"{header}.AsSByte()",
-            var other => throw new GeneratorException($"Unsupported @eventHeader type '{other.Type}' on member '{member.ModeledName}'."),
-        };
-
-        writer.OpenBlock($"""if (context.ResponseData.IsEventHeaderPresent("{member.ModeledName}"))""", () =>
-        {
-            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {value};");
         });
     }
 

@@ -77,6 +77,9 @@ public sealed class EventStreamPublisherCodegenTests : IDisposable
         AssertBranch(source, wireName: "implicit", contentType: "application/json", payload: "memoryStream.ToArray()");
         // A structure @eventPayload stays JSON (the event marshaller writes it through the JSON writer).
         AssertBranch(source, wireName: "explicit", contentType: "application/json", payload: "memoryStream.ToArray()");
+        // Headers only or no members: no payload, no :content-type, and no JSON object opened for it (event-streams SEP).
+        Assert.Contains("""var context = CreateJsonMarshallerContext(memoryStream); EndEventMarshaller.Instance.Marshall((EndEvent)evnt, context); eventHeaders = context.Request.EventHeaders; context.Writer.Flush(); eventType = "end"; contentType = null; eventPayload = Array.Empty<byte>();""", Normalize(source));
+        Assert.Contains("""var context = CreateJsonMarshallerContext(memoryStream); HeadersOnlyEventMarshaller.Instance.Marshall((HeadersOnlyEvent)evnt, context); eventHeaders = context.Request.EventHeaders; context.Writer.Flush(); eventType = "headersOnly"; contentType = null; eventPayload = Array.Empty<byte>();""", Normalize(source));
 
         // The @error union member is filtered out — it is not a publishable event.
         Assert.DoesNotContain("evnt is ChatError", source);
@@ -86,7 +89,8 @@ public sealed class EventStreamPublisherCodegenTests : IDisposable
     public void PublisherMarshaller_Cbor_DerivesFromCborBaseAndEncodesTheMapAsBody()
     {
         var context = TestModels.Context("Codegen/rpcv2cbor-model.json");
-        var source = new EventStreamPublisherMarshallerWriter(context, ModelFileName).Write(context.RequestEventStreams.Single(), TestContext.Current.CancellationToken);
+        var stream = context.RequestEventStreams.Single(candidate => candidate.Id.Name == "InputStream");
+        var source = new EventStreamPublisherMarshallerWriter(context, ModelFileName).Write(stream, TestContext.Current.CancellationToken);
 
         Assert.Contains("public partial class InputStreamPublisherMarshaller : CborEventStreamPublisher", source);
         Assert.Contains("var context = CreateCborMarshallerContext(writer);", source);
@@ -94,6 +98,18 @@ public sealed class EventStreamPublisherCodegenTests : IDisposable
         Assert.Contains("""return CreateEventStreamMessage(eventType: "initial-request", contentType: "application/cbor", marshalledEventHeaders: null, eventPayload: initialRequest);""", source);
         AssertBranch(source, wireName: "audio", contentType: "application/octet-stream", payload: "context.Request.Content");
         AssertBranch(source, wireName: "metadata", contentType: "application/cbor", payload: "writer.Encode()");
+        Assert.Contains("""var context = CreateCborMarshallerContext(writer); PingEventMarshaller.Instance.Marshall((PingEvent)evnt, context); eventHeaders = context.Request.EventHeaders; eventType = "ping"; contentType = null; eventPayload = Array.Empty<byte>();""", Normalize(source));
+    }
+
+    // AudioStream's only operation has no other input member; rpcv2Cbor still sends the initial-request.
+    [Fact]
+    public void PublisherMarshaller_Cbor_SendsTheInitialRequestWithoutSiblings()
+    {
+        var context = TestModels.Context("Codegen/rpcv2cbor-model.json");
+        var stream = context.RequestEventStreams.Single(candidate => candidate.Id.Name == "AudioStream");
+        var source = new EventStreamPublisherMarshallerWriter(context, ModelFileName).Write(stream, TestContext.Current.CancellationToken);
+
+        Assert.Contains("internal AudioStreamPublisherMarshaller(Func<Task<IAudioStreamEvent>> publisher, byte[] initialRequest) : this(publisher)", source);
     }
 
     [Fact]

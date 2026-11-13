@@ -284,13 +284,20 @@ members still get marshallers.
   event's `@eventPayload` member: a blob payload → `application/octet-stream`, a string payload →
   `text/plain`, both read from `context.Request.Content`; a structure payload or an implicit body →
   `application/json` from the JSON writer's stream. (C2J emits `text/plain` for a structure payload too,
-  but the event marshaller writes it as JSON, so JSON is kept here.) On rpcv2Cbor the class derives from
+  but the event marshaller writes it as JSON, so JSON is kept here.) An event whose members are all
+  `@eventHeader` (or that has none) has no payload: empty bytes and a null content type, so the runtime
+  omits `:content-type` (event-streams SEP). On rpcv2Cbor the class derives from
   `CborEventStreamPublisher` and the body is a CBOR map (`application/cbor`).
 - The request member becomes a `Func<Task<I{Union}Event>> {Member}Publisher` property (keeps any modeled
   `[AWSProperty]`/`[Obsolete]`, no `IsSet`). The request marshaller wires it:
   `request.EventStreamPublisher = new {Union}PublisherMarshaller(publicRequest.{Member}Publisher)` with
   `Content-Type: application/vnd.amazon.eventstream`, replacing body serialization.
 - On RPC protocols, input siblings are serialized into an `initial-request` event before the first modeled event.
+  It is always sent, as an empty map/object when the stream is the only member (Amazon Event Stream
+  specification, Initial Message Events; pinned by the rpcv2Cbor corpus protocol tests).
+- An output event may arrive with an empty payload: an event with no body members is then the empty event, and
+  an unset structure `@eventPayload` is left unset. The generated unmarshaller checks for it before reading
+  (`CborReaderState.Finished` on rpcv2Cbor, a zero-length payload stream on JSON).
 
 ## Response Header Unmarshalling
 
@@ -452,7 +459,7 @@ list, but no CBOR service model uses `@sparse`. Documents and streaming blobs ar
 `UnsupportedTraitValidator`.
 
 Event streams follow the awsJson rules, plus `Accept: application/vnd.amazon.eventstream` for an output stream.
-Initial messages and modeled events are CBOR maps. Each modeled event is decoded without its message headers, so a response `@eventHeader` fails loud.
+Initial messages and modeled events are CBOR maps. A modeled event is decoded through a `CborUnmarshallerContext` whose response data is the message's headers (`EventStreamUtils.ConvertMessageToResponseData`), so `@eventPayload`/`@eventHeader`/body members partition exactly as on awsJson.
 
 ## restXml
 

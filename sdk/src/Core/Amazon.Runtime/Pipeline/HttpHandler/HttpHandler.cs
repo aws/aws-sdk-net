@@ -503,7 +503,9 @@ namespace Amazon.Runtime.Internal
                     }
                 }
 
-                if (content != null)
+                // An event stream request body is published as it is produced (see WriteContentToRequestBody) and
+                // has no length; the empty content built above only keeps the body path open.
+                if (content != null && request.HttpRequestStreamPublisher == null)
                 {
                     request.Headers[HeaderKeys.ContentLengthHeader] =
                         content.Length.ToString(CultureInfo.InvariantCulture);

@@ -186,8 +186,9 @@ public static class MarshallerCommon
     }
 
     // The @eventPayload member IS the message payload: a blob is the raw MemoryStream, a string is the stream
-    // read to end, a structure is the whole body decoded by its own unmarshaller.
-    internal static void WriteEventPayloadMember(CodeWriter writer, Member member, string unmarshallArguments)
+    // read to end, a structure is the whole body decoded by its own unmarshaller. `hasPayload` is the protocol's
+    // check that the payload is not empty: an unset structure payload arrives as zero bytes and is left unset.
+    internal static void WriteEventPayloadMember(CodeWriter writer, Member member, string unmarshallArguments, string hasPayload)
     {
         if (member.Type.MarshalsAsString)
         {
@@ -198,7 +199,10 @@ public static class MarshallerCommon
         }
         else if (member.Type.UnmarshallerName is { } unmarshaller)
         {
-            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {unmarshaller}.Instance.Unmarshall({unmarshallArguments});");
+            writer.OpenBlock($"if ({hasPayload})", () =>
+            {
+                writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {unmarshaller}.Instance.Unmarshall({unmarshallArguments});");
+            });
         }
         else if (member.Type.IsBlob)
         {
@@ -233,6 +237,30 @@ public static class MarshallerCommon
             writer.WriteLine($"""var header = new Amazon.Runtime.EventStreams.EventStreamHeader("{member.ModeledName}");""");
             writer.WriteLine($"header.{setter};");
             writer.WriteLine("context.Request.EventHeaders.Add(header);");
+        });
+    }
+
+    // A @eventHeader member is read from the event-message header via context.ResponseData. The accessor is
+    // chosen by the target shape, symmetric with WriteEventHeader (an enum rides AsString via its implicit conversion).
+    internal static void WriteEventHeaderUnmarshall(CodeWriter writer, Member member)
+    {
+        var header = $"""context.ResponseData.GetEventStreamHeader("{member.ModeledName}")""";
+        var value = member.Type.Target switch
+        {
+            StringShape or EnumShape => $"{header}.AsString()",
+            BooleanShape => $"{header}.AsBool()",
+            IntegerShape or IntEnumShape => $"{header}.AsInt32()",
+            LongShape => $"{header}.AsInt64()",
+            TimestampShape => $"{header}.AsTimestamp()",
+            BlobShape => $"new MemoryStream({header}.AsByteBuf())",
+            ShortShape => $"{header}.AsInt16()",
+            ByteShape => $"{header}.AsSByte()",
+            var other => throw new GeneratorException($"Unsupported @eventHeader type '{other.Type}' on member '{member.ModeledName}'."),
+        };
+
+        writer.OpenBlock($"""if (context.ResponseData.IsEventHeaderPresent("{member.ModeledName}"))""", () =>
+        {
+            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {value};");
         });
     }
 

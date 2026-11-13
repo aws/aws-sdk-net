@@ -119,15 +119,13 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             {
                 var memoryStream = new MemoryStream();
                 var context = CreateJsonMarshallerContext(memoryStream);
-                context.Writer.WriteStartObject();
                 EndOfInputEventMarshaller.Instance.Marshall((EndOfInputEvent)evnt, context);
                 eventHeaders = context.Request.EventHeaders;
-                context.Writer.WriteEndObject();
                 context.Writer.Flush();
 
                 eventType = "endOfInputEvent";
-                contentType = "application/json";
-                eventPayload = memoryStream.ToArray();
+                contentType = null;
+                eventPayload = Array.Empty<byte>();
             }
             else if (evnt is TextInputEvent)
             {

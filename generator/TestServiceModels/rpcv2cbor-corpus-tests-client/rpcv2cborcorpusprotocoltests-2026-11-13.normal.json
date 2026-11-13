@@ -1,0 +1,859 @@
+{
+  "version": "2.0",
+  "metadata": {
+    "apiVersion": "2026-11-13",
+    "auth": [
+      "aws.auth#sigv4"
+    ],
+    "endpointPrefix": "rpcv2cborcorpusprotocoltests",
+    "protocol": "smithy-rpc-v2-cbor",
+    "protocols": [
+      "smithy-rpc-v2-cbor"
+    ],
+    "serviceFullName": "RpcV2 CBOR Corpus Protocol Tests",
+    "serviceId": "RpcV2CBORCorpusProtocolTests",
+    "signatureVersion": "v4",
+    "signingName": "rpcv2cborcorpusprotocoltests",
+    "uid": "rpcv2cborcorpusprotocoltests-2026-11-13",
+    "targetPrefix": "RpcV2CborCorpusTests"
+  },
+  "operations": {
+    "EventStreamDuplex": {
+      "name": "EventStreamDuplex",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "EventStreamDuplexInput"
+      },
+      "output": {
+        "shape": "EventStreamDuplexOutput"
+      }
+    },
+    "EventStreamError": {
+      "name": "EventStreamError",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "EventStreamErrorInput"
+      },
+      "output": {
+        "shape": "EventStreamErrorOutput"
+      }
+    },
+    "EventStreamInitialRequest": {
+      "name": "EventStreamInitialRequest",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "EventStreamInitialRequestInput"
+      },
+      "output": {
+        "shape": "EventStreamInitialRequestOutput"
+      }
+    },
+    "EventStreamInitialResponse": {
+      "name": "EventStreamInitialResponse",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "EventStreamInitialResponseInput"
+      },
+      "output": {
+        "shape": "EventStreamInitialResponseOutput"
+      }
+    },
+    "EventStreamRequest": {
+      "name": "EventStreamRequest",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "EventStreamRequestInput"
+      },
+      "output": {
+        "shape": "EventStreamRequestOutput"
+      }
+    },
+    "EventStreamResponse": {
+      "name": "EventStreamResponse",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "EventStreamResponseInput"
+      },
+      "output": {
+        "shape": "EventStreamResponseOutput"
+      }
+    },
+    "EventStreamResponseBlobPayload": {
+      "name": "EventStreamResponseBlobPayload",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "EventStreamResponseBlobPayloadInput"
+      },
+      "output": {
+        "shape": "EventStreamResponseBlobPayloadOutput"
+      }
+    },
+    "EventStreamResponseHeaders": {
+      "name": "EventStreamResponseHeaders",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "EventStreamResponseHeadersInput"
+      },
+      "output": {
+        "shape": "EventStreamResponseHeadersOutput"
+      }
+    },
+    "EventStreamResponseImplicitPayload": {
+      "name": "EventStreamResponseImplicitPayload",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "EventStreamResponseImplicitPayloadInput"
+      },
+      "output": {
+        "shape": "EventStreamResponseImplicitPayloadOutput"
+      }
+    },
+    "EventStreamResponseStructPayload": {
+      "name": "EventStreamResponseStructPayload",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "EventStreamResponseStructPayloadInput"
+      },
+      "output": {
+        "shape": "EventStreamResponseStructPayloadOutput"
+      }
+    },
+    "EventStreamResponseUnionPayload": {
+      "name": "EventStreamResponseUnionPayload",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "EventStreamResponseUnionPayloadInput"
+      },
+      "output": {
+        "shape": "EventStreamResponseUnionPayloadOutput"
+      }
+    }
+  },
+  "shapes": {
+    "BigDecimal": {
+      "type": "bigDecimal"
+    },
+    "BigInteger": {
+      "type": "bigInteger"
+    },
+    "Blob": {
+      "type": "blob"
+    },
+    "BlobPayloadEvent": {
+      "type": "structure",
+      "members": {
+        "contentType": {
+          "shape": "String",
+          "eventheader": true
+        },
+        "data": {
+          "shape": "Blob",
+          "eventpayload": true
+        }
+      },
+      "event": true
+    },
+    "BlobPayloadEventStream": {
+      "type": "structure",
+      "members": {
+        "blobEvent": {
+          "shape": "BlobPayloadEvent"
+        }
+      },
+      "eventstream": true
+    },
+    "Boolean": {
+      "type": "boolean"
+    },
+    "Byte": {
+      "type": "byte"
+    },
+    "CorpusIntEnum": {
+      "type": "integer"
+    },
+    "CorpusStringEnum": {
+      "type": "string",
+      "enum": [
+        "Foo",
+        "Bar",
+        "Baz"
+      ]
+    },
+    "CorpusSubUnion": {
+      "type": "structure",
+      "members": {
+        "stringValue": {
+          "shape": "String"
+        },
+        "integerValue": {
+          "shape": "Integer"
+        }
+      },
+      "union": true
+    },
+    "CorpusUnion": {
+      "type": "structure",
+      "members": {
+        "booleanValue": {
+          "shape": "Boolean"
+        },
+        "byteValue": {
+          "shape": "Byte"
+        },
+        "shortValue": {
+          "shape": "Short"
+        },
+        "integerValue": {
+          "shape": "Integer"
+        },
+        "longValue": {
+          "shape": "Long"
+        },
+        "floatValue": {
+          "shape": "Float"
+        },
+        "doubleValue": {
+          "shape": "Double"
+        },
+        "bigIntegerValue": {
+          "shape": "BigInteger"
+        },
+        "bigDecimalValue": {
+          "shape": "BigDecimal"
+        },
+        "stringValue": {
+          "shape": "String"
+        },
+        "blobValue": {
+          "shape": "Blob"
+        },
+        "timestampValue": {
+          "shape": "NoFormatTimestamp"
+        },
+        "enumValue": {
+          "shape": "CorpusStringEnum"
+        },
+        "intEnumValue": {
+          "shape": "CorpusIntEnum"
+        },
+        "listValue": {
+          "shape": "StringList"
+        },
+        "mapValue": {
+          "shape": "StringMap"
+        },
+        "structValue": {
+          "shape": "SimpleStruct"
+        },
+        "unionValue": {
+          "shape": "CorpusSubUnion"
+        }
+      },
+      "union": true
+    },
+    "Double": {
+      "type": "double"
+    },
+    "EndStreamEvent": {
+      "type": "structure",
+      "members": {},
+      "event": true
+    },
+    "ErrorEventStream": {
+      "type": "structure",
+      "members": {
+        "messageEvent": {
+          "shape": "MessageEvent"
+        },
+        "streamError": {
+          "shape": "StreamError"
+        }
+      },
+      "eventstream": true
+    },
+    "EventStreamDuplexInput": {
+      "type": "structure",
+      "members": {
+        "requestId": {
+          "shape": "String"
+        },
+        "events": {
+          "shape": "RequestEventStream"
+        }
+      }
+    },
+    "EventStreamDuplexOutput": {
+      "type": "structure",
+      "members": {
+        "sessionId": {
+          "shape": "String"
+        },
+        "events": {
+          "shape": "ResponseEventStream"
+        }
+      }
+    },
+    "EventStreamErrorInput": {
+      "type": "structure",
+      "members": {}
+    },
+    "EventStreamErrorOutput": {
+      "type": "structure",
+      "members": {
+        "events": {
+          "shape": "ErrorEventStream"
+        }
+      },
+      "required": [
+        "events"
+      ]
+    },
+    "EventStreamInitialRequestInput": {
+      "type": "structure",
+      "members": {
+        "requestId": {
+          "shape": "String"
+        },
+        "priority": {
+          "shape": "Integer"
+        },
+        "events": {
+          "shape": "RequestEventStream"
+        }
+      }
+    },
+    "EventStreamInitialRequestOutput": {
+      "type": "structure",
+      "members": {}
+    },
+    "EventStreamInitialResponseInput": {
+      "type": "structure",
+      "members": {}
+    },
+    "EventStreamInitialResponseOutput": {
+      "type": "structure",
+      "members": {
+        "sessionId": {
+          "shape": "String"
+        },
+        "timeout": {
+          "shape": "Integer"
+        },
+        "events": {
+          "shape": "ResponseEventStream"
+        }
+      }
+    },
+    "EventStreamRequestInput": {
+      "type": "structure",
+      "members": {
+        "events": {
+          "shape": "RequestEventStream"
+        }
+      },
+      "required": [
+        "events"
+      ]
+    },
+    "EventStreamRequestOutput": {
+      "type": "structure",
+      "members": {}
+    },
+    "EventStreamResponseBlobPayloadInput": {
+      "type": "structure",
+      "members": {}
+    },
+    "EventStreamResponseBlobPayloadOutput": {
+      "type": "structure",
+      "members": {
+        "events": {
+          "shape": "BlobPayloadEventStream"
+        }
+      },
+      "required": [
+        "events"
+      ]
+    },
+    "EventStreamResponseHeadersInput": {
+      "type": "structure",
+      "members": {}
+    },
+    "EventStreamResponseHeadersOutput": {
+      "type": "structure",
+      "members": {
+        "events": {
+          "shape": "HeaderEventStream"
+        }
+      },
+      "required": [
+        "events"
+      ]
+    },
+    "EventStreamResponseImplicitPayloadInput": {
+      "type": "structure",
+      "members": {}
+    },
+    "EventStreamResponseImplicitPayloadOutput": {
+      "type": "structure",
+      "members": {
+        "events": {
+          "shape": "ImplicitPayloadEventStream"
+        }
+      },
+      "required": [
+        "events"
+      ]
+    },
+    "EventStreamResponseInput": {
+      "type": "structure",
+      "members": {}
+    },
+    "EventStreamResponseOutput": {
+      "type": "structure",
+      "members": {
+        "events": {
+          "shape": "ResponseEventStream"
+        }
+      },
+      "required": [
+        "events"
+      ]
+    },
+    "EventStreamResponseStructPayloadInput": {
+      "type": "structure",
+      "members": {}
+    },
+    "EventStreamResponseStructPayloadOutput": {
+      "type": "structure",
+      "members": {
+        "events": {
+          "shape": "StructPayloadEventStream"
+        }
+      },
+      "required": [
+        "events"
+      ]
+    },
+    "EventStreamResponseUnionPayloadInput": {
+      "type": "structure",
+      "members": {}
+    },
+    "EventStreamResponseUnionPayloadOutput": {
+      "type": "structure",
+      "members": {
+        "events": {
+          "shape": "UnionPayloadEventStream"
+        }
+      },
+      "required": [
+        "events"
+      ]
+    },
+    "Float": {
+      "type": "float"
+    },
+    "HeaderEvent": {
+      "type": "structure",
+      "members": {
+        "stringHeader": {
+          "shape": "String",
+          "eventheader": true
+        },
+        "integerHeader": {
+          "shape": "Integer",
+          "eventheader": true
+        },
+        "booleanHeader": {
+          "shape": "Boolean",
+          "eventheader": true
+        },
+        "byteHeader": {
+          "shape": "Byte",
+          "eventheader": true
+        },
+        "shortHeader": {
+          "shape": "Short",
+          "eventheader": true
+        },
+        "longHeader": {
+          "shape": "Long",
+          "eventheader": true
+        },
+        "timestampHeader": {
+          "shape": "NoFormatTimestamp",
+          "eventheader": true
+        },
+        "blobHeader": {
+          "shape": "Blob",
+          "eventheader": true
+        },
+        "body": {
+          "shape": "String",
+          "eventpayload": true
+        }
+      },
+      "event": true
+    },
+    "HeaderEventStream": {
+      "type": "structure",
+      "members": {
+        "headerEvent": {
+          "shape": "HeaderEvent"
+        }
+      },
+      "eventstream": true
+    },
+    "HeartbeatEvent": {
+      "type": "structure",
+      "members": {},
+      "event": true
+    },
+    "ImplicitPayloadEvent": {
+      "type": "structure",
+      "members": {
+        "requestId": {
+          "shape": "String",
+          "eventheader": true
+        },
+        "content": {
+          "shape": "String"
+        },
+        "count": {
+          "shape": "Integer"
+        },
+        "nested": {
+          "shape": "SimpleStruct"
+        }
+      },
+      "event": true
+    },
+    "ImplicitPayloadEventStream": {
+      "type": "structure",
+      "members": {
+        "dataEvent": {
+          "shape": "ImplicitPayloadEvent"
+        }
+      },
+      "eventstream": true
+    },
+    "Integer": {
+      "type": "integer"
+    },
+    "IntegerList": {
+      "type": "list",
+      "member": {
+        "shape": "Integer"
+      }
+    },
+    "IntegerMap": {
+      "type": "map",
+      "key": {
+        "shape": "String"
+      },
+      "value": {
+        "shape": "Integer"
+      }
+    },
+    "ListEvent": {
+      "type": "structure",
+      "members": {
+        "strings": {
+          "shape": "StringList"
+        },
+        "integers": {
+          "shape": "IntegerList"
+        },
+        "timestamps": {
+          "shape": "TimestampList"
+        }
+      },
+      "event": true
+    },
+    "Long": {
+      "type": "long"
+    },
+    "MapEvent": {
+      "type": "structure",
+      "members": {
+        "strings": {
+          "shape": "StringMap"
+        },
+        "integers": {
+          "shape": "IntegerMap"
+        },
+        "timestamps": {
+          "shape": "TimestampMap"
+        }
+      },
+      "event": true
+    },
+    "MessageEvent": {
+      "type": "structure",
+      "members": {
+        "content": {
+          "shape": "String"
+        },
+        "sequence": {
+          "shape": "Integer"
+        }
+      },
+      "event": true
+    },
+    "NoFormatTimestamp": {
+      "type": "timestamp"
+    },
+    "RequestEventStream": {
+      "type": "structure",
+      "members": {
+        "sendMessage": {
+          "shape": "SendMessageEvent"
+        },
+        "endStream": {
+          "shape": "EndStreamEvent"
+        }
+      },
+      "eventstream": true
+    },
+    "ResponseEventStream": {
+      "type": "structure",
+      "members": {
+        "scalarsEvent": {
+          "shape": "ScalarsEvent"
+        },
+        "listEvent": {
+          "shape": "ListEvent"
+        },
+        "mapEvent": {
+          "shape": "MapEvent"
+        },
+        "structEvent": {
+          "shape": "StructEvent"
+        },
+        "unionEvent": {
+          "shape": "UnionEvent"
+        },
+        "heartbeatEvent": {
+          "shape": "HeartbeatEvent"
+        }
+      },
+      "eventstream": true
+    },
+    "ScalarsEvent": {
+      "type": "structure",
+      "members": {
+        "booleanMember": {
+          "shape": "Boolean"
+        },
+        "byteMember": {
+          "shape": "Byte"
+        },
+        "shortMember": {
+          "shape": "Short"
+        },
+        "integerMember": {
+          "shape": "Integer"
+        },
+        "longMember": {
+          "shape": "Long"
+        },
+        "floatMember": {
+          "shape": "Float"
+        },
+        "doubleMember": {
+          "shape": "Double"
+        },
+        "bigIntegerMember": {
+          "shape": "BigInteger"
+        },
+        "bigDecimalMember": {
+          "shape": "BigDecimal"
+        },
+        "stringMember": {
+          "shape": "String"
+        },
+        "blobMember": {
+          "shape": "Blob"
+        },
+        "timestampMember": {
+          "shape": "NoFormatTimestamp"
+        },
+        "stringEnum": {
+          "shape": "CorpusStringEnum"
+        },
+        "intEnum": {
+          "shape": "CorpusIntEnum"
+        }
+      },
+      "event": true
+    },
+    "SendMessageEvent": {
+      "type": "structure",
+      "members": {
+        "content": {
+          "shape": "String"
+        }
+      },
+      "event": true
+    },
+    "Short": {
+      "type": "short"
+    },
+    "SimpleStruct": {
+      "type": "structure",
+      "members": {
+        "stringMember": {
+          "shape": "String"
+        },
+        "integerMember": {
+          "shape": "Integer"
+        },
+        "booleanMember": {
+          "shape": "Boolean"
+        }
+      }
+    },
+    "StreamError": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "shape": "String"
+        },
+        "code": {
+          "shape": "Integer"
+        }
+      },
+      "exception": true,
+      "event": true
+    },
+    "String": {
+      "type": "string"
+    },
+    "StringList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
+    "StringMap": {
+      "type": "map",
+      "key": {
+        "shape": "String"
+      },
+      "value": {
+        "shape": "String"
+      }
+    },
+    "StructEvent": {
+      "type": "structure",
+      "members": {
+        "value": {
+          "shape": "SimpleStruct"
+        }
+      },
+      "event": true
+    },
+    "StructPayloadEvent": {
+      "type": "structure",
+      "members": {
+        "contentType": {
+          "shape": "String",
+          "eventheader": true
+        },
+        "payload": {
+          "shape": "SimpleStruct",
+          "eventpayload": true
+        }
+      },
+      "event": true
+    },
+    "StructPayloadEventStream": {
+      "type": "structure",
+      "members": {
+        "structPayloadEvent": {
+          "shape": "StructPayloadEvent"
+        }
+      },
+      "eventstream": true
+    },
+    "TimestampList": {
+      "type": "list",
+      "member": {
+        "shape": "NoFormatTimestamp"
+      }
+    },
+    "TimestampMap": {
+      "type": "map",
+      "key": {
+        "shape": "String"
+      },
+      "value": {
+        "shape": "NoFormatTimestamp"
+      }
+    },
+    "UnionEvent": {
+      "type": "structure",
+      "members": {
+        "value": {
+          "shape": "CorpusUnion"
+        }
+      },
+      "event": true
+    },
+    "UnionPayloadEvent": {
+      "type": "structure",
+      "members": {
+        "contentType": {
+          "shape": "String",
+          "eventheader": true
+        },
+        "payload": {
+          "shape": "CorpusUnion",
+          "eventpayload": true
+        }
+      },
+      "event": true
+    },
+    "UnionPayloadEventStream": {
+      "type": "structure",
+      "members": {
+        "unionPayloadEvent": {
+          "shape": "UnionPayloadEvent"
+        }
+      },
+      "eventstream": true
+    }
+  }
+}
