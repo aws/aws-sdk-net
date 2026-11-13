@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Text;
+using System.Threading;
 using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Metrics;
@@ -36,6 +37,10 @@ namespace Amazon.Runtime.Internal
         // AWS_LAMBDA_FUNCTION_NAME is set by the Lambda runtime before the process starts and doesn't change
         // for the life of the execution environment, so it's read once instead of on every request.
         private static bool _isRunningInLambda = IsLambdaFunctionNameSet();
+
+        // AWS_LAMBDA_MAX_CONCURRENCY is likewise fixed for the life of the execution environment. It is read lazily
+        // on the first request (rather than at type initialization) and cached: 0 = not read yet, 1 = unset, 2 = set.
+        private static int _lambdaMaxConcurrencyState;
 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler
@@ -143,7 +148,7 @@ namespace Amazon.Runtime.Internal
                 if (_isRunningInLambda)
                 {
                     string amznTraceId;
-                    if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY)))
+                    if (IsLambdaMaxConcurrencySet())
                     {
                         amznTraceId = SDKTaskContext.Default.Get(EnvironmentVariables._X_AMZN_TRACE_ID)?.ToString() ??
                                             Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
@@ -168,6 +173,19 @@ namespace Amazon.Runtime.Internal
         internal static void ResetIsRunningInLambda()
         {
             _isRunningInLambda = IsLambdaFunctionNameSet();
+            Volatile.Write(ref _lambdaMaxConcurrencyState, 0);
+        }
+
+        private static bool IsLambdaMaxConcurrencySet()
+        {
+            var state = Volatile.Read(ref _lambdaMaxConcurrencyState);
+            if (state == 0)
+            {
+                state = string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY)) ? 1 : 2;
+                Volatile.Write(ref _lambdaMaxConcurrencyState, state);
+            }
+
+            return state == 2;
         }
 
         private static bool IsLambdaFunctionNameSet()

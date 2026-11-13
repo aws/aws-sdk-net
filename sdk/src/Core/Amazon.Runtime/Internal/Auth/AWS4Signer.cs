@@ -62,6 +62,52 @@ namespace Amazon.Runtime.Internal.Auth
 
         internal const SigningAlgorithm SignerAlgorithm = SigningAlgorithm.HmacSHA256;
 
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// The UTF-8 encoding of a string, held in a caller-provided stack buffer when it fits or in an array pool
+        /// buffer otherwise. The signing inputs can contain credentials (for example the session token header in a
+        /// canonical request), so the pooled buffer is zeroed before it goes back to the shared pool.
+        /// </summary>
+        private ref struct Utf8Buffer
+        {
+            // Strings up to this many UTF-8 bytes are encoded on the stack; larger ones use the array pool.
+            internal const int StackAllocByteLimit = 1024;
+
+            private byte[] _rented;
+
+            public Span<byte> Bytes { get; }
+
+            /// <param name="value">The string to encode.</param>
+            /// <param name="byteCount">The UTF-8 byte count of <paramref name="value"/>.</param>
+            /// <param name="stackBuffer">A buffer of exactly <paramref name="byteCount"/> bytes, supplied only when it is at most <see cref="StackAllocByteLimit"/>.</param>
+            public Utf8Buffer(string value, int byteCount, Span<byte> stackBuffer)
+            {
+                if (byteCount <= StackAllocByteLimit)
+                {
+                    _rented = null;
+                    Bytes = stackBuffer.Slice(0, byteCount);
+                }
+                else
+                {
+                    _rented = System.Buffers.ArrayPool<byte>.Shared.Rent(byteCount);
+                    Bytes = _rented.AsSpan(0, byteCount);
+                }
+
+                Encoding.UTF8.GetBytes(value, Bytes);
+            }
+
+            public void Dispose()
+            {
+                if (_rented != null)
+                {
+                    CryptographicOperations.ZeroMemory(Bytes);
+                    System.Buffers.ArrayPool<byte>.Shared.Return(_rented);
+                    _rented = null;
+                }
+            }
+        }
+#endif
+
         // If this set is updated to include new headers, the SigV4a signer (in "AWSSDK.Extensions.CrtIntegration\CrtAWS4aSigner.cs") may need to
         // be updated as well.
         private static readonly HashSet<string> _headersToIgnoreWhenSigning = new HashSet<string>(StringComparer.OrdinalIgnoreCase) {
@@ -522,7 +568,12 @@ namespace Amazon.Runtime.Internal.Auth
             var signingKeyEntry = GetSigningKeyEntry(awsSecretAccessKey, region, dateStamp, service);
 #if NET8_0_OR_GREATER
             var signature = new byte[HMACSHA256.HashSizeInBytes];
-            signingKeyEntry.ComputeHmac(Encoding.UTF8.GetBytes(stringToSign), signature);
+            var stringToSignByteCount = Encoding.UTF8.GetByteCount(stringToSign);
+            Span<byte> stringToSignStack = stringToSignByteCount <= Utf8Buffer.StackAllocByteLimit ? stackalloc byte[stringToSignByteCount] : default;
+            using (var stringToSignBytes = new Utf8Buffer(stringToSign, stringToSignByteCount, stringToSignStack))
+            {
+                signingKeyEntry.ComputeHmac(stringToSignBytes.Bytes, signature);
+            }
 #else
             var signature = ComputeKeyedHash(SignerAlgorithm, signingKeyEntry.Key, stringToSign);
 #endif
@@ -787,6 +838,18 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns></returns>
         public static byte[] ComputeHash(string data)
         {
+#if NET8_0_OR_GREATER
+            // Canonical requests are routinely larger than the stack limit, so they come from the array pool.
+            if (data != null)
+            {
+                var byteCount = Encoding.UTF8.GetByteCount(data);
+                Span<byte> stack = byteCount <= Utf8Buffer.StackAllocByteLimit ? stackalloc byte[byteCount] : default;
+                using (var utf8 = new Utf8Buffer(data, byteCount, stack))
+                {
+                    return SHA256.HashData(utf8.Bytes);
+                }
+            }
+#endif
             return ComputeHash(Encoding.UTF8.GetBytes(data));
         }
 

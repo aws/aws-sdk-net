@@ -204,6 +204,7 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual("environmentTraceId", headers[HeaderKeys.XAmznTraceIdHeader]);
 
                 Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY, "1");
+                Marshaller.ResetIsRunningInLambda();
                 headers = new Dictionary<string, string>();
                 Marshaller.SetRecursionDetectionHeader(headers);
                 Assert.AreEqual("contextTraceId", headers[HeaderKeys.XAmznTraceIdHeader]);

@@ -451,6 +451,89 @@ namespace AWSSDK.UnitTests
         }
 
         // -----------------------------------------------------------------------
+        // String hashing (stack / pooled buffer paths on .NET 8+)
+        // -----------------------------------------------------------------------
+
+        // Straddle the stack/pool threshold, and mix in multi-byte characters so the UTF-8 byte count
+        // differs from the string length (including a surrogate pair).
+        public static IEnumerable<object[]> HashInputs()
+        {
+            foreach (var length in new[] { 1, 100, 340, 341, 342, 1024, 1025, 5000 })
+            {
+                yield return new object[] { new string('a', length) };
+            }
+
+            foreach (var repeats in new[] { 3, 170, 171, 172, 400 })
+            {
+                yield return new object[] { string.Concat(Enumerable.Repeat("a\u00e9\u20ac\U0001F600", repeats)) };
+            }
+        }
+
+        [TestMethod]
+        [DynamicData(nameof(HashInputs))]
+        public void ComputeHash_String_MatchesHashOfUtf8Bytes(string data)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                CollectionAssert.AreEqual(sha256.ComputeHash(Encoding.UTF8.GetBytes(data)), AWS4Signer.ComputeHash(data));
+            }
+        }
+
+        [TestMethod]
+        public void ComputeHash_String_EmptyMatchesEmptyBodyHash()
+        {
+            Assert.AreEqual(AWS4Signer.EmptyBodySha256, AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(string.Empty), true));
+        }
+
+        [TestMethod]
+        public void ComputeHash_String_NullThrows()
+        {
+            Assert.ThrowsExactly<ArgumentNullException>(() => AWS4Signer.ComputeHash((string)null));
+        }
+
+        [TestMethod]
+        public void ComputeSignature_CanonicalRequestAboveStackLimit_MatchesIndependentHmac()
+        {
+            // Multi-byte header values push the canonical request well past the stack buffer limit.
+            var canonicalRequest = "PUT\n/key\n\nx-amz-meta-a:" + string.Concat(Enumerable.Repeat("\u00e9\u20ac\U0001F600", 300)) + "\n\nhost;x-amz-meta-a\nUNSIGNED-PAYLOAD";
+            Assert.AreEqual(
+                IndependentSignature("secret-large", "us-east-1", SigningTestDate, canonicalRequest),
+                Sign("secret-large", "us-east-1", SigningTestDate, canonicalRequest).Signature);
+        }
+
+        [TestMethod]
+        public void ComputeSignature_MultiByteRegion_MatchesIndependentHmac()
+        {
+            Assert.AreEqual(
+                IndependentSignature("secret-mb", "us-\u00e9\u20ac-1", SigningTestDate, "canonical-request"),
+                Sign("secret-mb", "us-\u00e9\u20ac-1", SigningTestDate, "canonical-request").Signature);
+        }
+
+#if NET8_0_OR_GREATER
+        [TestMethod]
+        public void ComputeHash_String_LargeInput_DoesNotLeaveDataInPooledBuffer()
+        {
+            // The pooled buffer that held the encoded string must be zeroed before it is returned: canonical requests
+            // can contain the session token header. Shared pool buffers are cached per thread, so the next rent of the
+            // same size class gets back the buffer that was just used.
+            const string marker = "x-amz-security-token:SECRET-SESSION-TOKEN";
+            var data = marker + new string('a', 4000);
+            AWS4Signer.ComputeHash(data);
+
+            var buffer = System.Buffers.ArrayPool<byte>.Shared.Rent(data.Length);
+            try
+            {
+                // The data is ASCII, so its UTF-8 length is its string length. Bytes beyond it were never ours.
+                CollectionAssert.AreEqual(new byte[data.Length], buffer.AsSpan(0, data.Length).ToArray());
+            }
+            finally
+            {
+                System.Buffers.ArrayPool<byte>.Shared.Return(buffer);
+            }
+        }
+#endif
+
+        // -----------------------------------------------------------------------
         // Testee shim
         // -----------------------------------------------------------------------
 
