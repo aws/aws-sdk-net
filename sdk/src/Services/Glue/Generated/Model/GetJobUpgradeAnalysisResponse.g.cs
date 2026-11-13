@@ -64,9 +64,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AutoUpgradeEligibilitySummary. 
         /// <para>
-        /// The Amazon S3 URI of the consent report summarizing upgrade assessment findings. Populated
-        /// when the analysis reaches <c>WAITING_FOR_CONSENT</c> and remains available in all
-        /// subsequent states.
+        /// A presigned URL for downloading the auto upgrade eligibility summary, which lists
+        /// the compatibility results for the job. Available once the analysis reaches <c>WAITING_FOR_CONSENT</c>
+        /// and in all subsequent states. The URL expires after 1 hour. Calling <c>GetJobUpgradeAnalysis</c>
+        /// again returns a new URL.
         /// </para>
         /// </summary>
         public string AutoUpgradeEligibilitySummary { get; set; }
@@ -79,8 +80,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AutoUpgradeEvaluationSummary. 
         /// <para>
-        /// The Amazon S3 URI of the terminal-state evaluation summary, available once the analysis
-        /// reaches a terminal status (<c>SUCCEEDED</c> or <c>FAILED</c>).
+        /// A presigned URL for downloading the auto upgrade evaluation summary for the analysis.
+        /// Available once the analysis reaches a terminal status (<c>SUCCEEDED</c> or <c>FAILED</c>).
+        /// The URL expires after 1 hour. Calling <c>GetJobUpgradeAnalysis</c> again returns a
+        /// new URL.
         /// </para>
         /// </summary>
         public string AutoUpgradeEvaluationSummary { get; set; }

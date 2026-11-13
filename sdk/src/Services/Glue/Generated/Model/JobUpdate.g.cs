@@ -230,6 +230,14 @@ namespace Amazon.Glue.Model
         /// If not provided in the update request, the Glue version retains the value from the
         /// existing job definition.
         /// </para>
+        ///  
+        /// <para>
+        /// Set <c>GlueVersion</c> to <c>auto</c> to turn on automatic version upgrades for the
+        /// job. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/auto-version-upgrades.html">Automatic
+        /// version upgrades for Glue jobs</a> in the developer guide. For the job requirements,
+        /// see <a href="https://docs.aws.amazon.com/glue/latest/dg/auto-version-upgrades.html#auto-version-upgrades-before-you-start">Before
+        /// you start</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 255)]
         public string GlueVersion { get; set; }
