@@ -16,6 +16,7 @@ using System;
 using System.Net;
 using Amazon.Util;
 using System.Globalization;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using System.Net.Http;
 
@@ -115,6 +116,7 @@ namespace Amazon.Runtime
         /// If null, an HttpClient will be created by the SDK.
         /// Note that IClientConfig members such as ProxyHost, ProxyPort, GetWebProxy, and AllowAutoRedirect
         /// will have no effect unless they're used explicitly by the HttpClientFactory implementation.
+        /// The AWS_CA_BUNDLE environment variable is also not applied to HttpClients created by the factory.
         /// </summary>
         public HttpClientFactory HttpClientFactory { get; set; } = AWSConfigs.HttpClientFactory;
         
@@ -168,6 +170,12 @@ namespace Amazon.Runtime
             if (clientConfig.ConnectTimeout.HasValue)
                 uniqueString = string.Concat(uniqueString, "ConnectTimeout:", clientConfig.ConnectTimeout.Value.ToString());
 #endif
+
+            // HttpClients created while AWS_CA_BUNDLE is set trust a different set of CAs, so they must not be shared
+            // with clients created under a different (or no) bundle.
+            var caBundlePath = Environment.GetEnvironmentVariable(CABundle.EnvironmentVariableName);
+            if (!string.IsNullOrWhiteSpace(caBundlePath))
+                uniqueString = string.Concat(uniqueString, "CABundle:", caBundlePath);
 
             return uniqueString;
         }

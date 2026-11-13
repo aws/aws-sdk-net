@@ -332,6 +332,8 @@ namespace Amazon.Runtime
                 Logger.GetLogger(typeof(HttpRequestMessageFactory)).Debug(pns, $"The current runtime does not support modifying proxy settings of HttpClient.");
             }
 
+            ApplyCABundle(httpMessageHandler);
+
             var httpClient = new HttpClient(httpMessageHandler);
             
             if (clientConfig.Timeout.HasValue)
@@ -343,6 +345,28 @@ namespace Amazon.Runtime
 
             return httpClient;
         }
+
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Configures the handler to trust only the CA bundle set by the AWS_CA_BUNDLE environment variable, if set.
+        /// </summary>
+        private static void ApplyCABundle(SocketsHttpHandler httpMessageHandler)
+        {
+            var caBundle = CABundle.FromEnvironment();
+            if (caBundle != null)
+            {
+                httpMessageHandler.SslOptions.CertificateChainPolicy = caBundle.CreateChainPolicy();
+            }
+        }
+#else
+        /// <summary>
+        /// Configures the handler to trust only the CA bundle set by the AWS_CA_BUNDLE environment variable, if set.
+        /// </summary>
+        private static void ApplyCABundle(HttpClientHandler httpMessageHandler)
+        {
+            CABundle.ApplyFromEnvironment(httpMessageHandler);
+        }
+#endif
 
     }
 
