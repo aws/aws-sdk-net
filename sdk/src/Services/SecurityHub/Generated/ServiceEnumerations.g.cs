@@ -580,6 +580,11 @@ namespace Amazon.SecurityHub
     public class ConfigurationPolicyAssociationStatus : ConstantClass
     {
         /// <summary>
+        /// Constant DISABLED for ConfigurationPolicyAssociationStatus
+        /// </summary>
+        public static readonly ConfigurationPolicyAssociationStatus DISABLED = new ConfigurationPolicyAssociationStatus("DISABLED");
+
+        /// <summary>
         /// Constant FAILED for ConfigurationPolicyAssociationStatus
         /// </summary>
         public static readonly ConfigurationPolicyAssociationStatus FAILED = new ConfigurationPolicyAssociationStatus("FAILED");
@@ -3919,6 +3924,11 @@ namespace Amazon.SecurityHub
     /// </summary>
     public class OrganizationConfigurationStatus : ConstantClass
     {
+        /// <summary>
+        /// Constant DISABLED for OrganizationConfigurationStatus
+        /// </summary>
+        public static readonly OrganizationConfigurationStatus DISABLED = new OrganizationConfigurationStatus("DISABLED");
+
         /// <summary>
         /// Constant ENABLED for OrganizationConfigurationStatus
         /// </summary>

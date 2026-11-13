@@ -6490,14 +6490,19 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
-        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you retrieve
-        /// resources from your entire organization or from specific organizational units. Only
-        /// the delegated administrator account can use <c>Scopes</c>.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>. With <c>AwsOrganizations</c>,
+        /// you can retrieve resources from your entire organization or from specific organizational
+        /// units. Only the delegated administrator account can use <c>Scopes</c>.
         /// </para>
         ///  
         /// <para>
         /// You can use the <c>Filters</c> parameter to further refine results based on resource
         /// attributes, such as <c>ResourceType</c> or <c>Region</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation returns paginated results. To retrieve additional results, use the
+        /// <c>NextToken</c> value from the previous response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSoftwareResourcesV2 service method.</param>
@@ -6541,14 +6546,19 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
-        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you retrieve
-        /// resources from your entire organization or from specific organizational units. Only
-        /// the delegated administrator account can use <c>Scopes</c>.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>. With <c>AwsOrganizations</c>,
+        /// you can retrieve resources from your entire organization or from specific organizational
+        /// units. Only the delegated administrator account can use <c>Scopes</c>.
         /// </para>
         ///  
         /// <para>
         /// You can use the <c>Filters</c> parameter to further refine results based on resource
         /// attributes, such as <c>ResourceType</c> or <c>Region</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation returns paginated results. To retrieve additional results, use the
+        /// <c>NextToken</c> value from the previous response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSoftwareResourcesV2 service method.</param>
@@ -6600,9 +6610,9 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
-        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you aggregate
-        /// software from your entire organization or from specific organizational units. Only
-        /// the delegated administrator account can use <c>Scopes</c>.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>. With <c>AwsOrganizations</c>,
+        /// you can aggregate software from your entire organization or from specific organizational
+        /// units. Only the delegated administrator account can use <c>Scopes</c>.
         /// </para>
         ///  
         /// <para>
@@ -6656,9 +6666,9 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
-        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you aggregate
-        /// software from your entire organization or from specific organizational units. Only
-        /// the delegated administrator account can use <c>Scopes</c>.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>. With <c>AwsOrganizations</c>,
+        /// you can aggregate software from your entire organization or from specific organizational
+        /// units. Only the delegated administrator account can use <c>Scopes</c>.
         /// </para>
         ///  
         /// <para>
@@ -6710,9 +6720,9 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
-        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you retrieve
-        /// software from your entire organization or from specific organizational units. Only
-        /// the delegated administrator account can use <c>Scopes</c>.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>. With <c>AwsOrganizations</c>,
+        /// you can retrieve software from your entire organization or from specific organizational
+        /// units. Only the delegated administrator account can use <c>Scopes</c>.
         /// </para>
         ///  
         /// <para>
@@ -6725,6 +6735,11 @@ namespace Amazon.SecurityHub
         /// <para>
         /// To list the resources that contain a specific package, use <c>GetSoftwareResourcesV2</c>.
         /// To get counts of software grouped by a field, use <c>GetSoftwareStatisticsV2</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation returns paginated results. To retrieve additional results, use the
+        /// <c>NextToken</c> value from the previous response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSoftwareV2 service method.</param>
@@ -6768,9 +6783,9 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
-        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you retrieve
-        /// software from your entire organization or from specific organizational units. Only
-        /// the delegated administrator account can use <c>Scopes</c>.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>. With <c>AwsOrganizations</c>,
+        /// you can retrieve software from your entire organization or from specific organizational
+        /// units. Only the delegated administrator account can use <c>Scopes</c>.
         /// </para>
         ///  
         /// <para>
@@ -6783,6 +6798,11 @@ namespace Amazon.SecurityHub
         /// <para>
         /// To list the resources that contain a specific package, use <c>GetSoftwareResourcesV2</c>.
         /// To get counts of software grouped by a field, use <c>GetSoftwareStatisticsV2</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation returns paginated results. To retrieve additional results, use the
+        /// <c>NextToken</c> value from the previous response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSoftwareV2 service method.</param>
