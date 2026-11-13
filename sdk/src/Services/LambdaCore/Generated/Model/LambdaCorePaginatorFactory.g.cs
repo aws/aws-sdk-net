@@ -47,5 +47,29 @@ namespace Amazon.LambdaCore.Model
         {
             return new ListNetworkConnectorsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListRuntimeAliases operation
+        /// </summary>
+        public IListRuntimeAliasesPaginator ListRuntimeAliases(ListRuntimeAliasesRequest request)
+        {
+            return new ListRuntimeAliasesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRuntimeVersions operation
+        /// </summary>
+        public IListRuntimeVersionsPaginator ListRuntimeVersions(ListRuntimeVersionsRequest request)
+        {
+            return new ListRuntimeVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRuntimes operation
+        /// </summary>
+        public IListRuntimesPaginator ListRuntimes(ListRuntimesRequest request)
+        {
+            return new ListRuntimesPaginator(this.client, request);
+        }
     }
 }

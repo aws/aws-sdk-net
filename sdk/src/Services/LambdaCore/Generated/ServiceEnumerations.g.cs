@@ -22,6 +22,47 @@ using Amazon.Runtime;
 namespace Amazon.LambdaCore
 {
     /// <summary>
+    /// Constants used for properties of type CompatibilityPolicy.
+    /// </summary>
+    public class CompatibilityPolicy : ConstantClass
+    {
+        /// <summary>
+        /// Constant NotSupported for CompatibilityPolicy
+        /// </summary>
+        public static readonly CompatibilityPolicy NotSupported = new CompatibilityPolicy("NotSupported");
+
+        /// <summary>
+        /// Constant Supported for CompatibilityPolicy
+        /// </summary>
+        public static readonly CompatibilityPolicy Supported = new CompatibilityPolicy("Supported");
+
+        /// <summary>
+        /// Constructs a custom CompatibilityPolicy for a value not among the defined constants.
+        /// </summary>
+        public CompatibilityPolicy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CompatibilityPolicy FindValue(string value)
+        {
+            return FindValue<CompatibilityPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CompatibilityPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ComputeResourceType.
     /// </summary>
     public class ComputeResourceType : ConstantClass
@@ -57,6 +98,42 @@ namespace Amazon.LambdaCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ComputeResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IntegrationModel.
+    /// </summary>
+    public class IntegrationModel : ConstantClass
+    {
+        /// <summary>
+        /// Constant RuntimeAPI for IntegrationModel
+        /// </summary>
+        public static readonly IntegrationModel RuntimeAPI = new IntegrationModel("RuntimeAPI");
+
+        /// <summary>
+        /// Constructs a custom IntegrationModel for a value not among the defined constants.
+        /// </summary>
+        public IntegrationModel(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationModel FindValue(string value)
+        {
+            return FindValue<IntegrationModel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationModel(string value)
         {
             return FindValue(value);
         }
@@ -383,6 +460,256 @@ namespace Amazon.LambdaCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuntimeAliasState.
+    /// </summary>
+    public class RuntimeAliasState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for RuntimeAliasState
+        /// </summary>
+        public static readonly RuntimeAliasState ACTIVE = new RuntimeAliasState("ACTIVE");
+
+        /// <summary>
+        /// Constant CREATING for RuntimeAliasState
+        /// </summary>
+        public static readonly RuntimeAliasState CREATING = new RuntimeAliasState("CREATING");
+
+        /// <summary>
+        /// Constant DELETING for RuntimeAliasState
+        /// </summary>
+        public static readonly RuntimeAliasState DELETING = new RuntimeAliasState("DELETING");
+
+        /// <summary>
+        /// Constant PENDING_DELETION for RuntimeAliasState
+        /// </summary>
+        public static readonly RuntimeAliasState PENDING_DELETION = new RuntimeAliasState("PENDING_DELETION");
+
+        /// <summary>
+        /// Constant UPDATING for RuntimeAliasState
+        /// </summary>
+        public static readonly RuntimeAliasState UPDATING = new RuntimeAliasState("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom RuntimeAliasState for a value not among the defined constants.
+        /// </summary>
+        public RuntimeAliasState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuntimeAliasState FindValue(string value)
+        {
+            return FindValue<RuntimeAliasState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuntimeAliasState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuntimeArchitecture.
+    /// </summary>
+    public class RuntimeArchitecture : ConstantClass
+    {
+        /// <summary>
+        /// Constant Arm64 for RuntimeArchitecture
+        /// </summary>
+        public static readonly RuntimeArchitecture Arm64 = new RuntimeArchitecture("arm64");
+
+        /// <summary>
+        /// Constant X86_64 for RuntimeArchitecture
+        /// </summary>
+        public static readonly RuntimeArchitecture X86_64 = new RuntimeArchitecture("x86_64");
+
+        /// <summary>
+        /// Constructs a custom RuntimeArchitecture for a value not among the defined constants.
+        /// </summary>
+        public RuntimeArchitecture(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuntimeArchitecture FindValue(string value)
+        {
+            return FindValue<RuntimeArchitecture>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuntimeArchitecture(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuntimeReleaseState.
+    /// </summary>
+    public class RuntimeReleaseState : ConstantClass
+    {
+        /// <summary>
+        /// Constant DEPRECATED for RuntimeReleaseState
+        /// </summary>
+        public static readonly RuntimeReleaseState DEPRECATED = new RuntimeReleaseState("DEPRECATED");
+
+        /// <summary>
+        /// Constant GA for RuntimeReleaseState
+        /// </summary>
+        public static readonly RuntimeReleaseState GA = new RuntimeReleaseState("GA");
+
+        /// <summary>
+        /// Constant PREVIEW for RuntimeReleaseState
+        /// </summary>
+        public static readonly RuntimeReleaseState PREVIEW = new RuntimeReleaseState("PREVIEW");
+
+        /// <summary>
+        /// Constructs a custom RuntimeReleaseState for a value not among the defined constants.
+        /// </summary>
+        public RuntimeReleaseState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuntimeReleaseState FindValue(string value)
+        {
+            return FindValue<RuntimeReleaseState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuntimeReleaseState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuntimeState.
+    /// </summary>
+    public class RuntimeState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for RuntimeState
+        /// </summary>
+        public static readonly RuntimeState ACTIVE = new RuntimeState("ACTIVE");
+
+        /// <summary>
+        /// Constant DELETING for RuntimeState
+        /// </summary>
+        public static readonly RuntimeState DELETING = new RuntimeState("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for RuntimeState
+        /// </summary>
+        public static readonly RuntimeState FAILED = new RuntimeState("FAILED");
+
+        /// <summary>
+        /// Constant PENDING_DELETION for RuntimeState
+        /// </summary>
+        public static readonly RuntimeState PENDING_DELETION = new RuntimeState("PENDING_DELETION");
+
+        /// <summary>
+        /// Constructs a custom RuntimeState for a value not among the defined constants.
+        /// </summary>
+        public RuntimeState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuntimeState FindValue(string value)
+        {
+            return FindValue<RuntimeState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuntimeState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuntimeVersionState.
+    /// </summary>
+    public class RuntimeVersionState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for RuntimeVersionState
+        /// </summary>
+        public static readonly RuntimeVersionState ACTIVE = new RuntimeVersionState("ACTIVE");
+
+        /// <summary>
+        /// Constant CREATING for RuntimeVersionState
+        /// </summary>
+        public static readonly RuntimeVersionState CREATING = new RuntimeVersionState("CREATING");
+
+        /// <summary>
+        /// Constant DELETING for RuntimeVersionState
+        /// </summary>
+        public static readonly RuntimeVersionState DELETING = new RuntimeVersionState("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for RuntimeVersionState
+        /// </summary>
+        public static readonly RuntimeVersionState FAILED = new RuntimeVersionState("FAILED");
+
+        /// <summary>
+        /// Constant PENDING_DELETION for RuntimeVersionState
+        /// </summary>
+        public static readonly RuntimeVersionState PENDING_DELETION = new RuntimeVersionState("PENDING_DELETION");
+
+        /// <summary>
+        /// Constructs a custom RuntimeVersionState for a value not among the defined constants.
+        /// </summary>
+        public RuntimeVersionState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuntimeVersionState FindValue(string value)
+        {
+            return FindValue<RuntimeVersionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuntimeVersionState(string value)
         {
             return FindValue(value);
         }
