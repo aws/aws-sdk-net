@@ -167,10 +167,10 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
-        /// Re-reads the AWS_LAMBDA_FUNCTION_NAME environment variable so that the next request picks up
-        /// a change to it. Used by tests that set the variable at runtime.
+        /// Resets cached Lambda environment state so that the next request re-reads the environment variables.
+        /// Used by tests that set the variables at runtime.
         /// </summary>
-        internal static void ResetIsRunningInLambda()
+        internal static void ResetLambdaEnvironmentCache()
         {
             _isRunningInLambda = IsLambdaFunctionNameSet();
             Volatile.Write(ref _lambdaMaxConcurrencyState, 0);

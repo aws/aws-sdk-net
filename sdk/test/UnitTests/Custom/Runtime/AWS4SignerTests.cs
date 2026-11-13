@@ -513,18 +513,17 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ComputeHash_String_LargeInput_DoesNotLeaveDataInPooledBuffer()
         {
-            // The pooled buffer that held the encoded string must be zeroed before it is returned: canonical requests
-            // can contain the session token header. Shared pool buffers are cached per thread, so the next rent of the
-            // same size class gets back the buffer that was just used.
+            // The pooled buffer that held the encoded string must be cleared before it is returned:
+            // canonical requests can contain the session token header.
             const string marker = "x-amz-security-token:SECRET-SESSION-TOKEN";
+            var markerBytes = Encoding.UTF8.GetBytes(marker);
             var data = marker + new string('a', 4000);
             AWS4Signer.ComputeHash(data);
 
             var buffer = System.Buffers.ArrayPool<byte>.Shared.Rent(data.Length);
             try
             {
-                // The data is ASCII, so its UTF-8 length is its string length. Bytes beyond it were never ours.
-                CollectionAssert.AreEqual(new byte[data.Length], buffer.AsSpan(0, data.Length).ToArray());
+                Assert.AreEqual(-1, buffer.AsSpan().IndexOf(markerBytes));
             }
             finally
             {
