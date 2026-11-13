@@ -1921,6 +1921,8 @@ namespace Amazon.Util
             {
                 request.ServerCertificateValidationCallback = caBundle.RemoteCertificateValidationCallback;
             }
+
+            if (timeout > TimeSpan.Zero)
             {
                 request.Timeout = (int)timeout.TotalMilliseconds;
             }
