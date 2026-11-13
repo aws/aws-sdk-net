@@ -37,33 +37,49 @@ using Amazon.Extensions.CborProtocol.Internal.Transform;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ProxyRulePriority Marshaller
+    /// NatGatewayCreateMapping Marshaller
     /// </summary>
-    public partial class ProxyRulePriorityMarshaller : IRequestMarshaller<ProxyRulePriority, CborMarshallerContext>
+    public partial class NatGatewayCreateMappingMarshaller : IRequestMarshaller<NatGatewayCreateMapping, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProxyRulePriority requestObject, CborMarshallerContext context)
+        public void Marshall(NatGatewayCreateMapping requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetNewPosition())
+            if (requestObject.IsSetAllocationIds())
             {
-                context.Writer.WriteTextString("NewPosition");
-                context.Writer.WriteInt32(requestObject.NewPosition.Value);
+                context.Writer.WriteTextString("AllocationIds");
+                context.Writer.WriteStartArray(requestObject.AllocationIds.Count);
+                foreach (var requestObjectAllocationIdsListValue in requestObject.AllocationIds)
+                {
+                    context.Writer.WriteTextString(requestObjectAllocationIdsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if (requestObject.IsSetProxyRuleName())
+            if (requestObject.IsSetPrivateIps())
             {
-                context.Writer.WriteTextString("ProxyRuleName");
-                context.Writer.WriteTextString(requestObject.ProxyRuleName);
+                context.Writer.WriteTextString("PrivateIps");
+                context.Writer.WriteStartArray(requestObject.PrivateIps.Count);
+                foreach (var requestObjectPrivateIpsListValue in requestObject.PrivateIps)
+                {
+                    context.Writer.WriteTextString(requestObjectPrivateIpsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetSubnetId())
+            {
+                context.Writer.WriteTextString("SubnetId");
+                context.Writer.WriteTextString(requestObject.SubnetId);
             }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static ProxyRulePriorityMarshaller Instance = new ProxyRulePriorityMarshaller();
+        public readonly static NatGatewayCreateMappingMarshaller Instance = new NatGatewayCreateMappingMarshaller();
     }
 }

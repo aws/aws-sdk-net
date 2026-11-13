@@ -62,6 +62,18 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 var propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "DecryptionAction":
+                        context.AddPathSegment("DecryptionAction");
+                        unmarshalledObject.DecryptionAction = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "DeploymentMode":
+                        context.AddPathSegment("DeploymentMode");
+                        unmarshalledObject.DeploymentMode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "DestinationPorts":
                         context.AddPathSegment("DestinationPorts");
                         unmarshalledObject.DestinationPorts = new CborListUnmarshaller<PortRange, PortRangeUnmarshaller>(PortRangeUnmarshaller.Instance).Unmarshall(context);
@@ -71,6 +83,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     case "Destinations":
                         context.AddPathSegment("Destinations");
                         unmarshalledObject.Destinations = new CborListUnmarshaller<Address, AddressUnmarshaller>(AddressUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "DomainMatch":
+                        context.AddPathSegment("DomainMatch");
+                        unmarshalledObject.DomainMatch = DomainMatchUnmarshaller.Instance.Unmarshall(context);
                         context.PopPathSegment();
                         break;
 

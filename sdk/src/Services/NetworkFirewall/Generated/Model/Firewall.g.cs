@@ -230,10 +230,11 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetFirewallPolicyChangeProtection() => this.FirewallPolicyChangeProtection.HasValue;
 
         /// <summary>
-        /// Gets and sets the property NatGatewayMappings. 
+        /// Gets and sets the property NatGatewayCreateMappings. 
         /// <para>
-        /// The NAT gateways that the firewall uses to proxy traffic. This is set for proxy mode
-        /// firewalls, where <c>NoSourcePreservation</c> is <c>TRUE</c>. 
+        /// The NAT gateways that you specified for Network Firewall to create for a proxy mode
+        /// firewall. To get the IDs and status of the NAT gateways that are attached to the firewall,
+        /// see <c>NatGatewayAttachments</c> in the firewall's <c>SyncStates</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -242,28 +243,13 @@ namespace Amazon.NetworkFirewall.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<NatGatewayMapping> NatGatewayMappings { get; set; } = AWSConfigs.InitializeCollections ? new List<NatGatewayMapping>() : null;
+        [AWSProperty(Min = 1, Max = 20)]
+        public List<NatGatewayCreateMapping> NatGatewayCreateMappings { get; set; } = AWSConfigs.InitializeCollections ? new List<NatGatewayCreateMapping>() : null;
 
         /// <summary>
-        /// Checks to see if the NatGatewayMappings property is set.
+        /// Checks to see if the NatGatewayCreateMappings property is set.
         /// </summary>
-        internal bool IsSetNatGatewayMappings() => this.NatGatewayMappings != null && (this.NatGatewayMappings.Count > 0 || !AWSConfigs.InitializeCollections);
-
-        /// <summary>
-        /// Gets and sets the property NoSourcePreservation. 
-        /// <para>
-        /// Indicates whether the firewall operates in proxy mode, in which the source IP address
-        /// of the traffic is not preserved. When this value is <c>TRUE</c>, the firewall proxies
-        /// traffic through a NAT gateway and uses the NAT gateway's IP address as the source
-        /// for traffic reaching the destination. 
-        /// </para>
-        /// </summary>
-        public bool? NoSourcePreservation { get; set; }
-
-        /// <summary>
-        /// Checks to see if the NoSourcePreservation property is set.
-        /// </summary>
-        internal bool IsSetNoSourcePreservation() => this.NoSourcePreservation.HasValue;
+        internal bool IsSetNatGatewayCreateMappings() => this.NatGatewayCreateMappings != null && (this.NatGatewayCreateMappings.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property NumberOfAssociations. 
@@ -281,8 +267,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ProxySettings. 
         /// <para>
-        /// The listener configuration for the firewall's proxy. This is set for proxy mode firewalls,
-        /// where <c>NoSourcePreservation</c> is <c>TRUE</c>. 
+        /// The proxy settings of a proxy mode firewall: its listeners and, if you specified them,
+        /// your own <c>CertificateArn</c> and <c>DomainName</c>.
         /// </para>
         /// </summary>
         public ProxySettings ProxySettings { get; set; }
@@ -396,10 +382,24 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetTransitGatewayOwnerAccountId() => this.TransitGatewayOwnerAccountId != null;
 
         /// <summary>
+        /// Gets and sets the property TransparentFilteringNatScope. 
+        /// <para>
+        /// How a proxy mode firewall handles traffic that isn't sent to its proxy listener. <c>NAT_ALL</c>
+        /// sends this traffic out through the firewall's NAT gateway after inspection. <c>NAT_NONE</c>
+        /// returns it to the firewall endpoint without address translation.
+        /// </para>
+        /// </summary>
+        public TransparentFilteringNatScope TransparentFilteringNatScope { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TransparentFilteringNatScope property is set.
+        /// </summary>
+        internal bool IsSetTransparentFilteringNatScope() => this.TransparentFilteringNatScope != null;
+
+        /// <summary>
         /// Gets and sets the property VpcEndpoint. 
         /// <para>
-        /// The VPC and subnets for the firewall endpoint. This is set for proxy mode firewalls,
-        /// where <c>NoSourcePreservation</c> is <c>TRUE</c>. 
+        /// The VPC and subnets for the endpoints of a proxy mode firewall.
         /// </para>
         /// </summary>
         public VpcEndpoint VpcEndpoint { get; set; }

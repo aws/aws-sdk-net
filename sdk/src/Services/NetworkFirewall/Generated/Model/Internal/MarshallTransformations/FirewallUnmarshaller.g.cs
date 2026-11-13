@@ -128,15 +128,9 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
-                    case "NatGatewayMappings":
-                        context.AddPathSegment("NatGatewayMappings");
-                        unmarshalledObject.NatGatewayMappings = new CborListUnmarshaller<NatGatewayMapping, NatGatewayMappingUnmarshaller>(NatGatewayMappingUnmarshaller.Instance).Unmarshall(context);
-                        context.PopPathSegment();
-                        break;
-
-                    case "NoSourcePreservation":
-                        context.AddPathSegment("NoSourcePreservation");
-                        unmarshalledObject.NoSourcePreservation = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                    case "NatGatewayCreateMappings":
+                        context.AddPathSegment("NatGatewayCreateMappings");
+                        unmarshalledObject.NatGatewayCreateMappings = new CborListUnmarshaller<NatGatewayCreateMapping, NatGatewayCreateMappingUnmarshaller>(NatGatewayCreateMappingUnmarshaller.Instance).Unmarshall(context);
                         context.PopPathSegment();
                         break;
 
@@ -179,6 +173,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     case "TransitGatewayOwnerAccountId":
                         context.AddPathSegment("TransitGatewayOwnerAccountId");
                         unmarshalledObject.TransitGatewayOwnerAccountId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "TransparentFilteringNatScope":
+                        context.AddPathSegment("TransparentFilteringNatScope");
+                        unmarshalledObject.TransparentFilteringNatScope = CborStringUnmarshaller.Instance.Unmarshall(context);
                         context.PopPathSegment();
                         break;
 

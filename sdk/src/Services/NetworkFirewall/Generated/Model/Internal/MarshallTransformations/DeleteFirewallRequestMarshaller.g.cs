@@ -67,6 +67,11 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             {
                 writer.WriteStartMap(null);
                 var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDeleteAssociatedNatGateways())
+                {
+                    context.Writer.WriteTextString("DeleteAssociatedNatGateways");
+                    context.Writer.WriteBoolean(publicRequest.DeleteAssociatedNatGateways.Value);
+                }
                 if (publicRequest.IsSetFirewallArn())
                 {
                     context.Writer.WriteTextString("FirewallArn");

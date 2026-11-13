@@ -65,6 +65,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndMap();
             }
 
+            if (requestObject.IsSetDefaultDecryptionBehavior())
+            {
+                context.Writer.WriteTextString("DefaultDecryptionBehavior");
+                context.Writer.WriteTextString(requestObject.DefaultDecryptionBehavior);
+            }
+
             if (requestObject.IsSetScopes())
             {
                 context.Writer.WriteTextString("Scopes");

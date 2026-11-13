@@ -48,6 +48,18 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetCertificateArn())
+            {
+                context.Writer.WriteTextString("CertificateArn");
+                context.Writer.WriteTextString(requestObject.CertificateArn);
+            }
+
+            if (requestObject.IsSetDomainName())
+            {
+                context.Writer.WriteTextString("DomainName");
+                context.Writer.WriteTextString(requestObject.DomainName);
+            }
+
             if (requestObject.IsSetListenerProperties())
             {
                 context.Writer.WriteTextString("ListenerProperties");

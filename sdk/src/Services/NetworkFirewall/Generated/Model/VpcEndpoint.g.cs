@@ -30,14 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// Contains the VPC and subnets for a proxy mode firewall endpoint. You use it in <c>CreateFirewall</c>
-    /// when <c>NoSourcePreservation</c> is <c>TRUE</c>, to specify where Network Firewall
-    /// creates the firewall endpoint. 
+    /// The VPC and subnets for the endpoints of a proxy mode firewall. You use this in <c>CreateFirewall</c>.
+    /// Network Firewall creates the firewall endpoints and the firewall's NAT gateways in
+    /// this VPC.
     /// 
     ///  
     /// <para>
-    /// This differs from <c>VpcEndpointAssociation</c>, which defines additional secondary
-    /// endpoints for a firewall in other VPCs. 
+    /// This differs from <c>VpcEndpointAssociation</c>, which defines additional endpoints
+    /// for a firewall in other VPCs.
     /// </para>
     /// </summary>
     public partial class VpcEndpoint
@@ -45,8 +45,9 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property SubnetMappings. 
         /// <para>
-        /// The subnets in which Network Firewall creates the firewall endpoint for a proxy mode
-        /// firewall. Each subnet must belong to a different Availability Zone in the VPC. 
+        /// The subnets where Network Firewall creates the firewall endpoints of a proxy mode
+        /// firewall. Specify one subnet for each Availability Zone, and a NAT gateway mapping
+        /// in each of those Availability Zones.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -66,8 +67,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The unique identifier of the VPC where Network Firewall creates the proxy mode firewall
-        /// endpoint. 
+        /// The ID of the VPC where Network Firewall creates the endpoints and NAT gateways of
+        /// a proxy mode firewall.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 128)]

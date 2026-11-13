@@ -77,6 +77,21 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("FirewallName");
                     context.Writer.WriteTextString(publicRequest.FirewallName);
                 }
+                if (publicRequest.IsSetNatGatewayCreateMappings())
+                {
+                    context.Writer.WriteTextString("NatGatewayCreateMappings");
+                    context.Writer.WriteStartArray(publicRequest.NatGatewayCreateMappings.Count);
+                    foreach (var publicRequestNatGatewayCreateMappingsListValue in publicRequest.NatGatewayCreateMappings)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = NatGatewayCreateMappingMarshaller.Instance;
+                        marshaller.Marshall(publicRequestNatGatewayCreateMappingsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
                 if (publicRequest.IsSetSubnetMappings())
                 {
                     context.Writer.WriteTextString("SubnetMappings");

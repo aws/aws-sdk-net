@@ -318,6 +318,47 @@ namespace Amazon.NetworkFirewall
     }
 
     /// <summary>
+    /// Constants used for properties of type DecryptionAction.
+    /// </summary>
+    public class DecryptionAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant BYPASS for DecryptionAction
+        /// </summary>
+        public static readonly DecryptionAction BYPASS = new DecryptionAction("BYPASS");
+
+        /// <summary>
+        /// Constant DECRYPT for DecryptionAction
+        /// </summary>
+        public static readonly DecryptionAction DECRYPT = new DecryptionAction("DECRYPT");
+
+        /// <summary>
+        /// Constructs a custom DecryptionAction for a value not among the defined constants.
+        /// </summary>
+        public DecryptionAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DecryptionAction FindValue(string value)
+        {
+            return FindValue<DecryptionAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DecryptionAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EnabledAnalysisType.
     /// </summary>
     public class EnabledAnalysisType : ConstantClass
@@ -2439,52 +2480,6 @@ namespace Amazon.NetworkFirewall
     }
 
     /// <summary>
-    /// Constants used for properties of type ProxyRulePhaseAction.
-    /// </summary>
-    public class ProxyRulePhaseAction : ConstantClass
-    {
-        /// <summary>
-        /// Constant ALERT for ProxyRulePhaseAction
-        /// </summary>
-        public static readonly ProxyRulePhaseAction ALERT = new ProxyRulePhaseAction("ALERT");
-
-        /// <summary>
-        /// Constant ALLOW for ProxyRulePhaseAction
-        /// </summary>
-        public static readonly ProxyRulePhaseAction ALLOW = new ProxyRulePhaseAction("ALLOW");
-
-        /// <summary>
-        /// Constant DENY for ProxyRulePhaseAction
-        /// </summary>
-        public static readonly ProxyRulePhaseAction DENY = new ProxyRulePhaseAction("DENY");
-
-        /// <summary>
-        /// Constructs a custom ProxyRulePhaseAction for a value not among the defined constants.
-        /// </summary>
-        public ProxyRulePhaseAction(string value) : base(value) { }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static ProxyRulePhaseAction FindValue(string value)
-        {
-            return FindValue<ProxyRulePhaseAction>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator ProxyRulePhaseAction(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-    /// <summary>
     /// Constants used for properties of type ProxyState.
     /// </summary>
     public class ProxyState : ConstantClass
@@ -2775,52 +2770,6 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Route53ResolvedIPValidationAction(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-    /// <summary>
-    /// Constants used for properties of type RuleGroupRequestPhase.
-    /// </summary>
-    public class RuleGroupRequestPhase : ConstantClass
-    {
-        /// <summary>
-        /// Constant POST_RES for RuleGroupRequestPhase
-        /// </summary>
-        public static readonly RuleGroupRequestPhase POST_RES = new RuleGroupRequestPhase("POST_RES");
-
-        /// <summary>
-        /// Constant PRE_DNS for RuleGroupRequestPhase
-        /// </summary>
-        public static readonly RuleGroupRequestPhase PRE_DNS = new RuleGroupRequestPhase("PRE_DNS");
-
-        /// <summary>
-        /// Constant PRE_REQ for RuleGroupRequestPhase
-        /// </summary>
-        public static readonly RuleGroupRequestPhase PRE_REQ = new RuleGroupRequestPhase("PRE_REQ");
-
-        /// <summary>
-        /// Constructs a custom RuleGroupRequestPhase for a value not among the defined constants.
-        /// </summary>
-        public RuleGroupRequestPhase(string value) : base(value) { }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static RuleGroupRequestPhase FindValue(string value)
-        {
-            return FindValue<RuleGroupRequestPhase>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator RuleGroupRequestPhase(string value)
         {
             return FindValue(value);
         }
@@ -3438,6 +3387,52 @@ namespace Amazon.NetworkFirewall
     }
 
     /// <summary>
+    /// Constants used for properties of type TLSInspectionScopeDeploymentMode.
+    /// </summary>
+    public class TLSInspectionScopeDeploymentMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL for TLSInspectionScopeDeploymentMode
+        /// </summary>
+        public static readonly TLSInspectionScopeDeploymentMode ALL = new TLSInspectionScopeDeploymentMode("ALL");
+
+        /// <summary>
+        /// Constant EXPLICIT_PROXY_ONLY for TLSInspectionScopeDeploymentMode
+        /// </summary>
+        public static readonly TLSInspectionScopeDeploymentMode EXPLICIT_PROXY_ONLY = new TLSInspectionScopeDeploymentMode("EXPLICIT_PROXY_ONLY");
+
+        /// <summary>
+        /// Constant TRANSPARENT_FIREWALL_ONLY for TLSInspectionScopeDeploymentMode
+        /// </summary>
+        public static readonly TLSInspectionScopeDeploymentMode TRANSPARENT_FIREWALL_ONLY = new TLSInspectionScopeDeploymentMode("TRANSPARENT_FIREWALL_ONLY");
+
+        /// <summary>
+        /// Constructs a custom TLSInspectionScopeDeploymentMode for a value not among the defined constants.
+        /// </summary>
+        public TLSInspectionScopeDeploymentMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TLSInspectionScopeDeploymentMode FindValue(string value)
+        {
+            return FindValue<TLSInspectionScopeDeploymentMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TLSInspectionScopeDeploymentMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type TargetType.
     /// </summary>
     public class TargetType : ConstantClass
@@ -3595,6 +3590,47 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TransitGatewayAttachmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TransparentFilteringNatScope.
+    /// </summary>
+    public class TransparentFilteringNatScope : ConstantClass
+    {
+        /// <summary>
+        /// Constant NAT_ALL for TransparentFilteringNatScope
+        /// </summary>
+        public static readonly TransparentFilteringNatScope NAT_ALL = new TransparentFilteringNatScope("NAT_ALL");
+
+        /// <summary>
+        /// Constant NAT_NONE for TransparentFilteringNatScope
+        /// </summary>
+        public static readonly TransparentFilteringNatScope NAT_NONE = new TransparentFilteringNatScope("NAT_NONE");
+
+        /// <summary>
+        /// Constructs a custom TransparentFilteringNatScope for a value not among the defined constants.
+        /// </summary>
+        public TransparentFilteringNatScope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransparentFilteringNatScope FindValue(string value)
+        {
+            return FindValue<TransparentFilteringNatScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransparentFilteringNatScope(string value)
         {
             return FindValue(value);
         }

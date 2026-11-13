@@ -519,6 +519,17 @@ namespace Amazon.NetworkFirewall
         /// for each subnet's Availability Zone, to redirect the traffic that's coming into and
         /// going out of the zone through the firewall endpoint. 
         /// </para>
+        ///  
+        /// <para>
+        /// For a proxy mode firewall, use this operation to add Availability Zones to the firewall.
+        /// For each subnet, specify a NAT gateway in <c>NatGatewayCreateMappings</c> in the same
+        /// Availability Zone. You can't add an Availability Zone that the firewall already uses.
+        /// The firewall keeps working in its other Availability Zones while Network Firewall
+        /// sets up the new one. If Network Firewall can't set up the new Availability Zone, it
+        /// removes the Availability Zone from the firewall. It also deletes the NAT gateway that
+        /// it created there. The Availability Zone's <c>Attachment</c> status shows the reason.
+        /// You can then add the Availability Zone again. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateSubnets service method.</param>
         /// <returns>The response from the AssociateSubnets service method, as returned by NetworkFirewall.</returns>
@@ -576,6 +587,17 @@ namespace Amazon.NetworkFirewall
         /// for each subnet's Availability Zone, to redirect the traffic that's coming into and
         /// going out of the zone through the firewall endpoint. 
         /// </para>
+        ///  
+        /// <para>
+        /// For a proxy mode firewall, use this operation to add Availability Zones to the firewall.
+        /// For each subnet, specify a NAT gateway in <c>NatGatewayCreateMappings</c> in the same
+        /// Availability Zone. You can't add an Availability Zone that the firewall already uses.
+        /// The firewall keeps working in its other Availability Zones while Network Firewall
+        /// sets up the new one. If Network Firewall can't set up the new Availability Zone, it
+        /// removes the Availability Zone from the firewall. It also deletes the NAT gateway that
+        /// it created there. The Availability Zone's <c>Attachment</c> status shows the reason.
+        /// You can then add the Availability Zone again. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateSubnets service method.</param>
         /// <param name="cancellationToken">
@@ -623,97 +645,6 @@ namespace Amazon.NetworkFirewall
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateSubnets">REST API Reference for AssociateSubnets Operation</seealso>
         Task<AssociateSubnetsResponse> AssociateSubnetsAsync(AssociateSubnetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Attaches <a>ProxyRuleGroup</a> resources to a <a>ProxyConfiguration</a> 
-        /// 
-        ///  
-        /// <para>
-        /// A Proxy Configuration defines the monitoring and protection behavior for a Proxy.
-        /// The details of the behavior are defined in the rule groups that you add to your configuration.
-        /// 
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the AttachRuleGroupsToProxyConfiguration service method.</param>
-        /// <returns>The response from the AttachRuleGroupsToProxyConfiguration service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AttachRuleGroupsToProxyConfiguration">REST API Reference for AttachRuleGroupsToProxyConfiguration Operation</seealso>
-        AttachRuleGroupsToProxyConfigurationResponse AttachRuleGroupsToProxyConfiguration(AttachRuleGroupsToProxyConfigurationRequest request);
-#endif
-
-        /// <summary>
-        /// Attaches <a>ProxyRuleGroup</a> resources to a <a>ProxyConfiguration</a> 
-        /// 
-        ///  
-        /// <para>
-        /// A Proxy Configuration defines the monitoring and protection behavior for a Proxy.
-        /// The details of the behavior are defined in the rule groups that you add to your configuration.
-        /// 
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the AttachRuleGroupsToProxyConfiguration service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the AttachRuleGroupsToProxyConfiguration service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AttachRuleGroupsToProxyConfiguration">REST API Reference for AttachRuleGroupsToProxyConfiguration Operation</seealso>
-        Task<AttachRuleGroupsToProxyConfigurationResponse> AttachRuleGroupsToProxyConfigurationAsync(AttachRuleGroupsToProxyConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -840,6 +771,17 @@ namespace Amazon.NetworkFirewall
         /// <para>
         /// To generate a report on the last 30 days of traffic monitored by a firewall, use <a>StartAnalysisReport</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// To create a proxy mode firewall, specify <c>VpcEndpoint</c> and <c>NatGatewayCreateMappings</c>
+        /// instead of <c>VpcId</c> and <c>SubnetMappings</c>. A proxy mode firewall is an explicit
+        /// forward proxy. Your clients send HTTP and HTTPS proxy requests to the firewall's proxy
+        /// DNS name, which <c>DescribeFirewall</c> returns in each Availability Zone's <c>Attachment</c>.
+        /// The firewall evaluates proxy traffic with the stateful rules in its firewall policy,
+        /// and sends allowed traffic out through the NAT gateway in the same Availability Zone.
+        /// Your clients don't need route table changes. In each Availability Zone, the firewall
+        /// has one endpoint and one NAT gateway, which Network Firewall creates for you. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFirewall service method.</param>
         /// <returns>The response from the CreateFirewall service method, as returned by NetworkFirewall.</returns>
@@ -917,6 +859,17 @@ namespace Amazon.NetworkFirewall
         ///  
         /// <para>
         /// To generate a report on the last 30 days of traffic monitored by a firewall, use <a>StartAnalysisReport</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a proxy mode firewall, specify <c>VpcEndpoint</c> and <c>NatGatewayCreateMappings</c>
+        /// instead of <c>VpcId</c> and <c>SubnetMappings</c>. A proxy mode firewall is an explicit
+        /// forward proxy. Your clients send HTTP and HTTPS proxy requests to the firewall's proxy
+        /// DNS name, which <c>DescribeFirewall</c> returns in each Availability Zone's <c>Attachment</c>.
+        /// The firewall evaluates proxy traffic with the stateful rules in its firewall policy,
+        /// and sends allowed traffic out through the NAT gateway in the same Availability Zone.
+        /// Your clients don't need route table changes. In each Availability Zone, the firewall
+        /// has one endpoint and one NAT gateway, which Network Firewall creates for you. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFirewall service method.</param>
@@ -1178,448 +1131,6 @@ namespace Amazon.NetworkFirewall
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewallPolicyV2">REST API Reference for CreateFirewallPolicyV2 Operation</seealso>
         Task<CreateFirewallPolicyV2Response> CreateFirewallPolicyV2Async(CreateFirewallPolicyV2Request request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Creates an Network Firewall <a>Proxy</a> 
-        /// 
-        ///  
-        /// <para>
-        /// Attaches a Proxy configuration to a NAT Gateway. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To manage a proxy's tags, use the standard Amazon Web Services resource tagging operations,
-        /// <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To retrieve information about proxies, use <a>ListProxies</a> and <a>DescribeProxy</a>.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateProxy service method.</param>
-        /// <returns>The response from the CreateProxy service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
-        /// Unable to perform the operation because doing so would violate a limit setting.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.UnsupportedOperationException">
-        /// The operation you requested isn't supported by Network Firewall.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxy">REST API Reference for CreateProxy Operation</seealso>
-        CreateProxyResponse CreateProxy(CreateProxyRequest request);
-#endif
-
-        /// <summary>
-        /// Creates an Network Firewall <a>Proxy</a> 
-        /// 
-        ///  
-        /// <para>
-        /// Attaches a Proxy configuration to a NAT Gateway. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To manage a proxy's tags, use the standard Amazon Web Services resource tagging operations,
-        /// <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To retrieve information about proxies, use <a>ListProxies</a> and <a>DescribeProxy</a>.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateProxy service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the CreateProxy service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
-        /// Unable to perform the operation because doing so would violate a limit setting.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.UnsupportedOperationException">
-        /// The operation you requested isn't supported by Network Firewall.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxy">REST API Reference for CreateProxy Operation</seealso>
-        Task<CreateProxyResponse> CreateProxyAsync(CreateProxyRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Creates an Network Firewall <a>ProxyConfiguration</a> 
-        /// 
-        ///  
-        /// <para>
-        /// A Proxy Configuration defines the monitoring and protection behavior for a Proxy.
-        /// The details of the behavior are defined in the rule groups that you add to your configuration.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// To manage a proxy configuration's tags, use the standard Amazon Web Services resource
-        /// tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To retrieve information about proxies, use <a>ListProxyConfigurations</a> and <a>DescribeProxyConfiguration</a>.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateProxyConfiguration service method.</param>
-        /// <returns>The response from the CreateProxyConfiguration service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
-        /// Unable to perform the operation because doing so would violate a limit setting.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyConfiguration">REST API Reference for CreateProxyConfiguration Operation</seealso>
-        CreateProxyConfigurationResponse CreateProxyConfiguration(CreateProxyConfigurationRequest request);
-#endif
-
-        /// <summary>
-        /// Creates an Network Firewall <a>ProxyConfiguration</a> 
-        /// 
-        ///  
-        /// <para>
-        /// A Proxy Configuration defines the monitoring and protection behavior for a Proxy.
-        /// The details of the behavior are defined in the rule groups that you add to your configuration.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// To manage a proxy configuration's tags, use the standard Amazon Web Services resource
-        /// tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To retrieve information about proxies, use <a>ListProxyConfigurations</a> and <a>DescribeProxyConfiguration</a>.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateProxyConfiguration service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the CreateProxyConfiguration service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
-        /// Unable to perform the operation because doing so would violate a limit setting.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyConfiguration">REST API Reference for CreateProxyConfiguration Operation</seealso>
-        Task<CreateProxyConfigurationResponse> CreateProxyConfigurationAsync(CreateProxyConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Creates an Network Firewall <a>ProxyRuleGroup</a> 
-        /// 
-        ///  
-        /// <para>
-        /// Collections of related proxy filtering rules. Rule groups help you manage and reuse
-        /// sets of rules across multiple proxy configurations. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To manage a proxy rule group's tags, use the standard Amazon Web Services resource
-        /// tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To retrieve information about proxy rule groups, use <a>ListProxyRuleGroups</a> and
-        /// <a>DescribeProxyRuleGroup</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To retrieve information about individual proxy rules, use <a>DescribeProxyRuleGroup</a>
-        /// and <a>DescribeProxyRule</a>.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateProxyRuleGroup service method.</param>
-        /// <returns>The response from the CreateProxyRuleGroup service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
-        /// Unable to perform the operation because doing so would violate a limit setting.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRuleGroup">REST API Reference for CreateProxyRuleGroup Operation</seealso>
-        CreateProxyRuleGroupResponse CreateProxyRuleGroup(CreateProxyRuleGroupRequest request);
-#endif
-
-        /// <summary>
-        /// Creates an Network Firewall <a>ProxyRuleGroup</a> 
-        /// 
-        ///  
-        /// <para>
-        /// Collections of related proxy filtering rules. Rule groups help you manage and reuse
-        /// sets of rules across multiple proxy configurations. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To manage a proxy rule group's tags, use the standard Amazon Web Services resource
-        /// tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To retrieve information about proxy rule groups, use <a>ListProxyRuleGroups</a> and
-        /// <a>DescribeProxyRuleGroup</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To retrieve information about individual proxy rules, use <a>DescribeProxyRuleGroup</a>
-        /// and <a>DescribeProxyRule</a>.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateProxyRuleGroup service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the CreateProxyRuleGroup service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
-        /// Unable to perform the operation because doing so would violate a limit setting.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRuleGroup">REST API Reference for CreateProxyRuleGroup Operation</seealso>
-        Task<CreateProxyRuleGroupResponse> CreateProxyRuleGroupAsync(CreateProxyRuleGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Creates Network Firewall <a>ProxyRule</a> resources. 
-        /// 
-        ///  
-        /// <para>
-        /// Attaches new proxy rule(s) to an existing proxy rule group. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To retrieve information about individual proxy rules, use <a>DescribeProxyRuleGroup</a>
-        /// and <a>DescribeProxyRule</a>.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateProxyRules service method.</param>
-        /// <returns>The response from the CreateProxyRules service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRules">REST API Reference for CreateProxyRules Operation</seealso>
-        CreateProxyRulesResponse CreateProxyRules(CreateProxyRulesRequest request);
-#endif
-
-        /// <summary>
-        /// Creates Network Firewall <a>ProxyRule</a> resources. 
-        /// 
-        ///  
-        /// <para>
-        /// Attaches new proxy rule(s) to an existing proxy rule group. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To retrieve information about individual proxy rules, use <a>DescribeProxyRuleGroup</a>
-        /// and <a>DescribeProxyRule</a>.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateProxyRules service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the CreateProxyRules service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRules">REST API Reference for CreateProxyRules Operation</seealso>
-        Task<CreateProxyRulesResponse> CreateProxyRulesAsync(CreateProxyRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -2079,6 +1590,12 @@ namespace Amazon.NetworkFirewall
         /// To delete a firewall, remove the delete protection if you need to using <a>UpdateFirewallDeleteProtection</a>,
         /// then delete the firewall by calling <a>DeleteFirewall</a>. 
         /// </para>
+        ///  
+        /// <para>
+        /// Deleting a proxy mode firewall detaches its NAT gateways. To also delete the NAT gateways
+        /// that Network Firewall created for the firewall, specify <c>DeleteAssociatedNatGateways</c>.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFirewall service method.</param>
         /// <returns>The response from the DeleteFirewall service method, as returned by NetworkFirewall.</returns>
@@ -2139,6 +1656,12 @@ namespace Amazon.NetworkFirewall
         /// <para>
         /// To delete a firewall, remove the delete protection if you need to using <a>UpdateFirewallDeleteProtection</a>,
         /// then delete the firewall by calling <a>DeleteFirewall</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Deleting a proxy mode firewall detaches its NAT gateways. To also delete the NAT gateways
+        /// that Network Firewall created for the firewall, specify <c>DeleteAssociatedNatGateways</c>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFirewall service method.</param>
@@ -2469,7 +1992,7 @@ namespace Amazon.NetworkFirewall
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Deletes the specified <a>Proxy</a>. 
+        /// Deletes the specified proxy. 
         /// 
         ///  
         /// <para>
@@ -2514,7 +2037,7 @@ namespace Amazon.NetworkFirewall
 #endif
 
         /// <summary>
-        /// Deletes the specified <a>Proxy</a>. 
+        /// Deletes the specified proxy. 
         /// 
         ///  
         /// <para>
@@ -2559,237 +2082,6 @@ namespace Amazon.NetworkFirewall
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxy">REST API Reference for DeleteProxy Operation</seealso>
         Task<DeleteProxyResponse> DeleteProxyAsync(DeleteProxyRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Deletes the specified <a>ProxyConfiguration</a>.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyConfiguration service method.</param>
-        /// <returns>The response from the DeleteProxyConfiguration service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyConfiguration">REST API Reference for DeleteProxyConfiguration Operation</seealso>
-        DeleteProxyConfigurationResponse DeleteProxyConfiguration(DeleteProxyConfigurationRequest request);
-#endif
-
-        /// <summary>
-        /// Deletes the specified <a>ProxyConfiguration</a>.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyConfiguration service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the DeleteProxyConfiguration service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyConfiguration">REST API Reference for DeleteProxyConfiguration Operation</seealso>
-        Task<DeleteProxyConfigurationResponse> DeleteProxyConfigurationAsync(DeleteProxyConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Deletes the specified <a>ProxyRuleGroup</a>.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyRuleGroup service method.</param>
-        /// <returns>The response from the DeleteProxyRuleGroup service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRuleGroup">REST API Reference for DeleteProxyRuleGroup Operation</seealso>
-        DeleteProxyRuleGroupResponse DeleteProxyRuleGroup(DeleteProxyRuleGroupRequest request);
-#endif
-
-        /// <summary>
-        /// Deletes the specified <a>ProxyRuleGroup</a>.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyRuleGroup service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the DeleteProxyRuleGroup service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRuleGroup">REST API Reference for DeleteProxyRuleGroup Operation</seealso>
-        Task<DeleteProxyRuleGroupResponse> DeleteProxyRuleGroupAsync(DeleteProxyRuleGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Deletes the specified <a>ProxyRule</a>(s). currently attached to a <a>ProxyRuleGroup</a>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyRules service method.</param>
-        /// <returns>The response from the DeleteProxyRules service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRules">REST API Reference for DeleteProxyRules Operation</seealso>
-        DeleteProxyRulesResponse DeleteProxyRules(DeleteProxyRulesRequest request);
-#endif
-
-        /// <summary>
-        /// Deletes the specified <a>ProxyRule</a>(s). currently attached to a <a>ProxyRuleGroup</a>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyRules service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the DeleteProxyRules service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRules">REST API Reference for DeleteProxyRules Operation</seealso>
-        Task<DeleteProxyRulesResponse> DeleteProxyRulesAsync(DeleteProxyRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -3777,239 +3069,6 @@ namespace Amazon.NetworkFirewall
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns the data objects for the specified proxy configuration.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyConfiguration service method.</param>
-        /// <returns>The response from the DescribeProxyConfiguration service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyConfiguration">REST API Reference for DescribeProxyConfiguration Operation</seealso>
-        DescribeProxyConfigurationResponse DescribeProxyConfiguration(DescribeProxyConfigurationRequest request);
-#endif
-
-        /// <summary>
-        /// Returns the data objects for the specified proxy configuration.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyConfiguration service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the DescribeProxyConfiguration service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyConfiguration">REST API Reference for DescribeProxyConfiguration Operation</seealso>
-        Task<DescribeProxyConfigurationResponse> DescribeProxyConfigurationAsync(DescribeProxyConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Returns the data objects for the specified proxy configuration for the specified proxy
-        /// rule group.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyRule service method.</param>
-        /// <returns>The response from the DescribeProxyRule service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRule">REST API Reference for DescribeProxyRule Operation</seealso>
-        DescribeProxyRuleResponse DescribeProxyRule(DescribeProxyRuleRequest request);
-#endif
-
-        /// <summary>
-        /// Returns the data objects for the specified proxy configuration for the specified proxy
-        /// rule group.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyRule service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the DescribeProxyRule service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRule">REST API Reference for DescribeProxyRule Operation</seealso>
-        Task<DescribeProxyRuleResponse> DescribeProxyRuleAsync(DescribeProxyRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Returns the data objects for the specified proxy rule group.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyRuleGroup service method.</param>
-        /// <returns>The response from the DescribeProxyRuleGroup service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRuleGroup">REST API Reference for DescribeProxyRuleGroup Operation</seealso>
-        DescribeProxyRuleGroupResponse DescribeProxyRuleGroup(DescribeProxyRuleGroupRequest request);
-#endif
-
-        /// <summary>
-        /// Returns the data objects for the specified proxy rule group.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyRuleGroup service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the DescribeProxyRuleGroup service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRuleGroup">REST API Reference for DescribeProxyRuleGroup Operation</seealso>
-        Task<DescribeProxyRuleGroupResponse> DescribeProxyRuleGroupAsync(DescribeProxyRuleGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
         /// Retrieves a resource policy that you created in a <a>PutResourcePolicy</a> request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy service method.</param>
@@ -4502,97 +3561,6 @@ namespace Amazon.NetworkFirewall
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Detaches <a>ProxyRuleGroup</a> resources from a <a>ProxyConfiguration</a> 
-        /// 
-        ///  
-        /// <para>
-        /// A Proxy Configuration defines the monitoring and protection behavior for a Proxy.
-        /// The details of the behavior are defined in the rule groups that you add to your configuration.
-        /// 
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DetachRuleGroupsFromProxyConfiguration service method.</param>
-        /// <returns>The response from the DetachRuleGroupsFromProxyConfiguration service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DetachRuleGroupsFromProxyConfiguration">REST API Reference for DetachRuleGroupsFromProxyConfiguration Operation</seealso>
-        DetachRuleGroupsFromProxyConfigurationResponse DetachRuleGroupsFromProxyConfiguration(DetachRuleGroupsFromProxyConfigurationRequest request);
-#endif
-
-        /// <summary>
-        /// Detaches <a>ProxyRuleGroup</a> resources from a <a>ProxyConfiguration</a> 
-        /// 
-        ///  
-        /// <para>
-        /// A Proxy Configuration defines the monitoring and protection behavior for a Proxy.
-        /// The details of the behavior are defined in the rule groups that you add to your configuration.
-        /// 
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DetachRuleGroupsFromProxyConfiguration service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the DetachRuleGroupsFromProxyConfiguration service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DetachRuleGroupsFromProxyConfiguration">REST API Reference for DetachRuleGroupsFromProxyConfiguration Operation</seealso>
-        Task<DetachRuleGroupsFromProxyConfigurationResponse> DetachRuleGroupsFromProxyConfigurationAsync(DetachRuleGroupsFromProxyConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
         /// Removes the specified Availability Zone associations from a transit gateway-attached
         /// firewall. This removes the firewall endpoints from these Availability Zones and stops
         /// traffic filtering in those zones. Before removing an Availability Zone, ensure you've
@@ -4712,7 +3680,16 @@ namespace Amazon.NetworkFirewall
         /// <summary>
         /// Removes the specified subnet associations from the firewall. This removes the firewall
         /// endpoints from the subnets and removes any network filtering protections that the
-        /// endpoints were providing.
+        /// endpoints were providing. 
+        /// 
+        ///  
+        /// <para>
+        /// For a proxy mode firewall, this also removes the firewall's proxy DNS record in the
+        /// Availability Zone and detaches the Availability Zone's NAT gateway from the firewall.
+        /// Network Firewall keeps the NAT gateway. You can't remove the firewall's last Availability
+        /// Zone. To do that, delete the firewall. If a VPC endpoint association exists in the
+        /// Availability Zone, delete it first. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateSubnets service method.</param>
         /// <returns>The response from the DisassociateSubnets service method, as returned by NetworkFirewall.</returns>
@@ -4758,7 +3735,16 @@ namespace Amazon.NetworkFirewall
         /// <summary>
         /// Removes the specified subnet associations from the firewall. This removes the firewall
         /// endpoints from the subnets and removes any network filtering protections that the
-        /// endpoints were providing.
+        /// endpoints were providing. 
+        /// 
+        ///  
+        /// <para>
+        /// For a proxy mode firewall, this also removes the firewall's proxy DNS record in the
+        /// Availability Zone and detaches the Availability Zone's NAT gateway from the firewall.
+        /// Network Firewall keeps the NAT gateway. You can't remove the firewall's last Availability
+        /// Zone. To do that, delete the firewall. If a VPC endpoint association exists in the
+        /// Availability Zone, delete it first. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateSubnets service method.</param>
         /// <param name="cancellationToken">
@@ -5480,243 +4466,6 @@ namespace Amazon.NetworkFirewall
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperations">REST API Reference for ListFlowOperations Operation</seealso>
         Task<ListFlowOperationsResponse> ListFlowOperationsAsync(ListFlowOperationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Retrieves the metadata for the proxies that you have defined. Depending on your setting
-        /// for max results and the number of proxies, a single call might not return the full
-        /// list.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListProxies service method.</param>
-        /// <returns>The response from the ListProxies service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxies">REST API Reference for ListProxies Operation</seealso>
-        ListProxiesResponse ListProxies(ListProxiesRequest request);
-#endif
-
-        /// <summary>
-        /// Retrieves the metadata for the proxies that you have defined. Depending on your setting
-        /// for max results and the number of proxies, a single call might not return the full
-        /// list.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListProxies service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the ListProxies service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxies">REST API Reference for ListProxies Operation</seealso>
-        Task<ListProxiesResponse> ListProxiesAsync(ListProxiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Retrieves the metadata for the proxy configuration that you have defined. Depending
-        /// on your setting for max results and the number of proxy configurations, a single call
-        /// might not return the full list.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListProxyConfigurations service method.</param>
-        /// <returns>The response from the ListProxyConfigurations service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyConfigurations">REST API Reference for ListProxyConfigurations Operation</seealso>
-        ListProxyConfigurationsResponse ListProxyConfigurations(ListProxyConfigurationsRequest request);
-#endif
-
-        /// <summary>
-        /// Retrieves the metadata for the proxy configuration that you have defined. Depending
-        /// on your setting for max results and the number of proxy configurations, a single call
-        /// might not return the full list.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListProxyConfigurations service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the ListProxyConfigurations service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyConfigurations">REST API Reference for ListProxyConfigurations Operation</seealso>
-        Task<ListProxyConfigurationsResponse> ListProxyConfigurationsAsync(ListProxyConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Retrieves the metadata for the proxy rule groups that you have defined. Depending
-        /// on your setting for max results and the number of proxy rule groups, a single call
-        /// might not return the full list.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListProxyRuleGroups service method.</param>
-        /// <returns>The response from the ListProxyRuleGroups service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyRuleGroups">REST API Reference for ListProxyRuleGroups Operation</seealso>
-        ListProxyRuleGroupsResponse ListProxyRuleGroups(ListProxyRuleGroupsRequest request);
-#endif
-
-        /// <summary>
-        /// Retrieves the metadata for the proxy rule groups that you have defined. Depending
-        /// on your setting for max results and the number of proxy rule groups, a single call
-        /// might not return the full list.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListProxyRuleGroups service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the ListProxyRuleGroups service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyRuleGroups">REST API Reference for ListProxyRuleGroups Operation</seealso>
-        Task<ListProxyRuleGroupsResponse> ListProxyRuleGroupsAsync(ListProxyRuleGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -7801,400 +6550,16 @@ namespace Amazon.NetworkFirewall
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates the properties of the specified proxy.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateProxy service method.</param>
-        /// <returns>The response from the UpdateProxy service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
+        /// Modifies the proxy settings of a proxy mode firewall. Use this operation to change
+        /// the ports and protocols on which the firewall's proxy listens for traffic. The new
+        /// listeners take effect without recreating the firewall.
         /// 
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// You specified an unsupported parameter name or value.
+        /// The <c>ProxySettings</c> that you provide replace the firewall's current proxy settings.
+        /// If you created the firewall with your own <c>CertificateArn</c> and <c>DomainName</c>,
+        /// you must specify the same values in every request. You can't change or remove them.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.UnsupportedOperationException">
-        /// The operation you requested isn't supported by Network Firewall.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxy">REST API Reference for UpdateProxy Operation</seealso>
-        UpdateProxyResponse UpdateProxy(UpdateProxyRequest request);
-#endif
-
-        /// <summary>
-        /// Updates the properties of the specified proxy.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateProxy service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the UpdateProxy service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.UnsupportedOperationException">
-        /// The operation you requested isn't supported by Network Firewall.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxy">REST API Reference for UpdateProxy Operation</seealso>
-        Task<UpdateProxyResponse> UpdateProxyAsync(UpdateProxyRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Updates the properties of the specified proxy configuration.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyConfiguration service method.</param>
-        /// <returns>The response from the UpdateProxyConfiguration service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyConfiguration">REST API Reference for UpdateProxyConfiguration Operation</seealso>
-        UpdateProxyConfigurationResponse UpdateProxyConfiguration(UpdateProxyConfigurationRequest request);
-#endif
-
-        /// <summary>
-        /// Updates the properties of the specified proxy configuration.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyConfiguration service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the UpdateProxyConfiguration service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyConfiguration">REST API Reference for UpdateProxyConfiguration Operation</seealso>
-        Task<UpdateProxyConfigurationResponse> UpdateProxyConfigurationAsync(UpdateProxyConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Updates the properties of the specified proxy rule.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRule service method.</param>
-        /// <returns>The response from the UpdateProxyRule service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRule">REST API Reference for UpdateProxyRule Operation</seealso>
-        UpdateProxyRuleResponse UpdateProxyRule(UpdateProxyRuleRequest request);
-#endif
-
-        /// <summary>
-        /// Updates the properties of the specified proxy rule.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRule service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the UpdateProxyRule service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRule">REST API Reference for UpdateProxyRule Operation</seealso>
-        Task<UpdateProxyRuleResponse> UpdateProxyRuleAsync(UpdateProxyRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Updates proxy rule group priorities within a proxy configuration.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRuleGroupPriorities service method.</param>
-        /// <returns>The response from the UpdateProxyRuleGroupPriorities service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRuleGroupPriorities">REST API Reference for UpdateProxyRuleGroupPriorities Operation</seealso>
-        UpdateProxyRuleGroupPrioritiesResponse UpdateProxyRuleGroupPriorities(UpdateProxyRuleGroupPrioritiesRequest request);
-#endif
-
-        /// <summary>
-        /// Updates proxy rule group priorities within a proxy configuration.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRuleGroupPriorities service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the UpdateProxyRuleGroupPriorities service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRuleGroupPriorities">REST API Reference for UpdateProxyRuleGroupPriorities Operation</seealso>
-        Task<UpdateProxyRuleGroupPrioritiesResponse> UpdateProxyRuleGroupPrioritiesAsync(UpdateProxyRuleGroupPrioritiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Updates proxy rule priorities within a proxy rule group.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRulePriorities service method.</param>
-        /// <returns>The response from the UpdateProxyRulePriorities service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRulePriorities">REST API Reference for UpdateProxyRulePriorities Operation</seealso>
-        UpdateProxyRulePrioritiesResponse UpdateProxyRulePriorities(UpdateProxyRulePrioritiesRequest request);
-#endif
-
-        /// <summary>
-        /// Updates proxy rule priorities within a proxy rule group.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRulePriorities service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the UpdateProxyRulePriorities service method, as returned by NetworkFirewall.</returns>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn't perform the operation because
-        /// of a system problem. Retry your request.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
-        /// The operation failed because of a problem with your request. Examples include: 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// You specified an unsupported parameter name or value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to update a property with a value that isn't among the available types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Your request references an ARN that is malformed, or corresponds to a resource that
-        /// isn't valid in the context of the request.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
-        /// Unable to locate a resource using the parameters that you provided.
-        /// </exception>
-        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
-        /// Unable to process the request due to throttling limitations.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRulePriorities">REST API Reference for UpdateProxyRulePriorities Operation</seealso>
-        Task<UpdateProxyRulePrioritiesResponse> UpdateProxyRulePrioritiesAsync(UpdateProxyRulePrioritiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Modifies the proxy listener configuration of a proxy mode firewall. Proxy mode firewalls
-        /// are created with <c>NoSourcePreservation</c> set to <c>TRUE</c>. Use this operation
-        /// to change the ports and protocols on which the firewall's proxy listens for traffic.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProxySettings service method.</param>
         /// <returns>The response from the UpdateProxySettings service method, as returned by NetworkFirewall.</returns>
@@ -8241,9 +6606,16 @@ namespace Amazon.NetworkFirewall
 #endif
 
         /// <summary>
-        /// Modifies the proxy listener configuration of a proxy mode firewall. Proxy mode firewalls
-        /// are created with <c>NoSourcePreservation</c> set to <c>TRUE</c>. Use this operation
-        /// to change the ports and protocols on which the firewall's proxy listens for traffic.
+        /// Modifies the proxy settings of a proxy mode firewall. Use this operation to change
+        /// the ports and protocols on which the firewall's proxy listens for traffic. The new
+        /// listeners take effect without recreating the firewall.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>ProxySettings</c> that you provide replace the firewall's current proxy settings.
+        /// If you created the firewall with your own <c>CertificateArn</c> and <c>DomainName</c>,
+        /// you must specify the same values in every request. You can't change or remove them.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProxySettings service method.</param>
         /// <param name="cancellationToken">

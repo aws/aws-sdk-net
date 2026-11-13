@@ -37,55 +37,32 @@ using Amazon.Extensions.CborProtocol.Internal.Transform;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ProxyRule Marshaller
+    /// DomainMatch Marshaller
     /// </summary>
-    public partial class ProxyRuleMarshaller : IRequestMarshaller<ProxyRule, CborMarshallerContext>
+    public partial class DomainMatchMarshaller : IRequestMarshaller<DomainMatch, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProxyRule requestObject, CborMarshallerContext context)
+        public void Marshall(DomainMatch requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetAction())
+            if (requestObject.IsSetDomains())
             {
-                context.Writer.WriteTextString("Action");
-                context.Writer.WriteTextString(requestObject.Action);
-            }
-
-            if (requestObject.IsSetConditions())
-            {
-                context.Writer.WriteTextString("Conditions");
-                context.Writer.WriteStartArray(requestObject.Conditions.Count);
-                foreach (var requestObjectConditionsListValue in requestObject.Conditions)
+                context.Writer.WriteTextString("Domains");
+                context.Writer.WriteStartArray(requestObject.Domains.Count);
+                foreach (var requestObjectDomainsListValue in requestObject.Domains)
                 {
-                    context.Writer.WriteStartMap(null);
-
-                    var marshaller = ProxyRuleConditionMarshaller.Instance;
-                    marshaller.Marshall(requestObjectConditionsListValue, context);
-
-                    context.Writer.WriteEndMap();
+                    context.Writer.WriteTextString(requestObjectDomainsListValue);
                 }
                 context.Writer.WriteEndArray();
-            }
-
-            if (requestObject.IsSetDescription())
-            {
-                context.Writer.WriteTextString("Description");
-                context.Writer.WriteTextString(requestObject.Description);
-            }
-
-            if (requestObject.IsSetProxyRuleName())
-            {
-                context.Writer.WriteTextString("ProxyRuleName");
-                context.Writer.WriteTextString(requestObject.ProxyRuleName);
             }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static ProxyRuleMarshaller Instance = new ProxyRuleMarshaller();
+        public readonly static DomainMatchMarshaller Instance = new DomainMatchMarshaller();
     }
 }

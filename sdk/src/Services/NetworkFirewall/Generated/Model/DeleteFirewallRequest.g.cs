@@ -40,10 +40,41 @@ namespace Amazon.NetworkFirewall.Model
     /// firewall endpoints. When the route tables no longer use the firewall endpoints, you
     /// can remove the firewall safely. </para> <para> To delete a firewall, remove the delete
     /// protection if you need to using <a>UpdateFirewallDeleteProtection</a>, then delete
-    /// the firewall by calling <a>DeleteFirewall</a>. </para>
+    /// the firewall by calling <a>DeleteFirewall</a>. </para> <para> Deleting a proxy mode
+    /// firewall detaches its NAT gateways. To also delete the NAT gateways that Network Firewall
+    /// created for the firewall, specify <c>DeleteAssociatedNatGateways</c>. </para>
     /// </summary>
     public partial class DeleteFirewallRequest : AmazonNetworkFirewallRequest
     {
+        /// <summary>
+        /// Gets and sets the property DeleteAssociatedNatGateways. 
+        /// <para>
+        /// Specifies whether to delete the NAT gateways that Network Firewall created for a proxy
+        /// mode firewall when you delete the firewall. You can choose from the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FALSE</c> - Network Firewall detaches the NAT gateways from the firewall and keeps
+        /// them. This is the default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TRUE</c> - Network Firewall also deletes the NAT gateways. The firewall status
+        /// stays <c>DELETING</c> until they're deleted. You need permission to call the Amazon
+        /// EC2 <c>DeleteNatGateway</c> action.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't specify <c>TRUE</c> for a firewall that isn't a proxy mode firewall.
+        /// </para>
+        /// </summary>
+        public bool? DeleteAssociatedNatGateways { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeleteAssociatedNatGateways property is set.
+        /// </summary>
+        internal bool IsSetDeleteAssociatedNatGateways() => this.DeleteAssociatedNatGateways.HasValue;
+
         /// <summary>
         /// Gets and sets the property FirewallArn. 
         /// <para>

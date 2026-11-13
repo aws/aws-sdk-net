@@ -62,6 +62,18 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 var propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "CertificateArn":
+                        context.AddPathSegment("CertificateArn");
+                        unmarshalledObject.CertificateArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "DomainName":
+                        context.AddPathSegment("DomainName");
+                        unmarshalledObject.DomainName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "ListenerProperties":
                         context.AddPathSegment("ListenerProperties");
                         unmarshalledObject.ListenerProperties = new CborListUnmarshaller<ListenerProperty, ListenerPropertyUnmarshaller>(ListenerPropertyUnmarshaller.Instance).Unmarshall(context);

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteProxy operation. Deletes the specified <a>Proxy</a>.
+    /// Container for the parameters to the DeleteProxy operation. Deletes the specified proxy.
     /// <para> Detaches a Proxy configuration from a NAT Gateway. </para>
     /// </summary>
     public partial class DeleteProxyRequest : AmazonNetworkFirewallRequest

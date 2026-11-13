@@ -36,17 +36,17 @@ using Amazon.Extensions.CborProtocol.Internal.Transform;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProxyRuleGroup Object
+    /// Response Unmarshaller for NatGatewayCreateMapping Object
     /// </summary>
-    public partial class ProxyRuleGroupUnmarshaller : ICborUnmarshaller<ProxyRuleGroup, CborUnmarshallerContext>
+    public partial class NatGatewayCreateMappingUnmarshaller : ICborUnmarshaller<NatGatewayCreateMapping, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ProxyRuleGroup Unmarshall(CborUnmarshallerContext context)
+        public NatGatewayCreateMapping Unmarshall(CborUnmarshallerContext context)
         {
-            var unmarshalledObject = new ProxyRuleGroup();
+            var unmarshalledObject = new NatGatewayCreateMapping();
             if (context.IsEmptyResponse) return null;
 
             var reader = context.Reader;
@@ -62,45 +62,21 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 var propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
-                    case "CreateTime":
-                        context.AddPathSegment("CreateTime");
-                        unmarshalledObject.CreateTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                    case "AllocationIds":
+                        context.AddPathSegment("AllocationIds");
+                        unmarshalledObject.AllocationIds = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
                         context.PopPathSegment();
                         break;
 
-                    case "DeleteTime":
-                        context.AddPathSegment("DeleteTime");
-                        unmarshalledObject.DeleteTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                    case "PrivateIps":
+                        context.AddPathSegment("PrivateIps");
+                        unmarshalledObject.PrivateIps = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
                         context.PopPathSegment();
                         break;
 
-                    case "Description":
-                        context.AddPathSegment("Description");
-                        unmarshalledObject.Description = CborStringUnmarshaller.Instance.Unmarshall(context);
-                        context.PopPathSegment();
-                        break;
-
-                    case "ProxyRuleGroupArn":
-                        context.AddPathSegment("ProxyRuleGroupArn");
-                        unmarshalledObject.ProxyRuleGroupArn = CborStringUnmarshaller.Instance.Unmarshall(context);
-                        context.PopPathSegment();
-                        break;
-
-                    case "ProxyRuleGroupName":
-                        context.AddPathSegment("ProxyRuleGroupName");
-                        unmarshalledObject.ProxyRuleGroupName = CborStringUnmarshaller.Instance.Unmarshall(context);
-                        context.PopPathSegment();
-                        break;
-
-                    case "Rules":
-                        context.AddPathSegment("Rules");
-                        unmarshalledObject.Rules = ProxyRulesByRequestPhaseUnmarshaller.Instance.Unmarshall(context);
-                        context.PopPathSegment();
-                        break;
-
-                    case "Tags":
-                        context.AddPathSegment("Tags");
-                        unmarshalledObject.Tags = new CborListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance).Unmarshall(context);
+                    case "SubnetId":
+                        context.AddPathSegment("SubnetId");
+                        unmarshalledObject.SubnetId = CborStringUnmarshaller.Instance.Unmarshall(context);
                         context.PopPathSegment();
                         break;
 
@@ -113,11 +89,11 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ProxyRuleGroupUnmarshaller _instance = new ProxyRuleGroupUnmarshaller();
+        private static NatGatewayCreateMappingUnmarshaller _instance = new NatGatewayCreateMappingUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static ProxyRuleGroupUnmarshaller Instance => _instance;
+        public static NatGatewayCreateMappingUnmarshaller Instance => _instance;
     }
 }

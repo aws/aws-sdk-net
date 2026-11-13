@@ -43,7 +43,15 @@ namespace Amazon.NetworkFirewall.Model
     /// tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
     /// </para> <para> To retrieve information about firewalls, use <a>ListFirewalls</a> and
     /// <a>DescribeFirewall</a>. </para> <para> To generate a report on the last 30 days of
-    /// traffic monitored by a firewall, use <a>StartAnalysisReport</a>. </para>
+    /// traffic monitored by a firewall, use <a>StartAnalysisReport</a>. </para> <para> To
+    /// create a proxy mode firewall, specify <c>VpcEndpoint</c> and <c>NatGatewayCreateMappings</c>
+    /// instead of <c>VpcId</c> and <c>SubnetMappings</c>. A proxy mode firewall is an explicit
+    /// forward proxy. Your clients send HTTP and HTTPS proxy requests to the firewall's proxy
+    /// DNS name, which <c>DescribeFirewall</c> returns in each Availability Zone's <c>Attachment</c>.
+    /// The firewall evaluates proxy traffic with the stateful rules in its firewall policy,
+    /// and sends allowed traffic out through the NAT gateway in the same Availability Zone.
+    /// Your clients don't need route table changes. In each Availability Zone, the firewall
+    /// has one endpoint and one NAT gateway, which Network Firewall creates for you. </para>
     /// </summary>
     public partial class CreateFirewallRequest : AmazonNetworkFirewallRequest
     {
@@ -204,11 +212,31 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetFirewallPolicyChangeProtection() => this.FirewallPolicyChangeProtection.HasValue;
 
         /// <summary>
-        /// Gets and sets the property NatGatewayMappings. 
+        /// Gets and sets the property NatGatewayCreateMappings. 
         /// <para>
-        /// The NAT gateways that the firewall uses to proxy traffic when <c>NoSourcePreservation</c>
-        /// is <c>TRUE</c>. Network Firewall attaches the firewall to each NAT gateway that you
-        /// specify, so that egress traffic is proxied through the NAT gateway. 
+        /// The NAT gateways that Network Firewall creates for a proxy mode firewall, one for
+        /// each Availability Zone. When you specify this, you create a proxy mode firewall. Destinations
+        /// see the IP address of the NAT gateway in the client's Availability Zone as the source
+        /// of the traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify one mapping for each Availability Zone in <c>VpcEndpoint</c>, and no other
+        /// Availability Zones. Each NAT gateway subnet must be in the <c>VpcEndpoint</c> VPC
+        /// and can't be one of the firewall endpoint subnets.
+        /// </para>
+        ///  
+        /// <para>
+        /// You need permission to call the Amazon EC2 <c>CreateNatGateway</c> action.
+        /// </para>
+        ///  
+        /// <para>
+        /// If Network Firewall can't set up an Availability Zone, for example because Amazon
+        /// EC2 rejects the NAT gateway, it removes the Availability Zone from the firewall. It
+        /// also deletes the NAT gateway that it created there. The Availability Zone's <c>Attachment</c>
+        /// status is <c>FAILED</c>, and its status message explains why. You can add the Availability
+        /// Zone again with <c>AssociateSubnets</c>. If no Availability Zone can be set up, the
+        /// firewall status is <c>FAILED</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -217,48 +245,25 @@ namespace Amazon.NetworkFirewall.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<NatGatewayMapping> NatGatewayMappings { get; set; } = AWSConfigs.InitializeCollections ? new List<NatGatewayMapping>() : null;
+        [AWSProperty(Min = 1, Max = 20)]
+        public List<NatGatewayCreateMapping> NatGatewayCreateMappings { get; set; } = AWSConfigs.InitializeCollections ? new List<NatGatewayCreateMapping>() : null;
 
         /// <summary>
-        /// Checks to see if the NatGatewayMappings property is set.
+        /// Checks to see if the NatGatewayCreateMappings property is set.
         /// </summary>
-        internal bool IsSetNatGatewayMappings() => this.NatGatewayMappings != null && (this.NatGatewayMappings.Count > 0 || !AWSConfigs.InitializeCollections);
-
-        /// <summary>
-        /// Gets and sets the property NoSourcePreservation. 
-        /// <para>
-        /// Optional. Indicates whether the firewall operates in proxy mode, in which the source
-        /// IP address of the traffic is not preserved. When set to <c>TRUE</c>, the firewall
-        /// proxies traffic through a NAT gateway and the traffic reaching the destination uses
-        /// the NAT gateway's IP address as the source. 
-        /// </para>
-        ///  
-        /// <para>
-        /// When you set this to <c>TRUE</c>, you must specify <c>NatGatewayMappings</c> and <c>VpcEndpoint</c>
-        /// instead of a top-level <c>VpcId</c> and <c>SubnetMappings</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// You can't change this setting after you create the firewall. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default value: <c>FALSE</c> 
-        /// </para>
-        /// </summary>
-        public bool? NoSourcePreservation { get; set; }
-
-        /// <summary>
-        /// Checks to see if the NoSourcePreservation property is set.
-        /// </summary>
-        internal bool IsSetNoSourcePreservation() => this.NoSourcePreservation.HasValue;
+        internal bool IsSetNatGatewayCreateMappings() => this.NatGatewayCreateMappings != null && (this.NatGatewayCreateMappings.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property ProxySettings. 
         /// <para>
-        /// The listener configuration for a proxy mode firewall, used when <c>NoSourcePreservation</c>
-        /// is <c>TRUE</c>. This specifies the ports and protocols on which the firewall's proxy
-        /// listens for traffic. 
+        /// The proxy settings for a proxy mode firewall: the ports and protocols on which the
+        /// firewall's proxy listens for traffic, and optionally your own domain name and certificate.
+        /// If you don't specify listeners, the firewall listens for HTTP on port 3128 and HTTPS
+        /// on port 8443.
+        /// </para>
+        ///  
+        /// <para>
+        /// To change the listeners later, use <c>UpdateProxySettings</c>.
         /// </para>
         /// </summary>
         public ProxySettings ProxySettings { get; set; }
@@ -354,16 +359,47 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetTransitGatewayId() => this.TransitGatewayId != null;
 
         /// <summary>
+        /// Gets and sets the property TransparentFilteringNatScope. 
+        /// <para>
+        /// How a proxy mode firewall handles traffic that isn't sent to its proxy listener. If
+        /// you don't specify a value, the firewall uses <c>NAT_ALL</c>. You can choose from the
+        /// following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>NAT_ALL</c> - After inspection, the firewall sends this traffic out through its
+        /// NAT gateway, which translates the source address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NAT_NONE</c> - After inspection, the firewall returns this traffic to the firewall
+        /// endpoint without address translation.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can specify this only for a proxy mode firewall, and you can't change it after
+        /// you create the firewall.
+        /// </para>
+        /// </summary>
+        public TransparentFilteringNatScope TransparentFilteringNatScope { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TransparentFilteringNatScope property is set.
+        /// </summary>
+        internal bool IsSetTransparentFilteringNatScope() => this.TransparentFilteringNatScope != null;
+
+        /// <summary>
         /// Gets and sets the property VpcEndpoint. 
         /// <para>
-        /// The VPC and subnets for the firewall endpoint, used when <c>NoSourcePreservation</c>
-        /// is <c>TRUE</c>. Network Firewall creates the firewall endpoint in the subnets that
-        /// you specify here. 
+        /// The VPC and subnets for the endpoints of a proxy mode firewall. Network Firewall creates
+        /// a firewall endpoint in each subnet that you specify. It also creates the firewall's
+        /// NAT gateways in this VPC, in the subnets that you specify in <c>NatGatewayCreateMappings</c>.
         /// </para>
         ///  
         /// <para>
-        /// For proxy mode firewalls, provide the firewall's VPC and endpoint subnets through
-        /// this parameter instead of the top-level <c>VpcId</c> and <c>SubnetMappings</c>. 
+        /// To create a proxy mode firewall, you must specify <c>VpcEndpoint</c> and <c>NatGatewayCreateMappings</c>,
+        /// and you must not specify the top-level <c>VpcId</c> and <c>SubnetMappings</c>. Specify
+        /// one subnet for each Availability Zone where you want to use the firewall.
         /// </para>
         /// </summary>
         public VpcEndpoint VpcEndpoint { get; set; }

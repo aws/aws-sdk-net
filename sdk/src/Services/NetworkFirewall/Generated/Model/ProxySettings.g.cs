@@ -30,15 +30,86 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// The listener configuration for a proxy mode firewall. This specifies the ports and
-    /// protocols on which the firewall's proxy listens for traffic.
+    /// The proxy settings of a proxy mode firewall: the ports and protocols on which the
+    /// firewall's proxy listens for traffic, and optionally your own domain name and certificate.
     /// </summary>
     public partial class ProxySettings
     {
         /// <summary>
+        /// Gets and sets the property CertificateArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the certificate that the firewall's HTTPS proxy
+        /// listener presents to clients. The certificate must be an Certificate Manager (ACM)
+        /// certificate in the same account and Region as the firewall. Its subject alternative
+        /// names must cover <c>DomainName</c>, either exactly or with a wildcard that matches
+        /// exactly one label. For example, <c>*.example.com</c> covers <c>proxy.example.com</c>.
+        /// If you don't specify this, Network Firewall uses a certificate that it manages for
+        /// a domain name that it generates.
+        /// </para>
+        ///  
+        /// <para>
+        /// You manage and renew the certificate in ACM, and Network Firewall uses renewed certificates
+        /// automatically. While the firewall uses the certificate, you can't delete it from ACM.
+        /// Your clients must trust the certificate's certificate authority.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <c>CertificateArn</c>, you must also specify <c>DomainName</c>. You
+        /// can set them only when you create the firewall. When you call <c>UpdateProxySettings</c>,
+        /// specify the same values.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string CertificateArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CertificateArn property is set.
+        /// </summary>
+        internal bool IsSetCertificateArn() => this.CertificateArn != null;
+
+        /// <summary>
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The domain name that your clients use to reach the firewall's proxy. The name must
+        /// have at least two labels and at most 253 characters. It can't contain a wildcard or
+        /// use the <c>proxy-<i>id</i>.nfw.<i>region</i>.amazonaws.com</c> format, and the certificate
+        /// in <c>CertificateArn</c> must cover it. If you don't specify this, Network Firewall
+        /// generates a domain name.
+        /// </para>
+        ///  
+        /// <para>
+        /// Network Firewall creates the Route 53 private hosted zones that resolve this name
+        /// to the firewall endpoints, so you don't need to configure DNS. A VPC can have only
+        /// one private hosted zone with a given name. If a VPC that the firewall serves already
+        /// has one with this name, Network Firewall can't set up the Availability Zones in that
+        /// VPC.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <c>DomainName</c>, you must also specify <c>CertificateArn</c>. You
+        /// can set them only when you create the firewall. When you call <c>UpdateProxySettings</c>,
+        /// specify the same values.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 253)]
+        public string DomainName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DomainName property is set.
+        /// </summary>
+        internal bool IsSetDomainName() => this.DomainName != null;
+
+        /// <summary>
         /// Gets and sets the property ListenerProperties. 
         /// <para>
-        /// Listener properties for HTTP and HTTPS traffic. 
+        /// The listeners of the firewall's proxy. Specify at least one listener, and at most
+        /// one HTTP listener and one HTTPS listener. Each listener needs a port from 1 to 65535,
+        /// and the two listeners must use different ports.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify listeners when you create the firewall, the firewall listens
+        /// for HTTP on port 3128 and HTTPS on port 8443.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

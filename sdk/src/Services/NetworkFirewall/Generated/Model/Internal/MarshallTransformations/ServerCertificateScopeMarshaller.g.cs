@@ -48,6 +48,18 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetDecryptionAction())
+            {
+                context.Writer.WriteTextString("DecryptionAction");
+                context.Writer.WriteTextString(requestObject.DecryptionAction);
+            }
+
+            if (requestObject.IsSetDeploymentMode())
+            {
+                context.Writer.WriteTextString("DeploymentMode");
+                context.Writer.WriteTextString(requestObject.DeploymentMode);
+            }
+
             if (requestObject.IsSetDestinationPorts())
             {
                 context.Writer.WriteTextString("DestinationPorts");
@@ -78,6 +90,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetDomainMatch())
+            {
+                context.Writer.WriteTextString("DomainMatch");
+                context.Writer.WriteStartMap(null);
+
+                var marshaller = DomainMatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.DomainMatch, context);
+
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetProtocols())

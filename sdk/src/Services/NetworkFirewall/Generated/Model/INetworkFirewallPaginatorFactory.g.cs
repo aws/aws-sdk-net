@@ -81,24 +81,6 @@ namespace Amazon.NetworkFirewall.Model
         IListFlowOperationsPaginator ListFlowOperations(ListFlowOperationsRequest request);
 
         /// <summary>
-        /// Paginator for ListProxies operation
-        /// </summary>
-        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
-        IListProxiesPaginator ListProxies(ListProxiesRequest request);
-
-        /// <summary>
-        /// Paginator for ListProxyConfigurations operation
-        /// </summary>
-        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
-        IListProxyConfigurationsPaginator ListProxyConfigurations(ListProxyConfigurationsRequest request);
-
-        /// <summary>
-        /// Paginator for ListProxyRuleGroups operation
-        /// </summary>
-        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
-        IListProxyRuleGroupsPaginator ListProxyRuleGroups(ListProxyRuleGroupsRequest request);
-
-        /// <summary>
         /// Paginator for ListRuleGroups operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

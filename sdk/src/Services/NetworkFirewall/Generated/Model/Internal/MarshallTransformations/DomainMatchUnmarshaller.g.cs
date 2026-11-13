@@ -36,17 +36,17 @@ using Amazon.Extensions.CborProtocol.Internal.Transform;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProxyRulesByRequestPhase Object
+    /// Response Unmarshaller for DomainMatch Object
     /// </summary>
-    public partial class ProxyRulesByRequestPhaseUnmarshaller : ICborUnmarshaller<ProxyRulesByRequestPhase, CborUnmarshallerContext>
+    public partial class DomainMatchUnmarshaller : ICborUnmarshaller<DomainMatch, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ProxyRulesByRequestPhase Unmarshall(CborUnmarshallerContext context)
+        public DomainMatch Unmarshall(CborUnmarshallerContext context)
         {
-            var unmarshalledObject = new ProxyRulesByRequestPhase();
+            var unmarshalledObject = new DomainMatch();
             if (context.IsEmptyResponse) return null;
 
             var reader = context.Reader;
@@ -62,21 +62,9 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 var propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
-                    case "PostRESPONSE":
-                        context.AddPathSegment("PostRESPONSE");
-                        unmarshalledObject.PostRESPONSE = new CborListUnmarshaller<ProxyRule, ProxyRuleUnmarshaller>(ProxyRuleUnmarshaller.Instance).Unmarshall(context);
-                        context.PopPathSegment();
-                        break;
-
-                    case "PreDNS":
-                        context.AddPathSegment("PreDNS");
-                        unmarshalledObject.PreDNS = new CborListUnmarshaller<ProxyRule, ProxyRuleUnmarshaller>(ProxyRuleUnmarshaller.Instance).Unmarshall(context);
-                        context.PopPathSegment();
-                        break;
-
-                    case "PreREQUEST":
-                        context.AddPathSegment("PreREQUEST");
-                        unmarshalledObject.PreREQUEST = new CborListUnmarshaller<ProxyRule, ProxyRuleUnmarshaller>(ProxyRuleUnmarshaller.Instance).Unmarshall(context);
+                    case "Domains":
+                        context.AddPathSegment("Domains");
+                        unmarshalledObject.Domains = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
                         context.PopPathSegment();
                         break;
 
@@ -89,11 +77,11 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ProxyRulesByRequestPhaseUnmarshaller _instance = new ProxyRulesByRequestPhaseUnmarshaller();
+        private static DomainMatchUnmarshaller _instance = new DomainMatchUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static ProxyRulesByRequestPhaseUnmarshaller Instance => _instance;
+        public static DomainMatchUnmarshaller Instance => _instance;
     }
 }

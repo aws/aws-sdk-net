@@ -74,6 +74,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "DefaultDecryptionBehavior":
+                        context.AddPathSegment("DefaultDecryptionBehavior");
+                        unmarshalledObject.DefaultDecryptionBehavior = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "Scopes":
                         context.AddPathSegment("Scopes");
                         unmarshalledObject.Scopes = new CborListUnmarshaller<ServerCertificateScope, ServerCertificateScopeUnmarshaller>(ServerCertificateScopeUnmarshaller.Instance).Unmarshall(context);

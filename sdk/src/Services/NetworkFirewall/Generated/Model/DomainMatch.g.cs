@@ -30,33 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// This is the response object from the ListProxies operation.
+    /// The domains that a <a>ServerCertificateScope</a> matches for SSL/TLS inspection on
+    /// a proxy mode firewall.
     /// </summary>
-    public partial class ListProxiesResponse : AmazonWebServiceResponse
+    public partial class DomainMatch
     {
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Domains. 
         /// <para>
-        /// When you request a list of objects with a <c>MaxResults</c> setting, if the number
-        /// of objects that are still available for retrieval exceeds the maximum you requested,
-        /// Network Firewall returns a <c>NextToken</c> value in the response. To retrieve the
-        /// next batch of objects, use the token returned from the prior request in your next
-        /// request.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min = 1, Max = 4096)]
-        public string NextToken { get; set; }
-
-        /// <summary>
-        /// Checks to see if the NextToken property is set.
-        /// </summary>
-        internal bool IsSetNextToken() => this.NextToken != null;
-
-        /// <summary>
-        /// Gets and sets the property Proxies. 
-        /// <para>
-        /// The metadata for the proxies. Depending on your setting for max results and the number
-        /// of proxies that you have, this might not be the full list. 
+        /// The domains to match. You can specify an exact domain, such as <c>example.com</c>,
+        /// or a domain with a single leading wildcard label, such as <c>*.example.com</c>. You
+        /// can specify from 1 to 50 domains, and each domain can be up to 255 characters long.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -65,11 +49,12 @@ namespace Amazon.NetworkFirewall.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<ProxyMetadata> Proxies { get; set; } = AWSConfigs.InitializeCollections ? new List<ProxyMetadata>() : null;
+        [AWSProperty(Required = true, Min = 1, Max = 50)]
+        public List<string> Domains { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Checks to see if the Proxies property is set.
+        /// Checks to see if the Domains property is set.
         /// </summary>
-        internal bool IsSetProxies() => this.Proxies != null && (this.Proxies.Count > 0 || !AWSConfigs.InitializeCollections);
+        internal bool IsSetDomains() => this.Domains != null && (this.Domains.Count > 0 || !AWSConfigs.InitializeCollections);
     }
 }

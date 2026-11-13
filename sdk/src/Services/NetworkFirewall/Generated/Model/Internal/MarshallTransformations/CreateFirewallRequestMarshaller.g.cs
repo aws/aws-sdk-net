@@ -132,25 +132,20 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("FirewallPolicyChangeProtection");
                     context.Writer.WriteBoolean(publicRequest.FirewallPolicyChangeProtection.Value);
                 }
-                if (publicRequest.IsSetNatGatewayMappings())
+                if (publicRequest.IsSetNatGatewayCreateMappings())
                 {
-                    context.Writer.WriteTextString("NatGatewayMappings");
-                    context.Writer.WriteStartArray(publicRequest.NatGatewayMappings.Count);
-                    foreach (var publicRequestNatGatewayMappingsListValue in publicRequest.NatGatewayMappings)
+                    context.Writer.WriteTextString("NatGatewayCreateMappings");
+                    context.Writer.WriteStartArray(publicRequest.NatGatewayCreateMappings.Count);
+                    foreach (var publicRequestNatGatewayCreateMappingsListValue in publicRequest.NatGatewayCreateMappings)
                     {
                         context.Writer.WriteStartMap(null);
 
-                        var marshaller = NatGatewayMappingMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNatGatewayMappingsListValue, context);
+                        var marshaller = NatGatewayCreateMappingMarshaller.Instance;
+                        marshaller.Marshall(publicRequestNatGatewayCreateMappingsListValue, context);
 
                         context.Writer.WriteEndMap();
                     }
                     context.Writer.WriteEndArray();
-                }
-                if (publicRequest.IsSetNoSourcePreservation())
-                {
-                    context.Writer.WriteTextString("NoSourcePreservation");
-                    context.Writer.WriteBoolean(publicRequest.NoSourcePreservation.Value);
                 }
                 if (publicRequest.IsSetProxySettings())
                 {
@@ -201,6 +196,11 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WriteTextString("TransitGatewayId");
                     context.Writer.WriteTextString(publicRequest.TransitGatewayId);
+                }
+                if (publicRequest.IsSetTransparentFilteringNatScope())
+                {
+                    context.Writer.WriteTextString("TransparentFilteringNatScope");
+                    context.Writer.WriteTextString(publicRequest.TransparentFilteringNatScope);
                 }
                 if (publicRequest.IsSetVpcEndpoint())
                 {
