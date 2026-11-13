@@ -81,6 +81,20 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("EventBridgePutEventsV2Parameters", targetDepth, ref reader))
+                {
+                    var unmarshaller = EventBridgePutEventsV2ParametersUnmarshaller.Instance;
+                    unmarshalledObject.EventBridgePutEventsV2Parameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("EventBridgePutRawEventsParameters", targetDepth, ref reader))
+                {
+                    var unmarshaller = EventBridgePutRawEventsParametersUnmarshaller.Instance;
+                    unmarshalledObject.EventBridgePutRawEventsParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Input", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

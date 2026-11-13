@@ -39,7 +39,7 @@ namespace Amazon.Scheduler.Model
         /// <para>
         /// A cluster query language expression to apply to the constraint. You cannot specify
         /// an expression if the constraint type is <c>distinctInstance</c>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/latest/developerguide/cluster-query-language.html">Cluster
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
         /// query language</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         /// </summary>

@@ -84,6 +84,28 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetEventBridgePutEventsV2Parameters())
+            {
+                context.Writer.WritePropertyName("EventBridgePutEventsV2Parameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EventBridgePutEventsV2ParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.EventBridgePutEventsV2Parameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetEventBridgePutRawEventsParameters())
+            {
+                context.Writer.WritePropertyName("EventBridgePutRawEventsParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EventBridgePutRawEventsParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.EventBridgePutRawEventsParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetInput())
             {
                 context.Writer.WritePropertyName("Input");
