@@ -451,6 +451,111 @@ namespace AWSSDK.UnitTests
         }
 
         // -----------------------------------------------------------------------
+        // String hashing (stack / pooled buffer paths on .NET 8+)
+        // -----------------------------------------------------------------------
+
+        // Straddle the stack/pool threshold, and mix in multi-byte characters so the UTF-8 byte count
+        // differs from the string length (including a surrogate pair).
+        public static IEnumerable<object[]> HashInputs()
+        {
+            foreach (var length in new[] { 1, 100, 340, 341, 342, 1024, 1025, 5000 })
+            {
+                yield return new object[] { new string('a', length) };
+            }
+
+            foreach (var repeats in new[] { 3, 170, 171, 172, 400 })
+            {
+                yield return new object[] { string.Concat(Enumerable.Repeat("a\u00e9\u20ac\U0001F600", repeats)) };
+            }
+        }
+
+        [TestMethod]
+        [DynamicData(nameof(HashInputs))]
+        public void ComputeHash_String_MatchesHashOfUtf8Bytes(string data)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                CollectionAssert.AreEqual(sha256.ComputeHash(Encoding.UTF8.GetBytes(data)), AWS4Signer.ComputeHash(data));
+            }
+        }
+
+        [TestMethod]
+        public void ComputeHash_String_EmptyMatchesEmptyBodyHash()
+        {
+            Assert.AreEqual(AWS4Signer.EmptyBodySha256, AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(string.Empty), true));
+        }
+
+        [TestMethod]
+        public void ComputeHash_String_NullThrows()
+        {
+            Assert.ThrowsExactly<ArgumentNullException>(() => AWS4Signer.ComputeHash((string)null));
+        }
+
+        [TestMethod]
+        public void ComputeSignature_CanonicalRequestAboveStackLimit_MatchesIndependentHmac()
+        {
+            // Multi-byte header values push the canonical request well past the stack buffer limit.
+            var canonicalRequest = "PUT\n/key\n\nx-amz-meta-a:" + string.Concat(Enumerable.Repeat("\u00e9\u20ac\U0001F600", 300)) + "\n\nhost;x-amz-meta-a\nUNSIGNED-PAYLOAD";
+            Assert.AreEqual(
+                IndependentSignature("secret-large", "us-east-1", SigningTestDate, canonicalRequest),
+                Sign("secret-large", "us-east-1", SigningTestDate, canonicalRequest).Signature);
+        }
+
+        [TestMethod]
+        public void ComputeSignature_MultiByteRegion_MatchesIndependentHmac()
+        {
+            Assert.AreEqual(
+                IndependentSignature("secret-mb", "us-\u00e9\u20ac-1", SigningTestDate, "canonical-request"),
+                Sign("secret-mb", "us-\u00e9\u20ac-1", SigningTestDate, "canonical-request").Signature);
+        }
+
+#if NET8_0_OR_GREATER
+        [TestMethod]
+        public void ComputeHash_String_LargeInput_DoesNotLeaveDataInPooledBuffer()
+        {
+            // The pooled buffer that held the encoded string must be cleared before it is returned:
+            // canonical requests can contain the session token header.
+            var data = "x-amz-security-token:SECRET-SESSION-TOKEN" + new string('a', 4000);
+            var pool = new RecordingArrayPool();
+            var sharedPool = AWS4Signer.Utf8Buffer.Pool;
+            AWS4Signer.Utf8Buffer.Pool = pool;
+            try
+            {
+                AWS4Signer.ComputeHash(data);
+            }
+            finally
+            {
+                AWS4Signer.Utf8Buffer.Pool = sharedPool;
+            }
+
+            Assert.IsNotNull(pool.Rented, "A buffer should have been rented for an input above the stack limit.");
+            Assert.AreSame(pool.Rented, pool.Returned, "The rented buffer should have been returned to the pool.");
+            CollectionAssert.AreEqual(new byte[pool.Returned.Length], pool.Returned);
+        }
+
+        // Hands out a fresh zeroed array and records the buffer that comes back, so the test can
+        // inspect the exact buffer the signer used rather than relying on ArrayPool.Shared's caching.
+        private sealed class RecordingArrayPool : System.Buffers.ArrayPool<byte>
+        {
+            public byte[] Rented { get; private set; }
+
+            public byte[] Returned { get; private set; }
+
+            public override byte[] Rent(int minimumLength)
+            {
+                Assert.IsNull(Rented, "Only one buffer should be rented.");
+                return Rented = new byte[minimumLength + 64];
+            }
+
+            public override void Return(byte[] array, bool clearArray = false)
+            {
+                Assert.IsNull(Returned, "Only one buffer should be returned.");
+                Returned = array;
+            }
+        }
+#endif
+
+        // -----------------------------------------------------------------------
         // Testee shim
         // -----------------------------------------------------------------------
 

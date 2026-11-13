@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Text;
+using System.Threading;
 using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Metrics;
@@ -36,6 +37,13 @@ namespace Amazon.Runtime.Internal
         // AWS_LAMBDA_FUNCTION_NAME is set by the Lambda runtime before the process starts and doesn't change
         // for the life of the execution environment, so it's read once instead of on every request.
         private static bool _isRunningInLambda = IsLambdaFunctionNameSet();
+
+        // AWS_LAMBDA_MAX_CONCURRENCY is likewise fixed for the life of the execution environment. It is read lazily
+        // on the first request (rather than at type initialization) and cached in _lambdaMaxConcurrencyState.
+        private const int LambdaMaxConcurrencyUnread = 0;
+        private const int LambdaMaxConcurrencyUnset = 1;
+        private const int LambdaMaxConcurrencySet = 2;
+        private static int _lambdaMaxConcurrencyState = LambdaMaxConcurrencyUnread;
 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler
@@ -143,7 +151,7 @@ namespace Amazon.Runtime.Internal
                 if (_isRunningInLambda)
                 {
                     string amznTraceId;
-                    if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY)))
+                    if (IsLambdaMaxConcurrencySet())
                     {
                         amznTraceId = SDKTaskContext.Default.Get(EnvironmentVariables._X_AMZN_TRACE_ID)?.ToString() ??
                                             Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
@@ -162,12 +170,27 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
-        /// Re-reads the AWS_LAMBDA_FUNCTION_NAME environment variable so that the next request picks up
-        /// a change to it. Used by tests that set the variable at runtime.
+        /// Resets cached Lambda environment state so that the next request re-reads the environment variables.
+        /// Used by tests that set the variables at runtime.
         /// </summary>
-        internal static void ResetIsRunningInLambda()
+        internal static void ResetLambdaEnvironmentCache()
         {
             _isRunningInLambda = IsLambdaFunctionNameSet();
+            Volatile.Write(ref _lambdaMaxConcurrencyState, LambdaMaxConcurrencyUnread);
+        }
+
+        private static bool IsLambdaMaxConcurrencySet()
+        {
+            var state = Volatile.Read(ref _lambdaMaxConcurrencyState);
+            if (state == LambdaMaxConcurrencyUnread)
+            {
+                state = string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY))
+                    ? LambdaMaxConcurrencyUnset
+                    : LambdaMaxConcurrencySet;
+                Volatile.Write(ref _lambdaMaxConcurrencyState, state);
+            }
+
+            return state == LambdaMaxConcurrencySet;
         }
 
         private static bool IsLambdaFunctionNameSet()
