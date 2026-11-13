@@ -39,10 +39,26 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property ProfileId. 
         /// <para>
-        /// The unique identifier of the profile.
+        /// The profile to act on. You can specify one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The profile ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The profile ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alias ARN of the profile.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// An ARN must be for a profile in your account and Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 36, Max = 36)]
+        [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string ProfileId { get; set; }
 
         /// <summary>

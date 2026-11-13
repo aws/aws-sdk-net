@@ -60,6 +60,20 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("aliasArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AliasArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("aliasName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AliasName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("attributeMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AttributeMapping, AttributeMappingUnmarshaller>(AttributeMappingUnmarshaller.Instance);
@@ -106,6 +120,13 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("previousAliasName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreviousAliasName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

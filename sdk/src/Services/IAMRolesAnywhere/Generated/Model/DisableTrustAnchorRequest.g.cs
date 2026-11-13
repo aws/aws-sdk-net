@@ -40,10 +40,26 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property TrustAnchorId. 
         /// <para>
-        /// The unique identifier of the trust anchor.
+        /// The trust anchor to act on. You can specify one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The trust anchor ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The trust anchor ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alias ARN of the trust anchor.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// An ARN must be for a trust anchor in your account and Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 36, Max = 36)]
+        [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string TrustAnchorId { get; set; }
 
         /// <summary>

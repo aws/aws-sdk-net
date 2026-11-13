@@ -35,6 +35,43 @@ namespace Amazon.IAMRolesAnywhere.Model
     public partial class TrustAnchorDetail
     {
         /// <summary>
+        /// Gets and sets the property AliasArn. 
+        /// <para>
+        /// The alias ARN of the trust anchor, in the form <c>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/trust-anchor/<i>alias-name</i>
+        /// </c>. Present only if the trust anchor has an alias.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the alias ARN in place of the resource ID or ARN in the request parameters
+        /// whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity
+        /// and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't
+        /// apply to the resource that holds the alias. Write policies with the ARN that contains
+        /// the resource ID instead.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1011)]
+        public string AliasArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AliasArn property is set.
+        /// </summary>
+        internal bool IsSetAliasArn() => this.AliasArn != null;
+
+        /// <summary>
+        /// Gets and sets the property AliasName. 
+        /// <para>
+        /// The alias of the trust anchor. Present only if the trust anchor has an alias.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 256)]
+        public string AliasName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AliasName property is set.
+        /// </summary>
+        internal bool IsSetAliasName() => this.AliasName != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The ISO-8601 timestamp when the trust anchor was created. 
@@ -109,6 +146,23 @@ namespace Amazon.IAMRolesAnywhere.Model
         internal bool IsSetNotificationSettings() => this.NotificationSettings != null && (this.NotificationSettings.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property PreviousAliasName. 
+        /// <para>
+        /// The alias that the resource had before the update request. IAM Roles Anywhere returns
+        /// this value only in the response to an update request that changed or removed an existing
+        /// alias. It isn't returned when the alias was unchanged, when the resource had no alias
+        /// before the request, or by other operations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 256)]
+        public string PreviousAliasName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PreviousAliasName property is set.
+        /// </summary>
+        internal bool IsSetPreviousAliasName() => this.PreviousAliasName != null;
+
+        /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
         /// The trust anchor type and its related certificate data.
@@ -127,6 +181,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The ARN of the trust anchor.
         /// </para>
         /// </summary>
+        [AWSProperty(Min = 1, Max = 1011)]
         public string TrustAnchorArn { get; set; }
 
         /// <summary>

@@ -41,6 +41,42 @@ namespace Amazon.IAMRolesAnywhere.Model
     public partial class CreateTrustAnchorRequest : AmazonIAMRolesAnywhereRequest
     {
         /// <summary>
+        /// Gets and sets the property AliasName. 
+        /// <para>
+        /// An alias for the trust anchor. When you set an alias, the response includes the alias
+        /// ARN of the trust anchor in <c>aliasArn</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// An alias name contains 1 to 256 characters. It must begin with a letter (A-Z or a-z).
+        /// It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens
+        /// (-), and forward slashes (/). A forward slash can appear only between two other characters,
+        /// so an alias name can't end with a forward slash or contain two in a row. Alias names
+        /// that begin with <c>aws/</c>, in any combination of uppercase and lowercase letters,
+        /// are reserved. Alias names are case sensitive.
+        /// </para>
+        ///  
+        /// <para>
+        /// The alias name must be unique among resources of the same type in your account and
+        /// Region. If another resource of the same type already has the alias, the request fails
+        /// with a <c>ValidationException</c>. An invalid or reserved alias name also causes a
+        /// <c>ValidationException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter or specify an empty string, the resource is created without
+        /// an alias.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 256)]
+        public string AliasName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AliasName property is set.
+        /// </summary>
+        internal bool IsSetAliasName() => this.AliasName != null;
+
+        /// <summary>
         /// Gets and sets the property CrlDpRevocationEnabled. 
         /// <para>
         /// Specifies whether the trust anchor checks certificate revocation status against CRL

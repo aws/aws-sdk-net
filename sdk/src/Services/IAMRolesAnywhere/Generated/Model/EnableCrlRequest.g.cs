@@ -40,10 +40,26 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property CrlId. 
         /// <para>
-        /// The unique identifier of the certificate revocation list (CRL).
+        /// The certificate revocation list (CRL) to act on. You can specify one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The CRL ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The CRL ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alias ARN of the CRL.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// An ARN must be for a CRL in your account and Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 36, Max = 36)]
+        [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string CrlId { get; set; }
 
         /// <summary>

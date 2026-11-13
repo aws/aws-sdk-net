@@ -74,6 +74,11 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAliasName())
+            {
+                context.Writer.WritePropertyName("aliasName");
+                context.Writer.WriteStringValue(publicRequest.AliasName);
+            }
             if (publicRequest.IsSetCrlDpRevocationEnabled())
             {
                 context.Writer.WritePropertyName("crlDpRevocationEnabled");

@@ -35,6 +35,44 @@ namespace Amazon.IAMRolesAnywhere.Model
     public partial class CrlDetail
     {
         /// <summary>
+        /// Gets and sets the property AliasArn. 
+        /// <para>
+        /// The alias ARN of the certificate revocation list (CRL), in the form <c>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/crl/<i>alias-name</i>
+        /// </c>. Present only if the CRL has an alias.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the alias ARN in place of the resource ID or ARN in the request parameters
+        /// whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity
+        /// and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't
+        /// apply to the resource that holds the alias. Write policies with the ARN that contains
+        /// the resource ID instead.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1011)]
+        public string AliasArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AliasArn property is set.
+        /// </summary>
+        internal bool IsSetAliasArn() => this.AliasArn != null;
+
+        /// <summary>
+        /// Gets and sets the property AliasName. 
+        /// <para>
+        /// The alias of the certificate revocation list (CRL). Present only if the CRL has an
+        /// alias.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 256)]
+        public string AliasName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AliasName property is set.
+        /// </summary>
+        internal bool IsSetAliasName() => this.AliasName != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The ISO-8601 timestamp when the certificate revocation list (CRL) was created. 
@@ -53,6 +91,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The ARN of the certificate revocation list (CRL).
         /// </para>
         /// </summary>
+        [AWSProperty(Min = 1, Max = 1011)]
         public string CrlArn { get; set; }
 
         /// <summary>
@@ -114,12 +153,30 @@ namespace Amazon.IAMRolesAnywhere.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
+        /// Gets and sets the property PreviousAliasName. 
+        /// <para>
+        /// The alias that the resource had before the update request. IAM Roles Anywhere returns
+        /// this value only in the response to an update request that changed or removed an existing
+        /// alias. It isn't returned when the alias was unchanged, when the resource had no alias
+        /// before the request, or by other operations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 256)]
+        public string PreviousAliasName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PreviousAliasName property is set.
+        /// </summary>
+        internal bool IsSetPreviousAliasName() => this.PreviousAliasName != null;
+
+        /// <summary>
         /// Gets and sets the property TrustAnchorArn. 
         /// <para>
         /// The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation
         /// for. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min = 1, Max = 1011)]
         public string TrustAnchorArn { get; set; }
 
         /// <summary>
