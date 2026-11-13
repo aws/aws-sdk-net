@@ -32,7 +32,9 @@ namespace Amazon.AppStream.Model
     /// <summary>
     /// Container for the parameters to the DescribeImageBuilders operation. Retrieves a list
     /// that describes one or more specified image builders, if the image builder names are
-    /// provided. Otherwise, all image builders in the account are described.
+    /// provided. Otherwise, all image builders in the account are described. <para> The description
+    /// of each image builder includes its agent access configuration, if agent access is
+    /// enabled. </para>
     /// </summary>
     public partial class DescribeImageBuildersRequest : AmazonAppStreamRequest
     {

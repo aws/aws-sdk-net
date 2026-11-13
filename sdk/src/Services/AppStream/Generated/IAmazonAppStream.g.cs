@@ -2445,6 +2445,12 @@ namespace Amazon.AppStream
         /// <summary>
         /// Retrieves a list that describes one or more specified image builders, if the image
         /// builder names are provided. Otherwise, all image builders in the account are described.
+        /// 
+        ///  
+        /// <para>
+        /// The description of each image builder includes its agent access configuration, if
+        /// agent access is enabled.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImageBuilders service method.</param>
         /// <returns>The response from the DescribeImageBuilders service method, as returned by AppStream.</returns>
@@ -2458,6 +2464,12 @@ namespace Amazon.AppStream
         /// <summary>
         /// Retrieves a list that describes one or more specified image builders, if the image
         /// builder names are provided. Otherwise, all image builders in the account are described.
+        /// 
+        ///  
+        /// <para>
+        /// The description of each image builder includes its agent access configuration, if
+        /// agent access is enabled.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImageBuilders service method.</param>
         /// <param name="cancellationToken">
@@ -4227,6 +4239,75 @@ namespace Amazon.AppStream
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         Task<UpdateFleetResponse> UpdateFleetAsync(UpdateFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the specified fields for the specified image builder. The image builder must
+        /// be in the STOPPED state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImageBuilder service method.</param>
+        /// <returns>The response from the UpdateImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
+        /// The image can't be updated because it's not compatible for updates.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// WorkSpaces Applications can’t process the request right now because the Describe calls
+        /// from your AWS account are being throttled by Amazon EC2. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateImageBuilder">REST API Reference for UpdateImageBuilder Operation</seealso>
+        UpdateImageBuilderResponse UpdateImageBuilder(UpdateImageBuilderRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the specified fields for the specified image builder. The image builder must
+        /// be in the STOPPED state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImageBuilder service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
+        /// The image can't be updated because it's not compatible for updates.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// WorkSpaces Applications can’t process the request right now because the Describe calls
+        /// from your AWS account are being throttled by Amazon EC2. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateImageBuilder">REST API Reference for UpdateImageBuilder Operation</seealso>
+        Task<UpdateImageBuilderResponse> UpdateImageBuilderAsync(UpdateImageBuilderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

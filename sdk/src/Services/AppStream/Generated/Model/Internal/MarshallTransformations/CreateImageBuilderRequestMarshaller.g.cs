@@ -82,6 +82,16 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     }
                     context.Writer.WriteEndArray();
                 }
+                if (publicRequest.IsSetAgentAccessConfig())
+                {
+                    context.Writer.WriteTextString("AgentAccessConfig");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ImageBuilderAgentAccessConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AgentAccessConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
                 if (publicRequest.IsSetAppstreamAgentVersion())
                 {
                     context.Writer.WriteTextString("AppstreamAgentVersion");

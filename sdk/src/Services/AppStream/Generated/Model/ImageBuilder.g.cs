@@ -56,6 +56,19 @@ namespace Amazon.AppStream.Model
         internal bool IsSetAccessEndpoints() => this.AccessEndpoints != null && (this.AccessEndpoints.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property AgentAccessConfig. 
+        /// <para>
+        /// The agent access configuration of the image builder, if agent access is enabled.
+        /// </para>
+        /// </summary>
+        public ImageBuilderAgentAccessConfig AgentAccessConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AgentAccessConfig property is set.
+        /// </summary>
+        internal bool IsSetAgentAccessConfig() => this.AgentAccessConfig != null;
+
+        /// <summary>
         /// Gets and sets the property AppstreamAgentVersion. 
         /// <para>
         /// The version of the WorkSpaces Applications agent that is currently being used by the

@@ -1051,6 +1051,42 @@ namespace Amazon.AppStream
     }
 
     /// <summary>
+    /// Constants used for properties of type ImageBuilderAttribute.
+    /// </summary>
+    public class ImageBuilderAttribute : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT_ACCESS_CONFIG for ImageBuilderAttribute
+        /// </summary>
+        public static readonly ImageBuilderAttribute AGENT_ACCESS_CONFIG = new ImageBuilderAttribute("AGENT_ACCESS_CONFIG");
+
+        /// <summary>
+        /// Constructs a custom ImageBuilderAttribute for a value not among the defined constants.
+        /// </summary>
+        public ImageBuilderAttribute(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageBuilderAttribute FindValue(string value)
+        {
+            return FindValue<ImageBuilderAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageBuilderAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ImageBuilderState.
     /// </summary>
     public class ImageBuilderState : ConstantClass
@@ -1982,6 +2018,11 @@ namespace Amazon.AppStream
         /// Constant AGENT_ACCESS_CONFIG for StackAttribute
         /// </summary>
         public static readonly StackAttribute AGENT_ACCESS_CONFIG = new StackAttribute("AGENT_ACCESS_CONFIG");
+
+        /// <summary>
+        /// Constant AGENT_ACCESS_CONFIG_KMS_KEY_ARN for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute AGENT_ACCESS_CONFIG_KMS_KEY_ARN = new StackAttribute("AGENT_ACCESS_CONFIG_KMS_KEY_ARN");
 
         /// <summary>
         /// Constant CONTENT_REDIRECTION for StackAttribute

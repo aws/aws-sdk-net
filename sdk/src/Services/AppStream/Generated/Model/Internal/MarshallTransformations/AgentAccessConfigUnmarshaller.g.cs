@@ -62,6 +62,18 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 var propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "KmsKeyArn":
+                        context.AddPathSegment("KmsKeyArn");
+                        unmarshalledObject.KmsKeyArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ReplaySessionEnabled":
+                        context.AddPathSegment("ReplaySessionEnabled");
+                        unmarshalledObject.ReplaySessionEnabled = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "S3BucketArn":
                         context.AddPathSegment("S3BucketArn");
                         unmarshalledObject.S3BucketArn = CborStringUnmarshaller.Instance.Unmarshall(context);
