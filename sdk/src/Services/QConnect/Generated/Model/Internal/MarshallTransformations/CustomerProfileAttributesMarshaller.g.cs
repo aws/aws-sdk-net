@@ -165,6 +165,19 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.BusinessPhoneNumber);
             }
 
+            if (requestObject.IsSetCalculatedAttributes())
+            {
+                context.Writer.WritePropertyName("calculatedAttributes");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectCalculatedAttributesKvp in requestObject.CalculatedAttributes)
+                {
+                    context.Writer.WritePropertyName(requestObjectCalculatedAttributesKvp.Key);
+                    var requestObjectCalculatedAttributesValue = requestObjectCalculatedAttributesKvp.Value;
+                    context.Writer.WriteStringValue(requestObjectCalculatedAttributesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetCity())
             {
                 context.Writer.WritePropertyName("city");
@@ -332,6 +345,22 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("province");
                 context.Writer.WriteStringValue(requestObject.Province);
+            }
+
+            if (requestObject.IsSetRecommendations())
+            {
+                context.Writer.WritePropertyName("recommendations");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectRecommendationsListValue in requestObject.Recommendations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProfileRecommendationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRecommendationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetShippingAddress1())

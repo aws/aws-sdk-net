@@ -2006,6 +2006,11 @@ namespace Amazon.QConnect
         public static readonly MessageTemplateAttributeType AGENT = new MessageTemplateAttributeType("AGENT");
 
         /// <summary>
+        /// Constant CASE for MessageTemplateAttributeType
+        /// </summary>
+        public static readonly MessageTemplateAttributeType CASE = new MessageTemplateAttributeType("CASE");
+
+        /// <summary>
         /// Constant CUSTOM for MessageTemplateAttributeType
         /// </summary>
         public static readonly MessageTemplateAttributeType CUSTOM = new MessageTemplateAttributeType("CUSTOM");

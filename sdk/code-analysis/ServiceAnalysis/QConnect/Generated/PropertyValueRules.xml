@@ -3086,6 +3086,70 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.ProfileCatalogItem.AdditionalInformation</property>
+    <min>1</min>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ProfileCatalogItem.Category</property>
+    <min>1</min>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ProfileCatalogItem.Code</property>
+    <min>1</min>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ProfileCatalogItem.CreatedAt</property>
+    <min>1</min>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ProfileCatalogItem.Description</property>
+    <min>1</min>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ProfileCatalogItem.Id</property>
+    <min>1</min>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ProfileCatalogItem.ImageLink</property>
+    <min>1</min>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ProfileCatalogItem.Link</property>
+    <min>1</min>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ProfileCatalogItem.Name</property>
+    <min>1</min>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ProfileCatalogItem.Price</property>
+    <min>1</min>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ProfileCatalogItem.Type</property>
+    <min>1</min>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ProfileCatalogItem.UpdatedAt</property>
+    <min>1</min>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ProfileRecommendation.Score</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.PushADMMessageTemplateContent.ImageIconUrl</property>
     <min>1</min>
   </property-value-rule>
