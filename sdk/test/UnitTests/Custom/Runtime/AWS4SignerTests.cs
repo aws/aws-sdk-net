@@ -515,19 +515,42 @@ namespace AWSSDK.UnitTests
         {
             // The pooled buffer that held the encoded string must be cleared before it is returned:
             // canonical requests can contain the session token header.
-            const string marker = "x-amz-security-token:SECRET-SESSION-TOKEN";
-            var markerBytes = Encoding.UTF8.GetBytes(marker);
-            var data = marker + new string('a', 4000);
-            AWS4Signer.ComputeHash(data);
-
-            var buffer = System.Buffers.ArrayPool<byte>.Shared.Rent(data.Length);
+            var data = "x-amz-security-token:SECRET-SESSION-TOKEN" + new string('a', 4000);
+            var pool = new RecordingArrayPool();
+            var sharedPool = AWS4Signer.Utf8Buffer.Pool;
+            AWS4Signer.Utf8Buffer.Pool = pool;
             try
             {
-                Assert.AreEqual(-1, buffer.AsSpan().IndexOf(markerBytes));
+                AWS4Signer.ComputeHash(data);
             }
             finally
             {
-                System.Buffers.ArrayPool<byte>.Shared.Return(buffer);
+                AWS4Signer.Utf8Buffer.Pool = sharedPool;
+            }
+
+            Assert.IsNotNull(pool.Rented, "A buffer should have been rented for an input above the stack limit.");
+            Assert.AreSame(pool.Rented, pool.Returned, "The rented buffer should have been returned to the pool.");
+            CollectionAssert.AreEqual(new byte[pool.Returned.Length], pool.Returned);
+        }
+
+        // Hands out a fresh zeroed array and records the buffer that comes back, so the test can
+        // inspect the exact buffer the signer used rather than relying on ArrayPool.Shared's caching.
+        private sealed class RecordingArrayPool : System.Buffers.ArrayPool<byte>
+        {
+            public byte[] Rented { get; private set; }
+
+            public byte[] Returned { get; private set; }
+
+            public override byte[] Rent(int minimumLength)
+            {
+                Assert.IsNull(Rented, "Only one buffer should be rented.");
+                return Rented = new byte[minimumLength + 64];
+            }
+
+            public override void Return(byte[] array, bool clearArray = false)
+            {
+                Assert.IsNull(Returned, "Only one buffer should be returned.");
+                Returned = array;
             }
         }
 #endif

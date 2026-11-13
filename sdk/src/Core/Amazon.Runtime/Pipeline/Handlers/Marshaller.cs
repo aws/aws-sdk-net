@@ -39,8 +39,11 @@ namespace Amazon.Runtime.Internal
         private static bool _isRunningInLambda = IsLambdaFunctionNameSet();
 
         // AWS_LAMBDA_MAX_CONCURRENCY is likewise fixed for the life of the execution environment. It is read lazily
-        // on the first request (rather than at type initialization) and cached: 0 = not read yet, 1 = unset, 2 = set.
-        private static int _lambdaMaxConcurrencyState;
+        // on the first request (rather than at type initialization) and cached in _lambdaMaxConcurrencyState.
+        private const int LambdaMaxConcurrencyUnread = 0;
+        private const int LambdaMaxConcurrencyUnset = 1;
+        private const int LambdaMaxConcurrencySet = 2;
+        private static int _lambdaMaxConcurrencyState = LambdaMaxConcurrencyUnread;
 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler
@@ -173,19 +176,21 @@ namespace Amazon.Runtime.Internal
         internal static void ResetLambdaEnvironmentCache()
         {
             _isRunningInLambda = IsLambdaFunctionNameSet();
-            Volatile.Write(ref _lambdaMaxConcurrencyState, 0);
+            Volatile.Write(ref _lambdaMaxConcurrencyState, LambdaMaxConcurrencyUnread);
         }
 
         private static bool IsLambdaMaxConcurrencySet()
         {
             var state = Volatile.Read(ref _lambdaMaxConcurrencyState);
-            if (state == 0)
+            if (state == LambdaMaxConcurrencyUnread)
             {
-                state = string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY)) ? 1 : 2;
+                state = string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY))
+                    ? LambdaMaxConcurrencyUnset
+                    : LambdaMaxConcurrencySet;
                 Volatile.Write(ref _lambdaMaxConcurrencyState, state);
             }
 
-            return state == 2;
+            return state == LambdaMaxConcurrencySet;
         }
 
         private static bool IsLambdaFunctionNameSet()

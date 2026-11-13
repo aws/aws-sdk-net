@@ -66,12 +66,17 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// The UTF-8 encoding of a string, held in a caller-provided stack buffer when it fits or in an array pool
         /// buffer otherwise. The signing inputs can contain credentials (for example the session token header in a
-        /// canonical request), so the entire rented array is zeroed before it goes back to the shared pool.
+        /// canonical request), so the portion of the pooled buffer that was written to is zeroed before the buffer
+        /// goes back to the pool.
         /// </summary>
-        private ref struct Utf8Buffer
+        internal ref struct Utf8Buffer
         {
             // Strings up to this many UTF-8 bytes are encoded on the stack; larger ones use the array pool.
             internal const int StackAllocByteLimit = 1024;
+
+            // The pool that buffers above the stack limit are rented from. Replaced by tests that need to observe
+            // the exact buffer that was used.
+            internal static System.Buffers.ArrayPool<byte> Pool = System.Buffers.ArrayPool<byte>.Shared;
 
             private byte[] _rented;
 
@@ -89,7 +94,7 @@ namespace Amazon.Runtime.Internal.Auth
                 }
                 else
                 {
-                    _rented = System.Buffers.ArrayPool<byte>.Shared.Rent(byteCount);
+                    _rented = Pool.Rent(byteCount);
                     Bytes = _rented.AsSpan(0, byteCount);
                 }
 
@@ -100,8 +105,8 @@ namespace Amazon.Runtime.Internal.Auth
             {
                 if (_rented != null)
                 {
-                    CryptographicOperations.ZeroMemory(_rented.AsSpan());
-                    System.Buffers.ArrayPool<byte>.Shared.Return(_rented);
+                    CryptographicOperations.ZeroMemory(Bytes);
+                    Pool.Return(_rented);
                     _rented = null;
                 }
             }
