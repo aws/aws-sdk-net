@@ -1444,6 +1444,12 @@
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.MSTeamsBidirectionalConfiguration.RoleArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MSTeamsChannel.ChannelId</property>
     <min>1</min>
     <max>256</max>
