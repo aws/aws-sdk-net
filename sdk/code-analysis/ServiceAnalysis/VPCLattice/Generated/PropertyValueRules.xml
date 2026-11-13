@@ -817,7 +817,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetAuthPolicyResponse.Policy</property>
-    <max>36864</max>
+    <max>102400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetDomainVerificationRequest.DomainVerificationIdentifier</property>
@@ -1644,7 +1644,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.PutAuthPolicyRequest.Policy</property>
-    <max>36864</max>
+    <max>102400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.PutAuthPolicyRequest.ResourceIdentifier</property>
@@ -1654,7 +1654,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.PutAuthPolicyResponse.Policy</property>
-    <max>36864</max>
+    <max>102400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.PutResourcePolicyRequest.Policy</property>

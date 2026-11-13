@@ -90,6 +90,20 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
+        /// Gets and sets the property ResourceConfigDnsResolution. 
+        /// <para>
+        /// The DNS resolution type for resource configurations that are associated with this
+        /// resource gateway.
+        /// </para>
+        /// </summary>
+        public ResourceConfigDnsResolution ResourceConfigDnsResolution { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceConfigDnsResolution property is set.
+        /// </summary>
+        internal bool IsSetResourceConfigDnsResolution() => this.ResourceConfigDnsResolution != null;
+
+        /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// The IDs of the security groups associated with the resource gateway.

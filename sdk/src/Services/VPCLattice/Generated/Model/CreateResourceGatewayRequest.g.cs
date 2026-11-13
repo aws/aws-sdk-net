@@ -125,8 +125,8 @@ namespace Amazon.VPCLattice.Model
         /// Gets and sets the property ResourceConfigDnsResolution. 
         /// <para>
         /// Indicates how DNS is resolved for resource configurations associated with this resource
-        /// gateway. This value is set when you create the resource gateway and can't be changed
-        /// afterward. The default is <c>PUBLIC</c>.
+        /// gateway. The default is <c>PUBLIC</c>. To change the value after you create the resource
+        /// gateway, use <c>UpdateResourceGateway</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -137,6 +137,13 @@ namespace Amazon.VPCLattice.Model
         /// the VPC. A CIDR resource configuration requires a resource gateway that uses <c>IN_VPC</c>,
         /// and an <c>IN_VPC</c> resource gateway can't be used for ARN resource configurations,
         /// so a single resource gateway can't serve both ARN and CIDR resource configurations.
+        /// </para>
+        ///  
+        /// <para>
+        /// DNS queries for an <c>IN_VPC</c> resource gateway use UDP only, with no TCP fallback.
+        /// If responses exceed 8.4 KB, DNS resolution fails. The DNS resolver must be recursive.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-gateway.html#resource-config-dns-resolution">Resource
+        /// Config DNS Resolution</a> in the <i>Amazon VPC Lattice User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>

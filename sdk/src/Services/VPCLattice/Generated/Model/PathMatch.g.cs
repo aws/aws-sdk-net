@@ -37,7 +37,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property CaseSensitive. 
         /// <para>
-        /// Indicates whether the match is case sensitive.
+        /// Specifies whether the match is case sensitive. Defaults to <c>true</c> (case-sensitive
+        /// matching). Set to <c>false</c> to match the path case-insensitively.
         /// </para>
         /// </summary>
         public bool? CaseSensitive { get; set; }
