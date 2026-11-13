@@ -31,9 +31,11 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLifecyclePolicy operation. Updates the specified
-    /// lifecycle policy. The request replaces the existing policy configuration rather than
-    /// merging changes, so re-specify every setting that you want to keep. The <c>resourceType</c>
-    /// must match the existing policy's value.
+    /// lifecycle policy. The <c>resourceType</c> must match the existing policy's value.
+    /// <note> <para> This operation doesn't support selective updates. The request replaces
+    /// the entire lifecycle policy configuration, so include every setting that you want
+    /// to keep. Any optional property that you omit is removed or reset to its default. </para>
+    /// </note>
     /// </summary>
     public partial class UpdateLifecyclePolicyRequest : AmazonImagebuilderRequest
     {

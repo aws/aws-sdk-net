@@ -84,6 +84,11 @@ namespace Amazon.Imagebuilder.Model
         /// - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image
         /// Builder returns build versions for all of the images in your account.
         /// </para>
+        ///  
+        /// <para>
+        /// If the ARN that you specify doesn't exist, Image Builder returns an empty list rather
+        /// than a <c>ResourceNotFoundException</c> error.
+        /// </para>
         /// </summary>
         public string ImageVersionArn { get; set; }
 

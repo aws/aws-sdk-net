@@ -33,8 +33,9 @@ namespace Amazon.Imagebuilder.Model
     /// Container for the parameters to the UpdateInfrastructureConfiguration operation. Updates
     /// an infrastructure configuration. An infrastructure configuration defines the environment
     /// in which Image Builder builds and tests your image. <note> <para> This operation doesn't
-    /// support selective updates. The request replaces the configuration, so include every
-    /// setting that you want to keep. Omitted optional properties are cleared. </para> </note>
+    /// support selective updates. The request replaces the entire infrastructure configuration,
+    /// so include every setting that you want to keep. Any optional property that you omit
+    /// is removed or reset to its default. </para> </note>
     /// </summary>
     public partial class UpdateInfrastructureConfigurationRequest : AmazonImagebuilderRequest
     {

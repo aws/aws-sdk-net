@@ -69,6 +69,11 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.
         /// </para>
+        ///  
+        /// <para>
+        /// If the ARN that you specify doesn't exist, Image Builder returns an empty list rather
+        /// than a <c>ResourceNotFoundException</c> error.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public string ImagePipelineArn { get; set; }

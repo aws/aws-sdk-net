@@ -44,6 +44,11 @@ namespace Amazon.Imagebuilder.Model
         /// an exact version, without a build number suffix. If you don't specify an ARN, Image
         /// Builder returns build versions for the components that your account owns.
         /// </para>
+        ///  
+        /// <para>
+        /// If the ARN that you specify doesn't exist, Image Builder returns an empty list rather
+        /// than a <c>ResourceNotFoundException</c> error.
+        /// </para>
         /// </summary>
         public string ComponentVersionArn { get; set; }
 

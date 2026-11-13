@@ -41,6 +41,14 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The name of the filter. Filter names are case-sensitive.
         /// </para>
+        ///  
+        /// <para>
+        /// The <c>name</c> filter matches the name that you gave the resource when you created
+        /// it, exactly as you entered it. It doesn't match the name segment of the resource ARN,
+        /// which Image Builder converts to lowercase with hyphens in place of spaces and underscores.
+        /// For example, a resource named <c>My Image</c> has an ARN that contains <c>my-image</c>
+        /// – filter on <c>My Image</c> to find it.
+        /// </para>
         /// </summary>
         public string Name { get; set; }
 

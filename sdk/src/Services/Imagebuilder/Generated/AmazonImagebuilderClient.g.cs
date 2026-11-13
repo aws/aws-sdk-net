@@ -7668,8 +7668,9 @@ namespace Amazon.Imagebuilder
         /// 
         ///  <note> 
         /// <para>
-        /// This operation doesn't support selective updates. The request replaces the stored
-        /// configuration, so include every setting that you want to keep.
+        /// This operation doesn't support selective updates. The request replaces the entire
+        /// distribution configuration, so include every setting that you want to keep. Any optional
+        /// property that you omit is removed or reset to its default.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7736,8 +7737,9 @@ namespace Amazon.Imagebuilder
         /// 
         ///  <note> 
         /// <para>
-        /// This operation doesn't support selective updates. The request replaces the stored
-        /// configuration, so include every setting that you want to keep.
+        /// This operation doesn't support selective updates. The request replaces the entire
+        /// distribution configuration, so include every setting that you want to keep. Any optional
+        /// property that you omit is removed or reset to its default.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7799,8 +7801,8 @@ namespace Amazon.Imagebuilder
         /// 
         ///  <note> 
         /// <para>
-        /// UpdateImagePipeline does not support selective updates. The request replaces the pipeline's
-        /// entire configuration, so include every setting that you want to keep. Any optional
+        /// This operation doesn't support selective updates. The request replaces the entire
+        /// pipeline configuration, so include every setting that you want to keep. Any optional
         /// property that you omit is removed or reset to its default.
         /// </para>
         ///  </note>
@@ -7864,8 +7866,8 @@ namespace Amazon.Imagebuilder
         /// 
         ///  <note> 
         /// <para>
-        /// UpdateImagePipeline does not support selective updates. The request replaces the pipeline's
-        /// entire configuration, so include every setting that you want to keep. Any optional
+        /// This operation doesn't support selective updates. The request replaces the entire
+        /// pipeline configuration, so include every setting that you want to keep. Any optional
         /// property that you omit is removed or reset to its default.
         /// </para>
         ///  </note>
@@ -7921,8 +7923,9 @@ namespace Amazon.Imagebuilder
         /// 
         ///  <note> 
         /// <para>
-        /// This operation doesn't support selective updates. The request replaces the configuration,
-        /// so include every setting that you want to keep. Omitted optional properties are cleared.
+        /// This operation doesn't support selective updates. The request replaces the entire
+        /// infrastructure configuration, so include every setting that you want to keep. Any
+        /// optional property that you omit is removed or reset to its default.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7983,8 +7986,9 @@ namespace Amazon.Imagebuilder
         /// 
         ///  <note> 
         /// <para>
-        /// This operation doesn't support selective updates. The request replaces the configuration,
-        /// so include every setting that you want to keep. Omitted optional properties are cleared.
+        /// This operation doesn't support selective updates. The request replaces the entire
+        /// infrastructure configuration, so include every setting that you want to keep. Any
+        /// optional property that you omit is removed or reset to its default.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8034,9 +8038,16 @@ namespace Amazon.Imagebuilder
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates the specified lifecycle policy. The request replaces the existing policy configuration
-        /// rather than merging changes, so re-specify every setting that you want to keep. The
-        /// <c>resourceType</c> must match the existing policy's value.
+        /// Updates the specified lifecycle policy. The <c>resourceType</c> must match the existing
+        /// policy's value.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation doesn't support selective updates. The request replaces the entire
+        /// lifecycle policy configuration, so include every setting that you want to keep. Any
+        /// optional property that you omit is removed or reset to its default.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy service method.</param>
         /// <returns>The response from the UpdateLifecyclePolicy service method, as returned by Imagebuilder.</returns>
@@ -8095,9 +8106,16 @@ namespace Amazon.Imagebuilder
 #endif
 
         /// <summary>
-        /// Updates the specified lifecycle policy. The request replaces the existing policy configuration
-        /// rather than merging changes, so re-specify every setting that you want to keep. The
-        /// <c>resourceType</c> must match the existing policy's value.
+        /// Updates the specified lifecycle policy. The <c>resourceType</c> must match the existing
+        /// policy's value.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation doesn't support selective updates. The request replaces the entire
+        /// lifecycle policy configuration, so include every setting that you want to keep. Any
+        /// optional property that you omit is removed or reset to its default.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">

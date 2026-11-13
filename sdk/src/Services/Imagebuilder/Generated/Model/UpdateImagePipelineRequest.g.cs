@@ -34,10 +34,10 @@ namespace Amazon.Imagebuilder.Model
     /// pipeline. Use image pipelines to automate the creation and distribution of images.
     /// You must specify exactly one recipe for your image, using either a <c>containerRecipeArn</c>
     /// or an <c>imageRecipeArn</c>. The recipe must be the same type, image or container,
-    /// as the pipeline's current recipe. <note> <para> UpdateImagePipeline does not support
-    /// selective updates. The request replaces the pipeline's entire configuration, so include
-    /// every setting that you want to keep. Any optional property that you omit is removed
-    /// or reset to its default. </para> </note>
+    /// as the pipeline's current recipe. <note> <para> This operation doesn't support selective
+    /// updates. The request replaces the entire pipeline configuration, so include every
+    /// setting that you want to keep. Any optional property that you omit is removed or reset
+    /// to its default. </para> </note>
     /// </summary>
     public partial class UpdateImagePipelineRequest : AmazonImagebuilderRequest
     {
@@ -277,7 +277,10 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property Workflows. 
         /// <para>
         /// The array of workflow configuration objects for builds that this pipeline starts.
-        /// You must also specify <c>executionRole</c> when you provide workflows.
+        /// If you specify workflows, they replace the default workflows that Image Builder otherwise
+        /// runs for the pipeline's builds. For example, if your list doesn't include a test workflow,
+        /// the pipeline's builds don't run one. You must also specify <c>executionRole</c> when
+        /// you provide workflows.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
