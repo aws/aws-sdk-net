@@ -39,8 +39,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ActiveCount. 
         /// <para>
         /// The number of nodes that are running the extension's current version and configuration.
-        /// While SageMaker HyperPod creates or updates the extension, <c>ActiveCount</c> is lower
-        /// than <c>TotalCount</c>.
+        /// Nodes that report the extension as unhealthy aren't counted. While SageMaker HyperPod
+        /// creates or updates the extension, <c>ActiveCount</c> is lower than <c>TotalCount</c>.
+        /// To see why nodes aren't counted, see <c>Health</c> in <c>DescribeClusterExtension</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 0)]

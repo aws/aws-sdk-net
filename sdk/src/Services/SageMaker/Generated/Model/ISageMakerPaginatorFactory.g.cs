@@ -123,6 +123,12 @@ namespace Amazon.SageMaker.Model
         IListClusterEventsPaginator ListClusterEvents(ListClusterEventsRequest request);
 
         /// <summary>
+        /// Paginator for ListClusterExtensionVersions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListClusterExtensionVersionsPaginator ListClusterExtensionVersions(ListClusterExtensionVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListClusterExtensions operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -133,6 +139,12 @@ namespace Amazon.SageMaker.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListClusterNodesPaginator ListClusterNodes(ListClusterNodesRequest request);
+
+        /// <summary>
+        /// Paginator for ListClusterOperations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListClusterOperationsPaginator ListClusterOperations(ListClusterOperationsRequest request);
 
         /// <summary>
         /// Paginator for ListClusterSchedulerConfigs operation

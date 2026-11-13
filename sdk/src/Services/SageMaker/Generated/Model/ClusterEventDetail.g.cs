@@ -157,6 +157,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceId() => this.InstanceId != null;
 
         /// <summary>
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// The unique identifier (UUID) of the cluster operation that the event is associated
+        /// with, such as a scaling operation. This field is not returned when the event is not
+        /// associated with an operation.
+        /// </para>
+        /// </summary>
+        public string OperationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OperationId property is set.
+        /// </summary>
+        internal bool IsSetOperationId() => this.OperationId != null;
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of resource associated with the event. Valid values are <c>Cluster</c>, <c>InstanceGroup</c>,

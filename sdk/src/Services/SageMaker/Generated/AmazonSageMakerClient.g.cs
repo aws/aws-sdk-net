@@ -11879,7 +11879,8 @@ namespace Amazon.SageMaker
         /// Retrieves information about an extension installed on a SageMaker HyperPod cluster.
         /// The information includes the extension's version, configuration, and status, and a
         /// summary of how many cluster nodes are running the current version and configuration
-        /// of the extension.
+        /// of the extension. If the extension has problems on some nodes, the response also lists
+        /// the problems and how many nodes each one affects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterExtension service method.</param>
         /// <returns>The response from the DescribeClusterExtension service method, as returned by SageMaker.</returns>
@@ -11910,7 +11911,8 @@ namespace Amazon.SageMaker
         /// Retrieves information about an extension installed on a SageMaker HyperPod cluster.
         /// The information includes the extension's version, configuration, and status, and a
         /// summary of how many cluster nodes are running the current version and configuration
-        /// of the extension.
+        /// of the extension. If the extension has problems on some nodes, the response also lists
+        /// the problems and how many nodes each one affects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterExtension service method.</param>
         /// <param name="cancellationToken">
@@ -11980,6 +11982,60 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeClusterNodeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeClusterNodeResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves detailed information about a specific operation for a given HyperPod cluster,
+        /// such as a scaling operation or a deep health check. Use the <c>OperationId</c> returned
+        /// by the <c>ListClusterOperations</c> operation to identify the operation to describe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterOperation service method.</param>
+        /// <returns>The response from the DescribeClusterOperation service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterOperation">REST API Reference for DescribeClusterOperation Operation</seealso>
+        public virtual DescribeClusterOperationResponse DescribeClusterOperation(DescribeClusterOperationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeClusterOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterOperationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterOperationResponse>(request, options);
+        }
+#else
+        internal virtual DescribeClusterOperationResponse DescribeClusterOperation(DescribeClusterOperationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeClusterOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterOperationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterOperationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves detailed information about a specific operation for a given HyperPod cluster,
+        /// such as a scaling operation or a deep health check. Use the <c>OperationId</c> returned
+        /// by the <c>ListClusterOperations</c> operation to identify the operation to describe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeClusterOperation service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterOperation">REST API Reference for DescribeClusterOperation Operation</seealso>
+        public virtual Task<DescribeClusterOperationResponse> DescribeClusterOperationAsync(DescribeClusterOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeClusterOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterOperationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeClusterOperationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -16670,6 +16726,70 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the versions of an extension that you can install on a SageMaker HyperPod cluster,
+        /// from the highest version to the lowest. Use a version from this list as the <c>ExtensionVersion</c>
+        /// in <c>CreateClusterExtension</c> or <c>UpdateClusterExtension</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The list contains only versions that you can install. Versions that SageMaker HyperPod
+        /// no longer offers for new installations don't appear. If SageMaker HyperPod doesn't
+        /// offer an extension with the name that you specify, the response contains an empty
+        /// list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterExtensionVersions service method.</param>
+        /// <returns>The response from the ListClusterExtensionVersions service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterExtensionVersions">REST API Reference for ListClusterExtensionVersions Operation</seealso>
+        public virtual ListClusterExtensionVersionsResponse ListClusterExtensionVersions(ListClusterExtensionVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListClusterExtensionVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterExtensionVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterExtensionVersionsResponse>(request, options);
+        }
+#else
+        internal virtual ListClusterExtensionVersionsResponse ListClusterExtensionVersions(ListClusterExtensionVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListClusterExtensionVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterExtensionVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterExtensionVersionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the versions of an extension that you can install on a SageMaker HyperPod cluster,
+        /// from the highest version to the lowest. Use a version from this list as the <c>ExtensionVersion</c>
+        /// in <c>CreateClusterExtension</c> or <c>UpdateClusterExtension</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The list contains only versions that you can install. Versions that SageMaker HyperPod
+        /// no longer offers for new installations don't appear. If SageMaker HyperPod doesn't
+        /// offer an extension with the name that you specify, the response contains an empty
+        /// list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterExtensionVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListClusterExtensionVersions service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterExtensionVersions">REST API Reference for ListClusterExtensionVersions Operation</seealso>
+        public virtual Task<ListClusterExtensionVersionsResponse> ListClusterExtensionVersionsAsync(ListClusterExtensionVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListClusterExtensionVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterExtensionVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListClusterExtensionVersionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists the extensions installed on a SageMaker HyperPod cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClusterExtensions service method.</param>
@@ -16768,6 +16888,60 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListClusterNodesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListClusterNodesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves a list of operation summaries for a specified HyperPod cluster, such as
+        /// scaling operations and deep health checks. The operation supports filtering, sorting,
+        /// and pagination of results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterOperations service method.</param>
+        /// <returns>The response from the ListClusterOperations service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterOperations">REST API Reference for ListClusterOperations Operation</seealso>
+        public virtual ListClusterOperationsResponse ListClusterOperations(ListClusterOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListClusterOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterOperationsResponse>(request, options);
+        }
+#else
+        internal virtual ListClusterOperationsResponse ListClusterOperations(ListClusterOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListClusterOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterOperationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves a list of operation summaries for a specified HyperPod cluster, such as
+        /// scaling operations and deep health checks. The operation supports filtering, sorting,
+        /// and pagination of results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListClusterOperations service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterOperations">REST API Reference for ListClusterOperations Operation</seealso>
+        public virtual Task<ListClusterOperationsResponse> ListClusterOperationsAsync(ListClusterOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListClusterOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterOperationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListClusterOperationsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -23090,6 +23264,12 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// To retry the operation on nodes where it failed, fix the cause that <c>DescribeClusterExtension</c>
+        /// reports in <c>Health</c>, and then send an <c>UpdateClusterExtension</c> request that
+        /// doesn't change the version or the configuration.
+        /// </para>
+        ///  
+        /// <para>
         /// You can't update an extension while it is being deleted.
         /// </para>
         /// </summary>
@@ -23140,6 +23320,12 @@ namespace Amazon.SageMaker
         /// that version.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// To retry the operation on nodes where it failed, fix the cause that <c>DescribeClusterExtension</c>
+        /// reports in <c>Health</c>, and then send an <c>UpdateClusterExtension</c> request that
+        /// doesn't change the version or the configuration.
+        /// </para>
+        ///  
         /// <para>
         /// You can't update an extension while it is being deleted.
         /// </para>

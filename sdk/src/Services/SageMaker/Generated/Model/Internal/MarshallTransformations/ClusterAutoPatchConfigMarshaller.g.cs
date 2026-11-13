@@ -56,6 +56,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetDrainPolicy())
+            {
+                context.Writer.WritePropertyName("DrainPolicy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterDrainPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.DrainPolicy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetIdleWaitWindowInSeconds())
+            {
+                context.Writer.WritePropertyName("IdleWaitWindowInSeconds");
+                context.Writer.WriteNumberValue(requestObject.IdleWaitWindowInSeconds.Value);
+            }
+
             if (requestObject.IsSetPatchSchedule())
             {
                 context.Writer.WritePropertyName("PatchSchedule");

@@ -50,6 +50,38 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDeploymentConfig() => this.DeploymentConfig != null;
 
         /// <summary>
+        /// Gets and sets the property DrainPolicy. 
+        /// <para>
+        /// The policy that controls how pods are evicted from an instance before it is patched.
+        /// Valid only when <c>PatchingStrategy</c> is <c>DrainFirst</c>.
+        /// </para>
+        /// </summary>
+        public ClusterDrainPolicy DrainPolicy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DrainPolicy property is set.
+        /// </summary>
+        internal bool IsSetDrainPolicy() => this.DrainPolicy != null;
+
+        /// <summary>
+        /// Gets and sets the property IdleWaitWindowInSeconds. 
+        /// <para>
+        /// The maximum time, in seconds, that automatic patching waits for instances to become
+        /// idle after a scheduled patch starts. Automatic patching uncordons instances that don't
+        /// become idle within this window, and they remain on the previous AMI version. Valid
+        /// values are from 3600 (1 hour) to 2160000 (25 days). The default is 86400 (24 hours).
+        /// This setting applies only to the <c>WhenIdle</c> and <c>WhenAllIdle</c> strategies.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 3600, Max = 2160000)]
+        public int? IdleWaitWindowInSeconds { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdleWaitWindowInSeconds property is set.
+        /// </summary>
+        internal bool IsSetIdleWaitWindowInSeconds() => this.IdleWaitWindowInSeconds.HasValue;
+
+        /// <summary>
         /// Gets and sets the property PatchSchedule. 
         /// <para>
         /// The schedule for automatic patching, including the next patch date.
@@ -80,6 +112,15 @@ namespace Amazon.SageMaker.Model
         ///  <c>WhenAllIdle</c>: Cordons all instances and waits for all to become idle before
         /// patching. All instances are uncordoned after patching completes. If not all instances
         /// become idle, no patching occurs and all instances remain on the previous AMI version.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DrainFirst</c>: Designed for workloads that never become idle, such as inference.
+        /// Cordons instances, evicts the running pods, and then patches each instance in batches.
+        /// Each instance is uncordoned after patching. Use <c>DrainPolicy</c> to control how
+        /// long to wait for pods to drain and what happens if the drain times out. Requires <c>MaximumBatchSize</c>
+        /// in <c>DeploymentConfig</c>. Available only for clusters that use Amazon EKS as the
+        /// orchestrator.
         /// </para>
         ///  </li> </ul>
         /// </summary>

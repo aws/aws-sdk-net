@@ -59,6 +59,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("Health", targetDepth, ref reader))
+                {
+                    var unmarshaller = ExtensionHealthUnmarshaller.Instance;
+                    unmarshalledObject.Health = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("NodeSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = ExtensionNodeSummaryUnmarshaller.Instance;

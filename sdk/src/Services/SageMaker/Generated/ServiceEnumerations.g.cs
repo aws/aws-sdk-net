@@ -6351,10 +6351,179 @@ namespace Amazon.SageMaker
     }
 
     /// <summary>
+    /// Constants used for properties of type ClusterOnDrainTimeout.
+    /// </summary>
+    public class ClusterOnDrainTimeout : ConstantClass
+    {
+        /// <summary>
+        /// Constant Force for ClusterOnDrainTimeout
+        /// </summary>
+        public static readonly ClusterOnDrainTimeout Force = new ClusterOnDrainTimeout("Force");
+
+        /// <summary>
+        /// Constant Skip for ClusterOnDrainTimeout
+        /// </summary>
+        public static readonly ClusterOnDrainTimeout Skip = new ClusterOnDrainTimeout("Skip");
+
+        /// <summary>
+        /// Constructs a custom ClusterOnDrainTimeout for a value not among the defined constants.
+        /// </summary>
+        public ClusterOnDrainTimeout(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterOnDrainTimeout FindValue(string value)
+        {
+            return FindValue<ClusterOnDrainTimeout>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterOnDrainTimeout(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ClusterOperationSortBy.
+    /// </summary>
+    public class ClusterOperationSortBy : ConstantClass
+    {
+        /// <summary>
+        /// Constant CreationTime for ClusterOperationSortBy
+        /// </summary>
+        public static readonly ClusterOperationSortBy CreationTime = new ClusterOperationSortBy("CreationTime");
+
+        /// <summary>
+        /// Constructs a custom ClusterOperationSortBy for a value not among the defined constants.
+        /// </summary>
+        public ClusterOperationSortBy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterOperationSortBy FindValue(string value)
+        {
+            return FindValue<ClusterOperationSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterOperationSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ClusterOperationStatus.
+    /// </summary>
+    public class ClusterOperationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Done for ClusterOperationStatus
+        /// </summary>
+        public static readonly ClusterOperationStatus Done = new ClusterOperationStatus("Done");
+
+        /// <summary>
+        /// Constant InProgress for ClusterOperationStatus
+        /// </summary>
+        public static readonly ClusterOperationStatus InProgress = new ClusterOperationStatus("InProgress");
+
+        /// <summary>
+        /// Constant Superseded for ClusterOperationStatus
+        /// </summary>
+        public static readonly ClusterOperationStatus Superseded = new ClusterOperationStatus("Superseded");
+
+        /// <summary>
+        /// Constructs a custom ClusterOperationStatus for a value not among the defined constants.
+        /// </summary>
+        public ClusterOperationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterOperationStatus FindValue(string value)
+        {
+            return FindValue<ClusterOperationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterOperationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ClusterOperationType.
+    /// </summary>
+    public class ClusterOperationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DeepHealthCheck for ClusterOperationType
+        /// </summary>
+        public static readonly ClusterOperationType DeepHealthCheck = new ClusterOperationType("DeepHealthCheck");
+
+        /// <summary>
+        /// Constant Scaling for ClusterOperationType
+        /// </summary>
+        public static readonly ClusterOperationType Scaling = new ClusterOperationType("Scaling");
+
+        /// <summary>
+        /// Constructs a custom ClusterOperationType for a value not among the defined constants.
+        /// </summary>
+        public ClusterOperationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterOperationType FindValue(string value)
+        {
+            return FindValue<ClusterOperationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterOperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ClusterPatchingStrategy.
     /// </summary>
     public class ClusterPatchingStrategy : ConstantClass
     {
+        /// <summary>
+        /// Constant DrainFirst for ClusterPatchingStrategy
+        /// </summary>
+        public static readonly ClusterPatchingStrategy DrainFirst = new ClusterPatchingStrategy("DrainFirst");
+
         /// <summary>
         /// Constant WhenAllIdle for ClusterPatchingStrategy
         /// </summary>
@@ -8184,6 +8353,77 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ExtensionHealthIssueCode.
+    /// </summary>
+    public class ExtensionHealthIssueCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AccessDenied for ExtensionHealthIssueCode
+        /// </summary>
+        public static readonly ExtensionHealthIssueCode AccessDenied = new ExtensionHealthIssueCode("AccessDenied");
+
+        /// <summary>
+        /// Constant ConfigurationConflict for ExtensionHealthIssueCode
+        /// </summary>
+        public static readonly ExtensionHealthIssueCode ConfigurationConflict = new ExtensionHealthIssueCode("ConfigurationConflict");
+
+        /// <summary>
+        /// Constant DependencyUnreachable for ExtensionHealthIssueCode
+        /// </summary>
+        public static readonly ExtensionHealthIssueCode DependencyUnreachable = new ExtensionHealthIssueCode("DependencyUnreachable");
+
+        /// <summary>
+        /// Constant ExtensionUnhealthy for ExtensionHealthIssueCode
+        /// </summary>
+        public static readonly ExtensionHealthIssueCode ExtensionUnhealthy = new ExtensionHealthIssueCode("ExtensionUnhealthy");
+
+        /// <summary>
+        /// Constant InternalFailure for ExtensionHealthIssueCode
+        /// </summary>
+        public static readonly ExtensionHealthIssueCode InternalFailure = new ExtensionHealthIssueCode("InternalFailure");
+
+        /// <summary>
+        /// Constant InvalidConfiguration for ExtensionHealthIssueCode
+        /// </summary>
+        public static readonly ExtensionHealthIssueCode InvalidConfiguration = new ExtensionHealthIssueCode("InvalidConfiguration");
+
+        /// <summary>
+        /// Constant Other for ExtensionHealthIssueCode
+        /// </summary>
+        public static readonly ExtensionHealthIssueCode Other = new ExtensionHealthIssueCode("Other");
+
+        /// <summary>
+        /// Constant ResourceNotFound for ExtensionHealthIssueCode
+        /// </summary>
+        public static readonly ExtensionHealthIssueCode ResourceNotFound = new ExtensionHealthIssueCode("ResourceNotFound");
+
+        /// <summary>
+        /// Constructs a custom ExtensionHealthIssueCode for a value not among the defined constants.
+        /// </summary>
+        public ExtensionHealthIssueCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExtensionHealthIssueCode FindValue(string value)
+        {
+            return FindValue<ExtensionHealthIssueCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExtensionHealthIssueCode(string value)
         {
             return FindValue(value);
         }

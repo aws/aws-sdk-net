@@ -39,8 +39,11 @@ namespace Amazon.SageMaker.Model
     /// value <c>null</c> is removed and returns to its default value. </para> </li> <li>
     /// <para> <b>Version:</b> You can update to a later version. You can't update to an earlier
     /// version. To use an earlier version, delete the extension and create it again with
-    /// that version. </para> </li> </ul> <para> You can't update an extension while it is
-    /// being deleted. </para>
+    /// that version. </para> </li> </ul> <para> To retry the operation on nodes where it
+    /// failed, fix the cause that <c>DescribeClusterExtension</c> reports in <c>Health</c>,
+    /// and then send an <c>UpdateClusterExtension</c> request that doesn't change the version
+    /// or the configuration. </para> <para> You can't update an extension while it is being
+    /// deleted. </para>
     /// </summary>
     public partial class UpdateClusterExtensionRequest : AmazonSageMakerRequest
     {

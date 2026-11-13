@@ -153,6 +153,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListClusterExtensionVersions operation
+        /// </summary>
+        public IListClusterExtensionVersionsPaginator ListClusterExtensionVersions(ListClusterExtensionVersionsRequest request)
+        {
+            return new ListClusterExtensionVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListClusterExtensions operation
         /// </summary>
         public IListClusterExtensionsPaginator ListClusterExtensions(ListClusterExtensionsRequest request)
@@ -166,6 +174,14 @@ namespace Amazon.SageMaker.Model
         public IListClusterNodesPaginator ListClusterNodes(ListClusterNodesRequest request)
         {
             return new ListClusterNodesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListClusterOperations operation
+        /// </summary>
+        public IListClusterOperationsPaginator ListClusterOperations(ListClusterOperationsRequest request)
+        {
+            return new ListClusterOperationsPaginator(this.client, request);
         }
 
         /// <summary>

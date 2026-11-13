@@ -74,6 +74,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("DrainPolicy", targetDepth, ref reader))
+                {
+                    var unmarshaller = ClusterDrainPolicyUnmarshaller.Instance;
+                    unmarshalledObject.DrainPolicy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("IdleWaitWindowInSeconds", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.IdleWaitWindowInSeconds = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("PatchingStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

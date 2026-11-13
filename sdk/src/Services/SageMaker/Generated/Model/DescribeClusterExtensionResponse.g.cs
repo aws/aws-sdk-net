@@ -49,6 +49,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExtensionDetails() => this.ExtensionDetails != null;
 
         /// <summary>
+        /// Gets and sets the property Health. 
+        /// <para>
+        /// The problems that affect the extension on the cluster's nodes, grouped by cause, with
+        /// the number of nodes that each problem affects. Use it to find out why <c>ActiveCount</c>
+        /// is lower than <c>TotalCount</c>, or why the status is <c>Degraded</c>, <c>CreateFailed</c>,
+        /// or <c>UpdateFailed</c>. SageMaker HyperPod omits <c>Health</c> when no node has a
+        /// problem. Nodes where SageMaker HyperPod hasn't finished installing or updating the
+        /// extension aren't counted in any issue, unless an earlier attempt failed on them.
+        /// </para>
+        /// </summary>
+        public ExtensionHealth Health { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Health property is set.
+        /// </summary>
+        internal bool IsSetHealth() => this.Health != null;
+
+        /// <summary>
         /// Gets and sets the property NodeSummary. 
         /// <para>
         /// A summary of how many nodes in your cluster the extension targets, and how many of

@@ -105,6 +105,11 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("NodeId");
                 context.Writer.WriteStringValue(publicRequest.NodeId);
             }
+            if (publicRequest.IsSetOperationId())
+            {
+                context.Writer.WritePropertyName("OperationId");
+                context.Writer.WriteStringValue(publicRequest.OperationId);
+            }
             if (publicRequest.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("ResourceType");
