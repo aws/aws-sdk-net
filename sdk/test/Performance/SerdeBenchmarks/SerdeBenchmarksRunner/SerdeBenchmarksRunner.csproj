@@ -3,6 +3,8 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>$(SdkPerformanceTargets)</TargetFramework>
+    <!-- Override to run the benchmarks on another runtime, e.g. SerdeBenchmarksTargetFramework=net11.0 (see README). -->
+    <TargetFramework Condition="'$(SerdeBenchmarksTargetFramework)' != ''">$(SerdeBenchmarksTargetFramework)</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>

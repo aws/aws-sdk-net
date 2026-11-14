@@ -81,6 +81,20 @@ An invalid or missing value, an option used without the one it depends on, or a 
 
 Don't pin the process to one core (`taskset -c N`): the runtime's JIT and GC threads then share it, and early cases run up to 2x slow.
 
+### Running on another .NET version
+
+The runner targets `$(SdkPerformanceTargets)` (`net10.0`). To run it on another runtime, such as .NET 11, set
+`SerdeBenchmarksTargetFramework` with that runtime's SDK installed. Set it as an environment variable, so the projects
+that BenchmarkDotNet generates for out-of-process jobs pick it up too:
+
+```bash
+export SerdeBenchmarksTargetFramework=net11.0
+dotnet build -c Release sdk/test/Performance/SerdeBenchmarks/SerdeBenchmarksRunner/SerdeBenchmarksRunner.csproj
+dotnet run -c Release --no-build --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchmarksRunner/SerdeBenchmarksRunner.csproj -- --suite serde --filter '*'
+```
+
+The BenchmarkDotNet summary's `Runtime=` line shows the runtime the benchmarks ran on.
+
 ## HTTPS loopback mode
 
 `--cpu-time --transport https` sends every call through a real `SocketsHttpHandler` (HTTP/1.1 over TLS, keep-alive) to a fixture server running as a separate process on the same host, so the server's CPU is not part of the measurement. The server must:
