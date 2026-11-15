@@ -118,7 +118,7 @@ namespace Amazon.Runtime.Internal.Util
                     position = base.Position + offset;
                     break;
                 case SeekOrigin.End:
-                    position = base.Position + this.partSize + offset;
+                    position = this.initialPosition + this.partSize + offset;
                     break;
             }
 
