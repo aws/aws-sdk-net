@@ -32,7 +32,7 @@ namespace Amazon.SageMakerInferenceRouterRuntime
     public partial class AmazonSageMakerInferenceRouterRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMaker Inference Router Runtime", "4.0");
+            InternalSDKUtils.BuildUserAgentString("SageMaker Inference Router Runtime", "4.1.0.0");
 
         private static readonly AmazonSageMakerInferenceRouterRuntimeEndpointResolver EndpointResolver =
             new AmazonSageMakerInferenceRouterRuntimeEndpointResolver();

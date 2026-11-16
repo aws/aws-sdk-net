@@ -32,7 +32,7 @@ namespace Amazon.EndUserMessaging
     public partial class AmazonEndUserMessagingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EndUserMessaging", "4.1.0.0");
+            InternalSDKUtils.BuildUserAgentString("EndUserMessaging", "4.1.0.1");
 
         private static readonly AmazonEndUserMessagingEndpointResolver EndpointResolver =
             new AmazonEndUserMessagingEndpointResolver();

@@ -32,7 +32,7 @@ namespace Amazon.OpenSearchMemory
     public partial class AmazonOpenSearchMemoryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("OpenSearchMemory", "4.0");
+            InternalSDKUtils.BuildUserAgentString("OpenSearchMemory", "4.1.0.0");
 
         private static readonly AmazonOpenSearchMemoryEndpointResolver EndpointResolver =
             new AmazonOpenSearchMemoryEndpointResolver();

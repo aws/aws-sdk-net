@@ -32,7 +32,7 @@ namespace Amazon.ConnectScheduling
     public partial class AmazonConnectSchedulingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ConnectScheduling", "4.0");
+            InternalSDKUtils.BuildUserAgentString("ConnectScheduling", "4.1.0.0");
 
         private static readonly AmazonConnectSchedulingEndpointResolver EndpointResolver =
             new AmazonConnectSchedulingEndpointResolver();

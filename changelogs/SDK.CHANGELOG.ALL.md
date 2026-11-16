@@ -1,3 +1,73 @@
+### 4.1.3.0 (2026-11-16 19:38 UTC)
+* Athena (4.1.1.0)
+	* Adds an optional AttributesToGet parameter to ListDatabases and ListTableMetadata to return only requested database or table names (and table types) from the AWS Glue Data Catalog, reducing response time for large catalogs.
+* AWSHealth (4.1.1.0)
+	* Adds resource tags functionality to the AWS Health service
+* CognitoIdentityProvider (4.1.2.0)
+	* Implement OAuth 2.0 Token Exchange (RFC 8693) for Cognito User Pools, enabling services to exchange a user's existing token for a new token that is appropriately scoped and audience-bound for a specific downstream service.
+* Connect (4.1.2.0)
+	* Adds the DeleteAllEntitySessions API, which signs a user out of all of their active sessions in an Amazon Connect instance.
+* ConnectHealth (4.1.1.0)
+	* Adds dataset APIs and async medical coding jobs that can use a customer dataset (preview). Ambient listening sessions add medical coding job details and real-time periodontal chart and checklist events (preview). SubmitFeedback compares human-approved and AI-generated artifacts (preview).
+* ConnectScheduling (4.1.0.0)
+	* This release adds APIs for Amazon Connect Scheduling. Use them to create, get, approve, reject, and cancel agent time off requests, and to set agent time off balances.
+* DevOpsAgent (4.1.1.1)
+	* A SendMessageHeartbeatEvent that arrives with an empty payload is now returned as an event instead of failing the event stream.
+* DSQL (4.1.1.0)
+	* Added support for Amazon Aurora DSQL advanced monitoring metric groups, which publish detailed database metrics and logs to Amazon CloudWatch Database Insights. Adds the metricGroups parameter to CreateCluster, UpdateCluster, and GetCluster.
+* DynamoDBStreams (4.1.1.0)
+	* Generate account-based endpoints for DynamoDB Streams requests when the account ID is available
+* EC2 (4.1.3.0)
+	* Adds a new Transit Gateway Attachment type called Network Function. Launches associated KMS Keys for EBS Snapshots - associated KMS keys enable customers to share and copy snapshots encrypted with AWS Managed Keys across AWS accounts.
+* ECR (4.1.1.0)
+	* ECR feature support for replicating image deletion and untagging.
+* ECS (4.1.1.0)
+	* Amazon ECS gateway connectors now support a configurable deregistration delay (0-3600 seconds, default 300 seconds).
+* EMRServerless (4.1.1.0)
+	* Amazon EMR Serverless now supports Flex, a new execution option for running data processing jobs on spare compute capacity at a discount.
+* HealthLake (4.1.0.1)
+	* A HeartbeatEvent that arrives with an empty payload is now returned as an event instead of failing the event stream.
+* IAMToolbox (4.1.1.0)
+	* AWS IAM adds the GetRequestAuthorizationPolicy operation, per-check authorization results (checks) and extra policy metadata for resource-based policies (policySource) in GetRequestAuthorizationDetails for Access Troubleshooter.
+* IoTWireless (4.1.1.0)
+	* Updated CreateDeviceProfile to accept MaxEirp values up to 36 dBm in LoRaWANDeviceProfile. Previously the maximum value was 15.
+* KeyManagementService (4.1.1.0)
+	* AWS KMS now supports sharing KMS keys across AWS accounts using AWS Resource Access Manager (AWS RAM). This release adds the optional ResourceOwners parameter to ListKeys, which lists keys owned by the caller's account (SELF), keys shared with the account through AWS RAM, or both.
+* Lambda (4.1.2.0)
+	* Adds support for GPU instances on Lambda Managed Instances in the CreateFunction and UpdateFunctionConfiguration APIs. Lambda Event Functions on Lambda Managed Instances can now set the accelerator memory using the new AcceleratorConfig parameter and run on capacity providers with GPU instances.
+* LambdaCore (4.1.2.0)
+	* Lambda network connectors now support service-managed Elastic IP addresses. This enables traffic routed through a connector to reach the public internet without a NAT gateway.
+* NetworkFirewall (4.1.2.0)
+	* Adds support for context-aware stateful rule groups, letting rules reference AWS resource IDs through ContextSets sourced from a Network Manager context store.
+* NetworkFlowMonitor (4.1.1.0)
+	* This release adds Performance Monitors to Amazon CloudWatch Network Monitoring. Without installing an agent, they track traffic in the VPCs you select and report an impact score (None, Low, Medium, or High) showing whether the AWS network is degrading your workloads.
+* NetworkManager (4.1.1.0)
+	* Context Sharing with Firewalls
+* OpenSearchMemory (4.1.0.0)
+	* Initial release of Amazon OpenSearch Memory, which gives AI agents persistent memory. Store conversation and document events in a Space, have memories extracted from them automatically, and retrieve them with semantic, lexical, or hybrid search.
+* Polly (4.1.0.1)
+	* The CloseStreamEvent sent on the StartSpeechSynthesisStream input stream now has an empty payload and no :content-type header instead of an empty JSON object, per the event stream specification for events with no members.
+* QBusiness (4.1.0.1)
+	* The EndOfInputEvent sent on the Chat input stream now has an empty payload and no :content-type header instead of an empty JSON object, per the event stream specification for events with no members.
+* S3Vectors (4.1.1.0)
+	* Amazon S3 Vectors now supports hybrid search, providing metadata text search along with vector search.
+* SageMaker (4.1.3.0)
+	* Amazon SageMaker adds Synthetic Data Generation, Auto-labeling, Data Quality Evaluation, and Data Transformation capabilities, Cross-Region Inference Routing, KV Aware routing for realtime inference endpoints.
+* SageMakerInferenceRouterRuntime (4.1.0.0)
+	* Amazon SageMaker adds cross-region inference routing with new runtime APIs that intelligently route inference requests across endpoints in multiple AWS regions.
+* WellArchitected (4.1.1.0)
+	* This release adds AWS Organizations integration, on-demand reports, recommendation and profile sharing, and automated basic profiles to the Well-Architected Agent.
+* WorkSpaces (4.1.1.0)
+	* Adds the WorkspaceOsUserMode parameter to RegisterWorkspaceDirectory and DescribeWorkspaceDirectories, so customers can register an IAM Identity Center directory whose WorkSpaces use local operating system users instead of joining a domain.
+* Core 4.1.1.0
+	* Added EventStreamUtils.ConvertMessageToResponseData so an event unmarshaller context built over a message payload can read the event's headers; used by rpcv2Cbor event streams whose events carry eventHeader members.
+	* Added support for the AWS_CA_BUNDLE environment variable. When set to the path of a PEM file, HTTP clients created by the SDK, including container credentials and SSO start URL resolution, trust only the CA certificates in that file when validating server certificates. A custom HttpClientFactory is not affected.
+	* Enumerating an event stream now returns the events that were decoded before a message that fails to convert, and then throws. Previously, events decoded in the same network read as the failing message were discarded.
+	* Event stream events with no payload (every member is an event header, or the event has no members) no longer carry a :content-type header, per the event stream specification.
+	* Reduce SigV4 signing allocations on .NET 8+ by hashing the canonical request and string to sign from pooled buffers, and read AWS_LAMBDA_MAX_CONCURRENCY once for recursion detection. Signatures and headers are unchanged.
+	* Stopped adding a Content-Length: 0 entry to the internal request headers of event stream requests. The header was never sent on the wire (the streamed body has no length), so only code that inspects the request headers sees the difference.
+	* All service and extension packages updated to require new Core
+
 ### 4.1.2.0 (2026-11-13 19:12 UTC)
 * AppStream (4.1.1.0)
 	* Amazon WorkSpaces Agent Access now supports image builders, so AI agents can install, configure, and test applications before you create an image. New Replay Session delivers a video of screenshots, a transcript, and a report for each agent session, optionally encrypted with your own KMS key.

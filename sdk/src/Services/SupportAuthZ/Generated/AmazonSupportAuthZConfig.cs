@@ -32,7 +32,7 @@ namespace Amazon.SupportAuthZ
     public partial class AmazonSupportAuthZConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SupportAuthZ", "4.1.0.0");
+            InternalSDKUtils.BuildUserAgentString("SupportAuthZ", "4.1.0.1");
 
         private static readonly AmazonSupportAuthZEndpointResolver EndpointResolver =
             new AmazonSupportAuthZEndpointResolver();
