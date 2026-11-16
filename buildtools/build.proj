@@ -310,6 +310,7 @@
             <PrivateKeyException Include="sdk/test/Services/EC2/UnitTests/Custom/PasswordTest.cs" />
             <PrivateKeyException Include="sdk/test/NetStandard/UnitTests/sample.rsa.private.key.txt" />
             <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/IoTManagedIntegrations/Generated/PropertyValueRules.xml" />
+            <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/SSOAdmin/Generated/PropertyValueRules.xml" />
             <PrivateKeyException Include="extensions/test/EC2.DecryptPasswordTests/PasswordTest.cs"/>
 
             <PrivateKeyException Include="extensions/src/AWSSDK.Extensions.CloudFront.Signers/AmazonCloudFrontUrlSigner.cs"/>
