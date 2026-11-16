@@ -522,7 +522,16 @@ namespace Amazon.Runtime.Internal.Auth
             var signingKeyEntry = GetSigningKeyEntry(awsSecretAccessKey, region, dateStamp, service);
 #if NET8_0_OR_GREATER
             var signature = new byte[HMACSHA256.HashSizeInBytes];
-            signingKeyEntry.ComputeHmac(Encoding.UTF8.GetBytes(stringToSign), signature);
+            var stringToSignBuffer = System.Buffers.ArrayPool<byte>.Shared.Rent(Encoding.UTF8.GetByteCount(stringToSign));
+            try
+            {
+                var written = Encoding.UTF8.GetBytes(stringToSign, stringToSignBuffer);
+                signingKeyEntry.ComputeHmac(stringToSignBuffer.AsSpan(0, written), signature);
+            }
+            finally
+            {
+                System.Buffers.ArrayPool<byte>.Shared.Return(stringToSignBuffer, clearArray: true);
+            }
 #else
             var signature = ComputeKeyedHash(SignerAlgorithm, signingKeyEntry.Key, stringToSign);
 #endif
@@ -787,7 +796,22 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns></returns>
         public static byte[] ComputeHash(string data)
         {
+#if NET8_0_OR_GREATER
+            // Rent from the array pool instead of allocating a byte[] copy of the canonical request.
+            // The buffer is cleared when returned as the data can contain the session token header.
+            var buffer = System.Buffers.ArrayPool<byte>.Shared.Rent(Encoding.UTF8.GetByteCount(data));
+            try
+            {
+                var written = Encoding.UTF8.GetBytes(data, buffer);
+                return SHA256.HashData(buffer.AsSpan(0, written));
+            }
+            finally
+            {
+                System.Buffers.ArrayPool<byte>.Shared.Return(buffer, clearArray: true);
+            }
+#else
             return ComputeHash(Encoding.UTF8.GetBytes(data));
+#endif
         }
 
         /// <summary>

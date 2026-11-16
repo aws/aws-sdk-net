@@ -451,6 +451,28 @@ namespace AWSSDK.UnitTests
         }
 
         // -----------------------------------------------------------------------
+        // String hashing
+        // -----------------------------------------------------------------------
+
+        [TestMethod]
+        public void ComputeHash_String_MultiByte_MatchesHashOfUtf8Bytes()
+        {
+            var data = "a\u00e9\u20ac\U0001F600";
+            using (var sha256 = SHA256.Create())
+            {
+                CollectionAssert.AreEqual(sha256.ComputeHash(Encoding.UTF8.GetBytes(data)), AWS4Signer.ComputeHash(data));
+            }
+        }
+
+        [TestMethod]
+        public void ComputeSignature_MultiByteRegion_MatchesIndependentHmac()
+        {
+            Assert.AreEqual(
+                IndependentSignature("secret-mb", "us-\u00e9\u20ac-1", SigningTestDate, "canonical-request"),
+                Sign("secret-mb", "us-\u00e9\u20ac-1", SigningTestDate, "canonical-request").Signature);
+        }
+
+        // -----------------------------------------------------------------------
         // Testee shim
         // -----------------------------------------------------------------------
 
