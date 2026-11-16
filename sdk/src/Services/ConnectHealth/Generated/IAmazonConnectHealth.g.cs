@@ -101,6 +101,113 @@ namespace Amazon.ConnectHealth
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a Dataset in a Domain and starts building it. A new dataset has the status
+        /// CREATING. When it's ready to use, its status changes to ACTIVE, or to CREATE_FAILED
+        /// if it fails to build. To check the status, call GetDataset.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is idempotent: if you retry a request with the same clientToken, it
+        /// returns the dataset that the first request created.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a medical coding dataset, Amazon Connect Health uses the coded examples that are
+        /// in the s3InputPath when you create the dataset, and writes evaluation scores to the
+        /// s3OutputPath. Later changes to the s3InputPath don't change the dataset. To use this
+        /// operation, you must have s3:GetObject and s3:ListBucket permissions for the input
+        /// location and s3:PutObject permission for the output location, and kms:Decrypt and
+        /// kms:GenerateDataKey permissions if you encrypt the locations with an AWS KMS key.
+        /// </para>
+        ///  
+        /// <para>
+        /// Datasets are in preview release and are subject to change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
+        /// <returns>The response from the CreateDataset service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ConflictException">
+        /// This error is thrown when a resource update is no longer valid due to assumptions
+        /// about initial state changing.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        CreateDatasetResponse CreateDataset(CreateDatasetRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a Dataset in a Domain and starts building it. A new dataset has the status
+        /// CREATING. When it's ready to use, its status changes to ACTIVE, or to CREATE_FAILED
+        /// if it fails to build. To check the status, call GetDataset.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is idempotent: if you retry a request with the same clientToken, it
+        /// returns the dataset that the first request created.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a medical coding dataset, Amazon Connect Health uses the coded examples that are
+        /// in the s3InputPath when you create the dataset, and writes evaluation scores to the
+        /// s3OutputPath. Later changes to the s3InputPath don't change the dataset. To use this
+        /// operation, you must have s3:GetObject and s3:ListBucket permissions for the input
+        /// location and s3:PutObject permission for the output location, and kms:Decrypt and
+        /// kms:GenerateDataKey permissions if you encrypt the locations with an AWS KMS key.
+        /// </para>
+        ///  
+        /// <para>
+        /// Datasets are in preview release and are subject to change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateDataset service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ConflictException">
+        /// This error is thrown when a resource update is no longer valid due to assumptions
+        /// about initial state changing.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a new Domain for managing HealthAgent resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
@@ -224,6 +331,91 @@ namespace Amazon.ConnectHealth
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Starts deleting a Dataset and the resources that Amazon Connect Health built for it.
+        /// You can delete a dataset whose status is ACTIVE, CREATE_FAILED, or DELETE_FAILED.
+        /// The dataset moves to DELETING, and then to DELETED. If the delete fails, the dataset
+        /// moves to DELETE_FAILED, and you can call DeleteDataset again.
+        /// 
+        ///  
+        /// <para>
+        /// Medical coding jobs that already use the dataset finish. Amazon Connect Health rejects
+        /// new requests that specify the dataset.
+        /// </para>
+        ///  
+        /// <para>
+        /// Datasets are in preview release and are subject to change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
+        /// <returns>The response from the DeleteDataset service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ConflictException">
+        /// This error is thrown when a resource update is no longer valid due to assumptions
+        /// about initial state changing.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request);
+#endif
+
+        /// <summary>
+        /// Starts deleting a Dataset and the resources that Amazon Connect Health built for it.
+        /// You can delete a dataset whose status is ACTIVE, CREATE_FAILED, or DELETE_FAILED.
+        /// The dataset moves to DELETING, and then to DELETED. If the delete fails, the dataset
+        /// moves to DELETE_FAILED, and you can call DeleteDataset again.
+        /// 
+        ///  
+        /// <para>
+        /// Medical coding jobs that already use the dataset finish. Amazon Connect Health rejects
+        /// new requests that specify the dataset.
+        /// </para>
+        ///  
+        /// <para>
+        /// Datasets are in preview release and are subject to change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteDataset service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ConflictException">
+        /// This error is thrown when a resource update is no longer valid due to assumptions
+        /// about initial state changing.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes a Domain and all associated resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
@@ -251,6 +443,69 @@ namespace Amazon.ConnectHealth
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves information about a Dataset, including its status and, after it is built,
+        /// its results. A dataset whose status is DELETED returns ResourceNotFoundException.
+        /// 
+        ///  
+        /// <para>
+        /// Datasets are in preview release and are subject to change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataset service method.</param>
+        /// <returns>The response from the GetDataset service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/GetDataset">REST API Reference for GetDataset Operation</seealso>
+        GetDatasetResponse GetDataset(GetDatasetRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about a Dataset, including its status and, after it is built,
+        /// its results. A dataset whose status is DELETED returns ResourceNotFoundException.
+        /// 
+        ///  
+        /// <para>
+        /// Datasets are in preview release and are subject to change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDataset service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/GetDataset">REST API Reference for GetDataset Operation</seealso>
+        Task<GetDatasetResponse> GetDatasetAsync(GetDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves information about a Domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDomain service method.</param>
@@ -275,6 +530,69 @@ namespace Amazon.ConnectHealth
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/GetDomain">REST API Reference for GetDomain Operation</seealso>
         Task<GetDomainResponse> GetDomainAsync(GetDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about a medical coding job, including its status and, when it
+        /// succeeds, the location of its results.
+        /// 
+        ///  
+        /// <para>
+        /// Medical coding jobs are in preview release and are subject to change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMedicalCodingJob service method.</param>
+        /// <returns>The response from the GetMedicalCodingJob service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/GetMedicalCodingJob">REST API Reference for GetMedicalCodingJob Operation</seealso>
+        GetMedicalCodingJobResponse GetMedicalCodingJob(GetMedicalCodingJobRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about a medical coding job, including its status and, when it
+        /// succeeds, the location of its results.
+        /// 
+        ///  
+        /// <para>
+        /// Medical coding jobs are in preview release and are subject to change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMedicalCodingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetMedicalCodingJob service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/GetMedicalCodingJob">REST API Reference for GetMedicalCodingJob Operation</seealso>
+        Task<GetMedicalCodingJobResponse> GetMedicalCodingJobAsync(GetMedicalCodingJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -425,6 +743,73 @@ namespace Amazon.ConnectHealth
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the Datasets in a Domain. You can list only the datasets of one type. The operation
+        /// doesn't return datasets whose status is DELETED, and the order of the results isn't
+        /// specified. We recommend using pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// 
+        ///  
+        /// <para>
+        /// Datasets are in preview release and are subject to change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
+        /// <returns>The response from the ListDatasets service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        ListDatasetsResponse ListDatasets(ListDatasetsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the Datasets in a Domain. You can list only the datasets of one type. The operation
+        /// doesn't return datasets whose status is DELETED, and the order of the results isn't
+        /// specified. We recommend using pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// 
+        ///  
+        /// <para>
+        /// Datasets are in preview release and are subject to change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDatasets service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists Domains for a given account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomains service method.</param>
@@ -509,6 +894,91 @@ namespace Amazon.ConnectHealth
         /// <returns>The response from the ListTagsForResource service method, as returned by ConnectHealth.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Starts an asynchronous job that generates medical codes (ICD-10 and CPT) for clinical
+        /// text. Call GetMedicalCodingJob to check the status of the job. When the job succeeds,
+        /// Amazon Connect Health writes the results to the output Amazon S3 location.
+        /// 
+        ///  
+        /// <para>
+        /// To tailor the codes to your organization, specify an ACTIVE medical coding dataset
+        /// in the Domain. If you don't specify a dataset, the job uses the general medical coding
+        /// knowledge base.
+        /// </para>
+        ///  
+        /// <para>
+        /// Medical coding jobs are in preview release and are subject to change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMedicalCodingJob service method.</param>
+        /// <returns>The response from the StartMedicalCodingJob service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ConflictException">
+        /// This error is thrown when a resource update is no longer valid due to assumptions
+        /// about initial state changing.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/StartMedicalCodingJob">REST API Reference for StartMedicalCodingJob Operation</seealso>
+        StartMedicalCodingJobResponse StartMedicalCodingJob(StartMedicalCodingJobRequest request);
+#endif
+
+        /// <summary>
+        /// Starts an asynchronous job that generates medical codes (ICD-10 and CPT) for clinical
+        /// text. Call GetMedicalCodingJob to check the status of the job. When the job succeeds,
+        /// Amazon Connect Health writes the results to the output Amazon S3 location.
+        /// 
+        ///  
+        /// <para>
+        /// To tailor the codes to your organization, specify an ACTIVE medical coding dataset
+        /// in the Domain. If you don't specify a dataset, the job uses the general medical coding
+        /// knowledge base.
+        /// </para>
+        ///  
+        /// <para>
+        /// Medical coding jobs are in preview release and are subject to change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMedicalCodingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartMedicalCodingJob service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ConflictException">
+        /// This error is thrown when a resource update is no longer valid due to assumptions
+        /// about initial state changing.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/StartMedicalCodingJob">REST API Reference for StartMedicalCodingJob Operation</seealso>
+        Task<StartMedicalCodingJobResponse> StartMedicalCodingJobAsync(StartMedicalCodingJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NET8_0_OR_GREATER
 #if NETFRAMEWORK
@@ -627,6 +1097,59 @@ namespace Amazon.ConnectHealth
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/StartPatientInsightsJob">REST API Reference for StartPatientInsightsJob Operation</seealso>
         Task<StartPatientInsightsJobResponse> StartPatientInsightsJobAsync(StartPatientInsightsJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Submits feedback on a clinical document or a set of medical codes that Amazon Connect
+        /// Health generated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitFeedback service method.</param>
+        /// <returns>The response from the SubmitFeedback service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/SubmitFeedback">REST API Reference for SubmitFeedback Operation</seealso>
+        SubmitFeedbackResponse SubmitFeedback(SubmitFeedbackRequest request);
+#endif
+
+        /// <summary>
+        /// Submits feedback on a clinical document or a set of medical codes that Amazon Connect
+        /// Health generated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitFeedback service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the SubmitFeedback service method, as returned by ConnectHealth.</returns>
+        /// <exception cref="Amazon.ConnectHealth.Model.AccessDeniedException">
+        /// This error is thrown when the client does not supply proper credentials to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.InternalServerException">
+        /// This error is thrown when a transient error causes our API to fail.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ResourceNotFoundException">
+        /// This error is thrown when the requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ThrottlingException">
+        /// This error is thrown when the client exceeds the allowed request rate.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectHealth.Model.ValidationException">
+        /// This error is thrown when the client supplies invalid input to the API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/SubmitFeedback">REST API Reference for SubmitFeedback Operation</seealso>
+        Task<SubmitFeedbackResponse> SubmitFeedbackAsync(SubmitFeedbackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

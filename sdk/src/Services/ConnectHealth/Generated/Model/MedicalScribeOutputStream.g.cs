@@ -38,7 +38,8 @@ using ExceptionFactory = System.Func<Amazon.Runtime.EventStreams.IEventStreamMes
 namespace Amazon.ConnectHealth.Model
 {
     /// <summary>
-    /// Output stream from Medical Scribe containing transcript events and errors
+    /// The output stream of a listening session. It carries transcript events, periodontal
+    /// chart events, checklist events, and errors.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "MedicalScribeOutputStreamCollection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventOutputStream. Users need to be able to call Dispose.")]
@@ -51,6 +52,22 @@ namespace Amazon.ConnectHealth.Model
         {
             {
                 "Initial-Response", payload => new InitialResponseEvent(payload)
+            },
+            {
+                "checklistEvent", payload =>
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    return new MedicalScribeChecklistEventUnmarshaller().Unmarshall(context, ref reader);
+                }
+            },
+            {
+                "periodontalChartEvent", payload =>
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    return new MedicalScribePeriodontalChartEventUnmarshaller().Unmarshall(context, ref reader);
+                }
             },
             {
                 "transcriptEvent", payload =>
@@ -114,6 +131,16 @@ namespace Amazon.ConnectHealth.Model
         public event EventHandler<EventStreamEventReceivedArgs<InitialResponseEvent>> InitialResponseReceived;
 
         ///<summary>
+        ///Raised when an ChecklistEvent event is received
+        ///</summary>
+        public event EventHandler<EventStreamEventReceivedArgs<MedicalScribeChecklistEvent>> ChecklistEventReceived;
+
+        ///<summary>
+        ///Raised when an PeriodontalChartEvent event is received
+        ///</summary>
+        public event EventHandler<EventStreamEventReceivedArgs<MedicalScribePeriodontalChartEvent>> PeriodontalChartEventReceived;
+
+        ///<summary>
         ///Raised when an TranscriptEvent event is received
         ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<MedicalScribeTranscriptEvent>> TranscriptEventReceived;
@@ -151,6 +178,8 @@ namespace Amazon.ConnectHealth.Model
                 // and we can avoid a cascade of nested if else statements. The result is thrown away
                 var _ =
                 RaiseEvent(InitialResponseReceived, ev) ||
+                RaiseEvent(ChecklistEventReceived, ev) ||
+                RaiseEvent(PeriodontalChartEventReceived, ev) ||
                 RaiseEvent(TranscriptEventReceived, ev);
             };
         }
