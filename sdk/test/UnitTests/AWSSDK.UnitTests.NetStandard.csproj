@@ -47,6 +47,7 @@
     <Compile Remove="**/obj/**"/>
     <None Remove="**/obj/**" />
     <Compile Remove="**/_bcl/**"/>
+    <Compile Remove="../Services/MobileAnalytics/UnitTests/**/*.cs"/>
   </ItemGroup>
 
   <ItemGroup>
