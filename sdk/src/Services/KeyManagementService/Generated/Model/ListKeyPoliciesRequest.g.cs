@@ -32,10 +32,13 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the ListKeyPolicies operation. Gets the names of the
     /// key policies that are attached to a KMS key. This operation is designed to get policy
-    /// names that you can use in a <a>GetKeyPolicy</a> operation. However, the only valid
-    /// policy name is <c>default</c>. <para> <b>Cross-account use</b>: No. You cannot perform
-    /// this operation on a KMS key in a different Amazon Web Services account. </para> <para>
-    /// <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListKeyPolicies</a>
+    /// names that you can use in a <a>GetKeyPolicy</a> operation. The valid policy names
+    /// are <c>default</c> and <c>AWS_RAM</c>. <para> For information about the <c>AWS_RAM</c>
+    /// key policy, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+    /// KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>. </para>
+    /// <para> <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key
+    /// in a different Amazon Web Services account. </para> <para> <b>Required permissions</b>:
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListKeyPolicies</a>
     /// (key policy) </para> <para> <b>Related operations:</b> </para> <ul> <li> <para> <a>GetKeyPolicy</a>
     /// </para> </li> <li> <para> <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
     /// </para> </li> </ul> <para> <b>Eventual consistency</b>: The KMS API follows an eventual
@@ -93,7 +96,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// Only one policy can be attached to a key.
+        /// A KMS key can have at most two key policies, <c>default</c> and <c>AWS_RAM</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1000)]

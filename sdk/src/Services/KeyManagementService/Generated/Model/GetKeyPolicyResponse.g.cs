@@ -51,8 +51,17 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name of the key policy. The only valid value is <c>default</c>.
+        /// The name of the key policy. Valid values are:
         /// </para>
+        ///  <dl> <dt>default</dt> <dd> 
+        /// <para>
+        /// The key policy that you manage.
+        /// </para>
+        ///  </dd> <dt>AWS_RAM</dt> <dd> 
+        /// <para>
+        /// The key policy that RAM manages for KMS keys that you share through RAM.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Min = 1, Max = 128)]
         public string PolicyName { get; set; }

@@ -11617,6 +11617,19 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
+        /// A KMS key can have two key policies. You manage the <c>default</c> key policy. Resource
+        /// Access Manager (RAM) manages the <c>AWS_RAM</c> key policy for KMS keys that you share
+        /// through RAM. You can use <c>GetKeyPolicy</c> to view the <c>AWS_RAM</c> key policy,
+        /// but you can't change it with <a>PutKeyPolicy</a>. To get the <c>AWS_RAM</c> key policy,
+        /// set the <c>PolicyName</c> parameter to <c>AWS_RAM</c>. If the KMS key doesn't have
+        /// an <c>AWS_RAM</c> key policy, <c>GetKeyPolicy</c> returns a <c>NotFoundException</c>.
+        /// For information about sharing KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+        /// KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>. For information
+        /// about RAM managed permissions, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/security-ram-permissions.html">Managing
+        /// permissions in RAM</a> in the <i>RAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
         /// different Amazon Web Services account.
         /// </para>
@@ -11624,6 +11637,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetKeyPolicy</a>
         /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-policy-name">kms:PolicyName</a>
+        /// condition key to control access to this operation based on the value of the <c>PolicyName</c>
+        /// parameter in the request. If the request doesn't include <c>PolicyName</c>, the value
+        /// of <c>kms:PolicyName</c> is <c>default</c>.
         /// </para>
         ///  
         /// <para>
@@ -11688,6 +11708,19 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
+        /// A KMS key can have two key policies. You manage the <c>default</c> key policy. Resource
+        /// Access Manager (RAM) manages the <c>AWS_RAM</c> key policy for KMS keys that you share
+        /// through RAM. You can use <c>GetKeyPolicy</c> to view the <c>AWS_RAM</c> key policy,
+        /// but you can't change it with <a>PutKeyPolicy</a>. To get the <c>AWS_RAM</c> key policy,
+        /// set the <c>PolicyName</c> parameter to <c>AWS_RAM</c>. If the KMS key doesn't have
+        /// an <c>AWS_RAM</c> key policy, <c>GetKeyPolicy</c> returns a <c>NotFoundException</c>.
+        /// For information about sharing KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+        /// KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>. For information
+        /// about RAM managed permissions, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/security-ram-permissions.html">Managing
+        /// permissions in RAM</a> in the <i>RAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
         /// different Amazon Web Services account.
         /// </para>
@@ -11695,6 +11728,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetKeyPolicy</a>
         /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-policy-name">kms:PolicyName</a>
+        /// condition key to control access to this operation based on the value of the <c>PolicyName</c>
+        /// parameter in the request. If the request doesn't include <c>PolicyName</c>, the value
+        /// of <c>kms:PolicyName</c> is <c>default</c>.
         /// </para>
         ///  
         /// <para>
@@ -11762,6 +11802,19 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
+        /// A KMS key can have two key policies. You manage the <c>default</c> key policy. Resource
+        /// Access Manager (RAM) manages the <c>AWS_RAM</c> key policy for KMS keys that you share
+        /// through RAM. You can use <c>GetKeyPolicy</c> to view the <c>AWS_RAM</c> key policy,
+        /// but you can't change it with <a>PutKeyPolicy</a>. To get the <c>AWS_RAM</c> key policy,
+        /// set the <c>PolicyName</c> parameter to <c>AWS_RAM</c>. If the KMS key doesn't have
+        /// an <c>AWS_RAM</c> key policy, <c>GetKeyPolicy</c> returns a <c>NotFoundException</c>.
+        /// For information about sharing KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+        /// KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>. For information
+        /// about RAM managed permissions, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/security-ram-permissions.html">Managing
+        /// permissions in RAM</a> in the <i>RAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
         /// different Amazon Web Services account.
         /// </para>
@@ -11769,6 +11822,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetKeyPolicy</a>
         /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-policy-name">kms:PolicyName</a>
+        /// condition key to control access to this operation based on the value of the <c>PolicyName</c>
+        /// parameter in the request. If the request doesn't include <c>PolicyName</c>, the value
+        /// of <c>kms:PolicyName</c> is <c>default</c>.
         /// </para>
         ///  
         /// <para>
@@ -11782,8 +11842,8 @@ namespace Amazon.KeyManagementService
         /// eventual consistency</a>.
         /// </para>
         /// </summary>
-        /// <param name="keyId">Gets the key policy for the specified KMS key.   Specify the key ID or key ARN of the KMS key.   For example:   <ul>   <li>      Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>         </li>   <li>      Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>         </li>   </ul>   To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policyName">Specifies the name of the key policy. If no policy name is specified, the default value is  <c>default</c>. The only valid name is <c>default</c>. To get the names of key   policies, use <a>ListKeyPolicies</a>.</param>
+        /// <param name="keyId">Identifies the KMS key whose key policy you want to get.   Specify the key ID or key ARN of the KMS key.   For example:   <ul>   <li>      Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>         </li>   <li>      Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>         </li>   </ul>   To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="policyName">Specifies the name of the key policy. If no policy name is specified, the default value is  <c>default</c>. Valid values are <c>default</c> and <c>AWS_RAM</c>. Use  <c>AWS_RAM</c> to get the key policy that RAM manages for a KMS key that you share   through RAM. If the KMS key doesn't have an <c>AWS_RAM</c> key policy, the request   fails with a <c>NotFoundException</c>. To get the names of key policies, use <a>ListKeyPolicies</a>.</param>
         /// <returns>The response from the GetKeyPolicy service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request. You can retry the request.
@@ -11834,6 +11894,19 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
+        /// A KMS key can have two key policies. You manage the <c>default</c> key policy. Resource
+        /// Access Manager (RAM) manages the <c>AWS_RAM</c> key policy for KMS keys that you share
+        /// through RAM. You can use <c>GetKeyPolicy</c> to view the <c>AWS_RAM</c> key policy,
+        /// but you can't change it with <a>PutKeyPolicy</a>. To get the <c>AWS_RAM</c> key policy,
+        /// set the <c>PolicyName</c> parameter to <c>AWS_RAM</c>. If the KMS key doesn't have
+        /// an <c>AWS_RAM</c> key policy, <c>GetKeyPolicy</c> returns a <c>NotFoundException</c>.
+        /// For information about sharing KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+        /// KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>. For information
+        /// about RAM managed permissions, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/security-ram-permissions.html">Managing
+        /// permissions in RAM</a> in the <i>RAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
         /// different Amazon Web Services account.
         /// </para>
@@ -11841,6 +11914,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetKeyPolicy</a>
         /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-policy-name">kms:PolicyName</a>
+        /// condition key to control access to this operation based on the value of the <c>PolicyName</c>
+        /// parameter in the request. If the request doesn't include <c>PolicyName</c>, the value
+        /// of <c>kms:PolicyName</c> is <c>default</c>.
         /// </para>
         ///  
         /// <para>
@@ -11854,8 +11934,8 @@ namespace Amazon.KeyManagementService
         /// eventual consistency</a>.
         /// </para>
         /// </summary>
-        /// <param name="keyId">Gets the key policy for the specified KMS key.   Specify the key ID or key ARN of the KMS key.   For example:   <ul>   <li>      Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>         </li>   <li>      Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>         </li>   </ul>   To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policyName">Specifies the name of the key policy. If no policy name is specified, the default value is  <c>default</c>. The only valid name is <c>default</c>. To get the names of key   policies, use <a>ListKeyPolicies</a>.</param>
+        /// <param name="keyId">Identifies the KMS key whose key policy you want to get.   Specify the key ID or key ARN of the KMS key.   For example:   <ul>   <li>      Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>         </li>   <li>      Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>         </li>   </ul>   To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="policyName">Specifies the name of the key policy. If no policy name is specified, the default value is  <c>default</c>. Valid values are <c>default</c> and <c>AWS_RAM</c>. Use  <c>AWS_RAM</c> to get the key policy that RAM manages for a KMS key that you share   through RAM. If the KMS key doesn't have an <c>AWS_RAM</c> key policy, the request   fails with a <c>NotFoundException</c>. To get the names of key policies, use <a>ListKeyPolicies</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -14128,8 +14208,13 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Gets the names of the key policies that are attached to a KMS key. This operation
         /// is designed to get policy names that you can use in a <a>GetKeyPolicy</a> operation.
-        /// However, the only valid policy name is <c>default</c>. 
+        /// The valid policy names are <c>default</c> and <c>AWS_RAM</c>.
         /// 
+        ///  
+        /// <para>
+        /// For information about the <c>AWS_RAM</c> key policy, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+        /// KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
         ///  
         /// <para>
         ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
@@ -14209,8 +14294,13 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Gets the names of the key policies that are attached to a KMS key. This operation
         /// is designed to get policy names that you can use in a <a>GetKeyPolicy</a> operation.
-        /// However, the only valid policy name is <c>default</c>. 
+        /// The valid policy names are <c>default</c> and <c>AWS_RAM</c>.
         /// 
+        ///  
+        /// <para>
+        /// For information about the <c>AWS_RAM</c> key policy, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+        /// KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
         ///  
         /// <para>
         ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
@@ -14520,13 +14610,40 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
-        /// different Amazon Web Services account.
+        /// You can also use <c>ListKeys</c> to list KMS keys in the Region that other Amazon
+        /// Web Services accounts shared with the caller's Amazon Web Services account through
+        /// Resource Access Manager (RAM). To list them, use the <c>ResourceOwners</c> parameter.
+        /// If you omit <c>ResourceOwners</c>, <c>ListKeys</c> lists only the KMS keys in the
+        /// caller's Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>ResourceOwners</c> includes <c>OTHER_ACCOUNTS_VIA_RAM</c>, <c>ListKeys</c>
+        /// returns the KMS keys that other Amazon Web Services accounts currently share with
+        /// the caller's Amazon Web Services account through RAM. For information about how and
+        /// when a resource that another account shares becomes available to your Amazon Web Services
+        /// account, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/working-with-shared.html">Access
+        /// Amazon Web Services resources shared with you</a> in the <i>RAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: No. This operation doesn't take a KMS key parameter, so
+        /// you can't use it to list the KMS keys of a specific Amazon Web Services account. The
+        /// only KMS keys in other Amazon Web Services accounts that <c>ListKeys</c> returns are
+        /// the ones that other accounts shared with the caller's Amazon Web Services account
+        /// through RAM. To list them, set the <c>ResourceOwners</c> parameter to include <c>OTHER_ACCOUNTS_VIA_RAM</c>.
         /// </para>
         ///  
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListKeys</a>
         /// (IAM policy)
+        /// </para>
+        ///  
+        /// <para>
+        /// The same <c>kms:ListKeys</c> permission lets you list the KMS keys that other accounts
+        /// shared with you through RAM. KMS doesn't evaluate the key policies of shared KMS keys
+        /// when it lists them. To use a shared KMS key, you need permission for each operation
+        /// on that KMS key.
         /// </para>
         ///  
         /// <para>
@@ -14553,6 +14670,12 @@ namespace Amazon.KeyManagementService
         ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
         /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
         /// eventual consistency</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// KMS keys that other Amazon Web Services accounts share with you can take some time
+        /// to appear in or disappear from <c>ListKeys</c> results after changes to resource shares,
+        /// such as accepting an invitation or deleting a resource share.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeys service method.</param>
@@ -14577,13 +14700,40 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
-        /// different Amazon Web Services account.
+        /// You can also use <c>ListKeys</c> to list KMS keys in the Region that other Amazon
+        /// Web Services accounts shared with the caller's Amazon Web Services account through
+        /// Resource Access Manager (RAM). To list them, use the <c>ResourceOwners</c> parameter.
+        /// If you omit <c>ResourceOwners</c>, <c>ListKeys</c> lists only the KMS keys in the
+        /// caller's Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>ResourceOwners</c> includes <c>OTHER_ACCOUNTS_VIA_RAM</c>, <c>ListKeys</c>
+        /// returns the KMS keys that other Amazon Web Services accounts currently share with
+        /// the caller's Amazon Web Services account through RAM. For information about how and
+        /// when a resource that another account shares becomes available to your Amazon Web Services
+        /// account, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/working-with-shared.html">Access
+        /// Amazon Web Services resources shared with you</a> in the <i>RAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: No. This operation doesn't take a KMS key parameter, so
+        /// you can't use it to list the KMS keys of a specific Amazon Web Services account. The
+        /// only KMS keys in other Amazon Web Services accounts that <c>ListKeys</c> returns are
+        /// the ones that other accounts shared with the caller's Amazon Web Services account
+        /// through RAM. To list them, set the <c>ResourceOwners</c> parameter to include <c>OTHER_ACCOUNTS_VIA_RAM</c>.
         /// </para>
         ///  
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListKeys</a>
         /// (IAM policy)
+        /// </para>
+        ///  
+        /// <para>
+        /// The same <c>kms:ListKeys</c> permission lets you list the KMS keys that other accounts
+        /// shared with you through RAM. KMS doesn't evaluate the key policies of shared KMS keys
+        /// when it lists them. To use a shared KMS key, you need permission for each operation
+        /// on that KMS key.
         /// </para>
         ///  
         /// <para>
@@ -14610,6 +14760,12 @@ namespace Amazon.KeyManagementService
         ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
         /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
         /// eventual consistency</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// KMS keys that other Amazon Web Services accounts share with you can take some time
+        /// to appear in or disappear from <c>ListKeys</c> results after changes to resource shares,
+        /// such as accepting an invitation or deleting a resource share.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeys service method.</param>
@@ -15361,7 +15517,8 @@ namespace Amazon.KeyManagementService
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Attaches a key policy to the specified KMS key. 
+        /// Attaches a key policy to the specified KMS key. You can use this operation to set
+        /// only the <c>default</c> key policy.
         /// 
         ///  
         /// <para>
@@ -15376,6 +15533,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        /// A KMS key can also have an <c>AWS_RAM</c> key policy, which Resource Access Manager
+        /// (RAM) manages for KMS keys that you share through RAM. You can't use <c>PutKeyPolicy</c>
+        /// to create, change, or delete the <c>AWS_RAM</c> key policy. If you set <c>PolicyName</c>
+        /// to <c>AWS_RAM</c>, the request fails with a <c>ValidationException</c> and the message
+        /// <c>The AWS_RAM policy can only be managed by the RAM service.</c> To view the <c>AWS_RAM</c>
+        /// key policy, use <a>GetKeyPolicy</a>. For information about sharing KMS keys, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+        /// KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
         /// different Amazon Web Services account.
         /// </para>
@@ -15383,6 +15551,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:PutKeyPolicy</a>
         /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-policy-name">kms:PolicyName</a>
+        /// condition key to control access to this operation based on the value of the <c>PolicyName</c>
+        /// parameter in the request. If the request doesn't include <c>PolicyName</c>, the value
+        /// of <c>kms:PolicyName</c> is <c>default</c>.
         /// </para>
         ///  
         /// <para>
@@ -15455,7 +15630,8 @@ namespace Amazon.KeyManagementService
 #endif
 
         /// <summary>
-        /// Attaches a key policy to the specified KMS key. 
+        /// Attaches a key policy to the specified KMS key. You can use this operation to set
+        /// only the <c>default</c> key policy.
         /// 
         ///  
         /// <para>
@@ -15470,6 +15646,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        /// A KMS key can also have an <c>AWS_RAM</c> key policy, which Resource Access Manager
+        /// (RAM) manages for KMS keys that you share through RAM. You can't use <c>PutKeyPolicy</c>
+        /// to create, change, or delete the <c>AWS_RAM</c> key policy. If you set <c>PolicyName</c>
+        /// to <c>AWS_RAM</c>, the request fails with a <c>ValidationException</c> and the message
+        /// <c>The AWS_RAM policy can only be managed by the RAM service.</c> To view the <c>AWS_RAM</c>
+        /// key policy, use <a>GetKeyPolicy</a>. For information about sharing KMS keys, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+        /// KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
         /// different Amazon Web Services account.
         /// </para>
@@ -15477,6 +15664,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:PutKeyPolicy</a>
         /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-policy-name">kms:PolicyName</a>
+        /// condition key to control access to this operation based on the value of the <c>PolicyName</c>
+        /// parameter in the request. If the request doesn't include <c>PolicyName</c>, the value
+        /// of <c>kms:PolicyName</c> is <c>default</c>.
         /// </para>
         ///  
         /// <para>
@@ -15552,7 +15746,8 @@ namespace Amazon.KeyManagementService
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Attaches a key policy to the specified KMS key. 
+        /// Attaches a key policy to the specified KMS key. You can use this operation to set
+        /// only the <c>default</c> key policy.
         /// 
         ///  
         /// <para>
@@ -15567,6 +15762,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        /// A KMS key can also have an <c>AWS_RAM</c> key policy, which Resource Access Manager
+        /// (RAM) manages for KMS keys that you share through RAM. You can't use <c>PutKeyPolicy</c>
+        /// to create, change, or delete the <c>AWS_RAM</c> key policy. If you set <c>PolicyName</c>
+        /// to <c>AWS_RAM</c>, the request fails with a <c>ValidationException</c> and the message
+        /// <c>The AWS_RAM policy can only be managed by the RAM service.</c> To view the <c>AWS_RAM</c>
+        /// key policy, use <a>GetKeyPolicy</a>. For information about sharing KMS keys, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+        /// KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
         /// different Amazon Web Services account.
         /// </para>
@@ -15574,6 +15780,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:PutKeyPolicy</a>
         /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-policy-name">kms:PolicyName</a>
+        /// condition key to control access to this operation based on the value of the <c>PolicyName</c>
+        /// parameter in the request. If the request doesn't include <c>PolicyName</c>, the value
+        /// of <c>kms:PolicyName</c> is <c>default</c>.
         /// </para>
         ///  
         /// <para>
@@ -15588,7 +15801,7 @@ namespace Amazon.KeyManagementService
         /// </summary>
         /// <param name="keyId">Sets the key policy on the specified KMS key.   Specify the key ID or key ARN of the KMS key.   For example:   <ul>   <li>      Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>         </li>   <li>      Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>         </li>   </ul>   To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="policy">The key policy to attach to the KMS key.   The key policy must meet the following criteria:   <ul>   <li>      The key policy must allow the calling principal to make a    subsequent <c>PutKeyPolicy</c> request on the KMS key.  This reduces the risk that    the KMS key becomes unmanageable. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit    this condition, set <c>BypassPolicyLockoutSafetyCheck</c> to true.)   </li>   <li>      Each statement in the key policy must contain one or more principals. The principals    in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services    principal, you might need to enforce a delay before including the new principal in a key    policy because the new principal might not be immediately visible to KMS. For more    information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services   Identity and Access Management User Guide</i>.   </li>   </ul>   <note>   If either of the required <c>Resource</c> or <c>Action</c> elements are  missing from a key policy statement, the policy statement has no effect. When a key policy  statement is missing one of these elements, the KMS console correctly reports an error,  but the <c>PutKeyPolicy</c> API request succeeds, even though the policy statement is  ineffective.   For more information on required key policy elements, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-overview.html#key-policy-elements">Elements in a key    policy</a> in the <i>Key Management Service Developer Guide</i>.   </note>   A key policy document can include only the following characters:   <ul>   <li>      Printable ASCII characters from the space character (<c>\u0020</c>) through the end of the ASCII character range.   </li>   <li>      Printable characters in the Basic Latin and Latin-1 Supplement character set (through <c>\u00FF</c>).   </li>   <li>      The tab (<c>\u0009</c>), line feed (<c>\u000A</c>), and carriage return (<c>\u000D</c>) special characters   </li>   </ul>   <note>   If the key policy exceeds the length constraint, KMS returns a    <c>LimitExceededException</c>.   </note>   For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the   <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i>      <i>Identity and Access Management User Guide</i>   </i>.</param>
-        /// <param name="policyName">The name of the key policy. If no policy name is specified, the default value is  <c>default</c>. The only valid value is <c>default</c>.</param>
+        /// <param name="policyName">The name of the key policy. If no policy name is specified, the default value is  <c>default</c>. Valid values are <c>default</c> and <c>AWS_RAM</c>, but   you can set only the <c>default</c> key policy. RAM manages the <c>AWS_RAM</c>   key policy for KMS keys that you share through RAM. If you specify <c>AWS_RAM</c>, the   request fails with a <c>ValidationException</c>, or with an  <c>AccessDeniedException</c> if you don't have permission to call  <c>PutKeyPolicy</c> with that policy name.</param>
         /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request. You can retry the request.
@@ -15648,7 +15861,8 @@ namespace Amazon.KeyManagementService
 #endif
 
         /// <summary>
-        /// Attaches a key policy to the specified KMS key. 
+        /// Attaches a key policy to the specified KMS key. You can use this operation to set
+        /// only the <c>default</c> key policy.
         /// 
         ///  
         /// <para>
@@ -15663,6 +15877,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        /// A KMS key can also have an <c>AWS_RAM</c> key policy, which Resource Access Manager
+        /// (RAM) manages for KMS keys that you share through RAM. You can't use <c>PutKeyPolicy</c>
+        /// to create, change, or delete the <c>AWS_RAM</c> key policy. If you set <c>PolicyName</c>
+        /// to <c>AWS_RAM</c>, the request fails with a <c>ValidationException</c> and the message
+        /// <c>The AWS_RAM policy can only be managed by the RAM service.</c> To view the <c>AWS_RAM</c>
+        /// key policy, use <a>GetKeyPolicy</a>. For information about sharing KMS keys, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+        /// KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
         /// different Amazon Web Services account.
         /// </para>
@@ -15670,6 +15895,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:PutKeyPolicy</a>
         /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-policy-name">kms:PolicyName</a>
+        /// condition key to control access to this operation based on the value of the <c>PolicyName</c>
+        /// parameter in the request. If the request doesn't include <c>PolicyName</c>, the value
+        /// of <c>kms:PolicyName</c> is <c>default</c>.
         /// </para>
         ///  
         /// <para>
@@ -15684,7 +15916,7 @@ namespace Amazon.KeyManagementService
         /// </summary>
         /// <param name="keyId">Sets the key policy on the specified KMS key.   Specify the key ID or key ARN of the KMS key.   For example:   <ul>   <li>      Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>         </li>   <li>      Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>         </li>   </ul>   To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="policy">The key policy to attach to the KMS key.   The key policy must meet the following criteria:   <ul>   <li>      The key policy must allow the calling principal to make a    subsequent <c>PutKeyPolicy</c> request on the KMS key.  This reduces the risk that    the KMS key becomes unmanageable. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit    this condition, set <c>BypassPolicyLockoutSafetyCheck</c> to true.)   </li>   <li>      Each statement in the key policy must contain one or more principals. The principals    in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services    principal, you might need to enforce a delay before including the new principal in a key    policy because the new principal might not be immediately visible to KMS. For more    information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services   Identity and Access Management User Guide</i>.   </li>   </ul>   <note>   If either of the required <c>Resource</c> or <c>Action</c> elements are  missing from a key policy statement, the policy statement has no effect. When a key policy  statement is missing one of these elements, the KMS console correctly reports an error,  but the <c>PutKeyPolicy</c> API request succeeds, even though the policy statement is  ineffective.   For more information on required key policy elements, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-overview.html#key-policy-elements">Elements in a key    policy</a> in the <i>Key Management Service Developer Guide</i>.   </note>   A key policy document can include only the following characters:   <ul>   <li>      Printable ASCII characters from the space character (<c>\u0020</c>) through the end of the ASCII character range.   </li>   <li>      Printable characters in the Basic Latin and Latin-1 Supplement character set (through <c>\u00FF</c>).   </li>   <li>      The tab (<c>\u0009</c>), line feed (<c>\u000A</c>), and carriage return (<c>\u000D</c>) special characters   </li>   </ul>   <note>   If the key policy exceeds the length constraint, KMS returns a    <c>LimitExceededException</c>.   </note>   For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the   <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i>      <i>Identity and Access Management User Guide</i>   </i>.</param>
-        /// <param name="policyName">The name of the key policy. If no policy name is specified, the default value is  <c>default</c>. The only valid value is <c>default</c>.</param>
+        /// <param name="policyName">The name of the key policy. If no policy name is specified, the default value is  <c>default</c>. Valid values are <c>default</c> and <c>AWS_RAM</c>, but   you can set only the <c>default</c> key policy. RAM manages the <c>AWS_RAM</c>   key policy for KMS keys that you share through RAM. If you specify <c>AWS_RAM</c>, the   request fails with a <c>ValidationException</c>, or with an  <c>AccessDeniedException</c> if you don't have permission to call  <c>PutKeyPolicy</c> with that policy name.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

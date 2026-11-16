@@ -37,7 +37,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Keys. 
         /// <para>
-        /// A list of KMS keys.
+        /// A list of KMS keys. For a KMS key that another Amazon Web Services account shared
+        /// with you through RAM, the key ARN contains the account ID of the Amazon Web Services
+        /// account that owns the KMS key.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
