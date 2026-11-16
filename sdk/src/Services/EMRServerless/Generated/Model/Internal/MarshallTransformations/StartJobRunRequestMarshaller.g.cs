@@ -114,6 +114,16 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("executionTimeoutMinutes");
                 context.Writer.WriteNumberValue(publicRequest.ExecutionTimeoutMinutes.Value);
             }
+            if (publicRequest.IsSetFlexExecution())
+            {
+                context.Writer.WritePropertyName("flexExecution");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FlexExecutionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FlexExecution, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetJobDriver())
             {
                 context.Writer.WritePropertyName("jobDriver");

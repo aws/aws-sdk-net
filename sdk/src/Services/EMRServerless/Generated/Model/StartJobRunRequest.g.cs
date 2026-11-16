@@ -126,6 +126,20 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetExecutionTimeoutMinutes() => this.ExecutionTimeoutMinutes.HasValue;
 
         /// <summary>
+        /// Gets and sets the property FlexExecution. 
+        /// <para>
+        /// The Amazon EMR Serverless Flex settings for the job run. If you don't specify these
+        /// settings, the job run doesn't use Flex capacity.
+        /// </para>
+        /// </summary>
+        public FlexExecution FlexExecution { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FlexExecution property is set.
+        /// </summary>
+        internal bool IsSetFlexExecution() => this.FlexExecution != null;
+
+        /// <summary>
         /// Gets and sets the property JobDriver. 
         /// <para>
         /// The job driver for the job run.
