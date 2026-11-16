@@ -67,6 +67,19 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetEventArn() => this.EventArn != null;
 
         /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// Values to narrow the results returned.
+        /// </para>
+        /// </summary>
+        public AffectedAccountFilter Filter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Filter property is set.
+        /// </summary>
+        internal bool IsSetFilter() => this.Filter != null;
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of items to return in one batch, between 10 and 100, inclusive.

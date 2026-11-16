@@ -35,6 +35,26 @@ namespace Amazon.AWSHealth.Model
     public partial class DescribeAffectedAccountsForOrganizationResponse : AmazonWebServiceResponse
     {
         /// <summary>
+        /// Gets and sets the property AffectedAccountEntities. 
+        /// <para>
+        /// The list of affected account entities, including account IDs and their associated
+        /// tags.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AccountEntity> AffectedAccountEntities { get; set; } = AWSConfigs.InitializeCollections ? new List<AccountEntity>() : null;
+
+        /// <summary>
+        /// Checks to see if the AffectedAccountEntities property is set.
+        /// </summary>
+        internal bool IsSetAffectedAccountEntities() => this.AffectedAccountEntities != null && (this.AffectedAccountEntities.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property AffectedAccounts. 
         /// <para>
         /// A JSON set of elements of the affected accounts.

@@ -62,6 +62,12 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                 var propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "accountTags":
+                        context.AddPathSegment("AccountTags");
+                        unmarshalledObject.AccountTags = new CborDictionaryUnmarshaller<string, string, CborStringUnmarshaller, CborStringUnmarshaller>(CborStringUnmarshaller.Instance, CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "awsAccountId":
                         context.AddPathSegment("AwsAccountId");
                         unmarshalledObject.AwsAccountId = CborStringUnmarshaller.Instance.Unmarshall(context);
@@ -101,6 +107,12 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                     case "lastUpdatedTime":
                         context.AddPathSegment("LastUpdatedTime");
                         unmarshalledObject.LastUpdatedTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "resourceTags":
+                        context.AddPathSegment("ResourceTags");
+                        unmarshalledObject.ResourceTags = new CborDictionaryUnmarshaller<string, string, CborStringUnmarshaller, CborStringUnmarshaller>(CborStringUnmarshaller.Instance, CborStringUnmarshaller.Instance).Unmarshall(context);
                         context.PopPathSegment();
                         break;
 

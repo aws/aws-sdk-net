@@ -185,7 +185,65 @@
     <pattern>^[a-zA-Z0-9=/+_.-]{4,10000}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeTagsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeTagsRequest.NextToken</property>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>^[a-zA-Z0-9=/+_.-]{4,10000}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeTagsResponse.NextToken</property>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>^[a-zA-Z0-9=/+_.-]{4,10000}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeTagsForOrganizationRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeTagsForOrganizationRequest.NextToken</property>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>^[a-zA-Z0-9=/+_.-]{4,10000}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeTagsForOrganizationResponse.NextToken</property>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>^[a-zA-Z0-9=/+_.-]{4,10000}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.AccountEntity.AccountId</property>
+    <min>0</min>
+    <max>12</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSHealth.Model.AccountEntityAggregate.AccountId</property>
+    <min>0</min>
+    <max>1600</max>
+    <pattern>^arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.AccountTag.Key</property>
+    <min>0</min>
+    <max>127</max>
+    <pattern>^.{0,127}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.AccountTag.Value</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^.{0,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.AffectedAccountFilter.EventArn</property>
     <min>0</min>
     <max>1600</max>
     <pattern>^arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}$</pattern>
@@ -365,6 +423,30 @@
     <pattern>^arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationTag.Key</property>
+    <min>0</min>
+    <max>127</max>
+    <pattern>^.{0,127}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationTag.Value</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^.{0,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationTagKey.Key</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>^[a-zA-Z0-9 _.:/=+\-@]{1,127}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.ResourceTagKey.Key</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>^[a-zA-Z0-9 _.:\/=+\-@]{1,127}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSHealth.Model.ServiceLifecycle.Service</property>
     <min>2</min>
     <max>30</max>
@@ -375,5 +457,11 @@
     <min>2</min>
     <max>30</max>
     <pattern>^[^:/]{2,30}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.TagKeyForOrganization.Key</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>^[a-zA-Z0-9 _.:/=+\-@]{1,127}$</pattern>
   </property-value-rule>
 </property-value-rules>
