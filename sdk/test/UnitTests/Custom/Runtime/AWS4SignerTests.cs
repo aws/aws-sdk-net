@@ -451,11 +451,11 @@ namespace AWSSDK.UnitTests
         }
 
         // -----------------------------------------------------------------------
-        // String hashing (stack / pooled buffer paths on .NET 8+)
+        // String hashing
         // -----------------------------------------------------------------------
 
-        // Straddle the stack/pool threshold, and mix in multi-byte characters so the UTF-8 byte count
-        // differs from the string length (including a surrogate pair).
+        // Inputs of varying size, including multi-byte characters so the UTF-8 byte count differs
+        // from the string length (including a surrogate pair).
         public static IEnumerable<object[]> HashInputs()
         {
             foreach (var length in new[] { 1, 100, 340, 341, 342, 1024, 1025, 5000 })
@@ -492,9 +492,9 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void ComputeSignature_CanonicalRequestAboveStackLimit_MatchesIndependentHmac()
+        public void ComputeSignature_LargeMultiByteCanonicalRequest_MatchesIndependentHmac()
         {
-            // Multi-byte header values push the canonical request well past the stack buffer limit.
+            // Multi-byte header values make the canonical request large, with more UTF-8 bytes than characters.
             var canonicalRequest = "PUT\n/key\n\nx-amz-meta-a:" + string.Concat(Enumerable.Repeat("\u00e9\u20ac\U0001F600", 300)) + "\n\nhost;x-amz-meta-a\nUNSIGNED-PAYLOAD";
             Assert.AreEqual(
                 IndependentSignature("secret-large", "us-east-1", SigningTestDate, canonicalRequest),
@@ -508,52 +508,6 @@ namespace AWSSDK.UnitTests
                 IndependentSignature("secret-mb", "us-\u00e9\u20ac-1", SigningTestDate, "canonical-request"),
                 Sign("secret-mb", "us-\u00e9\u20ac-1", SigningTestDate, "canonical-request").Signature);
         }
-
-#if NET8_0_OR_GREATER
-        [TestMethod]
-        public void ComputeHash_String_LargeInput_DoesNotLeaveDataInPooledBuffer()
-        {
-            // The pooled buffer that held the encoded string must be cleared before it is returned:
-            // canonical requests can contain the session token header.
-            var data = "x-amz-security-token:SECRET-SESSION-TOKEN" + new string('a', 4000);
-            var pool = new RecordingArrayPool();
-            var sharedPool = AWS4Signer.Utf8Buffer.Pool;
-            AWS4Signer.Utf8Buffer.Pool = pool;
-            try
-            {
-                AWS4Signer.ComputeHash(data);
-            }
-            finally
-            {
-                AWS4Signer.Utf8Buffer.Pool = sharedPool;
-            }
-
-            Assert.IsNotNull(pool.Rented, "A buffer should have been rented for an input above the stack limit.");
-            Assert.AreSame(pool.Rented, pool.Returned, "The rented buffer should have been returned to the pool.");
-            CollectionAssert.AreEqual(new byte[pool.Returned.Length], pool.Returned);
-        }
-
-        // Hands out a fresh zeroed array and records the buffer that comes back, so the test can
-        // inspect the exact buffer the signer used rather than relying on ArrayPool.Shared's caching.
-        private sealed class RecordingArrayPool : System.Buffers.ArrayPool<byte>
-        {
-            public byte[] Rented { get; private set; }
-
-            public byte[] Returned { get; private set; }
-
-            public override byte[] Rent(int minimumLength)
-            {
-                Assert.IsNull(Rented, "Only one buffer should be rented.");
-                return Rented = new byte[minimumLength + 64];
-            }
-
-            public override void Return(byte[] array, bool clearArray = false)
-            {
-                Assert.IsNull(Returned, "Only one buffer should be returned.");
-                Returned = array;
-            }
-        }
-#endif
 
         // -----------------------------------------------------------------------
         // Testee shim

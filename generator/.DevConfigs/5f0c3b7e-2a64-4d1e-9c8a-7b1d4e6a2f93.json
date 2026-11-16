@@ -1,7 +1,7 @@
 {
   "core": {
     "changeLogMessages": [
-      "Reduce SigV4 signing allocations on .NET 8+ by hashing the canonical request and string to sign from stack or pooled buffers, and read AWS_LAMBDA_MAX_CONCURRENCY once for recursion detection. Signatures and headers are unchanged."
+      "Reduce SigV4 signing allocations on .NET 8+ by hashing the canonical request and string to sign from pooled buffers, and read AWS_LAMBDA_MAX_CONCURRENCY once for recursion detection. Signatures and headers are unchanged."
     ],
     "type": "patch",
     "updateMinimum": false
