@@ -33,10 +33,22 @@ namespace Amazon.NetworkFlowMonitor.Model
     public interface INetworkFlowMonitorPaginatorFactory
     {
         /// <summary>
+        /// Paginator for GetMonitorScopeSuggestions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IGetMonitorScopeSuggestionsPaginator GetMonitorScopeSuggestions(GetMonitorScopeSuggestionsRequest request);
+
+        /// <summary>
         /// Paginator for GetQueryResultsMonitorTopContributors operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IGetQueryResultsMonitorTopContributorsPaginator GetQueryResultsMonitorTopContributors(GetQueryResultsMonitorTopContributorsRequest request);
+
+        /// <summary>
+        /// Paginator for GetQueryResultsPerformanceMonitor operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IGetQueryResultsPerformanceMonitorPaginator GetQueryResultsPerformanceMonitor(GetQueryResultsPerformanceMonitorRequest request);
 
         /// <summary>
         /// Paginator for GetQueryResultsWorkloadInsightsTopContributors operation
@@ -55,6 +67,12 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListMonitorsPaginator ListMonitors(ListMonitorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPerformanceMonitors operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListPerformanceMonitorsPaginator ListPerformanceMonitors(ListPerformanceMonitorsRequest request);
 
         /// <summary>
         /// Paginator for ListScopes operation
