@@ -318,6 +318,9 @@
             <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/test-rsa-key.pem"/>
             <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/test-ecdsa-key.pem"/>
             <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/test-dsa-key.pem"/>
+            <!-- PEM parsing for AWS_CA_BUNDLE: the CERTIFICATE markers and generated test certificates are not secrets. -->
+            <PrivateKeyException Include="sdk/src/Core/Amazon.Runtime/Pipeline/HttpHandler/CABundle.cs"/>
+            <PrivateKeyException Include="sdk/test/UnitTests/Custom/Runtime/HttpClientTests/CABundleTests.cs"/>
         </ItemGroup>
 
         <ItemGroup>
