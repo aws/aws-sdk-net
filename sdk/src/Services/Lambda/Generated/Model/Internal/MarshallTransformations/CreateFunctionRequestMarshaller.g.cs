@@ -68,6 +68,16 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAcceleratorConfig())
+            {
+                context.Writer.WritePropertyName("AcceleratorConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AcceleratorConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AcceleratorConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetArchitectures())
             {
                 context.Writer.WritePropertyName("Architectures");

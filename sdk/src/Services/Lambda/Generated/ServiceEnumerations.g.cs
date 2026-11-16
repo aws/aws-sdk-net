@@ -134,6 +134,11 @@ namespace Amazon.Lambda
         public static readonly CapacityProviderPredefinedMetricType LambdaCapacityProviderAverageCPUUtilization = new CapacityProviderPredefinedMetricType("LambdaCapacityProviderAverageCPUUtilization");
 
         /// <summary>
+        /// Constant LambdaCapacityProviderAverageGPUUtilization for CapacityProviderPredefinedMetricType
+        /// </summary>
+        public static readonly CapacityProviderPredefinedMetricType LambdaCapacityProviderAverageGPUUtilization = new CapacityProviderPredefinedMetricType("LambdaCapacityProviderAverageGPUUtilization");
+
+        /// <summary>
         /// Constructs a custom CapacityProviderPredefinedMetricType for a value not among the defined constants.
         /// </summary>
         public CapacityProviderPredefinedMetricType(string value) : base(value) { }
@@ -1284,6 +1289,11 @@ namespace Amazon.Lambda
         /// Constant ImageDeleted for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode ImageDeleted = new LastUpdateStatusReasonCode("ImageDeleted");
+
+        /// <summary>
+        /// Constant IncompatibleAcceleratorInstanceTypes for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode IncompatibleAcceleratorInstanceTypes = new LastUpdateStatusReasonCode("IncompatibleAcceleratorInstanceTypes");
 
         /// <summary>
         /// Constant InsufficientCapacity for LastUpdateStatusReasonCode
@@ -2622,6 +2632,11 @@ namespace Amazon.Lambda
         /// Constant ImageDeleted for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode ImageDeleted = new StateReasonCode("ImageDeleted");
+
+        /// <summary>
+        /// Constant IncompatibleAcceleratorInstanceTypes for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode IncompatibleAcceleratorInstanceTypes = new StateReasonCode("IncompatibleAcceleratorInstanceTypes");
 
         /// <summary>
         /// Constant InsufficientCapacity for StateReasonCode
