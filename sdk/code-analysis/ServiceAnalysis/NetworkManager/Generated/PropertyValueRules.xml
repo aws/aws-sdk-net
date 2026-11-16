@@ -31,6 +31,18 @@
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.AssociateContextStoreRequest.ContextStoreId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^context-store-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.AssociateContextStoreRequest.TransitGatewayArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.AssociateCustomerGatewayRequest.CustomerGatewayArn</property>
     <min>0</min>
     <max>500</max>
@@ -188,6 +200,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.CreateConnectionRequest.LinkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateContextStoreRequest.ClientToken</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateContextStoreRequest.Description</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateContextStoreRequest.GlobalNetworkId</property>
     <min>0</min>
     <max>50</max>
     <pattern>^[\s\S]*$</pattern>
@@ -487,6 +517,12 @@
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.DeleteContextStoreRequest.ContextStoreId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^context-store-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.DeleteCoreNetworkRequest.CoreNetworkId</property>
     <min>0</min>
     <max>50</max>
@@ -618,6 +654,18 @@
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.DisassociateContextStoreRequest.ContextStoreId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^context-store-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.DisassociateContextStoreRequest.TransitGatewayArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.DisassociateCustomerGatewayRequest.CustomerGatewayArn</property>
     <min>0</min>
     <max>500</max>
@@ -727,6 +775,36 @@
     <property>Amazon.NetworkManager.Model.GetConnectionsResponse.NextToken</property>
     <min>0</min>
     <max>2048</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetContextStoreRequest.ContextStoreId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^context-store-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetContextStoreAssociationRequest.ContextStoreId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^context-store-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetContextStoreAssociationRequest.TransitGatewayArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetContextVersionRequest.ContextStoreId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^context-store-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetContextVersionResponse.VersionId</property>
+    <min>0</min>
+    <max>256</max>
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1390,6 +1468,122 @@
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextChangesRequest.ContextStoreId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^context-store-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextChangesRequest.FromVersionId</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextChangesRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextChangesRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextChangesResponse.FromVersionId</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextChangesResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextChangesResponse.ToVersionId</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextStoreAssociationsRequest.ContextStoreId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^context-store-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextStoreAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextStoreAssociationsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextStoreAssociationsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextStoresRequest.GlobalNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextStoresRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextStoresRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextStoresResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextsRequest.ContextStoreId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^context-store-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListContextsResponse.VersionId</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.ListCoreNetworkPolicyVersionsRequest.CoreNetworkId</property>
     <min>0</min>
     <max>50</max>
@@ -1746,6 +1940,18 @@
     <property>Amazon.NetworkManager.Model.UpdateConnectionRequest.LinkId</property>
     <min>0</min>
     <max>50</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.UpdateContextStoreRequest.ContextStoreId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^context-store-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.UpdateContextStoreRequest.Description</property>
+    <min>0</min>
+    <max>256</max>
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2192,6 +2398,84 @@
     <property>Amazon.NetworkManager.Model.Connection.LinkId</property>
     <min>0</min>
     <max>50</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ContextEntry.AttachmentType</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ContextEntry.AvailabilityZone</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ContextEntry.ContextId</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ContextEntry.ContextType</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ContextEntry.PublicId</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ContextEntry.Region</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ContextEntry.SegmentType</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ContextStore.ContextStoreArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ContextStore.ContextStoreId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^context-store-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ContextStore.Description</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ContextStore.GlobalNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ContextStoreAssociation.ContextStoreId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^context-store-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ContextStoreAssociation.TransitGatewayArn</property>
+    <min>0</min>
+    <max>500</max>
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
