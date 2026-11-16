@@ -35,9 +35,11 @@ namespace Amazon.IAMToolbox.Model
     /// the request context, the evaluations performed, and the policies that were evaluated.
     /// <para> Use this operation to understand why a request was denied. Supported services
     /// include an authorization ID in the access denied error message. Pass that ID to this
-    /// operation to retrieve the details. </para> <para> Authorization details are available
-    /// for at least 24 hours after the denial. </para> <para> To use this operation, you
-    /// must have the <c>iam:GetRequestAuthorizationDetails</c> permission. </para>
+    /// operation to retrieve the details. </para> <para> To retrieve the content for a policy
+    /// in the <c>policies</c> list, call <c>GetRequestAuthorizationPolicy</c>. </para> <para>
+    /// Authorization details are available for at least 24 hours after the denial. </para>
+    /// <para> To use this operation, you must have the <c>iam:GetRequestAuthorizationDetails</c>
+    /// permission. </para>
     /// </summary>
     public partial class GetRequestAuthorizationDetailsRequest : AmazonIAMToolboxRequest
     {
@@ -48,7 +50,7 @@ namespace Amazon.IAMToolbox.Model
         /// the specific request to retrieve details for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
+        [AWSProperty(Required = true, Max = 256)]
         public string AuthorizationId { get; set; }
 
         /// <summary>
