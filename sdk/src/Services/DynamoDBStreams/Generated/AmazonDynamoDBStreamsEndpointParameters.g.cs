@@ -43,6 +43,15 @@ namespace Amazon.DynamoDBStreams.Endpoints
         }
 
         /// <summary>
+        /// The AWS region used to dispatch the request.
+        /// </summary>
+        public string Region
+        {
+            get => (string)this["Region"];
+            set => this["Region"] = value;
+        }
+
+        /// <summary>
         /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
         /// </summary>
         public bool? UseDualStack
@@ -70,12 +79,39 @@ namespace Amazon.DynamoDBStreams.Endpoints
         }
 
         /// <summary>
-        /// The AWS region used to dispatch the request.
+        /// The AWS AccountId used for the request.
         /// </summary>
-        public string Region
+        public string AccountId
         {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
+            get => (string)this["AccountId"];
+            set => this["AccountId"] = value;
+        }
+
+        /// <summary>
+        /// The AccountId Endpoint Mode.
+        /// </summary>
+        public string AccountIdEndpointMode
+        {
+            get => (string)this["AccountIdEndpointMode"];
+            set => this["AccountIdEndpointMode"] = value;
+        }
+
+        /// <summary>
+        /// The ARN of the stream for the request.
+        /// </summary>
+        public string StreamArn
+        {
+            get => (string)this["StreamArn"];
+            set => this["StreamArn"] = value;
+        }
+
+        /// <summary>
+        /// The shard iterator for the GetRecords request.
+        /// </summary>
+        public string ShardIterator
+        {
+            get => (string)this["ShardIterator"];
+            set => this["ShardIterator"] = value;
         }
     }
 }
