@@ -36,6 +36,41 @@ namespace Amazon.Athena.Model
     public partial class ListTableMetadataRequest : AmazonAthenaRequest
     {
         /// <summary>
+        /// Gets and sets the property AttributesToGet. 
+        /// <para>
+        /// Specifies the table properties returned by the <c>ListTableMetadata</c> call. This
+        /// parameter doesn't accept an empty list, and the request must include <c>NAME</c>.
+        /// The valid combinations of values are <c>NAME</c>, which returns the name of each table,
+        /// and <c>NAME</c> and <c>TABLE_TYPE</c>, which return the name and table type of each
+        /// table. The remaining properties are omitted. If you omit this parameter, all table
+        /// properties are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requesting only the properties you need can reduce response time for databases that
+        /// contain many tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter applies only to the Glue Data Catalog. For other data catalog types,
+        /// it is ignored.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2)]
+        public List<string> AttributesToGet { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the AttributesToGet property is set.
+        /// </summary>
+        internal bool IsSetAttributesToGet() => this.AttributesToGet != null && (this.AttributesToGet.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property CatalogName. 
         /// <para>
         /// The name of the data catalog for which table metadata should be returned.

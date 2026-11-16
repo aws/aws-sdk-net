@@ -540,6 +540,42 @@ namespace Amazon.Athena
     }
 
     /// <summary>
+    /// Constants used for properties of type DatabaseAttributes.
+    /// </summary>
+    public class DatabaseAttributes : ConstantClass
+    {
+        /// <summary>
+        /// Constant NAME for DatabaseAttributes
+        /// </summary>
+        public static readonly DatabaseAttributes NAME = new DatabaseAttributes("NAME");
+
+        /// <summary>
+        /// Constructs a custom DatabaseAttributes for a value not among the defined constants.
+        /// </summary>
+        public DatabaseAttributes(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatabaseAttributes FindValue(string value)
+        {
+            return FindValue<DatabaseAttributes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatabaseAttributes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EncryptionOption.
     /// </summary>
     public class EncryptionOption : ConstantClass
@@ -1045,6 +1081,47 @@ namespace Amazon.Athena
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SystemTableType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TableAttributes.
+    /// </summary>
+    public class TableAttributes : ConstantClass
+    {
+        /// <summary>
+        /// Constant NAME for TableAttributes
+        /// </summary>
+        public static readonly TableAttributes NAME = new TableAttributes("NAME");
+
+        /// <summary>
+        /// Constant TABLE_TYPE for TableAttributes
+        /// </summary>
+        public static readonly TableAttributes TABLE_TYPE = new TableAttributes("TABLE_TYPE");
+
+        /// <summary>
+        /// Constructs a custom TableAttributes for a value not among the defined constants.
+        /// </summary>
+        public TableAttributes(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TableAttributes FindValue(string value)
+        {
+            return FindValue<TableAttributes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TableAttributes(string value)
         {
             return FindValue(value);
         }
