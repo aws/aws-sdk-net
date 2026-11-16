@@ -319,6 +319,34 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
             #endregion
         }
 
+        public void CognitoIdentityProviderGetDerivedToken()
+        {
+            #region GetDerivedToken-1
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.GetDerivedToken(new GetDerivedTokenRequest
+            {
+                Audiences = new List<string> {
+                    "solar-system-data"
+                },
+                ClientId = "1example23456789",
+                ClientSecret = "13ka4h7u28d9oo44tqpq9djqsfvhvu8rk4d2ighvpu0k8fj1c2r9",
+                Scopes = new List<string> {
+                    "solar-system-data/asteroids.read"
+                },
+                SubjectToken = "eyJra456defEXAMPLE",
+                SubjectTokenType = "ACCESS_TOKEN"
+            });
+
+            int? expiresIn = response.ExpiresIn;
+            string issuedToken = response.IssuedToken;
+            IssuedTokenTypeIdentifierType issuedTokenType = response.IssuedTokenType;
+            List<string> scopes = response.Scopes;
+            OAuthTokenTypeType tokenType = response.TokenType;
+
+            #endregion
+        }
+
         public void CognitoIdentityProviderGetProvisionedLimit()
         {
             #region GetProvisionedLimit-1
