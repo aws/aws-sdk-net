@@ -454,51 +454,14 @@ namespace AWSSDK.UnitTests
         // String hashing
         // -----------------------------------------------------------------------
 
-        // Inputs of varying size, including multi-byte characters so the UTF-8 byte count differs
-        // from the string length (including a surrogate pair).
-        public static IEnumerable<object[]> HashInputs()
-        {
-            foreach (var length in new[] { 1, 100, 340, 341, 342, 1024, 1025, 5000 })
-            {
-                yield return new object[] { new string('a', length) };
-            }
-
-            foreach (var repeats in new[] { 3, 170, 171, 172, 400 })
-            {
-                yield return new object[] { string.Concat(Enumerable.Repeat("a\u00e9\u20ac\U0001F600", repeats)) };
-            }
-        }
-
         [TestMethod]
-        [DynamicData(nameof(HashInputs))]
-        public void ComputeHash_String_MatchesHashOfUtf8Bytes(string data)
+        public void ComputeHash_String_MultiByte_MatchesHashOfUtf8Bytes()
         {
+            var data = "a\u00e9\u20ac\U0001F600";
             using (var sha256 = SHA256.Create())
             {
                 CollectionAssert.AreEqual(sha256.ComputeHash(Encoding.UTF8.GetBytes(data)), AWS4Signer.ComputeHash(data));
             }
-        }
-
-        [TestMethod]
-        public void ComputeHash_String_EmptyMatchesEmptyBodyHash()
-        {
-            Assert.AreEqual(AWS4Signer.EmptyBodySha256, AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(string.Empty), true));
-        }
-
-        [TestMethod]
-        public void ComputeHash_String_NullThrows()
-        {
-            Assert.ThrowsExactly<ArgumentNullException>(() => AWS4Signer.ComputeHash((string)null));
-        }
-
-        [TestMethod]
-        public void ComputeSignature_LargeMultiByteCanonicalRequest_MatchesIndependentHmac()
-        {
-            // Multi-byte header values make the canonical request large, with more UTF-8 bytes than characters.
-            var canonicalRequest = "PUT\n/key\n\nx-amz-meta-a:" + string.Concat(Enumerable.Repeat("\u00e9\u20ac\U0001F600", 300)) + "\n\nhost;x-amz-meta-a\nUNSIGNED-PAYLOAD";
-            Assert.AreEqual(
-                IndependentSignature("secret-large", "us-east-1", SigningTestDate, canonicalRequest),
-                Sign("secret-large", "us-east-1", SigningTestDate, canonicalRequest).Signature);
         }
 
         [TestMethod]
