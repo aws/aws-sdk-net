@@ -210,6 +210,20 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetWorkspaceDirectoryName() => this.WorkspaceDirectoryName != null;
 
         /// <summary>
+        /// Gets and sets the property WorkspaceOsUserMode. 
+        /// <para>
+        /// Indicates how users are set up on the WorkSpace operating system. To use local users
+        /// with an AWS IAM Identity Center directory, specify <c>LOCAL_USER</c>.
+        /// </para>
+        /// </summary>
+        public WorkspaceOSUserMode WorkspaceOsUserMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WorkspaceOsUserMode property is set.
+        /// </summary>
+        internal bool IsSetWorkspaceOsUserMode() => this.WorkspaceOsUserMode != null;
+
+        /// <summary>
         /// Gets and sets the property WorkspaceType. 
         /// <para>
         /// Indicates whether the directory's WorkSpace type is personal or pools.

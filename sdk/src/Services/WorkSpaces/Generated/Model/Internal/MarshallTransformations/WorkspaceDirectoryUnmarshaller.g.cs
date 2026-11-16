@@ -224,6 +224,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "WorkspaceOsUserMode":
+                        context.AddPathSegment("WorkspaceOsUserMode");
+                        unmarshalledObject.WorkspaceOsUserMode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "WorkspaceSecurityGroupId":
                         context.AddPathSegment("WorkspaceSecurityGroupId");
                         unmarshalledObject.WorkspaceSecurityGroupId = CborStringUnmarshaller.Instance.Unmarshall(context);

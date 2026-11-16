@@ -147,6 +147,11 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("WorkspaceDirectoryName");
                     context.Writer.WriteTextString(publicRequest.WorkspaceDirectoryName);
                 }
+                if (publicRequest.IsSetWorkspaceOsUserMode())
+                {
+                    context.Writer.WriteTextString("WorkspaceOsUserMode");
+                    context.Writer.WriteTextString(publicRequest.WorkspaceOsUserMode);
+                }
                 if (publicRequest.IsSetWorkspaceType())
                 {
                     context.Writer.WriteTextString("WorkspaceType");

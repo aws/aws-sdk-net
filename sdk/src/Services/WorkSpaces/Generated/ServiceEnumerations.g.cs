@@ -3663,6 +3663,57 @@ namespace Amazon.WorkSpaces
     }
 
     /// <summary>
+    /// Constants used for properties of type WorkspaceOSUserMode.
+    /// </summary>
+    public class WorkspaceOSUserMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DOMAIN_JOIN for WorkspaceOSUserMode
+        /// </summary>
+        public static readonly WorkspaceOSUserMode DOMAIN_JOIN = new WorkspaceOSUserMode("DOMAIN_JOIN");
+
+        /// <summary>
+        /// Constant ENTRA_JOIN for WorkspaceOSUserMode
+        /// </summary>
+        public static readonly WorkspaceOSUserMode ENTRA_JOIN = new WorkspaceOSUserMode("ENTRA_JOIN");
+
+        /// <summary>
+        /// Constant LOCAL_USER for WorkspaceOSUserMode
+        /// </summary>
+        public static readonly WorkspaceOSUserMode LOCAL_USER = new WorkspaceOSUserMode("LOCAL_USER");
+
+        /// <summary>
+        /// Constant SELF_MANAGED for WorkspaceOSUserMode
+        /// </summary>
+        public static readonly WorkspaceOSUserMode SELF_MANAGED = new WorkspaceOSUserMode("SELF_MANAGED");
+
+        /// <summary>
+        /// Constructs a custom WorkspaceOSUserMode for a value not among the defined constants.
+        /// </summary>
+        public WorkspaceOSUserMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspaceOSUserMode FindValue(string value)
+        {
+            return FindValue<WorkspaceOSUserMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspaceOSUserMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type WorkspaceState.
     /// </summary>
     public class WorkspaceState : ConstantClass
