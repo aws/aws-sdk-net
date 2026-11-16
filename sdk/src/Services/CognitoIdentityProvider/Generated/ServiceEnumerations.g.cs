@@ -1455,6 +1455,16 @@ namespace Amazon.CognitoIdentityProvider
         public static readonly ExplicitAuthFlowsType ALLOW_REFRESH_TOKEN_AUTH = new ExplicitAuthFlowsType("ALLOW_REFRESH_TOKEN_AUTH");
 
         /// <summary>
+        /// Constant ALLOW_TOKEN_EXCHANGE_DELEGATION for ExplicitAuthFlowsType
+        /// </summary>
+        public static readonly ExplicitAuthFlowsType ALLOW_TOKEN_EXCHANGE_DELEGATION = new ExplicitAuthFlowsType("ALLOW_TOKEN_EXCHANGE_DELEGATION");
+
+        /// <summary>
+        /// Constant ALLOW_TOKEN_EXCHANGE_IMPERSONATION for ExplicitAuthFlowsType
+        /// </summary>
+        public static readonly ExplicitAuthFlowsType ALLOW_TOKEN_EXCHANGE_IMPERSONATION = new ExplicitAuthFlowsType("ALLOW_TOKEN_EXCHANGE_IMPERSONATION");
+
+        /// <summary>
         /// Constant ALLOW_USER_AUTH for ExplicitAuthFlowsType
         /// </summary>
         public static readonly ExplicitAuthFlowsType ALLOW_USER_AUTH = new ExplicitAuthFlowsType("ALLOW_USER_AUTH");
@@ -1685,6 +1695,47 @@ namespace Amazon.CognitoIdentityProvider
     }
 
     /// <summary>
+    /// Constants used for properties of type IssuedTokenTypeIdentifierType.
+    /// </summary>
+    public class IssuedTokenTypeIdentifierType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCESS_TOKEN for IssuedTokenTypeIdentifierType
+        /// </summary>
+        public static readonly IssuedTokenTypeIdentifierType ACCESS_TOKEN = new IssuedTokenTypeIdentifierType("ACCESS_TOKEN");
+
+        /// <summary>
+        /// Constant ID_TOKEN for IssuedTokenTypeIdentifierType
+        /// </summary>
+        public static readonly IssuedTokenTypeIdentifierType ID_TOKEN = new IssuedTokenTypeIdentifierType("ID_TOKEN");
+
+        /// <summary>
+        /// Constructs a custom IssuedTokenTypeIdentifierType for a value not among the defined constants.
+        /// </summary>
+        public IssuedTokenTypeIdentifierType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IssuedTokenTypeIdentifierType FindValue(string value)
+        {
+            return FindValue<IssuedTokenTypeIdentifierType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IssuedTokenTypeIdentifierType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type IssuerType.
     /// </summary>
     public class IssuerType : ConstantClass
@@ -1884,6 +1935,47 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OAuthFlowType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OAuthTokenTypeType.
+    /// </summary>
+    public class OAuthTokenTypeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Bearer for OAuthTokenTypeType
+        /// </summary>
+        public static readonly OAuthTokenTypeType Bearer = new OAuthTokenTypeType("Bearer");
+
+        /// <summary>
+        /// Constant N_A for OAuthTokenTypeType
+        /// </summary>
+        public static readonly OAuthTokenTypeType N_A = new OAuthTokenTypeType("N_A");
+
+        /// <summary>
+        /// Constructs a custom OAuthTokenTypeType for a value not among the defined constants.
+        /// </summary>
+        public OAuthTokenTypeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OAuthTokenTypeType FindValue(string value)
+        {
+            return FindValue<OAuthTokenTypeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OAuthTokenTypeType(string value)
         {
             return FindValue(value);
         }
@@ -2580,6 +2672,52 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TimeUnitsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TokenTypeIdentifierType.
+    /// </summary>
+    public class TokenTypeIdentifierType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCESS_TOKEN for TokenTypeIdentifierType
+        /// </summary>
+        public static readonly TokenTypeIdentifierType ACCESS_TOKEN = new TokenTypeIdentifierType("ACCESS_TOKEN");
+
+        /// <summary>
+        /// Constant ID_TOKEN for TokenTypeIdentifierType
+        /// </summary>
+        public static readonly TokenTypeIdentifierType ID_TOKEN = new TokenTypeIdentifierType("ID_TOKEN");
+
+        /// <summary>
+        /// Constant SAML2 for TokenTypeIdentifierType
+        /// </summary>
+        public static readonly TokenTypeIdentifierType SAML2 = new TokenTypeIdentifierType("SAML2");
+
+        /// <summary>
+        /// Constructs a custom TokenTypeIdentifierType for a value not among the defined constants.
+        /// </summary>
+        public TokenTypeIdentifierType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TokenTypeIdentifierType FindValue(string value)
+        {
+            return FindValue<TokenTypeIdentifierType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TokenTypeIdentifierType(string value)
         {
             return FindValue(value);
         }

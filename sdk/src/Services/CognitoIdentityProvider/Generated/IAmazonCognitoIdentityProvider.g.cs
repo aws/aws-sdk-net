@@ -10281,6 +10281,157 @@ namespace Amazon.CognitoIdentityProvider
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Exchanges an existing token for a new token that is scoped and audience-bound for
+        /// a specific downstream service, following the OAuth 2.0 Token Exchange grant type.
+        /// For more information about the OAuth 2.0 Token Exchange grant type, see <a href="https://tools.ietf.org/html/rfc8693">RFC
+        /// 8693 - OAuth 2.0 Token Exchange</a> on the IETF website. Present a <c>SubjectToken</c>,
+        /// the credential that you already hold, to receive a new token appropriate for calling
+        /// a specific resource server or audience.
+        /// 
+        ///  
+        /// <para>
+        /// If you also present an <c>ActorToken</c> that identifies an intermediary service,
+        /// the issued token carries an <c>act</c> claim that identifies the intermediary, and
+        /// downstream services can distinguish a user acting directly from an intermediary acting
+        /// on the user's behalf. If you don't present an <c>ActorToken</c>, the issued token
+        /// appears as if the user acted directly.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have IAM credentials, or you must present the requesting
+        /// app client's <c>ClientId</c> and, if the client has a secret, <c>ClientSecret</c>,
+        /// in the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// The requesting app client must have <c>ALLOW_TOKEN_EXCHANGE_IMPERSONATION</c> or <c>ALLOW_TOKEN_EXCHANGE_DELEGATION</c>
+        /// in its <c>ExplicitAuthFlows</c> (depending on whether you include an <c>ActorToken</c>),
+        /// or the request fails.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDerivedToken service method.</param>
+        /// <returns>The response from the GetDerivedToken service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
+        /// This exception is thrown when Amazon Cognito encounters an invalid Lambda response.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
+        /// This exception is thrown when Amazon Cognito encounters an unexpected exception with
+        /// Lambda.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
+        /// exception with the Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDerivedToken">REST API Reference for GetDerivedToken Operation</seealso>
+        GetDerivedTokenResponse GetDerivedToken(GetDerivedTokenRequest request);
+#endif
+
+        /// <summary>
+        /// Exchanges an existing token for a new token that is scoped and audience-bound for
+        /// a specific downstream service, following the OAuth 2.0 Token Exchange grant type.
+        /// For more information about the OAuth 2.0 Token Exchange grant type, see <a href="https://tools.ietf.org/html/rfc8693">RFC
+        /// 8693 - OAuth 2.0 Token Exchange</a> on the IETF website. Present a <c>SubjectToken</c>,
+        /// the credential that you already hold, to receive a new token appropriate for calling
+        /// a specific resource server or audience.
+        /// 
+        ///  
+        /// <para>
+        /// If you also present an <c>ActorToken</c> that identifies an intermediary service,
+        /// the issued token carries an <c>act</c> claim that identifies the intermediary, and
+        /// downstream services can distinguish a user acting directly from an intermediary acting
+        /// on the user's behalf. If you don't present an <c>ActorToken</c>, the issued token
+        /// appears as if the user acted directly.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have IAM credentials, or you must present the requesting
+        /// app client's <c>ClientId</c> and, if the client has a secret, <c>ClientSecret</c>,
+        /// in the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// The requesting app client must have <c>ALLOW_TOKEN_EXCHANGE_IMPERSONATION</c> or <c>ALLOW_TOKEN_EXCHANGE_DELEGATION</c>
+        /// in its <c>ExplicitAuthFlows</c> (depending on whether you include an <c>ActorToken</c>),
+        /// or the request fails.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDerivedToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDerivedToken service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
+        /// This exception is thrown when Amazon Cognito encounters an invalid Lambda response.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
+        /// This exception is thrown when Amazon Cognito encounters an unexpected exception with
+        /// Lambda.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
+        /// exception with the Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDerivedToken">REST API Reference for GetDerivedToken Operation</seealso>
+        Task<GetDerivedTokenResponse> GetDerivedTokenAsync(GetDerivedTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Given a device key, returns information about a remembered device for the current
         /// user. For more information about device authentication, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
         /// with user devices in your user pool</a>.

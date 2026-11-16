@@ -493,6 +493,18 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         ///  <c>ALLOW_REFRESH_TOKEN_AUTH</c>: Enable authflow to refresh tokens.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ALLOW_TOKEN_EXCHANGE_IMPERSONATION</c> – Use this flow to request <c>GetDerivedToken</c>
+        /// token exchanges without an <c>ActorToken</c>. The issued token represents the subject
+        /// user directly.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ALLOW_TOKEN_EXCHANGE_DELEGATION</c> – Use this flow to request <c>GetDerivedToken</c>
+        /// token exchanges that include an <c>ActorToken</c>. The issued token carries an <c>act</c>
+        /// claim that identifies the intermediary acting on the behalf of the subject.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// In some environments, you will see the values <c>ADMIN_NO_SRP_AUTH</c>, <c>CUSTOM_AUTH_FLOW_ONLY</c>,

@@ -1155,6 +1155,46 @@
     <pattern>^[\w+]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetDerivedTokenRequest.ActorToken</property>
+    <min>0</min>
+    <max>131072</max>
+    <pattern>^[A-Za-z0-9-_+/=.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetDerivedTokenRequest.ActorTokenProviderName</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}\p{Z}]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetDerivedTokenRequest.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetDerivedTokenRequest.ClientSecret</property>
+    <min>24</min>
+    <max>64</max>
+    <pattern>^[\w+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetDerivedTokenRequest.SubjectToken</property>
+    <min>0</min>
+    <max>131072</max>
+    <pattern>^[A-Za-z0-9-_+/=.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetDerivedTokenRequest.SubjectTokenProviderName</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}\p{Z}]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetDerivedTokenResponse.IssuedToken</property>
+    <pattern>^[A-Za-z0-9-_=.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.GetDeviceRequest.AccessToken</property>
     <pattern>^[A-Za-z0-9-_=.]+$</pattern>
   </property-value-rule>
