@@ -48,6 +48,24 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetContextSets())
+            {
+                context.Writer.WriteTextString("ContextSets");
+                context.Writer.WriteStartMap(null);
+                foreach (var requestObjectContextSetsKvp in requestObject.ContextSets)
+                {
+                    context.Writer.WriteTextString(requestObjectContextSetsKvp.Key);
+                    var requestObjectContextSetsValue = requestObjectContextSetsKvp.Value;
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ContextSetMarshaller.Instance;
+                    marshaller.Marshall(requestObjectContextSetsValue, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                context.Writer.WriteEndMap();
+            }
+
             if (requestObject.IsSetIPSets())
             {
                 context.Writer.WriteTextString("IPSets");

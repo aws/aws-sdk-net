@@ -51,6 +51,12 @@ namespace Amazon.NetworkFirewall.Model
         IListContainerAssociationsPaginator ListContainerAssociations(ListContainerAssociationsRequest request);
 
         /// <summary>
+        /// Paginator for ListContextStores operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListContextStoresPaginator ListContextStores(ListContextStoresRequest request);
+
+        /// <summary>
         /// Paginator for ListFirewallPolicies operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -79,6 +85,12 @@ namespace Amazon.NetworkFirewall.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListFlowOperationsPaginator ListFlowOperations(ListFlowOperationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListResourcesInContextStore operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListResourcesInContextStorePaginator ListResourcesInContextStore(ListResourcesInContextStoreRequest request);
 
         /// <summary>
         /// Paginator for ListRuleGroups operation

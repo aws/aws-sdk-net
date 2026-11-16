@@ -272,6 +272,113 @@ namespace Amazon.NetworkFirewall
     }
 
     /// <summary>
+    /// Constants used for properties of type ContextStoreSyncStatus.
+    /// </summary>
+    public class ContextStoreSyncStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FULLY_RESOLVED for ContextStoreSyncStatus
+        /// </summary>
+        public static readonly ContextStoreSyncStatus FULLY_RESOLVED = new ContextStoreSyncStatus("FULLY_RESOLVED");
+
+        /// <summary>
+        /// Constant PARTIALLY_RESOLVED for ContextStoreSyncStatus
+        /// </summary>
+        public static readonly ContextStoreSyncStatus PARTIALLY_RESOLVED = new ContextStoreSyncStatus("PARTIALLY_RESOLVED");
+
+        /// <summary>
+        /// Constant SYNCING for ContextStoreSyncStatus
+        /// </summary>
+        public static readonly ContextStoreSyncStatus SYNCING = new ContextStoreSyncStatus("SYNCING");
+
+        /// <summary>
+        /// Constant SYNC_FAILED for ContextStoreSyncStatus
+        /// </summary>
+        public static readonly ContextStoreSyncStatus SYNC_FAILED = new ContextStoreSyncStatus("SYNC_FAILED");
+
+        /// <summary>
+        /// Constant UNRESOLVED for ContextStoreSyncStatus
+        /// </summary>
+        public static readonly ContextStoreSyncStatus UNRESOLVED = new ContextStoreSyncStatus("UNRESOLVED");
+
+        /// <summary>
+        /// Constructs a custom ContextStoreSyncStatus for a value not among the defined constants.
+        /// </summary>
+        public ContextStoreSyncStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContextStoreSyncStatus FindValue(string value)
+        {
+            return FindValue<ContextStoreSyncStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContextStoreSyncStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContextType.
+    /// </summary>
+    public class ContextType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Attachment for ContextType
+        /// </summary>
+        public static readonly ContextType Attachment = new ContextType("Attachment");
+
+        /// <summary>
+        /// Constant ResourceId for ContextType
+        /// </summary>
+        public static readonly ContextType ResourceId = new ContextType("ResourceId");
+
+        /// <summary>
+        /// Constant SegmentId for ContextType
+        /// </summary>
+        public static readonly ContextType SegmentId = new ContextType("SegmentId");
+
+        /// <summary>
+        /// Constant Subnet for ContextType
+        /// </summary>
+        public static readonly ContextType Subnet = new ContextType("Subnet");
+
+        /// <summary>
+        /// Constructs a custom ContextType for a value not among the defined constants.
+        /// </summary>
+        public ContextType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContextType FindValue(string value)
+        {
+            return FindValue<ContextType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContextType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DNSExpiryExceptionPolicy.
     /// </summary>
     public class DNSExpiryExceptionPolicy : ConstantClass
@@ -2678,6 +2785,57 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant SecurityGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType SecurityGroup = new ResourceType("SecurityGroup");
+
+        /// <summary>
+        /// Constant Subnet for ResourceType
+        /// </summary>
+        public static readonly ResourceType Subnet = new ResourceType("Subnet");
+
+        /// <summary>
+        /// Constant TGWAttachment for ResourceType
+        /// </summary>
+        public static readonly ResourceType TGWAttachment = new ResourceType("TGWAttachment");
+
+        /// <summary>
+        /// Constant VPC for ResourceType
+        /// </summary>
+        public static readonly ResourceType VPC = new ResourceType("VPC");
+
+        /// <summary>
+        /// Constructs a custom ResourceType for a value not among the defined constants.
+        /// </summary>
+        public ResourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
         {
             return FindValue(value);
         }

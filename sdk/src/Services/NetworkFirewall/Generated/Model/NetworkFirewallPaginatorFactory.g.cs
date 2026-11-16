@@ -57,6 +57,14 @@ namespace Amazon.NetworkFirewall.Model
         }
 
         /// <summary>
+        /// Paginator for ListContextStores operation
+        /// </summary>
+        public IListContextStoresPaginator ListContextStores(ListContextStoresRequest request)
+        {
+            return new ListContextStoresPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFirewallPolicies operation
         /// </summary>
         public IListFirewallPoliciesPaginator ListFirewallPolicies(ListFirewallPoliciesRequest request)
@@ -94,6 +102,14 @@ namespace Amazon.NetworkFirewall.Model
         public IListFlowOperationsPaginator ListFlowOperations(ListFlowOperationsRequest request)
         {
             return new ListFlowOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourcesInContextStore operation
+        /// </summary>
+        public IListResourcesInContextStorePaginator ListResourcesInContextStore(ListResourcesInContextStoreRequest request)
+        {
+            return new ListResourcesInContextStorePaginator(this.client, request);
         }
 
         /// <summary>

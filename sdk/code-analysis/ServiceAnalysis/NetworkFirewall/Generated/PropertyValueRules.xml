@@ -908,6 +908,23 @@
     <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListContextStoresRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListContextStoresRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListContextStoresResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListFirewallPoliciesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -1060,6 +1077,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListFlowOperationsResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListResourcesInContextStoreRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListResourcesInContextStoreRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListResourcesInContextStoreResponse.NextToken</property>
     <min>1</min>
     <max>4096</max>
     <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
@@ -1820,6 +1854,16 @@
     <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ContextFilters.Region</property>
+    <pattern>^[a-z]{2}(-[a-z]+)+-\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ContextStore.ContextStoreOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.CustomAction.ActionName</property>
     <min>1</min>
     <max>128</max>
@@ -1864,6 +1908,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.Firewall.ContextStoreOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.Firewall.Description</property>
@@ -2202,6 +2252,10 @@
     <min>1</min>
     <max>253</max>
     <pattern>^[A-Za-z0-9][A-Za-z0-9.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ResourceContext.Region</property>
+    <pattern>^[a-z]{2}(-[a-z]+)+-\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.Route53ResolvedIPValidation.DNSFirewallRuleGroupId</property>

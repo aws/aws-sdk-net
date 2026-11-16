@@ -87,6 +87,37 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetAvailabilityZoneMappings() => this.AvailabilityZoneMappings != null && (this.AvailabilityZoneMappings.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property ContextStoreId. 
+        /// <para>
+        /// The unique identifier of the context store that the firewall uses to resolve context
+        /// sets in its rule groups. Network Firewall discovers the context store from the transit
+        /// gateway association in Network Manager. This field is only present for transit gateway-attached
+        /// firewalls whose transit gateway is associated with a context store.
+        /// </para>
+        /// </summary>
+        public string ContextStoreId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContextStoreId property is set.
+        /// </summary>
+        internal bool IsSetContextStoreId() => this.ContextStoreId != null;
+
+        /// <summary>
+        /// Gets and sets the property ContextStoreOwnerAccountId. 
+        /// <para>
+        /// The Amazon Web Services account ID that owns the context store. This may be different
+        /// from the firewall owner's account ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 12, Max = 12)]
+        public string ContextStoreOwnerAccountId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContextStoreOwnerAccountId property is set.
+        /// </summary>
+        internal bool IsSetContextStoreOwnerAccountId() => this.ContextStoreOwnerAccountId != null;
+
+        /// <summary>
         /// Gets and sets the property DeleteProtection. 
         /// <para>
         /// A flag indicating whether it is possible to delete the firewall. A setting of <c>TRUE</c>

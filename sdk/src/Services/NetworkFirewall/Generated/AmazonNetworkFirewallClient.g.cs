@@ -5155,6 +5155,120 @@ namespace Amazon.NetworkFirewall
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the active context stores that are associated with your firewalls. A context
+        /// store records network resources that can be used to evaluate context-aware rules.
+        /// You can list the following resource types: VPCs, subnets, security groups, and transit
+        /// gateway attachments.
+        /// 
+        ///  
+        /// <para>
+        /// When using a small page size, a single call might not return the full list. A response
+        /// can contain fewer than <c>MaxResults</c> results, or none, and still include a <c>NextToken</c>.
+        /// Keep making requests until the response does not include a <c>NextToken</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContextStores service method.</param>
+        /// <returns>The response from the ListContextStores service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListContextStores">REST API Reference for ListContextStores Operation</seealso>
+        public virtual ListContextStoresResponse ListContextStores(ListContextStoresRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextStoresResponseUnmarshaller.Instance;
+
+            return Invoke<ListContextStoresResponse>(request, options);
+        }
+#else
+        internal virtual ListContextStoresResponse ListContextStores(ListContextStoresRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextStoresResponseUnmarshaller.Instance;
+
+            return Invoke<ListContextStoresResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the active context stores that are associated with your firewalls. A context
+        /// store records network resources that can be used to evaluate context-aware rules.
+        /// You can list the following resource types: VPCs, subnets, security groups, and transit
+        /// gateway attachments.
+        /// 
+        ///  
+        /// <para>
+        /// When using a small page size, a single call might not return the full list. A response
+        /// can contain fewer than <c>MaxResults</c> results, or none, and still include a <c>NextToken</c>.
+        /// Keep making requests until the response does not include a <c>NextToken</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContextStores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContextStores service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListContextStores">REST API Reference for ListContextStores Operation</seealso>
+        public virtual Task<ListContextStoresResponse> ListContextStoresAsync(ListContextStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextStoresResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContextStoresResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves the metadata for the firewall policies that you have defined. Depending
         /// on your setting for max results and the number of firewall policies, a single call
         /// might not return the full list.
@@ -5707,6 +5821,124 @@ namespace Amazon.NetworkFirewall
             options.ResponseUnmarshaller = ListFlowOperationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFlowOperationsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the resources that a context store records. The context store must be associated
+        /// with a transit gateway that your firewall is attached to. You can filter the results
+        /// by Region, resource type, or both.
+        /// 
+        ///  
+        /// <para>
+        /// When using a small page size, a single call might not return the full list. A response
+        /// can contain fewer than <c>MaxResults</c> results, or none, and still include a <c>NextToken</c>.
+        /// Keep making requests until the response does not include a <c>NextToken</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourcesInContextStore service method.</param>
+        /// <returns>The response from the ListResourcesInContextStore service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListResourcesInContextStore">REST API Reference for ListResourcesInContextStore Operation</seealso>
+        public virtual ListResourcesInContextStoreResponse ListResourcesInContextStore(ListResourcesInContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListResourcesInContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourcesInContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourcesInContextStoreResponse>(request, options);
+        }
+#else
+        internal virtual ListResourcesInContextStoreResponse ListResourcesInContextStore(ListResourcesInContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListResourcesInContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourcesInContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourcesInContextStoreResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the resources that a context store records. The context store must be associated
+        /// with a transit gateway that your firewall is attached to. You can filter the results
+        /// by Region, resource type, or both.
+        /// 
+        ///  
+        /// <para>
+        /// When using a small page size, a single call might not return the full list. A response
+        /// can contain fewer than <c>MaxResults</c> results, or none, and still include a <c>NextToken</c>.
+        /// Keep making requests until the response does not include a <c>NextToken</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourcesInContextStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListResourcesInContextStore service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListResourcesInContextStore">REST API Reference for ListResourcesInContextStore Operation</seealso>
+        public virtual Task<ListResourcesInContextStoreResponse> ListResourcesInContextStoreAsync(ListResourcesInContextStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListResourcesInContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourcesInContextStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourcesInContextStoreResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

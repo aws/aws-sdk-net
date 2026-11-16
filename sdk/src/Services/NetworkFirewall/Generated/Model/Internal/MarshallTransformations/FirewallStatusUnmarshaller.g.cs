@@ -74,6 +74,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "ContextStoreSyncState":
+                        context.AddPathSegment("ContextStoreSyncState");
+                        unmarshalledObject.ContextStoreSyncState = ContextStoreSyncStateUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "Status":
                         context.AddPathSegment("Status");
                         unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);

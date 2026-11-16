@@ -62,6 +62,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 var propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "ContextSets":
+                        context.AddPathSegment("ContextSets");
+                        unmarshalledObject.ContextSets = new CborDictionaryUnmarshaller<string, ContextSet, CborStringUnmarshaller, ContextSetUnmarshaller>(CborStringUnmarshaller.Instance, ContextSetUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "IPSets":
                         context.AddPathSegment("IPSets");
                         unmarshalledObject.IPSets = new CborDictionaryUnmarshaller<string, IPSet, CborStringUnmarshaller, IPSetUnmarshaller>(CborStringUnmarshaller.Instance, IPSetUnmarshaller.Instance).Unmarshall(context);

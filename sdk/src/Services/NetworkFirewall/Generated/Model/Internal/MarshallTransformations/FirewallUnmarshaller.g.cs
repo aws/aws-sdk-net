@@ -74,6 +74,18 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "ContextStoreId":
+                        context.AddPathSegment("ContextStoreId");
+                        unmarshalledObject.ContextStoreId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ContextStoreOwnerAccountId":
+                        context.AddPathSegment("ContextStoreOwnerAccountId");
+                        unmarshalledObject.ContextStoreOwnerAccountId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "DeleteProtection":
                         context.AddPathSegment("DeleteProtection");
                         unmarshalledObject.DeleteProtection = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
