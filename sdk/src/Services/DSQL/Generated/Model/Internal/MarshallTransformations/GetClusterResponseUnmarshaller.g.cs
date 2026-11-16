@@ -94,6 +94,13 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("metricGroups", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<MetricGroupResponse, MetricGroupResponseUnmarshaller>(MetricGroupResponseUnmarshaller.Instance);
+                    unmarshalledObject.MetricGroups = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("multiRegionProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiRegionPropertiesUnmarshaller.Instance;

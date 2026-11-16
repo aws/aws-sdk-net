@@ -195,6 +195,42 @@ namespace Amazon.DSQL
     }
 
     /// <summary>
+    /// Constants used for properties of type MetricGroup.
+    /// </summary>
+    public class MetricGroup : ConstantClass
+    {
+        /// <summary>
+        /// Constant STATEMENT_STATISTICS for MetricGroup
+        /// </summary>
+        public static readonly MetricGroup STATEMENT_STATISTICS = new MetricGroup("STATEMENT_STATISTICS");
+
+        /// <summary>
+        /// Constructs a custom MetricGroup for a value not among the defined constants.
+        /// </summary>
+        public MetricGroup(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricGroup FindValue(string value)
+        {
+            return FindValue<MetricGroup>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricGroup(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type StreamFailureErrorCode.
     /// </summary>
     public class StreamFailureErrorCode : ConstantClass
