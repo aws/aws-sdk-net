@@ -104,6 +104,47 @@ namespace Amazon.LambdaCore
     }
 
     /// <summary>
+    /// Constants used for properties of type ElasticIpType.
+    /// </summary>
+    public class ElasticIpType : ConstantClass
+    {
+        /// <summary>
+        /// Constant None for ElasticIpType
+        /// </summary>
+        public static readonly ElasticIpType None = new ElasticIpType("None");
+
+        /// <summary>
+        /// Constant ServiceManaged for ElasticIpType
+        /// </summary>
+        public static readonly ElasticIpType ServiceManaged = new ElasticIpType("ServiceManaged");
+
+        /// <summary>
+        /// Constructs a custom ElasticIpType for a value not among the defined constants.
+        /// </summary>
+        public ElasticIpType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ElasticIpType FindValue(string value)
+        {
+            return FindValue<ElasticIpType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ElasticIpType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type IntegrationModel.
     /// </summary>
     public class IntegrationModel : ConstantClass
@@ -209,6 +250,11 @@ namespace Amazon.LambdaCore
         /// Constant InternalError for NetworkConnectorLastUpdateStatusReasonCode
         /// </summary>
         public static readonly NetworkConnectorLastUpdateStatusReasonCode InternalError = new NetworkConnectorLastUpdateStatusReasonCode("InternalError");
+
+        /// <summary>
+        /// Constant InternetGatewayNotAttached for NetworkConnectorLastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly NetworkConnectorLastUpdateStatusReasonCode InternetGatewayNotAttached = new NetworkConnectorLastUpdateStatusReasonCode("InternetGatewayNotAttached");
 
         /// <summary>
         /// Constant InvalidSecurityGroup for NetworkConnectorLastUpdateStatusReasonCode
@@ -341,6 +387,11 @@ namespace Amazon.LambdaCore
         /// Constant InternalError for NetworkConnectorStateReasonCode
         /// </summary>
         public static readonly NetworkConnectorStateReasonCode InternalError = new NetworkConnectorStateReasonCode("InternalError");
+
+        /// <summary>
+        /// Constant InternetGatewayNotAttached for NetworkConnectorStateReasonCode
+        /// </summary>
+        public static readonly NetworkConnectorStateReasonCode InternetGatewayNotAttached = new NetworkConnectorStateReasonCode("InternetGatewayNotAttached");
 
         /// <summary>
         /// Constant InvalidSecurityGroup for NetworkConnectorStateReasonCode

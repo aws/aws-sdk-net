@@ -56,6 +56,17 @@ namespace Amazon.LambdaCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if (requestObject.IsSetElasticIpConfiguration())
+            {
+                context.Writer.WritePropertyName("ElasticIpConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ElasticIpConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ElasticIpConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetNetworkProtocol())
             {
                 context.Writer.WritePropertyName("NetworkProtocol");
