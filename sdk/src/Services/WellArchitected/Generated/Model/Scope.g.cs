@@ -38,7 +38,8 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property GoalIds. 
         /// <para>
-        /// Specific goal IDs to focus on during recommendation generation.
+        /// Specific goal IDs to focus on during recommendation generation. Use <c>ListAgentGoals</c>
+        /// to retrieve goal IDs.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -58,7 +59,8 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// Optional per-pillar item filtering configuration.
+        /// An optional per-pillar filter. When you specify items, only the listed items are processed
+        /// for each pillar. When you omit items, all items are processed.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -77,7 +79,8 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Pillars. 
         /// <para>
-        /// The Well-Architected Tool Framework pillars to include in the generation scope.
+        /// The Amazon Web Services Well-Architected Framework pillars to include in the generation
+        /// scope.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

@@ -39,7 +39,7 @@ namespace Amazon.WellArchitected.Model
         /// Gets and sets the property AggregationConfiguration. 
         /// <para>
         /// The aggregation configuration that defines which Amazon Web Services accounts and
-        /// Regions to analyze.
+        /// Regions to analyze. Not present for basic profiles.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -48,7 +48,7 @@ namespace Amazon.WellArchitected.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required = true, Min = 0, Max = 100)]
+        [AWSProperty(Min = 0, Max = 1000)]
         public List<AggregationConfiguration> AggregationConfiguration { get; set; } = AWSConfigs.InitializeCollections ? new List<AggregationConfiguration>() : null;
 
         /// <summary>
@@ -182,10 +182,11 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The ARN of the IAM execution role used for recommendation actions.
+        /// The ARN of the IAM execution role used for recommendation actions. Not present for
+        /// basic profiles.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Max = 2048)]
+        [AWSProperty(Max = 2048)]
         public string ExecutionRoleArn { get; set; }
 
         /// <summary>
@@ -255,9 +256,23 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
+        /// Gets and sets the property OrganizationalAggregationConfiguration. 
+        /// <para>
+        /// The organizational monitoring boundary. Present only for organizational profiles.
+        /// </para>
+        /// </summary>
+        public OrganizationalAggregationConfiguration OrganizationalAggregationConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OrganizationalAggregationConfiguration property is set.
+        /// </summary>
+        internal bool IsSetOrganizationalAggregationConfiguration() => this.OrganizationalAggregationConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Pillars. 
         /// <para>
-        /// The Well-Architected Tool Framework pillars associated with this profile.
+        /// The Amazon Web Services Well-Architected Framework pillars associated with this profile.
+        /// Not present for basic profiles.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -266,7 +281,7 @@ namespace Amazon.WellArchitected.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 5)]
+        [AWSProperty(Min = 1, Max = 5)]
         public List<string> Pillars { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -275,22 +290,16 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetPillars() => this.Pillars != null && (this.Pillars.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property ProfileType. 
         /// <para>
-        /// The tags associated with the profile.
+        /// The type of the profile.
         /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data
-        /// for this property is returned from the service the property will also be null. This
-        /// was changed to improve performance and allow the SDK and caller to distinguish between
-        /// a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<Tag> Tags { get; set; } = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        public ProfileType ProfileType { get; set; }
 
         /// <summary>
-        /// Checks to see if the Tags property is set.
+        /// Checks to see if the ProfileType property is set.
         /// </summary>
-        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+        internal bool IsSetProfileType() => this.ProfileType != null;
     }
 }

@@ -103,6 +103,17 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Industry);
             }
 
+            if (requestObject.IsSetOrganizationalUnitIds())
+            {
+                context.Writer.WritePropertyName("organizationalUnitIds");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectOrganizationalUnitIdsListValue in requestObject.OrganizationalUnitIds)
+                {
+                    context.Writer.WriteStringValue(requestObjectOrganizationalUnitIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if (requestObject.IsSetRegions())
             {
                 context.Writer.WritePropertyName("regions");

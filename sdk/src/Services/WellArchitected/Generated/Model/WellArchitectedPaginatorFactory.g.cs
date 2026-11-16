@@ -57,6 +57,14 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
+        /// Paginator for ListAgentOrganizationalReports operation
+        /// </summary>
+        public IListAgentOrganizationalReportsPaginator ListAgentOrganizationalReports(ListAgentOrganizationalReportsRequest request)
+        {
+            return new ListAgentOrganizationalReportsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAgentProfiles operation
         /// </summary>
         public IListAgentProfilesPaginator ListAgentProfiles(ListAgentProfilesRequest request)
