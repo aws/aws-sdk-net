@@ -119,6 +119,7 @@ public class CustomizationsModelTests
               "operationModifiers": {
                 "InvokeAsync": { "exclude": true },
                 "CreateBucket": { "name": "PutBucket" },
+                "SelectObjectContent": { "clientMethodOnly": true },
                 "DescribeDomain": { "useWrappingResult": true, "wrappedResultShape": "DomainDetail", "wrappedResultMember": "DomainDetail" }
               }
             }
@@ -127,6 +128,7 @@ public class CustomizationsModelTests
         Assert.Equal(["FailedEntryCount"], model.ShapeModifiers["PutTargetsResponse"].Exclude);
         Assert.True(model.OperationModifiers["InvokeAsync"].Exclude);
         Assert.Equal("PutBucket", model.OperationName("CreateBucket"));
+        Assert.True(model.IsClientMethodOnly("SelectObjectContent"));
         var wrap = model.OperationModifiers["DescribeDomain"];
         Assert.Equal((true, "DomainDetail", "DomainDetail"), (wrap.UseWrappingResult, wrap.WrappedResultShape, wrap.WrappedResultMember));
     }

@@ -166,6 +166,12 @@ public class GenerationContext
     /// </summary>
     public IReadOnlyDictionary<ShapeId, bool> DiscoveredOperations { get; }
 
+    /// <summary>
+    /// The operations whose request/response classes and marshallers are generated: all but the
+    /// <c>operationModifiers</c> <c>clientMethodOnly</c> ones, which get only their client methods.
+    /// </summary>
+    public IReadOnlyList<Operation> GeneratedOperations { get; }
+
     /// <summary>Operations carrying <c>@paginated</c> or a <c>paginators</c> customization, with token/items members resolved to .NET property names. Sorted by operation name.</summary>
     public IReadOnlyList<PaginatedOperation> PaginatedOperations { get; }
 
@@ -320,14 +326,17 @@ public class GenerationContext
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
         PaginatedOperations = PaginationResolver.Resolve(Operations, index, Customizations);
-        RequestEventStreams = EventStreamResolver.ResolveRequestStreams(Operations, index);
-        ResponseEventStreams = EventStreamResolver.ResolveResponseStreams(Operations, index);
+        GeneratedOperations = Operations.Where(operation => !Customizations.IsClientMethodOnly(operation.Shape.Id.Name)).ToList();
+        RequestEventStreams = EventStreamResolver.ResolveRequestStreams(GeneratedOperations, index);
+        ResponseEventStreams = EventStreamResolver.ResolveResponseStreams(GeneratedOperations, index);
         OperationEndpointContexts = EndpointContextResolver.ResolveOperations(Operations, index, Customizations);
 
         var structures = new Dictionary<ShapeId, StructureShape>();
         var errors = new Dictionary<ShapeId, StructureShape>();
+        // The shapes only a clientMethodOnly operation reaches are hand-written too.
+        var generatedShapes = index.ShapesReachableFrom(GeneratedOperations.Select(operation => operation.Shape));
 
-        foreach (var (shapeId, shape) in index.Shapes.OrderBy(kvp => kvp.Key.AbsoluteName, StringComparer.Ordinal))
+        foreach (var (shapeId, shape) in generatedShapes.OrderBy(kvp => kvp.Key.AbsoluteName, StringComparer.Ordinal))
         {
             if (shape is not StructureShape structure)
             {
@@ -363,7 +372,7 @@ public class GenerationContext
         // PortSpecification.AllPorts). Prelude shapes never appear in index.Shapes, so the loop
         // above cannot collect it. Operation input/output references to Unit don't count — those
         // emit empty Request/Response classes instead (see ResolveStructure).
-        if (index.Shapes.Values.OfType<StructureShape>().Any(s => s.Members.Values.Any(m => m.Target == ShapeId.Unit)))
+        if (generatedShapes.Values.OfType<StructureShape>().Any(s => s.Members.Values.Any(m => m.Target == ShapeId.Unit)))
         {
             structures[ShapeId.Unit] = new StructureShape { Id = ShapeId.Unit };
         }

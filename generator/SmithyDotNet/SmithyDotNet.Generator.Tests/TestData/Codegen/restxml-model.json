@@ -12,11 +12,13 @@
         { "target": "com.example#PutChecksummedThing" },
         { "target": "com.example#GetChecksummedThing" },
         { "target": "com.example#AccountOp" },
-        { "target": "com.example#RegionOp" }
+        { "target": "com.example#RegionOp" },
+        { "target": "com.example#SelectThing" }
       ],
       "traits": {
         "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
         "aws.protocols#restXml": {},
+        "smithy.api#title": "Example Service",
         "smithy.api#xmlNamespace": { "uri": "http://example.com/doc/2023-01-01/" }
       }
     },
@@ -240,6 +242,54 @@
         "zebra": { "target": "smithy.api#String" },
         "apple": { "target": "smithy.api#String" }
       }
+    },
+
+    "com.example#SelectThing": {
+      "type": "operation",
+      "input": { "target": "com.example#SelectThingRequest" },
+      "output": { "target": "com.example#SelectThingResponse" },
+      "errors": [ { "target": "com.example#SelectFailed" } ],
+      "traits": { "smithy.api#http": { "uri": "/things/{id}/select", "method": "POST" } }
+    },
+    "com.example#SelectThingRequest": {
+      "type": "structure",
+      "members": {
+        "id":       { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } },
+        "nested":   { "target": "com.example#NestedThing" },
+        "progress": { "target": "com.example#SelectProgress" }
+      }
+    },
+    "com.example#SelectThingResponse": {
+      "type": "structure",
+      "members": {
+        "payload": { "target": "com.example#SelectEvents", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#SelectProgress": {
+      "type": "structure",
+      "members": {
+        "enabled": { "target": "smithy.api#Boolean" }
+      }
+    },
+    "com.example#SelectEvents": {
+      "type": "union",
+      "members": {
+        "records": { "target": "com.example#RecordsEvent" }
+      },
+      "traits": { "smithy.api#streaming": {} }
+    },
+    "com.example#RecordsEvent": {
+      "type": "structure",
+      "members": {
+        "payload": { "target": "smithy.api#Blob", "traits": { "smithy.api#eventPayload": {} } }
+      }
+    },
+    "com.example#SelectFailed": {
+      "type": "structure",
+      "members": {
+        "message": { "target": "smithy.api#String" }
+      },
+      "traits": { "smithy.api#error": "server", "smithy.api#httpError": 500 }
     },
 
     "com.example#ThingConflict": {

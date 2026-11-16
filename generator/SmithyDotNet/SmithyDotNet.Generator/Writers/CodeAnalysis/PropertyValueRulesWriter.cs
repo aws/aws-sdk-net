@@ -35,7 +35,7 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
             // Input/output structures are named after the generated request/response classes, not
             // their modeled shape names, so they're emitted here and skipped in the sorted walk below.
             var requestAndResponseShapes = new HashSet<ShapeId>();
-            foreach (var operation in context.Operations)
+            foreach (var operation in context.GeneratedOperations)
             {
                 cancellationToken.ThrowIfCancellationRequested();
                 WriteShapeRules(writer, $"{operation.Name}Request", operation.Input);

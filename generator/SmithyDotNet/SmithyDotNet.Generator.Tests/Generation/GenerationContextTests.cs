@@ -145,6 +145,24 @@ public class GenerationContextTests
         Assert.Contains(context.Operations, operation => operation.Name == "ListThings" && operation.Shape.Id.Name == "DoLists");
     }
 
+    // SelectThing alone reaches SelectProgress, SelectFailed and the SelectEvents stream; NestedThing is shared with PutThing.
+    [Fact]
+    public void ClientMethodOnly_KeepsOperation_DropsShapesOnlyItReaches()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["SelectThing"] = new OperationModifier { ClientMethodOnly = true };
+
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        Assert.Contains(context.Operations, operation => operation.Name == "SelectThing");
+        Assert.DoesNotContain(context.GeneratedOperations, operation => operation.Name == "SelectThing");
+        Assert.Equal(context.Operations.Count - 1, context.GeneratedOperations.Count);
+        Assert.Empty(context.ResponseEventStreams);
+        Assert.DoesNotContain(context.Structures.Keys, id => id.Name is "SelectProgress" or "SelectEvents" or "RecordsEvent");
+        Assert.Contains(context.Structures.Keys, id => id.Name == "NestedThing");
+        Assert.DoesNotContain(context.Errors.Keys, id => id.Name == "SelectFailed");
+    }
+
     [Fact]
     public void ApiVersion_DerivedFromServiceShape()
     {

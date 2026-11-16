@@ -45,8 +45,11 @@ public class ServiceIndex
     /// </summary>
     public IReadOnlyList<EnumShape> AllEnums { get; }
 
+    private readonly SmithyModel _model;
+
     public ServiceIndex(SmithyModel model)
     {
+        _model = model;
         var serviceEntry = model.Shapes.Single(kvp => kvp.Value is ServiceShape);
         if (serviceEntry.Value is not ServiceShape service)
         {
@@ -62,6 +65,10 @@ public class ServiceIndex
 
         RequireNoMixins();
     }
+
+    /// <summary>The subset of <see cref="Shapes"/> reachable from the service's errors and <paramref name="operations"/>.</summary>
+    public IReadOnlyDictionary<ShapeId, Shape> ShapesReachableFrom(IEnumerable<OperationShape> operations) =>
+        CollectReachableShapes(_model, Service, operations);
 
     /// <summary>
     /// The generated type name for a shape: the service's <c>rename</c> entry when it has one, otherwise
@@ -180,7 +187,7 @@ public class ServiceIndex
         return operations;
     }
 
-    private static Dictionary<ShapeId, Shape> CollectReachableShapes(SmithyModel model, ServiceShape service, IReadOnlyList<OperationShape> operations)
+    private static Dictionary<ShapeId, Shape> CollectReachableShapes(SmithyModel model, ServiceShape service, IEnumerable<OperationShape> operations)
     {
         var reachable = new Dictionary<ShapeId, Shape>();
         var visited = new HashSet<string>();

@@ -6,7 +6,7 @@ using static SmithyDotNet.Generator.Generation.Customizations.CustomizationTrans
 namespace SmithyDotNet.Generator.Generation.Customizations;
 
 /// <summary>
-/// The <c>operationModifiers</c> hooks (<c>name</c>, <c>deprecatedMessage</c>, <c>exclude</c>, <c>useWrappingResult</c>,
+/// The <c>operationModifiers</c> hooks (<c>name</c>, <c>deprecatedMessage</c>, <c>exclude</c>, <c>clientMethodOnly</c>, <c>useWrappingResult</c>,
 /// <c>marshallNameOverrides</c>) and <c>suppressResultGeneration</c>.
 /// </summary>
 internal static class OperationModifiers
@@ -37,6 +37,11 @@ internal static class OperationModifiers
             if (modifier.DeprecatedMessage is { } message)
             {
                 operation.SetDeprecatedMessage(message);
+            }
+
+            if (modifier.Exclude && modifier.ClientMethodOnly)
+            {
+                throw new GeneratorException($"operationModifiers['{operationName}'] both excludes the operation and keeps its client methods.");
             }
 
             if (modifier.Exclude)

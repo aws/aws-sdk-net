@@ -286,7 +286,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             Emit(Path.Combine(marshalling, $"{context.StructureUnmarshallerName(structure.Id)}.g.cs"), structureUnmarshallerCode);
         }
 
-        foreach (var operation in context.Operations)
+        foreach (var operation in context.GeneratedOperations)
         {
             // smithy.api#Unit as an operation input/output means "no value" — it is not a model
             // structure, and adding it here would suppress the plain Unit model class that union
@@ -440,7 +440,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         // no standalone class), which also avoids colliding with {Op}Request/{Op}Response file
         // names for shapes named like their wrapper.
         var memberReferencedOperationShapes = new HashSet<ShapeId>();
-        var referenceSources = context.Operations.SelectMany(o => new[] { o.Input, o.Output })
+        var referenceSources = context.GeneratedOperations.SelectMany(o => new[] { o.Input, o.Output })
             .Concat(context.Structures.Values)
             .Concat(context.Errors.Values);
         foreach (var source in referenceSources)

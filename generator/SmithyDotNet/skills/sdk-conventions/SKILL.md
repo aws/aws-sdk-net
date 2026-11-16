@@ -372,7 +372,10 @@ for a form member). All three carry the member `@documentation` onto the paramet
 `ServiceGenerator` emits C2J's reflection tests under `UnitTests/Generated/Customizations/` when the hook is present
 (`SimpleConstructorTestsWriter`, `SimpleMethodTestsWriter`); `noArgOverloads` has no generated test.
 `operationModifiers.{Operation}.exclude` unbinds the operation from its service or resource and `shapeModifiers.{Shape}.exclude`
-removes members, so whatever is no longer reachable is not emitted. `useWrappingResult` moves the output under one member,
+removes members, so whatever is no longer reachable is not emitted. `clientMethodOnly` (C2J's hard-coded
+`S3ExcludeListOperations`, S3 `SelectObjectContent`) keeps the operation in `Operations` for the client, interface, endpoint
+and metadata writers, but `GeneratedOperations` drops it, so its request/response classes, marshallers, event streams and the
+shapes only it reaches are hand-written. `useWrappingResult` moves the output under one member,
 `wrappedResultMember`, of a new output structure: the response has a single property of the output's type, paginator paths go
 through it, and the JSON, CBOR and ec2Query response unmarshallers read it from the whole body.
 

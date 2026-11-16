@@ -272,18 +272,20 @@ public class CustomizationTransformTests
     }
 
     [Theory]
-    [InlineData("Bucket", false, false, null, "not an operation")]
-    [InlineData("Orphan", true, false, null, "excludes an operation that no service or resource lists")]
-    [InlineData("ListBuckets", false, true, "Bucket", "wrappedResultShape must name the output, 'BucketPage'")]
-    [InlineData("TagBucket", false, true, "Unit", "wrappedResultShape must name the output, 'Unit'")]
-    [InlineData("ListBuckets", false, false, "BucketPage", "needs both useWrappingResult and a wrappedResultMember")]
-    [InlineData("Orphan", false, true, "Chunk", "'com.example#OrphanWrappedOutput', which is already a shape in the model")]
-    public void OperationModifiers_Invalid_Throws(string operation, bool exclude, bool useWrappingResult, string? wrappedResultShape, string expectedInMessage)
+    [InlineData("Bucket", false, false, false, null, "not an operation")]
+    [InlineData("Orphan", true, false, false, null, "excludes an operation that no service or resource lists")]
+    [InlineData("ListBuckets", true, true, false, null, "both excludes the operation and keeps its client methods")]
+    [InlineData("ListBuckets", false, false, true, "Bucket", "wrappedResultShape must name the output, 'BucketPage'")]
+    [InlineData("TagBucket", false, false, true, "Unit", "wrappedResultShape must name the output, 'Unit'")]
+    [InlineData("ListBuckets", false, false, false, "BucketPage", "needs both useWrappingResult and a wrappedResultMember")]
+    [InlineData("Orphan", false, false, true, "Chunk", "'com.example#OrphanWrappedOutput', which is already a shape in the model")]
+    public void OperationModifiers_Invalid_Throws(string operation, bool exclude, bool clientMethodOnly, bool useWrappingResult, string? wrappedResultShape, string expectedInMessage)
     {
         var customizations = new CustomizationsModel();
         customizations.OperationModifiers[operation] = new OperationModifier
         {
             Exclude = exclude,
+            ClientMethodOnly = clientMethodOnly,
             UseWrappingResult = useWrappingResult,
             WrappedResultShape = wrappedResultShape,
             WrappedResultMember = wrappedResultShape is null ? null : "Page",

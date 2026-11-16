@@ -192,6 +192,21 @@ public class PaginationResolverTests
         Assert.Equal("d", trait.PageSize);
     }
 
+    // A name modifier changes Operation.Name; paginators and operationModifiers stay keyed by the modeled name.
+    [Fact]
+    public void Customization_KeyedByModeledName_AppliesToRenamedOperation()
+    {
+        var (index, _) = LoadPaginatedModel();
+        var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "things" }""", name: "RenamedOp");
+        var customizations = new CustomizationsModel { Paginators = { ["TestOp"] = new() { Items = ["counts"] } } };
+        customizations.OperationModifiers["TestOp"] = new OperationModifier { Name = "RenamedOp", StopPaginationOnSameToken = true };
+
+        var result = PaginationResolver.Resolve([op], index, customizations).Single();
+
+        Assert.True(result.StopOnSameToken);
+        Assert.Contains(result.ResultKeys, key => key.Property == "Counts");
+    }
+
     [Fact]
     public void Customization_AddsResultKeysAfterModeledItems()
     {
@@ -316,7 +331,7 @@ public class PaginationResolverTests
     // An invalid trait can't live in the model itself: Resolve processes every operation, so one
     // bad trait there would break all the happy-path tests. These ops exist only for the trait;
     // request and response share one shape with members of assorted types to point the trait at.
-    private static Operation MakeOperation(string paginatedTraitJson)
+    private static Operation MakeOperation(string paginatedTraitJson, string name = "TestOp")
     {
         var members = new Dictionary<string, MemberShape>
         {
@@ -339,6 +354,6 @@ public class PaginationResolverTests
             },
         };
 
-        return new Operation("TestOp", opShape, structure, structure, [], RequiresHttp2: false, HasOutputEventStream: false);
+        return new Operation(name, opShape, structure, structure, [], RequiresHttp2: false, HasOutputEventStream: false);
     }
 }

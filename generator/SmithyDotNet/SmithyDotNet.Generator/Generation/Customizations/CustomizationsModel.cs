@@ -52,6 +52,9 @@ public sealed record CustomizationsModel
     [JsonPropertyName("retainOriginalMemberOrdering")]
     public bool RetainOriginalMemberOrdering { get; init; }
 
+    /// <summary>True when <c>operationModifiers.{op}.clientMethodOnly</c> is set for modeled operation <paramref name="operationName"/>.</summary>
+    public bool IsClientMethodOnly(string operationName) => OperationModifiers.GetValueOrDefault(operationName) is { ClientMethodOnly: true };
+
     /// <summary>True when <c>operationModifiers.{op}.allowEmptyResult</c> is set for <paramref name="operationName"/>.</summary>
     public bool AllowsEmptyResult(string operationName) => ModifierFor(operationName) is { AllowEmptyResult: true };
 
@@ -507,6 +510,13 @@ public sealed record OperationModifier
     /// <summary>Drops the operation, and with it the structures only it uses.</summary>
     [JsonPropertyName("exclude")]
     public bool Exclude { get; init; }
+
+    /// <summary>
+    /// Emits only the operation's client methods; its request/response classes, marshallers and the structures only it
+    /// uses are hand-written (S3 <c>SelectObjectContent</c>). C2J: <c>S3ExcludeListOperations</c>.
+    /// </summary>
+    [JsonPropertyName("clientMethodOnly")]
+    public bool ClientMethodOnly { get; init; }
 
     /// <summary>
     /// The response exposes the output, <c>wrappedResultShape</c>, as a single <c>wrappedResultMember</c> property
