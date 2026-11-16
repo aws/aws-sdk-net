@@ -2907,6 +2907,93 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates an inference router. An inference router is a Regional SageMaker AI resource
+        /// that sends each inference request to one of the endpoints or inference components
+        /// that you list for a routing target. These destinations can be in any Amazon Web Services
+        /// account, and in any Amazon Web Services Region in the same partition as the router.
+        /// 
+        ///  
+        /// <para>
+        /// The router's status is <c>Creating</c> until it's ready to use. SageMaker AI checks
+        /// that each endpoint is a real-time or asynchronous endpoint, as the routing target
+        /// requires, and rejects one of the wrong type. It checks endpoints in other accounts
+        /// with your credentials, so the endpoint policy must allow <c>sagemaker:DescribeEndpoint</c>.
+        /// SageMaker AI accepts an endpoint that it can't check, for example one that doesn't
+        /// exist. Requests to it fail if it's the wrong type or doesn't exist. To see the status
+        /// of each destination, call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceRouter.html">DescribeInferenceRouter</a>
+        /// and see the <c>RoutingStatus</c> of each destination.
+        /// </para>
+        ///  
+        /// <para>
+        /// To invoke the router, use <c>InvokeInferenceRouter</c> or <c>InvokeInferenceRouterAsync</c>.
+        /// For information about inference routers, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router.html">Route
+        /// requests across Regions with inference routers</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceRouter service method.</param>
+        /// <returns>The response from the CreateInferenceRouter service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceAlreadyExistsException">
+        /// The resource that you are trying to create already exists. Use a different resource
+        /// name, or delete the existing resource before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceRouter">REST API Reference for CreateInferenceRouter Operation</seealso>
+        CreateInferenceRouterResponse CreateInferenceRouter(CreateInferenceRouterRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an inference router. An inference router is a Regional SageMaker AI resource
+        /// that sends each inference request to one of the endpoints or inference components
+        /// that you list for a routing target. These destinations can be in any Amazon Web Services
+        /// account, and in any Amazon Web Services Region in the same partition as the router.
+        /// 
+        ///  
+        /// <para>
+        /// The router's status is <c>Creating</c> until it's ready to use. SageMaker AI checks
+        /// that each endpoint is a real-time or asynchronous endpoint, as the routing target
+        /// requires, and rejects one of the wrong type. It checks endpoints in other accounts
+        /// with your credentials, so the endpoint policy must allow <c>sagemaker:DescribeEndpoint</c>.
+        /// SageMaker AI accepts an endpoint that it can't check, for example one that doesn't
+        /// exist. Requests to it fail if it's the wrong type or doesn't exist. To see the status
+        /// of each destination, call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceRouter.html">DescribeInferenceRouter</a>
+        /// and see the <c>RoutingStatus</c> of each destination.
+        /// </para>
+        ///  
+        /// <para>
+        /// To invoke the router, use <c>InvokeInferenceRouter</c> or <c>InvokeInferenceRouterAsync</c>.
+        /// For information about inference routers, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router.html">Route
+        /// requests across Regions with inference routers</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceRouter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateInferenceRouter service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceAlreadyExistsException">
+        /// The resource that you are trying to create already exists. Use a different resource
+        /// name, or delete the existing resource before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceRouter">REST API Reference for CreateInferenceRouter Operation</seealso>
+        Task<CreateInferenceRouterResponse> CreateInferenceRouterAsync(CreateInferenceRouterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a model customization job in Amazon SageMaker. A job runs a workload based
         /// on the job category and configuration you provide. You specify the job category, a
         /// schema-versioned configuration document, and an IAM role that grants Amazon SageMaker
@@ -2914,12 +3001,32 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// Use the <c>AgentRFT</c> category to fine-tune a model using multi-turn reinforcement
-        /// learning with reward signals. Use the <c>AgentRFTEvaluation</c> category to evaluate
-        /// a fine-tuned or base model by running multi-turn rollouts against a held-out prompt
-        /// dataset and computing metrics such as pass@k and mean reward.
+        /// Specify one of the following job categories, which determines the type of workload
+        /// that the job runs:
         /// </para>
-        ///  
+        ///  <dl> <dt>AgentRFT</dt> <dd> 
+        /// <para>
+        /// Fine-tune a model using multi-turn reinforcement learning with reward signals.
+        /// </para>
+        ///  </dd> <dt>AgentRFTEvaluation</dt> <dd> 
+        /// <para>
+        /// Evaluate a fine-tuned or base model by running multi-turn rollouts against a held-out
+        /// prompt dataset. This category computes metrics such as pass@k and mean reward.
+        /// </para>
+        ///  </dd> <dt>DataQualityEvaluation</dt> <dd> 
+        /// <para>
+        /// Evaluate the quality of a generated or bring-your-own dataset using quality metrics
+        /// or your own specification.
+        /// </para>
+        ///  </dd> <dt>DataTransformation</dt> <dd> 
+        /// <para>
+        /// Transform datasets into the format you need, for example for model customization.
+        /// </para>
+        ///  </dd> <dt>SyntheticDataGeneration</dt> <dd> 
+        /// <para>
+        /// Generate synthetic training and testing datasets from your context data and specifications.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// Before creating a job, call <c>ListJobSchemaVersions</c> and <c>DescribeJobSchemaVersion</c>
         /// to retrieve the configuration schema for your job category. The <c>JobConfigDocument</c>
@@ -2979,12 +3086,32 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// Use the <c>AgentRFT</c> category to fine-tune a model using multi-turn reinforcement
-        /// learning with reward signals. Use the <c>AgentRFTEvaluation</c> category to evaluate
-        /// a fine-tuned or base model by running multi-turn rollouts against a held-out prompt
-        /// dataset and computing metrics such as pass@k and mean reward.
+        /// Specify one of the following job categories, which determines the type of workload
+        /// that the job runs:
         /// </para>
-        ///  
+        ///  <dl> <dt>AgentRFT</dt> <dd> 
+        /// <para>
+        /// Fine-tune a model using multi-turn reinforcement learning with reward signals.
+        /// </para>
+        ///  </dd> <dt>AgentRFTEvaluation</dt> <dd> 
+        /// <para>
+        /// Evaluate a fine-tuned or base model by running multi-turn rollouts against a held-out
+        /// prompt dataset. This category computes metrics such as pass@k and mean reward.
+        /// </para>
+        ///  </dd> <dt>DataQualityEvaluation</dt> <dd> 
+        /// <para>
+        /// Evaluate the quality of a generated or bring-your-own dataset using quality metrics
+        /// or your own specification.
+        /// </para>
+        ///  </dd> <dt>DataTransformation</dt> <dd> 
+        /// <para>
+        /// Transform datasets into the format you need, for example for model customization.
+        /// </para>
+        ///  </dd> <dt>SyntheticDataGeneration</dt> <dd> 
+        /// <para>
+        /// Generate synthetic training and testing datasets from your context data and specifications.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// Before creating a job, call <c>ListJobSchemaVersions</c> and <c>DescribeJobSchemaVersion</c>
         /// to retrieve the configuration schema for your job category. The <c>JobConfigDocument</c>
@@ -6138,6 +6265,53 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes the resource-based policy that is attached to an endpoint. After you delete
+        /// the policy, other accounts can no longer send requests to the endpoint through an
+        /// inference router. The endpoint continues to serve requests from your account. If the
+        /// endpoint doesn't have a policy, the operation succeeds.
+        /// 
+        ///  
+        /// <para>
+        /// The change typically takes effect within 30 seconds, and can take up to 5 minutes.
+        /// To revoke access for one account only, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PutEndpointPolicy.html">PutEndpointPolicy</a>
+        /// to replace the policy with one that doesn't include that account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpointPolicy service method.</param>
+        /// <returns>The response from the DeleteEndpointPolicy service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEndpointPolicy">REST API Reference for DeleteEndpointPolicy Operation</seealso>
+        DeleteEndpointPolicyResponse DeleteEndpointPolicy(DeleteEndpointPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes the resource-based policy that is attached to an endpoint. After you delete
+        /// the policy, other accounts can no longer send requests to the endpoint through an
+        /// inference router. The endpoint continues to serve requests from your account. If the
+        /// endpoint doesn't have a policy, the operation succeeds.
+        /// 
+        ///  
+        /// <para>
+        /// The change typically takes effect within 30 seconds, and can take up to 5 minutes.
+        /// To revoke access for one account only, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PutEndpointPolicy.html">PutEndpointPolicy</a>
+        /// to replace the policy with one that doesn't include that account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpointPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteEndpointPolicy service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEndpointPolicy">REST API Reference for DeleteEndpointPolicy Operation</seealso>
+        Task<DeleteEndpointPolicyResponse> DeleteEndpointPolicyAsync(DeleteEndpointPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes an SageMaker experiment. All trials associated with the experiment must be
         /// deleted first. Use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html">ListTrials</a>
         /// API to get a list of the trials associated with the experiment.
@@ -6555,6 +6729,53 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceExperiment">REST API Reference for DeleteInferenceExperiment Operation</seealso>
         Task<DeleteInferenceExperimentResponse> DeleteInferenceExperimentAsync(DeleteInferenceExperimentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes an inference router. The endpoints and inference components that the router
+        /// sends requests to aren't deleted.
+        /// 
+        ///  
+        /// <para>
+        /// If the router is being created, updated, or deleted, you get a <c>ConflictException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceRouter service method.</param>
+        /// <returns>The response from the DeleteInferenceRouter service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceRouter">REST API Reference for DeleteInferenceRouter Operation</seealso>
+        DeleteInferenceRouterResponse DeleteInferenceRouter(DeleteInferenceRouterRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an inference router. The endpoints and inference components that the router
+        /// sends requests to aren't deleted.
+        /// 
+        ///  
+        /// <para>
+        /// If the router is being created, updated, or deleted, you get a <c>ConflictException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceRouter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteInferenceRouter service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceRouter">REST API Reference for DeleteInferenceRouter Operation</seealso>
+        Task<DeleteInferenceRouterResponse> DeleteInferenceRouterAsync(DeleteInferenceRouterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -8767,6 +8988,49 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns information about an inference router, including the routing status of each
+        /// destination.
+        /// 
+        ///  
+        /// <para>
+        /// SageMaker AI checks each destination with your permissions when you call this operation,
+        /// so callers with different permissions can see a different <c>RoutingStatus</c>. To
+        /// get the router's tags, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTags.html">ListTags</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInferenceRouter service method.</param>
+        /// <returns>The response from the DescribeInferenceRouter service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceRouter">REST API Reference for DescribeInferenceRouter Operation</seealso>
+        DescribeInferenceRouterResponse DescribeInferenceRouter(DescribeInferenceRouterRequest request);
+#endif
+
+        /// <summary>
+        /// Returns information about an inference router, including the routing status of each
+        /// destination.
+        /// 
+        ///  
+        /// <para>
+        /// SageMaker AI checks each destination with your permissions when you call this operation,
+        /// so callers with different permissions can see a different <c>RoutingStatus</c>. To
+        /// get the router's tags, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTags.html">ListTags</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInferenceRouter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeInferenceRouter service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceRouter">REST API Reference for DescribeInferenceRouter Operation</seealso>
+        Task<DescribeInferenceRouterResponse> DescribeInferenceRouterAsync(DescribeInferenceRouterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns detailed information about a job, including its current status, secondary
         /// status, configuration, and timestamps. Use <c>SecondaryStatus</c> for granular progress
         /// tracking and <c>SecondaryStatusTransitions</c> to see the full history of status changes
@@ -10205,6 +10469,35 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the resource-based policy that is attached to an endpoint. If the endpoint
+        /// doesn't have a policy, you get a <c>ValidationException</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEndpointPolicy service method.</param>
+        /// <returns>The response from the GetEndpointPolicy service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetEndpointPolicy">REST API Reference for GetEndpointPolicy Operation</seealso>
+        GetEndpointPolicyResponse GetEndpointPolicy(GetEndpointPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the resource-based policy that is attached to an endpoint. If the endpoint
+        /// doesn't have a policy, you get a <c>ValidationException</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEndpointPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetEndpointPolicy service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetEndpointPolicy">REST API Reference for GetEndpointPolicy Operation</seealso>
+        Task<GetEndpointPolicyResponse> GetEndpointPolicyAsync(GetEndpointPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// The resource policy for the lineage group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLineageGroupPolicy service method.</param>
@@ -11479,6 +11772,29 @@ namespace Amazon.SageMaker
         /// <returns>The response from the ListInferenceRecommendationsJobs service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobs">REST API Reference for ListInferenceRecommendationsJobs Operation</seealso>
         Task<ListInferenceRecommendationsJobsResponse> ListInferenceRecommendationsJobsAsync(ListInferenceRecommendationsJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the inference routers in your account in the current Amazon Web Services Region.
+        /// A router that you just created might not appear in the list right away.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceRouters service method.</param>
+        /// <returns>The response from the ListInferenceRouters service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRouters">REST API Reference for ListInferenceRouters Operation</seealso>
+        ListInferenceRoutersResponse ListInferenceRouters(ListInferenceRoutersRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the inference routers in your account in the current Amazon Web Services Region.
+        /// A router that you just created might not appear in the list right away.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceRouters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListInferenceRouters service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRouters">REST API Reference for ListInferenceRouters Operation</seealso>
+        Task<ListInferenceRoutersResponse> ListInferenceRoutersAsync(ListInferenceRoutersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -12820,6 +13136,67 @@ namespace Amazon.SageMaker
         /// <returns>The response from the ListWorkteams service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkteams">REST API Reference for ListWorkteams Operation</seealso>
         Task<ListWorkteamsResponse> ListWorkteamsAsync(ListWorkteamsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Attaches a resource-based policy to an endpoint. With an endpoint policy, you can
+        /// allow other Amazon Web Services accounts to send requests to your endpoint, or to
+        /// inference components on it, through an inference router. The policy that you specify
+        /// replaces the endpoint's existing policy, if it has one.
+        /// 
+        ///  
+        /// <para>
+        /// You can't attach a policy to an endpoint whose status is <c>Deleting</c> or <c>Failed</c>.
+        /// SageMaker AI rejects a policy that doesn't follow the endpoint policy rules. For information
+        /// about the policy rules, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router-cross-account.html">Use
+        /// destinations in other accounts</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Policy changes typically take effect within 30 seconds, and can take up to 5 minutes.
+        /// If you delete the endpoint, its policy is also deleted, and a new endpoint with the
+        /// same name has no policy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEndpointPolicy service method.</param>
+        /// <returns>The response from the PutEndpointPolicy service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PutEndpointPolicy">REST API Reference for PutEndpointPolicy Operation</seealso>
+        PutEndpointPolicyResponse PutEndpointPolicy(PutEndpointPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Attaches a resource-based policy to an endpoint. With an endpoint policy, you can
+        /// allow other Amazon Web Services accounts to send requests to your endpoint, or to
+        /// inference components on it, through an inference router. The policy that you specify
+        /// replaces the endpoint's existing policy, if it has one.
+        /// 
+        ///  
+        /// <para>
+        /// You can't attach a policy to an endpoint whose status is <c>Deleting</c> or <c>Failed</c>.
+        /// SageMaker AI rejects a policy that doesn't follow the endpoint policy rules. For information
+        /// about the policy rules, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router-cross-account.html">Use
+        /// destinations in other accounts</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Policy changes typically take effect within 30 seconds, and can take up to 5 minutes.
+        /// If you delete the endpoint, its policy is also deleted, and a new endpoint with the
+        /// same name has no policy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEndpointPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutEndpointPolicy service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PutEndpointPolicy">REST API Reference for PutEndpointPolicy Operation</seealso>
+        Task<PutEndpointPolicyResponse> PutEndpointPolicyAsync(PutEndpointPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -15419,6 +15796,79 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment">REST API Reference for UpdateInferenceExperiment Operation</seealso>
         Task<UpdateInferenceExperimentResponse> UpdateInferenceExperimentAsync(UpdateInferenceExperimentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the routing targets of an inference router. The routing targets that you specify
+        /// replace all of the router's existing routing targets. To change one routing target,
+        /// call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceRouter.html">DescribeInferenceRouter</a>,
+        /// edit the routing targets, and send all of them.
+        /// 
+        ///  
+        /// <para>
+        /// The update is applied in full or not at all, and each request uses either the previous
+        /// configuration or the new one. Updates typically take effect within about 2 minutes.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the router is being created, updated, or deleted, or another request changes it
+        /// at the same time, you get a <c>ConflictException</c>. Describe the router, and then
+        /// send your update again.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInferenceRouter service method.</param>
+        /// <returns>The response from the UpdateInferenceRouter service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceRouter">REST API Reference for UpdateInferenceRouter Operation</seealso>
+        UpdateInferenceRouterResponse UpdateInferenceRouter(UpdateInferenceRouterRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the routing targets of an inference router. The routing targets that you specify
+        /// replace all of the router's existing routing targets. To change one routing target,
+        /// call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceRouter.html">DescribeInferenceRouter</a>,
+        /// edit the routing targets, and send all of them.
+        /// 
+        ///  
+        /// <para>
+        /// The update is applied in full or not at all, and each request uses either the previous
+        /// configuration or the new one. Updates typically take effect within about 2 minutes.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the router is being created, updated, or deleted, or another request changes it
+        /// at the same time, you get a <c>ConflictException</c>. Describe the router, and then
+        /// send your update again.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInferenceRouter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateInferenceRouter service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceRouter">REST API Reference for UpdateInferenceRouter Operation</seealso>
+        Task<UpdateInferenceRouterResponse> UpdateInferenceRouterAsync(UpdateInferenceRouterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

@@ -297,6 +297,12 @@ namespace Amazon.SageMaker.Model
         IListInferenceRecommendationsJobsPaginator ListInferenceRecommendationsJobs(ListInferenceRecommendationsJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListInferenceRouters operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListInferenceRoutersPaginator ListInferenceRouters(ListInferenceRoutersRequest request);
+
+        /// <summary>
         /// Paginator for ListJobSchemaVersions operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

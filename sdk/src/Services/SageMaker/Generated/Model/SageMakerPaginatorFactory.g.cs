@@ -385,6 +385,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListInferenceRouters operation
+        /// </summary>
+        public IListInferenceRoutersPaginator ListInferenceRouters(ListInferenceRoutersRequest request)
+        {
+            return new ListInferenceRoutersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListJobSchemaVersions operation
         /// </summary>
         public IListJobSchemaVersionsPaginator ListJobSchemaVersions(ListJobSchemaVersionsRequest request)

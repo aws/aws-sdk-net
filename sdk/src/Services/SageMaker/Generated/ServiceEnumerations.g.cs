@@ -10722,6 +10722,103 @@ namespace Amazon.SageMaker
     }
 
     /// <summary>
+    /// Constants used for properties of type InferenceRouterRoutingPreference.
+    /// </summary>
+    public class InferenceRouterRoutingPreference : ConstantClass
+    {
+        /// <summary>
+        /// Constant InstancePoolOrder for InferenceRouterRoutingPreference
+        /// </summary>
+        public static readonly InferenceRouterRoutingPreference InstancePoolOrder = new InferenceRouterRoutingPreference("InstancePoolOrder");
+
+        /// <summary>
+        /// Constant LocalRegionFirst for InferenceRouterRoutingPreference
+        /// </summary>
+        public static readonly InferenceRouterRoutingPreference LocalRegionFirst = new InferenceRouterRoutingPreference("LocalRegionFirst");
+
+        /// <summary>
+        /// Constructs a custom InferenceRouterRoutingPreference for a value not among the defined constants.
+        /// </summary>
+        public InferenceRouterRoutingPreference(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InferenceRouterRoutingPreference FindValue(string value)
+        {
+            return FindValue<InferenceRouterRoutingPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InferenceRouterRoutingPreference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InferenceRouterStatus.
+    /// </summary>
+    public class InferenceRouterStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Creating for InferenceRouterStatus
+        /// </summary>
+        public static readonly InferenceRouterStatus Creating = new InferenceRouterStatus("Creating");
+
+        /// <summary>
+        /// Constant Deleting for InferenceRouterStatus
+        /// </summary>
+        public static readonly InferenceRouterStatus Deleting = new InferenceRouterStatus("Deleting");
+
+        /// <summary>
+        /// Constant Failed for InferenceRouterStatus
+        /// </summary>
+        public static readonly InferenceRouterStatus Failed = new InferenceRouterStatus("Failed");
+
+        /// <summary>
+        /// Constant InService for InferenceRouterStatus
+        /// </summary>
+        public static readonly InferenceRouterStatus InService = new InferenceRouterStatus("InService");
+
+        /// <summary>
+        /// Constant Updating for InferenceRouterStatus
+        /// </summary>
+        public static readonly InferenceRouterStatus Updating = new InferenceRouterStatus("Updating");
+
+        /// <summary>
+        /// Constructs a custom InferenceRouterStatus for a value not among the defined constants.
+        /// </summary>
+        public InferenceRouterStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InferenceRouterStatus FindValue(string value)
+        {
+            return FindValue<InferenceRouterStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InferenceRouterStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type InputMode.
     /// </summary>
     public class InputMode : ConstantClass
@@ -11861,6 +11958,21 @@ namespace Amazon.SageMaker
         public static readonly JobCategory AgentRFTEvaluation = new JobCategory("AgentRFTEvaluation");
 
         /// <summary>
+        /// Constant DataQualityEvaluation for JobCategory
+        /// </summary>
+        public static readonly JobCategory DataQualityEvaluation = new JobCategory("DataQualityEvaluation");
+
+        /// <summary>
+        /// Constant DataTransformation for JobCategory
+        /// </summary>
+        public static readonly JobCategory DataTransformation = new JobCategory("DataTransformation");
+
+        /// <summary>
+        /// Constant SyntheticDataGeneration for JobCategory
+        /// </summary>
+        public static readonly JobCategory SyntheticDataGeneration = new JobCategory("SyntheticDataGeneration");
+
+        /// <summary>
         /// Constructs a custom JobCategory for a value not among the defined constants.
         /// </summary>
         public JobCategory(string value) : base(value) { }
@@ -11917,9 +12029,24 @@ namespace Amazon.SageMaker
         public static readonly JobSecondaryStatus Evaluating = new JobSecondaryStatus("Evaluating");
 
         /// <summary>
+        /// Constant Executing for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Executing = new JobSecondaryStatus("Executing");
+
+        /// <summary>
         /// Constant Failed for JobSecondaryStatus
         /// </summary>
         public static readonly JobSecondaryStatus Failed = new JobSecondaryStatus("Failed");
+
+        /// <summary>
+        /// Constant Finalizing for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Finalizing = new JobSecondaryStatus("Finalizing");
+
+        /// <summary>
+        /// Constant Generating for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Generating = new JobSecondaryStatus("Generating");
 
         /// <summary>
         /// Constant Interrupted for JobSecondaryStatus
@@ -11932,9 +12059,24 @@ namespace Amazon.SageMaker
         public static readonly JobSecondaryStatus MaxRuntimeExceeded = new JobSecondaryStatus("MaxRuntimeExceeded");
 
         /// <summary>
+        /// Constant PartialGeneration for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus PartialGeneration = new JobSecondaryStatus("PartialGeneration");
+
+        /// <summary>
         /// Constant Pending for JobSecondaryStatus
         /// </summary>
         public static readonly JobSecondaryStatus Pending = new JobSecondaryStatus("Pending");
+
+        /// <summary>
+        /// Constant Preparing for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Preparing = new JobSecondaryStatus("Preparing");
+
+        /// <summary>
+        /// Constant Publishing for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Publishing = new JobSecondaryStatus("Publishing");
 
         /// <summary>
         /// Constant Restarting for JobSecondaryStatus
@@ -11962,9 +12104,19 @@ namespace Amazon.SageMaker
         public static readonly JobSecondaryStatus Training = new JobSecondaryStatus("Training");
 
         /// <summary>
+        /// Constant Transforming for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Transforming = new JobSecondaryStatus("Transforming");
+
+        /// <summary>
         /// Constant Uploading for JobSecondaryStatus
         /// </summary>
         public static readonly JobSecondaryStatus Uploading = new JobSecondaryStatus("Uploading");
+
+        /// <summary>
+        /// Constant Validating for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Validating = new JobSecondaryStatus("Validating");
 
         /// <summary>
         /// Constructs a custom JobSecondaryStatus for a value not among the defined constants.
@@ -20583,10 +20735,61 @@ namespace Amazon.SageMaker
     }
 
     /// <summary>
+    /// Constants used for properties of type RoutingStatus.
+    /// </summary>
+    public class RoutingStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Routable for RoutingStatus
+        /// </summary>
+        public static readonly RoutingStatus Routable = new RoutingStatus("Routable");
+
+        /// <summary>
+        /// Constant Unknown for RoutingStatus
+        /// </summary>
+        public static readonly RoutingStatus Unknown = new RoutingStatus("Unknown");
+
+        /// <summary>
+        /// Constant Unroutable for RoutingStatus
+        /// </summary>
+        public static readonly RoutingStatus Unroutable = new RoutingStatus("Unroutable");
+
+        /// <summary>
+        /// Constructs a custom RoutingStatus for a value not among the defined constants.
+        /// </summary>
+        public RoutingStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RoutingStatus FindValue(string value)
+        {
+            return FindValue<RoutingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RoutingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RoutingStrategy.
     /// </summary>
     public class RoutingStrategy : ConstantClass
     {
+        /// <summary>
+        /// Constant KV_AWARE for RoutingStrategy
+        /// </summary>
+        public static readonly RoutingStrategy KV_AWARE = new RoutingStrategy("KV_AWARE");
+
         /// <summary>
         /// Constant LEAST_OUTSTANDING_REQUESTS for RoutingStrategy
         /// </summary>
