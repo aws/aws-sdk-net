@@ -38,6 +38,19 @@ namespace Amazon.ECS.Model
     public partial class GatewayConnector
     {
         /// <summary>
+        /// Gets and sets the property DeregistrationDelay. 
+        /// <para>
+        /// The deregistration delay settings for the targets of this connector.
+        /// </para>
+        /// </summary>
+        public GatewayConnectorDeregistrationDelay DeregistrationDelay { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeregistrationDelay property is set.
+        /// </summary>
+        internal bool IsSetDeregistrationDelay() => this.DeregistrationDelay != null;
+
+        /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
         /// The filters that control which gateway ingress paths the connector applies to.
