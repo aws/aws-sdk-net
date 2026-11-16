@@ -169,6 +169,34 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property TransitGatewayAttachmentId. 
+        /// <para>
+        /// The ID of the transit gateway attachment, if the connection is for a transit gateway
+        /// attachment.
+        /// </para>
+        /// </summary>
+        public string TransitGatewayAttachmentId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TransitGatewayAttachmentId property is set.
+        /// </summary>
+        internal bool IsSetTransitGatewayAttachmentId() => this.TransitGatewayAttachmentId != null;
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayAttachmentOwner. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that owns the transit gateway attachment,
+        /// if the connection is for a transit gateway attachment.
+        /// </para>
+        /// </summary>
+        public string TransitGatewayAttachmentOwner { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TransitGatewayAttachmentOwner property is set.
+        /// </summary>
+        internal bool IsSetTransitGatewayAttachmentOwner() => this.TransitGatewayAttachmentOwner != null;
+
+        /// <summary>
         /// Gets and sets the property VpcEndpointConnectionId. 
         /// <para>
         /// The ID of the VPC endpoint connection.

@@ -23445,6 +23445,47 @@ namespace Amazon.EC2
     }
 
     /// <summary>
+    /// Constants used for properties of type PermissionType.
+    /// </summary>
+    public class PermissionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant TransitGatewayAttachment for PermissionType
+        /// </summary>
+        public static readonly PermissionType TransitGatewayAttachment = new PermissionType("transit-gateway-attachment");
+
+        /// <summary>
+        /// Constant VpcEndpoint for PermissionType
+        /// </summary>
+        public static readonly PermissionType VpcEndpoint = new PermissionType("vpc-endpoint");
+
+        /// <summary>
+        /// Constructs a custom PermissionType for a value not among the defined constants.
+        /// </summary>
+        public PermissionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionType FindValue(string value)
+        {
+            return FindValue<PermissionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type PhcSupport.
     /// </summary>
     public class PhcSupport : ConstantClass

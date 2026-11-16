@@ -131,6 +131,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("transitGatewayAttachmentId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TransitGatewayAttachmentId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("transitGatewayAttachmentOwner", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TransitGatewayAttachmentOwner = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("vpcEndpointConnectionId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

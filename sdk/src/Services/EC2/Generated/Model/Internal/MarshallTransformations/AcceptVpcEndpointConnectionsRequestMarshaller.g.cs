@@ -61,6 +61,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("ServiceId", StringUtils.FromString(publicRequest.ServiceId));
             }
+            if (publicRequest.IsSetTransitGatewayAttachmentIds())
+            {
+                if (publicRequest.TransitGatewayAttachmentIds.Count == 0)
+                {
+                    request.Parameters.Add("TransitGatewayAttachmentId", "");
+                }
+                else
+                {
+                    int index0 = 1;
+                    foreach (var item0 in publicRequest.TransitGatewayAttachmentIds)
+                    {
+                        request.Parameters.Add("TransitGatewayAttachmentId" + "." + index0, StringUtils.FromString(item0));
+                        index0++;
+                    }
+                }
+            }
             if (publicRequest.IsSetVpcEndpointIds())
             {
                 if (publicRequest.VpcEndpointIds.Count == 0)

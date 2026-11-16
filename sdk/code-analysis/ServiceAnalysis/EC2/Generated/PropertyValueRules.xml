@@ -755,6 +755,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTransitGatewayNetworkFunctionAttachmentsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeTransitGatewayPeeringAttachmentsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>

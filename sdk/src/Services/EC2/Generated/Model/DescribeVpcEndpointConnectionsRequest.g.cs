@@ -66,6 +66,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>transit-gateway-attachment-id</c> - The ID of the transit gateway attachment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>vpc-endpoint-owner</c> - The ID of the Amazon Web Services account ID that owns
         /// the endpoint.
         /// </para>

@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>permission-type</c> - The permission type (<c>vpc-endpoint</c> | <c>transit-gateway-attachment</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>principal</c> - The ARN of the principal.
         /// </para>
         ///  </li> <li> 

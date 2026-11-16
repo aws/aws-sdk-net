@@ -1348,6 +1348,45 @@ namespace Amazon.EC2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Associates an additional KMS key with an encrypted Amazon EBS snapshot. With the associated
+        /// key, you have a second, independent way to access the snapshot's data, in addition
+        /// to the key the snapshot is already encrypted under. Associating a key doesn't re-encrypt
+        /// the snapshot or grant access to its original key.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/associated-kms-keys.html">Associated
+        /// KMS keys</a> in the <i>Amazon EBS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateKmsKeyId service method.</param>
+        /// <returns>The response from the AssociateKmsKeyId service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateKmsKeyId">REST API Reference for AssociateKmsKeyId Operation</seealso>
+        AssociateKmsKeyIdResponse AssociateKmsKeyId(AssociateKmsKeyIdRequest request);
+#endif
+
+        /// <summary>
+        /// Associates an additional KMS key with an encrypted Amazon EBS snapshot. With the associated
+        /// key, you have a second, independent way to access the snapshot's data, in addition
+        /// to the key the snapshot is already encrypted under. Associating a key doesn't re-encrypt
+        /// the snapshot or grant access to its original key.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/associated-kms-keys.html">Associated
+        /// KMS keys</a> in the <i>Amazon EBS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateKmsKeyId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociateKmsKeyId service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateKmsKeyId">REST API Reference for AssociateKmsKeyId Operation</seealso>
+        Task<AssociateKmsKeyIdResponse> AssociateKmsKeyIdAsync(AssociateKmsKeyIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT
         /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Work
         /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
@@ -7546,6 +7585,47 @@ namespace Amazon.EC2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a network function attachment that connects the specified transit gateway
+        /// to a Gateway Load Balancer endpoint service. Traffic that you route to the attachment
+        /// is sent to the network function appliances behind the endpoint service. To use this
+        /// operation, you must be the owner of the transit gateway.
+        /// 
+        ///  
+        /// <para>
+        /// You can create one network function attachment for each combination of transit gateway
+        /// and endpoint service. The attachment remains in the <c>pendingAcceptance</c> state
+        /// until the endpoint service owner accepts the endpoint connection.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayNetworkFunctionAttachment service method.</param>
+        /// <returns>The response from the CreateTransitGatewayNetworkFunctionAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayNetworkFunctionAttachment">REST API Reference for CreateTransitGatewayNetworkFunctionAttachment Operation</seealso>
+        CreateTransitGatewayNetworkFunctionAttachmentResponse CreateTransitGatewayNetworkFunctionAttachment(CreateTransitGatewayNetworkFunctionAttachmentRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a network function attachment that connects the specified transit gateway
+        /// to a Gateway Load Balancer endpoint service. Traffic that you route to the attachment
+        /// is sent to the network function appliances behind the endpoint service. To use this
+        /// operation, you must be the owner of the transit gateway.
+        /// 
+        ///  
+        /// <para>
+        /// You can create one network function attachment for each combination of transit gateway
+        /// and endpoint service. The attachment remains in the <c>pendingAcceptance</c> state
+        /// until the endpoint service owner accepts the endpoint connection.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayNetworkFunctionAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateTransitGatewayNetworkFunctionAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayNetworkFunctionAttachment">REST API Reference for CreateTransitGatewayNetworkFunctionAttachment Operation</seealso>
+        Task<CreateTransitGatewayNetworkFunctionAttachmentResponse> CreateTransitGatewayNetworkFunctionAttachmentAsync(CreateTransitGatewayNetworkFunctionAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Requests a transit gateway peering attachment between the specified transit gateway
         /// (requester) and a peer transit gateway (accepter). The peer transit gateway can be
         /// in your account or a different Amazon Web Services account.
@@ -10684,6 +10764,29 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteTransitGatewayMulticastDomain service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMulticastDomain">REST API Reference for DeleteTransitGatewayMulticastDomain Operation</seealso>
         Task<DeleteTransitGatewayMulticastDomainResponse> DeleteTransitGatewayMulticastDomainAsync(DeleteTransitGatewayMulticastDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes the specified network function attachment. The attachment must be in the <c>available</c>
+        /// or <c>pendingAcceptance</c> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayNetworkFunctionAttachment service method.</param>
+        /// <returns>The response from the DeleteTransitGatewayNetworkFunctionAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayNetworkFunctionAttachment">REST API Reference for DeleteTransitGatewayNetworkFunctionAttachment Operation</seealso>
+        DeleteTransitGatewayNetworkFunctionAttachmentResponse DeleteTransitGatewayNetworkFunctionAttachment(DeleteTransitGatewayNetworkFunctionAttachmentRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes the specified network function attachment. The attachment must be in the <c>available</c>
+        /// or <c>pendingAcceptance</c> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayNetworkFunctionAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteTransitGatewayNetworkFunctionAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayNetworkFunctionAttachment">REST API Reference for DeleteTransitGatewayNetworkFunctionAttachment Operation</seealso>
+        Task<DeleteTransitGatewayNetworkFunctionAttachmentResponse> DeleteTransitGatewayNetworkFunctionAttachmentAsync(DeleteTransitGatewayNetworkFunctionAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -18994,6 +19097,29 @@ namespace Amazon.EC2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Describes one or more network function attachments. You can describe attachments that
+        /// you own or that are attached to a transit gateway that you own.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayNetworkFunctionAttachments service method.</param>
+        /// <returns>The response from the DescribeTransitGatewayNetworkFunctionAttachments service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayNetworkFunctionAttachments">REST API Reference for DescribeTransitGatewayNetworkFunctionAttachments Operation</seealso>
+        DescribeTransitGatewayNetworkFunctionAttachmentsResponse DescribeTransitGatewayNetworkFunctionAttachments(DescribeTransitGatewayNetworkFunctionAttachmentsRequest request);
+#endif
+
+        /// <summary>
+        /// Describes one or more network function attachments. You can describe attachments that
+        /// you own or that are attached to a transit gateway that you own.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayNetworkFunctionAttachments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeTransitGatewayNetworkFunctionAttachments service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayNetworkFunctionAttachments">REST API Reference for DescribeTransitGatewayNetworkFunctionAttachments Operation</seealso>
+        Task<DescribeTransitGatewayNetworkFunctionAttachmentsResponse> DescribeTransitGatewayNetworkFunctionAttachmentsAsync(DescribeTransitGatewayNetworkFunctionAttachmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Describes your transit gateway peering attachments.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayPeeringAttachments service method.</param>
@@ -21819,6 +21945,31 @@ namespace Amazon.EC2
         /// <returns>The response from the DisassociateIpamResourceDiscovery service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">REST API Reference for DisassociateIpamResourceDiscovery Operation</seealso>
         Task<DisassociateIpamResourceDiscoveryResponse> DisassociateIpamResourceDiscoveryAsync(DisassociateIpamResourceDiscoveryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes an associated KMS key from an Amazon EBS snapshot. After you disassociate
+        /// the key, it can no longer be used to access the snapshot's data. The snapshot's original
+        /// encryption key is unaffected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateKmsKeyId service method.</param>
+        /// <returns>The response from the DisassociateKmsKeyId service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateKmsKeyId">REST API Reference for DisassociateKmsKeyId Operation</seealso>
+        DisassociateKmsKeyIdResponse DisassociateKmsKeyId(DisassociateKmsKeyIdRequest request);
+#endif
+
+        /// <summary>
+        /// Removes an associated KMS key from an Amazon EBS snapshot. After you disassociate
+        /// the key, it can no longer be used to access the snapshot's data. The snapshot's original
+        /// encryption key is unaffected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateKmsKeyId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociateKmsKeyId service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateKmsKeyId">REST API Reference for DisassociateKmsKeyId Operation</seealso>
+        Task<DisassociateKmsKeyIdResponse> DisassociateKmsKeyIdAsync(DisassociateKmsKeyIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -29001,6 +29152,49 @@ namespace Amazon.EC2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Adds Availability Zones to or removes Availability Zones from the specified network
+        /// function attachment. The attachment must be in the <c>available</c> state. You must
+        /// specify at least one Availability Zone to add or remove, and the attachment must keep
+        /// at least one Availability Zone.
+        /// 
+        ///  
+        /// <para>
+        /// Adding an Availability Zone provisions a new Gateway Load Balancer endpoint in that
+        /// Availability Zone. If the endpoint service doesn't automatically accept connection
+        /// requests, the endpoint service owner must accept the endpoint connection for each
+        /// Availability Zone that you add.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayNetworkFunctionAttachment service method.</param>
+        /// <returns>The response from the ModifyTransitGatewayNetworkFunctionAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayNetworkFunctionAttachment">REST API Reference for ModifyTransitGatewayNetworkFunctionAttachment Operation</seealso>
+        ModifyTransitGatewayNetworkFunctionAttachmentResponse ModifyTransitGatewayNetworkFunctionAttachment(ModifyTransitGatewayNetworkFunctionAttachmentRequest request);
+#endif
+
+        /// <summary>
+        /// Adds Availability Zones to or removes Availability Zones from the specified network
+        /// function attachment. The attachment must be in the <c>available</c> state. You must
+        /// specify at least one Availability Zone to add or remove, and the attachment must keep
+        /// at least one Availability Zone.
+        /// 
+        ///  
+        /// <para>
+        /// Adding an Availability Zone provisions a new Gateway Load Balancer endpoint in that
+        /// Availability Zone. If the endpoint service doesn't automatically accept connection
+        /// requests, the endpoint service owner must accept the endpoint connection for each
+        /// Availability Zone that you add.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayNetworkFunctionAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ModifyTransitGatewayNetworkFunctionAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayNetworkFunctionAttachment">REST API Reference for ModifyTransitGatewayNetworkFunctionAttachment Operation</seealso>
+        Task<ModifyTransitGatewayNetworkFunctionAttachmentResponse> ModifyTransitGatewayNetworkFunctionAttachmentAsync(ModifyTransitGatewayNetworkFunctionAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Modifies the specified transit gateway policy table entry.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayPolicyTableEntry service method.</param>
@@ -29598,6 +29792,15 @@ namespace Amazon.EC2
         /// the name of a public service can send a request to attach an endpoint. If the service
         /// does not require manual approval, attachments are automatically approved.
         /// </para>
+        ///  
+        /// <para>
+        /// By default, principals that you grant permissions to can create VPC endpoints that
+        /// connect to your endpoint service. For Gateway Load Balancer endpoint services, you
+        /// can instead grant permissions so that principals can create transit gateway attachments
+        /// that connect to your endpoint service. To do so, specify <c>transit-gateway-attachment</c>
+        /// for <c>PermissionType</c>. The two permission types are independent. A principal can
+        /// have either or both.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServicePermissions service method.</param>
         /// <returns>The response from the ModifyVpcEndpointServicePermissions service method, as returned by EC2.</returns>
@@ -29615,6 +29818,15 @@ namespace Amazon.EC2
         /// If you grant permissions to all principals, the service is public. Any users who know
         /// the name of a public service can send a request to attach an endpoint. If the service
         /// does not require manual approval, attachments are automatically approved.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, principals that you grant permissions to can create VPC endpoints that
+        /// connect to your endpoint service. For Gateway Load Balancer endpoint services, you
+        /// can instead grant permissions so that principals can create transit gateway attachments
+        /// that connect to your endpoint service. To do so, specify <c>transit-gateway-attachment</c>
+        /// for <c>PermissionType</c>. The two permission types are independent. A principal can
+        /// have either or both.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServicePermissions service method.</param>

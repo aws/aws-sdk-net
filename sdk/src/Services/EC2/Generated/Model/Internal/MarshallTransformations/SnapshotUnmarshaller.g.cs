@@ -55,6 +55,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("associatedKmsKeySet/item", targetDepth))
+                    {
+                        if (unmarshalledObject.AssociatedKmsKeys == null)
+                        {
+                            unmarshalledObject.AssociatedKmsKeys = new List<AssociatedKmsKey>();
+                        }
+                        var unmarshaller = AssociatedKmsKeyUnmarshaller.Instance;
+                        unmarshalledObject.AssociatedKmsKeys.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
                     if (context.TestExpression("availabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

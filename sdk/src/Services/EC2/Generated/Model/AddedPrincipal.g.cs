@@ -35,6 +35,19 @@ namespace Amazon.EC2.Model
     public partial class AddedPrincipal
     {
         /// <summary>
+        /// Gets and sets the property PermissionType. 
+        /// <para>
+        /// The type of permission granted to the principal.
+        /// </para>
+        /// </summary>
+        public PermissionType PermissionType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PermissionType property is set.
+        /// </summary>
+        internal bool IsSetPermissionType() => this.PermissionType != null;
+
+        /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the principal.

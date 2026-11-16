@@ -73,6 +73,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun.Value));
             }
+            if (publicRequest.IsSetPermissionType())
+            {
+                request.Parameters.Add("PermissionType", StringUtils.FromString(publicRequest.PermissionType));
+            }
             if (publicRequest.IsSetRemoveAllowedPrincipals())
             {
                 if (publicRequest.RemoveAllowedPrincipals.Count == 0)

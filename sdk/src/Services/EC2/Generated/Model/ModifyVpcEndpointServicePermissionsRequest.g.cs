@@ -37,6 +37,12 @@ namespace Amazon.EC2.Model
     /// If you grant permissions to all principals, the service is public. Any users who know
     /// the name of a public service can send a request to attach an endpoint. If the service
     /// does not require manual approval, attachments are automatically approved. </para>
+    /// <para> By default, principals that you grant permissions to can create VPC endpoints
+    /// that connect to your endpoint service. For Gateway Load Balancer endpoint services,
+    /// you can instead grant permissions so that principals can create transit gateway attachments
+    /// that connect to your endpoint service. To do so, specify <c>transit-gateway-attachment</c>
+    /// for <c>PermissionType</c>. The two permission types are independent. A principal can
+    /// have either or both. </para>
     /// </summary>
     public partial class ModifyVpcEndpointServicePermissionsRequest : AmazonEC2Request
     {
@@ -75,6 +81,37 @@ namespace Amazon.EC2.Model
         /// Checks to see if the DryRun property is set.
         /// </summary>
         internal bool IsSetDryRun() => this.DryRun.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property PermissionType. 
+        /// <para>
+        /// The type of permission to add or remove. The permission type applies to all principals
+        /// in <c>AddAllowedPrincipals</c> and <c>RemoveAllowedPrincipals</c>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>vpc-endpoint</c> - Principals can create VPC endpoints that connect to the endpoint
+        /// service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>transit-gateway-attachment</c> - Principals can create transit gateway attachments
+        /// that connect to the endpoint service. This permission type is supported only for Gateway
+        /// Load Balancer endpoint services. You can grant it only to Amazon Web Services accounts
+        /// (<c>arn:aws:iam::account-id:root</c>). You can't grant it to users, IAM roles, organizations,
+        /// organizational units, or all principals (*).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <c>vpc-endpoint</c> 
+        /// </para>
+        /// </summary>
+        public PermissionType PermissionType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PermissionType property is set.
+        /// </summary>
+        internal bool IsSetPermissionType() => this.PermissionType != null;
 
         /// <summary>
         /// Gets and sets the property RemoveAllowedPrincipals. 
