@@ -102,6 +102,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("MultipathResilience", targetDepth, ref reader))
+                {
+                    var unmarshaller = MultipathResilienceChangeValuesUnmarshaller.Instance;
+                    unmarshalledObject.MultipathResilience = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("NetworkFunctionGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

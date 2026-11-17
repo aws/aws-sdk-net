@@ -1340,6 +1340,47 @@ namespace Amazon.NetworkManager
     }
 
     /// <summary>
+    /// Constants used for properties of type MultipathResilienceMode.
+    /// </summary>
+    public class MultipathResilienceMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant BestEffort for MultipathResilienceMode
+        /// </summary>
+        public static readonly MultipathResilienceMode BestEffort = new MultipathResilienceMode("best-effort");
+
+        /// <summary>
+        /// Constant Disabled for MultipathResilienceMode
+        /// </summary>
+        public static readonly MultipathResilienceMode Disabled = new MultipathResilienceMode("disabled");
+
+        /// <summary>
+        /// Constructs a custom MultipathResilienceMode for a value not among the defined constants.
+        /// </summary>
+        public MultipathResilienceMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultipathResilienceMode FindValue(string value)
+        {
+            return FindValue<MultipathResilienceMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultipathResilienceMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type NatGatewaySupportState.
     /// </summary>
     public class NatGatewaySupportState : ConstantClass
