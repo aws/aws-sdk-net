@@ -1,7 +1,7 @@
 {
   "core": {
     "changeLogMessages": [
-      "Pass the caller's cancellation token to the inner stream reads and writes of CompressionWrapperStream and to the paginators of PaginatedResponse and PaginatedResultKeyResponse."
+      "Pass the caller's cancellation token to the inner stream read of CompressionWrapperStream.ReadAsync."
     ],
     "type": "patch",
     "updateMinimum": false

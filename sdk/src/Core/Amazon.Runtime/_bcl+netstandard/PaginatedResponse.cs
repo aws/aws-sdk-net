@@ -32,7 +32,7 @@ namespace Amazon.Runtime
         /// <returns></returns>
          public async IAsyncEnumerator<TResponse> GetAsyncEnumerator(CancellationToken cancellationToken = default)
          {
-             await foreach (var response in _paginator.PaginateAsync(cancellationToken).WithCancellation(cancellationToken).ConfigureAwait(false))
+             await foreach (var response in _paginator.PaginateAsync().WithCancellation(cancellationToken).ConfigureAwait(false))
              {
                  cancellationToken.ThrowIfCancellationRequested();
                  yield return response;

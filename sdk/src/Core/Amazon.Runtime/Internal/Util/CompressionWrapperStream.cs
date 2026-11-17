@@ -174,7 +174,7 @@ namespace Amazon.Runtime.Internal.Util
                     }
                     else
                     {
-                        await _compressionStream.WriteAsync(_inputBuffer, 0, readCount, cancellationToken).ConfigureAwait(false);
+                        await _compressionStream.WriteAsync(_inputBuffer, 0, readCount).ConfigureAwait(false);
                     }
                 }
 

@@ -37,7 +37,7 @@ namespace Amazon.Runtime
         /// <returns></returns>
          public async IAsyncEnumerator<TResultKey> GetAsyncEnumerator(CancellationToken cancellationToken = default)
          {
-             await foreach (var parent in _paginator.PaginateAsync(cancellationToken).WithCancellation(cancellationToken).ConfigureAwait(false))
+             await foreach (var parent in _paginator.PaginateAsync().WithCancellation(cancellationToken).ConfigureAwait(false))
              {
                  foreach (var resultKey in _resultKeySelector(parent))
                  {
