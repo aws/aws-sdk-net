@@ -498,6 +498,11 @@ namespace Amazon.SecurityHub
         public static readonly CloudProviderName Azure = new CloudProviderName("Azure");
 
         /// <summary>
+        /// Constant GCP for CloudProviderName
+        /// </summary>
+        public static readonly CloudProviderName GCP = new CloudProviderName("GCP");
+
+        /// <summary>
         /// Constructs a custom CloudProviderName for a value not among the defined constants.
         /// </summary>
         public CloudProviderName(string value) : base(value) { }
@@ -718,6 +723,11 @@ namespace Amazon.SecurityHub
         public static readonly ConnectorProviderName AZURE = new ConnectorProviderName("AZURE");
 
         /// <summary>
+        /// Constant GCP for ConnectorProviderName
+        /// </summary>
+        public static readonly ConnectorProviderName GCP = new ConnectorProviderName("GCP");
+
+        /// <summary>
         /// Constant JIRA_CLOUD for ConnectorProviderName
         /// </summary>
         public static readonly ConnectorProviderName JIRA_CLOUD = new ConnectorProviderName("JIRA_CLOUD");
@@ -907,6 +917,16 @@ namespace Amazon.SecurityHub
         public static readonly CriticalitySourceType AutomationRule = new CriticalitySourceType("AutomationRule");
 
         /// <summary>
+        /// Constant CloudWatchTelemetryInference for CriticalitySourceType
+        /// </summary>
+        public static readonly CriticalitySourceType CloudWatchTelemetryInference = new CriticalitySourceType("CloudWatchTelemetryInference");
+
+        /// <summary>
+        /// Constant InstalledSoftwareAndPackageInference for CriticalitySourceType
+        /// </summary>
+        public static readonly CriticalitySourceType InstalledSoftwareAndPackageInference = new CriticalitySourceType("InstalledSoftwareAndPackageInference");
+
+        /// <summary>
         /// Constant ResourceName for CriticalitySourceType
         /// </summary>
         public static readonly CriticalitySourceType ResourceName = new CriticalitySourceType("ResourceName");
@@ -951,6 +971,11 @@ namespace Amazon.SecurityHub
         /// Constant AZURE for CspmConnectorProviderName
         /// </summary>
         public static readonly CspmConnectorProviderName AZURE = new CspmConnectorProviderName("AZURE");
+
+        /// <summary>
+        /// Constant GCP for CspmConnectorProviderName
+        /// </summary>
+        public static readonly CspmConnectorProviderName GCP = new CspmConnectorProviderName("GCP");
 
         /// <summary>
         /// Constructs a custom CspmConnectorProviderName for a value not among the defined constants.
@@ -2412,6 +2437,47 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FreeTrialType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GcpScopeType.
+    /// </summary>
+    public class GcpScopeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ORGANIZATION for GcpScopeType
+        /// </summary>
+        public static readonly GcpScopeType ORGANIZATION = new GcpScopeType("ORGANIZATION");
+
+        /// <summary>
+        /// Constant PROJECT for GcpScopeType
+        /// </summary>
+        public static readonly GcpScopeType PROJECT = new GcpScopeType("PROJECT");
+
+        /// <summary>
+        /// Constructs a custom GcpScopeType for a value not among the defined constants.
+        /// </summary>
+        public GcpScopeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GcpScopeType FindValue(string value)
+        {
+            return FindValue<GcpScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GcpScopeType(string value)
         {
             return FindValue(value);
         }
@@ -5303,6 +5369,11 @@ namespace Amazon.SecurityHub
         public static readonly SecurityControlsProvider Azure = new SecurityControlsProvider("Azure");
 
         /// <summary>
+        /// Constant GCP for SecurityControlsProvider
+        /// </summary>
+        public static readonly SecurityControlsProvider GCP = new SecurityControlsProvider("GCP");
+
+        /// <summary>
         /// Constructs a custom SecurityControlsProvider for a value not among the defined constants.
         /// </summary>
         public SecurityControlsProvider(string value) : base(value) { }
@@ -5754,6 +5825,11 @@ namespace Amazon.SecurityHub
         /// Constant Azure for StandardsProvider
         /// </summary>
         public static readonly StandardsProvider Azure = new StandardsProvider("Azure");
+
+        /// <summary>
+        /// Constant GCP for StandardsProvider
+        /// </summary>
+        public static readonly StandardsProvider GCP = new StandardsProvider("GCP");
 
         /// <summary>
         /// Constructs a custom StandardsProvider for a value not among the defined constants.

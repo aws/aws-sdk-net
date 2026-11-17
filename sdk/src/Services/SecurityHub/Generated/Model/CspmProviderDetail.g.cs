@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// The detailed cloud provider configuration for a connector. This is a union type that
-    /// currently supports Azure.
+    /// currently supports Azure and GCP.
     /// </summary>
     public partial class CspmProviderDetail
     {
@@ -47,5 +47,18 @@ namespace Amazon.SecurityHub.Model
         /// Checks to see if the Azure property is set.
         /// </summary>
         internal bool IsSetAzure() => this.Azure != null;
+
+        /// <summary>
+        /// Gets and sets the property GCP. 
+        /// <para>
+        /// The GCP provider detail.
+        /// </para>
+        /// </summary>
+        public GcpDetail GCP { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GCP property is set.
+        /// </summary>
+        internal bool IsSetGCP() => this.GCP != null;
     }
 }

@@ -37,8 +37,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The cloud provider whose resources the standard evaluates. For example, <c>AWS</c>
-        /// or <c>Azure</c>.
+        /// The cloud provider whose resources the standard evaluates. For example, <c>AWS</c>,
+        /// <c>Azure</c>, or <c>GCP</c>.
         /// </para>
         /// </summary>
         public StandardsProvider Provider { get; set; }

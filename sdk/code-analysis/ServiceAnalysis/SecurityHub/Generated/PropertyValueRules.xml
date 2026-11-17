@@ -6693,6 +6693,14 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GcpDetail.AWSConfigConnectorArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GcpProviderConfiguration.AWSConfigConnectorArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.GeneratorDetails.Description</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>

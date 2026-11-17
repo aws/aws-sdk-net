@@ -72,7 +72,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Providers. 
         /// <para>
         /// A list of cloud providers to filter the enabled standards by. For example, specify
-        /// <c>Azure</c> to return only enabled standards that evaluate Azure resources.
+        /// <c>Azure</c> to return only enabled standards that evaluate Azure resources, or <c>GCP</c>
+        /// to return only enabled standards that evaluate GCP resources.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
