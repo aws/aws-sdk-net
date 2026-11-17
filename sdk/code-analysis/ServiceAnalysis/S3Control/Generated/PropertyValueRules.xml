@@ -2240,6 +2240,16 @@
     <pattern>^arn:[a-z\-]+:s3:[a-z0-9\-]+:\d{12}:storage\-lens\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.StorageLensCostAndUsageReportsSelectionCriteria.MaxDepth</property>
+    <min>1</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.StorageLensCostAndUsageReportsSelectionCriteria.MinDepth</property>
+    <min>1</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.StorageLensGroup.Name</property>
     <min>1</min>
     <max>64</max>

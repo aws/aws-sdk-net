@@ -56,6 +56,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 StorageLensAwsOrgMarshaller.Instance.Marshall(requestObject.AwsOrg, context);
                 context.Writer.WriteEndElement();
             }
+            if (requestObject.IsSetCostAndUsageReportsPublish())
+            {
+                context.Writer.WriteStartElement("CostAndUsageReportsPublish");
+                StorageLensCostAndUsageReportsPublishMarshaller.Instance.Marshall(requestObject.CostAndUsageReportsPublish, context);
+                context.Writer.WriteEndElement();
+            }
             if (requestObject.IsSetDataExport())
             {
                 context.Writer.WriteStartElement("DataExport");
@@ -82,6 +88,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 context.Writer.WriteStartElement("Include");
                 IncludeMarshaller.Instance.Marshall(requestObject.Include, context);
+                context.Writer.WriteEndElement();
+            }
+            if (requestObject.IsSetIntAccessTiers())
+            {
+                context.Writer.WriteStartElement("IntAccessTiers");
+                IntAccessTiersMarshaller.Instance.Marshall(requestObject.IntAccessTiers, context);
                 context.Writer.WriteEndElement();
             }
             if (requestObject.IsSetIsEnabled())

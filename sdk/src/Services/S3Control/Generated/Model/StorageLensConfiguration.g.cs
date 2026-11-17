@@ -62,6 +62,20 @@ namespace Amazon.S3Control.Model
         internal bool IsSetAwsOrg() => this.AwsOrg != null;
 
         /// <summary>
+        /// Gets and sets the property CostAndUsageReportsPublish. 
+        /// <para>
+        /// A container for the configuration used to publish S3 Storage Lens cost data to Amazon
+        /// Web Services Cost and Usage Reports (Amazon Web Services CUR).
+        /// </para>
+        /// </summary>
+        public StorageLensCostAndUsageReportsPublish CostAndUsageReportsPublish { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CostAndUsageReportsPublish property is set.
+        /// </summary>
+        internal bool IsSetCostAndUsageReportsPublish() => this.CostAndUsageReportsPublish != null;
+
+        /// <summary>
         /// Gets and sets the property DataExport. 
         /// <para>
         /// A container to specify the properties of your S3 Storage Lens metrics export including,
@@ -130,6 +144,19 @@ namespace Amazon.S3Control.Model
         /// Checks to see if the Include property is set.
         /// </summary>
         internal bool IsSetInclude() => this.Include != null;
+
+        /// <summary>
+        /// Gets and sets the property IntAccessTiers. 
+        /// <para>
+        /// A container element for S3 Storage Lens Intelligent-Tiering access tier metrics.
+        /// </para>
+        /// </summary>
+        public IntAccessTiers IntAccessTiers { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IntAccessTiers property is set.
+        /// </summary>
+        internal bool IsSetIntAccessTiers() => this.IntAccessTiers != null;
 
         /// <summary>
         /// Gets and sets the property IsEnabled. 

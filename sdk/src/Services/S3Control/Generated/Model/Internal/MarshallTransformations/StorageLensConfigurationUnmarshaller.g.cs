@@ -69,6 +69,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("CostAndUsageReportsPublish", targetDepth))
+                    {
+                        var unmarshaller = StorageLensCostAndUsageReportsPublishUnmarshaller.Instance;
+                        unmarshalledObject.CostAndUsageReportsPublish = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("DataExport", targetDepth))
                     {
                         var unmarshaller = StorageLensDataExportUnmarshaller.Instance;
@@ -101,6 +108,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IncludeUnmarshaller.Instance;
                         unmarshalledObject.Include = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("IntAccessTiers", targetDepth))
+                    {
+                        var unmarshaller = IntAccessTiersUnmarshaller.Instance;
+                        unmarshalledObject.IntAccessTiers = unmarshaller.Unmarshall(context);
                         continue;
                     }
 
