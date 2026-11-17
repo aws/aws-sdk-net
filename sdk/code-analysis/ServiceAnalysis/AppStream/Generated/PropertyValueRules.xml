@@ -103,10 +103,6 @@
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AppStream.Model.CreateAppBlockBuilderStreamingURLResponse.StreamingURL</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AppStream.Model.CreateApplicationRequest.AppBlockArn</property>
     <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
   </property-value-rule>
@@ -236,10 +232,6 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AppStream.Model.CreateImageBuilderStreamingURLResponse.StreamingURL</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AppStream.Model.CreateImportedImageRequest.Description</property>
     <min>0</min>
     <max>256</max>
@@ -314,10 +306,6 @@
     <min>2</min>
     <max>32</max>
     <pattern>^[\w+=,.@-]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AppStream.Model.CreateStreamingURLResponse.StreamingURL</property>
-    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateThemeForStackRequest.StackName</property>

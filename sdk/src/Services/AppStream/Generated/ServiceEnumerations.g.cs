@@ -103,6 +103,11 @@ namespace Amazon.AppStream
         public static readonly Action PRINTING_TO_LOCAL_DEVICE = new Action("PRINTING_TO_LOCAL_DEVICE");
 
         /// <summary>
+        /// Constant SMART_CARD_REDIRECTION for Action
+        /// </summary>
+        public static readonly Action SMART_CARD_REDIRECTION = new Action("SMART_CARD_REDIRECTION");
+
+        /// <summary>
         /// Constructs a custom Action for a value not among the defined constants.
         /// </summary>
         public Action(string value) : base(value) { }
