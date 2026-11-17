@@ -68,9 +68,21 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "EnableEndUserAdvisor":
+                        context.AddPathSegment("EnableEndUserAdvisor");
+                        unmarshalledObject.EnableEndUserAdvisor = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "IncreaseVolumeSize":
                         context.AddPathSegment("IncreaseVolumeSize");
                         unmarshalledObject.IncreaseVolumeSize = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "NestedVirtualization":
+                        context.AddPathSegment("NestedVirtualization");
+                        unmarshalledObject.NestedVirtualization = CborStringUnmarshaller.Instance.Unmarshall(context);
                         context.PopPathSegment();
                         break;
 

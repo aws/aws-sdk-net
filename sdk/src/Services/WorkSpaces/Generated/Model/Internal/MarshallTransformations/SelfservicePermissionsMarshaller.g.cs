@@ -54,10 +54,22 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.WriteTextString(requestObject.ChangeComputeType);
             }
 
+            if (requestObject.IsSetEnableEndUserAdvisor())
+            {
+                context.Writer.WriteTextString("EnableEndUserAdvisor");
+                context.Writer.WriteTextString(requestObject.EnableEndUserAdvisor);
+            }
+
             if (requestObject.IsSetIncreaseVolumeSize())
             {
                 context.Writer.WriteTextString("IncreaseVolumeSize");
                 context.Writer.WriteTextString(requestObject.IncreaseVolumeSize);
+            }
+
+            if (requestObject.IsSetNestedVirtualization())
+            {
+                context.Writer.WriteTextString("NestedVirtualization");
+                context.Writer.WriteTextString(requestObject.NestedVirtualization);
             }
 
             if (requestObject.IsSetRebuildWorkspace())
