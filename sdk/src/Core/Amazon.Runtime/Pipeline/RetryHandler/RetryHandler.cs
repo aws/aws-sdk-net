@@ -397,6 +397,11 @@ namespace Amazon.Runtime.Internal
                 string.Equals(operationName, "ReceiveMessage", StringComparison.OrdinalIgnoreCase))
                 return true;
 
+            if (string.Equals(serviceId, "Kinesis", StringComparison.OrdinalIgnoreCase) &&
+                (string.Equals(operationName, "ReceiveQueueRecords", StringComparison.OrdinalIgnoreCase) ||
+                 string.Equals(operationName, "ReceiveDeadLetterQueueRecords", StringComparison.OrdinalIgnoreCase)))
+                return true;
+
             if (string.Equals(serviceId, "SFN", StringComparison.OrdinalIgnoreCase) &&
                 string.Equals(operationName, "GetActivityTask", StringComparison.OrdinalIgnoreCase))
                 return true;

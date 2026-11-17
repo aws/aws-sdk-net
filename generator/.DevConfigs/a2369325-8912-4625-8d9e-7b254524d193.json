@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Back off on retries of the Kinesis `ReceiveQueueRecords` and `ReceiveDeadLetterQueueRecords` long polling operations even when the retry quota is depleted."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
