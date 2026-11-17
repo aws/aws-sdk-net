@@ -165,7 +165,7 @@ namespace Amazon.Runtime.Internal.Util
                 // Loop while GzipStream has not written data to the compressed stream or we haven't read the full stream yet
                 while (_outputBufferStream.Length == 0 && !_hitEnd)
                 {
-                    var readCount = await BaseStream.ReadAsync(_inputBuffer, 0, _inputBuffer.Length).ConfigureAwait(false);
+                    var readCount = await BaseStream.ReadAsync(_inputBuffer, 0, _inputBuffer.Length, cancellationToken).ConfigureAwait(false);
                     if (readCount == 0)
                     {
                         _hitEnd = true;
