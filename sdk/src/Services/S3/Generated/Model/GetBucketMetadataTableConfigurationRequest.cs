@@ -34,7 +34,7 @@ namespace Amazon.S3.Model
     /// <important> 
     /// <para>
     ///  We recommend that you retrieve your S3 Metadata configurations by using the V2 <a
-    /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
     /// API operation. We no longer recommend using the V1 <c>GetBucketMetadataTableConfiguration</c>
     /// API operation. 
     /// </para>
