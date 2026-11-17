@@ -522,9 +522,25 @@
     <value>
       <example>
         <para>
+          The following example returns a list of available security standards from a specified provider.
+        </para>
+        <code title="To get available GCP security standards" source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs" region="DescribeStandards-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DescribeStandards(Amazon.SecurityHub.Model.DescribeStandardsRequest)" />
+      <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DescribeStandards(Amazon.SecurityHub.Model.DescribeStandardsRequest)" />
+      <member name="T:Amazon.SecurityHub.Model.DescribeStandardsRequest" />
+      <member name="T:Amazon.SecurityHub.Model.DescribeStandardsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
           The following example returns a list of available security standards in Security Hub.
         </para>
-        <code title="To get available Security Hub standards" source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs" region="DescribeStandards-2" />
+        <code title="To get available Security Hub standards" source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs" region="DescribeStandards-3" />
       </example>
     </value>
   </doc>
@@ -1020,9 +1036,25 @@
     <value>
       <example>
         <para>
+          The following example lists security control definitions for a specified provider.
+        </para>
+        <code title="To list GCP security control definitions" source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs" region="ListSecurityControlDefinitions-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListSecurityControlDefinitions(Amazon.SecurityHub.Model.ListSecurityControlDefinitionsRequest)" />
+      <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListSecurityControlDefinitions(Amazon.SecurityHub.Model.ListSecurityControlDefinitionsRequest)" />
+      <member name="T:Amazon.SecurityHub.Model.ListSecurityControlDefinitionsRequest" />
+      <member name="T:Amazon.SecurityHub.Model.ListSecurityControlDefinitionsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
           The following example lists security controls that apply to a specified Security Hub standard. 
         </para>
-        <code title="To list security controls that apply to a standard" source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs" region="ListSecurityControlDefinitions-2" />
+        <code title="To list security controls that apply to a standard" source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs" region="ListSecurityControlDefinitions-3" />
       </example>
     </value>
   </doc>
