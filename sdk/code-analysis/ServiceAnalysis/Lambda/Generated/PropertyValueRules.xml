@@ -452,6 +452,12 @@
     <pattern>^arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:code-signing-config:csc-[a-z0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.DeleteDurableExecutionRequest.DurableExecutionArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^arn:([a-zA-Z0-9-]+):lambda:([a-zA-Z0-9-]+):(\d{12}):function:([a-zA-Z0-9_-]+):(\$LATEST(?:\.PUBLISHED)?|[0-9]+)/durable-execution/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteEventSourceMappingRequest.UUID</property>
     <min>36</min>
     <max>36</max>
@@ -1379,6 +1385,23 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.PauseDurableExecutionRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\x21-\x7E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PauseDurableExecutionRequest.DurableExecutionArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^arn:([a-zA-Z0-9-]+):lambda:([a-zA-Z0-9-]+):(\d{12}):function:([a-zA-Z0-9_-]+):(\$LATEST(?:\.PUBLISHED)?|[0-9]+)/durable-execution/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PauseDurableExecutionRequest.Reason</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.PublishLayerVersionRequest.Description</property>
     <min>0</min>
     <max>256</max>
@@ -1727,6 +1750,23 @@
     <min>1</min>
     <max>100</max>
     <pattern>^([a-zA-Z0-9-_.]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.ResumeDurableExecutionRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\x21-\x7E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.ResumeDurableExecutionRequest.DurableExecutionArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^arn:([a-zA-Z0-9-]+):lambda:([a-zA-Z0-9-]+):(\d{12}):function:([a-zA-Z0-9_-]+):(\$LATEST(?:\.PUBLISHED)?|[0-9]+)/durable-execution/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.ResumeDurableExecutionRequest.Reason</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.SendDurableExecutionCallbackFailureRequest.CallbackId</property>
@@ -2460,9 +2500,19 @@
     <max>6291456</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.EventPauseReason.Payload</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.EventResult.Payload</property>
     <min>0</min>
     <max>6291456</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.EventResumeReason.Payload</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.Execution.DurableExecutionArn</property>
@@ -2803,6 +2853,11 @@
     <min>1</min>
     <max>32</max>
     <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PauseDetails.Reason</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ProvisionedConcurrencyConfigListItem.AllocatedProvisionedConcurrentExecutions</property>

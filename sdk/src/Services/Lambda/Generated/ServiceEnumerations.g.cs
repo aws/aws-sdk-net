@@ -588,6 +588,16 @@ namespace Amazon.Lambda
         public static readonly EventType ExecutionFailed = new EventType("ExecutionFailed");
 
         /// <summary>
+        /// Constant ExecutionPaused for EventType
+        /// </summary>
+        public static readonly EventType ExecutionPaused = new EventType("ExecutionPaused");
+
+        /// <summary>
+        /// Constant ExecutionResumed for EventType
+        /// </summary>
+        public static readonly EventType ExecutionResumed = new EventType("ExecutionResumed");
+
+        /// <summary>
         /// Constant ExecutionStarted for EventType
         /// </summary>
         public static readonly EventType ExecutionStarted = new EventType("ExecutionStarted");
@@ -674,9 +684,24 @@ namespace Amazon.Lambda
     public class ExecutionStatus : ConstantClass
     {
         /// <summary>
+        /// Constant DELETING for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus DELETING = new ExecutionStatus("DELETING");
+
+        /// <summary>
         /// Constant FAILED for ExecutionStatus
         /// </summary>
         public static readonly ExecutionStatus FAILED = new ExecutionStatus("FAILED");
+
+        /// <summary>
+        /// Constant PAUSED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus PAUSED = new ExecutionStatus("PAUSED");
+
+        /// <summary>
+        /// Constant PAUSING for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus PAUSING = new ExecutionStatus("PAUSING");
 
         /// <summary>
         /// Constant RUNNING for ExecutionStatus

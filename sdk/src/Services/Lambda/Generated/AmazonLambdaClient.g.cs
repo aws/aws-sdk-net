@@ -1901,6 +1901,102 @@ namespace Amazon.Lambda
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes a completed Lambda <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// execution</a> and its data. The execution must be in a terminal state (<c>SUCCEEDED</c>,
+        /// <c>FAILED</c>, <c>STOPPED</c>, or <c>TIMED_OUT</c>). Otherwise, this operation returns
+        /// a <c>ResourceConflictException</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The execution has <c>DELETING</c> status until the deletion finishes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-delete.html">Deleting
+        /// durable executions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDurableExecution service method.</param>
+        /// <returns>The response from the DeleteDurableExecution service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteDurableExecution">REST API Reference for DeleteDurableExecution Operation</seealso>
+        public virtual DeleteDurableExecutionResponse DeleteDurableExecution(DeleteDurableExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDurableExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDurableExecutionResponse>(request, options);
+        }
+#else
+        internal virtual DeleteDurableExecutionResponse DeleteDurableExecution(DeleteDurableExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDurableExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDurableExecutionResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes a completed Lambda <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// execution</a> and its data. The execution must be in a terminal state (<c>SUCCEEDED</c>,
+        /// <c>FAILED</c>, <c>STOPPED</c>, or <c>TIMED_OUT</c>). Otherwise, this operation returns
+        /// a <c>ResourceConflictException</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The execution has <c>DELETING</c> status until the deletion finishes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-delete.html">Deleting
+        /// durable executions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDurableExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteDurableExecution service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteDurableExecution">REST API Reference for DeleteDurableExecution Operation</seealso>
+        public virtual Task<DeleteDurableExecutionResponse> DeleteDurableExecutionAsync(DeleteDurableExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDurableExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDurableExecutionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event
         /// source mapping</a>. You can get the identifier of a mapping from the output of <a>ListEventSourceMappings</a>.
         /// 
@@ -6801,6 +6897,138 @@ namespace Amazon.Lambda
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Pauses a running <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// execution</a>. While an execution is paused, Lambda doesn't invoke your function,
+        /// but pending operations such as waits and callbacks continue to complete.
+        /// 
+        ///  
+        /// <para>
+        /// If an invocation is in progress, the execution status changes to <c>PAUSING</c> until
+        /// the invocation reaches its next checkpoint, and then changes to <c>PAUSED</c>. This
+        /// operation returns a successful response while the execution status is still <c>RUNNING</c>,
+        /// and the status changes when Lambda processes the request. For more information about
+        /// pausing executions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-pause-resume.html">Pausing
+        /// and resuming durable executions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PauseDurableExecution service method.</param>
+        /// <returns>The response from the PauseDurableExecution service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PauseDurableExecution">REST API Reference for PauseDurableExecution Operation</seealso>
+        public virtual PauseDurableExecutionResponse PauseDurableExecution(PauseDurableExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PauseDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseDurableExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<PauseDurableExecutionResponse>(request, options);
+        }
+#else
+        internal virtual PauseDurableExecutionResponse PauseDurableExecution(PauseDurableExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PauseDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseDurableExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<PauseDurableExecutionResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Pauses a running <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// execution</a>. While an execution is paused, Lambda doesn't invoke your function,
+        /// but pending operations such as waits and callbacks continue to complete.
+        /// 
+        ///  
+        /// <para>
+        /// If an invocation is in progress, the execution status changes to <c>PAUSING</c> until
+        /// the invocation reaches its next checkpoint, and then changes to <c>PAUSED</c>. This
+        /// operation returns a successful response while the execution status is still <c>RUNNING</c>,
+        /// and the status changes when Lambda processes the request. For more information about
+        /// pausing executions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-pause-resume.html">Pausing
+        /// and resuming durable executions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PauseDurableExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PauseDurableExecution service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PauseDurableExecution">REST API Reference for PauseDurableExecution Operation</seealso>
+        public virtual Task<PauseDurableExecutionResponse> PauseDurableExecutionAsync(PauseDurableExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PauseDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseDurableExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PauseDurableExecutionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
         /// layer</a> from a ZIP archive. Each time you call <c>PublishLayerVersion</c> with the
         /// same layer name, a new version is created.
@@ -8097,6 +8325,140 @@ namespace Amazon.Lambda
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Resumes a paused <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// execution</a>. If the pause interrupted an invocation, or an operation completed while
+        /// the execution was paused, Lambda invokes your function. Otherwise, the execution continues
+        /// to wait for its pending operations.
+        /// 
+        ///  
+        /// <para>
+        /// If the execution status is <c>PAUSING</c>, this operation cancels the pause, and the
+        /// in-progress invocation continues. This operation returns a successful response while
+        /// the execution status is still <c>PAUSED</c> or <c>PAUSING</c>, and the status changes
+        /// to <c>RUNNING</c> when Lambda processes the request. For more information about resuming
+        /// executions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-pause-resume.html">Pausing
+        /// and resuming durable executions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeDurableExecution service method.</param>
+        /// <returns>The response from the ResumeDurableExecution service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ResumeDurableExecution">REST API Reference for ResumeDurableExecution Operation</seealso>
+        public virtual ResumeDurableExecutionResponse ResumeDurableExecution(ResumeDurableExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ResumeDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeDurableExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeDurableExecutionResponse>(request, options);
+        }
+#else
+        internal virtual ResumeDurableExecutionResponse ResumeDurableExecution(ResumeDurableExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ResumeDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeDurableExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeDurableExecutionResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Resumes a paused <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// execution</a>. If the pause interrupted an invocation, or an operation completed while
+        /// the execution was paused, Lambda invokes your function. Otherwise, the execution continues
+        /// to wait for its pending operations.
+        /// 
+        ///  
+        /// <para>
+        /// If the execution status is <c>PAUSING</c>, this operation cancels the pause, and the
+        /// in-progress invocation continues. This operation returns a successful response while
+        /// the execution status is still <c>PAUSED</c> or <c>PAUSING</c>, and the status changes
+        /// to <c>RUNNING</c> when Lambda processes the request. For more information about resuming
+        /// executions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-pause-resume.html">Pausing
+        /// and resuming durable executions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeDurableExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ResumeDurableExecution service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ResumeDurableExecution">REST API Reference for ResumeDurableExecution Operation</seealso>
+        public virtual Task<ResumeDurableExecutionResponse> ResumeDurableExecutionAsync(ResumeDurableExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ResumeDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeDurableExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResumeDurableExecutionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Sends a failure response for a callback operation in a durable execution. Use this
         /// API when an external system cannot complete a callback operation successfully.
         /// </summary>
@@ -8403,7 +8765,7 @@ namespace Amazon.Lambda
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Stops a running <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// Stops a running or paused <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
         /// execution</a>. The execution transitions to STOPPED status and cannot be resumed.
         /// Any in-progress operations are terminated.
         /// </summary>
@@ -8459,7 +8821,7 @@ namespace Amazon.Lambda
 #endif
 
         /// <summary>
-        /// Stops a running <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// Stops a running or paused <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
         /// execution</a>. The execution transitions to STOPPED status and cannot be resumed.
         /// Any in-progress operations are terminated.
         /// </summary>
