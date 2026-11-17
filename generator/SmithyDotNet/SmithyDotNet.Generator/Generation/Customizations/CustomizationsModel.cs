@@ -130,6 +130,26 @@ public sealed record CustomizationsModel
     [JsonPropertyName("suppressResultGeneration")]
     public List<string> SuppressResultGeneration { get; init; } = [];
 
+    /// <summary>
+    /// Structures and enums, by modeled name, that hand-written code supplies: no class, enum class or (un)marshaller is
+    /// emitted for them, but members still target them by name (S3's <c>NotificationConfiguration</c>).
+    /// </summary>
+    [JsonPropertyName("excludeShapes")]
+    public List<string> ExcludeShapes { get; init; } = [];
+
+    /// <summary>
+    /// Members, by <see cref="EmittedName"/> and keyed by modeled shape name, whose properties are hand-written: the class omits the property and its
+    /// <c>IsSet</c>, but the (un)marshallers still read and write it. Unlike <c>shapeModifiers.exclude</c>, the member stays in the model.
+    /// </summary>
+    [JsonPropertyName("excludeMembers")]
+    public Dictionary<string, List<string>> ExcludeMembers { get; init; } = [];
+
+    /// <summary>True when <c>excludeShapes</c> lists modeled shape <paramref name="shapeName"/>.</summary>
+    public bool IsExcludedShape(string shapeName) => ExcludeShapes.Contains(shapeName);
+
+    /// <summary>True when <c>excludeMembers</c> lists the member emitted as <paramref name="memberName"/> under <paramref name="shapeName"/>.</summary>
+    public bool IsExcludedMember(string shapeName, string memberName) => ExcludeMembers.TryGetValue(shapeName, out var members) && members.Contains(memberName);
+
     /// <summary>The value member an <c>emitFromMember</c> substitution unwraps <paramref name="shapeName"/> to, or null.</summary>
     public string? EmittedValueMember(string shapeName) => ShapeSubstitutions.GetValueOrDefault(shapeName)?.EmitFromMember;
 
@@ -197,6 +217,8 @@ public sealed record CustomizationsModel
         var generateUnmarshaller = new List<string>();
         var retainOriginalMemberOrdering = false;
         var suppressResultGeneration = new List<string>();
+        var excludeShapes = new List<string>();
+        var excludeMembers = new Dictionary<string, List<string>>();
 
         foreach (var path in paths)
         {
@@ -335,6 +357,25 @@ public sealed record CustomizationsModel
             skipUriPropertyValidation.AddRange(file.SkipUriPropertyValidation);
             generateUnmarshaller.AddRange(file.GenerateUnmarshaller);
             suppressResultGeneration.AddRange(file.SuppressResultGeneration);
+
+            // S3 splits excludeShapes between its main and enums files.
+            foreach (var shapeName in file.ExcludeShapes)
+            {
+                if (excludeShapes.Contains(shapeName))
+                {
+                    throw new GeneratorException($"'{path}': excludeShapes lists '{shapeName}' more than once.");
+                }
+
+                excludeShapes.Add(shapeName);
+            }
+
+            foreach (var (shapeName, members) in file.ExcludeMembers)
+            {
+                if (!excludeMembers.TryAdd(shapeName, members))
+                {
+                    throw new GeneratorException($"'{path}': excludeMembers['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
         }
 
         return new CustomizationsModel
@@ -355,6 +396,8 @@ public sealed record CustomizationsModel
             GenerateUnmarshaller = generateUnmarshaller,
             RetainOriginalMemberOrdering = retainOriginalMemberOrdering,
             SuppressResultGeneration = suppressResultGeneration,
+            ExcludeShapes = excludeShapes,
+            ExcludeMembers = excludeMembers,
         };
     }
 }

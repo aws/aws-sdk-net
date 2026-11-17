@@ -553,8 +553,10 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 }
 
                 // A request event stream's @streaming union is not a wire structure: its events still need
-                // their own marshallers, so recurse into them, but the union itself gets none.
-                if (context.RequestEventStreams.Any(stream => stream.Id == structureId))
+                // their own marshallers, so recurse into them, but the union itself gets none. An excludeShapes
+                // structure's (un)marshaller is hand-written, but the structures it holds may not be (S3's
+                // NotificationConfiguration holds the generated TopicConfiguration).
+                if (context.RequestEventStreams.Any(stream => stream.Id == structureId) || context.Customizations.IsExcludedShape(structureId.Name))
                 {
                     foreach (var nested in ReferencedStructuresRecursive(structure, visited))
                     {

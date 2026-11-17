@@ -283,6 +283,20 @@ public class OperationWriterTests
         Assert.Contains("""[Obsolete("This type is deprecated.")]""", response);
     }
 
+    // Most of S3's excludeMembers keys are outputs (GetObjectOutput, GetBucketWebsiteOutput).
+    [Fact]
+    public void Response_OmitsExcludedMember()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ExcludeMembers["DoScalarsResponse"] = ["updated"];
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+        var operation = context.Operations.Single(o => o.Name == "DoScalars");
+
+        var response = new OperationWriter(context, "example-2023-01-01.normal.json").WriteResponse(operation, TestContext.Current.CancellationToken);
+        Assert.DoesNotContain(" Updated", response);
+        Assert.Contains("public long? Total ", response);
+    }
+
     [Fact]
     public void Response_OmitsContentLengthMember()
     {

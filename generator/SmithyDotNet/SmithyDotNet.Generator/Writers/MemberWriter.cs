@@ -14,10 +14,11 @@ public static class MemberWriter
         "SDK behavior set the AWSConfigs.InitializeCollections static property to true.";
 
     /// <summary>
-    /// Writes each member with a blank line between them.
+    /// Writes each member, except hand-written ones, with a blank line between them.
     /// </summary>
-    public static void WriteMembers(CodeWriter writer, IReadOnlyList<Member> members)
+    public static void WriteMembers(CodeWriter writer, IReadOnlyList<Member> allMembers)
     {
+        var members = allMembers.Where(member => !member.IsPropertyExcluded).ToList();
         for (var i = 0; i < members.Count; i++)
         {
             if (i > 0)

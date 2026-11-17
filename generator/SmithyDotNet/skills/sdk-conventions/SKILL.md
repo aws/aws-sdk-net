@@ -376,7 +376,10 @@ for a form member). All three carry the member `@documentation` onto the paramet
 removes members, so whatever is no longer reachable is not emitted. `clientMethodOnly` (C2J's hard-coded
 `S3ExcludeListOperations`, S3 `SelectObjectContent`) keeps the operation in `Operations` for the client, interface, endpoint
 and metadata writers, but `GeneratedOperations` drops it, so its request/response classes, marshallers, event streams and the
-shapes only it reaches are hand-written. `useWrappingResult` moves the output under one member,
+shapes only it reaches are hand-written. The top-level `excludeShapes` (structures and enums) and `excludeMembers` hooks
+leave the model alone and mark code as hand-written: an excluded structure gets no class or (un)marshaller (the structures
+it holds still do), an excluded enum no enum class, and an excluded member no property or `IsSet`, though the (un)marshallers
+still use it. Both key shapes by modeled name (C2J keys a renamed structure by its new name); `excludeMembers` lists members by emitted name, as C2J. `useWrappingResult` moves the output under one member,
 `wrappedResultMember`, of a new output structure: the response has a single property of the output's type, paginator paths go
 through it, and the JSON, CBOR and ec2Query response unmarshallers read it from the whole body.
 

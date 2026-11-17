@@ -347,10 +347,16 @@ public class GenerationContext
             {
                 errors[shapeId] = structure;
             }
-            // An emitFromMember wrapper is never emitted: members typed as it expose its value (TypeMapper.ResolveType).
-            else if (!structure.IsInput() && !structure.IsOutput() && Customizations.EmittedValueMember(shapeId.Name) is null)
+            else
             {
-                structures[shapeId] = structure;
+                // An emitFromMember wrapper is never emitted: members typed as it expose its value (TypeMapper.ResolveType).
+                // An excludeShapes structure is hand-written.
+                var isHandWritten = Customizations.EmittedValueMember(shapeId.Name) is not null
+                    || Customizations.IsExcludedShape(shapeId.Name);
+                if (!structure.IsInput() && !structure.IsOutput() && !isHandWritten)
+                {
+                    structures[shapeId] = structure;
+                }
             }
         }
 
@@ -387,6 +393,7 @@ public class GenerationContext
         // Ordered by shape name for stable output. AllEnums already scopes the set: reachable
         // enums plus same-namespace orphans, matching C2J's *ExceptionReason enums.
         Enums = index.AllEnums
+            .Where(e => !Customizations.IsExcludedShape(e.Id.Name))
             .OrderBy(e => e.Id.Name, StringComparer.Ordinal)
             .ToList();
 

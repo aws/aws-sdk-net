@@ -199,6 +199,30 @@ public class CustomizationsModelTests
         Assert.Contains("emitIsSetProperties['QueryInput']", ex.Message);
     }
 
+    // S3 splits excludeShapes between s3.customizations.json and s3.customizations.enums.json.
+    [Fact]
+    public void Load_ExcludeShapesAndMembers_MergeAcrossFiles()
+    {
+        var model = LoadFiles(
+            """{ "excludeShapes": ["NotificationConfiguration"], "excludeMembers": { "PartDetail": ["ETag"] } }""",
+            """{ "excludeShapes": ["Protocol"], "excludeMembers": { "S3ObjectVersion": ["Key"] } }""");
+
+        Assert.Equal(["NotificationConfiguration", "Protocol"], model.ExcludeShapes);
+        Assert.True(model.IsExcludedMember("PartDetail", "ETag"));
+        Assert.True(model.IsExcludedMember("S3ObjectVersion", "Key"));
+    }
+
+    [Theory]
+    [InlineData("""{ "excludeShapes": ["Protocol"] }""", "excludeShapes lists 'Protocol' more than once")]
+    [InlineData("""{ "excludeMembers": { "PartDetail": ["Size"] } }""", "excludeMembers['PartDetail'] appears in more than one customizations file")]
+    public void Load_ExcludeShapesAndMembers_RepeatedAcrossFiles_Throws(string second, string expectedInMessage)
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
+            """{ "excludeShapes": ["Protocol"], "excludeMembers": { "PartDetail": ["ETag"] } }""",
+            second));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
     [Fact]
     public void Load_CombinesShapeModifiersAcrossFiles()
     {

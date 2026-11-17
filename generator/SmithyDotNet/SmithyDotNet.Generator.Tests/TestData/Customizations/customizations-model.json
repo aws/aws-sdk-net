@@ -55,7 +55,8 @@
     "com.example#Holder": {
       "type": "structure",
       "members": {
-        "bucket": { "target": "com.example#Bucket" }
+        "bucket": { "target": "com.example#Bucket" },
+        "chunk": { "target": "com.example#Chunk" }
       }
     },
     "com.example#IdValue": {

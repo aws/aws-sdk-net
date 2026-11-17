@@ -120,6 +120,35 @@ public static class CustomizationTransform
             }
         }
 
+        foreach (var shapeName in customizations.ExcludeShapes)
+        {
+            var shape = FindSingleShape(model, shapeName, $"excludeShapes['{shapeName}']");
+            // An @input/@output structure is only ever its {Op}Request/{Op}Response, so excluding it would do nothing. An
+            // input/output without the trait is also a class when a member targets it (S3's NotificationConfiguration), and
+            // only that class is excluded; its {Op}Response is still emitted, as in C2J.
+            // TODO: C2J also skips an {Op}Request/{Op}Response by that name; no service excludes one or an error today.
+            if (shape is not (StructureShape or EnumShape) || shape.IsError() || shape.IsInput() || shape.IsOutput())
+            {
+                throw new GeneratorException($"excludeShapes['{shapeName}'] targets a shape that is not a structure or enum, or is an error or an @input/@output structure.");
+            }
+        }
+
+        foreach (var (shapeName, memberNames) in customizations.ExcludeMembers)
+        {
+            if (FindSingleShape(model, shapeName, $"excludeMembers['{shapeName}']") is not StructureShape structure)
+            {
+                throw new GeneratorException($"excludeMembers['{shapeName}'] targets a shape that is not a structure.");
+            }
+
+            foreach (var memberName in memberNames)
+            {
+                if (FindByEmittedName(structure, shapeName, memberName, customizations) is null)
+                {
+                    throw new GeneratorException($"excludeMembers['{shapeName}'] lists member '{memberName}', which the shape does not have.");
+                }
+            }
+        }
+
         foreach (var propertyName in customizations.SkipUriPropertyValidation)
         {
             var found = false;

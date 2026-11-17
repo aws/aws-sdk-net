@@ -147,6 +147,7 @@ public sealed record UnwrappedValue(string Wrapper, string QueryName, string Ele
 /// <param name="IsEventPayload">True when the member carries <c>@eventPayload</c>: it is the event message payload, unmarshalled from the raw stream rather than a header.</param>
 /// <param name="IsEventHeader">True when the member carries <c>@eventHeader</c>: it is unmarshalled from an event-message header.</param>
 /// <param name="IsInternal">True when the customizations' <c>accessModifier</c> makes the property <c>internal</c>.</param>
+/// <param name="IsPropertyExcluded">True when <c>excludeMembers</c> lists the member: hand-written code declares the property, so the class omits it but the (un)marshallers still use it.</param>
 /// <param name="EventStreamPublisher">Set when this is a request event-stream member: the member is emitted as a <c>Func&lt;Task&lt;I{Stream}Event&gt;&gt;</c> publisher property (keeping any modeled <c>[Obsolete]</c>/<c>[AWSProperty]</c>, but with no <c>IsSet</c>) instead of a normal property.</param>
 public sealed record Member(
     string PropertyName,
@@ -163,7 +164,8 @@ public sealed record Member(
     bool IsEventPayload = false,
     bool IsEventHeader = false,
     EventStreamPublisherInfo? EventStreamPublisher = null,
-    bool IsInternal = false
+    bool IsInternal = false,
+    bool IsPropertyExcluded = false
 )
 {
     /// <summary>
@@ -250,7 +252,8 @@ public static class TypeMapper
                 BaseMemberModifier: BaseMemberModifierFor(context.Customizations, shapeName, memberName, propertyName),
                 IsEventPayload: member.IsEventPayload(),
                 IsEventHeader: member.IsEventHeader(),
-                IsInternal: context.Customizations.IsInternal(shapeName, memberName))
+                IsInternal: context.Customizations.IsInternal(shapeName, memberName),
+                IsPropertyExcluded: context.Customizations.IsExcludedMember(shapeName, emittedName))
             );
         }
 

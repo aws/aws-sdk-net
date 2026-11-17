@@ -443,6 +443,46 @@ public class CustomizationTransformTests
         Assert.Contains(expectedInMessage, ex.Message);
     }
 
+    // excludeShapes, excludeMembers
+
+    [Theory]
+    [InlineData("NoSuchShape", "excludeShapes['NoSuchShape'] does not match any shape")]
+    [InlineData("Dup", "excludeShapes['Dup'] matches more than one shape")]
+    [InlineData("LegacyId", "excludeShapes['LegacyId'] targets a shape that is not a structure or enum")]
+    [InlineData("AccessDenied", "excludeShapes['AccessDenied'] targets a shape that is not a structure or enum, or is an error")]
+    [InlineData("BucketPage", "excludeShapes['BucketPage'] targets a shape that is not a structure or enum, or is an error or an @input/@output structure")]
+    public void ExcludeShapes_Invalid_Throws(string shape, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ExcludeShapes.Add(shape);
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    // S3's NotificationConfiguration: GetBucketNotificationConfiguration's output without @output, and a member target.
+    [Fact]
+    public void ExcludeShapes_OutputWithoutTraitThatAMemberTargets_Validates()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ExcludeShapes.Add("Chunk");
+
+        ApplyAndValidate(customizations);
+    }
+
+    [Theory]
+    [InlineData("NoSuchShape", "name", "excludeMembers['NoSuchShape'] does not match any shape")]
+    [InlineData("LegacyId", "name", "excludeMembers['LegacyId'] targets a shape that is not a structure")]
+    [InlineData("Bucket", "missing", "excludeMembers['Bucket'] lists member 'missing', which the shape does not have")]
+    public void ExcludeMembers_Invalid_Throws(string shape, string member, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ExcludeMembers[shape] = [member];
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
     // skipUriPropertyValidation
 
     [Theory]

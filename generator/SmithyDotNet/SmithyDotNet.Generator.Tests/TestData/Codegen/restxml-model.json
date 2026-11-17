@@ -229,7 +229,8 @@
     "com.example#Thing": {
       "type": "structure",
       "members": {
-        "arn": { "target": "smithy.api#String" }
+        "arn":    { "target": "smithy.api#String" },
+        "detail": { "target": "com.example#NestedThing" }
       }
     },
     "com.example#ThingList": {
