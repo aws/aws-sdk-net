@@ -54,7 +54,8 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer.
         /// To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name
-        /// (ARN). To use resource-based permissions on the Lambda function, specify null.
+        /// (ARN). To use resource-based permissions on the Lambda function, specify null. This
+        /// property is not supported for <c>JWT</c> authorizers.
         /// </para>
         /// </summary>
         public string AuthorizerCredentials { get; set; }
@@ -70,7 +71,7 @@ namespace Amazon.APIGateway.Model
         /// The TTL in seconds of cached authorizer results. If it equals 0, authorization caching
         /// is disabled. If it is greater than 0, API Gateway will cache authorizer responses.
         /// If this field is not set, the default value is 300. The maximum value is 3600, or
-        /// 1 hour.
+        /// 1 hour. This property is not supported for <c>JWT</c> authorizers.
         /// </para>
         /// </summary>
         public int? AuthorizerResultTtlInSeconds { get; set; }
@@ -90,7 +91,8 @@ namespace Amazon.APIGateway.Model
         /// where <c>{region}</c> is the same as the region hosting the Lambda function, <c>path</c>
         /// indicates that the remaining substring in the URI should be treated as the path to
         /// the resource, including the initial <c>/</c>. For Lambda functions, this is usually
-        /// of the form <c>/2015-03-31/functions/[FunctionARN]/invocations</c>.
+        /// of the form <c>/2015-03-31/functions/[FunctionARN]/invocations</c>. This property
+        /// is not supported for <c>JWT</c> authorizers.
         /// </para>
         /// </summary>
         public string AuthorizerUri { get; set; }
@@ -131,7 +133,10 @@ namespace Amazon.APIGateway.Model
         /// Lambda function, otherwise, it returns a 401 Unauthorized response without calling
         /// the Lambda function. The valid value is a string of comma-separated mapping expressions
         /// of the specified request parameters. When the authorization caching is not enabled,
-        /// this property is optional. 
+        /// this property is optional. For a <c>JWT</c> authorizer, this is required and must
+        /// be a single request-header mapping expression, <c>method.request.header.&lt;name&gt;</c>,
+        /// for example, <c>method.request.header.Authorization</c>. Query string parameters are
+        /// not supported, and there is no default. 
         /// </para>
         /// </summary>
         public string IdentitySource { get; set; }
@@ -150,7 +155,7 @@ namespace Amazon.APIGateway.Model
         /// the specified regular expression. It will invoke the authorizer's Lambda function
         /// when there is a match. Otherwise, it will return a 401 Unauthorized response without
         /// calling the Lambda function. The validation expression does not apply to the <c>REQUEST</c>
-        /// authorizer.
+        /// or <c>JWT</c> authorizer.
         /// </para>
         /// </summary>
         public string IdentityValidationExpression { get; set; }
@@ -159,6 +164,20 @@ namespace Amazon.APIGateway.Model
         /// Checks to see if the IdentityValidationExpression property is set.
         /// </summary>
         internal bool IsSetIdentityValidationExpression() => this.IdentityValidationExpression != null;
+
+        /// <summary>
+        /// Gets and sets the property JwtConfiguration. 
+        /// <para>
+        /// The configuration returned for a JWT authorizer. This field is present only when <c>type</c>
+        /// is <c>JWT</c>.
+        /// </para>
+        /// </summary>
+        public JwtConfiguration JwtConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JwtConfiguration property is set.
+        /// </summary>
+        internal bool IsSetJwtConfiguration() => this.JwtConfiguration != null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -178,7 +197,8 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// A list of the Amazon Cognito user pool ARNs for the <c>COGNITO_USER_POOLS</c> authorizer.
         /// Each element is of this format: <c>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</c>.
-        /// For a <c>TOKEN</c> or <c>REQUEST</c> authorizer, this is not defined. 
+        /// For a <c>TOKEN</c> or <c>REQUEST</c> authorizer, this is not defined. This property
+        /// is not supported for <c>JWT</c> authorizers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -199,8 +219,9 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// The authorizer type. Valid values are <c>TOKEN</c> for a Lambda function using a single
         /// authorization token submitted in a custom header, <c>REQUEST</c> for a Lambda function
-        /// using incoming request parameters, and <c>COGNITO_USER_POOLS</c> for using an Amazon
-        /// Cognito user pool.
+        /// using incoming request parameters, <c>COGNITO_USER_POOLS</c> for using an Amazon Cognito
+        /// user pool, and <c>JWT</c> for using a native JWT authorizer with the trusted issuers,
+        /// audiences, and signing algorithms that you declare.
         /// </para>
         /// </summary>
         public AuthorizerType Type { get; set; }

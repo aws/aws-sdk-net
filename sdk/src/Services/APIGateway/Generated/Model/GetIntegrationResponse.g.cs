@@ -122,11 +122,12 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Credentials. 
         /// <para>
-        /// Specifies the credentials required for the integration, if any. For AWS integrations,
-        /// three options are available. To specify an IAM Role for API Gateway to assume, use
-        /// the role's Amazon Resource Name (ARN). To require that the caller's identity be passed
-        /// through from the request, specify the string <c>arn:aws:iam::\*:user/\*</c>. To use
-        /// resource-based permissions on supported Amazon Web Services services, specify null.
+        /// Specifies the credentials required for the integration, if any. For Amazon Web Services
+        /// integrations, three options are available. To specify an IAM Role for API Gateway
+        /// to assume, use the role's Amazon Resource Name (ARN). To require that the caller's
+        /// identity be passed through from the request, specify the string <c>arn:aws:iam::\*:user/\*</c>.
+        /// To use resource-based permissions on supported Amazon Web Services services, specify
+        /// null.
         /// </para>
         /// </summary>
         public string Credentials { get; set; }
@@ -173,7 +174,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property IntegrationTarget. 
         /// <para>
-        ///  The ALB or NLB listener to send the request to. 
+        ///  The ALB or NLB ARN to send the request to. 
         /// </para>
         /// </summary>
         public string IntegrationTarget { get; set; }

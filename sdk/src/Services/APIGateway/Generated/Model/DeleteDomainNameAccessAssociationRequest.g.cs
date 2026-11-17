@@ -31,10 +31,10 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDomainNameAccessAssociation operation. Deletes
-    /// the DomainNameAccessAssociation resource. <para> Only the AWS account that created
-    /// the DomainNameAccessAssociation resource can delete it. To stop an access association
-    /// source in another AWS account from accessing your private custom domain name, use
-    /// the RejectDomainNameAccessAssociation operation. </para>
+    /// the DomainNameAccessAssociation resource. <para> Only the Amazon Web Services account
+    /// that created the DomainNameAccessAssociation resource can delete it. To stop an access
+    /// association source in another Amazon Web Services account from accessing your private
+    /// custom domain name, use the RejectDomainNameAccessAssociation operation. </para>
     /// </summary>
     public partial class DeleteDomainNameAccessAssociationRequest : AmazonAPIGatewayRequest
     {

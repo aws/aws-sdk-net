@@ -98,8 +98,8 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint.
         /// The valid value is <c>Z2FDTNDATAQYW2</c> for all the regions. For more information,
-        /// see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.
-        /// 
+        /// see Set up a Regional Custom Domain Name and Amazon Web Services Regions and Endpoints
+        /// for API Gateway. 
         /// </para>
         /// </summary>
         public string DistributionHostedZoneId { get; set; }
@@ -314,8 +314,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property RegionalHostedZoneId. 
         /// <para>
         /// The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more
-        /// information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints
-        /// for API Gateway. 
+        /// information, see Set up a Regional Custom Domain Name and Amazon Web Services Regions
+        /// and Endpoints for API Gateway. 
         /// </para>
         /// </summary>
         public string RegionalHostedZoneId { get; set; }
