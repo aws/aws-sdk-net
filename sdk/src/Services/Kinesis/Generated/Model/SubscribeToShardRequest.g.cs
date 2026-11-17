@@ -49,8 +49,8 @@ namespace Amazon.Kinesis.Model
     /// If you call <c>SubscribeToShard</c> 5 seconds or more after a successful call, the
     /// second call takes over the subscription and the previous connection expires or fails
     /// with a <c>ResourceInUseException</c>. </para> <para> For an example of how to use
-    /// this operation, see <a href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
-    /// Fan-Out Using the Kinesis Data Streams API</a>. </para>
+    /// this operation, see <a href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Develop
+    /// enhanced fan-out consumers with the Amazon Web Services SDK for Java</a>. </para>
     /// </summary>
     public partial class SubscribeToShardRequest : AmazonKinesisRequest
     {
