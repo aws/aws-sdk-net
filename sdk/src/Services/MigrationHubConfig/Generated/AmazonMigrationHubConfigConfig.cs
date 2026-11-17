@@ -32,7 +32,7 @@ namespace Amazon.MigrationHubConfig
     public partial class AmazonMigrationHubConfigConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MigrationHub Config", "4.1.0.1");
+            InternalSDKUtils.BuildUserAgentString("MigrationHub Config", "4.1.0.2");
 
         private static readonly AmazonMigrationHubConfigEndpointResolver EndpointResolver =
             new AmazonMigrationHubConfigEndpointResolver();

@@ -32,7 +32,7 @@ namespace Amazon.KinesisAnalytics
     public partial class AmazonKinesisAnalyticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kinesis Analytics", "4.1.0.1");
+            InternalSDKUtils.BuildUserAgentString("Kinesis Analytics", "4.1.0.2");
 
         private static readonly AmazonKinesisAnalyticsEndpointResolver EndpointResolver =
             new AmazonKinesisAnalyticsEndpointResolver();

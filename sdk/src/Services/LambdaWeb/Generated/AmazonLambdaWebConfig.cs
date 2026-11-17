@@ -32,7 +32,7 @@ namespace Amazon.LambdaWeb
     public partial class AmazonLambdaWebConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Lambda Web", "4.1.0.1");
+            InternalSDKUtils.BuildUserAgentString("Lambda Web", "4.1.0.2");
 
         private static readonly AmazonLambdaWebEndpointResolver EndpointResolver =
             new AmazonLambdaWebEndpointResolver();

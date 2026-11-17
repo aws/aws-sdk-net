@@ -32,7 +32,7 @@ namespace Amazon.TrustedAdvisor
     public partial class AmazonTrustedAdvisorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("TrustedAdvisor", "4.1.0.1");
+            InternalSDKUtils.BuildUserAgentString("TrustedAdvisor", "4.1.0.2");
 
         private static readonly AmazonTrustedAdvisorEndpointResolver EndpointResolver =
             new AmazonTrustedAdvisorEndpointResolver();

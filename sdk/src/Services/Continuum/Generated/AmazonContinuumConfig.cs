@@ -32,7 +32,7 @@ namespace Amazon.Continuum
     public partial class AmazonContinuumConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Continuum", "4.1.0.1");
+            InternalSDKUtils.BuildUserAgentString("Continuum", "4.1.0.2");
 
         private static readonly AmazonContinuumEndpointResolver EndpointResolver =
             new AmazonContinuumEndpointResolver();

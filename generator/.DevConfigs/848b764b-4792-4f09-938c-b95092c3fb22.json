@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Pass the caller's cancellation token to the inner stream read of CompressionWrapperStream.ReadAsync."
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}

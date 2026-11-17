@@ -32,7 +32,7 @@ namespace Amazon.AccountAccessRuntime
     public partial class AmazonAccountAccessRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Account Access Runtime", "4.1.0.1");
+            InternalSDKUtils.BuildUserAgentString("Account Access Runtime", "4.1.0.2");
 
         private static readonly AmazonAccountAccessRuntimeEndpointResolver EndpointResolver =
             new AmazonAccountAccessRuntimeEndpointResolver();

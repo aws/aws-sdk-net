@@ -32,7 +32,7 @@ namespace Amazon.AgentRegistry
     public partial class AmazonAgentRegistryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Agent Registry", "4.1.0.1");
+            InternalSDKUtils.BuildUserAgentString("Agent Registry", "4.1.0.2");
 
         private static readonly AmazonAgentRegistryEndpointResolver EndpointResolver =
             new AmazonAgentRegistryEndpointResolver();

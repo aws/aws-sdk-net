@@ -32,7 +32,7 @@ namespace Amazon.PCS
     public partial class AmazonPCSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PCS", "4.1.0.1");
+            InternalSDKUtils.BuildUserAgentString("PCS", "4.1.0.2");
 
         private static readonly AmazonPCSEndpointResolver EndpointResolver =
             new AmazonPCSEndpointResolver();
