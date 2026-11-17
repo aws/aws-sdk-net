@@ -110,6 +110,34 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetEngine() => this.Engine != null;
 
         /// <summary>
+        /// Gets and sets the property Integrations. 
+        /// <para>
+        /// Which serverless cache integrations to enable. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>dynamodb</c> – DynamoDB integration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// DynamoDB integration requires the Valkey engine with a major engine version of 9 or
+        /// above. If not specified, no integrations are enabled.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<IntegrationRequest> Integrations { get; set; } = AWSConfigs.InitializeCollections ? new List<IntegrationRequest>() : null;
+
+        /// <summary>
+        /// Checks to see if the Integrations property is set.
+        /// </summary>
+        internal bool IsSetIntegrations() => this.Integrations != null && (this.Integrations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// ARN of the customer managed key for encrypting the data at rest. If no KMS key is

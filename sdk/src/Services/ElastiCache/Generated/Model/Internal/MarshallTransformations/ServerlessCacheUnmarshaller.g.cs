@@ -118,6 +118,17 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("Integrations/Integration", targetDepth))
+                    {
+                        if (unmarshalledObject.Integrations == null)
+                        {
+                            unmarshalledObject.Integrations = new List<Integration>();
+                        }
+                        var unmarshaller = IntegrationUnmarshaller.Instance;
+                        unmarshalledObject.Integrations.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
                     if (context.TestExpression("KmsKeyId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
