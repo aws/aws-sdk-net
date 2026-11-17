@@ -88,6 +88,13 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("LanguageCode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ParticipantId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
