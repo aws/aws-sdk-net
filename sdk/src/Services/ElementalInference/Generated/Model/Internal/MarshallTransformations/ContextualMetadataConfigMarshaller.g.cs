@@ -45,6 +45,17 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetCustomQuestions())
+            {
+                context.Writer.WritePropertyName("customQuestions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomQuestionsConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomQuestions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetExtendedAnalysis())
             {
                 context.Writer.WritePropertyName("extendedAnalysis");

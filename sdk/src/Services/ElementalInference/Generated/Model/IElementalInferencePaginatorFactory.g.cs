@@ -45,6 +45,24 @@ namespace Amazon.ElementalInference.Model
         IListFeedsPaginator ListFeeds(ListFeedsRequest request);
 
         /// <summary>
+        /// Paginator for ListFunctions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListFunctionsPaginator ListFunctions(ListFunctionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListQuestionSetVersions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListQuestionSetVersionsPaginator ListQuestionSetVersions(ListQuestionSetVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListQuestionSets operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListQuestionSetsPaginator ListQuestionSets(ListQuestionSetsRequest request);
+
+        /// <summary>
         /// Paginator for ListScheduleActions operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
