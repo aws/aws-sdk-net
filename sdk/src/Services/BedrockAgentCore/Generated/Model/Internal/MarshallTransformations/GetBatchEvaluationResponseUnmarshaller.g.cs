@@ -87,6 +87,13 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("datasetExecutionDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = DatasetExecutionDetailsUnmarshaller.Instance;
+                    unmarshalledObject.DatasetExecutionDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -83,6 +83,25 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetDataSourceConfig() => this.DataSourceConfig != null;
 
         /// <summary>
+        /// Gets and sets the property DatasetExecutionConfig. 
+        /// <para>
+        /// The configuration for running the scenarios in a dataset against an agent before evaluating
+        /// the resulting sessions. When you specify this field, the batch evaluation runs each
+        /// scenario in the dataset against the agent. It then evaluates the sessions that the
+        /// agent produces. You must also specify <c>evaluators</c> and a <c>dataSourceConfig</c>
+        /// that uses <c>cloudWatchLogs</c>. Configure <c>cloudWatchLogs</c> with the service
+        /// name and log groups that the agent uses for its traces. You can't specify <c>insights</c>
+        /// or an <c>onlineEvaluationConfigSource</c> data source with this field.
+        /// </para>
+        /// </summary>
+        public DatasetExecutionConfig DatasetExecutionConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DatasetExecutionConfig property is set.
+        /// </summary>
+        internal bool IsSetDatasetExecutionConfig() => this.DatasetExecutionConfig != null;
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the batch evaluation.

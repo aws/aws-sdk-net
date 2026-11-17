@@ -1467,6 +1467,122 @@ namespace Amazon.BedrockAgentCore
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes the record of a dataset generation. The examples the generation added stay
+        /// in the dataset's draft. To remove them, find them with the <c>generationIds</c> filter
+        /// of <c>ListDatasetExamples</c>, then call <c>DeleteDatasetExamples</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetGeneration service method.</param>
+        /// <returns>The response from the DeleteDatasetGeneration service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteDatasetGeneration">REST API Reference for DeleteDatasetGeneration Operation</seealso>
+        public virtual DeleteDatasetGenerationResponse DeleteDatasetGeneration(DeleteDatasetGenerationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDatasetGenerationResponse>(request, options);
+        }
+#else
+        internal virtual DeleteDatasetGenerationResponse DeleteDatasetGeneration(DeleteDatasetGenerationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDatasetGenerationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes the record of a dataset generation. The examples the generation added stay
+        /// in the dataset's draft. To remove them, find them with the <c>generationIds</c> filter
+        /// of <c>ListDatasetExamples</c>, then call <c>DeleteDatasetExamples</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteDatasetGeneration service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteDatasetGeneration">REST API Reference for DeleteDatasetGeneration Operation</seealso>
+        public virtual Task<DeleteDatasetGenerationResponse> DeleteDatasetGenerationAsync(DeleteDatasetGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetGenerationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDatasetGenerationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes an event from an AgentCore Memory resource. When you delete an event, it is
         /// permanently removed.
         /// 
@@ -2361,6 +2477,116 @@ namespace Amazon.BedrockAgentCore
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Amazon Bedrock AgentCore Agent Insights identifies patterns detected across your agent
+        /// sessions. Use Agent Insights to identify recurring issues and prioritize fixes.
+        /// 
+        ///  
+        /// <para>
+        /// Retrieves detailed information about an Amazon Bedrock AgentCore Agent Insight, including
+        /// its archive status, affected sessions, and, when applicable, the batch evaluation
+        /// that produced it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentInsight service method.</param>
+        /// <returns>The response from the GetAgentInsight service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetAgentInsight">REST API Reference for GetAgentInsight Operation</seealso>
+        public virtual GetAgentInsightResponse GetAgentInsight(GetAgentInsightRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAgentInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentInsightResponseUnmarshaller.Instance;
+
+            return Invoke<GetAgentInsightResponse>(request, options);
+        }
+#else
+        internal virtual GetAgentInsightResponse GetAgentInsight(GetAgentInsightRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAgentInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentInsightResponseUnmarshaller.Instance;
+
+            return Invoke<GetAgentInsightResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Amazon Bedrock AgentCore Agent Insights identifies patterns detected across your agent
+        /// sessions. Use Agent Insights to identify recurring issues and prioritize fixes.
+        /// 
+        ///  
+        /// <para>
+        /// Retrieves detailed information about an Amazon Bedrock AgentCore Agent Insight, including
+        /// its archive status, affected sessions, and, when applicable, the batch evaluation
+        /// that produced it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentInsight service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAgentInsight service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetAgentInsight">REST API Reference for GetAgentInsight Operation</seealso>
+        public virtual Task<GetAgentInsightResponse> GetAgentInsightAsync(GetAgentInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAgentInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentInsightResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAgentInsightResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves detailed information about a batch evaluation, including its status, configuration,
         /// results, and any error details.
         /// </summary>
@@ -2765,6 +2991,112 @@ namespace Amazon.BedrockAgentCore
             options.ResponseUnmarshaller = GetCodeInterpreterSessionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCodeInterpreterSessionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a dataset generation, including its status, the request it was started with,
+        /// its progress counts, its redaction summary and its errors. Call this operation to
+        /// track a generation that you started with <c>StartDatasetGeneration</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDatasetGeneration service method.</param>
+        /// <returns>The response from the GetDatasetGeneration service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetDatasetGeneration">REST API Reference for GetDatasetGeneration Operation</seealso>
+        public virtual GetDatasetGenerationResponse GetDatasetGeneration(GetDatasetGenerationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDatasetGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<GetDatasetGenerationResponse>(request, options);
+        }
+#else
+        internal virtual GetDatasetGenerationResponse GetDatasetGeneration(GetDatasetGenerationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDatasetGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<GetDatasetGenerationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Gets a dataset generation, including its status, the request it was started with,
+        /// its progress counts, its redaction summary and its errors. Call this operation to
+        /// track a generation that you started with <c>StartDatasetGeneration</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDatasetGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDatasetGeneration service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetDatasetGeneration">REST API Reference for GetDatasetGeneration Operation</seealso>
+        public virtual Task<GetDatasetGenerationResponse> GetDatasetGenerationAsync(GetDatasetGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDatasetGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetGenerationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDatasetGenerationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -5241,6 +5573,96 @@ namespace Amazon.BedrockAgentCore
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists Amazon Bedrock AgentCore Agent Insight summaries in your account and Region.
+        /// Use this operation to review patterns across sessions before you investigate or archive
+        /// an insight. The response paginates the results. Use the <c>nextToken</c> parameter
+        /// to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentInsights service method.</param>
+        /// <returns>The response from the ListAgentInsights service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListAgentInsights">REST API Reference for ListAgentInsights Operation</seealso>
+        public virtual ListAgentInsightsResponse ListAgentInsights(ListAgentInsightsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAgentInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgentInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAgentInsightsResponse>(request, options);
+        }
+#else
+        internal virtual ListAgentInsightsResponse ListAgentInsights(ListAgentInsightsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAgentInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgentInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAgentInsightsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists Amazon Bedrock AgentCore Agent Insight summaries in your account and Region.
+        /// Use this operation to review patterns across sessions before you investigate or archive
+        /// an insight. The response paginates the results. Use the <c>nextToken</c> parameter
+        /// to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAgentInsights service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListAgentInsights">REST API Reference for ListAgentInsights Operation</seealso>
+        public virtual Task<ListAgentInsightsResponse> ListAgentInsightsAsync(ListAgentInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAgentInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgentInsightsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAgentInsightsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists all batch evaluations in the account, providing summary information about each
         /// evaluation's status and configuration.
         /// </summary>
@@ -5631,6 +6053,112 @@ namespace Amazon.BedrockAgentCore
             options.ResponseUnmarshaller = ListCodeInterpreterSessionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCodeInterpreterSessionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the generations for a dataset. AgentCore keeps a generation until you delete
+        /// it with <c>DeleteDatasetGeneration</c> or delete the dataset. To get a generation's
+        /// counts and the request it was started with, call <c>GetDatasetGeneration</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetGenerations service method.</param>
+        /// <returns>The response from the ListDatasetGenerations service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListDatasetGenerations">REST API Reference for ListDatasetGenerations Operation</seealso>
+        public virtual ListDatasetGenerationsResponse ListDatasetGenerations(ListDatasetGenerationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatasetGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetGenerationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetGenerationsResponse>(request, options);
+        }
+#else
+        internal virtual ListDatasetGenerationsResponse ListDatasetGenerations(ListDatasetGenerationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatasetGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetGenerationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetGenerationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the generations for a dataset. AgentCore keeps a generation until you delete
+        /// it with <c>DeleteDatasetGeneration</c> or delete the dataset. To get a generation's
+        /// counts and the request it was started with, call <c>GetDatasetGeneration</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetGenerations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDatasetGenerations service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListDatasetGenerations">REST API Reference for ListDatasetGenerations Operation</seealso>
+        public virtual Task<ListDatasetGenerationsResponse> ListDatasetGenerationsAsync(ListDatasetGenerationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatasetGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetGenerationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDatasetGenerationsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -7367,6 +7895,170 @@ namespace Amazon.BedrockAgentCore
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Starts a dataset generation, which creates examples for an existing dataset from your
+        /// agent's traces. The dataset must be <c>ACTIVE</c>. Each generation produces one scenario
+        /// type, set by <c>scenarioType</c>. When the generation finishes, AgentCore adds the
+        /// examples to the dataset's draft. Examples that duplicate each other, or that duplicate
+        /// examples already in the draft, are left out.
+        /// 
+        ///  
+        /// <para>
+        /// A dataset can have only one generation in progress at a time. While it runs, requests
+        /// that change the dataset's draft or publish a version are rejected with a <c>ConflictException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// AgentCore reads the traces with your credentials, so you need read access to the trace
+        /// log groups, and to the dataset's KMS key if the dataset uses a customer managed key.
+        /// The draft can hold at most 1,000 examples, including the examples this generation
+        /// can add (<c>maxScenarios</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// The operation returns immediately. To track progress, call <c>GetDatasetGeneration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDatasetGeneration service method.</param>
+        /// <returns>The response from the StartDatasetGeneration service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartDatasetGeneration">REST API Reference for StartDatasetGeneration Operation</seealso>
+        public virtual StartDatasetGenerationResponse StartDatasetGeneration(StartDatasetGenerationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartDatasetGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDatasetGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<StartDatasetGenerationResponse>(request, options);
+        }
+#else
+        internal virtual StartDatasetGenerationResponse StartDatasetGeneration(StartDatasetGenerationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartDatasetGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDatasetGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<StartDatasetGenerationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Starts a dataset generation, which creates examples for an existing dataset from your
+        /// agent's traces. The dataset must be <c>ACTIVE</c>. Each generation produces one scenario
+        /// type, set by <c>scenarioType</c>. When the generation finishes, AgentCore adds the
+        /// examples to the dataset's draft. Examples that duplicate each other, or that duplicate
+        /// examples already in the draft, are left out.
+        /// 
+        ///  
+        /// <para>
+        /// A dataset can have only one generation in progress at a time. While it runs, requests
+        /// that change the dataset's draft or publish a version are rejected with a <c>ConflictException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// AgentCore reads the traces with your credentials, so you need read access to the trace
+        /// log groups, and to the dataset's KMS key if the dataset uses a customer managed key.
+        /// The draft can hold at most 1,000 examples, including the examples this generation
+        /// can add (<c>maxScenarios</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// The operation returns immediately. To track progress, call <c>GetDatasetGeneration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDatasetGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartDatasetGeneration service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartDatasetGeneration">REST API Reference for StartDatasetGeneration Operation</seealso>
+        public virtual Task<StartDatasetGenerationResponse> StartDatasetGenerationAsync(StartDatasetGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartDatasetGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDatasetGenerationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartDatasetGenerationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Starts a memory extraction job that processes events that failed extraction previously
         /// in an AgentCore Memory resource and produces structured memory records. When earlier
         /// extraction attempts have left events unprocessed, this job will pick up and extract
@@ -8289,6 +8981,110 @@ namespace Amazon.BedrockAgentCore
             options.ResponseUnmarshaller = UpdateABTestResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateABTestResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the archive status of an Amazon Bedrock AgentCore Agent Insight.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentInsight service method.</param>
+        /// <returns>The response from the UpdateAgentInsight service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/UpdateAgentInsight">REST API Reference for UpdateAgentInsight Operation</seealso>
+        public virtual UpdateAgentInsightResponse UpdateAgentInsight(UpdateAgentInsightRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAgentInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAgentInsightResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAgentInsightResponse>(request, options);
+        }
+#else
+        internal virtual UpdateAgentInsightResponse UpdateAgentInsight(UpdateAgentInsightRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAgentInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAgentInsightResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAgentInsightResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates the archive status of an Amazon Bedrock AgentCore Agent Insight.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentInsight service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateAgentInsight service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/UpdateAgentInsight">REST API Reference for UpdateAgentInsight Operation</seealso>
+        public virtual Task<UpdateAgentInsightResponse> UpdateAgentInsightAsync(UpdateAgentInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAgentInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAgentInsightResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAgentInsightResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
