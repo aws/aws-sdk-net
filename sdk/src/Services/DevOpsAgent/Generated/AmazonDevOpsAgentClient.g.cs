@@ -2726,6 +2726,106 @@ namespace Amazon.DevOpsAgent
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves the details of a chat execution, including its execution ID, summary, timestamps,
+        /// and archive status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChat service method.</param>
+        /// <returns>The response from the GetChat service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetChat">REST API Reference for GetChat Operation</seealso>
+        public virtual GetChatResponse GetChat(GetChatRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetChatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChatResponseUnmarshaller.Instance;
+
+            return Invoke<GetChatResponse>(request, options);
+        }
+#else
+        internal virtual GetChatResponse GetChat(GetChatRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetChatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChatResponseUnmarshaller.Instance;
+
+            return Invoke<GetChatResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves the details of a chat execution, including its execution ID, summary, timestamps,
+        /// and archive status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChat service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetChat service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetChat">REST API Reference for GetChat Operation</seealso>
+        public virtual Task<GetChatResponse> GetChatAsync(GetChatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetChatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChatResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetChatResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Get the full auth configuration of operator including any enabled auth flow
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOperatorApp service method.</param>
@@ -5864,6 +5964,116 @@ namespace Amazon.DevOpsAgent
             options.ResponseUnmarshaller = UpdateBacklogTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateBacklogTaskResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a chat execution. You can use this operation to change the chat execution's
+        /// summary or to archive or unarchive it.
+        /// 
+        /// <para>
+        /// Archiving a chat execution hides it from the default chat list. Unarchiving a chat
+        /// execution restores it to the default chat list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChat service method.</param>
+        /// <returns>The response from the UpdateChat service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateChat">REST API Reference for UpdateChat Operation</seealso>
+        public virtual UpdateChatResponse UpdateChat(UpdateChatRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateChatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChatResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateChatResponse>(request, options);
+        }
+#else
+        internal virtual UpdateChatResponse UpdateChat(UpdateChatRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateChatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChatResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateChatResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates a chat execution. You can use this operation to change the chat execution's
+        /// summary or to archive or unarchive it.
+        /// 
+        /// <para>
+        /// Archiving a chat execution hides it from the default chat list. Unarchiving a chat
+        /// execution restores it to the default chat list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChat service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateChat service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateChat">REST API Reference for UpdateChat Operation</seealso>
+        public virtual Task<UpdateChatResponse> UpdateChatAsync(UpdateChatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateChatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChatResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateChatResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
