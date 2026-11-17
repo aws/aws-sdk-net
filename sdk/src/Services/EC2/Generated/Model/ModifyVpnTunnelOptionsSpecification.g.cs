@@ -129,6 +129,32 @@ namespace Amazon.EC2.Model
         internal bool IsSetLogOptions() => this.LogOptions != null;
 
         /// <summary>
+        /// Gets and sets the property Phase1AdditionalKeyExchanges. 
+        /// <para>
+        /// One or more additional key exchange rounds that are permitted for the VPN tunnel for
+        /// phase 1 IKE negotiations. Additional key exchanges occur after the initial Diffie-Hellman
+        /// exchange. Each round must have a unique round number.
+        /// </para>
+        ///  
+        /// <para>
+        /// Additional key exchanges are supported only with IKEv2. You can't specify a <c>required</c>
+        /// round if <c>IKEVersions</c> contains only <c>ikev1</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<VpnAdditionalKeyExchangeRequest> Phase1AdditionalKeyExchanges { get; set; } = AWSConfigs.InitializeCollections ? new List<VpnAdditionalKeyExchangeRequest>() : null;
+
+        /// <summary>
+        /// Checks to see if the Phase1AdditionalKeyExchanges property is set.
+        /// </summary>
+        internal bool IsSetPhase1AdditionalKeyExchanges() => this.Phase1AdditionalKeyExchanges != null && (this.Phase1AdditionalKeyExchanges.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property Phase1DHGroupNumbers. 
         /// <para>
         /// One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for
@@ -137,7 +163,8 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Valid values: <c>2</c> | <c>14</c> | <c>15</c> | <c>16</c> | <c>17</c> | <c>18</c>
-        /// | <c>19</c> | <c>20</c> | <c>21</c> | <c>22</c> | <c>23</c> | <c>24</c> 
+        /// | <c>19</c> | <c>20</c> | <c>21</c> | <c>22</c> | <c>23</c> | <c>24</c> | <c>35</c>
+        /// 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -224,6 +251,32 @@ namespace Amazon.EC2.Model
         internal bool IsSetPhase1LifetimeSeconds() => this.Phase1LifetimeSeconds.HasValue;
 
         /// <summary>
+        /// Gets and sets the property Phase2AdditionalKeyExchanges. 
+        /// <para>
+        /// One or more additional key exchange rounds that are permitted for the VPN tunnel for
+        /// phase 2 IKE negotiations. Additional key exchanges occur after the initial Diffie-Hellman
+        /// exchange. Each round must have a unique round number.
+        /// </para>
+        ///  
+        /// <para>
+        /// Additional key exchanges are supported only with IKEv2. You can't specify a <c>required</c>
+        /// round if <c>IKEVersions</c> contains only <c>ikev1</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<VpnAdditionalKeyExchangeRequest> Phase2AdditionalKeyExchanges { get; set; } = AWSConfigs.InitializeCollections ? new List<VpnAdditionalKeyExchangeRequest>() : null;
+
+        /// <summary>
+        /// Checks to see if the Phase2AdditionalKeyExchanges property is set.
+        /// </summary>
+        internal bool IsSetPhase2AdditionalKeyExchanges() => this.Phase2AdditionalKeyExchanges != null && (this.Phase2AdditionalKeyExchanges.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property Phase2DHGroupNumbers. 
         /// <para>
         /// One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for
@@ -233,7 +286,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Valid values: <c>2</c> | <c>5</c> | <c>14</c> | <c>15</c> | <c>16</c> | <c>17</c>
         /// | <c>18</c> | <c>19</c> | <c>20</c> | <c>21</c> | <c>22</c> | <c>23</c> | <c>24</c>
-        /// 
+        /// | <c>35</c> | <c>36</c> | <c>37</c> 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

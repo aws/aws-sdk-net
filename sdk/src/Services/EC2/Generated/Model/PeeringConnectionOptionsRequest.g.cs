@@ -73,5 +73,49 @@ namespace Amazon.EC2.Model
         /// Checks to see if the AllowEgressFromLocalVpcToRemoteClassicLink property is set.
         /// </summary>
         internal bool IsSetAllowEgressFromLocalVpcToRemoteClassicLink() => this.AllowEgressFromLocalVpcToRemoteClassicLink.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property AllowMultipathResilience. 
+        /// <para>
+        /// Specifies whether you allow multipath resilience for this side of the VPC peering
+        /// connection. Multipath resilience is supported only for inter-Region VPC peering connections
+        /// between supported Regions. It takes effect only when both the requester and the accepter
+        /// allow it. If you don't specify this parameter, the current setting doesn't change.
+        /// </para>
+        /// </summary>
+        public bool? AllowMultipathResilience { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AllowMultipathResilience property is set.
+        /// </summary>
+        internal bool IsSetAllowMultipathResilience() => this.AllowMultipathResilience.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MultipathResilienceMode. 
+        /// <para>
+        /// The multipath resilience mode. You can specify this parameter only if <c>AllowMultipathResilience</c>
+        /// is <c>true</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following value is valid:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>always-on</c> – Replicates traffic across multiple network paths while multipath
+        /// resilience is in effect.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If <c>AllowMultipathResilience</c> is <c>true</c> and you don't specify a mode, the
+        /// default is <c>always-on</c>.
+        /// </para>
+        /// </summary>
+        public MultipathResilienceMode MultipathResilienceMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MultipathResilienceMode property is set.
+        /// </summary>
+        internal bool IsSetMultipathResilienceMode() => this.MultipathResilienceMode != null;
     }
 }

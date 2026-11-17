@@ -72,6 +72,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CapacityReservation = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    if (context.TestExpression("capacityReservationSet/item", targetDepth))
+                    {
+                        if (unmarshalledObject.CapacityReservations == null)
+                        {
+                            unmarshalledObject.CapacityReservations = new List<CapacityReservation>();
+                        }
+                        var unmarshaller = CapacityReservationUnmarshaller.Instance;
+                        unmarshalledObject.CapacityReservations.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
                 }
             }
 

@@ -35,7 +35,13 @@ namespace Amazon.EC2.Model
     /// be in the <c>pending-acceptance</c> state, and you must be the owner of the peer VPC.
     /// Use <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC peering connection
     /// requests. <para> For an inter-Region VPC peering connection request, you must accept
-    /// the VPC peering connection in the Region of the accepter VPC. </para>
+    /// the VPC peering connection in the Region of the accepter VPC. </para> <para> If the
+    /// requester allows multipath resilience, accepting the request also allows multipath
+    /// resilience for the accepter VPC, and the <c>multipathResilienceStatus</c> of the VPC
+    /// peering connection becomes <c>enabled</c>. Additional charges apply. For more information,
+    /// see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing</a>. To stop allowing
+    /// multipath resilience for the accepter VPC, use <a>ModifyVpcPeeringConnectionOptions</a>
+    /// and set <c>AllowMultipathResilience</c> to <c>false</c>. </para>
     /// </summary>
     public partial class AcceptVpcPeeringConnectionRequest : AmazonEC2Request
     {

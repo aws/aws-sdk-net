@@ -101,6 +101,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("phase1AdditionalKeyExchangeSet/item", targetDepth))
+                    {
+                        if (unmarshalledObject.Phase1AdditionalKeyExchanges == null)
+                        {
+                            unmarshalledObject.Phase1AdditionalKeyExchanges = new List<VpnAdditionalKeyExchange>();
+                        }
+                        var unmarshaller = VpnAdditionalKeyExchangeUnmarshaller.Instance;
+                        unmarshalledObject.Phase1AdditionalKeyExchanges.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
                     if (context.TestExpression("phase1DHGroupNumberSet/item", targetDepth))
                     {
                         if (unmarshalledObject.Phase1DHGroupNumbers == null)
@@ -138,6 +149,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Phase1LifetimeSeconds = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("phase2AdditionalKeyExchangeSet/item", targetDepth))
+                    {
+                        if (unmarshalledObject.Phase2AdditionalKeyExchanges == null)
+                        {
+                            unmarshalledObject.Phase2AdditionalKeyExchanges = new List<VpnAdditionalKeyExchange>();
+                        }
+                        var unmarshaller = VpnAdditionalKeyExchangeUnmarshaller.Instance;
+                        unmarshalledObject.Phase2AdditionalKeyExchanges.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
 

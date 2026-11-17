@@ -125,6 +125,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceType() => this.InstanceType != null;
 
         /// <summary>
+        /// Gets and sets the property InstanceTypePreferences. 
+        /// <para>
+        /// List of instance type preferences for the Capacity Block offering search. Accepts
+        /// one or more instance type names. Either this or the legacy <c>InstanceType</c> parameter
+        /// is required.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 10)]
+        public List<CapacityBlockInstanceTypePreference> InstanceTypePreferences { get; set; } = AWSConfigs.InitializeCollections ? new List<CapacityBlockInstanceTypePreference>() : null;
+
+        /// <summary>
+        /// Checks to see if the InstanceTypePreferences property is set.
+        /// </summary>
+        internal bool IsSetInstanceTypePreferences() => this.InstanceTypePreferences != null && (this.InstanceTypePreferences.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of items to return for this request. To get the next page of items,

@@ -449,6 +449,47 @@ namespace Amazon.EC2
     }
 
     /// <summary>
+    /// Constants used for properties of type AdditionalKeyExchangeRequirement.
+    /// </summary>
+    public class AdditionalKeyExchangeRequirement : ConstantClass
+    {
+        /// <summary>
+        /// Constant Optional for AdditionalKeyExchangeRequirement
+        /// </summary>
+        public static readonly AdditionalKeyExchangeRequirement Optional = new AdditionalKeyExchangeRequirement("optional");
+
+        /// <summary>
+        /// Constant Required for AdditionalKeyExchangeRequirement
+        /// </summary>
+        public static readonly AdditionalKeyExchangeRequirement Required = new AdditionalKeyExchangeRequirement("required");
+
+        /// <summary>
+        /// Constructs a custom AdditionalKeyExchangeRequirement for a value not among the defined constants.
+        /// </summary>
+        public AdditionalKeyExchangeRequirement(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdditionalKeyExchangeRequirement FindValue(string value)
+        {
+            return FindValue<AdditionalKeyExchangeRequirement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdditionalKeyExchangeRequirement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AddressAttributeName.
     /// </summary>
     public class AddressAttributeName : ConstantClass
@@ -22093,6 +22134,88 @@ namespace Amazon.EC2
     }
 
     /// <summary>
+    /// Constants used for properties of type MultipathResilienceMode.
+    /// </summary>
+    public class MultipathResilienceMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AlwaysOn for MultipathResilienceMode
+        /// </summary>
+        public static readonly MultipathResilienceMode AlwaysOn = new MultipathResilienceMode("always-on");
+
+        /// <summary>
+        /// Constructs a custom MultipathResilienceMode for a value not among the defined constants.
+        /// </summary>
+        public MultipathResilienceMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultipathResilienceMode FindValue(string value)
+        {
+            return FindValue<MultipathResilienceMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultipathResilienceMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MultipathResilienceStatus.
+    /// </summary>
+    public class MultipathResilienceStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Disabled for MultipathResilienceStatus
+        /// </summary>
+        public static readonly MultipathResilienceStatus Disabled = new MultipathResilienceStatus("disabled");
+
+        /// <summary>
+        /// Constant Enabled for MultipathResilienceStatus
+        /// </summary>
+        public static readonly MultipathResilienceStatus Enabled = new MultipathResilienceStatus("enabled");
+
+        /// <summary>
+        /// Constant Pending for MultipathResilienceStatus
+        /// </summary>
+        public static readonly MultipathResilienceStatus Pending = new MultipathResilienceStatus("pending");
+
+        /// <summary>
+        /// Constructs a custom MultipathResilienceStatus for a value not among the defined constants.
+        /// </summary>
+        public MultipathResilienceStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultipathResilienceStatus FindValue(string value)
+        {
+            return FindValue<MultipathResilienceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultipathResilienceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type NatGatewayAddressStatus.
     /// </summary>
     public class NatGatewayAddressStatus : ConstantClass
@@ -29936,6 +30059,88 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TransitGatewayNatRuleState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TransitGatewayPeeringAttachmentMultipathResilienceMode.
+    /// </summary>
+    public class TransitGatewayPeeringAttachmentMultipathResilienceMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AlwaysOn for TransitGatewayPeeringAttachmentMultipathResilienceMode
+        /// </summary>
+        public static readonly TransitGatewayPeeringAttachmentMultipathResilienceMode AlwaysOn = new TransitGatewayPeeringAttachmentMultipathResilienceMode("always-on");
+
+        /// <summary>
+        /// Constructs a custom TransitGatewayPeeringAttachmentMultipathResilienceMode for a value not among the defined constants.
+        /// </summary>
+        public TransitGatewayPeeringAttachmentMultipathResilienceMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayPeeringAttachmentMultipathResilienceMode FindValue(string value)
+        {
+            return FindValue<TransitGatewayPeeringAttachmentMultipathResilienceMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayPeeringAttachmentMultipathResilienceMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TransitGatewayPeeringAttachmentMultipathResilienceStatus.
+    /// </summary>
+    public class TransitGatewayPeeringAttachmentMultipathResilienceStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Disabled for TransitGatewayPeeringAttachmentMultipathResilienceStatus
+        /// </summary>
+        public static readonly TransitGatewayPeeringAttachmentMultipathResilienceStatus Disabled = new TransitGatewayPeeringAttachmentMultipathResilienceStatus("disabled");
+
+        /// <summary>
+        /// Constant Enabled for TransitGatewayPeeringAttachmentMultipathResilienceStatus
+        /// </summary>
+        public static readonly TransitGatewayPeeringAttachmentMultipathResilienceStatus Enabled = new TransitGatewayPeeringAttachmentMultipathResilienceStatus("enabled");
+
+        /// <summary>
+        /// Constant Pending for TransitGatewayPeeringAttachmentMultipathResilienceStatus
+        /// </summary>
+        public static readonly TransitGatewayPeeringAttachmentMultipathResilienceStatus Pending = new TransitGatewayPeeringAttachmentMultipathResilienceStatus("pending");
+
+        /// <summary>
+        /// Constructs a custom TransitGatewayPeeringAttachmentMultipathResilienceStatus for a value not among the defined constants.
+        /// </summary>
+        public TransitGatewayPeeringAttachmentMultipathResilienceStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayPeeringAttachmentMultipathResilienceStatus FindValue(string value)
+        {
+            return FindValue<TransitGatewayPeeringAttachmentMultipathResilienceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayPeeringAttachmentMultipathResilienceStatus(string value)
         {
             return FindValue(value);
         }

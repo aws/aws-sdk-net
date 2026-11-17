@@ -83,7 +83,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GlobalAcceleratorExclusion. 
         /// <para>
-        /// Specifies whether to exclude AWS Global Accelerator traffic from encryption enforcement.
+        /// Specifies whether to exclude Amazon Web Services Global Accelerator traffic from encryption
+        /// enforcement.
         /// </para>
         /// </summary>
         public VpcEncryptionControlExclusionStateInput GlobalAcceleratorExclusion { get; set; }

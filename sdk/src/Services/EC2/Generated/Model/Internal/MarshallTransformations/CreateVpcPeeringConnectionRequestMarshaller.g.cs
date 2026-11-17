@@ -69,6 +69,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("PeerVpcId", StringUtils.FromString(publicRequest.PeerVpcId));
             }
+            if (publicRequest.IsSetRequesterPeeringConnectionOptions())
+            {
+                if (publicRequest.RequesterPeeringConnectionOptions.IsSetAllowMultipathResilience())
+                {
+                    request.Parameters.Add("RequesterPeeringConnectionOptions" + ".AllowMultipathResilience", StringUtils.FromBool(publicRequest.RequesterPeeringConnectionOptions.AllowMultipathResilience.Value));
+                }
+                if (publicRequest.RequesterPeeringConnectionOptions.IsSetMultipathResilienceMode())
+                {
+                    request.Parameters.Add("RequesterPeeringConnectionOptions" + ".MultipathResilienceMode", StringUtils.FromString(publicRequest.RequesterPeeringConnectionOptions.MultipathResilienceMode));
+                }
+            }
             if (publicRequest.IsSetTagSpecifications())
             {
                 if (publicRequest.TagSpecifications.Count == 0)

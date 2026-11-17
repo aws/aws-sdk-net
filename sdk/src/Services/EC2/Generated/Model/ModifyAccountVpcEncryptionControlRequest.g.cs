@@ -98,8 +98,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GlobalAccelerator. 
         /// <para>
-        /// Specifies whether to exclude AWS Global Accelerator from account-level encryption
-        /// enforcement.
+        /// Specifies whether to exclude Amazon Web Services Global Accelerator from account-level
+        /// encryption enforcement.
         /// </para>
         /// </summary>
         public VpcEncryptionControlExclusionStateInput GlobalAccelerator { get; set; }

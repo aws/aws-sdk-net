@@ -175,6 +175,48 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     }
                                 }
                             }
+                            if (item1.IsSetPhase1AdditionalKeyExchanges())
+                            {
+                                if (item1.Phase1AdditionalKeyExchanges.Count == 0)
+                                {
+                                    request.Parameters.Add("Options" + ".TunnelOptions" + "." + index1 + ".Phase1AdditionalKeyExchange", "");
+                                }
+                                else
+                                {
+                                    int index2 = 1;
+                                    foreach (var item2 in item1.Phase1AdditionalKeyExchanges)
+                                    {
+                                        if (item2.IsSetAdditionalKeyExchangeRound())
+                                        {
+                                            request.Parameters.Add("Options" + ".TunnelOptions" + "." + index1 + ".Phase1AdditionalKeyExchange" + "." + index2 + ".AdditionalKeyExchangeRound", StringUtils.FromInt(item2.AdditionalKeyExchangeRound.Value));
+                                        }
+                                        if (item2.IsSetKeyExchangeMethods())
+                                        {
+                                            if (item2.KeyExchangeMethods.Count == 0)
+                                            {
+                                                request.Parameters.Add("Options" + ".TunnelOptions" + "." + index1 + ".Phase1AdditionalKeyExchange" + "." + index2 + ".KeyExchangeMethod", "");
+                                            }
+                                            else
+                                            {
+                                                int index3 = 1;
+                                                foreach (var item3 in item2.KeyExchangeMethods)
+                                                {
+                                                    if (item3.IsSetValue())
+                                                    {
+                                                        request.Parameters.Add("Options" + ".TunnelOptions" + "." + index1 + ".Phase1AdditionalKeyExchange" + "." + index2 + ".KeyExchangeMethod" + "." + index3 + ".Value", StringUtils.FromInt(item3.Value.Value));
+                                                    }
+                                                    index3++;
+                                                }
+                                            }
+                                        }
+                                        if (item2.IsSetRequirement())
+                                        {
+                                            request.Parameters.Add("Options" + ".TunnelOptions" + "." + index1 + ".Phase1AdditionalKeyExchange" + "." + index2 + ".Requirement", StringUtils.FromString(item2.Requirement));
+                                        }
+                                        index2++;
+                                    }
+                                }
+                            }
                             if (item1.IsSetPhase1DHGroupNumbers())
                             {
                                 if (item1.Phase1DHGroupNumbers.Count == 0)
@@ -235,6 +277,48 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             if (item1.IsSetPhase1LifetimeSeconds())
                             {
                                 request.Parameters.Add("Options" + ".TunnelOptions" + "." + index1 + ".Phase1LifetimeSeconds", StringUtils.FromInt(item1.Phase1LifetimeSeconds.Value));
+                            }
+                            if (item1.IsSetPhase2AdditionalKeyExchanges())
+                            {
+                                if (item1.Phase2AdditionalKeyExchanges.Count == 0)
+                                {
+                                    request.Parameters.Add("Options" + ".TunnelOptions" + "." + index1 + ".Phase2AdditionalKeyExchange", "");
+                                }
+                                else
+                                {
+                                    int index2 = 1;
+                                    foreach (var item2 in item1.Phase2AdditionalKeyExchanges)
+                                    {
+                                        if (item2.IsSetAdditionalKeyExchangeRound())
+                                        {
+                                            request.Parameters.Add("Options" + ".TunnelOptions" + "." + index1 + ".Phase2AdditionalKeyExchange" + "." + index2 + ".AdditionalKeyExchangeRound", StringUtils.FromInt(item2.AdditionalKeyExchangeRound.Value));
+                                        }
+                                        if (item2.IsSetKeyExchangeMethods())
+                                        {
+                                            if (item2.KeyExchangeMethods.Count == 0)
+                                            {
+                                                request.Parameters.Add("Options" + ".TunnelOptions" + "." + index1 + ".Phase2AdditionalKeyExchange" + "." + index2 + ".KeyExchangeMethod", "");
+                                            }
+                                            else
+                                            {
+                                                int index3 = 1;
+                                                foreach (var item3 in item2.KeyExchangeMethods)
+                                                {
+                                                    if (item3.IsSetValue())
+                                                    {
+                                                        request.Parameters.Add("Options" + ".TunnelOptions" + "." + index1 + ".Phase2AdditionalKeyExchange" + "." + index2 + ".KeyExchangeMethod" + "." + index3 + ".Value", StringUtils.FromInt(item3.Value.Value));
+                                                    }
+                                                    index3++;
+                                                }
+                                            }
+                                        }
+                                        if (item2.IsSetRequirement())
+                                        {
+                                            request.Parameters.Add("Options" + ".TunnelOptions" + "." + index1 + ".Phase2AdditionalKeyExchange" + "." + index2 + ".Requirement", StringUtils.FromString(item2.Requirement));
+                                        }
+                                        index2++;
+                                    }
+                                }
                             }
                             if (item1.IsSetPhase2DHGroupNumbers())
                             {

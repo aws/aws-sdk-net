@@ -39,9 +39,10 @@ namespace Amazon.EC2.Model
     /// peering limitations</a> in the <i>VPC Peering Guide</i>. </para> </note> <para> The
     /// owner of the accepter VPC must accept the peering request to activate the peering
     /// connection. The VPC peering connection request expires after 7 days, after which it
-    /// cannot be accepted or rejected. </para> <para> If you create a VPC peering connection
-    /// request between VPCs with overlapping CIDR blocks, the VPC peering connection has
-    /// a status of <c>failed</c>. </para>
+    /// cannot be accepted or rejected. </para> <para> Multipath resilience replicates the
+    /// traffic of an inter-Region VPC peering connection across multiple network paths. </para>
+    /// <para> If you create a VPC peering connection request between VPCs with overlapping
+    /// CIDR blocks, the VPC peering connection has a status of <c>failed</c>. </para>
     /// </summary>
     public partial class CreateVpcPeeringConnectionRequest : AmazonEC2Request
     {
@@ -108,6 +109,19 @@ namespace Amazon.EC2.Model
         /// Checks to see if the PeerVpcId property is set.
         /// </summary>
         internal bool IsSetPeerVpcId() => this.PeerVpcId != null;
+
+        /// <summary>
+        /// Gets and sets the property RequesterPeeringConnectionOptions. 
+        /// <para>
+        /// The VPC peering connection options to apply to the requester VPC.
+        /// </para>
+        /// </summary>
+        public CreatePeeringConnectionOptionsRequest RequesterPeeringConnectionOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RequesterPeeringConnectionOptions property is set.
+        /// </summary>
+        internal bool IsSetRequesterPeeringConnectionOptions() => this.RequesterPeeringConnectionOptions != null;
 
         /// <summary>
         /// Gets and sets the property TagSpecifications. 

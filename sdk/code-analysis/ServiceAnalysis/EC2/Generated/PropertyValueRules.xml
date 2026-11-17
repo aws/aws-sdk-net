@@ -1842,4 +1842,9 @@
     <min>1</min>
     <max>1283</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.VpnAdditionalKeyExchangeRequest.AdditionalKeyExchangeRound</property>
+    <min>1</min>
+    <max>7</max>
+  </property-value-rule>
 </property-value-rules>

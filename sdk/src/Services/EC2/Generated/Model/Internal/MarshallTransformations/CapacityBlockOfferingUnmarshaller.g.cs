@@ -83,6 +83,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("capacityBlockOfferingSegmentSet/item", targetDepth))
+                    {
+                        if (unmarshalledObject.CapacityBlockOfferingSegments == null)
+                        {
+                            unmarshalledObject.CapacityBlockOfferingSegments = new List<CapacityBlockOfferingSegment>();
+                        }
+                        var unmarshaller = CapacityBlockOfferingSegmentUnmarshaller.Instance;
+                        unmarshalledObject.CapacityBlockOfferingSegments.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
                     if (context.TestExpression("currencyCode", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

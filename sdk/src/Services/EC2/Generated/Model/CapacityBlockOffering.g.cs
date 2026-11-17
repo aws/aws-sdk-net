@@ -91,6 +91,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetCapacityBlockOfferingId() => this.CapacityBlockOfferingId != null;
 
         /// <summary>
+        /// Gets and sets the property CapacityBlockOfferingSegments. 
+        /// <para>
+        /// The individual segments that compose the Capacity Block offering. Each segment describes
+        /// a distinct block of capacity with its own Availability Zone, instance type, schedule,
+        /// and pricing.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 10)]
+        public List<CapacityBlockOfferingSegment> CapacityBlockOfferingSegments { get; set; } = AWSConfigs.InitializeCollections ? new List<CapacityBlockOfferingSegment>() : null;
+
+        /// <summary>
+        /// Checks to see if the CapacityBlockOfferingSegments property is set.
+        /// </summary>
+        internal bool IsSetCapacityBlockOfferingSegments() => this.CapacityBlockOfferingSegments != null && (this.CapacityBlockOfferingSegments.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
         /// The currency of the payment for the Capacity Block.

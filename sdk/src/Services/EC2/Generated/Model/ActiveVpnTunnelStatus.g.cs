@@ -48,6 +48,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetIkeVersion() => this.IkeVersion != null;
 
         /// <summary>
+        /// Gets and sets the property Phase1AdditionalKeyExchanges. 
+        /// <para>
+        /// The additional key exchanges negotiated in Phase 1 IKE negotiations.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ActiveVpnTunnelAdditionalKeyExchange> Phase1AdditionalKeyExchanges { get; set; } = AWSConfigs.InitializeCollections ? new List<ActiveVpnTunnelAdditionalKeyExchange>() : null;
+
+        /// <summary>
+        /// Checks to see if the Phase1AdditionalKeyExchanges property is set.
+        /// </summary>
+        internal bool IsSetPhase1AdditionalKeyExchanges() => this.Phase1AdditionalKeyExchanges != null && (this.Phase1AdditionalKeyExchanges.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property Phase1DHGroup. 
         /// <para>
         /// The Diffie-Hellman group number being used in Phase 1 IKE negotiations.
@@ -85,6 +104,25 @@ namespace Amazon.EC2.Model
         /// Checks to see if the Phase1IntegrityAlgorithm property is set.
         /// </summary>
         internal bool IsSetPhase1IntegrityAlgorithm() => this.Phase1IntegrityAlgorithm != null;
+
+        /// <summary>
+        /// Gets and sets the property Phase2AdditionalKeyExchanges. 
+        /// <para>
+        /// The additional key exchanges negotiated in Phase 2 IKE negotiations.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ActiveVpnTunnelAdditionalKeyExchange> Phase2AdditionalKeyExchanges { get; set; } = AWSConfigs.InitializeCollections ? new List<ActiveVpnTunnelAdditionalKeyExchange>() : null;
+
+        /// <summary>
+        /// Checks to see if the Phase2AdditionalKeyExchanges property is set.
+        /// </summary>
+        internal bool IsSetPhase2AdditionalKeyExchanges() => this.Phase2AdditionalKeyExchanges != null && (this.Phase2AdditionalKeyExchanges.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property Phase2DHGroup. 

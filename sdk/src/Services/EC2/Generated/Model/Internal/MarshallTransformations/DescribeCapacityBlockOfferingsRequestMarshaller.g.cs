@@ -77,6 +77,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("InstanceType", StringUtils.FromString(publicRequest.InstanceType));
             }
+            if (publicRequest.IsSetInstanceTypePreferences())
+            {
+                if (publicRequest.InstanceTypePreferences.Count == 0)
+                {
+                    request.Parameters.Add("InstanceTypePreference", "");
+                }
+                else
+                {
+                    int index0 = 1;
+                    foreach (var item0 in publicRequest.InstanceTypePreferences)
+                    {
+                        if (item0.IsSetInstanceType())
+                        {
+                            request.Parameters.Add("InstanceTypePreference" + "." + index0 + ".InstanceType", StringUtils.FromString(item0.InstanceType));
+                        }
+                        index0++;
+                    }
+                }
+            }
             if (publicRequest.IsSetMaxResults())
             {
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults.Value));

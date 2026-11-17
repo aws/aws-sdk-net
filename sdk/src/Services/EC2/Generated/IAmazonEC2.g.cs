@@ -306,6 +306,15 @@ namespace Amazon.EC2
         /// For an inter-Region VPC peering connection request, you must accept the VPC peering
         /// connection in the Region of the accepter VPC.
         /// </para>
+        ///  
+        /// <para>
+        /// If the requester allows multipath resilience, accepting the request also allows multipath
+        /// resilience for the accepter VPC, and the <c>multipathResilienceStatus</c> of the VPC
+        /// peering connection becomes <c>enabled</c>. Additional charges apply. For more information,
+        /// see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing</a>. To stop allowing
+        /// multipath resilience for the accepter VPC, use <a>ModifyVpcPeeringConnectionOptions</a>
+        /// and set <c>AllowMultipathResilience</c> to <c>false</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptVpcPeeringConnection service method.</param>
         /// <returns>The response from the AcceptVpcPeeringConnection service method, as returned by EC2.</returns>
@@ -323,6 +332,15 @@ namespace Amazon.EC2
         /// <para>
         /// For an inter-Region VPC peering connection request, you must accept the VPC peering
         /// connection in the Region of the accepter VPC.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the requester allows multipath resilience, accepting the request also allows multipath
+        /// resilience for the accepter VPC, and the <c>multipathResilienceStatus</c> of the VPC
+        /// peering connection becomes <c>enabled</c>. Additional charges apply. For more information,
+        /// see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing</a>. To stop allowing
+        /// multipath resilience for the accepter VPC, use <a>ModifyVpcPeeringConnectionOptions</a>
+        /// and set <c>AllowMultipathResilience</c> to <c>false</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptVpcPeeringConnection service method.</param>
@@ -8308,6 +8326,11 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// Multipath resilience replicates the traffic of an inter-Region VPC peering connection
+        /// across multiple network paths.
+        /// </para>
+        ///  
+        /// <para>
         /// If you create a VPC peering connection request between VPCs with overlapping CIDR
         /// blocks, the VPC peering connection has a status of <c>failed</c>.
         /// </para>
@@ -8335,6 +8358,11 @@ namespace Amazon.EC2
         /// The owner of the accepter VPC must accept the peering request to activate the peering
         /// connection. The VPC peering connection request expires after 7 days, after which it
         /// cannot be accepted or rejected.
+        /// </para>
+        ///  
+        /// <para>
+        /// Multipath resilience replicates the traffic of an inter-Region VPC peering connection
+        /// across multiple network paths.
         /// </para>
         ///  
         /// <para>
@@ -29195,6 +29223,53 @@ namespace Amazon.EC2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Modifies the options for a transit gateway peering attachment. The peering attachment
+        /// must be in the <c>available</c> state.
+        /// 
+        ///  
+        /// <para>
+        /// You can allow multipath resilience for your side of an inter-Region transit gateway
+        /// peering attachment between supported Regions. Multipath resilience isn't supported
+        /// for transit gateway peering attachments in the same Region. It takes effect only when
+        /// both the requester and the accepter allow it. To modify the requester side, send the
+        /// request in the Region of the requester transit gateway. To modify the accepter side,
+        /// send the request in the Region of the accepter transit gateway. To check whether multipath
+        /// resilience is in effect, use <a>DescribeTransitGatewayPeeringAttachments</a> and check
+        /// <c>multipathResilienceStatus</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayPeeringAttachment service method.</param>
+        /// <returns>The response from the ModifyTransitGatewayPeeringAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPeeringAttachment">REST API Reference for ModifyTransitGatewayPeeringAttachment Operation</seealso>
+        ModifyTransitGatewayPeeringAttachmentResponse ModifyTransitGatewayPeeringAttachment(ModifyTransitGatewayPeeringAttachmentRequest request);
+#endif
+
+        /// <summary>
+        /// Modifies the options for a transit gateway peering attachment. The peering attachment
+        /// must be in the <c>available</c> state.
+        /// 
+        ///  
+        /// <para>
+        /// You can allow multipath resilience for your side of an inter-Region transit gateway
+        /// peering attachment between supported Regions. Multipath resilience isn't supported
+        /// for transit gateway peering attachments in the same Region. It takes effect only when
+        /// both the requester and the accepter allow it. To modify the requester side, send the
+        /// request in the Region of the requester transit gateway. To modify the accepter side,
+        /// send the request in the Region of the accepter transit gateway. To check whether multipath
+        /// resilience is in effect, use <a>DescribeTransitGatewayPeeringAttachments</a> and check
+        /// <c>multipathResilienceStatus</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayPeeringAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ModifyTransitGatewayPeeringAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPeeringAttachment">REST API Reference for ModifyTransitGatewayPeeringAttachment Operation</seealso>
+        Task<ModifyTransitGatewayPeeringAttachmentResponse> ModifyTransitGatewayPeeringAttachmentAsync(ModifyTransitGatewayPeeringAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Modifies the specified transit gateway policy table entry.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayPolicyTableEntry service method.</param>
@@ -29855,6 +29930,16 @@ namespace Amazon.EC2
         /// the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a>
         /// command.
         /// </para>
+        ///  
+        /// <para>
+        /// Multipath resilience replicates the traffic of an inter-Region VPC peering connection
+        /// across multiple network paths. You can allow multipath resilience for your side of
+        /// the connection if both of its Regions are supported. It takes effect only when both
+        /// the requester and the accepter allow it. Additional charges apply when multipath resilience
+        /// is in effect. For more information, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon
+        /// VPC pricing</a>. To check whether multipath resilience is in effect, use <a>DescribeVpcPeeringConnections</a>
+        /// and check <c>multipathResilienceStatus</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions service method.</param>
         /// <returns>The response from the ModifyVpcPeeringConnectionOptions service method, as returned by EC2.</returns>
@@ -29878,6 +29963,16 @@ namespace Amazon.EC2
         /// modify the accepter VPC peering options. To verify which VPCs are the accepter and
         /// the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a>
         /// command.
+        /// </para>
+        ///  
+        /// <para>
+        /// Multipath resilience replicates the traffic of an inter-Region VPC peering connection
+        /// across multiple network paths. You can allow multipath resilience for your side of
+        /// the connection if both of its Regions are supported. It takes effect only when both
+        /// the requester and the accepter allow it. Additional charges apply when multipath resilience
+        /// is in effect. For more information, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon
+        /// VPC pricing</a>. To check whether multipath resilience is in effect, use <a>DescribeVpcPeeringConnections</a>
+        /// and check <c>multipathResilienceStatus</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions service method.</param>

@@ -73,5 +73,32 @@ namespace Amazon.EC2.Model
         /// Checks to see if the AllowEgressFromLocalVpcToRemoteClassicLink property is set.
         /// </summary>
         internal bool IsSetAllowEgressFromLocalVpcToRemoteClassicLink() => this.AllowEgressFromLocalVpcToRemoteClassicLink.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property AllowMultipathResilience. 
+        /// <para>
+        /// Indicates whether this side of the VPC peering connection allows multipath resilience.
+        /// </para>
+        /// </summary>
+        public bool? AllowMultipathResilience { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AllowMultipathResilience property is set.
+        /// </summary>
+        internal bool IsSetAllowMultipathResilience() => this.AllowMultipathResilience.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MultipathResilienceMode. 
+        /// <para>
+        /// The multipath resilience mode for this side of the VPC peering connection. This value
+        /// is present only when this side allows multipath resilience.
+        /// </para>
+        /// </summary>
+        public MultipathResilienceMode MultipathResilienceMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MultipathResilienceMode property is set.
+        /// </summary>
+        internal bool IsSetMultipathResilienceMode() => this.MultipathResilienceMode != null;
     }
 }

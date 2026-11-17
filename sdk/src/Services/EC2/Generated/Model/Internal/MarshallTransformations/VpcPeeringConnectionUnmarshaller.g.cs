@@ -69,6 +69,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("multipathResilienceStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MultipathResilienceStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("requesterVpcInfo", targetDepth))
                     {
                         var unmarshaller = VpcPeeringConnectionVpcInfoUnmarshaller.Instance;

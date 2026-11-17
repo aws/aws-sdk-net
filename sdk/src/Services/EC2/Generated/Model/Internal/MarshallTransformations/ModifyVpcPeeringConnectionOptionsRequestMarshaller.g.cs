@@ -67,6 +67,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AccepterPeeringConnectionOptions" + ".AllowEgressFromLocalVpcToRemoteClassicLink", StringUtils.FromBool(publicRequest.AccepterPeeringConnectionOptions.AllowEgressFromLocalVpcToRemoteClassicLink.Value));
                 }
+                if (publicRequest.AccepterPeeringConnectionOptions.IsSetAllowMultipathResilience())
+                {
+                    request.Parameters.Add("AccepterPeeringConnectionOptions" + ".AllowMultipathResilience", StringUtils.FromBool(publicRequest.AccepterPeeringConnectionOptions.AllowMultipathResilience.Value));
+                }
+                if (publicRequest.AccepterPeeringConnectionOptions.IsSetMultipathResilienceMode())
+                {
+                    request.Parameters.Add("AccepterPeeringConnectionOptions" + ".MultipathResilienceMode", StringUtils.FromString(publicRequest.AccepterPeeringConnectionOptions.MultipathResilienceMode));
+                }
             }
             if (publicRequest.IsSetDryRun())
             {
@@ -85,6 +93,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (publicRequest.RequesterPeeringConnectionOptions.IsSetAllowEgressFromLocalVpcToRemoteClassicLink())
                 {
                     request.Parameters.Add("RequesterPeeringConnectionOptions" + ".AllowEgressFromLocalVpcToRemoteClassicLink", StringUtils.FromBool(publicRequest.RequesterPeeringConnectionOptions.AllowEgressFromLocalVpcToRemoteClassicLink.Value));
+                }
+                if (publicRequest.RequesterPeeringConnectionOptions.IsSetAllowMultipathResilience())
+                {
+                    request.Parameters.Add("RequesterPeeringConnectionOptions" + ".AllowMultipathResilience", StringUtils.FromBool(publicRequest.RequesterPeeringConnectionOptions.AllowMultipathResilience.Value));
+                }
+                if (publicRequest.RequesterPeeringConnectionOptions.IsSetMultipathResilienceMode())
+                {
+                    request.Parameters.Add("RequesterPeeringConnectionOptions" + ".MultipathResilienceMode", StringUtils.FromString(publicRequest.RequesterPeeringConnectionOptions.MultipathResilienceMode));
                 }
             }
             if (publicRequest.IsSetVpcPeeringConnectionId())

@@ -62,6 +62,34 @@ namespace Amazon.EC2.Model
         internal bool IsSetExpirationTime() => this.ExpirationTime.HasValue;
 
         /// <summary>
+        /// Gets and sets the property MultipathResilienceStatus. 
+        /// <para>
+        /// The multipath resilience status of the VPC peering connection. The possible values
+        /// are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>enabled</c> – Both the requester and the accepter allow multipath resilience.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>pending</c> – Either the requester or the accepter allows multipath resilience,
+        /// but not both.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>disabled</c> – Neither the requester nor the accepter allows multipath resilience.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public MultipathResilienceStatus MultipathResilienceStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MultipathResilienceStatus property is set.
+        /// </summary>
+        internal bool IsSetMultipathResilienceStatus() => this.MultipathResilienceStatus != null;
+
+        /// <summary>
         /// Gets and sets the property RequesterVpcInfo. 
         /// <para>
         /// Information about the requester VPC. CIDR block information is only returned when

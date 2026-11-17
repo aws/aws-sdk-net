@@ -35,6 +35,34 @@ namespace Amazon.EC2.Model
     public partial class TransitGatewayPeeringAttachmentOptions
     {
         /// <summary>
+        /// Gets and sets the property AccepterAllowMultipathResilience. 
+        /// <para>
+        /// Indicates whether the accepter allows multipath resilience for the transit gateway
+        /// peering attachment.
+        /// </para>
+        /// </summary>
+        public bool? AccepterAllowMultipathResilience { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AccepterAllowMultipathResilience property is set.
+        /// </summary>
+        internal bool IsSetAccepterAllowMultipathResilience() => this.AccepterAllowMultipathResilience.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property AccepterMultipathResilienceMode. 
+        /// <para>
+        /// The multipath resilience mode for the accepter. This value is present only when the
+        /// accepter allows multipath resilience.
+        /// </para>
+        /// </summary>
+        public TransitGatewayPeeringAttachmentMultipathResilienceMode AccepterMultipathResilienceMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AccepterMultipathResilienceMode property is set.
+        /// </summary>
+        internal bool IsSetAccepterMultipathResilienceMode() => this.AccepterMultipathResilienceMode != null;
+
+        /// <summary>
         /// Gets and sets the property DynamicRouting. 
         /// <para>
         /// Describes whether dynamic routing is enabled or disabled for the transit gateway peering
@@ -47,5 +75,61 @@ namespace Amazon.EC2.Model
         /// Checks to see if the DynamicRouting property is set.
         /// </summary>
         internal bool IsSetDynamicRouting() => this.DynamicRouting != null;
+
+        /// <summary>
+        /// Gets and sets the property MultipathResilienceStatus. 
+        /// <para>
+        /// The multipath resilience status of the transit gateway peering attachment. The possible
+        /// values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>enabled</c> – Both the requester and the accepter allow multipath resilience.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>pending</c> – Either the requester or the accepter allows multipath resilience,
+        /// but not both.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>disabled</c> – Neither the requester nor the accepter allows multipath resilience.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TransitGatewayPeeringAttachmentMultipathResilienceStatus MultipathResilienceStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MultipathResilienceStatus property is set.
+        /// </summary>
+        internal bool IsSetMultipathResilienceStatus() => this.MultipathResilienceStatus != null;
+
+        /// <summary>
+        /// Gets and sets the property RequesterAllowMultipathResilience. 
+        /// <para>
+        /// Indicates whether the requester allows multipath resilience for the transit gateway
+        /// peering attachment.
+        /// </para>
+        /// </summary>
+        public bool? RequesterAllowMultipathResilience { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RequesterAllowMultipathResilience property is set.
+        /// </summary>
+        internal bool IsSetRequesterAllowMultipathResilience() => this.RequesterAllowMultipathResilience.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RequesterMultipathResilienceMode. 
+        /// <para>
+        /// The multipath resilience mode for the requester. This value is present only when the
+        /// requester allows multipath resilience.
+        /// </para>
+        /// </summary>
+        public TransitGatewayPeeringAttachmentMultipathResilienceMode RequesterMultipathResilienceMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RequesterMultipathResilienceMode property is set.
+        /// </summary>
+        internal bool IsSetRequesterMultipathResilienceMode() => this.RequesterMultipathResilienceMode != null;
     }
 }

@@ -42,7 +42,13 @@ namespace Amazon.EC2.Model
     /// to modify the requester VPC peering options and the Region for the accepter VPC to
     /// modify the accepter VPC peering options. To verify which VPCs are the accepter and
     /// the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a>
-    /// command. </para>
+    /// command. </para> <para> Multipath resilience replicates the traffic of an inter-Region
+    /// VPC peering connection across multiple network paths. You can allow multipath resilience
+    /// for your side of the connection if both of its Regions are supported. It takes effect
+    /// only when both the requester and the accepter allow it. Additional charges apply when
+    /// multipath resilience is in effect. For more information, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon
+    /// VPC pricing</a>. To check whether multipath resilience is in effect, use <a>DescribeVpcPeeringConnections</a>
+    /// and check <c>multipathResilienceStatus</c>. </para>
     /// </summary>
     public partial class ModifyVpcPeeringConnectionOptionsRequest : AmazonEC2Request
     {

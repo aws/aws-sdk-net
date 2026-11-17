@@ -59,9 +59,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             if (publicRequest.IsSetOptions())
             {
+                if (publicRequest.Options.IsSetAllowMultipathResilience())
+                {
+                    request.Parameters.Add("Options" + ".AllowMultipathResilience", StringUtils.FromBool(publicRequest.Options.AllowMultipathResilience.Value));
+                }
                 if (publicRequest.Options.IsSetDynamicRouting())
                 {
                     request.Parameters.Add("Options" + ".DynamicRouting", StringUtils.FromString(publicRequest.Options.DynamicRouting));
+                }
+                if (publicRequest.Options.IsSetMultipathResilienceMode())
+                {
+                    request.Parameters.Add("Options" + ".MultipathResilienceMode", StringUtils.FromString(publicRequest.Options.MultipathResilienceMode));
                 }
             }
             if (publicRequest.IsSetPeerAccountId())
