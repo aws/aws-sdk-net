@@ -45,10 +45,41 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetBooleanValue())
+            {
+                context.Writer.WritePropertyName("BooleanValue");
+                context.Writer.WriteBooleanValue(requestObject.BooleanValue.Value);
+            }
+
+            if (requestObject.IsSetDateTimeValue())
+            {
+                context.Writer.WritePropertyName("DateTimeValue");
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.DateTimeValue.Value));
+            }
+
+            if (requestObject.IsSetNumericValue())
+            {
+                context.Writer.WritePropertyName("NumericValue");
+                if (StringUtils.IsSpecialDoubleValue(requestObject.NumericValue.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.NumericValue.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(requestObject.NumericValue.Value);
+                }
+            }
+
             if (requestObject.IsSetRefId())
             {
                 context.Writer.WritePropertyName("RefId");
                 context.Writer.WriteStringValue(requestObject.RefId);
+            }
+
+            if (requestObject.IsSetStringValue())
+            {
+                context.Writer.WritePropertyName("StringValue");
+                context.Writer.WriteStringValue(requestObject.StringValue);
             }
 
             if (requestObject.IsSetType())

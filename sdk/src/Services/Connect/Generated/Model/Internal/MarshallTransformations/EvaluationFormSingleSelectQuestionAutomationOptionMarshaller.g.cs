@@ -45,6 +45,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAutomationRule())
+            {
+                context.Writer.WritePropertyName("AutomationRule");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SingleSelectQuestionAutomationRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutomationRule, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetRuleCategory())
             {
                 context.Writer.WritePropertyName("RuleCategory");

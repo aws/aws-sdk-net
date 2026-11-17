@@ -88,6 +88,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ItemEnablementStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.ItemEnablementStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -113,6 +120,20 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, EvaluationScore, StringUnmarshaller, EvaluationScoreUnmarshaller>(StringUnmarshaller.Instance, EvaluationScoreUnmarshaller.Instance);
                     unmarshalledObject.Scores = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SourceResolutionStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceResolutionStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SourceValues", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<EvaluationResolvedSource, EvaluationResolvedSourceUnmarshaller>(EvaluationResolvedSourceUnmarshaller.Instance);
+                    unmarshalledObject.SourceValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

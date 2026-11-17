@@ -50,7 +50,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AnalysisType. 
         /// <para>
-        /// Type of analysis used to provide suggested answer.
+        /// Type of analysis used to provide suggested answer. Valid values: <c>CONTACT_LENS_DATA</c>
+        /// | <c>GEN_AI</c> | <c>CONDITION</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
