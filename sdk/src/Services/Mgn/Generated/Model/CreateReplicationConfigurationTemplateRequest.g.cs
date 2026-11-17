@@ -149,6 +149,23 @@ namespace Amazon.Mgn.Model
         internal bool IsSetInternetProtocol() => this.InternetProtocol != null;
 
         /// <summary>
+        /// Gets and sets the property OutpostSnapshotLocation. 
+        /// <para>
+        /// Request to set the location of replication snapshots when the staging area subnet
+        /// is on an AWS Outpost during Replication Settings template creation. Set to <c>OUTPOST</c>
+        /// to keep replication snapshots on the Outpost, or <c>REGION</c> to store them in the
+        /// AWS Region. Required when the staging area subnet is on an Outpost, and not allowed
+        /// otherwise.
+        /// </para>
+        /// </summary>
+        public OutpostSnapshotLocation OutpostSnapshotLocation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OutpostSnapshotLocation property is set.
+        /// </summary>
+        internal bool IsSetOutpostSnapshotLocation() => this.OutpostSnapshotLocation != null;
+
+        /// <summary>
         /// Gets and sets the property ReplicationServerInstanceType. 
         /// <para>
         /// Request to configure the Replication Server instance type during Replication Settings

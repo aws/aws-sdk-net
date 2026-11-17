@@ -37,6 +37,20 @@ namespace Amazon.Mgn.Model
     public partial class NetworkMigrationMapperSegmentConstruct
     {
         /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// The construct-type-specific behavioral configuration. Returned by Get, and by List
+        /// when includeConfiguration is true.
+        /// </para>
+        /// </summary>
+        public OperationConfigurationUnion Configuration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Configuration property is set.
+        /// </summary>
+        internal bool IsSetConfiguration() => this.Configuration != null;
+
+        /// <summary>
         /// Gets and sets the property ConstructID. 
         /// <para>
         /// The unique identifier of the construct.
@@ -56,7 +70,7 @@ namespace Amazon.Mgn.Model
         /// The type of the construct, such as VPC, subnet, security group, or route table.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 0, Max = 24)]
+        [AWSProperty(Min = 0, Max = 64)]
         public string ConstructType { get; set; }
 
         /// <summary>
@@ -90,6 +104,27 @@ namespace Amazon.Mgn.Model
         /// Checks to see if the Description property is set.
         /// </summary>
         internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property EnrichedProperties. 
+        /// <para>
+        /// The construct properties using their native value types. Returned by Get, and by List
+        /// when includeEnrichedProperties is true.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 20)]
+        public Dictionary<string, Amazon.Runtime.Documents.Document> EnrichedProperties { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
+
+        /// <summary>
+        /// Checks to see if the EnrichedProperties property is set.
+        /// </summary>
+        internal bool IsSetEnrichedProperties() => this.EnrichedProperties != null && (this.EnrichedProperties.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property Excluded. 

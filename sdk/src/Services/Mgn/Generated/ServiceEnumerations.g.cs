@@ -779,6 +779,88 @@ namespace Amazon.Mgn
     }
 
     /// <summary>
+    /// Constants used for properties of type DefinitionType.
+    /// </summary>
+    public class DefinitionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant MIGRATION for DefinitionType
+        /// </summary>
+        public static readonly DefinitionType MIGRATION = new DefinitionType("MIGRATION");
+
+        /// <summary>
+        /// Constant NEW_NETWORK for DefinitionType
+        /// </summary>
+        public static readonly DefinitionType NEW_NETWORK = new DefinitionType("NEW_NETWORK");
+
+        /// <summary>
+        /// Constructs a custom DefinitionType for a value not among the defined constants.
+        /// </summary>
+        public DefinitionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefinitionType FindValue(string value)
+        {
+            return FindValue<DefinitionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefinitionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DeleteOnTermination.
+    /// </summary>
+    public class DeleteOnTermination : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for DeleteOnTermination
+        /// </summary>
+        public static readonly DeleteOnTermination DISABLED = new DeleteOnTermination("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for DeleteOnTermination
+        /// </summary>
+        public static readonly DeleteOnTermination ENABLED = new DeleteOnTermination("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom DeleteOnTermination for a value not among the defined constants.
+        /// </summary>
+        public DeleteOnTermination(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeleteOnTermination FindValue(string value)
+        {
+            return FindValue<DeleteOnTermination>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeleteOnTermination(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EncryptionAlgorithm.
     /// </summary>
     public class EncryptionAlgorithm : ConstantClass
@@ -1278,6 +1360,225 @@ namespace Amazon.Mgn
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InitiatedBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InsightLevel.
+    /// </summary>
+    public class InsightLevel : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONSTRUCT for InsightLevel
+        /// </summary>
+        public static readonly InsightLevel CONSTRUCT = new InsightLevel("CONSTRUCT");
+
+        /// <summary>
+        /// Constant RUN for InsightLevel
+        /// </summary>
+        public static readonly InsightLevel RUN = new InsightLevel("RUN");
+
+        /// <summary>
+        /// Constant SEGMENT for InsightLevel
+        /// </summary>
+        public static readonly InsightLevel SEGMENT = new InsightLevel("SEGMENT");
+
+        /// <summary>
+        /// Constructs a custom InsightLevel for a value not among the defined constants.
+        /// </summary>
+        public InsightLevel(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightLevel FindValue(string value)
+        {
+            return FindValue<InsightLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InsightProducerName.
+    /// </summary>
+    public class InsightProducerName : ConstantClass
+    {
+        /// <summary>
+        /// Constant ANALYZE for InsightProducerName
+        /// </summary>
+        public static readonly InsightProducerName ANALYZE = new InsightProducerName("ANALYZE");
+
+        /// <summary>
+        /// Constant CODE_GENERATION for InsightProducerName
+        /// </summary>
+        public static readonly InsightProducerName CODE_GENERATION = new InsightProducerName("CODE_GENERATION");
+
+        /// <summary>
+        /// Constant DEPLOY for InsightProducerName
+        /// </summary>
+        public static readonly InsightProducerName DEPLOY = new InsightProducerName("DEPLOY");
+
+        /// <summary>
+        /// Constant DEPLOYED_STACKS_DELETION for InsightProducerName
+        /// </summary>
+        public static readonly InsightProducerName DEPLOYED_STACKS_DELETION = new InsightProducerName("DEPLOYED_STACKS_DELETION");
+
+        /// <summary>
+        /// Constant MAPPING for InsightProducerName
+        /// </summary>
+        public static readonly InsightProducerName MAPPING = new InsightProducerName("MAPPING");
+
+        /// <summary>
+        /// Constant MAPPING_UPDATE for InsightProducerName
+        /// </summary>
+        public static readonly InsightProducerName MAPPING_UPDATE = new InsightProducerName("MAPPING_UPDATE");
+
+        /// <summary>
+        /// Constructs a custom InsightProducerName for a value not among the defined constants.
+        /// </summary>
+        public InsightProducerName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightProducerName FindValue(string value)
+        {
+            return FindValue<InsightProducerName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightProducerName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InsightProducerType.
+    /// </summary>
+    public class InsightProducerType : ConstantClass
+    {
+        /// <summary>
+        /// Constant API for InsightProducerType
+        /// </summary>
+        public static readonly InsightProducerType API = new InsightProducerType("API");
+
+        /// <summary>
+        /// Constant JOB for InsightProducerType
+        /// </summary>
+        public static readonly InsightProducerType JOB = new InsightProducerType("JOB");
+
+        /// <summary>
+        /// Constructs a custom InsightProducerType for a value not among the defined constants.
+        /// </summary>
+        public InsightProducerType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightProducerType FindValue(string value)
+        {
+            return FindValue<InsightProducerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightProducerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InsightType.
+    /// </summary>
+    public class InsightType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BEHAVIOR_CHANGE for InsightType
+        /// </summary>
+        public static readonly InsightType BEHAVIOR_CHANGE = new InsightType("BEHAVIOR_CHANGE");
+
+        /// <summary>
+        /// Constant CONTEXT for InsightType
+        /// </summary>
+        public static readonly InsightType CONTEXT = new InsightType("CONTEXT");
+
+        /// <summary>
+        /// Constant ERROR for InsightType
+        /// </summary>
+        public static readonly InsightType ERROR = new InsightType("ERROR");
+
+        /// <summary>
+        /// Constant EXCLUDED for InsightType
+        /// </summary>
+        public static readonly InsightType EXCLUDED = new InsightType("EXCLUDED");
+
+        /// <summary>
+        /// Constant INFO for InsightType
+        /// </summary>
+        public static readonly InsightType INFO = new InsightType("INFO");
+
+        /// <summary>
+        /// Constant INTENT_GAP for InsightType
+        /// </summary>
+        public static readonly InsightType INTENT_GAP = new InsightType("INTENT_GAP");
+
+        /// <summary>
+        /// Constant QUESTION for InsightType
+        /// </summary>
+        public static readonly InsightType QUESTION = new InsightType("QUESTION");
+
+        /// <summary>
+        /// Constant WARNING for InsightType
+        /// </summary>
+        public static readonly InsightType WARNING = new InsightType("WARNING");
+
+        /// <summary>
+        /// Constructs a custom InsightType for a value not among the defined constants.
+        /// </summary>
+        public InsightType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightType FindValue(string value)
+        {
+            return FindValue<InsightType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightType(string value)
         {
             return FindValue(value);
         }
@@ -2222,6 +2523,47 @@ namespace Amazon.Mgn
     }
 
     /// <summary>
+    /// Constants used for properties of type OutpostSnapshotLocation.
+    /// </summary>
+    public class OutpostSnapshotLocation : ConstantClass
+    {
+        /// <summary>
+        /// Constant OUTPOST for OutpostSnapshotLocation
+        /// </summary>
+        public static readonly OutpostSnapshotLocation OUTPOST = new OutpostSnapshotLocation("OUTPOST");
+
+        /// <summary>
+        /// Constant REGION for OutpostSnapshotLocation
+        /// </summary>
+        public static readonly OutpostSnapshotLocation REGION = new OutpostSnapshotLocation("REGION");
+
+        /// <summary>
+        /// Constructs a custom OutpostSnapshotLocation for a value not among the defined constants.
+        /// </summary>
+        public OutpostSnapshotLocation(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutpostSnapshotLocation FindValue(string value)
+        {
+            return FindValue<OutpostSnapshotLocation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutpostSnapshotLocation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type PostLaunchActionExecutionStatus.
     /// </summary>
     public class PostLaunchActionExecutionStatus : ConstantClass
@@ -2308,6 +2650,138 @@ namespace Amazon.Mgn
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PostLaunchActionsDeploymentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RemoteSourceActionInvocationStatus.
+    /// </summary>
+    public class RemoteSourceActionInvocationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CANCELLED for RemoteSourceActionInvocationStatus
+        /// </summary>
+        public static readonly RemoteSourceActionInvocationStatus CANCELLED = new RemoteSourceActionInvocationStatus("CANCELLED");
+
+        /// <summary>
+        /// Constant CANCELLING for RemoteSourceActionInvocationStatus
+        /// </summary>
+        public static readonly RemoteSourceActionInvocationStatus CANCELLING = new RemoteSourceActionInvocationStatus("CANCELLING");
+
+        /// <summary>
+        /// Constant DELAYED for RemoteSourceActionInvocationStatus
+        /// </summary>
+        public static readonly RemoteSourceActionInvocationStatus DELAYED = new RemoteSourceActionInvocationStatus("DELAYED");
+
+        /// <summary>
+        /// Constant FAILED for RemoteSourceActionInvocationStatus
+        /// </summary>
+        public static readonly RemoteSourceActionInvocationStatus FAILED = new RemoteSourceActionInvocationStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for RemoteSourceActionInvocationStatus
+        /// </summary>
+        public static readonly RemoteSourceActionInvocationStatus IN_PROGRESS = new RemoteSourceActionInvocationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant PENDING for RemoteSourceActionInvocationStatus
+        /// </summary>
+        public static readonly RemoteSourceActionInvocationStatus PENDING = new RemoteSourceActionInvocationStatus("PENDING");
+
+        /// <summary>
+        /// Constant STALLED for RemoteSourceActionInvocationStatus
+        /// </summary>
+        public static readonly RemoteSourceActionInvocationStatus STALLED = new RemoteSourceActionInvocationStatus("STALLED");
+
+        /// <summary>
+        /// Constant SUCCESS for RemoteSourceActionInvocationStatus
+        /// </summary>
+        public static readonly RemoteSourceActionInvocationStatus SUCCESS = new RemoteSourceActionInvocationStatus("SUCCESS");
+
+        /// <summary>
+        /// Constant TIMED_OUT for RemoteSourceActionInvocationStatus
+        /// </summary>
+        public static readonly RemoteSourceActionInvocationStatus TIMED_OUT = new RemoteSourceActionInvocationStatus("TIMED_OUT");
+
+        /// <summary>
+        /// Constructs a custom RemoteSourceActionInvocationStatus for a value not among the defined constants.
+        /// </summary>
+        public RemoteSourceActionInvocationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemoteSourceActionInvocationStatus FindValue(string value)
+        {
+            return FindValue<RemoteSourceActionInvocationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemoteSourceActionInvocationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RemoteSourceActionJobStatus.
+    /// </summary>
+    public class RemoteSourceActionJobStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for RemoteSourceActionJobStatus
+        /// </summary>
+        public static readonly RemoteSourceActionJobStatus COMPLETED = new RemoteSourceActionJobStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for RemoteSourceActionJobStatus
+        /// </summary>
+        public static readonly RemoteSourceActionJobStatus FAILED = new RemoteSourceActionJobStatus("FAILED");
+
+        /// <summary>
+        /// Constant PENDING for RemoteSourceActionJobStatus
+        /// </summary>
+        public static readonly RemoteSourceActionJobStatus PENDING = new RemoteSourceActionJobStatus("PENDING");
+
+        /// <summary>
+        /// Constant RUNNING for RemoteSourceActionJobStatus
+        /// </summary>
+        public static readonly RemoteSourceActionJobStatus RUNNING = new RemoteSourceActionJobStatus("RUNNING");
+
+        /// <summary>
+        /// Constant STALLED for RemoteSourceActionJobStatus
+        /// </summary>
+        public static readonly RemoteSourceActionJobStatus STALLED = new RemoteSourceActionJobStatus("STALLED");
+
+        /// <summary>
+        /// Constructs a custom RemoteSourceActionJobStatus for a value not among the defined constants.
+        /// </summary>
+        public RemoteSourceActionJobStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemoteSourceActionJobStatus FindValue(string value)
+        {
+            return FindValue<RemoteSourceActionJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemoteSourceActionJobStatus(string value)
         {
             return FindValue(value);
         }
@@ -2618,6 +3092,11 @@ namespace Amazon.Mgn
         /// Constant CISCO_ACI for SourceEnvironment
         /// </summary>
         public static readonly SourceEnvironment CISCO_ACI = new SourceEnvironment("CISCO_ACI");
+
+        /// <summary>
+        /// Constant F5_BIGIP for SourceEnvironment
+        /// </summary>
+        public static readonly SourceEnvironment F5_BIGIP = new SourceEnvironment("F5_BIGIP");
 
         /// <summary>
         /// Constant FORTIGATE_FIREWALL for SourceEnvironment

@@ -108,6 +108,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReplicatorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("stagingOutpostArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StagingOutpostArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

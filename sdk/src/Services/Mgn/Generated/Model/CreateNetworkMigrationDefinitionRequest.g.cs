@@ -74,6 +74,21 @@ namespace Amazon.Mgn.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
+        /// Gets and sets the property DefinitionType. 
+        /// <para>
+        /// Specifies the type of the definition. <c>MIGRATION</c> migrates an existing network.
+        /// <c>NEW_NETWORK</c> designs a new network. If you omit this value, the definition type
+        /// is <c>MIGRATION</c>.
+        /// </para>
+        /// </summary>
+        public DefinitionType DefinitionType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DefinitionType property is set.
+        /// </summary>
+        internal bool IsSetDefinitionType() => this.DefinitionType != null;
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the network migration definition.
@@ -133,7 +148,7 @@ namespace Amazon.Mgn.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min = 0, Max = 2)]
+        [AWSProperty(Min = 0, Max = 3)]
         public List<SourceConfiguration> SourceConfigurations { get; set; } = AWSConfigs.InitializeCollections ? new List<SourceConfiguration>() : null;
 
         /// <summary>

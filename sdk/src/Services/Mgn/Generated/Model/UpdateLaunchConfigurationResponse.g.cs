@@ -127,6 +127,20 @@ namespace Amazon.Mgn.Model
         internal bool IsSetLicensing() => this.Licensing != null;
 
         /// <summary>
+        /// Gets and sets the property MapAutoTaggingKey. 
+        /// <para>
+        /// Map auto tagging key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 256)]
+        public string MapAutoTaggingKey { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MapAutoTaggingKey property is set.
+        /// </summary>
+        internal bool IsSetMapAutoTaggingKey() => this.MapAutoTaggingKey != null;
+
+        /// <summary>
         /// Gets and sets the property MapAutoTaggingMpeID. 
         /// <para>
         /// Map auto tagging MPE ID.
