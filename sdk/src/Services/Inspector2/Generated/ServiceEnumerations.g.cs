@@ -134,9 +134,24 @@ namespace Amazon.Inspector2
         public static readonly AggregationResourceType AWS_LAMBDA_FUNCTION = new AggregationResourceType("AWS_LAMBDA_FUNCTION");
 
         /// <summary>
+        /// Constant ArtifactregistryGoogleapisComDockerImage for AggregationResourceType
+        /// </summary>
+        public static readonly AggregationResourceType ArtifactregistryGoogleapisComDockerImage = new AggregationResourceType("artifactregistry.googleapis.com/DockerImage");
+
+        /// <summary>
         /// Constant CODE_REPOSITORY for AggregationResourceType
         /// </summary>
         public static readonly AggregationResourceType CODE_REPOSITORY = new AggregationResourceType("CODE_REPOSITORY");
+
+        /// <summary>
+        /// Constant CloudfunctionsGoogleapisComFunction for AggregationResourceType
+        /// </summary>
+        public static readonly AggregationResourceType CloudfunctionsGoogleapisComFunction = new AggregationResourceType("cloudfunctions.googleapis.com/Function");
+
+        /// <summary>
+        /// Constant ComputeGoogleapisComInstance for AggregationResourceType
+        /// </summary>
+        public static readonly AggregationResourceType ComputeGoogleapisComInstance = new AggregationResourceType("compute.googleapis.com/Instance");
 
         /// <summary>
         /// Constant MicrosoftComputeVirtualMachines for AggregationResourceType
@@ -1579,6 +1594,11 @@ namespace Amazon.Inspector2
         public static readonly CloudProvider AZURE = new CloudProvider("AZURE");
 
         /// <summary>
+        /// Constant GCP for CloudProvider
+        /// </summary>
+        public static readonly CloudProvider GCP = new CloudProvider("GCP");
+
+        /// <summary>
         /// Constant NOT_APPLICABLE for CloudProvider
         /// </summary>
         public static readonly CloudProvider NOT_APPLICABLE = new CloudProvider("NOT_APPLICABLE");
@@ -1884,6 +1904,11 @@ namespace Amazon.Inspector2
         /// Constant AZURE for ConnectorCloudProvider
         /// </summary>
         public static readonly ConnectorCloudProvider AZURE = new ConnectorCloudProvider("AZURE");
+
+        /// <summary>
+        /// Constant GCP for ConnectorCloudProvider
+        /// </summary>
+        public static readonly ConnectorCloudProvider GCP = new ConnectorCloudProvider("GCP");
 
         /// <summary>
         /// Constructs a custom ConnectorCloudProvider for a value not among the defined constants.
@@ -2335,9 +2360,29 @@ namespace Amazon.Inspector2
         public static readonly CoverageResourceType AWS_LAMBDA_FUNCTION = new CoverageResourceType("AWS_LAMBDA_FUNCTION");
 
         /// <summary>
+        /// Constant ArtifactregistryGoogleapisComDockerImage for CoverageResourceType
+        /// </summary>
+        public static readonly CoverageResourceType ArtifactregistryGoogleapisComDockerImage = new CoverageResourceType("artifactregistry.googleapis.com/DockerImage");
+
+        /// <summary>
+        /// Constant ArtifactregistryGoogleapisComRepository for CoverageResourceType
+        /// </summary>
+        public static readonly CoverageResourceType ArtifactregistryGoogleapisComRepository = new CoverageResourceType("artifactregistry.googleapis.com/Repository");
+
+        /// <summary>
         /// Constant CODE_REPOSITORY for CoverageResourceType
         /// </summary>
         public static readonly CoverageResourceType CODE_REPOSITORY = new CoverageResourceType("CODE_REPOSITORY");
+
+        /// <summary>
+        /// Constant CloudfunctionsGoogleapisComFunction for CoverageResourceType
+        /// </summary>
+        public static readonly CoverageResourceType CloudfunctionsGoogleapisComFunction = new CoverageResourceType("cloudfunctions.googleapis.com/Function");
+
+        /// <summary>
+        /// Constant ComputeGoogleapisComInstance for CoverageResourceType
+        /// </summary>
+        public static readonly CoverageResourceType ComputeGoogleapisComInstance = new CoverageResourceType("compute.googleapis.com/Instance");
 
         /// <summary>
         /// Constant MACHINE_IMAGE for CoverageResourceType
@@ -4859,6 +4904,11 @@ namespace Amazon.Inspector2
         public static readonly Provider AZURE = new Provider("AZURE");
 
         /// <summary>
+        /// Constant GCP for Provider
+        /// </summary>
+        public static readonly Provider GCP = new Provider("GCP");
+
+        /// <summary>
         /// Constructs a custom Provider for a value not among the defined constants.
         /// </summary>
         public Provider(string value) : base(value) { }
@@ -5323,9 +5373,24 @@ namespace Amazon.Inspector2
         public static readonly ResourceType AWS_LAMBDA_FUNCTION = new ResourceType("AWS_LAMBDA_FUNCTION");
 
         /// <summary>
+        /// Constant ArtifactregistryGoogleapisComDockerImage for ResourceType
+        /// </summary>
+        public static readonly ResourceType ArtifactregistryGoogleapisComDockerImage = new ResourceType("artifactregistry.googleapis.com/DockerImage");
+
+        /// <summary>
         /// Constant CODE_REPOSITORY for ResourceType
         /// </summary>
         public static readonly ResourceType CODE_REPOSITORY = new ResourceType("CODE_REPOSITORY");
+
+        /// <summary>
+        /// Constant CloudfunctionsGoogleapisComFunction for ResourceType
+        /// </summary>
+        public static readonly ResourceType CloudfunctionsGoogleapisComFunction = new ResourceType("cloudfunctions.googleapis.com/Function");
+
+        /// <summary>
+        /// Constant ComputeGoogleapisComInstance for ResourceType
+        /// </summary>
+        public static readonly ResourceType ComputeGoogleapisComInstance = new ResourceType("compute.googleapis.com/Instance");
 
         /// <summary>
         /// Constant MACHINE_IMAGE for ResourceType
@@ -6113,6 +6178,16 @@ namespace Amazon.Inspector2
     public class ScopeType : ConstantClass
     {
         /// <summary>
+        /// Constant ORGANIZATION for ScopeType
+        /// </summary>
+        public static readonly ScopeType ORGANIZATION = new ScopeType("ORGANIZATION");
+
+        /// <summary>
+        /// Constant PROJECT for ScopeType
+        /// </summary>
+        public static readonly ScopeType PROJECT = new ScopeType("PROJECT");
+
+        /// <summary>
         /// Constant SUBSCRIPTION for ScopeType
         /// </summary>
         public static readonly ScopeType SUBSCRIPTION = new ScopeType("SUBSCRIPTION");
@@ -6749,6 +6824,11 @@ namespace Amazon.Inspector2
         public static readonly UsageType EC2_AMI_HOURS = new UsageType("EC2_AMI_HOURS");
 
         /// <summary>
+        /// Constant EC2_AMI_ONE_SHOT_SCAN for UsageType
+        /// </summary>
+        public static readonly UsageType EC2_AMI_ONE_SHOT_SCAN = new UsageType("EC2_AMI_ONE_SHOT_SCAN");
+
+        /// <summary>
         /// Constant EC2_INSTANCE_HOURS for UsageType
         /// </summary>
         public static readonly UsageType EC2_INSTANCE_HOURS = new UsageType("EC2_INSTANCE_HOURS");
@@ -6762,6 +6842,26 @@ namespace Amazon.Inspector2
         /// Constant ECR_RESCAN for UsageType
         /// </summary>
         public static readonly UsageType ECR_RESCAN = new UsageType("ECR_RESCAN");
+
+        /// <summary>
+        /// Constant GCP_CLOUD_RUN_HOURS for UsageType
+        /// </summary>
+        public static readonly UsageType GCP_CLOUD_RUN_HOURS = new UsageType("GCP_CLOUD_RUN_HOURS");
+
+        /// <summary>
+        /// Constant GCP_CONTAINER_IMAGE_INITIAL_SCAN for UsageType
+        /// </summary>
+        public static readonly UsageType GCP_CONTAINER_IMAGE_INITIAL_SCAN = new UsageType("GCP_CONTAINER_IMAGE_INITIAL_SCAN");
+
+        /// <summary>
+        /// Constant GCP_CONTAINER_IMAGE_RESCAN for UsageType
+        /// </summary>
+        public static readonly UsageType GCP_CONTAINER_IMAGE_RESCAN = new UsageType("GCP_CONTAINER_IMAGE_RESCAN");
+
+        /// <summary>
+        /// Constant GCP_VM_AGENT_BASED_INSTANCE_HOURS for UsageType
+        /// </summary>
+        public static readonly UsageType GCP_VM_AGENT_BASED_INSTANCE_HOURS = new UsageType("GCP_VM_AGENT_BASED_INSTANCE_HOURS");
 
         /// <summary>
         /// Constant LAMBDA_FUNCTION_CODE_HOURS for UsageType

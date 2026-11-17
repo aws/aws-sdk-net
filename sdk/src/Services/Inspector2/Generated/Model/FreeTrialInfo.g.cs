@@ -37,8 +37,21 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property CloudProvider. 
         /// <para>
-        /// The cloud provider associated with the free trial information.
+        /// The cloud provider associated with the free trial information. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS</c> – Amazon Web Services resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AZURE</c> – Microsoft Azure resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GCP</c> – Google Cloud Platform (GCP) resources.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public CloudProvider CloudProvider { get; set; }
 

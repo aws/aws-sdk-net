@@ -1274,7 +1274,9 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Details on the resource types used to filter findings.
+        /// Details on the resource types used to filter findings. For Google Cloud Platform (GCP)
+        /// resources, the resource type is <c>compute.googleapis.com/Instance</c>, <c>cloudfunctions.googleapis.com/Function</c>,
+        /// or <c>artifactregistry.googleapis.com/DockerImage</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

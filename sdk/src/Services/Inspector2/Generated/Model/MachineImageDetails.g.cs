@@ -89,7 +89,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property OwnerAccountId. Account ID that owns the image
         /// </summary>
-        [AWSProperty(Min = 12, Max = 36)]
+        [AWSProperty(Min = 6, Max = 36)]
         public string OwnerAccountId { get; set; }
 
         /// <summary>

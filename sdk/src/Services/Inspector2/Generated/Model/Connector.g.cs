@@ -152,6 +152,39 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetEnablementStatusReason() => this.EnablementStatusReason != null;
 
         /// <summary>
+        /// Gets and sets the property GcpRegions. 
+        /// <para>
+        /// The Google Cloud Platform (GCP) locations configured for the connector.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public List<string> GcpRegions { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the GcpRegions property is set.
+        /// </summary>
+        internal bool IsSetGcpRegions() => this.GcpRegions != null && (this.GcpRegions.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property GcpScopeConfiguration. 
+        /// <para>
+        /// The Google Cloud Platform (GCP) scope configuration for the connector.
+        /// </para>
+        /// </summary>
+        public GcpScopeConfiguration GcpScopeConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GcpScopeConfiguration property is set.
+        /// </summary>
+        internal bool IsSetGcpScopeConfiguration() => this.GcpScopeConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Health. 
         /// <para>
         /// The health of the connector, which indicates whether Amazon Inspector can reach and
