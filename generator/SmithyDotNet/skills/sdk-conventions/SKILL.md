@@ -372,16 +372,33 @@ for a form member). All three carry the member `@documentation` onto the paramet
 
 `ServiceGenerator` emits C2J's reflection tests under `UnitTests/Generated/Customizations/` when the hook is present
 (`SimpleConstructorTestsWriter`, `SimpleMethodTestsWriter`); `noArgOverloads` has no generated test.
-`operationModifiers.{Operation}.exclude` unbinds the operation from its service or resource and `shapeModifiers.{Shape}.exclude`
-removes members, so whatever is no longer reachable is not emitted. `clientMethodOnly` (C2J's hard-coded
-`S3ExcludeListOperations`, S3 `SelectObjectContent`) keeps the operation in `Operations` for the client, interface, endpoint
-and metadata writers, but `GeneratedOperations` drops it, so its request/response classes, marshallers, event streams and the
-shapes only it reaches are hand-written. The top-level `excludeShapes` (structures and enums) and `excludeMembers` hooks
-leave the model alone and mark code as hand-written: an excluded structure gets no class or (un)marshaller (the structures
-it holds still do), an excluded enum no enum class, and an excluded member no property or `IsSet`, though the (un)marshallers
-still use it. Both key shapes by modeled name (C2J keys a renamed structure by its new name); `excludeMembers` lists members by emitted name, as C2J. `useWrappingResult` moves the output under one member,
-`wrappedResultMember`, of a new output structure: the response has a single property of the output's type, paginator paths go
-through it, and the JSON, CBOR and ec2Query response unmarshallers read it from the whole body.
+
+Hooks that remove or reshape what is emitted:
+- `operationModifiers.{Operation}.exclude` unbinds the operation from its service or resource, and
+  `shapeModifiers.{Shape}.exclude` removes members. Whatever is no longer reachable is not emitted.
+- `clientMethodOnly` (C2J's hard-coded `S3ExcludeListOperations`, S3 `SelectObjectContent`) keeps the operation in
+  `Operations` for the client, interface, endpoint and metadata writers, but `GeneratedOperations` drops it. Its
+  request/response classes, marshallers, event streams and the shapes only it reaches are hand-written.
+- The top-level `excludeShapes` (structures and enums) and `excludeMembers` leave the model alone and mark code as
+  hand-written:
+  - an excluded structure gets no class or (un)marshaller (the structures it holds still do);
+  - an excluded enum gets no enum class;
+  - an excluded member gets no property or `IsSet`, though the (un)marshallers still use it.
+
+  Both key shapes by modeled name (C2J keys a renamed structure by its new name); `excludeMembers` lists members by
+  emitted name, as C2J.
+- `flattenShapes` (S3, restXml only) replaces an input/output's structure `@httpPayload` member with the target's
+  members, so they become request/response properties.
+  - The input takes the payload's `@xmlName`, so the body writers match C2J: the request writes that root even when
+    nothing is set (the payload path sent an empty body).
+  - The response reads the members one level under the root, behind `if (context.IsStartOfDocument)` where C2J bumps
+    the depth unconditionally.
+  - The target keeps its class, as in C2J (S3's `Delete`), unless `excludeShapes` lists it.
+  - It runs before `shapeModifiers`, which address the flattened members on the parent as C2J does, and drops their
+    `@required` (C2J checks it against the parent).
+- `useWrappingResult` moves the output under one member, `wrappedResultMember`, of a new output structure. The response
+  has a single property of the output's type, paginator paths go through it, and the JSON, CBOR and ec2Query response
+  unmarshallers read it from the whole body.
 
 - What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` parses;
   each hook's per-level behavior lives on that record, its `Apply`/`Validate` step, and its lookup.

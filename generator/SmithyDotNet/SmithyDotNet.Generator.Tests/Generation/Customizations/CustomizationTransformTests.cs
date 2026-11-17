@@ -443,6 +443,51 @@ public class CustomizationTransformTests
         Assert.Contains(expectedInMessage, ex.Message);
     }
 
+    // flattenShapes
+
+    private static CustomizationsModel Flatten(string shape, string member)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.FlattenShapes[shape] = [member];
+        return customizations;
+    }
+
+    [Fact]
+    public void FlattenShapes_ReplacesPayloadWithItsMembers()
+    {
+        var model = Apply(Flatten("PutBucketRequest", "config"));
+
+        var request = Structure(model, "PutBucketRequest");
+        Assert.Equal(["id", "name", "region", "trace"], request.Members.Keys);
+        // C2J checks @required against the parent, which never lists a flattened member.
+        Assert.False(request.Members["name"].IsRequired());
+        Assert.True(Structure(model, "BucketConfig").Members["name"].IsRequired());
+        // The body's root element stays the payload's.
+        Assert.Equal("CreateBucketConfiguration", request.GetXmlName());
+    }
+
+    // shapeModifiers address a flattened member on its new parent (S3's RestoreObjectRequest.Tier).
+    [Fact]
+    public void FlattenShapes_RunsBeforeShapeModifiers()
+    {
+        var customizations = Flatten("PutBucketRequest", "config");
+        customizations.ShapeModifiers["PutBucketRequest"] = new ShapeModifier { Exclude = ["region"] };
+
+        Assert.DoesNotContain("region", Structure(Apply(customizations), "PutBucketRequest").Members.Keys);
+    }
+
+    [Theory]
+    [InlineData("LegacyId", "config", "flattenShapes['LegacyId'] targets a shape that is not a structure")]
+    [InlineData("PutBucketRequest", "missing", "flattenShapes['PutBucketRequest'] flattens 'missing', which the shape does not have")]
+    [InlineData("Holder", "bucket", "flattenShapes['Holder'] flattens 'bucket', which is not a structure @httpPayload")]
+    [InlineData("ClashRequest", "config", "flattenShapes['ClashRequest'] flattens 'config', whose member 'name' the shape already has")]
+    [InlineData("NamespacedRequest", "config", "flattenShapes['NamespacedRequest'] flattens 'config', whose @xmlNamespace or target @xmlName is not supported yet")]
+    public void FlattenShapes_Invalid_Throws(string shape, string member, string expectedInMessage)
+    {
+        var ex = Assert.Throws<GeneratorException>(() => Apply(Flatten(shape, member)));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
     // excludeShapes, excludeMembers
 
     [Theory]

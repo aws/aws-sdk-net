@@ -9,6 +9,7 @@
         { "target": "com.example#GetThing" },
         { "target": "com.example#GetThingStream" },
         { "target": "com.example#PutPayload" },
+        { "target": "com.example#GetPayload" },
         { "target": "com.example#PutChecksummedThing" },
         { "target": "com.example#GetChecksummedThing" },
         { "target": "com.example#AccountOp" },
@@ -113,6 +114,24 @@
       "type": "structure",
       "members": {
         "details": { "target": "com.example#NestedThing", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#GetPayload": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#GetPayloadResponse" },
+      "traits": { "smithy.api#http": { "uri": "/payload", "method": "GET" } }
+    },
+    "com.example#GetPayloadResponse": {
+      "type": "structure",
+      "members": {
+        "details": { "target": "com.example#PayloadThing", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#PayloadThing": {
+      "type": "structure",
+      "members": {
+        "note": { "target": "smithy.api#String" }
       }
     },
 

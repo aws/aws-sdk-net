@@ -192,6 +192,42 @@
       "type": "list",
       "member": { "target": "smithy.api#String" }
     },
+    "com.example#PutBucket": {
+      "type": "operation",
+      "input": { "target": "com.example#PutBucketRequest" }
+    },
+    "com.example#PutBucketRequest": {
+      "type": "structure",
+      "members": {
+        "id": { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {} } },
+        "config": { "target": "com.example#BucketConfig", "traits": { "smithy.api#httpPayload": {}, "smithy.api#xmlName": "CreateBucketConfiguration" } },
+        "trace": { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-trace" } }
+      }
+    },
+    "com.example#BucketConfig": {
+      "type": "structure",
+      "members": {
+        "name": { "target": "smithy.api#String", "traits": { "smithy.api#required": {} } },
+        "region": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#PutNamespaced": {
+      "type": "operation",
+      "input": { "target": "com.example#NamespacedRequest" }
+    },
+    "com.example#NamespacedRequest": {
+      "type": "structure",
+      "members": {
+        "config": { "target": "com.example#BucketConfig", "traits": { "smithy.api#httpPayload": {}, "smithy.api#xmlNamespace": { "uri": "http://example.com/ns" } } }
+      }
+    },
+    "com.example#ClashRequest": {
+      "type": "structure",
+      "members": {
+        "name": { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-name" } },
+        "config": { "target": "com.example#BucketConfig", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
     "com.example#Dup": {
       "type": "structure",
       "members": {}

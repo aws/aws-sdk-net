@@ -199,6 +199,38 @@ public class RestXmlCodegenTests
         Assert.Contains("NestedThingMarshaller.Instance.Marshall(publicRequest.Details, context);", source);
     }
 
+    // S3's DeleteObjectsRequest: the payload's members are the request's, written under the payload's root unguarded (C2J).
+    [Fact]
+    public void Request_FlattenedPayload_WritesMembersUnderPayloadRoot()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.FlattenShapes["PutPayloadRequest"] = ["details"];
+        var source = RequestMarshaller(TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations), "PutPayload");
+
+        Assert.DoesNotContain("IsSetDetails", source);
+        Assert.Contains("""context.Writer.WriteStartElement("NestedThing", "http://example.com/doc/2023-01-01/");""", source);
+        Assert.Contains("""context.Writer.WriteElementString("note", StringUtils.FromString(publicRequest.Note));""", source);
+        Assert.DoesNotContain("NestedThingMarshaller", source);
+    }
+
+    // S3's CopyObjectOutput: the payload's members are read straight into the response, one level under the root.
+    [Fact]
+    public void Response_FlattenedPayload_ReadsMembersIntoTheResponse()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.FlattenShapes["GetPayloadResponse"] = ["details"];
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+        var source = new XmlResponseUnmarshallerWriter(context, ModelFileName)
+            .Write(context.Operations.Single(o => o.Name == "GetPayload"), TestContext.Current.CancellationToken);
+
+        // The members sit under the root element, which a body read at the document start descends past.
+        Assert.Contains("if (context.IsStartOfDocument)", source);
+        Assert.Contains("targetDepth += 1;", source);
+        Assert.Contains("""if (context.TestExpression("note", targetDepth))""", source);
+        Assert.Contains("unmarshalledObject.Note = unmarshaller.Unmarshall(context);", source);
+        Assert.DoesNotContain("PayloadThingUnmarshaller", source);
+    }
+
     [Fact]
     public void Request_HostPrefix_SkippedWhenHostLabelIsContextParam()
     {

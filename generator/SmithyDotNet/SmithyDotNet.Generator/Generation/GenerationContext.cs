@@ -293,6 +293,12 @@ public class GenerationContext
         Protocol = ProtocolResolver.Resolve(index.Service, SdkId);
         UsesHttpBindings = Protocol is AWSProtocol.RestJson1 or AWSProtocol.RestXml;
 
+        // flattenShapes is XML-specific: the flattened members are written under the restXml body's root element.
+        if (Protocol is not AWSProtocol.RestXml && Customizations.FlattenShapes.Keys.FirstOrDefault() is { } flattenedShape)
+        {
+            throw new GeneratorException($"flattenShapes['{flattenedShape}'] flattens a payload, which is only supported for restXml.");
+        }
+
         // The wrapped output is read as the whole response body, which only awsJson's, rpcv2Cbor's and ec2Query's responses are.
         var supportsWrappedOutput = Protocol is AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1 or AWSProtocol.RpcV2Cbor or AWSProtocol.Ec2Query;
         foreach (var (operationName, modifier) in Customizations.OperationModifiers)
@@ -358,6 +364,12 @@ public class GenerationContext
                     structures[shapeId] = structure;
                 }
             }
+        }
+
+        // Nothing reaches a flattened payload's target any more, but its class is still part of the API (S3's Delete).
+        foreach (var target in Customizations.FlattenedTargets.Where(target => !Customizations.IsExcludedShape(target.Id.Name)))
+        {
+            structures.TryAdd(target.Id, target);
         }
 
         // monitoring models LimitExceededFault next to LimitExceededException, and ResourceNotFound next to

@@ -224,6 +224,26 @@ public class CustomizationsModelTests
     }
 
     [Fact]
+    public void Load_FlattenShapes_MergesAcrossFiles()
+    {
+        var model = LoadFiles(
+            """{ "flattenShapes": { "DeleteObjectsRequest": ["Delete"] } }""",
+            """{ "flattenShapes": { "CopyObjectOutput": ["CopyObjectResult"] } }""");
+
+        Assert.Equal(["Delete"], model.FlattenShapes["DeleteObjectsRequest"]);
+        Assert.Equal(["CopyObjectResult"], model.FlattenShapes["CopyObjectOutput"]);
+    }
+
+    [Fact]
+    public void Load_FlattenShapes_SameShapeInTwoFiles_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
+            """{ "flattenShapes": { "DeleteObjectsRequest": ["Delete"] } }""",
+            """{ "flattenShapes": { "DeleteObjectsRequest": ["Other"] } }"""));
+        Assert.Contains("flattenShapes['DeleteObjectsRequest'] appears in more than one customizations file", ex.Message);
+    }
+
+    [Fact]
     public void Load_CombinesShapeModifiersAcrossFiles()
     {
         var merged = LoadFiles(

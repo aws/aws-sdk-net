@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using SmithyDotNet.Generator.Model.Shapes;
 
 namespace SmithyDotNet.Generator.Generation.Customizations;
 
@@ -144,6 +145,20 @@ public sealed record CustomizationsModel
     [JsonPropertyName("excludeMembers")]
     public Dictionary<string, List<string>> ExcludeMembers { get; init; } = [];
 
+    /// <summary>
+    /// Structure <c>@httpPayload</c> members, keyed by modeled input/output shape name, whose target's members replace them
+    /// on the request/response class. Applied by <see cref="Customizations.FlattenShapes"/>.
+    /// </summary>
+    [JsonPropertyName("flattenShapes")]
+    public Dictionary<string, List<string>> FlattenShapes { get; init; } = [];
+
+    /// <summary>
+    /// The targets <c>flattenShapes</c> replaced, filled in by <see cref="CustomizationTransform"/>. No longer reachable, but
+    /// C2J still ships their classes (S3's <c>Delete</c>), so they are emitted unless <c>excludeShapes</c> lists them.
+    /// </summary>
+    [JsonIgnore]
+    public List<StructureShape> FlattenedTargets { get; } = [];
+
     /// <summary>True when <c>excludeShapes</c> lists modeled shape <paramref name="shapeName"/>.</summary>
     public bool IsExcludedShape(string shapeName) => ExcludeShapes.Contains(shapeName);
 
@@ -219,6 +234,7 @@ public sealed record CustomizationsModel
         var suppressResultGeneration = new List<string>();
         var excludeShapes = new List<string>();
         var excludeMembers = new Dictionary<string, List<string>>();
+        var flattenShapes = new Dictionary<string, List<string>>();
 
         foreach (var path in paths)
         {
@@ -376,6 +392,14 @@ public sealed record CustomizationsModel
                     throw new GeneratorException($"'{path}': excludeMembers['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
                 }
             }
+
+            foreach (var (shapeName, members) in file.FlattenShapes)
+            {
+                if (!flattenShapes.TryAdd(shapeName, members))
+                {
+                    throw new GeneratorException($"'{path}': flattenShapes['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
         }
 
         return new CustomizationsModel
@@ -398,6 +422,7 @@ public sealed record CustomizationsModel
             SuppressResultGeneration = suppressResultGeneration,
             ExcludeShapes = excludeShapes,
             ExcludeMembers = excludeMembers,
+            FlattenShapes = flattenShapes,
         };
     }
 }

@@ -10,10 +10,10 @@ namespace SmithyDotNet.Generator.Generation.Customizations;
 /// <c>renameShape</c> adds a service <c>rename</c> entry; <c>locationName</c> sets <c>@ec2QueryName</c>) or a
 /// structural edit (a member-keyed <c>renameShape</c> copies the member's target; <c>exclude</c> unbinds an operation
 /// or drops members; <c>useWrappingResult</c> wraps an output; <c>emitAsShape</c> retargets members; <c>inject</c> adds
-/// one; <c>suppressResultGeneration</c> drops an output) is applied to the model; the rest, member renames included,
+/// one; <c>flattenShapes</c> replaces a payload with its members; <c>suppressResultGeneration</c> drops an output) is applied to the model; the rest, member renames included,
 /// are checked here and read from <see cref="GenerationContext.Customizations"/> by shape and member name where the
 /// member is resolved.
-/// Each hook family is applied by its own class (<see cref="ShapeSubstitutions"/>, <see cref="ShapeModifiers"/>,
+/// Each hook family is applied by its own class (<see cref="ShapeSubstitutions"/>, <see cref="FlattenShapes"/>, <see cref="ShapeModifiers"/>,
 /// <see cref="OperationModifiers"/>). A stale shape/member reference throws — it must fail the build, not silently stop applying.
 /// </summary>
 public static class CustomizationTransform
@@ -23,6 +23,8 @@ public static class CustomizationTransform
         // First, so a member-keyed copy exists for the hooks below. Every hook keys a shape by its modeled name,
         // unlike C2J, which keys a renamed structure by its new name (S3's customizations need rekeying).
         ShapeSubstitutions.Apply(model, customizations);
+        // Before shapeModifiers, which address a flattened member on its new parent, as C2J does (S3's RestoreObjectRequest.Tier).
+        FlattenShapes.Apply(model, customizations);
         ShapeModifiers.Apply(model, customizations);
         OperationModifiers.Apply(model, customizations);
     }

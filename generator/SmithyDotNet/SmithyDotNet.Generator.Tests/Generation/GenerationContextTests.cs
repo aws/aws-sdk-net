@@ -125,6 +125,18 @@ public class GenerationContextTests
         Assert.Contains("operationModifiers['GetThing'] allows an empty result, which is only supported for restXml.", ex.Message);
     }
 
+    [Theory]
+    [InlineData("Codegen/codegen-model.json")]
+    [InlineData("Codegen/rpcv2cbor-model.json")]
+    public void FlattenShapes_OutsideRestXml_Throws(string modelPath)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.FlattenShapes["GetThingRequest"] = ["details"];
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load(modelPath)), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("flattenShapes['GetThingRequest'] flattens a payload, which is only supported for restXml.", ex.Message);
+    }
+
     [Fact]
     public void Name_WithoutHttpBindings_Throws()
     {
@@ -161,6 +173,24 @@ public class GenerationContextTests
         Assert.DoesNotContain(context.Structures.Keys, id => id.Name is "SelectProgress" or "SelectEvents" or "RecordsEvent");
         Assert.Contains(context.Structures.Keys, id => id.Name == "NestedThing");
         Assert.DoesNotContain(context.Errors.Keys, id => id.Name == "SelectFailed");
+    }
+
+    // C2J still ships a flattened payload's class (S3's Delete, RestoreRequest), though nothing references it.
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public void FlattenedPayloadTarget_KeepsItsClassUnlessExcluded(bool excluded)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.FlattenShapes["GetPayloadResponse"] = ["details"];
+        if (excluded)
+        {
+            customizations.ExcludeShapes.Add("PayloadThing");
+        }
+
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        Assert.Equal(!excluded, context.Structures.Keys.Any(id => id.Name == "PayloadThing"));
     }
 
     [Fact]
