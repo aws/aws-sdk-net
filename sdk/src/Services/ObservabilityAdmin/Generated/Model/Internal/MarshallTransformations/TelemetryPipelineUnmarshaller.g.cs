@@ -67,10 +67,24 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ConfigurationSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = ConfigurationSummaryUnmarshaller.Instance;
+                    unmarshalledObject.ConfigurationSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("CreatedTimeStamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CreatedTimeStamp = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("LastRefreshTimeStamp", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.LastRefreshTimeStamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
@@ -85,6 +99,13 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SourceProgress", targetDepth, ref reader))
+                {
+                    var unmarshaller = SourceProgressUnmarshaller.Instance;
+                    unmarshalledObject.SourceProgress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

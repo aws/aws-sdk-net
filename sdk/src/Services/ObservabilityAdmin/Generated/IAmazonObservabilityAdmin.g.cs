@@ -127,6 +127,79 @@ namespace Amazon.ObservabilityAdmin
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a connector to a third-party cloud provider. With a connector, you can discover
+        /// resources in the provider and collect their telemetry. Currently, Microsoft Azure
+        /// is the only supported provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
+        /// <returns>The response from the CreateConnector service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
+        CreateConnectorResponse CreateConnector(CreateConnectorRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a connector to a third-party cloud provider. With a connector, you can discover
+        /// resources in the provider and collect their telemetry. Currently, Microsoft Azure
+        /// is the only supported provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateConnector service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
+        Task<CreateConnectorResponse> CreateConnectorAsync(CreateConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a dataset integration for the caller's account in the current region and returns
         /// its ARN.
         /// 
@@ -567,6 +640,73 @@ namespace Amazon.ObservabilityAdmin
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes a connector and its telemetry manifest.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnector service method.</param>
+        /// <returns>The response from the DeleteConnector service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InvalidStateException">
+        /// The requested operation cannot be completed on the specified resource in the current
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
+        DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a connector and its telemetry manifest.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteConnector service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InvalidStateException">
+        /// The requested operation cannot be completed on the specified resource in the current
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
+        Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes a dataset integration for the caller's account in the current region. This
         /// operation is idempotent; if you submit the same delete more than once, each call succeeds.
         /// </summary>
@@ -950,6 +1090,189 @@ namespace Amazon.ObservabilityAdmin
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetCentralizationRuleForOrganization">REST API Reference for GetCentralizationRuleForOrganization Operation</seealso>
         Task<GetCentralizationRuleForOrganizationResponse> GetCentralizationRuleForOrganizationAsync(GetCentralizationRuleForOrganizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the details of a connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnector service method.</param>
+        /// <returns>The response from the GetConnector service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetConnector">REST API Reference for GetConnector Operation</seealso>
+        GetConnectorResponse GetConnector(GetConnectorRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the details of a connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetConnector service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetConnector">REST API Reference for GetConnector Operation</seealso>
+        Task<GetConnectorResponse> GetConnectorAsync(GetConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the telemetry manifest of a connector and its current version. If the connector
+        /// has no telemetry manifest, this operation returns a <c>ResourceNotFoundException</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorTelemetryManifest service method.</param>
+        /// <returns>The response from the GetConnectorTelemetryManifest service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetConnectorTelemetryManifest">REST API Reference for GetConnectorTelemetryManifest Operation</seealso>
+        GetConnectorTelemetryManifestResponse GetConnectorTelemetryManifest(GetConnectorTelemetryManifestRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the telemetry manifest of a connector and its current version. If the connector
+        /// has no telemetry manifest, this operation returns a <c>ResourceNotFoundException</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorTelemetryManifest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetConnectorTelemetryManifest service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetConnectorTelemetryManifest">REST API Reference for GetConnectorTelemetryManifest Operation</seealso>
+        Task<GetConnectorTelemetryManifestResponse> GetConnectorTelemetryManifestAsync(GetConnectorTelemetryManifestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Generates the artifacts that you use to create the infrastructure in your cloud provider
+        /// that delivers the telemetry declared in the connector's telemetry manifest. This operation
+        /// doesn't change any resources in your cloud provider or in Amazon Web Services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorTelemetrySetup service method.</param>
+        /// <returns>The response from the GetConnectorTelemetrySetup service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetConnectorTelemetrySetup">REST API Reference for GetConnectorTelemetrySetup Operation</seealso>
+        GetConnectorTelemetrySetupResponse GetConnectorTelemetrySetup(GetConnectorTelemetrySetupRequest request);
+#endif
+
+        /// <summary>
+        /// Generates the artifacts that you use to create the infrastructure in your cloud provider
+        /// that delivers the telemetry declared in the connector's telemetry manifest. This operation
+        /// doesn't change any resources in your cloud provider or in Amazon Web Services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorTelemetrySetup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetConnectorTelemetrySetup service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetConnectorTelemetrySetup">REST API Reference for GetConnectorTelemetrySetup Operation</seealso>
+        Task<GetConnectorTelemetrySetupResponse> GetConnectorTelemetrySetupAsync(GetConnectorTelemetrySetupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1419,6 +1742,67 @@ namespace Amazon.ObservabilityAdmin
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the details of a third-party telemetry enrichment, including its status and
+        /// source configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetThirdPartyTelemetryEnrichment service method.</param>
+        /// <returns>The response from the GetThirdPartyTelemetryEnrichment service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetThirdPartyTelemetryEnrichment">REST API Reference for GetThirdPartyTelemetryEnrichment Operation</seealso>
+        GetThirdPartyTelemetryEnrichmentResponse GetThirdPartyTelemetryEnrichment(GetThirdPartyTelemetryEnrichmentRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the details of a third-party telemetry enrichment, including its status and
+        /// source configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetThirdPartyTelemetryEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetThirdPartyTelemetryEnrichment service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetThirdPartyTelemetryEnrichment">REST API Reference for GetThirdPartyTelemetryEnrichment Operation</seealso>
+        Task<GetThirdPartyTelemetryEnrichmentResponse> GetThirdPartyTelemetryEnrichmentAsync(GetThirdPartyTelemetryEnrichmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists all centralization rules in your organization. This operation can only be called
         /// by the organization's management account or a delegated administrator account.
         /// </summary>
@@ -1471,6 +1855,65 @@ namespace Amazon.ObservabilityAdmin
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListCentralizationRulesForOrganization">REST API Reference for ListCentralizationRulesForOrganization Operation</seealso>
         Task<ListCentralizationRulesForOrganizationResponse> ListCentralizationRulesForOrganizationAsync(ListCentralizationRulesForOrganizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the connectors in the account and Region. This operation returns results in
+        /// pages. To get the next page, pass the returned <c>NextToken</c> in the next call.
+        /// We recommend that you use pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors service method.</param>
+        /// <returns>The response from the ListConnectors service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        ListConnectorsResponse ListConnectors(ListConnectorsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the connectors in the account and Region. This operation returns results in
+        /// pages. To get the next page, pass the returned <c>NextToken</c> in the next call.
+        /// We recommend that you use pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListConnectors service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        Task<ListConnectorsResponse> ListConnectorsAsync(ListConnectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1639,6 +2082,73 @@ namespace Amazon.ObservabilityAdmin
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists resources in your cloud provider that the connector can access, such as management
+        /// groups, subscriptions, resource types, Regions, resources, and Event Hubs. Use the
+        /// results to build a telemetry manifest. This operation returns results in pages. To
+        /// get the next page, pass the returned <c>NextToken</c> in the next call. We recommend
+        /// that you use pagination to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourcesByConnector service method.</param>
+        /// <returns>The response from the ListResourcesByConnector service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListResourcesByConnector">REST API Reference for ListResourcesByConnector Operation</seealso>
+        ListResourcesByConnectorResponse ListResourcesByConnector(ListResourcesByConnectorRequest request);
+#endif
+
+        /// <summary>
+        /// Lists resources in your cloud provider that the connector can access, such as management
+        /// groups, subscriptions, resource types, Regions, resources, and Event Hubs. Use the
+        /// results to build a telemetry manifest. This operation returns results in pages. To
+        /// get the next page, pass the returned <c>NextToken</c> in the next call. We recommend
+        /// that you use pagination to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourcesByConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListResourcesByConnector service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListResourcesByConnector">REST API Reference for ListResourcesByConnector Operation</seealso>
+        Task<ListResourcesByConnectorResponse> ListResourcesByConnectorAsync(ListResourcesByConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists all S3 Table integrations in your account. We recommend using pagination to
         /// ensure that the operation returns quickly and successfully.
         /// </summary>
@@ -1694,8 +2204,8 @@ namespace Amazon.ObservabilityAdmin
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Lists all tags attached to the specified resource. Supports telemetry rule resources
-        /// and telemetry pipeline resources.
+        /// Lists all tags attached to the specified resource. Supports telemetry rule resources,
+        /// telemetry pipeline resources, and third-party telemetry enrichment resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <returns>The response from the ListTagsForResource service method, as returned by ObservabilityAdmin.</returns>
@@ -1723,8 +2233,8 @@ namespace Amazon.ObservabilityAdmin
 #endif
 
         /// <summary>
-        /// Lists all tags attached to the specified resource. Supports telemetry rule resources
-        /// and telemetry pipeline resources.
+        /// Lists all tags attached to the specified resource. Supports telemetry rule resources,
+        /// telemetry pipeline resources, and third-party telemetry enrichment resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1922,6 +2432,136 @@ namespace Amazon.ObservabilityAdmin
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns a summary of each third-party telemetry enrichment in your account and Region.
+        /// To get the full configuration of an enrichment, use <c>GetThirdPartyTelemetryEnrichment</c>.
+        /// The results are paginated. To get the next page of results, use <c>NextToken</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThirdPartyTelemetryEnrichments service method.</param>
+        /// <returns>The response from the ListThirdPartyTelemetryEnrichments service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListThirdPartyTelemetryEnrichments">REST API Reference for ListThirdPartyTelemetryEnrichments Operation</seealso>
+        ListThirdPartyTelemetryEnrichmentsResponse ListThirdPartyTelemetryEnrichments(ListThirdPartyTelemetryEnrichmentsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns a summary of each third-party telemetry enrichment in your account and Region.
+        /// To get the full configuration of an enrichment, use <c>GetThirdPartyTelemetryEnrichment</c>.
+        /// The results are paginated. To get the next page of results, use <c>NextToken</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThirdPartyTelemetryEnrichments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListThirdPartyTelemetryEnrichments service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListThirdPartyTelemetryEnrichments">REST API Reference for ListThirdPartyTelemetryEnrichments Operation</seealso>
+        Task<ListThirdPartyTelemetryEnrichmentsResponse> ListThirdPartyTelemetryEnrichmentsAsync(ListThirdPartyTelemetryEnrichmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates or replaces the telemetry manifest of a connector. The telemetry manifest
+        /// declares which resources in your cloud provider to collect telemetry from and which
+        /// telemetry types to collect. To avoid overwriting changes made by another caller, specify
+        /// <c>ExpectedVersion</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConnectorTelemetryManifest service method.</param>
+        /// <returns>The response from the PutConnectorTelemetryManifest service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/PutConnectorTelemetryManifest">REST API Reference for PutConnectorTelemetryManifest Operation</seealso>
+        PutConnectorTelemetryManifestResponse PutConnectorTelemetryManifest(PutConnectorTelemetryManifestRequest request);
+#endif
+
+        /// <summary>
+        /// Creates or replaces the telemetry manifest of a connector. The telemetry manifest
+        /// declares which resources in your cloud provider to collect telemetry from and which
+        /// telemetry types to collect. To avoid overwriting changes made by another caller, specify
+        /// <c>ExpectedVersion</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConnectorTelemetryManifest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutConnectorTelemetryManifest service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/PutConnectorTelemetryManifest">REST API Reference for PutConnectorTelemetryManifest Operation</seealso>
+        Task<PutConnectorTelemetryManifestResponse> PutConnectorTelemetryManifestAsync(PutConnectorTelemetryManifestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Enables the resource tags for telemetry feature for your account, which enhances
         /// telemetry data with additional resource metadata from Resource Explorer to provide
         /// richer context for monitoring and observability.
@@ -2088,6 +2728,184 @@ namespace Amazon.ObservabilityAdmin
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryEvaluationForOrganization">REST API Reference for StartTelemetryEvaluationForOrganization Operation</seealso>
         Task<StartTelemetryEvaluationForOrganizationResponse> StartTelemetryEvaluationForOrganizationAsync(StartTelemetryEvaluationForOrganizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Starts a refresh of an external-cloud telemetry pipeline. The refresh re-reads the
+        /// connector's telemetry manifest and re-discovers the sources in scope.
+        /// 
+        ///  
+        /// <para>
+        /// The pipeline must be in the <c>ACTIVE</c> or <c>UPDATE_FAILED</c> state, with no refresh
+        /// already running. You can use <c>GetTelemetryPipeline</c> to track the refresh.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTelemetryPipelineRefresh service method.</param>
+        /// <returns>The response from the StartTelemetryPipelineRefresh service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryPipelineRefresh">REST API Reference for StartTelemetryPipelineRefresh Operation</seealso>
+        StartTelemetryPipelineRefreshResponse StartTelemetryPipelineRefresh(StartTelemetryPipelineRefreshRequest request);
+#endif
+
+        /// <summary>
+        /// Starts a refresh of an external-cloud telemetry pipeline. The refresh re-reads the
+        /// connector's telemetry manifest and re-discovers the sources in scope.
+        /// 
+        ///  
+        /// <para>
+        /// The pipeline must be in the <c>ACTIVE</c> or <c>UPDATE_FAILED</c> state, with no refresh
+        /// already running. You can use <c>GetTelemetryPipeline</c> to track the refresh.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTelemetryPipelineRefresh service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartTelemetryPipelineRefresh service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryPipelineRefresh">REST API Reference for StartTelemetryPipelineRefresh Operation</seealso>
+        Task<StartTelemetryPipelineRefreshResponse> StartTelemetryPipelineRefreshAsync(StartTelemetryPipelineRefreshRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Starts a third-party telemetry enrichment. An enrichment adds resource metadata, such
+        /// as tags, from a third-party telemetry source to the telemetry that CloudWatch receives
+        /// from the resources of that source.
+        /// 
+        ///  
+        /// <para>
+        /// You specify an Amazon Web Services Config connector for your third-party environment,
+        /// such as a Microsoft Azure tenant. You can use each connector for only one enrichment.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>config:PutThirdPartyServiceLinkedConfigurationRecorder</c>
+        /// permission. If the Amazon Web Services Config service-linked role does not exist in
+        /// your account, you must also have the <c>iam:CreateServiceLinkedRole</c> permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartThirdPartyTelemetryEnrichment service method.</param>
+        /// <returns>The response from the StartThirdPartyTelemetryEnrichment service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartThirdPartyTelemetryEnrichment">REST API Reference for StartThirdPartyTelemetryEnrichment Operation</seealso>
+        StartThirdPartyTelemetryEnrichmentResponse StartThirdPartyTelemetryEnrichment(StartThirdPartyTelemetryEnrichmentRequest request);
+#endif
+
+        /// <summary>
+        /// Starts a third-party telemetry enrichment. An enrichment adds resource metadata, such
+        /// as tags, from a third-party telemetry source to the telemetry that CloudWatch receives
+        /// from the resources of that source.
+        /// 
+        ///  
+        /// <para>
+        /// You specify an Amazon Web Services Config connector for your third-party environment,
+        /// such as a Microsoft Azure tenant. You can use each connector for only one enrichment.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>config:PutThirdPartyServiceLinkedConfigurationRecorder</c>
+        /// permission. If the Amazon Web Services Config service-linked role does not exist in
+        /// your account, you must also have the <c>iam:CreateServiceLinkedRole</c> permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartThirdPartyTelemetryEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartThirdPartyTelemetryEnrichment service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartThirdPartyTelemetryEnrichment">REST API Reference for StartThirdPartyTelemetryEnrichment Operation</seealso>
+        Task<StartThirdPartyTelemetryEnrichmentResponse> StartThirdPartyTelemetryEnrichmentAsync(StartThirdPartyTelemetryEnrichmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -2258,8 +3076,89 @@ namespace Amazon.ObservabilityAdmin
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Adds or updates tags for a resource. Supports telemetry rule resources and telemetry
-        /// pipeline resources.
+        /// Stops a third-party telemetry enrichment. CloudWatch stops adding resource metadata
+        /// from the third-party telemetry source to your telemetry.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>config:DeleteServiceLinkedConfigurationRecorder</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopThirdPartyTelemetryEnrichment service method.</param>
+        /// <returns>The response from the StopThirdPartyTelemetryEnrichment service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StopThirdPartyTelemetryEnrichment">REST API Reference for StopThirdPartyTelemetryEnrichment Operation</seealso>
+        StopThirdPartyTelemetryEnrichmentResponse StopThirdPartyTelemetryEnrichment(StopThirdPartyTelemetryEnrichmentRequest request);
+#endif
+
+        /// <summary>
+        /// Stops a third-party telemetry enrichment. CloudWatch stops adding resource metadata
+        /// from the third-party telemetry source to your telemetry.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>config:DeleteServiceLinkedConfigurationRecorder</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopThirdPartyTelemetryEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StopThirdPartyTelemetryEnrichment service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StopThirdPartyTelemetryEnrichment">REST API Reference for StopThirdPartyTelemetryEnrichment Operation</seealso>
+        Task<StopThirdPartyTelemetryEnrichmentResponse> StopThirdPartyTelemetryEnrichmentAsync(StopThirdPartyTelemetryEnrichmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Adds or updates tags for a resource. Supports telemetry rule resources, telemetry
+        /// pipeline resources, and third-party telemetry enrichment resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <returns>The response from the TagResource service method, as returned by ObservabilityAdmin.</returns>
@@ -2291,8 +3190,8 @@ namespace Amazon.ObservabilityAdmin
 #endif
 
         /// <summary>
-        /// Adds or updates tags for a resource. Supports telemetry rule resources and telemetry
-        /// pipeline resources.
+        /// Adds or updates tags for a resource. Supports telemetry rule resources, telemetry
+        /// pipeline resources, and third-party telemetry enrichment resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2382,8 +3281,8 @@ namespace Amazon.ObservabilityAdmin
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Removes tags from a resource. Supports telemetry rule resources and telemetry pipeline
-        /// resources.
+        /// Removes tags from a resource. Supports telemetry rule resources, telemetry pipeline
+        /// resources, and third-party telemetry enrichment resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <returns>The response from the UntagResource service method, as returned by ObservabilityAdmin.</returns>
@@ -2411,8 +3310,8 @@ namespace Amazon.ObservabilityAdmin
 #endif
 
         /// <summary>
-        /// Removes tags from a resource. Supports telemetry rule resources and telemetry pipeline
-        /// resources.
+        /// Removes tags from a resource. Supports telemetry rule resources, telemetry pipeline
+        /// resources, and third-party telemetry enrichment resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

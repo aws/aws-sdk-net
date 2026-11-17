@@ -31,7 +31,8 @@ namespace Amazon.ObservabilityAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation. Removes tags from a resource.
-    /// Supports telemetry rule resources and telemetry pipeline resources.
+    /// Supports telemetry rule resources, telemetry pipeline resources, and third-party telemetry
+    /// enrichment resources.
     /// </summary>
     public partial class UntagResourceRequest : AmazonObservabilityAdminRequest
     {

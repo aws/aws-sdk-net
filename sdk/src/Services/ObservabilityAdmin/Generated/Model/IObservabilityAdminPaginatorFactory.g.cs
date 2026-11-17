@@ -39,6 +39,12 @@ namespace Amazon.ObservabilityAdmin.Model
         IListCentralizationRulesForOrganizationPaginator ListCentralizationRulesForOrganization(ListCentralizationRulesForOrganizationRequest request);
 
         /// <summary>
+        /// Paginator for ListConnectors operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListConnectorsPaginator ListConnectors(ListConnectorsRequest request);
+
+        /// <summary>
         /// Paginator for ListDatasetIntegrations operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -79,5 +85,11 @@ namespace Amazon.ObservabilityAdmin.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListTelemetryRulesForOrganizationPaginator ListTelemetryRulesForOrganization(ListTelemetryRulesForOrganizationRequest request);
+
+        /// <summary>
+        /// Paginator for ListThirdPartyTelemetryEnrichments operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListThirdPartyTelemetryEnrichmentsPaginator ListThirdPartyTelemetryEnrichments(ListThirdPartyTelemetryEnrichmentsRequest request);
     }
 }
