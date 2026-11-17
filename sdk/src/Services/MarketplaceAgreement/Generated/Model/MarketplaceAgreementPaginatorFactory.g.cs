@@ -41,11 +41,35 @@ namespace Amazon.MarketplaceAgreement.Model
         }
 
         /// <summary>
+        /// Paginator for GetAgreementRequestApprovalPlans operation
+        /// </summary>
+        public IGetAgreementRequestApprovalPlansPaginator GetAgreementRequestApprovalPlans(GetAgreementRequestApprovalPlansRequest request)
+        {
+            return new GetAgreementRequestApprovalPlansPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetAgreementRequestTerms operation
+        /// </summary>
+        public IGetAgreementRequestTermsPaginator GetAgreementRequestTerms(GetAgreementRequestTermsRequest request)
+        {
+            return new GetAgreementRequestTermsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetAgreementTerms operation
         /// </summary>
         public IGetAgreementTermsPaginator GetAgreementTerms(GetAgreementTermsRequest request)
         {
             return new GetAgreementTermsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgreementApprovals operation
+        /// </summary>
+        public IListAgreementApprovalsPaginator ListAgreementApprovals(ListAgreementApprovalsRequest request)
+        {
+            return new ListAgreementApprovalsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -78,6 +102,14 @@ namespace Amazon.MarketplaceAgreement.Model
         public IListAgreementPaymentRequestsPaginator ListAgreementPaymentRequests(ListAgreementPaymentRequestsRequest request)
         {
             return new ListAgreementPaymentRequestsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgreementRequests operation
+        /// </summary>
+        public IListAgreementRequestsPaginator ListAgreementRequests(ListAgreementRequestsRequest request)
+        {
+            return new ListAgreementRequestsPaginator(this.client, request);
         }
 
         /// <summary>

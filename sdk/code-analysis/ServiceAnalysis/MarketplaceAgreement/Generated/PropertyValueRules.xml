@@ -181,6 +181,12 @@
     <pattern>^pr-[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.CancelAgreementRequestRequest.AgreementRequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^ar-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.CreateAgreementRequestRequest.AgreementProposalIdentifier</property>
     <min>1</min>
     <max>64</max>
@@ -205,6 +211,12 @@
     <pattern>^ar-[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.CreateAgreementRequestResponse.AgreementType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.DescribeAgreementRequest.AgreementId</property>
     <min>1</min>
     <max>64</max>
@@ -227,6 +239,12 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[A-Za-z0-9_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementApprovalRequest.AgreementApprovalId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^apr-[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.GetAgreementCancellationRequestRequest.AgreementCancellationRequestId</property>
@@ -261,6 +279,12 @@
     <property>Amazon.MarketplaceAgreement.Model.GetAgreementCancellationRequestResponse.StatusMessage</property>
     <min>1</min>
     <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementContactsRequest.AgreementId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.GetAgreementEntitlementsRequest.AgreementId</property>
@@ -335,6 +359,72 @@
     <pattern>^pr-[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementRequestRequest.AgreementRequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^ar-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementRequestResponse.AgreementId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementRequestResponse.AgreementRequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^ar-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementRequestResponse.AgreementType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementRequestApprovalPlansRequest.AgreementRequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^ar-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementRequestApprovalPlansRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementRequestApprovalPlansRequest.NextToken</property>
+    <max>8192</max>
+    <pattern>^[a-zA-Z0-9+/=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementRequestApprovalPlansResponse.NextToken</property>
+    <max>8192</max>
+    <pattern>^[a-zA-Z0-9+/=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementRequestTermsRequest.AgreementRequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^ar-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementRequestTermsRequest.MaxResults</property>
+    <min>10</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementRequestTermsRequest.NextToken</property>
+    <max>8192</max>
+    <pattern>^[a-zA-Z0-9+/=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.GetAgreementRequestTermsResponse.NextToken</property>
+    <max>8192</max>
+    <pattern>^[a-zA-Z0-9+/=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.GetAgreementTermsRequest.AgreementId</property>
     <min>1</min>
     <max>64</max>
@@ -397,6 +487,33 @@
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.GetBillingAdjustmentRequestResponse.StatusMessage</property>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ListAgreementApprovalsRequest.AgreementRequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^ar-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ListAgreementApprovalsRequest.Catalog</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ListAgreementApprovalsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ListAgreementApprovalsRequest.NextToken</property>
+    <max>8192</max>
+    <pattern>^[a-zA-Z0-9+/=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ListAgreementApprovalsResponse.NextToken</property>
+    <max>8192</max>
+    <pattern>^[a-zA-Z0-9+/=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ListAgreementCancellationRequestsRequest.AgreementId</property>
@@ -533,6 +650,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ListAgreementPaymentRequestsResponse.NextToken</property>
+    <max>8192</max>
+    <pattern>^[a-zA-Z0-9+/=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ListAgreementRequestsRequest.Catalog</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ListAgreementRequestsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ListAgreementRequestsRequest.NextToken</property>
+    <max>8192</max>
+    <pattern>^[a-zA-Z0-9+/=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ListAgreementRequestsRequest.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ListAgreementRequestsResponse.NextToken</property>
     <max>8192</max>
     <pattern>^[a-zA-Z0-9+/=_-]+$</pattern>
   </property-value-rule>
@@ -780,16 +924,131 @@
     <pattern>^pr-[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.StartAgreementApprovalsRequest.AgreementRequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^ar-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Acceptor.AccountId</property>
     <min>12</min>
     <max>12</max>
     <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AcceptorContact.CompanyName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AcceptorContact.CountryCode</property>
+    <pattern>^[A-Z]{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AcceptorContact.EmailAddress</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AcceptorContact.FirstName</property>
+    <min>1</min>
+    <max>80</max>
+    <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AcceptorContact.LastName</property>
+    <min>1</min>
+    <max>80</max>
+    <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.AccessDeniedException.RequestId</property>
     <min>1</min>
     <max>128</max>
     <pattern>^[A-Za-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalProposalSummary.OfferId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^\S{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalProposalSummary.OfferSetId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalProposer.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalProposer.LegalName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[^\p{C}]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalPurchaseOrder.ChargeId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^ch-[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalPurchaseOrder.PurchaseOrderReference</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalRequester.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalResource.DeployedOnAws</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalResource.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalResource.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[^\p{C}]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalResource.Type</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalSummary.AgreementApprovalId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^apr-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalSummary.AgreementRequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^ar-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementApprovalSummary.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(.)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.AgreementCancellationRequestSummary.AgreementCancellationRequestId</property>
@@ -846,6 +1105,24 @@
     <pattern>^[A-Za-z0-9_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementRequestSummary.AgreementId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementRequestSummary.AgreementRequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^ar-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AgreementRequestSummary.AgreementType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.AgreementViewSummary.AgreementId</property>
     <min>1</min>
     <max>64</max>
@@ -862,6 +1139,23 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[A-Za-z0-9_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AwsOrganizationAdminApprover.OrganizationId</property>
+    <min>12</min>
+    <max>34</max>
+    <pattern>^o-[a-z0-9]{10,32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AwsOrganizationApproverOutcome.ApproverOutcomeId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^aprout-[A-Za-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.AwsOrganizationApproverOutcome.Note</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.BatchCreateBillingAdjustmentError.ClientToken</property>
@@ -953,6 +1247,93 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApproval.AgreementApprovalId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^apr-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApproval.AgreementRequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^ar-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApproval.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApprovalApproverInput.AgreementApprovalId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^apr-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApprovalApproverInput.ApproverOutcomeIdToOverride</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^aprout-[A-Za-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApprovalApproverInput.Note</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApprovalLevel.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApprovalPlan.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApprovalPlan.PlanReference</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^aplan-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApprovalPlanInput.PlanReference</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^aplan-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApprovalPlanInput.RequesterNote</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApprovalPlanLevel.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApprovalRejectionInput.AgreementApprovalId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^apr-[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApprovalRejectionInput.ApproverOutcomeIdToOverride</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^aprout-[A-Za-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.BuyerAgreementApprovalRejectionInput.Note</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ByolPricingTerm.Id</property>
     <min>1</min>
     <max>256</max>
@@ -963,6 +1344,12 @@
     <min>1</min>
     <max>4096</max>
     <pattern>^[A-Za-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.CallerIdentity.PrincipalArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[^:]+:[^:]+:[^:]*:[^:]*:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Charge.AgreementId</property>
@@ -1097,6 +1484,39 @@
     <pattern>^(.)+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.EmailApprover.EmailAddress</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.EmailApprover.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.EmailApproverOutcome.ApproverOutcomeId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^aprout-[A-Za-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.EmailApproverOutcome.EmailAddress</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.EmailApproverOutcome.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.EmailApproverOutcome.Note</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.EstimatedCharges.AgreementValue</property>
     <min>1</min>
     <max>4096</max>
@@ -1131,6 +1551,10 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[A-Za-z0-9_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ExpectedCharge.PurchaseOrderReference</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Filter.Name</property>
@@ -1382,6 +1806,27 @@
     <min>1</min>
     <max>4096</max>
     <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ProcurementToolApprover.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ProcurementToolApproverOutcome.ApproverOutcomeId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^aprout-[A-Za-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ProcurementToolApproverOutcome.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ProcurementToolApproverOutcome.Note</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ProposalSummary.OfferId</property>

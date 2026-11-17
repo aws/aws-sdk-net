@@ -61,9 +61,33 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "agreementType":
+                        context.AddPathSegment("AgreementType");
+                        unmarshalledObject.AgreementType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "approvalRequirement":
+                        context.AddPathSegment("ApprovalRequirement");
+                        unmarshalledObject.ApprovalRequirement = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "chargeSummary":
                         context.AddPathSegment("ChargeSummary");
                         unmarshalledObject.ChargeSummary = ChargeSummaryUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "createdAt":
+                        context.AddPathSegment("CreatedAt");
+                        unmarshalledObject.CreatedAt = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "status":
+                        context.AddPathSegment("Status");
+                        unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);
                         context.PopPathSegment();
                         break;
 

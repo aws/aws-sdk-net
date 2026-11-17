@@ -67,6 +67,16 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
             {
                 writer.WriteStartMap(null);
                 var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAcceptorContact())
+                {
+                    context.Writer.WriteTextString("acceptorContact");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = AcceptorContactMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AcceptorContact, context);
+
+                    context.Writer.WriteEndMap();
+                }
                 if (publicRequest.IsSetAgreementProposalIdentifier())
                 {
                     context.Writer.WriteTextString("agreementProposalIdentifier");

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
-    /// Defines a short-term free pricing model where the buyers aren’t charged anything within
+    /// Defines a short-term free pricing model where the buyers aren't charged anything within
     /// a specified limit.
     /// </summary>
     public partial class FreeTrialPricingTerm

@@ -51,7 +51,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The 3-letter ISO 4217 currency code (e.g., <c>USD</c>, <c>EUR</c>, <c>JPY</c>).
+        /// The 3-letter ISO 4217 currency code (for example, <c>USD</c>, <c>EUR</c>, <c>JPY</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min = 3, Max = 3)]

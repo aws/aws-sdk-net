@@ -61,7 +61,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The three-letter currency code for all charges (e.g., USD).
+        /// The three-letter currency code for all charges (for example, USD).
         /// </para>
         /// </summary>
         [AWSProperty(Min = 3, Max = 3)]
