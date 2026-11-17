@@ -78,6 +78,17 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if (requestObject.IsSetSourceDriftStatuses())
+            {
+                context.Writer.WritePropertyName("sourceDriftStatuses");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectSourceDriftStatusesListValue in requestObject.SourceDriftStatuses)
+                {
+                    context.Writer.WriteStringValue(requestObjectSourceDriftStatusesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if (requestObject.IsSetStatuses())
             {
                 context.Writer.WritePropertyName("statuses");
