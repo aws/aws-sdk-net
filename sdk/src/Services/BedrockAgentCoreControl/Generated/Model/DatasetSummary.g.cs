@@ -131,12 +131,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetExampleCount() => this.ExampleCount.HasValue;
 
         /// <summary>
+        /// Gets and sets the property ExampleCountByField. 
+        /// <para>
+        ///  The number of examples that have each field, for the DRAFT. Absent when the counts
+        /// are unknown. 
+        /// </para>
+        /// </summary>
+        public ExampleCountByField ExampleCountByField { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExampleCountByField property is set.
+        /// </summary>
+        internal bool IsSetExampleCountByField() => this.ExampleCountByField != null;
+
+        /// <summary>
         /// Gets and sets the property SchemaType. 
         /// <para>
         ///  The schema type of the dataset. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public DatasetSchemaType SchemaType { get; set; }
 
         /// <summary>

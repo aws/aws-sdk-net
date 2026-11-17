@@ -51,6 +51,19 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetDatasetId() => this.DatasetId != null;
 
         /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        ///  A filter to apply to the dataset versions. 
+        /// </para>
+        /// </summary>
+        public ListDatasetVersionsFilter Filter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Filter property is set.
+        /// </summary>
+        internal bool IsSetFilter() => this.Filter != null;
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         ///  The maximum number of versions to return per page. 
@@ -70,6 +83,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         ///  The token for the next page of results. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max = 2048)]
         public string NextToken { get; set; }
 
         /// <summary>

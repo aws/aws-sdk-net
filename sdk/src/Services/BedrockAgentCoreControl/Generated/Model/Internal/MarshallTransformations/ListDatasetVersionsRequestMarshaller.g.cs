@@ -54,18 +54,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDatasetVersionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.BedrockAgentCoreControl");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-06-05";
-            request.HttpMethod = "GET";
-
-            if (publicRequest.IsSetMaxResults())
-            {
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults.Value));
-            }
-
-            if (publicRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            }
+            request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetDatasetId())
             {
@@ -73,9 +64,42 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             }
             request.AddPathResource("{datasetId}", StringUtils.FromString(publicRequest.DatasetId));
 
-            request.ResourcePath = "/datasets/{datasetId}/versions";
+            request.ResourcePath = "/datasets/{datasetId}/versions/list";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetFilter())
+            {
+                context.Writer.WritePropertyName("filter");
+                context.Writer.WriteStartObject();
 
-            request.UseQueryString = true;
+                var marshaller = ListDatasetVersionsFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Filter, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+            if (publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
 
             return request;
         }
