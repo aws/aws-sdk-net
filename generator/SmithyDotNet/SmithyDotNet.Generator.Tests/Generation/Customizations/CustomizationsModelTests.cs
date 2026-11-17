@@ -80,13 +80,17 @@ public class CustomizationsModelTests
     {
         var model = LoadFiles("""
             { "service": { "skipClientContextParams": ["UseArnRegion"], "skipDocSamples": true, "requestBaseClass": "AmazonWebServiceRequest", "streamingResponseBaseClass": "StreamResponse",
-              "customErrorHandling": { "responseUnmarshallerBaseClass": "S3ReponseUnmarshaller", "errorResponseType": "S3ErrorResponse", "exceptionFactory": "ConstructS3Exception" } } }
+              "customErrorHandling": { "responseUnmarshallerBaseClass": "S3ReponseUnmarshaller", "errorResponseType": "S3ErrorResponse", "exceptionFactory": "ConstructS3Exception" }, "clientDisposeMethod": "DisposeS3ExpressCredentialProvider", "retryPolicyRequestList": true, "customPropertyValueRules": true, "endpointResolverPartial": true } }
             """);
         Assert.Equal(["UseArnRegion"], model.Service?.SkipClientContextParams);
         Assert.True(model.Service?.SkipDocSamples);
         Assert.Equal("AmazonWebServiceRequest", model.Service?.RequestBaseClass);
         Assert.Equal("StreamResponse", model.Service?.StreamingResponseBaseClass);
         Assert.Equal(TestCustomizations.ErrorHandling().CustomErrorHandling, model.Service?.CustomErrorHandling);
+        Assert.Equal("DisposeS3ExpressCredentialProvider", model.Service?.ClientDisposeMethod);
+        Assert.True(model.Service?.RetryPolicyRequestList);
+        Assert.True(model.Service?.CustomPropertyValueRules);
+        Assert.True(model.Service?.EndpointResolverPartial);
     }
 
     // Each part only works with the others, so a partial set fails at load, not in the generated code.

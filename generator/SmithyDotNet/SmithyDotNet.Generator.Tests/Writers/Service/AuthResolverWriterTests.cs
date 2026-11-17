@@ -29,6 +29,7 @@ public class AuthResolverWriterTests
     private static readonly string EventBridgeOutput = Write("eventbridge-model.json", "eventbridge-2015-10-07.normal.json", new ServiceMetadata { EndpointResolvesAuth = true });
     private static readonly string SimpleDbOutput = Write("simpledb-model.json", "sdb-2009-04-15.normal.json", new ServiceMetadata { SignatureVersion = SignatureVersion.V2 });
     private static readonly string S3ControlOutput = Write("s3control-model.json", "s3control-2018-08-20.normal.json", new ServiceMetadata { SignatureVersion = SignatureVersion.S3V4 });
+    private static readonly string SignatureVersionS3Output = Write("s3control-model.json", "s3control-2018-08-20.normal.json", new ServiceMetadata { SignatureVersion = SignatureVersion.S3 });
 
     private static readonly string[] CognitoNoAuthRequestNames =
     [
@@ -217,6 +218,12 @@ public class AuthResolverWriterTests
             """, EmptyAuthOutput);
         Assert.Contains("_ => AuthSchemeOption.DEFAULT_NOAUTH,", EmptyAuthOutput);
         Assert.DoesNotContain("new List<IAuthSchemeOption>", EmptyAuthOutput);
+    }
+
+    [Fact]
+    public void SignatureVersionS3_OverridesSignerWithQualifiedS3Signer()
+    {
+        Assert.Contains("return new Amazon.S3.Internal.S3Signer();", SignatureVersionS3Output);
     }
 
     [Fact]

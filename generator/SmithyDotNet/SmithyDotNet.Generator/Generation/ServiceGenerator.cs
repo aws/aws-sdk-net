@@ -205,6 +205,14 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             Emit(Path.Combine(generated, $"{clientName}Exception.g.cs"), exceptionWriter.WriteServiceException(cancellationToken));
         }
 
+        if (context.Customizations.Service?.RetryPolicyRequestList == true)
+        {
+            // Sits at the top of Generated/ rather than Generated/Internal/ despite its namespace,
+            // because that is where the shipped file lives.
+            var retryPolicyWriter = new RetryPolicyWriter(context, modelFileName);
+            Emit(Path.Combine(generated, $"{clientName}RetryPolicy.g.cs"), retryPolicyWriter.Write(cancellationToken));
+        }
+
         if (context.ResponseEventStreams.Count > 0)
         {
             var eventStreamExceptionWriter = new EventStreamExceptionWriter(context, modelFileName);

@@ -11,5 +11,6 @@
   ],
   "base-name": "S3",
   "legacy-service-id": "S3",
-  "endpoint-resolves-auth": true
+  "endpoint-resolves-auth": true,
+  "signature-version": "S3"
 }

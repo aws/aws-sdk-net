@@ -138,6 +138,24 @@ public class GenerationContextTests
     }
 
     [Fact]
+    public void EndpointResolverPartial_WithoutEndpointRuleSet_Throws()
+    {
+        var customizations = new CustomizationsModel { Service = new ServiceCustomizations { EndpointResolverPartial = true } };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/codegen-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("service.endpointResolverPartial needs an endpoint rule set", ex.Message);
+    }
+
+    [Fact]
+    public void EmptyClientDisposeMethod_Throws()
+    {
+        var customizations = new CustomizationsModel { Service = new ServiceCustomizations { ClientDisposeMethod = "" } };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/codegen-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("service.clientDisposeMethod is empty", ex.Message);
+    }
+
+    [Fact]
     public void Name_WithoutHttpBindings_Throws()
     {
         var customizations = new CustomizationsModel();

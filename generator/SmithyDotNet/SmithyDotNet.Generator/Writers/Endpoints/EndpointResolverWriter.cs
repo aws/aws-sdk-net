@@ -70,7 +70,7 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
             writer.WriteLine("/// <para />");
             writer.WriteLine("/// Responsible for setting authentication and HTTP headers provided by resolved endpoint.");
             writer.WriteLine("/// </summary>");
-            writer.OpenBlock($"public class {className} : BaseEndpointResolver", () =>
+            writer.OpenBlock($"public {(AllowsPartial ? "partial " : "")}class {className} : BaseEndpointResolver", () =>
             {
                 WriteServiceSpecificHandler(writer);
                 writer.WriteLine();
@@ -81,12 +81,25 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
         return writer.ToFormattedString(cancellationToken);
     }
 
-    private static void WriteServiceSpecificHandler(CodeWriter writer)
+    // The hooks are private partial methods, so the hand-written half must implement them: a missing or
+    // misnamed file fails to compile instead of silently dropping S3's SigV2/KMS and presigned/ACL handling.
+    private bool AllowsPartial => context.Customizations.Service?.EndpointResolverPartial == true;
+
+    private void WriteServiceSpecificHandler(CodeWriter writer)
     {
         writer.OpenBlock("protected override void ServiceSpecificHandler(IExecutionContext executionContext, EndpointParameters parameters)", () =>
         {
+            if (AllowsPartial)
+            {
+                writer.WriteLine("BeforeInjectHostPrefix(executionContext, parameters);");
+            }
             writer.WriteLine("InjectHostPrefix(executionContext.RequestContext);");
         });
+        if (AllowsPartial)
+        {
+            writer.WriteLine();
+            writer.WriteLine("private partial void BeforeInjectHostPrefix(IExecutionContext executionContext, EndpointParameters parameters);");
+        }
     }
 
     private void WriteMapEndpointsParameters(CodeWriter writer, EndpointRuleSet ruleSet, string parametersName)
@@ -120,6 +133,12 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
                 WriteRegionFromServiceUrl(writer);
             }
 
+            if (AllowsPartial)
+            {
+                writer.WriteLine();
+                writer.OpenBlock("if (TryMapNonGeneratedRequest(requestContext, result))", () => writer.WriteLine("return result;"));
+            }
+
             // The comment is emitted only alongside real blocks. C2J emits it unconditionally, but it's
             // a comment, and emitting it for every service would churn every already-migrated resolver.
             if (context.OperationEndpointContexts.Count > 0)
@@ -135,6 +154,14 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
             writer.WriteLine();
             writer.WriteLine("return result;");
         });
+
+        if (AllowsPartial)
+        {
+            // Typed to the concrete parameters class so the partial can assign its properties
+            // (S3 sets Bucket and UseS3ExpressControlEndpoint); the base class declares none.
+            writer.WriteLine();
+            writer.WriteLine($"private partial bool TryMapNonGeneratedRequest(IRequestContext requestContext, {parametersName} result);");
+        }
     }
 
     private static string BuiltInSource(string builtIn) =>

@@ -29,32 +29,33 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
         {
             writer.WriteStartElement("property-value-rules");
 
-            // The legacy generator skips S3 entirely here (it hand-maintains its own rules). S3 isn't
-            // onboarded to the Smithy path yet; revisit this carve-out when it is.
-
-            // Input/output structures are named after the generated request/response classes, not
-            // their modeled shape names, so they're emitted here and skipped in the sorted walk below.
-            var requestAndResponseShapes = new HashSet<ShapeId>();
-            foreach (var operation in context.GeneratedOperations)
+            // S3 hand-maintains its rules in Custom/PropertyValueRules.xml; the generated file stays empty.
+            if (context.Customizations.Service?.CustomPropertyValueRules != true)
             {
-                cancellationToken.ThrowIfCancellationRequested();
-                WriteShapeRules(writer, $"{operation.Name}Request", operation.Input);
-                WriteShapeRules(writer, $"{operation.Name}Response", operation.Output);
-                requestAndResponseShapes.Add(operation.Shape.Input);
-                requestAndResponseShapes.Add(operation.Shape.Output);
-            }
-
-            foreach (var (shapeId, structure) in context.Structures.Concat(context.Errors).OrderBy(kvp => kvp.Key.Name, StringComparer.Ordinal))
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-                if (requestAndResponseShapes.Contains(shapeId))
+                // Input/output structures are named after the generated request/response classes, not
+                // their modeled shape names, so they're emitted here and skipped in the sorted walk below.
+                var requestAndResponseShapes = new HashSet<ShapeId>();
+                foreach (var operation in context.GeneratedOperations)
                 {
-                    continue;
+                    cancellationToken.ThrowIfCancellationRequested();
+                    WriteShapeRules(writer, $"{operation.Name}Request", operation.Input);
+                    WriteShapeRules(writer, $"{operation.Name}Response", operation.Output);
+                    requestAndResponseShapes.Add(operation.Shape.Input);
+                    requestAndResponseShapes.Add(operation.Shape.Output);
                 }
 
-                // An error shape's rules go under its generated exception class name.
-                var name = context.ToDotNetName(shapeId);
-                WriteShapeRules(writer, structure.IsError() ? ExceptionWriter.ToExceptionName(name) : name, structure);
+                foreach (var (shapeId, structure) in context.Structures.Concat(context.Errors).OrderBy(kvp => kvp.Key.Name, StringComparer.Ordinal))
+                {
+                    cancellationToken.ThrowIfCancellationRequested();
+                    if (requestAndResponseShapes.Contains(shapeId))
+                    {
+                        continue;
+                    }
+
+                    // An error shape's rules go under its generated exception class name.
+                    var name = context.ToDotNetName(shapeId);
+                    WriteShapeRules(writer, structure.IsError() ? ExceptionWriter.ToExceptionName(name) : name, structure);
+                }
             }
 
             writer.WriteEndElement();

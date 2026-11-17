@@ -278,6 +278,15 @@ public class GenerationContext
 
         EndpointRuleSet = index.Service.GetEndpointRuleSet();
         HasEndpointRuleSet = EndpointRuleSet is not null;
+        if (Customizations.Service?.EndpointResolverPartial == true && !HasEndpointRuleSet)
+        {
+            throw new GeneratorException("service.endpointResolverPartial needs an endpoint rule set; the service has no endpoint resolver to make partial.");
+        }
+
+        if (Customizations.Service?.ClientDisposeMethod is { } disposeMethod && string.IsNullOrWhiteSpace(disposeMethod))
+        {
+            throw new GeneratorException("service.clientDisposeMethod is empty; name the method Dispose(bool) should call.");
+        }
         ClientContextParameters = EndpointContextResolver.ResolveClientParameters(index, Customizations);
 
         EndpointTests = index.Service.GetEndpointTests();

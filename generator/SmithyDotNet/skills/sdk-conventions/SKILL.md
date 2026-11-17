@@ -355,11 +355,23 @@ nothing targets it.
 - `operationModifiers.{Operation}.stopPaginationOnSameToken` stops on a repeated token (CloudWatch Logs `GetLogEvents`).
 - `operationModifiers.{Operation}.skipChecksumDuringMarshalling` drops the marshaller's checksum call (S3 `PutObject`,
   `UploadPart`).
-- The Smithy-only `service` section (one file per service) replaces C2J's `ServiceId == "S3"` branches:
-  `skipClientContextParams` keeps the listed params out of the generated config (hand-written for S3, S3 Control; an
-  unmodeled name fails), `skipDocSamples` emits none, `requestBaseClass` and `streamingResponseBaseClass` replace
-  the generated bases (see Base Types), and `customErrorHandling` replaces the error handling and leaves the service
-  exception to hand-written code (see marshalling → restXml).
+- The Smithy-only `service` section (one file per service) replaces C2J's `ServiceId == "S3"` branches. Each key names
+  something S3 supplies by hand:
+  - `skipClientContextParams`: the listed params stay out of the generated config (hand-written for S3, S3 Control; an
+    unmodeled name fails).
+  - `skipDocSamples`: no doc samples.
+  - `requestBaseClass`, `streamingResponseBaseClass`: replace the generated bases (see Base Types).
+  - `customErrorHandling`: replaces the error handling and skips the generated service exception (see marshalling →
+    restXml).
+  - `clientDisposeMethod`: the client's `Dispose(bool)` calls it inside `if (disposing)`, before the base call. Empty fails.
+  - `retryPolicyRequestList`: emits `Amazon{BaseName}RetryPolicy` with the 200-error request list, which excludes only
+    operations whose output has a `@streaming` blob (`RetryPolicyWriter` says why that matches shipped S3).
+  - `customPropertyValueRules`: `Generated/PropertyValueRules.xml` stays empty and the code-analysis project also embeds
+    `Custom/PropertyValueRules.xml`.
+  - `endpointResolverPartial`: the endpoint resolver is `partial` and declares `private partial` hooks the hand-written
+    half must implement, so a missing file fails to compile: `BeforeInjectHostPrefix` (S3's SigV2/KMS tweaks) and
+    `TryMapNonGeneratedRequest` (maps presigned/ACL requests and returns early, ahead of the per-operation blocks).
+    Needs an endpoint rule set, else generation fails.
 
 Three convenience hooks add hand-picked public members, read from `GenerationContext.Customizations` (not folded into the
 model). A form names members by C# property name (case-insensitive); a stale operation/class/member reference fails

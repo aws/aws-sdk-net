@@ -455,6 +455,33 @@ public sealed record ServiceCustomizations
     /// </summary>
     [JsonPropertyName("customErrorHandling")]
     public CustomErrorHandling? CustomErrorHandling { get; init; }
+
+    /// <summary>
+    /// Instance method the client's <c>Dispose(bool)</c> calls when <c>disposing</c>, before the base call
+    /// (S3's <c>DisposeS3ExpressCredentialProvider</c>). Unlike the model-keyed hooks, a stale name here can't be
+    /// validated — it resolves against hand-written code, so a typo surfaces as a compile error in the SDK.
+    /// </summary>
+    [JsonPropertyName("clientDisposeMethod")]
+    public string? ClientDisposeMethod { get; init; }
+
+    /// <summary>Emit <c>Amazon{BaseName}RetryPolicy</c> with the <c>RequestsWith200Error</c> list; only S3 consumes this today.</summary>
+    [JsonPropertyName("retryPolicyRequestList")]
+    public bool RetryPolicyRequestList { get; init; }
+
+    /// <summary>
+    /// Emit an empty <c>Generated/PropertyValueRules.xml</c> and also embed <c>Custom/PropertyValueRules.xml</c>
+    /// in the code-analysis project (S3's rules are hand-maintained).
+    /// </summary>
+    [JsonPropertyName("customPropertyValueRules")]
+    public bool CustomPropertyValueRules { get; init; }
+
+    /// <summary>
+    /// Emit the endpoint resolver as <c>partial</c> with two hooks the hand-written half must implement:
+    /// <c>BeforeInjectHostPrefix</c> (S3's SigV2/KMS tweaks) and <c>TryMapNonGeneratedRequest</c>, which maps
+    /// requests with no generated marshaller (S3's presigned URL/POST and ACL requests) and returns early.
+    /// </summary>
+    [JsonPropertyName("endpointResolverPartial")]
+    public bool EndpointResolverPartial { get; init; }
 }
 
 /// <summary>The <c>service.customErrorHandling</c> hook. Read by the restXml writers today.</summary>

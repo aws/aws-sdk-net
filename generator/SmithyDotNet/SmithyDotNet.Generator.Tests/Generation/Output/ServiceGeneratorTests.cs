@@ -155,6 +155,20 @@ public class ServiceGeneratorTests : IDisposable
     }
 
     [Fact]
+    public void RetryPolicyRequestList_EmitsRetryPolicy()
+    {
+        var service = new ServiceCustomizations { RetryPolicyRequestList = true };
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, _fixture.Context.Metadata, new CustomizationsModel { Service = service });
+        var outputDir = Path.Combine(_outputDir, "retry-policy");
+        var generator = new ServiceGenerator(context, ModelFileName, ServiceFileVersion, _fixture.DefaultConfigurationModes);
+        var written = generator.Generate(outputDir, Path.Combine(outputDir, "code-analysis"), testsOutputPath: null, TestContext.Current.CancellationToken);
+
+        var retryPolicy = Path.Combine("Generated", "AmazonCloudTrailDataRetryPolicy.g.cs");
+        Assert.Contains(retryPolicy, written);
+        Assert.DoesNotContain(retryPolicy, _written);
+    }
+
+    [Fact]
     public void WritesExceptionUnmarshallerFiles()
     {
         var marshalling = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations");

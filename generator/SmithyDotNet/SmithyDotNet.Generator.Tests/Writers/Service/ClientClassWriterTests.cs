@@ -254,6 +254,23 @@ public class ClientClassWriterTests
     {
         Assert.Contains("protected override void Dispose(bool disposing)", _output);
         Assert.Contains("base.Dispose(disposing);", _output);
+        Assert.DoesNotContain("if (disposing)", _output);
+    }
+
+    [Fact]
+    public void Dispose_WithCustomization_CallsMethodInsideDisposingGuard()
+    {
+        var service = new ServiceCustomizations { ClientDisposeMethod = "DisposeS3ExpressCredentialProvider" };
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, _fixture.Context.Metadata, new CustomizationsModel { Service = service });
+
+        var output = new ClientClassWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken);
+
+        // Inside the guard, so a finalizer's Dispose(false) skips it; the base call stays outside.
+        var guard = output.IndexOf("if (disposing)");
+        var guardEnd = output.IndexOf("}", guard);
+        var call = output.IndexOf("DisposeS3ExpressCredentialProvider();");
+        Assert.True(guard >= 0 && call > guard && call < guardEnd);
+        Assert.True(output.IndexOf("base.Dispose(disposing);") > guardEnd);
     }
 
     [Fact]

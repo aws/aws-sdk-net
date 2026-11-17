@@ -49,15 +49,19 @@ public sealed class CodeAnalysisProjectFileWriter(GenerationContext context)
                 writer.WriteLine("""<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.3.1" />""");
             });
             writer.WriteLine();
-            // TODO: the legacy generator also embeds any *.xml under a service's /Custom folder. No
-            // service is onboarded with custom analyzer resources yet, so only the always-present
-            // PropertyValueRules.xml is emitted.
             writer.OpenXmlBlock("ItemGroup", () =>
             {
                 writer.OpenXmlBlock("EmbeddedResource Include=\"Generated/PropertyValueRules.xml\"", "EmbeddedResource", () =>
                 {
                     writer.WriteLine("<CopyToOutputDirectory>Always</CopyToOutputDirectory>");
                 });
+                if (context.Customizations.Service?.CustomPropertyValueRules == true)
+                {
+                    writer.OpenXmlBlock("EmbeddedResource Include=\"Custom/PropertyValueRules.xml\"", "EmbeddedResource", () =>
+                    {
+                        writer.WriteLine("<CopyToOutputDirectory>Always</CopyToOutputDirectory>");
+                    });
+                }
             });
             writer.WriteLine();
             writer.OpenXmlBlock("ItemGroup", () =>
