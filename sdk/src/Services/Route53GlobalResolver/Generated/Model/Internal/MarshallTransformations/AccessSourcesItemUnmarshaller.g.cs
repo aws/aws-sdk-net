@@ -67,6 +67,13 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("coreNetworkEndpointId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CoreNetworkEndpointId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -106,6 +113,13 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("segment", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Segment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
