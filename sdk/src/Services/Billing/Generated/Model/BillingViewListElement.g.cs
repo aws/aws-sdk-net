@@ -51,8 +51,32 @@ namespace Amazon.Billing.Model
         /// <summary>
         /// Gets and sets the property BillingViewType. 
         /// <para>
-        /// The type of billing view.
+        /// The type of billing view. The following values are valid:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PRIMARY</c> - The billing view that contains all cost management data associated
+        /// with an account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CUSTOM</c> - A billing view that a customer creates from one or more source views.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BILLING_GROUP</c> - The billing view for an Billing Conductor billing group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BILLING_TRANSFER</c> - The billing view for the billing data that a bill transfer
+        /// account is financially responsible for.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BILLING_TRANSFER_SHOWBACK</c> - The billing view for billing data configured for
+        /// showback or chargeback purposes.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public BillingViewType BillingViewType { get; set; }
 
