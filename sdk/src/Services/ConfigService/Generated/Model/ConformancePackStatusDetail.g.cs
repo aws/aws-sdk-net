@@ -99,6 +99,18 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// UPDATE_IN_PROGRESS when a conformance pack update is in progress for an account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UPDATE_COMPLETE when a conformance pack has been successfully updated in your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UPDATE_FAILED when a conformance pack update failed in your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// DELETE_IN_PROGRESS when a conformance pack deletion is in progress. 
         /// </para>
         ///  </li> <li> 
@@ -161,13 +173,40 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// Amazon Resource Name (ARN) of CloudFormation stack. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Custom conformance packs populate this field. Managed conformance packs leave it empty.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 2048)]
+        [AWSProperty(Min = 1, Max = 2048)]
         public string StackArn { get; set; }
 
         /// <summary>
         /// Checks to see if the StackArn property is set.
         /// </summary>
         internal bool IsSetStackArn() => this.StackArn != null;
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the conformance pack. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CUSTOM</c> – A custom conformance pack.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MANAGED</c> – A managed conformance pack.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ConformancePackType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
     }
 }

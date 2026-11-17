@@ -75,7 +75,7 @@ namespace Amazon.ConfigService.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min = 0, Max = 60)]
+        [AWSProperty(Min = 0, Max = 330)]
         public List<ConformancePackInputParameter> ConformancePackInputParameters { get; set; } = AWSConfigs.InitializeCollections ? new List<ConformancePackInputParameter>() : null;
 
         /// <summary>
@@ -163,6 +163,47 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetLastUpdateRequestedTime() => this.LastUpdateRequestedTime.HasValue;
 
         /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// An object of type <c>ConformancePackScope</c>, which contains the tag key and optional
+        /// tag value that defines which resources trigger an evaluation for the Config rules
+        /// in the managed conformance pack.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Managed conformance packs with a scope populate this field. Custom conformance packs
+        /// leave it empty.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ConformancePackScope Scope { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Scope property is set.
+        /// </summary>
+        internal bool IsSetScope() => this.Scope != null;
+
+        /// <summary>
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// Contains the identifier of the managed conformance pack that Config deploys in your
+        /// account.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field applies only to managed conformance packs. Custom conformance packs leave
+        /// it empty.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ConformancePackSource Source { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Source property is set.
+        /// </summary>
+        internal bool IsSetSource() => this.Source != null;
+
+        /// <summary>
         /// Gets and sets the property TemplateSSMDocumentDetails. 
         /// <para>
         /// An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services
@@ -176,5 +217,27 @@ namespace Amazon.ConfigService.Model
         /// Checks to see if the TemplateSSMDocumentDetails property is set.
         /// </summary>
         internal bool IsSetTemplateSSMDocumentDetails() => this.TemplateSSMDocumentDetails != null;
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the conformance pack. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CUSTOM</c> – A custom conformance pack.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MANAGED</c> – A managed conformance pack.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ConformancePackType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
     }
 }

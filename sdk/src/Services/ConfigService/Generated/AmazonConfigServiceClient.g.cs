@@ -13737,8 +13737,14 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify only one of the follow parameters: <c>TemplateS3Uri</c>, <c>TemplateBody</c>
-        /// or <c>TemplateSSMDocumentDetails</c>.
+        /// For custom conformance packs, you must specify only one of <c>TemplateS3Uri</c>, <c>TemplateBody</c>,
+        /// <c>TemplateSSMDocumentDetails</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For managed conformance packs, you must specify <c>Source</c>. Do not specify <c>TemplateS3Uri</c>,
+        /// <c>TemplateBody</c>, <c>TemplateSSMDocumentDetails</c>, <c>DeliveryS3Bucket</c>, or
+        /// <c>DeliveryS3KeyPrefix</c>.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -13912,8 +13918,14 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify only one of the follow parameters: <c>TemplateS3Uri</c>, <c>TemplateBody</c>
-        /// or <c>TemplateSSMDocumentDetails</c>.
+        /// For custom conformance packs, you must specify only one of <c>TemplateS3Uri</c>, <c>TemplateBody</c>,
+        /// <c>TemplateSSMDocumentDetails</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For managed conformance packs, you must specify <c>Source</c>. Do not specify <c>TemplateS3Uri</c>,
+        /// <c>TemplateBody</c>, <c>TemplateSSMDocumentDetails</c>, <c>DeliveryS3Bucket</c>, or
+        /// <c>DeliveryS3KeyPrefix</c>.
         /// </para>
         ///  </note> <note> 
         /// <para>
