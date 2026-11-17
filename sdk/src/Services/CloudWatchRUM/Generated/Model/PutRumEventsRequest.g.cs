@@ -120,6 +120,23 @@ namespace Amazon.CloudWatchRUM.Model
         internal bool IsSetRumEvents() => this.RumEvents != null && (this.RumEvents.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property SessionMetadata. 
+        /// <para>
+        /// A JSON serialization of attributes that apply to every event in this batch, such as
+        /// the browser, device, and operating system of the end user. CloudWatch RUM merges these
+        /// attributes into each event in the batch, so you send them once for the batch instead
+        /// of once for each event. If an attribute appears both here and in an individual event's
+        /// <c>metadata</c>, CloudWatch RUM uses the value in the event's <c>metadata</c>.
+        /// </para>
+        /// </summary>
+        public string SessionMetadata { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SessionMetadata property is set.
+        /// </summary>
+        internal bool IsSetSessionMetadata() => this.SessionMetadata != null;
+
+        /// <summary>
         /// Gets and sets the property UserDetails. 
         /// <para>
         /// A structure that contains information about the user session that this batch of events
