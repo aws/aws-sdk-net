@@ -265,36 +265,69 @@ public sealed class HttpRequestBindings(GenerationContext context)
     }
 
     // https://smithy.io/2.0/spec/http-bindings.html#httplabel-trait
-    public void WriteResourcePath(CodeWriter writer, HttpTrait httpTrait, List<Member> labelMembers)
+    // With argumentExceptionClass, an unset string label throws ArgumentException naming that request class.
+    public void WriteResourcePath(CodeWriter writer, HttpTrait httpTrait, List<Member> labelMembers, string? argumentExceptionClass = null)
     {
         // Split off any static query literal (e.g. "/token?aws_iam=t"): the path becomes ResourcePath,
         // each query pair becomes a sub-resource. Left in ResourcePath, the runtime percent-encodes the
         // '?' and drops the query, silently changing the request.
         var uriParts = httpTrait.Uri.Split('?');
         var path = uriParts[0];
+        var service = context.Customizations.Service;
+
+        // The endpoint resolver adds this label to the URL (S3's Bucket), so it is removed from the path.
+        if (service?.EndpointResolvedLabel is { } endpointResolvedLabel)
+        {
+            path = path.Replace("/{" + endpointResolvedLabel + "}", "");
+            if (path.Length == 0)
+            {
+                path = "/";
+            }
+        }
 
         foreach (var member in labelMembers)
         {
             // A greedy label ({name+}) spans multiple path segments; C2J strips a leading '/' from the
-            // value and keeps the '+' in both the AddPathResource key and ResourcePath so the runtime
-            // substitution matches. https://smithy.io/2.0/spec/http-bindings.html#greedy-labels
+            // value unless keepGreedyLabelLeadingSlash is set, and keeps the '+' in both the AddPathResource
+            // key and ResourcePath so the runtime substitution matches.
+            // https://smithy.io/2.0/spec/http-bindings.html#greedy-labels
             var greedy = httpTrait.Uri.Contains("{" + member.ModeledName + "+}");
-            var valueExpr = greedy ? $"publicRequest.{member.PropertyName}.TrimStart('/')" : $"publicRequest.{member.PropertyName}";
+            var skipValidation = context.Customizations.SkipUriPropertyValidation.Contains(member.PropertyName);
+            var throwsArgumentException = argumentExceptionClass is not null && member.Type.Target is StringShape;
+
+            if (!skipValidation && throwsArgumentException)
+            {
+                writer.OpenBlock($"if (string.IsNullOrEmpty(publicRequest.{member.PropertyName}))", () =>
+                {
+                    writer.WriteLine($"""throw new System.ArgumentException("{member.PropertyName} is a required property and must be set before making this call.", "{argumentExceptionClass}.{member.PropertyName}");""");
+                });
+            }
+            else if (!skipValidation)
+            {
+                writer.OpenBlock($"if (!publicRequest.IsSet{member.PropertyName}())", () =>
+                {
+                    writer.WriteLine($"""throw new Amazon{context.BaseName}Exception("Request object does not have required field {member.PropertyName} set");""");
+                });
+            }
+
+            if (member.ModeledName == service?.EndpointResolvedLabel && !greedy)
+            {
+                continue;
+            }
+
+            var keepLeadingSlash = service?.KeepGreedyLabelLeadingSlash == true;
+
+            var valueExpr = greedy && !keepLeadingSlash ? $"publicRequest.{member.PropertyName}.TrimStart('/')" : $"publicRequest.{member.PropertyName}";
             var conversion = StringConversion(member, valueExpr, QueryLabelTimestampDefault) ?? throw new GeneratorException($"Unsupported label member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
             var pathTemplate = greedy ? "{" + member.ModeledName + "+}" : "{" + member.ModeledName + "}";
 
-            if (context.Customizations.SkipUriPropertyValidation.Contains(member.PropertyName))
+            if (skipValidation)
             {
                 // skipUriPropertyValidation: no required check — an unset label sends an empty segment (C2J parity).
                 writer.WriteLine($"""request.AddPathResource("{pathTemplate}", publicRequest.IsSet{member.PropertyName}() ? {conversion} : string.Empty);""");
             }
             else
             {
-                writer.OpenBlock($"if (!publicRequest.IsSet{member.PropertyName}())", () =>
-                {
-                    writer.WriteLine($"""throw new Amazon{context.BaseName}Exception("Request object does not have required field {member.PropertyName} set");""");
-                });
-
                 writer.WriteLine($"""request.AddPathResource("{pathTemplate}", {conversion});""");
             }
             writer.WriteLine("");

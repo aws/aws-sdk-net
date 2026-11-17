@@ -244,6 +244,69 @@ public class RestXmlCodegenTests
         Assert.Contains("""request.HostPrefix = $"{hostPrefixLabels.region}.";""", emitted);
     }
 
+    // S3 object keys can start with '/'.
+    [Fact]
+    public void Request_KeepGreedyLabelLeadingSlash_SendsValueAsIs()
+    {
+        var service = new ServiceCustomizations { KeepGreedyLabelLeadingSlash = true };
+        var source = RequestMarshaller(ServiceContext(service), "GetItem");
+
+        Assert.Contains("""request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));""", source);
+    }
+
+    // S3's Bucket: the endpoint resolver adds it to the URL.
+    [Fact]
+    public void Request_EndpointResolvedLabel_LeavesThePath()
+    {
+        var service = new ServiceCustomizations { EndpointResolvedLabel = "Container" };
+        var source = RequestMarshaller(ServiceContext(service), "GetItem");
+
+        Assert.Contains("if (!publicRequest.IsSetContainer())", source);
+        Assert.DoesNotContain("{Container}", source);
+    }
+
+    [Fact]
+    public void Request_EndpointResolvedLabel_AloneInThePath_LeavesTheRoot()
+    {
+        var service = new ServiceCustomizations { EndpointResolvedLabel = "Container" };
+        var source = RequestMarshaller(ServiceContext(service), "ListItems");
+        Assert.Contains("""request.ResourcePath = "/";""", source);
+    }
+
+    [Fact]
+    public void Request_EndpointResolvedLabel_Greedy_StaysInThePath()
+    {
+        var service = new ServiceCustomizations { EndpointResolvedLabel = "Container" };
+        var source = RequestMarshaller(ServiceContext(service), "GetContainerPath");
+        Assert.Contains("""request.AddPathResource("{Container+}", StringUtils.FromString(publicRequest.Container.TrimStart('/')));""", source);
+    }
+
+    [Fact]
+    public void Request_EndpointResolvedLabel_WithSkipUriPropertyValidation_HasNoRequiredCheck()
+    {
+        var service = new ServiceCustomizations { EndpointResolvedLabel = "Container" };
+        var customizations = new CustomizationsModel { Service = service, SkipUriPropertyValidation = ["Container"] };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+        var source = RequestMarshaller(context, "GetItem");
+        Assert.DoesNotContain("Container", source);
+    }
+
+    // C2J's S3 marshallers throw ArgumentException for an unset bucket or key, except in a few operations.
+    [Fact]
+    public void Request_RequiredLabelServiceExceptionOperations_OthersThrowArgumentException()
+    {
+        var service = new ServiceCustomizations { EndpointResolvedLabel = "Container", RequiredLabelServiceExceptionOperations = ["ListItems"] };
+        var context = ServiceContext(service);
+
+        var source = RequestMarshaller(context, "GetItem");
+        Assert.Contains("if (string.IsNullOrEmpty(publicRequest.Container))", source);
+        Assert.Contains("""throw new System.ArgumentException("Key is a required property and must be set before making this call.", "GetItemRequest.Key");""", source);
+        Assert.DoesNotContain("IsSetKey", source);
+
+        var listed = RequestMarshaller(context, "ListItems");
+        Assert.Contains("if (!publicRequest.IsSetContainer())", listed);
+    }
+
     [Fact]
     public void Request_Get_NoBody()
     {

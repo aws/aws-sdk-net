@@ -99,7 +99,13 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
             }
             _bindings.WriteHeaderMembers(writer, partitioned.HeaderMembers);
             AwsQueryCompatibleMarshalling.WriteQueryModeHeader(writer, context);
-            _bindings.WriteResourcePath(writer, httpTrait, partitioned.LabelMembers);
+
+            // C2J's S3 marshallers throw ArgumentException for an unset bucket or key, except in the listed operations.
+            var serviceExceptionOperations = context.Customizations.Service?.RequiredLabelServiceExceptionOperations;
+            var throwsArgumentException = serviceExceptionOperations is not null && !serviceExceptionOperations.Contains(operation.Name);
+            var argumentExceptionClass = throwsArgumentException ? className : null;
+
+            _bindings.WriteResourcePath(writer, httpTrait, partitioned.LabelMembers, argumentExceptionClass);
             writer.WriteLine("");
             _bindings.WriteQueryStringMembers(writer, partitioned.QueryMembers);
             if (partitioned.QueryParamsMember is { } queryParams)

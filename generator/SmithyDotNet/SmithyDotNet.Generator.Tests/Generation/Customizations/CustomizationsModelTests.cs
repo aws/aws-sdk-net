@@ -79,8 +79,25 @@ public class CustomizationsModelTests
     public void Load_Service_ReadsSection()
     {
         var model = LoadFiles("""
-            { "service": { "skipClientContextParams": ["UseArnRegion"], "skipDocSamples": true, "requestBaseClass": "AmazonWebServiceRequest", "streamingResponseBaseClass": "StreamResponse",
-              "customErrorHandling": { "responseUnmarshallerBaseClass": "S3ReponseUnmarshaller", "errorResponseType": "S3ErrorResponse", "exceptionFactory": "ConstructS3Exception" }, "clientDisposeMethod": "DisposeS3ExpressCredentialProvider", "retryPolicyRequestList": true, "customPropertyValueRules": true, "endpointResolverPartial": true } }
+            {
+                "service": {
+                    "skipClientContextParams": ["UseArnRegion"],
+                    "skipDocSamples": true,
+                    "requestBaseClass": "AmazonWebServiceRequest",
+                    "streamingResponseBaseClass": "StreamResponse",
+                    "customErrorHandling": {
+                        "responseUnmarshallerBaseClass": "S3ReponseUnmarshaller",
+                        "errorResponseType": "S3ErrorResponse",
+                        "exceptionFactory": "ConstructS3Exception"
+                    },
+                    "clientDisposeMethod": "DisposeS3ExpressCredentialProvider",
+                    "retryPolicyRequestList": true,
+                    "customPropertyValueRules": true,
+                    "endpointResolverPartial": true,
+                    "endpointResolvedLabel": "Bucket",
+                    "keepGreedyLabelLeadingSlash": true
+                }
+            }
             """);
         Assert.Equal(["UseArnRegion"], model.Service?.SkipClientContextParams);
         Assert.True(model.Service?.SkipDocSamples);
@@ -91,6 +108,8 @@ public class CustomizationsModelTests
         Assert.True(model.Service?.RetryPolicyRequestList);
         Assert.True(model.Service?.CustomPropertyValueRules);
         Assert.True(model.Service?.EndpointResolverPartial);
+        Assert.Equal("Bucket", model.Service?.EndpointResolvedLabel);
+        Assert.True(model.Service?.KeepGreedyLabelLeadingSlash);
     }
 
     // Each part only works with the others, so a partial set fails at load, not in the generated code.

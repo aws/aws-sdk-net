@@ -80,7 +80,7 @@ instead of the default `application/json`, matching C2J.
 | `@httpQuery("name")` `list<string>` | Query string | `request.ParameterCollection.Add("name", publicRequest.Prop)` (repeated params, ordinal-sorted at runtime) |
 | `@httpQuery("name")` `list<value-type>` | Query string | `request.ParameterCollection.Add("name", publicRequest.Prop.ConvertAll<string>(item => StringUtils.FromX(item)))` |
 | `@httpQueryParams` map | Query string | Loop entries into query params (see below); `@httpQuery` wins on key collision |
-| `@httpLabel` | URI segment | `if (!publicRequest.IsSetProp()) throw new Amazon{BaseName}Exception(...)`, then `request.AddPathResource("{name}", <conversion>)`. A greedy label keeps `{name+}` as the key and passes the value through `.TrimStart('/')` |
+| `@httpLabel` | URI segment | `if (!publicRequest.IsSetProp()) throw new Amazon{BaseName}Exception(...)`, then `request.AddPathResource("{name}", <conversion>)`. A greedy label keeps `{name+}` as the key and passes the value through `.TrimStart('/')`. S3 changes this with three `service` keys (see below) |
 | `@httpHeader("name")` scalar | Header | `request.Headers["name"] = ...` |
 | `@httpHeader("name")` `@mediaType` string | Header | Base64: `Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(...))`; the read side decodes (C2J "jsonvalue"). Body-bound `@mediaType` strings are plain |
 | `@httpHeader("name")` `list<string>` | Header | `request.Headers["name"] = StringUtils.FromList(publicRequest.Prop)` (comma join, RFC-7230 quoting) |
@@ -99,6 +99,15 @@ required check.
 A label whose property is listed in the `skipUriPropertyValidation` customization gets no required check
 and is sent empty when unset: `request.AddPathResource("{name}", publicRequest.IsSetProp() ? <conversion> : string.Empty)`.
 Glacier lists `AccountId`, which its `ProcessRequestHandler` then replaces with `-` (the caller's account).
+
+S3 sets three `service` keys that change label handling:
+
+- `endpointResolvedLabel` (`Bucket`): `/{Bucket}` is left out of `ResourcePath` and gets no `AddPathResource`,
+  because the endpoint resolver adds the bucket to the URL.
+- `keepGreedyLabelLeadingSlash`: no `TrimStart('/')`, so a key can start with `/`.
+- `requiredLabelServiceExceptionOperations` (restXml only): an unset string label throws `System.ArgumentException`
+  on `string.IsNullOrEmpty`, as C2J's S3 marshallers do. The listed operations keep the `IsSet` check with the
+  service exception.
 
 List query/header bindings accept `list<string>`/`list<enum>` (an enum element is a plain `string`, see
 type-mapping) and value-type element lists (int, long, bool, double, float, timestamp, intEnum), matching

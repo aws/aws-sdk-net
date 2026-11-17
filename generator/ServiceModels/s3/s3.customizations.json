@@ -12,7 +12,10 @@
         "clientDisposeMethod": "DisposeS3ExpressCredentialProvider",
         "retryPolicyRequestList": true,
         "customPropertyValueRules": true,
-        "endpointResolverPartial": true
+        "endpointResolverPartial": true,
+        "endpointResolvedLabel": "Bucket",
+        "keepGreedyLabelLeadingSlash": true,
+        "requiredLabelServiceExceptionOperations": ["CreateSession", "GetObjectAttributes", "GetBucketAcl", "PutObjectAcl", "GetObjectAcl", "PutBucketAcl", "CreateBucketMetadataConfiguration", "GetBucketMetadataConfiguration", "DeleteBucketMetadataConfiguration"]
     },
     "runtimePipelineOverride": {
         "overrides": [

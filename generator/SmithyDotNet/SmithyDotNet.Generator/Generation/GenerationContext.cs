@@ -336,12 +336,53 @@ public class GenerationContext
         Operations = OperationResolver.Resolve(index, Protocol, Customizations);
         EndpointDiscoveryOperation = EndpointDiscoveryResolver.ResolveDiscoveryOperation(Operations, index);
         DiscoveredOperations = EndpointDiscoveryResolver.ResolveDiscoveredOperations(Operations, EndpointDiscoveryOperation);
+
         // A SigV2 service (sdb) models no auth trait; C2J still resolved it to SigV4 so the handler resolves AWS credentials.
         ServiceAuthSchemes = Metadata?.SignatureVersion == SignatureVersion.V2 ? [AuthSchemeIds.SigV4] : ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
         PaginatedOperations = PaginationResolver.Resolve(Operations, index, Customizations);
         GeneratedOperations = Operations.Where(operation => !Customizations.IsClientMethodOnly(operation.Shape.Id.Name)).ToList();
+
+        if (Customizations.Service?.EndpointResolvedLabel is { } endpointResolvedLabel)
+        {
+            var isInAUri = false;
+            foreach (var operation in GeneratedOperations)
+            {
+                var uri = operation.Shape.GetHttp()?.Uri;
+                if (uri is not null && uri.Contains("/{" + endpointResolvedLabel + "}"))
+                {
+                    isInAUri = true;
+                }
+            }
+            if (!isInAUri)
+            {
+                throw new GeneratorException($"service.endpointResolvedLabel is '{endpointResolvedLabel}', which no generated operation's URI has.");
+            }
+        }
+
+        // Only the restXml marshaller reads it; on any other protocol it would be silently ignored.
+        if (Customizations.Service?.RequiredLabelServiceExceptionOperations is not null && Protocol is not AWSProtocol.RestXml)
+        {
+            throw new GeneratorException("service.requiredLabelServiceExceptionOperations is only supported for restXml.");
+        }
+
+        foreach (var operationName in Customizations.Service?.RequiredLabelServiceExceptionOperations ?? [])
+        {
+            var isGenerated = false;
+            foreach (var operation in GeneratedOperations)
+            {
+                if (operation.Name == operationName)
+                {
+                    isGenerated = true;
+                }
+            }
+            if (!isGenerated)
+            {
+                throw new GeneratorException($"service.requiredLabelServiceExceptionOperations lists '{operationName}', which is not a generated operation.");
+            }
+        }
+
         RequestEventStreams = EventStreamResolver.ResolveRequestStreams(GeneratedOperations, index);
         ResponseEventStreams = EventStreamResolver.ResolveResponseStreams(GeneratedOperations, index);
         OperationEndpointContexts = EndpointContextResolver.ResolveOperations(Operations, index, Customizations);

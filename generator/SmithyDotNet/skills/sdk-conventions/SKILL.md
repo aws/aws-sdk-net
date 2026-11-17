@@ -372,6 +372,8 @@ nothing targets it.
     half must implement, so a missing file fails to compile: `BeforeInjectHostPrefix` (S3's SigV2/KMS tweaks) and
     `TryMapNonGeneratedRequest` (maps presigned/ACL requests and returns early, ahead of the per-operation blocks).
     Needs an endpoint rule set, else generation fails.
+  - `endpointResolvedLabel`, `keepGreedyLabelLeadingSlash`, `requiredLabelServiceExceptionOperations`: change the
+    `@httpLabel` handling (see marshalling).
 
 Three convenience hooks add hand-picked public members, read from `GenerationContext.Customizations` (not folded into the
 model). A form names members by C# property name (case-insensitive); a stale operation/class/member reference fails

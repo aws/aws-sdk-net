@@ -482,6 +482,21 @@ public sealed record ServiceCustomizations
     /// </summary>
     [JsonPropertyName("endpointResolverPartial")]
     public bool EndpointResolverPartial { get; init; }
+
+    /// <summary>
+    /// An <c>@httpLabel</c> the endpoint resolver adds to the URL (S3's <c>Bucket</c>). It is removed from
+    /// <c>ResourcePath</c> and gets no <c>AddPathResource</c>; its required check stays.
+    /// </summary>
+    [JsonPropertyName("endpointResolvedLabel")]
+    public string? EndpointResolvedLabel { get; init; }
+
+    /// <summary>A greedy label's value is sent as is, so an S3 key can start with <c>/</c>; otherwise the leading <c>/</c> is trimmed.</summary>
+    [JsonPropertyName("keepGreedyLabelLeadingSlash")]
+    public bool KeepGreedyLabelLeadingSlash { get; init; }
+
+    /// <summary>When set, an unset string label throws <c>ArgumentException</c>, as S3's C2J marshallers do; the listed operations keep the service exception.</summary>
+    [JsonPropertyName("requiredLabelServiceExceptionOperations")]
+    public List<string>? RequiredLabelServiceExceptionOperations { get; init; }
 }
 
 /// <summary>The <c>service.customErrorHandling</c> hook. Read by the restXml writers today.</summary>

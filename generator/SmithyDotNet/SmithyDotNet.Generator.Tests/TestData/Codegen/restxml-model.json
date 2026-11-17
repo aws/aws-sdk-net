@@ -14,6 +14,9 @@
         { "target": "com.example#GetChecksummedThing" },
         { "target": "com.example#AccountOp" },
         { "target": "com.example#RegionOp" },
+        { "target": "com.example#GetItem" },
+        { "target": "com.example#ListItems" },
+        { "target": "com.example#GetContainerPath" },
         { "target": "com.example#SelectThing" }
       ],
       "traits": {
@@ -201,6 +204,43 @@
       "type": "structure",
       "members": {
         "region": { "target": "smithy.api#String", "traits": { "smithy.api#hostLabel": {}, "smithy.api#required": {} } }
+      }
+    },
+    "com.example#GetItem": {
+      "type": "operation",
+      "input": { "target": "com.example#GetItemRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/{Container}/{Key+}", "method": "GET" } }
+    },
+    "com.example#GetItemRequest": {
+      "type": "structure",
+      "members": {
+        "Container": { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } },
+        "Key":       { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } }
+      }
+    },
+    "com.example#GetContainerPath": {
+      "type": "operation",
+      "input": { "target": "com.example#GetContainerPathRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/{Container+}", "method": "GET" } }
+    },
+    "com.example#GetContainerPathRequest": {
+      "type": "structure",
+      "members": {
+        "Container": { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } }
+      }
+    },
+    "com.example#ListItems": {
+      "type": "operation",
+      "input": { "target": "com.example#ListItemsRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/{Container}", "method": "GET" } }
+    },
+    "com.example#ListItemsRequest": {
+      "type": "structure",
+      "members": {
+        "Container": { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } }
       }
     },
 

@@ -156,6 +156,36 @@ public class GenerationContextTests
     }
 
     [Fact]
+    public void EndpointResolvedLabel_OnlyInClientMethodOnlyUris_Throws()
+    {
+        var customizations = new CustomizationsModel { Service = new ServiceCustomizations { EndpointResolvedLabel = "Container" } };
+        customizations.OperationModifiers["GetItem"] = new OperationModifier { ClientMethodOnly = true };
+        customizations.OperationModifiers["ListItems"] = new OperationModifier { ClientMethodOnly = true };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/restxml-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("service.endpointResolvedLabel is 'Container', which no generated operation's URI has.", ex.Message);
+    }
+
+    [Fact]
+    public void RequiredLabelServiceExceptionOperations_ClientMethodOnlyOperation_Throws()
+    {
+        var customizations = new CustomizationsModel { Service = new ServiceCustomizations { RequiredLabelServiceExceptionOperations = ["GetItem"] } };
+        customizations.OperationModifiers["GetItem"] = new OperationModifier { ClientMethodOnly = true };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/restxml-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("service.requiredLabelServiceExceptionOperations lists 'GetItem', which is not a generated operation.", ex.Message);
+    }
+
+    [Fact]
+    public void RequiredLabelServiceExceptionOperations_NotRestXml_Throws()
+    {
+        var customizations = new CustomizationsModel { Service = new ServiceCustomizations { RequiredLabelServiceExceptionOperations = [] } };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/codegen-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("service.requiredLabelServiceExceptionOperations is only supported for restXml.", ex.Message);
+    }
+
+    [Fact]
     public void Name_WithoutHttpBindings_Throws()
     {
         var customizations = new CustomizationsModel();
