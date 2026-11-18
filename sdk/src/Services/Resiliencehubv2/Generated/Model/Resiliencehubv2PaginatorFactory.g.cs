@@ -209,6 +209,14 @@ namespace Amazon.Resiliencehubv2.Model
         }
 
         /// <summary>
+        /// Paginator for ListTestTemplates operation
+        /// </summary>
+        public IListTestTemplatesPaginator ListTestTemplates(ListTestTemplatesRequest request)
+        {
+            return new ListTestTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTests operation
         /// </summary>
         public IListTestsPaginator ListTests(ListTestsRequest request)

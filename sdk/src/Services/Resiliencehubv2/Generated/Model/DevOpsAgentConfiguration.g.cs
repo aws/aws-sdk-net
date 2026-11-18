@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Resiliencehubv2.Model
 {
     /// <summary>
-    /// The AWS DevOps Agent (DevOps Agent) integration configuration that you supply when
-    /// creating or updating a service. Connecting a service to a DevOps Agent Agent Space
+    /// The Amazon Web Services DevOps Agent (DevOps Agent) integration configuration that
+    /// you supply when creating or updating a service. Connecting a service to an Agent Space
     /// lets DevOps Agent investigate the service's resilience test runs and attach its analysis
     /// to the results. Include this block with an Agent Space Amazon Resource Name (ARN)
     /// to connect or reconnect the service to an Agent Space. Include it without an Agent

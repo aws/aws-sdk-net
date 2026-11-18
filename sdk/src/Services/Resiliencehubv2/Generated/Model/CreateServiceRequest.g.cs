@@ -57,7 +57,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// <summary>
         /// Gets and sets the property ClientToken.
         /// </summary>
-        [AWSProperty(Min = 1, Max = 63)]
+        [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
 
         /// <summary>
