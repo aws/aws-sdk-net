@@ -163,6 +163,28 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetOperationPreferences() => this.OperationPreferences != null;
 
         /// <summary>
+        /// Gets and sets the property RegionalStatusDetails. 
+        /// <para>
+        /// The progress detail for each Region of the operation, keyed by Region. Each entry
+        /// reports the stack instances deployment progress for that Region. This field is returned
+        /// only by <a>DescribeStackSetOperation</a>. It is not included in the <a>ListStackSetOperations</a>
+        /// summary.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, RegionalStatusDetail> RegionalStatusDetails { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, RegionalStatusDetail>() : null;
+
+        /// <summary>
+        /// Checks to see if the RegionalStatusDetails property is set.
+        /// </summary>
+        internal bool IsSetRegionalStatusDetails() => this.RegionalStatusDetails != null && (this.RegionalStatusDetails.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property RetainStacks. 
         /// <para>
         /// For StackSet operations of action type <c>DELETE</c>, specifies whether to remove

@@ -294,7 +294,7 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         ///  <c>ForceRollback</c> and <c>ResourcesToSkip</c> are mutually exclusive. For details,
-        /// see <a>ContinueUpdateRollbackInput$ForceRollback</a>.
+        /// see the <c>ForceRollback</c> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback service method.</param>
@@ -330,7 +330,7 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         ///  <c>ForceRollback</c> and <c>ResourcesToSkip</c> are mutually exclusive. For details,
-        /// see <a>ContinueUpdateRollbackInput$ForceRollback</a>.
+        /// see the <c>ForceRollback</c> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback service method.</param>
@@ -1980,6 +1980,11 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns the description of the specified StackSet operation.
         /// 
+        ///  
+        /// <para>
+        /// Reports role provisioning and stack instances deployment progress in <c>StatusDetails.Stages</c>.
+        /// A breakdown for each Amazon Web Services Region is available in <c>RegionalStatusDetails</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This API provides <i>strongly consistent</i> reads meaning it will always return the
@@ -2002,6 +2007,11 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns the description of the specified StackSet operation.
         /// 
+        ///  
+        /// <para>
+        /// Reports role provisioning and stack instances deployment progress in <c>StatusDetails.Stages</c>.
+        /// A breakdown for each Amazon Web Services Region is available in <c>RegionalStatusDetails</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This API provides <i>strongly consistent</i> reads meaning it will always return the
@@ -3448,6 +3458,11 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns summary information about operations performed on a StackSet.
         /// 
+        ///  
+        /// <para>
+        /// Reports role provisioning and stack instances deployment progress in <c>StatusDetails.Stages</c>.
+        /// The breakdown for each Amazon Web Services Region is available only from <a>DescribeStackSetOperation</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This API provides <i>eventually consistent</i> reads meaning it may take some time
@@ -3467,6 +3482,11 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns summary information about operations performed on a StackSet.
         /// 
+        ///  
+        /// <para>
+        /// Reports role provisioning and stack instances deployment progress in <c>StatusDetails.Stages</c>.
+        /// The breakdown for each Amazon Web Services Region is available only from <a>DescribeStackSetOperation</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This API provides <i>eventually consistent</i> reads meaning it may take some time

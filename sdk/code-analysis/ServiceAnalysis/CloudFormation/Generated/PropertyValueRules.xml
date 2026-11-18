@@ -1712,6 +1712,39 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.RegionalStackInstancesDeployment.CancelledStackInstancesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.RegionalStackInstancesDeployment.CompletedStackInstancesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.RegionalStackInstancesDeployment.FailedStackInstancesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.RegionalStackInstancesDeployment.PendingStackInstancesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.RegionalStackInstancesDeployment.PercentageCompleted</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.RegionalStackInstancesDeployment.SkippedStackInstancesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.RegionalStackInstancesDeployment.SucceededStackInstancesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.RegionalStackInstancesDeployment.TotalStackInstancesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.RequiredActivatedType.OriginalTypeName</property>
     <min>10</min>
     <max>204</max>
@@ -1758,6 +1791,27 @@
     <property>Amazon.CloudFormation.Model.ResourceToImport.ResourceType</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.RoleProvisioning.CompletedAccountsCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.RoleProvisioning.FailedAccountsCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.RoleProvisioning.PendingAccountsCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.RoleProvisioning.PercentageCompleted</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.RoleProvisioning.SucceededAccountsCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.RollbackConfiguration.MonitoringTimeInMinutes</property>
@@ -1880,6 +1934,35 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackInstanceSummary.Region</property>
     <pattern>^[a-zA-Z0-9-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstancesDeployment.CancelledStackInstancesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstancesDeployment.CompletedStackInstancesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstancesDeployment.FailedStackInstancesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstancesDeployment.PendingStackInstancesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstancesDeployment.PercentageCompleted</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstancesDeployment.SkippedStackInstancesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstancesDeployment.SucceededStackInstancesCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackRefactorAction.Description</property>
@@ -2014,6 +2097,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackSetOperationStatusDetails.FailedStackInstancesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetOperationStatusDetails.TotalAccountsCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetOperationStatusDetails.TotalStackInstancesCount</property>
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
