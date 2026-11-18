@@ -61,6 +61,8 @@ public sealed class QueryRequestMarshallerWriter(GenerationContext context, stri
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Marshall the request object to the HTTP request.");
         writer.WriteLine("/// </summary>");
+
+        var bodyMarshaller = new QueryBodyMemberMarshaller(context, operation.Name);
         writer.OpenBlock($"public IRequest Marshall({className} publicRequest)", () =>
         {
             writer.WriteLine($"""IRequest request = new DefaultRequest(publicRequest, "{context.Namespace}");""");
@@ -79,7 +81,7 @@ public sealed class QueryRequestMarshallerWriter(GenerationContext context, stri
             writer.WriteLine($"""request.Parameters.Add("Version", "{context.ApiVersion}");""");
             writer.WriteLine("");
 
-            new QueryBodyMemberMarshaller(context, operation.Name).WriteStructureBody(writer, operation.Input, partitioned.BodyMembers, "publicRequest", prefix: null, depth: 0);
+            bodyMarshaller.WriteStructureBody(writer, operation.Input, partitioned.BodyMembers, "publicRequest", prefix: null, depth: 0);
             writer.WriteLine("");
 
             // Cache the URL-encoded body up front (the runtime signs and sends it), except under SigV2: that
@@ -102,6 +104,8 @@ public sealed class QueryRequestMarshallerWriter(GenerationContext context, stri
             writer.WriteLine("");
             writer.WriteLine("return request;");
         });
+
+        bodyMarshaller.WriteRecursiveStructureMethods(writer);
     }
 
     private void WriteUsings(CodeWriter writer)

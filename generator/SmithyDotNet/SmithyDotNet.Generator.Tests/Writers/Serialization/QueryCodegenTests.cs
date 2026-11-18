@@ -95,6 +95,18 @@ public class QueryCodegenTests
     }
 
     [Fact]
+    public void Request_RecursiveStructure_CallsMethodBelowFirstLevel()
+    {
+        var source = RequestMarshaller("DoThing");
+
+        // The request calls the method, which calls itself for the levels below.
+        Assert.Contains("""MarshallTreeNode(request, publicRequest.Tree, "tree");""", source);
+        Assert.Contains("private static void MarshallTreeNode(IRequest request, TreeNode value, string prefix)", source);
+        Assert.Contains("""request.Parameters.Add(prefix + ".label", StringUtils.FromString(value.Label));""", source);
+        Assert.Contains("""MarshallTreeNode(request, item0, prefix + ".children" + ".member" + "." + index0);""", source);
+    }
+
+    [Fact]
     public void Request_Lists_WrappedFlattenedAndStructItems()
     {
         var source = RequestMarshaller("DoThing");
