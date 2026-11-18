@@ -157,6 +157,29 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>waf.http2.traffic_inspection_behavior</c> – Specifies when Amazon Web Services
+        /// WAF inspects HTTP/2 requests. This attribute applies only to target groups that use
+        /// the <c>HTTP2</c> protocol version. The possible values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>inspect_immediately</c> – Inspects each request as soon as data is available.
+        /// This is the default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>inspect_after_sufficient_data</c> – Accumulates HTTP/2 data frames before inspection.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>routing.http2.rst_stream_error_forwarding.enabled</c> – Specifies whether the
+        /// load balancer forwards an HTTP/2 or gRPC target's <c>RST_STREAM</c> error code to
+        /// the client, instead of returning an HTTP 502 (Bad Gateway) response. This attribute
+        /// applies only to target groups that use the <c>HTTP2</c> or <c>GRPC</c> protocol version.
+        /// The value is <c>true</c> or <c>false</c>. The default is <c>false</c>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The following attribute is supported only if the load balancer is an Application Load
