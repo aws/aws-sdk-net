@@ -37,7 +37,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// A description of an error that prevented a message being sent using the <c>SendBulkTemplatedEmail</c>
+        /// A description of an error that prevented a message being sent using the <c>SendBulkEmail</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The unique message identifier returned from the <c>SendBulkTemplatedEmail</c> operation.
+        /// The unique message identifier returned from the <c>SendBulkEmail</c> operation.
         /// </para>
         /// </summary>
         public string MessageId { get; set; }
@@ -64,7 +64,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of a message sent using the <c>SendBulkTemplatedEmail</c> operation.
+        /// The status of a message sent using the <c>SendBulkEmail</c> operation.
         /// </para>
         ///  
         /// <para>
@@ -72,70 +72,73 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// SUCCESS: Amazon SES accepted the message, and will attempt to deliver it to the recipients.
+        ///  <c>SUCCESS</c> – Amazon SES accepted the message, and will attempt to deliver it
+        /// to the recipients.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MESSAGE_REJECTED: The message was rejected because it contained a virus.
+        ///  <c>MESSAGE_REJECTED</c> – The message was rejected because it contained a virus.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MAIL_FROM_DOMAIN_NOT_VERIFIED: The sender's email address or domain was not verified.
+        ///  <c>MAIL_FROM_DOMAIN_NOT_VERIFIED</c> – The sender's email address or domain was not
+        /// verified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CONFIGURATION_SET_DOES_NOT_EXIST: The configuration set you specified does not exist.
+        ///  <c>CONFIGURATION_SET_NOT_FOUND</c> – The configuration set you specified does not
+        /// exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// TEMPLATE_DOES_NOT_EXIST: The template you specified does not exist.
+        ///  <c>TEMPLATE_NOT_FOUND</c> – The template you specified does not exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_SUSPENDED: Your account has been shut down because of issues related to your
-        /// email sending practices.
+        ///  <c>ACCOUNT_SUSPENDED</c> – Your account has been shut down because of issues related
+        /// to your email sending practices.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_THROTTLED: The number of emails you can send has been reduced because your
-        /// account has exceeded its allocated sending limit.
+        ///  <c>ACCOUNT_THROTTLED</c> – The number of emails you can send has been reduced because
+        /// your account has exceeded its allocated sending limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_DAILY_QUOTA_EXCEEDED: You have reached or exceeded the maximum number of emails
-        /// you can send from your account in a 24-hour period.
+        ///  <c>ACCOUNT_DAILY_QUOTA_EXCEEDED</c> – You have reached or exceeded the maximum number
+        /// of emails you can send from your account in a 24-hour period.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_SENDING_POOL_NAME: The configuration set you specified refers to an IP pool
-        /// that does not exist.
+        ///  <c>INVALID_SENDING_POOL_NAME</c> – The configuration set you specified refers to
+        /// an IP pool that does not exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_SENDING_PAUSED: Email sending for the Amazon SES account was disabled using
-        /// the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateAccountSendingEnabled.html">UpdateAccountSendingEnabled</a>
+        ///  <c>ACCOUNT_SENDING_PAUSED</c> – Email sending for the Amazon SES account was disabled
+        /// using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutAccountSendingAttributes.html">PutAccountSendingAttributes</a>
         /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CONFIGURATION_SET_SENDING_PAUSED: Email sending for this configuration set was disabled
-        /// using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetSendingEnabled.html">UpdateConfigurationSetSendingEnabled</a>
+        ///  <c>CONFIGURATION_SET_SENDING_PAUSED</c> – Email sending for this configuration set
+        /// was disabled using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutConfigurationSetSendingOptions.html">PutConfigurationSetSendingOptions</a>
         /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PARAMETER_VALUE: One or more of the parameters you specified when calling
+        ///  <c>INVALID_PARAMETER</c> – One or more of the parameters you specified when calling
         /// this operation was invalid. See the error message for additional information.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// TRANSIENT_FAILURE: Amazon SES was unable to process your request because of a temporary
-        /// issue.
+        ///  <c>TRANSIENT_FAILURE</c> – Amazon SES was unable to process your request because
+        /// of a temporary issue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FAILED: Amazon SES was unable to process your request. See the error message for additional
-        /// information.
+        ///  <c>FAILED</c> – Amazon SES was unable to process your request. See the error message
+        /// for additional information.
         /// </para>
         ///  </li> </ul>
         /// </summary>

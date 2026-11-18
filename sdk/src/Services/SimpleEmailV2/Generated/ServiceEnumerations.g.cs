@@ -22,6 +22,47 @@ using Amazon.Runtime;
 namespace Amazon.SimpleEmailV2
 {
     /// <summary>
+    /// Constants used for properties of type AccountSharedPoolDeliveryMode.
+    /// </summary>
+    public class AccountSharedPoolDeliveryMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant GLOBAL for AccountSharedPoolDeliveryMode
+        /// </summary>
+        public static readonly AccountSharedPoolDeliveryMode GLOBAL = new AccountSharedPoolDeliveryMode("GLOBAL");
+
+        /// <summary>
+        /// Constant REGIONAL for AccountSharedPoolDeliveryMode
+        /// </summary>
+        public static readonly AccountSharedPoolDeliveryMode REGIONAL = new AccountSharedPoolDeliveryMode("REGIONAL");
+
+        /// <summary>
+        /// Constructs a custom AccountSharedPoolDeliveryMode for a value not among the defined constants.
+        /// </summary>
+        public AccountSharedPoolDeliveryMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountSharedPoolDeliveryMode FindValue(string value)
+        {
+            return FindValue<AccountSharedPoolDeliveryMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountSharedPoolDeliveryMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AttachmentContentDisposition.
     /// </summary>
     public class AttachmentContentDisposition : ConstantClass
@@ -2413,6 +2454,52 @@ namespace Amazon.SimpleEmailV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SendingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SharedPoolDeliveryMode.
+    /// </summary>
+    public class SharedPoolDeliveryMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCOUNT for SharedPoolDeliveryMode
+        /// </summary>
+        public static readonly SharedPoolDeliveryMode ACCOUNT = new SharedPoolDeliveryMode("ACCOUNT");
+
+        /// <summary>
+        /// Constant GLOBAL for SharedPoolDeliveryMode
+        /// </summary>
+        public static readonly SharedPoolDeliveryMode GLOBAL = new SharedPoolDeliveryMode("GLOBAL");
+
+        /// <summary>
+        /// Constant REGIONAL for SharedPoolDeliveryMode
+        /// </summary>
+        public static readonly SharedPoolDeliveryMode REGIONAL = new SharedPoolDeliveryMode("REGIONAL");
+
+        /// <summary>
+        /// Constructs a custom SharedPoolDeliveryMode for a value not among the defined constants.
+        /// </summary>
+        public SharedPoolDeliveryMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SharedPoolDeliveryMode FindValue(string value)
+        {
+            return FindValue<SharedPoolDeliveryMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SharedPoolDeliveryMode(string value)
         {
             return FindValue(value);
         }

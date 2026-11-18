@@ -117,8 +117,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property ReplacementTags. 
         /// <para>
         /// A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <c>SendBulkTemplatedEmail</c> operation. Tags correspond to characteristics
-        /// of the email that you define, so that you can publish email sending events.
+        /// using the <c>SendBulkEmail</c> operation. Tags correspond to characteristics of the
+        /// email that you define, so that you can publish email sending events.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
