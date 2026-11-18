@@ -1023,20 +1023,6 @@ namespace Amazon.Neptune
         /// without failover for the new DB cluster parameter group and associated settings to
         /// take effect.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// After you create a DB cluster parameter group, you should wait at least 5 minutes
-        /// before creating your first DB cluster that uses that DB cluster parameter group as
-        /// the default parameter group. This allows Amazon Neptune to fully complete the create
-        /// action before the DB cluster parameter group is used as the default for a new DB cluster.
-        /// This is especially important for parameters that are critical when creating the default
-        /// database for a DB cluster, such as the character set for the default database defined
-        /// by the <c>character_set_database</c> parameter. You can use the <i>Parameter Groups</i>
-        /// option of the <a href="https://console.aws.amazon.com/rds/">Amazon Neptune console</a>
-        /// or the <a>DescribeDBClusterParameters</a> command to verify that your DB cluster parameter
-        /// group has been created or modified.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterParameterGroup service method.</param>
         /// <returns>The response from the CreateDBClusterParameterGroup service method, as returned by Neptune.</returns>
@@ -1084,20 +1070,6 @@ namespace Amazon.Neptune
         /// without failover for the new DB cluster parameter group and associated settings to
         /// take effect.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// After you create a DB cluster parameter group, you should wait at least 5 minutes
-        /// before creating your first DB cluster that uses that DB cluster parameter group as
-        /// the default parameter group. This allows Amazon Neptune to fully complete the create
-        /// action before the DB cluster parameter group is used as the default for a new DB cluster.
-        /// This is especially important for parameters that are critical when creating the default
-        /// database for a DB cluster, such as the character set for the default database defined
-        /// by the <c>character_set_database</c> parameter. You can use the <i>Parameter Groups</i>
-        /// option of the <a href="https://console.aws.amazon.com/rds/">Amazon Neptune console</a>
-        /// or the <a>DescribeDBClusterParameters</a> command to verify that your DB cluster parameter
-        /// group has been created or modified.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterParameterGroup service method.</param>
         /// <param name="cancellationToken">
@@ -3462,6 +3434,50 @@ namespace Amazon.Neptune
             options.ResponseUnmarshaller = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribePendingMaintenanceActionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes the properties of specific platform versions for Neptune Serverless.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServerlessV2PlatformVersions service method.</param>
+        /// <returns>The response from the DescribeServerlessV2PlatformVersions service method, as returned by Neptune.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeServerlessV2PlatformVersions">REST API Reference for DescribeServerlessV2PlatformVersions Operation</seealso>
+        public virtual DescribeServerlessV2PlatformVersionsResponse DescribeServerlessV2PlatformVersions(DescribeServerlessV2PlatformVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeServerlessV2PlatformVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServerlessV2PlatformVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServerlessV2PlatformVersionsResponse>(request, options);
+        }
+#else
+        internal virtual DescribeServerlessV2PlatformVersionsResponse DescribeServerlessV2PlatformVersions(DescribeServerlessV2PlatformVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeServerlessV2PlatformVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServerlessV2PlatformVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServerlessV2PlatformVersionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Describes the properties of specific platform versions for Neptune Serverless.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServerlessV2PlatformVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeServerlessV2PlatformVersions service method, as returned by Neptune.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeServerlessV2PlatformVersions">REST API Reference for DescribeServerlessV2PlatformVersions Operation</seealso>
+        public virtual Task<DescribeServerlessV2PlatformVersionsResponse> DescribeServerlessV2PlatformVersionsAsync(DescribeServerlessV2PlatformVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeServerlessV2PlatformVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServerlessV2PlatformVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeServerlessV2PlatformVersionsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
