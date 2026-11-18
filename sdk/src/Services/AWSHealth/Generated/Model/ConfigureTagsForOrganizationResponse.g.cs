@@ -37,7 +37,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property ConfiguredTagKeys. 
         /// <para>
-        /// The list of tag keys that were successfully configured for the organization.
+        /// The list of tag keys that were successfully configured for the organization, with
+        /// the current status of each tag key.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -47,7 +48,7 @@ namespace Amazon.AWSHealth.Model
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min = 1, Max = 10)]
-        public List<TagKeyForOrganization> ConfiguredTagKeys { get; set; } = AWSConfigs.InitializeCollections ? new List<TagKeyForOrganization>() : null;
+        public List<OrganizationTagKey> ConfiguredTagKeys { get; set; } = AWSConfigs.InitializeCollections ? new List<OrganizationTagKey>() : null;
 
         /// <summary>
         /// Checks to see if the ConfiguredTagKeys property is set.

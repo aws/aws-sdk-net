@@ -53,7 +53,7 @@ namespace Amazon.AWSHealth.Model
         /// The tag key name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 127)]
+        [AWSProperty(Required = true, Min = 1, Max = 127)]
         public string Key { get; set; }
 
         /// <summary>

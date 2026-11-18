@@ -50,7 +50,7 @@ namespace Amazon.AWSHealth.Model
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 10)]
-        public List<ResourceTagKey> TagKeys { get; set; } = AWSConfigs.InitializeCollections ? new List<ResourceTagKey>() : null;
+        public List<ConfigureTagsTagKey> TagKeys { get; set; } = AWSConfigs.InitializeCollections ? new List<ConfigureTagsTagKey>() : null;
 
         /// <summary>
         /// Checks to see if the TagKeys property is set.

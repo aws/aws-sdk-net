@@ -57,7 +57,7 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                 {
                     case "configuredTagKeys":
                         context.AddPathSegment("ConfiguredTagKeys");
-                        unmarshalledObject.ConfiguredTagKeys = new CborListUnmarshaller<TagKeyForOrganization, TagKeyForOrganizationUnmarshaller>(TagKeyForOrganizationUnmarshaller.Instance).Unmarshall(context);
+                        unmarshalledObject.ConfiguredTagKeys = new CborListUnmarshaller<OrganizationTagKey, OrganizationTagKeyUnmarshaller>(OrganizationTagKeyUnmarshaller.Instance).Unmarshall(context);
                         context.PopPathSegment();
                         break;
 

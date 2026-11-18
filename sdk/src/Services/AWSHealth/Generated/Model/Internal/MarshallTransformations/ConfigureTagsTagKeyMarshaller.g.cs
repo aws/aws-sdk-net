@@ -37,14 +37,14 @@ using Amazon.Extensions.CborProtocol.Internal.Transform;
 namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ResourceTagKey Marshaller
+    /// ConfigureTagsTagKey Marshaller
     /// </summary>
-    public partial class ResourceTagKeyMarshaller : IRequestMarshaller<ResourceTagKey, CborMarshallerContext>
+    public partial class ConfigureTagsTagKeyMarshaller : IRequestMarshaller<ConfigureTagsTagKey, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ResourceTagKey requestObject, CborMarshallerContext context)
+        public void Marshall(ConfigureTagsTagKey requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
@@ -59,17 +59,11 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                 context.Writer.WriteTextString("key");
                 context.Writer.WriteTextString(requestObject.Key);
             }
-
-            if (requestObject.IsSetStatus())
-            {
-                context.Writer.WriteTextString("status");
-                context.Writer.WriteTextString(requestObject.Status);
-            }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static ResourceTagKeyMarshaller Instance = new ResourceTagKeyMarshaller();
+        public readonly static ConfigureTagsTagKeyMarshaller Instance = new ConfigureTagsTagKeyMarshaller();
     }
 }

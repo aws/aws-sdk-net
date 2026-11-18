@@ -75,7 +75,7 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WriteStartMap(null);
 
-                        var marshaller = ResourceTagKeyMarshaller.Instance;
+                        var marshaller = ConfigureTagsTagKeyMarshaller.Instance;
                         marshaller.Marshall(publicRequestTagKeysListValue, context);
 
                         context.Writer.WriteEndMap();

@@ -122,12 +122,6 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
-                    case "tags":
-                        context.AddPathSegment("Tags");
-                        unmarshalledObject.Tags = new CborDictionaryUnmarshaller<string, string, CborStringUnmarshaller, CborStringUnmarshaller>(CborStringUnmarshaller.Instance, CborStringUnmarshaller.Instance).Unmarshall(context);
-                        context.PopPathSegment();
-                        break;
-
                     default:
                         reader.SkipValue();
                         break;
