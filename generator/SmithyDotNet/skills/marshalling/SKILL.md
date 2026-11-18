@@ -586,6 +586,14 @@ awsQuery writers with EC2's differences; only EC2 and the EC2Protocol test clien
   - `inject` adds a real member; its `locationName` becomes `@xmlName`, so the request name upper-cases it and
     the response name lower-cases it, as C2J. An injected name a renamed member already has moves that member
     to its emitted name, keeping its wire name.
+  - `inject.location` (only `header`, S3) binds the member to `@httpHeader(locationName ?? member)`, or a map to
+    `@httpPrefixHeaders(locationName ?? "")`; `locationName` is then not an `@xmlName`.
+  - `inject.originalMember` names a member of the same shape as modeled (usually excluded) whose `@xmlName`,
+    `@contextParam` and `@httpPayload` the injected member takes, which is all C2J reads from it; its HTTP binding
+    stays behind.
+  - `inject.originalMemberIsOutsideContainingShape` + `outsideOriginalMember` (`"Shape,Member"`) make the injected
+    member a copy of another shape's member, target included (`shape` must be its emitted type name), minus `@httpPayload` and
+    `@required`, which C2J keeps on the containing shape.
   - `modify.locationName` becomes `@ec2QueryName` (upper-cased): request only, ranked above the model's name.
   - `marshallNameOverrides` names a member for one operation's request, above every other rule (upper-cased).
   - `customMarshall` keeps the member on the class but out of the request; hand-written code sends it.

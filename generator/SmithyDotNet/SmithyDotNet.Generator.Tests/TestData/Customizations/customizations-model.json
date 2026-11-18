@@ -221,7 +221,7 @@
     "com.example#PutBucketRequest": {
       "type": "structure",
       "members": {
-        "id": { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {} } },
+        "id": { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.rules#contextParam": { "name": "Id" } } },
         "config": { "target": "com.example#BucketConfig", "traits": { "smithy.api#httpPayload": {}, "smithy.api#xmlName": "CreateBucketConfiguration" } },
         "trace": { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-trace" } }
       }

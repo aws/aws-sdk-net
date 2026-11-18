@@ -27,6 +27,9 @@ internal static class ShapeModifiers
                 shape.SetDeprecatedMessage(shapeMessage);
             }
 
+            // An inject's originalMember names a member as modeled, which exclude usually drops.
+            var modeledMembers = shape is StructureShape modeledShape ? new Dictionary<string, MemberShape>(modeledShape.Members) : [];
+
             // TODO: S3's excludeFromMarshalling and excludeFromUnmarshalling keep the member on the class but off the
             // wire, so they need a marshalling-level flag rather than this removal.
             foreach (var memberName in modifier.Exclude)
@@ -43,7 +46,7 @@ internal static class ShapeModifiers
                 {
                     throw new GeneratorException($"shapeModifiers['{shapeName}'] injects '{memberName}' into a '{shape.Type}' shape; only structures are supported.");
                 }
-                MemberInjection.Apply(model, target, memberName, injector, shapeName, customizations);
+                MemberInjection.Apply(model, target, modeledMembers, memberName, injector, shapeName, customizations);
             }
 
             // The structure/enum restriction only bites member modifications - a shape-level hook (e.g.

@@ -239,6 +239,90 @@ public class CustomizationTransformTests
         Assert.Contains("excludes member 'missing', which the shape does not have", ex.Message);
     }
 
+    // inject
+
+    // S3's CopyObjectRequest.DestinationKey and GetBucketCorsOutput.Configuration: the original is excluded first, and its
+    // binding stays behind, as C2J reads only the original's XML name, endpoint parameter and payload.
+    [Fact]
+    public void Inject_OriginalMember_TakesItsXmlNameContextParamAndPayload()
+    {
+        var customizations = new CustomizationsModel();
+        var modifier = TestCustomizations.Inject("BucketId", new PropertyInjector { Shape = "Text", OriginalMember = "id" });
+        TestCustomizations.Inject("Configuration", new PropertyInjector { Shape = "BucketConfig", OriginalMember = "config" }, modifier);
+        modifier.Exclude.AddRange(["id", "config"]);
+        customizations.ShapeModifiers["PutBucketRequest"] = modifier;
+
+        var request = Structure(Apply(customizations), "PutBucketRequest");
+
+        Assert.Equal("Id", request.Members["BucketId"].GetContextParam()?.Name);
+        Assert.False(request.Members["BucketId"].IsHttpLabel());
+        Assert.True(request.Members["Configuration"].IsHttpPayload());
+        Assert.Equal("CreateBucketConfiguration", request.Members["Configuration"].GetXmlName());
+    }
+
+    // S3's CopyObjectRequest.SourceBucket and Headers.
+    [Fact]
+    public void Inject_HeaderLocation_BindsAHeader()
+    {
+        var customizations = new CustomizationsModel();
+        var modifier = TestCustomizations.Inject("Source", new PropertyInjector { Shape = "Text", Location = "header" });
+        TestCustomizations.Inject("Named", new PropertyInjector { Shape = "Text", Location = "header", LocationName = "x-named" }, modifier);
+        TestCustomizations.Inject("Headers", new PropertyInjector { Shape = "NameValueMap", Location = "header" }, modifier);
+        customizations.ShapeModifiers["PutBucketRequest"] = modifier;
+
+        var request = Structure(Apply(customizations), "PutBucketRequest");
+
+        Assert.Equal("Source", request.Members["Source"].GetHttpHeader());
+        Assert.Equal("x-named", request.Members["Named"].GetHttpHeader());
+        Assert.Null(request.Members["Named"].GetXmlName());
+        Assert.Equal("", request.Members["Headers"].GetHttpPrefixHeaders());
+    }
+
+    // S3's GetBucketLifecycleConfigurationOutput.Configuration copies PutBucketLifecycleConfigurationRequest's payload,
+    // naming its target by the renamed type, as BucketConfig's rename to Config does here.
+    [Fact]
+    public void Inject_OutsideOriginalMember_CopiesThatMemberWithoutItsPayload()
+    {
+        var customizations = Substitute("BucketConfig", "Config");
+        customizations.ShapeModifiers["PermissionOutput"] = TestCustomizations.Inject("Configuration", new PropertyInjector
+        {
+            Shape = "Config",
+            OriginalMemberIsOutsideContainingShape = true,
+            OutsideOriginalMember = "PutBucketRequest,config",
+        });
+
+        var configuration = Structure(Apply(customizations), "PermissionOutput").Members["Configuration"];
+
+        Assert.Equal("com.example#BucketConfig", configuration.Target.AbsoluteName);
+        Assert.Equal("CreateBucketConfiguration", configuration.GetXmlName());
+        Assert.False(configuration.IsHttpPayload());
+    }
+
+    [Theory]
+    [InlineData("uri", null, false, null, "with location 'uri'; only 'header' is supported")]
+    [InlineData(null, "missing", false, null, "with originalMember 'missing', which the shape does not have")]
+    [InlineData(null, null, true, null, "sets only one of originalMemberIsOutsideContainingShape and outsideOriginalMember")]
+    [InlineData(null, null, false, "PutBucketRequest,config", "sets only one of originalMemberIsOutsideContainingShape and outsideOriginalMember")]
+    [InlineData(null, "id", true, "PutBucketRequest,config", "sets both originalMember and outsideOriginalMember")]
+    [InlineData(null, null, true, "PutBucketRequest", "copies outsideOriginalMember 'PutBucketRequest', which is not a 'ShapeName,MemberName' of a structure")]
+    [InlineData(null, null, true, "PutBucketRequest,missing", "copies outsideOriginalMember 'PutBucketRequest,missing', which is not a 'ShapeName,MemberName' of a structure")]
+    [InlineData(null, null, true, "PutBucketRequest,config", "names shape 'Text', but outsideOriginalMember 'PutBucketRequest,config' targets 'BucketConfig'")]
+    public void Inject_Invalid_Throws(string? location, string? originalMember, bool outside, string? outsideMember, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["PutBucketRequest"] = TestCustomizations.Inject("Injected", new PropertyInjector
+        {
+            Shape = "Text",
+            Location = location,
+            OriginalMember = originalMember,
+            OriginalMemberIsOutsideContainingShape = outside,
+            OutsideOriginalMember = outsideMember,
+        });
+
+        var ex = Assert.Throws<GeneratorException>(() => Apply(customizations));
+        Assert.Contains($"shapeModifiers['PutBucketRequest'] injects 'Injected' {expectedInMessage}", ex.Message);
+    }
+
     // operationModifiers and paginators
 
     // ListBuckets is bound to the service; TagBucket and DeleteBucket are a resource's instance and collection operations.

@@ -683,9 +683,38 @@ public sealed record PropertyInjector
     [JsonPropertyName("documentation")]
     public string? Documentation { get; init; }
 
-    /// <summary>ec2Query-only: the wire name (upper-cased in requests, lower-cased in responses, as C2J does).</summary>
+    /// <summary>
+    /// The wire name: with <see cref="Location"/> the header name (or a map's header prefix), otherwise the XML name
+    /// (ec2Query upper-cases it in requests and lower-cases it in responses, as C2J does).
+    /// </summary>
     [JsonPropertyName("locationName")]
     public string? LocationName { get; init; }
+
+    /// <summary>
+    /// Only <c>header</c>, the one value used (S3's CopyObjectRequest.SourceBucket): an <c>@httpHeader</c> named by
+    /// <see cref="LocationName"/> or the member, or for a map <c>@httpPrefixHeaders</c>.
+    /// </summary>
+    [JsonPropertyName("location")]
+    public string? Location { get; init; }
+
+    /// <summary>
+    /// A member of the same shape as modeled, usually excluded, that the injected one replaces: it takes the original's
+    /// XML name, <c>@contextParam</c> and <c>@httpPayload</c>, which is all C2J reads from it (S3's
+    /// CopyObjectRequest.DestinationKey keeps Key's endpoint parameter).
+    /// </summary>
+    [JsonPropertyName("originalMember")]
+    public string? OriginalMember { get; init; }
+
+    /// <summary>
+    /// Set with <see cref="OutsideOriginalMember"/>: the injected member is a copy of another shape's member, target
+    /// included, as in C2J (S3's GetBucketLifecycleConfigurationOutput.Configuration); <see cref="Shape"/> must be the copy's emitted type name.
+    /// </summary>
+    [JsonPropertyName("originalMemberIsOutsideContainingShape")]
+    public bool OriginalMemberIsOutsideContainingShape { get; init; }
+
+    /// <summary>The member <see cref="OriginalMemberIsOutsideContainingShape"/> copies, as <c>"ShapeName,MemberName"</c>.</summary>
+    [JsonPropertyName("outsideOriginalMember")]
+    public string? OutsideOriginalMember { get; init; }
 
     /// <summary>ec2Query-only: see <see cref="CustomizationsModel.CustomMarshall"/>.</summary>
     [JsonPropertyName("customMarshall")]

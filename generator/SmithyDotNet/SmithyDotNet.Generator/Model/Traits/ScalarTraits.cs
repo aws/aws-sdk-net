@@ -29,6 +29,10 @@ public static class ScalarTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httpprefixheaders-trait" /></remarks>
     public static string? GetHttpPrefixHeaders(this Shape shape) => GetStringTrait(shape, "smithy.api#httpPrefixHeaders");
 
+    public static void SetHttpHeader(this Shape shape, string name) => SetStringTrait(shape, "smithy.api#httpHeader", name);
+
+    public static void SetHttpPrefixHeaders(this Shape shape, string prefix) => SetStringTrait(shape, "smithy.api#httpPrefixHeaders", prefix);
+
     /// <remarks><see href="https://smithy.io/2.0/spec/protocol-traits.html#jsonname-trait" /></remarks>
     public static string? GetJsonName(this Shape shape) => GetStringTrait(shape, "smithy.api#jsonName");
 
