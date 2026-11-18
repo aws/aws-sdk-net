@@ -51,10 +51,10 @@ namespace Amazon.AWSSupport.Internal
         {
             var config = (AmazonAWSSupportConfig)requestContext.ClientConfig;
             var result = new AWSSupportEndpointParameters();
-            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;
 
             // The region needs to be determined from the ServiceURL if not set.
             var regionEndpoint = config.RegionEndpoint;
