@@ -32,9 +32,10 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Specifies whether Amazon S3 replicates delete markers. If you specify a <c>Filter</c>
     /// in your replication configuration, you must also include a <c>DeleteMarkerReplication</c>
-    /// element. If your <c>Filter</c> includes a <c>Tag</c> element, the <c>DeleteMarkerReplication</c>
-    /// <c>Status</c> must be set to Disabled, because Amazon S3 does not support replicating
-    /// delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic
+    /// element. If your <c>Filter</c> includes a <c>Tag</c> element, including within a <c>Not</c>
+    /// or <c>Or</c> element, the <c>DeleteMarkerReplication</c> <c>Status</c> must be set
+    /// to Disabled, because Amazon S3 does not support replicating delete markers for tag-based
+    /// rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic
     /// Rule Configuration</a>. 
     /// 
     ///  

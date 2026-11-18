@@ -45,6 +45,7 @@ namespace Amazon.S3.Model
     public partial class EncryptionConfiguration
     {
         private string _replicaKmsKeyID;
+        private UseSourceMultiRegionKey _useSourceMultiRegionKey;
 
         /// <summary>
         /// Gets and sets the property ReplicaKmsKeyID. 
@@ -67,6 +68,25 @@ namespace Amazon.S3.Model
         internal bool IsSetReplicaKmsKeyID()
         {
             return this._replicaKmsKeyID != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseSourceMultiRegionKey. 
+        /// <para>
+        /// Specifies whether Amazon S3 uses the related multi-Region KMS key in the destination
+        /// Amazon Web Services Region to encrypt the replica.
+        /// </para>
+        /// </summary>
+        public UseSourceMultiRegionKey UseSourceMultiRegionKey
+        {
+            get { return this._useSourceMultiRegionKey; }
+            set { this._useSourceMultiRegionKey = value; }
+        }
+
+        // Check to see if UseSourceMultiRegionKey property is set
+        internal bool IsSetUseSourceMultiRegionKey()
+        {
+            return this._useSourceMultiRegionKey != null;
         }
 
     }
