@@ -32,7 +32,7 @@ namespace Amazon.AbuseSignal
     public partial class AmazonAbuseSignalConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Abuse Signal", "4.0");
+            InternalSDKUtils.BuildUserAgentString("Abuse Signal", "4.1.0.0");
 
         private static readonly AmazonAbuseSignalEndpointResolver EndpointResolver =
             new AmazonAbuseSignalEndpointResolver();

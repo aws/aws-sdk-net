@@ -1,3 +1,39 @@
+### 4.1.5.0 (2026-11-18 19:36 UTC)
+* AbuseSignal (4.1.0.0)
+	* This release introduces the AWS Abuse Signal API, enabling customers to programmatically submit and track AWS abuse reports.
+* AWSHealth (4.1.2.0)
+	* Adds resource tags functionality to the AWS Health service
+* AWSSupport (4.1.1.0)
+	* Updated endpoint resolution for AWS Support, including FIPS and dual-stack endpoints.
+* BedrockAgentCoreControl (4.1.2.0)
+	* Adds s3BucketMount to mount an Amazon S3 bucket as a file system in AgentCore Runtime, with an optional per-session key prefix and adds operatingSystemConfiguration with a Linux privilegeMode (STANDARD or PRIVILEGED) to the capacity provider configuration
+* Braket (4.1.1.0)
+	* Supporting a new PAUSED device status and a DeviceStatusReason.
+* CleanRooms (4.1.2.0)
+	* Adds support for populating intermediate tables with results from PySpark analysis templates.
+* CloudFormation (4.1.2.0)
+	* AWS CloudFormation StackSets now provides stage-by-stage progress for deployments that span thousands of accounts and AWS Regions, which enables you to see where each deployment stands while it runs
+* CognitoIdentityProvider (4.1.3.0)
+	* Add support for restoring user pool's user data to point in time.
+* ElasticLoadBalancingV2 (4.1.0.3)
+	* This release adds support for the keyExchange field in CloudTrail tlsDetails, enabling customers to distinguish classical from post-quantum hybrid key exchange for TLS connections on Application Load Balancers.
+* IdentityManagement (4.1.2.0)
+	* Adds MaxSignInSessionDuration to IAM Roles and Login Profiles, allowing customers to configure the maximum Console sign-in session duration per principal. Affects CreateRole, UpdateRole, GetRole and LoginProfile APIs.
+* Neptune (4.1.1.0)
+	* Neptune Database Serverless support for graviton3 based r8g instances.
+* Resiliencehubv2 (4.1.1.0)
+	* This release includes support for adding new field for the effective policy used in test runs and documentation updates.
+* S3 (4.1.2.0)
+	* Adds exclusions and Multi-Region key resolution to S3 Replication. Rule filters support a Not element to exclude prefixes and object tags. Destination EncryptionConfiguration supports UseSourceMultiRegionKey to encrypt replicas with the related replica KMS multi-Region key in the destination Region.
+* SecurityAgent (4.1.2.0)
+	* This release adds support for resuming a paused penetration test job from its last saved checkpoint.
+* Signin (4.1.1.0)
+	* These APIs enable customers and administrators to list, view, and revoke AWS Sign-In Sessions programmatically using the AWS CLI and SDKs, providing greater visibility and control over authenticated access.
+* SimpleEmailV2 (4.1.1.0)
+	* This release adds support for Spillover Routing in Amazon SES.
+* WAFV2 (4.1.1.0)
+	* Adds the AnalyticsConfig parameter to CreateWebACL and UpdateWebACL to enable or disable cross-Region security analytics for a WebACL. When you enable security analytics, you authorize AWS to transfer and store full request logs outside the AWS Region where the WebACL is hosted.
+
 ### 4.1.4.0 (2026-11-17 19:18 UTC)
 * APIGateway (4.1.1.0)
 	* API Gateway now adds support for JWT authorizers on REST APIs.
