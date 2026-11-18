@@ -38,7 +38,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the field to filter on. Currently only supports <c>deviceArn</c>.
+        /// The name of the field to filter on. Currently supports <c>deviceArn</c> and <c>spendingLimitArn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 64)]
