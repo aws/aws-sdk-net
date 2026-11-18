@@ -4720,6 +4720,47 @@ namespace Amazon.BedrockAgentCoreControl
     }
 
     /// <summary>
+    /// Constants used for properties of type PrivilegeMode.
+    /// </summary>
+    public class PrivilegeMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant PRIVILEGED for PrivilegeMode
+        /// </summary>
+        public static readonly PrivilegeMode PRIVILEGED = new PrivilegeMode("PRIVILEGED");
+
+        /// <summary>
+        /// Constant STANDARD for PrivilegeMode
+        /// </summary>
+        public static readonly PrivilegeMode STANDARD = new PrivilegeMode("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom PrivilegeMode for a value not among the defined constants.
+        /// </summary>
+        public PrivilegeMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrivilegeMode FindValue(string value)
+        {
+            return FindValue<PrivilegeMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrivilegeMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type Provider.
     /// </summary>
     public class Provider : ConstantClass

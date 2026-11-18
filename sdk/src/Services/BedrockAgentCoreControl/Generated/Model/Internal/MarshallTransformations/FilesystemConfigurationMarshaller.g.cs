@@ -67,6 +67,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetS3BucketMount())
+            {
+                context.Writer.WritePropertyName("s3BucketMount");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3BucketMountConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3BucketMount, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetS3FilesAccessPoint())
             {
                 context.Writer.WritePropertyName("s3FilesAccessPoint");

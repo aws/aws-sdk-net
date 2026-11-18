@@ -67,6 +67,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("s3BucketMount", targetDepth, ref reader))
+                {
+                    var unmarshaller = S3BucketMountConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3BucketMount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("s3FilesAccessPoint", targetDepth, ref reader))
                 {
                     var unmarshaller = S3FilesAccessPointConfigurationUnmarshaller.Instance;
