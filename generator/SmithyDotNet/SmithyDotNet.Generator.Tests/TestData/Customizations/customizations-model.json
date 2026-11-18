@@ -250,6 +250,34 @@
         "config": { "target": "com.example#BucketConfig", "traits": { "smithy.api#httpPayload": {} } }
       }
     },
+    "com.example#PutBucketLifecycleConfigurationRequest": {
+      "type": "structure",
+      "members": {
+        "LifecycleConfiguration": { "target": "com.example#BucketLifecycleConfiguration", "traits": { "smithy.api#httpPayload": {}, "smithy.api#xmlName": "LifecycleConfiguration" } }
+      }
+    },
+    "com.example#GetBucketLifecycleConfigurationOutput": {
+      "type": "structure",
+      "members": {
+        "Rules": { "target": "com.example#LifecycleRules", "traits": { "smithy.api#xmlFlattened": {}, "smithy.api#xmlName": "Rule" } }
+      }
+    },
+    "com.example#BucketLifecycleConfiguration": {
+      "type": "structure",
+      "members": {
+        "Rules": { "target": "com.example#LifecycleRules", "traits": { "smithy.api#required": {}, "smithy.api#xmlFlattened": {}, "smithy.api#xmlName": "Rule" } }
+      }
+    },
+    "com.example#LifecycleRules": {
+      "type": "list",
+      "member": { "target": "com.example#LifecycleRule" }
+    },
+    "com.example#LifecycleRule": {
+      "type": "structure",
+      "members": {
+        "ID": { "target": "smithy.api#String" }
+      }
+    },
     "com.example#Dup": {
       "type": "structure",
       "members": {}

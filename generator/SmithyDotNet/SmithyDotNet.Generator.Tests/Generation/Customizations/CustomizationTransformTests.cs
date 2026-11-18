@@ -278,23 +278,26 @@ public class CustomizationTransformTests
         Assert.Equal("", request.Members["Headers"].GetHttpPrefixHeaders());
     }
 
-    // S3's GetBucketLifecycleConfigurationOutput.Configuration copies PutBucketLifecycleConfigurationRequest's payload,
-    // naming its target by the renamed type, as BucketConfig's rename to Config does here.
+    // S3's exact entries: "shape" names BucketLifecycleConfiguration by its renamed type, and the copy is a body member
+    // of the output, not its payload.
     [Fact]
     public void Inject_OutsideOriginalMember_CopiesThatMemberWithoutItsPayload()
     {
-        var customizations = Substitute("BucketConfig", "Config");
-        customizations.ShapeModifiers["PermissionOutput"] = TestCustomizations.Inject("Configuration", new PropertyInjector
+        var customizations = Substitute("BucketLifecycleConfiguration", "LifecycleConfiguration");
+        var modifier = TestCustomizations.Inject("Configuration", new PropertyInjector
         {
-            Shape = "Config",
+            Shape = "LifecycleConfiguration",
             OriginalMemberIsOutsideContainingShape = true,
-            OutsideOriginalMember = "PutBucketRequest,config",
+            OutsideOriginalMember = "PutBucketLifecycleConfigurationRequest,LifecycleConfiguration",
         });
+        modifier.Exclude.Add("Rules");
+        customizations.ShapeModifiers["GetBucketLifecycleConfigurationOutput"] = modifier;
 
-        var configuration = Structure(Apply(customizations), "PermissionOutput").Members["Configuration"];
+        var output = Structure(Apply(customizations), "GetBucketLifecycleConfigurationOutput");
 
-        Assert.Equal("com.example#BucketConfig", configuration.Target.AbsoluteName);
-        Assert.Equal("CreateBucketConfiguration", configuration.GetXmlName());
+        var configuration = Assert.Single(output.Members).Value;
+        Assert.Equal("com.example#BucketLifecycleConfiguration", configuration.Target.AbsoluteName);
+        Assert.Equal("LifecycleConfiguration", configuration.GetXmlName());
         Assert.False(configuration.IsHttpPayload());
     }
 
