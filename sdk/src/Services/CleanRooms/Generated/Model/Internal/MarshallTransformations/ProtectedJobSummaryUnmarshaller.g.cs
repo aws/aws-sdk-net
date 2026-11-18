@@ -67,6 +67,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("intermediateTableConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = IntermediateTableOutputConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IntermediateTableConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("jobComputePayerAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

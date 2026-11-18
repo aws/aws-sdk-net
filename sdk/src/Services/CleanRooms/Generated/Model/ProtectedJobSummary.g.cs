@@ -63,6 +63,20 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetId() => this.Id != null;
 
         /// <summary>
+        /// Gets and sets the property IntermediateTableConfiguration. 
+        /// <para>
+        /// The intermediate table that the protected job populated. This field is present when
+        /// the protected job was triggered by a <c>PopulateIntermediateTable</c> operation.
+        /// </para>
+        /// </summary>
+        public IntermediateTableOutputConfiguration IntermediateTableConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IntermediateTableConfiguration property is set.
+        /// </summary>
+        internal bool IsSetIntermediateTableConfiguration() => this.IntermediateTableConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property JobComputePayerAccountId. 
         /// <para>
         /// The account ID of the member that pays for the job compute costs.

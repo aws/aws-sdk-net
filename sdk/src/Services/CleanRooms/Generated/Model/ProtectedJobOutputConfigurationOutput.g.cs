@@ -35,6 +35,21 @@ namespace Amazon.CleanRooms.Model
     public partial class ProtectedJobOutputConfigurationOutput
     {
         /// <summary>
+        /// Gets and sets the property IntermediateTable. 
+        /// <para>
+        /// Specifies the intermediate table that the protected job populated, identified by its
+        /// ID, Amazon Resource Name (ARN), and name. This field is present when the protected
+        /// job was triggered by a <c>PopulateIntermediateTable</c> operation.
+        /// </para>
+        /// </summary>
+        public IntermediateTableOutputConfiguration IntermediateTable { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IntermediateTable property is set.
+        /// </summary>
+        internal bool IsSetIntermediateTable() => this.IntermediateTable != null;
+
+        /// <summary>
         /// Gets and sets the property Member. 
         /// <para>
         ///  The member output configuration for a protected job.

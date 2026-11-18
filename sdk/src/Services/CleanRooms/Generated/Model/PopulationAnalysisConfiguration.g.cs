@@ -36,6 +36,21 @@ namespace Amazon.CleanRooms.Model
     public partial class PopulationAnalysisConfiguration
     {
         /// <summary>
+        /// Gets and sets the property JobParameters. 
+        /// <para>
+        /// Specifies the PySpark job parameters for the population analysis. Use <c>jobParameters</c>
+        /// instead of <c>sqlParameters</c> when you populate the intermediate table with results
+        /// from a PySpark job.
+        /// </para>
+        /// </summary>
+        public PopulationAnalysisJobParameters JobParameters { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobParameters property is set.
+        /// </summary>
+        internal bool IsSetJobParameters() => this.JobParameters != null;
+
+        /// <summary>
         /// Gets and sets the property SqlParameters. 
         /// <para>
         /// The SQL parameters for the population analysis, including the query string or analysis

@@ -2531,6 +2531,11 @@ namespace Amazon.CleanRooms
     public class PopulateIntermediateTableAnalysisType : ConstantClass
     {
         /// <summary>
+        /// Constant JOB for PopulateIntermediateTableAnalysisType
+        /// </summary>
+        public static readonly PopulateIntermediateTableAnalysisType JOB = new PopulateIntermediateTableAnalysisType("JOB");
+
+        /// <summary>
         /// Constant QUERY for PopulateIntermediateTableAnalysisType
         /// </summary>
         public static readonly PopulateIntermediateTableAnalysisType QUERY = new PopulateIntermediateTableAnalysisType("QUERY");
