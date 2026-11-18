@@ -2294,6 +2294,82 @@ namespace Amazon.CognitoIdentityProvider
     }
 
     /// <summary>
+    /// Constants used for properties of type RestoreStatusType.
+    /// </summary>
+    public class RestoreStatusType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS_ABORTED for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType AWS_ABORTED = new RestoreStatusType("AWS_ABORTED");
+
+        /// <summary>
+        /// Constant PREVIEW_CANCELLED for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType PREVIEW_CANCELLED = new RestoreStatusType("PREVIEW_CANCELLED");
+
+        /// <summary>
+        /// Constant PREVIEW_EXPIRED for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType PREVIEW_EXPIRED = new RestoreStatusType("PREVIEW_EXPIRED");
+
+        /// <summary>
+        /// Constant PREVIEW_GENERATED for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType PREVIEW_GENERATED = new RestoreStatusType("PREVIEW_GENERATED");
+
+        /// <summary>
+        /// Constant PREVIEW_GENERATING for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType PREVIEW_GENERATING = new RestoreStatusType("PREVIEW_GENERATING");
+
+        /// <summary>
+        /// Constant PREVIEW_GENERATION_FAILED for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType PREVIEW_GENERATION_FAILED = new RestoreStatusType("PREVIEW_GENERATION_FAILED");
+
+        /// <summary>
+        /// Constant RESTORE_COMPLETED for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType RESTORE_COMPLETED = new RestoreStatusType("RESTORE_COMPLETED");
+
+        /// <summary>
+        /// Constant RESTORING for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType RESTORING = new RestoreStatusType("RESTORING");
+
+        /// <summary>
+        /// Constant TEMPORARY_INTERNAL_ERROR_SEE_SUPPORT_CASE for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType TEMPORARY_INTERNAL_ERROR_SEE_SUPPORT_CASE = new RestoreStatusType("TEMPORARY_INTERNAL_ERROR_SEE_SUPPORT_CASE");
+
+        /// <summary>
+        /// Constructs a custom RestoreStatusType for a value not among the defined constants.
+        /// </summary>
+        public RestoreStatusType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RestoreStatusType FindValue(string value)
+        {
+            return FindValue<RestoreStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RestoreStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RevokeAssociatedSessionsType.
     /// </summary>
     public class RevokeAssociatedSessionsType : ConstantClass

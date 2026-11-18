@@ -547,6 +547,18 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CancelPointInTimeRecoveryRequest.RestoreId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CancelPointInTimeRecoveryRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ChangePasswordRequest.AccessToken</property>
     <pattern>^[A-Za-z0-9-_=.]+$</pattern>
   </property-value-rule>
@@ -1017,6 +1029,18 @@
     <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.DescribePointInTimeRecoveryRequest.RestoreId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.DescribePointInTimeRecoveryRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.DescribeResourceServerRequest.Identifier</property>
     <min>1</min>
     <max>256</max>
@@ -1382,6 +1406,12 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.InitiatePointInTimeRecoveryRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ListDevicesRequest.AccessToken</property>
     <pattern>^[A-Za-z0-9-_=.]+$</pattern>
   </property-value-rule>
@@ -1441,6 +1471,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ListIdentityProvidersResponse.NextToken</property>
+    <min>1</min>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListPointInTimeRecoveriesRequest.MaxResults</property>
+    <min>1</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListPointInTimeRecoveriesRequest.NextToken</property>
+    <min>1</min>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListPointInTimeRecoveriesRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListPointInTimeRecoveriesResponse.NextToken</property>
     <min>1</min>
     <pattern>^[\S]+$</pattern>
   </property-value-rule>
@@ -1866,6 +1917,18 @@
     <property>Amazon.CognitoIdentityProvider.Model.SignUpResponse.UserSub</property>
     <min>0</min>
     <max>131072</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.StartPointInTimeRecoveryRequest.RestoreId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.StartPointInTimeRecoveryRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.StartUserImportJobRequest.JobId</property>
@@ -2801,6 +2864,23 @@
     <min>1</min>
     <max>55</max>
     <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.RestorationDescriptionType.RestoreId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.RestorationType.RestoreId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.RestorePreviewType.Entity</property>
+    <min>0</min>
+    <max>131072</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.RiskConfigurationType.ClientId</property>
