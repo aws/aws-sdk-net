@@ -522,6 +522,11 @@ namespace Amazon.SecurityAgent
         public static readonly ErrorCode INTERNAL_ERROR = new ErrorCode("INTERNAL_ERROR");
 
         /// <summary>
+        /// Constant PAUSED_BY_USER for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode PAUSED_BY_USER = new ErrorCode("PAUSED_BY_USER");
+
+        /// <summary>
         /// Constant STOPPED_BY_USER for ErrorCode
         /// </summary>
         public static readonly ErrorCode STOPPED_BY_USER = new ErrorCode("STOPPED_BY_USER");
@@ -709,6 +714,16 @@ namespace Amazon.SecurityAgent
         /// Constant IN_PROGRESS for JobStatus
         /// </summary>
         public static readonly JobStatus IN_PROGRESS = new JobStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant PAUSED for JobStatus
+        /// </summary>
+        public static readonly JobStatus PAUSED = new JobStatus("PAUSED");
+
+        /// <summary>
+        /// Constant PAUSING for JobStatus
+        /// </summary>
+        public static readonly JobStatus PAUSING = new JobStatus("PAUSING");
 
         /// <summary>
         /// Constant STOPPED for JobStatus

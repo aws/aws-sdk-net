@@ -4545,6 +4545,54 @@ namespace Amazon.SecurityAgent
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Resumes a stopped or paused pentest job from its last saved checkpoint. The job keeps
+        /// its pentest job identifier and continues as a new version, keeping the findings and
+        /// progress from earlier runs. You can resume a job within 7 days of when it was created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumePentestJob service method.</param>
+        /// <returns>The response from the ResumePentestJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ResumePentestJob">REST API Reference for ResumePentestJob Operation</seealso>
+        public virtual ResumePentestJobResponse ResumePentestJob(ResumePentestJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ResumePentestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumePentestJobResponseUnmarshaller.Instance;
+
+            return Invoke<ResumePentestJobResponse>(request, options);
+        }
+#else
+        internal virtual ResumePentestJobResponse ResumePentestJob(ResumePentestJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ResumePentestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumePentestJobResponseUnmarshaller.Instance;
+
+            return Invoke<ResumePentestJobResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Resumes a stopped or paused pentest job from its last saved checkpoint. The job keeps
+        /// its pentest job identifier and continues as a new version, keeping the findings and
+        /// progress from earlier runs. You can resume a job within 7 days of when it was created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumePentestJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ResumePentestJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ResumePentestJob">REST API Reference for ResumePentestJob Operation</seealso>
+        public virtual Task<ResumePentestJobResponse> ResumePentestJobAsync(ResumePentestJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ResumePentestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumePentestJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResumePentestJobResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Initiates code remediation for one or more security findings. This creates pull requests
         /// in integrated repositories to fix the identified vulnerabilities.
         /// </summary>
