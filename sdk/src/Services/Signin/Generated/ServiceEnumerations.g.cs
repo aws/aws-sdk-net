@@ -22,6 +22,47 @@ using Amazon.Runtime;
 namespace Amazon.Signin
 {
     /// <summary>
+    /// Constants used for properties of type ClientType.
+    /// </summary>
+    public class ClientType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLI for ClientType
+        /// </summary>
+        public static readonly ClientType CLI = new ClientType("CLI");
+
+        /// <summary>
+        /// Constant MCP for ClientType
+        /// </summary>
+        public static readonly ClientType MCP = new ClientType("MCP");
+
+        /// <summary>
+        /// Constructs a custom ClientType for a value not among the defined constants.
+        /// </summary>
+        public ClientType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientType FindValue(string value)
+        {
+            return FindValue<ClientType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type OAuth2ErrorCode.
     /// </summary>
     public class OAuth2ErrorCode : ConstantClass
@@ -45,6 +86,11 @@ namespace Amazon.Signin
         /// Constant INVALID_REQUEST for OAuth2ErrorCode
         /// </summary>
         public static readonly OAuth2ErrorCode INVALID_REQUEST = new OAuth2ErrorCode("INVALID_REQUEST");
+
+        /// <summary>
+        /// Constant Invalid_client for OAuth2ErrorCode
+        /// </summary>
+        public static readonly OAuth2ErrorCode Invalid_client = new OAuth2ErrorCode("invalid_client");
 
         /// <summary>
         /// Constant Invalid_grant for OAuth2ErrorCode
@@ -127,6 +173,47 @@ namespace Amazon.Signin
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OAuth2ErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SessionStatus.
+    /// </summary>
+    public class SessionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus ACTIVE = new SessionStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant REVOKED for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus REVOKED = new SessionStatus("REVOKED");
+
+        /// <summary>
+        /// Constructs a custom SessionStatus for a value not among the defined constants.
+        /// </summary>
+        public SessionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionStatus FindValue(string value)
+        {
+            return FindValue<SessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionStatus(string value)
         {
             return FindValue(value);
         }

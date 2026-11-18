@@ -39,5 +39,13 @@ namespace Amazon.Signin.Model
         {
             return new ListResourcePermissionStatementsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSessions operation
+        /// </summary>
+        public IListSessionsPaginator ListSessions(ListSessionsRequest request)
+        {
+            return new ListSessionsPaginator(this.client, request);
+        }
     }
 }

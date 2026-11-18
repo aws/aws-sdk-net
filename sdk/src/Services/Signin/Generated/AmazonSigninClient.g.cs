@@ -250,6 +250,90 @@ namespace Amazon.Signin
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Revokes up to five sign-in sessions. A revoked session can no longer be refreshed.
+        /// Revoking a session that is already revoked succeeds. Each session must belong to the
+        /// identity specified by principalArn, or to the caller if principalArn is omitted. Failures
+        /// for individual sessions are returned in the errors list and do not fail the whole
+        /// request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchRevokeSessions service method.</param>
+        /// <returns>The response from the BatchRevokeSessions service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// The request failed because of an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ResourceNotFoundException">
+        /// Error thrown when requested resource is not found HTTP Status Code: 404 Not Found
+        /// Used when the specified resource does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// The request failed because you exceeded the request rate limit for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// The request failed because it contains a malformed, missing, or invalid parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/BatchRevokeSessions">REST API Reference for BatchRevokeSessions Operation</seealso>
+        public virtual BatchRevokeSessionsResponse BatchRevokeSessions(BatchRevokeSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchRevokeSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchRevokeSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchRevokeSessionsResponse>(request, options);
+        }
+#else
+        internal virtual BatchRevokeSessionsResponse BatchRevokeSessions(BatchRevokeSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchRevokeSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchRevokeSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchRevokeSessionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Revokes up to five sign-in sessions. A revoked session can no longer be refreshed.
+        /// Revoking a session that is already revoked succeeds. Each session must belong to the
+        /// identity specified by principalArn, or to the caller if principalArn is omitted. Failures
+        /// for individual sessions are returned in the errors list and do not fail the whole
+        /// request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchRevokeSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchRevokeSessions service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// The request failed because of an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ResourceNotFoundException">
+        /// Error thrown when requested resource is not found HTTP Status Code: 404 Not Found
+        /// Used when the specified resource does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// The request failed because you exceeded the request rate limit for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// The request failed because it contains a malformed, missing, or invalid parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/BatchRevokeSessions">REST API Reference for BatchRevokeSessions Operation</seealso>
+        public virtual Task<BatchRevokeSessionsResponse> BatchRevokeSessionsAsync(BatchRevokeSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchRevokeSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchRevokeSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchRevokeSessionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a bearer token that represents your IAM credentials and can be used to access
         /// a supported AWS service. By default, the token is valid for 12 hours.
         /// </summary>
@@ -844,6 +928,86 @@ namespace Amazon.Signin
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the details of a single sign-in session. The session must belong to the identity
+        /// specified by principalArn, or to the caller if principalArn is omitted. A session
+        /// that belongs to a different identity or account is reported as not found.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
+        /// <returns>The response from the GetSession service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// The request failed because of an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ResourceNotFoundException">
+        /// Error thrown when requested resource is not found HTTP Status Code: 404 Not Found
+        /// Used when the specified resource does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// The request failed because you exceeded the request rate limit for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// The request failed because it contains a malformed, missing, or invalid parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/GetSession">REST API Reference for GetSession Operation</seealso>
+        public virtual GetSessionResponse GetSession(GetSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
+
+            return Invoke<GetSessionResponse>(request, options);
+        }
+#else
+        internal virtual GetSessionResponse GetSession(GetSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
+
+            return Invoke<GetSessionResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the details of a single sign-in session. The session must belong to the identity
+        /// specified by principalArn, or to the caller if principalArn is omitted. A session
+        /// that belongs to a different identity or account is reported as not found.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetSession service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// The request failed because of an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ResourceNotFoundException">
+        /// Error thrown when requested resource is not found HTTP Status Code: 404 Not Found
+        /// Used when the specified resource does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// The request failed because you exceeded the request rate limit for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// The request failed because it contains a malformed, missing, or invalid parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/GetSession">REST API Reference for GetSession Operation</seealso>
+        public virtual Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSessionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Inspects the metadata and active state of an OAuth 2.0 access token or refresh token.
         /// Implements RFC 7662 OAuth 2.0 Token Introspection over a SigV4-authenticated endpoint.
         /// Returns the claims associated with a token issued by AWS Sign-In.
@@ -988,6 +1152,80 @@ namespace Amazon.Signin
             options.ResponseUnmarshaller = ListResourcePermissionStatementsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListResourcePermissionStatementsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists sign-in sessions for an IAM identity in your account. If you omit principalArn,
+        /// the operation lists the caller's own sessions. Specify a user or role ARN to list
+        /// that identity's sessions, or specify arn:aws:iam::{account-id}:* to list all sessions
+        /// in the account. Filters are combined with a logical AND.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
+        /// <returns>The response from the ListSessions service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// The request failed because of an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// The request failed because you exceeded the request rate limit for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// The request failed because it contains a malformed, missing, or invalid parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        public virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSessionsResponse>(request, options);
+        }
+#else
+        internal virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSessionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists sign-in sessions for an IAM identity in your account. If you omit principalArn,
+        /// the operation lists the caller's own sessions. Specify a user or role ARN to list
+        /// that identity's sessions, or specify arn:aws:iam::{account-id}:* to list all sessions
+        /// in the account. Filters are combined with a logical AND.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListSessions service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// The request failed because of an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// The request failed because you exceeded the request rate limit for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// The request failed because it contains a malformed, missing, or invalid parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        public virtual Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSessionsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

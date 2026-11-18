@@ -100,7 +100,7 @@ namespace Amazon.Signin.Model
         /// Gets and sets the property RefreshToken. The refresh token issued by a previous token
         /// response. Required when "grant_type=refresh_token".
         /// </summary>
-        [AWSProperty(Sensitive = true, Min = 1, Max = 2048)]
+        [AWSProperty(Sensitive = true, Min = 1, Max = 12288)]
         public string RefreshToken { get; set; }
 
         /// <summary>
