@@ -72,6 +72,26 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetCreateDate() => this.CreateDate.HasValue;
 
         /// <summary>
+        /// Gets and sets the property MaxSigninSessionDuration. 
+        /// <para>
+        /// The maximum duration (in seconds) of an Amazon Web Services Sign-In session for the
+        /// user.
+        /// </para>
+        ///  
+        /// <para>
+        /// This member is omitted when the setting is unset. In that case, no default value is
+        /// returned and the existing sign-in session behavior applies.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 3600, Max = 7776000)]
+        public int? MaxSigninSessionDuration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxSigninSessionDuration property is set.
+        /// </summary>
+        internal bool IsSetMaxSigninSessionDuration() => this.MaxSigninSessionDuration.HasValue;
+
+        /// <summary>
         /// Gets and sets the property PasswordResetRequired. 
         /// <para>
         /// Specifies whether the user is required to set a new password on next sign-in.

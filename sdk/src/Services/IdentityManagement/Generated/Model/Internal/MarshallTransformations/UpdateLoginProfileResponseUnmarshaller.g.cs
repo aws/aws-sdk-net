@@ -105,6 +105,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     {
                         return EntityTemporarilyUnmodifiableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
+                    {
+                        return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceeded"))
                     {
                         return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

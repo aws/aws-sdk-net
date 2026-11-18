@@ -183,6 +183,11 @@
     <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.CreateLoginProfileRequest.MaxSigninSessionDuration</property>
+    <min>3600</min>
+    <max>7776000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateLoginProfileRequest.Password</property>
     <min>1</min>
     <max>128</max>
@@ -254,6 +259,11 @@
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.MaxSessionDuration</property>
     <min>3600</min>
     <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.CreateRoleRequest.MaxSigninSessionDuration</property>
+    <min>3600</min>
+    <max>7776000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.Path</property>
@@ -1961,6 +1971,11 @@
     <pattern>^(\u002F)|(\u002F[\u0021-\u007E]+\u002F)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateLoginProfileRequest.MaxSigninSessionDuration</property>
+    <min>3600</min>
+    <max>7776000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateLoginProfileRequest.Password</property>
     <min>1</min>
     <max>128</max>
@@ -1987,6 +2002,11 @@
     <property>Amazon.IdentityManagement.Model.UpdateRoleRequest.MaxSessionDuration</property>
     <min>3600</min>
     <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateRoleRequest.MaxSigninSessionDuration</property>
+    <min>3600</min>
+    <max>7776000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateRoleRequest.RoleName</property>
@@ -2425,6 +2445,11 @@
     <pattern>^[\w-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.LoginProfile.MaxSigninSessionDuration</property>
+    <min>3600</min>
+    <max>7776000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.LoginProfile.UserName</property>
     <min>1</min>
     <max>64</max>
@@ -2658,6 +2683,11 @@
     <property>Amazon.IdentityManagement.Model.Role.MaxSessionDuration</property>
     <min>3600</min>
     <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.Role.MaxSigninSessionDuration</property>
+    <min>3600</min>
+    <max>7776000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Role.Path</property>

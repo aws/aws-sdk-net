@@ -59,6 +59,28 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxSigninSessionDuration. 
+        /// <para>
+        /// The maximum duration (in seconds) of an Amazon Web Services Sign-In session for this
+        /// IAM user. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000
+        /// seconds), inclusive. If you do not specify a value, the setting remains unset and
+        /// the existing sign-in session behavior applies.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This setting is not supported for the root user.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min = 3600, Max = 7776000)]
+        public int? MaxSigninSessionDuration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxSigninSessionDuration property is set.
+        /// </summary>
+        internal bool IsSetMaxSigninSessionDuration() => this.MaxSigninSessionDuration.HasValue;
+
+        /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
         /// The new password for the user.
