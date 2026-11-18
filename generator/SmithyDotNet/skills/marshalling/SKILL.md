@@ -500,7 +500,7 @@ Writers and their output are pinned by `RestXmlCodegenTests` and the restXml pro
   (C2J parity), not a JSON reader. A structure `@httpPayload` is matched by its root element name through
   that loop; string/blob/streaming payloads read the raw stream via the shared,
   protocol-aware `MarshallerCommon.WritePayloadUnmarshall`. Header/`@httpResponseCode` reads are the
-  restJson1 emitters. The s3control `allowEmptyResult` customization returns early on a successful empty
+  restJson1 emitters. `aws.customizations#s3UnwrappedXmlOutput` matches at depth 1. The s3control `allowEmptyResult` customization returns early on a successful empty
   body (the loop would otherwise throw); it is rejected at generation time on any non-restXml protocol.
 - **Errors** — `XmlErrorResponseUnmarshaller` parses the `ErrorResponse/Error/Code` envelope; dispatch is
   on `errorResponse.Code` against the Smithy shape name, same structure as the JSON path. S3 supplies its own

@@ -120,16 +120,24 @@ public sealed class XmlResponseUnmarshallerWriter(GenerationContext context, str
         writer.OpenBlock($"private static void UnmarshallResult(XmlUnmarshallerContext context, {className} unmarshalledObject)", () =>
         {
             writer.WriteLine("int originalDepth = context.CurrentDepth;");
-            writer.WriteLine("int targetDepth = originalDepth + 1;");
-            // For ordinary body members the response wrapper element has not been descended past at the
-            // document root, so the match depth is one deeper. A structure/union payload IS the root element
-            // (no wrapper), so it stays at originalDepth + 1 — C2J omits this bump when a payload exists.
-            if (structurePayload is null)
+            if (operation.Shape.HasS3UnwrappedXmlOutput())
             {
-                writer.OpenBlock("if (context.IsStartOfDocument)", () =>
+                // The member is the root element.
+                writer.WriteLine("int targetDepth = 1;");
+            }
+            else
+            {
+                writer.WriteLine("int targetDepth = originalDepth + 1;");
+                // For ordinary body members the response wrapper element has not been descended past at the
+                // document root, so the match depth is one deeper. A structure/union payload IS the root element
+                // (no wrapper), so it stays at originalDepth + 1 — C2J omits this bump when a payload exists.
+                if (structurePayload is null)
                 {
-                    writer.WriteLine("targetDepth += 1;");
-                });
+                    writer.OpenBlock("if (context.IsStartOfDocument)", () =>
+                    {
+                        writer.WriteLine("targetDepth += 1;");
+                    });
+                }
             }
             writer.OpenBlock("if (context.IsEmptyResponse)", () =>
             {

@@ -232,6 +232,16 @@ public class RestXmlCodegenTests
     }
 
     [Fact]
+    public void Response_S3UnwrappedXmlOutput_ReadsTheMemberAtTheRoot()
+    {
+        var source = ResponseUnmarshaller(Context, "GetLocation");
+
+        Assert.Contains("int targetDepth = 1;", source);
+        Assert.DoesNotContain("context.IsStartOfDocument", source);
+        Assert.Contains("""if (context.TestExpression("location", targetDepth))""", source);
+    }
+
+    [Fact]
     public void Request_HostPrefix_SkippedWhenHostLabelIsContextParam()
     {
         // S3 Control shape: the @hostLabel is also a @contextParam, so the endpoint ruleset already puts

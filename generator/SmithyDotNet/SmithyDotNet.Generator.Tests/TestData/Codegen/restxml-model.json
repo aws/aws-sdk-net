@@ -10,6 +10,7 @@
         { "target": "com.example#GetThingStream" },
         { "target": "com.example#PutPayload" },
         { "target": "com.example#GetPayload" },
+        { "target": "com.example#GetLocation" },
         { "target": "com.example#PutChecksummedThing" },
         { "target": "com.example#GetChecksummedThing" },
         { "target": "com.example#AccountOp" },
@@ -135,6 +136,21 @@
       "type": "structure",
       "members": {
         "note": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#GetLocation": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#GetLocationResponse" },
+      "traits": {
+        "aws.customizations#s3UnwrappedXmlOutput": {},
+        "smithy.api#http": { "uri": "/location", "method": "GET" }
+      }
+    },
+    "com.example#GetLocationResponse": {
+      "type": "structure",
+      "members": {
+        "location": { "target": "smithy.api#String" }
       }
     },
 

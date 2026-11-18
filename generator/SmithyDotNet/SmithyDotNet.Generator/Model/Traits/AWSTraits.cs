@@ -85,6 +85,10 @@ public static class AWSTraits
     /// <remarks><see href="https://smithy.io/2.0/aws/aws-auth.html#aws-auth-unsignedpayload-trait" /></remarks>
     public static bool HasUnsignedPayload(this Shape shape) => shape.Traits.ContainsKey("aws.auth#unsignedPayload");
 
+    /// <summary>Whether the operation's XML response has no wrapper element (S3's <c>GetBucketLocation</c>).</summary>
+    /// <remarks><see href="https://smithy.io/2.0/aws/customizations/s3-customizations.html#aws-customizations-s3unwrappedxmloutput-trait" /></remarks>
+    public static bool HasS3UnwrappedXmlOutput(this Shape shape) => shape.Traits.ContainsKey("aws.customizations#s3UnwrappedXmlOutput");
+
     /// <summary>
     /// Whether the service shape carries a Smithy endpoint rule set. The config writer emits the
     /// endpoint resolver field, <c>EndpointProvider</c> wiring, and <c>DetermineServiceOperationEndpoint</c>
